@@ -1,6 +1,6 @@
 include_directories( 
-    ${pimsettingexporter_SOURCE_DIR}/core/
-    ${pimsettingexporter_BINARY_DIR}/core/
+    ${pim-data-exporter_SOURCE_DIR}/core/
+    ${pim-data-exporter_BINARY_DIR}/core/
     )
 
 set(selectiontreewidget_gui_SRCS selectiontreewidget_gui.cpp ../dialog/selectiontypedialog.cpp ../widgets/selectiontypetreewidget.cpp ../pimsettingexportgui_debug.cpp)

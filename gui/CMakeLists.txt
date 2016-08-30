@@ -1,6 +1,6 @@
 
 include_directories( 
-    ${pimsettingexporter_SOURCE_DIR}/core/
+    ${pim-data-exporter_SOURCE_DIR}/core/
     )
 
 

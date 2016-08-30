@@ -1,6 +1,6 @@
 include_directories( 
-    ${pimsettingexporter_SOURCE_DIR}/core/
-    ${pimsettingexporter_BINARY_DIR}/core/
+    ${pim-data-exporter_SOURCE_DIR}/core/
+    ${pim-data-exporter_BINARY_DIR}/core/
     )
 
 set(pimsettingexporter_calendar_SRCS
