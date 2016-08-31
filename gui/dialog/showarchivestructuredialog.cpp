@@ -54,12 +54,14 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     mainLayout->addWidget(searchLine);
     mainLayout->addWidget(mTreeWidget);
     mainLayout->addWidget(buttonBox);
-    const bool result = fillTree();
-    mTreeWidget->expandAll();
-    readConfig();
     user1Button->setText(i18n("Save As Text..."));
+    const bool result = fillTree();
+    if (result) {
+        mTreeWidget->expandAll();
+        connect(user1Button, &QPushButton::clicked, this, &ShowArchiveStructureDialog::slotExportAsLogFile);
+    }
     user1Button->setEnabled(result);
-    connect(user1Button, &QPushButton::clicked, this, &ShowArchiveStructureDialog::slotExportAsLogFile);
+    readConfig();
 }
 
 ShowArchiveStructureDialog::~ShowArchiveStructureDialog()
@@ -80,7 +82,7 @@ bool ShowArchiveStructureDialog::fillTree()
     if (!result) {
         KMessageBox::error(this, i18n("Archive cannot be opened in read mode."), i18n("Cannot open archive"));
         delete zip;
-        return result;
+        return false;
     }
     const KArchiveDirectory *topDirectory = zip->directory();
     const bool isAValidArchive = searchArchiveElement(Utils::infoPath(), topDirectory, i18n("Info"));
