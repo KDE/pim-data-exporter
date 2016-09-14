@@ -312,6 +312,7 @@ void ExportMailJob::backupConfig()
     backupConfigFile(QStringLiteral("kleopatrarc"));
     backupConfigFile(QStringLiteral("sieveeditorrc"));
     backupConfigFile(QStringLiteral("kwatchgnupgrc"));
+    backupConfigFile(QStringLiteral("pimpluginsrc"));
 
     //Notify file config
     backupConfigFile(QStringLiteral("akonadi_mailfilter_agent.notifyrc"));

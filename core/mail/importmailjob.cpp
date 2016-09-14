@@ -809,6 +809,7 @@ void ImportMailJob::restoreConfig()
     restoreConfigFile(QStringLiteral("kleopatrarc"));
     restoreConfigFile(QStringLiteral("sieveeditorrc"));
     restoreConfigFile(QStringLiteral("kwatchgnupgrc"));
+    restoreConfigFile(QStringLiteral("pimpluginsrc"));
     //Restore notify file
     QStringList lstNotify;
     lstNotify << QStringLiteral("akonadi_mailfilter_agent.notifyrc")
