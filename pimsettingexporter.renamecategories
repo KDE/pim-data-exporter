@@ -1,0 +1,3 @@
+log_pimsettingexportercore org.kde.pim.pimsettingexportercore
+log_pimsettingexportergui org.kde.pim.pimsettingexportergui
+log_pimsettingexporterconsole org.kde.pim.pimsettingexporterconsole

@@ -45,7 +45,7 @@ set(pimsettingexporter_SRCS
 
 qt5_add_resources(pimsettingexporter_SRCS pimsettingexporter.qrc)
 
-ecm_qt_declare_logging_category(pimsettingexporter_SRCS HEADER pimsettingexportgui_debug.h IDENTIFIER PIMSETTINGEXPORTERGUI_LOG CATEGORY_NAME log_pimsettingexportergui)
+ecm_qt_declare_logging_category(pimsettingexporter_SRCS HEADER pimsettingexportgui_debug.h IDENTIFIER PIMSETTINGEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimsettingexportergui)
 
 add_executable(pimsettingexporter ${pimsettingexporter_SRCS})
 

@@ -92,7 +92,7 @@ add_subdirectory(core)
 add_subdirectory(gui)
 add_subdirectory(console)
 
-install( FILES pimsettingexporter.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+install( FILES pimsettingexporter.renamecategories pimsettingexporter.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
 
 
 add_subdirectory(doc)

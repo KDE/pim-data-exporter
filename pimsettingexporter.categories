@@ -1,4 +1,4 @@
-log_pimsettingexportercore pimsettingexporter (pimsettingexporter lib core)
-log_pimsettingexportergui pimsettingexporter (pimsettingexporter gui)
-log_pimsettingexporterconsole pimsettingexporter (pimsettingexporter console)
+org.kde.pim.pimsettingexportercore pimsettingexporter (pimsettingexporter lib core)
+org.kde.pim.pimsettingexportergui pimsettingexporter (pimsettingexporter gui)
+org.kde.pim.pimsettingexporterconsole pimsettingexporter (pimsettingexporter console)
 
