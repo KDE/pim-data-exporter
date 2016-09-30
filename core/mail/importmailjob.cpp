@@ -843,6 +843,7 @@ void ImportMailJob::restoreConfig()
     }
 
     importDataSubdirectory(QStringLiteral("/messageviewer/themes/"));
+    importDataSubdirectory(QStringLiteral("/messageviewerplugins/"));
 
     Q_EMIT info(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportMailJob::slotNextStep);

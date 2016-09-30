@@ -1,4 +1,4 @@
-2016-09-13:
+2016-09-30:
 -----------
 
 2015-1-29: New VERSION for archive => VERSION_2 => knote-akonadi
@@ -130,3 +130,6 @@ Root
 |       |---------korganizer/designer/
 |       |---------gravatar/*.png
 |       |---------knotes/print/theme/
+|       |---------messageviewerplugins/
+
+

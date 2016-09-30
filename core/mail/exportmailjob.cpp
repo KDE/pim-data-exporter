@@ -416,6 +416,7 @@ void ExportMailJob::backupConfig()
         delete templateConfig;
     }
 
+    storeDirectory(QStringLiteral("/messageviewerplugins/"));
     storeDirectory(QStringLiteral("/messageviewer/themes/"));
 
     const QDir gravatarDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/gravatar/"));
