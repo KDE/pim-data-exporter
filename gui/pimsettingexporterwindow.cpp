@@ -196,24 +196,24 @@ void PimSettingExporterWindow::setupActions(bool canZipFile)
 {
     KActionCollection *ac = actionCollection();
 
-    mBackupAction = ac->addAction(QStringLiteral("backup"), this, SLOT(slotBackupData()));
+    mBackupAction = ac->addAction(QStringLiteral("backup"), this, &PimSettingExporterWindow::slotBackupData);
     mBackupAction->setText(i18n("Export Data..."));
     mBackupAction->setEnabled(canZipFile);
 
-    mRestoreAction = ac->addAction(QStringLiteral("restore"), this, SLOT(slotRestoreData()));
+    mRestoreAction = ac->addAction(QStringLiteral("restore"), this, &PimSettingExporterWindow::slotRestoreData);
     mRestoreAction->setText(i18n("Import Data..."));
     mRestoreAction->setEnabled(canZipFile);
 
-    mSaveLogAction = ac->addAction(QStringLiteral("save_log"), this, SLOT(slotSaveLog()));
+    mSaveLogAction = ac->addAction(QStringLiteral("save_log"), this, &PimSettingExporterWindow::slotSaveLog);
     mSaveLogAction->setText(i18n("Save log..."));
 
-    mArchiveStructureInfo = ac->addAction(QStringLiteral("show_structure_info"), this, SLOT(slotShowStructureInfos()));
+    mArchiveStructureInfo = ac->addAction(QStringLiteral("show_structure_info"), this, &PimSettingExporterWindow::slotShowStructureInfos);
     mArchiveStructureInfo->setText(i18n("Show Archive Structure Information..."));
 
-    mShowArchiveInformationsAction = ac->addAction(QStringLiteral("show_archive_info"), this, SLOT(slotShowArchiveInformations()));
+    mShowArchiveInformationsAction = ac->addAction(QStringLiteral("show_archive_info"), this, &PimSettingExporterWindow::slotShowArchiveInformations);
     mShowArchiveInformationsAction->setText(i18n("Show Archive Information..."));
 
-    mShowArchiveInformationsAboutCurrentArchiveAction = ac->addAction(QStringLiteral("show_current_archive_info"), this, SLOT(slotShowCurrentArchiveInformations()));
+    mShowArchiveInformationsAboutCurrentArchiveAction = ac->addAction(QStringLiteral("show_current_archive_info"), this, &PimSettingExporterWindow::slotShowCurrentArchiveInformations);
     mShowArchiveInformationsAboutCurrentArchiveAction->setText(i18n("Show Information on current Archive..."));
     mShowArchiveInformationsAboutCurrentArchiveAction->setEnabled(false);
 
