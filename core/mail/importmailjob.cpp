@@ -197,7 +197,7 @@ void ImportMailJob::restoreTransports()
                 if (group.hasKey(portStr)) {
                     mt->setPort(group.readEntry(portStr, -1));
                 }
-                const QString userNameStr(QStringLiteral("userName"));
+                const QString userNameStr(QStringLiteral("user"));
                 if (group.hasKey(userNameStr)) {
                     mt->setUserName(group.readEntry(userNameStr));
                 }
@@ -205,7 +205,7 @@ void ImportMailJob::restoreTransports()
                 if (group.hasKey(precommandStr)) {
                     mt->setPrecommand(group.readEntry(precommandStr));
                 }
-                const QString requiresAuthenticationStr(QStringLiteral("requiresAuthentication"));
+                const QString requiresAuthenticationStr(QStringLiteral("auth"));
                 if (group.hasKey(requiresAuthenticationStr)) {
                     mt->setRequiresAuthentication(group.readEntry(requiresAuthenticationStr, false));
                 }
@@ -221,7 +221,7 @@ void ImportMailJob::restoreTransports()
                 if (group.hasKey(specifySenderOverwriteAddressStr)) {
                     mt->setSpecifySenderOverwriteAddress(group.readEntry(specifySenderOverwriteAddressStr, false));
                 }
-                const QString storePasswordStr(QStringLiteral("storePassword"));
+                const QString storePasswordStr(QStringLiteral("storepass"));
                 if (group.hasKey(storePasswordStr)) {
                     mt->setStorePassword(group.readEntry(storePasswordStr, false));
                 }
@@ -233,7 +233,7 @@ void ImportMailJob::restoreTransports()
                 if (group.hasKey(encryptionStr)) {
                     mt->setEncryption(group.readEntry(encryptionStr, 1)); //TODO verify
                 }
-                const QString authenticationTypeStr(QStringLiteral("authenticationType"));
+                const QString authenticationTypeStr(QStringLiteral("authtype"));
                 if (group.hasKey(authenticationTypeStr)) {
                     mt->setAuthenticationType(group.readEntry(authenticationTypeStr, 1)); //TODO verify
                 }
