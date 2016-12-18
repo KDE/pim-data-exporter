@@ -153,7 +153,7 @@ void Utils::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &c
     if (group.hasKey(currentKey)) {
         const QStringList value = group.readEntry(currentKey, QStringList());
         QStringList newValue;
-        Q_FOREACH (const QString &str, value) {
+        for (const QString &str : value) {
             bool found = false;
             const int collectionId = str.toInt(&found);
             if (found) {
@@ -175,7 +175,7 @@ void Utils::convertCollectionListToRealPath(KConfigGroup &group, const QString &
             group.deleteEntry(currentKey);
         } else {
             QStringList result;
-            Q_FOREACH (QString collection, listExpension) {
+            for (QString collection : listExpension) {
                 collection = collection.remove(QLatin1Char('c'));
                 bool found = false;
                 const int collectionValue = collection.toInt(&found);

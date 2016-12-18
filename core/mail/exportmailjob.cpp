@@ -243,7 +243,7 @@ void ExportMailJob::backupResources()
 
     Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
     const Akonadi::AgentInstance::List list = manager->instances();
-    foreach (const Akonadi::AgentInstance &agent, list) {
+    for (const Akonadi::AgentInstance &agent : list) {
         const QStringList capabilities(agent.type().capabilities());
         if (agent.type().mimeTypes().contains(KMime::Message::mimeType())) {
             if (capabilities.contains(QStringLiteral("Resource")) &&
@@ -337,7 +337,7 @@ void ExportMailJob::backupConfig()
         KConfig *archiveConfig = archivemailrc->copyTo(tmp.fileName());
         const QStringList archiveList = archiveConfig->groupList().filter(QRegularExpression(QStringLiteral("FolderArchiveAccount")));
 
-        Q_FOREACH (const QString &str, archiveList) {
+        for (const QString &str : archiveList) {
             KConfigGroup oldGroup = archiveConfig->group(str);
             qint64 id = oldGroup.readEntry("topLevelCollectionId", -1);
             if (id != -1)  {
@@ -365,7 +365,7 @@ void ExportMailJob::backupConfig()
         const QStringList archiveList = archiveConfig->groupList().filter(QRegularExpression(QStringLiteral("ArchiveMailCollection \\d+")));
         const QString archiveGroupPattern = QStringLiteral("ArchiveMailCollection ");
 
-        Q_FOREACH (const QString &str, archiveList) {
+        for (const QString &str : archiveList) {
             bool found = false;
             const int collectionId = str.rightRef(str.length() - archiveGroupPattern.length()).toInt(&found);
             if (found) {
@@ -397,7 +397,7 @@ void ExportMailJob::backupConfig()
         KConfig *templateConfig = templaterc->copyTo(tmp.fileName());
         const QString templateGroupPattern = QStringLiteral("Templates #");
         const QStringList templateList = templateConfig->groupList().filter(QRegularExpression(QStringLiteral("Templates #\\d+")));
-        Q_FOREACH (const QString &str, templateList) {
+        for (const QString &str : templateList) {
             bool found = false;
             const int collectionId = str.rightRef(str.length() - templateGroupPattern.length()).toInt(&found);
             if (found) {
@@ -452,7 +452,7 @@ void ExportMailJob::backupConfig()
         KConfig *kmailConfig = kmailrc->copyTo(tmp.fileName());
         const QString folderGroupPattern = QStringLiteral("Folder-");
         const QStringList folderList = kmailConfig->groupList().filter(QRegularExpression(QStringLiteral("Folder-\\d+")));
-        Q_FOREACH (const QString &str, folderList) {
+        for (const QString &str : folderList) {
             bool found = false;
             const int collectionId = str.rightRef(str.length() - folderGroupPattern.length()).toInt(&found);
             if (found) {
@@ -496,7 +496,7 @@ void ExportMailJob::backupConfig()
             KConfigGroup storageGroup = kmailConfig->group(storageModelSelectedMessageStr);
             const QString storageModelSelectedPattern(QStringLiteral("MessageUniqueIdForStorageModel"));
             const QStringList storageList = storageGroup.keyList().filter(QRegularExpression(QStringLiteral("MessageUniqueIdForStorageModel\\d+")));
-            Q_FOREACH (const QString &str, storageList) {
+            for (const QString &str : storageList) {
                 bool found = false;
                 const int collectionId = str.rightRef(str.length() - storageModelSelectedPattern.length()).toInt(&found);
                 const QString oldValue = storageGroup.readEntry(str);
@@ -552,7 +552,7 @@ void ExportMailJob::backupIdentity()
 
         KConfig *identityConfig = identity->copyTo(tmp.fileName());
         const QStringList accountList = identityConfig->groupList().filter(QRegularExpression(QStringLiteral("Identity #\\d+")));
-        Q_FOREACH (const QString &account, accountList) {
+        for (const QString &account : accountList) {
             KConfigGroup group = identityConfig->group(account);
             const QString fcc = QStringLiteral("Fcc");
             if (group.hasKey(fcc)) {

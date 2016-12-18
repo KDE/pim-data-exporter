@@ -194,7 +194,7 @@ void AbstractImportExportJob::storeArchiveInfoResources(const KArchiveDirectory 
             if (lst.count() >= 2) {
                 const QString archPath(prefix + QLatin1Char('/') + entryName + QLatin1Char('/'));
                 resourceFiles files;
-                Q_FOREACH (const QString &name, lst) {
+                for (const QString &name : lst) {
                     if (isAConfigFile(name)) {
                         files.akonadiConfigFile = archPath + name;
                     } else if (name.startsWith(Utils::prefixAkonadiConfigFile())) {
@@ -248,7 +248,7 @@ void AbstractImportExportJob::convertRealPathToCollectionList(KConfigGroup &grou
         const QStringList listExpension = group.readEntry(currentKey, QStringList());
         QStringList result;
         if (!listExpension.isEmpty()) {
-            Q_FOREACH (const QString &collection, listExpension) {
+            for (const QString &collection : listExpension) {
                 const Akonadi::Collection::Id id = convertPathToId(collection);
                 if (id != -1) {
                     if (addCollectionPrefix) {

@@ -138,7 +138,7 @@ void ImportMailJob::storeMailArchiveResource(const KArchiveDirectory *dir, const
             if (lst.count() >= 2) {
                 const QString archPath(prefix + QLatin1Char('/') + entryName + QLatin1Char('/'));
                 resourceFiles files;
-                Q_FOREACH (const QString &name, lst) {
+                for (const QString &name : lst) {
                     if (name.endsWith(QLatin1String("rc")) &&
                             (name.contains(QStringLiteral("akonadi_mbox_resource_")) ||
                              name.contains(QStringLiteral("akonadi_mixedmaildir_resource_")) ||
@@ -609,7 +609,7 @@ void ImportMailJob::restoreConfig()
             const QString filterFileName(mTempDirName + QLatin1Char('/') + QLatin1String("filters"));
             KSharedConfig::Ptr filtersConfig = KSharedConfig::openConfig(filterFileName);
             const QStringList filterList = filtersConfig->groupList().filter(QRegularExpression(QStringLiteral("Filter #\\d+")));
-            Q_FOREACH (const QString &filterStr, filterList) {
+            for(const QString &filterStr : filterList) {
                 KConfigGroup group = filtersConfig->group(filterStr);
                 const QString accountStr(QStringLiteral("accounts-set"));
                 if (group.hasKey(accountStr)) {
@@ -617,7 +617,7 @@ void ImportMailJob::restoreConfig()
                     if (!accounts.isEmpty()) {
                         const QStringList lstAccounts = accounts.split(QLatin1Char(','));
                         QStringList newLstAccounts;
-                        Q_FOREACH (const QString &acc, lstAccounts) {
+                        for (const QString &acc : lstAccounts) {
                             if (mHashResources.contains(acc)) {
                                 newLstAccounts.append(mHashResources.value(acc));
                             } else {
@@ -892,7 +892,7 @@ void ImportMailJob::restoreIdentity()
             const int defaultIdentity = general.readEntry(QStringLiteral("Default Identity"), -1);
 
             const QStringList identityList = identityConfig->groupList().filter(QRegularExpression(QStringLiteral("Identity #\\d+")));
-            Q_FOREACH (const QString &identityStr, identityList) {
+            for (const QString &identityStr : identityList) {
                 KConfigGroup group = identityConfig->group(identityStr);
                 int oldUid = -1;
                 const QString uidStr(QStringLiteral("uoid"));
@@ -1049,7 +1049,7 @@ void ImportMailJob::importFolderArchiveConfig(const KArchiveFile *archiveconfigu
 
     const QStringList archiveList = archiveConfig->groupList().filter(QRegularExpression(QStringLiteral("FolderArchiveAccount ")));
 
-    Q_FOREACH (const QString &str, archiveList) {
+    for (const QString &str : archiveList) {
         KConfigGroup oldGroup = archiveConfig->group(str);
         const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(QStringLiteral("topLevelCollectionId")));
         if (id != -1) {
@@ -1065,7 +1065,7 @@ void ImportMailJob::copyArchiveMailAgentConfigGroup(KSharedConfig::Ptr archiveCo
     //adapt id
     const QString archiveGroupPattern = QStringLiteral("ArchiveMailCollection ");
     const QStringList archiveList = archiveConfigOrigin->groupList().filter(archiveGroupPattern);
-    Q_FOREACH (const QString &str, archiveList) {
+    for (const QString &str : archiveList) {
         const QString path = str.right(str.length() - archiveGroupPattern.length());
         if (!path.isEmpty()) {
             KConfigGroup oldGroup = archiveConfigOrigin->group(str);
@@ -1092,7 +1092,7 @@ void ImportMailJob::importTemplatesConfig(const KArchiveFile *templatesconfigura
     //adapt id
     const QString templateGroupPattern = QStringLiteral("Templates #");
     const QStringList templateList = templateConfig->groupList().filter(templateGroupPattern);
-    Q_FOREACH (const QString &str, templateList) {
+    for (const QString &str : templateList) {
         const QString path = str.right(str.length() - templateGroupPattern.length());
         if (!path.isEmpty()) {
             KConfigGroup oldGroup = templateConfig->group(str);
@@ -1107,7 +1107,7 @@ void ImportMailJob::importTemplatesConfig(const KArchiveFile *templatesconfigura
     //adapt identity
     const QString templateGroupIdentityPattern = QStringLiteral("Templates #IDENTITY_");
     const QStringList templateListIdentity = templateConfig->groupList().filter(templateGroupIdentityPattern);
-    Q_FOREACH (const QString &str, templateListIdentity) {
+    for (const QString &str : templateListIdentity) {
         bool found = false;
         const int identity = str.rightRef(str.length() - templateGroupIdentityPattern.length()).toInt(&found);
         if (found) {
@@ -1137,7 +1137,7 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
     //adapt folder id
     const QString folderGroupPattern = QStringLiteral("Folder-");
     const QStringList folderList = kmailConfig->groupList().filter(folderGroupPattern);
-    Q_FOREACH (const QString &str, folderList) {
+    for (const QString &str : folderList) {
         const QString path = str.right(str.length() - folderGroupPattern.length());
         if (!path.isEmpty()) {
             KConfigGroup oldGroup = kmailConfig->group(str);
@@ -1152,10 +1152,10 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
     const QString accountOrder(QStringLiteral("AccountOrder"));
     if (kmailConfig->hasGroup(accountOrder)) {
         KConfigGroup group = kmailConfig->group(accountOrder);
-        QStringList orderList = group.readEntry(QStringLiteral("order"), QStringList());
+        const QStringList orderList = group.readEntry(QStringLiteral("order"), QStringList());
         QStringList newOrderList;
         if (!orderList.isEmpty()) {
-            Q_FOREACH (const QString &account, orderList) {
+            for (const QString &account : orderList) {
                 if (mHashResources.contains(account)) {
                     newOrderList.append(mHashResources.value(account));
                 } else {
@@ -1209,7 +1209,7 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
 
     const QString resourceGroupPattern = QStringLiteral("Resource ");
     const QStringList resourceList = kmailConfig->groupList().filter(resourceGroupPattern);
-    Q_FOREACH (const QString &str, resourceList) {
+    for (const QString &str : resourceList) {
         const QString res = str.right(str.length() - resourceGroupPattern.length());
         if (!res.isEmpty()) {
             KConfigGroup oldGroup = kmailConfig->group(str);
