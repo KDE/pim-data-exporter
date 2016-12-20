@@ -47,7 +47,6 @@ Exec=pimsettingexporter
 Type=Application
 Icon=kontact
 Comment=PIM Setting Exporter allows to save all data from PIM apps and restore them in other system.
-Comment[ast]=L'esportador d'axustes PIM permite guardar tolos datos d'aplicaciones PIM y restauralos n'otru sistema.
 Comment[bs]=PIM izvoznik postavki vam omogućava da spremite sve podatke iz PIM aplikacija i vratite ih u drugi sistem.
 Comment[ca]=L'exportador de la configuració PIM permet desar totes les dades de les aplicacions PIM i restaura-les en un altre sistema.
 Comment[ca@valencia]=L'exportador de la configuració PIM permet guardar totes les dades de les aplicacions PIM i restaura-les en un altre sistema.
