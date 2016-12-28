@@ -223,7 +223,8 @@ void ImportAddressbookJob::importkaddressBookConfig(const KArchiveFile *file, co
     const KArchiveEntry *csvtemplateEntry  = mArchiveDirectory->entry(Utils::dataPath() + cvsTemplateDirName);
     if (csvtemplateEntry && csvtemplateEntry->isDirectory()) {
         const KArchiveDirectory *csvTemplateDir = static_cast<const KArchiveDirectory *>(csvtemplateEntry);
-        Q_FOREACH (const QString &entryName, csvTemplateDir->entries()) {
+        const QStringList lst = csvTemplateDir->entries();
+        for (const QString &entryName : lst) {
             const KArchiveEntry *entry = csvTemplateDir->entry(entryName);
             if (entry && entry->isFile()) {
                 const KArchiveFile *csvTemplateFile = static_cast<const KArchiveFile *>(entry);

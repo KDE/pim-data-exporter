@@ -112,7 +112,8 @@ void ImportMailJob::slotNextStep()
 
 void ImportMailJob::searchAllMailsFiles(const KArchiveDirectory *dir, const QString &prefix)
 {
-    Q_FOREACH (const QString &entryName, dir->entries()) {
+    const QStringList lst = dir->entries();
+    for (const QString &entryName : lst) {
         const KArchiveEntry *entry = dir->entry(entryName);
         if (entry && entry->isDirectory()) {
             const QString newPrefix = (prefix.isEmpty() ? prefix : prefix + QLatin1Char('/')) + entryName;
@@ -130,7 +131,8 @@ void ImportMailJob::searchAllMailsFiles(const KArchiveDirectory *dir, const QStr
 
 void ImportMailJob::storeMailArchiveResource(const KArchiveDirectory *dir, const QString &prefix)
 {
-    Q_FOREACH (const QString &entryName, dir->entries()) {
+    const QStringList lst = dir->entries();
+    for (const QString &entryName : lst) {
         const KArchiveEntry *entry = dir->entry(entryName);
         if (entry && entry->isDirectory()) {
             const KArchiveDirectory *resourceDir = static_cast<const KArchiveDirectory *>(entry);
@@ -184,7 +186,7 @@ void ImportMailJob::restoreTransports()
             }
 
             const QStringList transportList = transportConfig->groupList().filter(QRegularExpression(QStringLiteral("Transport \\d+")));
-            Q_FOREACH (const QString &transport, transportList) {
+            for (const QString &transport : transportList) {
                 KConfigGroup group = transportConfig->group(transport);
                 const int transportId = group.readEntry(QStringLiteral("id"), -1);
                 MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
@@ -811,19 +813,19 @@ void ImportMailJob::restoreConfig()
     restoreConfigFile(QStringLiteral("kwatchgnupgrc"));
     restoreConfigFile(QStringLiteral("pimpluginsrc"));
     //Restore notify file
-    QStringList lstNotify;
-    lstNotify << QStringLiteral("akonadi_mailfilter_agent.notifyrc")
-              << QStringLiteral("akonadi_sendlater_agent.notifyrc")
-              << QStringLiteral("akonadi_archivemail_agent.notifyrc")
-              << QStringLiteral("kmail2.notifyrc")
-              << QStringLiteral("akonadi_newmailnotifier_agent.notifyrc")
-              << QStringLiteral("akonadi_maildispatcher_agent.notifyrc")
-              << QStringLiteral("akonadi_followupreminder_agent.notifyrc")
-              << QStringLiteral("messageviewer.notifyrc")
-              << QStringLiteral("storageservicemanager.notifyrc");
+    const QStringList lstNotify = {
+        QStringLiteral("akonadi_mailfilter_agent.notifyrc"),
+        QStringLiteral("akonadi_sendlater_agent.notifyrc"),
+        QStringLiteral("akonadi_archivemail_agent.notifyrc"),
+        QStringLiteral("kmail2.notifyrc"),
+        QStringLiteral("akonadi_newmailnotifier_agent.notifyrc"),
+        QStringLiteral("akonadi_maildispatcher_agent.notifyrc"),
+        QStringLiteral("akonadi_followupreminder_agent.notifyrc"),
+        QStringLiteral("messageviewer.notifyrc"),
+        QStringLiteral("storageservicemanager.notifyrc") };
 
     //We can't merge it.
-    Q_FOREACH (const QString &filename, lstNotify) {
+    for (const QString &filename : lstNotify) {
         restoreConfigFile(filename);
     }
 
@@ -854,7 +856,8 @@ void ImportMailJob::importSimpleFilesInDirectory(const QString &relativePath)
     const KArchiveEntry *autocorrectionEntry  = mArchiveDirectory->entry(Utils::dataPath() + relativePath);
     if (autocorrectionEntry && autocorrectionEntry->isDirectory()) {
         const KArchiveDirectory *autoCorrectionDir = static_cast<const KArchiveDirectory *>(autocorrectionEntry);
-        Q_FOREACH (const QString &entryName, autoCorrectionDir->entries()) {
+        const QStringList lst = autoCorrectionDir->entries();
+        for (const QString &entryName : lst) {
             const KArchiveEntry *entry = autoCorrectionDir->entry(entryName);
             if (entry && entry->isFile()) {
                 const KArchiveFile *autocorrectionFile = static_cast<const KArchiveFile *>(entry);

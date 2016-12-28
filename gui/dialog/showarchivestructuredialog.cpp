@@ -124,7 +124,8 @@ void ShowArchiveStructureDialog::addSubItems(QTreeWidgetItem *parent, const KArc
     const KArchiveDirectory *dir = static_cast<const KArchiveDirectory *>(entry);
     ++indent;
     const QString space = QString(indent * 2, QLatin1Char(' '));
-    Q_FOREACH (const QString &entryName, dir->entries()) {
+    const QStringList lst = dir->entries();
+    for (const QString &entryName : lst) {
         const KArchiveEntry *entry = dir->entry(entryName);
         if (entry) {
             if (entry->isDirectory()) {

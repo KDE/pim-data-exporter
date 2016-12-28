@@ -170,7 +170,8 @@ void AbstractImportExportJob::overwriteDirectory(const QString &path, const KArc
 
 void AbstractImportExportJob::searchAllFiles(const KArchiveDirectory *dir, const QString &prefix, const QString &searchEntryName)
 {
-    Q_FOREACH (const QString &entryName, dir->entries()) {
+    const QStringList lst = dir->entries();
+    for (const QString &entryName : lst) {
         const KArchiveEntry *entry = dir->entry(entryName);
         if (entry && entry->isDirectory()) {
             const QString newPrefix = (prefix.isEmpty() ? prefix : prefix + QLatin1Char('/')) + entryName;
@@ -185,7 +186,8 @@ void AbstractImportExportJob::searchAllFiles(const KArchiveDirectory *dir, const
 
 void AbstractImportExportJob::storeArchiveInfoResources(const KArchiveDirectory *dir, const QString &prefix)
 {
-    Q_FOREACH (const QString &entryName, dir->entries()) {
+    const QStringList lst = dir->entries();
+    for (const QString &entryName : lst) {
         const KArchiveEntry *entry = dir->entry(entryName);
         if (entry && entry->isDirectory()) {
             const KArchiveDirectory *resourceDir = static_cast<const KArchiveDirectory *>(entry);
@@ -453,7 +455,8 @@ void AbstractImportExportJob::extractZipFile(const KArchiveFile *file, const QSt
         KZip *zip = Utils::openZip(source + QLatin1Char('/') + file->name(), errorMsg);
         if (zip) {
             const KArchiveDirectory *zipDir = zip->directory();
-            Q_FOREACH (const QString &entryName, zipDir->entries()) {
+            const QStringList lst = zipDir->entries();
+            for (const QString &entryName : lst) {
                 const KArchiveEntry *entry = zipDir->entry(entryName);
                 if (entry) {
                     if (entry->isDirectory()) {
@@ -602,7 +605,8 @@ void AbstractImportExportJob::importDataSubdirectory(const QString &subdirectory
     const KArchiveEntry *themeEntry  = mArchiveDirectory->entry(Utils::dataPath() + subdirectoryRelativePath);
     if (themeEntry && themeEntry->isDirectory()) {
         const KArchiveDirectory *themeDir = static_cast<const KArchiveDirectory *>(themeEntry);
-        Q_FOREACH (const QString &entryName, themeDir->entries()) {
+        const QStringList lst = themeDir->entries();
+        for (const QString &entryName : lst) {
             const KArchiveEntry *entry = themeDir->entry(entryName);
             if (entry && entry->isDirectory()) {
                 QString subFolderName = entryName;
