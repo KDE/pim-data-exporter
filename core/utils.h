@@ -96,6 +96,7 @@ PIMSETTINGEXPORTER_EXPORT QString jotPath();
 PIMSETTINGEXPORTER_EXPORT QString infoPath();
 PIMSETTINGEXPORTER_EXPORT QString notePath();
 PIMSETTINGEXPORTER_EXPORT QString prefixAkonadiConfigFile();
+PIMSETTINGEXPORTER_EXPORT QString exportDataTypeFileName();
 QString akonadiAgentName(const QString &configPath);
 
 void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);

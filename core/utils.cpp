@@ -33,6 +33,11 @@
 #include <QDir>
 #include <QStandardPaths>
 
+QString Utils::exportDataTypeFileName()
+{
+    return QStringLiteral("exportdatatype.xml");
+}
+
 int Utils::currentArchiveVersion()
 {
     //Increase it when we add major feature!
@@ -292,7 +297,7 @@ KZip *Utils::openZip(const QString &filename, QString &errorMsg)
 void Utils::storeDataExportInfo(const QString &filename, KZip *archive)
 {
     if (QFile(filename).exists()) {
-        const bool fileAdded  = archive->addLocalFile(filename, Utils::infoPath() + QStringLiteral("exporteddata.xml"));
+        const bool fileAdded  = archive->addLocalFile(filename, Utils::infoPath() + Utils::exportDataTypeFileName());
         if (fileAdded) {
             qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "exporteddata file can not add to archive" << filename;
         }

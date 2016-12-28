@@ -1,4 +1,4 @@
-2016-09-30:
+2016-12-28:
 -----------
 
 2015-1-29: New VERSION for archive => VERSION_2 => knote-akonadi
@@ -7,6 +7,7 @@ Zip structure is :
 Root
 |-----information
 |       |---------VERSION_<number>
+|       |---------exportdatatype.xml
 |
 |-----transports
 |       |---------mailtransports
