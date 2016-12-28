@@ -43,6 +43,7 @@ public:
     void loadTemplate(const QString &fileName = QString());
     void saveAsDefaultTemplate();
     void loadDefaultTemplate();
+    QString exportedFileInfo();
 private Q_SLOTS:
     void slotItemChanged(QTreeWidgetItem *, int);
 
@@ -60,6 +61,7 @@ private:
     Utils::importExportParameters typeChecked(QTreeWidgetItem *parent) const;
     void initializeSubItem(QTreeWidgetItem *item, Utils::StoredTypes types);
     void loadFileName(const QString &fileName);
+    QString templateSelectionToString();
 
     QTreeWidgetItem *mKmailItem;
     QTreeWidgetItem *mKalarmItem;

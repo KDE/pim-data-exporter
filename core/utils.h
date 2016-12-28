@@ -106,6 +106,7 @@ QString resourcePath(const Akonadi::AgentInstance &agent, const QString &default
 QString adaptResourcePath(KSharedConfigPtr resourceConfig, const QString &storedData);
 QString storeResources(KZip *archive, const QString &identifier, const QString &path);
 KZip *openZip(const QString &filename, QString &errorMsg);
+void storeDataExportInfo(const QString &filename, KZip *archive);
 
 void addVersion(KZip *archive);
 int archiveVersion(KZip *archive);

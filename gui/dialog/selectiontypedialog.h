@@ -35,6 +35,7 @@ public:
 
     void loadTemplate(const QString &fileName);
 
+    QString exportedFileInfo();
 private Q_SLOTS:
     void slotSelectAll();
     void slotUnselectAll();

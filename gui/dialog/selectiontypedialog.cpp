@@ -105,6 +105,11 @@ QHash<Utils::AppsType, Utils::importExportParameters> SelectionTypeDialog::store
     return mSelectionTreeWidget->storedType();
 }
 
+QString SelectionTypeDialog::exportedFileInfo()
+{
+    return mSelectionTreeWidget->exportedFileInfo();
+}
+
 void SelectionTypeDialog::loadTemplate(const QString &fileName)
 {
     if (!fileName.isEmpty()) {

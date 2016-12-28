@@ -44,6 +44,7 @@
 
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QFile>
 
 #include "pimsettingexportcore_debug.h"
 #include <QDateTime>
@@ -61,6 +62,18 @@ PimSettingsBackupRestore::PimSettingsBackupRestore(QObject *parent)
 PimSettingsBackupRestore::~PimSettingsBackupRestore()
 {
     delete mImportExportData;
+    QFile f(mExportedInfoFileName);
+    if (f.exists()) {
+        const bool removeFile = f.remove();
+        if (!removeFile) {
+            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Impossible to remove exportedfile info" << mExportedInfoFileName;
+        }
+    }
+}
+
+void PimSettingsBackupRestore::setExportedInfoFileName(const QString &filename)
+{
+    mExportedInfoFileName = filename;
 }
 
 void PimSettingsBackupRestore::setStoredParameters(const QHash<Utils::AppsType, Utils::importExportParameters> &stored)
@@ -102,6 +115,9 @@ bool PimSettingsBackupRestore::backupStart(const QString &filename)
     Q_EMIT addEndLine();
     //Add version
     Utils::addVersion(mArchiveStorage->archive());
+    //Add exported file info.
+    qDebug() << "mExportedInfoFileName"<<mExportedInfoFileName;
+    Utils::storeDataExportInfo(mExportedInfoFileName, mArchiveStorage->archive());
     backupNextStep();
     return true;
 }

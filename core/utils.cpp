@@ -289,6 +289,18 @@ KZip *Utils::openZip(const QString &filename, QString &errorMsg)
     return zip;
 }
 
+void Utils::storeDataExportInfo(const QString &filename, KZip *archive)
+{
+    if (QFile(filename).exists()) {
+        const bool fileAdded  = archive->addLocalFile(filename, Utils::infoPath() + QStringLiteral("exporteddata.xml"));
+        if (fileAdded) {
+            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "exporteddata file can not add to archive" << filename;
+        }
+    } else {
+        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "exported file was not created" << filename;
+    }
+}
+
 void Utils::addVersion(KZip *archive)
 {
     QTemporaryFile tmp;

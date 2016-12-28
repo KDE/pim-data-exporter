@@ -290,6 +290,7 @@ void PimSettingExporterWindow::backupData(const QString &filename, const QString
         mLogWidget->clear();
         initializeBackupRestoreUi();
         mPimSettingsBackupRestoreUI->setStoredParameters(dialog->storedType());
+        mPimSettingsBackupRestoreUI->setExportedInfoFileName(dialog->exportedFileInfo());
         delete dialog;
 
         if (currentFileName.isEmpty()) {

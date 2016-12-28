@@ -40,6 +40,7 @@ public:
 
     void nextStep();
     void closeArchive();
+    void setExportedInfoFileName(const QString &filename);
 private Q_SLOTS:
     void slotJobFinished();
 
@@ -73,6 +74,7 @@ private:
     void executeJob();
     void addDate();
 
+    QString mExportedInfoFileName;
     QHash<Utils::AppsType, Utils::importExportParameters> mStored;
     QHash<Utils::AppsType, Utils::importExportParameters>::const_iterator mStoreIterator;
     Action mAction;

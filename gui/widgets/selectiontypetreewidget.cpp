@@ -26,6 +26,7 @@
 #include <QFileDialog>
 
 #include <KLocalizedString>
+#include <QTemporaryFile>
 
 #include <QTreeWidgetItem>
 #include <QHeaderView>
@@ -291,11 +292,27 @@ void SelectionTypeTreeWidget::loadTemplate(const QString &fileName)
     }
 }
 
-void SelectionTypeTreeWidget::saveAsDefaultTemplate()
+QString SelectionTypeTreeWidget::exportedFileInfo()
+{
+    const QString templateStr = templateSelectionToString();
+    QTemporaryFile tmp;
+    tmp.open();
+    tmp.setAutoRemove(false);
+    PimCommon::Util::saveToFile(tmp.fileName(), templateStr);
+    return tmp.fileName();
+}
+
+QString SelectionTypeTreeWidget::templateSelectionToString()
 {
     TemplateSelection templateSelection;
     templateSelection.createTemplate(storedType());
     const QString templateStr = templateSelection.document().toString(2);
+    return templateStr;
+}
+
+void SelectionTypeTreeWidget::saveAsDefaultTemplate()
+{
+    const QString templateStr = templateSelectionToString();
     QString ret = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/pimsettingexporter/");
     QFileInfo fileInfo(ret);
     QDir().mkpath(fileInfo.absolutePath());
@@ -305,9 +322,7 @@ void SelectionTypeTreeWidget::saveAsDefaultTemplate()
 
 void SelectionTypeTreeWidget::saveAsTemplate()
 {
-    TemplateSelection templateSelection;
-    templateSelection.createTemplate(storedType());
-    const QString templateStr = templateSelection.document().toString(2);
+    const QString templateStr = templateSelectionToString();
     const QString filter(i18n("Template Files (*.xml)"));
     PimCommon::Util::saveTextAs(templateStr, filter, this);
 }
