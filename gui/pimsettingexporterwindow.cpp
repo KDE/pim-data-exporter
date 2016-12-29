@@ -350,6 +350,23 @@ void PimSettingExporterWindow::loadData(const QString &filename, const QString &
     if (KMessageBox::warningYesNo(this, i18n("Before to restore data, close all kdepim applications. Do you want to continue?"), i18n("Backup")) == KMessageBox::No) {
         return;
     }
+
+    //First select filename.
+    QString currentFileName = filename;
+    if (currentFileName.isEmpty()) {
+        QString recentDirClass;
+        currentFileName = QFileDialog::getOpenFileName(this, i18n("Restore backup"),
+                          KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")), recentDirClass).toLocalFile(),
+                          i18n("Zip File (*.zip)"));
+        if (currentFileName.isEmpty()) {
+            return;
+        }
+        if (!recentDirClass.isEmpty()) {
+            KRecentDirs::add(recentDirClass, currentFileName);
+        }
+    }
+    //TODO load exported file name.
+
     QPointer<SelectionTypeDialog> dialog = new SelectionTypeDialog(this);
     dialog->loadTemplate(templateFile);
     if (dialog->exec()) {
@@ -358,19 +375,6 @@ void PimSettingExporterWindow::loadData(const QString &filename, const QString &
         initializeBackupRestoreUi();
         mPimSettingsBackupRestoreUI->setStoredParameters(dialog->storedType());
         delete dialog;
-        QString currentFileName = filename;
-        if (currentFileName.isEmpty()) {
-            QString recentDirClass;
-            currentFileName = QFileDialog::getOpenFileName(this, i18n("Restore backup"),
-                              KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")), recentDirClass).toLocalFile(),
-                              i18n("Zip File (*.zip)"));
-            if (currentFileName.isEmpty()) {
-                return;
-            }
-            if (!recentDirClass.isEmpty()) {
-                KRecentDirs::add(recentDirClass, currentFileName);
-            }
-        }
 
         mTrayIcon->setStatus(KStatusNotifierItem::Active);
         if (!mPimSettingsBackupRestoreUI->restoreStart(currentFileName)) {
