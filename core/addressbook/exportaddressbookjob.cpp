@@ -26,7 +26,6 @@
 
 #include <QTemporaryFile>
 #include <KConfigGroup>
-#include <KZip>
 
 #include <QDir>
 #include <QStandardPaths>

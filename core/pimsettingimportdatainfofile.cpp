@@ -20,7 +20,6 @@
 
 #include "pimsettingimportdatainfofile.h"
 #include "utils.h"
-#include <KZip>
 
 PimSettingImportDataInfoFile::PimSettingImportDataInfoFile(QObject *parent)
     : QObject(parent)

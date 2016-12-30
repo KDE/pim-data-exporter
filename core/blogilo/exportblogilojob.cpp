@@ -23,7 +23,6 @@
 
 #include <KLocalizedString>
 
-#include <KZip>
 
 #include <QStandardPaths>
 #include <QTimer>
