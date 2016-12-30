@@ -19,7 +19,9 @@
 
 
 #include "pimsettingimportdatainfofile.h"
+#include "pimsettingexportcore_debug.h"
 #include "utils.h"
+#include <KZip>
 
 PimSettingImportDataInfoFile::PimSettingImportDataInfoFile(QObject *parent)
     : QObject(parent)
@@ -39,10 +41,27 @@ void PimSettingImportDataInfoFile::setCurrentFileName(const QString &filename)
 
 QString PimSettingImportDataInfoFile::importDataInfoPath()
 {
+    QString temporaryFilePath;
     if (mFilename.isEmpty()) {
-        return {};
+        return temporaryFilePath;
     }
     mTempFile.open();
-    //TODO
-    return {};
+    const QString tmpFileName = mTempFile.fileName();
+    QString errorMsg;
+    KZip *archive = Utils::openZip(mFilename, errorMsg);
+    if (!archive) {
+        qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "unable to open zip file " << errorMsg;
+    } else {
+        const KArchiveEntry *informationFile = archive->directory()->entry(Utils::infoPath() + Utils::exportDataTypeFileName());
+        if (informationFile && informationFile->isFile()) {
+            const KArchiveFile *file = static_cast<const KArchiveFile *>(informationFile);
+            if (file->copyTo(tmpFileName)) {
+                temporaryFilePath = tmpFileName;
+            } else {
+                qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Impossible to copy to temporary file" << tmpFileName;
+            }
+        }
+    }
+    delete archive;
+    return tmpFileName;
 }
