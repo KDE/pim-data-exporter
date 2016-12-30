@@ -95,6 +95,27 @@ void SelectionTypeTreeWidget::initialize()
     connect(this, &SelectionTypeTreeWidget::itemChanged, this, &SelectionTypeTreeWidget::slotItemChanged);
 }
 
+void SelectionTypeTreeWidget::removeNotSelectedItems()
+{
+    removeNotSelectedItem(mKmailItem);
+    removeNotSelectedItem(mKalarmItem);
+    removeNotSelectedItem(mKaddressbookItem);
+    removeNotSelectedItem(mKorganizerItem);
+    removeNotSelectedItem(mKNotesItem);
+    removeNotSelectedItem(mAkregatorItem);
+    removeNotSelectedItem(mBlogiloItem);
+}
+
+void SelectionTypeTreeWidget::removeNotSelectedItem(QTreeWidgetItem *parent)
+{
+    for (int i = 0; i < parent->childCount(); ++i) {
+        QTreeWidgetItem *item = parent->child(i);
+        if (item->checkState(0) == Qt::Unchecked) {
+            delete item;
+        }
+    }
+}
+
 QHash<Utils::AppsType, Utils::importExportParameters> SelectionTypeTreeWidget::storedType() const
 {
     QHash<Utils::AppsType, Utils::importExportParameters> stored;

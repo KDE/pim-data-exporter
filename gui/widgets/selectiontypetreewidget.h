@@ -44,6 +44,8 @@ public:
     void saveAsDefaultTemplate();
     void loadDefaultTemplate();
     QString exportedFileInfo();
+    void removeNotSelectedItems();
+
 private Q_SLOTS:
     void slotItemChanged(QTreeWidgetItem *, int);
 
@@ -62,6 +64,7 @@ private:
     void initializeSubItem(QTreeWidgetItem *item, Utils::StoredTypes types);
     void loadFileName(const QString &fileName);
     QString templateSelectionToString();
+    void removeNotSelectedItem(QTreeWidgetItem *parent);
 
     QTreeWidgetItem *mKmailItem;
     QTreeWidgetItem *mKalarmItem;
