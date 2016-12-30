@@ -25,6 +25,7 @@
 #include "job/fullsynchronizeresourcesjob.h"
 #include "trayicon/pimsettingstrayicon.h"
 
+#include "pimsettingimportdatainfofile.h"
 #include "pimsettingexporterkernel.h"
 #include "dialog/selectiontypedialog.h"
 #include "utils.h"
@@ -365,10 +366,17 @@ void PimSettingExporterWindow::loadData(const QString &filename, const QString &
             KRecentDirs::add(recentDirClass, currentFileName);
         }
     }
-    //TODO load exported file name.
-
+    // Don't put it in 'if' otherwise temporary file will be removed after that.
+    QString templateFileName;
+    PimSettingImportDataInfoFile dataInfo;
+    if (templateFile.isEmpty()) {
+        dataInfo.setCurrentFileName(currentFileName);
+        templateFileName = dataInfo.importDataInfoPath();
+    } else {
+        templateFileName = templateFile;
+    }
     QPointer<SelectionTypeDialog> dialog = new SelectionTypeDialog(this);
-    dialog->loadTemplate(templateFile);
+    dialog->loadTemplate(templateFileName);
     if (dialog->exec()) {
         mLogWidget->clear();
         mNeedToSyncResources.clear();

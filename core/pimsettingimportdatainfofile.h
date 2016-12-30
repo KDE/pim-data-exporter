@@ -22,9 +22,8 @@
 
 #include <QObject>
 #include <QString>
-#include <QTemporaryFile>
 #include "pimsettingexporter_export.h"
-
+class QTemporaryDir;
 class PIMSETTINGEXPORTER_EXPORT PimSettingImportDataInfoFile : public QObject
 {
     Q_OBJECT
@@ -36,7 +35,7 @@ public:
 
     QString importDataInfoPath();
 private:
-    QTemporaryFile mTempFile;
+    QTemporaryDir *mTempDir;
     QString mFilename;
 };
 

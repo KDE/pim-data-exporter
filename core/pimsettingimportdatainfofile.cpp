@@ -22,16 +22,18 @@
 #include "pimsettingexportcore_debug.h"
 #include "utils.h"
 #include <KZip>
+#include <QTemporaryDir>
 
 PimSettingImportDataInfoFile::PimSettingImportDataInfoFile(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mTempDir(Q_NULLPTR)
 {
 
 }
 
 PimSettingImportDataInfoFile::~PimSettingImportDataInfoFile()
 {
-
+    delete mTempDir;
 }
 
 void PimSettingImportDataInfoFile::setCurrentFileName(const QString &filename)
@@ -45,8 +47,7 @@ QString PimSettingImportDataInfoFile::importDataInfoPath()
     if (mFilename.isEmpty()) {
         return temporaryFilePath;
     }
-    mTempFile.open();
-    const QString tmpFileName = mTempFile.fileName();
+    mTempDir = new QTemporaryDir;
     QString errorMsg;
     KZip *archive = Utils::openZip(mFilename, errorMsg);
     if (!archive) {
@@ -55,13 +56,16 @@ QString PimSettingImportDataInfoFile::importDataInfoPath()
         const KArchiveEntry *informationFile = archive->directory()->entry(Utils::infoPath() + Utils::exportDataTypeFileName());
         if (informationFile && informationFile->isFile()) {
             const KArchiveFile *file = static_cast<const KArchiveFile *>(informationFile);
-            if (file->copyTo(tmpFileName)) {
-                temporaryFilePath = tmpFileName;
+            temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();
+            if (file->copyTo(mTempDir->path())) {
+                temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();
             } else {
-                qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Impossible to copy to temporary file" << tmpFileName;
+                qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Impossible to copy to temporary file" << temporaryFilePath;
             }
+        } else {
+            qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Old archive without exporteddata information";
         }
     }
     delete archive;
-    return tmpFileName;
+    return temporaryFilePath;
 }
