@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     QCommandLineParser parser;
     KAboutData aboutData(QStringLiteral("pimsettingexporterconsole"), i18n("PIM Setting Exporter Console"),
                          QStringLiteral(PIMSETTINGEXPORTER_VERSION), i18n("PIM Setting Exporter Console"), KAboutLicense::GPL_V2,
-                         i18n("Copyright © 2015-2016 pimsettingexporter authors"));
+                         i18n("Copyright © 2015-2017 pimsettingexporter authors"));
     aboutData.addAuthor(i18n("Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
     parser.addVersionOption();
     parser.addHelpOption();
