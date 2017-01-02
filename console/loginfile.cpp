@@ -24,7 +24,7 @@
 
 LogInFile::LogInFile(QObject *parent)
     : QObject(parent),
-      mFile(Q_NULLPTR)
+      mFile(nullptr)
 {
 }
 

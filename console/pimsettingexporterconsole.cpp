@@ -32,7 +32,7 @@
 PimSettingExporterConsole::PimSettingExporterConsole(QObject *parent)
     : QObject(parent),
       mPimSettingsBackupRestore(new PimSettingsBackupRestore(this)),
-      mLogInFile(Q_NULLPTR),
+      mLogInFile(nullptr),
       mLogInfo(new LogInfo(this)),
       mMode(Import),
       mInProgress(false)
@@ -67,7 +67,7 @@ void PimSettingExporterConsole::initializeLogInFile()
 void PimSettingExporterConsole::closeLogFile()
 {
     delete mLogInFile;
-    mLogInFile = Q_NULLPTR;
+    mLogInFile = nullptr;
 }
 
 void PimSettingExporterConsole::slotRestoreDone()

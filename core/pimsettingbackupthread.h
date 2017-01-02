@@ -26,7 +26,7 @@ class PimSettingBackupThread : public QThread
 {
     Q_OBJECT
 public:
-    explicit PimSettingBackupThread(KZip *zip, const QString &url, const QString &archivePath, const QString &archivename, QObject *parent = Q_NULLPTR);
+    explicit PimSettingBackupThread(KZip *zip, const QString &url, const QString &archivePath, const QString &archivename, QObject *parent = nullptr);
     ~PimSettingBackupThread();
 
 Q_SIGNALS:

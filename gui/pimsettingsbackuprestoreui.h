@@ -26,7 +26,7 @@ class PimSettingsBackupRestoreUI : public PimSettingsBackupRestore
 {
     Q_OBJECT
 public:
-    explicit PimSettingsBackupRestoreUI(QWidget *parentWidget, QObject *parent = Q_NULLPTR);
+    explicit PimSettingsBackupRestoreUI(QWidget *parentWidget, QObject *parent = nullptr);
     ~PimSettingsBackupRestoreUI();
 
 protected:

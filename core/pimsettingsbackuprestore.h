@@ -30,7 +30,7 @@ class PIMSETTINGEXPORTER_EXPORT PimSettingsBackupRestore : public QObject
 {
     Q_OBJECT
 public:
-    explicit PimSettingsBackupRestore(QObject *parent = Q_NULLPTR);
+    explicit PimSettingsBackupRestore(QObject *parent = nullptr);
     ~PimSettingsBackupRestore();
 
     bool backupStart(const QString &filename);

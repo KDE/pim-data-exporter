@@ -26,7 +26,7 @@
 
 ImportExportProgressIndicatorGui::ImportExportProgressIndicatorGui(QWidget *parentWidget, QObject *parent)
     : ImportExportProgressIndicatorBase(parent),
-      mProgressDialog(Q_NULLPTR),
+      mProgressDialog(nullptr),
       mParentWidget(parentWidget)
 {
 

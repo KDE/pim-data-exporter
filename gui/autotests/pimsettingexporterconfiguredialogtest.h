@@ -26,7 +26,7 @@ class PimSettingExporterConfigureDialogTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit PimSettingExporterConfigureDialogTest(QObject *parent = Q_NULLPTR);
+    explicit PimSettingExporterConfigureDialogTest(QObject *parent = nullptr);
     ~PimSettingExporterConfigureDialogTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

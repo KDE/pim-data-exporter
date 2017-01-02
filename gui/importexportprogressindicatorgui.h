@@ -26,7 +26,7 @@ class ImportExportProgressIndicatorGui : public ImportExportProgressIndicatorBas
 {
     Q_OBJECT
 public:
-    explicit ImportExportProgressIndicatorGui(QWidget *parentWidget, QObject *parent = Q_NULLPTR);
+    explicit ImportExportProgressIndicatorGui(QWidget *parentWidget, QObject *parent = nullptr);
     ~ImportExportProgressIndicatorGui();
 
     void increaseProgressDialog() Q_DECL_OVERRIDE;

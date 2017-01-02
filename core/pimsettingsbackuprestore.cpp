@@ -52,9 +52,9 @@
 
 PimSettingsBackupRestore::PimSettingsBackupRestore(QObject *parent)
     : QObject(parent),
-      mImportExportData(Q_NULLPTR),
+      mImportExportData(nullptr),
       mAction(Backup),
-      mArchiveStorage(Q_NULLPTR)
+      mArchiveStorage(nullptr)
 {
 
 }
@@ -86,7 +86,7 @@ bool PimSettingsBackupRestore::openArchive(const QString &filename, bool readWri
     mArchiveStorage = new ArchiveStorage(filename, this);
     if (!mArchiveStorage->openArchive(readWrite)) {
         delete mArchiveStorage;
-        mArchiveStorage = Q_NULLPTR;
+        mArchiveStorage = nullptr;
         return false;
     }
     return true;
@@ -194,11 +194,11 @@ void PimSettingsBackupRestore::closeArchive()
     if (mArchiveStorage) {
         mArchiveStorage->closeArchive();
         delete mArchiveStorage;
-        mArchiveStorage = Q_NULLPTR;
+        mArchiveStorage = nullptr;
     }
     if (mImportExportData) {
         delete mImportExportData;
-        mImportExportData = Q_NULLPTR;
+        mImportExportData = nullptr;
     }
     Q_EMIT updateActions(false);
 }
@@ -318,9 +318,9 @@ void PimSettingsBackupRestore::restoreFinished()
     //At the end
     mArchiveStorage->closeArchive();
     delete mArchiveStorage;
-    mArchiveStorage = Q_NULLPTR;
+    mArchiveStorage = nullptr;
     delete mImportExportData;
-    mImportExportData = Q_NULLPTR;
+    mImportExportData = nullptr;
     Q_EMIT restoreDone();
     deleteLater();
 }
@@ -347,7 +347,7 @@ void PimSettingsBackupRestore::slotJobFinished()
     ++mStoreIterator;
     Q_EMIT addEndLine();
     delete mImportExportData;
-    mImportExportData = Q_NULLPTR;
+    mImportExportData = nullptr;
     switch (mAction) {
     case Backup:
         backupNextStep();

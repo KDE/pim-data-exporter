@@ -27,7 +27,7 @@ class LogInFile : public QObject
 {
     Q_OBJECT
 public:
-    explicit LogInFile(QObject *parent = Q_NULLPTR);
+    explicit LogInFile(QObject *parent = nullptr);
     ~LogInFile();
 
     QString fileName() const;

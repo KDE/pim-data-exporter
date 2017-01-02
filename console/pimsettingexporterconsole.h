@@ -33,7 +33,7 @@ public:
         Export = 1
     };
 
-    explicit PimSettingExporterConsole(QObject *parent = Q_NULLPTR);
+    explicit PimSettingExporterConsole(QObject *parent = nullptr);
     ~PimSettingExporterConsole();
 
     Mode mode() const;

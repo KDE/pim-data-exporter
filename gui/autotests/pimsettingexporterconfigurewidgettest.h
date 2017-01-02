@@ -26,7 +26,7 @@ class PimSettingExporterConfigureWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit PimSettingExporterConfigureWidgetTest(QObject *parent = Q_NULLPTR);
+    explicit PimSettingExporterConfigureWidgetTest(QObject *parent = nullptr);
     ~PimSettingExporterConfigureWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

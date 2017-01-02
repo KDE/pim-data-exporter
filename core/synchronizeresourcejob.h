@@ -28,7 +28,7 @@ class PIMSETTINGEXPORTER_EXPORT SynchronizeResourceJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit SynchronizeResourceJob(QObject *parent = Q_NULLPTR);
+    explicit SynchronizeResourceJob(QObject *parent = nullptr);
     ~SynchronizeResourceJob();
 
     void start();

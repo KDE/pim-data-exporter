@@ -31,7 +31,7 @@ class PimSettingExporterWindow: public KXmlGuiWindow
 {
     Q_OBJECT
 public:
-    explicit PimSettingExporterWindow(QWidget *parent = Q_NULLPTR);
+    explicit PimSettingExporterWindow(QWidget *parent = nullptr);
     ~PimSettingExporterWindow();
     void handleCommandLine(const QCommandLineParser &parser);
 

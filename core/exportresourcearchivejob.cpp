@@ -29,8 +29,8 @@
 
 ExportResourceArchiveJob::ExportResourceArchiveJob(QObject *parent)
     : QObject(parent),
-      mZip(Q_NULLPTR),
-      mThread(Q_NULLPTR)
+      mZip(nullptr),
+      mThread(nullptr)
 {
 
 }

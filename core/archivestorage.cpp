@@ -31,7 +31,7 @@ ArchiveStorage::~ArchiveStorage()
 {
     closeArchive();
     delete mArchive;
-    mArchive = Q_NULLPTR;
+    mArchive = nullptr;
 }
 
 void ArchiveStorage::closeArchive()

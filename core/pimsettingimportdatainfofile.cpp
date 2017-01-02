@@ -26,7 +26,7 @@
 
 PimSettingImportDataInfoFile::PimSettingImportDataInfoFile(QObject *parent)
     : QObject(parent),
-      mTempDir(Q_NULLPTR)
+      mTempDir(nullptr)
 {
 
 }

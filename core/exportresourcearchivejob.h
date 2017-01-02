@@ -27,7 +27,7 @@ class ExportResourceArchiveJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit ExportResourceArchiveJob(QObject *parent = Q_NULLPTR);
+    explicit ExportResourceArchiveJob(QObject *parent = nullptr);
     ~ExportResourceArchiveJob();
 
     void setArchivePath(const QString &archivePath);

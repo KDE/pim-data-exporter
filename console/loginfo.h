@@ -26,7 +26,7 @@ class LogInfo : public QObject
 {
     Q_OBJECT
 public:
-    explicit LogInfo(QObject *parent = Q_NULLPTR);
+    explicit LogInfo(QObject *parent = nullptr);
     ~LogInfo();
 
     void addInfoLogEntry(const QString &log);

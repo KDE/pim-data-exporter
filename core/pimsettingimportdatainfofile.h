@@ -28,7 +28,7 @@ class PIMSETTINGEXPORTER_EXPORT PimSettingImportDataInfoFile : public QObject
 {
     Q_OBJECT
 public:
-    explicit PimSettingImportDataInfoFile(QObject *parent = Q_NULLPTR);
+    explicit PimSettingImportDataInfoFile(QObject *parent = nullptr);
     ~PimSettingImportDataInfoFile();
 
     void setCurrentFileName(const QString &filename);

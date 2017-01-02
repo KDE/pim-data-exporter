@@ -29,7 +29,7 @@ class PimSettingCommandLineOption : public QObject
 {
     Q_OBJECT
 public:
-    explicit PimSettingCommandLineOption(QObject *parent = Q_NULLPTR);
+    explicit PimSettingCommandLineOption(QObject *parent = nullptr);
     ~PimSettingCommandLineOption();
 
     void createParser(const QApplication &app);

@@ -26,7 +26,7 @@ class ImportExportProgressIndicatorConsole : public ImportExportProgressIndicato
 {
     Q_OBJECT
 public:
-    explicit ImportExportProgressIndicatorConsole(QObject *parent = Q_NULLPTR);
+    explicit ImportExportProgressIndicatorConsole(QObject *parent = nullptr);
     ~ImportExportProgressIndicatorConsole();
 
 private:

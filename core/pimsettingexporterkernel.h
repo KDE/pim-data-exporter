@@ -36,7 +36,7 @@ class FolderCollectionMonitor;
 class PIMSETTINGEXPORTER_EXPORT PimSettingExporterKernel : public QObject, public MailCommon::IKernel, public MailCommon::ISettings
 {
 public:
-    explicit PimSettingExporterKernel(QObject *parent = Q_NULLPTR);
+    explicit PimSettingExporterKernel(QObject *parent = nullptr);
 
     KIdentityManagement::IdentityManager *identityManager() Q_DECL_OVERRIDE;
     MessageComposer::MessageSender *msgSender() Q_DECL_OVERRIDE;

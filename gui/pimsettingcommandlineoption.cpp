@@ -28,7 +28,7 @@
 
 PimSettingCommandLineOption::PimSettingCommandLineOption(QObject *parent)
     : QObject(parent),
-      mExporterWindow(Q_NULLPTR)
+      mExporterWindow(nullptr)
 {
 }
 
