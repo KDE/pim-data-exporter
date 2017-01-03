@@ -114,6 +114,11 @@ void SelectionTypeTreeWidget::removeNotSelectedItem(QTreeWidgetItem *parent)
             delete item;
         }
     }
+    if (parent->childCount() == 0) {
+        delete parent;
+    } else {
+        parent->setCheckState(0, Qt::Checked);
+    }
 }
 
 QHash<Utils::AppsType, Utils::importExportParameters> SelectionTypeTreeWidget::storedType() const
@@ -153,17 +158,19 @@ QHash<Utils::AppsType, Utils::importExportParameters> SelectionTypeTreeWidget::s
 Utils::importExportParameters SelectionTypeTreeWidget::typeChecked(QTreeWidgetItem *parent) const
 {
     Utils::importExportParameters parameters;
-    int numberOfStep = 0;
-    Utils::StoredTypes types = Utils::None;
-    for (int i = 0; i < parent->childCount(); ++i) {
-        QTreeWidgetItem *item = parent->child(i);
-        if (item->checkState(0) == Qt::Checked) {
-            types |= static_cast<Utils::StoredType>(item->data(0, action).toInt());
-            ++numberOfStep;
+    if (parent) {
+        int numberOfStep = 0;
+        Utils::StoredTypes types = Utils::None;
+        for (int i = 0; i < parent->childCount(); ++i) {
+            QTreeWidgetItem *item = parent->child(i);
+            if (item->checkState(0) == Qt::Checked) {
+                types |= static_cast<Utils::StoredType>(item->data(0, action).toInt());
+                ++numberOfStep;
+            }
         }
+        parameters.types = types;
+        parameters.numberSteps = numberOfStep;
     }
-    parameters.types = types;
-    parameters.numberSteps = numberOfStep;
     return parameters;
 }
 
