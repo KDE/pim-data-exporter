@@ -369,14 +369,19 @@ void PimSettingExporterWindow::loadData(const QString &filename, const QString &
     // Don't put it in 'if' otherwise temporary file will be removed after that.
     QString templateFileName;
     PimSettingImportDataInfoFile dataInfo;
+    bool cleanupItems = false;
     if (templateFile.isEmpty()) {
         dataInfo.setCurrentFileName(currentFileName);
         templateFileName = dataInfo.importDataInfoPath();
+        cleanupItems = true;
     } else {
         templateFileName = templateFile;
     }
     QPointer<SelectionTypeDialog> dialog = new SelectionTypeDialog(this);
     dialog->loadTemplate(templateFileName);
+    if (cleanupItems) {
+        dialog->removeNotSelectedItems();
+    }
     if (dialog->exec()) {
         mLogWidget->clear();
         mNeedToSyncResources.clear();

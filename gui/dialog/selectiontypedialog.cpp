@@ -110,6 +110,11 @@ QString SelectionTypeDialog::exportedFileInfo()
     return mSelectionTreeWidget->exportedFileInfo();
 }
 
+void SelectionTypeDialog::removeNotSelectedItems()
+{
+    mSelectionTreeWidget->removeNotSelectedItems();
+}
+
 void SelectionTypeDialog::loadTemplate(const QString &fileName)
 {
     if (!fileName.isEmpty()) {
