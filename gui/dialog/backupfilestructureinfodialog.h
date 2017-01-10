@@ -29,7 +29,7 @@ class BackupFileStructureInfoDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit BackupFileStructureInfoDialog(QWidget *parent = Q_NULLPTR);
+    explicit BackupFileStructureInfoDialog(QWidget *parent = nullptr);
     ~BackupFileStructureInfoDialog();
 
 private:

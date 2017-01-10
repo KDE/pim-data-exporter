@@ -26,7 +26,7 @@ class PimSettingExporterConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit PimSettingExporterConfigureDialog(QWidget *parent = Q_NULLPTR);
+    explicit PimSettingExporterConfigureDialog(QWidget *parent = nullptr);
     ~PimSettingExporterConfigureDialog();
 
 private Q_SLOTS:

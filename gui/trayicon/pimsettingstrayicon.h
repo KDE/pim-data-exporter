@@ -26,7 +26,7 @@ class PimSettingsTrayIcon : public KStatusNotifierItem
 {
     Q_OBJECT
 public:
-    explicit PimSettingsTrayIcon(QObject *parent = Q_NULLPTR);
+    explicit PimSettingsTrayIcon(QObject *parent = nullptr);
     ~PimSettingsTrayIcon();
 };
 

@@ -28,7 +28,7 @@ class SelectionTypeDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SelectionTypeDialog(QWidget *parent = Q_NULLPTR);
+    explicit SelectionTypeDialog(QWidget *parent = nullptr);
     ~SelectionTypeDialog();
 
     QHash<Utils::AppsType, Utils::importExportParameters> storedType() const;

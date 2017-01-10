@@ -30,7 +30,7 @@ class ShowArchiveStructureDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit ShowArchiveStructureDialog(const QString &filename, QWidget *parent = Q_NULLPTR);
+    explicit ShowArchiveStructureDialog(const QString &filename, QWidget *parent = nullptr);
     ~ShowArchiveStructureDialog();
 
 private Q_SLOTS:

@@ -29,7 +29,7 @@ class FullSynchronizeResourcesJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit FullSynchronizeResourcesJob(QObject *parent = Q_NULLPTR);
+    explicit FullSynchronizeResourcesJob(QObject *parent = nullptr);
     ~FullSynchronizeResourcesJob();
 
     void setResources(const QStringList &lst);
