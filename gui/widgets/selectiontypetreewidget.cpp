@@ -116,6 +116,7 @@ void SelectionTypeTreeWidget::removeNotSelectedItem(QTreeWidgetItem *parent)
     }
     if (parent->childCount() == 0) {
         delete parent;
+        parent = nullptr;
     } else {
         parent->setCheckState(0, Qt::Checked);
     }
