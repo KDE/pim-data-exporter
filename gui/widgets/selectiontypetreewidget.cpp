@@ -97,29 +97,49 @@ void SelectionTypeTreeWidget::initialize()
 
 void SelectionTypeTreeWidget::removeNotSelectedItems()
 {
-    removeNotSelectedItem(mKmailItem);
-    removeNotSelectedItem(mKalarmItem);
-    removeNotSelectedItem(mKaddressbookItem);
-    removeNotSelectedItem(mKorganizerItem);
-    removeNotSelectedItem(mKNotesItem);
-    removeNotSelectedItem(mAkregatorItem);
-    removeNotSelectedItem(mBlogiloItem);
+    if (!removeNotSelectedItem(mKmailItem)) {
+        delete mKmailItem;
+        mKmailItem = nullptr;
+    }
+    if (!removeNotSelectedItem(mKalarmItem)) {
+        delete mKalarmItem;
+        mKalarmItem = nullptr;
+    }
+    if (!removeNotSelectedItem(mKaddressbookItem)) {
+        delete mKaddressbookItem;
+        mKaddressbookItem = nullptr;
+    }
+    if (!removeNotSelectedItem(mKorganizerItem)) {
+        delete mKorganizerItem;
+        mKorganizerItem = nullptr;
+    }
+    if (!removeNotSelectedItem(mKNotesItem)) {
+        delete mKNotesItem;
+        mKNotesItem = nullptr;
+    }
+    if (!removeNotSelectedItem(mAkregatorItem)) {
+        delete mAkregatorItem;
+        mAkregatorItem = nullptr;
+    }
+    if (!removeNotSelectedItem(mBlogiloItem)) {
+        delete mBlogiloItem;
+        mBlogiloItem = nullptr;
+    }
 }
 
-void SelectionTypeTreeWidget::removeNotSelectedItem(QTreeWidgetItem *parent)
+bool SelectionTypeTreeWidget::removeNotSelectedItem(QTreeWidgetItem *parent)
 {
-    for (int i = 0; i < parent->childCount(); ++i) {
+    for (int i = parent->childCount() - 1; i >= 0; --i) {
         QTreeWidgetItem *item = parent->child(i);
         if (item->checkState(0) == Qt::Unchecked) {
             delete item;
         }
     }
-    if (parent->childCount() == 0) {
-        delete parent;
-        parent = nullptr;
-    } else {
+    bool hasChildren = (parent->childCount() != 0);
+    if (hasChildren) {
         parent->setCheckState(0, Qt::Checked);
     }
+    return hasChildren;
 }
 
 QHash<Utils::AppsType, Utils::importExportParameters> SelectionTypeTreeWidget::storedType() const
@@ -255,12 +275,14 @@ void SelectionTypeTreeWidget::setSelectItems(bool b)
 
 void SelectionTypeTreeWidget::changeState(QTreeWidgetItem *item, bool b)
 {
-    blockSignals(true);
-    item->setCheckState(0, b ? Qt::Checked : Qt::Unchecked);
-    for (int i = 0; i < item->childCount(); ++i) {
-        item->child(i)->setCheckState(0, b ? Qt::Checked : Qt::Unchecked);
+    if (item) {
+        blockSignals(true);
+        item->setCheckState(0, b ? Qt::Checked : Qt::Unchecked);
+        for (int i = 0; i < item->childCount(); ++i) {
+            item->child(i)->setCheckState(0, b ? Qt::Checked : Qt::Unchecked);
+        }
+        blockSignals(false);
     }
-    blockSignals(false);
 }
 
 void SelectionTypeTreeWidget::slotItemChanged(QTreeWidgetItem *item, int column)

@@ -64,7 +64,7 @@ private:
     void initializeSubItem(QTreeWidgetItem *item, Utils::StoredTypes types);
     void loadFileName(const QString &fileName);
     QString templateSelectionToString();
-    void removeNotSelectedItem(QTreeWidgetItem *parent);
+    bool removeNotSelectedItem(QTreeWidgetItem *parent);
 
     QTreeWidgetItem *mKmailItem;
     QTreeWidgetItem *mKalarmItem;

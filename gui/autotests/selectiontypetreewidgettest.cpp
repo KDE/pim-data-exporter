@@ -44,15 +44,15 @@ void SelectionTypeTreeWidgetTest::shouldHaveDefaultSelectedWidget()
 void SelectionTypeTreeWidgetTest::shouldLoadTemplate_data()
 {
     QTest::addColumn<QString>("filename");
-    QTest::addColumn<int>("numberItems");
-    QTest::newRow("selectedtypemodel1.xml") << QStringLiteral("selectedtypemodel1.xml") << 7;
-    QTest::newRow("selectedtypemodel2.xml") << QStringLiteral("selectedtypemodel2.xml") << 3;
+    QTest::addColumn<int>("topLevelItems");
+    QTest::newRow("selectedtypemodel1.xml") << QStringLiteral("selectedtypemodel1.xml") << 4;
+    QTest::newRow("selectedtypemodel2.xml") << QStringLiteral("selectedtypemodel2.xml") << 1;
 }
 
 void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
 {
     QFETCH(QString, filename);
-    QFETCH(int, numberItems);
+    QFETCH(int, topLevelItems);
 
 
     QString fileNameFullPath = QLatin1String(PIMDATAEXPORTER_DATA_DIR) + QLatin1String("/") + filename;
@@ -66,7 +66,7 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
     w.show();
     QTest::qWait(5000);
 #endif
-    QCOMPARE(w.topLevelItemCount(), numberItems);
+    QCOMPARE(w.topLevelItemCount(), topLevelItems);
 }
 
 
