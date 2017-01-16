@@ -22,11 +22,12 @@
 #include "../widgets/selectiontypetreewidget.h"
 #include <QFile>
 #include <QTest>
+#include <QStandardPaths>
 //#define SHOW_WIDGET
 SelectionTypeTreeWidgetTest::SelectionTypeTreeWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 SelectionTypeTreeWidgetTest::~SelectionTypeTreeWidgetTest()
@@ -57,7 +58,8 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
     QFile f(fileNameFullPath);
     QVERIFY(f.exists());
     SelectionTypeTreeWidget w;
-    w.loadTemplate(filename);
+    qDebug() << " filename"<<fileNameFullPath;
+    w.loadTemplate(fileNameFullPath);
     w.removeNotSelectedItems();
 #ifdef SHOW_WIDGET
     w.show();
