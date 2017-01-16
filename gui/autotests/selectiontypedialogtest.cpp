@@ -24,6 +24,7 @@
 #include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <qtestmouse.h>
 #include <QTest>
 
 #include <gui/widgets/selectiontypetreewidget.h>
@@ -90,6 +91,33 @@ void SelectionTypeDialogTest::shouldHideButtons()
 
     QCheckBox *mUseTemplateByDefault = dlg.findChild<QCheckBox*>(QStringLiteral("mUseTemplateByDefault"));
     QVERIFY(mUseTemplateByDefault->isHidden());
+}
+
+void checkState(SelectionTypeTreeWidget *mSelectionTreeWidget, bool checked)
+{
+    for (int i = 0; i < mSelectionTreeWidget->topLevelItemCount(); i++) {
+        QTreeWidgetItem *item = mSelectionTreeWidget->topLevelItem(i);
+        bool isChecked = item->checkState(0);
+        QCOMPARE(isChecked, checked);
+        for (int j = 0; j < item->childCount(); j++) {
+            bool childIsChecked = item->child(j)->checkState(0);
+            QCOMPARE(childIsChecked, checked);
+        }
+    }
+}
+
+void SelectionTypeDialogTest::shouldSelectAllItems()
+{
+    SelectionTypeDialog dlg;
+    SelectionTypeTreeWidget *mSelectionTreeWidget = dlg.findChild<SelectionTypeTreeWidget *>(QStringLiteral("mSelectionTreeWidget"));
+    QPushButton *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectAll"));
+    QTest::mouseClick(selectAll, Qt::LeftButton);
+
+    checkState(mSelectionTreeWidget, true);
+
+    QPushButton *unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectAll"));
+    QTest::mouseClick(unselectAll, Qt::LeftButton);
+    checkState(mSelectionTreeWidget, false);
 }
 
 QTEST_MAIN(SelectionTypeDialogTest)

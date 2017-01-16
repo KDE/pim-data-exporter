@@ -31,6 +31,8 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldHideButtons();
+
+    void shouldSelectAllItems();
 };
 
 #endif // SELECTIONTYPEDIALOGTEST_H

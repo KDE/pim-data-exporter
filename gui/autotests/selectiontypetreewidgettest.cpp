@@ -49,6 +49,18 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate_data()
     QTest::newRow("selectedtypemodel2.xml") << QStringLiteral("selectedtypemodel2.xml") << 1;
 }
 
+void checkState(SelectionTypeTreeWidget *mSelectionTreeWidget, bool checked)
+{
+    for (int i = 0; i < mSelectionTreeWidget->topLevelItemCount(); i++) {
+        QTreeWidgetItem *item = mSelectionTreeWidget->topLevelItem(i);
+        bool isChecked = item->checkState(0);
+        QCOMPARE(isChecked, checked);
+        for (int j = 0; j < item->childCount(); j++) {
+            bool childIsChecked = item->child(j)->checkState(0);
+            QCOMPARE(childIsChecked, checked);
+        }
+    }
+}
 void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
 {
     QFETCH(QString, filename);
@@ -66,6 +78,7 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
     w.show();
     QTest::qWait(5000);
 #endif
+    checkState(&w, true);
     QCOMPARE(w.topLevelItemCount(), topLevelItems);
 }
 
