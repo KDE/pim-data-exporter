@@ -117,6 +117,7 @@ void SelectionTypeDialog::removeNotSelectedItems()
     mSelectionTreeWidget->removeNotSelectedItems();
     mSaveTemplate->hide();
     mLoadTemplate->hide();
+    mUseTemplateByDefault->hide();
 }
 
 void SelectionTypeDialog::loadTemplate(const QString &fileName)

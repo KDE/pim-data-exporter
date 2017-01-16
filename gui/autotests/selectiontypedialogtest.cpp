@@ -87,6 +87,9 @@ void SelectionTypeDialogTest::shouldHideButtons()
 
     QPushButton *mLoadTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mLoadTemplate"));
     QVERIFY(mLoadTemplate->isHidden());
+
+    QCheckBox *mUseTemplateByDefault = dlg.findChild<QCheckBox*>(QStringLiteral("mUseTemplateByDefault"));
+    QVERIFY(mUseTemplateByDefault->isHidden());
 }
 
 QTEST_MAIN(SelectionTypeDialogTest)
