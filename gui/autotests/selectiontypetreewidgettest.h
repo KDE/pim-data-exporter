@@ -30,6 +30,8 @@ public:
     ~SelectionTypeTreeWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultSelectedWidget();
+    void shouldLoadTemplate();
+    void shouldLoadTemplate_data();
 
 };
 

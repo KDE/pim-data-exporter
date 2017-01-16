@@ -20,8 +20,9 @@
 
 #include "selectiontypetreewidgettest.h"
 #include "../widgets/selectiontypetreewidget.h"
+#include <QFile>
 #include <QTest>
-
+//#define SHOW_WIDGET
 SelectionTypeTreeWidgetTest::SelectionTypeTreeWidgetTest(QObject *parent)
     : QObject(parent)
 {
@@ -38,5 +39,32 @@ void SelectionTypeTreeWidgetTest::shouldHaveDefaultSelectedWidget()
     SelectionTypeTreeWidget w;
     QVERIFY(w.topLevelItemCount() != 0);
 }
+
+void SelectionTypeTreeWidgetTest::shouldLoadTemplate_data()
+{
+    QTest::addColumn<QString>("filename");
+    QTest::addColumn<int>("numberItems");
+    QTest::newRow("selectedtypemodel1.xml") << QStringLiteral("selectedtypemodel1.xml") << 7;
+}
+
+void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
+{
+    QFETCH(QString, filename);
+    QFETCH(int, numberItems);
+
+
+    QString fileNameFullPath = QLatin1String(PIMDATAEXPORTER_DATA_DIR) + QLatin1String("/") + filename;
+    QFile f(fileNameFullPath);
+    QVERIFY(f.exists());
+    SelectionTypeTreeWidget w;
+    w.loadTemplate(filename);
+    w.removeNotSelectedItems();
+#ifdef SHOW_WIDGET
+    w.show();
+    QTest::qWait(5000);
+#endif
+    QCOMPARE(w.topLevelItemCount(), numberItems);
+}
+
 
 QTEST_MAIN(SelectionTypeTreeWidgetTest)
