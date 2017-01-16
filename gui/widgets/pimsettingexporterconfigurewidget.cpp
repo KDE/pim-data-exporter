@@ -42,7 +42,7 @@ PimSettingExporterConfigureWidget::PimSettingExporterConfigureWidget(QWidget *pa
     mAlwaysOverrideFile->setObjectName(QStringLiteral("alwaysoverridefile"));
     groupBoxLayout->addWidget(mAlwaysOverrideFile);
 
-    mAlwaysOverrideDirectory = new QCheckBox(i18n("Always Override File"));
+    mAlwaysOverrideDirectory = new QCheckBox(i18n("Always Override Directory"));
     mAlwaysOverrideDirectory->setObjectName(QStringLiteral("alwaysoverridedirectory"));
     groupBoxLayout->addWidget(mAlwaysOverrideDirectory);
 
