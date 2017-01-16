@@ -46,6 +46,7 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate_data()
     QTest::addColumn<QString>("filename");
     QTest::addColumn<int>("numberItems");
     QTest::newRow("selectedtypemodel1.xml") << QStringLiteral("selectedtypemodel1.xml") << 7;
+    QTest::newRow("selectedtypemodel2.xml") << QStringLiteral("selectedtypemodel2.xml") << 3;
 }
 
 void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
