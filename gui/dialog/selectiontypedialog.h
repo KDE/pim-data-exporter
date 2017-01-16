@@ -50,6 +50,8 @@ private:
     void saveDefaultTemplate();
     SelectionTypeTreeWidget *mSelectionTreeWidget;
     QCheckBox *mUseTemplateByDefault;
+    QPushButton *mSaveTemplate;
+    QPushButton *mLoadTemplate;
 };
 
 #endif // SELECTIONTYPEDIALOG_H
