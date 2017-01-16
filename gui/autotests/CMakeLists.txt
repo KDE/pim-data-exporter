@@ -1,3 +1,5 @@
+add_definitions(-DPIMDATAEXPORTER_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
+
 set( pimsettingexporter_kcfg_SRCS ../settings/pimsettingexporterglobalconfig.kcfgc )
 
 kconfig_add_kcfg_files(pimsettingexporter_kcfg_SRCS ${pimsettingexporter_kcfg_SRCS})
@@ -17,3 +19,9 @@ add_executable( pimsettingexporterconfigurewidgettest pimsettingexporterconfigur
 add_test(pimsettingexporterconfigurewidgettest pimsettingexporterconfigurewidgettest)
 ecm_mark_as_test(pimsettingexporterconfigurewidgettest)
 target_link_libraries(pimsettingexporterconfigurewidgettest Qt5::Test Qt5::Widgets KF5::I18n KF5::ItemViews KF5::ConfigCore KF5::ConfigGui)
+
+
+add_executable( selectiontypetreewidgettest selectiontypetreewidgettest.cpp ../widgets/selectiontypetreewidget.cpp ${pimsettingexporter_kcfg_SRCS})
+add_test(selectiontypetreewidgettest selectiontypetreewidgettest)
+ecm_mark_as_test(selectiontypetreewidgettest)
+target_link_libraries(selectiontypetreewidgettest Qt5::Test Qt5::Widgets KF5::I18n KF5::ItemViews pimsettingexporterprivate KF5::ConfigCore KF5::ConfigGui KF5::PimCommon)
