@@ -72,4 +72,21 @@ void SelectionTypeDialogTest::shouldHaveDefaultValue()
     QVERIFY(mLoadTemplate->isEnabled());
 }
 
+void SelectionTypeDialogTest::shouldHideButtons()
+{
+    SelectionTypeDialog dlg;
+    dlg.removeNotSelectedItems();
+    QPushButton *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectAll"));
+    QVERIFY(!selectAll->isHidden());
+
+    QPushButton *unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectAll"));
+    QVERIFY(!unselectAll->isHidden());
+
+    QPushButton *mSaveTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mSaveTemplate"));
+    QVERIFY(mSaveTemplate->isHidden());
+
+    QPushButton *mLoadTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mLoadTemplate"));
+    QVERIFY(mLoadTemplate->isHidden());
+}
+
 QTEST_MAIN(SelectionTypeDialogTest)

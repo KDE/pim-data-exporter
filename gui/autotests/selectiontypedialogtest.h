@@ -30,6 +30,7 @@ public:
     ~SelectionTypeDialogTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldHideButtons();
 };
 
 #endif // SELECTIONTYPEDIALOGTEST_H
