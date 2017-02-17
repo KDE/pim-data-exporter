@@ -54,7 +54,9 @@ void FullSynchronizeResourcesJob::setWindowParent(QWidget *parent)
 
 void FullSynchronizeResourcesJob::start()
 {
-    mProgressDialog = new QProgressDialog(QString(), i18n("Cancel"), 0, mResources.count(), mWindowParent);
+    if (!mProgressDialog) {
+        mProgressDialog = new QProgressDialog(QString(), i18n("Cancel"), 0, mResources.count(), mWindowParent);
+    }
     mProgressDialog->setWindowTitle(i18n("Synchronize resources"));
     mProgressDialog->setLabelText(i18n("Synchronize resources... It can take some time."));
     mProgressDialog->setWindowModality(Qt::WindowModal);
