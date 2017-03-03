@@ -20,7 +20,7 @@
 #include "importaddressbookjob.h"
 #include "archivestorage.h"
 
-#include "PimCommon/CreateResource"
+#include <PimCommonAkonadi/CreateResource>
 
 #include <KLocalizedString>
 #include <KConfigGroup>

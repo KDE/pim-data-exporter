@@ -24,7 +24,7 @@
 
 #include "MailCommon/MailUtil"
 
-#include "PimCommon/CreateResource"
+#include <PimCommonAkonadi/CreateResource>
 
 #include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 #include <KZip>

@@ -24,7 +24,7 @@
 #include "MailCommon/FilterManager"
 #include "MailCommon/FilterImporterExporter"
 #include "MailCommon/MailUtil"
-#include "PimCommon/CreateResource"
+#include <PimCommonAkonadi/CreateResource>
 
 #include <MailTransport/mailtransport/transportmanager.h>
 

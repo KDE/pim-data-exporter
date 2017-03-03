@@ -20,7 +20,7 @@
 #include "importalarmjob.h"
 #include "archivestorage.h"
 
-#include "PimCommon/CreateResource"
+#include <PimCommonAkonadi/CreateResource>
 
 #include <KArchive>
 #include <KLocalizedString>

@@ -81,6 +81,7 @@ target_link_libraries(pimsettingexporterprivate
     KF5::AlarmCalendar
     KF5::MailCommon
     KF5::Archive
+    KF5::PimCommonAkonadi
     )
 
 set_target_properties(pimsettingexporterprivate PROPERTIES VERSION ${KDEPIM_LIB_VERSION} SOVERSION ${KDEPIM_LIB_SOVERSION})
