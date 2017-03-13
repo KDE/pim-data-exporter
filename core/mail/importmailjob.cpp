@@ -399,9 +399,6 @@ void ImportMailJob::restoreResources()
                     if (cache.hasKey(QStringLiteral("AutomaticExpungeEnabled"))) {
                         settings.insert(QStringLiteral("AutomaticExpungeEnabled"), cache.readEntry("AutomaticExpungeEnabled", true));
                     }
-                    if (cache.hasKey(QLatin1String(""))) {
-                        settings.insert(QLatin1String(""), cache.readEntry(""));
-                    }
                     if (cache.hasKey(QStringLiteral("DisconnectedModeEnabled"))) {
                         settings.insert(QStringLiteral("DisconnectedModeEnabled"), cache.readEntry("DisconnectedModeEnabled", false));
                     }
