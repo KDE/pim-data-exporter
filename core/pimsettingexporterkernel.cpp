@@ -22,7 +22,6 @@
 #include <KContacts/Addressee>
 #include <KContacts/ContactGroup>
 
-#include <kalarmcal/kacalendar.h>
 #include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 #include <MessageComposer/AkonadiSender>
 #include <MailCommon/FolderCollectionMonitor>
@@ -31,6 +30,12 @@
 #include <AkonadiCore/entitymimetypefiltermodel.h>
 #include <AkonadiCore/changerecorder.h>
 #include <KSharedConfig>
+
+//Same element as kalarmcal
+//const QLatin1String MIME_BASE("application/x-vnd.kde.alarm");
+const QLatin1String MIME_ACTIVE("application/x-vnd.kde.alarm.active");
+const QLatin1String MIME_ARCHIVED("application/x-vnd.kde.alarm.archived");
+const QLatin1String MIME_TEMPLATE("application/x-vnd.kde.alarm.template");
 
 PimSettingExporterKernel::PimSettingExporterKernel(QObject *parent)
     : QObject(parent)
@@ -41,9 +46,9 @@ PimSettingExporterKernel::PimSettingExporterKernel(QObject *parent)
     mFolderCollectionMonitor = new MailCommon::FolderCollectionMonitor(session, this);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KContacts::Addressee::mimeType(), true);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KContacts::ContactGroup::mimeType(), true);
-    mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KAlarmCal::MIME_ACTIVE);
-    mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KAlarmCal::MIME_ARCHIVED);
-    mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KAlarmCal::MIME_TEMPLATE);
+    mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(MIME_ACTIVE);
+    mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(MIME_ARCHIVED);
+    mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(MIME_TEMPLATE);
 
     mEntityTreeModel = new Akonadi::EntityTreeModel(folderCollectionMonitor(), this);
     mEntityTreeModel->setListFilter(Akonadi::CollectionFetchScope::Enabled);
