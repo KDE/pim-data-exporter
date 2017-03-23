@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "selectiontypetreewidgettest.h"
 #include "../widgets/selectiontypetreewidget.h"
 #include <QFile>
@@ -66,12 +65,11 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
     QFETCH(QString, filename);
     QFETCH(int, topLevelItems);
 
-
     QString fileNameFullPath = QLatin1String(PIMDATAEXPORTER_DATA_DIR) + QLatin1String("/") + filename;
     QFile f(fileNameFullPath);
     QVERIFY(f.exists());
     SelectionTypeTreeWidget w;
-    qDebug() << " filename"<<fileNameFullPath;
+    qDebug() << " filename" << fileNameFullPath;
     w.loadTemplate(fileNameFullPath);
     w.removeNotSelectedItems();
 #ifdef SHOW_WIDGET
@@ -81,6 +79,5 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
     checkState(&w, true);
     QCOMPARE(w.topLevelItemCount(), topLevelItems);
 }
-
 
 QTEST_MAIN(SelectionTypeTreeWidgetTest)

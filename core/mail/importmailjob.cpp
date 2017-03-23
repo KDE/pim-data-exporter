@@ -608,7 +608,7 @@ void ImportMailJob::restoreConfig()
             const QString filterFileName(mTempDirName + QLatin1Char('/') + QLatin1String("filters"));
             KSharedConfig::Ptr filtersConfig = KSharedConfig::openConfig(filterFileName);
             const QStringList filterList = filtersConfig->groupList().filter(QRegularExpression(QStringLiteral("Filter #\\d+")));
-            for(const QString &filterStr : filterList) {
+            for (const QString &filterStr : filterList) {
                 KConfigGroup group = filtersConfig->group(filterStr);
                 const QString accountStr(QStringLiteral("accounts-set"));
                 if (group.hasKey(accountStr)) {
@@ -819,7 +819,8 @@ void ImportMailJob::restoreConfig()
         QStringLiteral("akonadi_maildispatcher_agent.notifyrc"),
         QStringLiteral("akonadi_followupreminder_agent.notifyrc"),
         QStringLiteral("messageviewer.notifyrc"),
-        QStringLiteral("storageservicemanager.notifyrc") };
+        QStringLiteral("storageservicemanager.notifyrc")
+    };
 
     //We can't merge it.
     for (const QString &filename : lstNotify) {
