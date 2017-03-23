@@ -52,7 +52,7 @@ void SelectionTypeDialogTest::shouldHaveDefaultValue()
     SelectionTypeTreeWidget *mSelectionTreeWidget = dlg.findChild<SelectionTypeTreeWidget *>(QStringLiteral("mSelectionTreeWidget"));
     QVERIFY(mSelectionTreeWidget);
 
-    QCheckBox *mUseTemplateByDefault = dlg.findChild<QCheckBox*>(QStringLiteral("mUseTemplateByDefault"));
+    QCheckBox *mUseTemplateByDefault = dlg.findChild<QCheckBox *>(QStringLiteral("mUseTemplateByDefault"));
     QVERIFY(mUseTemplateByDefault);
     QVERIFY(!mUseTemplateByDefault->isChecked());
 
@@ -89,7 +89,7 @@ void SelectionTypeDialogTest::shouldHideButtons()
     QPushButton *mLoadTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mLoadTemplate"));
     QVERIFY(mLoadTemplate->isHidden());
 
-    QCheckBox *mUseTemplateByDefault = dlg.findChild<QCheckBox*>(QStringLiteral("mUseTemplateByDefault"));
+    QCheckBox *mUseTemplateByDefault = dlg.findChild<QCheckBox *>(QStringLiteral("mUseTemplateByDefault"));
     QVERIFY(mUseTemplateByDefault->isHidden());
 }
 

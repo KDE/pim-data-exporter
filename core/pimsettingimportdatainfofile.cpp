@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "pimsettingimportdatainfofile.h"
 #include "pimsettingexportcore_debug.h"
 #include "utils.h"
