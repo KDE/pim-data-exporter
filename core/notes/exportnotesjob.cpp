@@ -145,8 +145,9 @@ void ExportNotesJob::backupConfig()
 
     const QString knotesStr(QStringLiteral("knotesrc"));
     const QString knotesrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + knotesStr;
-    backupFile(knotesrc, Utils::configsPath(), knotesStr);
-
+    if (QFileInfo::exists(knotesrc)) {
+        backupFile(knotesrc, Utils::configsPath(), knotesStr);
+    }
     const QString globalNoteSettingsStr(QStringLiteral("globalnotesettings"));
     const QString globalNoteSettingsrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + globalNoteSettingsStr;
 
