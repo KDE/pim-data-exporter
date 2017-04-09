@@ -136,7 +136,7 @@ void ExportCalendarJob::backupConfig()
 
     const QString korganizerStr(QStringLiteral("korganizerrc"));
     const QString korganizerrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + korganizerStr;
-    if (QFile(korganizerrc).exists()) {
+    if (QFileInfo::exists(korganizerrc)) {
         KSharedConfigPtr korganizer = KSharedConfig::openConfig(korganizerrc);
 
         QTemporaryFile tmp;
@@ -161,7 +161,7 @@ void ExportCalendarJob::backupConfig()
 
     const QString freebusyurlsStr(QStringLiteral("korganizer/freebusyurls"));
     const QString freebusyurls = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + freebusyurlsStr;
-    if (QFile(freebusyurls).exists()) {
+    if (QFileInfo::exists(freebusyurls)) {
         backupFile(freebusyurls, Utils::dataPath(), freebusyurlsStr);
     }
 

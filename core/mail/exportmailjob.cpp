@@ -204,7 +204,7 @@ void ExportMailJob::backupTransports()
 
     const QString mailtransportsStr(QStringLiteral("mailtransports"));
     const QString maitransportsrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + mailtransportsStr;
-    if (!QFile(maitransportsrc).exists()) {
+    if (!QFileInfo::exists(maitransportsrc)) {
         Q_EMIT info(i18n("Transports backup done."));
     } else {
         KSharedConfigPtr mailtransportsConfig = KSharedConfig::openConfig(mailtransportsStr);
@@ -328,7 +328,7 @@ void ExportMailJob::backupConfig()
 
     const QString folderMailArchiveStr(QStringLiteral("foldermailarchiverc"));
     const QString folderMailArchiverc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + folderMailArchiveStr;
-    if (QFile(folderMailArchiverc).exists()) {
+    if (QFileInfo::exists(folderMailArchiverc)) {
         KSharedConfigPtr archivemailrc = KSharedConfig::openConfig(folderMailArchiveStr);
 
         QTemporaryFile tmp;
@@ -355,7 +355,7 @@ void ExportMailJob::backupConfig()
 
     const QString archiveMailAgentConfigurationStr(QStringLiteral("akonadi_archivemail_agentrc"));
     const QString archiveMailAgentconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveMailAgentConfigurationStr;
-    if (QFile(archiveMailAgentconfigurationrc).exists()) {
+    if (QFileInfo::exists(archiveMailAgentconfigurationrc)) {
         KSharedConfigPtr archivemailrc = KSharedConfig::openConfig(archiveMailAgentConfigurationStr);
 
         QTemporaryFile tmp;
@@ -388,7 +388,7 @@ void ExportMailJob::backupConfig()
 
     const QString templatesconfigurationrcStr(QStringLiteral("templatesconfigurationrc"));
     const QString templatesconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + templatesconfigurationrcStr;
-    if (QFile(templatesconfigurationrc).exists()) {
+    if (QFileInfo::exists(templatesconfigurationrc)) {
         KSharedConfigPtr templaterc = KSharedConfig::openConfig(templatesconfigurationrcStr);
 
         QTemporaryFile tmp;
@@ -543,7 +543,7 @@ void ExportMailJob::backupIdentity()
 
     const QString emailidentitiesStr(QStringLiteral("emailidentities"));
     const QString emailidentitiesrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + emailidentitiesStr;
-    if (QFile(emailidentitiesrc).exists()) {
+    if (QFileInfo::exists(emailidentitiesrc)) {
 
         KSharedConfigPtr identity = KSharedConfig::openConfig(emailidentitiesrc);
 

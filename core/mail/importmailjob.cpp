@@ -665,7 +665,7 @@ void ImportMailJob::restoreConfig()
     if (kmailsnippetentry && kmailsnippetentry->isFile()) {
         const KArchiveFile *kmailsnippet = static_cast<const KArchiveFile *>(kmailsnippetentry);
         const QString kmailsnippetrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kmailsnippetrcStr;
-        if (QFile(kmailsnippetrc).exists()) {
+        if (QFileInfo::exists(kmailsnippetrc)) {
             //TODO 4.13 allow to merge config.
             if (overwriteConfigMessageBox(kmailsnippetrcStr)) {
                 copyToFile(kmailsnippet, kmailsnippetrc, kmailsnippetrcStr, Utils::configsPath());
@@ -680,7 +680,7 @@ void ImportMailJob::restoreConfig()
     if (kabldapentry && kabldapentry->isFile()) {
         const KArchiveFile *kabldap = static_cast<const KArchiveFile *>(kabldapentry);
         const QString kabldaprc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + labldaprcStr;
-        if (QFile(kabldaprc).exists()) {
+        if (QFileInfo::exists(kabldaprc)) {
             const int result = mergeConfigMessageBox(labldaprcStr);
             if (result == KMessageBox::Yes) {
                 copyToFile(kabldap, kabldaprc, labldaprcStr, Utils::configsPath());
@@ -696,7 +696,7 @@ void ImportMailJob::restoreConfig()
     if (archiveconfigurationentry &&  archiveconfigurationentry->isFile()) {
         const KArchiveFile *archiveconfiguration = static_cast<const KArchiveFile *>(archiveconfigurationentry);
         const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveconfigurationrcStr;
-        if (QFile(archiveconfigurationrc).exists()) {
+        if (QFileInfo::exists(archiveconfigurationrc)) {
             const int result = mergeConfigMessageBox(archiveconfigurationrcStr);
             if (result == KMessageBox::Yes) {
                 importArchiveConfig(archiveconfiguration, archiveconfigurationrc, archiveconfigurationrcStr, Utils::configsPath());
@@ -713,7 +713,7 @@ void ImportMailJob::restoreConfig()
     if (templatesconfigurationentry &&  templatesconfigurationentry->isFile()) {
         const KArchiveFile *templatesconfiguration = static_cast<const KArchiveFile *>(templatesconfigurationentry);
         const QString templatesconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + templatesconfigurationrcStr;
-        if (QFile(templatesconfigurationrc).exists()) {
+        if (QFileInfo::exists(templatesconfigurationrc)) {
             //TODO 4.13 allow to merge config.
             if (overwriteConfigMessageBox(templatesconfigurationrcStr)) {
                 importTemplatesConfig(templatesconfiguration, templatesconfigurationrc, templatesconfigurationrcStr, Utils::configsPath());
@@ -728,7 +728,7 @@ void ImportMailJob::restoreConfig()
     if (kmail2rcentry && kmail2rcentry->isFile()) {
         const KArchiveFile *kmailrc = static_cast<const KArchiveFile *>(kmail2rcentry);
         const QString kmail2rc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kmailStr;
-        if (QFile(kmail2rc).exists()) {
+        if (QFileInfo::exists(kmail2rc)) {
             if (overwriteConfigMessageBox(kmailStr)) {
                 importKmailConfig(kmailrc, kmail2rc, kmailStr, Utils::configsPath());
             }
@@ -742,7 +742,7 @@ void ImportMailJob::restoreConfig()
     if (sievetemplatentry &&  sievetemplatentry->isFile()) {
         const KArchiveFile *sievetemplateconfiguration = static_cast<const KArchiveFile *>(sievetemplatentry);
         const QString sievetemplaterc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + sievetemplatercStr;
-        if (QFile(sievetemplaterc).exists()) {
+        if (QFileInfo::exists(sievetemplaterc)) {
             const int result = mergeConfigMessageBox(sievetemplatercStr);
             if (result == KMessageBox::Yes) {
                 copyToFile(sievetemplateconfiguration, sievetemplaterc, sievetemplatercStr, Utils::configsPath());
@@ -759,7 +759,7 @@ void ImportMailJob::restoreConfig()
     if (customtemplatentry &&  customtemplatentry->isFile()) {
         const KArchiveFile *customtemplateconfiguration = static_cast<const KArchiveFile *>(customtemplatentry);
         const QString customtemplaterc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + customTemplateStr;
-        if (QFile(customtemplaterc).exists()) {
+        if (QFileInfo::exists(customtemplaterc)) {
             //TODO 4.13 allow to merge config.
             if (overwriteConfigMessageBox(customTemplateStr)) {
                 copyToFile(customtemplateconfiguration, customtemplaterc, customTemplateStr, Utils::configsPath());
@@ -774,7 +774,7 @@ void ImportMailJob::restoreConfig()
     if (adblockentry &&  adblockentry->isFile()) {
         const KArchiveFile *adblockconfiguration = static_cast<const KArchiveFile *>(adblockentry);
         const QString adblockrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + adblockStr;
-        if (QFile(adblockrc).exists()) {
+        if (QFileInfo::exists(adblockrc)) {
             //TODO 4.13 allow to merge config.
             if (overwriteConfigMessageBox(adblockStr)) {
                 copyToFile(adblockconfiguration, adblockrc, adblockStr, Utils::configsPath());
@@ -833,7 +833,7 @@ void ImportMailJob::restoreConfig()
     if (kmail2Entry && kmail2Entry->isFile()) {
         const KArchiveFile *entry = static_cast<const KArchiveFile *>(kmail2Entry);
         const QString adblockPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("kmail2/adblockrules_local");
-        if (QFile(adblockPath).exists()) {
+        if (QFileInfo::exists(adblockPath)) {
             if (overwriteConfigMessageBox(QStringLiteral("adblockrules_local"))) {
                 copyToFile(entry, QString(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/") + QLatin1String("kmail2/adblockrules_local")), QStringLiteral("adblockrules_local"), Utils::dataPath() + QLatin1String("kmail2/"));
             }
@@ -861,7 +861,7 @@ void ImportMailJob::importSimpleFilesInDirectory(const QString &relativePath)
                 const KArchiveFile *autocorrectionFile = static_cast<const KArchiveFile *>(entry);
                 const QString name = autocorrectionFile->name();
                 QString autocorrectionPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + relativePath + QLatin1Char('/') + name;
-                if (QFile(autocorrectionPath).exists()) {
+                if (QFileInfo::exists(autocorrectionPath)) {
                     if (overwriteConfigMessageBox(name)) {
                         copyToFile(autocorrectionFile, autocorrectionPath, name, Utils::dataPath() + relativePath);
                     }
@@ -923,7 +923,7 @@ void ImportMailJob::restoreIdentity()
                                 const KArchiveFile *vcardFile = static_cast<const KArchiveFile *>(vcardEntry);
                                 QString vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/%1").arg(fileInfo.fileName());
                                 int i = 1;
-                                while (QFile(vcardFileName).exists()) {
+                                while (QFileInfo::exists(vcardFileName)) {
                                     vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/%1_%2").arg(i).arg(fileInfo.fileName());
                                     ++i;
                                 }

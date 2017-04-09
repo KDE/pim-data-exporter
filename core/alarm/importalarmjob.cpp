@@ -160,7 +160,7 @@ void ImportAlarmJob::restoreConfig()
     if (kalarmrcentry && kalarmrcentry->isFile()) {
         const KArchiveFile *kalarmrcFile = static_cast<const KArchiveFile *>(kalarmrcentry);
         const QString kalarmrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalarmStr;
-        if (QFile(kalarmrc).exists()) {
+        if (QFileInfo::exists(kalarmrc)) {
             if (overwriteConfigMessageBox(kalarmStr)) {
                 importkalarmConfig(kalarmrcFile, kalarmrc, kalarmStr, Utils::configsPath());
             }

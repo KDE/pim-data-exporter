@@ -135,7 +135,7 @@ void ExportAlarmJob::backupConfig()
 
     const QString kalarmStr(QStringLiteral("kalarmrc"));
     const QString kalarmrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalarmStr;
-    if (QFile(kalarmrc).exists()) {
+    if (QFileInfo::exists(kalarmrc)) {
         KSharedConfigPtr kalarm = KSharedConfig::openConfig(kalarmrc);
 
         QTemporaryFile tmp;

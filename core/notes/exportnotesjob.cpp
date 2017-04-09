@@ -150,7 +150,7 @@ void ExportNotesJob::backupConfig()
     const QString globalNoteSettingsStr(QStringLiteral("globalnotesettings"));
     const QString globalNoteSettingsrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + globalNoteSettingsStr;
 
-    if (QFile(globalNoteSettingsrc).exists()) {
+    if (QFileInfo::exists(globalNoteSettingsrc)) {
         KSharedConfigPtr globalnotesettingsrc = KSharedConfig::openConfig(globalNoteSettingsrc);
 
         QTemporaryFile tmp;

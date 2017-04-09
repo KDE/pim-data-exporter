@@ -127,13 +127,13 @@ QString Utils::adaptResourcePath(KSharedConfigPtr resourceConfig, const QString 
             QDir().mkdir(currentPath);
         }
     }
-    if (QFile(newUrl).exists()) {
+    if (QFileInfo::exists(newUrl)) {
         QString newFileName = newUrl;
         QFileInfo fileInfo(newFileName);
         for (int i = 0;; ++i) {
             const QString currentPath = fileInfo.path() + QLatin1Char('/') + QString::number(i) + QLatin1Char('/');
             newFileName = currentPath + fileInfo.fileName();
-            if (!QFile(newFileName).exists()) {
+            if (!QFileInfo::exists(newFileName)) {
                 QDir().mkdir(currentPath);
                 break;
             }
@@ -296,7 +296,7 @@ KZip *Utils::openZip(const QString &filename, QString &errorMsg)
 
 void Utils::storeDataExportInfo(const QString &filename, KZip *archive)
 {
-    if (QFile(filename).exists()) {
+    if (QFileInfo::exists(filename)) {
         const bool fileAdded  = archive->addLocalFile(filename, Utils::infoPath() + Utils::exportDataTypeFileName());
         if (fileAdded) {
             qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "exporteddata file can not add to archive" << filename;
