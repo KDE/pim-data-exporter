@@ -193,7 +193,6 @@ void ExportMailJob::slotWriteNextArchiveResource()
             QTimer::singleShot(0, this, &ExportMailJob::slotMailsJobTerminated);
         }
     } else {
-        Q_EMIT info(i18n("Resources backup done."));
         QTimer::singleShot(0, this, &ExportMailJob::slotCheckBackupResources);
     }
 }
