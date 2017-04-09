@@ -133,7 +133,7 @@ void ExportAddressbookJob::backupConfig()
 
     const QString kaddressbookStr(QStringLiteral("kaddressbookrc"));
     const QString kaddressbookrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kaddressbookStr;
-    if (QFile(kaddressbookrc).exists()) {
+    if (QFileInfo::exists(kaddressbookrc)) {
         KSharedConfigPtr kaddressbook = KSharedConfig::openConfig(kaddressbookrc);
 
         QTemporaryFile tmp;

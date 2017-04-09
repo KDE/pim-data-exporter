@@ -182,7 +182,7 @@ void ImportAddressbookJob::restoreConfig()
     if (kaddressbookrcentry && kaddressbookrcentry->isFile()) {
         const KArchiveFile *kaddressbookrcFile = static_cast<const KArchiveFile *>(kaddressbookrcentry);
         const QString kaddressbookrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kaddressbookStr;
-        if (QFile(kaddressbookrc).exists()) {
+        if (QFileInfo::exists(kaddressbookrc)) {
             if (overwriteConfigMessageBox(kaddressbookStr)) {
                 importkaddressBookConfig(kaddressbookrcFile, kaddressbookrc, kaddressbookStr, Utils::configsPath());
             }
@@ -230,7 +230,7 @@ void ImportAddressbookJob::importkaddressBookConfig(const KArchiveFile *file, co
                 const KArchiveFile *csvTemplateFile = static_cast<const KArchiveFile *>(entry);
                 const QString name = csvTemplateFile->name();
                 QString autocorrectionPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + cvsTemplateDirName;
-                if (QFile(autocorrectionPath).exists()) {
+                if (QFileInfo::exists(autocorrectionPath)) {
                     if (overwriteConfigMessageBox(name)) {
                         copyToFile(csvTemplateFile, autocorrectionPath + QLatin1Char('/') + name, name, Utils::dataPath() + cvsTemplateDirName);
                     }

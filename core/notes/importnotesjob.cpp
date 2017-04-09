@@ -96,7 +96,7 @@ void ImportNotesJob::restoreConfig()
         if (globalNotecentry && globalNotecentry->isFile()) {
             const KArchiveFile *globalNotecentryrc = static_cast<const KArchiveFile *>(globalNotecentry);
             const QString globalNoterc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + globalNoteStr;
-            if (QFile(globalNoterc).exists()) {
+            if (QFileInfo::exists(globalNoterc)) {
                 if (overwriteConfigMessageBox(globalNoteStr)) {
                     importKNoteGlobalSettings(globalNotecentryrc, globalNoterc, globalNoteStr, Utils::configsPath());
                 }

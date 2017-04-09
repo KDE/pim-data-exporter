@@ -183,7 +183,7 @@ void ImportCalendarJob::restoreConfig()
     if (oldKorganizerPrinterEntry && oldKorganizerPrinterEntry->isFile()) {
         const KArchiveFile *korganizerFile = static_cast<const KArchiveFile *>(oldKorganizerPrinterEntry);
         const QString oldKorganizerPrintrrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + korganizerPrinterrcStr;
-        if (QFile(oldKorganizerPrintrrc).exists()) {
+        if (QFileInfo::exists(oldKorganizerPrintrrc)) {
             if (overwriteConfigMessageBox(oldKorganizerPrintrrc)) {
                 copyToFile(korganizerFile, oldKorganizerPrintrrc, oldKorganizerPrintrrcStr, Utils::configsPath());
             }
@@ -195,7 +195,7 @@ void ImportCalendarJob::restoreConfig()
         if (korganizerPrinterEntry && korganizerPrinterEntry->isFile()) {
             const KArchiveFile *korganizerFile = static_cast<const KArchiveFile *>(korganizerPrinterEntry);
             const QString korganizerPrinterrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + korganizerPrinterrcStr;
-            if (QFile(korganizerPrinterrc).exists()) {
+            if (QFileInfo::exists(korganizerPrinterrc)) {
                 if (overwriteConfigMessageBox(korganizerPrinterrcStr)) {
                     copyToFile(korganizerFile, korganizerPrinterrc, korganizerPrinterrcStr, Utils::configsPath());
                 }
@@ -210,7 +210,7 @@ void ImportCalendarJob::restoreConfig()
     if (korganizerrcentry && korganizerrcentry->isFile()) {
         const KArchiveFile *korganizerrcFile = static_cast<const KArchiveFile *>(korganizerrcentry);
         const QString korganizerrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + korganizerStr;
-        if (QFile(korganizerrc).exists()) {
+        if (QFileInfo::exists(korganizerrc)) {
             if (overwriteConfigMessageBox(korganizerStr)) {
                 importkorganizerConfig(korganizerrcFile, korganizerrc, korganizerStr, Utils::configsPath());
             }
@@ -224,7 +224,7 @@ void ImportCalendarJob::restoreConfig()
     if (korgacrcentry && korgacrcentry->isFile()) {
         const KArchiveFile *korgacrcFile = static_cast<const KArchiveFile *>(korgacrcentry);
         const QString korgacrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + korgacStr;
-        if (QFile(korgacrc).exists()) {
+        if (QFileInfo::exists(korgacrc)) {
             if (overwriteConfigMessageBox(korgacStr)) {
                 copyToFile(korgacrcFile, korgacrc, korgacStr, Utils::configsPath());
             }
@@ -239,7 +239,7 @@ void ImportCalendarJob::restoreConfig()
         const KArchiveFile *freebusyrcFile = static_cast<const KArchiveFile *>(freebusyentry);
 
         const QString freebusypath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/korganizer/") + freebusyStr;
-        if (QFile(freebusypath).exists()) {
+        if (QFileInfo::exists(freebusypath)) {
             //TODO 4.12 merge it.
             if (overwriteConfigMessageBox(freebusyStr)) {
                 copyToFile(freebusyrcFile, freebusypath, freebusyStr, Utils::dataPath());

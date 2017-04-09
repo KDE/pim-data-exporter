@@ -113,7 +113,7 @@ void AbstractImportExportJob::backupUiRcFile(const QString &configFileName, cons
 {
     const QString configrcStr(configFileName);
     const QString configrc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kxmlgui5/") + application + QLatin1Char('/') + configrcStr;
-    if (QFile(configrc).exists()) {
+    if (QFileInfo::exists(configrc)) {
         backupFile(configrc, Utils::configsPath(), configrcStr);
     }
 }
@@ -122,14 +122,14 @@ void AbstractImportExportJob::backupConfigFile(const QString &configFileName)
 {
     const QString configrcStr(configFileName);
     const QString configrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + configrcStr;
-    if (QFile(configrc).exists()) {
+    if (QFileInfo::exists(configrc)) {
         backupFile(configrc, Utils::configsPath(), configrcStr);
     }
 }
 
 void AbstractImportExportJob::backupFile(const QString &filename, const QString &path, const QString &storedName)
 {
-    if (QFile(filename).exists()) {
+    if (QFileInfo::exists(filename)) {
         const bool fileAdded  = archive()->addLocalFile(filename, path + storedName);
         if (fileAdded) {
             Q_EMIT info(i18n("\"%1\" backup done.", path + storedName));
@@ -487,7 +487,7 @@ void AbstractImportExportJob::restoreUiRcFile(const QString &configNameStr, cons
     if (configNameentry &&  configNameentry->isFile()) {
         const KArchiveFile *configNameconfiguration = static_cast<const KArchiveFile *>(configNameentry);
         const QString configNamerc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kxmlgui5/") + applicationName + QLatin1Char('/') + configNameStr;
-        if (QFile(configNamerc).exists()) {
+        if (QFileInfo::exists(configNamerc)) {
             if (overwriteConfigMessageBox(configNameStr)) {
                 copyToFile(configNameconfiguration, configNamerc, configNameStr, Utils::configsPath());
             }
@@ -503,7 +503,7 @@ void AbstractImportExportJob::restoreConfigFile(const QString &configNameStr)
     if (configNameentry &&  configNameentry->isFile()) {
         const KArchiveFile *configNameconfiguration = static_cast<const KArchiveFile *>(configNameentry);
         const QString configNamerc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + configNameStr;
-        if (QFile(configNamerc).exists()) {
+        if (QFileInfo::exists(configNamerc)) {
             //TODO 4.12 allow to merge config.
             if (overwriteConfigMessageBox(configNameStr)) {
                 copyToFile(configNameconfiguration, configNamerc, configNameStr, Utils::configsPath());
