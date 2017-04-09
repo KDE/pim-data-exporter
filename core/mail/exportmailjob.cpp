@@ -437,13 +437,13 @@ void ExportMailJob::backupConfig()
         }
     }
     const QString adblockFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/adblockrules_local");
-    if (!adblockFilePath.isEmpty()) {
+    if (QFileInfo::exists(adblockFilePath)) {
         backupFile(adblockFilePath, Utils::dataPath() + QLatin1String("kmail2/"), QStringLiteral("adblockrules_local"));
     }
 
     const QString kmailStr(QStringLiteral("kmail2rc"));
     const QString kmail2rc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kmailStr;
-    if (QFile(kmail2rc).exists()) {
+    if (QFileInfo::exists(kmail2rc)) {
         KSharedConfigPtr kmailrc = KSharedConfig::openConfig(kmail2rc);
 
         QTemporaryFile tmp;
