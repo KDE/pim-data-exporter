@@ -85,6 +85,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"pimsettingexporter\")
 
 add_definitions( -DQT_NO_CAST_FROM_ASCII )
 add_definitions( -DQT_NO_CAST_TO_ASCII )
+add_definitions( -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT )
 
 configure_file(pimsettingexporter-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/pimsettingexporter-version.h @ONLY)
 
