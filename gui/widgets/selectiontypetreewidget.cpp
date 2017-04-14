@@ -365,8 +365,7 @@ void SelectionTypeTreeWidget::saveAsDefaultTemplate()
 {
     const QString templateStr = templateSelectionToString();
     QString ret = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/pimsettingexporter/");
-    QFileInfo fileInfo(ret);
-    QDir().mkpath(fileInfo.absolutePath());
+    QDir().mkpath(ret);
 
     PimCommon::Util::saveToFile(ret + QStringLiteral("defaulttemplate.xml"), templateStr);
 }
