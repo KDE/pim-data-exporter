@@ -156,8 +156,10 @@ void PimSettingExporterWindow::slotShowBackupFinishDialogInformation()
 void PimSettingExporterWindow::slotFullSyncFinished()
 {
     slotUpdateActions(false);
-    slotAddInfo(i18n("Full sync finished."));
+    const QString str = i18n("Full sync finished.");
+    slotAddInfo(str);
     mTrayIcon->setStatus(KStatusNotifierItem::Passive);
+    mTrayIcon->setToolTipSubTitle(str);
 }
 
 void PimSettingExporterWindow::slotFullSyncInstanceDone(const QString &identifier)
@@ -308,6 +310,7 @@ void PimSettingExporterWindow::backupData(const QString &filename, const QString
             mRecentFilesAction->addUrl(QUrl::fromLocalFile(currentFileName));
         }
         mTrayIcon->setStatus(KStatusNotifierItem::Active);
+        mTrayIcon->setToolTipSubTitle(i18n("Backup in progress..."));
         if (!mPimSettingsBackupRestoreUI->backupStart(currentFileName)) {
             qCDebug(PIMSETTINGEXPORTERGUI_LOG) << " backup Start failed";
         }
@@ -390,6 +393,7 @@ void PimSettingExporterWindow::loadData(const QString &filename, const QString &
         delete dialog;
 
         mTrayIcon->setStatus(KStatusNotifierItem::Active);
+        mTrayIcon->setToolTipSubTitle(i18n("Restore in progress..."));
         if (!mPimSettingsBackupRestoreUI->restoreStart(currentFileName)) {
             qCDebug(PIMSETTINGEXPORTERGUI_LOG) << " PimSettingExporterWindow restore failed";
         }
