@@ -48,6 +48,7 @@ void LogInFile::setFileName(const QString &fileName)
         if (!mFile) {
             mFile = new QFile(mFileName);
             if (!mFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
+                qCWarning(PIMSETTINGEXPORTERCONSOLE_LOG) << "Impossible to open filename " << mFileName;
                 return;
             }
         }
