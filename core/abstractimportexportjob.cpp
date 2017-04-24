@@ -610,14 +610,15 @@ void AbstractImportExportJob::importDataSubdirectory(const QString &subdirectory
             const KArchiveEntry *entry = themeDir->entry(entryName);
             if (entry && entry->isDirectory()) {
                 QString subFolderName = entryName;
-                QDir themeDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + subdirectoryRelativePath + QStringLiteral("/%1").arg(entryName));
+                const QString topLevelPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + subdirectoryRelativePath;
+                QDir themeDirectory(topLevelPath + QStringLiteral("/%1").arg(entryName));
                 int i = 1;
                 while (themeDirectory.exists()) {
                     subFolderName = entryName + QStringLiteral("_%1").arg(i);
-                    themeDirectory = QDir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + subdirectoryRelativePath + QStringLiteral("/%1").arg(subFolderName));
+                    themeDirectory = QDir(topLevelPath + QStringLiteral("/%1").arg(subFolderName));
                     ++i;
                 }
-                copyToDirectory(entry, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + subdirectoryRelativePath + QStringLiteral("/%1").arg(subFolderName));
+                copyToDirectory(entry, topLevelPath + QStringLiteral("/%1").arg(subFolderName));
             }
         }
     }
