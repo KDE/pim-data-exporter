@@ -39,29 +39,21 @@ BackupFileStructureInfoDialog::BackupFileStructureInfoDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18n("Archive File Structure"));
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    QLabel *lab = new QLabel(i18n("Backup Archive Structure:"));
+    mainLayout->addWidget(lab);
+    mEditor = new KPIMTextEdit::PlainTextEditorWidget;
+    mEditor->editor()->setWebShortcutSupport(false);
+    mEditor->setReadOnly(true);
+    mainLayout->addWidget(mEditor);
+
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &BackupFileStructureInfoDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &BackupFileStructureInfoDialog::reject);
     buttonBox->button(QDialogButtonBox::Close)->setDefault(true);
     setModal(true);
-
-    QWidget *w = new QWidget;
-
-    QVBoxLayout *lay = new QVBoxLayout;
-    lay->setMargin(0);
-    w->setLayout(lay);
-
-    QLabel *lab = new QLabel(i18n("Backup Archive Structure:"));
-    lay->addWidget(lab);
-
-    mEditor = new KPIMTextEdit::PlainTextEditorWidget;
-    mEditor->editor()->setWebShortcutSupport(false);
-    mEditor->setReadOnly(true);
-    lay->addWidget(mEditor);
-    mainLayout->addWidget(w);
     mainLayout->addWidget(buttonBox);
+
     loadStructure();
     readConfig();
 }
