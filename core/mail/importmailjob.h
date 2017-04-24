@@ -47,7 +47,6 @@ private:
     void restoreMails();
     void restoreConfig();
     void restoreIdentity();
-    void restoreAkonadiDb();
 
     void importTemplatesConfig(const KArchiveFile *templatesconfiguration, const QString &templatesconfigurationrc, const QString &filename, const QString &prefix);
     void importKmailConfig(const KArchiveFile *kmailsnippet, const QString &kmail2rc, const QString &filename, const QString &prefix);

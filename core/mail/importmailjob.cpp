@@ -18,7 +18,6 @@
 */
 
 #include "importmailjob.h"
-#include "akonadidatabase.h"
 #include "archivestorage.h"
 
 #include "MailCommon/FilterManager"
@@ -99,8 +98,6 @@ void ImportMailJob::slotNextStep()
             restoreIdentity();
         } else if (type == Utils::Config) {
             restoreConfig();
-        } else if (type == Utils::AkonadiDb) {
-            restoreAkonadiDb();
         } else {
             qCDebug(PIMSETTINGEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
             slotNextStep();
@@ -966,72 +963,6 @@ QString ImportMailJob::uniqueIdentityName(const QString &name)
         ++i;
     }
     return newName;
-}
-
-void ImportMailJob::restoreAkonadiDb()
-{
-    const QString akonadiDbPath(Utils::akonadiPath() + QLatin1String("akonadidatabase.sql"));
-    if (!mFileList.contains(akonadiDbPath)) {
-        Q_EMIT error(i18n("Akonadi database file could not be found in the archive."));
-    } else {
-        Q_EMIT info(i18n("Restore Akonadi Database..."));
-
-        const KArchiveEntry *akonadiDataBaseEntry = mArchiveDirectory->entry(akonadiDbPath);
-        if (akonadiDataBaseEntry && akonadiDataBaseEntry->isFile()) {
-
-            const KArchiveFile *akonadiDataBaseFile = static_cast<const KArchiveFile *>(akonadiDataBaseEntry);
-
-            QTemporaryFile tmp;
-            tmp.open();
-
-            akonadiDataBaseFile->copyTo(tmp.fileName());
-
-            /* Restore the database */
-            AkonadiDataBase akonadiDataBase;
-
-            const QString dbDriver(akonadiDataBase.driver());
-            QStringList params;
-            QString dbRestoreAppName;
-            if (dbDriver == QLatin1String("QPSQL")) {
-                dbRestoreAppName = QStringLiteral("pg_restore");
-                params << akonadiDataBase.options()
-                       << QStringLiteral("--dbname=") + akonadiDataBase.name()
-                       << QStringLiteral("--format=custom")
-                       << QStringLiteral("--clean")
-                       << QStringLiteral("--no-owner")
-                       << QStringLiteral("--no-privileges")
-                       << tmp.fileName();
-            } else if (dbDriver == QLatin1String("QMYSQL")) {
-                dbRestoreAppName = QStringLiteral("mysql");
-                params << akonadiDataBase.options()
-                       << QStringLiteral("--database=") + akonadiDataBase.name();
-            } else {
-                Q_EMIT error(i18n("Database driver \"%1\" not supported.", dbDriver));
-                slotNextStep();
-                return;
-            }
-
-            const QString dbRestoreApp = QStandardPaths::findExecutable(dbRestoreAppName);
-
-            if (dbRestoreApp.isEmpty()) {
-                Q_EMIT error(i18n("Could not find \"%1\" necessary to restore database.", dbRestoreAppName));
-                slotNextStep();
-                return;
-            }
-            KProcess *proc = new KProcess(this);
-            proc->setProgram(QStandardPaths::findExecutable(dbRestoreApp), params);
-            proc->setStandardInputFile(tmp.fileName());
-            const int result = proc->execute();
-            delete proc;
-            if (result != 0) {
-                Q_EMIT error(i18n("Failed to restore Akonadi Database."));
-                slotNextStep();
-                return;
-            }
-        }
-        Q_EMIT info(i18n("Akonadi Database restored."));
-    }
-    slotNextStep();
 }
 
 void ImportMailJob::importArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix)

@@ -102,7 +102,6 @@ bool ShowArchiveStructureDialog::fillTree()
         searchArchiveElement(Utils::configsPath(), topDirectory, Utils::storedTypeToI18n(Utils::Config));
         searchArchiveElement(Utils::transportsPath(), topDirectory, Utils::storedTypeToI18n(Utils::MailTransport));
         searchArchiveElement(Utils::dataPath(), topDirectory, Utils::storedTypeToI18n(Utils::Data));
-        searchArchiveElement(Utils::akonadiPath(), topDirectory, Utils::storedTypeToI18n(Utils::AkonadiDb));
     }
     delete zip;
     return result;

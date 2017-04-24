@@ -235,13 +235,6 @@ void SelectionTypeTreeWidget::createSubItem(QTreeWidgetItem *parent, Utils::Stor
         item->setData(0, action, type);
         break;
     }
-    case Utils::AkonadiDb: {
-        QTreeWidgetItem *item = new QTreeWidgetItem(parent);
-        item->setText(0, Utils::storedTypeToI18n(Utils::AkonadiDb));
-        item->setCheckState(0, Qt::Checked);
-        item->setData(0, action, type);
-        break;
-    }
     case Utils::Data: {
         QTreeWidgetItem *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Data));

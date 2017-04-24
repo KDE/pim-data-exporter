@@ -56,7 +56,6 @@ set(pimsettingexporter_LIB_SRCS
     abstractimportexportjob.cpp
     pimsettingexporterkernel.cpp
     utils.cpp
-    akonadidatabase.cpp
     archivestorage.cpp
     synchronizeresourcejob.cpp
     pimsettingsbackuprestore.cpp

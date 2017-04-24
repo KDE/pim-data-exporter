@@ -74,9 +74,6 @@ Utils::StoredTypes TemplateSelection::loadStoredTypes(const QDomElement &element
             } else if (tagName == QLatin1String("data")) {
                 types |= Utils::Data;
                 numberOfStep++;
-            } else if (tagName == QLatin1String("akonadidb")) {
-                types |= Utils::AkonadiDb;
-                numberOfStep++;
             }
         }
         n = n.nextSibling();
@@ -155,11 +152,6 @@ void TemplateSelection::saveParameters(Utils::StoredTypes type, QDomElement &ele
         QDomElement tag = mDocument.createElement(QStringLiteral("data"));
         elem.appendChild(tag);
     }
-    if (type & Utils::AkonadiDb) {
-        QDomElement tag = mDocument.createElement(QStringLiteral("akonadidb"));
-        elem.appendChild(tag);
-    }
-
 }
 
 void TemplateSelection::createTemplate(const QHash<Utils::AppsType, Utils::importExportParameters> &stored)

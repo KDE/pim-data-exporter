@@ -579,9 +579,6 @@ void AbstractImportExportJob::initializeListStep()
     if (mTypeSelected & Utils::Config) {
         mListStep << Utils::Config;
     }
-    if (mTypeSelected & Utils::AkonadiDb) {
-        mListStep << Utils::AkonadiDb;
-    }
     if (mTypeSelected & Utils::Data) {
         mListStep << Utils::Data;
     }

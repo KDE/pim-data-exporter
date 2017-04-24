@@ -18,7 +18,6 @@
 */
 
 #include "exportmailjob.h"
-#include "akonadidatabase.h"
 
 #include "MailCommon/MailUtil"
 #include "MailCommon/FilterManager"

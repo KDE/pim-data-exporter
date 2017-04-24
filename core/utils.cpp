@@ -369,8 +369,6 @@ QString Utils::storedTypeToI18n(StoredType type)
         return i18n("Resources");
     case Config:
         return i18n("Config");
-    case AkonadiDb:
-        return i18n("Akonadi Database");
     case Data:
         return i18n("Data");
     }
