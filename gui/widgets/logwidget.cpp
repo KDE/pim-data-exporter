@@ -26,10 +26,9 @@
 LogWidget::LogWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *layout = new QHBoxLayout;
-    mCustomLogWidget = new KPIM::CustomLogWidget;
+    QHBoxLayout *layout = new QHBoxLayout(this);
+    mCustomLogWidget = new KPIM::CustomLogWidget(this);
     layout->addWidget(mCustomLogWidget);
-    setLayout(layout);
 }
 
 LogWidget::~LogWidget()
