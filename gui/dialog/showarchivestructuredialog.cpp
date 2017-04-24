@@ -48,6 +48,7 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     mTreeWidget->setAlternatingRowColors(true);
 
     KTreeWidgetSearchLine *searchLine = new KTreeWidgetSearchLine(this, mTreeWidget);
+    searchLine->setPlaceholderText(i18n("Search..."));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     QPushButton *user1Button = new QPushButton;
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
