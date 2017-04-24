@@ -40,17 +40,19 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
       mFileName(filename)
 {
     setWindowTitle(i18n("Show Archive Content on file \"%1\"", filename));
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    setModal(true);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+
+    mTreeWidget = new QTreeWidget(this);
+    mTreeWidget->header()->hide();
+    mTreeWidget->setAlternatingRowColors(true);
+
+    KTreeWidgetSearchLine *searchLine = new KTreeWidgetSearchLine(this, mTreeWidget);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     QPushButton *user1Button = new QPushButton;
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ShowArchiveStructureDialog::reject);
-    setModal(true);
-    mTreeWidget = new QTreeWidget;
-    mTreeWidget->header()->hide();
-    mTreeWidget->setAlternatingRowColors(true);
-    KTreeWidgetSearchLine *searchLine = new KTreeWidgetSearchLine(this, mTreeWidget);
+
     mainLayout->addWidget(searchLine);
     mainLayout->addWidget(mTreeWidget);
     mainLayout->addWidget(buttonBox);

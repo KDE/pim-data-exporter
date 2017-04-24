@@ -28,8 +28,7 @@ PimSettingExporterConfigureDialog::PimSettingExporterConfigureDialog(QWidget *pa
     : QDialog(parent)
 {
     setWindowTitle(i18n("Configure PimSettingExporter"));
-    QVBoxLayout *layout = new QVBoxLayout;
-    setLayout(layout);
+    QVBoxLayout *layout = new QVBoxLayout(this);
     mConfigureWidget = new PimSettingExporterConfigureWidget(this);
     mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
     layout->addWidget(mConfigureWidget);

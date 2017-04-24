@@ -33,14 +33,13 @@ SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18n("Synchronize Resources"));
-    QVBoxLayout *topLayout = new QVBoxLayout;
-    setLayout(topLayout);
+    QVBoxLayout *topLayout = new QVBoxLayout(this);
 
-    QLabel *lab = new QLabel(i18n("Some resources were added but data were not sync. Select resources that you want to sync:"));
+    QLabel *lab = new QLabel(i18n("Some resources were added but data were not sync. Select resources that you want to sync:"), this);
     lab->setWordWrap(true);
     lab->setObjectName(QStringLiteral("label"));
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
