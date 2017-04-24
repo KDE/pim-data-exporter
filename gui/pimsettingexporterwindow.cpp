@@ -88,6 +88,7 @@ PimSettingExporterWindow::PimSettingExporterWindow(QWidget *parent)
 
 PimSettingExporterWindow::~PimSettingExporterWindow()
 {
+    MailCommon::FilterManager::instance()->cleanup();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup groupConfig = config->group(QStringLiteral("Recent File"));
     mRecentFilesAction->saveEntries(groupConfig);
