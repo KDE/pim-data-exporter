@@ -31,13 +31,13 @@ public:
     explicit ImportAlarmJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportAlarmJob();
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 protected Q_SLOTS:
-    void slotNextStep() Q_DECL_OVERRIDE;
+    void slotNextStep() override;
 
 private:
-    bool isAConfigFile(const QString &name) const  Q_DECL_OVERRIDE;
+    bool isAConfigFile(const QString &name) const  override;
     void importkalarmConfig(const KArchiveFile *kalarmFile, const QString &kalarmrc, const QString &filename, const QString &prefix);
     void restoreResources();
     void restoreConfig();

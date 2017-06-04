@@ -31,7 +31,7 @@ public:
     explicit ExportAkregatorJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportAkregatorJob();
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 private Q_SLOTS:
     void slotCheckBackupConfig();

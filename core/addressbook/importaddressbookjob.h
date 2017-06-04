@@ -32,17 +32,17 @@ public:
     explicit ImportAddressbookJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportAddressbookJob();
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 protected Q_SLOTS:
-    void slotNextStep() Q_DECL_OVERRIDE;
+    void slotNextStep() override;
 
 private:
-    bool isAConfigFile(const QString &name) const Q_DECL_OVERRIDE;
+    bool isAConfigFile(const QString &name) const override;
     void importkaddressBookConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void restoreResources();
     void restoreConfig();
-    void addSpecificResourceSettings(KSharedConfig::Ptr resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) Q_DECL_OVERRIDE;
+    void addSpecificResourceSettings(KSharedConfig::Ptr resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
 };
 
 #endif // IMPORTADDRESSBOOKJOB_H

@@ -30,8 +30,8 @@ public:
     ~ImportExportProgressIndicatorConsole();
 
 private:
-    void setProgressDialogLabel(const QString &text) Q_DECL_OVERRIDE;
-    void showErrorMessage(const QString &message, const QString &title) Q_DECL_OVERRIDE;
+    void setProgressDialogLabel(const QString &text) override;
+    void showErrorMessage(const QString &message, const QString &title) override;
 };
 
 #endif // IMPORTEXPORTPROGRESSINDICATORCONSOLE_H

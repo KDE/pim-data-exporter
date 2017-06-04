@@ -33,7 +33,7 @@ public:
     explicit ExportMailJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportMailJob();
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 Q_SIGNALS:
     void taskCanceled();

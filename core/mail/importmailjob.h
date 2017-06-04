@@ -36,10 +36,10 @@ public:
     explicit ImportMailJob(QObject *widget, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportMailJob();
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 protected Q_SLOTS:
-    void slotNextStep() Q_DECL_OVERRIDE;
+    void slotNextStep() override;
 
 private:
     void restoreTransports();

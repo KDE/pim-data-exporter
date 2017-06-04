@@ -31,10 +31,10 @@ public:
     explicit ImportAkregatorJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportAkregatorJob();
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 private Q_SLOTS:
-    void slotNextStep() Q_DECL_OVERRIDE;
+    void slotNextStep() override;
 
 private:
     void restoreConfig();

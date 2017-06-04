@@ -30,8 +30,8 @@ public:
     ~PimSettingsBackupRestoreUI();
 
 protected:
-    bool continueToRestore() Q_DECL_OVERRIDE;
-    void addExportProgressIndicator() Q_DECL_OVERRIDE;
+    bool continueToRestore() override;
+    void addExportProgressIndicator() override;
 private:
     QWidget *mParentWidget;
 };

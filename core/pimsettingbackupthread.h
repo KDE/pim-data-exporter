@@ -35,7 +35,7 @@ Q_SIGNALS:
     void terminated(bool success);
 
 protected:
-    void run() Q_DECL_OVERRIDE;
+    void run() override;
 
 private:
     QString mUrl;
