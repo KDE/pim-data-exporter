@@ -27,7 +27,7 @@
 #include <QCoreApplication>
 #include <QCommandLineOption>
 
-#include <QtCore/qtimer.h>
+#include <QTimer>
 
 int main(int argc, char *argv[])
 {
