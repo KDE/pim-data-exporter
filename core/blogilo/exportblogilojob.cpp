@@ -71,7 +71,7 @@ void ExportBlogiloJob::slotCheckBackupData()
         const QString dbfileStr = QStringLiteral("blogilo.db");
         const QString dbfile = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/blogilo/") + dbfileStr;
         if (QFileInfo::exists(dbfile)) {
-            backupFile(dbfile, Utils::dataPath() +  QLatin1String("/blogilo/"), dbfileStr);
+            backupFile(dbfile, Utils::dataPath() +  QLatin1String("blogilo/"), dbfileStr);
         }
 
         Q_EMIT info(i18n("Data backup done."));
