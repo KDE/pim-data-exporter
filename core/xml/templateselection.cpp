@@ -18,11 +18,12 @@
 */
 
 #include "templateselection.h"
-#include <QDomDocument>
 #include "pimsettingexportcore_debug.h"
 #include <QFile>
+#include <QXmlStreamWriter>
 
 TemplateSelection::TemplateSelection(const QString &path)
+    : mStreamWriter(nullptr)
 {
     if (!path.isEmpty()) {
         QDomDocument doc;
@@ -45,7 +46,7 @@ TemplateSelection::TemplateSelection(const QString &path)
 
 TemplateSelection::~TemplateSelection()
 {
-
+    delete mStreamWriter;
 }
 
 Utils::StoredTypes TemplateSelection::loadStoredTypes(const QDomElement &element, int &numberOfStep)
@@ -126,86 +127,87 @@ QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTem
     return value;
 }
 
-void TemplateSelection::saveParameters(Utils::StoredTypes type, QDomElement &elem)
+void TemplateSelection::saveParameters(Utils::StoredTypes type)
 {
     if (type & Utils::MailTransport) {
-        QDomElement tag = mDocument.createElement(QStringLiteral("mailtransport"));
-        elem.appendChild(tag);
+        mStreamWriter->writeEmptyElement(QStringLiteral("mailtransport"));
     }
     if (type & Utils::Mails) {
-        QDomElement tag = mDocument.createElement(QStringLiteral("mail"));
-        elem.appendChild(tag);
+        mStreamWriter->writeEmptyElement(QStringLiteral("mail"));
     }
     if (type & Utils::Resources) {
-        QDomElement tag = mDocument.createElement(QStringLiteral("resources"));
-        elem.appendChild(tag);
+        mStreamWriter->writeEmptyElement(QStringLiteral("resources"));
     }
     if (type & Utils::Identity) {
-        QDomElement tag = mDocument.createElement(QStringLiteral("identity"));
-        elem.appendChild(tag);
+        mStreamWriter->writeEmptyElement(QStringLiteral("identity"));
     }
     if (type & Utils::Config) {
-        QDomElement tag = mDocument.createElement(QStringLiteral("config"));
-        elem.appendChild(tag);
+        mStreamWriter->writeEmptyElement(QStringLiteral("config"));
     }
     if (type & Utils::Data) {
-        QDomElement tag = mDocument.createElement(QStringLiteral("data"));
-        elem.appendChild(tag);
+        mStreamWriter->writeEmptyElement(QStringLiteral("data"));
     }
+}
+
+QString TemplateSelection::saveTemplate() const
+{
+    return mSaveTemplate;
 }
 
 void TemplateSelection::createTemplate(const QHash<Utils::AppsType, Utils::importExportParameters> &stored)
 {
-    mDocument = QDomDocument();
-    QDomProcessingInstruction xmlDeclaration = mDocument.createProcessingInstruction(QStringLiteral("xml"), QStringLiteral("version=\"1.0\""));
-    mDocument.appendChild(xmlDeclaration);
+    mSaveTemplate.clear();
+    delete mStreamWriter;
+    mStreamWriter = new QXmlStreamWriter(&mSaveTemplate);
+    mStreamWriter->setAutoFormatting(true);
+    mStreamWriter->setAutoFormattingIndent(2);
+    mStreamWriter->writeStartDocument();
 
-    QDomElement root = mDocument.createElement(QStringLiteral("pimsettingexporter"));
-    mDocument.appendChild(root);
+    mStreamWriter->writeStartElement(QStringLiteral("pimsettingexporter"));
 
     QHash<Utils::AppsType, Utils::importExportParameters>::const_iterator i = stored.constBegin();
     while (i != stored.constEnd())  {
         switch (i.key()) {
         case Utils::KMail: {
-            QDomElement tag = mDocument.createElement(QStringLiteral("kmail"));
-            root.appendChild(tag);
-            saveParameters(i.value().types, tag);
+            mStreamWriter->writeStartElement(QStringLiteral("kmail"));
+            saveParameters(i.value().types);
+            mStreamWriter->writeEndElement();
             break;
         }
         case Utils::KAddressBook: {
-            QDomElement tag = mDocument.createElement(QStringLiteral("kaddressbook"));
-            root.appendChild(tag);
-            saveParameters(i.value().types, tag);
+            mStreamWriter->writeStartElement(QStringLiteral("kaddressbook"));
+            saveParameters(i.value().types);
+            mStreamWriter->writeEndElement();
             break;
         }
         case Utils::KAlarm: {
-            QDomElement tag = mDocument.createElement(QStringLiteral("kalarm"));
-            root.appendChild(tag);
-            saveParameters(i.value().types, tag);
+            mStreamWriter->writeStartElement(QStringLiteral("kalarm"));
+            saveParameters(i.value().types);
+            mStreamWriter->writeEndElement();
             break;
         }
         case Utils::KOrganizer: {
-            QDomElement tag = mDocument.createElement(QStringLiteral("korganizer"));
-            root.appendChild(tag);
-            saveParameters(i.value().types, tag);
+            mStreamWriter->writeStartElement(QStringLiteral("korganizer"));
+            saveParameters(i.value().types);
+            mStreamWriter->writeEndElement();
             break;
         }
         case Utils::KNotes: {
-            QDomElement tag = mDocument.createElement(QStringLiteral("knotes"));
-            root.appendChild(tag);
-            saveParameters(i.value().types, tag);
+            mStreamWriter->writeStartElement(QStringLiteral("knotes"));
+            saveParameters(i.value().types);
+            mStreamWriter->writeEndElement();
             break;
         }
         case Utils::Akregator: {
-            QDomElement tag = mDocument.createElement(QStringLiteral("akregator"));
-            root.appendChild(tag);
-            saveParameters(i.value().types, tag);
+            mStreamWriter->writeStartElement(QStringLiteral("akregator"));
+            saveParameters(i.value().types);
+            mStreamWriter->writeEndElement();
             break;
         }
         case Utils::Blogilo: {
-            QDomElement tag = mDocument.createElement(QStringLiteral("blogilo"));
-            root.appendChild(tag);
-            saveParameters(i.value().types, tag);
+            mStreamWriter->writeStartElement(QStringLiteral("blogilo"));
+            saveParameters(i.value().types);
+            mStreamWriter->writeEndElement();
             break;
         }
         case Utils::Unknown: {
@@ -215,9 +217,5 @@ void TemplateSelection::createTemplate(const QHash<Utils::AppsType, Utils::impor
         }
         ++i;
     }
-}
-
-QDomDocument TemplateSelection::document() const
-{
-    return mDocument;
+    mStreamWriter->writeEndElement();
 }

@@ -350,7 +350,7 @@ QString SelectionTypeTreeWidget::templateSelectionToString()
 {
     TemplateSelection templateSelection;
     templateSelection.createTemplate(storedType());
-    const QString templateStr = templateSelection.document().toString(2);
+    const QString templateStr = templateSelection.saveTemplate();
     return templateStr;
 }
 

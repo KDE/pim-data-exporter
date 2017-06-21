@@ -24,7 +24,7 @@
 #include <QHash>
 #include <QDomDocument>
 #include "utils.h"
-
+class QXmlStreamWriter;
 class PIMSETTINGEXPORTER_EXPORT TemplateSelection
 {
 public:
@@ -33,13 +33,16 @@ public:
 
     void createTemplate(const QHash<Utils::AppsType, Utils::importExportParameters> &stored);
 
-    QDomDocument document() const;
-
     QHash<Utils::AppsType, Utils::importExportParameters> loadTemplate(const QDomDocument &doc = QDomDocument());
+
+    QString saveTemplate() const;
+
 private:
     static Utils::StoredTypes loadStoredTypes(const QDomElement &element, int &numberOfStep);
-    void saveParameters(Utils::StoredTypes type, QDomElement &elem);
+    void saveParameters(Utils::StoredTypes type);
     QDomDocument mDocument;
+    QXmlStreamWriter *mStreamWriter;
+    QString mSaveTemplate;
 };
 
 #endif // TEMPLATESELECTION_H
