@@ -82,12 +82,9 @@ Utils::StoredTypes TemplateSelection::loadStoredTypes(const QDomElement &element
     return types;
 }
 
-QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTemplate(const QDomDocument &doc)
+QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTemplate()
 {
     QHash<Utils::AppsType, Utils::importExportParameters> value;
-    if (!doc.isNull()) {
-        mDocument = doc;
-    }
     QDomElement docElem = mDocument.documentElement();
     QDomNode n = docElem.firstChild();
     while (!n.isNull())  {

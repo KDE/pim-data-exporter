@@ -33,7 +33,7 @@ public:
 
     void createTemplate(const QHash<Utils::AppsType, Utils::importExportParameters> &stored);
 
-    QHash<Utils::AppsType, Utils::importExportParameters> loadTemplate(const QDomDocument &doc = QDomDocument());
+    QHash<Utils::AppsType, Utils::importExportParameters> loadTemplate();
 
     QString saveTemplate() const;
 
