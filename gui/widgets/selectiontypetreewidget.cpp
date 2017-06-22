@@ -308,8 +308,8 @@ void SelectionTypeTreeWidget::slotItemChanged(QTreeWidgetItem *item, int column)
 void SelectionTypeTreeWidget::loadFileName(const QString &fileName)
 {
     unSelectAllItems();
-    TemplateSelection templateSelection(fileName);
-    const QHash<Utils::AppsType, Utils::importExportParameters> params = templateSelection.loadTemplate();
+    TemplateSelection templateSelection;
+    const QHash<Utils::AppsType, Utils::importExportParameters> params = templateSelection.loadTemplate(fileName);
     setParameters(params);
 }
 

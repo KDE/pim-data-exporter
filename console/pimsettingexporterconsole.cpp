@@ -147,8 +147,8 @@ void PimSettingExporterConsole::start()
 {
     //Load template if necessary
     if (!mTemplateFileName.isEmpty()) {
-        TemplateSelection selection(mTemplateFileName);
-        const QHash<Utils::AppsType, Utils::importExportParameters> templateElements = selection.loadTemplate();
+        TemplateSelection selection;
+        const QHash<Utils::AppsType, Utils::importExportParameters> templateElements = selection.loadTemplate(mTemplateFileName);
         mPimSettingsBackupRestore->setStoredParameters(templateElements);
     }
     switch (mMode) {

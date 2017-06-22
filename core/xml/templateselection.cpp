@@ -22,105 +22,97 @@
 #include <QFile>
 #include <QXmlStreamWriter>
 
-TemplateSelection::TemplateSelection(const QString &path)
-    : mStreamWriter(nullptr)
+TemplateSelection::TemplateSelection()
+    : mStreamWriter(nullptr),
+      mStreamReader(nullptr)
 {
-    if (!path.isEmpty()) {
-        QDomDocument doc;
-        QString errorMsg;
-        int errorRow;
-        int errorCol;
-        QFile file(path);
-        if (file.open(QIODevice::ReadOnly)) {
-            if (!doc.setContent(&file, &errorMsg, &errorRow, &errorCol)) {
-                qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Unable to load document.Parse error in line " << errorRow
-                                                    << ", col " << errorCol << ": " << errorMsg;
-            } else {
-                mDocument = doc;
-            }
-        } else {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Unable to load file:" << path;
-        }
-    }
 }
 
 TemplateSelection::~TemplateSelection()
 {
     delete mStreamWriter;
+    delete mStreamReader;
 }
 
-Utils::StoredTypes TemplateSelection::loadStoredTypes(const QDomElement &element, int &numberOfStep)
+Utils::StoredTypes TemplateSelection::loadStoredTypes(int &numberOfStep)
 {
     Utils::StoredTypes types = Utils::None;
-    QDomNode n = element.firstChild();
-    while (!n.isNull())  {
-        QDomElement e = n.toElement();
-        if (!e.isNull())  {
-            const QString tagName(e.tagName());
-            if (tagName == QLatin1String("mailtransport")) {
-                types |= Utils::MailTransport;
-                numberOfStep++;
-            } else if (tagName == QLatin1String("mail")) {
-                types |= Utils::Mails;
-                numberOfStep++;
-            } else if (tagName == QLatin1String("resources")) {
-                types |= Utils::Resources;
-                numberOfStep++;
-            } else if (tagName == QLatin1String("identity")) {
-                types |= Utils::Identity;
-                numberOfStep++;
-            } else if (tagName == QLatin1String("config")) {
-                types |= Utils::Config;
-                numberOfStep++;
-            } else if (tagName == QLatin1String("data")) {
-                types |= Utils::Data;
-                numberOfStep++;
-            }
+    while(mStreamReader->readNextStartElement()) {
+        if (mStreamReader->name() == QLatin1String("mailtransport")) {
+            types |= Utils::MailTransport;
+            numberOfStep++;
+        } else if (mStreamReader->name() == QLatin1String("mail")) {
+            types |= Utils::Mails;
+            numberOfStep++;
+        } else if (mStreamReader->name() == QLatin1String("resources")) {
+            types |= Utils::Resources;
+            numberOfStep++;
+        } else if (mStreamReader->name() == QLatin1String("identity")) {
+            types |= Utils::Identity;
+            numberOfStep++;
+        } else if (mStreamReader->name() == QLatin1String("config")) {
+            types |= Utils::Config;
+            numberOfStep++;
+        } else if (mStreamReader->name() == QLatin1String("data")) {
+            types |= Utils::Data;
+            numberOfStep++;
         }
-        n = n.nextSibling();
+        mStreamReader->skipCurrentElement();
     }
     return types;
 }
 
-QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTemplate()
+QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTemplate(const QString &path)
 {
+    if (path.isEmpty()) {
+        return {};
+    }
+    QFile file(path);
+    if (!file.open(QIODevice::ReadOnly|QIODevice::Text)) {
+        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Unable to load file:" << path;
+        return {};
+    } else {
+        mStreamReader = new QXmlStreamReader(&file);
+    }
+
     QHash<Utils::AppsType, Utils::importExportParameters> value;
-    QDomElement docElem = mDocument.documentElement();
-    QDomNode n = docElem.firstChild();
-    while (!n.isNull())  {
-        QDomElement e = n.toElement();
-        if (!e.isNull())  {
-            const QString tagName(e.tagName());
-            //qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "tag :" << tagName;
-            Utils::AppsType type = Utils::Unknown;
-            if (tagName == QLatin1String("kmail")) {
-                type = Utils::KMail;
-            } else if (tagName == QLatin1String("kaddressbook")) {
-                type = Utils::KAddressBook;
-            } else if (tagName == QLatin1String("kalarm")) {
-                type = Utils::KAlarm;
-            } else if (tagName == QLatin1String("korganizer")) {
-                type = Utils::KOrganizer;
-            } else if (tagName == QLatin1String("knotes")) {
-                type = Utils::KNotes;
-            } else if (tagName == QLatin1String("akregator")) {
-                type = Utils::Akregator;
-            } else if (tagName == QLatin1String("blogilo")) {
-                type = Utils::Blogilo;
-            }
-            if (type != Utils::Unknown) {
-                int numberOfSteps = 0;
-                Utils::StoredTypes storedType = loadStoredTypes(e, numberOfSteps);
-                if (storedType != Utils::None) {
-                    Utils::importExportParameters utils;
-                    utils.types = storedType;
-                    utils.numberSteps = numberOfSteps;
-                    value.insert(type, utils);
+    if (mStreamReader->readNextStartElement()) {
+        if (mStreamReader->name() == QLatin1String("pimsettingexporter")) {
+            while(mStreamReader->readNextStartElement()) {
+                Utils::AppsType type = Utils::Unknown;
+                if (mStreamReader->name() == QLatin1String("kmail")) {
+                    type = Utils::KMail;
+                } else if (mStreamReader->name() == QLatin1String("kaddressbook")) {
+                    type = Utils::KAddressBook;
+                } else if (mStreamReader->name() == QLatin1String("kalarm")) {
+                    type = Utils::KAlarm;
+                } else if (mStreamReader->name() == QLatin1String("korganizer")) {
+                    type = Utils::KOrganizer;
+                } else if (mStreamReader->name() == QLatin1String("knotes")) {
+                    type = Utils::KNotes;
+                } else if (mStreamReader->name() == QLatin1String("akregator")) {
+                    type = Utils::Akregator;
+                } else if (mStreamReader->name() == QLatin1String("blogilo")) {
+                    type = Utils::Blogilo;
+                }
+                if (type != Utils::Unknown) {
+                    int numberOfSteps = 0;
+                    Utils::StoredTypes storedType = loadStoredTypes(numberOfSteps);
+                    if (storedType != Utils::None) {
+                        Utils::importExportParameters utils;
+                        utils.types = storedType;
+                        utils.numberSteps = numberOfSteps;
+                        value.insert(type, utils);
+                    }
                 }
             }
+        } else {
+            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Toplevel xml is not correct";
         }
-        n = n.nextSibling();
+    } else {
+        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Impossible to parse file";
     }
+
     return value;
 }
 
