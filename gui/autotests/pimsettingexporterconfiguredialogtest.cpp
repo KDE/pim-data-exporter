@@ -26,12 +26,10 @@
 PimSettingExporterConfigureDialogTest::PimSettingExporterConfigureDialogTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 PimSettingExporterConfigureDialogTest::~PimSettingExporterConfigureDialogTest()
 {
-
 }
 
 void PimSettingExporterConfigureDialogTest::shouldHaveDefaultValue()

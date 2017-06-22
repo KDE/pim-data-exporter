@@ -22,8 +22,8 @@
 #include <KLocalizedString>
 
 ArchiveStorage::ArchiveStorage(const QString &filename, QObject *parent)
-    : QObject(parent),
-      mArchive(new KZip(filename))
+    : QObject(parent)
+    , mArchive(new KZip(filename))
 {
 }
 
@@ -66,4 +66,3 @@ KZip *ArchiveStorage::archive() const
 {
     return mArchive;
 }
-

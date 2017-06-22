@@ -21,15 +21,13 @@
 #include <KMessageBox>
 
 ImportExportProgressIndicatorBase::ImportExportProgressIndicatorBase(QObject *parent)
-    : QObject(parent),
-      mNumberOfStep(0)
+    : QObject(parent)
+    , mNumberOfStep(0)
 {
-
 }
 
 ImportExportProgressIndicatorBase::~ImportExportProgressIndicatorBase()
 {
-
 }
 
 void ImportExportProgressIndicatorBase::increaseProgressDialog()

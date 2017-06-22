@@ -60,14 +60,14 @@
 #include <dialog/pimsettingexporterconfiguredialog.h>
 
 PimSettingExporterWindow::PimSettingExporterWindow(QWidget *parent)
-    : KXmlGuiWindow(parent),
-      mBackupAction(nullptr),
-      mRestoreAction(nullptr),
-      mSaveLogAction(nullptr),
-      mArchiveStructureInfo(nullptr),
-      mShowArchiveInformationsAction(nullptr),
-      mPimSettingsBackupRestoreUI(nullptr),
-      mTrayIcon(nullptr)
+    : KXmlGuiWindow(parent)
+    , mBackupAction(nullptr)
+    , mRestoreAction(nullptr)
+    , mSaveLogAction(nullptr)
+    , mArchiveStructureInfo(nullptr)
+    , mShowArchiveInformationsAction(nullptr)
+    , mPimSettingsBackupRestoreUI(nullptr)
+    , mTrayIcon(nullptr)
 {
     //Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
@@ -175,7 +175,8 @@ void PimSettingExporterWindow::slotFullSyncInstanceFailed(const QString &identif
 
 void PimSettingExporterWindow::showFinishInformation()
 {
-    KMessageBox::information(this, i18n("For restoring data, you must use \"pimsettingexporter\". Be careful it can overwrite existing settings, data."), i18n("Backup infos."), QStringLiteral("setProgressDialogLabelBackupInfos"));
+    KMessageBox::information(this, i18n("For restoring data, you must use \"pimsettingexporter\". Be careful it can overwrite existing settings, data."), i18n("Backup infos."),
+                             QStringLiteral("setProgressDialogLabelBackupInfos"));
     mTrayIcon->setStatus(KStatusNotifierItem::Passive);
 }
 
@@ -300,8 +301,8 @@ void PimSettingExporterWindow::backupData(const QString &filename, const QString
         if (currentFileName.isEmpty()) {
             QString recentDirClass;
             currentFileName = QFileDialog::getSaveFileName(this, i18n("Create backup"),
-                              KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")), recentDirClass).toLocalFile(),
-                              i18n("Zip file (*.zip)"));
+                                                           KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")), recentDirClass).toLocalFile(),
+                                                           i18n("Zip file (*.zip)"));
             if (currentFileName.isEmpty()) {
                 return;
             }
@@ -361,8 +362,8 @@ void PimSettingExporterWindow::loadData(const QString &filename, const QString &
     if (currentFileName.isEmpty()) {
         QString recentDirClass;
         currentFileName = QFileDialog::getOpenFileName(this, i18n("Restore backup"),
-                          KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")), recentDirClass).toLocalFile(),
-                          i18n("Zip File (*.zip)"));
+                                                       KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")), recentDirClass).toLocalFile(),
+                                                       i18n("Zip File (*.zip)"));
         if (currentFileName.isEmpty()) {
             return;
         }

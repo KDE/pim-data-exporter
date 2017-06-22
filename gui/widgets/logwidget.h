@@ -21,8 +21,7 @@
 #define LOGWIDGET_H
 
 #include <QWidget>
-namespace KPIM
-{
+namespace KPIM {
 class CustomLogWidget;
 }
 

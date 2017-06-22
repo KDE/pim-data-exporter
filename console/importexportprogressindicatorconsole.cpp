@@ -23,7 +23,6 @@
 ImportExportProgressIndicatorConsole::ImportExportProgressIndicatorConsole(QObject *parent)
     : ImportExportProgressIndicatorBase(parent)
 {
-
 }
 
 ImportExportProgressIndicatorConsole::~ImportExportProgressIndicatorConsole()
@@ -39,4 +38,3 @@ void ImportExportProgressIndicatorConsole::showErrorMessage(const QString &messa
 {
     qDebug() << " message " << message << " title " << title;
 }
-

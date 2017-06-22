@@ -31,7 +31,6 @@ SelectionTypeTreeWidgetTest::SelectionTypeTreeWidgetTest(QObject *parent)
 
 SelectionTypeTreeWidgetTest::~SelectionTypeTreeWidgetTest()
 {
-
 }
 
 void SelectionTypeTreeWidgetTest::shouldHaveDefaultSelectedWidget()
@@ -60,6 +59,7 @@ void checkState(SelectionTypeTreeWidget *mSelectionTreeWidget, bool checked)
         }
     }
 }
+
 void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
 {
     QFETCH(QString, filename);

@@ -34,7 +34,6 @@ ExportAkregatorJob::ExportAkregatorJob(QObject *parent, Utils::StoredTypes typeS
 
 ExportAkregatorJob::~ExportAkregatorJob()
 {
-
 }
 
 void ExportAkregatorJob::start()
@@ -82,4 +81,3 @@ void ExportAkregatorJob::slotCheckBackupData()
     }
     Q_EMIT jobFinished();
 }
-

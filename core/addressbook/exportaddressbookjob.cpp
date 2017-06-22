@@ -32,8 +32,8 @@
 #include <QTimer>
 
 ExportAddressbookJob::ExportAddressbookJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
-    : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep),
-      mIndexIdentifier(0)
+    : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
+    , mIndexIdentifier(0)
 {
 }
 
@@ -172,4 +172,3 @@ void ExportAddressbookJob::backupConfig()
 
     Q_EMIT info(i18n("Config backup done."));
 }
-

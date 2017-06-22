@@ -23,8 +23,8 @@
 #include <QFile>
 
 LogInFile::LogInFile(QObject *parent)
-    : QObject(parent),
-      mFile(nullptr)
+    : QObject(parent)
+    , mFile(nullptr)
 {
 }
 

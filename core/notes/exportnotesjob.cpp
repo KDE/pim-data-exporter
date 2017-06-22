@@ -32,14 +32,13 @@
 #include <exportresourcearchivejob.h>
 
 ExportNotesJob::ExportNotesJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
-    : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep),
-      mIndexIdentifier(0)
+    : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
+    , mIndexIdentifier(0)
 {
 }
 
 ExportNotesJob::~ExportNotesJob()
 {
-
 }
 
 void ExportNotesJob::start()

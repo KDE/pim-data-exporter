@@ -24,10 +24,9 @@
 #include <QTemporaryDir>
 
 PimSettingImportDataInfoFile::PimSettingImportDataInfoFile(QObject *parent)
-    : QObject(parent),
-      mTempDir(nullptr)
+    : QObject(parent)
+    , mTempDir(nullptr)
 {
-
 }
 
 PimSettingImportDataInfoFile::~PimSettingImportDataInfoFile()

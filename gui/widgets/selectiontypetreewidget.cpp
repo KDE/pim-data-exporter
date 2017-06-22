@@ -200,42 +200,48 @@ void SelectionTypeTreeWidget::createSubItem(QTreeWidgetItem *parent, Utils::Stor
     switch (type) {
     case Utils::None:
         break;
-    case Utils::Identity: {
+    case Utils::Identity:
+    {
         QTreeWidgetItem *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Identity));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);
         break;
     }
-    case Utils::Mails: {
+    case Utils::Mails:
+    {
         QTreeWidgetItem *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Mails));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);
         break;
     }
-    case Utils::MailTransport: {
+    case Utils::MailTransport:
+    {
         QTreeWidgetItem *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::MailTransport));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);
         break;
     }
-    case Utils::Resources: {
+    case Utils::Resources:
+    {
         QTreeWidgetItem *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Resources));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);
         break;
     }
-    case Utils::Config: {
+    case Utils::Config:
+    {
         QTreeWidgetItem *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Config));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);
         break;
     }
-    case Utils::Data: {
+    case Utils::Data:
+    {
         QTreeWidgetItem *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Data));
         item->setCheckState(0, Qt::Checked);
@@ -385,39 +391,31 @@ void SelectionTypeTreeWidget::initializeSubItem(QTreeWidgetItem *item, Utils::St
 void SelectionTypeTreeWidget::setParameters(const QHash<Utils::AppsType, Utils::importExportParameters> &params)
 {
     QHash<Utils::AppsType, Utils::importExportParameters>::const_iterator i = params.constBegin();
-    while (i != params.constEnd())  {
+    while (i != params.constEnd()) {
         switch (i.key()) {
-        case Utils::KMail: {
+        case Utils::KMail:
             initializeSubItem(mKmailItem, i.value().types);
             break;
-        }
-        case Utils::KAddressBook: {
+        case Utils::KAddressBook:
             initializeSubItem(mKaddressbookItem, i.value().types);
             break;
-        }
-        case Utils::KAlarm: {
+        case Utils::KAlarm:
             initializeSubItem(mKalarmItem, i.value().types);
             break;
-        }
-        case Utils::KOrganizer: {
+        case Utils::KOrganizer:
             initializeSubItem(mKorganizerItem, i.value().types);
             break;
-        }
-        case Utils::KNotes: {
+        case Utils::KNotes:
             initializeSubItem(mKNotesItem, i.value().types);
             break;
-        }
-        case Utils::Akregator: {
+        case Utils::Akregator:
             initializeSubItem(mAkregatorItem, i.value().types);
             break;
-        }
-        case Utils::Blogilo: {
+        case Utils::Blogilo:
             initializeSubItem(mBlogiloItem, i.value().types);
             break;
-        }
-        case Utils::Unknown: {
+        case Utils::Unknown:
             break;
-        }
         }
         ++i;
     }

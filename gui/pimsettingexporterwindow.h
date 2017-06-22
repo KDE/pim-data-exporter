@@ -27,7 +27,7 @@ class QAction;
 class QCommandLineParser;
 class PimSettingsBackupRestoreUI;
 class PimSettingsTrayIcon;
-class PimSettingExporterWindow: public KXmlGuiWindow
+class PimSettingExporterWindow : public KXmlGuiWindow
 {
     Q_OBJECT
 public:
@@ -79,4 +79,3 @@ private:
 };
 
 #endif /* PIMSETTINGEXPORTERWINDOW_H */
-

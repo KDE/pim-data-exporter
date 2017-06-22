@@ -54,7 +54,6 @@ PimSettingExporterConfigureWidget::PimSettingExporterConfigureWidget(QWidget *pa
 
 PimSettingExporterConfigureWidget::~PimSettingExporterConfigureWidget()
 {
-
 }
 
 void PimSettingExporterConfigureWidget::initialize()

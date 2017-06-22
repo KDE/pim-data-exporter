@@ -21,8 +21,7 @@
 #define BACKUPFILESTRUCTUREINFODIALOG_H
 
 #include <QDialog>
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class PlainTextEditorWidget;
 }
 class BackupFileStructureInfoDialog : public QDialog

@@ -34,7 +34,6 @@ ExportBlogiloJob::ExportBlogiloJob(QObject *parent, Utils::StoredTypes typeSelec
 
 ExportBlogiloJob::~ExportBlogiloJob()
 {
-
 }
 
 void ExportBlogiloJob::start()
@@ -78,4 +77,3 @@ void ExportBlogiloJob::slotCheckBackupData()
     }
     Q_EMIT jobFinished();
 }
-

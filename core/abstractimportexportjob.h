@@ -34,14 +34,12 @@ class KZip;
 class KArchiveFile;
 class KArchiveEntry;
 
-namespace KIdentityManagement
-{
+namespace KIdentityManagement {
 class Identity;
 class IdentityManager;
 }
 
-namespace PimCommon
-{
+namespace PimCommon {
 class CreateResource;
 }
 class ImportExportProgressIndicatorBase;

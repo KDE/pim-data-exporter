@@ -256,7 +256,7 @@ QString Utils::storeResources(KZip *archive, const QString &identifier, const QS
     }
     //Customize resource if necessary here.
     config->sync();
-    bool fileAdded  = archive->addLocalFile(tmp.fileName(), path + agentFileName);
+    bool fileAdded = archive->addLocalFile(tmp.fileName(), path + agentFileName);
     delete config;
     if (!fileAdded) {
         return i18n("Resource file \"%1\" cannot be added to backup file.", agentFileName);
@@ -265,7 +265,7 @@ QString Utils::storeResources(KZip *archive, const QString &identifier, const QS
     const QString agentConfigFileName = QLatin1String("agent_config_") + identifier;
     const QString agentConfigFileNamePath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1String("/akonadi/") + agentConfigFileName;
     if (QFileInfo::exists(agentConfigFileNamePath)) {
-        fileAdded  = archive->addLocalFile(agentConfigFileNamePath, path + agentConfigFileName);
+        fileAdded = archive->addLocalFile(agentConfigFileNamePath, path + agentConfigFileName);
         if (!fileAdded) {
             return i18n("Resource file \"%1\" cannot be added to backup file.", agentFileName);
         }
@@ -296,7 +296,7 @@ KZip *Utils::openZip(const QString &filename, QString &errorMsg)
 void Utils::storeDataExportInfo(const QString &filename, KZip *archive)
 {
     if (QFileInfo::exists(filename)) {
-        const bool fileAdded  = archive->addLocalFile(filename, Utils::infoPath() + Utils::exportDataTypeFileName());
+        const bool fileAdded = archive->addLocalFile(filename, Utils::infoPath() + Utils::exportDataTypeFileName());
         if (fileAdded) {
             qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "exporteddata file can not add to archive" << filename;
         }
@@ -309,7 +309,7 @@ void Utils::addVersion(KZip *archive)
 {
     QTemporaryFile tmp;
     tmp.open();
-    const bool fileAdded  = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + QStringLiteral("VERSION_%1").arg(currentArchiveVersion()));
+    const bool fileAdded = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + QStringLiteral("VERSION_%1").arg(currentArchiveVersion()));
     if (!fileAdded) {
         //TODO add i18n ?
         qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "version file can not add to archive";

@@ -33,14 +33,13 @@
 #include <exportresourcearchivejob.h>
 
 ExportAlarmJob::ExportAlarmJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
-    : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep),
-      mIndexIdentifier(0)
+    : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
+    , mIndexIdentifier(0)
 {
 }
 
 ExportAlarmJob::~ExportAlarmJob()
 {
-
 }
 
 void ExportAlarmJob::start()
@@ -159,4 +158,3 @@ void ExportAlarmJob::backupConfig()
 
     Q_EMIT info(i18n("Config backup done."));
 }
-

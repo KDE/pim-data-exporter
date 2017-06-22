@@ -33,8 +33,7 @@
 #include <QDir>
 #include <QTimer>
 
-namespace
-{
+namespace {
 inline const QString backupnote()
 {
     return QStringLiteral("backupnote/");
@@ -92,7 +91,7 @@ void ImportNotesJob::restoreConfig()
         restoreConfigFile(globalNoteSettingsStr);
     } else {
         const QString globalNoteStr(QStringLiteral("globalnotesettings"));
-        const KArchiveEntry *globalNotecentry  = mArchiveDirectory->entry(Utils::configsPath() + globalNoteStr);
+        const KArchiveEntry *globalNotecentry = mArchiveDirectory->entry(Utils::configsPath() + globalNoteStr);
         if (globalNotecentry && globalNotecentry->isFile()) {
             const KArchiveFile *globalNotecentryrc = static_cast<const KArchiveFile *>(globalNotecentry);
             const QString globalNoterc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + globalNoteStr;
@@ -104,7 +103,6 @@ void ImportNotesJob::restoreConfig()
                 importKNoteGlobalSettings(globalNotecentryrc, globalNoterc, globalNoteStr, Utils::configsPath());
             }
         }
-
     }
 
     restoreUiRcFile(QStringLiteral("knotesappui.rc"), QStringLiteral("knotes"));
@@ -122,7 +120,7 @@ void ImportNotesJob::restoreData()
     setProgressDialogLabel(i18n("Restore data..."));
     if (archiveVersion() <= 1) {
         //Knote < knote-akonadi
-        const KArchiveEntry *notesEntry  = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("knotes/"));
+        const KArchiveEntry *notesEntry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("knotes/"));
         if (notesEntry && notesEntry->isDirectory()) {
             const QString notesPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("knotes/");
             overwriteDirectory(notesPath, notesEntry);

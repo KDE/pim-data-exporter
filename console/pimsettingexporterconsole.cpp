@@ -30,12 +30,12 @@
 #include <MailCommon/FilterManager>
 
 PimSettingExporterConsole::PimSettingExporterConsole(QObject *parent)
-    : QObject(parent),
-      mPimSettingsBackupRestore(new PimSettingsBackupRestore(this)),
-      mLogInFile(nullptr),
-      mLogInfo(new LogInfo(this)),
-      mMode(Import),
-      mInProgress(false)
+    : QObject(parent)
+    , mPimSettingsBackupRestore(new PimSettingsBackupRestore(this))
+    , mLogInFile(nullptr)
+    , mLogInfo(new LogInfo(this))
+    , mMode(Import)
+    , mInProgress(false)
 {
     //Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
@@ -49,7 +49,6 @@ PimSettingExporterConsole::PimSettingExporterConsole(QObject *parent)
 
 PimSettingExporterConsole::~PimSettingExporterConsole()
 {
-
 }
 
 void PimSettingExporterConsole::initializeLogInFile()

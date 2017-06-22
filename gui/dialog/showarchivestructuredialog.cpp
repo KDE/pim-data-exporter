@@ -36,8 +36,8 @@
 #include <ktreewidgetsearchline.h>
 
 ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, QWidget *parent)
-    : QDialog(parent),
-      mFileName(filename)
+    : QDialog(parent)
+    , mFileName(filename)
 {
     setWindowTitle(i18n("Show Archive Content on file \"%1\"", filename));
     setModal(true);
@@ -179,4 +179,3 @@ void ShowArchiveStructureDialog::readConfig()
         resize(sizeDialog);
     }
 }
-

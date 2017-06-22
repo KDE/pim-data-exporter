@@ -25,16 +25,14 @@
 #include <synchronizeresourcejob.h>
 
 FullSynchronizeResourcesJob::FullSynchronizeResourcesJob(QObject *parent)
-    : QObject(parent),
-      mWindowParent(nullptr),
-      mProgressDialog(nullptr)
+    : QObject(parent)
+    , mWindowParent(nullptr)
+    , mProgressDialog(nullptr)
 {
-
 }
 
 FullSynchronizeResourcesJob::~FullSynchronizeResourcesJob()
 {
-
 }
 
 void FullSynchronizeResourcesJob::setResources(const QStringList &lst)

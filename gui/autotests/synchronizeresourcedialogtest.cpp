@@ -36,7 +36,6 @@ SynchronizeResourceDialogTest::SynchronizeResourceDialogTest(QObject *parent)
 
 SynchronizeResourceDialogTest::~SynchronizeResourceDialogTest()
 {
-
 }
 
 void SynchronizeResourceDialogTest::shouldHaveDefaultValue()

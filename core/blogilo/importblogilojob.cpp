@@ -81,7 +81,7 @@ void ImportBlogiloJob::restoreData()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore data..."));
-    const KArchiveEntry *blogiloEntry  = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("blogilo/"));
+    const KArchiveEntry *blogiloEntry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("blogilo/"));
     if (blogiloEntry && blogiloEntry->isDirectory()) {
         const QString blogiloPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("blogilo/");
         overwriteDirectory(blogiloPath, blogiloEntry);
@@ -89,4 +89,3 @@ void ImportBlogiloJob::restoreData()
     Q_EMIT info(i18n("Data restored."));
     QTimer::singleShot(0, this, &ImportBlogiloJob::slotNextStep);
 }
-

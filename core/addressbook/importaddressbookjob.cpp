@@ -32,8 +32,7 @@
 #include <QDir>
 #include <QStandardPaths>
 
-namespace
-{
+namespace {
 inline const QString storeAddressbook()
 {
     return QStringLiteral("backupaddressbook/");
@@ -48,7 +47,6 @@ ImportAddressbookJob::ImportAddressbookJob(QObject *parent, Utils::StoredTypes t
 
 ImportAddressbookJob::~ImportAddressbookJob()
 {
-
 }
 
 void ImportAddressbookJob::start()
@@ -82,7 +80,9 @@ void ImportAddressbookJob::restoreResources()
     setProgressDialogLabel(i18n("Restore resources..."));
     increaseProgressDialog();
     QStringList listResource;
-    listResource << restoreResourceFile(QStringLiteral("akonadi_vcard_resource"), Utils::addressbookPath(), QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/share/kaddressbook/"));
+    listResource
+    << restoreResourceFile(QStringLiteral("akonadi_vcard_resource"), Utils::addressbookPath(), QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String(
+                               "/share/kaddressbook/"));
 
     if (!mListResourceFile.isEmpty()) {
         QDir dir(mTempDirName);
@@ -93,8 +93,8 @@ void ImportAddressbookJob::restoreResources()
         for (int i = 0; i < numberOfResourceFile; ++i) {
             resourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
-            if (value.akonadiConfigFile.contains(QStringLiteral("akonadi_vcarddir_resource_")) ||
-                    value.akonadiConfigFile.contains(QStringLiteral("akonadi_contacts_resource_"))) {
+            if (value.akonadiConfigFile.contains(QStringLiteral("akonadi_vcarddir_resource_"))
+                || value.akonadiConfigFile.contains(QStringLiteral("akonadi_contacts_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
@@ -168,9 +168,9 @@ void ImportAddressbookJob::addSpecificResourceSettings(KSharedConfig::Ptr resour
 
 bool ImportAddressbookJob::isAConfigFile(const QString &name) const
 {
-    return name.endsWith(QLatin1String("rc")) && (name.contains(QStringLiteral("akonadi_vcarddir_resource_")) ||
-            name.contains(QStringLiteral("akonadi_vcard_resource_")) ||
-            name.contains(QStringLiteral("akonadi_contacts_resource_")));
+    return name.endsWith(QLatin1String("rc")) && (name.contains(QStringLiteral("akonadi_vcarddir_resource_"))
+                                                  || name.contains(QStringLiteral("akonadi_vcard_resource_"))
+                                                  || name.contains(QStringLiteral("akonadi_contacts_resource_")));
 }
 
 void ImportAddressbookJob::restoreConfig()
@@ -178,7 +178,7 @@ void ImportAddressbookJob::restoreConfig()
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore configs..."));
     const QString kaddressbookStr(QStringLiteral("kaddressbookrc"));
-    const KArchiveEntry *kaddressbookrcentry  = mArchiveDirectory->entry(Utils::configsPath() + kaddressbookStr);
+    const KArchiveEntry *kaddressbookrcentry = mArchiveDirectory->entry(Utils::configsPath() + kaddressbookStr);
     if (kaddressbookrcentry && kaddressbookrcentry->isFile()) {
         const KArchiveFile *kaddressbookrcFile = static_cast<const KArchiveFile *>(kaddressbookrcentry);
         const QString kaddressbookrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kaddressbookStr;
@@ -220,7 +220,7 @@ void ImportAddressbookJob::importkaddressBookConfig(const KArchiveFile *file, co
         convertRealPathToCollection(group, currentKey, true);
     }
     const QString cvsTemplateDirName = QStringLiteral("/kaddressbook/csv-templates/");
-    const KArchiveEntry *csvtemplateEntry  = mArchiveDirectory->entry(Utils::dataPath() + cvsTemplateDirName);
+    const KArchiveEntry *csvtemplateEntry = mArchiveDirectory->entry(Utils::dataPath() + cvsTemplateDirName);
     if (csvtemplateEntry && csvtemplateEntry->isDirectory()) {
         const KArchiveDirectory *csvTemplateDir = static_cast<const KArchiveDirectory *>(csvtemplateEntry);
         const QStringList lst = csvTemplateDir->entries();

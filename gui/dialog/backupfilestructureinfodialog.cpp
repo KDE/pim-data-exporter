@@ -87,4 +87,3 @@ void BackupFileStructureInfoDialog::readConfig()
         resize(sizeDialog);
     }
 }
-

@@ -23,8 +23,8 @@
 #include <QXmlStreamWriter>
 
 TemplateSelection::TemplateSelection()
-    : mStreamWriter(nullptr),
-      mStreamReader(nullptr)
+    : mStreamWriter(nullptr)
+    , mStreamReader(nullptr)
 {
 }
 
@@ -37,7 +37,7 @@ TemplateSelection::~TemplateSelection()
 Utils::StoredTypes TemplateSelection::loadStoredTypes(int &numberOfStep)
 {
     Utils::StoredTypes types = Utils::None;
-    while(mStreamReader->readNextStartElement()) {
+    while (mStreamReader->readNextStartElement()) {
         if (mStreamReader->name() == QLatin1String("mailtransport")) {
             types |= Utils::MailTransport;
             numberOfStep++;
@@ -78,7 +78,7 @@ QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTem
     QHash<Utils::AppsType, Utils::importExportParameters> value;
     if (mStreamReader->readNextStartElement()) {
         if (mStreamReader->name() == QLatin1String("pimsettingexporter")) {
-            while(mStreamReader->readNextStartElement()) {
+            while (mStreamReader->readNextStartElement()) {
                 Utils::AppsType type = Utils::Unknown;
                 if (mStreamReader->name() == QLatin1String("kmail")) {
                     type = Utils::KMail;
@@ -155,54 +155,46 @@ void TemplateSelection::createTemplate(const QHash<Utils::AppsType, Utils::impor
     mStreamWriter->writeStartElement(QStringLiteral("pimsettingexporter"));
 
     QHash<Utils::AppsType, Utils::importExportParameters>::const_iterator i = stored.constBegin();
-    while (i != stored.constEnd())  {
+    while (i != stored.constEnd()) {
         switch (i.key()) {
-        case Utils::KMail: {
+        case Utils::KMail:
             mStreamWriter->writeStartElement(QStringLiteral("kmail"));
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
-        }
-        case Utils::KAddressBook: {
+        case Utils::KAddressBook:
             mStreamWriter->writeStartElement(QStringLiteral("kaddressbook"));
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
-        }
-        case Utils::KAlarm: {
+        case Utils::KAlarm:
             mStreamWriter->writeStartElement(QStringLiteral("kalarm"));
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
-        }
-        case Utils::KOrganizer: {
+        case Utils::KOrganizer:
             mStreamWriter->writeStartElement(QStringLiteral("korganizer"));
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
-        }
-        case Utils::KNotes: {
+        case Utils::KNotes:
             mStreamWriter->writeStartElement(QStringLiteral("knotes"));
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
-        }
-        case Utils::Akregator: {
+        case Utils::Akregator:
             mStreamWriter->writeStartElement(QStringLiteral("akregator"));
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
-        }
-        case Utils::Blogilo: {
+        case Utils::Blogilo:
             mStreamWriter->writeStartElement(QStringLiteral("blogilo"));
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
-        }
-        case Utils::Unknown: {
+        case Utils::Unknown:
             qCCritical(PIMSETTINGEXPORTERCORE_LOG) << "Code must not use this enum here";
             break;
-        }
         }
         ++i;
     }

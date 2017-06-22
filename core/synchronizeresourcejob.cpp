@@ -28,9 +28,9 @@
 #include "pimsettingexportcore_debug.h"
 
 SynchronizeResourceJob::SynchronizeResourceJob(QObject *parent)
-    : QObject(parent),
-      mIndex(0),
-      mOnlyCollection(true)
+    : QObject(parent)
+    , mIndex(0)
+    , mOnlyCollection(true)
 {
 }
 
@@ -84,4 +84,3 @@ void SynchronizeResourceJob::setSynchronizeOnlyCollection(bool onlyCollection)
 {
     mOnlyCollection = onlyCollection;
 }
-

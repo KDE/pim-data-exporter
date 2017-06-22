@@ -29,6 +29,4 @@ PimSettingsTrayIcon::PimSettingsTrayIcon(QObject *parent)
 
 PimSettingsTrayIcon::~PimSettingsTrayIcon()
 {
-
 }
-

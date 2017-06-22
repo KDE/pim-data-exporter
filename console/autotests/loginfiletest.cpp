@@ -23,12 +23,10 @@
 LogInFileTest::LogInFileTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 LogInFileTest::~LogInFileTest()
 {
-
 }
 
 void LogInFileTest::shouldHaveDefaultValue()

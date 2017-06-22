@@ -25,8 +25,7 @@
 #include <KSharedConfig>
 #include "pimsettingexportcore_debug.h"
 class KZip;
-namespace Akonadi
-{
+namespace Akonadi {
 class AgentInstance;
 }
 
@@ -40,8 +39,7 @@ struct resourceFiles {
     }
 };
 
-namespace Utils
-{
+namespace Utils {
 enum StoredType {
     None = 0,
     Identity = 1,
@@ -67,15 +65,16 @@ enum AppsType {
 
 struct importExportParameters {
     importExportParameters()
-        : numberSteps(0),
-          types(None)
+        : numberSteps(0)
+        , types(None)
     {
-
     }
+
     bool isEmpty() const
     {
-        return (types == None);
+        return types == None;
     }
+
     int numberSteps;
     Utils::StoredTypes types;
 };

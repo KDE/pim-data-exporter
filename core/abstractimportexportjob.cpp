@@ -43,16 +43,16 @@
 int AbstractImportExportJob::sArchiveVersion = -1;
 
 AbstractImportExportJob::AbstractImportExportJob(QObject *parent, ArchiveStorage *archiveStorage, Utils::StoredTypes typeSelected, int numberOfStep)
-    : QObject(parent),
-      mTypeSelected(typeSelected),
-      mArchiveStorage(archiveStorage),
-      mIdentityManager(KIdentityManagement::IdentityManager::self()),
-      mTempDir(nullptr),
-      mArchiveDirectory(nullptr),
-      mNumberOfStep(numberOfStep),
-      mCreateResource(nullptr),
-      mIndex(-1),
-      mImportExportProgressIndicator(new ImportExportProgressIndicatorBase(this))
+    : QObject(parent)
+    , mTypeSelected(typeSelected)
+    , mArchiveStorage(archiveStorage)
+    , mIdentityManager(KIdentityManagement::IdentityManager::self())
+    , mTempDir(nullptr)
+    , mArchiveDirectory(nullptr)
+    , mNumberOfStep(numberOfStep)
+    , mCreateResource(nullptr)
+    , mIndex(-1)
+    , mImportExportProgressIndicator(new ImportExportProgressIndicatorBase(this))
 {
     mImportExportProgressIndicator->setNumberOfStep(numberOfStep);
     connect(mImportExportProgressIndicator, &ImportExportProgressIndicatorBase::info, this, &AbstractImportExportJob::info);
@@ -84,7 +84,6 @@ bool AbstractImportExportJob::wasCanceled() const
 void AbstractImportExportJob::increaseProgressDialog()
 {
     mImportExportProgressIndicator->increaseProgressDialog();
-
 }
 
 void AbstractImportExportJob::setProgressDialogLabel(const QString &text)
@@ -130,7 +129,7 @@ void AbstractImportExportJob::backupConfigFile(const QString &configFileName)
 void AbstractImportExportJob::backupFile(const QString &filename, const QString &path, const QString &storedName)
 {
     if (QFileInfo::exists(filename)) {
-        const bool fileAdded  = archive()->addLocalFile(filename, path + storedName);
+        const bool fileAdded = archive()->addLocalFile(filename, path + storedName);
         if (fileAdded) {
             Q_EMIT info(i18n("\"%1\" backup done.", path + storedName));
         } else {
@@ -345,7 +344,7 @@ void AbstractImportExportJob::backupResourceFile(const Akonadi::AgentInstance &a
     if (!url.isEmpty()) {
         QFileInfo fi(url);
         QString filename = fi.fileName();
-        const bool fileAdded  = archive()->addLocalFile(url, archivePath + filename);
+        const bool fileAdded = archive()->addLocalFile(url, archivePath + filename);
         if (fileAdded) {
             const QString errorStr = Utils::storeResources(archive(), identifier, archivePath);
             if (!errorStr.isEmpty()) {
@@ -357,14 +356,13 @@ void AbstractImportExportJob::backupResourceFile(const Akonadi::AgentInstance &a
             if (!url.isEmpty()) {
                 fi = QFileInfo(url);
                 filename = fi.fileName();
-                const bool fileAdded  = archive()->addLocalFile(url, archivePath + filename);
+                const bool fileAdded = archive()->addLocalFile(url, archivePath + filename);
                 if (fileAdded) {
                     Q_EMIT info(i18n("\"%1\" was backed up.", filename));
                 } else {
                     Q_EMIT error(i18n("\"%1\" file cannot be added to backup file.", filename));
                 }
             }
-
         } else {
             Q_EMIT error(i18n("\"%1\" file cannot be added to backup file.", filename));
         }
@@ -438,7 +436,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
     return resourceToSync;
 }
 
-void AbstractImportExportJob::addSpecificResourceSettings(KSharedConfig::Ptr /*resourceConfig*/, const QString &/*resourceName*/, QMap<QString, QVariant> &/*settings*/)
+void AbstractImportExportJob::addSpecificResourceSettings(KSharedConfig::Ptr /*resourceConfig*/, const QString & /*resourceName*/, QMap<QString, QVariant> & /*settings*/)
 {
     //Redefine it in subclass
 }
@@ -483,8 +481,8 @@ void AbstractImportExportJob::extractZipFile(const KArchiveFile *file, const QSt
 
 void AbstractImportExportJob::restoreUiRcFile(const QString &configNameStr, const QString &applicationName)
 {
-    const KArchiveEntry *configNameentry  = mArchiveDirectory->entry(Utils::configsPath() + configNameStr);
-    if (configNameentry &&  configNameentry->isFile()) {
+    const KArchiveEntry *configNameentry = mArchiveDirectory->entry(Utils::configsPath() + configNameStr);
+    if (configNameentry && configNameentry->isFile()) {
         const KArchiveFile *configNameconfiguration = static_cast<const KArchiveFile *>(configNameentry);
         const QString configNamerc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kxmlgui5/") + applicationName + QLatin1Char('/') + configNameStr;
         if (QFileInfo::exists(configNamerc)) {
@@ -499,8 +497,8 @@ void AbstractImportExportJob::restoreUiRcFile(const QString &configNameStr, cons
 
 void AbstractImportExportJob::restoreConfigFile(const QString &configNameStr)
 {
-    const KArchiveEntry *configNameentry  = mArchiveDirectory->entry(Utils::configsPath() + configNameStr);
-    if (configNameentry &&  configNameentry->isFile()) {
+    const KArchiveEntry *configNameentry = mArchiveDirectory->entry(Utils::configsPath() + configNameStr);
+    if (configNameentry && configNameentry->isFile()) {
         const KArchiveFile *configNameconfiguration = static_cast<const KArchiveFile *>(configNameentry);
         const QString configNamerc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + configNameStr;
         if (QFileInfo::exists(configNamerc)) {
@@ -599,7 +597,7 @@ void AbstractImportExportJob::storeDirectory(const QString &subDirectory)
 
 void AbstractImportExportJob::importDataSubdirectory(const QString &subdirectoryRelativePath)
 {
-    const KArchiveEntry *themeEntry  = mArchiveDirectory->entry(Utils::dataPath() + subdirectoryRelativePath);
+    const KArchiveEntry *themeEntry = mArchiveDirectory->entry(Utils::dataPath() + subdirectoryRelativePath);
     if (themeEntry && themeEntry->isDirectory()) {
         const KArchiveDirectory *themeDir = static_cast<const KArchiveDirectory *>(themeEntry);
         const QStringList lst = themeDir->entries();
@@ -619,6 +617,4 @@ void AbstractImportExportJob::importDataSubdirectory(const QString &subdirectory
             }
         }
     }
-
 }
-

@@ -22,14 +22,12 @@
 #include <MailCommon/MailInterfaces>
 #include "pimsettingexporter_export.h"
 
-namespace Akonadi
-{
+namespace Akonadi {
 class EntityTreeModel;
 class EntityMimeTypeFilterModel;
 }
 
-namespace MailCommon
-{
+namespace MailCommon {
 class FolderCollectionMonitor;
 }
 

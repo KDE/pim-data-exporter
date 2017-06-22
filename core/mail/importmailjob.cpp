@@ -51,8 +51,7 @@
 #include <qregularexpression.h>
 
 using namespace Akonadi;
-namespace
-{
+namespace {
 inline const QString storeMails()
 {
     return QStringLiteral("backupmail/");
@@ -138,10 +137,10 @@ void ImportMailJob::storeMailArchiveResource(const KArchiveDirectory *dir, const
                 const QString archPath(prefix + QLatin1Char('/') + entryName + QLatin1Char('/'));
                 resourceFiles files;
                 for (const QString &name : lst) {
-                    if (name.endsWith(QLatin1String("rc")) &&
-                            (name.contains(QStringLiteral("akonadi_mbox_resource_")) ||
-                             name.contains(QStringLiteral("akonadi_mixedmaildir_resource_")) ||
-                             name.contains(QStringLiteral("akonadi_maildir_resource_")))) {
+                    if (name.endsWith(QLatin1String("rc"))
+                        && (name.contains(QStringLiteral("akonadi_mbox_resource_"))
+                            || name.contains(QStringLiteral("akonadi_mixedmaildir_resource_"))
+                            || name.contains(QStringLiteral("akonadi_maildir_resource_")))) {
                         files.akonadiConfigFile = archPath + name;
                     } else if (name.startsWith(Utils::prefixAkonadiConfigFile())) {
                         files.akonadiAgentConfigFile = archPath + name;
@@ -476,7 +475,6 @@ void ImportMailJob::restoreMails()
     const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::mailsPath());
     const int numberOfResourceFile = mListResourceFile.size();
     for (int i = 0; i < numberOfResourceFile; ++i) {
-
         resourceFiles value = mListResourceFile.at(i);
         value.debug();
         const QString resourceFile = value.akonadiConfigFile;
@@ -546,9 +544,8 @@ void ImportMailJob::restoreMails()
                     mHashResources.insert(filename, newResource);
                     infoAboutNewResource(newResource);
                 }
-
-            } else if (resourceName.contains(QStringLiteral("akonadi_maildir_resource_")) ||
-                       resourceName.contains(QStringLiteral("akonadi_mixedmaildir_resource_"))) {
+            } else if (resourceName.contains(QStringLiteral("akonadi_maildir_resource_"))
+                       || resourceName.contains(QStringLiteral("akonadi_mixedmaildir_resource_"))) {
                 settings.insert(QStringLiteral("Path"), newUrl);
                 KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
                 if (general.hasKey(QStringLiteral("TopLevelIsContainer"))) {
@@ -561,10 +558,10 @@ void ImportMailJob::restoreMails()
                     settings.insert(QStringLiteral("MonitorFilesystem"), general.readEntry(QStringLiteral("MonitorFilesystem"), true));
                 }
 
-                const QString newResource = mCreateResource->createResource(resourceName.contains(QStringLiteral("akonadi_mixedmaildir_resource_")) ?
-                                            QStringLiteral("akonadi_mixedmaildir_resource")
-                                            : QStringLiteral("akonadi_maildir_resource")
-                                            , filename, settings);
+                const QString newResource = mCreateResource->createResource(resourceName.contains(QStringLiteral("akonadi_mixedmaildir_resource_"))
+                                                                            ? QStringLiteral("akonadi_mixedmaildir_resource")
+                                                                            : QStringLiteral("akonadi_maildir_resource"),
+                                                                            filename, settings);
                 if (!newResource.isEmpty()) {
                     mHashResources.insert(filename, newResource);
                     infoAboutNewResource(newResource);
@@ -590,7 +587,6 @@ void ImportMailJob::restoreMails()
 
 void ImportMailJob::restoreConfig()
 {
-
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore config..."));
     const QString filtersPath(Utils::configsPath() + QLatin1String("filters"));
@@ -658,7 +654,7 @@ void ImportMailJob::restoreConfig()
         }
     }
     const QString kmailsnippetrcStr(QStringLiteral("kmailsnippetrc"));
-    const KArchiveEntry *kmailsnippetentry  = mArchiveDirectory->entry(Utils::configsPath() + kmailsnippetrcStr);
+    const KArchiveEntry *kmailsnippetentry = mArchiveDirectory->entry(Utils::configsPath() + kmailsnippetrcStr);
     if (kmailsnippetentry && kmailsnippetentry->isFile()) {
         const KArchiveFile *kmailsnippet = static_cast<const KArchiveFile *>(kmailsnippetentry);
         const QString kmailsnippetrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kmailsnippetrcStr;
@@ -673,7 +669,7 @@ void ImportMailJob::restoreConfig()
     }
 
     const QString labldaprcStr(QStringLiteral("kabldaprc"));
-    const KArchiveEntry *kabldapentry  = mArchiveDirectory->entry(Utils::configsPath() + labldaprcStr);
+    const KArchiveEntry *kabldapentry = mArchiveDirectory->entry(Utils::configsPath() + labldaprcStr);
     if (kabldapentry && kabldapentry->isFile()) {
         const KArchiveFile *kabldap = static_cast<const KArchiveFile *>(kabldapentry);
         const QString kabldaprc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + labldaprcStr;
@@ -689,8 +685,8 @@ void ImportMailJob::restoreConfig()
         }
     }
     const QString archiveconfigurationrcStr(QStringLiteral("akonadi_archivemail_agentrc"));
-    const KArchiveEntry *archiveconfigurationentry  = mArchiveDirectory->entry(Utils::configsPath() + archiveconfigurationrcStr);
-    if (archiveconfigurationentry &&  archiveconfigurationentry->isFile()) {
+    const KArchiveEntry *archiveconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + archiveconfigurationrcStr);
+    if (archiveconfigurationentry && archiveconfigurationentry->isFile()) {
         const KArchiveFile *archiveconfiguration = static_cast<const KArchiveFile *>(archiveconfigurationentry);
         const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveconfigurationrcStr;
         if (QFileInfo::exists(archiveconfigurationrc)) {
@@ -706,8 +702,8 @@ void ImportMailJob::restoreConfig()
     }
 
     const QString templatesconfigurationrcStr(QStringLiteral("templatesconfigurationrc"));
-    const KArchiveEntry *templatesconfigurationentry  = mArchiveDirectory->entry(Utils::configsPath() + templatesconfigurationrcStr);
-    if (templatesconfigurationentry &&  templatesconfigurationentry->isFile()) {
+    const KArchiveEntry *templatesconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + templatesconfigurationrcStr);
+    if (templatesconfigurationentry && templatesconfigurationentry->isFile()) {
         const KArchiveFile *templatesconfiguration = static_cast<const KArchiveFile *>(templatesconfigurationentry);
         const QString templatesconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + templatesconfigurationrcStr;
         if (QFileInfo::exists(templatesconfigurationrc)) {
@@ -721,7 +717,7 @@ void ImportMailJob::restoreConfig()
     }
 
     const QString kmailStr(QStringLiteral("kmail2rc"));
-    const KArchiveEntry *kmail2rcentry  = mArchiveDirectory->entry(Utils::configsPath() + kmailStr);
+    const KArchiveEntry *kmail2rcentry = mArchiveDirectory->entry(Utils::configsPath() + kmailStr);
     if (kmail2rcentry && kmail2rcentry->isFile()) {
         const KArchiveFile *kmailrc = static_cast<const KArchiveFile *>(kmail2rcentry);
         const QString kmail2rc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kmailStr;
@@ -735,8 +731,8 @@ void ImportMailJob::restoreConfig()
     }
 
     const QString sievetemplatercStr(QStringLiteral("sievetemplaterc"));
-    const KArchiveEntry *sievetemplatentry  = mArchiveDirectory->entry(Utils::configsPath() + sievetemplatercStr);
-    if (sievetemplatentry &&  sievetemplatentry->isFile()) {
+    const KArchiveEntry *sievetemplatentry = mArchiveDirectory->entry(Utils::configsPath() + sievetemplatercStr);
+    if (sievetemplatentry && sievetemplatentry->isFile()) {
         const KArchiveFile *sievetemplateconfiguration = static_cast<const KArchiveFile *>(sievetemplatentry);
         const QString sievetemplaterc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + sievetemplatercStr;
         if (QFileInfo::exists(sievetemplaterc)) {
@@ -752,8 +748,8 @@ void ImportMailJob::restoreConfig()
     }
 
     const QString customTemplateStr(QStringLiteral("customtemplatesrc"));
-    const KArchiveEntry *customtemplatentry  = mArchiveDirectory->entry(Utils::configsPath() + customTemplateStr);
-    if (customtemplatentry &&  customtemplatentry->isFile()) {
+    const KArchiveEntry *customtemplatentry = mArchiveDirectory->entry(Utils::configsPath() + customTemplateStr);
+    if (customtemplatentry && customtemplatentry->isFile()) {
         const KArchiveFile *customtemplateconfiguration = static_cast<const KArchiveFile *>(customtemplatentry);
         const QString customtemplaterc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + customTemplateStr;
         if (QFileInfo::exists(customtemplaterc)) {
@@ -767,8 +763,8 @@ void ImportMailJob::restoreConfig()
     }
 
     const QString adblockStr(QStringLiteral("messagevieweradblockrc"));
-    const KArchiveEntry *adblockentry  = mArchiveDirectory->entry(Utils::configsPath() + adblockStr);
-    if (adblockentry &&  adblockentry->isFile()) {
+    const KArchiveEntry *adblockentry = mArchiveDirectory->entry(Utils::configsPath() + adblockStr);
+    if (adblockentry && adblockentry->isFile()) {
         const KArchiveFile *adblockconfiguration = static_cast<const KArchiveFile *>(adblockentry);
         const QString adblockrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + adblockStr;
         if (QFileInfo::exists(adblockrc)) {
@@ -826,16 +822,18 @@ void ImportMailJob::restoreConfig()
 
     importSimpleFilesInDirectory(QStringLiteral("/autocorrect/"));
     importSimpleFilesInDirectory(QStringLiteral("/gravatar/"));
-    const KArchiveEntry *kmail2Entry  = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("kmail2/adblockrules_local"));
+    const KArchiveEntry *kmail2Entry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("kmail2/adblockrules_local"));
     if (kmail2Entry && kmail2Entry->isFile()) {
         const KArchiveFile *entry = static_cast<const KArchiveFile *>(kmail2Entry);
         const QString adblockPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("kmail2/adblockrules_local");
         if (QFileInfo::exists(adblockPath)) {
             if (overwriteConfigMessageBox(QStringLiteral("adblockrules_local"))) {
-                copyToFile(entry, QString(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/") + QLatin1String("kmail2/adblockrules_local")), QStringLiteral("adblockrules_local"), Utils::dataPath() + QLatin1String("kmail2/"));
+                copyToFile(entry, QString(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/") + QLatin1String("kmail2/adblockrules_local")),
+                           QStringLiteral("adblockrules_local"), Utils::dataPath() + QLatin1String("kmail2/"));
             }
         } else {
-            copyToFile(entry, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("kmail2/adblockrules_local"), QStringLiteral("adblockrules_local"), Utils::dataPath() + QLatin1String("kmail2/"));
+            copyToFile(entry, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("kmail2/adblockrules_local"), QStringLiteral(
+                           "adblockrules_local"), Utils::dataPath() + QLatin1String("kmail2/"));
         }
     }
 
@@ -848,7 +846,7 @@ void ImportMailJob::restoreConfig()
 
 void ImportMailJob::importSimpleFilesInDirectory(const QString &relativePath)
 {
-    const KArchiveEntry *autocorrectionEntry  = mArchiveDirectory->entry(Utils::dataPath() + relativePath);
+    const KArchiveEntry *autocorrectionEntry = mArchiveDirectory->entry(Utils::dataPath() + relativePath);
     if (autocorrectionEntry && autocorrectionEntry->isDirectory()) {
         const KArchiveDirectory *autoCorrectionDir = static_cast<const KArchiveDirectory *>(autocorrectionEntry);
         const QStringList lst = autoCorrectionDir->entries();
@@ -912,7 +910,6 @@ void ImportMailJob::restoreIdentity()
                     if (group.hasKey(vcard)) {
                         const QString vcardFileName = group.readEntry(vcard);
                         if (!vcardFileName.isEmpty()) {
-
                             QFileInfo fileInfo(vcardFileName);
                             QFile file(vcardFileName);
                             const KArchiveEntry *vcardEntry = mArchiveDirectory->entry(Utils::identitiesPath() + QString::number(oldUid) + QDir::separator() + file.fileName());
@@ -921,7 +918,8 @@ void ImportMailJob::restoreIdentity()
                                 QString vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/%1").arg(fileInfo.fileName());
                                 int i = 1;
                                 while (QFileInfo::exists(vcardFileName)) {
-                                    vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/%1_%2").arg(i).arg(fileInfo.fileName());
+                                    vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/%1_%2").arg(i).arg(
+                                        fileInfo.fileName());
                                     ++i;
                                 }
                                 vcardFile->copyTo(QFileInfo(vcardFilePath).absolutePath());
@@ -930,7 +928,7 @@ void ImportMailJob::restoreIdentity()
                         }
                     }
                 }
-                QString name =  group.readEntry(QStringLiteral("Name"));
+                QString name = group.readEntry(QStringLiteral("Name"));
 
                 KIdentityManagement::Identity *identity = &mIdentityManager->newFromScratch(uniqueIdentityName(name));
                 group.writeEntry(QStringLiteral("Name"), name);

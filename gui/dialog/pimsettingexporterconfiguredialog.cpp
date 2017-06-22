@@ -43,7 +43,6 @@ PimSettingExporterConfigureDialog::PimSettingExporterConfigureDialog(QWidget *pa
 
 PimSettingExporterConfigureDialog::~PimSettingExporterConfigureDialog()
 {
-
 }
 
 void PimSettingExporterConfigureDialog::slotAccepted()

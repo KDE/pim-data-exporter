@@ -33,8 +33,7 @@
 #include <QStandardPaths>
 #include <QTimer>
 
-namespace
-{
+namespace {
 inline const QString storeAlarm()
 {
     return QStringLiteral("backupalarm/");
@@ -49,7 +48,6 @@ ImportAlarmJob::ImportAlarmJob(QObject *parent, Utils::StoredTypes typeSelected,
 
 ImportAlarmJob::~ImportAlarmJob()
 {
-
 }
 
 void ImportAlarmJob::start()
@@ -97,7 +95,7 @@ void ImportAlarmJob::restoreResources()
             resourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
             if (value.akonadiConfigFile.contains(QStringLiteral("akonadi_kalarm_dir_resource_"))
-                    || value.akonadiConfigFile.contains(QStringLiteral("akonadi_kalarm_resource_"))) {
+                || value.akonadiConfigFile.contains(QStringLiteral("akonadi_kalarm_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
@@ -148,7 +146,7 @@ void ImportAlarmJob::restoreResources()
 bool ImportAlarmJob::isAConfigFile(const QString &name) const
 {
     return name.endsWith(QLatin1String("rc")) && (name.contains(QStringLiteral("akonadi_kalarm_resource_"))
-            || name.contains(QStringLiteral("akonadi_kalarm_dir_resource_")));
+                                                  || name.contains(QStringLiteral("akonadi_kalarm_dir_resource_")));
 }
 
 void ImportAlarmJob::restoreConfig()
@@ -156,7 +154,7 @@ void ImportAlarmJob::restoreConfig()
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore configs..."));
     const QString kalarmStr(QStringLiteral("kalarmrc"));
-    const KArchiveEntry *kalarmrcentry  = mArchiveDirectory->entry(Utils::configsPath() + kalarmStr);
+    const KArchiveEntry *kalarmrcentry = mArchiveDirectory->entry(Utils::configsPath() + kalarmStr);
     if (kalarmrcentry && kalarmrcentry->isFile()) {
         const KArchiveFile *kalarmrcFile = static_cast<const KArchiveFile *>(kalarmrcentry);
         const QString kalarmrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalarmStr;
@@ -187,4 +185,3 @@ void ImportAlarmJob::importkalarmConfig(const KArchiveFile *kalarmFile, const QS
 
     kalarmConfig->sync();
 }
-

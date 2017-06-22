@@ -25,11 +25,10 @@
 #include <KStandardGuiItem>
 
 ImportExportProgressIndicatorGui::ImportExportProgressIndicatorGui(QWidget *parentWidget, QObject *parent)
-    : ImportExportProgressIndicatorBase(parent),
-      mProgressDialog(nullptr),
-      mParentWidget(parentWidget)
+    : ImportExportProgressIndicatorBase(parent)
+    , mProgressDialog(nullptr)
+    , mParentWidget(parentWidget)
 {
-
 }
 
 ImportExportProgressIndicatorGui::~ImportExportProgressIndicatorGui()
@@ -77,7 +76,8 @@ int ImportExportProgressIndicatorGui::mergeConfigMessageBox(const QString &confi
     if (PimSettingExportGlobalConfig::self()->alwaysMergeConfigFile()) {
         return KMessageBox::Yes;
     }
-    return KMessageBox::warningYesNoCancel(mParentWidget, i18n("\"%1\" already exists. Do you want to overwrite it or merge it?", configName), i18n("Restore"), KStandardGuiItem::overwrite(), KGuiItem(i18n("Merge")));
+    return KMessageBox::warningYesNoCancel(mParentWidget, i18n("\"%1\" already exists. Do you want to overwrite it or merge it?", configName), i18n("Restore"), KStandardGuiItem::overwrite(),
+                                           KGuiItem(i18n("Merge")));
 }
 
 bool ImportExportProgressIndicatorGui::overwriteConfigMessageBox(const QString &configName) const
@@ -85,7 +85,7 @@ bool ImportExportProgressIndicatorGui::overwriteConfigMessageBox(const QString &
     if (PimSettingExportGlobalConfig::self()->alwaysOverrideFile()) {
         return true;
     }
-    return (KMessageBox::warningYesNo(mParentWidget, i18n("\"%1\" already exists. Do you want to overwrite it?", configName), i18n("Restore")) == KMessageBox::Yes);
+    return KMessageBox::warningYesNo(mParentWidget, i18n("\"%1\" already exists. Do you want to overwrite it?", configName), i18n("Restore")) == KMessageBox::Yes;
 }
 
 bool ImportExportProgressIndicatorGui::overwriteDirectoryMessageBox(const QString &directory) const
@@ -93,11 +93,10 @@ bool ImportExportProgressIndicatorGui::overwriteDirectoryMessageBox(const QStrin
     if (PimSettingExportGlobalConfig::self()->alwaysOverrideDirectory()) {
         return true;
     }
-    return (KMessageBox::warningYesNo(mParentWidget, i18n("Directory \"%1\" already exists. Do you want to overwrite it?", directory), i18n("Restore")) == KMessageBox::Yes);
+    return KMessageBox::warningYesNo(mParentWidget, i18n("Directory \"%1\" already exists. Do you want to overwrite it?", directory), i18n("Restore")) == KMessageBox::Yes;
 }
 
 void ImportExportProgressIndicatorGui::showErrorMessage(const QString &message, const QString &title)
 {
     KMessageBox::error(mParentWidget, message, title);
 }
-

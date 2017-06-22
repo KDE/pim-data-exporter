@@ -27,8 +27,8 @@
 #include <QApplication>
 
 PimSettingCommandLineOption::PimSettingCommandLineOption(QObject *parent)
-    : QObject(parent),
-      mExporterWindow(nullptr)
+    : QObject(parent)
+    , mExporterWindow(nullptr)
 {
 }
 
@@ -79,4 +79,3 @@ void PimSettingCommandLineOption::handleCommandLine()
         mExporterWindow->handleCommandLine(mParser);
     }
 }
-

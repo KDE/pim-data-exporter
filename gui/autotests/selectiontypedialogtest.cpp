@@ -37,7 +37,6 @@ SelectionTypeDialogTest::SelectionTypeDialogTest(QObject *parent)
 
 SelectionTypeDialogTest::~SelectionTypeDialogTest()
 {
-
 }
 
 void SelectionTypeDialogTest::shouldHaveDefaultValue()

@@ -46,9 +46,9 @@
 #include <QRegularExpression>
 
 ExportMailJob::ExportMailJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
-    : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep),
-      mArchiveTime(QDateTime::currentDateTime()),
-      mIndexIdentifier(0)
+    : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
+    , mArchiveTime(QDateTime::currentDateTime())
+    , mIndexIdentifier(0)
 {
 }
 
@@ -58,7 +58,7 @@ ExportMailJob::~ExportMailJob()
 
 bool ExportMailJob::checkBackupType(Utils::StoredType type) const
 {
-    return (mTypeSelected & type);
+    return mTypeSelected & type;
 }
 
 void ExportMailJob::start()
@@ -148,13 +148,12 @@ void ExportMailJob::slotWriteNextArchiveResource()
         const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
         const QStringList capabilities(agent.type().capabilities());
         if (agent.type().mimeTypes().contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QStringLiteral("Resource")) &&
-                    !capabilities.contains(QStringLiteral("Virtual")) &&
-                    !capabilities.contains(QStringLiteral("MailTransport"))) {
-
+            if (capabilities.contains(QStringLiteral("Resource"))
+                && !capabilities.contains(QStringLiteral("Virtual"))
+                && !capabilities.contains(QStringLiteral("MailTransport"))) {
                 const QString identifier = agent.identifier();
-                if (identifier.contains(QStringLiteral("akonadi_maildir_resource_")) ||
-                        identifier.contains(QStringLiteral("akonadi_mixedmaildir_resource_"))) {
+                if (identifier.contains(QStringLiteral("akonadi_maildir_resource_"))
+                    || identifier.contains(QStringLiteral("akonadi_mixedmaildir_resource_"))) {
                     const QString archivePath = Utils::mailsPath() + identifier + QDir::separator();
 
                     const QString url = Utils::resourcePath(agent);
@@ -212,7 +211,7 @@ void ExportMailJob::backupTransports()
         KConfig *config = mailtransportsConfig->copyTo(tmp.fileName());
 
         config->sync();
-        const bool fileAdded  = archive()->addLocalFile(tmp.fileName(), Utils::transportsPath() + QLatin1String("mailtransports"));
+        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::transportsPath() + QLatin1String("mailtransports"));
         delete config;
         if (fileAdded) {
             Q_EMIT info(i18n("Transports backup done."));
@@ -244,13 +243,13 @@ void ExportMailJob::backupResources()
     for (const Akonadi::AgentInstance &agent : list) {
         const QStringList capabilities(agent.type().capabilities());
         if (agent.type().mimeTypes().contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QStringLiteral("Resource")) &&
-                    !capabilities.contains(QStringLiteral("Virtual")) &&
-                    !capabilities.contains(QStringLiteral("MailTransport"))) {
+            if (capabilities.contains(QStringLiteral("Resource"))
+                && !capabilities.contains(QStringLiteral("Virtual"))
+                && !capabilities.contains(QStringLiteral("MailTransport"))) {
                 const QString identifier = agent.identifier();
                 //Store just pop3/imap/kolab/gmail account. Store other config when we copy data.
                 if (identifier.contains(QStringLiteral("pop3")) || identifier.contains(QStringLiteral("imap"))
-                        || identifier.contains(QStringLiteral("_kolab_")) || identifier.contains(QStringLiteral("_gmail_"))) {
+                    || identifier.contains(QStringLiteral("_kolab_")) || identifier.contains(QStringLiteral("_gmail_"))) {
                     const QString errorStr = Utils::storeResources(archive(), identifier, Utils::resourcesPath());
                     if (!errorStr.isEmpty()) {
                         Q_EMIT error(errorStr);
@@ -276,7 +275,7 @@ void ExportMailJob::backupConfig()
         QUrl url(tmp.fileName());
         MailCommon::FilterImporterExporter exportFilters;
         exportFilters.exportFilters(lstFilter, url, true);
-        const bool fileAdded  = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + QLatin1String("filters"));
+        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + QLatin1String("filters"));
         if (fileAdded) {
             Q_EMIT info(i18n("Filters backup done."));
         } else {
@@ -338,7 +337,7 @@ void ExportMailJob::backupConfig()
         for (const QString &str : archiveList) {
             KConfigGroup oldGroup = archiveConfig->group(str);
             qint64 id = oldGroup.readEntry("topLevelCollectionId", -1);
-            if (id != -1)  {
+            if (id != -1) {
                 const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(id));
                 if (!realPath.isEmpty()) {
                     oldGroup.writeEntry(QStringLiteral("topLevelCollectionId"), realPath);
@@ -542,7 +541,6 @@ void ExportMailJob::backupIdentity()
     const QString emailidentitiesStr(QStringLiteral("emailidentities"));
     const QString emailidentitiesrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + emailidentitiesStr;
     if (QFileInfo::exists(emailidentitiesrc)) {
-
         KSharedConfigPtr identity = KSharedConfig::openConfig(emailidentitiesrc);
 
         QTemporaryFile tmp;
@@ -571,7 +569,7 @@ void ExportMailJob::backupIdentity()
                     const int uoid = group.readEntry(QStringLiteral("uoid"), -1);
                     QFile file(vcardFileName);
                     if (file.exists()) {
-                        const bool fileAdded  = archive()->addLocalFile(vcardFileName, Utils::identitiesPath() + QString::number(uoid) + QDir::separator() + file.fileName());
+                        const bool fileAdded = archive()->addLocalFile(vcardFileName, Utils::identitiesPath() + QString::number(uoid) + QDir::separator() + file.fileName());
                         if (!fileAdded) {
                             Q_EMIT error(i18n("vCard file \"%1\" cannot be saved.", file.fileName()));
                         }
@@ -583,7 +581,7 @@ void ExportMailJob::backupIdentity()
         }
 
         identityConfig->sync();
-        const bool fileAdded  = archive()->addLocalFile(tmp.fileName(), Utils::identitiesPath() + QLatin1String("emailidentities"));
+        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::identitiesPath() + QLatin1String("emailidentities"));
         delete identityConfig;
         if (fileAdded) {
             Q_EMIT info(i18n("Identity backup done."));
@@ -592,4 +590,3 @@ void ExportMailJob::backupIdentity()
         }
     }
 }
-

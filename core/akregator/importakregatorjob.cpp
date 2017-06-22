@@ -84,7 +84,7 @@ void ImportAkregatorJob::restoreData()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore data..."));
-    const KArchiveEntry *akregatorEntry  = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("akregator/"));
+    const KArchiveEntry *akregatorEntry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("akregator/"));
     if (akregatorEntry && akregatorEntry->isDirectory()) {
         const QString akregatorPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("akregator/");
         overwriteDirectory(akregatorPath, akregatorEntry);
@@ -92,4 +92,3 @@ void ImportAkregatorJob::restoreData()
     Q_EMIT info(i18n("Data restored."));
     QTimer::singleShot(0, this, &ImportAkregatorJob::slotNextStep);
 }
-

@@ -22,12 +22,10 @@
 LogInfo::LogInfo(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 LogInfo::~LogInfo()
 {
-
 }
 
 void LogInfo::addInfoLogEntry(const QString &log)

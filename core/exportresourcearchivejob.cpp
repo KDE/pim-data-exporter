@@ -28,16 +28,14 @@
 #include <AkonadiCore/ServerManager>
 
 ExportResourceArchiveJob::ExportResourceArchiveJob(QObject *parent)
-    : QObject(parent),
-      mZip(nullptr),
-      mThread(nullptr)
+    : QObject(parent)
+    , mZip(nullptr)
+    , mThread(nullptr)
 {
-
 }
 
 ExportResourceArchiveJob::~ExportResourceArchiveJob()
 {
-
 }
 
 void ExportResourceArchiveJob::setArchive(KZip *zip)
@@ -91,7 +89,7 @@ void ExportResourceArchiveJob::slotTerminated(bool success)
         if (!url.isEmpty()) {
             const QFileInfo fi(url);
             const QString filename = fi.fileName();
-            const bool fileAdded  = mZip->addLocalFile(url, mArchivePath + filename);
+            const bool fileAdded = mZip->addLocalFile(url, mArchivePath + filename);
             if (fileAdded) {
                 Q_EMIT info(i18n("\"%1\" was backed up.", filename));
             } else {

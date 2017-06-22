@@ -34,14 +34,13 @@
 #include <exportresourcearchivejob.h>
 
 ExportCalendarJob::ExportCalendarJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
-    : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep),
-      mIndexIdentifier(0)
+    : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
+    , mIndexIdentifier(0)
 {
 }
 
 ExportCalendarJob::~ExportCalendarJob()
 {
-
 }
 
 void ExportCalendarJob::start()
@@ -172,4 +171,3 @@ void ExportCalendarJob::backupConfig()
     backupUiRcFile(QStringLiteral("korganizer_part.rc"), QStringLiteral("korganizer"));
     Q_EMIT info(i18n("Config backup done."));
 }
-

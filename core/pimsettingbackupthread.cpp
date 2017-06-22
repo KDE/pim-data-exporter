@@ -26,11 +26,11 @@
 #include <QDebug>
 
 PimSettingBackupThread::PimSettingBackupThread(KZip *zip, const QString &url, const QString &archivePath, const QString &archivename, QObject *parent)
-    : QThread(parent),
-      mUrl(url),
-      mArchivePath(archivePath),
-      mArchiveName(archivename),
-      mZip(zip)
+    : QThread(parent)
+    , mUrl(url)
+    , mArchivePath(archivePath)
+    , mArchiveName(archivename)
+    , mZip(zip)
 {
     qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " PimSettingBackupThread::PimSettingBackupThread" << this;
 }

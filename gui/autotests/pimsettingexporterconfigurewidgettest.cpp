@@ -26,12 +26,10 @@
 PimSettingExporterConfigureWidgetTest::PimSettingExporterConfigureWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 PimSettingExporterConfigureWidgetTest::~PimSettingExporterConfigureWidgetTest()
 {
-
 }
 
 void PimSettingExporterConfigureWidgetTest::shouldHaveDefaultValue()

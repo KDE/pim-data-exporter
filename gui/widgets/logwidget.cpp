@@ -33,7 +33,6 @@ LogWidget::LogWidget(QWidget *parent)
 
 LogWidget::~LogWidget()
 {
-
 }
 
 void LogWidget::clear()
