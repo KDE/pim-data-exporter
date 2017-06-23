@@ -81,8 +81,8 @@ void ImportAddressbookJob::restoreResources()
     increaseProgressDialog();
     QStringList listResource;
     listResource
-    << restoreResourceFile(QStringLiteral("akonadi_vcard_resource"), Utils::addressbookPath(), QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String(
-                               "/share/kaddressbook/"));
+        << restoreResourceFile(QStringLiteral("akonadi_vcard_resource"), Utils::addressbookPath(), QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String(
+                                   "/share/kaddressbook/"));
 
     if (!mListResourceFile.isEmpty()) {
         QDir dir(mTempDirName);
