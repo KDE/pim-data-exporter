@@ -474,7 +474,7 @@ void AbstractImportExportJob::extractZipFile(const KArchiveFile *file, const QSt
     } else {
         QFile archiveFile(source + QLatin1Char('/') + file->name());
         if (!archiveFile.copy(destination + QLatin1Char('/') + file->name())) {
-            Q_EMIT error(i18n("Unable to copy file", file->name()));
+            Q_EMIT error(i18n("Unable to copy file %1", file->name()));
         }
     }
 }
