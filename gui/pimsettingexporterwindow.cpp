@@ -175,8 +175,12 @@ void PimSettingExporterWindow::slotFullSyncInstanceFailed(const QString &identif
 
 void PimSettingExporterWindow::showFinishInformation()
 {
-    KMessageBox::information(this, i18n("For restoring data, you must use \"pimsettingexporter\". Be careful it can overwrite existing settings, data."), i18n("Backup infos."),
-                             QStringLiteral("setProgressDialogLabelBackupInfos"));
+    KMessageBox::information(
+        this,
+        i18n("For restoring data, you must use \"pimsettingexporter\". "
+             "Be careful as it can overwrite your existing settings and data."),
+        i18n("Backup"),
+        QStringLiteral("setProgressDialogLabelBackupInfos"));
     mTrayIcon->setStatus(KStatusNotifierItem::Passive);
 }
 
@@ -280,7 +284,10 @@ void PimSettingExporterWindow::slotSaveLog()
 
 void PimSettingExporterWindow::slotBackupData()
 {
-    if (KMessageBox::warningContinueCancel(this, i18n("Before backing up data, it is recommended to quit all kdepim applications."), i18n("Backup")) == KMessageBox::Cancel) {
+    if (KMessageBox::warningContinueCancel(
+        this,
+        i18n("Please quit all kdepim applications before backing up your data."),
+        i18n("Backup")) == KMessageBox::Cancel) {
         return;
     }
     backupData();
@@ -353,7 +360,11 @@ void PimSettingExporterWindow::slotRestoreData()
 
 void PimSettingExporterWindow::loadData(const QString &filename, const QString &templateFile)
 {
-    if (KMessageBox::warningYesNo(this, i18n("Before to restore data, close all kdepim applications. Do you want to continue?"), i18n("Backup")) == KMessageBox::No) {
+    if (KMessageBox::warningYesNo(
+        this,
+        i18n("Before restoring data you must close all kdepim applications. "
+             "Do you want to continue?"),
+        i18n("Backup")) == KMessageBox::No) {
         return;
     }
 
@@ -361,9 +372,13 @@ void PimSettingExporterWindow::loadData(const QString &filename, const QString &
     QString currentFileName = filename;
     if (currentFileName.isEmpty()) {
         QString recentDirClass;
-        currentFileName = QFileDialog::getOpenFileName(this, i18n("Restore backup"),
-                                                       KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")), recentDirClass).toLocalFile(),
-                                                       i18n("Zip File (*.zip)"));
+        currentFileName =
+            QFileDialog::getOpenFileName(
+                this,
+                i18n("Restore backup"),
+                KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")),
+                                         recentDirClass).toLocalFile(),
+                i18n("Zip File (*.zip)"));
         if (currentFileName.isEmpty()) {
             return;
         }
