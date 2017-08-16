@@ -10,7 +10,7 @@ ecm_qt_declare_logging_category(pimsettingexporterconsole_loginfiletest_SRCS HEA
 
 
 add_executable( pimsettingexporterconsole_loginfiletest ${pimsettingexporterconsole_loginfiletest_SRCS})
-add_test( pimsettingexporterconsole_loginfiletest pimsettingexporterconsole_loginfiletest)
+add_test(NAME pimsettingexporterconsole_loginfiletest COMMAND pimsettingexporterconsole_loginfiletest)
 ecm_mark_as_test(pimsettingexporterconsole_loginfiletest)
 target_link_libraries( pimsettingexporterconsole_loginfiletest Qt5::Test)
 
