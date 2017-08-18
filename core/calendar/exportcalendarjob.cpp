@@ -157,6 +157,7 @@ void ExportCalendarJob::backupConfig()
 
     backupConfigFile(QStringLiteral("calendar_printing.rc"));
     backupConfigFile(QStringLiteral("korgacrc"));
+    backupConfigFile(QStringLiteral("eventviewsrc"));
 
     const QString freebusyurlsStr(QStringLiteral("korganizer/freebusyurls"));
     const QString freebusyurls = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + freebusyurlsStr;

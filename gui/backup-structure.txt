@@ -1,4 +1,4 @@
-2016-12-28:
+2017-08-18:
 -----------
 
 2015-1-29: New VERSION for archive => VERSION_2 => knote-akonadi
@@ -112,6 +112,7 @@ Root
 |       |---------akonadiconsoleui.rc
 |       |---------foldermailarchiverc
 |       |---------pimpluginsrc
+|       |---------eventviewsrc
 |
 |-----akonadi
 |       |---------<archive akonadi>
