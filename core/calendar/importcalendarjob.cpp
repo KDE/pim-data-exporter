@@ -270,6 +270,7 @@ void ImportCalendarJob::restoreConfig()
     restoreUiRcFile(QStringLiteral("korganizerui.rc"), QStringLiteral("korganizer"));
     restoreUiRcFile(QStringLiteral("korganizer_part.rc"), QStringLiteral("korganizer"));
 
+    restoreConfigFile(QStringLiteral("eventviewsrc"));
     Q_EMIT info(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportCalendarJob::slotNextStep);
 }
