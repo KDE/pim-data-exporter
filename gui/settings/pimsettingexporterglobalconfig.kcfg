@@ -5,13 +5,13 @@
       http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
 
   <group name="General">
-    <entry name="AlwaysOverrideFile" type="bool">
+    <entry name="AlwaysOverrideFile" type="Bool">
       <default>false</default>
     </entry>
-    <entry name="AlwaysMergeConfigFile" type="bool">
+    <entry name="AlwaysMergeConfigFile" type="Bool">
       <default>false</default>
-    </entry>   
-    <entry name="AlwaysOverrideDirectory" type="bool">
+    </entry>
+    <entry name="AlwaysOverrideDirectory" type="Bool">
       <default>false</default>
     </entry>
   </group>
