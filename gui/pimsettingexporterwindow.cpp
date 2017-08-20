@@ -238,8 +238,9 @@ void PimSettingExporterWindow::setupActions(bool canZipFile)
 
 void PimSettingExporterWindow::slotConfigure()
 {
-    PimSettingExporterConfigureDialog dlg(this);
-    dlg.exec();
+    QPointer<PimSettingExporterConfigureDialog> dlg = new PimSettingExporterConfigureDialog(this);
+    dlg->exec();
+    delete dlg;
 }
 
 void PimSettingExporterWindow::slotUpdateActions(bool inAction)
