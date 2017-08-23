@@ -40,7 +40,7 @@ private Q_SLOTS:
     void slotAddressbookJobTerminated();
 private:
     void backupConfig();
-    int mIndexIdentifier;
+    int mIndexIdentifier = 0;
 };
 
 #endif // EXPORTADDRESSBOOKJOB_H

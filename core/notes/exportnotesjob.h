@@ -40,7 +40,7 @@ private Q_SLOTS:
 private:
     void backupConfig();
     void backupTheme();
-    int mIndexIdentifier;
+    int mIndexIdentifier = 0;
 };
 
 #endif // EXPORTNOTESJOB_H

@@ -66,13 +66,13 @@ private:
     QString templateSelectionToString();
     bool removeNotSelectedItem(QTreeWidgetItem *parent);
 
-    QTreeWidgetItem *mKmailItem;
-    QTreeWidgetItem *mKalarmItem;
-    QTreeWidgetItem *mKaddressbookItem;
-    QTreeWidgetItem *mKorganizerItem;
-    QTreeWidgetItem *mKNotesItem;
-    QTreeWidgetItem *mAkregatorItem;
-    QTreeWidgetItem *mBlogiloItem;
+    QTreeWidgetItem *mKmailItem = nullptr;
+    QTreeWidgetItem *mKalarmItem = nullptr;
+    QTreeWidgetItem *mKaddressbookItem = nullptr;
+    QTreeWidgetItem *mKorganizerItem = nullptr;
+    QTreeWidgetItem *mKNotesItem = nullptr;
+    QTreeWidgetItem *mAkregatorItem = nullptr;
+    QTreeWidgetItem *mBlogiloItem = nullptr;
 };
 
 #endif // SELECTIONTYPETREEWIDGET_H

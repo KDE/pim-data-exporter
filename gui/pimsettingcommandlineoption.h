@@ -41,7 +41,7 @@ public Q_SLOTS:
 
 private:
     QCommandLineParser mParser;
-    PimSettingExporterWindow *mExporterWindow;
+    PimSettingExporterWindow *mExporterWindow = nullptr;
 };
 
 #endif // PIMSETTINGCOMMANDLINEOPTION_H

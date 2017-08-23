@@ -46,8 +46,8 @@ private Q_SLOTS:
 
 private:
     QStringList mListResources;
-    int mIndex;
-    bool mOnlyCollection;
+    int mIndex = 0;
+    bool mOnlyCollection = true;
 };
 
 #endif // SYNCHRONIZERESOURCEJOB_H

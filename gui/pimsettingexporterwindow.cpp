@@ -61,13 +61,6 @@
 
 PimSettingExporterWindow::PimSettingExporterWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
-    , mBackupAction(nullptr)
-    , mRestoreAction(nullptr)
-    , mSaveLogAction(nullptr)
-    , mArchiveStructureInfo(nullptr)
-    , mShowArchiveInformationsAction(nullptr)
-    , mPimSettingsBackupRestoreUI(nullptr)
-    , mTrayIcon(nullptr)
 {
     //Initialize filtermanager
     (void)MailCommon::FilterManager::instance();

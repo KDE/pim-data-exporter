@@ -39,7 +39,7 @@ Q_SIGNALS:
     void error(const QString &);
 
 private:
-    KZip *mArchive;
+    KZip *mArchive = nullptr;
 };
 
 #endif // ARCHIVESTORAGE_H

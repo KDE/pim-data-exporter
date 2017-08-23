@@ -41,7 +41,7 @@ private:
     QString mUrl;
     QString mArchivePath;
     QString mArchiveName;
-    KZip *mZip;
+    KZip *mZip = nullptr;
 };
 
 #endif // PIMSETTINGBACKUPTHREAD_H

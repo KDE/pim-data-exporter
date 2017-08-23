@@ -26,8 +26,6 @@
 
 FullSynchronizeResourcesJob::FullSynchronizeResourcesJob(QObject *parent)
     : QObject(parent)
-    , mWindowParent(nullptr)
-    , mProgressDialog(nullptr)
 {
 }
 

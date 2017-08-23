@@ -23,8 +23,6 @@
 #include <QXmlStreamWriter>
 
 TemplateSelection::TemplateSelection()
-    : mStreamWriter(nullptr)
-    , mStreamReader(nullptr)
 {
 }
 

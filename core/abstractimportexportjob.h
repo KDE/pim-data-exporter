@@ -121,15 +121,15 @@ protected:
 
     QString mTempDirName;
     Utils::StoredTypes mTypeSelected;
-    ArchiveStorage *mArchiveStorage;
-    KIdentityManagement::IdentityManager *mIdentityManager;
-    QTemporaryDir *mTempDir;
-    const KArchiveDirectory *mArchiveDirectory;
-    int mNumberOfStep;
-    PimCommon::CreateResource *mCreateResource;
+    ArchiveStorage *mArchiveStorage = nullptr;
+    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
+    QTemporaryDir *mTempDir = nullptr;
+    const KArchiveDirectory *mArchiveDirectory = nullptr;
+    int mNumberOfStep = -1;
+    PimCommon::CreateResource *mCreateResource = nullptr;
     QStringList mAgentPaths;
     QList<Utils::StoredType> mListStep;
-    int mIndex;
+    int mIndex = -1;
     static int sArchiveVersion;
 
 private:

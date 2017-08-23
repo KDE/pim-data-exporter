@@ -40,7 +40,7 @@ private Q_SLOTS:
     void slotWriteNextArchiveResource();
 private:
     void backupConfig();
-    int mIndexIdentifier;
+    int mIndexIdentifier = 0;
 };
 
 #endif // EXPORTCALENDARJOB_H

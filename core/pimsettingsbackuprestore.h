@@ -60,7 +60,7 @@ protected:
     virtual bool continueToRestore();
 
     virtual void addExportProgressIndicator();
-    AbstractImportExportJob *mImportExportData;
+    AbstractImportExportJob *mImportExportData = nullptr;
 private:
     enum Action {
         Backup,
@@ -77,8 +77,8 @@ private:
     QString mExportedInfoFileName;
     QHash<Utils::AppsType, Utils::importExportParameters> mStored;
     QHash<Utils::AppsType, Utils::importExportParameters>::const_iterator mStoreIterator;
-    Action mAction;
-    ArchiveStorage *mArchiveStorage;
+    Action mAction = Backup;
+    ArchiveStorage *mArchiveStorage = nullptr;
 };
 
 #endif // PIMSETTINGSBACKUPRESTORE_H

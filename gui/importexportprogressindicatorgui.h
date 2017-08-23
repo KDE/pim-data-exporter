@@ -40,8 +40,8 @@ public:
     void showErrorMessage(const QString &message, const QString &title) override;
 
 private:
-    QProgressDialog *mProgressDialog;
-    QWidget *mParentWidget;
+    QProgressDialog *mProgressDialog = nullptr;
+    QWidget *mParentWidget = nullptr;
 };
 
 #endif // IMPORTEXPORTPROGRESSINDICATORGUI_H

@@ -47,10 +47,7 @@ AbstractImportExportJob::AbstractImportExportJob(QObject *parent, ArchiveStorage
     , mTypeSelected(typeSelected)
     , mArchiveStorage(archiveStorage)
     , mIdentityManager(KIdentityManagement::IdentityManager::self())
-    , mTempDir(nullptr)
-    , mArchiveDirectory(nullptr)
     , mNumberOfStep(numberOfStep)
-    , mCreateResource(nullptr)
     , mIndex(-1)
     , mImportExportProgressIndicator(new ImportExportProgressIndicatorBase(this))
 {

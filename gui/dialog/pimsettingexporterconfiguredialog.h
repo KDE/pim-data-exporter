@@ -33,7 +33,7 @@ private Q_SLOTS:
     void slotAccepted();
 
 private:
-    PimSettingExporterConfigureWidget *mConfigureWidget;
+    PimSettingExporterConfigureWidget *mConfigureWidget = nullptr;
 };
 
 #endif // PIMSETTINGEXPORTERCONFIGUREDIALOG_H

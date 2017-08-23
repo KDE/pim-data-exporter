@@ -35,7 +35,7 @@ private:
     void readConfig();
     void writeConfig();
     void loadStructure();
-    KPIMTextEdit::PlainTextEditorWidget *mEditor;
+    KPIMTextEdit::PlainTextEditorWidget *mEditor = nullptr;
 };
 
 #endif // BACKUPFILESTRUCTUREINFODIALOG_H

@@ -52,9 +52,6 @@
 
 PimSettingsBackupRestore::PimSettingsBackupRestore(QObject *parent)
     : QObject(parent)
-    , mImportExportData(nullptr)
-    , mAction(Backup)
-    , mArchiveStorage(nullptr)
 {
 }
 

@@ -45,7 +45,7 @@ private:
     void readConfig();
     void writeConfig();
     void selectItem(bool state);
-    QListWidget *mListResourceWidget;
+    QListWidget *mListResourceWidget = nullptr;
 };
 
 #endif // SYNCHRONIZERESOURCEDIALOG_H

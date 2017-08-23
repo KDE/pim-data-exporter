@@ -63,19 +63,19 @@ private:
     void loadData(const QString &filename = QString(), const QString &templateFile = QString());
     void setupActions(bool canZipFile);
     void showFinishInformation();
-    LogWidget *mLogWidget;
-    KRecentFilesAction *mRecentFilesAction;
-    QAction *mBackupAction;
-    QAction *mRestoreAction;
-    QAction *mSaveLogAction;
-    QAction *mArchiveStructureInfo;
-    QAction *mShowArchiveInformationsAction;
-    QAction *mShowArchiveInformationsAboutCurrentArchiveAction;
-    PimSettingsBackupRestoreUI *mPimSettingsBackupRestoreUI;
+    LogWidget *mLogWidget= nullptr;
+    KRecentFilesAction *mRecentFilesAction= nullptr;
+    QAction *mBackupAction= nullptr;
+    QAction *mRestoreAction= nullptr;
+    QAction *mSaveLogAction= nullptr;
+    QAction *mArchiveStructureInfo= nullptr;
+    QAction *mShowArchiveInformationsAction= nullptr;
+    QAction *mShowArchiveInformationsAboutCurrentArchiveAction= nullptr;
+    PimSettingsBackupRestoreUI *mPimSettingsBackupRestoreUI= nullptr;
     QString mLastArchiveFileName;
     // Name, identifier
     QHash<QString, QString> mNeedToSyncResources;
-    PimSettingsTrayIcon *mTrayIcon;
+    PimSettingsTrayIcon *mTrayIcon = nullptr;
 };
 
 #endif /* PIMSETTINGEXPORTERWINDOW_H */

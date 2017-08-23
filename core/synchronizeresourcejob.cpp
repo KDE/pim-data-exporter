@@ -29,8 +29,6 @@
 
 SynchronizeResourceJob::SynchronizeResourceJob(QObject *parent)
     : QObject(parent)
-    , mIndex(0)
-    , mOnlyCollection(true)
 {
 }
 

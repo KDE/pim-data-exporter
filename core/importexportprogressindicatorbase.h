@@ -46,7 +46,7 @@ Q_SIGNALS:
     void canceled();
 
 protected:
-    int mNumberOfStep;
+    int mNumberOfStep = 0;
 };
 
 #endif // IMPORTEXPORTPROGRESSINDICATORBASE_H

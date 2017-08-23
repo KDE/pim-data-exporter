@@ -40,8 +40,8 @@ public:
 private:
     Utils::StoredTypes loadStoredTypes(int &numberOfStep);
     void saveParameters(Utils::StoredTypes type);
-    QXmlStreamWriter *mStreamWriter;
-    QXmlStreamReader *mStreamReader;
+    QXmlStreamWriter *mStreamWriter = nullptr;
+    QXmlStreamReader *mStreamReader = nullptr;
     QString mSaveTemplate;
 };
 

@@ -48,7 +48,7 @@ private:
     QTreeWidgetItem *addItem(QTreeWidgetItem *parent, const QString &name);
     QString mFileName;
     QString mLogFile;
-    QTreeWidget *mTreeWidget;
+    QTreeWidget *mTreeWidget = nullptr;
 };
 
 #endif // SHOWARCHIVESTRUCTUREDIALOG_H

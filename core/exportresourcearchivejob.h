@@ -57,8 +57,8 @@ private:
     QString mUrl;
     QString mArchivePath;
     QString mIdentifier;
-    KZip *mZip;
-    PimSettingBackupThread *mThread;
+    KZip *mZip = nullptr;
+    PimSettingBackupThread *mThread = nullptr;
 };
 
 #endif // EXPORTRESOURCEARCHIVEJOB_H

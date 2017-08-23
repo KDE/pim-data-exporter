@@ -36,9 +36,9 @@ public Q_SLOTS:
 
 private:
     void initialize();
-    QCheckBox *mAlwaysOverrideFile;
-    QCheckBox *mAlwaysOverrideDirectory;
-    QCheckBox *mAlwaysMergeConfigFile;
+    QCheckBox *mAlwaysOverrideFile = nullptr;
+    QCheckBox *mAlwaysOverrideDirectory = nullptr;
+    QCheckBox *mAlwaysMergeConfigFile = nullptr;
 };
 
 #endif // PIMSETTINGEXPORTERCONFIGUREWIDGET_H

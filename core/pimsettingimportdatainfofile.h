@@ -35,7 +35,7 @@ public:
 
     QString importDataInfoPath();
 private:
-    QTemporaryDir *mTempDir;
+    QTemporaryDir *mTempDir = nullptr;
     QString mFilename;
 };
 

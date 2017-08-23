@@ -22,7 +22,6 @@
 
 ImportExportProgressIndicatorBase::ImportExportProgressIndicatorBase(QObject *parent)
     : QObject(parent)
-    , mNumberOfStep(0)
 {
 }
 

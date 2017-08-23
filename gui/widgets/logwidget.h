@@ -42,7 +42,7 @@ public:
     bool isEmpty() const;
 
 private:
-    KPIM::CustomLogWidget *mCustomLogWidget;
+    KPIM::CustomLogWidget *mCustomLogWidget = nullptr;
 };
 
 #endif // LOGWIDGET_H

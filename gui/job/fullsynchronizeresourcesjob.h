@@ -48,8 +48,8 @@ private Q_SLOTS:
     void slotSynchronizeFinished();
 private:
     QStringList mResources;
-    QWidget *mWindowParent;
-    QProgressDialog *mProgressDialog;
+    QWidget *mWindowParent = nullptr;
+    QProgressDialog *mProgressDialog = nullptr;
 };
 
 #endif // FULLSYNCHRONIZERESOURCESJOB_H

@@ -52,8 +52,8 @@ private:
     void backupResources();
     void backupConfig();
     void backupIdentity();
-    QDateTime mArchiveTime;
-    int mIndexIdentifier;
+    QDateTime mArchiveTime = QDateTime::currentDateTime();
+    int mIndexIdentifier = 0;
 };
 
 #endif // ExportMailJob_H

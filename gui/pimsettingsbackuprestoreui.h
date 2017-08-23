@@ -33,7 +33,7 @@ protected:
     bool continueToRestore() override;
     void addExportProgressIndicator() override;
 private:
-    QWidget *mParentWidget;
+    QWidget *mParentWidget = nullptr;
 };
 
 #endif // PIMSETTINGSBACKUPRESTOREUI_H
