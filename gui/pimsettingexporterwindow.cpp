@@ -255,7 +255,7 @@ void PimSettingExporterWindow::slotRestoreFile(const QUrl &url)
 
 void PimSettingExporterWindow::slotShowArchiveInformations()
 {
-    const QString filename = QFileDialog::getOpenFileName(this, i18n("Select Archive"), QString(), i18n("Zip file (*.zip)"));
+    const QString filename = QFileDialog::getOpenFileName(this, i18n("Select Archive"), QString(), QStringLiteral("%1 (*.zip)").arg(i18n("Zip file")));
     if (filename.isEmpty()) {
         return;
     }
@@ -372,7 +372,7 @@ void PimSettingExporterWindow::loadData(const QString &filename, const QString &
                 i18n("Restore backup"),
                 KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")),
                                          recentDirClass).toLocalFile(),
-                i18n("Zip File (*.zip)"));
+                QStringLiteral("%1 (*.zip)").arg(i18n("Zip File")));
         if (currentFileName.isEmpty()) {
             return;
         }
