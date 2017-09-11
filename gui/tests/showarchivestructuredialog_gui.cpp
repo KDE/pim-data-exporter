@@ -22,7 +22,6 @@
 #include <KLocalizedString>
 #include <QFileDialog>
 #include <QApplication>
-#include <KAboutData>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <QStandardPaths>
@@ -31,16 +30,11 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    KAboutData aboutData(QStringLiteral("showarchivestructuredialog_gui"), i18n("showarchivestructuredialog_Gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(i18n("Test for showarchivestructuredialog"));
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), i18n("URL of a archive to open")));
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     QString fileName;
     if (parser.positionalArguments().count()) {

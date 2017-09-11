@@ -21,7 +21,6 @@
 
 #include <KLocalizedString>
 #include <QApplication>
-#include <KAboutData>
 #include <QCommandLineParser>
 #include <QStandardPaths>
 
@@ -29,15 +28,10 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    KAboutData aboutData(QStringLiteral("selectiontypedialog_gui"), i18n("SelectionTypeTest_Gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(i18n("Test for selectiontypedialog"));
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     SelectionTypeDialog *dialog = new SelectionTypeDialog;
     dialog->resize(800, 600);
