@@ -19,7 +19,6 @@
 
 #include "../dialog/showarchivestructuredialog.h"
 
-#include <KLocalizedString>
 #include <QFileDialog>
 #include <QApplication>
 #include <QCommandLineParser>
@@ -33,14 +32,14 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), i18n("URL of a archive to open")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), QStringLiteral("URL of a archive to open")));
     parser.process(app);
 
     QString fileName;
     if (parser.positionalArguments().count()) {
         fileName = parser.positionalArguments().at(0);
     } else {
-        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), i18n("Zip file (*.zip)"));
+        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), QStringLiteral("Zip file (*.zip)"));
     }
     if (fileName.isEmpty()) {
         return 0;
