@@ -42,11 +42,11 @@ Q_SIGNALS:
     void synchronizeInstanceDone(const QString &instance);
     void synchronizeInstanceFailed(const QString &instance);
 
-private Q_SLOTS:
+private:
     void slotSynchronizeInstanceFailed(const QString &identifier);
     void slotSynchronizeInstanceDone(const QString &identifier);
     void slotSynchronizeFinished();
-private:
+
     QStringList mResources;
     QWidget *mWindowParent = nullptr;
     QProgressDialog *mProgressDialog = nullptr;

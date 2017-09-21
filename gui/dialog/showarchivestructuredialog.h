@@ -33,10 +33,8 @@ public:
     explicit ShowArchiveStructureDialog(const QString &filename, QWidget *parent = nullptr);
     ~ShowArchiveStructureDialog();
 
-private Q_SLOTS:
-    void slotExportAsLogFile();
-
 private:
+    void slotExportAsLogFile();
     void exportAsLogFile();
     bool fillTree();
     void readConfig();

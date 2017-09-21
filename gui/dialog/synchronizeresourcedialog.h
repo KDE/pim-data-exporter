@@ -32,12 +32,12 @@ public:
     void setResources(const QHash<QString, QString> &resources);
     QStringList resources() const;
 
-private Q_SLOTS:
+private:
     void slotAccepted();
     void slotSelectAll();
     void slotUnselectAll();
 
-private:
+
     enum DataType {
         ResourceIdentifier = Qt::UserRole + 1
     };

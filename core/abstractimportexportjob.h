@@ -69,12 +69,6 @@ Q_SIGNALS:
     void needSynchronizeResource(const QString &name, const QString &identifier);
     void jobFinished();
 
-private Q_SLOTS:
-    void slotAllResourceSynchronized();
-    void slotSynchronizeInstanceDone(const QString &, const QString &identifier);
-    void slotSynchronizeInstanceFailed(const QString &instance);
-    void slotTaskCanceled();
-
 protected:
     virtual void slotNextStep();
 
@@ -133,7 +127,12 @@ protected:
     static int sArchiveVersion;
 
 private:
-    ImportExportProgressIndicatorBase *mImportExportProgressIndicator;
+    void slotAllResourceSynchronized();
+    void slotSynchronizeInstanceDone(const QString &, const QString &identifier);
+    void slotSynchronizeInstanceFailed(const QString &instance);
+    void slotTaskCanceled();
+
+    ImportExportProgressIndicatorBase *mImportExportProgressIndicator = nullptr;
 };
 
 #endif // ABSTRACTIMPORTEXPORTJOB_H

@@ -41,8 +41,6 @@ public:
     void nextStep();
     void closeArchive();
     void setExportedInfoFileName(const QString &filename);
-private Q_SLOTS:
-    void slotJobFinished();
 
 Q_SIGNALS:
     void addInfo(const QString &);
@@ -62,6 +60,7 @@ protected:
     virtual void addExportProgressIndicator();
     AbstractImportExportJob *mImportExportData = nullptr;
 private:
+    void slotJobFinished();
     enum Action {
         Backup,
         Restore

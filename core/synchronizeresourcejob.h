@@ -40,11 +40,10 @@ Q_SIGNALS:
     void synchronizationInstanceDone(const QString &name, const QString &identifier);
     void synchronizationInstanceFailed(const QString &);
 
-private Q_SLOTS:
+private:
     void slotSynchronizationFinished(KJob *);
     void slotNextSync();
 
-private:
     QStringList mListResources;
     int mIndex = 0;
     bool mOnlyCollection = true;

@@ -45,13 +45,12 @@ Q_SIGNALS:
     void info(const QString &str);
     void terminated();
 
-private Q_SLOTS:
-    void slotTerminated(bool success);
 
 public Q_SLOTS:
     void slotTaskCanceled();
 
 private:
+    void slotTerminated(bool success);
     void finished();
     QString mArchiveName;
     QString mUrl;

@@ -58,6 +58,7 @@ PimSettingsBackupRestore::PimSettingsBackupRestore(QObject *parent)
 PimSettingsBackupRestore::~PimSettingsBackupRestore()
 {
     delete mImportExportData;
+    mImportExportData = nullptr;
     QFile f(mExportedInfoFileName);
     if (f.exists()) {
         const bool removeFile = f.remove();

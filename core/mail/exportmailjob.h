@@ -38,7 +38,7 @@ public:
 Q_SIGNALS:
     void taskCanceled();
 
-private Q_SLOTS:
+private:
     void slotCheckBackupIdentity();
     void slotCheckBackupMailTransport();
     void slotCheckBackupConfig();
@@ -46,7 +46,7 @@ private Q_SLOTS:
     void slotCheckBackupResources();
     void slotMailsJobTerminated();
     void slotWriteNextArchiveResource();
-private:
+
     bool checkBackupType(Utils::StoredType type) const;
     void backupTransports();
     void backupResources();

@@ -32,12 +32,12 @@ public:
 
     void start() override;
 
-private Q_SLOTS:
+private:
     void slotCheckBackupResource();
     void slotCheckBackupConfig();
     void slotNoteJobTerminated();
     void slotWriteNextArchiveResource();
-private:
+
     void backupConfig();
     void backupTheme();
     int mIndexIdentifier = 0;

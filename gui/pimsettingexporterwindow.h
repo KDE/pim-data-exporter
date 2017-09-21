@@ -63,6 +63,9 @@ private:
     void loadData(const QString &filename = QString(), const QString &templateFile = QString());
     void setupActions(bool canZipFile);
     void showFinishInformation();
+    QString mLastArchiveFileName;
+    // Name, identifier
+    QHash<QString, QString> mNeedToSyncResources;
     LogWidget *mLogWidget= nullptr;
     KRecentFilesAction *mRecentFilesAction= nullptr;
     QAction *mBackupAction= nullptr;
@@ -72,9 +75,6 @@ private:
     QAction *mShowArchiveInformationsAction= nullptr;
     QAction *mShowArchiveInformationsAboutCurrentArchiveAction= nullptr;
     PimSettingsBackupRestoreUI *mPimSettingsBackupRestoreUI= nullptr;
-    QString mLastArchiveFileName;
-    // Name, identifier
-    QHash<QString, QString> mNeedToSyncResources;
     PimSettingsTrayIcon *mTrayIcon = nullptr;
 };
 

@@ -29,10 +29,9 @@ public:
     explicit PimSettingExporterConfigureDialog(QWidget *parent = nullptr);
     ~PimSettingExporterConfigureDialog();
 
-private Q_SLOTS:
+private:
     void slotAccepted();
 
-private:
     PimSettingExporterConfigureWidget *mConfigureWidget = nullptr;
 };
 

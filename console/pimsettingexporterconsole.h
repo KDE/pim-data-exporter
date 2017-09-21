@@ -51,7 +51,7 @@ public:
 Q_SIGNALS:
     void finished();
 
-private Q_SLOTS:
+private:
     void slotAddEndLine();
     void slotAddError(const QString &message);
     void slotAddInfo(const QString &message);
@@ -60,16 +60,16 @@ private Q_SLOTS:
     void slotBackupDone();
     void slotJobFinished();
     void slotRestoreDone();
-private:
+
     void initializeLogInFile();
     void closeLogFile();
     QString mTemplateFileName;
     QString mImportExportFileName;
-    PimSettingsBackupRestore *mPimSettingsBackupRestore;
-    LogInFile *mLogInFile;
-    LogInfo *mLogInfo;
+    PimSettingsBackupRestore *mPimSettingsBackupRestore = nullptr;
+    LogInFile *mLogInFile = nullptr;
+    LogInfo *mLogInfo = nullptr;
     Mode mMode;
-    bool mInProgress;
+    bool mInProgress = false;
 };
 
 #endif // PIMSETTINGEXPORTERCONSOLE_H
