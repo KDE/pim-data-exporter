@@ -33,7 +33,7 @@ PimSettingExporterConfigureDialog::PimSettingExporterConfigureDialog(QWidget *pa
     mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
     layout->addWidget(mConfigureWidget);
 
-    QDialogButtonBox *button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
+    QDialogButtonBox *button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
     button->setObjectName(QStringLiteral("buttonbox"));
     connect(button, &QDialogButtonBox::accepted, this, &PimSettingExporterConfigureDialog::slotAccepted);
     connect(button, &QDialogButtonBox::rejected, this, &PimSettingExporterConfigureDialog::reject);
