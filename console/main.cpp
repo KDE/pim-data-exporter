@@ -38,8 +38,6 @@ int main(int argc, char *argv[])
                          QStringLiteral(PIMSETTINGEXPORTER_VERSION), i18n("PIM Setting Exporter Console"), KAboutLicense::GPL_V2,
                          i18n("Copyright © 2015-2017 pimsettingexporter authors"));
     aboutData.addAuthor(i18n("Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
-    parser.addVersionOption();
-    parser.addHelpOption();
     parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("logfile"), i18n("File to log information to."), QStringLiteral("file")));
     parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("template"), i18n("Template file to define what data, settings to import or export."), QStringLiteral("file")));
     parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("import"), i18n("Import the given file."), QStringLiteral("file")));
