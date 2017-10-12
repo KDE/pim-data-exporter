@@ -990,7 +990,7 @@ void ImportMailJob::importFolderArchiveConfig(const KArchiveFile *archiveconfigu
     archiveConfig->sync();
 }
 
-void ImportMailJob::copyArchiveMailAgentConfigGroup(KSharedConfig::Ptr archiveConfigOrigin, KSharedConfig::Ptr archiveConfigDestination)
+void ImportMailJob::copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
     //adapt id
     const QString archiveGroupPattern = QStringLiteral("ArchiveMailCollection ");

@@ -114,7 +114,7 @@ QString Utils::infoPath()
     return QStringLiteral("information/");
 }
 
-QString Utils::adaptResourcePath(KSharedConfigPtr resourceConfig, const QString &storedData)
+QString Utils::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
     QString newUrl = Utils::resourcePath(resourceConfig);
     if (!newUrl.contains(QDir::homePath())) {
