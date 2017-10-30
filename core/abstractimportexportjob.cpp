@@ -268,8 +268,9 @@ void AbstractImportExportJob::convertRealPathToCollectionList(KConfigGroup &grou
 
 Akonadi::Collection::Id AbstractImportExportJob::convertPathToId(const QString &path)
 {
-    if (mHashConvertPathCollectionId.contains(path)) {
-        return mHashConvertPathCollectionId.value(path);
+    Akonadi::Collection::Id val = mHashConvertPathCollectionId.value(path, -1);
+    if (val != -1) {
+        return val;
     }
     const Akonadi::Collection::Id id = MailCommon::Util::convertFolderPathToCollectionId(path);
     if (id != -1) {
