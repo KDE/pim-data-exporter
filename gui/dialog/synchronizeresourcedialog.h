@@ -37,7 +37,6 @@ private:
     void slotSelectAll();
     void slotUnselectAll();
 
-
     enum DataType {
         ResourceIdentifier = Qt::UserRole + 1
     };

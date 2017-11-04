@@ -66,15 +66,15 @@ private:
     QString mLastArchiveFileName;
     // Name, identifier
     QHash<QString, QString> mNeedToSyncResources;
-    LogWidget *mLogWidget= nullptr;
-    KRecentFilesAction *mRecentFilesAction= nullptr;
-    QAction *mBackupAction= nullptr;
-    QAction *mRestoreAction= nullptr;
-    QAction *mSaveLogAction= nullptr;
-    QAction *mArchiveStructureInfo= nullptr;
-    QAction *mShowArchiveInformationsAction= nullptr;
-    QAction *mShowArchiveInformationsAboutCurrentArchiveAction= nullptr;
-    PimSettingsBackupRestoreUI *mPimSettingsBackupRestoreUI= nullptr;
+    LogWidget *mLogWidget = nullptr;
+    KRecentFilesAction *mRecentFilesAction = nullptr;
+    QAction *mBackupAction = nullptr;
+    QAction *mRestoreAction = nullptr;
+    QAction *mSaveLogAction = nullptr;
+    QAction *mArchiveStructureInfo = nullptr;
+    QAction *mShowArchiveInformationsAction = nullptr;
+    QAction *mShowArchiveInformationsAboutCurrentArchiveAction = nullptr;
+    PimSettingsBackupRestoreUI *mPimSettingsBackupRestoreUI = nullptr;
     PimSettingsTrayIcon *mTrayIcon = nullptr;
 };
 

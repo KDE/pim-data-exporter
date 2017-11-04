@@ -45,7 +45,6 @@ Q_SIGNALS:
     void info(const QString &str);
     void terminated();
 
-
 public Q_SLOTS:
     void slotTaskCanceled();
 

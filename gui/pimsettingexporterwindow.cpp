@@ -279,9 +279,9 @@ void PimSettingExporterWindow::slotSaveLog()
 void PimSettingExporterWindow::slotBackupData()
 {
     if (KMessageBox::warningContinueCancel(
-        this,
-        i18n("Please quit all kdepim applications before backing up your data."),
-        i18n("Backup")) == KMessageBox::Cancel) {
+            this,
+            i18n("Please quit all kdepim applications before backing up your data."),
+            i18n("Backup")) == KMessageBox::Cancel) {
         return;
     }
     backupData();
@@ -355,10 +355,10 @@ void PimSettingExporterWindow::slotRestoreData()
 void PimSettingExporterWindow::loadData(const QString &filename, const QString &templateFile)
 {
     if (KMessageBox::warningYesNo(
-        this,
-        i18n("Before restoring data you must close all kdepim applications. "
-             "Do you want to continue?"),
-        i18n("Backup")) == KMessageBox::No) {
+            this,
+            i18n("Before restoring data you must close all kdepim applications. "
+                 "Do you want to continue?"),
+            i18n("Backup")) == KMessageBox::No) {
         return;
     }
 
@@ -366,13 +366,13 @@ void PimSettingExporterWindow::loadData(const QString &filename, const QString &
     QString currentFileName = filename;
     if (currentFileName.isEmpty()) {
         QString recentDirClass;
-        currentFileName =
-            QFileDialog::getOpenFileName(
-                this,
-                i18n("Restore backup"),
-                KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")),
-                                         recentDirClass).toLocalFile(),
-                QStringLiteral("%1 (*.zip)").arg(i18n("Zip File")));
+        currentFileName
+            = QFileDialog::getOpenFileName(
+            this,
+            i18n("Restore backup"),
+            KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")),
+                                     recentDirClass).toLocalFile(),
+            QStringLiteral("%1 (*.zip)").arg(i18n("Zip File")));
         if (currentFileName.isEmpty()) {
             return;
         }
