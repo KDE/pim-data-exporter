@@ -915,10 +915,10 @@ void ImportMailJob::restoreIdentity()
                             const KArchiveEntry *vcardEntry = mArchiveDirectory->entry(Utils::identitiesPath() + QString::number(oldUid) + QDir::separator() + file.fileName());
                             if (vcardEntry && vcardEntry->isFile()) {
                                 const KArchiveFile *vcardFile = static_cast<const KArchiveFile *>(vcardEntry);
-                                QString vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/%1").arg(fileInfo.fileName());
+                                QString vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kmail2/%1").arg(fileInfo.fileName());
                                 int i = 1;
                                 while (QFileInfo::exists(vcardFileName)) {
-                                    vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/%1_%2").arg(i).arg(
+                                    vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kmail2/%1_%2").arg(i).arg(
                                         fileInfo.fileName());
                                     ++i;
                                 }
