@@ -35,7 +35,7 @@ public:
     ~PimSettingExporterWindow();
     void handleCommandLine(const QCommandLineParser &parser);
 
-private Q_SLOTS:
+private:
     void slotBackupData();
     void slotRestoreData();
     void slotAddInfo(const QString &info);

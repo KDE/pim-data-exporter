@@ -46,10 +46,10 @@ public:
     QString exportedFileInfo();
     void removeNotSelectedItems();
 
-private Q_SLOTS:
-    void slotItemChanged(QTreeWidgetItem *, int);
 
 private:
+    void slotItemChanged(QTreeWidgetItem *, int);
+
     enum ActionType {
         action = Qt::UserRole + 1
     };

@@ -32,7 +32,7 @@ public:
 
     void start() override;
 
-private Q_SLOTS:
+private:
     void slotNextStep() override;
 private:
     void importKNoteGlobalSettings(const KArchiveFile *kmailsnippet, const QString &kmail2rc, const QString &filename, const QString &prefix);

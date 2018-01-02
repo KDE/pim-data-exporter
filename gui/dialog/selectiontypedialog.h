@@ -35,15 +35,14 @@ public:
 
     void loadTemplate(const QString &fileName);
 
-    QString exportedFileInfo();
+    QString exportedFileInfo() const;
     void removeNotSelectedItems();
-private Q_SLOTS:
+private:
     void slotSelectAll();
     void slotUnselectAll();
 
     void slotSaveAsTemplate();
     void slotLoadTemplate();
-private:
     void readConfig();
     void writeConfig();
     void loadDefaultTemplate();

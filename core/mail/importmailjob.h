@@ -38,7 +38,7 @@ public:
 
     void start() override;
 
-protected Q_SLOTS:
+protected:
     void slotNextStep() override;
 
 private:

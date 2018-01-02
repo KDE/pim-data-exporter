@@ -33,7 +33,7 @@ public:
 
     void start() override;
 
-private Q_SLOTS:
+private:
     void slotNextStep() override;
 
 private:
