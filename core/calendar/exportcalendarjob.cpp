@@ -92,7 +92,7 @@ void ExportCalendarJob::slotWriteNextArchiveResource()
     if (mIndexIdentifier < list.count()) {
         Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
         const QString identifier = agent.identifier();
-        if (identifier.contains(QStringLiteral("akonadi_icaldir_resource_"))) {
+        if (identifier.contains(QLatin1String("akonadi_icaldir_resource_"))) {
             const QString archivePath = Utils::calendarPath() + identifier + QDir::separator();
 
             QString url = Utils::resourcePath(agent);
@@ -116,7 +116,7 @@ void ExportCalendarJob::slotWriteNextArchiveResource()
             } else {
                 QTimer::singleShot(0, this, &ExportCalendarJob::slotCalendarJobTerminated);
             }
-        } else if (identifier.contains(QStringLiteral("akonadi_ical_resource_"))) {
+        } else if (identifier.contains(QLatin1String("akonadi_ical_resource_"))) {
             backupResourceFile(agent, Utils::calendarPath());
             QTimer::singleShot(0, this, &ExportCalendarJob::slotCalendarJobTerminated);
         } else {

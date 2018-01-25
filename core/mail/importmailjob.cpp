@@ -138,9 +138,9 @@ void ImportMailJob::storeMailArchiveResource(const KArchiveDirectory *dir, const
                 resourceFiles files;
                 for (const QString &name : lst) {
                     if (name.endsWith(QLatin1String("rc"))
-                        && (name.contains(QStringLiteral("akonadi_mbox_resource_"))
-                            || name.contains(QStringLiteral("akonadi_mixedmaildir_resource_"))
-                            || name.contains(QStringLiteral("akonadi_maildir_resource_")))) {
+                        && (name.contains(QLatin1String("akonadi_mbox_resource_"))
+                            || name.contains(QLatin1String("akonadi_mixedmaildir_resource_"))
+                            || name.contains(QLatin1String("akonadi_maildir_resource_")))) {
                         files.akonadiConfigFile = archPath + name;
                     } else if (name.startsWith(Utils::prefixAkonadiConfigFile())) {
                         files.akonadiAgentConfigFile = archPath + name;
@@ -273,7 +273,7 @@ void ImportMailJob::restoreResources()
                 const QString resourceFileName = destDirectory + QLatin1Char('/') + filename;
                 KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(resourceFileName);
                 QMap<QString, QVariant> settings;
-                if (filename.contains(QStringLiteral("pop3"))) {
+                if (filename.contains(QLatin1String("pop3"))) {
                     KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
                     if (general.hasKey(QStringLiteral("login"))) {
                         settings.insert(QStringLiteral("Login"), general.readEntry("login"));
@@ -349,7 +349,7 @@ void ImportMailJob::restoreResources()
                         mHashResources.insert(filename, newResource);
                         infoAboutNewResource(newResource);
                     }
-                } else if (filename.contains(QStringLiteral("imap")) || filename.contains(QStringLiteral("kolab_")) || filename.contains(QStringLiteral("gmail_"))) {
+                } else if (filename.contains(QLatin1String("imap")) || filename.contains(QLatin1String("kolab_")) || filename.contains(QLatin1String("gmail_"))) {
                     KConfigGroup network = resourceConfig->group(QStringLiteral("network"));
                     if (network.hasKey(QStringLiteral("Authentication"))) {
                         settings.insert(QStringLiteral("Authentication"), network.readEntry("Authentication", 1));
@@ -440,9 +440,9 @@ void ImportMailJob::restoreResources()
                     }
 
                     QString newResource;
-                    if (filename.contains(QStringLiteral("kolab_"))) {
+                    if (filename.contains(QLatin1String("kolab_"))) {
                         newResource = mCreateResource->createResource(QStringLiteral("akonadi_kolab_resource"), filename, settings);
-                    } else if (filename.contains(QStringLiteral("gmail_"))) {
+                    } else if (filename.contains(QLatin1String("gmail_"))) {
                         newResource = mCreateResource->createResource(QStringLiteral("akonadi_gmail_resource"), filename, settings);
                     } else {
                         newResource = mCreateResource->createResource(QStringLiteral("akonadi_imap_resource"), filename, settings);
@@ -501,7 +501,7 @@ void ImportMailJob::restoreMails()
             }
 
             QMap<QString, QVariant> settings;
-            if (resourceName.contains(QStringLiteral("akonadi_mbox_resource_"))) {
+            if (resourceName.contains(QLatin1String("akonadi_mbox_resource_"))) {
                 const QString dataFile = value.akonadiResources;
                 const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                 if (dataResouceEntry->isFile()) {
@@ -544,8 +544,8 @@ void ImportMailJob::restoreMails()
                     mHashResources.insert(filename, newResource);
                     infoAboutNewResource(newResource);
                 }
-            } else if (resourceName.contains(QStringLiteral("akonadi_maildir_resource_"))
-                       || resourceName.contains(QStringLiteral("akonadi_mixedmaildir_resource_"))) {
+            } else if (resourceName.contains(QLatin1String("akonadi_maildir_resource_"))
+                       || resourceName.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
                 settings.insert(QStringLiteral("Path"), newUrl);
                 KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
                 if (general.hasKey(QStringLiteral("TopLevelIsContainer"))) {
@@ -558,7 +558,7 @@ void ImportMailJob::restoreMails()
                     settings.insert(QStringLiteral("MonitorFilesystem"), general.readEntry(QStringLiteral("MonitorFilesystem"), true));
                 }
 
-                const QString newResource = mCreateResource->createResource(resourceName.contains(QStringLiteral("akonadi_mixedmaildir_resource_"))
+                const QString newResource = mCreateResource->createResource(resourceName.contains(QLatin1String("akonadi_mixedmaildir_resource_"))
                                                                             ? QStringLiteral("akonadi_mixedmaildir_resource")
                                                                             : QStringLiteral("akonadi_maildir_resource"),
                                                                             filename, settings);

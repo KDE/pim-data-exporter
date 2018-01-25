@@ -98,8 +98,8 @@ void ImportCalendarJob::restoreResources()
         for (int i = 0; i < numberOfResourceFile; ++i) {
             resourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
-            if (value.akonadiConfigFile.contains(QStringLiteral("akonadi_icaldir_resource_"))
-                || value.akonadiConfigFile.contains(QStringLiteral("akonadi_ical_resource_"))) {
+            if (value.akonadiConfigFile.contains(QLatin1String("akonadi_icaldir_resource_"))
+                || value.akonadiConfigFile.contains(QLatin1String("akonadi_ical_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
@@ -119,11 +119,11 @@ void ImportCalendarJob::restoreResources()
 
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
-                    bool isDirResource = value.akonadiConfigFile.contains(QStringLiteral("akonadi_icaldir_resource_"));
+                    bool isDirResource = value.akonadiConfigFile.contains(QLatin1String("akonadi_icaldir_resource_"));
                     if (dataResouceEntry->isFile()) {
                         const KArchiveFile *file = static_cast<const KArchiveFile *>(dataResouceEntry);
                         //TODO  adapt directory name too
-                        extractZipFile(file, copyToDirName, newUrlInfo.path(), value.akonadiConfigFile.contains(QStringLiteral("akonadi_icaldir_resource_")));
+                        extractZipFile(file, copyToDirName, newUrlInfo.path(), value.akonadiConfigFile.contains(QLatin1String("akonadi_icaldir_resource_")));
                     }
                     settings.insert(QStringLiteral("Path"), newUrl);
 
@@ -168,8 +168,8 @@ void ImportCalendarJob::addSpecificResourceSettings(KSharedConfig::Ptr resourceC
 
 bool ImportCalendarJob::isAConfigFile(const QString &name) const
 {
-    return name.endsWith(QLatin1String("rc")) && (name.contains(QStringLiteral("akonadi_ical_resource_"))
-                                                  || name.contains(QStringLiteral("akonadi_icaldir_resource_")));
+    return name.endsWith(QLatin1String("rc")) && (name.contains(QLatin1String("akonadi_ical_resource_"))
+                                                  || name.contains(QLatin1String("akonadi_icaldir_resource_")));
 }
 
 void ImportCalendarJob::restoreConfig()

@@ -91,7 +91,7 @@ void ExportAlarmJob::slotWriteNextArchiveResource()
     if (mIndexIdentifier < list.count()) {
         Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
         const QString identifier = agent.identifier();
-        if (identifier.contains(QStringLiteral("akonadi_kalarm_dir_resource_"))) {
+        if (identifier.contains(QLatin1String("akonadi_kalarm_dir_resource_"))) {
             const QString archivePath = Utils::alarmPath() + identifier + QDir::separator();
 
             QString url = Utils::resourcePath(agent);
@@ -115,7 +115,7 @@ void ExportAlarmJob::slotWriteNextArchiveResource()
             } else {
                 QTimer::singleShot(0, this, &ExportAlarmJob::slotAlarmJobTerminated);
             }
-        } else if (identifier.contains(QStringLiteral("akonadi_kalarm_resource_"))) {
+        } else if (identifier.contains(QLatin1String("akonadi_kalarm_resource_"))) {
             backupResourceFile(agent, Utils::alarmPath());
             QTimer::singleShot(0, this, &ExportAlarmJob::slotAlarmJobTerminated);
         } else {

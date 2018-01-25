@@ -146,12 +146,12 @@ void ExportMailJob::slotWriteNextArchiveResource()
         const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
         const QStringList capabilities(agent.type().capabilities());
         if (agent.type().mimeTypes().contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QStringLiteral("Resource"))
-                && !capabilities.contains(QStringLiteral("Virtual"))
-                && !capabilities.contains(QStringLiteral("MailTransport"))) {
+            if (capabilities.contains(QLatin1String("Resource"))
+                && !capabilities.contains(QLatin1String("Virtual"))
+                && !capabilities.contains(QLatin1String("MailTransport"))) {
                 const QString identifier = agent.identifier();
-                if (identifier.contains(QStringLiteral("akonadi_maildir_resource_"))
-                    || identifier.contains(QStringLiteral("akonadi_mixedmaildir_resource_"))) {
+                if (identifier.contains(QLatin1String("akonadi_maildir_resource_"))
+                    || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
                     const QString archivePath = Utils::mailsPath() + identifier + QDir::separator();
 
                     const QString url = Utils::resourcePath(agent);
@@ -176,7 +176,7 @@ void ExportMailJob::slotWriteNextArchiveResource()
                     } else {
                         QTimer::singleShot(0, this, &ExportMailJob::slotMailsJobTerminated);
                     }
-                } else if (identifier.contains(QStringLiteral("akonadi_mbox_resource_"))) {
+                } else if (identifier.contains(QLatin1String("akonadi_mbox_resource_"))) {
                     backupResourceFile(agent, Utils::addressbookPath());
                     QTimer::singleShot(0, this, &ExportMailJob::slotMailsJobTerminated);
                 } else {
@@ -241,13 +241,13 @@ void ExportMailJob::backupResources()
     for (const Akonadi::AgentInstance &agent : list) {
         const QStringList capabilities(agent.type().capabilities());
         if (agent.type().mimeTypes().contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QStringLiteral("Resource"))
-                && !capabilities.contains(QStringLiteral("Virtual"))
-                && !capabilities.contains(QStringLiteral("MailTransport"))) {
+            if (capabilities.contains(QLatin1String("Resource"))
+                && !capabilities.contains(QLatin1String("Virtual"))
+                && !capabilities.contains(QLatin1String("MailTransport"))) {
                 const QString identifier = agent.identifier();
                 //Store just pop3/imap/kolab/gmail account. Store other config when we copy data.
-                if (identifier.contains(QStringLiteral("pop3")) || identifier.contains(QStringLiteral("imap"))
-                    || identifier.contains(QStringLiteral("_kolab_")) || identifier.contains(QStringLiteral("_gmail_"))) {
+                if (identifier.contains(QLatin1String("pop3")) || identifier.contains(QLatin1String("imap"))
+                    || identifier.contains(QLatin1String("_kolab_")) || identifier.contains(QLatin1String("_gmail_"))) {
                     const QString errorStr = Utils::storeResources(archive(), identifier, Utils::resourcesPath());
                     if (!errorStr.isEmpty()) {
                         Q_EMIT error(errorStr);
