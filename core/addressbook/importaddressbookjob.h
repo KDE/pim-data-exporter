@@ -30,7 +30,7 @@ class ImportAddressbookJob : public AbstractImportExportJob
     Q_OBJECT
 public:
     explicit ImportAddressbookJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportAddressbookJob();
+    ~ImportAddressbookJob() override;
 
     void start() override;
 

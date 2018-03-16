@@ -30,7 +30,7 @@ class ImportCalendarJob : public AbstractImportExportJob
     Q_OBJECT
 public:
     explicit ImportCalendarJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportCalendarJob();
+    ~ImportCalendarJob() override;
 
     void start() override;
 

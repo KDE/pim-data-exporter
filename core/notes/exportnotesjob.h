@@ -28,7 +28,7 @@ class ExportNotesJob : public AbstractImportExportJob
     Q_OBJECT
 public:
     explicit ExportNotesJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportNotesJob();
+    ~ExportNotesJob() override;
 
     void start() override;
 

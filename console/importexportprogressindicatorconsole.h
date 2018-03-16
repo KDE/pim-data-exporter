@@ -27,7 +27,7 @@ class ImportExportProgressIndicatorConsole : public ImportExportProgressIndicato
     Q_OBJECT
 public:
     explicit ImportExportProgressIndicatorConsole(QObject *parent = nullptr);
-    ~ImportExportProgressIndicatorConsole();
+    ~ImportExportProgressIndicatorConsole() override;
 
 private:
     void setProgressDialogLabel(const QString &text) override;

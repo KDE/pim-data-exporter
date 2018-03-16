@@ -29,7 +29,7 @@ class ExportAddressbookJob : public AbstractImportExportJob
     Q_OBJECT
 public:
     explicit ExportAddressbookJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportAddressbookJob();
+    ~ExportAddressbookJob() override;
 
     void start() override;
 

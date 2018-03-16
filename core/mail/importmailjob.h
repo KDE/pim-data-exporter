@@ -34,7 +34,7 @@ class ImportMailJob : public AbstractImportExportJob
     Q_OBJECT
 public:
     explicit ImportMailJob(QObject *widget, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportMailJob();
+    ~ImportMailJob() override;
 
     void start() override;
 

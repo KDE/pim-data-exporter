@@ -29,7 +29,7 @@ class ImportAkregatorJob : public AbstractImportExportJob
     Q_OBJECT
 public:
     explicit ImportAkregatorJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportAkregatorJob();
+    ~ImportAkregatorJob() override;
 
     void start() override;
 

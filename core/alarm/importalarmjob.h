@@ -29,7 +29,7 @@ class ImportAlarmJob : public AbstractImportExportJob
     Q_OBJECT
 public:
     explicit ImportAlarmJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportAlarmJob();
+    ~ImportAlarmJob() override;
 
     void start() override;
 

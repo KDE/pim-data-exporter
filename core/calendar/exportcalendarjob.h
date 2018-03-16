@@ -29,7 +29,7 @@ class ExportCalendarJob : public AbstractImportExportJob
     Q_OBJECT
 public:
     explicit ExportCalendarJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportCalendarJob();
+    ~ExportCalendarJob() override;
 
     void start() override;
 

@@ -29,7 +29,7 @@ class ExportAlarmJob : public AbstractImportExportJob
     Q_OBJECT
 public:
     explicit ExportAlarmJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportAlarmJob();
+    ~ExportAlarmJob() override;
 
     void start() override;
 

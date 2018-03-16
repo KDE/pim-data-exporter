@@ -27,7 +27,7 @@ class PimSettingBackupThread : public QThread
     Q_OBJECT
 public:
     explicit PimSettingBackupThread(KZip *zip, const QString &url, const QString &archivePath, const QString &archivename, QObject *parent = nullptr);
-    ~PimSettingBackupThread();
+    ~PimSettingBackupThread() override;
 
 Q_SIGNALS:
     void error(const QString &str);

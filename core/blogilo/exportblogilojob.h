@@ -29,7 +29,7 @@ class ExportBlogiloJob : public AbstractImportExportJob
     Q_OBJECT
 public:
     explicit ExportBlogiloJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportBlogiloJob();
+    ~ExportBlogiloJob() override;
 
     void start() override;
 
