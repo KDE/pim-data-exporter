@@ -39,8 +39,6 @@
 #include "akregator/exportakregatorjob.h"
 #include "akregator/importakregatorjob.h"
 
-#include "blogilo/exportblogilojob.h"
-#include "blogilo/importblogilojob.h"
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -172,12 +170,6 @@ void PimSettingsBackupRestore::backupNextStep()
                 executeJob();
             }
             break;
-        case Utils::Blogilo:
-            if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportBlogiloJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
-                executeJob();
-            }
-            break;
         case Utils::Unknown:
             break;
         }
@@ -246,12 +238,6 @@ void PimSettingsBackupRestore::restoreNextStep()
         case Utils::Akregator:
             if (mStoreIterator.value().numberSteps != 0) {
                 mImportExportData = new ImportAkregatorJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
-                executeJob();
-            }
-            break;
-        case Utils::Blogilo:
-            if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportBlogiloJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

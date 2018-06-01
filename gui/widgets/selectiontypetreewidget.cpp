@@ -86,12 +86,6 @@ void SelectionTypeTreeWidget::initialize()
     createSubItem(mAkregatorItem, Utils::Config);
     createSubItem(mAkregatorItem, Utils::Data);
 
-    mBlogiloItem = new QTreeWidgetItem(this);
-    mBlogiloItem->setText(0, Utils::appTypeToI18n(Utils::Blogilo));
-    mBlogiloItem->setCheckState(0, Qt::Checked);
-    createSubItem(mBlogiloItem, Utils::Config);
-    createSubItem(mBlogiloItem, Utils::Data);
-
     connect(this, &SelectionTypeTreeWidget::itemChanged, this, &SelectionTypeTreeWidget::slotItemChanged);
 }
 
@@ -120,10 +114,6 @@ void SelectionTypeTreeWidget::removeNotSelectedItems()
     if (!removeNotSelectedItem(mAkregatorItem)) {
         delete mAkregatorItem;
         mAkregatorItem = nullptr;
-    }
-    if (!removeNotSelectedItem(mBlogiloItem)) {
-        delete mBlogiloItem;
-        mBlogiloItem = nullptr;
     }
 }
 
@@ -168,10 +158,6 @@ QHash<Utils::AppsType, Utils::importExportParameters> SelectionTypeTreeWidget::s
     var = typeChecked(mAkregatorItem);
     if (!var.isEmpty()) {
         stored.insert(Utils::Akregator, var);
-    }
-    var = typeChecked(mBlogiloItem);
-    if (!var.isEmpty()) {
-        stored.insert(Utils::Blogilo, var);
     }
     return stored;
 }
@@ -269,7 +255,6 @@ void SelectionTypeTreeWidget::setSelectItems(bool b)
     changeState(mKorganizerItem, b);
     changeState(mKNotesItem, b);
     changeState(mAkregatorItem, b);
-    changeState(mBlogiloItem, b);
 }
 
 void SelectionTypeTreeWidget::changeState(QTreeWidgetItem *item, bool b)
@@ -410,9 +395,6 @@ void SelectionTypeTreeWidget::setParameters(const QHash<Utils::AppsType, Utils::
             break;
         case Utils::Akregator:
             initializeSubItem(mAkregatorItem, i.value().types);
-            break;
-        case Utils::Blogilo:
-            initializeSubItem(mBlogiloItem, i.value().types);
             break;
         case Utils::Unknown:
             break;

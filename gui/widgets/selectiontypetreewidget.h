@@ -72,7 +72,6 @@ private:
     QTreeWidgetItem *mKorganizerItem = nullptr;
     QTreeWidgetItem *mKNotesItem = nullptr;
     QTreeWidgetItem *mAkregatorItem = nullptr;
-    QTreeWidgetItem *mBlogiloItem = nullptr;
 };
 
 #endif // SELECTIONTYPETREEWIDGET_H

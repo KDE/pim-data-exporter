@@ -59,8 +59,7 @@ enum AppsType {
     KAlarm,
     KOrganizer,
     KNotes,
-    Akregator,
-    Blogilo
+    Akregator
 };
 
 struct importExportParameters {

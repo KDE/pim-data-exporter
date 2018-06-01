@@ -90,8 +90,6 @@ QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTem
                     type = Utils::KNotes;
                 } else if (mStreamReader->name() == QLatin1String("akregator")) {
                     type = Utils::Akregator;
-                } else if (mStreamReader->name() == QLatin1String("blogilo")) {
-                    type = Utils::Blogilo;
                 }
                 if (type != Utils::Unknown) {
                     int numberOfSteps = 0;
@@ -182,11 +180,6 @@ void TemplateSelection::createTemplate(const QHash<Utils::AppsType, Utils::impor
             break;
         case Utils::Akregator:
             mStreamWriter->writeStartElement(QStringLiteral("akregator"));
-            saveParameters(i.value().types);
-            mStreamWriter->writeEndElement();
-            break;
-        case Utils::Blogilo:
-            mStreamWriter->writeStartElement(QStringLiteral("blogilo"));
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;

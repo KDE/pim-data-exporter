@@ -37,10 +37,6 @@ set(pimsettingexporter_akregator_SRCS
     akregator/importakregatorjob.cpp
     )
 
-set(pimsettingexporter_blogilo_SRCS
-    blogilo/exportblogilojob.cpp
-    blogilo/importblogilojob.cpp
-    )
 
 set(pimsettingexporter_LIB_SRCS
     ${pimsettingexporter_xml_SRCS}
@@ -51,7 +47,6 @@ set(pimsettingexporter_LIB_SRCS
     ${pimsettingexporter_addressbook_SRCS}
     ${pimsettingexporter_jot_SRCS}
     ${pimsettingexporter_akregator_SRCS}
-    ${pimsettingexporter_blogilo_SRCS}
     pimsettingexportcore_debug.cpp
     abstractimportexportjob.cpp
     pimsettingexporterkernel.cpp
