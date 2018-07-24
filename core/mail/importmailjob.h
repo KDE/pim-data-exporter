@@ -65,7 +65,7 @@ private:
     void importSimpleFilesInDirectory(const QString &relativePath);
     QString uniqueIdentityName(const QString &name);
 
-    QHash<uint, uint> mHashIdentity;
+    QHash<int, uint> mHashIdentity;
     QHash<int, int> mHashTransport;
     QHash<QString, QString> mHashResources;
     QStringList mFileList;
