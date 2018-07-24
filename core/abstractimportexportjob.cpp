@@ -222,8 +222,9 @@ bool AbstractImportExportJob::overwriteDirectoryMessageBox(const QString &direct
     return mImportExportProgressIndicator->overwriteDirectoryMessageBox(directory);
 }
 
-void AbstractImportExportJob::convertRealPathToCollection(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix)
+qint64 AbstractImportExportJob::convertRealPathToCollection(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix)
 {
+    qint64 colId = -1;
     if (group.hasKey(currentKey)) {
         const QString path = group.readEntry(currentKey);
         if (!path.isEmpty()) {
@@ -237,8 +238,10 @@ void AbstractImportExportJob::convertRealPathToCollection(KConfigGroup &group, c
             } else {
                 group.deleteEntry(currentKey);
             }
+            colId = id;
         }
     }
+    return colId;
 }
 
 void AbstractImportExportJob::convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix)

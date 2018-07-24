@@ -43,6 +43,8 @@
 #include <AkonadiCore/agenttype.h>
 #include <AkonadiCore/agentmanager.h>
 #include <AkonadiCore/agentinstancecreatejob.h>
+#include <AkonadiCore/CollectionFetchJob>
+
 
 #include <QMetaMethod>
 #include <QDir>
@@ -869,6 +871,19 @@ void ImportMailJob::importSimpleFilesInDirectory(const QString &relativePath)
     }
 }
 
+void ImportMailJob::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
+{
+    auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection(colId), Akonadi::CollectionFetchJob::Base, this);
+    connect(fetch, &Akonadi::CollectionFetchJob::collectionsReceived,
+            this, [this, type](const Akonadi::Collection::List &cols) {
+                if (cols.count() != 1) {
+                    return;
+                }
+                Akonadi::SpecialMailCollections::self()->registerCollection(type, cols.first());
+            });
+}
+
+
 void ImportMailJob::restoreIdentity()
 {
     increaseProgressDialog();
@@ -897,13 +912,16 @@ void ImportMailJob::restoreIdentity()
                     group.deleteEntry(uidStr);
                 }
                 const QString fcc(QStringLiteral("Fcc"));
-                convertRealPathToCollection(group, fcc);
+                qint64 fccId = convertRealPathToCollection(group, fcc);
+                registerSpecialCollection(Akonadi::SpecialMailCollections::SentMail, fccId);
 
                 const QString draft = QStringLiteral("Drafts");
-                convertRealPathToCollection(group, draft);
+                qint64 draftId = convertRealPathToCollection(group, draft);
+                registerSpecialCollection(Akonadi::SpecialMailCollections::Drafts, draftId);
 
                 const QString templates = QStringLiteral("Templates");
-                convertRealPathToCollection(group, templates);
+                qint64 templateId = convertRealPathToCollection(group, templates);
+                registerSpecialCollection(Akonadi::SpecialMailCollections::Templates, templateId);
 
                 if (oldUid != -1) {
                     const QString vcard = QStringLiteral("VCardFile");

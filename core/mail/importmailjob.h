@@ -22,6 +22,7 @@
 
 #include "abstractimportexportjob.h"
 #include <AkonadiCore/Collection>
+#include <Akonadi/KMime/SpecialMailCollections>
 #include <QStringList>
 #include <QHash>
 #include <KArchive>
@@ -42,6 +43,7 @@ protected:
     void slotNextStep() override;
 
 private:
+    void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId);
     void restoreTransports();
     void restoreResources();
     void restoreMails();
