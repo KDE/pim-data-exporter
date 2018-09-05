@@ -185,6 +185,10 @@ void ImportMailJob::restoreTransports()
             for (const QString &transport : transportList) {
                 KConfigGroup group = transportConfig->group(transport);
                 const int transportId = group.readEntry(QStringLiteral("id"), -1);
+                if (transportId == -1) {
+                    qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Mail Transport is incorrect. Missing Id";
+                    continue;
+                }
                 MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
                 mt->setName(group.readEntry(QStringLiteral("name")));
                 const QString hostStr(QStringLiteral("host"));
