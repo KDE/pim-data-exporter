@@ -189,6 +189,19 @@ void ImportMailJob::restoreTransports()
                     qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Mail Transport is incorrect. Missing Id";
                     continue;
                 }
+                const QString identifierStr(QStringLiteral("identifier"));
+                if (group.hasKey(identifierStr)) {
+                    //TODO add support for smtp/akonadi send mail
+                    const QString identifierValue = group.readEntry(identifierStr);
+                    if (!identifierValue.isEmpty()) {
+                        if (identifierValue == QLatin1String("sendmail")) {
+                            //TODO sendmail
+                        } else if (identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
+                            //TODO add akonadi support
+                        }
+                    }
+                }
+
                 MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
                 mt->setName(group.readEntry(QStringLiteral("name")));
                 const QString hostStr(QStringLiteral("host"));
