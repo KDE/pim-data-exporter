@@ -195,7 +195,7 @@ void ImportMailJob::restoreTransports()
                 if (group.hasKey(identifierStr)) {
                     const QString identifierValue = group.readEntry(identifierStr);
                     if (!identifierValue.isEmpty()) {
-                        if (identifierValue == QLatin1String("sendmail")) {
+                        if (identifierValue == QLatin1String("sendmail") || identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
                             MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
                             mt->setName(group.readEntry(QStringLiteral("name")));
                             const QString hostStr(QStringLiteral("host"));
@@ -204,16 +204,11 @@ void ImportMailJob::restoreTransports()
                             }
                             mt->setIdentifier(identifierValue);
                             addMailTransport(mt, defaultTransport, transportId);
-                        } else if (identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
-                            MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
-                            mt->setName(group.readEntry(QStringLiteral("name")));
-                            const QString hostStr(QStringLiteral("host"));
-                            if (group.hasKey(hostStr)) {
-                                mt->setHost(group.readEntry(hostStr));
-                            }
-                            mt->setIdentifier(identifierValue);
-                            addMailTransport(mt, defaultTransport, transportId);
+                        } else {
+                            qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Unknown identifier type " << identifierValue;
                         }
+                    } else {
+                        qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "identifier value is empty";
                     }
                 } else {
                     MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
@@ -260,6 +255,20 @@ void ImportMailJob::restoreTransports()
                     }
                     const QString encryptionStr(QStringLiteral("encryption"));
                     if (group.hasKey(encryptionStr)) {
+                        const QString encryptionType = group.readEntry(encryptionStr, QString());
+                        if (!encryptionType.isEmpty()) {
+                            if (encryptionType == QLatin1String("TLS")) {
+                                mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::TLS));
+                            } else if (encryptionType == QLatin1String("SSL")) {
+                                mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::SSL));
+                            } else if (encryptionType == QLatin1String("None")) {
+                                mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::None));
+                            } else {
+                                qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Unknown encryption type " << encryptionType;
+                            }
+                        } else {
+                            qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Encryption type is empty. It's a bug";
+                        }
                         mt->setEncryption(group.readEntry(encryptionStr, 1)); //TODO verify
                     }
                     const QString authenticationTypeStr(QStringLiteral("authtype"));
