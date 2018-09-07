@@ -253,6 +253,20 @@ void ImportMailJob::restoreTransports()
                     }
                     const QString encryptionStr(QStringLiteral("encryption"));
                     if (group.hasKey(encryptionStr)) {
+                        const QString encryptionType = group.readEntry(encryptionStr, QString());
+                        if (!encryptionType.isEmpty()) {
+                            if (encryptionType == QLatin1String("TLS")) {
+                                mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::TLS));
+                            } else if (encryptionType == QLatin1String("SSL")) {
+                                mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::SSL));
+                            } else if (encryptionType == QLatin1String("None")) {
+                                mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::None));
+                            } else {
+                                qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Unknown encryption type " << encryptionType;
+                            }
+                        } else {
+                            qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Encryption type is empty. It's a bug";
+                        }
                         mt->setEncryption(group.readEntry(encryptionStr, 1)); //TODO verify
                     }
                     const QString authenticationTypeStr(QStringLiteral("authtype"));
