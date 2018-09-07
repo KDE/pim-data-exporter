@@ -193,7 +193,7 @@ void ImportMailJob::restoreTransports()
                 if (group.hasKey(identifierStr)) {
                     const QString identifierValue = group.readEntry(identifierStr);
                     if (!identifierValue.isEmpty()) {
-                        if (identifierValue == QLatin1String("sendmail")) {
+                        if (identifierValue == QLatin1String("sendmail") || identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
                             MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
                             mt->setName(group.readEntry(QStringLiteral("name")));
                             const QString hostStr(QStringLiteral("host"));
@@ -202,16 +202,11 @@ void ImportMailJob::restoreTransports()
                             }
                             mt->setIdentifier(identifierValue);
                             addMailTransport(mt, defaultTransport, transportId);
-                        } else if (identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
-                            MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
-                            mt->setName(group.readEntry(QStringLiteral("name")));
-                            const QString hostStr(QStringLiteral("host"));
-                            if (group.hasKey(hostStr)) {
-                                mt->setHost(group.readEntry(hostStr));
-                            }
-                            mt->setIdentifier(identifierValue);
-                            addMailTransport(mt, defaultTransport, transportId);
+                        } else {
+                            qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Unknown identifier type " << identifierValue;
                         }
+                    } else {
+                        qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "identifier value is empty";
                     }
                 } else {
                     MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
