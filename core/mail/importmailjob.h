@@ -28,7 +28,9 @@
 class KArchiveDirectory;
 class KArchiveFile;
 class ArchiveStorage;
-
+namespace MailTransport {
+class Transport;
+}
 class ImportMailJob : public AbstractImportExportJob
 {
     Q_OBJECT
@@ -61,6 +63,7 @@ private:
     void copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination);
     void mergeSieveTemplate(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void importSimpleFilesInDirectory(const QString &relativePath);
+    void addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId);
     QString uniqueIdentityName(const QString &name);
 
     QHash<uint, uint> mHashIdentity;

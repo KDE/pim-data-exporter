@@ -191,75 +191,81 @@ void ImportMailJob::restoreTransports()
                 }
                 const QString identifierStr(QStringLiteral("identifier"));
                 if (group.hasKey(identifierStr)) {
-                    //TODO add support for smtp/akonadi send mail
                     const QString identifierValue = group.readEntry(identifierStr);
                     if (!identifierValue.isEmpty()) {
                         if (identifierValue == QLatin1String("sendmail")) {
-                            //TODO sendmail
+                            MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
+                            mt->setName(group.readEntry(QStringLiteral("name")));
+                            const QString hostStr(QStringLiteral("host"));
+                            if (group.hasKey(hostStr)) {
+                                mt->setHost(group.readEntry(hostStr));
+                            }
+                            mt->setIdentifier(identifierValue);
+                            addMailTransport(mt, defaultTransport, transportId);
                         } else if (identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
-                            //TODO add akonadi support
+                            MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
+                            mt->setName(group.readEntry(QStringLiteral("name")));
+                            const QString hostStr(QStringLiteral("host"));
+                            if (group.hasKey(hostStr)) {
+                                mt->setHost(group.readEntry(hostStr));
+                            }
+                            mt->setIdentifier(identifierValue);
+                            addMailTransport(mt, defaultTransport, transportId);
                         }
                     }
+                } else {
+                    MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
+                    mt->setName(group.readEntry(QStringLiteral("name")));
+                    const QString hostStr(QStringLiteral("host"));
+                    if (group.hasKey(hostStr)) {
+                        mt->setHost(group.readEntry(hostStr));
+                    }
+                    const QString portStr(QStringLiteral("port"));
+                    if (group.hasKey(portStr)) {
+                        mt->setPort(group.readEntry(portStr, -1));
+                    }
+                    const QString userNameStr(QStringLiteral("user"));
+                    if (group.hasKey(userNameStr)) {
+                        mt->setUserName(group.readEntry(userNameStr));
+                    }
+                    const QString precommandStr(QStringLiteral("precommand"));
+                    if (group.hasKey(precommandStr)) {
+                        mt->setPrecommand(group.readEntry(precommandStr));
+                    }
+                    const QString requiresAuthenticationStr(QStringLiteral("auth"));
+                    if (group.hasKey(requiresAuthenticationStr)) {
+                        mt->setRequiresAuthentication(group.readEntry(requiresAuthenticationStr, false));
+                    }
+                    const QString specifyHostnameStr(QStringLiteral("specifyHostname"));
+                    if (group.hasKey(specifyHostnameStr)) {
+                        mt->setSpecifyHostname(group.readEntry(specifyHostnameStr, false));
+                    }
+                    const QString localHostnameStr(QStringLiteral("localHostname"));
+                    if (group.hasKey(localHostnameStr)) {
+                        mt->setLocalHostname(group.readEntry(localHostnameStr));
+                    }
+                    const QString specifySenderOverwriteAddressStr(QStringLiteral("specifySenderOverwriteAddress"));
+                    if (group.hasKey(specifySenderOverwriteAddressStr)) {
+                        mt->setSpecifySenderOverwriteAddress(group.readEntry(specifySenderOverwriteAddressStr, false));
+                    }
+                    const QString storePasswordStr(QStringLiteral("storepass"));
+                    if (group.hasKey(storePasswordStr)) {
+                        mt->setStorePassword(group.readEntry(storePasswordStr, false));
+                    }
+                    const QString senderOverwriteAddressStr(QStringLiteral("senderOverwriteAddress"));
+                    if (group.hasKey(senderOverwriteAddressStr)) {
+                        mt->setSenderOverwriteAddress(group.readEntry(senderOverwriteAddressStr));
+                    }
+                    const QString encryptionStr(QStringLiteral("encryption"));
+                    if (group.hasKey(encryptionStr)) {
+                        mt->setEncryption(group.readEntry(encryptionStr, 1)); //TODO verify
+                    }
+                    const QString authenticationTypeStr(QStringLiteral("authtype"));
+                    if (group.hasKey(authenticationTypeStr)) {
+                        mt->setAuthenticationType(group.readEntry(authenticationTypeStr, 1)); //TODO verify
+                    }
+                    addMailTransport(mt, defaultTransport, transportId);
                 }
-
-                MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
-                mt->setName(group.readEntry(QStringLiteral("name")));
-                const QString hostStr(QStringLiteral("host"));
-                if (group.hasKey(hostStr)) {
-                    mt->setHost(group.readEntry(hostStr));
-                }
-                const QString portStr(QStringLiteral("port"));
-                if (group.hasKey(portStr)) {
-                    mt->setPort(group.readEntry(portStr, -1));
-                }
-                const QString userNameStr(QStringLiteral("user"));
-                if (group.hasKey(userNameStr)) {
-                    mt->setUserName(group.readEntry(userNameStr));
-                }
-                const QString precommandStr(QStringLiteral("precommand"));
-                if (group.hasKey(precommandStr)) {
-                    mt->setPrecommand(group.readEntry(precommandStr));
-                }
-                const QString requiresAuthenticationStr(QStringLiteral("auth"));
-                if (group.hasKey(requiresAuthenticationStr)) {
-                    mt->setRequiresAuthentication(group.readEntry(requiresAuthenticationStr, false));
-                }
-                const QString specifyHostnameStr(QStringLiteral("specifyHostname"));
-                if (group.hasKey(specifyHostnameStr)) {
-                    mt->setSpecifyHostname(group.readEntry(specifyHostnameStr, false));
-                }
-                const QString localHostnameStr(QStringLiteral("localHostname"));
-                if (group.hasKey(localHostnameStr)) {
-                    mt->setLocalHostname(group.readEntry(localHostnameStr));
-                }
-                const QString specifySenderOverwriteAddressStr(QStringLiteral("specifySenderOverwriteAddress"));
-                if (group.hasKey(specifySenderOverwriteAddressStr)) {
-                    mt->setSpecifySenderOverwriteAddress(group.readEntry(specifySenderOverwriteAddressStr, false));
-                }
-                const QString storePasswordStr(QStringLiteral("storepass"));
-                if (group.hasKey(storePasswordStr)) {
-                    mt->setStorePassword(group.readEntry(storePasswordStr, false));
-                }
-                const QString senderOverwriteAddressStr(QStringLiteral("senderOverwriteAddress"));
-                if (group.hasKey(senderOverwriteAddressStr)) {
-                    mt->setSenderOverwriteAddress(group.readEntry(senderOverwriteAddressStr));
-                }
-                const QString encryptionStr(QStringLiteral("encryption"));
-                if (group.hasKey(encryptionStr)) {
-                    mt->setEncryption(group.readEntry(encryptionStr, 1)); //TODO verify
-                }
-                const QString authenticationTypeStr(QStringLiteral("authtype"));
-                if (group.hasKey(authenticationTypeStr)) {
-                    mt->setAuthenticationType(group.readEntry(authenticationTypeStr, 1)); //TODO verify
-                }
-
-                mt->forceUniqueName();
-                mt->save();
-                MailTransport::TransportManager::self()->addTransport(mt);
-                if (transportId == defaultTransport) {
-                    MailTransport::TransportManager::self()->setDefaultTransport(mt->id());
-                }
-                mHashTransport.insert(transportId, mt->id());
             }
             Q_EMIT info(i18n("Transports restored."));
         } else {
@@ -267,6 +273,17 @@ void ImportMailJob::restoreTransports()
         }
     }
     QTimer::singleShot(0, this, &ImportMailJob::slotNextStep);
+}
+
+void ImportMailJob::addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId)
+{
+    mt->forceUniqueName();
+    mt->save();
+    MailTransport::TransportManager::self()->addTransport(mt);
+    if (transportId == defaultTransport) {
+        MailTransport::TransportManager::self()->setDefaultTransport(mt->id());
+    }
+    mHashTransport.insert(transportId, mt->id());
 }
 
 void ImportMailJob::restoreResources()
