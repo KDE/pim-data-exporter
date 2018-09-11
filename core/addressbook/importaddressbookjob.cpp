@@ -168,9 +168,9 @@ void ImportAddressbookJob::addSpecificResourceSettings(KSharedConfig::Ptr resour
 
 bool ImportAddressbookJob::isAConfigFile(const QString &name) const
 {
-    return name.endsWith(QLatin1String("rc")) && (name.contains(QLatin1String("akonadi_vcarddir_resource_"))
-                                                  || name.contains(QLatin1String("akonadi_vcard_resource_"))
-                                                  || name.contains(QLatin1String("akonadi_contacts_resource_")));
+    return name.endsWith(QLatin1String("rc")) && (name.startsWith(QLatin1String("akonadi_vcarddir_resource_"))
+                                                  || name.startsWith(QLatin1String("akonadi_vcard_resource_"))
+                                                  || name.startsWith(QLatin1String("akonadi_contacts_resource_")));
 }
 
 void ImportAddressbookJob::restoreConfig()
