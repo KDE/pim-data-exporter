@@ -41,6 +41,8 @@ public:
 
     void start() override;
 
+    //For debugging
+    void importMailTransport(const QString &tempDirName);
 protected:
     void slotNextStep() override;
 

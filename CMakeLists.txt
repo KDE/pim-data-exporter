@@ -91,6 +91,10 @@ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 
 configure_file(pimsettingexporter-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/pimsettingexporter-version.h @ONLY)
 
+if(BUILD_TESTING)
+   add_definitions(-DBUILD_TESTING)
+endif(BUILD_TESTING)
+
 add_subdirectory(core)
 add_subdirectory(gui)
 add_subdirectory(console)

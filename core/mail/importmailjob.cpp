@@ -160,6 +160,114 @@ void ImportMailJob::storeMailArchiveResource(const KArchiveDirectory *dir, const
     }
 }
 
+void ImportMailJob::importMailTransport(const QString &tempDirName)
+{
+    KSharedConfig::Ptr transportConfig = KSharedConfig::openConfig(tempDirName + QLatin1Char('/') + QLatin1String("mailtransports"));
+
+    int defaultTransport = -1;
+    if (transportConfig->hasGroup(QStringLiteral("General"))) {
+        KConfigGroup group = transportConfig->group(QStringLiteral("General"));
+        defaultTransport = group.readEntry(QStringLiteral("default-transport"), -1);
+    }
+
+    const QStringList transportList = transportConfig->groupList().filter(QRegularExpression(QStringLiteral("Transport \\d+")));
+    for (const QString &transport : transportList) {
+        KConfigGroup group = transportConfig->group(transport);
+        const int transportId = group.readEntry(QStringLiteral("id"), -1);
+        if (transportId == -1) {
+            qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Mail Transport is incorrect. Missing Id";
+            continue;
+        }
+        const QString identifierStr(QStringLiteral("identifier"));
+        if (group.hasKey(identifierStr)) {
+            const QString identifierValue = group.readEntry(identifierStr);
+            if (!identifierValue.isEmpty()) {
+                if (identifierValue == QLatin1String("sendmail") || identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
+                    MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
+                    mt->setName(group.readEntry(QStringLiteral("name")));
+                    const QString hostStr(QStringLiteral("host"));
+                    if (group.hasKey(hostStr)) {
+                        mt->setHost(group.readEntry(hostStr));
+                    }
+                    mt->setIdentifier(identifierValue);
+                    addMailTransport(mt, defaultTransport, transportId);
+                } else {
+                    qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Unknown identifier type " << identifierValue;
+                }
+            } else {
+                qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "identifier value is empty";
+            }
+        } else {
+            MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
+            mt->setName(group.readEntry(QStringLiteral("name")));
+            const QString hostStr(QStringLiteral("host"));
+            if (group.hasKey(hostStr)) {
+                mt->setHost(group.readEntry(hostStr));
+            }
+            const QString portStr(QStringLiteral("port"));
+            if (group.hasKey(portStr)) {
+                mt->setPort(group.readEntry(portStr, -1));
+            }
+            const QString userNameStr(QStringLiteral("user"));
+            if (group.hasKey(userNameStr)) {
+                mt->setUserName(group.readEntry(userNameStr));
+            }
+            const QString precommandStr(QStringLiteral("precommand"));
+            if (group.hasKey(precommandStr)) {
+                mt->setPrecommand(group.readEntry(precommandStr));
+            }
+            const QString requiresAuthenticationStr(QStringLiteral("auth"));
+            if (group.hasKey(requiresAuthenticationStr)) {
+                mt->setRequiresAuthentication(group.readEntry(requiresAuthenticationStr, false));
+            }
+            const QString specifyHostnameStr(QStringLiteral("specifyHostname"));
+            if (group.hasKey(specifyHostnameStr)) {
+                mt->setSpecifyHostname(group.readEntry(specifyHostnameStr, false));
+            }
+            const QString localHostnameStr(QStringLiteral("localHostname"));
+            if (group.hasKey(localHostnameStr)) {
+                mt->setLocalHostname(group.readEntry(localHostnameStr));
+            }
+            const QString specifySenderOverwriteAddressStr(QStringLiteral("specifySenderOverwriteAddress"));
+            if (group.hasKey(specifySenderOverwriteAddressStr)) {
+                mt->setSpecifySenderOverwriteAddress(group.readEntry(specifySenderOverwriteAddressStr, false));
+            }
+            const QString storePasswordStr(QStringLiteral("storepass"));
+            if (group.hasKey(storePasswordStr)) {
+                mt->setStorePassword(group.readEntry(storePasswordStr, false));
+            }
+            const QString senderOverwriteAddressStr(QStringLiteral("senderOverwriteAddress"));
+            if (group.hasKey(senderOverwriteAddressStr)) {
+                mt->setSenderOverwriteAddress(group.readEntry(senderOverwriteAddressStr));
+            }
+            const QString encryptionStr(QStringLiteral("encryption"));
+            if (group.hasKey(encryptionStr)) {
+                const QString encryptionType = group.readEntry(encryptionStr, QString());
+                if (!encryptionType.isEmpty()) {
+                    if (encryptionType == QLatin1String("TLS")) {
+                        mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::TLS));
+                    } else if (encryptionType == QLatin1String("SSL")) {
+                        mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::SSL));
+                    } else if (encryptionType == QLatin1String("None")) {
+                        mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::None));
+                    } else {
+                        qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Unknown encryption type " << encryptionType;
+                    }
+                } else {
+                    qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Encryption type is empty. It's a bug";
+                }
+                mt->setEncryption(group.readEntry(encryptionStr, 1)); //TODO verify
+            }
+            const QString authenticationTypeStr(QStringLiteral("authtype"));
+            if (group.hasKey(authenticationTypeStr)) {
+                mt->setAuthenticationType(group.readEntry(authenticationTypeStr, 1)); //TODO verify
+            }
+            addMailTransport(mt, defaultTransport, transportId);
+        }
+    }
+
+}
+
 void ImportMailJob::restoreTransports()
 {
     setProgressDialogLabel(i18n("Restore transports..."));
@@ -175,109 +283,7 @@ void ImportMailJob::restoreTransports()
             const KArchiveFile *fileTransport = static_cast<const KArchiveFile *>(transport);
 
             fileTransport->copyTo(mTempDirName);
-            KSharedConfig::Ptr transportConfig = KSharedConfig::openConfig(mTempDirName + QLatin1Char('/') + QLatin1String("mailtransports"));
-
-            int defaultTransport = -1;
-            if (transportConfig->hasGroup(QStringLiteral("General"))) {
-                KConfigGroup group = transportConfig->group(QStringLiteral("General"));
-                defaultTransport = group.readEntry(QStringLiteral("default-transport"), -1);
-            }
-
-            const QStringList transportList = transportConfig->groupList().filter(QRegularExpression(QStringLiteral("Transport \\d+")));
-            for (const QString &transport : transportList) {
-                KConfigGroup group = transportConfig->group(transport);
-                const int transportId = group.readEntry(QStringLiteral("id"), -1);
-                if (transportId == -1) {
-                    qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Mail Transport is incorrect. Missing Id";
-                    continue;
-                }
-                const QString identifierStr(QStringLiteral("identifier"));
-                if (group.hasKey(identifierStr)) {
-                    const QString identifierValue = group.readEntry(identifierStr);
-                    if (!identifierValue.isEmpty()) {
-                        if (identifierValue == QLatin1String("sendmail") || identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
-                            MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
-                            mt->setName(group.readEntry(QStringLiteral("name")));
-                            const QString hostStr(QStringLiteral("host"));
-                            if (group.hasKey(hostStr)) {
-                                mt->setHost(group.readEntry(hostStr));
-                            }
-                            mt->setIdentifier(identifierValue);
-                            addMailTransport(mt, defaultTransport, transportId);
-                        } else {
-                            qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Unknown identifier type " << identifierValue;
-                        }
-                    } else {
-                        qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "identifier value is empty";
-                    }
-                } else {
-                    MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
-                    mt->setName(group.readEntry(QStringLiteral("name")));
-                    const QString hostStr(QStringLiteral("host"));
-                    if (group.hasKey(hostStr)) {
-                        mt->setHost(group.readEntry(hostStr));
-                    }
-                    const QString portStr(QStringLiteral("port"));
-                    if (group.hasKey(portStr)) {
-                        mt->setPort(group.readEntry(portStr, -1));
-                    }
-                    const QString userNameStr(QStringLiteral("user"));
-                    if (group.hasKey(userNameStr)) {
-                        mt->setUserName(group.readEntry(userNameStr));
-                    }
-                    const QString precommandStr(QStringLiteral("precommand"));
-                    if (group.hasKey(precommandStr)) {
-                        mt->setPrecommand(group.readEntry(precommandStr));
-                    }
-                    const QString requiresAuthenticationStr(QStringLiteral("auth"));
-                    if (group.hasKey(requiresAuthenticationStr)) {
-                        mt->setRequiresAuthentication(group.readEntry(requiresAuthenticationStr, false));
-                    }
-                    const QString specifyHostnameStr(QStringLiteral("specifyHostname"));
-                    if (group.hasKey(specifyHostnameStr)) {
-                        mt->setSpecifyHostname(group.readEntry(specifyHostnameStr, false));
-                    }
-                    const QString localHostnameStr(QStringLiteral("localHostname"));
-                    if (group.hasKey(localHostnameStr)) {
-                        mt->setLocalHostname(group.readEntry(localHostnameStr));
-                    }
-                    const QString specifySenderOverwriteAddressStr(QStringLiteral("specifySenderOverwriteAddress"));
-                    if (group.hasKey(specifySenderOverwriteAddressStr)) {
-                        mt->setSpecifySenderOverwriteAddress(group.readEntry(specifySenderOverwriteAddressStr, false));
-                    }
-                    const QString storePasswordStr(QStringLiteral("storepass"));
-                    if (group.hasKey(storePasswordStr)) {
-                        mt->setStorePassword(group.readEntry(storePasswordStr, false));
-                    }
-                    const QString senderOverwriteAddressStr(QStringLiteral("senderOverwriteAddress"));
-                    if (group.hasKey(senderOverwriteAddressStr)) {
-                        mt->setSenderOverwriteAddress(group.readEntry(senderOverwriteAddressStr));
-                    }
-                    const QString encryptionStr(QStringLiteral("encryption"));
-                    if (group.hasKey(encryptionStr)) {
-                        const QString encryptionType = group.readEntry(encryptionStr, QString());
-                        if (!encryptionType.isEmpty()) {
-                            if (encryptionType == QLatin1String("TLS")) {
-                                mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::TLS));
-                            } else if (encryptionType == QLatin1String("SSL")) {
-                                mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::SSL));
-                            } else if (encryptionType == QLatin1String("None")) {
-                                mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::None));
-                            } else {
-                                qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Unknown encryption type " << encryptionType;
-                            }
-                        } else {
-                            qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Encryption type is empty. It's a bug";
-                        }
-                        mt->setEncryption(group.readEntry(encryptionStr, 1)); //TODO verify
-                    }
-                    const QString authenticationTypeStr(QStringLiteral("authtype"));
-                    if (group.hasKey(authenticationTypeStr)) {
-                        mt->setAuthenticationType(group.readEntry(authenticationTypeStr, 1)); //TODO verify
-                    }
-                    addMailTransport(mt, defaultTransport, transportId);
-                }
-            }
+            importMailTransport(mTempDirName);
             Q_EMIT info(i18n("Transports restored."));
         } else {
             Q_EMIT error(i18n("Failed to restore transports file."));
