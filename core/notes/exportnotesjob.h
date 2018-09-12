@@ -21,9 +21,10 @@
 #define EXPORTNOTESJOB_H
 
 #include "abstractimportexportjob.h"
+#include "pimsettingexportercore_private_export.h"
 class ArchiveStorage;
 
-class ExportNotesJob : public AbstractImportExportJob
+class PIMSETTINGEXPORTER_TESTS_EXPORT ExportNotesJob : public AbstractImportExportJob
 {
     Q_OBJECT
 public:

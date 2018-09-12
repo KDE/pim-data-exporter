@@ -21,12 +21,13 @@
 #define ExportMailJob_H
 
 #include "abstractimportexportjob.h"
+#include "pimsettingexportercore_private_export.h"
 #include <KSharedConfig>
 #include <QDateTime>
 #include <time.h>
 class ArchiveStorage;
 
-class ExportMailJob : public AbstractImportExportJob
+class PIMSETTINGEXPORTER_TESTS_EXPORT ExportMailJob : public AbstractImportExportJob
 {
     Q_OBJECT
 public:

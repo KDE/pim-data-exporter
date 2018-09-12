@@ -20,7 +20,7 @@
 #ifndef PIMSETTINGEXPORTER_PRIVATE_EXPORT_H
 #define PIMSETTINGEXPORTER_PRIVATE_EXPORT_H
 
-#include "librocketchatrestapi-qt5_export.h"
+#include "pimsettingexporter_export.h"
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING

@@ -21,10 +21,10 @@
 #define IMPORTALARMJOB_H
 
 #include "abstractimportexportjob.h"
-
+#include "pimsettingexportercore_private_export.h"
 class ArchiveStorage;
 
-class ImportAlarmJob : public AbstractImportExportJob
+class PIMSETTINGEXPORTER_TESTS_EXPORT ImportAlarmJob : public AbstractImportExportJob
 {
     Q_OBJECT
 public:

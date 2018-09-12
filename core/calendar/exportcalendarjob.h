@@ -21,10 +21,10 @@
 #define EXPORTCALENDARJOB_H
 
 #include "abstractimportexportjob.h"
-
+#include "pimsettingexportercore_private_export.h"
 class ArchiveStorage;
 
-class ExportCalendarJob : public AbstractImportExportJob
+class PIMSETTINGEXPORTER_TESTS_EXPORT ExportCalendarJob : public AbstractImportExportJob
 {
     Q_OBJECT
 public:

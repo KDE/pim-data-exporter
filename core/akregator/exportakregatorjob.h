@@ -21,10 +21,10 @@
 #define EXPORTAKREGATORJOB_H
 
 #include "abstractimportexportjob.h"
-
+#include "pimsettingexportercore_private_export.h"
 class ArchiveStorage;
 
-class ExportAkregatorJob : public AbstractImportExportJob
+class PIMSETTINGEXPORTER_TESTS_EXPORT ExportAkregatorJob : public AbstractImportExportJob
 {
     Q_OBJECT
 public:
