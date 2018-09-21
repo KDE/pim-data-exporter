@@ -78,7 +78,7 @@ struct importExportParameters {
     Utils::StoredTypes types;
 };
 
-QString resourcePath(KSharedConfigPtr resourceConfig, const QString &defaultPath = QString());
+QString resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath = QString());
 PIMSETTINGEXPORTER_EXPORT QString transportsPath();
 PIMSETTINGEXPORTER_EXPORT QString resourcesPath();
 PIMSETTINGEXPORTER_EXPORT QString identitiesPath();

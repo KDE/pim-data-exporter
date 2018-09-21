@@ -143,7 +143,7 @@ QString Utils::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const Q
     return newUrl;
 }
 
-QString Utils::resourcePath(KSharedConfigPtr resourceConfig, const QString &defaultPath)
+QString Utils::resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath)
 {
     KConfigGroup group = resourceConfig->group(QStringLiteral("General"));
     QString url = group.readEntry(QStringLiteral("Path"), defaultPath);
