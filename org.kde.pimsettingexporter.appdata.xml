@@ -5,16 +5,25 @@
   <project_license>GPL-2.0+</project_license>
   <name>pimsettingexporter</name>
   <name xml:lang="ca">pimsettingexporter</name>
+  <name xml:lang="nl">pimsettingexporter</name>
+  <name xml:lang="pt">pimsettingexporter</name>
+  <name xml:lang="sk">pimsettingexporter</name>
   <name xml:lang="sv">Export av inställningar för personlig informationshantering</name>
   <name xml:lang="uk">Засіб експортування параметрів</name>
   <name xml:lang="x-test">xxpimsettingexporterxx</name>
   <summary>PIM Settings Exporter</summary>
   <summary xml:lang="ca">Exportador de la configuració PIM</summary>
+  <summary xml:lang="nl">PIM-exportprogramma van instellingen</summary>
+  <summary xml:lang="pt">Exportação de Configurações PIM</summary>
+  <summary xml:lang="sk">Exportér nastavení PIM</summary>
   <summary xml:lang="sv">Export av inställningar för personlig informationshantering</summary>
   <summary xml:lang="uk">Засіб експортування параметрів PIM</summary>
   <summary xml:lang="x-test">xxPIM Settings Exporterxx</summary>
   <developer_name>Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="nl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="pt">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="sk">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="sv">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="uk">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="x-test">xxLaurent Montel &lt;montel@kde.org&gt;xx</developer_name>
@@ -23,6 +32,9 @@
 	    pimsettingexporter allows to export/import PIM settings.
     </p>
     <p xml:lang="ca">El «pimsettingexporter» permet exportar/importa la configuració PIM.+</p>
+    <p xml:lang="nl">pimsettingexporter biedt u het exporteren/importeren van PIM-instellingen.</p>
+    <p xml:lang="pt">O 'pimsettingexporter' permite exportar ou importar configurações de PIM.</p>
+    <p xml:lang="sk">pimsettingexporter umožňuje exportovať/importovať PIM nastavenia.</p>
     <p xml:lang="sv">Export av inställningar för personlig informationshantering gör det möjligt att exportera och importera inställningar för personlig informationshantering.</p>
     <p xml:lang="uk">pimsettingexporter надає змогу експортувати та імпортувати параметри PIM.</p>
     <p xml:lang="x-test">xxpimsettingexporter allows to export/import PIM settings.xx</p>
@@ -33,6 +45,9 @@
   <provides>
     <binary>pimsettingexporter</binary>
     <binary xml:lang="ca">pimsettingexporter</binary>
+    <binary xml:lang="nl">pimsettingexporter</binary>
+    <binary xml:lang="pt">pimsettingexporter</binary>
+    <binary xml:lang="sk">pimsettingexporter</binary>
     <binary xml:lang="sv">Export av inställningar för personlig informationshantering</binary>
     <binary xml:lang="uk">Засіб експортування параметрів</binary>
     <binary xml:lang="x-test">xxpimsettingexporterxx</binary>
