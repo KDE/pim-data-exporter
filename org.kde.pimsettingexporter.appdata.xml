@@ -7,6 +7,7 @@
   <name xml:lang="ca">pimsettingexporter</name>
   <name xml:lang="ca-valencia">pimsettingexporter</name>
   <name xml:lang="cs">pimsettingexporter</name>
+  <name xml:lang="en-GB">pimsettingexporter</name>
   <name xml:lang="es">pimsettingexporter</name>
   <name xml:lang="fr">pimsettingexporter</name>
   <name xml:lang="gl">pimsettingexporter</name>
@@ -20,6 +21,7 @@
   <summary xml:lang="ca">Exportador de la configuració PIM</summary>
   <summary xml:lang="ca-valencia">Exportador de la configuració PIM</summary>
   <summary xml:lang="cs">Export nastavení PIM</summary>
+  <summary xml:lang="en-GB">PIM Settings Exporter</summary>
   <summary xml:lang="es">Exportador de preferencias de PIM</summary>
   <summary xml:lang="fr">Exportation des paramètres PIM</summary>
   <summary xml:lang="gl">Exportador de configuración de PIM</summary>
@@ -33,6 +35,7 @@
   <developer_name xml:lang="ca">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca-valencia">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="cs">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="en-GB">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="es">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="fr">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="gl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -49,6 +52,7 @@
     <p xml:lang="ca">El «pimsettingexporter» permet exportar/importa la configuració PIM.</p>
     <p xml:lang="ca-valencia">El «pimsettingexporter» permet exportar/importa la configuració PIM.</p>
     <p xml:lang="cs">pimsettingexporter umožňuje export/import nastavení PIM.</p>
+    <p xml:lang="en-GB">pimsettingexporter allows to export/import PIM settings.</p>
     <p xml:lang="es">pimsettingexporter permite exportar/importar preferencias de PIM.</p>
     <p xml:lang="fr">pimsettingexporter vous permet d'importer et d'exporter des paramètres PIM.</p>
     <p xml:lang="gl">pimsettingexporter permite exportar e importar configuración de PIM.</p>
@@ -67,6 +71,7 @@
     <binary xml:lang="ca">pimsettingexporter</binary>
     <binary xml:lang="ca-valencia">pimsettingexporter</binary>
     <binary xml:lang="cs">pimsettingexporter</binary>
+    <binary xml:lang="en-GB">pimsettingexporter</binary>
     <binary xml:lang="es">pimsettingexporter</binary>
     <binary xml:lang="fr">pimsettingexporter</binary>
     <binary xml:lang="gl">pimsettingexporter</binary>
