@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-set(KDEPIM_VERSION_NUMBER "5.9.80")
+set(KDEPIM_VERSION_NUMBER "5.10.40")
 project(pim-data-exporter VERSION ${KDEPIM_VERSION_NUMBER})
 
 set(KF5_VERSION "5.51.0")
@@ -26,7 +26,7 @@ include(ECMAddAppIcon)
 include(ECMQtDeclareLoggingCategory)
 
 # Do NOT add quote
-set(KDEPIM_DEV_VERSION beta)
+set(KDEPIM_DEV_VERSION alpha)
 
 # add an extra space
 if(DEFINED KDEPIM_DEV_VERSION)
