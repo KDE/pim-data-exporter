@@ -100,6 +100,8 @@ QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTem
                         utils.numberSteps = numberOfSteps;
                         value.insert(type, utils);
                     }
+                } else {
+                    mStreamReader->skipCurrentElement();
                 }
             }
         } else {
