@@ -13,6 +13,7 @@
   <name xml:lang="fi">pimsettingexporter</name>
   <name xml:lang="fr">pimsettingexporter</name>
   <name xml:lang="gl">pimsettingexporter</name>
+  <name xml:lang="id">pimsettingexporter</name>
   <name xml:lang="it">pimsettingexporter</name>
   <name xml:lang="nl">pimsettingexporter</name>
   <name xml:lang="pl">Eksportowanie ustawień ZIO</name>
@@ -32,6 +33,7 @@
   <summary xml:lang="fi">PIM-asetusten vienti</summary>
   <summary xml:lang="fr">Exportation des paramètres PIM</summary>
   <summary xml:lang="gl">Exportador de configuración de PIM</summary>
+  <summary xml:lang="id">Pengekspor Setelan PIM</summary>
   <summary xml:lang="it">Esportatore delle impostazioni di PIM</summary>
   <summary xml:lang="nl">PIM-exportprogramma van instellingen</summary>
   <summary xml:lang="pl">Eksportowanie ustawień ZIO</summary>
@@ -51,6 +53,7 @@
   <developer_name xml:lang="fi">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="fr">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="gl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="id">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="it">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="nl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="pl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -73,6 +76,7 @@
     <p xml:lang="fi">pimsettingexporterilla voit viedä ja tuoda PIM-asetuksia.</p>
     <p xml:lang="fr">pimsettingexporter vous permet d'importer et d'exporter des paramètres PIM.</p>
     <p xml:lang="gl">pimsettingexporter permite exportar e importar configuración de PIM.</p>
+    <p xml:lang="id">pimsettingexporter memungkinkan untuk ekspor/impor setelan PIM.</p>
     <p xml:lang="it">pimsettingexporter permette di esportare/importare le impostazioni di PIM.</p>
     <p xml:lang="nl">pimsettingexporter biedt u het exporteren/importeren van PIM-instellingen.</p>
     <p xml:lang="pl">Eksportowanie ustawień ZIO umożliwia eksportowanie/importowanie ustawień ZIO.</p>
@@ -97,6 +101,7 @@
     <binary xml:lang="fi">pimsettingexporter</binary>
     <binary xml:lang="fr">pimsettingexporter</binary>
     <binary xml:lang="gl">pimsettingexporter</binary>
+    <binary xml:lang="id">pimsettingexporter</binary>
     <binary xml:lang="it">pimsettingexporter</binary>
     <binary xml:lang="nl">pimsettingexporter</binary>
     <binary xml:lang="pl">Eksportowanie ustawień ZIO</binary>
