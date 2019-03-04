@@ -309,6 +309,7 @@ void ExportMailJob::backupConfig()
     backupConfigFile(QStringLiteral("kwatchgnupgrc"));
     backupConfigFile(QStringLiteral("pimpluginsrc"));
     backupConfigFile(QStringLiteral("texttospeechrc"));
+    backupConfigFile(QStringLiteral("kleopatracertificateselectiondialogrc"));
 
 
     //Notify file config

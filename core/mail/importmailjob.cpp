@@ -854,6 +854,7 @@ void ImportMailJob::restoreConfig()
     restoreConfigFile(QStringLiteral("kwatchgnupgrc"));
     restoreConfigFile(QStringLiteral("pimpluginsrc"));
     restoreConfigFile(QStringLiteral("texttospeechrc"));
+    restoreConfigFile(QStringLiteral("kleopatracertificateselectiondialogrc"));
 
     //Restore notify file
     const QStringList lstNotify = {

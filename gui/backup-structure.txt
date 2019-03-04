@@ -89,6 +89,7 @@ Root
 |       |---------kalarmui.rc
 |       |---------kmailsnippetrc
 |       |---------texttospeechrc
+|       |---------kleopatracertificateselectiondialogrc
 |       |---------korganizerui.rc
 |       |---------korganizer_part.rc
 |       |---------sieveeditorui.rc
