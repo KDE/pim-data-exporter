@@ -308,6 +308,8 @@ void ExportMailJob::backupConfig()
     backupConfigFile(QStringLiteral("sieveeditorrc"));
     backupConfigFile(QStringLiteral("kwatchgnupgrc"));
     backupConfigFile(QStringLiteral("pimpluginsrc"));
+    backupConfigFile(QStringLiteral("texttospeechrc"));
+
 
     //Notify file config
     backupConfigFile(QStringLiteral("akonadi_mailfilter_agent.notifyrc"));

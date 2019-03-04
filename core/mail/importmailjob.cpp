@@ -853,6 +853,8 @@ void ImportMailJob::restoreConfig()
     restoreConfigFile(QStringLiteral("sieveeditorrc"));
     restoreConfigFile(QStringLiteral("kwatchgnupgrc"));
     restoreConfigFile(QStringLiteral("pimpluginsrc"));
+    restoreConfigFile(QStringLiteral("texttospeechrc"));
+
     //Restore notify file
     const QStringList lstNotify = {
         QStringLiteral("akonadi_mailfilter_agent.notifyrc"),

@@ -87,6 +87,8 @@ Root
 |       |---------articleviewer.rc
 |       |---------akregator_shell.rc
 |       |---------kalarmui.rc
+|       |---------kmailsnippetrc
+|       |---------texttospeechrc
 |       |---------korganizerui.rc
 |       |---------korganizer_part.rc
 |       |---------sieveeditorui.rc
