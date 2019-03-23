@@ -23,6 +23,7 @@
   <name xml:lang="sv">Export av inställningar för personlig informationshantering</name>
   <name xml:lang="uk">Засіб експортування параметрів</name>
   <name xml:lang="x-test">xxpimsettingexporterxx</name>
+  <name xml:lang="zh-TW">pimsettingexporter</name>
   <summary>PIM Settings Exporter</summary>
   <summary xml:lang="ca">Exportador de la configuració PIM</summary>
   <summary xml:lang="ca-valencia">Exportador de la configuració PIM</summary>
@@ -43,6 +44,7 @@
   <summary xml:lang="sv">Export av inställningar för personlig informationshantering</summary>
   <summary xml:lang="uk">Засіб експортування параметрів PIM</summary>
   <summary xml:lang="x-test">xxPIM Settings Exporterxx</summary>
+  <summary xml:lang="zh-TW">PIM 設定匯出工具</summary>
   <developer_name>Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca-valencia">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -63,6 +65,7 @@
   <developer_name xml:lang="sv">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="uk">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="x-test">xxLaurent Montel &lt;montel@kde.org&gt;xx</developer_name>
+  <developer_name xml:lang="zh-TW">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <description>
     <p>
 	    pimsettingexporter allows to export/import PIM settings.
@@ -86,6 +89,7 @@
     <p xml:lang="sv">Export av inställningar för personlig informationshantering gör det möjligt att exportera och importera inställningar för personlig informationshantering.</p>
     <p xml:lang="uk">pimsettingexporter надає змогу експортувати та імпортувати параметри PIM.</p>
     <p xml:lang="x-test">xxpimsettingexporter allows to export/import PIM settings.xx</p>
+    <p xml:lang="zh-TW">pimsettingexporter 允許匯出或匯入 PIM 設定。</p>
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=pimsettingexporter</url>
   <url type="help">https://docs.kde.org/?application=pimsettingexporter</url>
@@ -111,6 +115,7 @@
     <binary xml:lang="sv">Export av inställningar för personlig informationshantering</binary>
     <binary xml:lang="uk">Засіб експортування параметрів</binary>
     <binary xml:lang="x-test">xxpimsettingexporterxx</binary>
+    <binary xml:lang="zh-TW">pimsettingexporter</binary>
   </provides>
   <project_group>KDE</project_group>
 </component>
