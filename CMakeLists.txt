@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-set(KDEPIM_VERSION_NUMBER "5.10.80")
+set(KDEPIM_VERSION_NUMBER "5.10.90")
 project(pim-data-exporter VERSION ${KDEPIM_VERSION_NUMBER})
 
 set(KF5_MIN_VERSION "5.56.0")
@@ -82,7 +82,12 @@ include_directories(${pim-data-exporter_SOURCE_DIR} ${pim-data-exporter_BINARY_D
 
 add_definitions(-DTRANSLATION_DOMAIN=\"pimsettingexporter\")
 
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+# workaround for https://bugreports.qt.io/browse/QTBUG-74665 (bug in qt5.13 reevaluate it)
+if (${Qt5Widgets_VERSION} STRGREATER "5.13")
+   MESSAGE(STATUS "Qt version: ${Qt5Widgets_VERSION} DISABLE compile without deprecated methods. bug QTBUG-74665")
+else()
+   add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+endif()
 
 configure_file(pimsettingexporter-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/pimsettingexporter-version.h @ONLY)
 
