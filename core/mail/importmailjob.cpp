@@ -50,7 +50,7 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <QTimer>
-#include <qregularexpression.h>
+#include <QRegularExpression>
 
 using namespace Akonadi;
 namespace {
