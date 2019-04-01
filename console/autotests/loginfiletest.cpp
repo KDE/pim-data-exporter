@@ -18,7 +18,7 @@
 */
 
 #include "loginfiletest.h"
-#include <qtest.h>
+#include <QTest>
 #include "../loginfile.h"
 LogInFileTest::LogInFileTest(QObject *parent)
     : QObject(parent)

@@ -19,7 +19,7 @@
 
 #include "importexportprogressindicatorgui.h"
 #include "pimsettingexporterglobalconfig.h"
-#include <qprogressdialog.h>
+#include <QProgressDialog>
 #include <KMessageBox>
 #include <KLocalizedString>
 #include <KStandardGuiItem>
