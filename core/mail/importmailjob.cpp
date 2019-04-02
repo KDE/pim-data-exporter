@@ -311,7 +311,7 @@ void ImportMailJob::restoreResources()
 
     QDir dir(mTempDirName);
     dir.mkdir(Utils::resourcesPath());
-    Q_FOREACH (const QString &filename, mFileList) {
+    for (const QString &filename : qAsConst(mFileList)) {
         if (filename.startsWith(Utils::resourcesPath())) {
             const KArchiveEntry *fileEntry = mArchiveDirectory->entry(filename);
             if (fileEntry && fileEntry->isFile()) {
