@@ -437,7 +437,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
     return resourceToSync;
 }
 
-void AbstractImportExportJob::addSpecificResourceSettings(KSharedConfig::Ptr /*resourceConfig*/, const QString & /*resourceName*/, QMap<QString, QVariant> & /*settings*/)
+void AbstractImportExportJob::addSpecificResourceSettings(const KSharedConfig::Ptr /*resourceConfig*/&, const QString & /*resourceName*/, QMap<QString, QVariant> & /*settings*/)
 {
     //Redefine it in subclass
 }

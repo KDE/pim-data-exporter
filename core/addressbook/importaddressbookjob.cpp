@@ -150,7 +150,7 @@ void ImportAddressbookJob::restoreResources()
     startSynchronizeResources(listResource);
 }
 
-void ImportAddressbookJob::addSpecificResourceSettings(KSharedConfig::Ptr resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings)
+void ImportAddressbookJob::addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings)
 {
     if (resourceName == QLatin1String("akonadi_vcard_resource")) {
         KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
