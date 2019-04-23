@@ -37,7 +37,7 @@ public:
     ~PimSettingExporterConsole();
 
     Mode mode() const;
-    void setMode(const Mode &mode);
+    void setMode(Mode mode);
 
     void setLogFileName(const QString &logFileName);
 

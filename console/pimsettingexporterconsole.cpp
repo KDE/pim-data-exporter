@@ -171,7 +171,7 @@ PimSettingExporterConsole::Mode PimSettingExporterConsole::mode() const
     return mMode;
 }
 
-void PimSettingExporterConsole::setMode(const Mode &mode)
+void PimSettingExporterConsole::setMode(Mode mode)
 {
     if (mInProgress) {
         qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
