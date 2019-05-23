@@ -3,7 +3,7 @@
   <id>org.kde.pimsettingexporter.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
-  <name>pimsettingexporter</name>
+  <name>PIM Setting Exporter</name>
   <name xml:lang="ca">pimsettingexporter</name>
   <name xml:lang="ca-valencia">pimsettingexporter</name>
   <name xml:lang="cs">pimsettingexporter</name>
@@ -24,7 +24,7 @@
   <name xml:lang="uk">Засіб експортування параметрів</name>
   <name xml:lang="x-test">xxpimsettingexporterxx</name>
   <name xml:lang="zh-TW">pimsettingexporter</name>
-  <summary>PIM Settings Exporter</summary>
+  <summary>Saves all data from PIM apps and restore them in other systems.</summary>
   <summary xml:lang="ca">Exportador de la configuració PIM</summary>
   <summary xml:lang="ca-valencia">Exportador de la configuració PIM</summary>
   <summary xml:lang="cs">Export nastavení PIM</summary>
@@ -68,7 +68,7 @@
   <developer_name xml:lang="zh-TW">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <description>
     <p>
-	    pimsettingexporter allows to export/import PIM settings.
+	    PIM Settings Exporter exports and imports PIM settings.
     </p>
     <p xml:lang="ca">El «pimsettingexporter» permet exportar/importa la configuració PIM.</p>
     <p xml:lang="ca-valencia">El «pimsettingexporter» permet exportar/importa la configuració PIM.</p>
@@ -98,4 +98,9 @@
     <binary>pimsettingexporter</binary>
   </provides>
   <project_group>KDE</project_group>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.kde.org/screenshots/pimsettingexporter/pimsettingexporter.png</image>
+    </screenshot>
+  </screenshots>
 </component>
