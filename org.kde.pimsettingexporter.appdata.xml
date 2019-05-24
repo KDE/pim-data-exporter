@@ -4,47 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>PIM Setting Exporter</name>
-  <name xml:lang="ca">pimsettingexporter</name>
-  <name xml:lang="ca-valencia">pimsettingexporter</name>
-  <name xml:lang="cs">pimsettingexporter</name>
-  <name xml:lang="de">PIM-Einstellungs-Export</name>
-  <name xml:lang="en-GB">pimsettingexporter</name>
-  <name xml:lang="es">pimsettingexporter</name>
-  <name xml:lang="fi">pimsettingexporter</name>
-  <name xml:lang="fr">pimsettingexporter</name>
-  <name xml:lang="gl">pimsettingexporter</name>
-  <name xml:lang="id">pimsettingexporter</name>
-  <name xml:lang="it">pimsettingexporter</name>
-  <name xml:lang="nl">pimsettingexporter</name>
-  <name xml:lang="pl">Eksportowanie ustawień ZIO</name>
-  <name xml:lang="pt">pimsettingexporter</name>
-  <name xml:lang="pt-BR">pimsettingexporter</name>
-  <name xml:lang="sk">pimsettingexporter</name>
-  <name xml:lang="sv">Export av inställningar för personlig informationshantering</name>
-  <name xml:lang="uk">Засіб експортування параметрів</name>
-  <name xml:lang="x-test">xxpimsettingexporterxx</name>
-  <name xml:lang="zh-TW">pimsettingexporter</name>
   <summary>Saves all data from PIM apps and restore them in other systems.</summary>
-  <summary xml:lang="ca">Exportador de la configuració PIM</summary>
-  <summary xml:lang="ca-valencia">Exportador de la configuració PIM</summary>
-  <summary xml:lang="cs">Export nastavení PIM</summary>
-  <summary xml:lang="de">PIM-Einstellungs-Export</summary>
-  <summary xml:lang="en-GB">PIM Settings Exporter</summary>
-  <summary xml:lang="es">Exportador de preferencias de PIM</summary>
-  <summary xml:lang="fi">PIM-asetusten vienti</summary>
-  <summary xml:lang="fr">Exportation des paramètres PIM</summary>
-  <summary xml:lang="gl">Exportador de configuración de PIM</summary>
-  <summary xml:lang="id">Pengekspor Setelan PIM</summary>
-  <summary xml:lang="it">Esportatore delle impostazioni di PIM</summary>
-  <summary xml:lang="nl">PIM-exportprogramma van instellingen</summary>
-  <summary xml:lang="pl">Eksportowanie ustawień ZIO</summary>
-  <summary xml:lang="pt">Exportação de Configurações PIM</summary>
-  <summary xml:lang="pt-BR">Configurações do exportador PIM</summary>
-  <summary xml:lang="sk">Exportér nastavení PIM</summary>
-  <summary xml:lang="sv">Export av inställningar för personlig informationshantering</summary>
-  <summary xml:lang="uk">Засіб експортування параметрів PIM</summary>
-  <summary xml:lang="x-test">xxPIM Settings Exporterxx</summary>
-  <summary xml:lang="zh-TW">PIM 設定匯出工具</summary>
   <developer_name>Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca-valencia">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -70,26 +30,6 @@
     <p>
 	    PIM Settings Exporter exports and imports PIM settings.
     </p>
-    <p xml:lang="ca">El «pimsettingexporter» permet exportar/importa la configuració PIM.</p>
-    <p xml:lang="ca-valencia">El «pimsettingexporter» permet exportar/importa la configuració PIM.</p>
-    <p xml:lang="cs">pimsettingexporter umožňuje export/import nastavení PIM.</p>
-    <p xml:lang="de">Mit diesem Programm können Sie PIM-Einstellungen exportieren oder importieren.</p>
-    <p xml:lang="en-GB">pimsettingexporter allows to export/import PIM settings.</p>
-    <p xml:lang="es">pimsettingexporter permite exportar/importar preferencias de PIM.</p>
-    <p xml:lang="fi">pimsettingexporterilla voit viedä ja tuoda PIM-asetuksia.</p>
-    <p xml:lang="fr">pimsettingexporter vous permet d'importer et d'exporter des paramètres PIM.</p>
-    <p xml:lang="gl">pimsettingexporter permite exportar e importar configuración de PIM.</p>
-    <p xml:lang="id">pimsettingexporter memungkinkan untuk ekspor/impor setelan PIM.</p>
-    <p xml:lang="it">pimsettingexporter permette di esportare/importare le impostazioni di PIM.</p>
-    <p xml:lang="nl">pimsettingexporter biedt u het exporteren/importeren van PIM-instellingen.</p>
-    <p xml:lang="pl">Eksportowanie ustawień ZIO umożliwia eksportowanie/importowanie ustawień ZIO.</p>
-    <p xml:lang="pt">O 'pimsettingexporter' permite exportar ou importar configurações de PIM.</p>
-    <p xml:lang="pt-BR">O pimsettingexporter permite exportar/importar configurações PIM.</p>
-    <p xml:lang="sk">pimsettingexporter umožňuje exportovať/importovať PIM nastavenia.</p>
-    <p xml:lang="sv">Export av inställningar för personlig informationshantering gör det möjligt att exportera och importera inställningar för personlig informationshantering.</p>
-    <p xml:lang="uk">pimsettingexporter надає змогу експортувати та імпортувати параметри PIM.</p>
-    <p xml:lang="x-test">xxpimsettingexporter allows to export/import PIM settings.xx</p>
-    <p xml:lang="zh-TW">pimsettingexporter 允許匯出或匯入 PIM 設定。</p>
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=pimsettingexporter</url>
   <url type="help">https://docs.kde.org/?application=pimsettingexporter</url>
