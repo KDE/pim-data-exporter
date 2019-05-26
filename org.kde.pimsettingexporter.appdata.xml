@@ -8,6 +8,7 @@
   <name xml:lang="ca-valencia">Exportador de la configuració PIM</name>
   <name xml:lang="nl">PIM-exportprogramma van instellingen</name>
   <name xml:lang="pt">Exportação das Definições PIM</name>
+  <name xml:lang="sv">Export av inställningar för personlig informationshantering</name>
   <name xml:lang="uk">Засіб експортування параметрів PIM</name>
   <name xml:lang="x-test">xxPIM Setting Exporterxx</name>
   <summary>Saves all data from PIM apps and restore them in other systems.</summary>
@@ -15,6 +16,7 @@
   <summary xml:lang="ca-valencia">Guarda totes les dades de les aplicacions PIM i les restaura en altres sistemes.</summary>
   <summary xml:lang="nl">Slaat alle gegevens op uit PIM-toepassingen en herstelt ze in andere systemen.</summary>
   <summary xml:lang="pt">Grava todos os dados das aplicações PIM e repõe-os noutros sistemas.</summary>
+  <summary xml:lang="sv">Sparar alla data från program för personlig informationshantering och återställer dem på andra system.</summary>
   <summary xml:lang="uk">Зберігає усі дані з програм PIM і відновлює їх у інших системах.</summary>
   <summary xml:lang="x-test">xxSaves all data from PIM apps and restore them in other systems.xx</summary>
   <developer_name>Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -46,6 +48,7 @@
     <p xml:lang="ca-valencia">L'Exportador de la configuració PIM permet exportar i importar la configuració PIM.</p>
     <p xml:lang="nl">PIM Settings Exporter exporteert en importeert PIM-instellingen.</p>
     <p xml:lang="pt">A Exportação de Definições PIM permite exportar ou importar configurações de PIM.</p>
+    <p xml:lang="sv">Export av inställningar för personlig informationshantering gör det möjligt att exportera och importera inställningar för personlig informationshantering.</p>
     <p xml:lang="uk">Засіб експортування параметрів PIM надає змогу експортувати та імпортувати параметри PIM.</p>
     <p xml:lang="x-test">xxPIM Settings Exporter exports and imports PIM settings.xx</p>
   </description>
