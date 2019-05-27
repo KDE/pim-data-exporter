@@ -6,6 +6,7 @@
   <name>PIM Setting Exporter</name>
   <name xml:lang="ca">Exportador de la configuració PIM</name>
   <name xml:lang="ca-valencia">Exportador de la configuració PIM</name>
+  <name xml:lang="en-GB">PIM Setting Exporter</name>
   <name xml:lang="nl">PIM-exportprogramma van instellingen</name>
   <name xml:lang="pt">Exportação das Definições PIM</name>
   <name xml:lang="sv">Export av inställningar för personlig informationshantering</name>
@@ -14,6 +15,7 @@
   <summary>Saves all data from PIM apps and restore them in other systems.</summary>
   <summary xml:lang="ca">Desa totes les dades de les aplicacions PIM i les restaura en altres sistemes.</summary>
   <summary xml:lang="ca-valencia">Guarda totes les dades de les aplicacions PIM i les restaura en altres sistemes.</summary>
+  <summary xml:lang="en-GB">Saves all data from PIM apps and restore them in other systems.</summary>
   <summary xml:lang="nl">Slaat alle gegevens op uit PIM-toepassingen en herstelt ze in andere systemen.</summary>
   <summary xml:lang="pt">Grava todos os dados das aplicações PIM e repõe-os noutros sistemas.</summary>
   <summary xml:lang="sv">Sparar alla data från program för personlig informationshantering och återställer dem på andra system.</summary>
@@ -46,6 +48,7 @@
     </p>
     <p xml:lang="ca">L'Exportador de la configuració PIM permet exportar i importar la configuració PIM.</p>
     <p xml:lang="ca-valencia">L'Exportador de la configuració PIM permet exportar i importar la configuració PIM.</p>
+    <p xml:lang="en-GB">PIM Settings Exporter exports and imports PIM settings.</p>
     <p xml:lang="nl">PIM Settings Exporter exporteert en importeert PIM-instellingen.</p>
     <p xml:lang="pt">A Exportação de Definições PIM permite exportar ou importar configurações de PIM.</p>
     <p xml:lang="sv">Export av inställningar för personlig informationshantering gör det möjligt att exportera och importera inställningar för personlig informationshantering.</p>
