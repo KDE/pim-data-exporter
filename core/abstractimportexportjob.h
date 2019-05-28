@@ -122,7 +122,7 @@ protected:
     int mNumberOfStep = -1;
     PimCommon::CreateResource *mCreateResource = nullptr;
     QStringList mAgentPaths;
-    QList<Utils::StoredType> mListStep;
+    QVector<Utils::StoredType> mListStep;
     int mIndex = -1;
     static int sArchiveVersion;
 
