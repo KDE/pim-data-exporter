@@ -47,6 +47,7 @@ Exec=pimsettingexporter
 Type=Application
 Icon=kontact
 GenericName=Saves and restores all data from PIM apps
+GenericName[uk]=Збереження і відновлення усіх даних програм PIM
 Comment=PIM Setting Exporter allows to save all data from PIM apps and restore them in other systems.
 Comment[ca]=L'exportador de la configuració PIM permet desar totes les dades de les aplicacions PIM i restaura-les en altres sistemes.
 Comment[ca@valencia]=L'exportador de la configuració PIM permet guardar totes les dades de les aplicacions PIM i restaura-les en altres sistemes.
