@@ -698,7 +698,7 @@ void ImportMailJob::restoreConfig()
 
             bool canceled = false;
             MailCommon::FilterImporterExporter exportFilters;
-            QList<MailCommon::MailFilter *> lstFilter = exportFilters.importFilters(canceled, MailCommon::FilterImporterExporter::KMailFilter, filterFileName);
+            QVector<MailCommon::MailFilter *> lstFilter = exportFilters.importFilters(canceled, MailCommon::FilterImporterExporter::KMailFilter, filterFileName);
             if (canceled) {
                 MailCommon::FilterManager::instance()->appendFilters(lstFilter);
             }

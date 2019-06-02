@@ -266,7 +266,7 @@ void ExportMailJob::backupConfig()
 {
     setProgressDialogLabel(i18n("Backing up config..."));
 
-    QList<MailCommon::MailFilter *> lstFilter = MailCommon::FilterManager::instance()->filters();
+    QVector<MailCommon::MailFilter *> lstFilter = MailCommon::FilterManager::instance()->filters();
     if (!lstFilter.isEmpty()) {
         QTemporaryFile tmp;
         tmp.open();
