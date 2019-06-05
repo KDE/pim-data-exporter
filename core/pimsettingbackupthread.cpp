@@ -23,7 +23,6 @@
 #include <KZip>
 #include <QTemporaryFile>
 #include <KLocalizedString>
-#include <QDebug>
 
 PimSettingBackupThread::PimSettingBackupThread(KZip *zip, const QString &url, const QString &archivePath, const QString &archivename, QObject *parent)
     : QThread(parent)
