@@ -1194,6 +1194,16 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         convertRealPathToCollectionList(favoriteGroup, expensionKey);
     }
 
+
+    const QString favoriteCollectionStr(QStringLiteral("FavoriteCollections"));
+    if (kmailConfig->hasGroup(favoriteCollectionStr)) {
+        KConfigGroup favoriteGroup = kmailConfig->group(favoriteCollectionStr);
+
+        const QString favoriteCollectionIdsStr(QStringLiteral("FavoriteCollectionIds"));
+        convertRealPathToCollectionList(favoriteGroup, favoriteCollectionIdsStr);
+    }
+
+
     const QString generalStr(QStringLiteral("General"));
     if (kmailConfig->hasGroup(generalStr)) {
         KConfigGroup generalGroup = kmailConfig->group(generalStr);
