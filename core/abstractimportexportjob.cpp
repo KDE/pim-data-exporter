@@ -271,6 +271,9 @@ void AbstractImportExportJob::convertRealPathToCollectionList(KConfigGroup &grou
 
 Akonadi::Collection::Id AbstractImportExportJob::convertPathToId(const QString &path)
 {
+    if (path.isEmpty()) {
+        return -1;
+    }
     Akonadi::Collection::Id val = mHashConvertPathCollectionId.value(path, -1);
     if (val != -1) {
         return val;
