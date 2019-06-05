@@ -1091,32 +1091,32 @@ void ImportMailJob::importTemplatesConfig(const KArchiveFile *templatesconfigura
 
     //adapt id
     const QString templateGroupPattern = QStringLiteral("Templates #");
+    const QString templateGroupIdentityPattern = QStringLiteral("Templates #IDENTITY_");
     const QStringList templateList = templateConfig->groupList().filter(templateGroupPattern);
     for (const QString &str : templateList) {
-        const QString path = str.right(str.length() - templateGroupPattern.length());
-        if (!path.isEmpty()) {
-            KConfigGroup oldGroup = templateConfig->group(str);
-            const Akonadi::Collection::Id id = convertPathToId(path);
-            if (id != -1) {
-                KConfigGroup newGroup(templateConfig, templateGroupPattern + QString::number(id));
-                oldGroup.copyTo(&newGroup);
+        //Identity
+        if (str.startsWith(templateGroupIdentityPattern)) {
+            bool found = false;
+            const int identity = str.rightRef(str.length() - templateGroupIdentityPattern.length()).toInt(&found);
+            if (found) {
+                KConfigGroup oldGroup = templateConfig->group(str);
+                if (mHashIdentity.contains(identity)) {
+                    KConfigGroup newGroup(templateConfig, templateGroupPattern + QString::number(mHashIdentity.value(identity)));
+                    oldGroup.copyTo(&newGroup);
+                }
+                oldGroup.deleteGroup();
             }
-            oldGroup.deleteGroup();
-        }
-    }
-    //adapt identity
-    const QString templateGroupIdentityPattern = QStringLiteral("Templates #IDENTITY_");
-    const QStringList templateListIdentity = templateConfig->groupList().filter(templateGroupIdentityPattern);
-    for (const QString &str : templateListIdentity) {
-        bool found = false;
-        const int identity = str.rightRef(str.length() - templateGroupIdentityPattern.length()).toInt(&found);
-        if (found) {
-            KConfigGroup oldGroup = templateConfig->group(str);
-            if (mHashIdentity.contains(identity)) {
-                KConfigGroup newGroup(templateConfig, templateGroupPattern + QString::number(mHashIdentity.value(identity)));
-                oldGroup.copyTo(&newGroup);
+        } else { //Folder
+            const QString path = str.right(str.length() - templateGroupPattern.length());
+            if (!path.isEmpty()) {
+                KConfigGroup oldGroup = templateConfig->group(str);
+                const Akonadi::Collection::Id id = convertPathToId(path);
+                if (id != -1) {
+                    KConfigGroup newGroup(templateConfig, templateGroupPattern + QString::number(id));
+                    oldGroup.copyTo(&newGroup);
+                }
+                oldGroup.deleteGroup();
             }
-            oldGroup.deleteGroup();
         }
     }
     templateConfig->sync();
