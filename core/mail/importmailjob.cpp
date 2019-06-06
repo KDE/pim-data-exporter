@@ -1200,7 +1200,7 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         KConfigGroup favoriteGroup = kmailConfig->group(favoriteCollectionStr);
 
         const QString favoriteCollectionIdsStr(QStringLiteral("FavoriteCollectionIds"));
-        convertRealPathToCollectionList(favoriteGroup, favoriteCollectionIdsStr);
+        convertRealPathToCollectionList(favoriteGroup, favoriteCollectionIdsStr, false);
     }
 
     const QString favoriteCollectionOrderStr(QStringLiteral("FavoriteCollectionsOrder"));
@@ -1210,6 +1210,29 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         //For favorite id for root collection == 0 and we store only folder => c
         const QString favoriteCollectionOrderIdsStr(QStringLiteral("0"));
         convertRealPathToCollectionList(favoriteGroupOrder, favoriteCollectionOrderIdsStr, true);
+    }
+
+    //Event collection
+    const QString eventCollectionStr(QStringLiteral("Event"));
+    if (kmailConfig->hasGroup(eventCollectionStr)) {
+        KConfigGroup eventGroup = kmailConfig->group(eventCollectionStr);
+        const QString eventLastEventSelectedFolder(QStringLiteral("LastEventSelectedFolder"));
+        convertRealPathToCollectionList(eventGroup, eventLastEventSelectedFolder, false);
+    }
+
+    //Todo collection
+    const QString todoCollectionStr(QStringLiteral("Todo"));
+    if (kmailConfig->hasGroup(todoCollectionStr)) {
+        KConfigGroup todoGroup = kmailConfig->group(todoCollectionStr);
+        const QString todoLastEventSelectedFolder(QStringLiteral("LastSelectedFolder"));
+        convertRealPathToCollectionList(todoGroup, todoLastEventSelectedFolder, false);
+    }
+    //Note collection
+    const QString noteCollectionStr(QStringLiteral("Note"));
+    if (kmailConfig->hasGroup(noteCollectionStr)) {
+        KConfigGroup noteGroup = kmailConfig->group(noteCollectionStr);
+        const QString noteLastEventSelectedFolder(QStringLiteral("LastNoteSelectedFolder"));
+        convertRealPathToCollectionList(noteGroup, noteLastEventSelectedFolder, false);
     }
 
 

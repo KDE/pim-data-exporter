@@ -536,6 +536,29 @@ void ExportMailJob::backupConfig()
             Utils::convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr, prefixCollection);
         }
 
+        //Event collection
+        const QString eventCollectionStr(QStringLiteral("Event"));
+        if (kmailConfig->hasGroup(eventCollectionStr)) {
+            KConfigGroup eventGroup = kmailConfig->group(eventCollectionStr);
+            const QString eventLastEventSelectedFolder(QStringLiteral("LastEventSelectedFolder"));
+            Utils::convertCollectionIdsToRealPath(eventGroup, eventLastEventSelectedFolder);
+        }
+
+        //Todo collection
+        const QString todoCollectionStr(QStringLiteral("Todo"));
+        if (kmailConfig->hasGroup(todoCollectionStr)) {
+            KConfigGroup todoGroup = kmailConfig->group(todoCollectionStr);
+            const QString todoLastEventSelectedFolder(QStringLiteral("LastSelectedFolder"));
+            Utils::convertCollectionIdsToRealPath(todoGroup, todoLastEventSelectedFolder);
+        }
+        //Note collection
+        const QString noteCollectionStr(QStringLiteral("Note"));
+        if (kmailConfig->hasGroup(noteCollectionStr)) {
+            KConfigGroup noteGroup = kmailConfig->group(noteCollectionStr);
+            const QString noteLastEventSelectedFolder(QStringLiteral("LastNoteSelectedFolder"));
+            Utils::convertCollectionIdsToRealPath(noteGroup, noteLastEventSelectedFolder);
+        }
+
         kmailConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), kmailStr);
         delete kmailConfig;

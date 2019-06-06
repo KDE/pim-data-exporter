@@ -76,6 +76,8 @@ target_link_libraries(pimsettingexporterprivate
     KF5::Archive
     KF5::PimCommonAkonadi
     KF5::I18n
+    KF5::CalendarCore
+    KF5::AkonadiNotes
     )
 
 set_target_properties(pimsettingexporterprivate PROPERTIES VERSION ${KDEPIM_LIB_VERSION} SOVERSION ${KDEPIM_LIB_SOVERSION})
