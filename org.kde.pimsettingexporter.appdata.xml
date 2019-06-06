@@ -15,6 +15,7 @@
   <name xml:lang="gl">pimsettingexporter</name>
   <name xml:lang="id">pimsettingexporter</name>
   <name xml:lang="it">pimsettingexporter</name>
+  <name xml:lang="ko">pimsettingexporter</name>
   <name xml:lang="nl">pimsettingexporter</name>
   <name xml:lang="pl">Eksportowanie ustawień ZIO</name>
   <name xml:lang="pt">pimsettingexporter</name>
@@ -36,6 +37,7 @@
   <summary xml:lang="gl">Exportador de configuración de PIM</summary>
   <summary xml:lang="id">Pengekspor Setelan PIM</summary>
   <summary xml:lang="it">Esportatore delle impostazioni di PIM</summary>
+  <summary xml:lang="ko">PIM 설정 내보내기</summary>
   <summary xml:lang="nl">PIM-exportprogramma van instellingen</summary>
   <summary xml:lang="pl">Eksportowanie ustawień ZIO</summary>
   <summary xml:lang="pt">Exportação de Configurações PIM</summary>
@@ -57,6 +59,7 @@
   <developer_name xml:lang="gl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="id">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="it">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="ko">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="nl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="pl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="pt">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -81,6 +84,7 @@
     <p xml:lang="gl">pimsettingexporter permite exportar e importar configuración de PIM.</p>
     <p xml:lang="id">pimsettingexporter memungkinkan untuk ekspor/impor setelan PIM.</p>
     <p xml:lang="it">pimsettingexporter permette di esportare/importare le impostazioni di PIM.</p>
+    <p xml:lang="ko">PIM 설정 내보내기 도구에서는 PIM 설정을 내보내고 가져옵니다.</p>
     <p xml:lang="nl">pimsettingexporter biedt u het exporteren/importeren van PIM-instellingen.</p>
     <p xml:lang="pl">Eksportowanie ustawień ZIO umożliwia eksportowanie/importowanie ustawień ZIO.</p>
     <p xml:lang="pt">O 'pimsettingexporter' permite exportar ou importar configurações de PIM.</p>
