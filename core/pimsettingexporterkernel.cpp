@@ -29,6 +29,9 @@
 #include <AkonadiCore/entitytreemodel.h>
 #include <AkonadiCore/entitymimetypefiltermodel.h>
 #include <AkonadiCore/changerecorder.h>
+#include <Akonadi/Notes/NoteUtils>
+#include <KCalCore/KCalCore/Todo>
+#include <KCalCore/KCalCore/Event>
 #include <KSharedConfig>
 
 //Same element as kalarmcal
@@ -45,6 +48,9 @@ PimSettingExporterKernel::PimSettingExporterKernel(QObject *parent)
     mFolderCollectionMonitor = new MailCommon::FolderCollectionMonitor(session, this);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KContacts::Addressee::mimeType(), true);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KContacts::ContactGroup::mimeType(), true);
+    mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KCalCore::Todo::todoMimeType(), true);
+    mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KCalCore::Event::eventMimeType(), true);
+    mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(Akonadi::NoteUtils::noteMimeType(), true);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(MIME_ACTIVE);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(MIME_ARCHIVED);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(MIME_TEMPLATE);
