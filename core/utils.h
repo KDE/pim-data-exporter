@@ -98,7 +98,7 @@ QString akonadiAgentName(const QString &configPath);
 
 void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);
 void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey);
-void convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey);
+void convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection = QString());
 
 QString resourcePath(const Akonadi::AgentInstance &agent, const QString &defaultPath = QString());
 QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData);
