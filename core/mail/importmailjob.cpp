@@ -1235,6 +1235,19 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         convertRealPathToCollectionList(noteGroup, noteLastEventSelectedFolder, false);
     }
 
+    //Convert MessageListTab collection id
+    const QString messageListPaneStr(QStringLiteral("MessageListPane"));
+    if (kmailConfig->hasGroup(messageListPaneStr)) {
+        KConfigGroup messageListPaneGroup = kmailConfig->group(messageListPaneStr);
+        const int numberOfTab = messageListPaneGroup.readEntry(QStringLiteral("tabNumber"), 0);
+        for (int i = 0; i < numberOfTab; ++i) {
+            KConfigGroup messageListPaneTabGroup = kmailConfig->group(QStringLiteral("MessageListTab%1").arg(i));
+            const QString messageListPaneTabFolderStr(QStringLiteral("collectionId"));
+            convertRealPathToCollectionList(messageListPaneTabGroup, messageListPaneTabFolderStr, false);
+        }
+    }
+
+
 
     const QString generalStr(QStringLiteral("General"));
     if (kmailConfig->hasGroup(generalStr)) {

@@ -559,6 +559,19 @@ void ExportMailJob::backupConfig()
             Utils::convertCollectionIdsToRealPath(noteGroup, noteLastEventSelectedFolder);
         }
 
+        //Convert MessageListTab collection id
+        const QString messageListPaneStr(QStringLiteral("MessageListPane"));
+        if (kmailConfig->hasGroup(messageListPaneStr)) {
+            KConfigGroup messageListPaneGroup = kmailConfig->group(messageListPaneStr);
+            const int numberOfTab = messageListPaneGroup.readEntry(QStringLiteral("tabNumber"), 0);
+            for (int i = 0; i < numberOfTab; ++i) {
+                KConfigGroup messageListPaneTabGroup = kmailConfig->group(QStringLiteral("MessageListTab%1").arg(i));
+                const QString messageListPaneTabFolderStr(QStringLiteral("collectionId"));
+                Utils::convertCollectionIdsToRealPath(messageListPaneTabGroup, messageListPaneTabFolderStr);
+            }
+        }
+
+
         kmailConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), kmailStr);
         delete kmailConfig;
