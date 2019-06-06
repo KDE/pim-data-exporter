@@ -1235,6 +1235,15 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         convertRealPathToCollectionList(noteGroup, noteLastEventSelectedFolder, false);
     }
 
+    //FolderSelectionDialog collection
+    const QString folderSelectionCollectionStr(QStringLiteral("FolderSelectionDialog"));
+    if (kmailConfig->hasGroup(folderSelectionCollectionStr)) {
+        KConfigGroup folderSelectionGroup = kmailConfig->group(folderSelectionCollectionStr);
+        const QString folderSelectionSelectedFolder(QStringLiteral("LastSelectedFolder"));
+        convertRealPathToCollectionList(folderSelectionGroup, folderSelectionSelectedFolder, false);
+    }
+
+
     //Convert MessageListTab collection id
     const QString messageListPaneStr(QStringLiteral("MessageListPane"));
     if (kmailConfig->hasGroup(messageListPaneStr)) {
@@ -1248,6 +1257,22 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
     }
 
 
+    //Automatic Add Contacts
+    QHash<int, uint>::const_iterator i = mHashIdentity.constBegin();
+    while (i != mHashIdentity.constEnd()) {
+        //Use old key
+        const QString groupId = QStringLiteral("Automatic Add Contacts %1").arg(i.key());
+        if (kmailConfig->hasGroup(groupId)) {
+            KConfigGroup identityGroup = kmailConfig->group(groupId);
+
+            KConfigGroup newGroup(kmailConfig, QStringLiteral("Automatic Add Contacts %1").arg(i.value()));
+            identityGroup.copyTo(&newGroup);
+            const QString automaticAddContactStr(QStringLiteral("Collection"));
+            Utils::convertCollectionIdsToRealPath(newGroup, automaticAddContactStr);
+            identityGroup.deleteGroup();
+        }
+        ++i;
+    }
 
     const QString generalStr(QStringLiteral("General"));
     if (kmailConfig->hasGroup(generalStr)) {

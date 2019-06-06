@@ -45,6 +45,9 @@
 #include <exportresourcearchivejob.h>
 #include <QRegularExpression>
 
+#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagement/Identity>
+
 ExportMailJob::ExportMailJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
@@ -551,6 +554,14 @@ void ExportMailJob::backupConfig()
             const QString todoLastEventSelectedFolder(QStringLiteral("LastSelectedFolder"));
             Utils::convertCollectionIdsToRealPath(todoGroup, todoLastEventSelectedFolder);
         }
+        //FolderSelectionDialog collection
+        const QString folderSelectionCollectionStr(QStringLiteral("FolderSelectionDialog"));
+        if (kmailConfig->hasGroup(folderSelectionCollectionStr)) {
+            KConfigGroup folderSelectionGroup = kmailConfig->group(folderSelectionCollectionStr);
+            const QString folderSelectionSelectedFolder(QStringLiteral("LastSelectedFolder"));
+            Utils::convertCollectionIdsToRealPath(folderSelectionGroup, folderSelectionSelectedFolder);
+        }
+
         //Note collection
         const QString noteCollectionStr(QStringLiteral("Note"));
         if (kmailConfig->hasGroup(noteCollectionStr)) {
@@ -571,6 +582,20 @@ void ExportMailJob::backupConfig()
             }
         }
 
+        //Automatic Add Contacts
+        KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
+        KIdentityManagement::IdentityManager::ConstIterator end = im->end();
+        for (KIdentityManagement::IdentityManager::ConstIterator it = im->begin(); it != end; ++it) {
+            const uint identity = (*it).uoid();
+            const QString groupId = QStringLiteral("Automatic Add Contacts %1").arg(identity);
+            if (kmailConfig->hasGroup(groupId)) {
+                KConfigGroup identityGroup = kmailConfig->group(groupId);
+                const QString automaticAddContactStr(QStringLiteral("Collection"));
+                Utils::convertCollectionIdsToRealPath(identityGroup, automaticAddContactStr);
+            }
+        }
+
+        //TODO add confirm address too
 
         kmailConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), kmailStr);
