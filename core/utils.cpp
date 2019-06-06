@@ -153,6 +153,7 @@ QString Utils::resourcePath(const KSharedConfigPtr &resourceConfig, const QStrin
     return url;
 }
 
+//Merge two methods I think
 void Utils::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
 {
     if (group.hasKey(currentKey)) {
@@ -172,7 +173,11 @@ void Utils::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &c
                 }
             }
         }
-        group.writeEntry(currentKey, newValue);
+        if (newValue.isEmpty()) {
+            group.deleteEntry(currentKey);
+        } else {
+            group.writeEntry(currentKey, newValue);
+        }
     }
 }
 
