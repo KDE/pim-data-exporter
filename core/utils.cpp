@@ -153,13 +153,17 @@ QString Utils::resourcePath(const KSharedConfigPtr &resourceConfig, const QStrin
     return url;
 }
 
-void Utils::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey)
+void Utils::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
 {
     if (group.hasKey(currentKey)) {
         const QStringList value = group.readEntry(currentKey, QStringList());
         QStringList newValue;
-        for (const QString &str : value) {
+        for (QString str : value) {
             bool found = false;
+            if (!prefixCollection.isEmpty() && str.startsWith(prefixCollection)) {
+                str = str.remove(0, prefixCollection.length());
+
+            }
             const int collectionId = str.toInt(&found);
             if (found) {
                 const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionId));

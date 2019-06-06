@@ -527,6 +527,15 @@ void ExportMailJob::backupConfig()
             Utils::convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr);
         }
 
+        const QString favoriteCollectionOrderStr(QStringLiteral("FavoriteCollectionsOrder"));
+        if (kmailConfig->hasGroup(favoriteCollectionOrderStr)) {
+            KConfigGroup favoriteGroup = kmailConfig->group(favoriteCollectionOrderStr);
+            //For favorite id for root collection == 0 and we store only folder => c
+            const QString favoriteCollectionIdsStr(QStringLiteral("0"));
+            const QString prefixCollection(QStringLiteral("c"));
+            Utils::convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr, prefixCollection);
+        }
+
         kmailConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), kmailStr);
         delete kmailConfig;

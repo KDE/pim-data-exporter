@@ -1203,6 +1203,15 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         convertRealPathToCollectionList(favoriteGroup, favoriteCollectionIdsStr);
     }
 
+    const QString favoriteCollectionOrderStr(QStringLiteral("FavoriteCollectionsOrder"));
+    if (kmailConfig->hasGroup(favoriteCollectionOrderStr)) {
+        KConfigGroup favoriteGroupOrder = kmailConfig->group(favoriteCollectionOrderStr);
+
+        //For favorite id for root collection == 0 and we store only folder => c
+        const QString favoriteCollectionOrderIdsStr(QStringLiteral("0"));
+        convertRealPathToCollectionList(favoriteGroupOrder, favoriteCollectionOrderIdsStr, true);
+    }
+
 
     const QString generalStr(QStringLiteral("General"));
     if (kmailConfig->hasGroup(generalStr)) {
