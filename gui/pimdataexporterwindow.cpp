@@ -89,17 +89,17 @@ PimDataExporterWindow::~PimDataExporterWindow()
 
 void PimDataExporterWindow::initializeBackupRestoreUi()
 {
-    mPimSettingsBackupRestoreUI = new PimDataBackupRestoreUI(this, this);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addInfo, this, &PimDataExporterWindow::slotAddInfo);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addEndLine, this, &PimDataExporterWindow::slotAddEndLine);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addError, this, &PimDataExporterWindow::slotAddError);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addTitle, this, &PimDataExporterWindow::slotAddTitle);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::updateActions, this, &PimDataExporterWindow::slotUpdateActions);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::jobFinished, this, &PimDataExporterWindow::slotJobFinished);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::backupDone, this, &PimDataExporterWindow::slotShowBackupFinishDialogInformation);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::jobFailed, this, &PimDataExporterWindow::slotJobFailed);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestoreUI::needSyncResource, this, &PimDataExporterWindow::slotAddResourceToSync);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::restoreDone, this, &PimDataExporterWindow::slotRestoreDone);
+    mPimDataBackupRestoreUI = new PimDataBackupRestoreUI(this, this);
+    connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::addInfo, this, &PimDataExporterWindow::slotAddInfo);
+    connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::addEndLine, this, &PimDataExporterWindow::slotAddEndLine);
+    connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::addError, this, &PimDataExporterWindow::slotAddError);
+    connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::addTitle, this, &PimDataExporterWindow::slotAddTitle);
+    connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::updateActions, this, &PimDataExporterWindow::slotUpdateActions);
+    connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::jobFinished, this, &PimDataExporterWindow::slotJobFinished);
+    connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::backupDone, this, &PimDataExporterWindow::slotShowBackupFinishDialogInformation);
+    connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::jobFailed, this, &PimDataExporterWindow::slotJobFailed);
+    connect(mPimDataBackupRestoreUI, &PimDataBackupRestoreUI::needSyncResource, this, &PimDataExporterWindow::slotAddResourceToSync);
+    connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::restoreDone, this, &PimDataExporterWindow::slotRestoreDone);
 }
 
 void PimDataExporterWindow::slotAddResourceToSync(const QString &name, const QString &identifier)
@@ -109,12 +109,12 @@ void PimDataExporterWindow::slotAddResourceToSync(const QString &name, const QSt
 
 void PimDataExporterWindow::slotJobFinished()
 {
-    mPimSettingsBackupRestoreUI->nextStep();
+    mPimDataBackupRestoreUI->nextStep();
 }
 
 void PimDataExporterWindow::slotJobFailed()
 {
-    mPimSettingsBackupRestoreUI->closeArchive();
+    mPimDataBackupRestoreUI->closeArchive();
 }
 
 void PimDataExporterWindow::slotRestoreDone()
@@ -295,8 +295,8 @@ void PimDataExporterWindow::backupData(const QString &filename, const QString &t
     if (dialog->exec()) {
         mLogWidget->clear();
         initializeBackupRestoreUi();
-        mPimSettingsBackupRestoreUI->setStoredParameters(dialog->storedType());
-        mPimSettingsBackupRestoreUI->setExportedInfoFileName(dialog->exportedFileInfo());
+        mPimDataBackupRestoreUI->setStoredParameters(dialog->storedType());
+        mPimDataBackupRestoreUI->setExportedInfoFileName(dialog->exportedFileInfo());
         delete dialog;
 
         if (currentFileName.isEmpty()) {
@@ -314,7 +314,7 @@ void PimDataExporterWindow::backupData(const QString &filename, const QString &t
         }
         mTrayIcon->setStatus(KStatusNotifierItem::Active);
         mTrayIcon->setToolTipSubTitle(i18n("Backup in progress..."));
-        if (!mPimSettingsBackupRestoreUI->backupStart(currentFileName)) {
+        if (!mPimDataBackupRestoreUI->backupStart(currentFileName)) {
             qCDebug(PIMDATAEXPORTERGUI_LOG) << " backup Start failed";
         }
         mLastArchiveFileName = currentFileName;
@@ -400,12 +400,12 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
         mLogWidget->clear();
         mNeedToSyncResources.clear();
         initializeBackupRestoreUi();
-        mPimSettingsBackupRestoreUI->setStoredParameters(dialog->storedType());
+        mPimDataBackupRestoreUI->setStoredParameters(dialog->storedType());
         delete dialog;
 
         mTrayIcon->setStatus(KStatusNotifierItem::Active);
         mTrayIcon->setToolTipSubTitle(i18n("Restore in progress..."));
-        if (!mPimSettingsBackupRestoreUI->restoreStart(currentFileName)) {
+        if (!mPimDataBackupRestoreUI->restoreStart(currentFileName)) {
             qCDebug(PIMDATAEXPORTERGUI_LOG) << " PimSettingExporterWindow restore failed";
         }
     } else {

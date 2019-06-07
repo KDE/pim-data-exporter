@@ -16,7 +16,7 @@ target_link_libraries(pimdataexporterconfiguredialogtest Qt5::Test Qt5::Widgets 
 
 
 add_executable( pimdataexporterconfigurewidgettest pimdataexporterconfigurewidgettest.cpp ../widgets/pimdataexporterconfigurewidget.cpp ${pimdataexporter_kcfg_SRCS})
-add_test(NAME pimdataexporterconfigurewidgettest COMMAND pimsettingexporterconfigurewidgettest)
+add_test(NAME pimdataexporterconfigurewidgettest COMMAND pimdataexporterconfigurewidgettest)
 ecm_mark_as_test(pimdataexporterconfigurewidgettest)
 target_link_libraries(pimdataexporterconfigurewidgettest Qt5::Test Qt5::Widgets KF5::I18n KF5::ItemViews KF5::ConfigCore KF5::ConfigGui)
 

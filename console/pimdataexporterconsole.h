@@ -65,7 +65,7 @@ private:
     void closeLogFile();
     QString mTemplateFileName;
     QString mImportExportFileName;
-    PimDataBackupRestore *mPimSettingsBackupRestore = nullptr;
+    PimDataBackupRestore *mPimDataBackupRestore = nullptr;
     LogInFile *mLogInFile = nullptr;
     LogInfo *mLogInfo = nullptr;
     Mode mMode;

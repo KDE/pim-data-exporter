@@ -4,16 +4,16 @@ include_directories(${AKONADI_INCLUDE_DIR}
     )
 
 
-set(pimsettingexporterconsole_SRCS
+set(pimdataexporterconsole_SRCS
     importexportprogressindicatorconsole.cpp
     pimdataexporterconsole.cpp
     loginfo.cpp
     loginfile.cpp
     main.cpp)
 
-ecm_qt_declare_logging_category(pimsettingexporterconsole_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole)
+ecm_qt_declare_logging_category(pimdataexporterconsole_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole)
 
-add_executable(pimsettingexporterconsole ${pimsettingexporterconsole_SRCS})
+add_executable(pimsettingexporterconsole ${pimdataexporterconsole_SRCS})
 
 target_link_libraries(pimsettingexporterconsole KF5::ConfigCore KF5::CoreAddons KF5::I18n KF5::Archive KF5::AkonadiCore   KF5::MailCommon
     pimdataexporterprivate

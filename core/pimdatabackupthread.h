@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGBACKUPTHREAD_H
-#define PIMSETTINGBACKUPTHREAD_H
+#ifndef PIMDATABACKUPTHREAD_H
+#define PIMDATABACKUPTHREAD_H
 
 #include <QThread>
 class KZip;
@@ -44,4 +44,4 @@ private:
     KZip *mZip = nullptr;
 };
 
-#endif // PIMSETTINGBACKUPTHREAD_H
+#endif // PIMDATABACKUPTHREAD_H

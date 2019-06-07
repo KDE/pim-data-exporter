@@ -74,7 +74,7 @@ private:
     QAction *mArchiveStructureInfo = nullptr;
     QAction *mShowArchiveInformationsAction = nullptr;
     QAction *mShowArchiveInformationsAboutCurrentArchiveAction = nullptr;
-    PimDataBackupRestoreUI *mPimSettingsBackupRestoreUI = nullptr;
+    PimDataBackupRestoreUI *mPimDataBackupRestoreUI = nullptr;
     PimDataTrayIcon *mTrayIcon = nullptr;
 };
 

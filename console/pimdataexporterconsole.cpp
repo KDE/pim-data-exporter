@@ -31,7 +31,7 @@
 
 PimDataExporterConsole::PimDataExporterConsole(QObject *parent)
     : QObject(parent)
-    , mPimSettingsBackupRestore(new PimDataBackupRestore(this))
+    , mPimDataBackupRestore(new PimDataBackupRestore(this))
     , mLogInFile(nullptr)
     , mLogInfo(new LogInfo(this))
     , mMode(Import)
@@ -53,14 +53,14 @@ PimDataExporterConsole::~PimDataExporterConsole()
 
 void PimDataExporterConsole::initializeLogInFile()
 {
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addEndLine, this, &PimDataExporterConsole::slotAddEndLine);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addError, this, &PimDataExporterConsole::slotAddError);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addInfo, this, &PimDataExporterConsole::slotAddInfo);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addTitle, this, &PimDataExporterConsole::slotAddTitle);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::jobFinished, this, &PimDataExporterConsole::slotJobFinished);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::backupDone, this, &PimDataExporterConsole::slotBackupDone);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::jobFailed, this, &PimDataExporterConsole::slotJobFailed);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::restoreDone, this, &PimDataExporterConsole::slotRestoreDone);
+    connect(mPimDataBackupRestore, &PimDataBackupRestore::addEndLine, this, &PimDataExporterConsole::slotAddEndLine);
+    connect(mPimDataBackupRestore, &PimDataBackupRestore::addError, this, &PimDataExporterConsole::slotAddError);
+    connect(mPimDataBackupRestore, &PimDataBackupRestore::addInfo, this, &PimDataExporterConsole::slotAddInfo);
+    connect(mPimDataBackupRestore, &PimDataBackupRestore::addTitle, this, &PimDataExporterConsole::slotAddTitle);
+    connect(mPimDataBackupRestore, &PimDataBackupRestore::jobFinished, this, &PimDataExporterConsole::slotJobFinished);
+    connect(mPimDataBackupRestore, &PimDataBackupRestore::backupDone, this, &PimDataExporterConsole::slotBackupDone);
+    connect(mPimDataBackupRestore, &PimDataBackupRestore::jobFailed, this, &PimDataExporterConsole::slotJobFailed);
+    connect(mPimDataBackupRestore, &PimDataBackupRestore::restoreDone, this, &PimDataExporterConsole::slotRestoreDone);
 }
 
 void PimDataExporterConsole::closeLogFile()
@@ -80,7 +80,7 @@ void PimDataExporterConsole::slotJobFailed()
 {
     qCWarning(PIMDATAEXPORTERCONSOLE_LOG) << "job failed";
     closeLogFile();
-    mPimSettingsBackupRestore->closeArchive();
+    mPimDataBackupRestore->closeArchive();
 }
 
 void PimDataExporterConsole::slotBackupDone()
@@ -93,7 +93,7 @@ void PimDataExporterConsole::slotBackupDone()
 void PimDataExporterConsole::slotJobFinished()
 {
     qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "job finished";
-    mPimSettingsBackupRestore->nextStep();
+    mPimDataBackupRestore->nextStep();
 }
 
 void PimDataExporterConsole::slotAddEndLine()
@@ -148,17 +148,17 @@ void PimDataExporterConsole::start()
     if (!mTemplateFileName.isEmpty()) {
         TemplateSelection selection;
         const QHash<Utils::AppsType, Utils::importExportParameters> templateElements = selection.loadTemplate(mTemplateFileName);
-        mPimSettingsBackupRestore->setStoredParameters(templateElements);
+        mPimDataBackupRestore->setStoredParameters(templateElements);
     }
     switch (mMode) {
     case Import:
-        if (!mPimSettingsBackupRestore->restoreStart(mImportExportFileName)) {
+        if (!mPimDataBackupRestore->restoreStart(mImportExportFileName)) {
             qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Unable to start restore.";
             QTimer::singleShot(0, this, &PimDataExporterConsole::finished);
         }
         break;
     case Export:
-        if (!mPimSettingsBackupRestore->backupStart(mImportExportFileName)) {
+        if (!mPimDataBackupRestore->backupStart(mImportExportFileName)) {
             qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Unable to start backup.";
             QTimer::singleShot(0, this, &PimDataExporterConsole::finished);
         }

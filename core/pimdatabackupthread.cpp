@@ -31,12 +31,12 @@ PimDataBackupThread::PimDataBackupThread(KZip *zip, const QString &url, const QS
     , mArchiveName(archivename)
     , mZip(zip)
 {
-    qCDebug(PIMDATAEXPORTERCORE_LOG) << " PimSettingBackupThread::PimSettingBackupThread" << this;
+    qCDebug(PIMDATAEXPORTERCORE_LOG) << " PimDataBackupThread::PimDataBackupThread" << this;
 }
 
 PimDataBackupThread::~PimDataBackupThread()
 {
-    qCDebug(PIMDATAEXPORTERCORE_LOG) << " PimSettingBackupThread::~PimSettingBackupThread()" << this;
+    qCDebug(PIMDATAEXPORTERCORE_LOG) << " PimDataBackupThread::~PimDataBackupThread()" << this;
 }
 
 void PimDataBackupThread::run()

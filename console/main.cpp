@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     KAboutData aboutData(QStringLiteral("pimsettingexporterconsole"), i18n("PIM Setting Exporter Console"),
-                         QStringLiteral(PIMSETTINGEXPORTER_VERSION), i18n("PIM Setting Exporter Console"), KAboutLicense::GPL_V2,
+                         QStringLiteral(PIMDATAEXPORTER_VERSION), i18n("PIM Setting Exporter Console"), KAboutLicense::GPL_V2,
                          i18n("Copyright © 2015-2019 pimsettingexporter authors"));
     aboutData.addAuthor(i18n("Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
     parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("logfile"), i18n("File to log information to."), QStringLiteral("file")));

@@ -6,7 +6,7 @@ include_directories(
 
 set( PIMDATAEXPORTERCONSOLE_LOGinfiletest_SRCS loginfiletest.cpp ../loginfile.cpp )
 
-ecm_qt_declare_logging_category(PIMDATAEXPORTERCONSOLE_LOGinfiletest_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimsettingexporterconsole)
+ecm_qt_declare_logging_category(PIMDATAEXPORTERCONSOLE_LOGinfiletest_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole)
 
 
 add_executable( PIMDATAEXPORTERCONSOLE_LOGinfiletest ${PIMDATAEXPORTERCONSOLE_LOGinfiletest_SRCS})

@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGSBACKUPRESTORE_H
-#define PIMSETTINGSBACKUPRESTORE_H
+#ifndef PIMDATABACKUPRESTORE_H
+#define PIMDATABACKUPRESTORE_H
 
 #include <QObject>
 #include <QHash>
@@ -80,4 +80,4 @@ private:
     ArchiveStorage *mArchiveStorage = nullptr;
 };
 
-#endif // PIMSETTINGSBACKUPRESTORE_H
+#endif // PIMDATABACKUPRESTORE_H

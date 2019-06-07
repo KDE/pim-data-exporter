@@ -16,8 +16,8 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#ifndef PIMSETTINGEXPORTERKERNEL_H
-#define PIMSETTINGEXPORTERKERNEL_H
+#ifndef PIMDATAEXPORTERKERNEL_H
+#define PIMDATAEXPORTERKERNEL_H
 
 #include <MailCommon/MailInterfaces>
 #include "pimdataexporter_export.h"
