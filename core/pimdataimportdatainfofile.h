@@ -24,12 +24,12 @@
 #include <QString>
 #include "pimdataexporter_export.h"
 class QTemporaryDir;
-class PIMDATAEXPORTER_EXPORT PimSettingImportDataInfoFile : public QObject
+class PIMDATAEXPORTER_EXPORT PimDataImportDataInfoFile : public QObject
 {
     Q_OBJECT
 public:
-    explicit PimSettingImportDataInfoFile(QObject *parent = nullptr);
-    ~PimSettingImportDataInfoFile();
+    explicit PimDataImportDataInfoFile(QObject *parent = nullptr);
+    ~PimDataImportDataInfoFile();
 
     void setCurrentFileName(const QString &filename);
 

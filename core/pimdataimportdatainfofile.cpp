@@ -17,28 +17,28 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingimportdatainfofile.h"
+#include "pimdataimportdatainfofile.h"
 #include "pimsettingexportcore_debug.h"
 #include "utils.h"
 #include <KZip>
 #include <QTemporaryDir>
 
-PimSettingImportDataInfoFile::PimSettingImportDataInfoFile(QObject *parent)
+PimDataImportDataInfoFile::PimDataImportDataInfoFile(QObject *parent)
     : QObject(parent)
 {
 }
 
-PimSettingImportDataInfoFile::~PimSettingImportDataInfoFile()
+PimDataImportDataInfoFile::~PimDataImportDataInfoFile()
 {
     delete mTempDir;
 }
 
-void PimSettingImportDataInfoFile::setCurrentFileName(const QString &filename)
+void PimDataImportDataInfoFile::setCurrentFileName(const QString &filename)
 {
     mFilename = filename;
 }
 
-QString PimSettingImportDataInfoFile::importDataInfoPath()
+QString PimDataImportDataInfoFile::importDataInfoPath()
 {
     QString temporaryFilePath;
     if (mFilename.isEmpty()) {

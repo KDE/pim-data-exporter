@@ -25,7 +25,7 @@
 #include "job/fullsynchronizeresourcesjob.h"
 #include "trayicon/pimdatatrayicon.h"
 
-#include "pimsettingimportdatainfofile.h"
+#include "pimdataimportdatainfofile.h"
 #include "pimdataexporterkernel.h"
 #include "dialog/selectiontypedialog.h"
 #include "utils.h"
@@ -382,7 +382,7 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
     }
     // Don't put it in 'if' otherwise temporary file will be removed after that.
     QString templateFileName;
-    PimSettingImportDataInfoFile dataInfo;
+    PimDataImportDataInfoFile dataInfo;
     bool cleanupItems = false;
     if (templateFile.isEmpty()) {
         dataInfo.setCurrentFileName(currentFileName);
