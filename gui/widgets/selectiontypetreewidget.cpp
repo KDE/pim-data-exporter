@@ -30,7 +30,7 @@
 
 #include <QTreeWidgetItem>
 #include <QHeaderView>
-#include "gui/pimsettingexportgui_debug.h"
+#include "gui/pimdataexportgui_debug.h"
 #include <QPointer>
 
 SelectionTypeTreeWidget::SelectionTypeTreeWidget(QWidget *parent)

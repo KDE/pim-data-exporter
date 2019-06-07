@@ -21,7 +21,7 @@
 #include "dialog/showarchivestructuredialog.h"
 #include "importexportprogressindicatorgui.h"
 #include "widgets/logwidget.h"
-#include "pimsettingexportgui_debug.h"
+#include "pimdataexportgui_debug.h"
 #include "job/fullsynchronizeresourcesjob.h"
 #include "trayicon/pimdatatrayicon.h"
 

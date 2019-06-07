@@ -3,7 +3,7 @@ include_directories(
     ${pim-data-exporter_BINARY_DIR}/core/
     )
 
-set(selectiontreewidget_gui_SRCS selectiontreewidget_gui.cpp ../dialog/selectiontypedialog.cpp ../widgets/selectiontypetreewidget.cpp ../pimsettingexportgui_debug.cpp)
+set(selectiontreewidget_gui_SRCS selectiontreewidget_gui.cpp ../dialog/selectiontypedialog.cpp ../widgets/selectiontypetreewidget.cpp ../pimdataexportgui_debug.cpp)
 add_executable(selectiontreewidget_gui ${selectiontreewidget_gui_SRCS})
 target_link_libraries(selectiontreewidget_gui
     KF5::AkonadiCore
@@ -16,7 +16,7 @@ target_link_libraries(selectiontreewidget_gui
     KF5::I18n
     )
 
-set(showarchivestructuredialog_gui_SRCS showarchivestructuredialog_gui.cpp ../dialog/showarchivestructuredialog.cpp ../pimsettingexportgui_debug.cpp)
+set(showarchivestructuredialog_gui_SRCS showarchivestructuredialog_gui.cpp ../dialog/showarchivestructuredialog.cpp ../pimdataexportgui_debug.cpp)
 add_executable(showarchivestructuredialog_gui ${showarchivestructuredialog_gui_SRCS})
 target_link_libraries(showarchivestructuredialog_gui
     KF5::AkonadiCore

@@ -18,7 +18,7 @@
 */
 #include "pimdatacommandlineoption.h"
 #include "pimdataexporterwindow.h"
-#include "pimsettingexportgui_debug.h"
+#include "pimdataexportgui_debug.h"
 #include "pimsettingexporter-version.h"
 #include <KLocalizedString>
 #include <KAboutData>

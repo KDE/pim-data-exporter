@@ -4,18 +4,18 @@ include_directories(
     )
 
 
-set( pimsettingexporter_kcfg_SRCS settings/pimdataexporterglobalconfig.kcfgc )
+set( pimdataexporter_kcfg_SRCS settings/pimdataexporterglobalconfig.kcfgc )
 
-kconfig_add_kcfg_files(pimdataexporter_kcfg_SRCS ${pimsettingexporter_kcfg_SRCS})
+kconfig_add_kcfg_files(pimdataexporter_kcfg_SRCS ${pimdataexporter_kcfg_SRCS})
 
 
-set(pimsettingexporter_widget_SRCS
+set(pimdataexporter_widget_SRCS
     widgets/selectiontypetreewidget.cpp
     widgets/logwidget.cpp
     widgets/pimdataexporterconfigurewidget.cpp
     )
 
-set(pimsettingexporter_dialog_SRCS
+set(pimdataexporter_dialog_SRCS
     dialog/selectiontypedialog.cpp
     dialog/backupfilestructureinfodialog.cpp
     dialog/showarchivestructuredialog.cpp
@@ -23,31 +23,31 @@ set(pimsettingexporter_dialog_SRCS
     dialog/pimdataexporterconfiguredialog.cpp
     )
 
-set(pimsettingexporter_job_SRCS
+set(pimdataexporter_job_SRCS
     job/fullsynchronizeresourcesjob.cpp
     )
 
-set(pimsettingexporter_trayicon_SRCS
+set(pimdataexporter_trayicon_SRCS
     trayicon/pimdatatrayicon.cpp
     )
 
-set(pimsettingexporter_SRCS
+set(pimdataexporter_SRCS
     ${pimdataexporter_kcfg_SRCS}
-    ${pimsettingexporter_widget_SRCS}
-    ${pimsettingexporter_dialog_SRCS}
-    ${pimsettingexporter_job_SRCS}
-    ${pimsettingexporter_trayicon_SRCS}
+    ${pimdataexporter_widget_SRCS}
+    ${pimdataexporter_dialog_SRCS}
+    ${pimdataexporter_job_SRCS}
+    ${pimdataexporter_trayicon_SRCS}
     pimdatabackuprestoreui.cpp
     importexportprogressindicatorgui.cpp
     pimdataexporterwindow.cpp
     pimdatacommandlineoption.cpp
     main.cpp)
 
-qt5_add_resources(pimsettingexporter_SRCS pimsettingexporter.qrc)
+qt5_add_resources(pimdataexporter_SRCS pimsettingexporter.qrc)
 
-ecm_qt_declare_logging_category(pimsettingexporter_SRCS HEADER pimsettingexportgui_debug.h IDENTIFIER PIMSETTINGEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimsettingexportergui)
+ecm_qt_declare_logging_category(pimdataexporter_SRCS HEADER pimdataexportgui_debug.h IDENTIFIER PIMSETTINGEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimsettingexportergui)
 
-add_executable(pimsettingexporter ${pimsettingexporter_SRCS})
+add_executable(pimsettingexporter ${pimdataexporter_SRCS})
 
 target_link_libraries(pimsettingexporter
     PRIVATE
