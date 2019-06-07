@@ -20,12 +20,12 @@
 #ifndef TEMPLATESELECTION_H
 #define TEMPLATESELECTION_H
 
-#include "pimsettingexporter_export.h"
+#include "pimdataexporter_export.h"
 #include <QHash>
 #include "utils.h"
 class QXmlStreamWriter;
 class QXmlStreamReader;
-class PIMSETTINGEXPORTER_EXPORT TemplateSelection
+class PIMDATAEXPORTER_EXPORT TemplateSelection
 {
 public:
     TemplateSelection();

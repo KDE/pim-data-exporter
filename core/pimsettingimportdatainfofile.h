@@ -22,9 +22,9 @@
 
 #include <QObject>
 #include <QString>
-#include "pimsettingexporter_export.h"
+#include "pimdataexporter_export.h"
 class QTemporaryDir;
-class PIMSETTINGEXPORTER_EXPORT PimSettingImportDataInfoFile : public QObject
+class PIMDATAEXPORTER_EXPORT PimSettingImportDataInfoFile : public QObject
 {
     Q_OBJECT
 public:

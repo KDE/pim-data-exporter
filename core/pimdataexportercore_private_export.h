@@ -20,15 +20,15 @@
 #ifndef PIMSETTINGEXPORTER_CORE_PRIVATE_EXPORT_H
 #define PIMSETTINGEXPORTER_CORE_PRIVATE_EXPORT_H
 
-#include "pimsettingexporter_export.h"
+#include "pimdataexporter_export.h"
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-# ifndef PIMSETTINGEXPORTER_TESTS_EXPORT
-#  define PIMSETTINGEXPORTER_TESTS_EXPORT PIMSETTINGEXPORTER_EXPORT
+# ifndef PIMDATAEXPORTER_TESTS_EXPORT
+#  define PIMDATAEXPORTER_TESTS_EXPORT PIMDATAEXPORTER_EXPORT
 # endif
 #else /* not compiling tests */
-# define PIMSETTINGEXPORTER_TESTS_EXPORT
+# define PIMDATAEXPORTER_TESTS_EXPORT
 #endif
 
 #endif

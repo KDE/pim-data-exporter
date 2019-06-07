@@ -21,7 +21,7 @@
 #define ImportMailJob_H
 
 #include "abstractimportexportjob.h"
-#include "pimsettingexportercore_private_export.h"
+#include "pimdataexportercore_private_export.h"
 #include <AkonadiCore/Collection>
 #include <Akonadi/KMime/SpecialMailCollections>
 #include <QStringList>
@@ -33,7 +33,7 @@ class ArchiveStorage;
 namespace MailTransport {
 class Transport;
 }
-class PIMSETTINGEXPORTER_TESTS_EXPORT ImportMailJob : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ImportMailJob : public AbstractImportExportJob
 {
     Q_OBJECT
 public:

@@ -22,9 +22,9 @@
 
 #include <QObject>
 #include <QStringList>
-#include "pimsettingexporter_export.h"
+#include "pimdataexporter_export.h"
 class KJob;
-class PIMSETTINGEXPORTER_EXPORT SynchronizeResourceJob : public QObject
+class PIMDATAEXPORTER_EXPORT SynchronizeResourceJob : public QObject
 {
     Q_OBJECT
 public:

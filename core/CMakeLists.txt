@@ -63,7 +63,7 @@ set(pimdataexporter_LIB_SRCS
 ecm_qt_declare_logging_category(pimdataexporter_LIB_SRCS HEADER pimsettingexportcore_debug.h IDENTIFIER PIMSETTINGEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore)
 
 add_library(pimdataexporterprivate ${pimdataexporter_LIB_SRCS})
-generate_export_header(pimdataexporterprivate BASE_NAME pimsettingexporter)
+generate_export_header(pimdataexporterprivate BASE_NAME pimdataexporter)
 
 
 

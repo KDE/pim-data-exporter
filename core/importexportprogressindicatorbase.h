@@ -21,8 +21,8 @@
 #define IMPORTEXPORTPROGRESSINDICATORBASE_H
 
 #include <QObject>
-#include "pimsettingexporter_export.h"
-class PIMSETTINGEXPORTER_EXPORT ImportExportProgressIndicatorBase : public QObject
+#include "pimdataexporter_export.h"
+class PIMDATAEXPORTER_EXPORT ImportExportProgressIndicatorBase : public QObject
 {
     Q_OBJECT
 public:

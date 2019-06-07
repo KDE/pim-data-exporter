@@ -26,7 +26,7 @@
 class AbstractImportExportJob;
 class ArchiveStorage;
 
-class PIMSETTINGEXPORTER_EXPORT PimDataBackupRestore : public QObject
+class PIMDATAEXPORTER_EXPORT PimDataBackupRestore : public QObject
 {
     Q_OBJECT
 public:

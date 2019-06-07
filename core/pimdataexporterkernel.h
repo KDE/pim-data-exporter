@@ -20,7 +20,7 @@
 #define PIMSETTINGEXPORTERKERNEL_H
 
 #include <MailCommon/MailInterfaces>
-#include "pimsettingexporter_export.h"
+#include "pimdataexporter_export.h"
 
 namespace Akonadi {
 class EntityTreeModel;
@@ -31,7 +31,7 @@ namespace MailCommon {
 class FolderCollectionMonitor;
 }
 
-class PIMSETTINGEXPORTER_EXPORT PimDataExporterKernel : public QObject, public MailCommon::IKernel, public MailCommon::ISettings
+class PIMDATAEXPORTER_EXPORT PimDataExporterKernel : public QObject, public MailCommon::IKernel, public MailCommon::ISettings
 {
 public:
     explicit PimDataExporterKernel(QObject *parent = nullptr);

@@ -19,7 +19,7 @@
 
 #ifndef UTILS_H
 #define UTILS_H
-#include "pimsettingexporter_export.h"
+#include "pimdataexporter_export.h"
 #include <QString>
 #include <QUrl>
 #include <KSharedConfig>
@@ -79,21 +79,21 @@ struct importExportParameters {
 };
 
 QString resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath = QString());
-PIMSETTINGEXPORTER_EXPORT QString transportsPath();
-PIMSETTINGEXPORTER_EXPORT QString resourcesPath();
-PIMSETTINGEXPORTER_EXPORT QString identitiesPath();
-PIMSETTINGEXPORTER_EXPORT QString mailsPath();
-PIMSETTINGEXPORTER_EXPORT QString configsPath();
-PIMSETTINGEXPORTER_EXPORT QString akonadiPath();
-PIMSETTINGEXPORTER_EXPORT QString dataPath();
-PIMSETTINGEXPORTER_EXPORT QString calendarPath();
-PIMSETTINGEXPORTER_EXPORT QString addressbookPath();
-PIMSETTINGEXPORTER_EXPORT QString alarmPath();
-PIMSETTINGEXPORTER_EXPORT QString jotPath();
-PIMSETTINGEXPORTER_EXPORT QString infoPath();
-PIMSETTINGEXPORTER_EXPORT QString notePath();
-PIMSETTINGEXPORTER_EXPORT QString prefixAkonadiConfigFile();
-PIMSETTINGEXPORTER_EXPORT QString exportDataTypeFileName();
+PIMDATAEXPORTER_EXPORT QString transportsPath();
+PIMDATAEXPORTER_EXPORT QString resourcesPath();
+PIMDATAEXPORTER_EXPORT QString identitiesPath();
+PIMDATAEXPORTER_EXPORT QString mailsPath();
+PIMDATAEXPORTER_EXPORT QString configsPath();
+PIMDATAEXPORTER_EXPORT QString akonadiPath();
+PIMDATAEXPORTER_EXPORT QString dataPath();
+PIMDATAEXPORTER_EXPORT QString calendarPath();
+PIMDATAEXPORTER_EXPORT QString addressbookPath();
+PIMDATAEXPORTER_EXPORT QString alarmPath();
+PIMDATAEXPORTER_EXPORT QString jotPath();
+PIMDATAEXPORTER_EXPORT QString infoPath();
+PIMDATAEXPORTER_EXPORT QString notePath();
+PIMDATAEXPORTER_EXPORT QString prefixAkonadiConfigFile();
+PIMDATAEXPORTER_EXPORT QString exportDataTypeFileName();
 QString akonadiAgentName(const QString &configPath);
 
 void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);
@@ -110,7 +110,7 @@ void addVersion(KZip *archive);
 int archiveVersion(KZip *archive);
 
 int currentArchiveVersion();
-PIMSETTINGEXPORTER_EXPORT QString appTypeToI18n(AppsType type);
-PIMSETTINGEXPORTER_EXPORT QString storedTypeToI18n(StoredType type);
+PIMDATAEXPORTER_EXPORT QString appTypeToI18n(AppsType type);
+PIMDATAEXPORTER_EXPORT QString storedTypeToI18n(StoredType type);
 }
 #endif // UTILS_H

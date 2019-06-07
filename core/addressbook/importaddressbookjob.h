@@ -21,11 +21,11 @@
 #define IMPORTADDRESSBOOKJOB_H
 
 #include "abstractimportexportjob.h"
-#include "pimsettingexportercore_private_export.h"
+#include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
 class KArchiveFile;
 
-class PIMSETTINGEXPORTER_TESTS_EXPORT ImportAddressbookJob : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ImportAddressbookJob : public AbstractImportExportJob
 {
     Q_OBJECT
 public:
