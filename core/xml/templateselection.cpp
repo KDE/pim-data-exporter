@@ -75,7 +75,8 @@ QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTem
 
     QHash<Utils::AppsType, Utils::importExportParameters> value;
     if (mStreamReader->readNextStartElement()) {
-        if (mStreamReader->name() == QLatin1String("pimsettingexporter")) {
+        //Compatibility with old version
+        if ((mStreamReader->name() == QLatin1String("pimsettingexporter")) || (mStreamReader->name() == QLatin1String("pimdataexporter"))) {
             while (mStreamReader->readNextStartElement()) {
                 Utils::AppsType type = Utils::Unknown;
                 if (mStreamReader->name() == QLatin1String("kmail")) {
@@ -150,7 +151,7 @@ void TemplateSelection::createTemplate(const QHash<Utils::AppsType, Utils::impor
     mStreamWriter->setAutoFormattingIndent(2);
     mStreamWriter->writeStartDocument();
 
-    mStreamWriter->writeStartElement(QStringLiteral("pimsettingexporter"));
+    mStreamWriter->writeStartElement(QStringLiteral("pimdataexporter"));
 
     QHash<Utils::AppsType, Utils::importExportParameters>::const_iterator i = stored.constBegin();
     while (i != stored.constEnd()) {

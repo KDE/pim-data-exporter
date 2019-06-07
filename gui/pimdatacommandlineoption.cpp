@@ -19,7 +19,7 @@
 #include "pimdatacommandlineoption.h"
 #include "pimdataexporterwindow.h"
 #include "pimdataexportgui_debug.h"
-#include "pimsettingexporter-version.h"
+#include "pimdataexporter-version.h"
 #include <KLocalizedString>
 #include <KAboutData>
 #include <QCommandLineParser>

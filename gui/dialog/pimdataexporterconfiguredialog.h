@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGEXPORTERCONFIGUREDIALOG_H
-#define PIMSETTINGEXPORTERCONFIGUREDIALOG_H
+#ifndef PIMDATAEXPORTERCONFIGUREDIALOG_H
+#define PIMDATAEXPORTERCONFIGUREDIALOG_H
 
 #include <QDialog>
 class PimDataExporterConfigureWidget;
@@ -35,4 +35,4 @@ private:
     PimDataExporterConfigureWidget *mConfigureWidget = nullptr;
 };
 
-#endif // PIMSETTINGEXPORTERCONFIGUREDIALOG_H
+#endif // PIMDATAEXPORTERCONFIGUREDIALOG_H

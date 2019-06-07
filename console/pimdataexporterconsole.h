@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGEXPORTERCONSOLE_H
-#define PIMSETTINGEXPORTERCONSOLE_H
+#ifndef PIMDATAEXPORTERCONSOLE_H
+#define PIMDATAEXPORTERCONSOLE_H
 
 #include <QObject>
 class PimDataBackupRestore;
@@ -72,4 +72,4 @@ private:
     bool mInProgress = false;
 };
 
-#endif // PIMSETTINGEXPORTERCONSOLE_H
+#endif // PIMDATAEXPORTERCONSOLE_H

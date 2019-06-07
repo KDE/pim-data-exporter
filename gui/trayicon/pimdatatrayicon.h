@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGSTRAYICON_H
-#define PIMSETTINGSTRAYICON_H
+#ifndef PIMDATATRAYICON_H
+#define PIMDATATRAYICON_H
 
 #include <KStatusNotifierItem>
 
@@ -30,4 +30,4 @@ public:
     ~PimDataTrayIcon();
 };
 
-#endif // PIMSETTINGSTRAYICON_H
+#endif // PIMDATATRAYICON_H

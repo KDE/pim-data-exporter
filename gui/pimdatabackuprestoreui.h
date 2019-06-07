@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGSBACKUPRESTOREUI_H
-#define PIMSETTINGSBACKUPRESTOREUI_H
+#ifndef PIMDATABACKUPRESTOREUI_H
+#define PIMDATABACKUPRESTOREUI_H
 
 #include "pimdatabackuprestore.h"
 
@@ -36,4 +36,4 @@ private:
     QWidget *mParentWidget = nullptr;
 };
 
-#endif // PIMSETTINGSBACKUPRESTOREUI_H
+#endif // PIMDATABACKUPRESTOREUI_H

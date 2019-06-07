@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingexporter-version.h"
+#include "pimdataexporter-version.h"
 #include "pimdataexporterconsole.h"
 #include "pimdataexportconsole_debug.h"
 #include <kaboutdata.h>

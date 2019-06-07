@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGEXPORTERWINDOW_H
-#define PIMSETTINGEXPORTERWINDOW_H
+#ifndef PIMDATAEXPORTERWINDOW_H
+#define PIMDATAEXPORTERWINDOW_H
 #include <kxmlguiwindow.h>
 #include "utils.h"
 class LogWidget;
@@ -78,4 +78,4 @@ private:
     PimDataTrayIcon *mTrayIcon = nullptr;
 };
 
-#endif /* PIMSETTINGEXPORTERWINDOW_H */
+#endif /* PIMDATAEXPORTERWINDOW_H */

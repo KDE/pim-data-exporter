@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGCOMMANDLINEOPTION_H
-#define PIMSETTINGCOMMANDLINEOPTION_H
+#ifndef PIMDATACOMMANDLINEOPTION_H
+#define PIMDATACOMMANDLINEOPTION_H
 
 #include <QObject>
 #include <QCommandLineParser>
@@ -44,4 +44,4 @@ private:
     PimDataExporterWindow *mExporterWindow = nullptr;
 };
 
-#endif // PIMSETTINGCOMMANDLINEOPTION_H
+#endif // PIMDATACOMMANDLINEOPTION_H
