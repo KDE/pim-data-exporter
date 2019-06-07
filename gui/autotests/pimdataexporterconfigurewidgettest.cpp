@@ -17,24 +17,24 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingexporterconfigurewidgettest.h"
-#include "../widgets/pimsettingexporterconfigurewidget.h"
+#include "pimdataexporterconfigurewidgettest.h"
+#include "../widgets/pimdataexporterconfigurewidget.h"
 #include <QCheckBox>
 #include <QGroupBox>
 #include <QTest>
 
-PimSettingExporterConfigureWidgetTest::PimSettingExporterConfigureWidgetTest(QObject *parent)
+PimDataExporterConfigureWidgetTest::PimDataExporterConfigureWidgetTest(QObject *parent)
     : QObject(parent)
 {
 }
 
-PimSettingExporterConfigureWidgetTest::~PimSettingExporterConfigureWidgetTest()
+PimDataExporterConfigureWidgetTest::~PimDataExporterConfigureWidgetTest()
 {
 }
 
-void PimSettingExporterConfigureWidgetTest::shouldHaveDefaultValue()
+void PimDataExporterConfigureWidgetTest::shouldHaveDefaultValue()
 {
-    PimSettingExporterConfigureWidget w;
+    PimDataExporterConfigureWidget w;
 
     QGroupBox *importGroupBox = w.findChild<QGroupBox *>(QStringLiteral("import_groupbox"));
     QVERIFY(importGroupBox);
@@ -49,4 +49,4 @@ void PimSettingExporterConfigureWidgetTest::shouldHaveDefaultValue()
     QVERIFY(alwaysMergeConfigFile);
 }
 
-QTEST_MAIN(PimSettingExporterConfigureWidgetTest)
+QTEST_MAIN(PimDataExporterConfigureWidgetTest)

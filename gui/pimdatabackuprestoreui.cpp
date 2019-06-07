@@ -17,23 +17,23 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingsbackuprestoreui.h"
+#include "pimdatabackuprestoreui.h"
 #include "importexportprogressindicatorgui.h"
 #include "abstractimportexportjob.h"
 #include <KMessageBox>
 #include <KLocalizedString>
 
-PimSettingsBackupRestoreUI::PimSettingsBackupRestoreUI(QWidget *parentWidget, QObject *parent)
+PimDataBackupRestoreUI::PimDataBackupRestoreUI(QWidget *parentWidget, QObject *parent)
     : PimDataBackupRestore(parent)
     , mParentWidget(parentWidget)
 {
 }
 
-PimSettingsBackupRestoreUI::~PimSettingsBackupRestoreUI()
+PimDataBackupRestoreUI::~PimDataBackupRestoreUI()
 {
 }
 
-bool PimSettingsBackupRestoreUI::continueToRestore()
+bool PimDataBackupRestoreUI::continueToRestore()
 {
     if (KMessageBox::No
         == KMessageBox::questionYesNo(mParentWidget,
@@ -44,7 +44,7 @@ bool PimSettingsBackupRestoreUI::continueToRestore()
     return true;
 }
 
-void PimSettingsBackupRestoreUI::addExportProgressIndicator()
+void PimDataBackupRestoreUI::addExportProgressIndicator()
 {
     mImportExportData->setImportExportProgressIndicator(new ImportExportProgressIndicatorGui(mParentWidget, this));
 }

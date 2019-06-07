@@ -17,14 +17,14 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingexporterconfigurewidget.h"
-#include "pimsettingexporterglobalconfig.h"
+#include "pimdataexporterconfigurewidget.h"
+#include "pimdataexporterglobalconfig.h"
 #include <QVBoxLayout>
 #include <QCheckBox>
 #include <KLocalizedString>
 #include <QGroupBox>
 
-PimSettingExporterConfigureWidget::PimSettingExporterConfigureWidget(QWidget *parent)
+PimDataExporterConfigureWidget::PimDataExporterConfigureWidget(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
@@ -52,28 +52,28 @@ PimSettingExporterConfigureWidget::PimSettingExporterConfigureWidget(QWidget *pa
     initialize();
 }
 
-PimSettingExporterConfigureWidget::~PimSettingExporterConfigureWidget()
+PimDataExporterConfigureWidget::~PimDataExporterConfigureWidget()
 {
 }
 
-void PimSettingExporterConfigureWidget::initialize()
+void PimDataExporterConfigureWidget::initialize()
 {
-    mAlwaysOverrideFile->setChecked(PimSettingExportGlobalConfig::self()->alwaysOverrideFile());
-    mAlwaysMergeConfigFile->setChecked(PimSettingExportGlobalConfig::self()->alwaysMergeConfigFile());
-    mAlwaysOverrideDirectory->setChecked(PimSettingExportGlobalConfig::self()->alwaysOverrideDirectory());
+    mAlwaysOverrideFile->setChecked(PimDataExportGlobalConfig::self()->alwaysOverrideFile());
+    mAlwaysMergeConfigFile->setChecked(PimDataExportGlobalConfig::self()->alwaysMergeConfigFile());
+    mAlwaysOverrideDirectory->setChecked(PimDataExportGlobalConfig::self()->alwaysOverrideDirectory());
 }
 
-void PimSettingExporterConfigureWidget::save()
+void PimDataExporterConfigureWidget::save()
 {
-    PimSettingExportGlobalConfig::self()->setAlwaysOverrideFile(mAlwaysOverrideFile->isChecked());
-    PimSettingExportGlobalConfig::self()->setAlwaysMergeConfigFile(mAlwaysMergeConfigFile->isChecked());
-    PimSettingExportGlobalConfig::self()->setAlwaysOverrideDirectory(mAlwaysOverrideDirectory->isChecked());
+    PimDataExportGlobalConfig::self()->setAlwaysOverrideFile(mAlwaysOverrideFile->isChecked());
+    PimDataExportGlobalConfig::self()->setAlwaysMergeConfigFile(mAlwaysMergeConfigFile->isChecked());
+    PimDataExportGlobalConfig::self()->setAlwaysOverrideDirectory(mAlwaysOverrideDirectory->isChecked());
 }
 
-void PimSettingExporterConfigureWidget::resetToDefault()
+void PimDataExporterConfigureWidget::resetToDefault()
 {
-    const bool bUseDefaults = PimSettingExportGlobalConfig::self()->useDefaults(true);
+    const bool bUseDefaults = PimDataExportGlobalConfig::self()->useDefaults(true);
     initialize();
 
-    PimSettingExportGlobalConfig::self()->useDefaults(bUseDefaults);
+    PimDataExportGlobalConfig::self()->useDefaults(bUseDefaults);
 }

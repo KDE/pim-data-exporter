@@ -17,31 +17,16 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGCOMMANDLINEOPTION_H
-#define PIMSETTINGCOMMANDLINEOPTION_H
+#include "pimdatatrayicon.h"
+#include <KLocalizedString>
 
-#include <QObject>
-#include <QCommandLineParser>
-
-class QApplication;
-class PimSettingExporterWindow;
-class PimSettingCommandLineOption : public QObject
+PimDataTrayIcon::PimDataTrayIcon(QObject *parent)
+    : KStatusNotifierItem(parent)
 {
-    Q_OBJECT
-public:
-    explicit PimSettingCommandLineOption(QObject *parent = nullptr);
-    ~PimSettingCommandLineOption();
+    setToolTipTitle(i18n("PimSettingExporter"));
+    setIconByName(QStringLiteral("kontact"));
+}
 
-    void createParser(const QApplication &app);
-    void setExportWindow(PimSettingExporterWindow *exporterWindow);
-    void handleCommandLine();
-
-public Q_SLOTS:
-    void slotActivateRequested(const QStringList &arguments, const QString &workingDirectory);
-
-private:
-    QCommandLineParser mParser;
-    PimSettingExporterWindow *mExporterWindow = nullptr;
-};
-
-#endif // PIMSETTINGCOMMANDLINEOPTION_H
+PimDataTrayIcon::~PimDataTrayIcon()
+{
+}

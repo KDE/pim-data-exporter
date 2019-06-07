@@ -24,7 +24,7 @@
 class PimDataBackupRestore;
 class LogInFile;
 class LogInfo;
-class PimSettingExporterConsole : public QObject
+class PimDataExporterConsole : public QObject
 {
     Q_OBJECT
 public:
@@ -33,8 +33,8 @@ public:
         Export = 1
     };
 
-    explicit PimSettingExporterConsole(QObject *parent = nullptr);
-    ~PimSettingExporterConsole();
+    explicit PimDataExporterConsole(QObject *parent = nullptr);
+    ~PimDataExporterConsole();
 
     Mode mode() const;
     void setMode(Mode mode);

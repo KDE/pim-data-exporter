@@ -17,29 +17,29 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingexporterconfiguredialogtest.h"
-#include "../dialog/pimsettingexporterconfiguredialog.h"
+#include "pimdataexporterconfiguredialogtest.h"
+#include "../dialog/pimdataexporterconfiguredialog.h"
 #include <QDialogButtonBox>
 #include <QTest>
-#include "../widgets/pimsettingexporterconfigurewidget.h"
+#include "../widgets/pimdataexporterconfigurewidget.h"
 
-PimSettingExporterConfigureDialogTest::PimSettingExporterConfigureDialogTest(QObject *parent)
+PimDataExporterConfigureDialogTest::PimDataExporterConfigureDialogTest(QObject *parent)
     : QObject(parent)
 {
 }
 
-PimSettingExporterConfigureDialogTest::~PimSettingExporterConfigureDialogTest()
+PimDataExporterConfigureDialogTest::~PimDataExporterConfigureDialogTest()
 {
 }
 
-void PimSettingExporterConfigureDialogTest::shouldHaveDefaultValue()
+void PimDataExporterConfigureDialogTest::shouldHaveDefaultValue()
 {
-    PimSettingExporterConfigureDialog dlg;
+    PimDataExporterConfigureDialog dlg;
     QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
     QVERIFY(buttonBox);
 
-    PimSettingExporterConfigureWidget *configureWidget = dlg.findChild<PimSettingExporterConfigureWidget *>(QStringLiteral("configurewidget"));
+    PimDataExporterConfigureWidget *configureWidget = dlg.findChild<PimDataExporterConfigureWidget *>(QStringLiteral("configurewidget"));
     QVERIFY(configureWidget);
 }
 
-QTEST_MAIN(PimSettingExporterConfigureDialogTest)
+QTEST_MAIN(PimDataExporterConfigureDialogTest)

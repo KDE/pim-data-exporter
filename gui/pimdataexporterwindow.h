@@ -25,14 +25,14 @@ class LogWidget;
 class KRecentFilesAction;
 class QAction;
 class QCommandLineParser;
-class PimSettingsBackupRestoreUI;
-class PimSettingsTrayIcon;
-class PimSettingExporterWindow : public KXmlGuiWindow
+class PimDataBackupRestoreUI;
+class PimDataTrayIcon;
+class PimDataExporterWindow : public KXmlGuiWindow
 {
     Q_OBJECT
 public:
-    explicit PimSettingExporterWindow(QWidget *parent = nullptr);
-    ~PimSettingExporterWindow();
+    explicit PimDataExporterWindow(QWidget *parent = nullptr);
+    ~PimDataExporterWindow();
     void handleCommandLine(const QCommandLineParser &parser);
 
 private:
@@ -74,8 +74,8 @@ private:
     QAction *mArchiveStructureInfo = nullptr;
     QAction *mShowArchiveInformationsAction = nullptr;
     QAction *mShowArchiveInformationsAboutCurrentArchiveAction = nullptr;
-    PimSettingsBackupRestoreUI *mPimSettingsBackupRestoreUI = nullptr;
-    PimSettingsTrayIcon *mTrayIcon = nullptr;
+    PimDataBackupRestoreUI *mPimSettingsBackupRestoreUI = nullptr;
+    PimDataTrayIcon *mTrayIcon = nullptr;
 };
 
 #endif /* PIMSETTINGEXPORTERWINDOW_H */

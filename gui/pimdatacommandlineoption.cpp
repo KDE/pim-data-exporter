@@ -16,8 +16,8 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#include "pimsettingcommandlineoption.h"
-#include "pimsettingexporterwindow.h"
+#include "pimdatacommandlineoption.h"
+#include "pimdataexporterwindow.h"
 #include "pimsettingexportgui_debug.h"
 #include "pimsettingexporter-version.h"
 #include <KLocalizedString>
@@ -26,16 +26,16 @@
 #include <QCommandLineOption>
 #include <QApplication>
 
-PimSettingCommandLineOption::PimSettingCommandLineOption(QObject *parent)
+PimDataCommandLineOption::PimDataCommandLineOption(QObject *parent)
     : QObject(parent)
 {
 }
 
-PimSettingCommandLineOption::~PimSettingCommandLineOption()
+PimDataCommandLineOption::~PimDataCommandLineOption()
 {
 }
 
-void PimSettingCommandLineOption::slotActivateRequested(const QStringList &arguments, const QString &workingDirectory)
+void PimDataCommandLineOption::slotActivateRequested(const QStringList &arguments, const QString &workingDirectory)
 {
     Q_UNUSED(workingDirectory);
     if (!arguments.isEmpty()) {
@@ -47,7 +47,7 @@ void PimSettingCommandLineOption::slotActivateRequested(const QStringList &argum
     }
 }
 
-void PimSettingCommandLineOption::createParser(const QApplication &app)
+void PimDataCommandLineOption::createParser(const QApplication &app)
 {
     KAboutData aboutData(QStringLiteral("pimsettingexporter"), i18n("PIM Setting Exporter"),
                          QStringLiteral(PIMSETTINGEXPORTER_VERSION), i18n("PIM Setting Exporter"), KAboutLicense::GPL_V2,
@@ -67,12 +67,12 @@ void PimSettingCommandLineOption::createParser(const QApplication &app)
     aboutData.processCommandLine(&mParser);
 }
 
-void PimSettingCommandLineOption::setExportWindow(PimSettingExporterWindow *exporterWindow)
+void PimDataCommandLineOption::setExportWindow(PimDataExporterWindow *exporterWindow)
 {
     mExporterWindow = exporterWindow;
 }
 
-void PimSettingCommandLineOption::handleCommandLine()
+void PimDataCommandLineOption::handleCommandLine()
 {
     if (mExporterWindow) {
         mExporterWindow->handleCommandLine(mParser);

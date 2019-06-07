@@ -1,0 +1,5 @@
+File=pimdataexporterglobalconfig.kcfg
+ClassName=PimDataExportGlobalConfig
+Mutators=true
+Singleton=true
+ItemAccessors=true

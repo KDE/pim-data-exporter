@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingexporterwindow.h"
-#include "pimsettingcommandlineoption.h"
+#include "pimdataexporterwindow.h"
+#include "pimdatacommandlineoption.h"
 
 #include <KLocalizedString>
 #include <KDBusService>
@@ -44,15 +44,15 @@ int main(int argc, char *argv[])
     migrate.migrate();
     QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("kontact")));
 
-    PimSettingCommandLineOption parser;
+    PimDataCommandLineOption parser;
     parser.createParser(app);
 
     KDBusService service(KDBusService::Unique);
 
-    PimSettingExporterWindow *backupMailWin = new PimSettingExporterWindow();
+    PimDataExporterWindow *backupMailWin = new PimDataExporterWindow();
     parser.setExportWindow(backupMailWin);
     QObject::connect(&service, &KDBusService::activateRequested,
-                     &parser, &PimSettingCommandLineOption::slotActivateRequested);
+                     &parser, &PimDataCommandLineOption::slotActivateRequested);
     backupMailWin->show();
     parser.handleCommandLine();
 

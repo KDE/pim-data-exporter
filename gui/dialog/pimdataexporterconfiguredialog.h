@@ -17,17 +17,22 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGSTRAYICON_H
-#define PIMSETTINGSTRAYICON_H
+#ifndef PIMSETTINGEXPORTERCONFIGUREDIALOG_H
+#define PIMSETTINGEXPORTERCONFIGUREDIALOG_H
 
-#include <KStatusNotifierItem>
-
-class PimSettingsTrayIcon : public KStatusNotifierItem
+#include <QDialog>
+class PimDataExporterConfigureWidget;
+class PimDataExporterConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit PimSettingsTrayIcon(QObject *parent = nullptr);
-    ~PimSettingsTrayIcon();
+    explicit PimDataExporterConfigureDialog(QWidget *parent = nullptr);
+    ~PimDataExporterConfigureDialog();
+
+private:
+    void slotAccepted();
+
+    PimDataExporterConfigureWidget *mConfigureWidget = nullptr;
 };
 
-#endif // PIMSETTINGSTRAYICON_H
+#endif // PIMSETTINGEXPORTERCONFIGUREDIALOG_H

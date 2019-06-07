@@ -18,7 +18,7 @@
 */
 
 #include "importexportprogressindicatorgui.h"
-#include "pimsettingexporterglobalconfig.h"
+#include "pimdataexporterglobalconfig.h"
 #include <QProgressDialog>
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -72,7 +72,7 @@ bool ImportExportProgressIndicatorGui::wasCanceled() const
 
 int ImportExportProgressIndicatorGui::mergeConfigMessageBox(const QString &configName) const
 {
-    if (PimSettingExportGlobalConfig::self()->alwaysMergeConfigFile()) {
+    if (PimDataExportGlobalConfig::self()->alwaysMergeConfigFile()) {
         return KMessageBox::Yes;
     }
     return KMessageBox::warningYesNoCancel(mParentWidget, i18n("\"%1\" already exists. Do you want to overwrite it or merge it?", configName), i18n("Restore"), KStandardGuiItem::overwrite(),
@@ -81,7 +81,7 @@ int ImportExportProgressIndicatorGui::mergeConfigMessageBox(const QString &confi
 
 bool ImportExportProgressIndicatorGui::overwriteConfigMessageBox(const QString &configName) const
 {
-    if (PimSettingExportGlobalConfig::self()->alwaysOverrideFile()) {
+    if (PimDataExportGlobalConfig::self()->alwaysOverrideFile()) {
         return true;
     }
     return KMessageBox::warningYesNo(mParentWidget, i18n("\"%1\" already exists. Do you want to overwrite it?", configName), i18n("Restore")) == KMessageBox::Yes;
@@ -89,7 +89,7 @@ bool ImportExportProgressIndicatorGui::overwriteConfigMessageBox(const QString &
 
 bool ImportExportProgressIndicatorGui::overwriteDirectoryMessageBox(const QString &directory) const
 {
-    if (PimSettingExportGlobalConfig::self()->alwaysOverrideDirectory()) {
+    if (PimDataExportGlobalConfig::self()->alwaysOverrideDirectory()) {
         return true;
     }
     return KMessageBox::warningYesNo(mParentWidget, i18n("Directory \"%1\" already exists. Do you want to overwrite it?", directory), i18n("Restore")) == KMessageBox::Yes;

@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingexporterconsole.h"
+#include "pimdataexporterconsole.h"
 #include "pimdatabackuprestore.h"
 #include "pimsettingexportconsole_debug.h"
 #include "loginfile.h"
@@ -29,7 +29,7 @@
 #include <MailCommon/MailKernel>
 #include <MailCommon/FilterManager>
 
-PimSettingExporterConsole::PimSettingExporterConsole(QObject *parent)
+PimDataExporterConsole::PimDataExporterConsole(QObject *parent)
     : QObject(parent)
     , mPimSettingsBackupRestore(new PimDataBackupRestore(this))
     , mLogInFile(nullptr)
@@ -47,56 +47,56 @@ PimSettingExporterConsole::PimSettingExporterConsole(QObject *parent)
     //TODO initialize akonadi server
 }
 
-PimSettingExporterConsole::~PimSettingExporterConsole()
+PimDataExporterConsole::~PimDataExporterConsole()
 {
 }
 
-void PimSettingExporterConsole::initializeLogInFile()
+void PimDataExporterConsole::initializeLogInFile()
 {
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addEndLine, this, &PimSettingExporterConsole::slotAddEndLine);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addError, this, &PimSettingExporterConsole::slotAddError);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addInfo, this, &PimSettingExporterConsole::slotAddInfo);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addTitle, this, &PimSettingExporterConsole::slotAddTitle);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::jobFinished, this, &PimSettingExporterConsole::slotJobFinished);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::backupDone, this, &PimSettingExporterConsole::slotBackupDone);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::jobFailed, this, &PimSettingExporterConsole::slotJobFailed);
-    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::restoreDone, this, &PimSettingExporterConsole::slotRestoreDone);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addEndLine, this, &PimDataExporterConsole::slotAddEndLine);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addError, this, &PimDataExporterConsole::slotAddError);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addInfo, this, &PimDataExporterConsole::slotAddInfo);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addTitle, this, &PimDataExporterConsole::slotAddTitle);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::jobFinished, this, &PimDataExporterConsole::slotJobFinished);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::backupDone, this, &PimDataExporterConsole::slotBackupDone);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::jobFailed, this, &PimDataExporterConsole::slotJobFailed);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::restoreDone, this, &PimDataExporterConsole::slotRestoreDone);
 }
 
-void PimSettingExporterConsole::closeLogFile()
+void PimDataExporterConsole::closeLogFile()
 {
     delete mLogInFile;
     mLogInFile = nullptr;
 }
 
-void PimSettingExporterConsole::slotRestoreDone()
+void PimDataExporterConsole::slotRestoreDone()
 {
     qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Restore Done";
     closeLogFile();
-    QTimer::singleShot(0, this, &PimSettingExporterConsole::finished);
+    QTimer::singleShot(0, this, &PimDataExporterConsole::finished);
 }
 
-void PimSettingExporterConsole::slotJobFailed()
+void PimDataExporterConsole::slotJobFailed()
 {
     qCWarning(PIMSETTINGEXPORTERCONSOLE_LOG) << "job failed";
     closeLogFile();
     mPimSettingsBackupRestore->closeArchive();
 }
 
-void PimSettingExporterConsole::slotBackupDone()
+void PimDataExporterConsole::slotBackupDone()
 {
     qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Backup Done";
     closeLogFile();
-    QTimer::singleShot(0, this, &PimSettingExporterConsole::finished);
+    QTimer::singleShot(0, this, &PimDataExporterConsole::finished);
 }
 
-void PimSettingExporterConsole::slotJobFinished()
+void PimDataExporterConsole::slotJobFinished()
 {
     qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "job finished";
     mPimSettingsBackupRestore->nextStep();
 }
 
-void PimSettingExporterConsole::slotAddEndLine()
+void PimDataExporterConsole::slotAddEndLine()
 {
     if (mLogInFile) {
         mLogInFile->addEndLine();
@@ -104,7 +104,7 @@ void PimSettingExporterConsole::slotAddEndLine()
     mLogInfo->addEndLineLogEntry();
 }
 
-void PimSettingExporterConsole::slotAddError(const QString &message)
+void PimDataExporterConsole::slotAddError(const QString &message)
 {
     if (mLogInFile) {
         mLogInFile->addError(message);
@@ -112,7 +112,7 @@ void PimSettingExporterConsole::slotAddError(const QString &message)
     mLogInfo->addErrorLogEntry(message);
 }
 
-void PimSettingExporterConsole::slotAddInfo(const QString &message)
+void PimDataExporterConsole::slotAddInfo(const QString &message)
 {
     if (mLogInFile) {
         mLogInFile->addInfo(message);
@@ -120,7 +120,7 @@ void PimSettingExporterConsole::slotAddInfo(const QString &message)
     mLogInfo->addInfoLogEntry(message);
 }
 
-void PimSettingExporterConsole::slotAddTitle(const QString &message)
+void PimDataExporterConsole::slotAddTitle(const QString &message)
 {
     if (mLogInFile) {
         mLogInFile->addTitle(message);
@@ -128,12 +128,12 @@ void PimSettingExporterConsole::slotAddTitle(const QString &message)
     mLogInfo->addTitleLogEntry(message);
 }
 
-QString PimSettingExporterConsole::importExportFileName() const
+QString PimDataExporterConsole::importExportFileName() const
 {
     return mImportExportFileName;
 }
 
-void PimSettingExporterConsole::setImportExportFileName(const QString &filename)
+void PimDataExporterConsole::setImportExportFileName(const QString &filename)
 {
     if (mInProgress) {
         qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
@@ -142,7 +142,7 @@ void PimSettingExporterConsole::setImportExportFileName(const QString &filename)
     mImportExportFileName = filename;
 }
 
-void PimSettingExporterConsole::start()
+void PimDataExporterConsole::start()
 {
     //Load template if necessary
     if (!mTemplateFileName.isEmpty()) {
@@ -154,24 +154,24 @@ void PimSettingExporterConsole::start()
     case Import:
         if (!mPimSettingsBackupRestore->restoreStart(mImportExportFileName)) {
             qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Unable to start restore.";
-            QTimer::singleShot(0, this, &PimSettingExporterConsole::finished);
+            QTimer::singleShot(0, this, &PimDataExporterConsole::finished);
         }
         break;
     case Export:
         if (!mPimSettingsBackupRestore->backupStart(mImportExportFileName)) {
             qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Unable to start backup.";
-            QTimer::singleShot(0, this, &PimSettingExporterConsole::finished);
+            QTimer::singleShot(0, this, &PimDataExporterConsole::finished);
         }
         break;
     }
 }
 
-PimSettingExporterConsole::Mode PimSettingExporterConsole::mode() const
+PimDataExporterConsole::Mode PimDataExporterConsole::mode() const
 {
     return mMode;
 }
 
-void PimSettingExporterConsole::setMode(Mode mode)
+void PimDataExporterConsole::setMode(Mode mode)
 {
     if (mInProgress) {
         qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
@@ -180,7 +180,7 @@ void PimSettingExporterConsole::setMode(Mode mode)
     mMode = mode;
 }
 
-void PimSettingExporterConsole::setLogFileName(const QString &logFileName)
+void PimDataExporterConsole::setLogFileName(const QString &logFileName)
 {
     if (mInProgress) {
         qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
@@ -192,7 +192,7 @@ void PimSettingExporterConsole::setLogFileName(const QString &logFileName)
     mLogInFile->setFileName(logFileName);
 }
 
-void PimSettingExporterConsole::setTemplateFileName(const QString &templateFileName)
+void PimDataExporterConsole::setTemplateFileName(const QString &templateFileName)
 {
     if (mInProgress) {
         qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";

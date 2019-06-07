@@ -22,12 +22,12 @@
 
 #include <QObject>
 
-class PimSettingExporterConfigureWidgetTest : public QObject
+class PimDataExporterConfigureWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit PimSettingExporterConfigureWidgetTest(QObject *parent = nullptr);
-    ~PimSettingExporterConfigureWidgetTest();
+    explicit PimDataExporterConfigureWidgetTest(QObject *parent = nullptr);
+    ~PimDataExporterConfigureWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

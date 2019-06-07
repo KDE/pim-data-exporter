@@ -17,23 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGSBACKUPRESTOREUI_H
-#define PIMSETTINGSBACKUPRESTOREUI_H
+#ifndef PIMSETTINGSTRAYICON_H
+#define PIMSETTINGSTRAYICON_H
 
-#include "pimdatabackuprestore.h"
+#include <KStatusNotifierItem>
 
-class PimSettingsBackupRestoreUI : public PimDataBackupRestore
+class PimDataTrayIcon : public KStatusNotifierItem
 {
     Q_OBJECT
 public:
-    explicit PimSettingsBackupRestoreUI(QWidget *parentWidget, QObject *parent = nullptr);
-    ~PimSettingsBackupRestoreUI() override;
-
-protected:
-    bool continueToRestore() override;
-    void addExportProgressIndicator() override;
-private:
-    QWidget *mParentWidget = nullptr;
+    explicit PimDataTrayIcon(QObject *parent = nullptr);
+    ~PimDataTrayIcon();
 };
 
-#endif // PIMSETTINGSBACKUPRESTOREUI_H
+#endif // PIMSETTINGSTRAYICON_H

@@ -17,19 +17,23 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGEXPORTERCONFIGUREDIALOGTEST_H
-#define PIMSETTINGEXPORTERCONFIGUREDIALOGTEST_H
+#ifndef PIMSETTINGSBACKUPRESTOREUI_H
+#define PIMSETTINGSBACKUPRESTOREUI_H
 
-#include <QObject>
+#include "pimdatabackuprestore.h"
 
-class PimSettingExporterConfigureDialogTest : public QObject
+class PimDataBackupRestoreUI : public PimDataBackupRestore
 {
     Q_OBJECT
 public:
-    explicit PimSettingExporterConfigureDialogTest(QObject *parent = nullptr);
-    ~PimSettingExporterConfigureDialogTest();
-private Q_SLOTS:
-    void shouldHaveDefaultValue();
+    explicit PimDataBackupRestoreUI(QWidget *parentWidget, QObject *parent = nullptr);
+    ~PimDataBackupRestoreUI() override;
+
+protected:
+    bool continueToRestore() override;
+    void addExportProgressIndicator() override;
+private:
+    QWidget *mParentWidget = nullptr;
 };
 
-#endif // PIMSETTINGEXPORTERCONFIGUREDIALOGTEST_H
+#endif // PIMSETTINGSBACKUPRESTOREUI_H

@@ -18,7 +18,7 @@
 */
 
 #include "pimsettingexporter-version.h"
-#include "pimsettingexporterconsole.h"
+#include "pimdataexporterconsole.h"
 #include "pimsettingexportconsole_debug.h"
 #include <kaboutdata.h>
 #include <KLocalizedString>
@@ -69,13 +69,13 @@ int main(int argc, char *argv[])
         qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Log file " << logFile;
     }
 
-    PimSettingExporterConsole *console = new PimSettingExporterConsole;
+    PimDataExporterConsole *console = new PimDataExporterConsole;
     if (!importFile.isEmpty()) {
-        console->setMode(PimSettingExporterConsole::Import);
+        console->setMode(PimDataExporterConsole::Import);
         qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Import Mode" << importFile;
         console->setImportExportFileName(importFile);
     } else if (!exportFile.isEmpty()) {
-        console->setMode(PimSettingExporterConsole::Export);
+        console->setMode(PimDataExporterConsole::Export);
         qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Export Mode" << exportFile;
         console->setImportExportFileName(exportFile);
     }
@@ -85,8 +85,8 @@ int main(int argc, char *argv[])
     if (!templateFile.isEmpty()) {
         console->setTemplateFileName(templateFile);
     }
-    QObject::connect(console, &PimSettingExporterConsole::finished, &app, &QCoreApplication::quit);
-    QTimer::singleShot(0, console, &PimSettingExporterConsole::start);
+    QObject::connect(console, &PimDataExporterConsole::finished, &app, &QCoreApplication::quit);
+    QTimer::singleShot(0, console, &PimDataExporterConsole::start);
 
     return app.exec();
 }

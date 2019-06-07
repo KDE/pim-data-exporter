@@ -17,35 +17,35 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingexporterconfiguredialog.h"
+#include "pimdataexporterconfiguredialog.h"
 #include <QVBoxLayout>
 #include <KLocalizedString>
 #include <QPushButton>
 #include <QDialogButtonBox>
-#include "../widgets/pimsettingexporterconfigurewidget.h"
+#include "../widgets/pimdataexporterconfigurewidget.h"
 
-PimSettingExporterConfigureDialog::PimSettingExporterConfigureDialog(QWidget *parent)
+PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18n("Configure PimSettingExporter"));
     QVBoxLayout *layout = new QVBoxLayout(this);
-    mConfigureWidget = new PimSettingExporterConfigureWidget(this);
+    mConfigureWidget = new PimDataExporterConfigureWidget(this);
     mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
     layout->addWidget(mConfigureWidget);
 
     QDialogButtonBox *button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
     button->setObjectName(QStringLiteral("buttonbox"));
-    connect(button, &QDialogButtonBox::accepted, this, &PimSettingExporterConfigureDialog::slotAccepted);
-    connect(button, &QDialogButtonBox::rejected, this, &PimSettingExporterConfigureDialog::reject);
-    connect(button->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, mConfigureWidget, &PimSettingExporterConfigureWidget::resetToDefault);
+    connect(button, &QDialogButtonBox::accepted, this, &PimDataExporterConfigureDialog::slotAccepted);
+    connect(button, &QDialogButtonBox::rejected, this, &PimDataExporterConfigureDialog::reject);
+    connect(button->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, mConfigureWidget, &PimDataExporterConfigureWidget::resetToDefault);
     layout->addWidget(button);
 }
 
-PimSettingExporterConfigureDialog::~PimSettingExporterConfigureDialog()
+PimDataExporterConfigureDialog::~PimDataExporterConfigureDialog()
 {
 }
 
-void PimSettingExporterConfigureDialog::slotAccepted()
+void PimDataExporterConfigureDialog::slotAccepted()
 {
     mConfigureWidget->save();
     accept();

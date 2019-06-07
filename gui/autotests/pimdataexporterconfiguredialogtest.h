@@ -17,22 +17,19 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PIMSETTINGEXPORTERCONFIGUREDIALOG_H
-#define PIMSETTINGEXPORTERCONFIGUREDIALOG_H
+#ifndef PIMSETTINGEXPORTERCONFIGUREDIALOGTEST_H
+#define PIMSETTINGEXPORTERCONFIGUREDIALOGTEST_H
 
-#include <QDialog>
-class PimSettingExporterConfigureWidget;
-class PimSettingExporterConfigureDialog : public QDialog
+#include <QObject>
+
+class PimDataExporterConfigureDialogTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit PimSettingExporterConfigureDialog(QWidget *parent = nullptr);
-    ~PimSettingExporterConfigureDialog();
-
-private:
-    void slotAccepted();
-
-    PimSettingExporterConfigureWidget *mConfigureWidget = nullptr;
+    explicit PimDataExporterConfigureDialogTest(QObject *parent = nullptr);
+    ~PimDataExporterConfigureDialogTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
-#endif // PIMSETTINGEXPORTERCONFIGUREDIALOG_H
+#endif // PIMSETTINGEXPORTERCONFIGUREDIALOGTEST_H

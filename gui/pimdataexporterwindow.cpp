@@ -17,19 +17,19 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingexporterwindow.h"
+#include "pimdataexporterwindow.h"
 #include "dialog/showarchivestructuredialog.h"
 #include "importexportprogressindicatorgui.h"
 #include "widgets/logwidget.h"
 #include "pimsettingexportgui_debug.h"
 #include "job/fullsynchronizeresourcesjob.h"
-#include "trayicon/pimsettingstrayicon.h"
+#include "trayicon/pimdatatrayicon.h"
 
 #include "pimsettingimportdatainfofile.h"
 #include "pimdataexporterkernel.h"
 #include "dialog/selectiontypedialog.h"
 #include "utils.h"
-#include "pimsettingsbackuprestoreui.h"
+#include "pimdatabackuprestoreui.h"
 #include "dialog/synchronizeresourcedialog.h"
 
 #include "dialog/backupfilestructureinfodialog.h"
@@ -57,9 +57,9 @@
 #include <QFileDialog>
 #include <QCommandLineParser>
 
-#include <dialog/pimsettingexporterconfiguredialog.h>
+#include <dialog/pimdataexporterconfiguredialog.h>
 
-PimSettingExporterWindow::PimSettingExporterWindow(QWidget *parent)
+PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
 {
     //Initialize filtermanager
@@ -76,10 +76,10 @@ PimSettingExporterWindow::PimSettingExporterWindow(QWidget *parent)
     resize(800, 600);
     Akonadi::ControlGui::widgetNeedsAkonadi(this);
     statusBar()->hide();
-    mTrayIcon = new PimSettingsTrayIcon(this);
+    mTrayIcon = new PimDataTrayIcon(this);
 }
 
-PimSettingExporterWindow::~PimSettingExporterWindow()
+PimDataExporterWindow::~PimDataExporterWindow()
 {
     MailCommon::FilterManager::instance()->cleanup();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
@@ -87,37 +87,37 @@ PimSettingExporterWindow::~PimSettingExporterWindow()
     mRecentFilesAction->saveEntries(groupConfig);
 }
 
-void PimSettingExporterWindow::initializeBackupRestoreUi()
+void PimDataExporterWindow::initializeBackupRestoreUi()
 {
-    mPimSettingsBackupRestoreUI = new PimSettingsBackupRestoreUI(this, this);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addInfo, this, &PimSettingExporterWindow::slotAddInfo);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addEndLine, this, &PimSettingExporterWindow::slotAddEndLine);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addError, this, &PimSettingExporterWindow::slotAddError);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addTitle, this, &PimSettingExporterWindow::slotAddTitle);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::updateActions, this, &PimSettingExporterWindow::slotUpdateActions);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::jobFinished, this, &PimSettingExporterWindow::slotJobFinished);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::backupDone, this, &PimSettingExporterWindow::slotShowBackupFinishDialogInformation);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::jobFailed, this, &PimSettingExporterWindow::slotJobFailed);
-    connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestoreUI::needSyncResource, this, &PimSettingExporterWindow::slotAddResourceToSync);
-    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::restoreDone, this, &PimSettingExporterWindow::slotRestoreDone);
+    mPimSettingsBackupRestoreUI = new PimDataBackupRestoreUI(this, this);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addInfo, this, &PimDataExporterWindow::slotAddInfo);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addEndLine, this, &PimDataExporterWindow::slotAddEndLine);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addError, this, &PimDataExporterWindow::slotAddError);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addTitle, this, &PimDataExporterWindow::slotAddTitle);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::updateActions, this, &PimDataExporterWindow::slotUpdateActions);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::jobFinished, this, &PimDataExporterWindow::slotJobFinished);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::backupDone, this, &PimDataExporterWindow::slotShowBackupFinishDialogInformation);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::jobFailed, this, &PimDataExporterWindow::slotJobFailed);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestoreUI::needSyncResource, this, &PimDataExporterWindow::slotAddResourceToSync);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::restoreDone, this, &PimDataExporterWindow::slotRestoreDone);
 }
 
-void PimSettingExporterWindow::slotAddResourceToSync(const QString &name, const QString &identifier)
+void PimDataExporterWindow::slotAddResourceToSync(const QString &name, const QString &identifier)
 {
     mNeedToSyncResources.insert(name, identifier);
 }
 
-void PimSettingExporterWindow::slotJobFinished()
+void PimDataExporterWindow::slotJobFinished()
 {
     mPimSettingsBackupRestoreUI->nextStep();
 }
 
-void PimSettingExporterWindow::slotJobFailed()
+void PimDataExporterWindow::slotJobFailed()
 {
     mPimSettingsBackupRestoreUI->closeArchive();
 }
 
-void PimSettingExporterWindow::slotRestoreDone()
+void PimDataExporterWindow::slotRestoreDone()
 {
     if (!mNeedToSyncResources.isEmpty()) {
         QPointer<SynchronizeResourceDialog> dlg = new SynchronizeResourceDialog(this);
@@ -132,9 +132,9 @@ void PimSettingExporterWindow::slotRestoreDone()
             FullSynchronizeResourcesJob *job = new FullSynchronizeResourcesJob(this);
             job->setWindowParent(this);
             job->setResources(list);
-            connect(job, &FullSynchronizeResourcesJob::synchronizeFinished, this, &PimSettingExporterWindow::slotFullSyncFinished);
-            connect(job, &FullSynchronizeResourcesJob::synchronizeInstanceDone, this, &PimSettingExporterWindow::slotFullSyncInstanceDone);
-            connect(job, &FullSynchronizeResourcesJob::synchronizeInstanceFailed, this, &PimSettingExporterWindow::slotFullSyncInstanceFailed);
+            connect(job, &FullSynchronizeResourcesJob::synchronizeFinished, this, &PimDataExporterWindow::slotFullSyncFinished);
+            connect(job, &FullSynchronizeResourcesJob::synchronizeInstanceDone, this, &PimDataExporterWindow::slotFullSyncInstanceDone);
+            connect(job, &FullSynchronizeResourcesJob::synchronizeInstanceFailed, this, &PimDataExporterWindow::slotFullSyncInstanceFailed);
             job->start();
         }
     } else {
@@ -142,12 +142,12 @@ void PimSettingExporterWindow::slotRestoreDone()
     }
 }
 
-void PimSettingExporterWindow::slotShowBackupFinishDialogInformation()
+void PimDataExporterWindow::slotShowBackupFinishDialogInformation()
 {
     showFinishInformation();
 }
 
-void PimSettingExporterWindow::slotFullSyncFinished()
+void PimDataExporterWindow::slotFullSyncFinished()
 {
     slotUpdateActions(false);
     const QString str = i18n("Full sync finished.");
@@ -156,17 +156,17 @@ void PimSettingExporterWindow::slotFullSyncFinished()
     mTrayIcon->setToolTipSubTitle(str);
 }
 
-void PimSettingExporterWindow::slotFullSyncInstanceDone(const QString &identifier)
+void PimDataExporterWindow::slotFullSyncInstanceDone(const QString &identifier)
 {
     slotAddInfo(i18n("Full sync for \"%1\" done.", identifier));
 }
 
-void PimSettingExporterWindow::slotFullSyncInstanceFailed(const QString &identifier)
+void PimDataExporterWindow::slotFullSyncInstanceFailed(const QString &identifier)
 {
     slotAddError(i18n("Full sync for \"%1\" failed.", identifier));
 }
 
-void PimSettingExporterWindow::showFinishInformation()
+void PimDataExporterWindow::showFinishInformation()
 {
     KMessageBox::information(
         this,
@@ -177,7 +177,7 @@ void PimSettingExporterWindow::showFinishInformation()
     mTrayIcon->setStatus(KStatusNotifierItem::Passive);
 }
 
-void PimSettingExporterWindow::handleCommandLine(const QCommandLineParser &parser)
+void PimDataExporterWindow::handleCommandLine(const QCommandLineParser &parser)
 {
     QString templateFile;
     if (parser.isSet(QStringLiteral("template"))) {
@@ -194,49 +194,49 @@ void PimSettingExporterWindow::handleCommandLine(const QCommandLineParser &parse
     }
 }
 
-void PimSettingExporterWindow::setupActions(bool canZipFile)
+void PimDataExporterWindow::setupActions(bool canZipFile)
 {
     KActionCollection *ac = actionCollection();
 
-    mBackupAction = ac->addAction(QStringLiteral("backup"), this, &PimSettingExporterWindow::slotBackupData);
+    mBackupAction = ac->addAction(QStringLiteral("backup"), this, &PimDataExporterWindow::slotBackupData);
     mBackupAction->setText(i18n("Export Data..."));
     mBackupAction->setEnabled(canZipFile);
 
-    mRestoreAction = ac->addAction(QStringLiteral("restore"), this, &PimSettingExporterWindow::slotRestoreData);
+    mRestoreAction = ac->addAction(QStringLiteral("restore"), this, &PimDataExporterWindow::slotRestoreData);
     mRestoreAction->setText(i18n("Import Data..."));
     mRestoreAction->setEnabled(canZipFile);
 
-    mSaveLogAction = ac->addAction(QStringLiteral("save_log"), this, &PimSettingExporterWindow::slotSaveLog);
+    mSaveLogAction = ac->addAction(QStringLiteral("save_log"), this, &PimDataExporterWindow::slotSaveLog);
     mSaveLogAction->setText(i18n("Save log..."));
 
-    mArchiveStructureInfo = ac->addAction(QStringLiteral("show_structure_info"), this, &PimSettingExporterWindow::slotShowStructureInfos);
+    mArchiveStructureInfo = ac->addAction(QStringLiteral("show_structure_info"), this, &PimDataExporterWindow::slotShowStructureInfos);
     mArchiveStructureInfo->setText(i18n("Show Archive Structure Information..."));
 
-    mShowArchiveInformationsAction = ac->addAction(QStringLiteral("show_archive_info"), this, &PimSettingExporterWindow::slotShowArchiveInformations);
+    mShowArchiveInformationsAction = ac->addAction(QStringLiteral("show_archive_info"), this, &PimDataExporterWindow::slotShowArchiveInformations);
     mShowArchiveInformationsAction->setText(i18n("Show Archive Information..."));
 
-    mShowArchiveInformationsAboutCurrentArchiveAction = ac->addAction(QStringLiteral("show_current_archive_info"), this, &PimSettingExporterWindow::slotShowCurrentArchiveInformations);
+    mShowArchiveInformationsAboutCurrentArchiveAction = ac->addAction(QStringLiteral("show_current_archive_info"), this, &PimDataExporterWindow::slotShowCurrentArchiveInformations);
     mShowArchiveInformationsAboutCurrentArchiveAction->setText(i18n("Show Information on current Archive..."));
     mShowArchiveInformationsAboutCurrentArchiveAction->setEnabled(false);
 
-    KStandardAction::quit(this, &PimSettingExporterWindow::close, ac);
-    mRecentFilesAction = KStandardAction::openRecent(this, &PimSettingExporterWindow::slotRestoreFile, ac);
+    KStandardAction::quit(this, &PimDataExporterWindow::close, ac);
+    mRecentFilesAction = KStandardAction::openRecent(this, &PimDataExporterWindow::slotRestoreFile, ac);
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup groupConfig = config->group(QStringLiteral("Recent File"));
     mRecentFilesAction->loadEntries(groupConfig);
 
-    KStandardAction::preferences(this, &PimSettingExporterWindow::slotConfigure, ac);
+    KStandardAction::preferences(this, &PimDataExporterWindow::slotConfigure, ac);
 }
 
-void PimSettingExporterWindow::slotConfigure()
+void PimDataExporterWindow::slotConfigure()
 {
-    QPointer<PimSettingExporterConfigureDialog> dlg = new PimSettingExporterConfigureDialog(this);
+    QPointer<PimDataExporterConfigureDialog> dlg = new PimDataExporterConfigureDialog(this);
     dlg->exec();
     delete dlg;
 }
 
-void PimSettingExporterWindow::slotUpdateActions(bool inAction)
+void PimDataExporterWindow::slotUpdateActions(bool inAction)
 {
     mBackupAction->setEnabled(!inAction);
     mRestoreAction->setEnabled(!inAction);
@@ -246,14 +246,14 @@ void PimSettingExporterWindow::slotUpdateActions(bool inAction)
     mShowArchiveInformationsAboutCurrentArchiveAction->setEnabled(!inAction && !mLastArchiveFileName.isEmpty());
 }
 
-void PimSettingExporterWindow::slotRestoreFile(const QUrl &url)
+void PimDataExporterWindow::slotRestoreFile(const QUrl &url)
 {
     if (!url.isEmpty()) {
         loadData(url.path());
     }
 }
 
-void PimSettingExporterWindow::slotShowArchiveInformations()
+void PimDataExporterWindow::slotShowArchiveInformations()
 {
     const QString filename = QFileDialog::getOpenFileName(this, i18n("Select Archive"), QString(), QStringLiteral("%1 (*.zip)").arg(i18n("Zip file")));
     if (filename.isEmpty()) {
@@ -265,7 +265,7 @@ void PimSettingExporterWindow::slotShowArchiveInformations()
     delete dlg;
 }
 
-void PimSettingExporterWindow::slotSaveLog()
+void PimDataExporterWindow::slotSaveLog()
 {
     if (mLogWidget->isEmpty()) {
         KMessageBox::information(this, i18n("Log is empty."), i18n("Save log"));
@@ -276,7 +276,7 @@ void PimSettingExporterWindow::slotSaveLog()
     PimCommon::Util::saveTextAs(log, filter, this);
 }
 
-void PimSettingExporterWindow::slotBackupData()
+void PimDataExporterWindow::slotBackupData()
 {
     if (KMessageBox::warningContinueCancel(
             this,
@@ -287,7 +287,7 @@ void PimSettingExporterWindow::slotBackupData()
     backupData();
 }
 
-void PimSettingExporterWindow::backupData(const QString &filename, const QString &templateFile)
+void PimDataExporterWindow::backupData(const QString &filename, const QString &templateFile)
 {
     QString currentFileName = filename;
     QPointer<SelectionTypeDialog> dialog = new SelectionTypeDialog(this);
@@ -323,36 +323,36 @@ void PimSettingExporterWindow::backupData(const QString &filename, const QString
     }
 }
 
-void PimSettingExporterWindow::slotAddInfo(const QString &info)
+void PimDataExporterWindow::slotAddInfo(const QString &info)
 {
     mLogWidget->addInfoLogEntry(info);
     qApp->processEvents();
 }
 
-void PimSettingExporterWindow::slotAddError(const QString &info)
+void PimDataExporterWindow::slotAddError(const QString &info)
 {
     mLogWidget->addErrorLogEntry(info);
     qApp->processEvents();
 }
 
-void PimSettingExporterWindow::slotAddTitle(const QString &info)
+void PimDataExporterWindow::slotAddTitle(const QString &info)
 {
     mLogWidget->addTitleLogEntry(info);
     qApp->processEvents();
 }
 
-void PimSettingExporterWindow::slotAddEndLine()
+void PimDataExporterWindow::slotAddEndLine()
 {
     mLogWidget->addEndLineLogEntry();
     qApp->processEvents();
 }
 
-void PimSettingExporterWindow::slotRestoreData()
+void PimDataExporterWindow::slotRestoreData()
 {
     loadData();
 }
 
-void PimSettingExporterWindow::loadData(const QString &filename, const QString &templateFile)
+void PimDataExporterWindow::loadData(const QString &filename, const QString &templateFile)
 {
     if (KMessageBox::warningYesNo(
             this,
@@ -413,14 +413,14 @@ void PimSettingExporterWindow::loadData(const QString &filename, const QString &
     }
 }
 
-void PimSettingExporterWindow::slotShowStructureInfos()
+void PimDataExporterWindow::slotShowStructureInfos()
 {
     QPointer<BackupFileStructureInfoDialog> dlg = new BackupFileStructureInfoDialog(this);
     dlg->exec();
     delete dlg;
 }
 
-void PimSettingExporterWindow::slotShowCurrentArchiveInformations()
+void PimDataExporterWindow::slotShowCurrentArchiveInformations()
 {
     if (!mLastArchiveFileName.isEmpty()) {
         QPointer<ShowArchiveStructureDialog> dlg = new ShowArchiveStructureDialog(mLastArchiveFileName, this);

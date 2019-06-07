@@ -1,5 +1,0 @@
-File=pimsettingexporterglobalconfig.kcfg
-ClassName=PimSettingExportGlobalConfig
-Mutators=true
-Singleton=true
-ItemAccessors=true

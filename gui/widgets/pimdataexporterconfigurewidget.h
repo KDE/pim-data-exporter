@@ -22,12 +22,12 @@
 
 #include <QWidget>
 class QCheckBox;
-class PimSettingExporterConfigureWidget : public QWidget
+class PimDataExporterConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit PimSettingExporterConfigureWidget(QWidget *parent = nullptr);
-    ~PimSettingExporterConfigureWidget();
+    explicit PimDataExporterConfigureWidget(QWidget *parent = nullptr);
+    ~PimDataExporterConfigureWidget();
 
     void save();
 
