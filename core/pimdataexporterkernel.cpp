@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingexporterkernel.h"
+#include "pimdataexporterkernel.h"
 
 #include <KContacts/Addressee>
 #include <KContacts/ContactGroup>
@@ -39,7 +39,7 @@ const QLatin1String MIME_ACTIVE("application/x-vnd.kde.alarm.active");
 const QLatin1String MIME_ARCHIVED("application/x-vnd.kde.alarm.archived");
 const QLatin1String MIME_TEMPLATE("application/x-vnd.kde.alarm.template");
 
-PimSettingExporterKernel::PimSettingExporterKernel(QObject *parent)
+PimDataExporterKernel::PimDataExporterKernel(QObject *parent)
     : QObject(parent)
 {
     mIdentityManager = KIdentityManagement::IdentityManager::self();
@@ -67,82 +67,82 @@ PimSettingExporterKernel::PimSettingExporterKernel(QObject *parent)
     mCollectionModel->setSortCaseSensitivity(Qt::CaseInsensitive);
 }
 
-KIdentityManagement::IdentityManager *PimSettingExporterKernel::identityManager()
+KIdentityManagement::IdentityManager *PimDataExporterKernel::identityManager()
 {
     return mIdentityManager;
 }
 
-MessageComposer::MessageSender *PimSettingExporterKernel::msgSender()
+MessageComposer::MessageSender *PimDataExporterKernel::msgSender()
 {
     Q_ASSERT(false);
     return nullptr;
 }
 
-Akonadi::EntityMimeTypeFilterModel *PimSettingExporterKernel::collectionModel() const
+Akonadi::EntityMimeTypeFilterModel *PimDataExporterKernel::collectionModel() const
 {
     return mCollectionModel;
 }
 
-KSharedConfig::Ptr PimSettingExporterKernel::config()
+KSharedConfig::Ptr PimDataExporterKernel::config()
 {
     return KSharedConfig::openConfig();
 }
 
-void PimSettingExporterKernel::syncConfig()
+void PimDataExporterKernel::syncConfig()
 {
     Q_ASSERT(false);
 }
 
-MailCommon::JobScheduler *PimSettingExporterKernel::jobScheduler() const
+MailCommon::JobScheduler *PimDataExporterKernel::jobScheduler() const
 {
     Q_ASSERT(false);
     return nullptr;
 }
 
-Akonadi::ChangeRecorder *PimSettingExporterKernel::folderCollectionMonitor() const
+Akonadi::ChangeRecorder *PimDataExporterKernel::folderCollectionMonitor() const
 {
     return mFolderCollectionMonitor->monitor();
 }
 
-void PimSettingExporterKernel::updateSystemTray()
+void PimDataExporterKernel::updateSystemTray()
 {
     Q_ASSERT(false);
 }
 
-bool PimSettingExporterKernel::showPopupAfterDnD()
+bool PimDataExporterKernel::showPopupAfterDnD()
 {
     return false;
 }
 
-qreal PimSettingExporterKernel::closeToQuotaThreshold()
+qreal PimDataExporterKernel::closeToQuotaThreshold()
 {
     return 80;
 }
 
-QStringList PimSettingExporterKernel::customTemplates()
+QStringList PimDataExporterKernel::customTemplates()
 {
     Q_ASSERT(false);
     return QStringList();
 }
 
-bool PimSettingExporterKernel::excludeImportantMailFromExpiry()
+bool PimDataExporterKernel::excludeImportantMailFromExpiry()
 {
     Q_ASSERT(false);
     return true;
 }
 
-Akonadi::Collection::Id PimSettingExporterKernel::lastSelectedFolder()
+Akonadi::Collection::Id PimDataExporterKernel::lastSelectedFolder()
 {
     Q_ASSERT(false);
     return Akonadi::Collection::Id();
 }
 
-void PimSettingExporterKernel::setLastSelectedFolder(Akonadi::Collection::Id col)
+void PimDataExporterKernel::setLastSelectedFolder(Akonadi::Collection::Id col)
 {
     Q_UNUSED(col);
 }
 
-void PimSettingExporterKernel::expunge(Akonadi::Collection::Id col, bool sync)
+void PimDataExporterKernel::expunge(Akonadi::Collection::Id col, bool sync)
 {
     Q_UNUSED(col);
     Q_UNUSED(sync);

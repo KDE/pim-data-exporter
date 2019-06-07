@@ -21,7 +21,7 @@
 #define PIMSETTINGEXPORTERCONSOLE_H
 
 #include <QObject>
-class PimSettingsBackupRestore;
+class PimDataBackupRestore;
 class LogInFile;
 class LogInfo;
 class PimSettingExporterConsole : public QObject
@@ -65,7 +65,7 @@ private:
     void closeLogFile();
     QString mTemplateFileName;
     QString mImportExportFileName;
-    PimSettingsBackupRestore *mPimSettingsBackupRestore = nullptr;
+    PimDataBackupRestore *mPimSettingsBackupRestore = nullptr;
     LogInFile *mLogInFile = nullptr;
     LogInfo *mLogInfo = nullptr;
     Mode mMode;

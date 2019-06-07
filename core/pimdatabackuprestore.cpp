@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingsbackuprestore.h"
+#include "pimdatabackuprestore.h"
 #include "archivestorage.h"
 #include "importexportprogressindicatorbase.h"
 
@@ -48,12 +48,12 @@
 #include <QDateTime>
 #include <QLocale>
 
-PimSettingsBackupRestore::PimSettingsBackupRestore(QObject *parent)
+PimDataBackupRestore::PimDataBackupRestore(QObject *parent)
     : QObject(parent)
 {
 }
 
-PimSettingsBackupRestore::~PimSettingsBackupRestore()
+PimDataBackupRestore::~PimDataBackupRestore()
 {
     delete mImportExportData;
     mImportExportData = nullptr;
@@ -66,17 +66,17 @@ PimSettingsBackupRestore::~PimSettingsBackupRestore()
     }
 }
 
-void PimSettingsBackupRestore::setExportedInfoFileName(const QString &filename)
+void PimDataBackupRestore::setExportedInfoFileName(const QString &filename)
 {
     mExportedInfoFileName = filename;
 }
 
-void PimSettingsBackupRestore::setStoredParameters(const QHash<Utils::AppsType, Utils::importExportParameters> &stored)
+void PimDataBackupRestore::setStoredParameters(const QHash<Utils::AppsType, Utils::importExportParameters> &stored)
 {
     mStored = stored;
 }
 
-bool PimSettingsBackupRestore::openArchive(const QString &filename, bool readWrite)
+bool PimDataBackupRestore::openArchive(const QString &filename, bool readWrite)
 {
     mArchiveStorage = new ArchiveStorage(filename, this);
     if (!mArchiveStorage->openArchive(readWrite)) {
@@ -87,7 +87,7 @@ bool PimSettingsBackupRestore::openArchive(const QString &filename, bool readWri
     return true;
 }
 
-bool PimSettingsBackupRestore::backupStart(const QString &filename)
+bool PimDataBackupRestore::backupStart(const QString &filename)
 {
     if (mStored.isEmpty()) {
         addDate();
@@ -117,7 +117,7 @@ bool PimSettingsBackupRestore::backupStart(const QString &filename)
     return true;
 }
 
-void PimSettingsBackupRestore::nextStep()
+void PimDataBackupRestore::nextStep()
 {
     ++mStoreIterator;
     Q_EMIT addEndLine();
@@ -130,7 +130,7 @@ void PimSettingsBackupRestore::nextStep()
     }
 }
 
-void PimSettingsBackupRestore::backupNextStep()
+void PimDataBackupRestore::backupNextStep()
 {
     if (mStoreIterator != mStored.constEnd()) {
         switch (mStoreIterator.key()) {
@@ -178,7 +178,7 @@ void PimSettingsBackupRestore::backupNextStep()
     }
 }
 
-void PimSettingsBackupRestore::closeArchive()
+void PimDataBackupRestore::closeArchive()
 {
     if (mArchiveStorage) {
         mArchiveStorage->closeArchive();
@@ -192,7 +192,7 @@ void PimSettingsBackupRestore::closeArchive()
     Q_EMIT updateActions(false);
 }
 
-void PimSettingsBackupRestore::backupFinished()
+void PimDataBackupRestore::backupFinished()
 {
     Q_EMIT addInfo(i18n("Backup in \'%1\' done.", mArchiveStorage->filename()));
     //At the end
@@ -201,7 +201,7 @@ void PimSettingsBackupRestore::backupFinished()
     deleteLater();
 }
 
-void PimSettingsBackupRestore::restoreNextStep()
+void PimDataBackupRestore::restoreNextStep()
 {
     if (mStoreIterator != mStored.constEnd()) {
         switch (mStoreIterator.key()) {
@@ -249,18 +249,18 @@ void PimSettingsBackupRestore::restoreNextStep()
     }
 }
 
-bool PimSettingsBackupRestore::continueToRestore()
+bool PimDataBackupRestore::continueToRestore()
 {
     return true;
 }
 
-void PimSettingsBackupRestore::addDate()
+void PimDataBackupRestore::addDate()
 {
     const QDateTime now = QDateTime::currentDateTime();
     Q_EMIT addInfo(QLatin1Char('[') + QLocale().toString((now), QLocale::ShortFormat) + QLatin1Char(']'));
 }
 
-bool PimSettingsBackupRestore::restoreStart(const QString &filename)
+bool PimDataBackupRestore::restoreStart(const QString &filename)
 {
     if (mStored.isEmpty()) {
         addDate();
@@ -295,7 +295,7 @@ bool PimSettingsBackupRestore::restoreStart(const QString &filename)
     return true;
 }
 
-void PimSettingsBackupRestore::restoreFinished()
+void PimDataBackupRestore::restoreFinished()
 {
     Q_EMIT addInfo(i18n("Restoring data from \'%1\' done.", mArchiveStorage->filename()));
     //At the end
@@ -308,24 +308,24 @@ void PimSettingsBackupRestore::restoreFinished()
     deleteLater();
 }
 
-void PimSettingsBackupRestore::executeJob()
+void PimDataBackupRestore::executeJob()
 {
     addExportProgressIndicator();
-    connect(mImportExportData, &AbstractImportExportJob::info, this, &PimSettingsBackupRestore::addInfo);
-    connect(mImportExportData, &AbstractImportExportJob::error, this, &PimSettingsBackupRestore::addError);
-    connect(mImportExportData, &AbstractImportExportJob::title, this, &PimSettingsBackupRestore::addTitle);
-    connect(mImportExportData, &AbstractImportExportJob::endLine, this, &PimSettingsBackupRestore::addEndLine);
-    connect(mImportExportData, &AbstractImportExportJob::jobFinished, this, &PimSettingsBackupRestore::jobFinished);
-    connect(mImportExportData, &AbstractImportExportJob::needSynchronizeResource, this, &PimSettingsBackupRestore::needSyncResource);
+    connect(mImportExportData, &AbstractImportExportJob::info, this, &PimDataBackupRestore::addInfo);
+    connect(mImportExportData, &AbstractImportExportJob::error, this, &PimDataBackupRestore::addError);
+    connect(mImportExportData, &AbstractImportExportJob::title, this, &PimDataBackupRestore::addTitle);
+    connect(mImportExportData, &AbstractImportExportJob::endLine, this, &PimDataBackupRestore::addEndLine);
+    connect(mImportExportData, &AbstractImportExportJob::jobFinished, this, &PimDataBackupRestore::jobFinished);
+    connect(mImportExportData, &AbstractImportExportJob::needSynchronizeResource, this, &PimDataBackupRestore::needSyncResource);
     mImportExportData->start();
 }
 
-void PimSettingsBackupRestore::addExportProgressIndicator()
+void PimDataBackupRestore::addExportProgressIndicator()
 {
     mImportExportData->setImportExportProgressIndicator(new ImportExportProgressIndicatorBase(this));
 }
 
-void PimSettingsBackupRestore::slotJobFinished()
+void PimDataBackupRestore::slotJobFinished()
 {
     ++mStoreIterator;
     Q_EMIT addEndLine();

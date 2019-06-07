@@ -22,12 +22,12 @@
 
 #include <QThread>
 class KZip;
-class PimSettingBackupThread : public QThread
+class PimDataBackupThread : public QThread
 {
     Q_OBJECT
 public:
-    explicit PimSettingBackupThread(KZip *zip, const QString &url, const QString &archivePath, const QString &archivename, QObject *parent = nullptr);
-    ~PimSettingBackupThread() override;
+    explicit PimDataBackupThread(KZip *zip, const QString &url, const QString &archivePath, const QString &archivename, QObject *parent = nullptr);
+    ~PimDataBackupThread() override;
 
 Q_SIGNALS:
     void error(const QString &str);

@@ -22,7 +22,7 @@
 
 #include <QObject>
 class KZip;
-class PimSettingBackupThread;
+class PimDataBackupThread;
 class ExportResourceArchiveJob : public QObject
 {
     Q_OBJECT
@@ -56,7 +56,7 @@ private:
     QString mArchivePath;
     QString mIdentifier;
     KZip *mZip = nullptr;
-    PimSettingBackupThread *mThread = nullptr;
+    PimDataBackupThread *mThread = nullptr;
 };
 
 #endif // EXPORTRESOURCEARCHIVEJOB_H

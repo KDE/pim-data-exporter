@@ -49,13 +49,13 @@ set(pimsettingexporter_LIB_SRCS
     ${pimsettingexporter_akregator_SRCS}
     pimsettingexportcore_debug.cpp
     abstractimportexportjob.cpp
-    pimsettingexporterkernel.cpp
+    pimdataexporterkernel.cpp
     utils.cpp
     archivestorage.cpp
     synchronizeresourcejob.cpp
-    pimsettingsbackuprestore.cpp
+    pimdatabackuprestore.cpp
     importexportprogressindicatorbase.cpp
-    pimsettingbackupthread.cpp
+    pimdatabackupthread.cpp
     exportresourcearchivejob.cpp
     pimsettingimportdatainfofile.cpp
     )

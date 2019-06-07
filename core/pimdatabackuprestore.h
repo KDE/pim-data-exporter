@@ -26,12 +26,12 @@
 class AbstractImportExportJob;
 class ArchiveStorage;
 
-class PIMSETTINGEXPORTER_EXPORT PimSettingsBackupRestore : public QObject
+class PIMSETTINGEXPORTER_EXPORT PimDataBackupRestore : public QObject
 {
     Q_OBJECT
 public:
-    explicit PimSettingsBackupRestore(QObject *parent = nullptr);
-    ~PimSettingsBackupRestore();
+    explicit PimDataBackupRestore(QObject *parent = nullptr);
+    ~PimDataBackupRestore();
 
     bool backupStart(const QString &filename);
     bool restoreStart(const QString &filename);

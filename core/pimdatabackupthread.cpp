@@ -17,14 +17,14 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "pimsettingbackupthread.h"
+#include "pimdatabackupthread.h"
 #include "pimsettingexportcore_debug.h"
 
 #include <KZip>
 #include <QTemporaryFile>
 #include <KLocalizedString>
 
-PimSettingBackupThread::PimSettingBackupThread(KZip *zip, const QString &url, const QString &archivePath, const QString &archivename, QObject *parent)
+PimDataBackupThread::PimDataBackupThread(KZip *zip, const QString &url, const QString &archivePath, const QString &archivename, QObject *parent)
     : QThread(parent)
     , mUrl(url)
     , mArchivePath(archivePath)
@@ -34,12 +34,12 @@ PimSettingBackupThread::PimSettingBackupThread(KZip *zip, const QString &url, co
     qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " PimSettingBackupThread::PimSettingBackupThread" << this;
 }
 
-PimSettingBackupThread::~PimSettingBackupThread()
+PimDataBackupThread::~PimDataBackupThread()
 {
     qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " PimSettingBackupThread::~PimSettingBackupThread()" << this;
 }
 
-void PimSettingBackupThread::run()
+void PimDataBackupThread::run()
 {
     QTemporaryFile tmp;
     tmp.open();

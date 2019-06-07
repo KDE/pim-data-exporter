@@ -31,10 +31,10 @@ namespace MailCommon {
 class FolderCollectionMonitor;
 }
 
-class PIMSETTINGEXPORTER_EXPORT PimSettingExporterKernel : public QObject, public MailCommon::IKernel, public MailCommon::ISettings
+class PIMSETTINGEXPORTER_EXPORT PimDataExporterKernel : public QObject, public MailCommon::IKernel, public MailCommon::ISettings
 {
 public:
-    explicit PimSettingExporterKernel(QObject *parent = nullptr);
+    explicit PimDataExporterKernel(QObject *parent = nullptr);
 
     KIdentityManagement::IdentityManager *identityManager() override;
     MessageComposer::MessageSender *msgSender() override;

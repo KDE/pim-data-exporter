@@ -24,7 +24,7 @@
 #include <KLocalizedString>
 
 PimSettingsBackupRestoreUI::PimSettingsBackupRestoreUI(QWidget *parentWidget, QObject *parent)
-    : PimSettingsBackupRestore(parent)
+    : PimDataBackupRestore(parent)
     , mParentWidget(parentWidget)
 {
 }

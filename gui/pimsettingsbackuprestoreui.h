@@ -20,9 +20,9 @@
 #ifndef PIMSETTINGSBACKUPRESTOREUI_H
 #define PIMSETTINGSBACKUPRESTOREUI_H
 
-#include "pimsettingsbackuprestore.h"
+#include "pimdatabackuprestore.h"
 
-class PimSettingsBackupRestoreUI : public PimSettingsBackupRestore
+class PimSettingsBackupRestoreUI : public PimDataBackupRestore
 {
     Q_OBJECT
 public:

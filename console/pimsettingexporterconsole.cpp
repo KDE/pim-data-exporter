@@ -18,20 +18,20 @@
 */
 
 #include "pimsettingexporterconsole.h"
-#include "pimsettingsbackuprestore.h"
+#include "pimdatabackuprestore.h"
 #include "pimsettingexportconsole_debug.h"
 #include "loginfile.h"
 #include "loginfo.h"
 #include "xml/templateselection.h"
 
 #include <QTimer>
-#include <pimsettingexporterkernel.h>
+#include <pimdataexporterkernel.h>
 #include <MailCommon/MailKernel>
 #include <MailCommon/FilterManager>
 
 PimSettingExporterConsole::PimSettingExporterConsole(QObject *parent)
     : QObject(parent)
-    , mPimSettingsBackupRestore(new PimSettingsBackupRestore(this))
+    , mPimSettingsBackupRestore(new PimDataBackupRestore(this))
     , mLogInFile(nullptr)
     , mLogInfo(new LogInfo(this))
     , mMode(Import)
@@ -39,7 +39,7 @@ PimSettingExporterConsole::PimSettingExporterConsole(QObject *parent)
 {
     //Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
-    PimSettingExporterKernel *kernel = new PimSettingExporterKernel(this);
+    PimDataExporterKernel *kernel = new PimDataExporterKernel(this);
     CommonKernel->registerKernelIf(kernel);   //register KernelIf early, it is used by the Filter classes
     CommonKernel->registerSettingsIf(kernel);   //SettingsIf is used in FolderTreeWidget
 
@@ -53,14 +53,14 @@ PimSettingExporterConsole::~PimSettingExporterConsole()
 
 void PimSettingExporterConsole::initializeLogInFile()
 {
-    connect(mPimSettingsBackupRestore, &PimSettingsBackupRestore::addEndLine, this, &PimSettingExporterConsole::slotAddEndLine);
-    connect(mPimSettingsBackupRestore, &PimSettingsBackupRestore::addError, this, &PimSettingExporterConsole::slotAddError);
-    connect(mPimSettingsBackupRestore, &PimSettingsBackupRestore::addInfo, this, &PimSettingExporterConsole::slotAddInfo);
-    connect(mPimSettingsBackupRestore, &PimSettingsBackupRestore::addTitle, this, &PimSettingExporterConsole::slotAddTitle);
-    connect(mPimSettingsBackupRestore, &PimSettingsBackupRestore::jobFinished, this, &PimSettingExporterConsole::slotJobFinished);
-    connect(mPimSettingsBackupRestore, &PimSettingsBackupRestore::backupDone, this, &PimSettingExporterConsole::slotBackupDone);
-    connect(mPimSettingsBackupRestore, &PimSettingsBackupRestore::jobFailed, this, &PimSettingExporterConsole::slotJobFailed);
-    connect(mPimSettingsBackupRestore, &PimSettingsBackupRestore::restoreDone, this, &PimSettingExporterConsole::slotRestoreDone);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addEndLine, this, &PimSettingExporterConsole::slotAddEndLine);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addError, this, &PimSettingExporterConsole::slotAddError);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addInfo, this, &PimSettingExporterConsole::slotAddInfo);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::addTitle, this, &PimSettingExporterConsole::slotAddTitle);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::jobFinished, this, &PimSettingExporterConsole::slotJobFinished);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::backupDone, this, &PimSettingExporterConsole::slotBackupDone);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::jobFailed, this, &PimSettingExporterConsole::slotJobFailed);
+    connect(mPimSettingsBackupRestore, &PimDataBackupRestore::restoreDone, this, &PimSettingExporterConsole::slotRestoreDone);
 }
 
 void PimSettingExporterConsole::closeLogFile()

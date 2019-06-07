@@ -26,7 +26,7 @@
 #include "trayicon/pimsettingstrayicon.h"
 
 #include "pimsettingimportdatainfofile.h"
-#include "pimsettingexporterkernel.h"
+#include "pimdataexporterkernel.h"
 #include "dialog/selectiontypedialog.h"
 #include "utils.h"
 #include "pimsettingsbackuprestoreui.h"
@@ -64,7 +64,7 @@ PimSettingExporterWindow::PimSettingExporterWindow(QWidget *parent)
 {
     //Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
-    PimSettingExporterKernel *kernel = new PimSettingExporterKernel(this);
+    PimDataExporterKernel *kernel = new PimDataExporterKernel(this);
     CommonKernel->registerKernelIf(kernel);   //register KernelIf early, it is used by the Filter classes
     CommonKernel->registerSettingsIf(kernel);   //SettingsIf is used in FolderTreeWidget
 
@@ -90,16 +90,16 @@ PimSettingExporterWindow::~PimSettingExporterWindow()
 void PimSettingExporterWindow::initializeBackupRestoreUi()
 {
     mPimSettingsBackupRestoreUI = new PimSettingsBackupRestoreUI(this, this);
-    connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestore::addInfo, this, &PimSettingExporterWindow::slotAddInfo);
-    connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestore::addEndLine, this, &PimSettingExporterWindow::slotAddEndLine);
-    connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestore::addError, this, &PimSettingExporterWindow::slotAddError);
-    connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestore::addTitle, this, &PimSettingExporterWindow::slotAddTitle);
-    connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestore::updateActions, this, &PimSettingExporterWindow::slotUpdateActions);
-    connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestore::jobFinished, this, &PimSettingExporterWindow::slotJobFinished);
-    connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestore::backupDone, this, &PimSettingExporterWindow::slotShowBackupFinishDialogInformation);
-    connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestore::jobFailed, this, &PimSettingExporterWindow::slotJobFailed);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addInfo, this, &PimSettingExporterWindow::slotAddInfo);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addEndLine, this, &PimSettingExporterWindow::slotAddEndLine);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addError, this, &PimSettingExporterWindow::slotAddError);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::addTitle, this, &PimSettingExporterWindow::slotAddTitle);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::updateActions, this, &PimSettingExporterWindow::slotUpdateActions);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::jobFinished, this, &PimSettingExporterWindow::slotJobFinished);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::backupDone, this, &PimSettingExporterWindow::slotShowBackupFinishDialogInformation);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::jobFailed, this, &PimSettingExporterWindow::slotJobFailed);
     connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestoreUI::needSyncResource, this, &PimSettingExporterWindow::slotAddResourceToSync);
-    connect(mPimSettingsBackupRestoreUI, &PimSettingsBackupRestore::restoreDone, this, &PimSettingExporterWindow::slotRestoreDone);
+    connect(mPimSettingsBackupRestoreUI, &PimDataBackupRestore::restoreDone, this, &PimSettingExporterWindow::slotRestoreDone);
 }
 
 void PimSettingExporterWindow::slotAddResourceToSync(const QString &name, const QString &identifier)

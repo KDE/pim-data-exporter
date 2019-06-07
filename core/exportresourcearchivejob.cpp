@@ -20,7 +20,7 @@
 #include "exportresourcearchivejob.h"
 #include "utils.h"
 #include "pimsettingexportcore_debug.h"
-#include <pimsettingbackupthread.h>
+#include <pimdatabackupthread.h>
 #include <KLocalizedString>
 #include <KZip>
 #include <QFileInfo>
@@ -64,10 +64,10 @@ void ExportResourceArchiveJob::setArchiveName(const QString &archiveName)
 void ExportResourceArchiveJob::start()
 {
     if (mZip) {
-        mThread = new PimSettingBackupThread(mZip, mUrl, mArchivePath, mArchiveName);
-        connect(mThread, &PimSettingBackupThread::error, this, &ExportResourceArchiveJob::error);
-        connect(mThread, &PimSettingBackupThread::info, this, &ExportResourceArchiveJob::info);
-        connect(mThread, &PimSettingBackupThread::terminated, this, &ExportResourceArchiveJob::slotTerminated);
+        mThread = new PimDataBackupThread(mZip, mUrl, mArchivePath, mArchiveName);
+        connect(mThread, &PimDataBackupThread::error, this, &ExportResourceArchiveJob::error);
+        connect(mThread, &PimDataBackupThread::info, this, &ExportResourceArchiveJob::info);
+        connect(mThread, &PimDataBackupThread::terminated, this, &ExportResourceArchiveJob::slotTerminated);
         connect(mThread, &QThread::finished, mThread, &QObject::deleteLater);
         mThread->start();
     } else {
