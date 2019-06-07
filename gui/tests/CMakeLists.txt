@@ -11,7 +11,7 @@ target_link_libraries(selectiontreewidget_gui
     KF5::MailCommon
     KF5::PimCommon
     KF5::Archive
-    pimsettingexporterprivate
+    pimdataexporterprivate
     KF5::ItemViews
     KF5::I18n
     )
@@ -24,7 +24,7 @@ target_link_libraries(showarchivestructuredialog_gui
     KF5::MailCommon
     KF5::PimCommon
     KF5::Archive
-    pimsettingexporterprivate
+    pimdataexporterprivate
     KF5::ItemViews
     KF5::I18n
     )

@@ -24,10 +24,10 @@ target_link_libraries(pimsettingexporterconfigurewidgettest Qt5::Test Qt5::Widge
 add_executable( selectiontypetreewidgettest selectiontypetreewidgettest.cpp ../widgets/selectiontypetreewidget.cpp ${pimsettingexporter_kcfg_SRCS})
 add_test(NAME selectiontypetreewidgettest COMMAND selectiontypetreewidgettest)
 ecm_mark_as_test(selectiontypetreewidgettest)
-target_link_libraries(selectiontypetreewidgettest Qt5::Test Qt5::Widgets KF5::I18n KF5::ItemViews pimsettingexporterprivate KF5::ConfigCore KF5::ConfigGui KF5::PimCommonAkonadi)
+target_link_libraries(selectiontypetreewidgettest Qt5::Test Qt5::Widgets KF5::I18n KF5::ItemViews pimdataexporterprivate KF5::ConfigCore KF5::ConfigGui KF5::PimCommonAkonadi)
 
 
 add_executable( selectiontypedialogtest selectiontypedialogtest.cpp ../widgets/selectiontypetreewidget.cpp ../dialog/selectiontypedialog.cpp ${pimsettingexporter_kcfg_SRCS})
 add_test(NAME selectiontypedialogtest COMMAND selectiontypedialogtest)
 ecm_mark_as_test(selectiontypedialogtest)
-target_link_libraries(selectiontypedialogtest Qt5::Test Qt5::Widgets KF5::I18n KF5::ItemViews pimsettingexporterprivate KF5::ConfigCore KF5::ConfigGui KF5::PimCommonAkonadi)
+target_link_libraries(selectiontypedialogtest Qt5::Test Qt5::Widgets KF5::I18n KF5::ItemViews pimdataexporterprivate KF5::ConfigCore KF5::ConfigGui KF5::PimCommonAkonadi)

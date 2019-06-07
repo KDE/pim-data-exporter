@@ -56,7 +56,7 @@ target_link_libraries(pimsettingexporter
     KF5::MailCommon
     KF5::PimCommon
     KF5::Libkdepim
-    pimsettingexporterprivate
+    pimdataexporterprivate
     KF5::Archive
     KF5::ItemViews
     KF5::KIOFileWidgets
