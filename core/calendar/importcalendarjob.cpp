@@ -29,7 +29,7 @@
 #include <KArchive>
 #include <KZip>
 
-#include "pimsettingexportcore_debug.h"
+#include "pimdataexportcore_debug.h"
 
 #include <QFile>
 #include <QDir>
@@ -73,7 +73,7 @@ void ImportCalendarJob::slotNextStep()
         } else if (type == Utils::Config) {
             restoreConfig();
         } else {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
             slotNextStep();
         }
     } else {
@@ -104,13 +104,13 @@ void ImportCalendarJob::restoreResources()
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
                     if (!file->copyTo(copyToDirName)) {
-                        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "file can not copy to " << copyToDirName;
+                        qCDebug(PIMDATAEXPORTERCORE_LOG) << "file can not copy to " << copyToDirName;
                     }
                     QString resourceName(file->name());
 
                     QString filename(file->name());
                     //TODO adapt filename otherwise it will use all the time the same filename.
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " filename :" << filename;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " filename :" << filename;
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
@@ -141,7 +141,7 @@ void ImportCalendarJob::restoreResources()
                     const QString newResource = mCreateResource->createResource(resourceTypeName, filename, settings, true);
                     infoAboutNewResource(newResource);
                     listResource << newResource;
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " newResource" << newResource;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " newResource" << newResource;
                 }
             }
         }
@@ -254,7 +254,7 @@ void ImportCalendarJob::restoreConfig()
         const QString templatePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("korganizer/templates/");
         const KArchiveDirectory *templateDir = static_cast<const KArchiveDirectory *>(templateEntry);
         if (!templateDir->copyTo(templatePath)) {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "template cannot copy to " << templatePath;
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << "template cannot copy to " << templatePath;
         }
     }
 
@@ -263,7 +263,7 @@ void ImportCalendarJob::restoreConfig()
         const QString templatePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("korganizer/designer/");
         const KArchiveDirectory *templateDir = static_cast<const KArchiveDirectory *>(designerEntry);
         if (!templateDir->copyTo(templatePath)) {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "template cannot copy to " << templatePath;
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << "template cannot copy to " << templatePath;
         }
     }
 

@@ -315,7 +315,7 @@ void PimDataExporterWindow::backupData(const QString &filename, const QString &t
         mTrayIcon->setStatus(KStatusNotifierItem::Active);
         mTrayIcon->setToolTipSubTitle(i18n("Backup in progress..."));
         if (!mPimSettingsBackupRestoreUI->backupStart(currentFileName)) {
-            qCDebug(PIMSETTINGEXPORTERGUI_LOG) << " backup Start failed";
+            qCDebug(PIMDATAEXPORTERGUI_LOG) << " backup Start failed";
         }
         mLastArchiveFileName = currentFileName;
     } else {
@@ -406,7 +406,7 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
         mTrayIcon->setStatus(KStatusNotifierItem::Active);
         mTrayIcon->setToolTipSubTitle(i18n("Restore in progress..."));
         if (!mPimSettingsBackupRestoreUI->restoreStart(currentFileName)) {
-            qCDebug(PIMSETTINGEXPORTERGUI_LOG) << " PimSettingExporterWindow restore failed";
+            qCDebug(PIMDATAEXPORTERGUI_LOG) << " PimSettingExporterWindow restore failed";
         }
     } else {
         delete dialog;

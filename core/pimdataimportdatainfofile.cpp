@@ -18,7 +18,7 @@
 */
 
 #include "pimdataimportdatainfofile.h"
-#include "pimsettingexportcore_debug.h"
+#include "pimdataexportcore_debug.h"
 #include "utils.h"
 #include <KZip>
 #include <QTemporaryDir>
@@ -48,7 +48,7 @@ QString PimDataImportDataInfoFile::importDataInfoPath()
     QString errorMsg;
     KZip *archive = Utils::openZip(mFilename, errorMsg);
     if (!archive) {
-        qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "unable to open zip file " << errorMsg;
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "unable to open zip file " << errorMsg;
     } else {
         const KArchiveEntry *informationFile = archive->directory()->entry(Utils::infoPath() + Utils::exportDataTypeFileName());
         if (informationFile && informationFile->isFile()) {
@@ -57,10 +57,10 @@ QString PimDataImportDataInfoFile::importDataInfoPath()
             if (file->copyTo(mTempDir->path())) {
                 temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();
             } else {
-                qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Impossible to copy to temporary file" << temporaryFilePath;
+                qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to copy to temporary file" << temporaryFilePath;
             }
         } else {
-            qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Old archive without exporteddata information";
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Old archive without exporteddata information";
         }
     }
     delete archive;

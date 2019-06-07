@@ -23,7 +23,7 @@
 PimDataTrayIcon::PimDataTrayIcon(QObject *parent)
     : KStatusNotifierItem(parent)
 {
-    setToolTipTitle(i18n("PimSettingExporter"));
+    setToolTipTitle(i18n("Pim Data Exporter"));
     setIconByName(QStringLiteral("kontact"));
 }
 

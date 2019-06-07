@@ -42,7 +42,7 @@ void PimDataCommandLineOption::slotActivateRequested(const QStringList &argument
         if (mParser.parse(arguments)) {
             handleCommandLine();
         } else {
-            qCDebug(PIMSETTINGEXPORTERGUI_LOG) << " Impossible to parse argument ";
+            qCDebug(PIMDATAEXPORTERGUI_LOG) << " Impossible to parse argument ";
         }
     }
 }

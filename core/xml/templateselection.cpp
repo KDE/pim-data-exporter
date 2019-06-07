@@ -18,7 +18,7 @@
 */
 
 #include "templateselection.h"
-#include "pimsettingexportcore_debug.h"
+#include "pimdataexportcore_debug.h"
 #include <QFile>
 #include <QXmlStreamWriter>
 
@@ -67,7 +67,7 @@ QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTem
     }
     QFile file(path);
     if (!file.open(QIODevice::ReadOnly|QIODevice::Text)) {
-        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Unable to load file:" << path;
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "Unable to load file:" << path;
         return {};
     } else {
         mStreamReader = new QXmlStreamReader(&file);
@@ -105,10 +105,10 @@ QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTem
                 }
             }
         } else {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Toplevel xml is not correct";
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << "Toplevel xml is not correct";
         }
     } else {
-        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Impossible to parse file";
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "Impossible to parse file";
     }
 
     return value;
@@ -186,7 +186,7 @@ void TemplateSelection::createTemplate(const QHash<Utils::AppsType, Utils::impor
             mStreamWriter->writeEndElement();
             break;
         case Utils::Unknown:
-            qCCritical(PIMSETTINGEXPORTERCORE_LOG) << "Code must not use this enum here";
+            qCCritical(PIMDATAEXPORTERCORE_LOG) << "Code must not use this enum here";
             break;
         }
         ++i;

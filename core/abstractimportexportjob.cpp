@@ -153,13 +153,13 @@ void AbstractImportExportJob::overwriteDirectory(const QString &path, const KArc
         if (overwriteDirectoryMessageBox(path)) {
             const KArchiveDirectory *dirEntry = static_cast<const KArchiveDirectory *>(entry);
             if (!dirEntry->copyTo(path)) {
-                qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "directory cannot overwrite to " << path;
+                qCDebug(PIMDATAEXPORTERCORE_LOG) << "directory cannot overwrite to " << path;
             }
         }
     } else {
         const KArchiveDirectory *dirEntry = static_cast<const KArchiveDirectory *>(entry);
         if (dirEntry->copyTo(path)) {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "directory cannot overwrite to " << path;
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << "directory cannot overwrite to " << path;
         }
     }
 }
@@ -204,7 +204,7 @@ void AbstractImportExportJob::storeArchiveInfoResources(const KArchiveDirectory 
                 files.debug();
                 mListResourceFile.append(files);
             } else {
-                qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " Problem in archive. number of file " << lst.count();
+                qCDebug(PIMDATAEXPORTERCORE_LOG) << " Problem in archive. number of file " << lst.count();
             }
         }
     }
@@ -288,7 +288,7 @@ Akonadi::Collection::Id AbstractImportExportJob::convertPathToId(const QString &
 void AbstractImportExportJob::initializeImportJob()
 {
     if (mTempDir) {
-        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " initializeImportJob already called";
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << " initializeImportJob already called";
     } else {
         mTempDir = new QTemporaryDir();
         mTempDirName = mTempDir->path();
@@ -302,7 +302,7 @@ void AbstractImportExportJob::copyToDirectory(const KArchiveEntry *entry, const 
 {
     const KArchiveDirectory *subfolderDir = static_cast<const KArchiveDirectory *>(entry);
     if (!subfolderDir->copyTo(dest)) {
-        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "directory cannot copy to " << dest;
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "directory cannot copy to " << dest;
     }
     Q_EMIT info(i18n("\"%1\" was copied.", dest));
 }
@@ -313,18 +313,18 @@ void AbstractImportExportJob::copyToFile(const KArchiveFile *archivefile, const 
     const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
     const bool created = dir.mkpath(copyToDirName);
     if (!created) {
-        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " directory :" << prefix << " not created";
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << " directory :" << prefix << " not created";
     }
 
     if (!archivefile->copyTo(copyToDirName)) {
-        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "file " << filename << " can not copy to " << dest;
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "file " << filename << " can not copy to " << dest;
     }
     QFile file;
     file.setFileName(copyToDirName + QLatin1Char('/') + filename);
 
     //QFile doesn't overwrite => remove old file before
-    //qCDebug(PIMSETTINGEXPORTERCORE_LOG)<<" dest "<<dest;
-    //qCDebug(PIMSETTINGEXPORTERCORE_LOG)<<" file "<<file.fileName();
+    //qCDebug(PIMDATAEXPORTERCORE_LOG)<<" dest "<<dest;
+    //qCDebug(PIMDATAEXPORTERCORE_LOG)<<" file "<<file.fileName();
     QFile destination(dest);
     if (destination.exists()) {
         destination.remove();
@@ -394,7 +394,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
 
                     QString filename(file->name());
                     //TODO adapt filename otherwise it will use all the time the same filename.
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " filename :" << filename;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " filename :" << filename;
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
@@ -429,7 +429,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                     const QString newResource = mCreateResource->createResource(resourceBaseName, filename, settings);
                     infoAboutNewResource(newResource);
                     resourceToSync << newResource;
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " newResource" << newResource;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " newResource" << newResource;
                 }
             }
         }

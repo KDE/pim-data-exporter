@@ -19,7 +19,7 @@
 
 #include "pimdataexporterconsole.h"
 #include "pimdatabackuprestore.h"
-#include "pimsettingexportconsole_debug.h"
+#include "pimdataexportconsole_debug.h"
 #include "loginfile.h"
 #include "loginfo.h"
 #include "xml/templateselection.h"
@@ -71,28 +71,28 @@ void PimDataExporterConsole::closeLogFile()
 
 void PimDataExporterConsole::slotRestoreDone()
 {
-    qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Restore Done";
+    qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Restore Done";
     closeLogFile();
     QTimer::singleShot(0, this, &PimDataExporterConsole::finished);
 }
 
 void PimDataExporterConsole::slotJobFailed()
 {
-    qCWarning(PIMSETTINGEXPORTERCONSOLE_LOG) << "job failed";
+    qCWarning(PIMDATAEXPORTERCONSOLE_LOG) << "job failed";
     closeLogFile();
     mPimSettingsBackupRestore->closeArchive();
 }
 
 void PimDataExporterConsole::slotBackupDone()
 {
-    qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Backup Done";
+    qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Backup Done";
     closeLogFile();
     QTimer::singleShot(0, this, &PimDataExporterConsole::finished);
 }
 
 void PimDataExporterConsole::slotJobFinished()
 {
-    qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "job finished";
+    qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "job finished";
     mPimSettingsBackupRestore->nextStep();
 }
 
@@ -136,7 +136,7 @@ QString PimDataExporterConsole::importExportFileName() const
 void PimDataExporterConsole::setImportExportFileName(const QString &filename)
 {
     if (mInProgress) {
-        qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
+        qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
         return;
     }
     mImportExportFileName = filename;
@@ -153,13 +153,13 @@ void PimDataExporterConsole::start()
     switch (mMode) {
     case Import:
         if (!mPimSettingsBackupRestore->restoreStart(mImportExportFileName)) {
-            qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Unable to start restore.";
+            qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Unable to start restore.";
             QTimer::singleShot(0, this, &PimDataExporterConsole::finished);
         }
         break;
     case Export:
         if (!mPimSettingsBackupRestore->backupStart(mImportExportFileName)) {
-            qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Unable to start backup.";
+            qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Unable to start backup.";
             QTimer::singleShot(0, this, &PimDataExporterConsole::finished);
         }
         break;
@@ -174,7 +174,7 @@ PimDataExporterConsole::Mode PimDataExporterConsole::mode() const
 void PimDataExporterConsole::setMode(Mode mode)
 {
     if (mInProgress) {
-        qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
+        qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
         return;
     }
     mMode = mode;
@@ -183,7 +183,7 @@ void PimDataExporterConsole::setMode(Mode mode)
 void PimDataExporterConsole::setLogFileName(const QString &logFileName)
 {
     if (mInProgress) {
-        qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
+        qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
         return;
     }
     if (!mLogInFile) {
@@ -195,7 +195,7 @@ void PimDataExporterConsole::setLogFileName(const QString &logFileName)
 void PimDataExporterConsole::setTemplateFileName(const QString &templateFileName)
 {
     if (mInProgress) {
-        qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
+        qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Already in progress. We can't change it.";
         return;
     }
     mTemplateFileName = templateFileName;

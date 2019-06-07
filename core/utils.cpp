@@ -120,7 +120,7 @@ QString Utils::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const Q
     if (!newUrl.contains(QDir::homePath())) {
         QFileInfo fileInfo(newUrl);
         fileInfo.fileName();
-        //qCDebug(PIMSETTINGEXPORTERCORE_LOG)<<" url "<<url.path();
+        //qCDebug(PIMDATAEXPORTERCORE_LOG)<<" url "<<url.path();
         QString currentPath = QDir::homePath() + QLatin1Char('/') + storedData;
         newUrl = (currentPath + QLatin1Char('/') + fileInfo.fileName());
         if (!QDir(currentPath).exists()) {
@@ -243,7 +243,7 @@ QString Utils::storeResources(KZip *archive, const QString &identifier, const QS
 {
     const QString agentFileName = identifier + QLatin1String("rc");
     const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
-    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "configFileName " << configFileName << "agentFileName " << configFileName;
+    qCDebug(PIMDATAEXPORTERCORE_LOG) << "configFileName " << configFileName << "agentFileName " << configFileName;
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
     QTemporaryFile tmp;
@@ -307,10 +307,10 @@ void Utils::storeDataExportInfo(const QString &filename, KZip *archive)
     if (QFileInfo::exists(filename)) {
         const bool fileAdded = archive->addLocalFile(filename, Utils::infoPath() + Utils::exportDataTypeFileName());
         if (fileAdded) {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "exporteddata file can not add to archive" << filename << " to " << Utils::infoPath() + Utils::exportDataTypeFileName();
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << "exporteddata file can not add to archive" << filename << " to " << Utils::infoPath() + Utils::exportDataTypeFileName();
         }
     } else {
-        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "exported file was not created" << filename;
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "exported file was not created" << filename;
     }
 }
 
@@ -321,7 +321,7 @@ void Utils::addVersion(KZip *archive)
     const bool fileAdded = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + QStringLiteral("VERSION_%1").arg(currentArchiveVersion()));
     if (!fileAdded) {
         //TODO add i18n ?
-        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "version file can not add to archive";
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "version file can not add to archive";
     }
 }
 
@@ -357,7 +357,7 @@ QString Utils::appTypeToI18n(AppsType type)
     case Unknown:
         break;
     }
-    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " type unknown " << type;
+    qCDebug(PIMDATAEXPORTERCORE_LOG) << " type unknown " << type;
     return QString();
 }
 
@@ -379,6 +379,6 @@ QString Utils::storedTypeToI18n(StoredType type)
     case Data:
         return i18n("Data");
     }
-    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " type unknown " << type;
+    qCDebug(PIMDATAEXPORTERCORE_LOG) << " type unknown " << type;
     return QString();
 }

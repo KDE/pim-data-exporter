@@ -70,7 +70,7 @@ void ImportAlarmJob::slotNextStep()
         } else if (type == Utils::Config) {
             restoreConfig();
         } else {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
             slotNextStep();
         }
     } else {
@@ -104,7 +104,7 @@ void ImportAlarmJob::restoreResources()
 
                     QString filename(file->name());
                     //TODO adapt filename otherwise it will use all the time the same filename.
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " filename :" << filename;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " filename :" << filename;
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
@@ -134,7 +134,7 @@ void ImportAlarmJob::restoreResources()
                     const QString newResource = mCreateResource->createResource(archiveNameType, filename, settings, true);
                     infoAboutNewResource(newResource);
                     listResource << newResource;
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " newResource" << newResource;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " newResource" << newResource;
                 }
             }
         }

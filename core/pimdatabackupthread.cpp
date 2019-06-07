@@ -18,7 +18,7 @@
 */
 
 #include "pimdatabackupthread.h"
-#include "pimsettingexportcore_debug.h"
+#include "pimdataexportcore_debug.h"
 
 #include <KZip>
 #include <QTemporaryFile>
@@ -31,12 +31,12 @@ PimDataBackupThread::PimDataBackupThread(KZip *zip, const QString &url, const QS
     , mArchiveName(archivename)
     , mZip(zip)
 {
-    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " PimSettingBackupThread::PimSettingBackupThread" << this;
+    qCDebug(PIMDATAEXPORTERCORE_LOG) << " PimSettingBackupThread::PimSettingBackupThread" << this;
 }
 
 PimDataBackupThread::~PimDataBackupThread()
 {
-    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " PimSettingBackupThread::~PimSettingBackupThread()" << this;
+    qCDebug(PIMDATAEXPORTERCORE_LOG) << " PimSettingBackupThread::~PimSettingBackupThread()" << this;
 }
 
 void PimDataBackupThread::run()

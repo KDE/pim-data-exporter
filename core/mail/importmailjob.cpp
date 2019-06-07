@@ -38,7 +38,7 @@
 #include <KMessageBox>
 #include <KArchiveFile>
 #include <KZip>
-#include "pimsettingexportcore_debug.h"
+#include "pimdataexportcore_debug.h"
 
 #include <AkonadiCore/agenttype.h>
 #include <AkonadiCore/agentmanager.h>
@@ -100,7 +100,7 @@ void ImportMailJob::slotNextStep()
         } else if (type == Utils::Config) {
             restoreConfig();
         } else {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
             slotNextStep();
         }
     } else {
@@ -154,7 +154,7 @@ void ImportMailJob::storeMailArchiveResource(const KArchiveDirectory *dir, const
                 files.debug();
                 mListResourceFile.append(files);
             } else {
-                qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " Problem in archive. number of file " << lst.count();
+                qCDebug(PIMDATAEXPORTERCORE_LOG) << " Problem in archive. number of file " << lst.count();
             }
         }
     }
@@ -175,7 +175,7 @@ void ImportMailJob::importMailTransport(const QString &tempDirName)
         KConfigGroup group = transportConfig->group(transport);
         const int transportId = group.readEntry(QStringLiteral("id"), -1);
         if (transportId == -1) {
-            qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Mail Transport is incorrect. Missing Id";
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Mail Transport is incorrect. Missing Id";
             continue;
         }
         const QString identifierStr(QStringLiteral("identifier"));
@@ -192,10 +192,10 @@ void ImportMailJob::importMailTransport(const QString &tempDirName)
                     mt->setIdentifier(identifierValue);
                     addMailTransport(mt, defaultTransport, transportId);
                 } else {
-                    qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Unknown identifier type " << identifierValue;
+                    qCWarning(PIMDATAEXPORTERCORE_LOG) << "Unknown identifier type " << identifierValue;
                 }
             } else {
-                qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "identifier value is empty";
+                qCWarning(PIMDATAEXPORTERCORE_LOG) << "identifier value is empty";
             }
         } else {
             MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
@@ -251,10 +251,10 @@ void ImportMailJob::importMailTransport(const QString &tempDirName)
                     } else if (encryptionType == QLatin1String("None")) {
                         mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::None));
                     } else {
-                        qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Unknown encryption type " << encryptionType;
+                        qCWarning(PIMDATAEXPORTERCORE_LOG) << "Unknown encryption type " << encryptionType;
                     }
                 } else {
-                    qCWarning(PIMSETTINGEXPORTERCORE_LOG) << "Encryption type is empty. It's a bug";
+                    qCWarning(PIMDATAEXPORTERCORE_LOG) << "Encryption type is empty. It's a bug";
                 }
                 mt->setEncryption(group.readEntry(encryptionStr, 1)); //TODO verify
             }
@@ -460,7 +460,7 @@ void ImportMailJob::restoreResources()
                         if (collection != -1) {
                             settings.insert(QStringLiteral("TrashCollection"), collection);
                         } else {
-                            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " Use default trash folder";
+                            qCDebug(PIMDATAEXPORTERCORE_LOG) << " Use default trash folder";
                         }
                     }
 
@@ -503,7 +503,7 @@ void ImportMailJob::restoreResources()
                         infoAboutNewResource(newResource);
                     }
                 } else {
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " problem with resource";
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " problem with resource";
                 }
             }
         }
@@ -535,7 +535,7 @@ void ImportMailJob::restoreMails()
             file->copyTo(copyToDirName);
             QString resourceName(file->name());
             QString filename(file->name());
-            //qCDebug(PIMSETTINGEXPORTERCORE_LOG)<<" filename "<<filename<<" resourceName"<<resourceName;
+            //qCDebug(PIMDATAEXPORTERCORE_LOG)<<" filename "<<filename<<" resourceName"<<resourceName;
             KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
             const QString newUrl = Utils::adaptResourcePath(resourceConfig, storeMails());
@@ -627,9 +627,9 @@ void ImportMailJob::restoreMails()
                 }
                 listResourceToSync << newResource;
             } else {
-                qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " resource name not supported " << resourceName;
+                qCDebug(PIMDATAEXPORTERCORE_LOG) << " resource name not supported " << resourceName;
             }
-            //qCDebug(PIMSETTINGEXPORTERCORE_LOG)<<"url "<<url;
+            //qCDebug(PIMDATAEXPORTERCORE_LOG)<<"url "<<url;
         }
     }
     Q_EMIT info(i18n("Mails restored."));

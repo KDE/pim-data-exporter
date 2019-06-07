@@ -62,7 +62,7 @@ void ImportNotesJob::slotNextStep()
         } else if (type == Utils::Data) {
             restoreData();
         } else {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
             slotNextStep();
         }
     } else {
@@ -155,7 +155,7 @@ void ImportNotesJob::restoreResources()
 
                     QString filename(file->name());
                     //TODO adapt filename otherwise it will use all the time the same filename.
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " filename :" << filename;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " filename :" << filename;
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
@@ -183,7 +183,7 @@ void ImportNotesJob::restoreResources()
 
                     const QString newResource = mCreateResource->createResource(QStringLiteral("akonadi_akonotes_resource"), filename, settings, true);
                     infoAboutNewResource(newResource);
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " newResource" << newResource;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " newResource" << newResource;
                     listResource << newResource;
                 }
             }

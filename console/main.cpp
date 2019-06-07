@@ -19,7 +19,7 @@
 
 #include "pimsettingexporter-version.h"
 #include "pimdataexporterconsole.h"
-#include "pimsettingexportconsole_debug.h"
+#include "pimdataexportconsole_debug.h"
 #include <kaboutdata.h>
 #include <KLocalizedString>
 
@@ -62,21 +62,21 @@ int main(int argc, char *argv[])
     QString templateFile;
     if (parser.isSet(QStringLiteral("template"))) {
         templateFile = parser.value(QStringLiteral("template"));
-        qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Template file " << templateFile;
+        qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Template file " << templateFile;
     }
     if (parser.isSet(QStringLiteral("logfile"))) {
         logFile = parser.value(QStringLiteral("logfile"));
-        qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Log file " << logFile;
+        qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Log file " << logFile;
     }
 
     PimDataExporterConsole *console = new PimDataExporterConsole;
     if (!importFile.isEmpty()) {
         console->setMode(PimDataExporterConsole::Import);
-        qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Import Mode" << importFile;
+        qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Import Mode" << importFile;
         console->setImportExportFileName(importFile);
     } else if (!exportFile.isEmpty()) {
         console->setMode(PimDataExporterConsole::Export);
-        qCDebug(PIMSETTINGEXPORTERCONSOLE_LOG) << "Export Mode" << exportFile;
+        qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Export Mode" << exportFile;
         console->setImportExportFileName(exportFile);
     }
     if (!logFile.isEmpty()) {

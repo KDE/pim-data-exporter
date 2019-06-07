@@ -110,7 +110,7 @@ void ExportCalendarJob::slotWriteNextArchiveResource()
                     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportCalendarJob::slotCalendarJobTerminated);
                     resourceJob->start();
                 } else {
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Url is empty for " << identifier;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
                     QTimer::singleShot(0, this, &ExportCalendarJob::slotCalendarJobTerminated);
                 }
             } else {

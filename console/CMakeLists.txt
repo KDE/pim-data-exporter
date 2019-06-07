@@ -11,7 +11,7 @@ set(pimsettingexporterconsole_SRCS
     loginfile.cpp
     main.cpp)
 
-ecm_qt_declare_logging_category(pimsettingexporterconsole_SRCS HEADER pimsettingexportconsole_debug.h IDENTIFIER PIMSETTINGEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimsettingexporterconsole)
+ecm_qt_declare_logging_category(pimsettingexporterconsole_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole)
 
 add_executable(pimsettingexporterconsole ${pimsettingexporterconsole_SRCS})
 

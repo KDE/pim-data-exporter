@@ -18,7 +18,7 @@
 */
 
 #include "loginfile.h"
-#include "pimsettingexportconsole_debug.h"
+#include "pimdataexportconsole_debug.h"
 
 #include <QFile>
 
@@ -48,7 +48,7 @@ void LogInFile::setFileName(const QString &fileName)
         if (!mFile) {
             mFile = new QFile(mFileName);
             if (!mFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
-                qCWarning(PIMSETTINGEXPORTERCONSOLE_LOG) << "Impossible to open filename " << mFileName;
+                qCWarning(PIMDATAEXPORTERCONSOLE_LOG) << "Impossible to open filename " << mFileName;
                 return;
             }
         }

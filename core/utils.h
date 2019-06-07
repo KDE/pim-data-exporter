@@ -23,7 +23,7 @@
 #include <QString>
 #include <QUrl>
 #include <KSharedConfig>
-#include "pimsettingexportcore_debug.h"
+#include "pimdataexportcore_debug.h"
 class KZip;
 namespace Akonadi {
 class AgentInstance;
@@ -35,7 +35,7 @@ struct resourceFiles {
     QString akonadiAgentConfigFile;
     void debug() const
     {
-        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " akonadiconfigfile :" << akonadiConfigFile << " akonadiResources:" << akonadiResources << " akonadiAgentConfigFile:" << akonadiAgentConfigFile;
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << " akonadiconfigfile :" << akonadiConfigFile << " akonadiResources:" << akonadiResources << " akonadiAgentConfigFile:" << akonadiAgentConfigFile;
     }
 };
 

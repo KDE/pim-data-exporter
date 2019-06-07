@@ -44,7 +44,7 @@
 #include <KMessageBox>
 #include <QFile>
 
-#include "pimsettingexportcore_debug.h"
+#include "pimdataexportcore_debug.h"
 #include <QDateTime>
 #include <QLocale>
 
@@ -61,7 +61,7 @@ PimDataBackupRestore::~PimDataBackupRestore()
     if (f.exists()) {
         const bool removeFile = f.remove();
         if (!removeFile) {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Impossible to remove exportedfile info" << mExportedInfoFileName;
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << "Impossible to remove exportedfile info" << mExportedInfoFileName;
         }
     }
 }
@@ -284,7 +284,7 @@ bool PimDataBackupRestore::restoreStart(const QString &filename)
             return false;
         }
     }
-    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " version " << version;
+    qCDebug(PIMDATAEXPORTERCORE_LOG) << " version " << version;
     AbstractImportExportJob::setArchiveVersion(version);
 
     addDate();

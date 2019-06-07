@@ -36,7 +36,7 @@
 #include <QTemporaryFile>
 
 #include <KProcess>
-#include "pimsettingexportcore_debug.h"
+#include "pimdataexportcore_debug.h"
 
 #include <QFile>
 #include <QDir>
@@ -173,7 +173,7 @@ void ExportMailJob::slotWriteNextArchiveResource()
                             connect(this, &ExportMailJob::taskCanceled, resourceJob, &ExportResourceArchiveJob::slotTaskCanceled);
                             resourceJob->start();
                         } else {
-                            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Url is empty for " << identifier;
+                            qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
                             QTimer::singleShot(0, this, &ExportMailJob::slotMailsJobTerminated);
                         }
                     } else {
@@ -256,7 +256,7 @@ void ExportMailJob::backupResources()
                         Q_EMIT error(errorStr);
                     }
                 } else {
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " resource \"" << identifier << "\" will not store";
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " resource \"" << identifier << "\" will not store";
                 }
             }
         }

@@ -58,7 +58,7 @@ void ImportAkregatorJob::slotNextStep()
         } else if (type == Utils::Data) {
             restoreData();
         } else {
-            qCDebug(PIMSETTINGEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
             slotNextStep();
         }
     } else {

@@ -109,7 +109,7 @@ void ExportAlarmJob::slotWriteNextArchiveResource()
                     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAlarmJob::slotAlarmJobTerminated);
                     resourceJob->start();
                 } else {
-                    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "Url is empty for " << identifier;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
                     QTimer::singleShot(0, this, &ExportAlarmJob::slotAlarmJobTerminated);
                 }
             } else {

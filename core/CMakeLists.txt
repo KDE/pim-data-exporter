@@ -47,7 +47,6 @@ set(pimdataexporter_LIB_SRCS
     ${pimdataexporter_addressbook_SRCS}
     ${pimdataexporter_jot_SRCS}
     ${pimdataexporter_akregator_SRCS}
-    pimsettingexportcore_debug.cpp
     abstractimportexportjob.cpp
     pimdataexporterkernel.cpp
     utils.cpp
@@ -60,7 +59,7 @@ set(pimdataexporter_LIB_SRCS
     pimdataimportdatainfofile.cpp
     )
 
-ecm_qt_declare_logging_category(pimdataexporter_LIB_SRCS HEADER pimsettingexportcore_debug.h IDENTIFIER PIMSETTINGEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore)
+ecm_qt_declare_logging_category(pimdataexporter_LIB_SRCS HEADER pimdataexportcore_debug.h IDENTIFIER PIMDATAEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore)
 
 add_library(pimdataexporterprivate ${pimdataexporter_LIB_SRCS})
 generate_export_header(pimdataexporterprivate BASE_NAME pimdataexporter)

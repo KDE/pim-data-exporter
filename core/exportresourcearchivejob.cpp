@@ -19,7 +19,7 @@
 
 #include "exportresourcearchivejob.h"
 #include "utils.h"
-#include "pimsettingexportcore_debug.h"
+#include "pimdataexportcore_debug.h"
 #include <pimdatabackupthread.h>
 #include <KLocalizedString>
 #include <KZip>
@@ -71,7 +71,7 @@ void ExportResourceArchiveJob::start()
         connect(mThread, &QThread::finished, mThread, &QObject::deleteLater);
         mThread->start();
     } else {
-        qCDebug(PIMSETTINGEXPORTERCORE_LOG) << "zip not defined !";
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "zip not defined !";
         finished();
     }
 }
@@ -100,7 +100,7 @@ void ExportResourceArchiveJob::slotTerminated(bool success)
 
 void ExportResourceArchiveJob::slotTaskCanceled()
 {
-    qCDebug(PIMSETTINGEXPORTERCORE_LOG) << " void ExportResourceArchiveJob::slotTaskCanceled()";
+    qCDebug(PIMDATAEXPORTERCORE_LOG) << " void ExportResourceArchiveJob::slotTaskCanceled()";
     //TODO
     if (mThread) {
         mThread->exit();

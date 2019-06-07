@@ -1,4 +1,4 @@
-org.kde.pim.pimsettingexportercore pimsettingexporter (pimsettingexporter lib core) IDENTIFIER [PIMSETTINGEXPORTERCORE_LOG]
-org.kde.pim.pimsettingexportergui pimsettingexporter (pimsettingexporter gui) IDENTIFIER [PIMSETTINGEXPORTERGUI_LOG]
-org.kde.pim.pimsettingexporterconsole pimsettingexporter (pimsettingexporter console) IDENTIFIER [PIMSETTINGEXPORTERCONSOLE_LOG]
+org.kde.pim.pimdataexportercore pimdataexporter (pimdataexporter lib core) IDENTIFIER [PIMDATAEXPORTERCORE_LOG]
+org.kde.pim.pimdataexportergui pimdataexporter (pimdataexporter gui) IDENTIFIER [PIMDATAEXPORTERGUI_LOG]
+org.kde.pim.pimdataexporterconsole pimdataexporter (pimdataexporter console) IDENTIFIER [PIMDATAEXPORTERCONSOLE_LOG]
 
