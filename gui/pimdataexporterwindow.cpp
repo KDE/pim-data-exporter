@@ -406,7 +406,7 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
         mTrayIcon->setStatus(KStatusNotifierItem::Active);
         mTrayIcon->setToolTipSubTitle(i18n("Restore in progress..."));
         if (!mPimDataBackupRestoreUI->restoreStart(currentFileName)) {
-            qCDebug(PIMDATAEXPORTERGUI_LOG) << " PimSettingExporterWindow restore failed";
+            qCDebug(PIMDATAEXPORTERGUI_LOG) << " PimDataExporterWindow restore failed";
         }
     } else {
         delete dialog;
