@@ -69,7 +69,7 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     CommonKernel->registerSettingsIf(kernel);   //SettingsIf is used in FolderTreeWidget
 
     setupActions(true);
-    setupGUI(Keys | StatusBar | Save | Create, QStringLiteral("pimsettingexporter.rc"));
+    setupGUI(Keys | StatusBar | Save | Create, QStringLiteral("pimdataexporter.rc"));
     mLogWidget = new LogWidget(this);
 
     setCentralWidget(mLogWidget);

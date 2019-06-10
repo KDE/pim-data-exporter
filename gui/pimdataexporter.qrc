@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/kxmlgui5/pimsettingexporter">
+    <qresource prefix="/kxmlgui5/pimdataexporter">
         <file>pimdataexporter.rc</file>
     </qresource>
     <qresource prefix="/structure">
