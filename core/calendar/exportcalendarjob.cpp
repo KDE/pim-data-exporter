@@ -149,6 +149,13 @@ void ExportCalendarJob::backupConfig()
             Utils::convertCollectionListToRealPath(group, selectionKey);
         }
 
+        const QString collectionTreeViewStr(QStringLiteral("CollectionTreeView"));
+        if (korganizerConfig->hasGroup(collectionTreeViewStr)) {
+            KConfigGroup group = korganizerConfig->group(collectionTreeViewStr);
+            const QString selectionKey(QStringLiteral("Expansion"));
+            Utils::convertCollectionListToRealPath(group, selectionKey);
+        }
+
         korganizerConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), korganizerStr);
         delete korganizerConfig;
@@ -156,6 +163,7 @@ void ExportCalendarJob::backupConfig()
 
     backupConfigFile(QStringLiteral("calendar_printing.rc"));
     backupConfigFile(QStringLiteral("korgacrc"));
+    //TODO migrate collection id too here
     backupConfigFile(QStringLiteral("eventviewsrc"));
 
     const QString freebusyurlsStr(QStringLiteral("korganizer/freebusyurls"));
