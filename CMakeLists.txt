@@ -99,7 +99,7 @@ add_subdirectory(core)
 add_subdirectory(gui)
 add_subdirectory(console)
 
-install( FILES pimsettingexporter.renamecategories pimsettingexporter.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+install( FILES pimdataexporter.renamecategories pimdataexporter.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
 install(FILES org.kde.pimsettingexporter.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 
