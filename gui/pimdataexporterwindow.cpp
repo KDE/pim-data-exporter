@@ -170,7 +170,7 @@ void PimDataExporterWindow::showFinishInformation()
 {
     KMessageBox::information(
         this,
-        i18n("For restoring data, you must use \"pimsettingexporter\". "
+        i18n("For restoring data, you must use \"pimdataexporter\". "
              "Be careful as it can overwrite your existing settings and data."),
         i18n("Backup"),
         QStringLiteral("setProgressDialogLabelBackupInfos"));
@@ -370,7 +370,7 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
             = QFileDialog::getOpenFileName(
             this,
             i18n("Restore backup"),
-            KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")),
+            KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimdataexporter")),
                                      recentDirClass).toLocalFile(),
             QStringLiteral("%1 (*.zip)").arg(i18n("Zip File")));
         if (currentFileName.isEmpty()) {

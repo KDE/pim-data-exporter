@@ -84,7 +84,7 @@ find_package(KF5AkonadiNotes ${AKONADINOTES_LIB_VERSION} CONFIG REQUIRED)
 
 include_directories(${pim-data-exporter_SOURCE_DIR} ${pim-data-exporter_BINARY_DIR})
 
-add_definitions(-DTRANSLATION_DOMAIN=\"pimsettingexporter\")
+add_definitions(-DTRANSLATION_DOMAIN=\"pimdataexporter\")
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 
@@ -100,7 +100,7 @@ add_subdirectory(gui)
 add_subdirectory(console)
 
 install( FILES pimdataexporter.renamecategories pimdataexporter.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
-install(FILES org.kde.pimsettingexporter.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES org.kde.pimdataexporter.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 
 add_subdirectory(doc)

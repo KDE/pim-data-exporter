@@ -70,7 +70,7 @@
   <url type="help">https://docs.kde.org/?application=pimsettingexporter</url>
   <url type="donation">https://www.kde.org/community/donations</url>
   <provides>
-    <binary>pimsettingexporter</binary>
+    <binary>pimdataexporter</binary>
   </provides>
   <project_group>KDE</project_group>
   <screenshots>

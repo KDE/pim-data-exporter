@@ -47,9 +47,9 @@ qt5_add_resources(pimdataexporter_SRCS pimdataexporter.qrc)
 
 ecm_qt_declare_logging_category(pimdataexporter_SRCS HEADER pimdataexportgui_debug.h IDENTIFIER PIMDATAEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimdataexportergui)
 
-add_executable(pimsettingexporter ${pimdataexporter_SRCS})
+add_executable(pimdataexporter ${pimdataexporter_SRCS})
 
-target_link_libraries(pimsettingexporter
+target_link_libraries(pimdataexporter
     PRIVATE
     KF5::XmlGui
     KF5::DBusAddons
@@ -67,9 +67,9 @@ target_link_libraries(pimsettingexporter
 
 add_subdirectory(kconf_update)
 
-install(TARGETS pimsettingexporter ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS pimdataexporter ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
-install(PROGRAMS org.kde.pimsettingexporter.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(PROGRAMS org.kde.pimdataexporter.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
 install(FILES settings/pimdataexporterglobalconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 
