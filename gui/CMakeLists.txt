@@ -43,7 +43,7 @@ set(pimdataexporter_SRCS
     pimdatacommandlineoption.cpp
     main.cpp)
 
-qt5_add_resources(pimdataexporter_SRCS pimsettingexporter.qrc)
+qt5_add_resources(pimdataexporter_SRCS pimdataexporter.qrc)
 
 ecm_qt_declare_logging_category(pimdataexporter_SRCS HEADER pimdataexportgui_debug.h IDENTIFIER PIMDATAEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimdataexportergui)
 
