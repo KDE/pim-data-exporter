@@ -35,6 +35,7 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <QTimer>
+#include <QColor>
 
 namespace {
 inline const QString storeCalendar()
@@ -218,6 +219,20 @@ void ImportCalendarJob::restoreConfig()
         }
     }
 
+    const QString eventviewStr(QStringLiteral("eventviewsrc"));
+    const KArchiveEntry *eventviewentry = mArchiveDirectory->entry(Utils::configsPath() + eventviewStr);
+    if (eventviewentry && eventviewentry->isFile()) {
+        const KArchiveFile *eventviewrcFile = static_cast<const KArchiveFile *>(eventviewentry);
+        const QString eventviewrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + eventviewStr;
+        if (QFileInfo::exists(eventviewrc)) {
+            if (overwriteConfigMessageBox(eventviewStr)) {
+                importeventViewConfig(eventviewrcFile, eventviewrc, eventviewStr, Utils::configsPath());
+            }
+        } else {
+            importeventViewConfig(eventviewrcFile, eventviewrc, eventviewStr, Utils::configsPath());
+        }
+    }
+
     const QString korgacStr(QStringLiteral("korgacrc"));
     const KArchiveEntry *korgacrcentry = mArchiveDirectory->entry(Utils::configsPath() + korgacStr);
     if (korgacrcentry && korgacrcentry->isFile()) {
@@ -296,4 +311,27 @@ void ImportCalendarJob::importkorganizerConfig(const KArchiveFile *file, const Q
 
 
     korganizerConfig->sync();
+}
+
+void ImportCalendarJob::importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
+{
+    copyToFile(file, config, filename, prefix);
+    KSharedConfig::Ptr eventviewConfig = KSharedConfig::openConfig(config);
+
+    const QString resourceColorStr(QStringLiteral("Resources Colors"));
+    if (eventviewConfig->hasGroup(resourceColorStr)) {
+        KConfigGroup group = eventviewConfig->group(resourceColorStr);
+        const QStringList keyList = group.keyList();
+        for (const QString &key : keyList) {
+            const Akonadi::Collection::Id id = convertPathToId(key);
+            if (id != -1) {
+                const QColor color = group.readEntry(key, QColor());
+                group.writeEntry(QString::number(id), color);
+
+            }
+            group.deleteEntry(key);
+        }
+    }
+
+    eventviewConfig->sync();
 }

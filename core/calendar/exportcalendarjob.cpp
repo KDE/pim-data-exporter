@@ -18,7 +18,7 @@
 */
 
 #include "exportcalendarjob.h"
-
+#include <MailCommon/MailUtil>
 #include <AkonadiCore/AgentManager>
 
 #include <KLocalizedString>
@@ -29,6 +29,7 @@
 #include <QTimer>
 #include <QFile>
 #include <QDir>
+#include <QColor>
 
 #include <QStandardPaths>
 #include <exportresourcearchivejob.h>
@@ -160,11 +161,42 @@ void ExportCalendarJob::backupConfig()
         backupFile(tmp.fileName(), Utils::configsPath(), korganizerStr);
         delete korganizerConfig;
     }
+    const QString eventviewsrcStr(QStringLiteral("eventviewsrc"));
+    const QString eventviewsrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + eventviewsrcStr;
+    if (QFileInfo::exists(eventviewsrc)) {
+        KSharedConfigPtr eventviews = KSharedConfig::openConfig(eventviewsrc);
+
+        QTemporaryFile tmp;
+        tmp.open();
+
+        KConfig *eventviewConfig = eventviews->copyTo(tmp.fileName());
+
+        const QString resourceColorStr(QStringLiteral("Resources Colors"));
+        if (eventviewConfig->hasGroup(resourceColorStr)) {
+            KConfigGroup group = eventviewConfig->group(resourceColorStr);
+
+            const QStringList keyList = group.keyList();
+            bool found = false;
+            for (const QString &key : keyList) {
+                const int collectionValue = key.toInt(&found);
+                if (found && collectionValue != -1) {
+                    const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionValue));
+                    const QColor color = group.readEntry(key, QColor());
+                    group.writeEntry(realPath, color);
+                    group.deleteEntry(key);
+                }
+            }
+        }
+
+
+        eventviewConfig->sync();
+        backupFile(tmp.fileName(), Utils::configsPath(), eventviewsrcStr);
+        delete eventviewConfig;
+    }
+
 
     backupConfigFile(QStringLiteral("calendar_printing.rc"));
     backupConfigFile(QStringLiteral("korgacrc"));
-    //TODO migrate collection id too here
-    backupConfigFile(QStringLiteral("eventviewsrc"));
 
     const QString freebusyurlsStr(QStringLiteral("korganizer/freebusyurls"));
     const QString freebusyurls = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + freebusyurlsStr;
