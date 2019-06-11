@@ -99,7 +99,11 @@ add_subdirectory(core)
 add_subdirectory(gui)
 add_subdirectory(console)
 
-install( FILES pimdataexporter.renamecategories pimdataexporter.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+if (${ECM_VERSION} STRGREATER "5.58.0")
+    install(FILES pimdataexporter.renamecategories pimdataexporter.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+else()
+    install(FILES pimdataexporter.renamecategories pimdataexporter.categories  DESTINATION ${KDE_INSTALL_CONFDIR})
+endif()
 install(FILES org.kde.pimdataexporter.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 
