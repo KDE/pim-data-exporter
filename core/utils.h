@@ -21,7 +21,6 @@
 #define UTILS_H
 #include "pimdataexporter_export.h"
 #include <QString>
-#include <QUrl>
 #include <KSharedConfig>
 #include "pimdataexportcore_debug.h"
 class KZip;

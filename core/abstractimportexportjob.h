@@ -25,7 +25,6 @@
 #include <AkonadiCore/Collection>
 #include "pimdataexporter_export.h"
 #include <QStringList>
-#include <QUrl>
 
 class ArchiveStorage;
 class KArchiveDirectory;
