@@ -6,13 +6,16 @@
   <name>PIM Setting Exporter</name>
   <name xml:lang="ca">Exportador de la configuració PIM</name>
   <name xml:lang="ca-valencia">Exportador de la configuració PIM</name>
+  <name xml:lang="cs">Exportér nastavení PIM</name>
   <name xml:lang="en-GB">PIM Setting Exporter</name>
   <name xml:lang="es">Exportador de preferencias de PIM</name>
   <name xml:lang="fr">Exportation des paramètres PIM</name>
+  <name xml:lang="id">PIM Setting Exporter</name>
   <name xml:lang="it">Esportatore delle impostazioni di PIM</name>
   <name xml:lang="ko">PIM 설정 내보내기</name>
   <name xml:lang="nl">PIM-exportprogramma van instellingen</name>
   <name xml:lang="pt">Exportação das Definições PIM</name>
+  <name xml:lang="pt-BR">Exportador de configurações PIM</name>
   <name xml:lang="sv">Export av inställningar för personlig informationshantering</name>
   <name xml:lang="uk">Засіб експортування параметрів PIM</name>
   <name xml:lang="x-test">xxPIM Setting Exporterxx</name>
@@ -21,10 +24,12 @@
   <summary xml:lang="ca-valencia">Guarda totes les dades de les aplicacions PIM i les restaura en altres sistemes.</summary>
   <summary xml:lang="en-GB">Saves all data from PIM apps and restore them in other systems.</summary>
   <summary xml:lang="es">Guarda todos los datos desde aplicaciones PIM y las restaura en otros sistemas.</summary>
+  <summary xml:lang="id">Menyimpan semua data dari apl-apl PIM dan memulihkan mereka di sistem lain.</summary>
   <summary xml:lang="it">Salva tutti i dati dalle applicazioni di PIM e ripristinarli successivamente in altri sistemi.</summary>
   <summary xml:lang="ko">PIM 프로그램의 모든 데이터를 저장하고 다른 시스템에서 복원할 수 있도록 합니다.</summary>
-  <summary xml:lang="nl">Slaat alle gegevens op uit PIM-toepassingen en herstelt ze in andere systemen.</summary>
+  <summary xml:lang="nl">Slaat alle gegevens uit PIM-toepassingen en herstelt ze in andere systemen.</summary>
   <summary xml:lang="pt">Grava todos os dados das aplicações PIM e repõe-os noutros sistemas.</summary>
+  <summary xml:lang="pt-BR">Salva todo os dados de aplicativos PIM e restaura-os em outros sistemas.</summary>
   <summary xml:lang="sv">Sparar alla data från program för personlig informationshantering och återställer dem på andra system.</summary>
   <summary xml:lang="uk">Зберігає усі дані з програм PIM і відновлює їх у інших системах.</summary>
   <summary xml:lang="x-test">xxSaves all data from PIM apps and restore them in other systems.xx</summary>
@@ -58,10 +63,12 @@
     <p xml:lang="ca-valencia">L'Exportador de la configuració PIM permet exportar i importar la configuració PIM.</p>
     <p xml:lang="en-GB">PIM Settings Exporter exports and imports PIM settings.</p>
     <p xml:lang="es">El exportador de preferencias PIM permite exportar e importar preferencias de PIM.</p>
+    <p xml:lang="id">Mengekspor PIM Settings Exporter dan mengimpor setelan PIM.</p>
     <p xml:lang="it">L'esportatore delle impostazioni di PIM permette di esportare/importare le impostazioni di PIM.</p>
     <p xml:lang="ko">PIM 설정 내보내기 도구에서는 PIM 설정을 내보내고 가져옵니다.</p>
-    <p xml:lang="nl">PIM Settings Exporter exporteert en importeert PIM-instellingen.</p>
+    <p xml:lang="nl">PIM-exportprogramma van instellingen exporteert en importeert PIM-instellingen.</p>
     <p xml:lang="pt">A Exportação de Definições PIM permite exportar ou importar configurações de PIM.</p>
+    <p xml:lang="pt-BR">O Exportador de configurações PIM exporta e importa configurações do PIM.</p>
     <p xml:lang="sv">Export av inställningar för personlig informationshantering gör det möjligt att exportera och importera inställningar för personlig informationshantering.</p>
     <p xml:lang="uk">Засіб експортування параметрів PIM надає змогу експортувати та імпортувати параметри PIM.</p>
     <p xml:lang="x-test">xxPIM Settings Exporter exports and imports PIM settings.xx</p>
