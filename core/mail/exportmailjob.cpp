@@ -273,9 +273,10 @@ void ExportMailJob::backupConfig()
     if (!lstFilter.isEmpty()) {
         QTemporaryFile tmp;
         tmp.open();
-        QUrl url(tmp.fileName());
+        QUrl url = QUrl::fromLocalFile(tmp.fileName());
         MailCommon::FilterImporterExporter exportFilters;
         exportFilters.exportFilters(lstFilter, url, true);
+        tmp.close();
         const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + QLatin1String("filters"));
         if (fileAdded) {
             Q_EMIT info(i18n("Filters backup done."));
