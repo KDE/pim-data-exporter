@@ -1038,6 +1038,7 @@ void ImportMailJob::importArchiveConfig(const KArchiveFile *archiveconfiguration
     copyToFile(archiveconfiguration, archiveconfigurationrc, filename, prefix);
     KSharedConfig::Ptr archiveConfig = KSharedConfig::openConfig(archiveconfigurationrc);
 
+    //TODO fix FolderArchiveAccount
     copyArchiveMailAgentConfigGroup(archiveConfig, archiveConfig);
     archiveConfig->sync();
 }
