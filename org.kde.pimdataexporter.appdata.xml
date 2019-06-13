@@ -56,21 +56,21 @@
   <developer_name xml:lang="zh-TW">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <description>
     <p>
-	    PIM Settings Exporter exports and imports PIM settings.
+	    PIM Settings Exporter exports and imports PIM settings
     </p>
-    <p xml:lang="ca">L'Exportador de la configuració PIM permet exportar i importar la configuració PIM.</p>
-    <p xml:lang="ca-valencia">L'Exportador de la configuració PIM permet exportar i importar la configuració PIM.</p>
-    <p xml:lang="en-GB">PIM Settings Exporter exports and imports PIM settings.</p>
-    <p xml:lang="es">El exportador de preferencias PIM permite exportar e importar preferencias de PIM.</p>
-    <p xml:lang="id">Mengekspor PIM Settings Exporter dan mengimpor setelan PIM.</p>
-    <p xml:lang="it">L'esportatore delle impostazioni di PIM permette di esportare/importare le impostazioni di PIM.</p>
-    <p xml:lang="ko">PIM 설정 내보내기 도구에서는 PIM 설정을 내보내고 가져옵니다.</p>
+    <p xml:lang="ca">L'Exportador de la configuració PIM permet exportar i importar la configuració PIM</p>
+    <p xml:lang="ca-valencia">L'Exportador de la configuració PIM permet exportar i importar la configuració PIM</p>
+    <p xml:lang="en-GB">PIM Settings Exporter exports and imports PIM settings</p>
+    <p xml:lang="es">El exportador de preferencias PIM permite exportar e importar preferencias de PIM</p>
+    <p xml:lang="id">Mengekspor PIM Settings Exporter dan mengimpor setelan PIM</p>
+    <p xml:lang="it">L'esportatore delle impostazioni di PIM permette di esportare/importare le impostazioni di PIM</p>
+    <p xml:lang="ko">PIM 설정 내보내기 도구에서는 PIM 설정을 내보내고 가져옵니다</p>
     <p xml:lang="nl">PIM-exportprogramma van instellingen exporteert en importeert PIM-instellingen.</p>
-    <p xml:lang="pt">A Exportação de Definições PIM permite exportar ou importar configurações de PIM.</p>
-    <p xml:lang="pt-BR">O Exportador de configurações PIM exporta e importa configurações do PIM.</p>
+    <p xml:lang="pt">A Exportação de Definições PIM permite exportar ou importar configurações de PIM</p>
+    <p xml:lang="pt-BR">O Exportador de configurações PIM exporta e importa configurações do PIM</p>
     <p xml:lang="sv">Export av inställningar för personlig informationshantering gör det möjligt att exportera och importera inställningar för personlig informationshantering.</p>
-    <p xml:lang="uk">Засіб експортування параметрів PIM надає змогу експортувати та імпортувати параметри PIM.</p>
-    <p xml:lang="x-test">xxPIM Settings Exporter exports and imports PIM settings.xx</p>
+    <p xml:lang="uk">Засіб експортування параметрів PIM надає змогу експортувати та імпортувати параметри PIM</p>
+    <p xml:lang="x-test">xxPIM Settings Exporter exports and imports PIM settingsxx</p>
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=pimsettingexporter</url>
   <url type="help">https://docs.kde.org/?application=pimsettingexporter</url>
