@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="desktop">
-  <id>org.kde.pimsettingexporter.desktop</id>
+  <id>org.kde.pimdataexporter.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
-  <name>PIM Setting Exporter</name>
+  <name>PIM Data Exporter</name>
   <name xml:lang="ca">Exportador de la configuració PIM</name>
   <name xml:lang="ca-valencia">Exportador de la configuració PIM</name>
   <name xml:lang="cs">Exportér nastavení PIM</name>
@@ -56,7 +56,7 @@
   <developer_name xml:lang="zh-TW">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <description>
     <p>
-	    PIM Settings Exporter exports and imports PIM settings
+	    PIM Data Exporter exports and imports PIM settings
     </p>
     <p xml:lang="ca">L'Exportador de la configuració PIM permet exportar i importar la configuració PIM</p>
     <p xml:lang="ca-valencia">L'Exportador de la configuració PIM permet exportar i importar la configuració PIM</p>
@@ -72,7 +72,7 @@
     <p xml:lang="uk">Засіб експортування параметрів PIM надає змогу експортувати та імпортувати параметри PIM</p>
     <p xml:lang="x-test">xxPIM Settings Exporter exports and imports PIM settingsxx</p>
   </description>
-  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=pimsettingexporter</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=pimsettingsexporter</url>
   <url type="help">https://docs.kde.org/?application=pimsettingexporter</url>
   <url type="donation">https://www.kde.org/community/donations</url>
   <provides>
