@@ -312,7 +312,30 @@ void ImportMailJob::restoreResources()
     QDir dir(mTempDirName);
     dir.mkdir(Utils::resourcesPath());
     for (const QString &filename : qAsConst(mFileList)) {
-        if (filename.startsWith(Utils::resourcesPath())) {
+        //We need to find akonadi_* and agent_config_akonadi_*
+        if (filename.startsWith(Utils::resourcesPath() + QStringLiteral("akonadi_"))) {
+            QString agentFileConfigName = filename;
+            agentFileConfigName.remove(Utils::resourcesPath());
+            agentFileConfigName.remove(QStringLiteral("rc"));
+            agentFileConfigName += Utils::resourcesPath() + QStringLiteral("agent_config_");
+            QString resourceName;
+            if (mFileList.contains(agentFileConfigName)) {
+                //Parse config file => get name
+                const KArchiveEntry *agentFileConfigEntry = mArchiveDirectory->entry(agentFileConfigName);
+                if (agentFileConfigEntry && agentFileConfigEntry->isFile()) {
+                    const KArchiveFile *file = static_cast<const KArchiveFile *>(agentFileConfigEntry);
+                    const QString destDirectory = mTempDirName + QLatin1Char('/') + Utils::resourcesPath();
+
+                    file->copyTo(destDirectory);
+                    const QString filename(file->name());
+                    const QString agentResourceFileName = destDirectory + QLatin1Char('/') + filename;
+
+                    KSharedConfig::Ptr agentResourceConfig = KSharedConfig::openConfig(agentResourceFileName);
+                    KConfigGroup agentConfigGroup = agentResourceConfig->group(QStringLiteral("Agent"));
+                    resourceName = agentConfigGroup.readEntry(QStringLiteral("Name"));
+                }
+            }
+
             const KArchiveEntry *fileEntry = mArchiveDirectory->entry(filename);
             if (fileEntry && fileEntry->isFile()) {
                 const KArchiveFile *file = static_cast<const KArchiveFile *>(fileEntry);
@@ -492,11 +515,11 @@ void ImportMailJob::restoreResources()
 
                     QString newResource;
                     if (filename.contains(QLatin1String("kolab_"))) {
-                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_kolab_resource"), filename, settings);
+                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_kolab_resource"), resourceName.isEmpty() ? filename : resourceName, settings);
                     } else if (filename.contains(QLatin1String("gmail_"))) {
-                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_gmail_resource"), filename, settings);
+                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_gmail_resource"), resourceName.isEmpty() ? filename : resourceName, settings);
                     } else {
-                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_imap_resource"), filename, settings);
+                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_imap_resource"), resourceName.isEmpty() ? filename : resourceName, settings);
                     }
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
