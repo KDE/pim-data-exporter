@@ -322,14 +322,12 @@ void ImportMailJob::restoreResources()
                 if (agentFileConfigEntry && agentFileConfigEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(agentFileConfigEntry);
                     const QString destDirectory = mTempDirName + QLatin1Char('/') + Utils::resourcesPath();
-
                     file->copyTo(destDirectory);
                     const QString filename(file->name());
                     const QString agentResourceFileName = destDirectory + QLatin1Char('/') + filename;
                     resourceName = Utils::akonadiAgentName(agentResourceFileName);
                 }
             }
-
             const KArchiveEntry *fileEntry = mArchiveDirectory->entry(filename);
             if (fileEntry && fileEntry->isFile()) {
                 const KArchiveFile *file = static_cast<const KArchiveFile *>(fileEntry);
@@ -412,7 +410,8 @@ void ImportMailJob::restoreResources()
                     if (leaveOnserver.hasKey(QStringLiteral("downloadLater"))) {
                         settings.insert(QStringLiteral("DownloadLater"), leaveOnserver.readEntry("downloadLater", QStringList()));
                     }
-                    const QString newResource = mCreateResource->createResource(QStringLiteral("akonadi_pop3_resource"), filename, settings);
+                    const QString newResourceName = resourceName.isEmpty() ? filename : resourceName;
+                    const QString newResource = mCreateResource->createResource(QStringLiteral("akonadi_pop3_resource"), newResourceName, settings);
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
                         infoAboutNewResource(newResource);
