@@ -5,6 +5,7 @@
   <project_license>GPL-2.0+</project_license>
   <name>PIM Data Exporter</name>
   <name xml:lang="ca">Exportador de les dades PIM</name>
+  <name xml:lang="ca-valencia">Exportador de les dades PIM</name>
   <name xml:lang="nl">PIM-exportprogramma van gegevens</name>
   <name xml:lang="pt">Exportação dos Dados PIM</name>
   <name xml:lang="sv">Export av data för personlig informationshantering</name>
@@ -50,6 +51,7 @@
 	    PIM Data Exporter exports and imports PIM settings
     </p>
     <p xml:lang="ca">L'Exportador de les dades PIM exporta i importa la configuració PIM</p>
+    <p xml:lang="ca-valencia">L'Exportador de les dades PIM exporta i importa la configuració PIM</p>
     <p xml:lang="nl">PIM-exportprogramma van gegevens exporteert en importeert PIM-instellingen.</p>
     <p xml:lang="pt">A Exportação de Dados PIM permite exportar ou importar configurações de PIM.</p>
     <p xml:lang="sv">Export av data för personlig informationshantering exporterar och importerar inställningar för personlig informationshantering.</p>
