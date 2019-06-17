@@ -508,12 +508,13 @@ void ImportMailJob::restoreResources()
                     }
 
                     QString newResource;
+                    const QString newResourceName = resourceName.isEmpty() ? filename : resourceName;
                     if (filename.contains(QLatin1String("kolab_"))) {
-                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_kolab_resource"), resourceName.isEmpty() ? filename : resourceName, settings);
+                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_kolab_resource"), newResourceName, settings);
                     } else if (filename.contains(QLatin1String("gmail_"))) {
-                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_gmail_resource"), resourceName.isEmpty() ? filename : resourceName, settings);
+                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_gmail_resource"), newResourceName, settings);
                     } else {
-                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_imap_resource"), resourceName.isEmpty() ? filename : resourceName, settings);
+                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_imap_resource"), newResourceName, settings);
                     }
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
@@ -1231,27 +1232,11 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
     }
 
     //Event collection
-    const QString eventCollectionStr(QStringLiteral("Event"));
-    if (kmailConfig->hasGroup(eventCollectionStr)) {
-        KConfigGroup eventGroup = kmailConfig->group(eventCollectionStr);
-        const QString eventLastEventSelectedFolder(QStringLiteral("LastEventSelectedFolder"));
-        convertRealPathToCollectionList(eventGroup, eventLastEventSelectedFolder, false);
-    }
-
+    convertCollectionStrToAkonadiId(kmailConfig, QStringLiteral("Event"), QStringLiteral("LastEventSelectedFolder"));
     //Todo collection
-    const QString todoCollectionStr(QStringLiteral("Todo"));
-    if (kmailConfig->hasGroup(todoCollectionStr)) {
-        KConfigGroup todoGroup = kmailConfig->group(todoCollectionStr);
-        const QString todoLastEventSelectedFolder(QStringLiteral("LastSelectedFolder"));
-        convertRealPathToCollectionList(todoGroup, todoLastEventSelectedFolder, false);
-    }
+    convertCollectionStrToAkonadiId(kmailConfig, QStringLiteral("Todo"), QStringLiteral("LastSelectedFolder"));
     //Note collection
-    const QString noteCollectionStr(QStringLiteral("Note"));
-    if (kmailConfig->hasGroup(noteCollectionStr)) {
-        KConfigGroup noteGroup = kmailConfig->group(noteCollectionStr);
-        const QString noteLastEventSelectedFolder(QStringLiteral("LastNoteSelectedFolder"));
-        convertRealPathToCollectionList(noteGroup, noteLastEventSelectedFolder, false);
-    }
+    convertCollectionStrToAkonadiId(kmailConfig, QStringLiteral("Note"), QStringLiteral("LastNoteSelectedFolder"));
 
     //FolderSelectionDialog collection
     const QString folderSelectionCollectionStr(QStringLiteral("FolderSelectionDialog"));
@@ -1345,37 +1330,39 @@ void ImportMailJob::mergeLdapConfig(const KArchiveFile *archivefile, const QStri
 
     for (int i = 0; i < importingNumberSelectedHosts; ++i) {
         const QString auth = grpImporting.readEntry(QStringLiteral("SelectedAuth%1").arg(i), QString());
-        grpExisting.writeEntry(QStringLiteral("SelectedAuth%1").arg(existingNumberSelectedHosts + i + 1), auth);
-        grpExisting.writeEntry(QStringLiteral("SelectedBase%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedBase%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedBind%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedBind%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedHost%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedHost%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedMech%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedMech%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedPageSize%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedPageSize%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("SelectedPort%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedPort%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("SelectedPwdBind%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedPwdBind%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedSecurity%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedSecurity%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedSizeLimit%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedSizeLimit%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("SelectedTimeLimit%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedTimeLimit%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("SelectedUser%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedUser%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedVersion%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedVersion%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("SelectedUserFilter%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("SelectedUserFilter%1").arg(i), 0));
+        const int numberHosts = existingNumberSelectedHosts + i + 1;
+        grpExisting.writeEntry(QStringLiteral("SelectedAuth%1").arg(numberHosts), auth);
+        grpExisting.writeEntry(QStringLiteral("SelectedBase%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedBase%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("SelectedBind%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedBind%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("SelectedHost%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedHost%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("SelectedMech%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedMech%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("SelectedPageSize%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedPageSize%1").arg(i), 0));
+        grpExisting.writeEntry(QStringLiteral("SelectedPort%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedPort%1").arg(i), 0));
+        grpExisting.writeEntry(QStringLiteral("SelectedPwdBind%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedPwdBind%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("SelectedSecurity%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedSecurity%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("SelectedSizeLimit%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedSizeLimit%1").arg(i), 0));
+        grpExisting.writeEntry(QStringLiteral("SelectedTimeLimit%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedTimeLimit%1").arg(i), 0));
+        grpExisting.writeEntry(QStringLiteral("SelectedUser%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedUser%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("SelectedVersion%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedVersion%1").arg(i), 0));
+        grpExisting.writeEntry(QStringLiteral("SelectedUserFilter%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedUserFilter%1").arg(i), 0));
     }
 
     for (int i = 0; i < importingNumberHosts; ++i) {
-        grpExisting.writeEntry(QStringLiteral("Auth%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("Auth%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Base%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("Base%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Bind%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("Bind%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Host%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("Host%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Mech%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("Mech%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("PageSize%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("PageSize%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("Port%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("Port%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("PwdBind%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("PwdBind%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Security%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("Security%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SizeLimit%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("SizeLimit%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("TimeLimit%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("TimeLimit%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("User%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("User%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Version%1").arg(existingNumberHosts + i + 1), grpImporting.readEntry(QStringLiteral("Version%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("UserFilter%1").arg(existingNumberSelectedHosts + i + 1), grpImporting.readEntry(QStringLiteral("UserFilter%1").arg(i), 0));
+        const int numberHosts = existingNumberHosts + i + 1;
+        grpExisting.writeEntry(QStringLiteral("Auth%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Auth%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("Base%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Base%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("Bind%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Bind%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("Host%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Host%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("Mech%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Mech%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("PageSize%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("PageSize%1").arg(i), 0));
+        grpExisting.writeEntry(QStringLiteral("Port%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Port%1").arg(i), 0));
+        grpExisting.writeEntry(QStringLiteral("PwdBind%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("PwdBind%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("Security%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Security%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("SizeLimit%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SizeLimit%1").arg(i), 0));
+        grpExisting.writeEntry(QStringLiteral("TimeLimit%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("TimeLimit%1").arg(i), 0));
+        grpExisting.writeEntry(QStringLiteral("User%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("User%1").arg(i), QString()));
+        grpExisting.writeEntry(QStringLiteral("Version%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Version%1").arg(i), 0));
+        grpExisting.writeEntry(QStringLiteral("UserFilter%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("UserFilter%1").arg(i), 0));
     }
 
     grpExisting.sync();

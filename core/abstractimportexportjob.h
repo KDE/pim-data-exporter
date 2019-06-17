@@ -125,6 +125,7 @@ protected:
     int mIndex = -1;
     static int sArchiveVersion;
 
+    void convertCollectionStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key);
 private:
     void slotAllResourceSynchronized();
     void slotSynchronizeInstanceDone(const QString &, const QString &identifier);

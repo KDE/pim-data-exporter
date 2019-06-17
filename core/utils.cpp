@@ -266,7 +266,7 @@ QString Utils::storeResources(KZip *archive, const QString &identifier, const QS
         return i18n("Resource file \"%1\" cannot be added to backup file.", agentFileName);
     }
 
-    const QString agentConfigFileName = QLatin1String("agent_config_") + identifier;
+    const QString agentConfigFileName = Utils::prefixAkonadiConfigFile() + identifier;
     const QString agentConfigFileNamePath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1String("/akonadi/") + agentConfigFileName;
     if (QFileInfo::exists(agentConfigFileNamePath)) {
         fileAdded = archive->addLocalFile(agentConfigFileNamePath, path + agentConfigFileName);

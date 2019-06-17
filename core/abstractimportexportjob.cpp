@@ -622,3 +622,12 @@ void AbstractImportExportJob::importDataSubdirectory(const QString &subdirectory
         }
     }
 }
+
+void AbstractImportExportJob::convertCollectionStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key)
+{
+    if (config->hasGroup(groupName)) {
+        KConfigGroup eventGroup = config->group(groupName);
+        const QString eventLastEventSelectedFolder(key);
+        convertRealPathToCollection(eventGroup, eventLastEventSelectedFolder, false);
+    }
+}
