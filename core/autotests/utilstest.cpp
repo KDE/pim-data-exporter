@@ -29,5 +29,23 @@ UtilsTest::UtilsTest(QObject *parent) : QObject(parent)
 
 void UtilsTest::shouldTestValue()
 {
+    QCOMPARE(Utils::configsPath(), QStringLiteral("configs/"));    
+    QCOMPARE(Utils::transportsPath(), QStringLiteral("transports/"));
+    QCOMPARE(Utils::resourcesPath(), QStringLiteral("resources/"));
+    QCOMPARE(Utils::identitiesPath(), QStringLiteral("identities/"));
+    QCOMPARE(Utils::mailsPath(), QStringLiteral("mails/"));
     QCOMPARE(Utils::configsPath(), QStringLiteral("configs/"));
+    QCOMPARE(Utils::akonadiPath(), QStringLiteral("akonadi/"));
+    QCOMPARE(Utils::dataPath(), QStringLiteral("data/"));
+    QCOMPARE(Utils::calendarPath(), QStringLiteral("calendar/"));
+    QCOMPARE(Utils::addressbookPath(), QStringLiteral("addressbook/"));
+    QCOMPARE(Utils::alarmPath(), QStringLiteral("alarm/"));
+    QCOMPARE(Utils::dataPath(), QStringLiteral("data/"));
+    QCOMPARE(Utils::notePath(), QStringLiteral("note/"));
+}
+
+void UtilsTest::shouldGetAgentFileName()
+{
+    const QString filename = Utils::resourcesPath() + QStringLiteral("akonadi_imap_resource_0rc");
+    QCOMPARE(Utils::agentFileName(filename), QStringLiteral("resources/agent_config_akonadi_imap_resource_0"));
 }

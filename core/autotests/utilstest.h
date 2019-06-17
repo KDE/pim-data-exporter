@@ -30,6 +30,7 @@ public:
     ~UtilsTest() = default;
 private Q_SLOTS:
     void shouldTestValue();
+    void shouldGetAgentFileName();
 };
 
 #endif // UTILSTEST_H
