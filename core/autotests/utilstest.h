@@ -28,6 +28,8 @@ class UtilsTest : public QObject
 public:
     explicit UtilsTest(QObject *parent = nullptr);
     ~UtilsTest() = default;
+private Q_SLOTS:
+    void shouldTestValue();
 };
 
 #endif // UTILSTEST_H
