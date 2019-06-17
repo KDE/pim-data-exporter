@@ -140,7 +140,7 @@ void ImportNotesJob::restoreResources()
     QStringList listResource;
     if (!mListResourceFile.isEmpty()) {
         QDir dir(mTempDirName);
-        dir.mkdir(Utils::jotPath());
+        dir.mkdir(Utils::notePath());
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::notePath());
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {

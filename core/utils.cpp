@@ -94,11 +94,6 @@ QString Utils::alarmPath()
     return QStringLiteral("alarm/");
 }
 
-QString Utils::jotPath()
-{
-    return QStringLiteral("jot/");
-}
-
 QString Utils::notePath()
 {
     return QStringLiteral("note/");
