@@ -4,13 +4,13 @@ include_directories(
     ${pim-data-exporter_BINARY_DIR}/console/
     )
 
-set( PIMDATAEXPORTERCONSOLE_LOGinfiletest_SRCS loginfiletest.cpp ../loginfile.cpp )
+set( pimdataexporterconsole_loginfiletest_SRCS loginfiletest.cpp ../loginfile.cpp )
 
-ecm_qt_declare_logging_category(PIMDATAEXPORTERCONSOLE_LOGinfiletest_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole)
+ecm_qt_declare_logging_category(pimdataexporterconsole_loginfiletest_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole)
 
 
-add_executable( PIMDATAEXPORTERCONSOLE_LOGinfiletest ${PIMDATAEXPORTERCONSOLE_LOGinfiletest_SRCS})
-add_test(NAME PIMDATAEXPORTERCONSOLE_LOGinfiletest COMMAND PIMDATAEXPORTERCONSOLE_LOGinfiletest)
-ecm_mark_as_test(PIMDATAEXPORTERCONSOLE_LOGinfiletest)
-target_link_libraries( PIMDATAEXPORTERCONSOLE_LOGinfiletest Qt5::Test)
+add_executable( pimdataexporterconsole_loginfiletest ${pimdataexporterconsole_loginfiletest_SRCS})
+add_test(NAME pimdataexporterconsole_loginfiletest COMMAND pimdataexporterconsole_loginfiletest)
+ecm_mark_as_test(pimdataexporterconsole_loginfiletest)
+target_link_libraries( pimdataexporterconsole_loginfiletest Qt5::Test)
 
