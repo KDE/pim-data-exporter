@@ -314,10 +314,7 @@ void ImportMailJob::restoreResources()
     for (const QString &filename : qAsConst(mFileList)) {
         //We need to find akonadi_* and agent_config_akonadi_*
         if (filename.startsWith(Utils::resourcesPath() + QStringLiteral("akonadi_"))) {
-            QString agentFileConfigName = filename;
-            agentFileConfigName.remove(Utils::resourcesPath());
-            agentFileConfigName.remove(QStringLiteral("rc"));
-            agentFileConfigName += Utils::resourcesPath() + QStringLiteral("agent_config_");
+            QString agentFileConfigName = Utils::agentFileName(filename);
             QString resourceName;
             if (mFileList.contains(agentFileConfigName)) {
                 //Parse config file => get name
