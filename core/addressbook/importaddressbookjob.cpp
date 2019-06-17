@@ -133,7 +133,7 @@ void ImportAddressbookJob::restoreResources()
                     } else if (value.akonadiConfigFile.contains(QLatin1String("akonadi_contacts_resource_"))) {
                         instanceType = QStringLiteral("akonadi_contacts_resource");
                     } else {
-                        qCDebug(PIMDATAEXPORTERCORE_LOG) << " not supported" << value.akonadiConfigFile;
+                        qCWarning(PIMDATAEXPORTERCORE_LOG) << " not supported" << value.akonadiConfigFile;
                     }
 
                     const QString newResource = mCreateResource->createResource(instanceType, filename, settings, true);
