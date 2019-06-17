@@ -83,3 +83,7 @@ set_target_properties(pimdataexporterprivate PROPERTIES VERSION ${KDEPIM_LIB_VER
 
 install(TARGETS pimdataexporterprivate ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
+if(BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
+
