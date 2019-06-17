@@ -88,12 +88,14 @@ PIMDATAEXPORTER_EXPORT QString dataPath();
 PIMDATAEXPORTER_EXPORT QString calendarPath();
 PIMDATAEXPORTER_EXPORT QString addressbookPath();
 PIMDATAEXPORTER_EXPORT QString alarmPath();
-PIMDATAEXPORTER_EXPORT QString jotPath();
 PIMDATAEXPORTER_EXPORT QString infoPath();
 PIMDATAEXPORTER_EXPORT QString notePath();
 PIMDATAEXPORTER_EXPORT QString prefixAkonadiConfigFile();
 PIMDATAEXPORTER_EXPORT QString exportDataTypeFileName();
 QString akonadiAgentName(const QString &configPath);
+
+
+PIMDATAEXPORTER_EXPORT QString agentFileName(const QString &filename);
 
 void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);
 void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey);

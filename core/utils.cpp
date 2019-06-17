@@ -94,11 +94,6 @@ QString Utils::alarmPath()
     return QStringLiteral("alarm/");
 }
 
-QString Utils::jotPath()
-{
-    return QStringLiteral("jot/");
-}
-
 QString Utils::notePath()
 {
     return QStringLiteral("note/");
@@ -381,4 +376,14 @@ QString Utils::storedTypeToI18n(StoredType type)
     }
     qCDebug(PIMDATAEXPORTERCORE_LOG) << " type unknown " << type;
     return QString();
+}
+
+
+QString Utils::agentFileName(const QString &filename)
+{
+    QString agentFileConfigName = filename;
+    agentFileConfigName.remove(Utils::resourcesPath());
+    agentFileConfigName.remove(agentFileConfigName.length() - 2, 2); //Remove "rc"
+    agentFileConfigName = Utils::resourcesPath() + Utils::prefixAkonadiConfigFile() + agentFileConfigName;
+    return agentFileConfigName;
 }
