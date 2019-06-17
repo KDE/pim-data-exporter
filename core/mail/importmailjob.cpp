@@ -503,7 +503,7 @@ void ImportMailJob::restoreResources()
                         infoAboutNewResource(newResource);
                     }
                 } else {
-                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " problem with resource";
+                    qCWarning(PIMDATAEXPORTERCORE_LOG) << " problem with resource: " << filename;
                 }
             }
         }
