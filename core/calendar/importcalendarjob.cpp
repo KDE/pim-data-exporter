@@ -248,11 +248,11 @@ void ImportCalendarJob::restoreConfig()
     }
 
     const QString freebusyStr(QStringLiteral("freebusyurls"));
-    const KArchiveEntry *freebusyentry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("korganizer/") + freebusyStr);
+    const KArchiveEntry *freebusyentry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("korganizer/") + freebusyStr);
     if (freebusyentry && freebusyentry->isFile()) {
         const KArchiveFile *freebusyrcFile = static_cast<const KArchiveFile *>(freebusyentry);
 
-        const QString freebusypath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/korganizer/") + freebusyStr;
+        const QString freebusypath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/korganizer/") + freebusyStr;
         if (QFileInfo::exists(freebusypath)) {
             //TODO 4.12 merge it.
             if (overwriteConfigMessageBox(freebusyStr)) {
@@ -263,19 +263,19 @@ void ImportCalendarJob::restoreConfig()
         }
     }
 
-    const KArchiveEntry *templateEntry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("korganizer/templates/"));
+    const KArchiveEntry *templateEntry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("korganizer/templates/"));
     if (templateEntry && templateEntry->isDirectory()) {
         //TODO 4.12 verify if template already exists.
-        const QString templatePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("korganizer/templates/");
+        const QString templatePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("korganizer/templates/");
         const KArchiveDirectory *templateDir = static_cast<const KArchiveDirectory *>(templateEntry);
         if (!templateDir->copyTo(templatePath)) {
             qCDebug(PIMDATAEXPORTERCORE_LOG) << "template cannot copy to " << templatePath;
         }
     }
 
-    const KArchiveEntry *designerEntry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("korganizer/designer/"));
+    const KArchiveEntry *designerEntry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("korganizer/designer/"));
     if (designerEntry && designerEntry->isDirectory()) {
-        const QString templatePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("korganizer/designer/");
+        const QString templatePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("korganizer/designer/");
         const KArchiveDirectory *templateDir = static_cast<const KArchiveDirectory *>(designerEntry);
         if (!templateDir->copyTo(templatePath)) {
             qCDebug(PIMDATAEXPORTERCORE_LOG) << "template cannot copy to " << templatePath;

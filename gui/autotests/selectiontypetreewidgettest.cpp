@@ -65,7 +65,7 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
     QFETCH(QString, filename);
     QFETCH(int, topLevelItems);
 
-    QString fileNameFullPath = QLatin1String(PIMDATAEXPORTER_DATA_DIR) + QLatin1String("/") + filename;
+    QString fileNameFullPath = QLatin1String(PIMDATAEXPORTER_DATA_DIR) + QStringLiteral("/") + filename;
     QFile f(fileNameFullPath);
     QVERIFY(f.exists());
     SelectionTypeTreeWidget w;

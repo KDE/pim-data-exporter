@@ -120,9 +120,9 @@ void ImportNotesJob::restoreData()
     setProgressDialogLabel(i18n("Restore data..."));
     if (archiveVersion() <= 1) {
         //Knote < knote-akonadi
-        const KArchiveEntry *notesEntry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("knotes/"));
+        const KArchiveEntry *notesEntry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("knotes/"));
         if (notesEntry && notesEntry->isDirectory()) {
-            const QString notesPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("knotes/");
+            const QString notesPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("knotes/");
             overwriteDirectory(notesPath, notesEntry);
         }
         QTimer::singleShot(0, this, &ImportNotesJob::slotNextStep);

@@ -212,7 +212,7 @@ void ExportMailJob::backupTransports()
         KConfig *config = mailtransportsConfig->copyTo(tmp.fileName());
 
         config->sync();
-        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::transportsPath() + QLatin1String("mailtransports"));
+        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::transportsPath() + QStringLiteral("mailtransports"));
         delete config;
         if (fileAdded) {
             Q_EMIT info(i18n("Transports backup done."));
@@ -277,7 +277,7 @@ void ExportMailJob::backupConfig()
         MailCommon::FilterImporterExporter exportFilters;
         exportFilters.exportFilters(lstFilter, url, true);
         tmp.close();
-        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + QLatin1String("filters"));
+        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("filters"));
         if (fileAdded) {
             Q_EMIT info(i18n("Filters backup done."));
         } else {
@@ -420,26 +420,26 @@ void ExportMailJob::backupConfig()
     storeDirectory(QStringLiteral("/messageviewerplugins/"));
     storeDirectory(QStringLiteral("/messageviewer/themes/"));
 
-    const QDir gravatarDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/gravatar/"));
+    const QDir gravatarDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/gravatar/"));
     if (gravatarDirectory.exists()) {
         const QFileInfoList listFileInfo = gravatarDirectory.entryInfoList(QStringList() << QStringLiteral("*.png"), QDir::Files);
         const int listSize(listFileInfo.size());
         for (int i = 0; i < listSize; ++i) {
-            backupFile(listFileInfo.at(i).absoluteFilePath(), Utils::dataPath() + QLatin1String("gravatar/"), listFileInfo.at(i).fileName());
+            backupFile(listFileInfo.at(i).absoluteFilePath(), Utils::dataPath() + QStringLiteral("gravatar/"), listFileInfo.at(i).fileName());
         }
     }
 
-    const QDir autocorrectDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/autocorrect/"));
+    const QDir autocorrectDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/autocorrect/"));
     if (autocorrectDirectory.exists()) {
         const QFileInfoList listFileInfo = autocorrectDirectory.entryInfoList(QStringList() << QStringLiteral("*.xml"), QDir::Files);
         const int listSize(listFileInfo.size());
         for (int i = 0; i < listSize; ++i) {
-            backupFile(listFileInfo.at(i).absoluteFilePath(), Utils::dataPath() + QLatin1String("autocorrect/"), listFileInfo.at(i).fileName());
+            backupFile(listFileInfo.at(i).absoluteFilePath(), Utils::dataPath() + QStringLiteral("autocorrect/"), listFileInfo.at(i).fileName());
         }
     }
-    const QString adblockFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/adblockrules_local");
+    const QString adblockFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kmail2/adblockrules_local");
     if (QFileInfo::exists(adblockFilePath)) {
-        backupFile(adblockFilePath, Utils::dataPath() + QLatin1String("kmail2/"), QStringLiteral("adblockrules_local"));
+        backupFile(adblockFilePath, Utils::dataPath() + QStringLiteral("kmail2/"), QStringLiteral("adblockrules_local"));
     }
 
     const QString kmailStr(QStringLiteral("kmail2rc"));
@@ -652,7 +652,7 @@ void ExportMailJob::backupIdentity()
         }
 
         identityConfig->sync();
-        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::identitiesPath() + QLatin1String("emailidentities"));
+        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::identitiesPath() + QStringLiteral("emailidentities"));
         delete identityConfig;
         if (fileAdded) {
             Q_EMIT info(i18n("Identity backup done."));

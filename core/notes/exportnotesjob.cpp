@@ -55,7 +55,7 @@ void ExportNotesJob::start()
 
 void ExportNotesJob::backupTheme()
 {
-    const QString notesThemeDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/knotes/print/");
+    const QString notesThemeDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/knotes/print/");
     QDir notesThemeDirectory(notesThemeDir);
     if (notesThemeDirectory.exists()) {
         const bool notesDirAdded = archive()->addLocalDirectory(notesThemeDir, Utils::dataPath() +  QLatin1String("knotes/print"));

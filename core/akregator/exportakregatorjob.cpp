@@ -69,7 +69,7 @@ void ExportAkregatorJob::slotCheckBackupData()
         increaseProgressDialog();
         setProgressDialogLabel(i18n("Backing up data..."));
 
-        const QString akregatorDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/akregator");
+        const QString akregatorDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/akregator");
         QDir akregatorDirectory(akregatorDir);
         if (akregatorDirectory.exists()) {
             const bool akregatorDirAdded = archive()->addLocalDirectory(akregatorDir, Utils::dataPath() +  QLatin1String("akregator"));

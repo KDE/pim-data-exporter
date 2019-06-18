@@ -161,7 +161,7 @@ void ImportMailJob::storeMailArchiveResource(const KArchiveDirectory *dir, const
 
 void ImportMailJob::importMailTransport(const QString &tempDirName)
 {
-    KSharedConfig::Ptr transportConfig = KSharedConfig::openConfig(tempDirName + QLatin1Char('/') + QLatin1String("mailtransports"));
+    KSharedConfig::Ptr transportConfig = KSharedConfig::openConfig(tempDirName + QLatin1Char('/') + QStringLiteral("mailtransports"));
 
     int defaultTransport = -1;
     if (transportConfig->hasGroup(QStringLiteral("General"))) {
@@ -270,7 +270,7 @@ void ImportMailJob::restoreTransports()
 {
     setProgressDialogLabel(i18n("Restore transports..."));
     increaseProgressDialog();
-    const QString path = Utils::transportsPath() + QLatin1String("mailtransports");
+    const QString path = Utils::transportsPath() + QStringLiteral("mailtransports");
     if (!mFileList.contains(path)) {
         Q_EMIT error(i18n("mailtransports file could not be found in the archive."));
     } else {
@@ -655,7 +655,7 @@ void ImportMailJob::restoreConfig()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore config..."));
-    const QString filtersPath(Utils::configsPath() + QLatin1String("filters"));
+    const QString filtersPath(Utils::configsPath() + QStringLiteral("filters"));
     if (!mFileList.contains(filtersPath)) {
         Q_EMIT error(i18n("filters file could not be found in the archive."));
     } else {
@@ -664,7 +664,7 @@ void ImportMailJob::restoreConfig()
             const KArchiveFile *fileFilter = static_cast<const KArchiveFile *>(filter);
 
             fileFilter->copyTo(mTempDirName);
-            const QString filterFileName(mTempDirName + QLatin1Char('/') + QLatin1String("filters"));
+            const QString filterFileName(mTempDirName + QLatin1Char('/') + QStringLiteral("filters"));
             KSharedConfig::Ptr filtersConfig = KSharedConfig::openConfig(filterFileName);
             const QStringList filterList = filtersConfig->groupList().filter(QRegularExpression(QStringLiteral("Filter #\\d+")));
             for (const QString &filterStr : filterList) {
@@ -891,18 +891,18 @@ void ImportMailJob::restoreConfig()
 
     importSimpleFilesInDirectory(QStringLiteral("/autocorrect/"));
     importSimpleFilesInDirectory(QStringLiteral("/gravatar/"));
-    const KArchiveEntry *kmail2Entry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("kmail2/adblockrules_local"));
+    const KArchiveEntry *kmail2Entry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("kmail2/adblockrules_local"));
     if (kmail2Entry && kmail2Entry->isFile()) {
         const KArchiveFile *entry = static_cast<const KArchiveFile *>(kmail2Entry);
-        const QString adblockPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("kmail2/adblockrules_local");
+        const QString adblockPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/adblockrules_local");
         if (QFileInfo::exists(adblockPath)) {
             if (overwriteConfigMessageBox(QStringLiteral("adblockrules_local"))) {
-                copyToFile(entry, QString(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/") + QLatin1String("kmail2/adblockrules_local")),
-                           QStringLiteral("adblockrules_local"), Utils::dataPath() + QLatin1String("kmail2/"));
+                copyToFile(entry, QString(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/") + QStringLiteral("kmail2/adblockrules_local")),
+                           QStringLiteral("adblockrules_local"), Utils::dataPath() + QStringLiteral("kmail2/"));
             }
         } else {
-            copyToFile(entry, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QLatin1String("kmail2/adblockrules_local"), QStringLiteral(
-                           "adblockrules_local"), Utils::dataPath() + QLatin1String("kmail2/"));
+            copyToFile(entry, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/adblockrules_local"), QStringLiteral(
+                           "adblockrules_local"), Utils::dataPath() + QStringLiteral("kmail2/"));
         }
     }
 
@@ -954,7 +954,7 @@ void ImportMailJob::restoreIdentity()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restoring identities..."));
-    const QString path(Utils::identitiesPath() + QLatin1String("emailidentities"));
+    const QString path(Utils::identitiesPath() + QStringLiteral("emailidentities"));
     if (!mFileList.contains(path)) {
         Q_EMIT error(i18n("emailidentities file could not be found in the archive."));
     } else {
@@ -964,7 +964,7 @@ void ImportMailJob::restoreIdentity()
         if (identity && identity->isFile()) {
             const KArchiveFile *fileIdentity = static_cast<const KArchiveFile *>(identity);
             fileIdentity->copyTo(mTempDirName);
-            KSharedConfig::Ptr identityConfig = KSharedConfig::openConfig(mTempDirName + QLatin1Char('/') + QLatin1String("emailidentities"));
+            KSharedConfig::Ptr identityConfig = KSharedConfig::openConfig(mTempDirName + QLatin1Char('/') + QStringLiteral("emailidentities"));
             KConfigGroup general = identityConfig->group(QStringLiteral("General"));
             const int defaultIdentity = general.readEntry(QStringLiteral("Default Identity"), -1);
 

@@ -225,7 +225,7 @@ void Utils::convertCollectionToRealPath(KConfigGroup &group, const QString &curr
 
 QString Utils::resourcePath(const Akonadi::AgentInstance &agent, const QString &defaultPath)
 {
-    const QString agentFileName = agent.identifier() + QLatin1String("rc");
+    const QString agentFileName = agent.identifier() + QStringLiteral("rc");
     const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
@@ -235,7 +235,7 @@ QString Utils::resourcePath(const Akonadi::AgentInstance &agent, const QString &
 
 QString Utils::storeResources(KZip *archive, const QString &identifier, const QString &path)
 {
-    const QString agentFileName = identifier + QLatin1String("rc");
+    const QString agentFileName = identifier + QStringLiteral("rc");
     const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
     qCDebug(PIMDATAEXPORTERCORE_LOG) << "configFileName " << configFileName << "agentFileName " << configFileName;
 
@@ -266,7 +266,7 @@ QString Utils::storeResources(KZip *archive, const QString &identifier, const QS
     }
 
     const QString agentConfigFileName = Utils::prefixAkonadiConfigFile() + identifier;
-    const QString agentConfigFileNamePath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1String("/akonadi/") + agentConfigFileName;
+    const QString agentConfigFileNamePath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QStringLiteral("/akonadi/") + agentConfigFileName;
     if (QFileInfo::exists(agentConfigFileNamePath)) {
         fileAdded = archive->addLocalFile(agentConfigFileNamePath, path + agentConfigFileName);
         if (!fileAdded) {
@@ -321,11 +321,11 @@ void Utils::addVersion(KZip *archive)
 
 int Utils::archiveVersion(KZip *archive)
 {
-    const KArchiveEntry *informationFile = archive->directory()->entry(Utils::infoPath() + QLatin1String("VERSION_1"));
+    const KArchiveEntry *informationFile = archive->directory()->entry(Utils::infoPath() + QStringLiteral("VERSION_1"));
     if (informationFile && informationFile->isFile()) {
         return 1;
     }
-    informationFile = archive->directory()->entry(Utils::infoPath() + QLatin1String("VERSION_2"));
+    informationFile = archive->directory()->entry(Utils::infoPath() + QStringLiteral("VERSION_2"));
     if (informationFile && informationFile->isFile()) {
         return 2;
     }
