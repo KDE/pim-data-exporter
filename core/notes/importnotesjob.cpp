@@ -153,7 +153,7 @@ void ImportNotesJob::restoreResources()
                     file->copyTo(copyToDirName);
                     QString resourceName(file->name());
 
-                    QString filename(file->name());
+                    QString filename(resourceName);
                     //TODO adapt filename otherwise it will use all the time the same filename.
                     qCDebug(PIMDATAEXPORTERCORE_LOG) << " filename :" << filename;
 
