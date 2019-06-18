@@ -158,7 +158,6 @@ void Utils::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &c
             bool found = false;
             if (!prefixCollection.isEmpty() && str.startsWith(prefixCollection)) {
                 str = str.remove(0, prefixCollection.length());
-
             }
             const int collectionId = str.toInt(&found);
             if (found) {
@@ -377,7 +376,6 @@ QString Utils::storedTypeToI18n(StoredType type)
     qCDebug(PIMDATAEXPORTERCORE_LOG) << " type unknown " << type;
     return QString();
 }
-
 
 QString Utils::agentFileName(const QString &filename)
 {

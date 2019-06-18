@@ -315,7 +315,6 @@ void ExportMailJob::backupConfig()
     backupConfigFile(QStringLiteral("texttospeechrc"));
     backupConfigFile(QStringLiteral("kleopatracertificateselectiondialogrc"));
 
-
     //Notify file config
     backupConfigFile(QStringLiteral("akonadi_mailfilter_agent.notifyrc"));
     backupConfigFile(QStringLiteral("akonadi_sendlater_agent.notifyrc"));

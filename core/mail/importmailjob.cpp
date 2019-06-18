@@ -45,7 +45,6 @@
 #include <AkonadiCore/agentinstancecreatejob.h>
 #include <AkonadiCore/CollectionFetchJob>
 
-
 #include <QMetaMethod>
 #include <QDir>
 #include <QStandardPaths>
@@ -265,7 +264,6 @@ void ImportMailJob::importMailTransport(const QString &tempDirName)
             addMailTransport(mt, defaultTransport, transportId);
         }
     }
-
 }
 
 void ImportMailJob::restoreTransports()
@@ -945,13 +943,12 @@ void ImportMailJob::registerSpecialCollection(Akonadi::SpecialMailCollections::T
     auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection(colId), Akonadi::CollectionFetchJob::Base, this);
     connect(fetch, &Akonadi::CollectionFetchJob::collectionsReceived,
             this, [ type](const Akonadi::Collection::List &cols) {
-                if (cols.count() != 1) {
-                    return;
-                }
-                Akonadi::SpecialMailCollections::self()->registerCollection(type, cols.first());
-            });
+        if (cols.count() != 1) {
+            return;
+        }
+        Akonadi::SpecialMailCollections::self()->registerCollection(type, cols.first());
+    });
 }
-
 
 void ImportMailJob::restoreIdentity()
 {
@@ -1212,7 +1209,6 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         convertRealPathToCollectionList(favoriteGroup, expensionKey);
     }
 
-
     const QString favoriteCollectionStr(QStringLiteral("FavoriteCollections"));
     if (kmailConfig->hasGroup(favoriteCollectionStr)) {
         KConfigGroup favoriteGroup = kmailConfig->group(favoriteCollectionStr);
@@ -1245,7 +1241,6 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         convertRealPathToCollectionList(folderSelectionGroup, folderSelectionSelectedFolder, false);
     }
 
-
     //Convert MessageListTab collection id
     const QString messageListPaneStr(QStringLiteral("MessageListPane"));
     if (kmailConfig->hasGroup(messageListPaneStr)) {
@@ -1257,7 +1252,6 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
             convertRealPathToCollectionList(messageListPaneTabGroup, messageListPaneTabFolderStr, false);
         }
     }
-
 
     //Automatic Add Contacts
     QHash<int, uint>::const_iterator i = mHashIdentity.constBegin();

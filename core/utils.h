@@ -94,7 +94,6 @@ PIMDATAEXPORTER_EXPORT QString prefixAkonadiConfigFile();
 PIMDATAEXPORTER_EXPORT QString exportDataTypeFileName();
 QString akonadiAgentName(const QString &configPath);
 
-
 PIMDATAEXPORTER_EXPORT QString agentFileName(const QString &filename);
 
 void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);

@@ -39,7 +39,6 @@
 #include "akregator/exportakregatorjob.h"
 #include "akregator/importakregatorjob.h"
 
-
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QFile>

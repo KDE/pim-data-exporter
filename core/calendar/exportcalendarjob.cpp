@@ -188,12 +188,10 @@ void ExportCalendarJob::backupConfig()
             }
         }
 
-
         eventviewConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), eventviewsrcStr);
         delete eventviewConfig;
     }
-
 
     backupConfigFile(QStringLiteral("calendar_printing.rc"));
     backupConfigFile(QStringLiteral("korgacrc"));

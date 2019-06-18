@@ -46,7 +46,6 @@ public:
     QString exportedFileInfo();
     void removeNotSelectedItems();
 
-
 private:
     void slotItemChanged(QTreeWidgetItem *, int);
 

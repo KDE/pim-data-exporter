@@ -309,7 +309,6 @@ void ImportCalendarJob::importkorganizerConfig(const KArchiveFile *file, const Q
         convertRealPathToCollectionList(group, selectionKey, true);
     }
 
-
     korganizerConfig->sync();
 }
 
@@ -327,7 +326,6 @@ void ImportCalendarJob::importeventViewConfig(const KArchiveFile *file, const QS
             if (id != -1) {
                 const QColor color = group.readEntry(key, QColor());
                 group.writeEntry(QString::number(id), color);
-
             }
             group.deleteEntry(key);
         }

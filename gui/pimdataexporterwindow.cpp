@@ -368,11 +368,11 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
         QString recentDirClass;
         currentFileName
             = QFileDialog::getOpenFileName(
-            this,
-            i18n("Restore backup"),
-            KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimdataexporter")),
-                                     recentDirClass).toLocalFile(),
-            QStringLiteral("%1 (*.zip)").arg(i18n("Zip File")));
+                  this,
+                  i18n("Restore backup"),
+                  KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimdataexporter")),
+                                           recentDirClass).toLocalFile(),
+                  QStringLiteral("%1 (*.zip)").arg(i18n("Zip File")));
         if (currentFileName.isEmpty()) {
             return;
         }

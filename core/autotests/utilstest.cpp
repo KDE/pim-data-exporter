@@ -17,19 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "utilstest.h"
 #include "../utils.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(UtilsTest)
 UtilsTest::UtilsTest(QObject *parent) : QObject(parent)
 {
-
 }
 
 void UtilsTest::shouldTestValue()
 {
-    QCOMPARE(Utils::configsPath(), QStringLiteral("configs/"));    
+    QCOMPARE(Utils::configsPath(), QStringLiteral("configs/"));
     QCOMPARE(Utils::transportsPath(), QStringLiteral("transports/"));
     QCOMPARE(Utils::resourcesPath(), QStringLiteral("resources/"));
     QCOMPARE(Utils::identitiesPath(), QStringLiteral("identities/"));
