@@ -22,7 +22,6 @@
 #include "pimdataexporter-version.h"
 #include <KLocalizedString>
 #include <KAboutData>
-#include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <QApplication>
 

@@ -35,7 +35,6 @@
 #include <KLocalizedString>
 #include <QTemporaryFile>
 
-#include <KProcess>
 #include "pimdataexportcore_debug.h"
 
 #include <QFile>

@@ -31,8 +31,6 @@
 #include <KIdentityManagement/kidentitymanagement/identity.h>
 
 #include <KLocalizedString>
-#include <KProcess>
-#include <QTemporaryFile>
 #include <KSharedConfig>
 #include <KConfigGroup>
 #include <KMessageBox>

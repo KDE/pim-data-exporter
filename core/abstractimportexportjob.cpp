@@ -33,7 +33,6 @@
 
 #include <AkonadiCore/ServerManager>
 
-#include <QTemporaryFile>
 
 #include <QFile>
 #include <QDir>

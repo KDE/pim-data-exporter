@@ -40,7 +40,6 @@
 #include "akregator/importakregatorjob.h"
 
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <QFile>
 
 #include "pimdataexportcore_debug.h"

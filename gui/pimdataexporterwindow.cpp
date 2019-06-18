@@ -53,7 +53,6 @@
 #include <KFileWidget>
 #include <KRecentDirs>
 #include <QStandardPaths>
-#include <QLocale>
 #include <QFileDialog>
 #include <QCommandLineParser>
 

@@ -22,8 +22,6 @@
 
 #include <KLocalizedString>
 #include <KDBusService>
-#include <QCommandLineParser>
-#include <QCommandLineOption>
 #include <QApplication>
 #include <kdelibs4configmigrator.h>
 #include <KCrash>

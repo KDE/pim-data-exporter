@@ -19,7 +19,6 @@
 
 #include "../dialog/selectiontypedialog.h"
 
-#include <KLocalizedString>
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>
