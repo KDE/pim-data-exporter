@@ -289,7 +289,7 @@ void PimDataExporterWindow::slotBackupData()
 void PimDataExporterWindow::backupData(const QString &filename, const QString &templateFile)
 {
     QString currentFileName = filename;
-    QPointer<SelectionTypeDialog> dialog = new SelectionTypeDialog(this);
+    QPointer<SelectionTypeDialog> dialog = new SelectionTypeDialog(true, this);
     dialog->loadTemplate(templateFile);
     if (dialog->exec()) {
         mLogWidget->clear();
@@ -390,7 +390,7 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
     } else {
         templateFileName = templateFile;
     }
-    QPointer<SelectionTypeDialog> dialog = new SelectionTypeDialog(this);
+    QPointer<SelectionTypeDialog> dialog = new SelectionTypeDialog(false, this);
     dialog->loadTemplate(templateFileName);
     if (cleanupItems) {
         dialog->removeNotSelectedItems();

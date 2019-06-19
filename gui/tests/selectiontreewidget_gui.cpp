@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
 
-    SelectionTypeDialog *dialog = new SelectionTypeDialog;
+    SelectionTypeDialog *dialog = new SelectionTypeDialog(true);
     dialog->resize(800, 600);
     dialog->show();
     app.exec();

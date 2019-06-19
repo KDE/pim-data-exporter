@@ -41,7 +41,7 @@ SelectionTypeDialogTest::~SelectionTypeDialogTest()
 
 void SelectionTypeDialogTest::shouldHaveDefaultValue()
 {
-    SelectionTypeDialog dlg;
+    SelectionTypeDialog dlg(false);
     QVERIFY(dlg.isModal());
     QVERIFY(!dlg.windowTitle().isEmpty());
 
@@ -74,7 +74,7 @@ void SelectionTypeDialogTest::shouldHaveDefaultValue()
 
 void SelectionTypeDialogTest::shouldHideButtons()
 {
-    SelectionTypeDialog dlg;
+    SelectionTypeDialog dlg(false);
     dlg.removeNotSelectedItems();
     QPushButton *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectAll"));
     QVERIFY(!selectAll->isHidden());
@@ -107,7 +107,7 @@ void checkState(SelectionTypeTreeWidget *mSelectionTreeWidget, bool checked)
 
 void SelectionTypeDialogTest::shouldSelectAllItems()
 {
-    SelectionTypeDialog dlg;
+    SelectionTypeDialog dlg(false);
     SelectionTypeTreeWidget *mSelectionTreeWidget = dlg.findChild<SelectionTypeTreeWidget *>(QStringLiteral("mSelectionTreeWidget"));
     QPushButton *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectAll"));
     QTest::mouseClick(selectAll, Qt::LeftButton);

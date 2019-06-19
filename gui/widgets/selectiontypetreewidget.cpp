@@ -33,10 +33,10 @@
 #include "gui/pimdataexportgui_debug.h"
 #include <QPointer>
 
-SelectionTypeTreeWidget::SelectionTypeTreeWidget(QWidget *parent)
+SelectionTypeTreeWidget::SelectionTypeTreeWidget(bool backupData, QWidget *parent)
     : QTreeWidget(parent)
 {
-    initialize();
+    initialize(backupData);
     expandAll();
     header()->hide();
 }
@@ -45,7 +45,7 @@ SelectionTypeTreeWidget::~SelectionTypeTreeWidget()
 {
 }
 
-void SelectionTypeTreeWidget::initialize()
+void SelectionTypeTreeWidget::initialize(bool backupData)
 {
     mKmailItem = new QTreeWidgetItem(this);
     mKmailItem->setCheckState(0, Qt::Checked);
@@ -79,6 +79,9 @@ void SelectionTypeTreeWidget::initialize()
     mKNotesItem->setCheckState(0, Qt::Checked);
     createSubItem(mKNotesItem, Utils::Resources);
     createSubItem(mKNotesItem, Utils::Config);
+    if (!backupData)  {
+        createSubItem(mKNotesItem, Utils::Data);
+    }
 
     mAkregatorItem = new QTreeWidgetItem(this);
     mAkregatorItem->setText(0, Utils::appTypeToI18n(Utils::Akregator));

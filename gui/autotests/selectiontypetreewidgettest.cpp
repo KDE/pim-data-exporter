@@ -35,7 +35,7 @@ SelectionTypeTreeWidgetTest::~SelectionTypeTreeWidgetTest()
 
 void SelectionTypeTreeWidgetTest::shouldHaveDefaultSelectedWidget()
 {
-    SelectionTypeTreeWidget w;
+    SelectionTypeTreeWidget w(true);
     QVERIFY(w.topLevelItemCount() != 0);
 }
 
@@ -68,7 +68,7 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
     QString fileNameFullPath = QLatin1String(PIMDATAEXPORTER_DATA_DIR) + QStringLiteral("/") + filename;
     QFile f(fileNameFullPath);
     QVERIFY(f.exists());
-    SelectionTypeTreeWidget w;
+    SelectionTypeTreeWidget w(true);
     qDebug() << " filename" << fileNameFullPath;
     w.loadTemplate(fileNameFullPath);
     w.removeNotSelectedItems();

@@ -29,7 +29,7 @@
 #include <QVBoxLayout>
 #include <QCheckBox>
 
-SelectionTypeDialog::SelectionTypeDialog(QWidget *parent)
+SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18n("Select Type"));
@@ -46,7 +46,7 @@ SelectionTypeDialog::SelectionTypeDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SelectionTypeDialog::reject);
     okButton->setDefault(true);
 
-    mSelectionTreeWidget = new SelectionTypeTreeWidget(this);
+    mSelectionTreeWidget = new SelectionTypeTreeWidget(backupData, this);
     mSelectionTreeWidget->setObjectName(QStringLiteral("mSelectionTreeWidget"));
     topLayout->addWidget(mSelectionTreeWidget);
 

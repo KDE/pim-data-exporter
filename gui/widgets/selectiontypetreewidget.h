@@ -30,7 +30,7 @@ class SelectionTypeTreeWidget : public QTreeWidget
 {
     Q_OBJECT
 public:
-    explicit SelectionTypeTreeWidget(QWidget *parent = nullptr);
+    explicit SelectionTypeTreeWidget(bool backupData, QWidget *parent = nullptr);
     ~SelectionTypeTreeWidget();
 
     QHash<Utils::AppsType, Utils::importExportParameters> storedType() const;
@@ -53,7 +53,7 @@ private:
         action = Qt::UserRole + 1
     };
 
-    void initialize();
+    void initialize(bool backupData);
     void setSelectItems(bool b);
     void changeState(QTreeWidgetItem *item, bool b);
     void createSubItem(QTreeWidgetItem *parent, Utils::StoredType type);
