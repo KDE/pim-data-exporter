@@ -101,8 +101,7 @@ void ImportAddressbookJob::restoreResources()
                     file->copyTo(copyToDirName);
                     QString resourceName(file->name());
 
-                    QString filename(file->name());
-                    //TODO adapt filename otherwise it will use all the time the same filename.
+                    QString filename(resourceName);
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
                     //TODO fix default path
