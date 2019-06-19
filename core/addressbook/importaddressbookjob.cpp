@@ -200,12 +200,8 @@ void ImportAddressbookJob::importkaddressBookConfig(const KArchiveFile *file, co
     copyToFile(file, config, filename, prefix);
     KSharedConfig::Ptr kaddressBookConfig = KSharedConfig::openConfig(config);
 
-    const QString collectionViewCheckStateStr(QStringLiteral("CollectionViewCheckState"));
-    if (kaddressBookConfig->hasGroup(collectionViewCheckStateStr)) {
-        KConfigGroup group = kaddressBookConfig->group(collectionViewCheckStateStr);
-        const QString selectionKey(QStringLiteral("Selection"));
-        convertRealPathToCollectionList(group, selectionKey, true);
-    }
+    convertCollectionListStrToAkonadiId(kaddressBookConfig, QStringLiteral("CollectionViewCheckState"), QStringLiteral("Selection"), true);
+
 
     const QString collectionViewStateStr(QStringLiteral("CollectionViewState"));
     if (kaddressBookConfig->hasGroup(collectionViewStateStr)) {

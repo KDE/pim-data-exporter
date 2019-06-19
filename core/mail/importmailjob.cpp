@@ -1207,22 +1207,11 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         convertRealPathToCollectionList(favoriteGroup, expensionKey);
     }
 
-    const QString favoriteCollectionStr(QStringLiteral("FavoriteCollections"));
-    if (kmailConfig->hasGroup(favoriteCollectionStr)) {
-        KConfigGroup favoriteGroup = kmailConfig->group(favoriteCollectionStr);
+    convertCollectionListStrToAkonadiId(kmailConfig, QStringLiteral("FavoriteCollections"), QStringLiteral("FavoriteCollectionIds"), false);
 
-        const QString favoriteCollectionIdsStr(QStringLiteral("FavoriteCollectionIds"));
-        convertRealPathToCollectionList(favoriteGroup, favoriteCollectionIdsStr, false);
-    }
+    //For favorite id for root collection == 0 and we store only folder => c
+    convertCollectionListStrToAkonadiId(kmailConfig, QStringLiteral("FavoriteCollectionsOrder"), QStringLiteral("0"), true);
 
-    const QString favoriteCollectionOrderStr(QStringLiteral("FavoriteCollectionsOrder"));
-    if (kmailConfig->hasGroup(favoriteCollectionOrderStr)) {
-        KConfigGroup favoriteGroupOrder = kmailConfig->group(favoriteCollectionOrderStr);
-
-        //For favorite id for root collection == 0 and we store only folder => c
-        const QString favoriteCollectionOrderIdsStr(QStringLiteral("0"));
-        convertRealPathToCollectionList(favoriteGroupOrder, favoriteCollectionOrderIdsStr, true);
-    }
 
     //Event collection
     convertCollectionStrToAkonadiId(kmailConfig, QStringLiteral("Event"), QStringLiteral("LastEventSelectedFolder"));
@@ -1232,12 +1221,8 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
     convertCollectionStrToAkonadiId(kmailConfig, QStringLiteral("Note"), QStringLiteral("LastNoteSelectedFolder"));
 
     //FolderSelectionDialog collection
-    const QString folderSelectionCollectionStr(QStringLiteral("FolderSelectionDialog"));
-    if (kmailConfig->hasGroup(folderSelectionCollectionStr)) {
-        KConfigGroup folderSelectionGroup = kmailConfig->group(folderSelectionCollectionStr);
-        const QString folderSelectionSelectedFolder(QStringLiteral("LastSelectedFolder"));
-        convertRealPathToCollectionList(folderSelectionGroup, folderSelectionSelectedFolder, false);
-    }
+    convertCollectionListStrToAkonadiId(kmailConfig, QStringLiteral("FolderSelectionDialog"), QStringLiteral("LastSelectedFolder"), false);
+
 
     //Convert MessageListTab collection id
     const QString messageListPaneStr(QStringLiteral("MessageListPane"));

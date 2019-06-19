@@ -626,7 +626,14 @@ void AbstractImportExportJob::convertCollectionStrToAkonadiId(const KSharedConfi
 {
     if (config->hasGroup(groupName)) {
         KConfigGroup eventGroup = config->group(groupName);
-        const QString eventLastEventSelectedFolder(key);
-        convertRealPathToCollection(eventGroup, eventLastEventSelectedFolder, false);
+        convertRealPathToCollection(eventGroup, key, false);
+    }
+}
+
+void AbstractImportExportJob::convertCollectionListStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key, bool addCollectionPrefix)
+{
+    if (config->hasGroup(groupName)) {
+        KConfigGroup group = config->group(groupName);
+        convertRealPathToCollectionList(group, key, addCollectionPrefix);
     }
 }

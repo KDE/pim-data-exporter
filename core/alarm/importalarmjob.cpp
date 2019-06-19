@@ -176,12 +176,7 @@ void ImportAlarmJob::importkalarmConfig(const KArchiveFile *kalarmFile, const QS
     copyToFile(kalarmFile, kalarmrc, filename, prefix);
     KSharedConfig::Ptr kalarmConfig = KSharedConfig::openConfig(kalarmrc);
 
-    const QString collectionsStr(QStringLiteral("Collections"));
-    if (kalarmConfig->hasGroup(collectionsStr)) {
-        KConfigGroup group = kalarmConfig->group(collectionsStr);
-        const QString selectionKey(QStringLiteral("FavoriteCollectionIds"));
-        convertRealPathToCollectionList(group, selectionKey, false);
-    }
+    convertCollectionListStrToAkonadiId(kalarmConfig, QStringLiteral("Collections"), QStringLiteral("FavoriteCollectionIds"), false);
 
     kalarmConfig->sync();
 }

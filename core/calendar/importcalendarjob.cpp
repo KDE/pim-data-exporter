@@ -295,19 +295,8 @@ void ImportCalendarJob::importkorganizerConfig(const KArchiveFile *file, const Q
     copyToFile(file, config, filename, prefix);
     KSharedConfig::Ptr korganizerConfig = KSharedConfig::openConfig(config);
 
-    const QString collectionsStr(QStringLiteral("GlobalCollectionSelection"));
-    if (korganizerConfig->hasGroup(collectionsStr)) {
-        KConfigGroup group = korganizerConfig->group(collectionsStr);
-        const QString selectionKey(QStringLiteral("Selection"));
-        convertRealPathToCollectionList(group, selectionKey, true);
-    }
-
-    const QString collectionTreeViewStr(QStringLiteral("CollectionTreeView"));
-    if (korganizerConfig->hasGroup(collectionTreeViewStr)) {
-        KConfigGroup group = korganizerConfig->group(collectionTreeViewStr);
-        const QString selectionKey(QStringLiteral("Expansion"));
-        convertRealPathToCollectionList(group, selectionKey, true);
-    }
+    convertCollectionListStrToAkonadiId(korganizerConfig, QStringLiteral("GlobalCollectionSelection"), QStringLiteral("Selection"), true);
+    convertCollectionListStrToAkonadiId(korganizerConfig, QStringLiteral("CollectionTreeView"), QStringLiteral("Expansion"), true);
 
     korganizerConfig->sync();
 }
