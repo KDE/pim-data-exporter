@@ -77,8 +77,8 @@ void SelectionTypeTreeWidget::initialize()
     mKNotesItem = new QTreeWidgetItem(this);
     mKNotesItem->setText(0, Utils::appTypeToI18n(Utils::KNotes));
     mKNotesItem->setCheckState(0, Qt::Checked);
+    createSubItem(mKNotesItem, Utils::Resources);
     createSubItem(mKNotesItem, Utils::Config);
-    createSubItem(mKNotesItem, Utils::Data);
 
     mAkregatorItem = new QTreeWidgetItem(this);
     mAkregatorItem->setText(0, Utils::appTypeToI18n(Utils::Akregator));
