@@ -505,6 +505,8 @@ void ExportMailJob::backupConfig()
                     if (!realPath.isEmpty()) {
                         storageGroup.writeEntry(QStringLiteral("%1%2").arg(storageModelSelectedPattern, realPath), oldValue);
                         storageGroup.deleteEntry(str);
+                    } else {
+                        storageGroup.deleteEntry(str);
                     }
                 }
             }
