@@ -88,7 +88,7 @@ void ExportAddressbookJob::slotWriteNextArchiveResource()
     Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
     const Akonadi::AgentInstance::List list = manager->instances();
     if (mIndexIdentifier < list.count()) {
-        Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
+        const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
         const QString identifier = agent.identifier();
         if (identifier.contains(QLatin1String("akonadi_vcarddir_resource_")) || identifier.contains(QLatin1String("akonadi_contacts_resource_"))) {
             const QString archivePath = Utils::addressbookPath() + identifier + QDir::separator();
