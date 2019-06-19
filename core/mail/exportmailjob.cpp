@@ -598,6 +598,23 @@ void ExportMailJob::backupConfig()
 
         //TODO add confirm address too
 
+
+        //Clean up kmail2rc
+        const QString tipOfDaysStr(QStringLiteral("TipOfDay"));
+        if (kmailConfig->hasGroup(tipOfDaysStr)) {
+            kmailConfig->deleteGroup(tipOfDaysStr);
+        }
+        const QString startupStr(QStringLiteral("Startup"));
+        if (kmailConfig->hasGroup(startupStr)) {
+            kmailConfig->deleteGroup(startupStr);
+        }
+
+        const QString search(QStringLiteral("Search"));
+        if (kmailConfig->hasGroup(search)) {
+            KConfigGroup searchGroup = kmailConfig->group(search);
+            searchGroup.deleteGroup();
+        }
+
         kmailConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), kmailStr);
         delete kmailConfig;

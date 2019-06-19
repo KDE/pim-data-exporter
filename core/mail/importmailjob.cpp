@@ -1140,13 +1140,6 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
     copyToFile(kmailsnippet, kmail2rc, filename, prefix);
     KSharedConfig::Ptr kmailConfig = KSharedConfig::openConfig(kmail2rc);
 
-    //Be sure to delete Search group
-    const QString search(QStringLiteral("Search"));
-    if (kmailConfig->hasGroup(search)) {
-        KConfigGroup searchGroup = kmailConfig->group(search);
-        searchGroup.deleteGroup();
-    }
-
     //adapt folder id
     const QString folderGroupPattern = QStringLiteral("Folder-");
     const QStringList folderList = kmailConfig->groupList().filter(folderGroupPattern);
