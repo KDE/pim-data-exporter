@@ -49,7 +49,7 @@ private:
     void addLogLine(const QString &message, LogType type);
     QString mFileName;
     QTextStream mTextStream;
-    QFile *mFile;
+    QFile *mFile = nullptr;
 };
 
 #endif // LOGINFILE_H

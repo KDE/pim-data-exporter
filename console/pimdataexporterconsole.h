@@ -68,7 +68,7 @@ private:
     PimDataBackupRestore *mPimDataBackupRestore = nullptr;
     LogInFile *mLogInFile = nullptr;
     LogInfo *mLogInfo = nullptr;
-    Mode mMode;
+    Mode mMode = Import;
     bool mInProgress = false;
 };
 

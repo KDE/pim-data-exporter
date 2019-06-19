@@ -32,10 +32,7 @@
 PimDataExporterConsole::PimDataExporterConsole(QObject *parent)
     : QObject(parent)
     , mPimDataBackupRestore(new PimDataBackupRestore(this))
-    , mLogInFile(nullptr)
     , mLogInfo(new LogInfo(this))
-    , mMode(Import)
-    , mInProgress(false)
 {
     //Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
