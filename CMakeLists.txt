@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 set(KDEPIM_VERSION_NUMBER "5.11.40")
 project(pim-data-exporter VERSION ${KDEPIM_VERSION_NUMBER})
 
-set(KF5_MIN_VERSION "5.58.0")
+set(KF5_MIN_VERSION "5.59.0")
 
 find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -99,11 +99,7 @@ add_subdirectory(core)
 add_subdirectory(gui)
 add_subdirectory(console)
 
-if (${ECM_VERSION} STRGREATER "5.58.0")
-    install(FILES pimdataexporter.renamecategories pimdataexporter.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
-else()
-    install(FILES pimdataexporter.renamecategories pimdataexporter.categories  DESTINATION ${KDE_INSTALL_CONFDIR})
-endif()
+install(FILES pimdataexporter.renamecategories pimdataexporter.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 install(FILES org.kde.pimdataexporter.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 
