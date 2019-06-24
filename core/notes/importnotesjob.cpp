@@ -196,13 +196,13 @@ void ImportNotesJob::restoreResources()
 void ImportNotesJob::importKNoteGlobalSettings(const KArchiveFile *archive, const QString &configrc, const QString &filename, const QString &prefix)
 {
     copyToFile(archive, configrc, filename, prefix);
-    KSharedConfig::Ptr kmailConfig = KSharedConfig::openConfig(configrc);
+    KSharedConfig::Ptr globalSettingsConfig = KSharedConfig::openConfig(configrc);
 
     const QString composerStr(QStringLiteral("SelectNoteFolder"));
-    if (kmailConfig->hasGroup(composerStr)) {
-        KConfigGroup composerGroup = kmailConfig->group(composerStr);
+    if (globalSettingsConfig->hasGroup(composerStr)) {
+        KConfigGroup composerGroup = globalSettingsConfig->group(composerStr);
         const QString previousStr(QStringLiteral("DefaultFolder"));
         convertRealPathToCollection(composerGroup, previousStr);
     }
-    kmailConfig->sync();
+    globalSettingsConfig->sync();
 }
