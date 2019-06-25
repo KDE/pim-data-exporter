@@ -18,6 +18,7 @@
 */
 
 #include "exportmailjob.h"
+#include "importexportmailutil.h"
 
 #include "MailCommon/MailUtil"
 #include "MailCommon/FilterManager"
@@ -457,6 +458,7 @@ void ExportMailJob::backupConfig()
             const int collectionId = str.rightRef(str.length() - folderGroupPattern.length()).toInt(&found);
             if (found) {
                 KConfigGroup oldGroup = kmailConfig->group(str);
+                ImportExportMailUtil::cleanupFolderSettings(oldGroup);
                 const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionId));
                 if (!realPath.isEmpty()) {
                     KConfigGroup newGroup(kmailConfig, folderGroupPattern + realPath);
