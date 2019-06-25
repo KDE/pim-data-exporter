@@ -72,7 +72,7 @@ void ExportAkregatorJob::slotCheckBackupData()
         const QString akregatorDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/akregator");
         QDir akregatorDirectory(akregatorDir);
         if (akregatorDirectory.exists()) {
-            const bool akregatorDirAdded = archive()->addLocalDirectory(akregatorDir, Utils::dataPath() +  QLatin1String("akregator"));
+            const bool akregatorDirAdded = archive()->addLocalDirectory(akregatorDir, Utils::dataPath() +  QStringLiteral("akregator"));
             if (!akregatorDirAdded) {
                 Q_EMIT error(i18n("\"%1\" directory cannot be added to backup file.", akregatorDir));
             }

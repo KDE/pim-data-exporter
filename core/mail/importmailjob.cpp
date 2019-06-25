@@ -19,6 +19,7 @@
 
 #include "importmailjob.h"
 #include "archivestorage.h"
+#include "importexportmailutil.h"
 
 #include "MailCommon/FilterManager"
 #include "MailCommon/FilterImporterExporter"
@@ -1158,10 +1159,13 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         const QString path = str.right(str.length() - folderGroupPattern.length());
         if (!path.isEmpty()) {
             KConfigGroup oldGroup = kmailConfig->group(str);
-            const Akonadi::Collection::Id id = convertPathToId(path);
-            if (id != -1) {
-                KConfigGroup newGroup(kmailConfig, folderGroupPattern + QString::number(id));
-                oldGroup.copyTo(&newGroup);
+            ImportExportMailUtil::cleanupFolderSettings(oldGroup);
+            if (!oldGroup.groupList().isEmpty()) {
+                const Akonadi::Collection::Id id = convertPathToId(path);
+                if (id != -1) {
+                    KConfigGroup newGroup(kmailConfig, folderGroupPattern + QString::number(id));
+                    oldGroup.copyTo(&newGroup);
+                }
             }
             oldGroup.deleteGroup();
         }

@@ -16,6 +16,7 @@ set(pimsettingexporter_addressbook_SRCS
 set(pimsettingexporter_mail_SRCS
     mail/exportmailjob.cpp
     mail/importmailjob.cpp
+    mail/importexportmailutil.cpp
     )
 
 set(pimsettingexporter_alarm_SRCS
