@@ -200,10 +200,12 @@ void PimSettingExporterWindow::setupActions(bool canZipFile)
 
     mBackupAction = ac->addAction(QStringLiteral("backup"), this, &PimSettingExporterWindow::slotBackupData);
     mBackupAction->setText(i18n("Export Data..."));
+    mBackupAction->setIcon(QIcon::fromTheme(QStringLiteral("document-export")));
     mBackupAction->setEnabled(canZipFile);
 
     mRestoreAction = ac->addAction(QStringLiteral("restore"), this, &PimSettingExporterWindow::slotRestoreData);
     mRestoreAction->setText(i18n("Import Data..."));
+    mRestoreAction->setIcon(QIcon::fromTheme(QStringLiteral("document-import")));
     mRestoreAction->setEnabled(canZipFile);
 
     mSaveLogAction = ac->addAction(QStringLiteral("save_log"), this, &PimSettingExporterWindow::slotSaveLog);
