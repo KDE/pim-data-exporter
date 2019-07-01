@@ -1,5 +1,5 @@
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="BackupMailApplication" version="8">
+<gui name="PimDataExporter" version="8">
 <MenuBar>
   <Menu name="file"><text>&amp;File</text>
     <Action name="file_open_recent"/>
