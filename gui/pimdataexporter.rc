@@ -1,5 +1,5 @@
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="BackupMailApplication" version="7">
+<gui name="BackupMailApplication" version="8">
 <MenuBar>
   <Menu name="file"><text>&amp;File</text>
     <Action name="file_open_recent"/>
@@ -20,5 +20,10 @@
    <Action name="show_current_archive_info"/>
   </Menu>
 </MenuBar>
+<ToolBar noMerge="1" name="mainToolBar" fullWidth="true" >
+  <text>Main Toolbar</text>
+  <Action name="backup" />
+  <Action name="restore" />
+</ToolBar>
 </gui>
 
