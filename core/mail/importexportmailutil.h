@@ -22,8 +22,7 @@
 
 #include <KConfigGroup>
 
-namespace ImportExportMailUtil
-{
+namespace ImportExportMailUtil {
 void cleanupFolderSettings(KConfigGroup &oldGroup);
 }
 

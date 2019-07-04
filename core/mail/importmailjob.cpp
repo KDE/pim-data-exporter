@@ -1209,7 +1209,6 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
     //For favorite id for root collection == 0 and we store only folder => c
     convertCollectionListStrToAkonadiId(kmailConfig, QStringLiteral("FavoriteCollectionsOrder"), QStringLiteral("0"), true);
 
-
     //Event collection
     convertCollectionStrToAkonadiId(kmailConfig, QStringLiteral("Event"), QStringLiteral("LastEventSelectedFolder"));
     //Todo collection
@@ -1219,7 +1218,6 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
 
     //FolderSelectionDialog collection
     convertCollectionListStrToAkonadiId(kmailConfig, QStringLiteral("FolderSelectionDialog"), QStringLiteral("LastSelectedFolder"), false);
-
 
     //Convert MessageListTab collection id
     const QString messageListPaneStr(QStringLiteral("MessageListPane"));

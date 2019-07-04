@@ -600,7 +600,6 @@ void ExportMailJob::backupConfig()
 
         //TODO add confirm address too
 
-
         //Clean up kmail2rc
         const QString tipOfDaysStr(QStringLiteral("TipOfDay"));
         if (kmailConfig->hasGroup(tipOfDaysStr)) {

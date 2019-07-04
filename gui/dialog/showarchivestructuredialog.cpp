@@ -95,9 +95,9 @@ void ShowArchiveStructureDialog::slotExtractFile()
             if (currentEntry && currentEntry->isFile()) {
                 const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
                 const QString dir = QFileDialog::getExistingDirectory(this, i18n("Select Directory"),
-                                                                QDir::homePath(),
-                                                                QFileDialog::ShowDirsOnly
-                                                                | QFileDialog::DontResolveSymlinks);
+                                                                      QDir::homePath(),
+                                                                      QFileDialog::ShowDirsOnly
+                                                                      | QFileDialog::DontResolveSymlinks);
                 if (!dir.isEmpty()) {
                     if (!currentFile->copyTo(dir)) {
                         qCWarning(PIMDATAEXPORTERGUI_LOG) << "Impossible to extract file: " << currentItem->text(0) << " to " << dir;

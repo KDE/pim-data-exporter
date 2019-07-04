@@ -19,7 +19,6 @@
 
 #include "importexportmailutil.h"
 
-
 void ImportExportMailUtil::cleanupFolderSettings(KConfigGroup &oldGroup)
 {
     const bool mailingListEnabled = oldGroup.readEntry("MailingListEnabled", false);
@@ -53,4 +52,3 @@ void ImportExportMailUtil::cleanupFolderSettings(KConfigGroup &oldGroup)
         oldGroup.deleteEntry("UseDefaultIdentity");
     }
 }
-

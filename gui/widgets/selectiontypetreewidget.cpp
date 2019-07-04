@@ -79,7 +79,7 @@ void SelectionTypeTreeWidget::initialize(bool backupData)
     mKNotesItem->setCheckState(0, Qt::Checked);
     createSubItem(mKNotesItem, Utils::Resources);
     createSubItem(mKNotesItem, Utils::Config);
-    if (!backupData)  {
+    if (!backupData) {
         createSubItem(mKNotesItem, Utils::Data);
     }
 
