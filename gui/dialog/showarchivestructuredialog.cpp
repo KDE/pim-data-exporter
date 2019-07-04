@@ -90,7 +90,7 @@ bool ShowArchiveStructureDialog::fillTree()
     const KArchiveDirectory *topDirectory = zip->directory();
     const bool isAValidArchive = searchArchiveElement(Utils::infoPath(), topDirectory, i18n("Info"));
     if (!isAValidArchive) {
-        KMessageBox::error(this, i18n("This is not kdepim archive."), i18n("Show information"));
+        KMessageBox::error(this, i18n("This is not pim archive."), i18n("Show information"));
         result = false;
     } else {
         searchArchiveElement(Utils::mailsPath(), topDirectory, Utils::appTypeToI18n(Utils::KMail));
