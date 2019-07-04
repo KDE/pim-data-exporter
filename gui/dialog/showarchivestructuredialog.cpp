@@ -51,13 +51,20 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     searchLine->setPlaceholderText(i18n("Search..."));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     QPushButton *user1Button = new QPushButton(this);
+    user1Button->setText(i18n("Save As Text..."));
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
+
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ShowArchiveStructureDialog::reject);
+
+    mExtractFile = new QPushButton(this);
+    mExtractFile->setText(i18n("Extract Selected File"));
+    mExtractFile->setEnabled(false);
+    buttonBox->addButton(mExtractFile, QDialogButtonBox::ActionRole);
+
 
     mainLayout->addWidget(searchLine);
     mainLayout->addWidget(mTreeWidget);
     mainLayout->addWidget(buttonBox);
-    user1Button->setText(i18n("Save As Text..."));
     const bool result = fillTree();
     if (result) {
         mTreeWidget->expandAll();

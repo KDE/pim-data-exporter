@@ -25,7 +25,7 @@ class QTreeWidget;
 class QTreeWidgetItem;
 class KArchiveEntry;
 class KArchiveDirectory;
-
+class QPushButton;
 class ShowArchiveStructureDialog : public QDialog
 {
     Q_OBJECT
@@ -51,6 +51,7 @@ private:
     QString mFileName;
     QString mLogFile;
     QTreeWidget *mTreeWidget = nullptr;
+    QPushButton *mExtractFile = nullptr;
 };
 
 #endif // SHOWARCHIVESTRUCTUREDIALOG_H
