@@ -62,8 +62,9 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     if (result) {
         mTreeWidget->expandAll();
         connect(user1Button, &QPushButton::clicked, this, &ShowArchiveStructureDialog::slotExportAsLogFile);
+    } else {
+        user1Button->setEnabled(false);
     }
-    user1Button->setEnabled(result);
     readConfig();
 }
 
