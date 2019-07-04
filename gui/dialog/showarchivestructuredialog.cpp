@@ -50,7 +50,7 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     KTreeWidgetSearchLine *searchLine = new KTreeWidgetSearchLine(this, mTreeWidget);
     searchLine->setPlaceholderText(i18n("Search..."));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    QPushButton *user1Button = new QPushButton;
+    QPushButton *user1Button = new QPushButton(this);
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ShowArchiveStructureDialog::reject);
 
