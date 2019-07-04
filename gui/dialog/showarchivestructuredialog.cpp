@@ -19,6 +19,7 @@
 
 #include "showarchivestructuredialog.h"
 #include "core/utils.h"
+#include "pimdataexportgui_debug.h"
 #include "PimCommon/PimUtil"
 #include <QDialog>
 #include <KLocalizedString>
@@ -33,6 +34,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
+#include <QFileDialog>
 #include <ktreewidgetsearchline.h>
 
 ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, QWidget *parent)
@@ -59,8 +61,9 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     mExtractFile = new QPushButton(this);
     mExtractFile->setText(i18n("Extract Selected File"));
     mExtractFile->setEnabled(false);
+    connect(mExtractFile, &QPushButton::clicked, this, &ShowArchiveStructureDialog::slotExtractFile);
     buttonBox->addButton(mExtractFile, QDialogButtonBox::ActionRole);
-
+    connect(mTreeWidget, &QTreeWidget::itemClicked, this, &ShowArchiveStructureDialog::slotItemClicked);
 
     mainLayout->addWidget(searchLine);
     mainLayout->addWidget(mTreeWidget);
@@ -78,6 +81,41 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
 ShowArchiveStructureDialog::~ShowArchiveStructureDialog()
 {
     writeConfig();
+    delete mZip;
+}
+
+void ShowArchiveStructureDialog::slotExtractFile()
+{
+    QTreeWidgetItem *currentItem = mTreeWidget->currentItem();
+    if (currentItem) {
+        const QString fullPath = currentItem->data(0, FullPath).toString();
+        if (!fullPath.isEmpty()) {
+            const KArchiveDirectory *topDirectory = mZip->directory();
+            const KArchiveEntry *currentEntry = topDirectory->entry(fullPath);
+            if (currentEntry && currentEntry->isFile()) {
+                const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
+                const QString dir = QFileDialog::getExistingDirectory(this, i18n("Select Directory"),
+                                                                QDir::homePath(),
+                                                                QFileDialog::ShowDirsOnly
+                                                                | QFileDialog::DontResolveSymlinks);
+                if (!dir.isEmpty()) {
+                    if (!currentFile->copyTo(dir)) {
+                        qCWarning(PIMDATAEXPORTERGUI_LOG) << "Impossible to extract file: " << currentItem->text(0) << " to " << dir;
+                    }
+                }
+            }
+        }
+    }
+}
+
+void ShowArchiveStructureDialog::slotItemClicked(QTreeWidgetItem *item, int column)
+{
+    Q_UNUSED(column);
+    if (item) {
+        const QString fullPath = item->data(0, FullPath).toString();
+        mExtractFile->setEnabled(!fullPath.isEmpty());
+        qDebug() << " fullPath" <<fullPath;
+    }
 }
 
 void ShowArchiveStructureDialog::slotExportAsLogFile()
@@ -88,14 +126,15 @@ void ShowArchiveStructureDialog::slotExportAsLogFile()
 
 bool ShowArchiveStructureDialog::fillTree()
 {
-    KZip *zip = new KZip(mFileName);
-    bool result = zip->open(QIODevice::ReadOnly);
+    mZip = new KZip(mFileName);
+    bool result = mZip->open(QIODevice::ReadOnly);
     if (!result) {
         KMessageBox::error(this, i18n("Archive cannot be opened in read mode."), i18n("Cannot open archive"));
-        delete zip;
+        delete mZip;
+        mZip = nullptr;
         return false;
     }
-    const KArchiveDirectory *topDirectory = zip->directory();
+    const KArchiveDirectory *topDirectory = mZip->directory();
     const bool isAValidArchive = searchArchiveElement(Utils::infoPath(), topDirectory, i18n("Info"));
     if (!isAValidArchive) {
         KMessageBox::error(this, i18n("This is not pim archive."), i18n("Show information"));
@@ -111,7 +150,6 @@ bool ShowArchiveStructureDialog::fillTree()
         searchArchiveElement(Utils::transportsPath(), topDirectory, Utils::storedTypeToI18n(Utils::MailTransport));
         searchArchiveElement(Utils::dataPath(), topDirectory, Utils::storedTypeToI18n(Utils::Data));
     }
-    delete zip;
     return result;
 }
 
@@ -122,14 +160,14 @@ bool ShowArchiveStructureDialog::searchArchiveElement(const QString &path, const
     if (topEntry) {
         mLogFile += name + QLatin1Char('\n');
         QTreeWidgetItem *item = addTopItem(name);
-        addSubItems(item, topEntry, 0);
+        addSubItems(path, item, topEntry, 0);
     } else {
         result = false;
     }
     return result;
 }
 
-void ShowArchiveStructureDialog::addSubItems(QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent, const QString &fullpath)
+void ShowArchiveStructureDialog::addSubItems(const QString &topLevelPath, QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent, const QString &fullpath)
 {
     const KArchiveDirectory *dir = static_cast<const KArchiveDirectory *>(entry);
     ++indent;
@@ -145,10 +183,10 @@ void ShowArchiveStructureDialog::addSubItems(QTreeWidgetItem *parent, const KArc
                 font.setBold(true);
                 mLogFile += space + dirEntry->name() + QLatin1Char('\n');
                 newTopItem->setFont(0, font);
-                addSubItems(newTopItem, entry, indent, (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + dirEntry->name());
+                addSubItems(topLevelPath, newTopItem, entry, indent, (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + dirEntry->name());
             } else if (entry->isFile()) {
                 const KArchiveFile *file = static_cast<const KArchiveFile *>(entry);
-                const QString fileFullPath = fullpath + file->name();
+                const QString fileFullPath = topLevelPath + (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + file->name();
                 //qDebug() << " fileFullPath " <<fileFullPath;
                 addItem(parent, file->name(), fileFullPath);
                 mLogFile += space + file->name() + QLatin1Char('\n');

@@ -26,6 +26,7 @@ class QTreeWidgetItem;
 class KArchiveEntry;
 class KArchiveDirectory;
 class QPushButton;
+class KZip;
 class ShowArchiveStructureDialog : public QDialog
 {
     Q_OBJECT
@@ -43,15 +44,18 @@ private:
     bool fillTree();
     void readConfig();
     void writeConfig();
+    void slotItemClicked(QTreeWidgetItem *item, int column);
+    void addSubItems(const QString &topLevelPath, QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent, const QString &fullpath = QString());
+    void slotExtractFile();
 
     bool searchArchiveElement(const QString &path, const KArchiveDirectory *topDirectory, const QString &name);
     QTreeWidgetItem *addTopItem(const QString &name);
-    void addSubItems(QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent, const QString &fullpath = QString());
     QTreeWidgetItem *addItem(QTreeWidgetItem *parent, const QString &name, const QString &fillFullPath);
     QString mFileName;
     QString mLogFile;
     QTreeWidget *mTreeWidget = nullptr;
     QPushButton *mExtractFile = nullptr;
+    KZip *mZip = nullptr;
 };
 
 #endif // SHOWARCHIVESTRUCTUREDIALOG_H
