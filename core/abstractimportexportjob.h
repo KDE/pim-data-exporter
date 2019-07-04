@@ -72,6 +72,7 @@ protected:
     virtual void slotNextStep();
 
 protected:
+    bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
     void initializeListStep();
     void startSynchronizeResources(const QStringList &listResourceToSync);
     void infoAboutNewResource(const QString &resourceName);

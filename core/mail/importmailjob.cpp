@@ -279,7 +279,7 @@ void ImportMailJob::restoreTransports()
         if (transport && transport->isFile()) {
             const KArchiveFile *fileTransport = static_cast<const KArchiveFile *>(transport);
 
-            fileTransport->copyTo(mTempDirName);
+            copyArchiveFileTo(fileTransport, mTempDirName);
             importMailTransport(mTempDirName);
             Q_EMIT info(i18n("Transports restored."));
         } else {
@@ -319,7 +319,7 @@ void ImportMailJob::restoreResources()
                 if (agentFileConfigEntry && agentFileConfigEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(agentFileConfigEntry);
                     const QString destDirectory = mTempDirName + QLatin1Char('/') + Utils::resourcesPath();
-                    file->copyTo(destDirectory);
+                    copyArchiveFileTo(file, destDirectory);
                     const QString filename(file->name());
                     const QString agentResourceFileName = destDirectory + QLatin1Char('/') + filename;
                     resourceName = Utils::akonadiAgentName(agentResourceFileName);
@@ -330,7 +330,7 @@ void ImportMailJob::restoreResources()
                 const KArchiveFile *file = static_cast<const KArchiveFile *>(fileEntry);
                 const QString destDirectory = mTempDirName + QLatin1Char('/') + Utils::resourcesPath();
 
-                file->copyTo(destDirectory);
+                copyArchiveFileTo(file, destDirectory);
 
                 const QString filename(file->name());
                 const QString resourceFileName = destDirectory + QLatin1Char('/') + filename;
@@ -546,7 +546,7 @@ void ImportMailJob::restoreMails()
         const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(resourceFile);
         if (fileResouceEntry && fileResouceEntry->isFile()) {
             const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
-            file->copyTo(copyToDirName);
+            copyArchiveFileTo(file, copyToDirName);
             QString resourceName(file->name());
             QString filename(file->name());
             //qCDebug(PIMDATAEXPORTERCORE_LOG)<<" filename "<<filename<<" resourceName"<<resourceName;
@@ -559,7 +559,7 @@ void ImportMailJob::restoreMails()
                 const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                 if (akonadiAgentConfigEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
-                    file->copyTo(copyToDirName);
+                    copyArchiveFileTo(file, copyToDirName);
                     resourceName = file->name();
                     filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);
                 }
@@ -571,7 +571,7 @@ void ImportMailJob::restoreMails()
                 const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                 if (dataResouceEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(dataResouceEntry);
-                    file->copyTo(newUrl);
+                    copyArchiveFileTo(file, newUrl);
                 }
                 settings.insert(QStringLiteral("Path"), newUrl);
 
@@ -662,7 +662,7 @@ void ImportMailJob::restoreConfig()
         if (filter && filter->isFile()) {
             const KArchiveFile *fileFilter = static_cast<const KArchiveFile *>(filter);
 
-            fileFilter->copyTo(mTempDirName);
+            copyArchiveFileTo(fileFilter, mTempDirName);
             const QString filterFileName(mTempDirName + QLatin1Char('/') + QStringLiteral("filters"));
             KSharedConfig::Ptr filtersConfig = KSharedConfig::openConfig(filterFileName);
             const QStringList filterList = filtersConfig->groupList().filter(QRegularExpression(QStringLiteral("Filter #\\d+")));
@@ -962,7 +962,7 @@ void ImportMailJob::restoreIdentity()
         const KArchiveEntry *identity = mArchiveDirectory->entry(path);
         if (identity && identity->isFile()) {
             const KArchiveFile *fileIdentity = static_cast<const KArchiveFile *>(identity);
-            fileIdentity->copyTo(mTempDirName);
+            copyArchiveFileTo(fileIdentity, mTempDirName);
             KSharedConfig::Ptr identityConfig = KSharedConfig::openConfig(mTempDirName + QLatin1Char('/') + QStringLiteral("emailidentities"));
             KConfigGroup general = identityConfig->group(QStringLiteral("General"));
             const int defaultIdentity = general.readEntry(QStringLiteral("Default Identity"), -1);
@@ -1005,7 +1005,7 @@ void ImportMailJob::restoreIdentity()
                                         fileInfo.fileName());
                                     ++i;
                                 }
-                                vcardFile->copyTo(QFileInfo(vcardFilePath).absolutePath());
+                                copyArchiveFileTo(vcardFile, QFileInfo(vcardFilePath).absolutePath());
                                 group.writeEntry(vcard, vcardFilePath);
                             }
                         }
@@ -1286,7 +1286,7 @@ void ImportMailJob::mergeLdapConfig(const KArchiveFile *archivefile, const QStri
     dir.mkdir(prefix);
 
     const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
-    archivefile->copyTo(copyToDirName);
+    copyArchiveFileTo(archivefile, copyToDirName);
 
     KSharedConfig::Ptr existingConfig = KSharedConfig::openConfig(filename);
     KConfigGroup grpExisting = existingConfig->group(QStringLiteral("LDAP"));
@@ -1348,7 +1348,7 @@ void ImportMailJob::mergeKmailSnippetConfig(const KArchiveFile *archivefile, con
     dir.mkdir(prefix);
 
     const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
-    archivefile->copyTo(copyToDirName);
+    copyArchiveFileTo(archivefile, copyToDirName);
 
     KSharedConfig::Ptr existingConfig = KSharedConfig::openConfig(filename);
 
@@ -1377,7 +1377,7 @@ void ImportMailJob::mergeSieveTemplate(const KArchiveFile *archivefile, const QS
     dir.mkdir(prefix);
 
     const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
-    archivefile->copyTo(copyToDirName);
+    copyArchiveFileTo(archivefile, copyToDirName);
 
     KSharedConfig::Ptr existingConfig = KSharedConfig::openConfig(filename);
 

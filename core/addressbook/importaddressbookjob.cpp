@@ -98,7 +98,7 @@ void ImportAddressbookJob::restoreResources()
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
-                    file->copyTo(copyToDirName);
+                    copyArchiveFileTo(file, copyToDirName);
                     QString resourceName(file->name());
 
                     QString filename(resourceName);
@@ -121,7 +121,7 @@ void ImportAddressbookJob::restoreResources()
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
                             const KArchiveFile *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
-                            file->copyTo(copyToDirName);
+                            copyArchiveFileTo(file, copyToDirName);
                             resourceName = file->name();
                             filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);
                         }

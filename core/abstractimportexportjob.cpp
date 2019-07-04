@@ -448,6 +448,15 @@ void AbstractImportExportJob::addSpecificResourceSettings(const KSharedConfig::P
     //Redefine it in subclass
 }
 
+bool AbstractImportExportJob::copyArchiveFileTo(const KArchiveFile *file, const QString &destination)
+{
+    const bool result = file->copyTo(destination);
+    if (!result) {
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "file " << file->name() << " can not copy to " << destination;
+    }
+    return result;
+}
+
 void AbstractImportExportJob::extractZipFile(const KArchiveFile *file, const QString &source, const QString &destination, bool isStoredAsZippedArchive)
 {
     if (!file->copyTo(source)) {
