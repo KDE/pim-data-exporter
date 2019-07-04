@@ -121,7 +121,7 @@ bool ShowArchiveStructureDialog::searchArchiveElement(const QString &path, const
     return result;
 }
 
-void ShowArchiveStructureDialog::addSubItems(QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent)
+void ShowArchiveStructureDialog::addSubItems(QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent, const QString &fullpath)
 {
     const KArchiveDirectory *dir = static_cast<const KArchiveDirectory *>(entry);
     ++indent;
@@ -132,25 +132,28 @@ void ShowArchiveStructureDialog::addSubItems(QTreeWidgetItem *parent, const KArc
         if (entry) {
             if (entry->isDirectory()) {
                 const KArchiveDirectory *dirEntry = static_cast<const KArchiveDirectory *>(entry);
-                QTreeWidgetItem *newTopItem = addItem(parent, dirEntry->name());
+                QTreeWidgetItem *newTopItem = addItem(parent, dirEntry->name(), QString());
                 QFont font(newTopItem->font(0));
                 font.setBold(true);
                 mLogFile += space + dirEntry->name() + QLatin1Char('\n');
                 newTopItem->setFont(0, font);
-                addSubItems(newTopItem, entry, indent);
+                addSubItems(newTopItem, entry, indent, (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + dirEntry->name());
             } else if (entry->isFile()) {
                 const KArchiveFile *file = static_cast<const KArchiveFile *>(entry);
-                addItem(parent, file->name());
+                const QString fileFullPath = fullpath + file->name();
+                //qDebug() << " fileFullPath " <<fileFullPath;
+                addItem(parent, file->name(), fileFullPath);
                 mLogFile += space + file->name() + QLatin1Char('\n');
             }
         }
     }
 }
 
-QTreeWidgetItem *ShowArchiveStructureDialog::addItem(QTreeWidgetItem *parent, const QString &name)
+QTreeWidgetItem *ShowArchiveStructureDialog::addItem(QTreeWidgetItem *parent, const QString &name, const QString &fillFullPath)
 {
     QTreeWidgetItem *item = new QTreeWidgetItem(parent);
     item->setText(0, name);
+    item->setData(0, FullPath, fillFullPath);
     return item;
 }
 

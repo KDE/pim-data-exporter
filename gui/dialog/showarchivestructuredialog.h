@@ -33,6 +33,10 @@ public:
     explicit ShowArchiveStructureDialog(const QString &filename, QWidget *parent = nullptr);
     ~ShowArchiveStructureDialog();
 
+    enum File {
+        FullPath = Qt::UserRole + 1
+    };
+
 private:
     void slotExportAsLogFile();
     void exportAsLogFile();
@@ -42,8 +46,8 @@ private:
 
     bool searchArchiveElement(const QString &path, const KArchiveDirectory *topDirectory, const QString &name);
     QTreeWidgetItem *addTopItem(const QString &name);
-    void addSubItems(QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent);
-    QTreeWidgetItem *addItem(QTreeWidgetItem *parent, const QString &name);
+    void addSubItems(QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent, const QString &fullpath = QString());
+    QTreeWidgetItem *addItem(QTreeWidgetItem *parent, const QString &name, const QString &fillFullPath);
     QString mFileName;
     QString mLogFile;
     QTreeWidget *mTreeWidget = nullptr;
