@@ -388,7 +388,9 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
-                    file->copyTo(copyToDirName);
+                    if (!file->copyTo(copyToDirName)) {
+                        qCDebug(PIMDATAEXPORTERCORE_LOG) << "file " << value.akonadiConfigFile << " can not copy to " << copyToDirName;
+                    }
                     QString resourceName(file->name());
 
                     QString filename(file->name());
@@ -407,7 +409,9 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                     if (dataResouceEntry->isFile()) {
                         const KArchiveFile *file = static_cast<const KArchiveFile *>(dataResouceEntry);
-                        file->copyTo(newUrl);
+                        if (!file->copyTo(newUrl)) {
+                            qCDebug(PIMDATAEXPORTERCORE_LOG) << "file " << dataFile << " can not copy to " << newUrl;
+                        }
                     }
                     settings.insert(QStringLiteral("Path"), newUrl);
 
@@ -446,7 +450,9 @@ void AbstractImportExportJob::addSpecificResourceSettings(const KSharedConfig::P
 
 void AbstractImportExportJob::extractZipFile(const KArchiveFile *file, const QString &source, const QString &destination, bool isStoredAsZippedArchive)
 {
-    file->copyTo(source);
+    if (!file->copyTo(source)) {
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "file " << file->name() << " can not copy to " << source;
+    }
     QDir dest(destination);
     if (!dest.exists()) {
         dest.mkpath(destination);
