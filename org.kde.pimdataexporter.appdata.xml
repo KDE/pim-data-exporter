@@ -9,6 +9,7 @@
   <name xml:lang="id">PIM Data Exporter</name>
   <name xml:lang="it">Esportatore dei dati di PIM</name>
   <name xml:lang="nl">PIM-exportprogramma van gegevens</name>
+  <name xml:lang="pl">Eksportowanie danych ZIO</name>
   <name xml:lang="pt">Exportação dos Dados PIM</name>
   <name xml:lang="pt-BR">Exportador de dados PIM</name>
   <name xml:lang="sv">Export av data för personlig informationshantering</name>
@@ -23,6 +24,7 @@
   <summary xml:lang="it">Salva tutti i dati dalle applicazioni di PIM e li ripristina in altri sistemi.</summary>
   <summary xml:lang="ko">PIM 프로그램의 모든 데이터를 저장하고 다른 시스템에서 복원할 수 있도록 합니다.</summary>
   <summary xml:lang="nl">Slaat alle gegevens uit PIM-toepassingen en herstelt ze in andere systemen.</summary>
+  <summary xml:lang="pl">Zapisuje wszystkie dane z aplikacji ZIO i przywraca je na innych systemach.</summary>
   <summary xml:lang="pt">Grava todos os dados das aplicações PIM e repõe-os noutros sistemas.</summary>
   <summary xml:lang="pt-BR">Salva todo os dados de aplicativos PIM e restaura-os em outros sistemas.</summary>
   <summary xml:lang="sv">Sparar alla data från program för personlig informationshantering och återställer dem på andra system.</summary>
@@ -58,6 +60,7 @@
     <p xml:lang="id">PIM Data Exporter mengekspor dan mengimpor setelan PIM</p>
     <p xml:lang="it">L'esportatore dei dati di PIM esporta ed importa le impostazioni di PIM</p>
     <p xml:lang="nl">PIM-exportprogramma van gegevens exporteert en importeert PIM-instellingen.</p>
+    <p xml:lang="pl">Eksportowanie danych ZIO umożliwia eksportowanie/importowanie ustawień ZIO</p>
     <p xml:lang="pt">A Exportação de Dados PIM permite exportar ou importar configurações de PIM.</p>
     <p xml:lang="pt-BR">O Exportador de dados PIM exporta e importa configurações do PIM.</p>
     <p xml:lang="sv">Export av data för personlig informationshantering exporterar och importerar inställningar för personlig informationshantering.</p>
