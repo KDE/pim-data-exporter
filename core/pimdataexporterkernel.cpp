@@ -22,7 +22,7 @@
 #include <KContacts/Addressee>
 #include <KContacts/ContactGroup>
 
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
+#include <kidentitymanagement/identitymanager.h>
 #include <MessageComposer/AkonadiSender>
 #include <MailCommon/FolderCollectionMonitor>
 #include <AkonadiCore/session.h>
@@ -30,8 +30,8 @@
 #include <AkonadiCore/entitymimetypefiltermodel.h>
 #include <AkonadiCore/changerecorder.h>
 #include <Akonadi/Notes/NoteUtils>
-#include <KCalCore/KCalCore/Todo>
-#include <KCalCore/KCalCore/Event>
+#include <KCalCore/Todo>
+#include <KCalCore/Event>
 #include <KSharedConfig>
 
 //Same element as kalarmcal
