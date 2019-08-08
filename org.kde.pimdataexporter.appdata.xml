@@ -17,6 +17,7 @@
   <name xml:lang="pl">Eksportowanie danych ZIO</name>
   <name xml:lang="pt">Exportação dos Dados PIM</name>
   <name xml:lang="pt-BR">Exportador de dados PIM</name>
+  <name xml:lang="ru">Экспорт данных PIM</name>
   <name xml:lang="sk">Exportér údajov PIM</name>
   <name xml:lang="sv">Export av data för personlig informationshantering</name>
   <name xml:lang="uk">Засіб експортування даних PIM</name>
@@ -57,6 +58,7 @@
   <developer_name xml:lang="pl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="pt">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="pt-BR">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="ru">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="sk">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="sv">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="uk">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -79,6 +81,7 @@
     <p xml:lang="pl">Eksportowanie danych ZIO umożliwia eksportowanie/importowanie ustawień ZIO</p>
     <p xml:lang="pt">A Exportação de Dados PIM permite exportar ou importar configurações de PIM.</p>
     <p xml:lang="pt-BR">O Exportador de dados PIM exporta e importa configurações do PIM.</p>
+    <p xml:lang="ru">Экспорт и импорт настроек PIM</p>
     <p xml:lang="sk">Exportér údajov PIM exportuje a importuje nastavenia PIM</p>
     <p xml:lang="sv">Export av data för personlig informationshantering exporterar och importerar inställningar för personlig informationshantering.</p>
     <p xml:lang="uk">Засіб експортування даних PIM надає змогу експортувати та імпортувати параметри PIM.</p>
