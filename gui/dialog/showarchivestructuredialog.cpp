@@ -99,7 +99,13 @@ void ShowArchiveStructureDialog::slotExtractFile()
                                                                       QFileDialog::ShowDirsOnly
                                                                       | QFileDialog::DontResolveSymlinks);
                 if (!dir.isEmpty()) {
+                    if (QFile(dir + QLatin1Char('/') + currentFile->name()).exists()) {
+                        if (KMessageBox::questionYesNo(this, i18n("Do you want to override %1", currentFile->name()), i18n("File Already Exist") ) == KMessageBox::No) {
+                            return;
+                        }
+                    }
                     if (!currentFile->copyTo(dir)) {
+                        KMessageBox::error(this, i18n("Impossible to copy %1 in %2.", currentFile->name()), dir);
                         qCWarning(PIMDATAEXPORTERGUI_LOG) << "Impossible to extract file: " << currentItem->text(0) << " to " << dir;
                     }
                 }
