@@ -114,7 +114,6 @@ void ShowArchiveStructureDialog::slotItemClicked(QTreeWidgetItem *item, int colu
     if (item) {
         const QString fullPath = item->data(0, FullPath).toString();
         mExtractFile->setEnabled(!fullPath.isEmpty());
-        qDebug() << " fullPath" <<fullPath;
     }
 }
 
