@@ -63,6 +63,14 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     mExtractFile->setEnabled(false);
     connect(mExtractFile, &QPushButton::clicked, this, &ShowArchiveStructureDialog::slotExtractFile);
     buttonBox->addButton(mExtractFile, QDialogButtonBox::ActionRole);
+
+
+    mOpenFile = new QPushButton(this);
+    mOpenFile->setText(i18n("Open Selected File"));
+    mOpenFile->setEnabled(false);
+    connect(mOpenFile, &QPushButton::clicked, this, &ShowArchiveStructureDialog::slotOpenFile);
+    buttonBox->addButton(mOpenFile, QDialogButtonBox::ActionRole);
+
     connect(mTreeWidget, &QTreeWidget::itemClicked, this, &ShowArchiveStructureDialog::slotItemClicked);
 
     mainLayout->addWidget(searchLine);
@@ -82,6 +90,21 @@ ShowArchiveStructureDialog::~ShowArchiveStructureDialog()
 {
     writeConfig();
     delete mZip;
+}
+
+void ShowArchiveStructureDialog::slotOpenFile()
+{
+    QTreeWidgetItem *currentItem = mTreeWidget->currentItem();
+    if (currentItem) {
+        const QString fullPath = currentItem->data(0, FullPath).toString();
+        if (!fullPath.isEmpty()) {
+            const KArchiveDirectory *topDirectory = mZip->directory();
+            const KArchiveEntry *currentEntry = topDirectory->entry(fullPath);
+            if (currentEntry && currentEntry->isFile()) {
+                //TODO
+            }
+        }
+    }
 }
 
 void ShowArchiveStructureDialog::slotExtractFile()
@@ -119,7 +142,9 @@ void ShowArchiveStructureDialog::slotItemClicked(QTreeWidgetItem *item, int colu
     Q_UNUSED(column);
     if (item) {
         const QString fullPath = item->data(0, FullPath).toString();
-        mExtractFile->setEnabled(!fullPath.isEmpty());
+        const bool enableButton = !fullPath.isEmpty();
+        mExtractFile->setEnabled(enableButton);
+        mOpenFile->setEnabled(enableButton);
     }
 }
 

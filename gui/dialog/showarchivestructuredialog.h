@@ -47,6 +47,7 @@ private:
     void slotItemClicked(QTreeWidgetItem *item, int column);
     void addSubItems(const QString &topLevelPath, QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent, const QString &fullpath = QString());
     void slotExtractFile();
+    void slotOpenFile();
 
     bool searchArchiveElement(const QString &path, const KArchiveDirectory *topDirectory, const QString &name);
     QTreeWidgetItem *addTopItem(const QString &name);
@@ -55,6 +56,7 @@ private:
     QString mLogFile;
     QTreeWidget *mTreeWidget = nullptr;
     QPushButton *mExtractFile = nullptr;
+    QPushButton *mOpenFile = nullptr;
     KZip *mZip = nullptr;
 };
 
