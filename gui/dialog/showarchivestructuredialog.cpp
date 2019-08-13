@@ -123,7 +123,7 @@ void ShowArchiveStructureDialog::slotExtractFile()
                                                                       | QFileDialog::DontResolveSymlinks);
                 if (!dir.isEmpty()) {
                     if (QFile(dir + QLatin1Char('/') + currentFile->name()).exists()) {
-                        if (KMessageBox::questionYesNo(this, i18n("Do you want to override %1", currentFile->name()), i18n("File Already Exist") ) == KMessageBox::No) {
+                        if (KMessageBox::questionYesNo(this, i18n("Do you want to override %1?", currentFile->name()), i18n("File Already Exist") ) == KMessageBox::No) {
                             return;
                         }
                     }
