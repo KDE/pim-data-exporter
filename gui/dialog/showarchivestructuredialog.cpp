@@ -34,7 +34,9 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
+#include <KRun>
 #include <QFileDialog>
+#include <QTemporaryDir>
 #include <ktreewidgetsearchline.h>
 
 ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, QWidget *parent)
@@ -90,6 +92,7 @@ ShowArchiveStructureDialog::~ShowArchiveStructureDialog()
 {
     writeConfig();
     delete mZip;
+    delete mTempDir;
 }
 
 void ShowArchiveStructureDialog::slotOpenFile()
@@ -101,7 +104,24 @@ void ShowArchiveStructureDialog::slotOpenFile()
             const KArchiveDirectory *topDirectory = mZip->directory();
             const KArchiveEntry *currentEntry = topDirectory->entry(fullPath);
             if (currentEntry && currentEntry->isFile()) {
-                //TODO
+                const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
+
+                if (!mTempDir) {
+                    mTempDir = new QTemporaryDir;
+                }
+                const QString fileName = mTempDir->path() + QLatin1Char('/') + currentItem->text(0);
+                QFile f(fileName);
+                if (!f.open(QIODevice::WriteOnly)) {
+                    qCWarning(PIMDATAEXPORTERGUI_LOG) << "Impossible to extract file: " << currentItem->text(0);
+                    return;
+                }
+                const QByteArray data = currentFile->data();
+                if (f.write(data) != data.length()) {
+                    qCWarning(PIMDATAEXPORTERGUI_LOG) << "Impossible to copy file: " << currentItem->text(0);
+                    return;
+                }
+                KRun *runner = new KRun(QUrl::fromLocalFile(fileName), this);   // will delete itself
+                runner->setRunExecutables(false);
             }
         }
     }

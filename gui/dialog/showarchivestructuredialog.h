@@ -27,6 +27,7 @@ class KArchiveEntry;
 class KArchiveDirectory;
 class QPushButton;
 class KZip;
+class QTemporaryDir;
 class ShowArchiveStructureDialog : public QDialog
 {
     Q_OBJECT
@@ -58,6 +59,7 @@ private:
     QPushButton *mExtractFile = nullptr;
     QPushButton *mOpenFile = nullptr;
     KZip *mZip = nullptr;
+    QTemporaryDir *mTempDir = nullptr;
 };
 
 #endif // SHOWARCHIVESTRUCTUREDIALOG_H
