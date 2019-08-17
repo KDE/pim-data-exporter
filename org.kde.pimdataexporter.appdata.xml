@@ -10,6 +10,7 @@
   <name xml:lang="en-GB">PIM Data Exporter</name>
   <name xml:lang="fi">PIM-tietojen vienti</name>
   <name xml:lang="fr">Exportation des données PIM</name>
+  <name xml:lang="gl">Exportador de datos de PIM</name>
   <name xml:lang="id">PIM Data Exporter</name>
   <name xml:lang="it">Esportatore dei dati di PIM</name>
   <name xml:lang="nl">PIM-exportprogramma van gegevens</name>
@@ -28,6 +29,7 @@
   <summary xml:lang="es">Guarda todos los datos desde aplicaciones PIM y las restaura en otros sistemas.</summary>
   <summary xml:lang="fi">Tallentaa kaikkien PIM-sovellusten tiedot ja palauttaa ne toisessa järjestelmässä.</summary>
   <summary xml:lang="fr">Enregistre toutes les données des applis PIM et les restaure sur d'autres systèmes.</summary>
+  <summary xml:lang="gl">Garda todos os datos de aplicativos de xestión de información persoal e os restaura noutros sistemas.</summary>
   <summary xml:lang="id">Menyimpan semua data dari aplikasi PIM dan memulihkannya di sistem lain.</summary>
   <summary xml:lang="it">Salva tutti i dati dalle applicazioni di PIM e li ripristina in altri sistemi.</summary>
   <summary xml:lang="ko">PIM 프로그램의 모든 데이터를 저장하고 다른 시스템에서 복원할 수 있도록 합니다.</summary>
@@ -71,6 +73,7 @@
     <p xml:lang="en-GB">PIM Data Exporter exports and imports PIM settings</p>
     <p xml:lang="fi">PIM-tietojen viennillä viedään ja tuodaan PIM-asetuksia</p>
     <p xml:lang="fr">L'exportation des données PIM exporte et importe les paramètres PIM</p>
+    <p xml:lang="gl">O exportador de datos PIM exporta e importa configuración de xestión de información persoal</p>
     <p xml:lang="id">PIM Data Exporter mengekspor dan mengimpor pengaturan PIM</p>
     <p xml:lang="it">L'esportatore dei dati di PIM esporta ed importa le impostazioni di PIM</p>
     <p xml:lang="nl">PIM-exportprogramma van gegevens exporteert en importeert PIM-instellingen.</p>
