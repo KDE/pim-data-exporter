@@ -6,6 +6,7 @@
   <name>PIM Data Exporter</name>
   <name xml:lang="ca">Exportador de les dades PIM</name>
   <name xml:lang="ca-valencia">Exportador de les dades PIM</name>
+  <name xml:lang="cs">Exportér dat PIM</name>
   <name xml:lang="de">PIM-Daten-Export</name>
   <name xml:lang="en-GB">PIM Data Exporter</name>
   <name xml:lang="es">Exportador de datos de PIM</name>
@@ -26,6 +27,7 @@
   <summary>Saves all data from PIM apps and restore them in other systems.</summary>
   <summary xml:lang="ca">Desa totes les dades de les aplicacions PIM i les restaura en altres sistemes.</summary>
   <summary xml:lang="ca-valencia">Guarda totes les dades de les aplicacions PIM i les restaura en altres sistemes.</summary>
+  <summary xml:lang="cs">Ukládá všechna data z aplikací PIM a obnovuje je na jiných systémech.</summary>
   <summary xml:lang="de">Speichert alle Daten von PIM-Anwendungen, um sie später in anderen Systemen wiederherzustellen.</summary>
   <summary xml:lang="en-GB">Saves all data from PIM apps and restore them in other systems.</summary>
   <summary xml:lang="es">Guarda todos los datos desde aplicaciones PIM y las restaura en otros sistemas.</summary>
@@ -72,6 +74,7 @@
     </p>
     <p xml:lang="ca">L'Exportador de les dades PIM exporta i importa la configuració PIM</p>
     <p xml:lang="ca-valencia">L'Exportador de les dades PIM exporta i importa la configuració PIM</p>
+    <p xml:lang="cs">Exportér dat PIM exportuje a importuje nastavení PIM</p>
     <p xml:lang="de">Mit PIM-Daten-Export können Sie PIM-Einstellungen exportieren oder importieren.</p>
     <p xml:lang="en-GB">PIM Data Exporter exports and imports PIM settings</p>
     <p xml:lang="es">El exportador de datos  PIM exporta e importa preferencias de PIM</p>
