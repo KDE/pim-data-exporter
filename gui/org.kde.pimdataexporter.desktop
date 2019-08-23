@@ -2,6 +2,7 @@
 Name=PIM Data Exporter
 Name[ca]=Exportador de les dades PIM
 Name[ca@valencia]=Exportador de les dades PIM
+Name[cs]=Exportér dat PIM
 Name[de]=PIM-Daten-Export
 Name[en_GB]=PIM Data Exporter
 Name[es]=Exportador de preferencias de PIM
@@ -23,6 +24,7 @@ Icon=kontact
 GenericName=Saves and restores all data from PIM apps
 GenericName[ca]=Desa i emmagatzema totes les dades de les aplicacions PIM
 GenericName[ca@valencia]=Guarda i emmagatzema totes les dades de les aplicacions PIM
+GenericName[cs]=Ukládá a obnovuje všechna data z aplikací PIM
 GenericName[de]=Speichert alle Daten von PIM-Anwendungen und stellt sie wieder her
 GenericName[en_GB]=Saves and restores all data from PIM apps
 GenericName[es]=Guarda y restaura todos los datos desde aplicaciones PIM
