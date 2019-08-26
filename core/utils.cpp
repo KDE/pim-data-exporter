@@ -157,7 +157,7 @@ void Utils::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &c
         for (QString str : value) {
             bool found = false;
             if (!prefixCollection.isEmpty() && str.startsWith(prefixCollection)) {
-                str = str.remove(0, prefixCollection.length());
+                str.remove(0, prefixCollection.length());
             }
             const int collectionId = str.toInt(&found);
             if (found) {
@@ -184,7 +184,7 @@ void Utils::convertCollectionListToRealPath(KConfigGroup &group, const QString &
         } else {
             QStringList result;
             for (QString collection : listExpension) {
-                collection = collection.remove(QLatin1Char('c'));
+                collection.remove(QLatin1Char('c'));
                 bool found = false;
                 const int collectionValue = collection.toInt(&found);
                 if (found && collectionValue != -1) {
@@ -210,7 +210,7 @@ void Utils::convertCollectionToRealPath(KConfigGroup &group, const QString &curr
         if (collectionId.isEmpty()) {
             group.deleteEntry(currentKey);
         } else {
-            collectionId = collectionId.remove(QLatin1Char('c'));
+            collectionId.remove(QLatin1Char('c'));
             bool found = false;
             const int collectionValue = collectionId.toInt(&found);
             if (found && collectionValue != -1) {
