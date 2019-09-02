@@ -246,11 +246,11 @@ void ImportCalendarJob::restoreConfig()
     }
 
     const QString freebusyStr(QStringLiteral("freebusyurls"));
-    const KArchiveEntry *freebusyentry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("korganizer/") + freebusyStr);
+    const KArchiveEntry *freebusyentry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("korganizer/") + freebusyStr);
     if (freebusyentry && freebusyentry->isFile()) {
         const KArchiveFile *freebusyrcFile = static_cast<const KArchiveFile *>(freebusyentry);
 
-        const QString freebusypath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/korganizer/") + freebusyStr;
+        const QString freebusypath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/korganizer/") + freebusyStr;
         if (QFileInfo::exists(freebusypath)) {
             //TODO 4.12 merge it.
             if (overwriteConfigMessageBox(freebusyStr)) {

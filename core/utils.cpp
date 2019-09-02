@@ -266,7 +266,7 @@ QString Utils::storeResources(KZip *archive, const QString &identifier, const QS
     }
 
     const QString agentConfigFileName = Utils::prefixAkonadiConfigFile() + identifier;
-    const QString agentConfigFileNamePath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QStringLiteral("/akonadi/") + agentConfigFileName;
+    const QString agentConfigFileNamePath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1String("/akonadi/") + agentConfigFileName;
     if (QFileInfo::exists(agentConfigFileNamePath)) {
         fileAdded = archive->addLocalFile(agentConfigFileNamePath, path + agentConfigFileName);
         if (!fileAdded) {
