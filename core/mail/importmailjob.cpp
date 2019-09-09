@@ -685,11 +685,9 @@ void ImportMailJob::restoreConfig()
                     }
                 }
                 const int numActions = group.readEntry("actions", 0);
-                QString actName;
-                QString argsName;
                 for (int i = 0; i < numActions; ++i) {
-                    actName.sprintf("action-name-%d", i);
-                    argsName.sprintf("action-args-%d", i);
+                    const QString actName = QStringLiteral("action-name-%1").arg(i);
+                    const QString argsName = QStringLiteral("action-args-%1").arg(i);
                     const QString actValue = group.readEntry(actName);
                     if (actValue == QLatin1String("set identity")) {
                         const int argsValue = group.readEntry(argsName, -1);
