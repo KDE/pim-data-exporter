@@ -86,7 +86,10 @@ include_directories(${pim-data-exporter_SOURCE_DIR} ${pim-data-exporter_BINARY_D
 
 add_definitions(-DTRANSLATION_DOMAIN=\"pimdataexporter\")
 
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
+   add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+endif()
+
 
 configure_file(pimdataexporter-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/pimdataexporter-version.h @ONLY)
 add_definitions(-DQT_NO_FOREACH)
