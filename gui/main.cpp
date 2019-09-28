@@ -29,12 +29,12 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     QApplication app(argc, argv);
 
     KLocalizedString::setApplicationDomain("pimdataexporter");
 
     KCrash::initialize();
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     app.setDesktopFileName(QStringLiteral("org.kde.pimdataexporter"));
     Kdelibs4ConfigMigrator migrate(QStringLiteral("pimdataexporter"));
     //old migration. Don't change it
