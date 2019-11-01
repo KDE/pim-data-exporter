@@ -148,7 +148,7 @@ void ShowArchiveStructureDialog::slotExtractFile()
                         }
                     }
                     if (!currentFile->copyTo(dir)) {
-                        KMessageBox::error(this, i18n("Impossible to copy %1 in %2.", currentFile->name()), dir);
+                        KMessageBox::error(this, i18n("Impossible to copy %1 in %2.", currentFile->name(), dir));
                         qCWarning(PIMDATAEXPORTERGUI_LOG) << "Impossible to extract file: " << currentItem->text(0) << " to " << dir;
                     }
                 }
