@@ -867,6 +867,7 @@ void ImportMailJob::restoreConfig()
     restoreConfigFile(QStringLiteral("pimpluginsrc"));
     restoreConfigFile(QStringLiteral("texttospeechrc"));
     restoreConfigFile(QStringLiteral("kleopatracertificateselectiondialogrc"));
+    restoreConfigFile(QStringLiteral("dkimsettingsrc"));
 
     //Restore notify file
     const QStringList lstNotify = {

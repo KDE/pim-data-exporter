@@ -1,4 +1,4 @@
-2017-08-18:
+2019-11-04:
 -----------
 
 2015-1-29: New VERSION for archive => VERSION_2 => knote-akonadi
@@ -114,6 +114,7 @@ Root
 |       |---------foldermailarchiverc
 |       |---------pimpluginsrc
 |       |---------eventviewsrc
+|       |---------dkimsettingsrc
 |
 |-----akonadi
 |       |---------<archive akonadi>

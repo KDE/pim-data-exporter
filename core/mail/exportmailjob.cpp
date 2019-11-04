@@ -314,6 +314,7 @@ void ExportMailJob::backupConfig()
     backupConfigFile(QStringLiteral("pimpluginsrc"));
     backupConfigFile(QStringLiteral("texttospeechrc"));
     backupConfigFile(QStringLiteral("kleopatracertificateselectiondialogrc"));
+    backupConfigFile(QStringLiteral("dkimsettingsrc"));
 
     //Notify file config
     backupConfigFile(QStringLiteral("akonadi_mailfilter_agent.notifyrc"));
