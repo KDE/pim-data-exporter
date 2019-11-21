@@ -1178,7 +1178,7 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
     if (kmailConfig->hasGroup(composerStr)) {
         KConfigGroup composerGroup = kmailConfig->group(composerStr);
         const QString previousStr(QStringLiteral("previous-fcc"));
-        convertRealPathToCollection(composerGroup, previousStr);
+        (void)convertRealPathToCollection(composerGroup, previousStr);
 
         const QString previousIdentityStr(QStringLiteral("previous-identity"));
         if (composerGroup.hasKey(previousIdentityStr)) {
@@ -1197,10 +1197,10 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
     if (kmailConfig->hasGroup(collectionFolderViewStr)) {
         KConfigGroup favoriteGroup = kmailConfig->group(collectionFolderViewStr);
         const QString currentKey(QStringLiteral("Current"));
-        convertRealPathToCollection(favoriteGroup, currentKey, true);
+        (void)convertRealPathToCollection(favoriteGroup, currentKey, true);
 
         const QString expensionKey(QStringLiteral("Expansion"));
-        convertRealPathToCollectionList(favoriteGroup, expensionKey);
+        (void)convertRealPathToCollectionList(favoriteGroup, expensionKey);
     }
 
     convertCollectionListStrToAkonadiId(kmailConfig, QStringLiteral("FavoriteCollections"), QStringLiteral("FavoriteCollectionIds"), false);

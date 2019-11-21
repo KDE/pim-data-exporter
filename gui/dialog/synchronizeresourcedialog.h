@@ -30,7 +30,7 @@ public:
     ~SynchronizeResourceDialog();
 
     void setResources(const QHash<QString, QString> &resources);
-    QStringList resources() const;
+    Q_REQUIRED_RESULT QStringList resources() const;
 
 private:
     void slotAccepted();

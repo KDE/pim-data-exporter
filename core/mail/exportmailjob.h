@@ -48,7 +48,7 @@ private:
     void slotMailsJobTerminated();
     void slotWriteNextArchiveResource();
 
-    bool checkBackupType(Utils::StoredType type) const;
+    Q_REQUIRED_RESULT bool checkBackupType(Utils::StoredType type) const;
     void backupTransports();
     void backupResources();
     void backupConfig();

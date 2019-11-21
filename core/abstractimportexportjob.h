@@ -51,7 +51,7 @@ public:
 
     virtual void start() = 0;
 
-    bool wasCanceled() const;
+    Q_REQUIRED_RESULT bool wasCanceled() const;
 
     static int archiveVersion();
     static void setArchiveVersion(int version);
@@ -72,14 +72,14 @@ protected:
     virtual void slotNextStep();
 
 protected:
-    bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
+    Q_REQUIRED_RESULT bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
     void initializeListStep();
     void startSynchronizeResources(const QStringList &listResourceToSync);
     void infoAboutNewResource(const QString &resourceName);
     void copyToDirectory(const KArchiveEntry *entry, const QString &dest);
     void extractZipFile(const KArchiveFile *file, const QString &source, const QString &destination, bool isStoredAsZippedArchive = true);
 
-    qint64 convertRealPathToCollection(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = false);
+    Q_REQUIRED_RESULT qint64 convertRealPathToCollection(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = false);
     void convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = true);
     void copyToFile(const KArchiveFile *archivefile, const QString &dest, const QString &filename, const QString &prefix);
     void initializeImportJob();
@@ -88,11 +88,11 @@ protected:
     void backupUiRcFile(const QString &configFileName, const QString &applicationName);
     void restoreUiRcFile(const QString &configNameStr, const QString &applicationName);
 
-    int mergeConfigMessageBox(const QString &configName) const;
-    bool overwriteConfigMessageBox(const QString &configName) const;
-    Akonadi::Collection::Id convertPathToId(const QString &path);
+    Q_REQUIRED_RESULT int mergeConfigMessageBox(const QString &configName) const;
+    Q_REQUIRED_RESULT bool overwriteConfigMessageBox(const QString &configName) const;
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertPathToId(const QString &path);
     void backupResourceFile(const Akonadi::AgentInstance &agent, const QString &defaultPath);
-    QStringList restoreResourceFile(const QString &resourceName, const QString &defaultPath, const QString &storePath, bool overwriteResources = false);
+    Q_REQUIRED_RESULT QStringList restoreResourceFile(const QString &resourceName, const QString &defaultPath, const QString &storePath, bool overwriteResources = false);
     virtual void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings);
     void restoreConfigFile(const QString &configNameStr);
     bool overwriteDirectoryMessageBox(const QString &directory) const;

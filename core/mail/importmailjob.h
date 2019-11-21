@@ -69,7 +69,7 @@ private:
     void mergeSieveTemplate(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void importSimpleFilesInDirectory(const QString &relativePath);
     void addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId);
-    QString uniqueIdentityName(const QString &name);
+    Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
 
     QHash<int, uint> mHashIdentity;
     QHash<int, int> mHashTransport;

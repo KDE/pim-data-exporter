@@ -33,12 +33,12 @@ public:
 
     void createTemplate(const QHash<Utils::AppsType, Utils::importExportParameters> &stored);
 
-    QHash<Utils::AppsType, Utils::importExportParameters> loadTemplate(const QString &path);
+    Q_REQUIRED_RESULT QHash<Utils::AppsType, Utils::importExportParameters> loadTemplate(const QString &path);
 
-    QString saveTemplate() const;
+    Q_REQUIRED_RESULT QString saveTemplate() const;
 
 private:
-    Utils::StoredTypes loadStoredTypes(int &numberOfStep);
+    Q_REQUIRED_RESULT Utils::StoredTypes loadStoredTypes(int &numberOfStep);
     void saveParameters(Utils::StoredTypes type);
     QXmlStreamWriter *mStreamWriter = nullptr;
     QXmlStreamReader *mStreamReader = nullptr;

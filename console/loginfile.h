@@ -30,7 +30,7 @@ public:
     explicit LogInFile(QObject *parent = nullptr);
     ~LogInFile();
 
-    QString fileName() const;
+    Q_REQUIRED_RESULT QString fileName() const;
     void setFileName(const QString &fileName);
 
 public Q_SLOTS:

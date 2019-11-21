@@ -30,7 +30,7 @@ public:
     ~PimDataBackupRestoreUI() override;
 
 protected:
-    bool continueToRestore() override;
+    Q_REQUIRED_RESULT bool continueToRestore() override;
     void addExportProgressIndicator() override;
 private:
     QWidget *mParentWidget = nullptr;

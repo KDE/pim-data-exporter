@@ -38,7 +38,7 @@ protected:
     void slotNextStep() override;
 
 private:
-    bool isAConfigFile(const QString &name) const override;
+    Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importkaddressBookConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void restoreResources();
     void restoreConfig();
