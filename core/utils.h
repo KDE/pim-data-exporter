@@ -77,40 +77,40 @@ struct importExportParameters {
     Utils::StoredTypes types;
 };
 
-QString resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath = QString());
-PIMDATAEXPORTER_EXPORT QString transportsPath();
-PIMDATAEXPORTER_EXPORT QString resourcesPath();
-PIMDATAEXPORTER_EXPORT QString identitiesPath();
-PIMDATAEXPORTER_EXPORT QString mailsPath();
-PIMDATAEXPORTER_EXPORT QString configsPath();
-PIMDATAEXPORTER_EXPORT QString akonadiPath();
-PIMDATAEXPORTER_EXPORT QString dataPath();
-PIMDATAEXPORTER_EXPORT QString calendarPath();
-PIMDATAEXPORTER_EXPORT QString addressbookPath();
-PIMDATAEXPORTER_EXPORT QString alarmPath();
-PIMDATAEXPORTER_EXPORT QString infoPath();
-PIMDATAEXPORTER_EXPORT QString notePath();
-PIMDATAEXPORTER_EXPORT QString prefixAkonadiConfigFile();
-PIMDATAEXPORTER_EXPORT QString exportDataTypeFileName();
-QString akonadiAgentName(const QString &configPath);
+Q_REQUIRED_RESULT QString resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath = QString());
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString transportsPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString resourcesPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString identitiesPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString mailsPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString configsPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString akonadiPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString dataPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString calendarPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString addressbookPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString alarmPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString infoPath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString notePath();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString prefixAkonadiConfigFile();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString exportDataTypeFileName();
+Q_REQUIRED_RESULT QString akonadiAgentName(const QString &configPath);
 
-PIMDATAEXPORTER_EXPORT QString agentFileName(const QString &filename);
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString agentFileName(const QString &filename);
 
 void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);
 void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey);
 void convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection = QString());
 
-QString resourcePath(const Akonadi::AgentInstance &agent, const QString &defaultPath = QString());
-QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData);
-QString storeResources(KZip *archive, const QString &identifier, const QString &path);
+Q_REQUIRED_RESULT QString resourcePath(const Akonadi::AgentInstance &agent, const QString &defaultPath = QString());
+Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData);
+Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path);
 KZip *openZip(const QString &filename, QString &errorMsg);
 void storeDataExportInfo(const QString &filename, KZip *archive);
 
 void addVersion(KZip *archive);
-int archiveVersion(KZip *archive);
+Q_REQUIRED_RESULT int archiveVersion(KZip *archive);
 
-int currentArchiveVersion();
-PIMDATAEXPORTER_EXPORT QString appTypeToI18n(AppsType type);
-PIMDATAEXPORTER_EXPORT QString storedTypeToI18n(StoredType type);
+Q_REQUIRED_RESULT int currentArchiveVersion();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString appTypeToI18n(AppsType type);
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString storedTypeToI18n(StoredType type);
 }
 #endif // UTILS_H

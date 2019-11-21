@@ -31,11 +31,11 @@ public:
     explicit SelectionTypeDialog(bool backupData, QWidget *parent = nullptr);
     ~SelectionTypeDialog();
 
-    QHash<Utils::AppsType, Utils::importExportParameters> storedType() const;
+    Q_REQUIRED_RESULT QHash<Utils::AppsType, Utils::importExportParameters> storedType() const;
 
     void loadTemplate(const QString &fileName);
 
-    QString exportedFileInfo() const;
+    Q_REQUIRED_RESULT QString exportedFileInfo() const;
     void removeNotSelectedItems();
 private:
     void slotSelectAll();

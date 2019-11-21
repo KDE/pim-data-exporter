@@ -33,10 +33,10 @@ public:
     void createProgressDialog(const QString &title) override;
 
     void setProgressDialogLabel(const QString &text) override;
-    bool wasCanceled() const override;
-    int mergeConfigMessageBox(const QString &configName) const override;
-    bool overwriteConfigMessageBox(const QString &configName) const override;
-    bool overwriteDirectoryMessageBox(const QString &directory) const override;
+    Q_REQUIRED_RESULT bool wasCanceled() const override;
+    Q_REQUIRED_RESULT int mergeConfigMessageBox(const QString &configName) const override;
+    Q_REQUIRED_RESULT bool overwriteConfigMessageBox(const QString &configName) const override;
+    Q_REQUIRED_RESULT bool overwriteDirectoryMessageBox(const QString &directory) const override;
     void showErrorMessage(const QString &message, const QString &title) override;
 
 private:

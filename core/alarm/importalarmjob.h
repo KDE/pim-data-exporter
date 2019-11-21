@@ -37,7 +37,7 @@ protected:
     void slotNextStep() override;
 
 private:
-    bool isAConfigFile(const QString &name) const override;
+    Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importkalarmConfig(const KArchiveFile *kalarmFile, const QString &kalarmrc, const QString &filename, const QString &prefix);
     void restoreResources();
     void restoreConfig();

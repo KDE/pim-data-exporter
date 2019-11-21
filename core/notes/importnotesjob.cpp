@@ -202,7 +202,7 @@ void ImportNotesJob::importKNoteGlobalSettings(const KArchiveFile *archive, cons
     if (globalSettingsConfig->hasGroup(composerStr)) {
         KConfigGroup composerGroup = globalSettingsConfig->group(composerStr);
         const QString previousStr(QStringLiteral("DefaultFolder"));
-        convertRealPathToCollection(composerGroup, previousStr);
+        (void)convertRealPathToCollection(composerGroup, previousStr);
     }
     globalSettingsConfig->sync();
 }

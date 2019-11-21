@@ -33,7 +33,7 @@ public:
     explicit SelectionTypeTreeWidget(bool backupData, QWidget *parent = nullptr);
     ~SelectionTypeTreeWidget();
 
-    QHash<Utils::AppsType, Utils::importExportParameters> storedType() const;
+    Q_REQUIRED_RESULT QHash<Utils::AppsType, Utils::importExportParameters> storedType() const;
 
     void selectAllItems();
     void unSelectAllItems();
@@ -43,7 +43,7 @@ public:
     void loadTemplate(const QString &fileName = QString());
     void saveAsDefaultTemplate();
     void loadDefaultTemplate();
-    QString exportedFileInfo();
+    Q_REQUIRED_RESULT QString exportedFileInfo();
     void removeNotSelectedItems();
 
 private:
@@ -59,10 +59,10 @@ private:
     void createSubItem(QTreeWidgetItem *parent, Utils::StoredType type);
     void setParameters(const QHash<Utils::AppsType, Utils::importExportParameters> &params);
 
-    Utils::importExportParameters typeChecked(QTreeWidgetItem *parent) const;
+    Q_REQUIRED_RESULT Utils::importExportParameters typeChecked(QTreeWidgetItem *parent) const;
     void initializeSubItem(QTreeWidgetItem *item, Utils::StoredTypes types);
     void loadFileName(const QString &fileName);
-    QString templateSelectionToString();
+    Q_REQUIRED_RESULT QString templateSelectionToString();
     bool removeNotSelectedItem(QTreeWidgetItem *parent);
 
     QTreeWidgetItem *mKmailItem = nullptr;

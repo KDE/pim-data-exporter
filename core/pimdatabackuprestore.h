@@ -33,8 +33,8 @@ public:
     explicit PimDataBackupRestore(QObject *parent = nullptr);
     ~PimDataBackupRestore();
 
-    bool backupStart(const QString &filename);
-    bool restoreStart(const QString &filename);
+    Q_REQUIRED_RESULT bool backupStart(const QString &filename);
+    Q_REQUIRED_RESULT bool restoreStart(const QString &filename);
 
     void setStoredParameters(const QHash<Utils::AppsType, Utils::importExportParameters> &stored);
 
@@ -65,7 +65,7 @@ private:
         Backup,
         Restore
     };
-    bool openArchive(const QString &filename, bool readWrite);
+    Q_REQUIRED_RESULT bool openArchive(const QString &filename, bool readWrite);
     void backupNextStep();
     void restoreNextStep();
     void backupFinished();

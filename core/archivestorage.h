@@ -30,10 +30,10 @@ public:
     ~ArchiveStorage();
 
     void closeArchive();
-    bool openArchive(bool write);
+    Q_REQUIRED_RESULT bool openArchive(bool write);
 
     KZip *archive() const;
-    QString filename() const;
+    Q_REQUIRED_RESULT QString filename() const;
 
 Q_SIGNALS:
     void error(const QString &);

@@ -640,7 +640,7 @@ void AbstractImportExportJob::convertCollectionStrToAkonadiId(const KSharedConfi
 {
     if (config->hasGroup(groupName)) {
         KConfigGroup eventGroup = config->group(groupName);
-        convertRealPathToCollection(eventGroup, key, false);
+        (void)convertRealPathToCollection(eventGroup, key, false);
     }
 }
 
