@@ -23,7 +23,7 @@
 #include <KLocalizedString>
 #include <KDBusService>
 #include <QApplication>
-#include <kdelibs4configmigrator.h>
+#include <Kdelibs4ConfigMigrator>
 #include <KCrash>
 
 int main(int argc, char *argv[])

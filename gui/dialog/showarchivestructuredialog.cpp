@@ -37,7 +37,7 @@
 #include <KRun>
 #include <QFileDialog>
 #include <QTemporaryDir>
-#include <ktreewidgetsearchline.h>
+#include <KTreeWidgetSearchLine>
 
 ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, QWidget *parent)
     : QDialog(parent)

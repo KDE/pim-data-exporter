@@ -20,7 +20,7 @@
 #include "pimdataexporter-version.h"
 #include "pimdataexporterconsole.h"
 #include "pimdataexportconsole_debug.h"
-#include <kaboutdata.h>
+#include <KAboutData>
 #include <KLocalizedString>
 
 #include <QCommandLineParser>
