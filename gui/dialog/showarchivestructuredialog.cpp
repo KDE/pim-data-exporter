@@ -43,7 +43,7 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     : QDialog(parent)
     , mFileName(filename)
 {
-    setWindowTitle(i18n("Show Archive Content on file \"%1\"", filename));
+    setWindowTitle(i18nc("@title:window", "Show Archive Content on file \"%1\"", filename));
     setModal(true);
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 

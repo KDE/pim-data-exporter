@@ -27,7 +27,7 @@
 PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Configure PimDataExporter"));
+    setWindowTitle(i18nc("@title:window", "Configure PimDataExporter"));
     QVBoxLayout *layout = new QVBoxLayout(this);
     mConfigureWidget = new PimDataExporterConfigureWidget(this);
     mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));

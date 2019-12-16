@@ -32,7 +32,7 @@
 SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Select Type"));
+    setWindowTitle(i18nc("@title:window", "Select Type"));
     setModal(true);
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
