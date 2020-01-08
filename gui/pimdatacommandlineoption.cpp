@@ -52,16 +52,14 @@ void PimDataCommandLineOption::createParser(const QApplication &app)
                          QStringLiteral(PIMDATAEXPORTER_VERSION), i18n("PIM Data Exporter"), KAboutLicense::GPL_V2,
                          i18n("Copyright © 2012-2020 pimdataexporter authors"));
     aboutData.addAuthor(i18n("Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
-    mParser.addVersionOption();
-    mParser.addHelpOption();
+    KAboutData::setApplicationData(aboutData);
+    aboutData.setupCommandLine(&mParser);
     mParser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("template"), i18n("Template file uses to define what data, settings to import or export"), QStringLiteral("file")));
     mParser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("import"), i18n("Import the given file")));
     mParser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("export"), i18n("Export the given file")));
     mParser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("+[url]"), i18n("File or url. The user will be asked whether to import or export.")));
 
-    KAboutData::setApplicationData(aboutData);
 
-    aboutData.setupCommandLine(&mParser);
     mParser.process(app);
     aboutData.processCommandLine(&mParser);
 }
