@@ -58,11 +58,21 @@
 
 #include <dialog/pimdataexporterconfiguredialog.h>
 
+#ifdef WITH_KUSERFEEDBACK
+#include "userfeedback/userfeedbackmanager.h"
+#include <KUserFeedback/NotificationPopup>
+#include <KUserFeedback/Provider>
+#endif
+
 PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
 {
     //Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
+#ifdef WITH_KUSERFEEDBACK
+    //Initialize
+    (void)UserFeedBackManager::self();
+#endif
     PimDataExporterKernel *kernel = new PimDataExporterKernel(this);
     CommonKernel->registerKernelIf(kernel);   //register KernelIf early, it is used by the Filter classes
     CommonKernel->registerSettingsIf(kernel);   //SettingsIf is used in FolderTreeWidget
@@ -76,6 +86,10 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     Akonadi::ControlGui::widgetNeedsAkonadi(this);
     statusBar()->hide();
     mTrayIcon = new PimDataTrayIcon(this);
+#ifdef WITH_KUSERFEEDBACK
+    KUserFeedback::NotificationPopup *userFeedBackNotificationPopup = new KUserFeedback::NotificationPopup(this);
+    userFeedBackNotificationPopup->setFeedbackProvider(UserFeedBackManager::self()->userFeedbackProvider());
+#endif
 }
 
 PimDataExporterWindow::~PimDataExporterWindow()
