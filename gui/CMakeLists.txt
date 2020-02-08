@@ -1,4 +1,15 @@
 
+if (TARGET KUserFeedbackWidgets)
+    add_definitions(-DWITH_KUSERFEEDBACK)
+endif()
+
+set(pimdataexporter_userfeedback_SRCS)
+if (TARGET KUserFeedbackWidgets)
+    set(pimdataexporter_userfeedback_SRCS ${pimdataexporter_userfeedback_SRCS}
+        userfeedback/userfeedbackmanager.cpp
+        )
+endif()
+
 include_directories( 
     ${pim-data-exporter_SOURCE_DIR}/core/
     )
@@ -34,6 +45,7 @@ set(pimdataexporter_trayicon_SRCS
 set(pimdataexporter_SRCS
     ${pimdataexporter_kcfg_SRCS}
     ${pimdataexporter_widget_SRCS}
+    ${pimdataexporter_userfeedback_SRCS}
     ${pimdataexporter_dialog_SRCS}
     ${pimdataexporter_job_SRCS}
     ${pimdataexporter_trayicon_SRCS}
@@ -49,6 +61,11 @@ ecm_qt_declare_logging_category(pimdataexporter_SRCS HEADER pimdataexportgui_deb
 
 add_executable(pimdataexporter ${pimdataexporter_SRCS})
 
+set(pimdataexporter_userfeedback_LIB)
+if (TARGET KUserFeedbackWidgets)
+	set(pimdataexporter_userfeedback_LIB KUserFeedbackWidgets)
+endif()
+
 target_link_libraries(pimdataexporter
     PRIVATE
     KF5::XmlGui
@@ -63,6 +80,7 @@ target_link_libraries(pimdataexporter
     KF5::Notifications
     KF5::I18n
     KF5::Crash
+    ${pimdataexporter_userfeedback_LIB}
     )
 
 add_subdirectory(kconf_update)

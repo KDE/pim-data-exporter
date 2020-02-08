@@ -80,6 +80,10 @@ find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5CalendarCore ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5AkonadiNotes ${AKONADINOTES_LIB_VERSION} CONFIG REQUIRED)
 
+find_package(KUserFeedback)
+set_package_properties(KUserFeedback PROPERTIES DESCRIPTION "User Feedback lib" TYPE OPTIONAL PURPOSE "Allow to send Telemetry Information (optional). It can be disable in apps.")
+
+
 include_directories(${pim-data-exporter_SOURCE_DIR} ${pim-data-exporter_BINARY_DIR})
 
 add_definitions(-DTRANSLATION_DOMAIN=\"pimdataexporter\")
