@@ -48,6 +48,7 @@ PimDataExporterConfigureWidget::PimDataExporterConfigureWidget(QWidget *parent)
     mAlwaysMergeConfigFile = new QCheckBox(i18n("Always Merge Config File"));
     mAlwaysMergeConfigFile->setObjectName(QStringLiteral("alwaysmergeconfigfile"));
     groupBoxLayout->addWidget(mAlwaysMergeConfigFile);
+    groupBoxLayout->addStretch(1);
 
     initialize();
 }
