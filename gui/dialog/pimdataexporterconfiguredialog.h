@@ -22,6 +22,11 @@
 
 #include <KPageDialog>
 #include <QDialog>
+#ifdef WITH_KUSERFEEDBACK
+namespace KUserFeedback {
+class FeedbackConfigWidget;
+}
+#endif
 class PimDataExporterConfigureWidget;
 class PimDataExporterConfigureDialog : public KPageDialog
 {
@@ -32,8 +37,13 @@ public:
 
 private:
     void slotAccepted();
+    void readConfig();
+    void writeConfig();
 
     PimDataExporterConfigureWidget *mConfigureWidget = nullptr;
+#ifdef WITH_KUSERFEEDBACK
+    KUserFeedback::FeedbackConfigWidget *mUserFeedbackWidget = nullptr;
+#endif
 };
 
 #endif // PIMDATAEXPORTERCONFIGUREDIALOG_H

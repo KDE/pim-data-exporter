@@ -25,6 +25,14 @@
 #include <kpagewidgetmodel.h>
 #include "../widgets/pimdataexporterconfigurewidget.h"
 
+#ifdef WITH_KUSERFEEDBACK
+#include <KUserFeedback/Provider>
+#include <KUserFeedback/FeedbackConfigWidget>
+#include "userfeedback/userfeedbackmanager.h"
+#include <KConfigGroup>
+#include <KSharedConfig>
+#endif
+
 PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     : KPageDialog(parent)
 {
@@ -44,19 +52,53 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     generalPageWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("network-workgroup")));
     addPage(generalPageWidgetPage);
 
+#ifdef WITH_KUSERFEEDBACK
+    QWidget *userFeedBackWidget = new QWidget;
+    userFeedBackWidget->setObjectName(QStringLiteral("userFeedBackWidget"));
+
+    mUserFeedbackWidget = new KUserFeedback::FeedbackConfigWidget(this);
+
+    QHBoxLayout *userFeedBackLayout = new QHBoxLayout(userFeedBackWidget);
+    userFeedBackLayout->setContentsMargins(0, 0, 0, 0);
+    userFeedBackLayout->addWidget(mUserFeedbackWidget);
+
+    mUserFeedbackWidget->setFeedbackProvider(UserFeedBackManager::self()->userFeedbackProvider());
+    KPageWidgetItem *userFeedBackPageWidgetPage = new KPageWidgetItem(userFeedBackWidget, i18n("User Feedback"));
+    addPage(userFeedBackPageWidgetPage);
+#endif
+
+
 
     buttonBox()->setStandardButtons(QDialogButtonBox::Ok| QDialogButtonBox::Cancel);
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &PimDataExporterConfigureDialog::accept);
     connect(buttonBox(), &QDialogButtonBox::rejected, this, &PimDataExporterConfigureDialog::reject);
+    readConfig();
 }
 
 PimDataExporterConfigureDialog::~PimDataExporterConfigureDialog()
 {
+    writeConfig();
 }
 
 void PimDataExporterConfigureDialog::slotAccepted()
 {
     mConfigureWidget->save();
     accept();
+}
+
+void PimDataExporterConfigureDialog::readConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "PimDataExporterConfigureDialog");
+    const QSize size = group.readEntry("Size", QSize(600, 400));
+    if (size.isValid()) {
+        resize(size);
+    }
+}
+
+void PimDataExporterConfigureDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "PimDataExporterConfigureDialog");
+    group.writeEntry("Size", size());
+    group.sync();
 }
