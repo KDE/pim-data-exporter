@@ -21,7 +21,6 @@
 #define PIMDATAEXPORTERCONFIGUREDIALOG_H
 
 #include <KPageDialog>
-#include <QDialog>
 #ifdef WITH_KUSERFEEDBACK
 namespace KUserFeedback {
 class FeedbackConfigWidget;
