@@ -20,9 +20,10 @@
 #ifndef PIMDATAEXPORTERCONFIGUREDIALOG_H
 #define PIMDATAEXPORTERCONFIGUREDIALOG_H
 
+#include <KPageDialog>
 #include <QDialog>
 class PimDataExporterConfigureWidget;
-class PimDataExporterConfigureDialog : public QDialog
+class PimDataExporterConfigureDialog : public KPageDialog
 {
     Q_OBJECT
 public:

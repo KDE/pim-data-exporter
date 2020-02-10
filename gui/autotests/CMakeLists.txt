@@ -12,7 +12,7 @@ target_link_libraries(synchronizeresourcedialogtest Qt5::Test Qt5::Widgets KF5::
 add_executable( pimdataexporterconfiguredialogtest pimdataexporterconfiguredialogtest.cpp ../dialog/pimdataexporterconfiguredialog.cpp ../widgets/pimdataexporterconfigurewidget.cpp ${pimdataexporter_kcfg_SRCS})
 add_test(NAME pimdataexporterconfiguredialogtest COMMAND pimdataexporterconfiguredialogtest)
 ecm_mark_as_test(pimdataexporterconfiguredialogtest)
-target_link_libraries(pimdataexporterconfiguredialogtest Qt5::Test Qt5::Widgets KF5::I18n KF5::ItemViews KF5::ConfigCore KF5::ConfigGui)
+target_link_libraries(pimdataexporterconfiguredialogtest Qt5::Test Qt5::Widgets KF5::I18n KF5::ItemViews KF5::ConfigCore KF5::ConfigGui KF5::WidgetsAddons)
 
 
 add_executable( pimdataexporterconfigurewidgettest pimdataexporterconfigurewidgettest.cpp ../widgets/pimdataexporterconfigurewidget.cpp ${pimdataexporter_kcfg_SRCS})

@@ -81,6 +81,7 @@ target_link_libraries(pimdataexporter
     KF5::I18n
     KF5::Crash
     ${pimdataexporter_userfeedback_LIB}
+    KF5::WidgetsAddons
     )
 
 add_subdirectory(kconf_update)

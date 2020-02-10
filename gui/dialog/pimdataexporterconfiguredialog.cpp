@@ -22,23 +22,33 @@
 #include <KLocalizedString>
 #include <QPushButton>
 #include <QDialogButtonBox>
+#include <kpagewidgetmodel.h>
 #include "../widgets/pimdataexporterconfigurewidget.h"
 
 PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
-    : QDialog(parent)
+    : KPageDialog(parent)
 {
+    setFaceType(KPageDialog::List);
     setWindowTitle(i18nc("@title:window", "Configure PimDataExporter"));
-    QVBoxLayout *layout = new QVBoxLayout(this);
+
+
+    //General page
+    QWidget *generalConfigureWiget = new QWidget;
+    QVBoxLayout *layout = new QVBoxLayout(generalConfigureWiget);
     mConfigureWidget = new PimDataExporterConfigureWidget(this);
     mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
+
     layout->addWidget(mConfigureWidget);
 
-    QDialogButtonBox *button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
-    button->setObjectName(QStringLiteral("buttonbox"));
-    connect(button, &QDialogButtonBox::accepted, this, &PimDataExporterConfigureDialog::slotAccepted);
-    connect(button, &QDialogButtonBox::rejected, this, &PimDataExporterConfigureDialog::reject);
-    connect(button->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, mConfigureWidget, &PimDataExporterConfigureWidget::resetToDefault);
-    layout->addWidget(button);
+    KPageWidgetItem *generalPageWidgetPage = new KPageWidgetItem(mConfigureWidget, i18n("General"));
+    generalPageWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("network-workgroup")));
+    addPage(generalPageWidgetPage);
+
+
+    buttonBox()->setStandardButtons(QDialogButtonBox::Ok| QDialogButtonBox::Cancel);
+
+    connect(buttonBox(), &QDialogButtonBox::accepted, this, &PimDataExporterConfigureDialog::accept);
+    connect(buttonBox(), &QDialogButtonBox::rejected, this, &PimDataExporterConfigureDialog::reject);
 }
 
 PimDataExporterConfigureDialog::~PimDataExporterConfigureDialog()
