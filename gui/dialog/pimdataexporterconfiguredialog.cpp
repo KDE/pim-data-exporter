@@ -24,13 +24,13 @@
 #include <QDialogButtonBox>
 #include <kpagewidgetmodel.h>
 #include "../widgets/pimdataexporterconfigurewidget.h"
+#include <KConfigGroup>
+#include <KSharedConfig>
 
 #ifdef WITH_KUSERFEEDBACK
 #include <KUserFeedback/Provider>
 #include <KUserFeedback/FeedbackConfigWidget>
 #include "userfeedback/userfeedbackmanager.h"
-#include <KConfigGroup>
-#include <KSharedConfig>
 #endif
 
 PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
