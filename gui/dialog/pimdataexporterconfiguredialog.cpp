@@ -85,6 +85,11 @@ PimDataExporterConfigureDialog::~PimDataExporterConfigureDialog()
 void PimDataExporterConfigureDialog::slotAccepted()
 {
     mConfigureWidget->save();
+#ifdef WITH_KUSERFEEDBACK
+    // set current active mode + write back the config for future starts
+    UserFeedBackManager::self()->userFeedbackProvider()->setTelemetryMode(mUserFeedbackWidget->telemetryMode());
+    UserFeedBackManager::self()->userFeedbackProvider()->setSurveyInterval(mUserFeedbackWidget->surveyInterval());
+#endif
     accept();
 }
 
