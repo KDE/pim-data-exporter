@@ -60,7 +60,15 @@ set(pimdataexporter_LIB_SRCS
     pimdataimportdatainfofile.cpp
     )
 
-ecm_qt_declare_logging_category(pimdataexporter_LIB_SRCS HEADER pimdataexportcore_debug.h IDENTIFIER PIMDATAEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore)
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    ecm_qt_declare_logging_category(pimdataexporter_LIB_SRCS HEADER pimdataexportcore_debug.h IDENTIFIER PIMDATAEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore)
+else()
+    ecm_qt_declare_logging_category(pimdataexporter_LIB_SRCS HEADER pimdataexportcore_debug.h IDENTIFIER PIMDATAEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore
+        DESCRIPTION "pimdataexporter (pimdataexporter lib core)"
+        OLD_CATEGORY_NAMES log_pimsettingexportercore org.kde.pim.pimsettingexportercore
+        EXPORT PIMDATAEXPORTER
+    )
+endif()
 
 add_library(pimdataexporterprivate ${pimdataexporter_LIB_SRCS})
 generate_export_header(pimdataexporterprivate BASE_NAME pimdataexporter)

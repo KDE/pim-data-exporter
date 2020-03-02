@@ -106,7 +106,17 @@ add_subdirectory(core)
 add_subdirectory(gui)
 add_subdirectory(console)
 
-install(FILES pimdataexporter.renamecategories pimdataexporter.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    install(FILES pimdataexporter.renamecategories pimdataexporter.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+else ()
+    ecm_qt_install_logging_categories(
+        EXPORT PIMDATAEXPORTER
+        FILE pimdataexporter.categories
+        DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+        )
+endif()
+
+
 install(FILES org.kde.pimdataexporter.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 

@@ -59,7 +59,15 @@ qt5_add_resources(pimdataexporter_SRCS pimdataexporter.qrc)
 
 #TODO create lib
 
-ecm_qt_declare_logging_category(pimdataexporter_SRCS HEADER pimdataexportgui_debug.h IDENTIFIER PIMDATAEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimdataexportergui)
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    ecm_qt_declare_logging_category(pimdataexporter_SRCS HEADER pimdataexportgui_debug.h IDENTIFIER PIMDATAEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimdataexportergui)
+else()
+    ecm_qt_declare_logging_category(pimdataexporter_SRCS HEADER pimdataexportgui_debug.h IDENTIFIER PIMDATAEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimdataexportergui
+        DESCRIPTION "pimdataexporter (pimdataexporter gui)"
+        OLD_CATEGORY_NAMES log_pimsettingexportergui org.kde.pim.pimsettingexportergui
+        EXPORT PIMDATAEXPORTER
+    )
+endif()
 
 add_executable(pimdataexporter ${pimdataexporter_SRCS})
 
