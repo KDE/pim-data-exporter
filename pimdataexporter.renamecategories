@@ -1,6 +1,0 @@
-log_pimsettingexportercore org.kde.pim.pimsettingexportercore
-log_pimsettingexportergui org.kde.pim.pimsettingexportergui
-log_pimsettingexporterconsole org.kde.pim.pimsettingexporterconsole
-org.kde.pim.pimsettingexportercore org.kde.pim.pimdataexportercore
-org.kde.pim.pimsettingexportergui org.kde.pim.pimdataexportergui
-org.kde.pim.pimsettingexporterconsole org.kde.pim.pimdataexporterconsole

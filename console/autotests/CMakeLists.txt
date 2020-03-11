@@ -6,15 +6,7 @@ include_directories(
 
 set( pimdataexporterconsole_loginfiletest_SRCS loginfiletest.cpp ../loginfile.cpp )
 
-if (ECM_VERSION VERSION_LESS "5.68.0")
-    ecm_qt_declare_logging_category(pimdataexporterconsole_loginfiletest_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole)
-else()
-    ecm_qt_declare_logging_category(pimdataexporterconsole_loginfiletest_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole
-        DESCRIPTION "pimdataexporter (pimdataexporter console)"
-        OLD_CATEGORY_NAMES log_pimsettingexporterconsole org.kde.pim.pimsettingexporterconsole
-        EXPORT PIMDATAEXPORTER
-    )
-endif()
+ecm_qt_declare_logging_category(pimdataexporterconsole_loginfiletest_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole)
 
 
 
