@@ -25,6 +25,11 @@
 #include <QApplication>
 #include <Kdelibs4ConfigMigrator>
 #include <KCrash>
+#ifdef WITH_KUSERFEEDBACK
+#include "userfeedback/userfeedbackmanager.h"
+#include <KUserFeedback/Provider>
+#include <KUserFeedback/FeedbackConfigWidget>
+#endif
 
 int main(int argc, char *argv[])
 {
@@ -45,7 +50,12 @@ int main(int argc, char *argv[])
 
     PimDataCommandLineOption parser;
     parser.createParser(app);
-
+#ifdef WITH_KUSERFEEDBACK
+//    if(parser.isSet(QStringLiteral("feedback"))) {
+//        QTextStream(stdout) << UserFeedBackManager::self()->userFeedbackProvider()->describeDataSources() << '\n';
+//        return 0;
+//    }
+#endif
     KDBusService service(KDBusService::Unique);
 
     PimDataExporterWindow *backupMailWin = new PimDataExporterWindow();

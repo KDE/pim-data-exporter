@@ -58,8 +58,9 @@ void PimDataCommandLineOption::createParser(const QApplication &app)
     mParser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("import"), i18n("Import the given file")));
     mParser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("export"), i18n("Export the given file")));
     mParser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("+[url]"), i18n("File or url. The user will be asked whether to import or export.")));
-
-
+#ifdef WITH_KUSERFEEDBACK
+    mParser.addOption(QCommandLineOption(QStringLiteral("feedback"), i18n("Lists the available options for user feedback")));
+#endif
     mParser.process(app);
     aboutData.processCommandLine(&mParser);
 }
