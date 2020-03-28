@@ -59,8 +59,6 @@ void ImportNotesJob::slotNextStep()
             restoreResources();
         } else if (type == Utils::Config) {
             restoreConfig();
-        } else if (type == Utils::Resources) {
-            restoreData();
         } else {
             qCDebug(PIMDATAEXPORTERCORE_LOG) << Q_FUNC_INFO << " not supported type " << type;
             slotNextStep();
