@@ -7,6 +7,7 @@ set(pimdataexporter_userfeedback_SRCS)
 if (TARGET KUserFeedbackWidgets)
     set(pimdataexporter_userfeedback_SRCS ${pimdataexporter_userfeedback_SRCS}
         userfeedback/userfeedbackmanager.cpp
+        userfeedback/pimdataexporteduserfeedbackprovider.cpp
         )
 endif()
 

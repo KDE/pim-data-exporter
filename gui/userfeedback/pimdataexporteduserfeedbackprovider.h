@@ -17,22 +17,18 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "userfeedbackmanager.h"
-#include "pimdataexporteduserfeedbackprovider.h"
 
-UserFeedBackManager::UserFeedBackManager(QObject *parent)
-    : QObject(parent)
-{
-    mUserFeedbackProvider = new PimDataExportedUserFeedbackProvider(this);
-}
+#ifndef PIMDATAEXPORTEDUSERFEEDBACKPROVIDER_H
+#define PIMDATAEXPORTEDUSERFEEDBACKPROVIDER_H
 
-UserFeedBackManager *UserFeedBackManager::self()
-{
-    static UserFeedBackManager s_self;
-    return &s_self;
-}
+#include <KUserFeedback/Provider>
 
-KUserFeedback::Provider *UserFeedBackManager::userFeedbackProvider() const
+class PimDataExportedUserFeedbackProvider : public KUserFeedback::Provider
 {
-    return mUserFeedbackProvider;
-}
+    Q_OBJECT
+public:
+    explicit PimDataExportedUserFeedbackProvider(QObject *parent = nullptr);
+    ~PimDataExportedUserFeedbackProvider();
+};
+
+#endif // PIMDATAEXPORTEDUSERFEEDBACKPROVIDER_H

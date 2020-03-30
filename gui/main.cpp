@@ -50,12 +50,12 @@ int main(int argc, char *argv[])
 
     PimDataCommandLineOption parser;
     parser.createParser(app);
-#ifdef WITH_KUSERFEEDBACK
+//#ifdef WITH_KUSERFEEDBACK
 //    if(parser.isSet(QStringLiteral("feedback"))) {
-//        QTextStream(stdout) << UserFeedBackManager::self()->userFeedbackProvider()->describeDataSources() << '\n';
+////        QTextStream(stdout) << UserFeedBackManager::self()->userFeedbackProvider()->describeDataSources() << '\n';
 //        return 0;
 //    }
-#endif
+//#endif
     KDBusService service(KDBusService::Unique);
 
     PimDataExporterWindow *backupMailWin = new PimDataExporterWindow();
