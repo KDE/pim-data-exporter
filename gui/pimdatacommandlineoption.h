@@ -36,6 +36,8 @@ public:
     void setExportWindow(PimDataExporterWindow *exporterWindow);
     void handleCommandLine();
 
+    Q_REQUIRED_RESULT bool parseUserFeedback() const;
+
 public Q_SLOTS:
     void slotActivateRequested(const QStringList &arguments, const QString &workingDirectory);
 

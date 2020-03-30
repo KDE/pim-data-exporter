@@ -76,3 +76,8 @@ void PimDataCommandLineOption::handleCommandLine()
         mExporterWindow->handleCommandLine(mParser);
     }
 }
+
+bool PimDataCommandLineOption::parseUserFeedback() const
+{
+    return mParser.isSet(QStringLiteral("feedback"));
+}
