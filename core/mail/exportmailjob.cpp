@@ -20,9 +20,9 @@
 #include "exportmailjob.h"
 #include "importexportmailutil.h"
 
-#include "MailCommon/MailUtil"
-#include "MailCommon/FilterManager"
-#include "MailCommon/FilterImporterExporter"
+#include <MailCommon/MailUtil>
+#include <MailCommon/FilterManager>
+#include <MailCommon/FilterImporterExporter>
 #include "importexportprogressindicatorbase.h"
 
 #include <AkonadiCore/AgentManager>

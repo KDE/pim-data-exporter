@@ -19,8 +19,8 @@
 
 #include "backupfilestructureinfodialog.h"
 
-#include "kpimtextedit/plaintexteditorwidget.h"
-#include "kpimtextedit/plaintexteditor.h"
+#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <KPIMTextEdit/PlainTextEditor>
 
 #include <KLocalizedString>
 #include <KSharedConfig>

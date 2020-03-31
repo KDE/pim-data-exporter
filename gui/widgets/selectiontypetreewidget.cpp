@@ -21,7 +21,7 @@
 #include "core/utils.h"
 #include "core/xml/templateselection.h"
 
-#include "PimCommon/PimUtil"
+#include <PimCommon/PimUtil>
 
 #include <QFileDialog>
 

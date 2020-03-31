@@ -19,8 +19,8 @@
 
 #include "utils.h"
 
-#include "MailCommon/MailUtil"
-#include "PimCommon/PimUtil"
+#include <MailCommon/MailUtil>
+#include <PimCommon/PimUtil>
 
 #include <QSettings>
 #include <KConfigGroup>

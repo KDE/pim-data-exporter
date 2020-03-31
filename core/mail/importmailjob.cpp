@@ -21,9 +21,9 @@
 #include "archivestorage.h"
 #include "importexportmailutil.h"
 
-#include "MailCommon/FilterManager"
-#include "MailCommon/FilterImporterExporter"
-#include "MailCommon/MailUtil"
+#include <MailCommon/FilterManager>
+#include <MailCommon/FilterImporterExporter>
+#include <MailCommon/MailUtil>
 #include <PimCommonAkonadi/CreateResource>
 
 #include <mailtransport/transportmanager.h>

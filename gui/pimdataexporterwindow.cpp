@@ -37,7 +37,7 @@
 #include <MailCommon/MailKernel>
 #include <MailCommon/FilterManager>
 
-#include "PimCommon/PimUtil"
+#include <PimCommon/PimUtil>
 
 #include <AkonadiWidgets/ControlGui>
 

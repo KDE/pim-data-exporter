@@ -22,7 +22,7 @@
 #include "importexportprogressindicatorbase.h"
 #include "synchronizeresourcejob.h"
 
-#include "MailCommon/MailUtil"
+#include <MailCommon/MailUtil>
 
 #include <PimCommonAkonadi/CreateResource>
 
