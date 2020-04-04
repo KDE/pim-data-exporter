@@ -26,7 +26,7 @@
 #include <MailCommon/MailUtil>
 #include <PimCommonAkonadi/CreateResource>
 
-#include <mailtransport/transportmanager.h>
+#include <MailTransport/TransportManager>
 
 #include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 #include <KIdentityManagement/kidentitymanagement/identity.h>
