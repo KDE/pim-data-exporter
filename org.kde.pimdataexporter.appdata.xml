@@ -17,6 +17,7 @@
   <name xml:lang="ia">PIM Data Exporter (exportator de datos de PIM)</name>
   <name xml:lang="id">PIM Data Exporter</name>
   <name xml:lang="it">Esportatore dei dati di PIM</name>
+  <name xml:lang="ko">PIM 데이터 내보내기</name>
   <name xml:lang="nl">PIM-exportprogramma van gegevens</name>
   <name xml:lang="pl">Eksportowanie danych ZIO</name>
   <name xml:lang="pt">Exportação dos Dados PIM</name>
@@ -94,6 +95,7 @@
     <p xml:lang="ia">PIM Data Exporter exporta e importa preferentias de PIM</p>
     <p xml:lang="id">PIM Data Exporter mengekspor dan mengimpor pengaturan PIM</p>
     <p xml:lang="it">L'esportatore dei dati di PIM esporta ed importa le impostazioni di PIM</p>
+    <p xml:lang="ko">PIM 데이터 내보내기 도구에서는 PIM 설정을 내보내고 가져옵니다</p>
     <p xml:lang="nl">PIM-exportprogramma van gegevens exporteert en importeert PIM-instellingen.</p>
     <p xml:lang="pl">Eksportowanie danych ZIO umożliwia eksportowanie/importowanie ustawień ZIO</p>
     <p xml:lang="pt">A Exportação de Dados PIM permite exportar ou importar configurações de PIM.</p>
