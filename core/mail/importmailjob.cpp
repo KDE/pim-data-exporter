@@ -994,7 +994,7 @@ void ImportMailJob::restoreIdentity()
                         if (!vcardFileName.isEmpty()) {
                             QFileInfo fileInfo(vcardFileName);
                             QFile file(vcardFileName);
-                            const KArchiveEntry *vcardEntry = mArchiveDirectory->entry(Utils::identitiesPath() + QString::number(oldUid) + QDir::separator() + file.fileName());
+                            const KArchiveEntry *vcardEntry = mArchiveDirectory->entry(Utils::identitiesPath() + QString::number(oldUid) + QLatin1Char('/') + file.fileName());
                             if (vcardEntry && vcardEntry->isFile()) {
                                 const KArchiveFile *vcardFile = static_cast<const KArchiveFile *>(vcardEntry);
                                 QString vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kmail2/%1").arg(fileInfo.fileName());

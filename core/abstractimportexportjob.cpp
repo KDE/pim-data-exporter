@@ -340,7 +340,7 @@ void AbstractImportExportJob::copyToFile(const KArchiveFile *archivefile, const 
 void AbstractImportExportJob::backupResourceFile(const Akonadi::AgentInstance &agent, const QString &defaultPath)
 {
     const QString identifier = agent.identifier();
-    const QString archivePath = defaultPath + identifier + QDir::separator();
+    const QString archivePath = defaultPath + identifier + QLatin1Char('/');
 
     QString url = Utils::resourcePath(agent);
     if (!url.isEmpty()) {
@@ -476,7 +476,7 @@ void AbstractImportExportJob::extractZipFile(const KArchiveFile *file, const QSt
                 if (entry) {
                     if (entry->isDirectory()) {
                         const KArchiveDirectory *dir = static_cast<const KArchiveDirectory *>(entry);
-                        dir->copyTo(destination + QDir::separator() + dir->name(), true);
+                        dir->copyTo(destination + QLatin1Char('/') + dir->name(), true);
                     } else if (entry->isFile()) {
                         const KArchiveFile *dir = static_cast<const KArchiveFile *>(entry);
                         dir->copyTo(destination);

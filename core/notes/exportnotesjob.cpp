@@ -105,7 +105,7 @@ void ExportNotesJob::slotWriteNextArchiveResource()
         Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
         const QString identifier = agent.identifier();
         if (identifier.contains(QLatin1String("akonadi_akonotes_resource_"))) {
-            const QString archivePath = Utils::notePath() + identifier + QDir::separator();
+            const QString archivePath = Utils::notePath() + identifier + QLatin1Char('/');
 
             QString url = Utils::resourcePath(agent);
             if (!mAgentPaths.contains(url) && QDir(url).exists()) {

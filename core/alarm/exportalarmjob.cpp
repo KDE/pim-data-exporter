@@ -92,7 +92,7 @@ void ExportAlarmJob::slotWriteNextArchiveResource()
         const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
         const QString identifier = agent.identifier();
         if (identifier.contains(QLatin1String("akonadi_kalarm_dir_resource_"))) {
-            const QString archivePath = Utils::alarmPath() + identifier + QDir::separator();
+            const QString archivePath = Utils::alarmPath() + identifier + QLatin1Char('/');
 
             const QString url = Utils::resourcePath(agent);
             if (!mAgentPaths.contains(url)) {

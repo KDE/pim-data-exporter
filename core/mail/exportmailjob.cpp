@@ -155,7 +155,7 @@ void ExportMailJob::slotWriteNextArchiveResource()
                 const QString identifier = agent.identifier();
                 if (identifier.contains(QLatin1String("akonadi_maildir_resource_"))
                     || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
-                    const QString archivePath = Utils::mailsPath() + identifier + QDir::separator();
+                    const QString archivePath = Utils::mailsPath() + identifier + QLatin1Char('/');
 
                     const QString url = Utils::resourcePath(agent);
                     if (!mAgentPaths.contains(url)) {
@@ -660,7 +660,7 @@ void ExportMailJob::backupIdentity()
                     const int uoid = group.readEntry(QStringLiteral("uoid"), -1);
                     QFile file(vcardFileName);
                     if (file.exists()) {
-                        const bool fileAdded = archive()->addLocalFile(vcardFileName, Utils::identitiesPath() + QString::number(uoid) + QDir::separator() + file.fileName());
+                        const bool fileAdded = archive()->addLocalFile(vcardFileName, Utils::identitiesPath() + QString::number(uoid) + QLatin1Char('/') + file.fileName());
                         if (!fileAdded) {
                             Q_EMIT error(i18n("vCard file \"%1\" cannot be saved.", file.fileName()));
                         }
