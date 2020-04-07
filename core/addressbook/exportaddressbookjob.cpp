@@ -91,7 +91,7 @@ void ExportAddressbookJob::slotWriteNextArchiveResource()
         const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
         const QString identifier = agent.identifier();
         if (identifier.contains(QLatin1String("akonadi_vcarddir_resource_")) || identifier.contains(QLatin1String("akonadi_contacts_resource_"))) {
-            const QString archivePath = Utils::addressbookPath() + identifier + QDir::separator();
+            const QString archivePath = Utils::addressbookPath() + identifier + QLatin1Char('/');
 
             QString url = Utils::resourcePath(agent, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts/"));
             if (!mAgentPaths.contains(url)) {
