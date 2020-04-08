@@ -36,10 +36,10 @@ int main(int argc, char **argv)
     parser.process(app);
 
     QString fileName;
-    if (parser.positionalArguments().count()) {
-        fileName = parser.positionalArguments().at(0);
-    } else {
+    if (parser.positionalArguments().isEmpty()) {
         fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), QStringLiteral("Zip file (*.zip)"));
+    } else {
+        fileName = parser.positionalArguments().at(0);
     }
     if (fileName.isEmpty()) {
         return 0;
