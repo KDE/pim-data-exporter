@@ -97,6 +97,7 @@ endif()
 
 configure_file(pimdataexporter-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/pimdataexporter-version.h @ONLY)
 add_definitions(-DQT_NO_FOREACH)
+add_definitions(-DQT_NO_KEYWORDS)
 
 if(BUILD_TESTING)
    add_definitions(-DBUILD_TESTING)
