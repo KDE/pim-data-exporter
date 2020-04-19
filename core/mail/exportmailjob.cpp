@@ -27,8 +27,6 @@
 
 #include <AkonadiCore/AgentManager>
 #include <AkonadiCore/Collection>
-#include <AkonadiCore/CollectionFetchJob>
-#include <AkonadiCore/CollectionFetchScope>
 
 #include <MailTransport/TransportManager>
 

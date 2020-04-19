@@ -39,9 +39,6 @@
 #include <KZip>
 #include "pimdataexportcore_debug.h"
 
-#include <AkonadiCore/agenttype.h>
-#include <AkonadiCore/agentmanager.h>
-#include <AkonadiCore/agentinstancecreatejob.h>
 #include <AkonadiCore/CollectionFetchJob>
 
 #include <QMetaMethod>
