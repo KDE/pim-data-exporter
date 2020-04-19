@@ -1103,8 +1103,6 @@ void ImportMailJob::importFolderArchiveConfig(const KArchiveFile *archiveconfigu
 
 void ImportMailJob::copyMailArchiveConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
-#if 0
-    //TODO adapt FolderArchiveAccount
     const QString archiveGroupPattern = QStringLiteral("FolderArchiveAccount ");
     const QStringList archiveList = archiveConfigOrigin->groupList().filter(archiveGroupPattern);
     for (const QString &str : archiveList) {
@@ -1114,21 +1112,17 @@ void ImportMailJob::copyMailArchiveConfig(const KSharedConfig::Ptr &archiveConfi
             QString newResourceName;
             if (mHashResources.contains(resourcename)) {
                 newResourceName = mHashResources.value(resourcename);
-            }
-            if (!newResourceName.isEmpty()) {
-                KConfigGroup newGroup(archiveConfigDestination, archiveGroupPattern + QString::number(id));
-                oldGroup.copyTo(&newGroup);
-                const Akonadi::Collection::Id id = convertPathToId(path);
 
-                const int oldTopLevelCollectionId = newGroup.readEntry("topLevelCollectionId", -1);
-                if (oldTopLevelCollectionId != -1) {
-                    //TODO
+                const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(QStringLiteral("topLevelCollectionId")));
+                if (id != -1) {
+                    KConfigGroup newGroup(archiveConfigDestination, archiveGroupPattern + newResourceName);
+                    oldGroup.copyTo(&newGroup);
+                    newGroup.writeEntry(QStringLiteral("topLevelCollectionId"), id);
                 }
             }
             oldGroup.deleteGroup();
         }
     }
-#endif
 }
 
 void ImportMailJob::copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
