@@ -62,10 +62,13 @@ private:
     void searchAllMailsFiles(const KArchiveDirectory *dir, const QString &prefix);
     void storeMailArchiveResource(const KArchiveDirectory *dir, const QString &prefix);
 
+    void importMailArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix);
     void mergeLdapConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void mergeKmailSnippetConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void mergeArchiveMailAgentConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination);
+    void copyMailArchiveConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination);
+    void mergeMailArchiveConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void mergeSieveTemplate(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void importSimpleFilesInDirectory(const QString &relativePath);
     void addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId);
