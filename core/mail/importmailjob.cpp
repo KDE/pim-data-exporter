@@ -856,7 +856,6 @@ void ImportMailJob::restoreConfig()
     }
 
     restoreUiRcFile(QStringLiteral("sieveeditorui.rc"), QStringLiteral("sieveeditor"));
-    restoreUiRcFile(QStringLiteral("storageservicemanagerui.rc"), QStringLiteral("storageservicemanager"));
     restoreUiRcFile(QStringLiteral("headerthemeeditorui.rc"), QStringLiteral("headerthemeeditor"));
     restoreUiRcFile(QStringLiteral("contactthemeeditorui.rc"), QStringLiteral("contactthemeeditor"));
     restoreUiRcFile(QStringLiteral("contactprintthemeeditorui.rc"), QStringLiteral("contactprintthemeeditor"));
@@ -894,7 +893,6 @@ void ImportMailJob::restoreConfig()
         QStringLiteral("akonadi_maildispatcher_agent.notifyrc"),
         QStringLiteral("akonadi_followupreminder_agent.notifyrc"),
         QStringLiteral("messageviewer.notifyrc"),
-        QStringLiteral("storageservicemanager.notifyrc")
     };
 
     //We can't merge it.
