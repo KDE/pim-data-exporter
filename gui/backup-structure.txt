@@ -68,7 +68,6 @@ Root
 |       |---------akonadi_maildispatcher_agent.notifyrc
 |       |---------akonadi_newmailnotifier_agent.notifyrc
 |       |---------akonadi_followupreminder_agent.notifyrc
-|       |---------storageservicemanager.notifyrc
 |       |---------messagevieweradblockrc
 |       |---------knotesrc
 |       |---------akregatorrc
@@ -93,7 +92,6 @@ Root
 |       |---------korganizerui.rc
 |       |---------korganizer_part.rc
 |       |---------sieveeditorui.rc
-|       |---------storageservicemanagerui.rc
 |       |---------kmreadermainwin.rc
 |       |---------kmcomposerui.rc
 |       |---------kmmainwin.rc

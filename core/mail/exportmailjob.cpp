@@ -284,7 +284,6 @@ void ExportMailJob::backupConfig()
     }
 
     backupUiRcFile(QStringLiteral("sieveeditorui.rc"), QStringLiteral("sieveeditor"));
-    backupUiRcFile(QStringLiteral("storageservicemanagerui.rc"), QStringLiteral("storageservicemanager"));
     backupUiRcFile(QStringLiteral("kmreadermainwin.rc"), QStringLiteral("kmail2"));
     backupUiRcFile(QStringLiteral("kmcomposerui.rc"), QStringLiteral("kmail2"));
     backupUiRcFile(QStringLiteral("kmmainwin.rc"), QStringLiteral("kmail2"));
@@ -324,7 +323,6 @@ void ExportMailJob::backupConfig()
     backupConfigFile(QStringLiteral("akonadi_followupreminder_agent.notifyrc"));
     backupConfigFile(QStringLiteral("messagevieweradblockrc"));
     backupConfigFile(QStringLiteral("messageviewer.notifyrc"));
-    backupConfigFile(QStringLiteral("storageservicemanager.notifyrc"));
 
     const QString folderMailArchiveStr(QStringLiteral("foldermailarchiverc"));
     const QString folderMailArchiverc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + folderMailArchiveStr;
