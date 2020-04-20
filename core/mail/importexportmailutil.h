@@ -21,9 +21,9 @@
 #define IMPORTEXPORTMAILUTIL_H
 
 #include <KConfigGroup>
-
+#include "pimdataexportercore_private_export.h"
 namespace ImportExportMailUtil {
-void cleanupFolderSettings(KConfigGroup &oldGroup);
+PIMDATAEXPORTER_TESTS_EXPORT void cleanupFolderSettings(KConfigGroup &oldGroup);
 }
 
 #endif // IMPORTEXPORTMAILUTIL_H
