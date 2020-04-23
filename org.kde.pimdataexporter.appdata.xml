@@ -47,6 +47,7 @@
   <summary xml:lang="pl">Zapisuje wszystkie dane z aplikacji ZIO i przywraca je na innych systemach.</summary>
   <summary xml:lang="pt">Grava todos os dados das aplicações PIM e repõe-os noutros sistemas.</summary>
   <summary xml:lang="pt-BR">Salva todo os dados de aplicativos PIM e restaura-os em outros sistemas.</summary>
+  <summary xml:lang="ru">Сохранение данных из приложений PIM и для переноса и восстановления на других системах.</summary>
   <summary xml:lang="sk">Uloží všetky údaje z aplikácií PIM a obnoví ich v iných systémoch.</summary>
   <summary xml:lang="sv">Sparar alla data från program för personlig informationshantering och återställer dem på andra system.</summary>
   <summary xml:lang="uk">Зберігає усі дані з програм PIM і відновлює їх у інших системах.</summary>
