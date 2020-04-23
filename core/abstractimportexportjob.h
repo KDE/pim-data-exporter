@@ -95,13 +95,13 @@ protected:
     Q_REQUIRED_RESULT QStringList restoreResourceFile(const QString &resourceName, const QString &defaultPath, const QString &storePath, bool overwriteResources = false);
     virtual void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings);
     void restoreConfigFile(const QString &configNameStr);
-    bool overwriteDirectoryMessageBox(const QString &directory) const;
+    Q_REQUIRED_RESULT bool overwriteDirectoryMessageBox(const QString &directory) const;
     void overwriteDirectory(const QString &path, const KArchiveEntry *entry);
     virtual bool isAConfigFile(const QString &name) const;
     void searchAllFiles(const KArchiveDirectory *dir, const QString &prefix, const QString &searchEntryName);
     void storeArchiveInfoResources(const KArchiveDirectory *dir, const QString &prefix);
 
-    KZip *archive() const;
+    Q_REQUIRED_RESULT KZip *archive() const;
 
     void increaseProgressDialog();
     void createProgressDialog(const QString &title = QString());

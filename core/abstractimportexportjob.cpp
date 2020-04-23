@@ -46,7 +46,6 @@ AbstractImportExportJob::AbstractImportExportJob(QObject *parent, ArchiveStorage
     , mArchiveStorage(archiveStorage)
     , mIdentityManager(KIdentityManagement::IdentityManager::self())
     , mNumberOfStep(numberOfStep)
-    , mIndex(-1)
     , mImportExportProgressIndicator(new ImportExportProgressIndicatorBase(this))
 {
     mImportExportProgressIndicator->setNumberOfStep(numberOfStep);
