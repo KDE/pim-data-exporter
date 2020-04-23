@@ -18,6 +18,7 @@
 */
 
 #include "exportnotesjob.h"
+#include "exportresourcearchivejob.h"
 
 #include <AkonadiCore/AgentManager>
 
@@ -29,7 +30,6 @@
 #include <QDir>
 #include <QTimer>
 #include <QStandardPaths>
-#include <exportresourcearchivejob.h>
 
 ExportNotesJob::ExportNotesJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
