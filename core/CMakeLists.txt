@@ -25,8 +25,7 @@ set(pimdataexporter_alarm_SRCS
     )
 
 set(pimdataexporter_notes_SRCS
-    notes/exportnotesjobinterface.cpp
-    #notes/exportnotesjobinterfaceimpl.cpp
+    notes/exportnotesjobinterfaceimpl.cpp
     notes/importnotesjob.cpp
     )
 
