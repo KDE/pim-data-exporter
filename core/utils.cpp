@@ -159,7 +159,7 @@ void Utils::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &c
             if (!prefixCollection.isEmpty() && str.startsWith(prefixCollection)) {
                 str.remove(0, prefixCollection.length());
             }
-            const int collectionId = str.toInt(&found);
+            const qlonglong collectionId = str.toLongLong(&found);
             if (found) {
                 const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionId));
                 if (!realPath.isEmpty()) {
@@ -186,7 +186,7 @@ void Utils::convertCollectionListToRealPath(KConfigGroup &group, const QString &
             for (QString collection : listExpension) {
                 collection.remove(QLatin1Char('c'));
                 bool found = false;
-                const int collectionValue = collection.toInt(&found);
+                const qlonglong collectionValue = collection.toLongLong(&found);
                 if (found && collectionValue != -1) {
                     const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionValue));
                     if (!realPath.isEmpty()) {
@@ -212,7 +212,7 @@ void Utils::convertCollectionToRealPath(KConfigGroup &group, const QString &curr
         } else {
             collectionId.remove(QLatin1Char('c'));
             bool found = false;
-            const int collectionValue = collectionId.toInt(&found);
+            const qlonglong collectionValue = collectionId.toLongLong(&found);
             if (found && collectionValue != -1) {
                 const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionValue));
                 group.writeEntry(currentKey, realPath);
