@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "exportnotesjob.h"
+#include "exportnotesjobinterface.h"
 #include "exportresourcearchivejob.h"
 
 #include <AkonadiCore/AgentManager>
@@ -31,29 +31,29 @@
 #include <QTimer>
 #include <QStandardPaths>
 
-ExportNotesJob::ExportNotesJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportNotesJobInterface::ExportNotesJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
 }
 
-ExportNotesJob::~ExportNotesJob()
+ExportNotesJobInterface::~ExportNotesJobInterface()
 {
 }
 
-void ExportNotesJob::start()
+void ExportNotesJobInterface::start()
 {
     Q_EMIT title(i18n("Start export KNotes settings..."));
     createProgressDialog(i18n("Export KNotes settings"));
     if (mTypeSelected & Utils::Resources) {
-        QTimer::singleShot(0, this, &ExportNotesJob::slotCheckBackupResource);
+        QTimer::singleShot(0, this, &ExportNotesJobInterface::slotCheckBackupResource);
     } else if (mTypeSelected & Utils::Config) {
-        QTimer::singleShot(0, this, &ExportNotesJob::slotCheckBackupConfig);
+        QTimer::singleShot(0, this, &ExportNotesJobInterface::slotCheckBackupConfig);
     } else {
         Q_EMIT jobFinished();
     }
 }
 
-void ExportNotesJob::backupTheme()
+void ExportNotesJobInterface::backupTheme()
 {
     const QString notesThemeDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/knotes/print/");
     QDir notesThemeDirectory(notesThemeDir);
@@ -65,16 +65,16 @@ void ExportNotesJob::backupTheme()
     }
 }
 
-void ExportNotesJob::slotCheckBackupResource()
+void ExportNotesJobInterface::slotCheckBackupResource()
 {
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
     backupTheme();
 
-    QTimer::singleShot(0, this, &ExportNotesJob::slotWriteNextArchiveResource);
+    QTimer::singleShot(0, this, &ExportNotesJobInterface::slotWriteNextArchiveResource);
 }
 
-void ExportNotesJob::slotCheckBackupConfig()
+void ExportNotesJobInterface::slotCheckBackupConfig()
 {
     if (mTypeSelected & Utils::Config) {
         backupConfig();
@@ -87,17 +87,17 @@ void ExportNotesJob::slotCheckBackupConfig()
     Q_EMIT jobFinished();
 }
 
-void ExportNotesJob::slotNoteJobTerminated()
+void ExportNotesJobInterface::slotNoteJobTerminated()
 {
     if (wasCanceled()) {
         Q_EMIT jobFinished();
         return;
     }
     mIndexIdentifier++;
-    QTimer::singleShot(0, this, &ExportNotesJob::slotWriteNextArchiveResource);
+    QTimer::singleShot(0, this, &ExportNotesJobInterface::slotWriteNextArchiveResource);
 }
 
-void ExportNotesJob::slotWriteNextArchiveResource()
+void ExportNotesJobInterface::slotWriteNextArchiveResource()
 {
     Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
     const Akonadi::AgentInstance::List list = manager->instances();
@@ -117,27 +117,27 @@ void ExportNotesJob::slotWriteNextArchiveResource()
                     resourceJob->setIdentifier(identifier);
                     resourceJob->setArchive(archive());
                     resourceJob->setArchiveName(QStringLiteral("notes.zip"));
-                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJob::error);
-                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJob::info);
-                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJob::slotNoteJobTerminated);
+                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJobInterface::error);
+                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJobInterface::info);
+                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJobInterface::slotNoteJobTerminated);
                     resourceJob->start();
                 } else {
                     qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
-                    QTimer::singleShot(0, this, &ExportNotesJob::slotNoteJobTerminated);
+                    QTimer::singleShot(0, this, &ExportNotesJobInterface::slotNoteJobTerminated);
                 }
             } else {
-                QTimer::singleShot(0, this, &ExportNotesJob::slotNoteJobTerminated);
+                QTimer::singleShot(0, this, &ExportNotesJobInterface::slotNoteJobTerminated);
             }
         } else {
-            QTimer::singleShot(0, this, &ExportNotesJob::slotNoteJobTerminated);
+            QTimer::singleShot(0, this, &ExportNotesJobInterface::slotNoteJobTerminated);
         }
     } else {
         Q_EMIT info(i18n("Resources backup done."));
-        QTimer::singleShot(0, this, &ExportNotesJob::slotCheckBackupConfig);
+        QTimer::singleShot(0, this, &ExportNotesJobInterface::slotCheckBackupConfig);
     }
 }
 
-void ExportNotesJob::backupConfig()
+void ExportNotesJobInterface::backupConfig()
 {
     setProgressDialogLabel(i18n("Backing up config..."));
 
@@ -175,7 +175,7 @@ void ExportNotesJob::backupConfig()
     Q_EMIT info(i18n("Config backup done."));
 }
 
-void ExportNotesJob::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
+void ExportNotesJobInterface::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
 {
     Utils::convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
 }

@@ -17,19 +17,19 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef EXPORTNOTESJOB_H
-#define EXPORTNOTESJOB_H
+#ifndef EXPORTNOTESJOBINTERFACE_H
+#define EXPORTNOTESJOBINTERFACE_H
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ExportNotesJob : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ExportNotesJobInterface : public AbstractImportExportJob
 {
     Q_OBJECT
 public:
-    explicit ExportNotesJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportNotesJob() override;
+    explicit ExportNotesJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ExportNotesJobInterface() override;
 
     void start() override;
 
@@ -45,4 +45,4 @@ private:
     int mIndexIdentifier = 0;
 };
 
-#endif // EXPORTNOTESJOB_H
+#endif // EXPORTNOTESJOBINTERFACE_H
