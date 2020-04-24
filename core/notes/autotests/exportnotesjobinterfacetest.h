@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2013-2020 Laurent Montel <montel@kde.org>
+   Copyright (C) 2020 Laurent Montel <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,29 +17,34 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef EXPORTNOTESJOBINTERFACEIMPL_H
-#define EXPORTNOTESJOBINTERFACEIMPL_H
+#ifndef EXPORTNOTESJOBINTERFACETEST_H
+#define EXPORTNOTESJOBINTERFACETEST_H
 
-#include "exportnotesjobinterface.h"
-#include "pimdataexportercore_private_export.h"
-class ArchiveStorage;
+#include <QObject>
 
-class PIMDATAEXPORTER_TESTS_EXPORT ExportNotesJobInterfaceImpl : public ExportNotesJobInterface
+#include "notes/exportnotesjobinterface.h"
+
+class ExportNotesJobInterfaceTestImpl : public ExportNotesJobInterface
 {
     Q_OBJECT
 public:
-    explicit ExportNotesJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportNotesJobInterfaceImpl() override;
+    explicit ExportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ExportNotesJobInterfaceTestImpl();
 
 protected:
     void exportArchiveResource() override;
     void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) override;
-private:
-    void slotNoteJobTerminated();
-    void slotWriteNextArchiveResource();
-
-    int mIndexIdentifier = 0;
-
 };
 
-#endif // EXPORTNOTESJOBINTERFACE_H
+
+class ExportNotesJobInterfaceTest : public QObject
+{
+    Q_OBJECT
+public:
+    explicit ExportNotesJobInterfaceTest(QObject *parent = nullptr);
+    ~ExportNotesJobInterfaceTest() = default;
+private Q_SLOTS:
+    void importNoteConfigTest1();
+};
+
+#endif // EXPORTNOTESJOBINTERFACETEST_H

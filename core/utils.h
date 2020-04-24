@@ -104,9 +104,9 @@ Q_REQUIRED_RESULT QString resourcePath(const Akonadi::AgentInstance &agent, cons
 Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData);
 Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path);
 KZip *openZip(const QString &filename, QString &errorMsg);
-void storeDataExportInfo(const QString &filename, KZip *archive);
+PIMDATAEXPORTER_EXPORT void storeDataExportInfo(const QString &filename, KZip *archive);
 
-void addVersion(KZip *archive);
+PIMDATAEXPORTER_EXPORT void addVersion(KZip *archive);
 Q_REQUIRED_RESULT int archiveVersion(KZip *archive);
 
 Q_REQUIRED_RESULT int currentArchiveVersion();

@@ -17,29 +17,33 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef EXPORTNOTESJOBINTERFACEIMPL_H
-#define EXPORTNOTESJOBINTERFACEIMPL_H
+#ifndef EXPORTNOTESJOBINTERFACE_H
+#define EXPORTNOTESJOBINTERFACE_H
 
-#include "exportnotesjobinterface.h"
+#include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ExportNotesJobInterfaceImpl : public ExportNotesJobInterface
+class PIMDATAEXPORTER_TESTS_EXPORT ExportNotesJobInterface : public AbstractImportExportJob
 {
     Q_OBJECT
 public:
-    explicit ExportNotesJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportNotesJobInterfaceImpl() override;
+    explicit ExportNotesJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ExportNotesJobInterface() override;
+
+    void start() override;
+
+    void slotCheckBackupConfig();
 
 protected:
-    void exportArchiveResource() override;
-    void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) override;
+    virtual void exportArchiveResource() = 0;
+    virtual void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) = 0;
+
 private:
-    void slotNoteJobTerminated();
-    void slotWriteNextArchiveResource();
+    void slotCheckBackupResource();
 
-    int mIndexIdentifier = 0;
-
+    void backupConfig();
+    void backupTheme();
 };
 
 #endif // EXPORTNOTESJOBINTERFACE_H

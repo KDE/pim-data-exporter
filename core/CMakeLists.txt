@@ -24,6 +24,10 @@ set(pimdataexporter_alarm_SRCS
     alarm/importalarmjob.cpp
     )
 
+set(pimdataexporter_interfaces_SRCS
+    notes/exportnotesjobinterface.cpp
+   )
+
 set(pimdataexporter_notes_SRCS
     notes/exportnotesjobinterfaceimpl.cpp
     notes/importnotesjob.cpp
@@ -48,6 +52,7 @@ set(pimdataexporter_LIB_SRCS
     ${pimdataexporter_addressbook_SRCS}
     ${pimdataexporter_jot_SRCS}
     ${pimdataexporter_akregator_SRCS}
+    ${pimdataexporter_interfaces_SRCS}
     abstractimportexportjob.cpp
     pimdataexporterkernel.cpp
     utils.cpp
@@ -90,5 +95,6 @@ install(TARGETS pimdataexporterprivate ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRA
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)
+    add_subdirectory(notes/autotests)
 endif()
 
