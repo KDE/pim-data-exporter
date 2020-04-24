@@ -161,7 +161,7 @@ void ExportNotesJob::backupConfig()
             KConfigGroup selectFolderNoteGroup = knoteConfig->group(selectFolderNoteStr);
 
             const QString selectFolderNoteGroupStr(QStringLiteral("DefaultFolder"));
-            Utils::convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
+            convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
         }
         knoteConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), globalNoteSettingsStr);
@@ -173,4 +173,9 @@ void ExportNotesJob::backupConfig()
     backupConfigFile(QStringLiteral("akonadi_notes_agent.notifyrc"));
     storeDirectory(QStringLiteral("/knotes/print/theme/"));
     Q_EMIT info(i18n("Config backup done."));
+}
+
+void ExportNotesJob::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
+{
+    Utils::convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
 }

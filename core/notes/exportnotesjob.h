@@ -40,6 +40,7 @@ private:
     void slotWriteNextArchiveResource();
 
     void backupConfig();
+    void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr);
     void backupTheme();
     int mIndexIdentifier = 0;
 };
