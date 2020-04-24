@@ -30,6 +30,12 @@ public:
         : QObject(parent)
     {}
     virtual void writeNextArchiveResource() = 0;
+
+Q_SIGNALS:
+    void info(const QString &);
+    void error(const QString &);
+    void title(const QString &);
+    void jobFinished();
 };
 
 #endif // EXPORTNOTESJOBINTERFACE_H

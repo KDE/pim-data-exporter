@@ -21,12 +21,12 @@
 #define EXPORTNOTESJOBINTERFACEIMPL_H
 
 #include "exportnotesjobinterface.h"
-
+class AbstractImportExportJob;
 class ExportNotesJobInterfaceImpl : public ExportNotesJobInterface
 {
     Q_OBJECT
 public:
-    explicit ExportNotesJobInterfaceImpl(QObject *parent = nullptr);
+    explicit ExportNotesJobInterfaceImpl(AbstractImportExportJob *importExportJob, QObject *parent = nullptr);
     ~ExportNotesJobInterfaceImpl();
 
     void writeNextArchiveResource() override;
@@ -35,6 +35,7 @@ private:
     void slotWriteNextArchiveResource();
     void slotNoteJobTerminated();
     int mIndexIdentifier = 0;
+    AbstractImportExportJob *mImportExportJob = nullptr;
 };
 
 #endif // EXPORTNOTESJOBINTERFACEIMPL_H

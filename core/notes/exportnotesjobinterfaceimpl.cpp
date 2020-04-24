@@ -24,11 +24,13 @@
 #include <AkonadiCore/AgentManager>
 #include <QDir>
 #include <QTimer>
+#include <abstractimportexportjob.h>
 #include <exportresourcearchivejob.h>
 
 
-ExportNotesJobInterfaceImpl::ExportNotesJobInterfaceImpl(QObject *parent)
+ExportNotesJobInterfaceImpl::ExportNotesJobInterfaceImpl(AbstractImportExportJob *importExportJob, QObject *parent)
     : ExportNotesJobInterface(parent)
+    , mImportExportJob(importExportJob)
 {
 }
 
@@ -61,8 +63,8 @@ void ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource()
                     resourceJob->setIdentifier(identifier);
                     resourceJob->setArchive(archive());
                     resourceJob->setArchiveName(QStringLiteral("notes.zip"));
-                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJob::error);
-                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJob::info);
+                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJobInterfaceImpl::error);
+                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJobInterfaceImpl::info);
                     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
                     resourceJob->start();
                 } else {
@@ -83,7 +85,7 @@ void ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource()
 
 void ExportNotesJobInterfaceImpl::slotNoteJobTerminated()
 {
-    if (wasCanceled()) {
+    if (mImportExportJob->wasCanceled()) {
         Q_EMIT jobFinished();
         return;
     }
