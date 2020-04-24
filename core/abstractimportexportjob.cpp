@@ -379,7 +379,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
         dir.mkdir(defaultPath);
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + defaultPath);
 
-        for (int i = 0; i < mListResourceFile.size(); ++i) {
+        for (int i = 0, total = mListResourceFile.size(); i < total; ++i) {
             resourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
             if (value.akonadiConfigFile.contains(resourceBaseName + QLatin1Char('_'))) {
