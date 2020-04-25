@@ -27,13 +27,15 @@ class PIMDATAEXPORTER_EXPORT ResourceConverter
 {
 public:
     ResourceConverter();
-    QString agentFileName(const QString &filename);
-    QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString());
+    virtual ~ResourceConverter();
+    Q_REQUIRED_RESULT QString agentFileName(const QString &filename);
+    Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString());
     void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey);
     void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);
     void convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection = QString());
-    QString resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath = QString());
-    QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData);
+    Q_REQUIRED_RESULT QString resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath = QString());
+    Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData);
+    virtual Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
 };
 
 #endif // RESOURCECONVERTER_H

@@ -29,6 +29,10 @@ ResourceConverter::ResourceConverter()
 
 }
 
+ResourceConverter::~ResourceConverter()
+{
+}
+
 QString ResourceConverter::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
     QString newUrl = ResourceConverter::resourcePath(resourceConfig);
