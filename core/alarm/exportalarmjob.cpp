@@ -31,6 +31,7 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <exportresourcearchivejob.h>
+#include <resourceconverterimpl.h>
 
 ExportAlarmJob::ExportAlarmJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
@@ -94,7 +95,8 @@ void ExportAlarmJob::slotWriteNextArchiveResource()
         if (identifier.contains(QLatin1String("akonadi_kalarm_dir_resource_"))) {
             const QString archivePath = Utils::alarmPath() + identifier + QLatin1Char('/');
 
-            const QString url = Utils::resourcePath(identifier);
+            ResourceConverterImpl converter;
+            const QString url = converter.resourcePath(identifier);
             if (!mAgentPaths.contains(url)) {
                 mAgentPaths << url;
                 if (!url.isEmpty()) {
@@ -145,7 +147,8 @@ void ExportAlarmJob::backupConfig()
         if (kalarmConfig->hasGroup(collectionsStr)) {
             KConfigGroup group = kalarmConfig->group(collectionsStr);
             const QString selectionKey(QStringLiteral("FavoriteCollectionIds"));
-            Utils::convertCollectionIdsToRealPath(group, selectionKey);
+            ResourceConverterImpl converter;
+            converter.convertCollectionIdsToRealPath(group, selectionKey);
         }
 
         kalarmConfig->sync();

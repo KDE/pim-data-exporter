@@ -30,6 +30,7 @@
 #include <QFile>
 #include <QDir>
 #include <QColor>
+#include <resourceconverterimpl.h>
 
 #include <QStandardPaths>
 #include <exportresourcearchivejob.h>
@@ -96,7 +97,8 @@ void ExportCalendarJob::slotWriteNextArchiveResource()
         if (identifier.contains(QLatin1String("akonadi_icaldir_resource_"))) {
             const QString archivePath = Utils::calendarPath() + identifier + QLatin1Char('/');
 
-            const QString url = Utils::resourcePath(identifier);
+            ResourceConverterImpl converter;
+            const QString url = converter.resourcePath(identifier);
             if (!mAgentPaths.contains(url)) {
                 mAgentPaths << url;
                 if (!url.isEmpty()) {
@@ -147,14 +149,16 @@ void ExportCalendarJob::backupConfig()
         if (korganizerConfig->hasGroup(globalCollectionsStr)) {
             KConfigGroup group = korganizerConfig->group(globalCollectionsStr);
             const QString selectionKey(QStringLiteral("Selection"));
-            Utils::convertCollectionListToRealPath(group, selectionKey);
+            ResourceConverterImpl converter;
+            converter.convertCollectionListToRealPath(group, selectionKey);
         }
 
         const QString collectionTreeViewStr(QStringLiteral("CollectionTreeView"));
         if (korganizerConfig->hasGroup(collectionTreeViewStr)) {
             KConfigGroup group = korganizerConfig->group(collectionTreeViewStr);
             const QString selectionKey(QStringLiteral("Expansion"));
-            Utils::convertCollectionListToRealPath(group, selectionKey);
+            ResourceConverterImpl converter;
+            converter.convertCollectionListToRealPath(group, selectionKey);
         }
 
         korganizerConfig->sync();

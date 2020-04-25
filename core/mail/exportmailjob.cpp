@@ -42,6 +42,7 @@
 #include <QStandardPaths>
 #include <exportresourcearchivejob.h>
 #include <QRegularExpression>
+#include <resourceconverterimpl.h>
 
 #include <KIdentityManagement/IdentityManager>
 #include <KIdentityManagement/Identity>
@@ -154,8 +155,8 @@ void ExportMailJob::slotWriteNextArchiveResource()
                 if (identifier.contains(QLatin1String("akonadi_maildir_resource_"))
                     || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
                     const QString archivePath = Utils::mailsPath() + identifier + QLatin1Char('/');
-
-                    const QString url = Utils::resourcePath(identifier);
+                    ResourceConverterImpl converter;
+                    const QString url = converter.resourcePath(identifier);
                     if (!mAgentPaths.contains(url)) {
                         mAgentPaths << url;
                         if (!url.isEmpty()) {
@@ -516,10 +517,11 @@ void ExportMailJob::backupConfig()
             KConfigGroup favoriteGroup = kmailConfig->group(collectionFolderViewStr);
 
             const QString currentKey(QStringLiteral("Current"));
-            Utils::convertCollectionToRealPath(favoriteGroup, currentKey);
+            ResourceConverterImpl converter;
+            converter.convertCollectionToRealPath(favoriteGroup, currentKey);
 
             const QString expensionKey(QStringLiteral("Expansion"));
-            Utils::convertCollectionListToRealPath(favoriteGroup, expensionKey);
+            converter.convertCollectionListToRealPath(favoriteGroup, expensionKey);
         }
 
         const QString favoriteCollectionStr(QStringLiteral("FavoriteCollections"));
@@ -527,7 +529,8 @@ void ExportMailJob::backupConfig()
             KConfigGroup favoriteGroup = kmailConfig->group(favoriteCollectionStr);
 
             const QString favoriteCollectionIdsStr(QStringLiteral("FavoriteCollectionIds"));
-            Utils::convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr);
+            ResourceConverterImpl converter;
+            converter.convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr);
         }
 
         const QString favoriteCollectionOrderStr(QStringLiteral("FavoriteCollectionsOrder"));
@@ -536,7 +539,8 @@ void ExportMailJob::backupConfig()
             //For favorite id for root collection == 0 and we store only folder => c
             const QString favoriteCollectionIdsStr(QStringLiteral("0"));
             const QString prefixCollection(QStringLiteral("c"));
-            Utils::convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr, prefixCollection);
+            ResourceConverterImpl converter;
+            converter.convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr, prefixCollection);
         }
 
         //Event collection
@@ -544,7 +548,8 @@ void ExportMailJob::backupConfig()
         if (kmailConfig->hasGroup(eventCollectionStr)) {
             KConfigGroup eventGroup = kmailConfig->group(eventCollectionStr);
             const QString eventLastEventSelectedFolder(QStringLiteral("LastEventSelectedFolder"));
-            Utils::convertCollectionIdsToRealPath(eventGroup, eventLastEventSelectedFolder);
+            ResourceConverterImpl converter;
+            converter.convertCollectionIdsToRealPath(eventGroup, eventLastEventSelectedFolder);
         }
 
         //Todo collection
@@ -552,14 +557,16 @@ void ExportMailJob::backupConfig()
         if (kmailConfig->hasGroup(todoCollectionStr)) {
             KConfigGroup todoGroup = kmailConfig->group(todoCollectionStr);
             const QString todoLastEventSelectedFolder(QStringLiteral("LastSelectedFolder"));
-            Utils::convertCollectionIdsToRealPath(todoGroup, todoLastEventSelectedFolder);
+            ResourceConverterImpl converter;
+            converter.convertCollectionIdsToRealPath(todoGroup, todoLastEventSelectedFolder);
         }
         //FolderSelectionDialog collection
         const QString folderSelectionCollectionStr(QStringLiteral("FolderSelectionDialog"));
         if (kmailConfig->hasGroup(folderSelectionCollectionStr)) {
             KConfigGroup folderSelectionGroup = kmailConfig->group(folderSelectionCollectionStr);
             const QString folderSelectionSelectedFolder(QStringLiteral("LastSelectedFolder"));
-            Utils::convertCollectionIdsToRealPath(folderSelectionGroup, folderSelectionSelectedFolder);
+            ResourceConverterImpl converter;
+            converter.convertCollectionIdsToRealPath(folderSelectionGroup, folderSelectionSelectedFolder);
         }
 
         //Note collection
@@ -567,7 +574,8 @@ void ExportMailJob::backupConfig()
         if (kmailConfig->hasGroup(noteCollectionStr)) {
             KConfigGroup noteGroup = kmailConfig->group(noteCollectionStr);
             const QString noteLastEventSelectedFolder(QStringLiteral("LastNoteSelectedFolder"));
-            Utils::convertCollectionIdsToRealPath(noteGroup, noteLastEventSelectedFolder);
+            ResourceConverterImpl converter;
+            converter.convertCollectionIdsToRealPath(noteGroup, noteLastEventSelectedFolder);
         }
 
         //Convert MessageListTab collection id
@@ -578,7 +586,8 @@ void ExportMailJob::backupConfig()
             for (int i = 0; i < numberOfTab; ++i) {
                 KConfigGroup messageListPaneTabGroup = kmailConfig->group(QStringLiteral("MessageListTab%1").arg(i));
                 const QString messageListPaneTabFolderStr(QStringLiteral("collectionId"));
-                Utils::convertCollectionIdsToRealPath(messageListPaneTabGroup, messageListPaneTabFolderStr);
+                ResourceConverterImpl converter;
+                converter.convertCollectionIdsToRealPath(messageListPaneTabGroup, messageListPaneTabFolderStr);
             }
         }
 
@@ -591,7 +600,8 @@ void ExportMailJob::backupConfig()
             if (kmailConfig->hasGroup(groupId)) {
                 KConfigGroup identityGroup = kmailConfig->group(groupId);
                 const QString automaticAddContactStr(QStringLiteral("Collection"));
-                Utils::convertCollectionIdsToRealPath(identityGroup, automaticAddContactStr);
+                ResourceConverterImpl converter;
+                converter.convertCollectionIdsToRealPath(identityGroup, automaticAddContactStr);
             }
         }
 

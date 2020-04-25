@@ -36,6 +36,7 @@
 #include <QStandardPaths>
 #include <QTimer>
 #include <QColor>
+#include <resourceconverterimpl.h>
 
 namespace {
 inline const QString storeCalendar()
@@ -113,7 +114,8 @@ void ImportCalendarJob::restoreResources()
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-                    const QString newUrl = Utils::adaptResourcePath(resourceConfig, storeCalendar());
+                    ResourceConverterImpl converter;
+                    const QString newUrl = converter.adaptResourcePath(resourceConfig, storeCalendar());
                     QFileInfo newUrlInfo(newUrl);
 
                     const QString dataFile = value.akonadiResources;

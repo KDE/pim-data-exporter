@@ -31,6 +31,7 @@
 #include <QFile>
 #include <QDir>
 #include <QStandardPaths>
+#include <resourceconverterimpl.h>
 
 namespace {
 inline const QString storeAddressbook()
@@ -105,7 +106,8 @@ void ImportAddressbookJob::restoreResources()
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
                     //TODO fix default path
-                    const QString newUrl = Utils::adaptResourcePath(resourceConfig, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts"));
+                    ResourceConverterImpl converter;
+                    const QString newUrl = converter.adaptResourcePath(resourceConfig, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts"));
                     QFileInfo newUrlInfo(newUrl);
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);

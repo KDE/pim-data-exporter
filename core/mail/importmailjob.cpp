@@ -46,6 +46,7 @@
 #include <QStandardPaths>
 #include <QTimer>
 #include <QRegularExpression>
+#include <resourceconverterimpl.h>
 
 using namespace Akonadi;
 namespace {
@@ -305,10 +306,11 @@ void ImportMailJob::restoreResources()
 
     QDir dir(mTempDirName);
     dir.mkdir(Utils::resourcesPath());
+    ResourceConverterImpl converter;
     for (const QString &filename : qAsConst(mFileList)) {
         //We need to find akonadi_* and agent_config_akonadi_*
         if (filename.startsWith(Utils::resourcesPath() + QStringLiteral("akonadi_"))) {
-            const QString agentFileConfigName = Utils::agentFileName(filename);
+            const QString agentFileConfigName = converter.agentFileName(filename);
             QString resourceName;
             if (mFileList.contains(agentFileConfigName)) {
                 //Parse config file => get name
@@ -549,7 +551,8 @@ void ImportMailJob::restoreMails()
             //qCDebug(PIMDATAEXPORTERCORE_LOG)<<" filename "<<filename<<" resourceName"<<resourceName;
             KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-            const QString newUrl = Utils::adaptResourcePath(resourceConfig, storeMails());
+            ResourceConverterImpl converter;
+            const QString newUrl = converter.adaptResourcePath(resourceConfig, storeMails());
 
             const QString agentConfigFile = value.akonadiAgentConfigFile;
             if (!agentConfigFile.isEmpty()) {
@@ -1288,7 +1291,8 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
             KConfigGroup newGroup(kmailConfig, QStringLiteral("Automatic Add Contacts %1").arg(i.value()));
             identityGroup.copyTo(&newGroup);
             const QString automaticAddContactStr(QStringLiteral("Collection"));
-            Utils::convertCollectionIdsToRealPath(newGroup, automaticAddContactStr);
+            ResourceConverterImpl converter;
+            converter.convertCollectionIdsToRealPath(newGroup, automaticAddContactStr);
             identityGroup.deleteGroup();
         }
         ++i;

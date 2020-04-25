@@ -109,34 +109,6 @@ QString Utils::infoPath()
     return QStringLiteral("information/");
 }
 
-QString Utils::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
-{
-    QString newUrl = Utils::resourcePath(resourceConfig);
-    if (!newUrl.contains(QDir::homePath())) {
-        QFileInfo fileInfo(newUrl);
-        fileInfo.fileName();
-        //qCDebug(PIMDATAEXPORTERCORE_LOG)<<" url "<<url.path();
-        QString currentPath = QDir::homePath() + QLatin1Char('/') + storedData;
-        newUrl = (currentPath + QLatin1Char('/') + fileInfo.fileName());
-        if (!QDir(currentPath).exists()) {
-            QDir().mkdir(currentPath);
-        }
-    }
-    if (QFileInfo::exists(newUrl)) {
-        QString newFileName = newUrl;
-        QFileInfo fileInfo(newFileName);
-        for (int i = 0;; ++i) {
-            const QString currentPath = fileInfo.path() + QLatin1Char('/') + QString::number(i) + QLatin1Char('/');
-            newFileName = currentPath + fileInfo.fileName();
-            if (!QFileInfo::exists(newFileName)) {
-                QDir().mkdir(currentPath);
-                break;
-            }
-        }
-        newUrl = newFileName;
-    }
-    return newUrl;
-}
 
 QString Utils::resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath)
 {
@@ -146,81 +118,6 @@ QString Utils::resourcePath(const KSharedConfigPtr &resourceConfig, const QStrin
         url.replace(QLatin1String("$HOME"), QDir::homePath());
     }
     return url;
-}
-
-//Merge two methods I think
-void Utils::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
-{
-    if (group.hasKey(currentKey)) {
-        const QStringList value = group.readEntry(currentKey, QStringList());
-        QStringList newValue;
-        for (QString str : value) {
-            bool found = false;
-            if (!prefixCollection.isEmpty() && str.startsWith(prefixCollection)) {
-                str.remove(0, prefixCollection.length());
-            }
-            const qlonglong collectionId = str.toLongLong(&found);
-            if (found) {
-                const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionId));
-                if (!realPath.isEmpty()) {
-                    newValue << realPath;
-                }
-            }
-        }
-        if (newValue.isEmpty()) {
-            group.deleteEntry(currentKey);
-        } else {
-            group.writeEntry(currentKey, newValue);
-        }
-    }
-}
-
-void Utils::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
-{
-    if (group.hasKey(currentKey)) {
-        const QStringList listExpension = group.readEntry(currentKey, QStringList());
-        if (listExpension.isEmpty()) {
-            group.deleteEntry(currentKey);
-        } else {
-            QStringList result;
-            for (QString collection : listExpension) {
-                collection.remove(QLatin1Char('c'));
-                bool found = false;
-                const qlonglong collectionValue = collection.toLongLong(&found);
-                if (found && collectionValue != -1) {
-                    const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionValue));
-                    if (!realPath.isEmpty()) {
-                        result << realPath;
-                    }
-                }
-            }
-            if (result.isEmpty()) {
-                group.deleteEntry(currentKey);
-            } else {
-                group.writeEntry(currentKey, result);
-            }
-        }
-    }
-}
-
-void Utils::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
-{
-    if (group.hasKey(currentKey)) {
-        QString collectionId = group.readEntry(currentKey);
-        if (collectionId.isEmpty()) {
-            group.deleteEntry(currentKey);
-        } else {
-            collectionId.remove(QLatin1Char('c'));
-            bool found = false;
-            const qlonglong collectionValue = collectionId.toLongLong(&found);
-            if (found && collectionValue != -1) {
-                const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionValue));
-                group.writeEntry(currentKey, realPath);
-            } else {
-                group.deleteEntry(currentKey);
-            }
-        }
-    }
 }
 
 QString Utils::resourcePath(const QString &agentIdentifier, const QString &defaultPath)

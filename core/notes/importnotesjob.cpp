@@ -32,6 +32,7 @@
 #include <QStandardPaths>
 #include <QDir>
 #include <QTimer>
+#include <resourceconverterimpl.h>
 
 namespace {
 inline const QString backupnote()
@@ -157,7 +158,8 @@ void ImportNotesJob::restoreResources()
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-                    const QString newUrl = Utils::adaptResourcePath(resourceConfig, backupnote());
+                    ResourceConverterImpl converter;
+                    const QString newUrl = converter.adaptResourcePath(resourceConfig, backupnote());
                     QFileInfo newUrlInfo(newUrl);
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);

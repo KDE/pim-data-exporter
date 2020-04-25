@@ -20,6 +20,7 @@
 #include "abstractimportexportjob.h"
 #include "archivestorage.h"
 #include "importexportprogressindicatorbase.h"
+#include "resourceconverterimpl.h"
 #include "synchronizeresourcejob.h"
 
 #include <MailCommon/MailUtil>
@@ -341,7 +342,8 @@ void AbstractImportExportJob::backupResourceFile(const Akonadi::AgentInstance &a
     const QString identifier = agent.identifier();
     const QString archivePath = defaultPath + identifier + QLatin1Char('/');
 
-    QString url = Utils::resourcePath(identifier);
+    ResourceConverterImpl converter;
+    QString url = converter.resourcePath(identifier);
     if (!url.isEmpty()) {
         QFileInfo fi(url);
         QString filename = fi.fileName();
@@ -397,11 +399,12 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
+                    ResourceConverterImpl converter;
                     QString newUrl;
                     if (overwriteResources) {
-                        newUrl = Utils::resourcePath(resourceConfig);
+                        newUrl = converter.resourcePath(resourceConfig);
                     } else {
-                        newUrl = Utils::adaptResourcePath(resourceConfig, storePath);
+                        newUrl = converter.adaptResourcePath(resourceConfig, storePath);
                     }
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);

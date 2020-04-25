@@ -96,12 +96,7 @@ Q_REQUIRED_RESULT QString akonadiAgentName(const QString &configPath);
 
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString agentFileName(const QString &filename);
 
-void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);
-void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey);
-void convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection = QString());
-
 Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString());
-Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData);
 Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path);
 KZip *openZip(const QString &filename, QString &errorMsg);
 PIMDATAEXPORTER_EXPORT void storeDataExportInfo(const QString &filename, KZip *archive);

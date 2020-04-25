@@ -30,6 +30,7 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <QTimer>
+#include <resourceconverterimpl.h>
 
 ExportAddressbookJob::ExportAddressbookJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
@@ -93,7 +94,8 @@ void ExportAddressbookJob::slotWriteNextArchiveResource()
         if (identifier.contains(QLatin1String("akonadi_vcarddir_resource_")) || identifier.contains(QLatin1String("akonadi_contacts_resource_"))) {
             const QString archivePath = Utils::addressbookPath() + identifier + QLatin1Char('/');
 
-            const QString url = Utils::resourcePath(identifier, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts/"));
+            ResourceConverterImpl converter;
+            const QString url = converter.resourcePath(identifier, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts/"));
             if (!mAgentPaths.contains(url)) {
                 mAgentPaths << url;
                 if (!url.isEmpty()) {
@@ -144,20 +146,22 @@ void ExportAddressbookJob::backupConfig()
         if (kaddressBookConfig->hasGroup(collectionViewCheckStateStr)) {
             KConfigGroup group = kaddressBookConfig->group(collectionViewCheckStateStr);
             const QString selectionKey(QStringLiteral("Selection"));
-            Utils::convertCollectionListToRealPath(group, selectionKey);
+            ResourceConverterImpl converter;
+            converter.convertCollectionListToRealPath(group, selectionKey);
         }
 
         const QString collectionViewStateStr(QStringLiteral("CollectionViewState"));
         if (kaddressBookConfig->hasGroup(collectionViewStateStr)) {
             KConfigGroup group = kaddressBookConfig->group(collectionViewStateStr);
             QString currentKey(QStringLiteral("Current"));
-            Utils::convertCollectionToRealPath(group, currentKey);
+            ResourceConverterImpl converter;
+            converter.convertCollectionToRealPath(group, currentKey);
 
             currentKey = QStringLiteral("Expansion");
-            Utils::convertCollectionToRealPath(group, currentKey);
+            converter.convertCollectionToRealPath(group, currentKey);
 
             currentKey = QStringLiteral("Selection");
-            Utils::convertCollectionToRealPath(group, currentKey);
+            converter.convertCollectionToRealPath(group, currentKey);
         }
         kaddressBookConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), kaddressbookStr);
