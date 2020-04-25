@@ -41,8 +41,6 @@ void ExportNotesJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGrou
 {
     ResourceConverterTest resourceImpl;
     resourceImpl.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
-
-    //TODO
 }
 
 void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
