@@ -30,7 +30,7 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <QTimer>
-#include <resourceconverterimpl.h>
+#include "resourceconverterimpl.h"
 
 ExportAddressbookJob::ExportAddressbookJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)

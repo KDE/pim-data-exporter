@@ -31,7 +31,7 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <exportresourcearchivejob.h>
-#include <resourceconverterimpl.h>
+#include "resourceconverterimpl.h"
 
 ExportAlarmJob::ExportAlarmJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)

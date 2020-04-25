@@ -32,7 +32,7 @@
 #include <QFile>
 #include <QStandardPaths>
 #include <QTimer>
-#include <resourceconverterimpl.h>
+#include "resourceconverterimpl.h"
 
 namespace {
 inline const QString storeAlarm()

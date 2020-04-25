@@ -32,7 +32,7 @@
 #include <QStandardPaths>
 #include <QDir>
 #include <QTimer>
-#include <resourceconverterimpl.h>
+#include "resourceconverterimpl.h"
 
 namespace {
 inline const QString backupnote()

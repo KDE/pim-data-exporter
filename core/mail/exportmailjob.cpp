@@ -42,7 +42,7 @@
 #include <QStandardPaths>
 #include <exportresourcearchivejob.h>
 #include <QRegularExpression>
-#include <resourceconverterimpl.h>
+#include "resourceconverterimpl.h"
 
 #include <KIdentityManagement/IdentityManager>
 #include <KIdentityManagement/Identity>

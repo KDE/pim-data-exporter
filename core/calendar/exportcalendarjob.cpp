@@ -30,7 +30,7 @@
 #include <QFile>
 #include <QDir>
 #include <QColor>
-#include <resourceconverterimpl.h>
+#include "resourceconverterimpl.h"
 
 #include <QStandardPaths>
 #include <exportresourcearchivejob.h>

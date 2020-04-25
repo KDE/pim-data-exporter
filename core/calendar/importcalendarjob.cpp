@@ -36,7 +36,7 @@
 #include <QStandardPaths>
 #include <QTimer>
 #include <QColor>
-#include <resourceconverterimpl.h>
+#include "resourceconverterimpl.h"
 
 namespace {
 inline const QString storeCalendar()

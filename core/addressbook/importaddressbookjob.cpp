@@ -31,7 +31,7 @@
 #include <QFile>
 #include <QDir>
 #include <QStandardPaths>
-#include <resourceconverterimpl.h>
+#include "resourceconverterimpl.h"
 
 namespace {
 inline const QString storeAddressbook()

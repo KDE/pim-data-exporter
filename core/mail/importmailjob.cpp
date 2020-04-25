@@ -46,7 +46,7 @@
 #include <QStandardPaths>
 #include <QTimer>
 #include <QRegularExpression>
-#include <resourceconverterimpl.h>
+#include "resourceconverterimpl.h"
 
 using namespace Akonadi;
 namespace {
