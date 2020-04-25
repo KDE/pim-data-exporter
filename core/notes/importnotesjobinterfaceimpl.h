@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2013-2020 Laurent Montel <montel@kde.org>
+   Copyright (C) 2020 Laurent Montel <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,29 +17,22 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef IMPORTNOTESJOB_H
-#define IMPORTNOTESJOB_H
+#ifndef IMPORTNOTESJOBIMPLEMENTIMPL_H
+#define IMPORTNOTESJOBIMPLEMENTIMPL_H
 
-#include "abstractimportexportjob.h"
+#include "importnotesjobinterface.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ImportNotesJobInterface : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ImportNotesJobInterfaceImpl : public ImportNotesJobInterface
 {
     Q_OBJECT
 public:
-    explicit ImportNotesJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportNotesJobInterface() override;
-
-    void start() override;
+    explicit ImportNotesJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ImportNotesJobInterfaceImpl() override;
 
 private:
-    void slotNextStep() override;
-private:
-    void importKNoteGlobalSettings(const KArchiveFile *kmailsnippet, const QString &kmail2rc, const QString &filename, const QString &prefix);
-    void restoreConfig();
-    void restoreData();
-    virtual void restoreResources() = 0;
+    void restoreResources() override;
 };
 
 #endif // IMPORTNOTESJOB_H

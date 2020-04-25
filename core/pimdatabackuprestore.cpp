@@ -34,7 +34,7 @@
 #include "alarm/importalarmjob.h"
 
 #include "notes/exportnotesjobinterfaceimpl.h"
-#include "notes/importnotesjobinterface.h"
+#include "notes/importnotesjobinterfaceimpl.h"
 
 #include "akregator/exportakregatorjobinterface.h"
 #include "akregator/importakregatorjob.h"
@@ -45,6 +45,7 @@
 #include "pimdataexportcore_debug.h"
 #include <QDateTime>
 #include <QLocale>
+
 
 PimDataBackupRestore::PimDataBackupRestore(QObject *parent)
     : QObject(parent)
@@ -229,7 +230,7 @@ void PimDataBackupRestore::restoreNextStep()
             break;
         case Utils::KNotes:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportNotesJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ImportNotesJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

@@ -31,6 +31,7 @@ set(pimdataexporter_interfaces_SRCS
 
 set(pimdataexporter_notes_SRCS
     notes/exportnotesjobinterfaceimpl.cpp
+    notes/importnotesjobinterfaceimpl.cpp
     )
 
 set(pimdataexporter_xml_SRCS
