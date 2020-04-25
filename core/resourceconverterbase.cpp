@@ -22,7 +22,6 @@
 #include <KConfigGroup>
 #include <QDir>
 #include <QFileInfo>
-#include <MailCommon/MailUtil>
 
 ResourceConverterBase::ResourceConverterBase()
 {
@@ -85,7 +84,7 @@ void ResourceConverterBase::convertCollectionIdsToRealPath(KConfigGroup &group, 
             }
             const qlonglong collectionId = str.toLongLong(&found);
             if (found) {
-                const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionId));
+                const QString realPath = convertToFullCollectionPath(collectionId);
                 if (!realPath.isEmpty()) {
                     newValue << realPath;
                 }
@@ -112,7 +111,7 @@ void ResourceConverterBase::convertCollectionListToRealPath(KConfigGroup &group,
                 bool found = false;
                 const qlonglong collectionValue = collection.toLongLong(&found);
                 if (found && collectionValue != -1) {
-                    const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionValue));
+                    const QString realPath = convertToFullCollectionPath(collectionValue);
                     if (!realPath.isEmpty()) {
                         result << realPath;
                     }
@@ -138,7 +137,7 @@ void ResourceConverterBase::convertCollectionToRealPath(KConfigGroup &group, con
             bool found = false;
             const qlonglong collectionValue = collectionId.toLongLong(&found);
             if (found && collectionValue != -1) {
-                const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionValue));
+                const QString realPath = convertToFullCollectionPath(collectionValue);
                 group.writeEntry(currentKey, realPath);
             } else {
                 group.deleteEntry(currentKey);

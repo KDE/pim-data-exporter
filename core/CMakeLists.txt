@@ -64,6 +64,7 @@ set(pimdataexporter_LIB_SRCS
     exportresourcearchivejob.cpp
     pimdataimportdatainfofile.cpp
     resourceconverterbase.cpp
+    resourceconverterimpl.cpp
     )
 
 ecm_qt_declare_logging_category(pimdataexporter_LIB_SRCS HEADER pimdataexportcore_debug.h IDENTIFIER PIMDATAEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore
