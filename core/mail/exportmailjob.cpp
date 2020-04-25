@@ -155,7 +155,7 @@ void ExportMailJob::slotWriteNextArchiveResource()
                     || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
                     const QString archivePath = Utils::mailsPath() + identifier + QLatin1Char('/');
 
-                    const QString url = Utils::resourcePath(agent);
+                    const QString url = Utils::resourcePath(identifier);
                     if (!mAgentPaths.contains(url)) {
                         mAgentPaths << url;
                         if (!url.isEmpty()) {

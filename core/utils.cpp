@@ -223,9 +223,9 @@ void Utils::convertCollectionToRealPath(KConfigGroup &group, const QString &curr
     }
 }
 
-QString Utils::resourcePath(const Akonadi::AgentInstance &agent, const QString &defaultPath)
+QString Utils::resourcePath(const QString &agentIdentifier, const QString &defaultPath)
 {
-    const QString agentFileName = agent.identifier() + QStringLiteral("rc");
+    const QString agentFileName = agentIdentifier + QStringLiteral("rc");
     const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);

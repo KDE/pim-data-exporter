@@ -341,7 +341,7 @@ void AbstractImportExportJob::backupResourceFile(const Akonadi::AgentInstance &a
     const QString identifier = agent.identifier();
     const QString archivePath = defaultPath + identifier + QLatin1Char('/');
 
-    QString url = Utils::resourcePath(agent);
+    QString url = Utils::resourcePath(identifier);
     if (!url.isEmpty()) {
         QFileInfo fi(url);
         QString filename = fi.fileName();

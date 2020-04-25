@@ -22,7 +22,6 @@
 #include <KConfigGroup>
 #include <QDir>
 #include <QFileInfo>
-#include <AkonadiCore/AgentInstance>
 #include <MailCommon/MailUtil>
 
 ResourceConverter::ResourceConverter()
@@ -32,7 +31,7 @@ ResourceConverter::ResourceConverter()
 
 QString ResourceConverter::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
-    QString newUrl = Utils::resourcePath(resourceConfig);
+    QString newUrl = ResourceConverter::resourcePath(resourceConfig);
     if (!newUrl.contains(QDir::homePath())) {
         QFileInfo fileInfo(newUrl);
         fileInfo.fileName();
@@ -144,9 +143,9 @@ void ResourceConverter::convertCollectionToRealPath(KConfigGroup &group, const Q
     }
 }
 
-QString ResourceConverter::resourcePath(const Akonadi::AgentInstance &agent, const QString &defaultPath)
+QString ResourceConverter::resourcePath(const QString &agentIdentifier, const QString &defaultPath)
 {
-    const QString agentFileName = agent.identifier() + QStringLiteral("rc");
+    const QString agentFileName = agentIdentifier + QStringLiteral("rc");
     const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);

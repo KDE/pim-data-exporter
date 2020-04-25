@@ -94,7 +94,7 @@ void ExportAlarmJob::slotWriteNextArchiveResource()
         if (identifier.contains(QLatin1String("akonadi_kalarm_dir_resource_"))) {
             const QString archivePath = Utils::alarmPath() + identifier + QLatin1Char('/');
 
-            const QString url = Utils::resourcePath(agent);
+            const QString url = Utils::resourcePath(identifier);
             if (!mAgentPaths.contains(url)) {
                 mAgentPaths << url;
                 if (!url.isEmpty()) {
