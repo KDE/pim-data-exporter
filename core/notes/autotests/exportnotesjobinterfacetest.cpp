@@ -20,6 +20,7 @@
 #include "exportnotesjobinterfacetest.h"
 #include "notes/exportnotesjobinterface.h"
 #include "archivestorage.h"
+#include "resourceconvertertest.h"
 #include <QStandardPaths>
 #include <QTest>
 #include <QSignalSpy>
@@ -38,6 +39,9 @@ ExportNotesJobInterfaceTestImpl::~ExportNotesJobInterfaceTestImpl()
 
 void ExportNotesJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
 {
+    ResourceConverterTest resourceImpl;
+    resourceImpl.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
+
     //TODO
 }
 
