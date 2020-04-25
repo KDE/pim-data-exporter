@@ -21,7 +21,7 @@
 #include "notes/exportnotesjobinterface.h"
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
-#include <QStandardPaths>
+#include <QDebug>
 #include <QTest>
 #include <QSignalSpy>
 
@@ -45,7 +45,7 @@ void ExportNotesJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGrou
 
 void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
 {
-    //TODO
+    qDebug() << " not implement yet";
 }
 
 ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
