@@ -34,7 +34,7 @@
 #include "alarm/importalarmjob.h"
 
 #include "notes/exportnotesjobinterfaceimpl.h"
-#include "notes/importnotesjob.h"
+#include "notes/importnotesjobinterface.h"
 
 #include "akregator/exportakregatorjobinterface.h"
 #include "akregator/importakregatorjob.h"
@@ -229,7 +229,7 @@ void PimDataBackupRestore::restoreNextStep()
             break;
         case Utils::KNotes:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportNotesJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ImportNotesJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

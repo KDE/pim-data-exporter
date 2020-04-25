@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "importnotesjob.h"
+#include "importnotesjobinterface.h"
 #include "archivestorage.h"
 
 #include <PimCommonAkonadi/CreateResource>
@@ -41,17 +41,17 @@ inline const QString backupnote()
 }
 }
 
-ImportNotesJob::ImportNotesJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportNotesJobInterface::ImportNotesJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
     initializeImportJob();
 }
 
-ImportNotesJob::~ImportNotesJob()
+ImportNotesJobInterface::~ImportNotesJobInterface()
 {
 }
 
-void ImportNotesJob::slotNextStep()
+void ImportNotesJobInterface::slotNextStep()
 {
     ++mIndex;
     if (mIndex < mListStep.count()) {
@@ -69,17 +69,17 @@ void ImportNotesJob::slotNextStep()
     }
 }
 
-void ImportNotesJob::start()
+void ImportNotesJobInterface::start()
 {
     Q_EMIT title(i18n("Starting to import KNotes settings..."));
     mArchiveDirectory = archive()->directory();
     // FIXME search archive ? searchAllFiles(mArchiveDirectory, QString());
     createProgressDialog(i18n("Import KNotes settings"));
     initializeListStep();
-    QTimer::singleShot(0, this, &ImportNotesJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportNotesJobInterface::slotNextStep);
 }
 
-void ImportNotesJob::restoreConfig()
+void ImportNotesJobInterface::restoreConfig()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore configs..."));
@@ -110,10 +110,10 @@ void ImportNotesJob::restoreConfig()
     restoreConfigFile(QStringLiteral("akonadi_notes_agent.notifyrc"));
 
     Q_EMIT info(i18n("Config restored."));
-    QTimer::singleShot(0, this, &ImportNotesJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportNotesJobInterface::slotNextStep);
 }
 
-void ImportNotesJob::restoreData()
+void ImportNotesJobInterface::restoreData()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore data..."));
@@ -124,7 +124,7 @@ void ImportNotesJob::restoreData()
             const QString notesPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("knotes/");
             overwriteDirectory(notesPath, notesEntry);
         }
-        QTimer::singleShot(0, this, &ImportNotesJob::slotNextStep);
+        QTimer::singleShot(0, this, &ImportNotesJobInterface::slotNextStep);
     } else {
         restoreResources();
     }
@@ -132,7 +132,7 @@ void ImportNotesJob::restoreData()
     Q_EMIT info(i18n("Data restored."));
 }
 
-void ImportNotesJob::restoreResources()
+void ImportNotesJobInterface::restoreResources()
 {
     Q_EMIT info(i18n("Restore resources..."));
     setProgressDialogLabel(i18n("Restore resources..."));
@@ -193,7 +193,7 @@ void ImportNotesJob::restoreResources()
     startSynchronizeResources(listResource);
 }
 
-void ImportNotesJob::importKNoteGlobalSettings(const KArchiveFile *archive, const QString &configrc, const QString &filename, const QString &prefix)
+void ImportNotesJobInterface::importKNoteGlobalSettings(const KArchiveFile *archive, const QString &configrc, const QString &filename, const QString &prefix)
 {
     copyToFile(archive, configrc, filename, prefix);
     KSharedConfig::Ptr globalSettingsConfig = KSharedConfig::openConfig(configrc);
