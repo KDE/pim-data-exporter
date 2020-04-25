@@ -17,25 +17,25 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "resourceconverter.h"
+#include "resourceconverterbase.h"
 #include "utils.h"
 #include <KConfigGroup>
 #include <QDir>
 #include <QFileInfo>
 #include <MailCommon/MailUtil>
 
-ResourceConverter::ResourceConverter()
+ResourceConverterBase::ResourceConverterBase()
 {
 
 }
 
-ResourceConverter::~ResourceConverter()
+ResourceConverterBase::~ResourceConverterBase()
 {
 }
 
-QString ResourceConverter::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
+QString ResourceConverterBase::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
-    QString newUrl = ResourceConverter::resourcePath(resourceConfig);
+    QString newUrl = ResourceConverterBase::resourcePath(resourceConfig);
     if (!newUrl.contains(QDir::homePath())) {
         QFileInfo fileInfo(newUrl);
         fileInfo.fileName();
@@ -62,7 +62,7 @@ QString ResourceConverter::adaptResourcePath(const KSharedConfigPtr &resourceCon
     return newUrl;
 }
 
-QString ResourceConverter::resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath)
+QString ResourceConverterBase::resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath)
 {
     KConfigGroup group = resourceConfig->group(QStringLiteral("General"));
     QString url = group.readEntry(QStringLiteral("Path"), defaultPath);
@@ -73,7 +73,7 @@ QString ResourceConverter::resourcePath(const KSharedConfigPtr &resourceConfig, 
 }
 
 //Merge two methods I think
-void ResourceConverter::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
+void ResourceConverterBase::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
 {
     if (group.hasKey(currentKey)) {
         const QStringList value = group.readEntry(currentKey, QStringList());
@@ -99,7 +99,7 @@ void ResourceConverter::convertCollectionIdsToRealPath(KConfigGroup &group, cons
     }
 }
 
-void ResourceConverter::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
+void ResourceConverterBase::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     if (group.hasKey(currentKey)) {
         const QStringList listExpension = group.readEntry(currentKey, QStringList());
@@ -127,7 +127,7 @@ void ResourceConverter::convertCollectionListToRealPath(KConfigGroup &group, con
     }
 }
 
-void ResourceConverter::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
+void ResourceConverterBase::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     if (group.hasKey(currentKey)) {
         QString collectionId = group.readEntry(currentKey);
@@ -147,17 +147,17 @@ void ResourceConverter::convertCollectionToRealPath(KConfigGroup &group, const Q
     }
 }
 
-QString ResourceConverter::resourcePath(const QString &agentIdentifier, const QString &defaultPath)
+QString ResourceConverterBase::resourcePath(const QString &agentIdentifier, const QString &defaultPath)
 {
     const QString agentFileName = agentIdentifier + QStringLiteral("rc");
     const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
-    const QString url = ResourceConverter::resourcePath(resourceConfig, defaultPath);
+    const QString url = ResourceConverterBase::resourcePath(resourceConfig, defaultPath);
     return url;
 }
 
-QString ResourceConverter::agentFileName(const QString &filename)
+QString ResourceConverterBase::agentFileName(const QString &filename)
 {
     QString agentFileConfigName = filename;
     agentFileConfigName.remove(Utils::resourcesPath());

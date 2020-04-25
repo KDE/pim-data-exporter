@@ -17,17 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef RESOURCECONVERTER_H
-#define RESOURCECONVERTER_H
+#ifndef RESOURCECONVERTERBASE_H
+#define RESOURCECONVERTERBASE_H
 
 #include "pimdataexporter_export.h"
 #include <QString>
 #include <KSharedConfig>
-class PIMDATAEXPORTER_EXPORT ResourceConverter
+class PIMDATAEXPORTER_EXPORT ResourceConverterBase
 {
 public:
-    ResourceConverter();
-    virtual ~ResourceConverter();
+    ResourceConverterBase();
+    virtual ~ResourceConverterBase();
     Q_REQUIRED_RESULT QString agentFileName(const QString &filename);
     Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString());
     void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey);
