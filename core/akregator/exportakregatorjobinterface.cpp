@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "exportakregatorjob.h"
+#include "exportakregatorjobinterface.h"
 
 #include <AkonadiCore/AgentManager>
 #include <KLocalizedString>
@@ -27,29 +27,29 @@
 #include <QStandardPaths>
 #include <QTimer>
 
-ExportAkregatorJob::ExportAkregatorJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportAkregatorJobInterface::ExportAkregatorJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
 }
 
-ExportAkregatorJob::~ExportAkregatorJob()
+ExportAkregatorJobInterface::~ExportAkregatorJobInterface()
 {
 }
 
-void ExportAkregatorJob::start()
+void ExportAkregatorJobInterface::start()
 {
     Q_EMIT title(i18n("Start export Akregator settings..."));
     createProgressDialog(i18n("Export Akregator settings"));
     if (mTypeSelected & Utils::Config) {
-        QTimer::singleShot(0, this, &ExportAkregatorJob::slotCheckBackupConfig);
+        QTimer::singleShot(0, this, &ExportAkregatorJobInterface::slotCheckBackupConfig);
     } else if (mTypeSelected & Utils::Data) {
-        QTimer::singleShot(0, this, &ExportAkregatorJob::slotCheckBackupData);
+        QTimer::singleShot(0, this, &ExportAkregatorJobInterface::slotCheckBackupData);
     } else {
         Q_EMIT jobFinished();
     }
 }
 
-void ExportAkregatorJob::slotCheckBackupConfig()
+void ExportAkregatorJobInterface::slotCheckBackupConfig()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Backing up config..."));
@@ -60,10 +60,10 @@ void ExportAkregatorJob::slotCheckBackupConfig()
     backupConfigFile(QStringLiteral("akregator.notifyrc"));
 
     Q_EMIT info(i18n("Config backup done."));
-    QTimer::singleShot(0, this, &ExportAkregatorJob::slotCheckBackupData);
+    QTimer::singleShot(0, this, &ExportAkregatorJobInterface::slotCheckBackupData);
 }
 
-void ExportAkregatorJob::slotCheckBackupData()
+void ExportAkregatorJobInterface::slotCheckBackupData()
 {
     if (mTypeSelected & Utils::Data) {
         increaseProgressDialog();

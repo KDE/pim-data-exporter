@@ -36,7 +36,7 @@
 #include "notes/exportnotesjobinterfaceimpl.h"
 #include "notes/importnotesjob.h"
 
-#include "akregator/exportakregatorjob.h"
+#include "akregator/exportakregatorjobinterface.h"
 #include "akregator/importakregatorjob.h"
 
 #include <KLocalizedString>
@@ -164,7 +164,7 @@ void PimDataBackupRestore::backupNextStep()
             break;
         case Utils::Akregator:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportAkregatorJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ExportAkregatorJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

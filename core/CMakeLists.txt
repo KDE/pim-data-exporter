@@ -38,7 +38,7 @@ set(pimdataexporter_xml_SRCS
     )
 
 set(pimdataexporter_akregator_SRCS
-    akregator/exportakregatorjob.cpp
+    akregator/exportakregatorjobinterface.cpp
     akregator/importakregatorjob.cpp
     )
 
