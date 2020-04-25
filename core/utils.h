@@ -77,7 +77,6 @@ struct importExportParameters {
     Utils::StoredTypes types;
 };
 
-Q_REQUIRED_RESULT QString resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath = QString());
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString transportsPath();
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString resourcesPath();
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString identitiesPath();
@@ -94,9 +93,6 @@ PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString prefixAkonadiConfigFile();
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString exportDataTypeFileName();
 Q_REQUIRED_RESULT QString akonadiAgentName(const QString &configPath);
 
-PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString agentFileName(const QString &filename);
-
-Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString());
 Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path);
 KZip *openZip(const QString &filename, QString &errorMsg);
 PIMDATAEXPORTER_EXPORT void storeDataExportInfo(const QString &filename, KZip *archive);

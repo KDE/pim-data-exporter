@@ -110,26 +110,6 @@ QString Utils::infoPath()
 }
 
 
-QString Utils::resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath)
-{
-    KConfigGroup group = resourceConfig->group(QStringLiteral("General"));
-    QString url = group.readEntry(QStringLiteral("Path"), defaultPath);
-    if (!url.isEmpty()) {
-        url.replace(QLatin1String("$HOME"), QDir::homePath());
-    }
-    return url;
-}
-
-QString Utils::resourcePath(const QString &agentIdentifier, const QString &defaultPath)
-{
-    const QString agentFileName = agentIdentifier + QStringLiteral("rc");
-    const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
-
-    KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
-    const QString url = Utils::resourcePath(resourceConfig, defaultPath);
-    return url;
-}
-
 QString Utils::storeResources(KZip *archive, const QString &identifier, const QString &path)
 {
     const QString agentFileName = identifier + QStringLiteral("rc");
@@ -274,11 +254,3 @@ QString Utils::storedTypeToI18n(StoredType type)
     return QString();
 }
 
-QString Utils::agentFileName(const QString &filename)
-{
-    QString agentFileConfigName = filename;
-    agentFileConfigName.remove(Utils::resourcesPath());
-    agentFileConfigName.remove(agentFileConfigName.length() - 2, 2); //Remove "rc"
-    agentFileConfigName = Utils::resourcesPath() + Utils::prefixAkonadiConfigFile() + agentFileConfigName;
-    return agentFileConfigName;
-}
