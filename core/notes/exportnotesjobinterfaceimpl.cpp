@@ -19,6 +19,7 @@
 
 #include "exportnotesjobinterfaceimpl.h"
 #include "exportresourcearchivejob.h"
+#include "resourceconverterimpl.h"
 
 #include <AkonadiCore/AgentManager>
 
@@ -97,5 +98,6 @@ void ExportNotesJobInterfaceImpl::exportArchiveResource()
 
 void ExportNotesJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
 {
-    Utils::convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
+    ResourceConverterImpl resourceImpl;
+    resourceImpl.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
 }
