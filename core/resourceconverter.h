@@ -21,10 +21,22 @@
 #define RESOURCECONVERTER_H
 
 #include "pimdataexporter_export.h"
+#include <QString>
+#include <KSharedConfig>
+namespace Akonadi {
+class AgentInstance;
+}
 class PIMDATAEXPORTER_EXPORT ResourceConverter
 {
 public:
     ResourceConverter();
+    QString agentFileName(const QString &filename);
+    QString resourcePath(const Akonadi::AgentInstance &agent, const QString &defaultPath = QString());
+    void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey);
+    void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);
+    void convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection = QString());
+    QString resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath);
+    QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData);
 };
 
 #endif // RESOURCECONVERTER_H
