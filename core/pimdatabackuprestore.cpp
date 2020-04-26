@@ -21,8 +21,8 @@
 #include "archivestorage.h"
 #include "importexportprogressindicatorbase.h"
 
-#include "mail/exportmailjob.h"
-#include "mail/importmailjob.h"
+#include "mail/exportmailjobinterface.h"
+#include "mail/importmailjobinterface.h"
 
 #include "addressbook/exportaddressbookjobinterface.h"
 #include "addressbook/importaddressbookjobinterface.h"
@@ -37,7 +37,7 @@
 #include "notes/importnotesjobinterfaceimpl.h"
 
 #include "akregator/exportakregatorjobinterface.h"
-#include "akregator/importakregatorjob.h"
+#include "akregator/importakregatorjobinterface.h"
 
 #include <KLocalizedString>
 #include <QFile>
@@ -135,7 +135,7 @@ void PimDataBackupRestore::backupNextStep()
         switch (mStoreIterator.key()) {
         case Utils::KMail:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportMailJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ExportMailJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
@@ -206,7 +206,7 @@ void PimDataBackupRestore::restoreNextStep()
         switch (mStoreIterator.key()) {
         case Utils::KMail:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportMailJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ImportMailJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
@@ -236,7 +236,7 @@ void PimDataBackupRestore::restoreNextStep()
             break;
         case Utils::Akregator:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportAkregatorJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ImportAkregatorJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

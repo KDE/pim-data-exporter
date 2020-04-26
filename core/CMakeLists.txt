@@ -14,8 +14,8 @@ set(pimdataexporter_addressbook_SRCS
     )
 
 set(pimdataexporter_mail_SRCS
-    mail/exportmailjob.cpp
-    mail/importmailjob.cpp
+    mail/exportmailjobinterface.cpp
+    mail/importmailjobinterface.cpp
     mail/importexportmailutil.cpp
     )
 
@@ -40,7 +40,7 @@ set(pimdataexporter_xml_SRCS
 
 set(pimdataexporter_akregator_SRCS
     akregator/exportakregatorjobinterface.cpp
-    akregator/importakregatorjob.cpp
+    akregator/importakregatorjobinterface.cpp
     )
 
 

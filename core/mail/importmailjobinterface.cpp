@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "importmailjob.h"
+#include "importmailjobinterface.h"
 #include "archivestorage.h"
 #include "importexportmailutil.h"
 
@@ -56,17 +56,17 @@ inline const QString storeMails()
 }
 }
 
-ImportMailJob::ImportMailJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportMailJobInterface::ImportMailJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
     initializeImportJob();
 }
 
-ImportMailJob::~ImportMailJob()
+ImportMailJobInterface::~ImportMailJobInterface()
 {
 }
 
-void ImportMailJob::start()
+void ImportMailJobInterface::start()
 {
     Q_EMIT title(i18n("Starting to import KMail settings..."));
     createProgressDialog(i18n("Import KMail settings"));
@@ -74,13 +74,13 @@ void ImportMailJob::start()
     searchAllMailsFiles(mArchiveDirectory, QString());
     if (!mFileList.isEmpty() || !mListResourceFile.isEmpty()) {
         initializeListStep();
-        QTimer::singleShot(0, this, &ImportMailJob::slotNextStep);
+        QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
     } else {
         Q_EMIT jobFinished();
     }
 }
 
-void ImportMailJob::slotNextStep()
+void ImportMailJobInterface::slotNextStep()
 {
     ++mIndex;
     if (mIndex < mListStep.count()) {
@@ -104,7 +104,7 @@ void ImportMailJob::slotNextStep()
     }
 }
 
-void ImportMailJob::searchAllMailsFiles(const KArchiveDirectory *dir, const QString &prefix)
+void ImportMailJobInterface::searchAllMailsFiles(const KArchiveDirectory *dir, const QString &prefix)
 {
     const QStringList lst = dir->entries();
     for (const QString &entryName : lst) {
@@ -123,7 +123,7 @@ void ImportMailJob::searchAllMailsFiles(const KArchiveDirectory *dir, const QStr
     }
 }
 
-void ImportMailJob::storeMailArchiveResource(const KArchiveDirectory *dir, const QString &prefix)
+void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *dir, const QString &prefix)
 {
     const QStringList lst = dir->entries();
     for (const QString &entryName : lst) {
@@ -156,7 +156,7 @@ void ImportMailJob::storeMailArchiveResource(const KArchiveDirectory *dir, const
     }
 }
 
-void ImportMailJob::importMailTransport(const QString &tempDirName)
+void ImportMailJobInterface::importMailTransport(const QString &tempDirName)
 {
     KSharedConfig::Ptr transportConfig = KSharedConfig::openConfig(tempDirName + QLatin1Char('/') + QStringLiteral("mailtransports"));
 
@@ -263,7 +263,7 @@ void ImportMailJob::importMailTransport(const QString &tempDirName)
     }
 }
 
-void ImportMailJob::restoreTransports()
+void ImportMailJobInterface::restoreTransports()
 {
     setProgressDialogLabel(i18n("Restore transports..."));
     increaseProgressDialog();
@@ -284,10 +284,10 @@ void ImportMailJob::restoreTransports()
             Q_EMIT error(i18n("Failed to restore transports file."));
         }
     }
-    QTimer::singleShot(0, this, &ImportMailJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
 }
 
-void ImportMailJob::addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId)
+void ImportMailJobInterface::addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId)
 {
     mt->forceUniqueName();
     mt->save();
@@ -298,7 +298,7 @@ void ImportMailJob::addMailTransport(MailTransport::Transport *mt, int defaultTr
     mHashTransport.insert(transportId, mt->id());
 }
 
-void ImportMailJob::restoreResources()
+void ImportMailJobInterface::restoreResources()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore resources..."));
@@ -524,10 +524,10 @@ void ImportMailJob::restoreResources()
     //TODO synctree ?
 
     Q_EMIT info(i18n("Resources restored."));
-    QTimer::singleShot(0, this, &ImportMailJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
 }
 
-void ImportMailJob::restoreMails()
+void ImportMailJobInterface::restoreMails()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore mails..."));
@@ -650,7 +650,7 @@ void ImportMailJob::restoreMails()
     startSynchronizeResources(listResourceToSync);
 }
 
-void ImportMailJob::restoreConfig()
+void ImportMailJobInterface::restoreConfig()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore config..."));
@@ -924,10 +924,10 @@ void ImportMailJob::restoreConfig()
     importDataSubdirectory(QStringLiteral("/messageviewerplugins/"));
 
     Q_EMIT info(i18n("Config restored."));
-    QTimer::singleShot(0, this, &ImportMailJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
 }
 
-void ImportMailJob::importSimpleFilesInDirectory(const QString &relativePath)
+void ImportMailJobInterface::importSimpleFilesInDirectory(const QString &relativePath)
 {
     const KArchiveEntry *autocorrectionEntry = mArchiveDirectory->entry(Utils::dataPath() + relativePath);
     if (autocorrectionEntry && autocorrectionEntry->isDirectory()) {
@@ -952,7 +952,7 @@ void ImportMailJob::importSimpleFilesInDirectory(const QString &relativePath)
     }
 }
 
-void ImportMailJob::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
+void ImportMailJobInterface::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
 {
     auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection(colId), Akonadi::CollectionFetchJob::Base, this);
     connect(fetch, &Akonadi::CollectionFetchJob::collectionsReceived,
@@ -964,7 +964,7 @@ void ImportMailJob::registerSpecialCollection(Akonadi::SpecialMailCollections::T
     });
 }
 
-void ImportMailJob::restoreIdentity()
+void ImportMailJobInterface::restoreIdentity()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restoring identities..."));
@@ -1047,10 +1047,10 @@ void ImportMailJob::restoreIdentity()
             Q_EMIT error(i18n("Failed to restore identity file."));
         }
     }
-    QTimer::singleShot(0, this, &ImportMailJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
 }
 
-QString ImportMailJob::uniqueIdentityName(const QString &name)
+QString ImportMailJobInterface::uniqueIdentityName(const QString &name)
 {
     QString newName(name);
     int i = 0;
@@ -1061,7 +1061,7 @@ QString ImportMailJob::uniqueIdentityName(const QString &name)
     return newName;
 }
 
-void ImportMailJob::importMailArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix)
+void ImportMailJobInterface::importMailArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix)
 {
     copyToFile(archiveconfiguration, archiveconfigurationrc, filename, prefix);
     KSharedConfig::Ptr archiveConfig = KSharedConfig::openConfig(archiveconfigurationrc);
@@ -1071,7 +1071,7 @@ void ImportMailJob::importMailArchiveConfig(const KArchiveFile *archiveconfigura
     archiveConfig->sync();
 }
 
-void ImportMailJob::importArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix)
+void ImportMailJobInterface::importArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix)
 {
     copyToFile(archiveconfiguration, archiveconfigurationrc, filename, prefix);
     KSharedConfig::Ptr archiveConfig = KSharedConfig::openConfig(archiveconfigurationrc);
@@ -1081,7 +1081,7 @@ void ImportMailJob::importArchiveConfig(const KArchiveFile *archiveconfiguration
     archiveConfig->sync();
 }
 
-void ImportMailJob::importFolderArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix)
+void ImportMailJobInterface::importFolderArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix)
 {
     copyToFile(archiveconfiguration, archiveconfigurationrc, filename, prefix);
     KSharedConfig::Ptr archiveConfig = KSharedConfig::openConfig(archiveconfigurationrc);
@@ -1099,7 +1099,7 @@ void ImportMailJob::importFolderArchiveConfig(const KArchiveFile *archiveconfigu
     archiveConfig->sync();
 }
 
-void ImportMailJob::copyMailArchiveConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
+void ImportMailJobInterface::copyMailArchiveConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
     const QString archiveGroupPattern = QStringLiteral("FolderArchiveAccount ");
     const QStringList archiveList = archiveConfigOrigin->groupList().filter(archiveGroupPattern);
@@ -1123,7 +1123,7 @@ void ImportMailJob::copyMailArchiveConfig(const KSharedConfig::Ptr &archiveConfi
     }
 }
 
-void ImportMailJob::copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
+void ImportMailJobInterface::copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
     //adapt id
     const QString archiveGroupPattern = QStringLiteral("ArchiveMailCollection ");
@@ -1147,7 +1147,7 @@ void ImportMailJob::copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &ar
     }
 }
 
-void ImportMailJob::importTemplatesConfig(const KArchiveFile *templatesconfiguration, const QString &templatesconfigurationrc, const QString &filename, const QString &prefix)
+void ImportMailJobInterface::importTemplatesConfig(const KArchiveFile *templatesconfiguration, const QString &templatesconfigurationrc, const QString &filename, const QString &prefix)
 {
     copyToFile(templatesconfiguration, templatesconfigurationrc, filename, prefix);
     KSharedConfig::Ptr templateConfig = KSharedConfig::openConfig(templatesconfigurationrc);
@@ -1185,7 +1185,7 @@ void ImportMailJob::importTemplatesConfig(const KArchiveFile *templatesconfigura
     templateConfig->sync();
 }
 
-void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QString &kmail2rc, const QString &filename, const QString &prefix)
+void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet, const QString &kmail2rc, const QString &filename, const QString &prefix)
 {
     copyToFile(kmailsnippet, kmail2rc, filename, prefix);
     KSharedConfig::Ptr kmailConfig = KSharedConfig::openConfig(kmail2rc);
@@ -1328,7 +1328,7 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
     kmailConfig->sync();
 }
 
-void ImportMailJob::mergeLdapConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
+void ImportMailJobInterface::mergeLdapConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
 {
     QDir dir(mTempDirName);
     dir.mkdir(prefix);
@@ -1389,7 +1389,7 @@ void ImportMailJob::mergeLdapConfig(const KArchiveFile *archivefile, const QStri
     grpExisting.sync();
 }
 
-void ImportMailJob::mergeKmailSnippetConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
+void ImportMailJobInterface::mergeKmailSnippetConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
 {
     //TODO
     QDir dir(mTempDirName);
@@ -1403,7 +1403,7 @@ void ImportMailJob::mergeKmailSnippetConfig(const KArchiveFile *archivefile, con
     KSharedConfig::Ptr importingKMailSnipperConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + filename);
 }
 
-void ImportMailJob::mergeMailArchiveConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
+void ImportMailJobInterface::mergeMailArchiveConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
 {
     QDir dir(mTempDirName);
     dir.mkdir(prefix);
@@ -1419,7 +1419,7 @@ void ImportMailJob::mergeMailArchiveConfig(const KArchiveFile *archivefile, cons
     existingConfig->sync();
 }
 
-void ImportMailJob::mergeArchiveMailAgentConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
+void ImportMailJobInterface::mergeArchiveMailAgentConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
 {
     QDir dir(mTempDirName);
     dir.mkdir(prefix);
@@ -1435,7 +1435,7 @@ void ImportMailJob::mergeArchiveMailAgentConfig(const KArchiveFile *archivefile,
     existingConfig->sync();
 }
 
-void ImportMailJob::mergeSieveTemplate(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
+void ImportMailJobInterface::mergeSieveTemplate(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
 {
     QDir dir(mTempDirName);
     dir.mkdir(prefix);

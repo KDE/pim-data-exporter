@@ -27,12 +27,12 @@
 #include <time.h>
 class ArchiveStorage;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ExportMailJob : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ExportMailJobInterface : public AbstractImportExportJob
 {
     Q_OBJECT
 public:
-    explicit ExportMailJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportMailJob() override;
+    explicit ExportMailJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ExportMailJobInterface() override;
 
     void start() override;
 

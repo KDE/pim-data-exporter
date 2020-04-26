@@ -33,12 +33,12 @@ class ArchiveStorage;
 namespace MailTransport {
 class Transport;
 }
-class PIMDATAEXPORTER_TESTS_EXPORT ImportMailJob : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ImportMailJobInterface : public AbstractImportExportJob
 {
     Q_OBJECT
 public:
-    explicit ImportMailJob(QObject *widget, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportMailJob() override;
+    explicit ImportMailJobInterface(QObject *widget, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ImportMailJobInterface() override;
 
     void start() override;
 

@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "importakregatorjob.h"
+#include "importakregatorjobinterface.h"
 #include "archivestorage.h"
 
 #include <PimCommonAkonadi/CreateResource>
@@ -29,26 +29,26 @@
 
 #include <QStandardPaths>
 
-ImportAkregatorJob::ImportAkregatorJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportAkregatorJobInterface::ImportAkregatorJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
     initializeImportJob();
 }
 
-ImportAkregatorJob::~ImportAkregatorJob()
+ImportAkregatorJobInterface::~ImportAkregatorJobInterface()
 {
 }
 
-void ImportAkregatorJob::start()
+void ImportAkregatorJobInterface::start()
 {
     Q_EMIT title(i18n("Starting to import Akregator settings..."));
     mArchiveDirectory = archive()->directory();
     initializeListStep();
     createProgressDialog(i18n("Import Akregator settings"));
-    QTimer::singleShot(0, this, &ImportAkregatorJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportAkregatorJobInterface::slotNextStep);
 }
 
-void ImportAkregatorJob::slotNextStep()
+void ImportAkregatorJobInterface::slotNextStep()
 {
     ++mIndex;
     if (mIndex < mListStep.count()) {
@@ -66,7 +66,7 @@ void ImportAkregatorJob::slotNextStep()
     }
 }
 
-void ImportAkregatorJob::restoreConfig()
+void ImportAkregatorJobInterface::restoreConfig()
 {
     const QString akregatorStr(QStringLiteral("akregatorrc"));
     increaseProgressDialog();
@@ -77,10 +77,10 @@ void ImportAkregatorJob::restoreConfig()
     restoreConfigFile(QStringLiteral("akregator.notifyrc"));
 
     Q_EMIT info(i18n("Config restored."));
-    QTimer::singleShot(0, this, &ImportAkregatorJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportAkregatorJobInterface::slotNextStep);
 }
 
-void ImportAkregatorJob::restoreData()
+void ImportAkregatorJobInterface::restoreData()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore data..."));
@@ -90,5 +90,5 @@ void ImportAkregatorJob::restoreData()
         overwriteDirectory(akregatorPath, akregatorEntry);
     }
     Q_EMIT info(i18n("Data restored."));
-    QTimer::singleShot(0, this, &ImportAkregatorJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportAkregatorJobInterface::slotNextStep);
 }
