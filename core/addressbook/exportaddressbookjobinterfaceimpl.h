@@ -33,6 +33,8 @@ public:
 
 protected:
     void exportArchiveResource() override;
+    void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey) override;
+    void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) override;
 private:
     void slotWriteNextArchiveResource();
     void slotAddressbookJobTerminated();

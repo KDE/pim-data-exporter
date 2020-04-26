@@ -28,7 +28,6 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <QTimer>
-#include "resourceconverterimpl.h"
 
 ExportAddressbookJobInterface::ExportAddressbookJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
@@ -92,22 +91,20 @@ void ExportAddressbookJobInterface::backupConfig()
         if (kaddressBookConfig->hasGroup(collectionViewCheckStateStr)) {
             KConfigGroup group = kaddressBookConfig->group(collectionViewCheckStateStr);
             const QString selectionKey(QStringLiteral("Selection"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionListToRealPath(group, selectionKey);
+            convertCollectionListToRealPath(group, selectionKey);
         }
 
         const QString collectionViewStateStr(QStringLiteral("CollectionViewState"));
         if (kaddressBookConfig->hasGroup(collectionViewStateStr)) {
             KConfigGroup group = kaddressBookConfig->group(collectionViewStateStr);
             QString currentKey(QStringLiteral("Current"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionToRealPath(group, currentKey);
+            convertCollectionToRealPath(group, currentKey);
 
             currentKey = QStringLiteral("Expansion");
-            converter.convertCollectionToRealPath(group, currentKey);
+            convertCollectionToRealPath(group, currentKey);
 
             currentKey = QStringLiteral("Selection");
-            converter.convertCollectionToRealPath(group, currentKey);
+            convertCollectionToRealPath(group, currentKey);
         }
         kaddressBookConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), kaddressbookStr);
@@ -121,3 +118,4 @@ void ExportAddressbookJobInterface::backupConfig()
 
     Q_EMIT info(i18n("Config backup done."));
 }
+

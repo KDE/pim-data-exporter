@@ -101,3 +101,14 @@ void ExportAddressbookJobInterfaceImpl::slotWriteNextArchiveResource()
     }
 }
 
+void ExportAddressbookJobInterfaceImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
+{
+    ResourceConverterImpl converter;
+    converter.convertCollectionToRealPath(group, currentKey);
+}
+
+void ExportAddressbookJobInterfaceImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
+{
+    ResourceConverterImpl converter;
+    converter.convertCollectionListToRealPath(group, currentKey);
+}
