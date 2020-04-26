@@ -4,7 +4,7 @@ include_directories(
     )
 
 set(pimdataexporter_calendar_SRCS
-    calendar/exportcalendarjob.cpp
+    calendar/exportcalendarjobinterface.cpp
     calendar/importcalendarjob.cpp
     )
 

@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "exportcalendarjob.h"
+#include "exportcalendarjobinterface.h"
 #include <MailCommon/MailUtil>
 #include <AkonadiCore/AgentManager>
 
@@ -35,36 +35,36 @@
 #include <QStandardPaths>
 #include <exportresourcearchivejob.h>
 
-ExportCalendarJob::ExportCalendarJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportCalendarJobInterface::ExportCalendarJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
 }
 
-ExportCalendarJob::~ExportCalendarJob()
+ExportCalendarJobInterface::~ExportCalendarJobInterface()
 {
 }
 
-void ExportCalendarJob::start()
+void ExportCalendarJobInterface::start()
 {
     Q_EMIT title(i18n("Start export KOrganizer settings..."));
     createProgressDialog(i18n("Export KOrganizer settings"));
     if (mTypeSelected & Utils::Resources) {
-        QTimer::singleShot(0, this, &ExportCalendarJob::slotCheckBackupResource);
+        QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCheckBackupResource);
     } else if (mTypeSelected & Utils::Config) {
-        QTimer::singleShot(0, this, &ExportCalendarJob::slotCheckBackupConfig);
+        QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCheckBackupConfig);
     } else {
         Q_EMIT jobFinished();
     }
 }
 
-void ExportCalendarJob::slotCheckBackupResource()
+void ExportCalendarJobInterface::slotCheckBackupResource()
 {
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
-    QTimer::singleShot(0, this, &ExportCalendarJob::slotWriteNextArchiveResource);
+    QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotWriteNextArchiveResource);
 }
 
-void ExportCalendarJob::slotCheckBackupConfig()
+void ExportCalendarJobInterface::slotCheckBackupConfig()
 {
     if (mTypeSelected & Utils::Config) {
         backupConfig();
@@ -77,17 +77,17 @@ void ExportCalendarJob::slotCheckBackupConfig()
     Q_EMIT jobFinished();
 }
 
-void ExportCalendarJob::slotCalendarJobTerminated()
+void ExportCalendarJobInterface::slotCalendarJobTerminated()
 {
     if (wasCanceled()) {
         Q_EMIT jobFinished();
         return;
     }
     mIndexIdentifier++;
-    QTimer::singleShot(0, this, &ExportCalendarJob::slotWriteNextArchiveResource);
+    QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotWriteNextArchiveResource);
 }
 
-void ExportCalendarJob::slotWriteNextArchiveResource()
+void ExportCalendarJobInterface::slotWriteNextArchiveResource()
 {
     Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
     const Akonadi::AgentInstance::List list = manager->instances();
@@ -108,30 +108,30 @@ void ExportCalendarJob::slotWriteNextArchiveResource()
                     resourceJob->setIdentifier(identifier);
                     resourceJob->setArchive(archive());
                     resourceJob->setArchiveName(QStringLiteral("calendar.zip"));
-                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportCalendarJob::error);
-                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportCalendarJob::info);
-                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportCalendarJob::slotCalendarJobTerminated);
+                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportCalendarJobInterface::error);
+                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportCalendarJobInterface::info);
+                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
                     resourceJob->start();
                 } else {
                     qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
-                    QTimer::singleShot(0, this, &ExportCalendarJob::slotCalendarJobTerminated);
+                    QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
                 }
             } else {
-                QTimer::singleShot(0, this, &ExportCalendarJob::slotCalendarJobTerminated);
+                QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
             }
         } else if (identifier.contains(QLatin1String("akonadi_ical_resource_"))) {
             backupResourceFile(agent, Utils::calendarPath());
-            QTimer::singleShot(0, this, &ExportCalendarJob::slotCalendarJobTerminated);
+            QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
         } else {
-            QTimer::singleShot(0, this, &ExportCalendarJob::slotCalendarJobTerminated);
+            QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
         }
     } else {
         Q_EMIT info(i18n("Resources backup done."));
-        QTimer::singleShot(0, this, &ExportCalendarJob::slotCheckBackupConfig);
+        QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCheckBackupConfig);
     }
 }
 
-void ExportCalendarJob::backupConfig()
+void ExportCalendarJobInterface::backupConfig()
 {
     setProgressDialogLabel(i18n("Backing up config..."));
 

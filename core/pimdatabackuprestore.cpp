@@ -27,7 +27,7 @@
 #include "addressbook/exportaddressbookjob.h"
 #include "addressbook/importaddressbookjob.h"
 
-#include "calendar/exportcalendarjob.h"
+#include "calendar/exportcalendarjobinterface.h"
 #include "calendar/importcalendarjob.h"
 
 #include "alarm/exportalarmjob.h"
@@ -153,7 +153,7 @@ void PimDataBackupRestore::backupNextStep()
             break;
         case Utils::KOrganizer:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportCalendarJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ExportCalendarJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
