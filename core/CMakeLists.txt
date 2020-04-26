@@ -4,8 +4,8 @@ include_directories(
     )
 
 set(pimdataexporter_calendar_SRCS
-    calendar/exportcalendarjobinterface.cpp
-    calendar/importcalendarjobinterface.cpp
+    calendar/exportcalendarjobinterfaceimpl.cpp
+    calendar/importcalendarjobinterfaceimpl.cpp
     )
 
 set(pimdataexporter_addressbook_SRCS
@@ -27,6 +27,8 @@ set(pimdataexporter_alarm_SRCS
 set(pimdataexporter_interfaces_SRCS
     notes/exportnotesjobinterface.cpp
     notes/importnotesjobinterface.cpp
+    calendar/exportcalendarjobinterface.cpp
+    calendar/importcalendarjobinterface.cpp
    )
 
 set(pimdataexporter_notes_SRCS

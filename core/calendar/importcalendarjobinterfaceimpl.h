@@ -17,30 +17,22 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef EXPORTCALENDARJOBINTERFACE_H
-#define EXPORTCALENDARJOBINTERFACE_H
+#ifndef IMPORTCALENDARJOBINTERFACEIMPL_H
+#define IMPORTCALENDARJOBINTERFACEIMPL_H
 
-#include "abstractimportexportjob.h"
+#include "importcalendarjobinterface.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
+class KArchive;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ExportCalendarJobInterface : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ImportCalendarJobInterfaceImpl : public ImportCalendarJobInterface
 {
     Q_OBJECT
 public:
-    explicit ExportCalendarJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportCalendarJobInterface() override;
-
-    void start() override;
-
-protected:
-    virtual void exportArchiveResource() = 0;
-    void slotCheckBackupConfig();
+    explicit ImportCalendarJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ImportCalendarJobInterfaceImpl() override;
 private:
-    void slotCheckBackupResource();
-
-    void backupConfig();
-    int mIndexIdentifier = 0;
+    void restoreResources() override;
 };
 
-#endif // EXPORTCALENDARJOBINTERFACE_H
+#endif // IMPORTCALENDARJOBINTERFACEIMPL_H

@@ -27,8 +27,8 @@
 #include "addressbook/exportaddressbookjobinterface.h"
 #include "addressbook/importaddressbookjobinterface.h"
 
-#include "calendar/exportcalendarjobinterface.h"
-#include "calendar/importcalendarjobinterface.h"
+#include "calendar/importcalendarjobinterfaceimpl.h"
+#include "calendar/exportcalendarjobinterfaceimpl.h"
 
 #include "alarm/exportalarmjobinterface.h"
 #include "alarm/importalarmjobinterface.h"
@@ -45,7 +45,6 @@
 #include "pimdataexportcore_debug.h"
 #include <QDateTime>
 #include <QLocale>
-
 
 PimDataBackupRestore::PimDataBackupRestore(QObject *parent)
     : QObject(parent)
@@ -153,7 +152,7 @@ void PimDataBackupRestore::backupNextStep()
             break;
         case Utils::KOrganizer:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportCalendarJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ExportCalendarJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
@@ -224,7 +223,7 @@ void PimDataBackupRestore::restoreNextStep()
             break;
         case Utils::KOrganizer:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportCalendarJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ImportCalendarJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

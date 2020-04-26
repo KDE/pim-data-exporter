@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef IMPORTCALENDARJOB_H
-#define IMPORTCALENDARJOB_H
+#ifndef IMPORTCALENDARJOBINTERFACE_H
+#define IMPORTCALENDARJOBINTERFACE_H
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
@@ -41,9 +41,9 @@ private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importkorganizerConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
-    void restoreResources();
+    virtual void restoreResources() = 0;
     void restoreConfig();
     void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
 };
 
-#endif // IMPORTCALENDARJOB_H
+#endif // IMPORTCALENDARJOBINTERFACE_H

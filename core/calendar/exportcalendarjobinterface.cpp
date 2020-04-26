@@ -61,7 +61,7 @@ void ExportCalendarJobInterface::slotCheckBackupResource()
 {
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
-    QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotWriteNextArchiveResource);
+    exportArchiveResource();
 }
 
 void ExportCalendarJobInterface::slotCheckBackupConfig()
@@ -75,60 +75,6 @@ void ExportCalendarJobInterface::slotCheckBackupConfig()
         }
     }
     Q_EMIT jobFinished();
-}
-
-void ExportCalendarJobInterface::slotCalendarJobTerminated()
-{
-    if (wasCanceled()) {
-        Q_EMIT jobFinished();
-        return;
-    }
-    mIndexIdentifier++;
-    QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotWriteNextArchiveResource);
-}
-
-void ExportCalendarJobInterface::slotWriteNextArchiveResource()
-{
-    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
-    const Akonadi::AgentInstance::List list = manager->instances();
-    if (mIndexIdentifier < list.count()) {
-        const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
-        const QString identifier = agent.identifier();
-        if (identifier.contains(QLatin1String("akonadi_icaldir_resource_"))) {
-            const QString archivePath = Utils::calendarPath() + identifier + QLatin1Char('/');
-
-            ResourceConverterImpl converter;
-            const QString url = converter.resourcePath(identifier);
-            if (!mAgentPaths.contains(url)) {
-                mAgentPaths << url;
-                if (!url.isEmpty()) {
-                    ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
-                    resourceJob->setArchivePath(archivePath);
-                    resourceJob->setUrl(url);
-                    resourceJob->setIdentifier(identifier);
-                    resourceJob->setArchive(archive());
-                    resourceJob->setArchiveName(QStringLiteral("calendar.zip"));
-                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportCalendarJobInterface::error);
-                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportCalendarJobInterface::info);
-                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
-                    resourceJob->start();
-                } else {
-                    qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
-                    QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
-                }
-            } else {
-                QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
-            }
-        } else if (identifier.contains(QLatin1String("akonadi_ical_resource_"))) {
-            backupResourceFile(agent, Utils::calendarPath());
-            QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
-        } else {
-            QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
-        }
-    } else {
-        Q_EMIT info(i18n("Resources backup done."));
-        QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCheckBackupConfig);
-    }
 }
 
 void ExportCalendarJobInterface::backupConfig()
