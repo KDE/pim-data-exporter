@@ -9,7 +9,7 @@ set(pimdataexporter_calendar_SRCS
     )
 
 set(pimdataexporter_addressbook_SRCS
-    addressbook/exportaddressbookjobinterface.cpp
+    addressbook/exportaddressbookjobinterfaceimpl.cpp
     addressbook/importaddressbookjobinterface.cpp
     )
 
@@ -29,6 +29,7 @@ set(pimdataexporter_interfaces_SRCS
     notes/importnotesjobinterface.cpp
     calendar/exportcalendarjobinterface.cpp
     calendar/importcalendarjobinterface.cpp
+    addressbook/exportaddressbookjobinterface.cpp
    )
 
 set(pimdataexporter_notes_SRCS

@@ -17,29 +17,28 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef EXPORTADDRESSBOOKINTERFACE_H
-#define EXPORTADDRESSBOOKINTERFACE_H
+#ifndef EXPORTADDRESSBOOKINTERFACEIMPL_H
+#define EXPORTADDRESSBOOKINTERFACEIMPL_H
 
-#include "abstractimportexportjob.h"
+#include "exportaddressbookjobinterface.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ExportAddressbookJobInterface : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ExportAddressbookJobInterfaceImpl : public ExportAddressbookJobInterface
 {
     Q_OBJECT
 public:
-    explicit ExportAddressbookJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportAddressbookJobInterface() override;
-
-    void start() override;
+    explicit ExportAddressbookJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ExportAddressbookJobInterfaceImpl() override;
 
 protected:
-    virtual void exportArchiveResource() = 0;
-    void slotCheckBackupConfig();
+    void exportArchiveResource() override;
 private:
-    void slotCheckBackupResource();
+    void slotWriteNextArchiveResource();
+    void slotAddressbookJobTerminated();
 
     void backupConfig();
+    int mIndexIdentifier = 0;
 };
 
-#endif // EXPORTADDRESSBOOKINTERFACE_H
+#endif // EXPORTADDRESSBOOKINTERFACEIMPL_H

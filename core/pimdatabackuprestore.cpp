@@ -24,7 +24,7 @@
 #include "mail/exportmailjobinterface.h"
 #include "mail/importmailjobinterface.h"
 
-#include "addressbook/exportaddressbookjobinterface.h"
+#include "addressbook/exportaddressbookjobinterfaceimpl.h"
 #include "addressbook/importaddressbookjobinterface.h"
 
 #include "calendar/importcalendarjobinterfaceimpl.h"
@@ -45,6 +45,7 @@
 #include "pimdataexportcore_debug.h"
 #include <QDateTime>
 #include <QLocale>
+
 
 PimDataBackupRestore::PimDataBackupRestore(QObject *parent)
     : QObject(parent)
@@ -140,7 +141,7 @@ void PimDataBackupRestore::backupNextStep()
             break;
         case Utils::KAddressBook:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportAddressbookJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ExportAddressbookJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

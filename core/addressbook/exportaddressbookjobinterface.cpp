@@ -20,8 +20,6 @@
 #include "exportaddressbookjobinterface.h"
 #include "exportresourcearchivejob.h"
 
-#include <AkonadiCore/AgentManager>
-
 #include <KLocalizedString>
 
 #include <QTemporaryFile>
@@ -58,8 +56,9 @@ void ExportAddressbookJobInterface::slotCheckBackupResource()
 {
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
-    QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotWriteNextArchiveResource);
+    exportArchiveResource();
 }
+
 
 void ExportAddressbookJobInterface::slotCheckBackupConfig()
 {
@@ -74,59 +73,6 @@ void ExportAddressbookJobInterface::slotCheckBackupConfig()
     Q_EMIT jobFinished();
 }
 
-void ExportAddressbookJobInterface::slotAddressbookJobTerminated()
-{
-    if (wasCanceled()) {
-        Q_EMIT jobFinished();
-        return;
-    }
-    mIndexIdentifier++;
-    QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotWriteNextArchiveResource);
-}
-
-void ExportAddressbookJobInterface::slotWriteNextArchiveResource()
-{
-    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
-    const Akonadi::AgentInstance::List list = manager->instances();
-    if (mIndexIdentifier < list.count()) {
-        const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
-        const QString identifier = agent.identifier();
-        if (identifier.contains(QLatin1String("akonadi_vcarddir_resource_")) || identifier.contains(QLatin1String("akonadi_contacts_resource_"))) {
-            const QString archivePath = Utils::addressbookPath() + identifier + QLatin1Char('/');
-
-            ResourceConverterImpl converter;
-            const QString url = converter.resourcePath(identifier, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts/"));
-            if (!mAgentPaths.contains(url)) {
-                mAgentPaths << url;
-                if (!url.isEmpty()) {
-                    ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
-                    resourceJob->setArchivePath(archivePath);
-                    resourceJob->setUrl(url);
-                    resourceJob->setIdentifier(identifier);
-                    resourceJob->setArchive(archive());
-                    resourceJob->setArchiveName(QStringLiteral("addressbook.zip"));
-                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAddressbookJobInterface::error);
-                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAddressbookJobInterface::info);
-                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
-                    resourceJob->start();
-                } else {
-                    qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
-                    QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
-                }
-            } else {
-                QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
-            }
-        } else if (identifier.contains(QLatin1String("akonadi_vcard_resource_"))) {
-            backupResourceFile(agent, Utils::addressbookPath());
-            QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
-        } else {
-            QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
-        }
-    } else {
-        Q_EMIT info(i18n("Resources backup done."));
-        QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotCheckBackupConfig);
-    }
-}
 
 void ExportAddressbookJobInterface::backupConfig()
 {
