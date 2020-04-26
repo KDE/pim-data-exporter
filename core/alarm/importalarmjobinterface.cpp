@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "importalarmjob.h"
+#include "importalarmjobinterface.h"
 #include "archivestorage.h"
 
 #include <PimCommonAkonadi/CreateResource>
@@ -41,27 +41,27 @@ inline const QString storeAlarm()
 }
 }
 
-ImportAlarmJob::ImportAlarmJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportAlarmJobInterface::ImportAlarmJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
     initializeImportJob();
 }
 
-ImportAlarmJob::~ImportAlarmJob()
+ImportAlarmJobInterface::~ImportAlarmJobInterface()
 {
 }
 
-void ImportAlarmJob::start()
+void ImportAlarmJobInterface::start()
 {
     Q_EMIT title(i18n("Starting to import KAlarm settings..."));
     createProgressDialog(i18n("Import KAlarm settings"));
     mArchiveDirectory = archive()->directory();
     searchAllFiles(mArchiveDirectory, QString(), QStringLiteral("alarm"));
     initializeListStep();
-    QTimer::singleShot(0, this, &ImportAlarmJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportAlarmJobInterface::slotNextStep);
 }
 
-void ImportAlarmJob::slotNextStep()
+void ImportAlarmJobInterface::slotNextStep()
 {
     ++mIndex;
     if (mIndex < mListStep.count()) {
@@ -79,7 +79,7 @@ void ImportAlarmJob::slotNextStep()
     }
 }
 
-void ImportAlarmJob::restoreResources()
+void ImportAlarmJobInterface::restoreResources()
 {
     Q_EMIT info(i18n("Restore resources..."));
     setProgressDialogLabel(i18n("Restore resources..."));
@@ -145,13 +145,13 @@ void ImportAlarmJob::restoreResources()
     startSynchronizeResources(listResource);
 }
 
-bool ImportAlarmJob::isAConfigFile(const QString &name) const
+bool ImportAlarmJobInterface::isAConfigFile(const QString &name) const
 {
     return name.endsWith(QLatin1String("rc")) && (name.contains(QLatin1String("akonadi_kalarm_resource_"))
                                                   || name.contains(QLatin1String("akonadi_kalarm_dir_resource_")));
 }
 
-void ImportAlarmJob::restoreConfig()
+void ImportAlarmJobInterface::restoreConfig()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore configs..."));
@@ -170,10 +170,10 @@ void ImportAlarmJob::restoreConfig()
     }
     restoreUiRcFile(QStringLiteral("kalarmui.rc"), QStringLiteral("kalarm"));
     Q_EMIT info(i18n("Config restored."));
-    QTimer::singleShot(0, this, &ImportAlarmJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportAlarmJobInterface::slotNextStep);
 }
 
-void ImportAlarmJob::importkalarmConfig(const KArchiveFile *kalarmFile, const QString &kalarmrc, const QString &filename, const QString &prefix)
+void ImportAlarmJobInterface::importkalarmConfig(const KArchiveFile *kalarmFile, const QString &kalarmrc, const QString &filename, const QString &prefix)
 {
     copyToFile(kalarmFile, kalarmrc, filename, prefix);
     KSharedConfig::Ptr kalarmConfig = KSharedConfig::openConfig(kalarmrc);

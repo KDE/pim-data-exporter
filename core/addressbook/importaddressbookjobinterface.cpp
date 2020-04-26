@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "importaddressbookjob.h"
+#include "importaddressbookjobinterface.h"
 #include "archivestorage.h"
 
 #include <PimCommonAkonadi/CreateResource>
@@ -40,27 +40,27 @@ inline const QString storeAddressbook()
 }
 }
 
-ImportAddressbookJob::ImportAddressbookJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportAddressbookJobInterface::ImportAddressbookJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
     initializeImportJob();
 }
 
-ImportAddressbookJob::~ImportAddressbookJob()
+ImportAddressbookJobInterface::~ImportAddressbookJobInterface()
 {
 }
 
-void ImportAddressbookJob::start()
+void ImportAddressbookJobInterface::start()
 {
     Q_EMIT title(i18n("Starting to import KAddressBook settings..."));
     mArchiveDirectory = archive()->directory();
     createProgressDialog(i18n("Import KAddressBook settings"));
     searchAllFiles(mArchiveDirectory, QString(), QStringLiteral("addressbook"));
     initializeListStep();
-    QTimer::singleShot(0, this, &ImportAddressbookJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportAddressbookJobInterface::slotNextStep);
 }
 
-void ImportAddressbookJob::slotNextStep()
+void ImportAddressbookJobInterface::slotNextStep()
 {
     ++mIndex;
     if (mIndex < mListStep.count()) {
@@ -75,7 +75,7 @@ void ImportAddressbookJob::slotNextStep()
     }
 }
 
-void ImportAddressbookJob::restoreResources()
+void ImportAddressbookJobInterface::restoreResources()
 {
     Q_EMIT info(i18n("Restore resources..."));
     setProgressDialogLabel(i18n("Restore resources..."));
@@ -151,7 +151,7 @@ void ImportAddressbookJob::restoreResources()
     startSynchronizeResources(listResource);
 }
 
-void ImportAddressbookJob::addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings)
+void ImportAddressbookJobInterface::addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings)
 {
     if (resourceName == QLatin1String("akonadi_vcard_resource")) {
         KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
@@ -167,14 +167,14 @@ void ImportAddressbookJob::addSpecificResourceSettings(const KSharedConfig::Ptr 
     }
 }
 
-bool ImportAddressbookJob::isAConfigFile(const QString &name) const
+bool ImportAddressbookJobInterface::isAConfigFile(const QString &name) const
 {
     return name.endsWith(QLatin1String("rc")) && (name.startsWith(QLatin1String("akonadi_vcarddir_resource_"))
                                                   || name.startsWith(QLatin1String("akonadi_vcard_resource_"))
                                                   || name.startsWith(QLatin1String("akonadi_contacts_resource_")));
 }
 
-void ImportAddressbookJob::restoreConfig()
+void ImportAddressbookJobInterface::restoreConfig()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore configs..."));
@@ -193,10 +193,10 @@ void ImportAddressbookJob::restoreConfig()
     }
     restoreUiRcFile(QStringLiteral("kaddressbookui.rc"), QStringLiteral("kaddressbook"));
     Q_EMIT info(i18n("Config restored."));
-    QTimer::singleShot(0, this, &ImportAddressbookJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportAddressbookJobInterface::slotNextStep);
 }
 
-void ImportAddressbookJob::importkaddressBookConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
+void ImportAddressbookJobInterface::importkaddressBookConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
 {
     copyToFile(file, config, filename, prefix);
     KSharedConfig::Ptr kaddressBookConfig = KSharedConfig::openConfig(config);

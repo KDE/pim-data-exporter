@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "exportalarmjob.h"
+#include "exportalarmjobinterface.h"
 
 #include <AkonadiCore/AgentManager>
 
@@ -33,36 +33,36 @@
 #include <exportresourcearchivejob.h>
 #include "resourceconverterimpl.h"
 
-ExportAlarmJob::ExportAlarmJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportAlarmJobInterface::ExportAlarmJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
 }
 
-ExportAlarmJob::~ExportAlarmJob()
+ExportAlarmJobInterface::~ExportAlarmJobInterface()
 {
 }
 
-void ExportAlarmJob::start()
+void ExportAlarmJobInterface::start()
 {
     Q_EMIT title(i18n("Start export KAlarm settings..."));
     createProgressDialog(i18n("Export KAlarm settings"));
     if (mTypeSelected & Utils::Resources) {
-        QTimer::singleShot(0, this, &ExportAlarmJob::slotCheckBackupResource);
+        QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotCheckBackupResource);
     } else if (mTypeSelected & Utils::Config) {
-        QTimer::singleShot(0, this, &ExportAlarmJob::slotCheckBackupConfig);
+        QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotCheckBackupConfig);
     } else {
         Q_EMIT jobFinished();
     }
 }
 
-void ExportAlarmJob::slotCheckBackupResource()
+void ExportAlarmJobInterface::slotCheckBackupResource()
 {
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
-    QTimer::singleShot(0, this, &ExportAlarmJob::slotWriteNextArchiveResource);
+    QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotWriteNextArchiveResource);
 }
 
-void ExportAlarmJob::slotCheckBackupConfig()
+void ExportAlarmJobInterface::slotCheckBackupConfig()
 {
     if (mTypeSelected & Utils::Config) {
         backupConfig();
@@ -75,17 +75,17 @@ void ExportAlarmJob::slotCheckBackupConfig()
     Q_EMIT jobFinished();
 }
 
-void ExportAlarmJob::slotAlarmJobTerminated()
+void ExportAlarmJobInterface::slotAlarmJobTerminated()
 {
     if (wasCanceled()) {
         Q_EMIT jobFinished();
         return;
     }
     mIndexIdentifier++;
-    QTimer::singleShot(0, this, &ExportAlarmJob::slotWriteNextArchiveResource);
+    QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotWriteNextArchiveResource);
 }
 
-void ExportAlarmJob::slotWriteNextArchiveResource()
+void ExportAlarmJobInterface::slotWriteNextArchiveResource()
 {
     Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
     const Akonadi::AgentInstance::List list = manager->instances();
@@ -106,30 +106,30 @@ void ExportAlarmJob::slotWriteNextArchiveResource()
                     resourceJob->setIdentifier(identifier);
                     resourceJob->setArchive(archive());
                     resourceJob->setArchiveName(QStringLiteral("alarm.zip"));
-                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAlarmJob::error);
-                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAlarmJob::info);
-                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAlarmJob::slotAlarmJobTerminated);
+                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAlarmJobInterface::error);
+                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAlarmJobInterface::info);
+                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
                     resourceJob->start();
                 } else {
                     qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
-                    QTimer::singleShot(0, this, &ExportAlarmJob::slotAlarmJobTerminated);
+                    QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
                 }
             } else {
-                QTimer::singleShot(0, this, &ExportAlarmJob::slotAlarmJobTerminated);
+                QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
             }
         } else if (identifier.contains(QLatin1String("akonadi_kalarm_resource_"))) {
             backupResourceFile(agent, Utils::alarmPath());
-            QTimer::singleShot(0, this, &ExportAlarmJob::slotAlarmJobTerminated);
+            QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
         } else {
-            QTimer::singleShot(0, this, &ExportAlarmJob::slotAlarmJobTerminated);
+            QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
         }
     } else {
         Q_EMIT info(i18n("Resources backup done."));
-        QTimer::singleShot(0, this, &ExportAlarmJob::slotCheckBackupConfig);
+        QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotCheckBackupConfig);
     }
 }
 
-void ExportAlarmJob::backupConfig()
+void ExportAlarmJobInterface::backupConfig()
 {
     setProgressDialogLabel(i18n("Backing up config..."));
 

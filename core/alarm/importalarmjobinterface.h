@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2013-2020 Laurent Montel <montel@kde.org>
+   Copyright (C) 2012-2020 Laurent Montel <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,20 +17,19 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef IMPORTADDRESSBOOKJOB_H
-#define IMPORTADDRESSBOOKJOB_H
+#ifndef IMPORTALARMJOB_H
+#define IMPORTALARMJOB_H
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
-class KArchiveFile;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ImportAddressbookJob : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ImportAlarmJobInterface : public AbstractImportExportJob
 {
     Q_OBJECT
 public:
-    explicit ImportAddressbookJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportAddressbookJob() override;
+    explicit ImportAlarmJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ImportAlarmJobInterface() override;
 
     void start() override;
 
@@ -39,10 +38,9 @@ protected:
 
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
-    void importkaddressBookConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
+    void importkalarmConfig(const KArchiveFile *kalarmFile, const QString &kalarmrc, const QString &filename, const QString &prefix);
     void restoreResources();
     void restoreConfig();
-    void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
 };
 
-#endif // IMPORTADDRESSBOOKJOB_H
+#endif // IMPORTALARMJOB_H

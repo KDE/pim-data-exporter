@@ -24,14 +24,14 @@
 #include "mail/exportmailjob.h"
 #include "mail/importmailjob.h"
 
-#include "addressbook/exportaddressbookjob.h"
-#include "addressbook/importaddressbookjob.h"
+#include "addressbook/exportaddressbookjobinterface.h"
+#include "addressbook/importaddressbookjobinterface.h"
 
 #include "calendar/exportcalendarjobinterface.h"
-#include "calendar/importcalendarjob.h"
+#include "calendar/importcalendarjobinterface.h"
 
-#include "alarm/exportalarmjob.h"
-#include "alarm/importalarmjob.h"
+#include "alarm/exportalarmjobinterface.h"
+#include "alarm/importalarmjobinterface.h"
 
 #include "notes/exportnotesjobinterfaceimpl.h"
 #include "notes/importnotesjobinterfaceimpl.h"
@@ -141,13 +141,13 @@ void PimDataBackupRestore::backupNextStep()
             break;
         case Utils::KAddressBook:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportAddressbookJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ExportAddressbookJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
         case Utils::KAlarm:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportAlarmJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ExportAlarmJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
@@ -212,19 +212,19 @@ void PimDataBackupRestore::restoreNextStep()
             break;
         case Utils::KAddressBook:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportAddressbookJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ImportAddressbookJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
         case Utils::KAlarm:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportAlarmJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ImportAlarmJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
         case Utils::KOrganizer:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportCalendarJob(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ImportCalendarJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

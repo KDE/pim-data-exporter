@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "importcalendarjob.h"
+#include "importcalendarjobinterface.h"
 #include "archivestorage.h"
 
 #include <PimCommonAkonadi/CreateResource>
@@ -45,27 +45,27 @@ inline const QString storeCalendar()
 }
 }
 
-ImportCalendarJob::ImportCalendarJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportCalendarJobInterface::ImportCalendarJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
     initializeImportJob();
 }
 
-ImportCalendarJob::~ImportCalendarJob()
+ImportCalendarJobInterface::~ImportCalendarJobInterface()
 {
 }
 
-void ImportCalendarJob::start()
+void ImportCalendarJobInterface::start()
 {
     Q_EMIT title(i18n("Starting to import KOrganizer settings..."));
     mArchiveDirectory = archive()->directory();
     createProgressDialog(i18n("Import KOrganizer settings"));
     searchAllFiles(mArchiveDirectory, QString(), QStringLiteral("calendar"));
     initializeListStep();
-    QTimer::singleShot(0, this, &ImportCalendarJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportCalendarJobInterface::slotNextStep);
 }
 
-void ImportCalendarJob::slotNextStep()
+void ImportCalendarJobInterface::slotNextStep()
 {
     ++mIndex;
     if (mIndex < mListStep.count()) {
@@ -83,7 +83,7 @@ void ImportCalendarJob::slotNextStep()
     }
 }
 
-void ImportCalendarJob::restoreResources()
+void ImportCalendarJobInterface::restoreResources()
 {
     Q_EMIT info(i18n("Restore resources..."));
     setProgressDialogLabel(i18n("Restore resources..."));
@@ -151,7 +151,7 @@ void ImportCalendarJob::restoreResources()
     startSynchronizeResources(listResource);
 }
 
-void ImportCalendarJob::addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings)
+void ImportCalendarJobInterface::addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings)
 {
     if (resourceName == QLatin1String("akonadi_ical_resource")) {
         KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
@@ -167,13 +167,13 @@ void ImportCalendarJob::addSpecificResourceSettings(const KSharedConfig::Ptr &re
     }
 }
 
-bool ImportCalendarJob::isAConfigFile(const QString &name) const
+bool ImportCalendarJobInterface::isAConfigFile(const QString &name) const
 {
     return name.endsWith(QLatin1String("rc")) && (name.contains(QLatin1String("akonadi_ical_resource_"))
                                                   || name.contains(QLatin1String("akonadi_icaldir_resource_")));
 }
 
-void ImportCalendarJob::restoreConfig()
+void ImportCalendarJobInterface::restoreConfig()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore configs..."));
@@ -287,10 +287,10 @@ void ImportCalendarJob::restoreConfig()
 
     restoreConfigFile(QStringLiteral("eventviewsrc"));
     Q_EMIT info(i18n("Config restored."));
-    QTimer::singleShot(0, this, &ImportCalendarJob::slotNextStep);
+    QTimer::singleShot(0, this, &ImportCalendarJobInterface::slotNextStep);
 }
 
-void ImportCalendarJob::importkorganizerConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
+void ImportCalendarJobInterface::importkorganizerConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
 {
     copyToFile(file, config, filename, prefix);
     KSharedConfig::Ptr korganizerConfig = KSharedConfig::openConfig(config);
@@ -301,7 +301,7 @@ void ImportCalendarJob::importkorganizerConfig(const KArchiveFile *file, const Q
     korganizerConfig->sync();
 }
 
-void ImportCalendarJob::importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
+void ImportCalendarJobInterface::importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
 {
     copyToFile(file, config, filename, prefix);
     KSharedConfig::Ptr eventviewConfig = KSharedConfig::openConfig(config);

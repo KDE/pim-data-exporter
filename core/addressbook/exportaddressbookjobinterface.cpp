@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "exportaddressbookjob.h"
+#include "exportaddressbookjobinterface.h"
 #include "exportresourcearchivejob.h"
 
 #include <AkonadiCore/AgentManager>
@@ -32,36 +32,36 @@
 #include <QTimer>
 #include "resourceconverterimpl.h"
 
-ExportAddressbookJob::ExportAddressbookJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportAddressbookJobInterface::ExportAddressbookJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
 }
 
-ExportAddressbookJob::~ExportAddressbookJob()
+ExportAddressbookJobInterface::~ExportAddressbookJobInterface()
 {
 }
 
-void ExportAddressbookJob::start()
+void ExportAddressbookJobInterface::start()
 {
     Q_EMIT title(i18n("Start export KAddressBook settings..."));
     createProgressDialog(i18n("Export KAddressBook settings"));
     if (mTypeSelected & Utils::Resources) {
-        QTimer::singleShot(0, this, &ExportAddressbookJob::slotCheckBackupResource);
+        QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotCheckBackupResource);
     } else if (mTypeSelected & Utils::Config) {
-        QTimer::singleShot(0, this, &ExportAddressbookJob::slotCheckBackupConfig);
+        QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotCheckBackupConfig);
     } else {
         Q_EMIT jobFinished();
     }
 }
 
-void ExportAddressbookJob::slotCheckBackupResource()
+void ExportAddressbookJobInterface::slotCheckBackupResource()
 {
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
-    QTimer::singleShot(0, this, &ExportAddressbookJob::slotWriteNextArchiveResource);
+    QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotWriteNextArchiveResource);
 }
 
-void ExportAddressbookJob::slotCheckBackupConfig()
+void ExportAddressbookJobInterface::slotCheckBackupConfig()
 {
     if (mTypeSelected & Utils::Config) {
         backupConfig();
@@ -74,17 +74,17 @@ void ExportAddressbookJob::slotCheckBackupConfig()
     Q_EMIT jobFinished();
 }
 
-void ExportAddressbookJob::slotAddressbookJobTerminated()
+void ExportAddressbookJobInterface::slotAddressbookJobTerminated()
 {
     if (wasCanceled()) {
         Q_EMIT jobFinished();
         return;
     }
     mIndexIdentifier++;
-    QTimer::singleShot(0, this, &ExportAddressbookJob::slotWriteNextArchiveResource);
+    QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotWriteNextArchiveResource);
 }
 
-void ExportAddressbookJob::slotWriteNextArchiveResource()
+void ExportAddressbookJobInterface::slotWriteNextArchiveResource()
 {
     Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
     const Akonadi::AgentInstance::List list = manager->instances();
@@ -105,30 +105,30 @@ void ExportAddressbookJob::slotWriteNextArchiveResource()
                     resourceJob->setIdentifier(identifier);
                     resourceJob->setArchive(archive());
                     resourceJob->setArchiveName(QStringLiteral("addressbook.zip"));
-                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAddressbookJob::error);
-                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAddressbookJob::info);
-                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAddressbookJob::slotAddressbookJobTerminated);
+                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAddressbookJobInterface::error);
+                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAddressbookJobInterface::info);
+                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
                     resourceJob->start();
                 } else {
                     qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
-                    QTimer::singleShot(0, this, &ExportAddressbookJob::slotAddressbookJobTerminated);
+                    QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
                 }
             } else {
-                QTimer::singleShot(0, this, &ExportAddressbookJob::slotAddressbookJobTerminated);
+                QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
             }
         } else if (identifier.contains(QLatin1String("akonadi_vcard_resource_"))) {
             backupResourceFile(agent, Utils::addressbookPath());
-            QTimer::singleShot(0, this, &ExportAddressbookJob::slotAddressbookJobTerminated);
+            QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
         } else {
-            QTimer::singleShot(0, this, &ExportAddressbookJob::slotAddressbookJobTerminated);
+            QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
         }
     } else {
         Q_EMIT info(i18n("Resources backup done."));
-        QTimer::singleShot(0, this, &ExportAddressbookJob::slotCheckBackupConfig);
+        QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotCheckBackupConfig);
     }
 }
 
-void ExportAddressbookJob::backupConfig()
+void ExportAddressbookJobInterface::backupConfig()
 {
     setProgressDialogLabel(i18n("Backing up config..."));
 

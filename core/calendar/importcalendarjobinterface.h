@@ -17,19 +17,20 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef IMPORTALARMJOB_H
-#define IMPORTALARMJOB_H
+#ifndef IMPORTCALENDARJOB_H
+#define IMPORTCALENDARJOB_H
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
+class KArchive;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ImportAlarmJob : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ImportCalendarJobInterface : public AbstractImportExportJob
 {
     Q_OBJECT
 public:
-    explicit ImportAlarmJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportAlarmJob() override;
+    explicit ImportCalendarJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ImportCalendarJobInterface() override;
 
     void start() override;
 
@@ -38,9 +39,11 @@ protected:
 
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
-    void importkalarmConfig(const KArchiveFile *kalarmFile, const QString &kalarmrc, const QString &filename, const QString &prefix);
+    void importkorganizerConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
+    void importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void restoreResources();
     void restoreConfig();
+    void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
 };
 
-#endif // IMPORTALARMJOB_H
+#endif // IMPORTCALENDARJOB_H

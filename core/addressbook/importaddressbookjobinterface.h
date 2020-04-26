@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2012-2020 Laurent Montel <montel@kde.org>
+   Copyright (C) 2013-2020 Laurent Montel <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,20 +17,20 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef IMPORTCALENDARJOB_H
-#define IMPORTCALENDARJOB_H
+#ifndef IMPORTADDRESSBOOKJOB_H
+#define IMPORTADDRESSBOOKJOB_H
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
-class KArchive;
+class KArchiveFile;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ImportCalendarJob : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ImportAddressbookJobInterface : public AbstractImportExportJob
 {
     Q_OBJECT
 public:
-    explicit ImportCalendarJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportCalendarJob() override;
+    explicit ImportAddressbookJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ImportAddressbookJobInterface() override;
 
     void start() override;
 
@@ -39,11 +39,10 @@ protected:
 
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
-    void importkorganizerConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
-    void importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
+    void importkaddressBookConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void restoreResources();
     void restoreConfig();
     void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
 };
 
-#endif // IMPORTCALENDARJOB_H
+#endif // IMPORTADDRESSBOOKJOB_H

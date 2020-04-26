@@ -24,12 +24,12 @@
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ExportAddressbookJob : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ExportAddressbookJobInterface : public AbstractImportExportJob
 {
     Q_OBJECT
 public:
-    explicit ExportAddressbookJob(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportAddressbookJob() override;
+    explicit ExportAddressbookJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ExportAddressbookJobInterface() override;
 
     void start() override;
 
