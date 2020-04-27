@@ -43,6 +43,7 @@ protected:
     virtual void convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection = QString());
     virtual void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey);
     virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);
+    virtual void exportArchiveResource();
 private:
     void slotCheckBackupIdentity();
     void slotCheckBackupMailTransport();
