@@ -517,11 +517,10 @@ void ExportMailJobInterface::backupConfig()
             KConfigGroup favoriteGroup = kmailConfig->group(collectionFolderViewStr);
 
             const QString currentKey(QStringLiteral("Current"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionToRealPath(favoriteGroup, currentKey);
+            convertCollectionToRealPath(favoriteGroup, currentKey);
 
             const QString expensionKey(QStringLiteral("Expansion"));
-            converter.convertCollectionListToRealPath(favoriteGroup, expensionKey);
+            convertCollectionListToRealPath(favoriteGroup, expensionKey);
         }
 
         const QString favoriteCollectionStr(QStringLiteral("FavoriteCollections"));
@@ -529,8 +528,7 @@ void ExportMailJobInterface::backupConfig()
             KConfigGroup favoriteGroup = kmailConfig->group(favoriteCollectionStr);
 
             const QString favoriteCollectionIdsStr(QStringLiteral("FavoriteCollectionIds"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr);
+            convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr);
         }
 
         const QString favoriteCollectionOrderStr(QStringLiteral("FavoriteCollectionsOrder"));
@@ -539,8 +537,7 @@ void ExportMailJobInterface::backupConfig()
             //For favorite id for root collection == 0 and we store only folder => c
             const QString favoriteCollectionIdsStr(QStringLiteral("0"));
             const QString prefixCollection(QStringLiteral("c"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr, prefixCollection);
+            convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr, prefixCollection);
         }
 
         //Event collection
@@ -548,8 +545,7 @@ void ExportMailJobInterface::backupConfig()
         if (kmailConfig->hasGroup(eventCollectionStr)) {
             KConfigGroup eventGroup = kmailConfig->group(eventCollectionStr);
             const QString eventLastEventSelectedFolder(QStringLiteral("LastEventSelectedFolder"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionIdsToRealPath(eventGroup, eventLastEventSelectedFolder);
+            convertCollectionIdsToRealPath(eventGroup, eventLastEventSelectedFolder);
         }
 
         //Todo collection
@@ -557,16 +553,14 @@ void ExportMailJobInterface::backupConfig()
         if (kmailConfig->hasGroup(todoCollectionStr)) {
             KConfigGroup todoGroup = kmailConfig->group(todoCollectionStr);
             const QString todoLastEventSelectedFolder(QStringLiteral("LastSelectedFolder"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionIdsToRealPath(todoGroup, todoLastEventSelectedFolder);
+            convertCollectionIdsToRealPath(todoGroup, todoLastEventSelectedFolder);
         }
         //FolderSelectionDialog collection
         const QString folderSelectionCollectionStr(QStringLiteral("FolderSelectionDialog"));
         if (kmailConfig->hasGroup(folderSelectionCollectionStr)) {
             KConfigGroup folderSelectionGroup = kmailConfig->group(folderSelectionCollectionStr);
             const QString folderSelectionSelectedFolder(QStringLiteral("LastSelectedFolder"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionIdsToRealPath(folderSelectionGroup, folderSelectionSelectedFolder);
+            convertCollectionIdsToRealPath(folderSelectionGroup, folderSelectionSelectedFolder);
         }
 
         //Note collection
@@ -574,8 +568,7 @@ void ExportMailJobInterface::backupConfig()
         if (kmailConfig->hasGroup(noteCollectionStr)) {
             KConfigGroup noteGroup = kmailConfig->group(noteCollectionStr);
             const QString noteLastEventSelectedFolder(QStringLiteral("LastNoteSelectedFolder"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionIdsToRealPath(noteGroup, noteLastEventSelectedFolder);
+            convertCollectionIdsToRealPath(noteGroup, noteLastEventSelectedFolder);
         }
 
         //Convert MessageListTab collection id
@@ -586,8 +579,7 @@ void ExportMailJobInterface::backupConfig()
             for (int i = 0; i < numberOfTab; ++i) {
                 KConfigGroup messageListPaneTabGroup = kmailConfig->group(QStringLiteral("MessageListTab%1").arg(i));
                 const QString messageListPaneTabFolderStr(QStringLiteral("collectionId"));
-                ResourceConverterImpl converter;
-                converter.convertCollectionIdsToRealPath(messageListPaneTabGroup, messageListPaneTabFolderStr);
+                convertCollectionIdsToRealPath(messageListPaneTabGroup, messageListPaneTabFolderStr);
             }
         }
 
@@ -600,8 +592,7 @@ void ExportMailJobInterface::backupConfig()
             if (kmailConfig->hasGroup(groupId)) {
                 KConfigGroup identityGroup = kmailConfig->group(groupId);
                 const QString automaticAddContactStr(QStringLiteral("Collection"));
-                ResourceConverterImpl converter;
-                converter.convertCollectionIdsToRealPath(identityGroup, automaticAddContactStr);
+                convertCollectionIdsToRealPath(identityGroup, automaticAddContactStr);
             }
         }
 
@@ -686,4 +677,22 @@ void ExportMailJobInterface::backupIdentity()
             Q_EMIT error(i18n("Identity file cannot be added to backup file."));
         }
     }
+}
+
+void ExportMailJobInterface::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
+{
+    ResourceConverterImpl converter;
+    converter.convertCollectionIdsToRealPath(group, currentKey, prefixCollection);
+}
+
+void ExportMailJobInterface::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
+{
+    ResourceConverterImpl converter;
+    converter.convertCollectionToRealPath(group, currentKey);
+}
+
+void ExportMailJobInterface::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
+{
+    ResourceConverterImpl converter;
+    converter.convertCollectionListToRealPath(group, currentKey);
 }
