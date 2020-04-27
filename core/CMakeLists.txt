@@ -14,7 +14,7 @@ set(pimdataexporter_addressbook_SRCS
     )
 
 set(pimdataexporter_mail_SRCS
-    mail/exportmailjobinterface.cpp
+    mail/exportmailjobinterfaceimpl.cpp
     mail/importmailjobinterface.cpp
     mail/importexportmailutil.cpp
     )
@@ -33,6 +33,7 @@ set(pimdataexporter_interfaces_SRCS
     addressbook/importaddressbookjobinterface.cpp
     alarm/importalarmjobinterface.cpp
     alarm/exportalarmjobinterface.cpp
+    mail/exportmailjobinterface.cpp
    )
 
 set(pimdataexporter_notes_SRCS

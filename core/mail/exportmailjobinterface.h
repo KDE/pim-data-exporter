@@ -40,26 +40,22 @@ Q_SIGNALS:
     void taskCanceled();
 
 protected:
-    virtual void convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection = QString());
-    virtual void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey);
-    virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey);
-    virtual void exportArchiveResource();
+    virtual void convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection = QString()) = 0;
+    virtual void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
+    virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
+    virtual void exportArchiveResource() = 0;
+    virtual void backupResources() = 0;
+    void slotCheckBackupResources();
 private:
     void slotCheckBackupIdentity();
     void slotCheckBackupMailTransport();
     void slotCheckBackupConfig();
     void slotCheckBackupMails();
-    void slotCheckBackupResources();
-    void slotMailsJobTerminated();
-    void slotWriteNextArchiveResource();
 
     Q_REQUIRED_RESULT bool checkBackupType(Utils::StoredType type) const;
     void backupTransports();
-    void backupResources();
     void backupConfig();
     void backupIdentity();
-    QDateTime mArchiveTime = QDateTime::currentDateTime();
-    int mIndexIdentifier = 0;
 };
 
 #endif // ExportMailJob_H

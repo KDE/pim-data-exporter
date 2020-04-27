@@ -24,9 +24,7 @@
 #include <MailCommon/FilterManager>
 #include <MailCommon/FilterImporterExporter>
 #include "importexportprogressindicatorbase.h"
-
-#include <AkonadiCore/AgentManager>
-#include <AkonadiCore/Collection>
+#include "exportresourcearchivejob.h"
 
 #include <MailTransport/TransportManager>
 
@@ -40,7 +38,6 @@
 #include <QDir>
 #include <QTimer>
 #include <QStandardPaths>
-#include <exportresourcearchivejob.h>
 #include <QRegularExpression>
 #include "resourceconverterimpl.h"
 
@@ -130,76 +127,6 @@ void ExportMailJobInterface::slotCheckBackupMails()
     QTimer::singleShot(0, this, &ExportMailJobInterface::slotCheckBackupResources);
 }
 
-void ExportMailJobInterface::slotMailsJobTerminated()
-{
-    if (wasCanceled()) {
-        Q_EMIT jobFinished();
-        return;
-    }
-    mIndexIdentifier++;
-    exportArchiveResource();
-}
-
-void ExportMailJobInterface::exportArchiveResource()
-{
-    QTimer::singleShot(0, this, &ExportMailJobInterface::slotWriteNextArchiveResource);
-}
-
-void ExportMailJobInterface::slotWriteNextArchiveResource()
-{
-    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
-    const Akonadi::AgentInstance::List list = manager->instances();
-    if (mIndexIdentifier < list.count()) {
-        const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
-        const QStringList capabilities(agent.type().capabilities());
-        if (agent.type().mimeTypes().contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QLatin1String("Resource"))
-                && !capabilities.contains(QLatin1String("Virtual"))
-                && !capabilities.contains(QLatin1String("MailTransport"))) {
-                const QString identifier = agent.identifier();
-                if (identifier.contains(QLatin1String("akonadi_maildir_resource_"))
-                    || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
-                    const QString archivePath = Utils::mailsPath() + identifier + QLatin1Char('/');
-                    ResourceConverterImpl converter;
-                    const QString url = converter.resourcePath(identifier);
-                    if (!mAgentPaths.contains(url)) {
-                        mAgentPaths << url;
-                        if (!url.isEmpty()) {
-                            ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
-                            resourceJob->setArchivePath(archivePath);
-                            resourceJob->setUrl(url);
-                            resourceJob->setIdentifier(identifier);
-                            resourceJob->setArchive(archive());
-                            resourceJob->setArchiveName(QStringLiteral("mail.zip"));
-                            connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportMailJobInterface::error);
-                            connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportMailJobInterface::info);
-                            connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportMailJobInterface::slotMailsJobTerminated);
-                            connect(this, &ExportMailJobInterface::taskCanceled, resourceJob, &ExportResourceArchiveJob::slotTaskCanceled);
-                            resourceJob->start();
-                        } else {
-                            qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
-                            QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
-                        }
-                    } else {
-                        QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
-                    }
-                } else if (identifier.contains(QLatin1String("akonadi_mbox_resource_"))) {
-                    backupResourceFile(agent, Utils::addressbookPath());
-                    QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
-                } else {
-                    QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
-                }
-            } else {
-                QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
-            }
-        } else {
-            QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
-        }
-    } else {
-        QTimer::singleShot(0, this, &ExportMailJobInterface::slotCheckBackupResources);
-    }
-}
-
 void ExportMailJobInterface::backupTransports()
 {
     setProgressDialogLabel(i18n("Backing up transports..."));
@@ -237,36 +164,6 @@ void ExportMailJobInterface::slotCheckBackupResources()
         }
     }
     Q_EMIT jobFinished();
-}
-
-void ExportMailJobInterface::backupResources()
-{
-    setProgressDialogLabel(i18n("Backing up resources..."));
-
-    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
-    const Akonadi::AgentInstance::List list = manager->instances();
-    for (const Akonadi::AgentInstance &agent : list) {
-        const QStringList capabilities(agent.type().capabilities());
-        if (agent.type().mimeTypes().contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QLatin1String("Resource"))
-                && !capabilities.contains(QLatin1String("Virtual"))
-                && !capabilities.contains(QLatin1String("MailTransport"))) {
-                const QString identifier = agent.identifier();
-                //Store just pop3/imap/kolab/gmail account. Store other config when we copy data.
-                if (identifier.contains(QLatin1String("pop3")) || identifier.contains(QLatin1String("imap"))
-                    || identifier.contains(QLatin1String("_kolab_")) || identifier.contains(QLatin1String("_gmail_"))) {
-                    const QString errorStr = Utils::storeResources(archive(), identifier, Utils::resourcesPath());
-                    if (!errorStr.isEmpty()) {
-                        Q_EMIT error(errorStr);
-                    }
-                } else {
-                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " resource \"" << identifier << "\" will not store";
-                }
-            }
-        }
-    }
-
-    Q_EMIT info(i18n("Resources backup done."));
 }
 
 void ExportMailJobInterface::backupConfig()
@@ -684,20 +581,3 @@ void ExportMailJobInterface::backupIdentity()
     }
 }
 
-void ExportMailJobInterface::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
-{
-    ResourceConverterImpl converter;
-    converter.convertCollectionIdsToRealPath(group, currentKey, prefixCollection);
-}
-
-void ExportMailJobInterface::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
-{
-    ResourceConverterImpl converter;
-    converter.convertCollectionToRealPath(group, currentKey);
-}
-
-void ExportMailJobInterface::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
-{
-    ResourceConverterImpl converter;
-    converter.convertCollectionListToRealPath(group, currentKey);
-}

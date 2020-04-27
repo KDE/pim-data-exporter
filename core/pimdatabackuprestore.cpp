@@ -21,7 +21,7 @@
 #include "archivestorage.h"
 #include "importexportprogressindicatorbase.h"
 
-#include "mail/exportmailjobinterface.h"
+#include "mail/exportmailjobinterfaceimpl.h"
 #include "mail/importmailjobinterface.h"
 
 #include "addressbook/exportaddressbookjobinterfaceimpl.h"
@@ -45,6 +45,7 @@
 #include "pimdataexportcore_debug.h"
 #include <QDateTime>
 #include <QLocale>
+
 
 PimDataBackupRestore::PimDataBackupRestore(QObject *parent)
     : QObject(parent)
@@ -134,7 +135,7 @@ void PimDataBackupRestore::backupNextStep()
         switch (mStoreIterator.key()) {
         case Utils::KMail:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportMailJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ExportMailJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
