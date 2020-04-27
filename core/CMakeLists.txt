@@ -20,7 +20,7 @@ set(pimdataexporter_mail_SRCS
     )
 
 set(pimdataexporter_alarm_SRCS
-    alarm/exportalarmjobinterface.cpp
+    alarm/exportalarmjobinterfaceimpl.cpp
     alarm/importalarmjobinterfaceimpl.cpp
     )
 
@@ -32,6 +32,7 @@ set(pimdataexporter_interfaces_SRCS
     addressbook/exportaddressbookjobinterface.cpp
     addressbook/importaddressbookjobinterface.cpp
     alarm/importalarmjobinterface.cpp
+    alarm/exportalarmjobinterface.cpp
    )
 
 set(pimdataexporter_notes_SRCS

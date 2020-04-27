@@ -17,29 +17,28 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef EXPORTALARMJOBINTERFACE_H
-#define EXPORTALARMJOBINTERFACE_H
+#ifndef EXPORTALARMJOBINTERFACEIMPL_H
+#define EXPORTALARMJOBINTERFACEIMPL_H
 
-#include "abstractimportexportjob.h"
+#include "exportalarmjobinterface.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ExportAlarmJobInterface : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ExportAlarmJobInterfaceImpl : public ExportAlarmJobInterface
 {
     Q_OBJECT
 public:
-    explicit ExportAlarmJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportAlarmJobInterface() override;
+    explicit ExportAlarmJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ExportAlarmJobInterfaceImpl() override;
 
-    void start() override;
 protected:
-    virtual void exportArchiveResource() = 0;
-    void slotCheckBackupConfig();
+    void exportArchiveResource() override;
 
 private:
-    void slotCheckBackupResource();
+    void slotAlarmJobTerminated();
+    void slotWriteNextArchiveResource();
 
-    void backupConfig();
+    int mIndexIdentifier = 0;
 };
 
-#endif // EXPORTALARMJOBINTERFACE_H
+#endif // EXPORTALARMJOBINTERFACEIMPL_H
