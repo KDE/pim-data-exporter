@@ -31,7 +31,7 @@
 #include "calendar/exportcalendarjobinterfaceimpl.h"
 
 #include "alarm/exportalarmjobinterface.h"
-#include "alarm/importalarmjobinterface.h"
+#include "alarm/importalarmjobinterfaceimpl.h"
 
 #include "notes/exportnotesjobinterfaceimpl.h"
 #include "notes/importnotesjobinterfaceimpl.h"
@@ -45,6 +45,7 @@
 #include "pimdataexportcore_debug.h"
 #include <QDateTime>
 #include <QLocale>
+
 
 
 
@@ -219,7 +220,7 @@ void PimDataBackupRestore::restoreNextStep()
             break;
         case Utils::KAlarm:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportAlarmJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ImportAlarmJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

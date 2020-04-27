@@ -17,30 +17,21 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef IMPORTALARMJOBINTERFACE_H
-#define IMPORTALARMJOBINTERFACE_H
+#ifndef IMPORTALARMJOBINTERFACEIMPL_H
+#define IMPORTALARMJOBINTERFACEIMPL_H
 
-#include "abstractimportexportjob.h"
+#include "importalarmjobinterface.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
 
-class PIMDATAEXPORTER_TESTS_EXPORT ImportAlarmJobInterface : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ImportAlarmJobInterfaceImpl : public ImportAlarmJobInterface
 {
     Q_OBJECT
 public:
-    explicit ImportAlarmJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportAlarmJobInterface() override;
-
-    void start() override;
-
+    explicit ImportAlarmJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ImportAlarmJobInterfaceImpl() override;
 protected:
-    void slotNextStep() override;
-    virtual void restoreResources() = 0;
-
-private:
-    Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
-    void importkalarmConfig(const KArchiveFile *kalarmFile, const QString &kalarmrc, const QString &filename, const QString &prefix);
-    void restoreConfig();
+    void restoreResources() override;
 };
 
-#endif // IMPORTALARMJOBINTERFACE_H
+#endif // IMPORTALARMJOBINTERFACEIMPL_H
