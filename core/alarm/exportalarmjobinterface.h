@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef EXPORTALARMJOB_H
-#define EXPORTALARMJOB_H
+#ifndef EXPORTALARMJOBINTERFACE_H
+#define EXPORTALARMJOBINTERFACE_H
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
@@ -43,4 +43,4 @@ private:
     int mIndexIdentifier = 0;
 };
 
-#endif // EXPORTALARMJOB_H
+#endif // EXPORTALARMJOBINTERFACE_H

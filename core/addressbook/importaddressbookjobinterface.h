@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef IMPORTADDRESSBOOKJOB_H
-#define IMPORTADDRESSBOOKJOB_H
+#ifndef IMPORTADDRESSBOOKJOBINTERFACE_H
+#define IMPORTADDRESSBOOKJOBINTERFACE_H
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
@@ -45,4 +45,4 @@ private:
     void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
 };
 
-#endif // IMPORTADDRESSBOOKJOB_H
+#endif // IMPORTADDRESSBOOKJOBINTERFACE_H

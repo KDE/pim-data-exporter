@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef ImportMailJob_H
-#define ImportMailJob_H
+#ifndef ImportMailJobINTERFACE_H
+#define ImportMailJobINTERFACE_H
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"

@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef EXPORTAKREGATORJOB_H
-#define EXPORTAKREGATORJOB_H
+#ifndef EXPORTAKREGATORJOBINTERFACE_H
+#define EXPORTAKREGATORJOBINTERFACE_H
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
@@ -38,4 +38,4 @@ private:
     void slotCheckBackupData();
 };
 
-#endif // EXPORTAKREGATORJOB_H
+#endif // EXPORTAKREGATORJOBINTERFACE_H

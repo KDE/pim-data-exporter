@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef IMPORTAKREGATORJOB_H
-#define IMPORTAKREGATORJOB_H
+#ifndef IMPORTAKREGATORJOBINTERFACE_H
+#define IMPORTAKREGATORJOBINTERFACE_H
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
