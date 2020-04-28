@@ -18,7 +18,7 @@
 */
 
 #include "resourceconvertertest.h"
-
+#include <QDebug>
 ResourceConverterTest::ResourceConverterTest()
 {
 
@@ -31,6 +31,6 @@ ResourceConverterTest::~ResourceConverterTest()
 
 QString ResourceConverterTest::convertToFullCollectionPath(const qlonglong collectionValue)
 {
-    //TODO
+    qDebug() << " QString ResourceConverterTest::convertToFullCollectionPath(const qlonglong collectionValue) not implemented yet!";
     return QStringLiteral("COLLECTION_CONVERTED");
 }
