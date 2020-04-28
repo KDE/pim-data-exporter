@@ -251,11 +251,16 @@ Akonadi::Collection::Id AbstractImportExportJob::convertPathToId(const QString &
     if (val != -1) {
         return val;
     }
-    const Akonadi::Collection::Id id = MailCommon::Util::convertFolderPathToCollectionId(path);
+    const Akonadi::Collection::Id id = convertFolderPathToCollectionId(path);
     if (id != -1) {
         mHashConvertPathCollectionId.insert(path, id);
     }
     return id;
+}
+
+Akonadi::Collection::Id AbstractImportExportJob::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
 }
 
 void AbstractImportExportJob::initializeImportJob()
