@@ -17,43 +17,36 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "exportnotesjobinterfacetest.h"
-#include "notes/exportnotesjobinterface.h"
+#include "exportcalendarsjobinterfacetest.h"
 #include "archivestorage.h"
 #include "../resourceconvertertest.h"
 #include <QDebug>
 #include <QTest>
 #include <QSignalSpy>
 
-QTEST_MAIN(ExportNotesJobInterfaceTest)
+QTEST_MAIN(ExportCalendarsJobInterfaceTest)
 
-ExportNotesJobInterfaceTestImpl::ExportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
-    : ExportNotesJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
+ExportCalendarsJobInterfaceTestImpl::ExportCalendarsJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+    : ExportCalendarJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 
 }
 
-ExportNotesJobInterfaceTestImpl::~ExportNotesJobInterfaceTestImpl()
+ExportCalendarsJobInterfaceTestImpl::~ExportCalendarsJobInterfaceTestImpl()
 {
 }
 
-void ExportNotesJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
-{
-    ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
-}
-
-void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
+void ExportCalendarsJobInterfaceTestImpl::exportArchiveResource()
 {
     qDebug() << " not implement yet";
 }
 
-ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
+ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
 }
 
-void ExportNotesJobInterfaceTest::importNoteConfigTest1()
+void ExportCalendarsJobInterfaceTest::importNoteConfigTest1()
 {
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);
@@ -67,9 +60,9 @@ void ExportNotesJobInterfaceTest::importNoteConfigTest1()
     Utils::addVersion(archiveStorage->archive());
     Utils::storeDataExportInfo(storeArchivePath, archiveStorage->archive());
 
-    ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
-    QSignalSpy finish(exportNote, &ExportNotesJobInterfaceTestImpl::jobFinished);
-    QSignalSpy error(exportNote, &ExportNotesJobInterfaceTestImpl::error);
+    ExportCalendarsJobInterfaceTestImpl *exportNote = new ExportCalendarsJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
+    QSignalSpy finish(exportNote, &ExportCalendarsJobInterfaceTestImpl::jobFinished);
+    QSignalSpy error(exportNote, &ExportCalendarsJobInterfaceTestImpl::error);
     exportNote->start();
     QVERIFY(finish.wait());
     QCOMPARE(error.count(), 0);
