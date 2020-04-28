@@ -74,7 +74,7 @@ protected:
 protected:
     Q_REQUIRED_RESULT bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
     void initializeListStep();
-    void startSynchronizeResources(const QStringList &listResourceToSync);
+    virtual void startSynchronizeResources(const QStringList &listResourceToSync);
     void infoAboutNewResource(const QString &resourceName);
     void copyToDirectory(const KArchiveEntry *entry, const QString &dest);
     void extractZipFile(const KArchiveFile *file, const QString &source, const QString &destination, bool isStoredAsZippedArchive = true);
