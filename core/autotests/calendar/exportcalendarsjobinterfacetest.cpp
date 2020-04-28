@@ -46,7 +46,7 @@ ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent
 {
 }
 
-void ExportCalendarsJobInterfaceTest::importNoteConfigTest1()
+void ExportCalendarsJobInterfaceTest::importCalendarConfigTest1()
 {
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);
