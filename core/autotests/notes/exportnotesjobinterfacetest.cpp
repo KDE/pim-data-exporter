@@ -20,7 +20,7 @@
 #include "exportnotesjobinterfacetest.h"
 #include "notes/exportnotesjobinterface.h"
 #include "archivestorage.h"
-#include "resourceconvertertest.h"
+#include "../resourceconvertertest.h"
 #include <QDebug>
 #include <QTest>
 #include <QSignalSpy>

@@ -105,6 +105,5 @@ install(TARGETS pimdataexporterprivate ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRA
 
 if(BUILD_TESTING)
     add_subdirectory(autotests)
-    add_subdirectory(notes/autotests)
 endif()
 

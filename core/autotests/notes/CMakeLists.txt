@@ -1,6 +1,6 @@
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
-set( exportnotesjobinterfacetest_SRCS exportnotesjobinterfacetest.cpp resourceconvertertest.cpp )
+set( exportnotesjobinterfacetest_SRCS exportnotesjobinterfacetest.cpp ../resourceconvertertest.cpp )
 
 add_executable( exportnotesjobinterfacetest ${exportnotesjobinterfacetest_SRCS})
 add_test(NAME exportnotesjobinterfacetest COMMAND exportnotesjobinterfacetest)
