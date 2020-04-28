@@ -80,7 +80,6 @@ protected:
     void extractZipFile(const KArchiveFile *file, const QString &source, const QString &destination, bool isStoredAsZippedArchive = true);
 
     Q_REQUIRED_RESULT qint64 convertRealPathToCollection(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = false);
-    void convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = true);
     void copyToFile(const KArchiveFile *archivefile, const QString &dest, const QString &filename, const QString &prefix);
     void initializeImportJob();
     void backupFile(const QString &filename, const QString &path, const QString &storedName);
@@ -126,8 +125,9 @@ protected:
     int mIndex = -1;
     static int sArchiveVersion;
 
-    void convertCollectionStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key);
+
     void convertCollectionListStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key, bool addCollectionPrefix);
+    void convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = true);
 private:
     void slotAllResourceSynchronized();
     void slotSynchronizeInstanceDone(const QString &, const QString &identifier);

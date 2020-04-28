@@ -20,6 +20,7 @@
 #include "importmailjobinterface.h"
 #include "archivestorage.h"
 #include "importexportmailutil.h"
+#include "resourceconverterimpl.h"
 
 #include <MailCommon/FilterManager>
 #include <MailCommon/FilterImporterExporter>
@@ -46,7 +47,6 @@
 #include <QStandardPaths>
 #include <QTimer>
 #include <QRegularExpression>
-#include "resourceconverterimpl.h"
 
 using namespace Akonadi;
 namespace {
@@ -1250,7 +1250,7 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
         (void)convertRealPathToCollection(favoriteGroup, currentKey, true);
 
         const QString expensionKey(QStringLiteral("Expansion"));
-        (void)convertRealPathToCollectionList(favoriteGroup, expensionKey);
+        convertRealPathToCollectionList(favoriteGroup, expensionKey);
     }
 
     convertCollectionListStrToAkonadiId(kmailConfig, QStringLiteral("FavoriteCollections"), QStringLiteral("FavoriteCollectionIds"), false);
@@ -1464,4 +1464,13 @@ void ImportMailJobInterface::mergeSieveTemplate(const KArchiveFile *archivefile,
     }
     grpExisting.writeEntry(QStringLiteral("templateCount"), numberOfExistingTemplate);
     grpExisting.sync();
+}
+
+
+void ImportMailJobInterface::convertCollectionStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key)
+{
+    if (config->hasGroup(groupName)) {
+        KConfigGroup eventGroup = config->group(groupName);
+        (void)convertRealPathToCollection(eventGroup, key, false);
+    }
 }

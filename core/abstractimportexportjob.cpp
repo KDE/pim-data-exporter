@@ -242,31 +242,6 @@ qint64 AbstractImportExportJob::convertRealPathToCollection(KConfigGroup &group,
     return colId;
 }
 
-void AbstractImportExportJob::convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix)
-{
-    if (group.hasKey(currentKey)) {
-        const QStringList listExpension = group.readEntry(currentKey, QStringList());
-        QStringList result;
-        if (!listExpension.isEmpty()) {
-            for (const QString &collection : listExpension) {
-                const Akonadi::Collection::Id id = convertPathToId(collection);
-                if (id != -1) {
-                    if (addCollectionPrefix) {
-                        result << QStringLiteral("c%1").arg(id);
-                    } else {
-                        result << QStringLiteral("%1").arg(id);
-                    }
-                }
-            }
-            if (result.isEmpty()) {
-                group.deleteEntry(currentKey);
-            } else {
-                group.writeEntry(currentKey, result);
-            }
-        }
-    }
-}
-
 Akonadi::Collection::Id AbstractImportExportJob::convertPathToId(const QString &path)
 {
     if (path.isEmpty()) {
@@ -638,18 +613,35 @@ void AbstractImportExportJob::importDataSubdirectory(const QString &subdirectory
     }
 }
 
-void AbstractImportExportJob::convertCollectionStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key)
-{
-    if (config->hasGroup(groupName)) {
-        KConfigGroup eventGroup = config->group(groupName);
-        (void)convertRealPathToCollection(eventGroup, key, false);
-    }
-}
-
 void AbstractImportExportJob::convertCollectionListStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key, bool addCollectionPrefix)
 {
     if (config->hasGroup(groupName)) {
         KConfigGroup group = config->group(groupName);
         convertRealPathToCollectionList(group, key, addCollectionPrefix);
+    }
+}
+
+void AbstractImportExportJob::convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix)
+{
+    if (group.hasKey(currentKey)) {
+        const QStringList listExpension = group.readEntry(currentKey, QStringList());
+        QStringList result;
+        if (!listExpension.isEmpty()) {
+            for (const QString &collection : listExpension) {
+                const Akonadi::Collection::Id id = convertPathToId(collection);
+                if (id != -1) {
+                    if (addCollectionPrefix) {
+                        result << QStringLiteral("c%1").arg(id);
+                    } else {
+                        result << QStringLiteral("%1").arg(id);
+                    }
+                }
+            }
+            if (result.isEmpty()) {
+                group.deleteEntry(currentKey);
+            } else {
+                group.writeEntry(currentKey, result);
+            }
+        }
     }
 }

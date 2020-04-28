@@ -47,6 +47,7 @@ public:
 protected:
     void slotNextStep() override;
 
+    void convertCollectionStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key);
 private:
     void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId);
     void restoreTransports();
