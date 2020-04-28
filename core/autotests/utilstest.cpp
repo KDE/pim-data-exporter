@@ -42,9 +42,3 @@ void UtilsTest::shouldTestValue()
     QCOMPARE(Utils::notePath(), QStringLiteral("note/"));
 }
 
-void UtilsTest::shouldGetAgentFileName()
-{
-    //TODO
-//    const QString filename = Utils::resourcesPath() + QStringLiteral("akonadi_imap_resource_0rc");
-//    QCOMPARE(Utils::agentFileName(filename), QStringLiteral("resources/agent_config_akonadi_imap_resource_0"));
-}

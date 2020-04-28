@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2019-2020 Laurent Montel <montel@kde.org>
+   Copyright (C) 2020 Laurent Montel <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,19 +17,22 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef UTILSTEST_H
-#define UTILSTEST_H
 
-#include <QObject>
+#include "resourceconverterclasstest.h"
+#include "resourceconvertertest.h"
+#include "../utils.h"
+#include <QTest>
+QTEST_MAIN(ResourceConverterClassTest)
 
-class UtilsTest : public QObject
+ResourceConverterClassTest::ResourceConverterClassTest(QObject *parent)
+    : QObject(parent)
 {
-    Q_OBJECT
-public:
-    explicit UtilsTest(QObject *parent = nullptr);
-    ~UtilsTest() = default;
-private Q_SLOTS:
-    void shouldTestValue();
-};
 
-#endif // UTILSTEST_H
+}
+
+void ResourceConverterClassTest::shouldGetAgentFileName()
+{
+    ResourceConverterTest w;
+    const QString filename = Utils::resourcesPath() + QStringLiteral("akonadi_imap_resource_0rc");
+    QCOMPARE(w.agentFileName(filename), QStringLiteral("resources/agent_config_akonadi_imap_resource_0"));
+}

@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2019-2020 Laurent Montel <montel@kde.org>
+   Copyright (C) 2020 Laurent Montel <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,19 +17,20 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef UTILSTEST_H
-#define UTILSTEST_H
+
+#ifndef RESOURCECONVERTERCLASSTEST_H
+#define RESOURCECONVERTERCLASSTEST_H
 
 #include <QObject>
 
-class UtilsTest : public QObject
+class ResourceConverterClassTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit UtilsTest(QObject *parent = nullptr);
-    ~UtilsTest() = default;
+    explicit ResourceConverterClassTest(QObject *parent = nullptr);
+    ~ResourceConverterClassTest() = default;
 private Q_SLOTS:
-    void shouldTestValue();
+    void shouldGetAgentFileName();
 };
 
-#endif // UTILSTEST_H
+#endif // RESOURCECONVERTERCLASSTEST_H
