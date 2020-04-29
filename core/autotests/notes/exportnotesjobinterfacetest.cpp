@@ -21,8 +21,7 @@
 #include "notes/exportnotesjobinterface.h"
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
-#include "generatelistfilefromarchive.h"
-#include "loadlistfromfile.h"
+#include "compareexportfile.h"
 #include <QDebug>
 #include <QTest>
 #include <QSignalSpy>
@@ -79,11 +78,10 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
     delete exportNote;
     delete archiveStorage;
 
-    GenerateListFileFromArchive archive(temporaryFile);
-    //qDebug() << " archive " << archive.listFile();
-
-    LoadListFromFile f(QStringLiteral(PIMDATAEXPORTER_DIR "/test1/list.txt"));
-    QCOMPARE(f.fileList(), archive.listFile());
+    CompareExportFile compareExportFile;
+    compareExportFile.setTempFilePath(temporaryFile);
+    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/test1/list.txt"));
+    compareExportFile.compareFiles();
 }
 
 
