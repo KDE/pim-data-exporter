@@ -20,8 +20,9 @@
 #include "exportnotesjobinterfacetest.h"
 #include "notes/exportnotesjobinterface.h"
 #include "archivestorage.h"
-#include "../resourceconvertertest.h"
-#include "../generatelistfilefromarchive.h"
+#include "resourceconvertertest.h"
+#include "generatelistfilefromarchive.h"
+#include "loadlistfromfile.h"
 #include <QDebug>
 #include <QTest>
 #include <QSignalSpy>
@@ -62,7 +63,8 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
     qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/test1/config");
 
     //TODO fix file name.
-    const QString storeArchivePath(QStringLiteral("/tmp/foo.zip"));
+    const QString temporaryFile = QStringLiteral("/tmp/foo.zip");
+    const QString storeArchivePath(temporaryFile);
     ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
     Q_ASSERT(archiveStorage->openArchive(true));
     Utils::addVersion(archiveStorage->archive());
@@ -77,8 +79,11 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
     delete exportNote;
     delete archiveStorage;
 
-    GenerateListFileFromArchive archive(QStringLiteral("/tmp/foo.zip"));
-    qDebug() << " archive " << archive.listFile();
+    GenerateListFileFromArchive archive(temporaryFile);
+    //qDebug() << " archive " << archive.listFile();
+
+    LoadListFromFile f(QStringLiteral(PIMDATAEXPORTER_DIR "/test1/list.txt"));
+    QCOMPARE(f.fileList(), archive.listFile());
 }
 
 

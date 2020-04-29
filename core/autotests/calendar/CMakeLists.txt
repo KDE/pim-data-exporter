@@ -1,8 +1,8 @@
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
-set( exportcalendarsjobinterfacetest_SRCS exportcalendarsjobinterfacetest.cpp ../resourceconvertertest.cpp )
+set( exportcalendarsjobinterfacetest_SRCS exportcalendarsjobinterfacetest.cpp)
 
 add_executable( exportcalendarsjobinterfacetest ${exportcalendarsjobinterfacetest_SRCS})
 add_test(NAME exportcalendarsjobinterfacetest COMMAND exportcalendarsjobinterfacetest)
 ecm_mark_as_test(exportcalendarsjobinterfacetest)
-target_link_libraries(exportcalendarsjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore)
+target_link_libraries(exportcalendarsjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
