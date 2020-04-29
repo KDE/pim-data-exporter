@@ -14,3 +14,4 @@ target_link_libraries( resourceconverterclasstest Qt5::Test KF5::ConfigCore pimd
 
 add_subdirectory(notes)
 add_subdirectory(calendar)
+add_subdirectory(addressbook)
