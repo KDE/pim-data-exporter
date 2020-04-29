@@ -44,7 +44,7 @@ public:
     explicit ExportNotesJobInterfaceTest(QObject *parent = nullptr);
     ~ExportNotesJobInterfaceTest() = default;
 private Q_SLOTS:
-    void importNoteConfigTest1();
+    void exportNoteConfigTest1();
 };
 
 #endif // EXPORTNOTESJOBINTERFACETEST_H

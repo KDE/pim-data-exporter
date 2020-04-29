@@ -41,7 +41,7 @@ ExportAkregatorJobInterfaceTest::ExportAkregatorJobInterfaceTest(QObject *parent
 {
 }
 
-void ExportAkregatorJobInterfaceTest::importAkregatorConfigTest1()
+void ExportAkregatorJobInterfaceTest::exportAkregatorConfigTest1()
 {
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);

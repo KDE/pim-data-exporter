@@ -58,7 +58,7 @@ ExportAddressbookJobInterfaceTest::ExportAddressbookJobInterfaceTest(QObject *pa
 {
 }
 
-void ExportAddressbookJobInterfaceTest::importAddressBookConfigTest1()
+void ExportAddressbookJobInterfaceTest::exportAddressBookConfigTest1()
 {
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);

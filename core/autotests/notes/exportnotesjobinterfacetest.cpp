@@ -53,7 +53,7 @@ ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
 {
 }
 
-void ExportNotesJobInterfaceTest::importNoteConfigTest1()
+void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
 {
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);

@@ -46,7 +46,7 @@ ExportAlarmJobInterfaceTest::ExportAlarmJobInterfaceTest(QObject *parent)
 {
 }
 
-void ExportAlarmJobInterfaceTest::importAlarmConfigTest1()
+void ExportAlarmJobInterfaceTest::exportAlarmConfigTest1()
 {
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);
