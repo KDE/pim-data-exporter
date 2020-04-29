@@ -21,6 +21,7 @@
 #include "notes/exportnotesjobinterface.h"
 #include "archivestorage.h"
 #include "../resourceconvertertest.h"
+#include "../generatelistfilefromarchive.h"
 #include <QDebug>
 #include <QTest>
 #include <QSignalSpy>
@@ -75,6 +76,9 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
     QCOMPARE(error.count(), 0);
     delete exportNote;
     delete archiveStorage;
+
+    GenerateListFileFromArchive archive(QStringLiteral("/tmp/foo.zip"));
+    qDebug() << " archive " << archive.listFile();
 }
 
 
