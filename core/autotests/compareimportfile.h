@@ -29,11 +29,17 @@ public:
     CompareImportFile();
     ~CompareImportFile();
 
+    void compareFile();
+
     Q_REQUIRED_RESULT QString tempFilePath() const;
     void setTempFilePath(const QString &tempFilePath);
 
+    Q_REQUIRED_RESULT QString referenceFilePath() const;
+    void setReferenceFilePath(const QString &referenceFilePath);
+
 private:
     QString mTempFilePath;
+    QString mReferenceFilePath;
 };
 
 #endif // COMPAREIMPORTFILE_H

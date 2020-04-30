@@ -51,7 +51,7 @@ void ImportNotesJobInterfaceTest::importNoteConfigTest1()
 {
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);
-    //TODO use specific path !
+
     qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/test1/share");
     qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/test1/config");
 

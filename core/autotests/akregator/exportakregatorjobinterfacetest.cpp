@@ -68,7 +68,7 @@ void ExportAkregatorJobInterfaceTest::exportAkregatorConfigTest1()
 
     CompareExportFile compareExportFile;
     compareExportFile.setTempFilePath(temporaryFile);
-    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1/list.txt"));
+    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
     compareExportFile.compareFiles();
 }
 

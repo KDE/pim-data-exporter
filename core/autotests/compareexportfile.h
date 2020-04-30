@@ -36,6 +36,7 @@ public:
     void setListFilePath(const QString &listFilePath);
 
 private:
+    void compareFile(const QString &referenceFile, const QString &archiveFile);
     QString mTempFilePath;
     QString mListFilePath;
 };

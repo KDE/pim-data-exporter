@@ -37,6 +37,7 @@ GenerateListFileFromArchive::~GenerateListFileFromArchive()
 void GenerateListFileFromArchive::generateList()
 {
     mZip = new KZip(mFileName);
+    qDebug() << " mFileName" << mFileName;
     bool result = mZip->open(QIODevice::ReadOnly);
     QVERIFY(result);
     const KArchiveDirectory *topDirectory = mZip->directory();
