@@ -19,7 +19,8 @@
 
 #include "exportcalendarsjobinterfacetest.h"
 #include "archivestorage.h"
-#include "../resourceconvertertest.h"
+#include "compareexportfile.h"
+#include "resourceconvertertest.h"
 #include <QDebug>
 #include <QTest>
 #include <QSignalSpy>
@@ -54,7 +55,8 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfigTest1()
     qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/test1/config");
 
     //TODO fix file name.
-    const QString storeArchivePath(QStringLiteral("/tmp/foo.zip"));
+    const QString temporaryFile = QStringLiteral("/tmp/foo.zip");
+    const QString storeArchivePath(temporaryFile);
     ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
     Q_ASSERT(archiveStorage->openArchive(true));
     Utils::addVersion(archiveStorage->archive());
@@ -68,6 +70,11 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfigTest1()
     QCOMPARE(error.count(), 0);
     delete exportNote;
     delete archiveStorage;
+
+    CompareExportFile compareExportFile;
+    compareExportFile.setTempFilePath(temporaryFile);
+    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/test1/list.txt"));
+    compareExportFile.compareFiles();
 }
 
 
