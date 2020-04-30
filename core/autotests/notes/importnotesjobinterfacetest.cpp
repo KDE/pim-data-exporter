@@ -19,7 +19,9 @@
 
 
 #include "importnotesjobinterfacetest.h"
+#include "archivestorage.h"
 #include "notes/importnotesjobinterface.h"
+#include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportNotesJobInterfaceTest)
 
@@ -43,4 +45,28 @@ ImportNotesJobInterfaceTest::ImportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void ImportNotesJobInterfaceTest::importNoteConfigTest1()
+{
+    //Don't use setTestModeEnabled otherwise we can set env
+    //QStandardPaths::setTestModeEnabled(true);
+    //TODO use specific path !
+    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/test1/share");
+    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/test1/config");
+
+    //TODO fix file name.
+    const QString temporaryFile = QStringLiteral("/tmp/foo.zip");
+    const QString storeArchivePath(temporaryFile);
+    ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
+    Q_ASSERT(archiveStorage->openArchive(false));
+
+    ImportNotesJobInterfaceTestImpl *importNote = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
+    QSignalSpy finish(importNote, &ImportNotesJobInterfaceTestImpl::jobFinished);
+    QSignalSpy error(importNote, &ImportNotesJobInterfaceTestImpl::error);
+    importNote->start();
+    QVERIFY(finish.wait());
+    QCOMPARE(error.count(), 0);
+    delete importNote;
+    delete archiveStorage;
 }
