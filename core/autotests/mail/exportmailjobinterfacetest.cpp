@@ -74,8 +74,8 @@ void ExportMailJobInterfaceTest::exportMailConfigTest1()
 {
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);
-    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/test1/share");
-    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/test1/config");
+    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/export/test1/share");
+    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/export/test1/config");
 
     //TODO fix file name.
     const QString temporaryFile = QStringLiteral("/tmp/foo.zip");
@@ -96,6 +96,6 @@ void ExportMailJobInterfaceTest::exportMailConfigTest1()
 
     CompareExportFile compareExportFile;
     compareExportFile.setTempFilePath(temporaryFile);
-    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/test1/list.txt"));
+    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1/list.txt"));
     compareExportFile.compareFiles();
 }
