@@ -11,6 +11,7 @@ add_library(test_resourceconverter STATIC
     generatelistfilefromarchive.cpp
     loadlistfromfile.cpp
     compareexportfile.cpp
+    compareimportfile.cpp
 )
 target_link_libraries(test_resourceconverter PUBLIC KF5::ConfigCore pimdataexporterprivate KF5::Archive Qt5::Test)
 
