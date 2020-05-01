@@ -56,6 +56,9 @@ void CompareExportFile::compareFiles()
     QVERIFY(result);
     const KArchiveDirectory *topDirectory = mZip->directory();
     for (const QString &file : archiveList) {
+        if (file == QLatin1String("information/VERSION_2") || file == QLatin1String("information/exportdatatype.xml")) {
+            continue;
+        }
         const KArchiveEntry *currentEntry = topDirectory->entry(file);
         if (currentEntry && currentEntry->isFile()) {
             if (!mTempDir) {
@@ -68,17 +71,20 @@ void CompareExportFile::compareFiles()
             QString adaptFile = file;
             adaptFile.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
             const QString fileName = mTempDir->path() + QLatin1Char('/') + adaptFile;
-            QDir().mkpath(mTempDir->path() + QLatin1String("/config/"));
+            QFileInfo fileInfo(fileName);
+
+
+            QDir().mkpath(fileInfo.dir().path());
 
             QFile f(fileName);
-            qDebug() << " fileName" << fileName;
+            //qDebug() << " fileName" << fileName;
             QVERIFY(f.open(QIODevice::WriteOnly));
 
             const QByteArray data = currentFile->data();
             QCOMPARE(f.write(data), data.length());
             f.close();
 
-            qDebug() << "********** " << mTempDir->path() + QLatin1Char('/') + file;
+            //qDebug() << "********** " << mTempDir->path() + QLatin1Char('/') + file;
             compareFile(mListFilePath + QStringLiteral("/references/") + adaptFile, fileName);
         }
     }
