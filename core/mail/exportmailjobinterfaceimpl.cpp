@@ -21,8 +21,7 @@
 #include "importexportmailutil.h"
 
 #include <MailCommon/MailUtil>
-#include <MailCommon/FilterManager>
-#include <MailCommon/FilterImporterExporter>
+#include <KMime/Message>
 #include "importexportprogressindicatorbase.h"
 
 #include <AkonadiCore/AgentManager>

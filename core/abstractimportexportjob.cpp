@@ -23,10 +23,8 @@
 #include "resourceconverterimpl.h"
 #include "synchronizeresourcejob.h"
 
-#include <MailCommon/MailUtil>
-
 #include <PimCommonAkonadi/CreateResource>
-
+#include <AkonadiCore/AgentInstance>
 #include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 #include <KZip>
 #include <QTemporaryDir>
