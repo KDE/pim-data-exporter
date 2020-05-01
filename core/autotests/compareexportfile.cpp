@@ -64,16 +64,15 @@ void CompareExportFile::compareFiles()
             if (!mTempDir) {
                 mTempDir = new QTemporaryDir;
                 //TODO remove it.
-                mTempDir->setAutoRemove(false);
+                //mTempDir->setAutoRemove(false);
             }
             const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
 
             QString adaptFile = file;
             adaptFile.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
             const QString fileName = mTempDir->path() + QLatin1Char('/') + adaptFile;
-            QFileInfo fileInfo(fileName);
-
-
+            //create path
+            const QFileInfo fileInfo(fileName);
             QDir().mkpath(fileInfo.dir().path());
 
             QFile f(fileName);
@@ -92,7 +91,7 @@ void CompareExportFile::compareFiles()
 
 void CompareExportFile::compareFile(const QString &referenceFile, const QString &archiveFile)
 {
-    qDebug() << "referenceFile " << referenceFile << " archiveFile " << archiveFile;
+    //qDebug() << "referenceFile " << referenceFile << " archiveFile " << archiveFile;
     QProcess proc;
     const QStringList args = QStringList()
                              << QStringLiteral("-u")

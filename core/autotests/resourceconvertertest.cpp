@@ -29,10 +29,8 @@ ResourceConverterTest::~ResourceConverterTest()
 
 QString ResourceConverterTest::convertToFullCollectionPath(const qlonglong collectionValue)
 {
-    qDebug() << " QString ResourceConverterTest::convertToFullCollectionPath(const qlonglong collectionValue) not implemented yet!";
-    return QStringLiteral("COLLECTION_CONVERTED");
+    return QStringLiteral("foo/bla bla/bli%1").arg(collectionValue);
 }
-
 
 Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(const QString &path)
 {
