@@ -258,6 +258,7 @@ Akonadi::Collection::Id AbstractImportExportJob::convertPathToId(const QString &
     return id;
 }
 
+//Allow to remove dependancy against MailCommon::Util
 Akonadi::Collection::Id AbstractImportExportJob::convertFolderPathToCollectionId(const QString &path)
 {
     return MailCommon::Util::convertFolderPathToCollectionId(path);
