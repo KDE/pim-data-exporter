@@ -79,6 +79,6 @@ void ExportAlarmJobInterfaceTest::exportAlarmConfigTest1()
 
 Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    //TODO
-    return -1;
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertFolderPathToCollectionId(path);
 }

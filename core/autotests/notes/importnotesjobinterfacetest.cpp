@@ -20,6 +20,7 @@
 #include "importnotesjobinterfacetest.h"
 #include "archivestorage.h"
 #include "notes/importnotesjobinterface.h"
+#include "resourceconvertertest.h"
 #include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportNotesJobInterfaceTest)
@@ -70,6 +71,6 @@ void ImportNotesJobInterfaceTest::importNoteConfigTest1()
 
 Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    //TODO
-    return -1;
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertFolderPathToCollectionId(path);
 }

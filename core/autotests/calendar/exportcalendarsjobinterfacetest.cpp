@@ -79,6 +79,6 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfigTest1()
 
 Akonadi::Collection::Id ExportCalendarsJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    //TODO
-    return -1;
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertFolderPathToCollectionId(path);
 }

@@ -102,6 +102,6 @@ void ExportMailJobInterfaceTest::exportMailConfigTest1()
 
 Akonadi::Collection::Id ExportMailJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    //TODO
-    return -1;
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertFolderPathToCollectionId(path);
 }

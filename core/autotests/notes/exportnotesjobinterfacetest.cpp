@@ -85,6 +85,6 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
 
 Akonadi::Collection::Id ExportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    //TODO
-    return -1;
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
