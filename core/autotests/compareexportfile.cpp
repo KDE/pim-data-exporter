@@ -60,6 +60,7 @@ void CompareExportFile::compareFiles()
         if (currentEntry && currentEntry->isFile()) {
             if (!mTempDir) {
                 mTempDir = new QTemporaryDir;
+                //TODO remove it.
                 mTempDir->setAutoRemove(false);
             }
             const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
@@ -67,6 +68,7 @@ void CompareExportFile::compareFiles()
             QString adaptFile = file;
             adaptFile.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
             const QString fileName = mTempDir->path() + QLatin1Char('/') + adaptFile;
+            QDir().mkpath(mTempDir->path() + QLatin1String("/config/"));
 
             QFile f(fileName);
             qDebug() << " fileName" << fileName;
