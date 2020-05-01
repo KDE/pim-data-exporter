@@ -21,7 +21,8 @@
 #define COMPAREEXPORTFILE_H
 
 #include <QString>
-
+class KZip;
+class QTemporaryDir;
 class CompareExportFile
 {
 public:
@@ -39,6 +40,8 @@ private:
     void compareFile(const QString &referenceFile, const QString &archiveFile);
     QString mTempFilePath;
     QString mListFilePath;
+    KZip *mZip = nullptr;
+    QTemporaryDir *mTempDir = nullptr;
 };
 
 #endif // COMPAREEXPORTFILE_H

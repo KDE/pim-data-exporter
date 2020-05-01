@@ -47,6 +47,13 @@ void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
     qDebug() << " not implement yet";
 }
 
+Akonadi::Collection::Id ExportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertFolderPathToCollectionId(path);
+}
+
+
 ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
@@ -80,11 +87,4 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
     compareExportFile.setTempFilePath(temporaryFile);
     compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
     compareExportFile.compareFiles();
-}
-
-
-Akonadi::Collection::Id ExportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
-{
-    ResourceConverterTest resourceConverterTest;
-    return resourceConverterTest.convertFolderPathToCollectionId(path);
 }

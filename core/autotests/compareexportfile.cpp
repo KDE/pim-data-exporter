@@ -23,6 +23,7 @@
 #include <QTest>
 #include <QDebug>
 #include <QProcess>
+#include <KZip>
 
 CompareExportFile::CompareExportFile()
 {
@@ -30,6 +31,10 @@ CompareExportFile::CompareExportFile()
 
 CompareExportFile::~CompareExportFile()
 {
+    delete mZip;
+    mZip = nullptr;
+    delete mTempDir;
+    mTempDir = nullptr;
 }
 
 void CompareExportFile::compareFiles()
@@ -45,10 +50,36 @@ void CompareExportFile::compareFiles()
         qDebug() << "List File : " << archiveList;
     }
     QVERIFY(equal);
+    mZip = new KZip(mTempFilePath);
+    //qDebug() << " mFileName" << mFileName;
+    const bool result = mZip->open(QIODevice::ReadOnly);
+    QVERIFY(result);
+    const KArchiveDirectory *topDirectory = mZip->directory();
     for (const QString &file : archiveList) {
-        qDebug() << " file " << file;
+        const KArchiveEntry *currentEntry = topDirectory->entry(file);
+        if (currentEntry && currentEntry->isFile()) {
+            if (!mTempDir) {
+                mTempDir = new QTemporaryDir;
+                mTempDir->setAutoRemove(false);
+            }
+            const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
+
+            QString adaptFile = file;
+            adaptFile.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
+            const QString fileName = mTempDir->path() + QLatin1Char('/') + adaptFile;
+
+            QFile f(fileName);
+            qDebug() << " fileName" << fileName;
+            QVERIFY(f.open(QIODevice::WriteOnly));
+
+            const QByteArray data = currentFile->data();
+            QCOMPARE(f.write(data), data.length());
+
+
+            qDebug() << "********** " << mTempDir->path() + QLatin1Char('/') + file;
+            compareFile(mListFilePath + QStringLiteral("/references/") + adaptFile, fileName);
+        }
     }
-    //TODO compare files
 }
 
 void CompareExportFile::compareFile(const QString &referenceFile, const QString &archiveFile)
