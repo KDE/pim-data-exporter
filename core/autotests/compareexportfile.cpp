@@ -76,7 +76,7 @@ void CompareExportFile::compareFiles()
 
             const QByteArray data = currentFile->data();
             QCOMPARE(f.write(data), data.length());
-
+            f.close();
 
             qDebug() << "********** " << mTempDir->path() + QLatin1Char('/') + file;
             compareFile(mListFilePath + QStringLiteral("/references/") + adaptFile, fileName);
@@ -86,6 +86,7 @@ void CompareExportFile::compareFiles()
 
 void CompareExportFile::compareFile(const QString &referenceFile, const QString &archiveFile)
 {
+    qDebug() << "referenceFile " << referenceFile << " archiveFile " << archiveFile;
     QProcess proc;
     const QStringList args = QStringList()
                              << QStringLiteral("-u")
