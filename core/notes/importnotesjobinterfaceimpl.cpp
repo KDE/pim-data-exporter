@@ -19,7 +19,7 @@
 
 #include "importnotesjobinterfaceimpl.h"
 #include "archivestorage.h"
-
+#include <MailCommon/MailUtil>
 #include <PimCommonAkonadi/CreateResource>
 
 #include <KArchive>
@@ -110,4 +110,10 @@ void ImportNotesJobInterfaceImpl::restoreResources()
     }
     //It's maildir support. Need to add support
     startSynchronizeResources(listResource);
+}
+
+
+Akonadi::Collection::Id ImportNotesJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
 }

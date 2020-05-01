@@ -31,6 +31,7 @@
 
 #include "pimdataexportcore_debug.h"
 
+#include <MailCommon/MailUtil>
 #include <QFile>
 #include <QDir>
 #include <QStandardPaths>
@@ -52,6 +53,11 @@ ImportCalendarJobInterfaceImpl::ImportCalendarJobInterfaceImpl(QObject *parent, 
 
 ImportCalendarJobInterfaceImpl::~ImportCalendarJobInterfaceImpl()
 {
+}
+
+Akonadi::Collection::Id ImportCalendarJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
 }
 
 void ImportCalendarJobInterfaceImpl::restoreResources()

@@ -49,6 +49,11 @@ void ExportCalendarJobInterfaceImpl::exportArchiveResource()
     QTimer::singleShot(0, this, &ExportCalendarJobInterfaceImpl::slotWriteNextArchiveResource);
 }
 
+Akonadi::Collection::Id ExportCalendarJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
+}
+
 void ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated()
 {
     if (wasCanceled()) {

@@ -156,6 +156,11 @@ void ExportMailJobInterfaceImpl::backupResources()
     Q_EMIT info(i18n("Resources backup done."));
 }
 
+Akonadi::Collection::Id ExportMailJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
+}
+
 void ExportMailJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
 {
     ResourceConverterImpl converter;

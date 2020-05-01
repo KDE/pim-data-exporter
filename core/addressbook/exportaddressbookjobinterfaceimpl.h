@@ -35,6 +35,7 @@ protected:
     void exportArchiveResource() override;
     void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey) override;
     void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) override;
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
 private:
     void slotWriteNextArchiveResource();
     void slotAddressbookJobTerminated();

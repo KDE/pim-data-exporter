@@ -19,7 +19,7 @@
 
 #include "importaddressbookjobinterfaceimpl.h"
 #include "archivestorage.h"
-
+#include <MailCommon/MailUtil>
 #include <PimCommonAkonadi/CreateResource>
 
 #include <KLocalizedString>
@@ -123,4 +123,9 @@ void ImportAddressbookJobInterfaceImpl::restoreResources()
     Q_EMIT info(i18n("Resources restored."));
     //It's maildir support. Need to add support
     startSynchronizeResources(listResource);
+}
+
+Akonadi::Collection::Id ImportAddressbookJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
 }

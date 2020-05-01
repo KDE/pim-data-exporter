@@ -20,6 +20,7 @@
 #include "importakregatorjobinterface.h"
 #include "archivestorage.h"
 
+#include <MailCommon/MailUtil>
 #include <PimCommonAkonadi/CreateResource>
 
 #include <KArchive>
@@ -46,6 +47,11 @@ void ImportAkregatorJobInterface::start()
     initializeListStep();
     createProgressDialog(i18n("Import Akregator settings"));
     QTimer::singleShot(0, this, &ImportAkregatorJobInterface::slotNextStep);
+}
+
+Akonadi::Collection::Id ImportAkregatorJobInterface::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
 }
 
 void ImportAkregatorJobInterface::slotNextStep()

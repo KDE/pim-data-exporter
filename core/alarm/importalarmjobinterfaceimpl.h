@@ -32,6 +32,7 @@ public:
     ~ImportAlarmJobInterfaceImpl() override;
 protected:
     void restoreResources() override;
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
 };
 
 #endif // IMPORTALARMJOBINTERFACEIMPL_H

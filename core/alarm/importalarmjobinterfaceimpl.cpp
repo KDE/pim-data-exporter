@@ -21,6 +21,7 @@
 #include "archivestorage.h"
 
 #include <PimCommonAkonadi/CreateResource>
+#include <MailCommon/MailUtil>
 
 #include <KArchive>
 #include <KLocalizedString>
@@ -114,4 +115,9 @@ void ImportAlarmJobInterfaceImpl::restoreResources()
     }
     //It's maildir support. Need to add support
     startSynchronizeResources(listResource);
+}
+
+Akonadi::Collection::Id ImportAlarmJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
 }

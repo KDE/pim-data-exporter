@@ -18,7 +18,7 @@
 */
 
 #include "exportakregatorjobinterface.h"
-
+#include <MailCommon/MailUtil>
 #include <AkonadiCore/AgentManager>
 #include <KLocalizedString>
 #include <KZip>
@@ -47,6 +47,11 @@ void ExportAkregatorJobInterface::start()
     } else {
         Q_EMIT jobFinished();
     }
+}
+
+Akonadi::Collection::Id ExportAkregatorJobInterface::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
 }
 
 void ExportAkregatorJobInterface::slotCheckBackupConfig()

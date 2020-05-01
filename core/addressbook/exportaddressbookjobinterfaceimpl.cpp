@@ -21,7 +21,7 @@
 #include "exportresourcearchivejob.h"
 
 #include <AkonadiCore/AgentManager>
-
+#include <MailCommon/MailUtil>
 #include <KLocalizedString>
 
 #include <QTemporaryFile>
@@ -110,4 +110,9 @@ void ExportAddressbookJobInterfaceImpl::convertCollectionListToRealPath(KConfigG
 {
     ResourceConverterImpl converter;
     converter.convertCollectionListToRealPath(group, currentKey);
+}
+
+Akonadi::Collection::Id ExportAddressbookJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
 }

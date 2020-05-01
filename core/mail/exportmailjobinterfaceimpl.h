@@ -40,6 +40,7 @@ protected:
     void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) override;
     void exportArchiveResource() override;
     void backupResources() override;
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
 private:
     void slotCheckBackupMails();
     void slotWriteNextArchiveResource();

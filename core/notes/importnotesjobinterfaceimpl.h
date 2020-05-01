@@ -31,8 +31,12 @@ public:
     explicit ImportNotesJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportNotesJobInterfaceImpl() override;
 
+protected:
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+
 private:
     void restoreResources() override;
+
 };
 
 #endif // IMPORTNOTESJOB_H

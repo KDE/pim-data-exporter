@@ -31,6 +31,9 @@ class PIMDATAEXPORTER_TESTS_EXPORT ImportCalendarJobInterfaceImpl : public Impor
 public:
     explicit ImportCalendarJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportCalendarJobInterfaceImpl() override;
+protected:
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+
 private:
     void restoreResources() override;
 };

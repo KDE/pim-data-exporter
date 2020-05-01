@@ -22,7 +22,7 @@
 #include "resourceconverterimpl.h"
 
 #include <AkonadiCore/AgentManager>
-
+#include <MailCommon/MailUtil>
 #include <KLocalizedString>
 #include <KZip>
 #include <QTemporaryFile>
@@ -101,4 +101,9 @@ void ExportNotesJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &s
 {
     ResourceConverterImpl resourceImpl;
     resourceImpl.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
+}
+
+Akonadi::Collection::Id ExportNotesJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
 }

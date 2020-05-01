@@ -40,6 +40,8 @@ protected:
 
     void convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection) override;
     void backupResources() override;
+
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
 };
 
 class ExportMailJobInterfaceTest : public QObject

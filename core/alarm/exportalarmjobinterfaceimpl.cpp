@@ -22,6 +22,7 @@
 #include <AkonadiCore/AgentManager>
 
 #include <KLocalizedString>
+#include <MailCommon/MailUtil>
 
 #include <QTemporaryFile>
 #include <QTimer>
@@ -99,4 +100,9 @@ void ExportAlarmJobInterfaceImpl::slotWriteNextArchiveResource()
 void ExportAlarmJobInterfaceImpl::exportArchiveResource()
 {
     QTimer::singleShot(0, this, &ExportAlarmJobInterfaceImpl::slotWriteNextArchiveResource);
+}
+
+Akonadi::Collection::Id ExportAlarmJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
 }

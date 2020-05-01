@@ -98,3 +98,10 @@ void ExportMailJobInterfaceTest::exportMailConfigTest1()
     compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
     compareExportFile.compareFiles();
 }
+
+
+Akonadi::Collection::Id ExportMailJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    //TODO
+    return -1;
+}

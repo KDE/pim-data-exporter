@@ -33,6 +33,7 @@ public:
 
 protected:
     void exportArchiveResource() override;
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
 
 private:
     void slotAlarmJobTerminated();

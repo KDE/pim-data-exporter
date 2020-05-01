@@ -33,6 +33,9 @@ public:
 
     void start() override;
 
+protected:
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+
 private:
     void slotNextStep() override;
 

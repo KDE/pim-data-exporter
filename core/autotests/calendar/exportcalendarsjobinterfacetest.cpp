@@ -75,3 +75,10 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfigTest1()
     compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
     compareExportFile.compareFiles();
 }
+
+
+Akonadi::Collection::Id ExportCalendarsJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    //TODO
+    return -1;
+}

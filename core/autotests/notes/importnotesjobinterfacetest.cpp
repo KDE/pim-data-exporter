@@ -66,3 +66,10 @@ void ImportNotesJobInterfaceTest::importNoteConfigTest1()
     delete importNote;
     delete archiveStorage;
 }
+
+
+Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    //TODO
+    return -1;
+}
