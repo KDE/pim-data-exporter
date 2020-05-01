@@ -66,7 +66,6 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     connect(mExtractFile, &QPushButton::clicked, this, &ShowArchiveStructureDialog::slotExtractFile);
     buttonBox->addButton(mExtractFile, QDialogButtonBox::ActionRole);
 
-
     mOpenFile = new QPushButton(this);
     mOpenFile->setText(i18n("Open Selected File"));
     mOpenFile->setEnabled(false);
@@ -143,7 +142,7 @@ void ShowArchiveStructureDialog::slotExtractFile()
                                                                       | QFileDialog::DontResolveSymlinks);
                 if (!dir.isEmpty()) {
                     if (QFile(dir + QLatin1Char('/') + currentFile->name()).exists()) {
-                        if (KMessageBox::questionYesNo(this, i18n("Do you want to override %1?", currentFile->name()), i18n("File Already Exist") ) == KMessageBox::No) {
+                        if (KMessageBox::questionYesNo(this, i18n("Do you want to override %1?", currentFile->name()), i18n("File Already Exist")) == KMessageBox::No) {
                             return;
                         }
                     }

@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "pimdataexporteduserfeedbackprovider.h"
 #include <KUserFeedback/ApplicationVersionSource>
 #include <KUserFeedback/PlatformInfoSource>
@@ -50,5 +49,4 @@ PimDataExportedUserFeedbackProvider::PimDataExportedUserFeedbackProvider(QObject
 
 PimDataExportedUserFeedbackProvider::~PimDataExportedUserFeedbackProvider()
 {
-
 }

@@ -156,7 +156,6 @@ void ExportMailJobInterfaceImpl::backupResources()
     Q_EMIT info(i18n("Resources backup done."));
 }
 
-
 void ExportMailJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
 {
     ResourceConverterImpl converter;

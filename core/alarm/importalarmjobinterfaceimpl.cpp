@@ -115,4 +115,3 @@ void ImportAlarmJobInterfaceImpl::restoreResources()
     //It's maildir support. Need to add support
     startSynchronizeResources(listResource);
 }
-

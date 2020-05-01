@@ -42,7 +42,6 @@ protected:
     void backupResources() override;
 };
 
-
 class ExportMailJobInterfaceTest : public QObject
 {
     Q_OBJECT

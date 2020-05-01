@@ -36,7 +36,6 @@
 #include <QTimer>
 #include <QColor>
 
-
 ImportCalendarJobInterface::ImportCalendarJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
@@ -74,7 +73,6 @@ void ImportCalendarJobInterface::slotNextStep()
         Q_EMIT jobFinished();
     }
 }
-
 
 void ImportCalendarJobInterface::addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings)
 {

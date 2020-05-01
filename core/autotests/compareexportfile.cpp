@@ -26,7 +26,6 @@
 
 CompareExportFile::CompareExportFile()
 {
-
 }
 
 CompareExportFile::~CompareExportFile()
@@ -56,15 +55,14 @@ void CompareExportFile::compareFile(const QString &referenceFile, const QString 
 {
     QProcess proc;
     const QStringList args = QStringList()
-            << QStringLiteral("-u")
-            << referenceFile
-            << archiveFile;
+                             << QStringLiteral("-u")
+                             << referenceFile
+                             << archiveFile;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
     proc.start(QStringLiteral("diff"), args);
     QVERIFY(proc.waitForFinished());
     QCOMPARE(proc.exitCode(), 0);
 }
-
 
 QString CompareExportFile::tempFilePath() const
 {

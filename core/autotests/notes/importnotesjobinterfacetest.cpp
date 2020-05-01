@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "importnotesjobinterfacetest.h"
 #include "archivestorage.h"
 #include "notes/importnotesjobinterface.h"
@@ -25,11 +24,9 @@
 #include <QTest>
 QTEST_MAIN(ImportNotesJobInterfaceTest)
 
-
 ImportNotesJobInterfaceTestImpl::ImportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportNotesJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
-
 }
 
 ImportNotesJobInterfaceTestImpl::~ImportNotesJobInterfaceTestImpl()
@@ -44,7 +41,6 @@ void ImportNotesJobInterfaceTestImpl::restoreResources()
 ImportNotesJobInterfaceTest::ImportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void ImportNotesJobInterfaceTest::importNoteConfigTest1()

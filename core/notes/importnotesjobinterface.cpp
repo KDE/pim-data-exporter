@@ -32,7 +32,6 @@
 #include <QDir>
 #include <QTimer>
 
-
 ImportNotesJobInterface::ImportNotesJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
@@ -123,7 +122,6 @@ void ImportNotesJobInterface::restoreData()
     importDataSubdirectory(QStringLiteral("/knotes/print/theme/"));
     Q_EMIT info(i18n("Data restored."));
 }
-
 
 void ImportNotesJobInterface::importKNoteGlobalSettings(const KArchiveFile *archive, const QString &configrc, const QString &filename, const QString &prefix)
 {

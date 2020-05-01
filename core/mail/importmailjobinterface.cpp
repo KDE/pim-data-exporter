@@ -781,7 +781,6 @@ void ImportMailJobInterface::restoreConfig()
         }
     }
 
-
     const QString templatesconfigurationrcStr(QStringLiteral("templatesconfigurationrc"));
     const KArchiveEntry *templatesconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + templatesconfigurationrcStr);
     if (templatesconfigurationentry && templatesconfigurationentry->isFile()) {
@@ -1465,7 +1464,6 @@ void ImportMailJobInterface::mergeSieveTemplate(const KArchiveFile *archivefile,
     grpExisting.writeEntry(QStringLiteral("templateCount"), numberOfExistingTemplate);
     grpExisting.sync();
 }
-
 
 void ImportMailJobInterface::convertCollectionStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key)
 {

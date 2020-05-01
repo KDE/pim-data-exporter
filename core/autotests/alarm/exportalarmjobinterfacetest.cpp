@@ -30,7 +30,6 @@ QTEST_MAIN(ExportAlarmJobInterfaceTest)
 ExportAlarmJobInterfaceTestImpl::ExportAlarmJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportAlarmJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
-
 }
 
 ExportAlarmJobInterfaceTestImpl::~ExportAlarmJobInterfaceTestImpl()
@@ -76,7 +75,3 @@ void ExportAlarmJobInterfaceTest::exportAlarmConfigTest1()
     compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
     compareExportFile.compareFiles();
 }
-
-
-
-

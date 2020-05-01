@@ -30,7 +30,6 @@ QTEST_MAIN(ExportAddressbookJobInterfaceTest)
 ExportAddressbookJobInterfaceTestImpl::ExportAddressbookJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportAddressbookJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
-
 }
 
 ExportAddressbookJobInterfaceTestImpl::~ExportAddressbookJobInterfaceTestImpl()
@@ -87,7 +86,3 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfigTest1()
     compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
     compareExportFile.compareFiles();
 }
-
-
-
-

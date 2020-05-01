@@ -781,7 +781,6 @@ void ImportMailJobInterfaceImpl::restoreConfig()
         }
     }
 
-
     const QString templatesconfigurationrcStr(QStringLiteral("templatesconfigurationrc"));
     const KArchiveEntry *templatesconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + templatesconfigurationrcStr);
     if (templatesconfigurationentry && templatesconfigurationentry->isFile()) {

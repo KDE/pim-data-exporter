@@ -34,7 +34,6 @@ LoadListFromFile::LoadListFromFile(const QString &filename)
 
 LoadListFromFile::~LoadListFromFile()
 {
-
 }
 
 QStringList LoadListFromFile::fileList() const

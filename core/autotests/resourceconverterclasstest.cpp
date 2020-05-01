@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "resourceconverterclasstest.h"
 #include "resourceconvertertest.h"
 #include "../utils.h"
@@ -27,7 +26,6 @@ QTEST_MAIN(ResourceConverterClassTest)
 ResourceConverterClassTest::ResourceConverterClassTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void ResourceConverterClassTest::shouldGetAgentFileName()

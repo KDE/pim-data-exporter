@@ -54,7 +54,6 @@ ImportCalendarJobInterfaceImpl::~ImportCalendarJobInterfaceImpl()
 {
 }
 
-
 void ImportCalendarJobInterfaceImpl::restoreResources()
 {
     Q_EMIT info(i18n("Restore resources..."));
@@ -122,4 +121,3 @@ void ImportCalendarJobInterfaceImpl::restoreResources()
     //It's maildir support. Need to add support
     startSynchronizeResources(listResource);
 }
-

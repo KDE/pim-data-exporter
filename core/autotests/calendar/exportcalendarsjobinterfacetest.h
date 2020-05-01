@@ -35,7 +35,6 @@ protected:
     void exportArchiveResource() override;
 };
 
-
 class ExportCalendarsJobInterfaceTest : public QObject
 {
     Q_OBJECT

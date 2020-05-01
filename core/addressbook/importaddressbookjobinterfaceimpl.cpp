@@ -124,4 +124,3 @@ void ImportAddressbookJobInterfaceImpl::restoreResources()
     //It's maildir support. Need to add support
     startSynchronizeResources(listResource);
 }
-

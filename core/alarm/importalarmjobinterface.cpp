@@ -33,7 +33,6 @@
 #include <QStandardPaths>
 #include <QTimer>
 
-
 ImportAlarmJobInterface::ImportAlarmJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
@@ -71,7 +70,6 @@ void ImportAlarmJobInterface::slotNextStep()
         Q_EMIT jobFinished();
     }
 }
-
 
 bool ImportAlarmJobInterface::isAConfigFile(const QString &name) const
 {

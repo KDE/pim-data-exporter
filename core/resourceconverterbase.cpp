@@ -25,7 +25,6 @@
 
 ResourceConverterBase::ResourceConverterBase()
 {
-
 }
 
 ResourceConverterBase::~ResourceConverterBase()

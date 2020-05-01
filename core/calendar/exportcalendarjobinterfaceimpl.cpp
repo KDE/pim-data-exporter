@@ -102,4 +102,3 @@ void ExportCalendarJobInterfaceImpl::slotWriteNextArchiveResource()
         QTimer::singleShot(0, this, &ExportCalendarJobInterfaceImpl::slotCheckBackupConfig);
     }
 }
-

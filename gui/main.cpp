@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     PimDataCommandLineOption parser;
     parser.createParser(app);
 #ifdef WITH_KUSERFEEDBACK
-    if(parser.parseUserFeedback()) {
+    if (parser.parseUserFeedback()) {
         PimDataExportedUserFeedbackProvider *provider = new PimDataExportedUserFeedbackProvider;
         QTextStream(stdout) << provider->describeDataSources() << '\n';
         delete provider;

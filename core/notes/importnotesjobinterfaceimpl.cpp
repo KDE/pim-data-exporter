@@ -51,7 +51,6 @@ ImportNotesJobInterfaceImpl::~ImportNotesJobInterfaceImpl()
 {
 }
 
-
 void ImportNotesJobInterfaceImpl::restoreResources()
 {
     Q_EMIT info(i18n("Restore resources..."));
@@ -112,4 +111,3 @@ void ImportNotesJobInterfaceImpl::restoreResources()
     //It's maildir support. Need to add support
     startSynchronizeResources(listResource);
 }
-

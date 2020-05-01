@@ -41,4 +41,3 @@ void UtilsTest::shouldTestValue()
     QCOMPARE(Utils::dataPath(), QStringLiteral("data/"));
     QCOMPARE(Utils::notePath(), QStringLiteral("note/"));
 }
-

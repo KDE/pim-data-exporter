@@ -96,8 +96,6 @@ void ExportAlarmJobInterfaceImpl::slotWriteNextArchiveResource()
     }
 }
 
-
-
 void ExportAlarmJobInterfaceImpl::exportArchiveResource()
 {
     QTimer::singleShot(0, this, &ExportAlarmJobInterfaceImpl::slotWriteNextArchiveResource);

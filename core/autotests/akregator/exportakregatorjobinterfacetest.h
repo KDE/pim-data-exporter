@@ -32,7 +32,6 @@ public:
     ~ExportAkregatorJobInterfaceTestImpl();
 };
 
-
 class ExportAkregatorJobInterfaceTest : public QObject
 {
     Q_OBJECT

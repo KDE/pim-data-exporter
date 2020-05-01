@@ -39,7 +39,6 @@ protected:
     void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) override;
 };
 
-
 class ExportAddressbookJobInterfaceTest : public QObject
 {
     Q_OBJECT

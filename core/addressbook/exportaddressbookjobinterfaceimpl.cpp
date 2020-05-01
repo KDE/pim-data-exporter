@@ -41,7 +41,6 @@ ExportAddressbookJobInterfaceImpl::~ExportAddressbookJobInterfaceImpl()
 {
 }
 
-
 void ExportAddressbookJobInterfaceImpl::exportArchiveResource()
 {
     QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotWriteNextArchiveResource);

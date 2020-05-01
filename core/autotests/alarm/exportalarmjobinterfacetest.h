@@ -35,7 +35,6 @@ protected:
     void exportArchiveResource() override;
 };
 
-
 class ExportAlarmJobInterfaceTest : public QObject
 {
     Q_OBJECT

@@ -58,7 +58,6 @@ void ExportAddressbookJobInterface::slotCheckBackupResource()
     exportArchiveResource();
 }
 
-
 void ExportAddressbookJobInterface::slotCheckBackupConfig()
 {
     if (mTypeSelected & Utils::Config) {
@@ -71,7 +70,6 @@ void ExportAddressbookJobInterface::slotCheckBackupConfig()
     }
     Q_EMIT jobFinished();
 }
-
 
 void ExportAddressbookJobInterface::backupConfig()
 {
@@ -118,4 +116,3 @@ void ExportAddressbookJobInterface::backupConfig()
 
     Q_EMIT info(i18n("Config backup done."));
 }
-

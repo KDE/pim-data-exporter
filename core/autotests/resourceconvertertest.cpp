@@ -21,12 +21,10 @@
 #include <QDebug>
 ResourceConverterTest::ResourceConverterTest()
 {
-
 }
 
 ResourceConverterTest::~ResourceConverterTest()
 {
-
 }
 
 QString ResourceConverterTest::convertToFullCollectionPath(const qlonglong collectionValue)

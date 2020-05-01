@@ -30,7 +30,6 @@ QTEST_MAIN(ExportAkregatorJobInterfaceTest)
 ExportAkregatorJobInterfaceTestImpl::ExportAkregatorJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportAkregatorJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
-
 }
 
 ExportAkregatorJobInterfaceTestImpl::~ExportAkregatorJobInterfaceTestImpl()
@@ -71,7 +70,3 @@ void ExportAkregatorJobInterfaceTest::exportAkregatorConfigTest1()
     compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
     compareExportFile.compareFiles();
 }
-
-
-
-

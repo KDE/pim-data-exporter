@@ -30,7 +30,6 @@ QTEST_MAIN(ExportCalendarsJobInterfaceTest)
 ExportCalendarsJobInterfaceTestImpl::ExportCalendarsJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportCalendarJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
-
 }
 
 ExportCalendarsJobInterfaceTestImpl::~ExportCalendarsJobInterfaceTestImpl()
@@ -76,5 +75,3 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfigTest1()
     compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
     compareExportFile.compareFiles();
 }
-
-

@@ -36,7 +36,6 @@ protected:
     void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) override;
 };
 
-
 class ExportNotesJobInterfaceTest : public QObject
 {
     Q_OBJECT

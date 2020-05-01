@@ -46,7 +46,6 @@
 #include <QDateTime>
 #include <QLocale>
 
-
 PimDataBackupRestore::PimDataBackupRestore(QObject *parent)
     : QObject(parent)
 {

@@ -73,7 +73,6 @@ void ExportAlarmJobInterface::slotCheckBackupConfig()
     Q_EMIT jobFinished();
 }
 
-
 void ExportAlarmJobInterface::backupConfig()
 {
     setProgressDialogLabel(i18n("Backing up config..."));

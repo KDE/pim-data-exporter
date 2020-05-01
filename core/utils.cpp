@@ -109,7 +109,6 @@ QString Utils::infoPath()
     return QStringLiteral("information/");
 }
 
-
 QString Utils::storeResources(KZip *archive, const QString &identifier, const QString &path)
 {
     const QString agentFileName = identifier + QStringLiteral("rc");
@@ -253,4 +252,3 @@ QString Utils::storedTypeToI18n(StoredType type)
     qCDebug(PIMDATAEXPORTERCORE_LOG) << " type unknown " << type;
     return QString();
 }
-

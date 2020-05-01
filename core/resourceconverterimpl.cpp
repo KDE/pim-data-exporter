@@ -22,12 +22,10 @@
 
 ResourceConverterImpl::ResourceConverterImpl()
 {
-
 }
 
 ResourceConverterImpl::~ResourceConverterImpl()
 {
-
 }
 
 QString ResourceConverterImpl::convertToFullCollectionPath(const qlonglong collectionValue)

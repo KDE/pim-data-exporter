@@ -39,7 +39,6 @@ private:
     void slotWriteNextArchiveResource();
 
     int mIndexIdentifier = 0;
-
 };
 
 #endif // EXPORTNOTESJOBINTERFACE_H

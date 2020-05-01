@@ -39,7 +39,6 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     setFaceType(KPageDialog::List);
     setWindowTitle(i18nc("@title:window", "Configure PimDataExporter"));
 
-
     //General page
     QWidget *generalConfigureWiget = new QWidget;
     QVBoxLayout *layout = new QVBoxLayout(generalConfigureWiget);
@@ -67,8 +66,6 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     userFeedBackPageWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("preferences-other")));
     addPage(userFeedBackPageWidgetPage);
 #endif
-
-
 
     buttonBox()->setStandardButtons(QDialogButtonBox::Ok| QDialogButtonBox::Cancel);
 

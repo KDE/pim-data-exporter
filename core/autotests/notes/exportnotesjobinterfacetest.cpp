@@ -30,7 +30,6 @@ QTEST_MAIN(ExportNotesJobInterfaceTest)
 ExportNotesJobInterfaceTestImpl::ExportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportNotesJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
-
 }
 
 ExportNotesJobInterfaceTestImpl::~ExportNotesJobInterfaceTestImpl()
@@ -82,5 +81,3 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
     compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
     compareExportFile.compareFiles();
 }
-
-

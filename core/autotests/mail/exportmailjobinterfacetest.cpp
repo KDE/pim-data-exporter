@@ -30,7 +30,6 @@ QTEST_MAIN(ExportMailJobInterfaceTest)
 ExportMailJobInterfaceTestImpl::ExportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportMailJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
-
 }
 
 ExportMailJobInterfaceTestImpl::~ExportMailJobInterfaceTestImpl()

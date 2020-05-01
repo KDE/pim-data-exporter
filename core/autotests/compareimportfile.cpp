@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "compareimportfile.h"
 
 #include <QProcess>
@@ -25,21 +24,19 @@
 
 CompareImportFile::CompareImportFile()
 {
-
 }
 
 CompareImportFile::~CompareImportFile()
 {
-
 }
 
 void CompareImportFile::compareFile()
 {
     QProcess proc;
     const QStringList args = QStringList()
-            << QStringLiteral("-u")
-            << mReferenceFilePath
-            << mTempFilePath;
+                             << QStringLiteral("-u")
+                             << mReferenceFilePath
+                             << mTempFilePath;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
     proc.start(QStringLiteral("diff"), args);
     QVERIFY(proc.waitForFinished());
