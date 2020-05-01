@@ -5,4 +5,4 @@ Port=12
 SenderID=VV
 
 [SelectNoteFolder]
-DefaultFolder=31
+DefaultFolder=foo/bla bla/bli31
