@@ -115,5 +115,6 @@ void ImportNotesJobInterfaceImpl::restoreResources()
 
 Akonadi::Collection::Id ImportNotesJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    return MailCommon::Util::convertFolderPathToCollectionId(path);
+    ResourceConverterImpl converter;
+    return converter.convertFolderPathToCollectionId(path);
 }

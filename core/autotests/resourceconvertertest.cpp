@@ -32,3 +32,11 @@ QString ResourceConverterTest::convertToFullCollectionPath(const qlonglong colle
     qDebug() << " QString ResourceConverterTest::convertToFullCollectionPath(const qlonglong collectionValue) not implemented yet!";
     return QStringLiteral("COLLECTION_CONVERTED");
 }
+
+
+Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(const QString &path)
+{
+    //TODO implement it
+    qDebug() << " Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(const QString &path) not implemented yet";
+    return -1;
+}

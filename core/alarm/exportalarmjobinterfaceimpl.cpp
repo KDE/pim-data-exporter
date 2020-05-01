@@ -104,5 +104,6 @@ void ExportAlarmJobInterfaceImpl::exportArchiveResource()
 
 Akonadi::Collection::Id ExportAlarmJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    return MailCommon::Util::convertFolderPathToCollectionId(path);
+    ResourceConverterImpl converter;
+    return converter.convertFolderPathToCollectionId(path);
 }

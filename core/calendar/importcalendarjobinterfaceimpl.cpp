@@ -57,7 +57,8 @@ ImportCalendarJobInterfaceImpl::~ImportCalendarJobInterfaceImpl()
 
 Akonadi::Collection::Id ImportCalendarJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    return MailCommon::Util::convertFolderPathToCollectionId(path);
+    ResourceConverterImpl converter;
+    return converter.convertFolderPathToCollectionId(path);
 }
 
 void ImportCalendarJobInterfaceImpl::restoreResources()

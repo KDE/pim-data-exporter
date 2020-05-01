@@ -119,5 +119,6 @@ void ImportAlarmJobInterfaceImpl::restoreResources()
 
 Akonadi::Collection::Id ImportAlarmJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    return MailCommon::Util::convertFolderPathToCollectionId(path);
+    ResourceConverterImpl converter;
+    return converter.convertFolderPathToCollectionId(path);
 }

@@ -127,5 +127,6 @@ void ImportAddressbookJobInterfaceImpl::restoreResources()
 
 Akonadi::Collection::Id ImportAddressbookJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    return MailCommon::Util::convertFolderPathToCollectionId(path);
+    ResourceConverterImpl converter;
+    return converter.convertFolderPathToCollectionId(path);
 }

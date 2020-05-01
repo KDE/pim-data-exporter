@@ -114,5 +114,6 @@ void ExportAddressbookJobInterfaceImpl::convertCollectionListToRealPath(KConfigG
 
 Akonadi::Collection::Id ExportAddressbookJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    return MailCommon::Util::convertFolderPathToCollectionId(path);
+    ResourceConverterImpl converter;
+    return converter.convertFolderPathToCollectionId(path);
 }

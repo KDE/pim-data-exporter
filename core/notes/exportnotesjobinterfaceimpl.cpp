@@ -105,5 +105,6 @@ void ExportNotesJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &s
 
 Akonadi::Collection::Id ExportNotesJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    return MailCommon::Util::convertFolderPathToCollectionId(path);
+    ResourceConverterImpl converter;
+    return converter.convertFolderPathToCollectionId(path);
 }

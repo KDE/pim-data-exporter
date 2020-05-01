@@ -32,3 +32,8 @@ QString ResourceConverterImpl::convertToFullCollectionPath(const qlonglong colle
 {
     return MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionValue));
 }
+
+Akonadi::Collection::Id ResourceConverterImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    return MailCommon::Util::convertFolderPathToCollectionId(path);
+}

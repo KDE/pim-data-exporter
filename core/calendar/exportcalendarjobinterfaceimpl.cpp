@@ -51,7 +51,8 @@ void ExportCalendarJobInterfaceImpl::exportArchiveResource()
 
 Akonadi::Collection::Id ExportCalendarJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    return MailCommon::Util::convertFolderPathToCollectionId(path);
+    ResourceConverterImpl converter;
+    return converter.convertFolderPathToCollectionId(path);
 }
 
 void ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated()
