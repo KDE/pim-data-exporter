@@ -19,7 +19,6 @@
 
 #include "exportcalendarjobinterface.h"
 #include <MailCommon/MailUtil>
-#include <AkonadiCore/AgentManager>
 
 #include <KLocalizedString>
 
@@ -130,6 +129,7 @@ void ExportCalendarJobInterface::backupConfig()
             for (const QString &key : keyList) {
                 const int collectionValue = key.toInt(&found);
                 if (found && collectionValue != -1) {
+                    //TODO fixme MailCommon::Util::fullCollectionPath
                     const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionValue));
                     const QColor color = group.readEntry(key, QColor());
                     group.writeEntry(realPath, color);

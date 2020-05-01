@@ -51,7 +51,8 @@ void ImportAkregatorJobInterface::start()
 
 Akonadi::Collection::Id ImportAkregatorJobInterface::convertFolderPathToCollectionId(const QString &path)
 {
-    return MailCommon::Util::convertFolderPathToCollectionId(path);
+    //Unused here.
+    return -1;
 }
 
 void ImportAkregatorJobInterface::slotNextStep()
