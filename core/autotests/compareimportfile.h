@@ -30,15 +30,16 @@ public:
 
     void compareFile();
 
-    Q_REQUIRED_RESULT QString tempFilePath() const;
-    void setTempFilePath(const QString &tempFilePath);
 
-    Q_REQUIRED_RESULT QString referenceFilePath() const;
-    void setReferenceFilePath(const QString &referenceFilePath);
+    Q_REQUIRED_RESULT QString archiveFilePath() const;
+    void setArchiveFilePath(const QString &archiveFilePath);
+
+    Q_REQUIRED_RESULT QString listFilePath() const;
+    void setListFilePath(const QString &listFilePath);
 
 private:
-    QString mTempFilePath;
-    QString mReferenceFilePath;
+    QString mArchiveFilePath;
+    QString mListFilePath;
 };
 
 #endif // COMPAREIMPORTFILE_H

@@ -18,6 +18,8 @@
 */
 
 #include "compareimportfile.h"
+#include "generatelistfilefromarchive.h"
+#include "loadlistfromfile.h"
 
 #include <QProcess>
 #include <QTest>
@@ -32,33 +34,35 @@ CompareImportFile::~CompareImportFile()
 
 void CompareImportFile::compareFile()
 {
-    QProcess proc;
-    const QStringList args = QStringList()
-                             << QStringLiteral("-u")
-                             << mReferenceFilePath
-                             << mTempFilePath;
-    proc.setProcessChannelMode(QProcess::ForwardedChannels);
-    proc.start(QStringLiteral("diff"), args);
-    QVERIFY(proc.waitForFinished());
-    QCOMPARE(proc.exitCode(), 0);
+    GenerateListFileFromArchive archive(mArchiveFilePath);
+    //qDebug() << " archive " << archive.listFile();
+
+    LoadListFromFile f(mListFilePath + QStringLiteral("/list.txt"));
+    const QStringList archiveList = archive.listFile();
+    const bool equal = (f.fileList() == archiveList);
+    if (!equal) {
+        qDebug() << "Requested : " << f.fileList();
+        qDebug() << "List File : " << archiveList;
+    }
+    QVERIFY(equal);
 }
 
-QString CompareImportFile::tempFilePath() const
+QString CompareImportFile::archiveFilePath() const
 {
-    return mTempFilePath;
+    return mArchiveFilePath;
 }
 
-void CompareImportFile::setTempFilePath(const QString &tempFilePath)
+void CompareImportFile::setArchiveFilePath(const QString &archiveFilePath)
 {
-    mTempFilePath = tempFilePath;
+    mArchiveFilePath = archiveFilePath;
 }
 
-QString CompareImportFile::referenceFilePath() const
+QString CompareImportFile::listFilePath() const
 {
-    return mReferenceFilePath;
+    return mListFilePath;
 }
 
-void CompareImportFile::setReferenceFilePath(const QString &referenceFilePath)
+void CompareImportFile::setListFilePath(const QString &listFilePath)
 {
-    mReferenceFilePath = referenceFilePath;
+    mListFilePath = listFilePath;
 }

@@ -39,21 +39,35 @@ void ImportNotesJobInterfaceTestImpl::restoreResources()
     qDebug() << " not implement yet";
 }
 
+Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertFolderPathToCollectionId(path);
+}
+
 ImportNotesJobInterfaceTest::ImportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
 }
 
-void ImportNotesJobInterfaceTest::importNoteConfigTest1()
+void ImportNotesJobInterfaceTest::importNoteConfig_data()
 {
+    QTest::addColumn<QString>("zipFilePath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
+    QTest::newRow("test1") << QLatin1String(pathConfig) + QStringLiteral("test1/test1.zip");
+}
+
+void ImportNotesJobInterfaceTest::importNoteConfig()
+{
+    QFETCH(QString, zipFilePath);
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);
 
-    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/test1/share");
-    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/test1/config");
+    //FIXME Extract in tmp !
+    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/import/test1/share");
+    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/import/test1/config");
 
-    //TODO fix file name.
-    const QString temporaryFile = QStringLiteral("/tmp/foo.zip");
+    const QString temporaryFile = zipFilePath;
     const QString storeArchivePath(temporaryFile);
     ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
     Q_ASSERT(archiveStorage->openArchive(false));
@@ -66,11 +80,5 @@ void ImportNotesJobInterfaceTest::importNoteConfigTest1()
     QCOMPARE(error.count(), 0);
     delete importNote;
     delete archiveStorage;
-}
-
-
-Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
-{
-    ResourceConverterTest resourceConverterTest;
-    return resourceConverterTest.convertFolderPathToCollectionId(path);
+    //TODO compare this number of file extracted.
 }
