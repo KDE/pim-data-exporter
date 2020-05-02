@@ -63,12 +63,11 @@ void CompareExportFile::compareFiles()
         if (currentEntry && currentEntry->isFile()) {
             if (!mTempDir) {
                 mTempDir = new QTemporaryDir;
-                //TODO remove it.
-                //mTempDir->setAutoRemove(false);
             }
             const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
 
             QString adaptFile = file;
+            //We store in zip as configs, but we extract in config/
             adaptFile.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
             const QString fileName = mTempDir->path() + QLatin1Char('/') + adaptFile;
             //create path
@@ -79,11 +78,11 @@ void CompareExportFile::compareFiles()
             //qDebug() << " fileName" << fileName;
             QVERIFY(f.open(QIODevice::WriteOnly));
 
+            //Store data.
             const QByteArray data = currentFile->data();
             QCOMPARE(f.write(data), data.length());
             f.close();
 
-            //qDebug() << "********** " << mTempDir->path() + QLatin1Char('/') + file;
             compareFile(mListFilePath + QStringLiteral("/references/") + adaptFile, fileName);
         }
     }
