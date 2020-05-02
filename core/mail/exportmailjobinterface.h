@@ -49,6 +49,7 @@ protected:
     virtual void exportArchiveResource() = 0;
     virtual void backupResources() = 0;
     virtual QVector<MailCommon::MailFilter *> filters() = 0;
+    virtual Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
     void slotCheckBackupResources();
 private:
     void slotCheckBackupIdentity();

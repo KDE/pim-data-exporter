@@ -91,10 +91,18 @@ void ExportMailJobInterfaceTest::exportMailConfig_data()
 void ExportMailJobInterfaceTest::exportMailConfig()
 {
     QFETCH(QByteArray, configpath);
+    qDebug() << " configpath" << configpath;
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
     ExportMailJobInterfaceTestImpl *exportNote = new ExportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(exportNote);
     file->start();
     delete exportNote;
+}
+
+
+QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlonglong collectionValue)
+{
+    ResourceConverterTest converter;
+    return converter.convertToFullCollectionPath(collectionValue);
 }

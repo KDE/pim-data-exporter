@@ -1,4 +1,3 @@
-configs/globalnotesettings
-configs/knotesrc
+configs/kmail2rc
 information/VERSION_2
 information/exportdatatype.xml

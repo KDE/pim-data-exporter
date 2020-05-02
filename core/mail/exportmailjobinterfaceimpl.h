@@ -42,6 +42,7 @@ protected:
     void backupResources() override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     Q_REQUIRED_RESULT QVector<MailCommon::MailFilter *> filters() override;
+    Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) override;
 private:
     void slotCheckBackupMails();
     void slotWriteNextArchiveResource();

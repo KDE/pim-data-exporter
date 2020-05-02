@@ -20,7 +20,6 @@
 #include "exportmailjobinterface.h"
 #include "importexportmailutil.h"
 
-#include <MailCommon/MailUtil>
 #include <MailCommon/FilterImporterExporter>
 #include "importexportprogressindicatorbase.h"
 #include "exportresourcearchivejob.h"
@@ -38,7 +37,6 @@
 #include <QTimer>
 #include <QStandardPaths>
 #include <QRegularExpression>
-#include "resourceconverterimpl.h"
 
 #include <KIdentityManagement/IdentityManager>
 #include <KIdentityManagement/Identity>
@@ -241,8 +239,7 @@ void ExportMailJobInterface::backupConfig()
             KConfigGroup oldGroup = archiveConfig->group(str);
             qint64 id = oldGroup.readEntry("topLevelCollectionId", -1);
             if (id != -1) {
-                ResourceConverterImpl resourceConverter;
-                const QString realPath = resourceConverter.convertToFullCollectionPath(id);
+                const QString realPath = convertToFullCollectionPath(id);
                 if (!realPath.isEmpty()) {
                     oldGroup.writeEntry(QStringLiteral("topLevelCollectionId"), realPath);
                 }
@@ -271,8 +268,7 @@ void ExportMailJobInterface::backupConfig()
             const int collectionId = str.rightRef(str.length() - archiveGroupPattern.length()).toInt(&found);
             if (found) {
                 KConfigGroup oldGroup = archiveConfig->group(str);
-                ResourceConverterImpl resourceConverter;
-                const QString realPath = resourceConverter.convertToFullCollectionPath(collectionId);
+                const QString realPath = convertToFullCollectionPath(collectionId);
                 if (!realPath.isEmpty()) {
                     const QString collectionPath(archiveGroupPattern + realPath);
                     KConfigGroup newGroup(archiveConfig, collectionPath);
@@ -304,8 +300,7 @@ void ExportMailJobInterface::backupConfig()
             const int collectionId = str.rightRef(str.length() - templateGroupPattern.length()).toInt(&found);
             if (found) {
                 KConfigGroup oldGroup = templateConfig->group(str);
-                ResourceConverterImpl resourceConverter;
-                const QString realPath = resourceConverter.convertToFullCollectionPath(collectionId);
+                const QString realPath = convertToFullCollectionPath(collectionId);
                 if (!realPath.isEmpty()) {
                     KConfigGroup newGroup(templateConfig, templateGroupPattern + realPath);
                     oldGroup.copyTo(&newGroup);
@@ -361,8 +356,7 @@ void ExportMailJobInterface::backupConfig()
             if (found) {
                 KConfigGroup oldGroup = kmailConfig->group(str);
                 ImportExportMailUtil::cleanupFolderSettings(oldGroup);
-                ResourceConverterImpl resourceConverter;
-                const QString realPath = resourceConverter.convertToFullCollectionPath(collectionId);
+                const QString realPath = convertToFullCollectionPath(collectionId);
                 if (!realPath.isEmpty()) {
                     KConfigGroup newGroup(kmailConfig, folderGroupPattern + realPath);
                     oldGroup.copyTo(&newGroup);
@@ -377,8 +371,7 @@ void ExportMailJobInterface::backupConfig()
             if (composerGroup.hasKey(previousStr)) {
                 const int collectionId = composerGroup.readEntry(previousStr, -1);
                 if (collectionId != -1) {
-                    ResourceConverterImpl resourceConverter;
-                    const QString realPath = resourceConverter.convertToFullCollectionPath(collectionId);
+                    const QString realPath = convertToFullCollectionPath(collectionId);
                     composerGroup.writeEntry(previousStr, realPath);
                 }
             }
@@ -391,8 +384,7 @@ void ExportMailJobInterface::backupConfig()
             if (generalGroup.hasKey(startupFolderStr)) {
                 const int collectionId = generalGroup.readEntry(startupFolderStr, -1);
                 if (collectionId != -1) {
-                    ResourceConverterImpl resourceConverter;
-                    const QString realPath = resourceConverter.convertToFullCollectionPath(collectionId);
+                    const QString realPath = convertToFullCollectionPath(collectionId);
                     generalGroup.writeEntry(startupFolderStr, realPath);
                 }
             }
@@ -408,8 +400,7 @@ void ExportMailJobInterface::backupConfig()
                 const int collectionId = str.rightRef(str.length() - storageModelSelectedPattern.length()).toInt(&found);
                 const QString oldValue = storageGroup.readEntry(str);
                 if (found) {
-                    ResourceConverterImpl resourceConverter;
-                    const QString realPath = resourceConverter.convertToFullCollectionPath(collectionId);
+                    const QString realPath = convertToFullCollectionPath(collectionId);
                     if (!realPath.isEmpty()) {
                         storageGroup.writeEntry(QStringLiteral("%1%2").arg(storageModelSelectedPattern, realPath), oldValue);
                         storageGroup.deleteEntry(str);
@@ -548,20 +539,17 @@ void ExportMailJobInterface::backupIdentity()
             KConfigGroup group = identityConfig->group(account);
             const QString fcc = QStringLiteral("Fcc");
             if (group.hasKey(fcc)) {
-                ResourceConverterImpl resourceConverter;
-                const QString realPath = resourceConverter.convertToFullCollectionPath(group.readEntry(fcc).toLongLong());
+                const QString realPath = convertToFullCollectionPath(group.readEntry(fcc).toLongLong());
                 group.writeEntry(fcc, realPath);
             }
             const QString draft = QStringLiteral("Drafts");
             if (group.hasKey(draft)) {
-                ResourceConverterImpl resourceConverter;
-                const QString realPath = resourceConverter.convertToFullCollectionPath(group.readEntry(draft).toLongLong());
+                const QString realPath = convertToFullCollectionPath(group.readEntry(draft).toLongLong());
                 group.writeEntry(draft, realPath);
             }
             const QString templates = QStringLiteral("Templates");
             if (group.hasKey(templates)) {
-                ResourceConverterImpl resourceConverter;
-                const QString realPath = resourceConverter.convertToFullCollectionPath(group.readEntry(templates).toLongLong());
+                const QString realPath = convertToFullCollectionPath(group.readEntry(templates).toLongLong());
                 group.writeEntry(templates, realPath);
             }
             const QString vcard = QStringLiteral("VCardFile");
