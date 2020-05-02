@@ -63,8 +63,11 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
 {
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);
-    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/export/test1/share");
-    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/export/test1/config");
+    const QByteArray pathConfig("/export/test1/");
+
+
+    qputenv("XDG_DATA_HOME", QByteArray(PIMDATAEXPORTER_DIR) + pathConfig + "/share");
+    qputenv("XDG_CONFIG_HOME", QByteArray(PIMDATAEXPORTER_DIR) + pathConfig + "/config");
 
     //TODO fix file name.
     const QString temporaryFile = QDir::tempPath() + QStringLiteral("/archive.zip");
@@ -85,7 +88,7 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
 
     CompareExportFile compareExportFile;
     compareExportFile.setTempFilePath(temporaryFile);
-    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
+    compareExportFile.setListFilePath(QLatin1String(QByteArray(PIMDATAEXPORTER_DIR + pathConfig)));
     compareExportFile.compareFiles();
     QVERIFY(QFile(temporaryFile).remove());
 }
