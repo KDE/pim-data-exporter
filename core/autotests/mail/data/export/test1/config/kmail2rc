@@ -948,9 +948,6 @@ State=AAAA/wAAAAD9AAAAAAAABPgAAAJAAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG
 ToolBarsMovable=Disabled
 Width 1920=1272
 
-[Recent Dirs]
-savemessage[$e]=$HOME,/compile/kde5/framework/kde/pim/messagelib/messageviewer/src/dkim-verify/autotests/data2,/compile/kde5/framework/kde/pim/messagelib/messageviewer/src/dkim-verify/autotests/data
-
 [RecipientsPicker]
 Size=1186,522
 
