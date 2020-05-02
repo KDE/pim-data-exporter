@@ -62,7 +62,7 @@ void ImportNotesJobInterfaceTest::importNoteConfig()
 {
     QFETCH(QString, zipFilePath);
     TestImportFile *file = new TestImportFile(zipFilePath, this);
-    file->setPathConfig(path);
+    file->setPathConfig(zipFilePath);
     ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->start();

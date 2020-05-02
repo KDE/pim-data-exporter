@@ -21,7 +21,7 @@
 #include "archivestorage.h"
 
 #include "abstractimportexportjob.h"
-#include "compareexportfile.h"
+#include "compareimportfile.h"
 
 #include <QSignalSpy>
 #include <QTest>
@@ -49,10 +49,10 @@ void TestImportFile::start()
     delete mArchiveStorage;
     mArchiveStorage = nullptr;
 
-    CompareExportFile compareExportFile;
-    compareExportFile.setTempFilePath(mArchivePath);
+    CompareImportFile compareExportFile;
+    compareExportFile.setArchiveFilePath(mArchivePath);
     compareExportFile.setListFilePath(mPathConfig);
-    compareExportFile.compareFiles();
+    compareExportFile.compareFile();
 }
 
 AbstractImportExportJob *TestImportFile::abstractImportExportJob() const
