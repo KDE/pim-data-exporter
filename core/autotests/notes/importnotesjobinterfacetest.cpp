@@ -21,7 +21,7 @@
 #include "archivestorage.h"
 #include "notes/importnotesjobinterface.h"
 #include "resourceconvertertest.h"
-#include "compareimportfile.h"
+#include "testimportfile.h"
 #include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportNotesJobInterfaceTest)
@@ -61,30 +61,12 @@ void ImportNotesJobInterfaceTest::importNoteConfig_data()
 void ImportNotesJobInterfaceTest::importNoteConfig()
 {
     QFETCH(QString, zipFilePath);
-    //Don't use setTestModeEnabled otherwise we can set env
-    //QStandardPaths::setTestModeEnabled(true);
+    const QString path = QLatin1String(PIMDATAEXPORTER_DIR) + QStringLiteral("/import/test1/");
 
-    const QByteArray path = QByteArray(PIMDATAEXPORTER_DIR) + "/import/test1/";
-    //FIXME Extract in tmp !
-    qputenv("XDG_DATA_HOME", path + "share");
-    qputenv("XDG_CONFIG_HOME", path + "config");
-
-    const QString temporaryFile = zipFilePath;
-    const QString storeArchivePath(temporaryFile);
-    ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
-    Q_ASSERT(archiveStorage->openArchive(false));
-
-    ImportNotesJobInterfaceTestImpl *importNote = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
-    QSignalSpy finish(importNote, &ImportNotesJobInterfaceTestImpl::jobFinished);
-    QSignalSpy error(importNote, &ImportNotesJobInterfaceTestImpl::error);
-    importNote->start();
-    QVERIFY(finish.wait());
-    QCOMPARE(error.count(), 0);
-    delete importNote;
-    delete archiveStorage;
-
-    CompareImportFile importFile;
-    importFile.setArchiveFilePath(zipFilePath);
-    importFile.setListFilePath(QLatin1String(path) + QStringLiteral("list.txt"));
-    importFile.compareFile();
+    TestImportFile *file = new TestImportFile(zipFilePath, this);
+    file->setPathConfig(path);
+    ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(impl);
+    file->start();
+    delete impl;
 }
