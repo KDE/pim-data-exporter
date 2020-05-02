@@ -55,8 +55,8 @@ ExportAlarmJobInterfaceTest::ExportAlarmJobInterfaceTest(QObject *parent)
 void ExportAlarmJobInterfaceTest::exportAlarmConfig_data()
 {
     QTest::addColumn<QByteArray>("configpath");
-    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/test1/");
-    QTest::newRow("test1") << pathConfig;
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
+    QTest::newRow("test1") << pathConfig + QByteArray("test1/");
 }
 
 void ExportAlarmJobInterfaceTest::exportAlarmConfig()

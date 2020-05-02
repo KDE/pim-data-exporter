@@ -1,0 +1,46 @@
+[$Version]
+update_info=noteglobalsettings.upd:initial-noteagent-migration,noteglobalsettings.upd:selectcollection-noteagent-migration
+
+[AgentTypeDialog]
+Size=979,637
+
+[Display]
+width=260
+
+[DownloadDialog Settings]
+Height 1080=522
+Width 1920=700
+
+[Editor]
+titlefont=Liberation Sans,12,-1,5,50,0,0,0,0,0,Regular
+
+[KFileDialog Settings]
+Height 1080=540
+Width 1920=960
+
+[KNoteDeleteSelectedNotesDialog]
+Size=300,200
+
+[KNoteFindDialog]
+Size=461,270
+
+[KNotePrintSelectedNotesDialog]
+Size=960,656
+
+[KNoteSimpleConfigDialog]
+Size=600,400
+
+[KNotesKeyDialog]
+Size=1120,685
+
+[KPimPrintPreviewDialog]
+Size=1054,732
+
+[Migratekde4]
+Version=1
+
+[Misc]
+SystemTrayShowNotes=true
+
+[SelectedNotefolderDialog]
+Size=600,400
