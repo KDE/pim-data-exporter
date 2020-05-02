@@ -19,7 +19,7 @@
 
 #include "exportalarmjobinterfacetest.h"
 #include "archivestorage.h"
-#include "compareexportfile.h"
+#include "testexportfile.h"
 #include "resourceconvertertest.h"
 #include <QDebug>
 #include <QTest>
@@ -41,6 +41,12 @@ void ExportAlarmJobInterfaceTestImpl::exportArchiveResource()
     qDebug() << " not implement yet";
 }
 
+Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertFolderPathToCollectionId(path);
+}
+
 ExportAlarmJobInterfaceTest::ExportAlarmJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
@@ -48,37 +54,13 @@ ExportAlarmJobInterfaceTest::ExportAlarmJobInterfaceTest(QObject *parent)
 
 void ExportAlarmJobInterfaceTest::exportAlarmConfigTest1()
 {
-    //Don't use setTestModeEnabled otherwise we can set env
-    //QStandardPaths::setTestModeEnabled(true);
-    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/export/test1/share");
-    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/export/test1/config");
-
-    //TODO fix file name.
-    const QString temporaryFile = QStringLiteral("/tmp/foo.zip");
-    const QString storeArchivePath(temporaryFile);
-    ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
-    Q_ASSERT(archiveStorage->openArchive(true));
-    Utils::addVersion(archiveStorage->archive());
-    Utils::storeDataExportInfo( archiveStorage->archive());
-
-    ExportAlarmJobInterfaceTestImpl *exportNote = new ExportAlarmJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
-    QSignalSpy finish(exportNote, &ExportAlarmJobInterfaceTestImpl::jobFinished);
-    QSignalSpy error(exportNote, &ExportAlarmJobInterfaceTestImpl::error);
-    exportNote->start();
-    QVERIFY(finish.wait());
-    QCOMPARE(error.count(), 0);
+    TestExportFile *file = new TestExportFile(this);
+    const QByteArray pathConfig("/export/test1/");
+    file->setPathConfig(QByteArray(PIMDATAEXPORTER_DIR) + pathConfig);
+    ExportAlarmJobInterfaceTestImpl *exportNote = new ExportAlarmJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(exportNote);
+    file->start();
     delete exportNote;
-    delete archiveStorage;
-
-    CompareExportFile compareExportFile;
-    compareExportFile.setTempFilePath(temporaryFile);
-    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
-    compareExportFile.compareFiles();
 }
 
 
-Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
-{
-    ResourceConverterTest resourceConverterTest;
-    return resourceConverterTest.convertFolderPathToCollectionId(path);
-}

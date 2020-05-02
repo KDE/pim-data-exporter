@@ -20,10 +20,9 @@
 #include "exportmailjobinterfacetest.h"
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
-#include "compareexportfile.h"
+#include "testexportfile.h"
 #include <QDebug>
 #include <QTest>
-#include <QSignalSpy>
 
 QTEST_MAIN(ExportMailJobInterfaceTest)
 
@@ -59,6 +58,12 @@ void ExportMailJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGroup
     resourceConverter.convertCollectionIdsToRealPath(group, currentKey, prefixCollection);
 }
 
+Akonadi::Collection::Id ExportMailJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertFolderPathToCollectionId(path);
+}
+
 void ExportMailJobInterfaceTestImpl::backupResources()
 {
     qDebug() << " not implement yet";
@@ -71,37 +76,12 @@ ExportMailJobInterfaceTest::ExportMailJobInterfaceTest(QObject *parent)
 
 void ExportMailJobInterfaceTest::exportMailConfigTest1()
 {
-    //Don't use setTestModeEnabled otherwise we can set env
-    //QStandardPaths::setTestModeEnabled(true);
-    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/export/test1/share");
-    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/export/test1/config");
-
-    //TODO fix file name.
-    const QString temporaryFile = QStringLiteral("/tmp/foo.zip");
-    const QString storeArchivePath(temporaryFile);
-    ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
-    Q_ASSERT(archiveStorage->openArchive(true));
-    Utils::addVersion(archiveStorage->archive());
-    Utils::storeDataExportInfo( archiveStorage->archive());
-
-    ExportMailJobInterfaceTestImpl *exportNote = new ExportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
-    QSignalSpy finish(exportNote, &ExportMailJobInterfaceTestImpl::jobFinished);
-    QSignalSpy error(exportNote, &ExportMailJobInterfaceTestImpl::error);
-    exportNote->start();
-    QVERIFY(finish.wait());
-    QCOMPARE(error.count(), 0);
-    delete exportNote;
-    delete archiveStorage;
-
-    CompareExportFile compareExportFile;
-    compareExportFile.setTempFilePath(temporaryFile);
-    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
-    compareExportFile.compareFiles();
+    TestExportFile *file = new TestExportFile(this);
+    const QByteArray pathConfig("/export/test1/");
+    file->setPathConfig(QByteArray(PIMDATAEXPORTER_DIR) + pathConfig);
+    ExportMailJobInterfaceTestImpl *impl = new ExportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(impl);
+    file->start();
+    delete impl;
 }
 
-
-Akonadi::Collection::Id ExportMailJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
-{
-    ResourceConverterTest resourceConverterTest;
-    return resourceConverterTest.convertFolderPathToCollectionId(path);
-}

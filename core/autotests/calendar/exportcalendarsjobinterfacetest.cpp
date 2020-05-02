@@ -19,11 +19,10 @@
 
 #include "exportcalendarsjobinterfacetest.h"
 #include "archivestorage.h"
-#include "compareexportfile.h"
 #include "resourceconvertertest.h"
+#include "testexportfile.h"
 #include <QDebug>
 #include <QTest>
-#include <QSignalSpy>
 
 QTEST_MAIN(ExportCalendarsJobInterfaceTest)
 
@@ -41,6 +40,12 @@ void ExportCalendarsJobInterfaceTestImpl::exportArchiveResource()
     qDebug() << " not implement yet";
 }
 
+Akonadi::Collection::Id ExportCalendarsJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertFolderPathToCollectionId(path);
+}
+
 ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
@@ -48,37 +53,11 @@ ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent
 
 void ExportCalendarsJobInterfaceTest::exportCalendarConfigTest1()
 {
-    //Don't use setTestModeEnabled otherwise we can set env
-    //QStandardPaths::setTestModeEnabled(true);
-    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/export/test1/share");
-    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/export/test1/config");
-
-    //TODO fix file name.
-    const QString temporaryFile = QStringLiteral("/tmp/foo.zip");
-    const QString storeArchivePath(temporaryFile);
-    ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
-    Q_ASSERT(archiveStorage->openArchive(true));
-    Utils::addVersion(archiveStorage->archive());
-    Utils::storeDataExportInfo( archiveStorage->archive());
-
-    ExportCalendarsJobInterfaceTestImpl *exportNote = new ExportCalendarsJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
-    QSignalSpy finish(exportNote, &ExportCalendarsJobInterfaceTestImpl::jobFinished);
-    QSignalSpy error(exportNote, &ExportCalendarsJobInterfaceTestImpl::error);
-    exportNote->start();
-    QVERIFY(finish.wait());
-    QCOMPARE(error.count(), 0);
-    delete exportNote;
-    delete archiveStorage;
-
-    CompareExportFile compareExportFile;
-    compareExportFile.setTempFilePath(temporaryFile);
-    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
-    compareExportFile.compareFiles();
-}
-
-
-Akonadi::Collection::Id ExportCalendarsJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
-{
-    ResourceConverterTest resourceConverterTest;
-    return resourceConverterTest.convertFolderPathToCollectionId(path);
+    TestExportFile *file = new TestExportFile(this);
+    const QByteArray pathConfig("/export/test1/");
+    file->setPathConfig(QByteArray(PIMDATAEXPORTER_DIR) + pathConfig);
+    ExportCalendarsJobInterfaceTestImpl *impl = new ExportCalendarsJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(impl);
+    file->start();
+    delete impl;
 }

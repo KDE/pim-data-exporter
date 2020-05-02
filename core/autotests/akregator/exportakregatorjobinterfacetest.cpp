@@ -20,6 +20,7 @@
 #include "exportakregatorjobinterfacetest.h"
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
+#include "testexportfile.h"
 #include "compareexportfile.h"
 #include <QDebug>
 #include <QTest>
@@ -43,30 +44,11 @@ ExportAkregatorJobInterfaceTest::ExportAkregatorJobInterfaceTest(QObject *parent
 
 void ExportAkregatorJobInterfaceTest::exportAkregatorConfigTest1()
 {
-    //Don't use setTestModeEnabled otherwise we can set env
-    //QStandardPaths::setTestModeEnabled(true);
-    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/export/test1/share");
-    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/export/test1/config");
-
-    //TODO fix file name.
-    const QString temporaryFile = QStringLiteral("/tmp/foo.zip");
-    const QString storeArchivePath(temporaryFile);
-    ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
-    Q_ASSERT(archiveStorage->openArchive(true));
-    Utils::addVersion(archiveStorage->archive());
-    Utils::storeDataExportInfo( archiveStorage->archive());
-
-    ExportAkregatorJobInterfaceTestImpl *exportNote = new ExportAkregatorJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
-    QSignalSpy finish(exportNote, &ExportAkregatorJobInterfaceTestImpl::jobFinished);
-    QSignalSpy error(exportNote, &ExportAkregatorJobInterfaceTestImpl::error);
-    exportNote->start();
-    QVERIFY(finish.wait());
-    QCOMPARE(error.count(), 0);
+    TestExportFile *file = new TestExportFile(this);
+    const QByteArray pathConfig("/export/test1/");
+    file->setPathConfig(QByteArray(PIMDATAEXPORTER_DIR) + pathConfig);
+    ExportAkregatorJobInterfaceTestImpl *exportNote = new ExportAkregatorJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(exportNote);
+    file->start();
     delete exportNote;
-    delete archiveStorage;
-
-    CompareExportFile compareExportFile;
-    compareExportFile.setTempFilePath(temporaryFile);
-    compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
-    compareExportFile.compareFiles();
 }
