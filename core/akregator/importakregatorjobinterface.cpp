@@ -20,7 +20,6 @@
 #include "importakregatorjobinterface.h"
 #include "archivestorage.h"
 
-#include <MailCommon/MailUtil>
 #include <PimCommonAkonadi/CreateResource>
 
 #include <KArchive>

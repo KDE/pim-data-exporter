@@ -18,7 +18,6 @@
 */
 
 #include "exportcalendarjobinterface.h"
-#include <MailCommon/MailUtil>
 
 #include <KLocalizedString>
 
