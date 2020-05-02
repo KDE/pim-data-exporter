@@ -29,7 +29,6 @@
 #include <QFile>
 #include <QDir>
 #include <QColor>
-#include "resourceconverterimpl.h"
 
 #include <QStandardPaths>
 #include <exportresourcearchivejob.h>
@@ -94,16 +93,14 @@ void ExportCalendarJobInterface::backupConfig()
         if (korganizerConfig->hasGroup(globalCollectionsStr)) {
             KConfigGroup group = korganizerConfig->group(globalCollectionsStr);
             const QString selectionKey(QStringLiteral("Selection"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionListToRealPath(group, selectionKey);
+            convertCollectionListToRealPath(group, selectionKey);
         }
 
         const QString collectionTreeViewStr(QStringLiteral("CollectionTreeView"));
         if (korganizerConfig->hasGroup(collectionTreeViewStr)) {
             KConfigGroup group = korganizerConfig->group(collectionTreeViewStr);
             const QString selectionKey(QStringLiteral("Expansion"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionListToRealPath(group, selectionKey);
+           convertCollectionListToRealPath(group, selectionKey);
         }
 
         korganizerConfig->sync();
@@ -129,8 +126,7 @@ void ExportCalendarJobInterface::backupConfig()
             for (const QString &key : keyList) {
                 const int collectionValue = key.toInt(&found);
                 if (found && collectionValue != -1) {
-                    ResourceConverterImpl resourceConverter;
-                    const QString realPath = resourceConverter.convertToFullCollectionPath(collectionValue);
+                    const QString realPath = convertToFullCollectionPath(collectionValue);
                     const QColor color = group.readEntry(key, QColor());
                     group.writeEntry(realPath, color);
                     group.deleteEntry(key);

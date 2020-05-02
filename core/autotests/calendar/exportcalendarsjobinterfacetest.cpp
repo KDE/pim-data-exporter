@@ -46,6 +46,18 @@ Akonadi::Collection::Id ExportCalendarsJobInterfaceTestImpl::convertFolderPathTo
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
+QString ExportCalendarsJobInterfaceTestImpl::convertToFullCollectionPath(const qlonglong collectionValue)
+{
+    ResourceConverterTest resourceConverterTest;
+    return resourceConverterTest.convertToFullCollectionPath(collectionValue);
+}
+
+void ExportCalendarsJobInterfaceTestImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
+{
+    ResourceConverterTest converter;
+    converter.convertCollectionListToRealPath(group, currentKey);
+}
+
 ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

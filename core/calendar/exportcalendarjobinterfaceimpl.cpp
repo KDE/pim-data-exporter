@@ -55,6 +55,13 @@ Akonadi::Collection::Id ExportCalendarJobInterfaceImpl::convertFolderPathToColle
     return converter.convertFolderPathToCollectionId(path);
 }
 
+void ExportCalendarJobInterfaceImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
+{
+    ResourceConverterImpl converter;
+    converter.convertCollectionListToRealPath(group, currentKey);
+}
+
+
 void ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated()
 {
     if (wasCanceled()) {
@@ -107,4 +114,11 @@ void ExportCalendarJobInterfaceImpl::slotWriteNextArchiveResource()
         Q_EMIT info(i18n("Resources backup done."));
         QTimer::singleShot(0, this, &ExportCalendarJobInterfaceImpl::slotCheckBackupConfig);
     }
+}
+
+QString ExportCalendarJobInterfaceImpl::convertToFullCollectionPath(const qlonglong collectionValue)
+{
+    ResourceConverterImpl converter;
+    return converter.convertToFullCollectionPath(collectionValue);
+
 }
