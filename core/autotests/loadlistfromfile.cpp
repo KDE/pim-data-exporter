@@ -30,6 +30,7 @@ LoadListFromFile::LoadListFromFile(const QString &filename)
     f.close();
     const QString contextStr = QString::fromUtf8(content);
     mFileList = contextStr.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+    mFileList.sort();
 }
 
 LoadListFromFile::~LoadListFromFile()
