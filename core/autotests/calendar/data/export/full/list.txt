@@ -1,4 +1,3 @@
-configs/globalnotesettings
-configs/knotesrc
+configs/korganizerrc
 information/VERSION_2
 information/exportdatatype.xml

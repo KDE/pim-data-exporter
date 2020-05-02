@@ -1,0 +1,309 @@
+Height 1080=880
+State=AAAA/wAAAAD9AAAAAAAABiUAAAMVAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+Width 1920=1573
+
+[$Version]
+update_info=korganizer.upd:korganizer_3.4_GroupwareCleanup,korganizer.upd:korganizer_3.4_WebExport,korganizer.upd:korganizer_3.4_FilterAction,korganizer.upd:korganizer_3.4_HolidayPlugin,korganizer.upd:korganizer_4.3_ShowTodos,korganizer.upd:korganizer_4.4_MoveFreeBusy
+
+[AddTransportDialog]
+Size=859,636
+
+[AddressLineEdit]
+ShowOU=true
+
+[AgentTypeDialog]
+Size=728,594
+
+[Archive Dialog]
+Archive Action=actionDelete
+
+[BlackListBalooEmailCompletionDialog]
+Size=800,600
+
+[Calendar]
+Default Calendar=-1
+
+[Calendar/Datenums Plugin]
+ShowDayNumbers=3
+
+[Calendar/Picoftheday Plugin]
+AspectRatioMode=1
+
+[CollectionPropertiesDialog]
+Size=671,467
+
+[CollectionTreeView]
+Expansion=c1,c2642,c2643,c2644,c2762
+HorizontalScroll=0
+VerticalScroll=0
+
+[Colors]
+Todo due today Color=164,255,139
+Unset Category Color=108,241,255
+
+[CompletionConfigureDialog]
+Size=1006,525
+
+[CompletionOrderEditor]
+Size=600,400
+
+[ConfigureAgentsWidget]
+splitter=511,128
+
+[Default Datetimes]
+Default Reminder Time=18
+Default Reminder Time Units=1
+Enable Event Reminders=true
+
+[DefaultAgendaSideBySideView]
+ColumnTitles=Agenda 1,Agenda 2
+CustomNumberOfColumns=2
+UseCustomCollectionSelection=false
+UseCustomColumnSetup=false
+
+[DownloadDialog Settings]
+Height 1080=477
+Width 1920=700
+
+[EmailAddressSelectionDialog]
+Size=885,398
+
+[EmailAddressSelectionLdapDialog]
+Size=773,221
+
+[FileDialogSize]
+Height 1080=487
+Width 1920=649
+
+[Filter_New Filter 1]
+CategoryList=
+Criteria=0
+HideTodoDays=0
+
+[Fonts]
+Agenda TimeLabels Font=Sans Serif,10,-1,5,50,2,0,0,0,0
+
+[General]
+CalendarFilters=New Filter 1
+Current Filter=
+Current View=Timeline
+Range Mode=3
+
+[General View]
+Show Daily Recurrences=false
+Week Numbers Show Work Week=true
+
+[GlobalCollectionSelection]
+Current=x-1
+Selection=c3845,c2334,c2333,c3095,c2737,c4054
+
+[GlobalCollectionView]
+Expansion=c1,c2642,c2643,c2644,c2762
+HorizontalScroll=0
+VerticalScroll=0
+
+[HTML Settings]
+AutomaticDetectionLanguage=1
+
+[Hebrew Calendar Plugin]
+ShowChol_HaMoed=true
+ShowOmer=true
+ShowParsha=true
+UseIsraelSettings=true
+
+[IncidenceDialog]
+Size=1272,663
+
+[Internal Settings]
+DefaultResourceColorSeed=122
+EventTemplates=sq
+JournalTemplates=Nouveau modèle journal,fvcbcxvb
+TodoTemplates=Nouveau modèle tâche à faire,sdf,qsdfqsqsf
+
+[KFileDialog Settings]
+Height 1080=525
+Width 1920=960
+detailViewIconSize=0
+
+[KNoteEditDialog]
+Size=711,320
+
+[KNoteSimpleConfigDialog]
+Size=600,400
+
+[KOrganizer Geometry]
+Separator1=452,1120
+Separator2=270,168,128,241
+
+[KPimPrintPreviewDialog]
+Size=1360,804
+
+[ListView Layout]
+ViewState=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x01\x01\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x03\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00\x00\x04\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00T\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x01\xb9\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00u\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00x\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00Z\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x00Z
+
+[MainWindow]
+Height 1080=899
+State=AAAA/wAAAAD9AAAAAAAABiUAAAMqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAQAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAJABrAG8AcgBnAGEAbgBpAHoAZQByAF8AdABvAG8AbABiAGEAcgEAAAEk/////wAAAAAAAAAAAAAAIABzAGMAaABlAGQAdQBsAGUAXwB0AG8AbwBsAGIAYQByAQAAArb/////AAAAAAAAAAAAAAAcAGYAaQBsAHQAZQByAF8AdABvAG8AbABiAGEAcgEAAATs/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=1573
+Window-Maximized 540x960=true
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[MainWindowkontact_akregatorplugin]
+Height 1080=868
+State=AAAA/wAAAAD9AAAAAAAAB0wAAAMOAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAQAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIABuAGEAdgBpAGcAYQB0AG8AcgBUAG8AbwBsAEIAYQByAAAAAKH/////AAAAAAAAAAAAAAAmAHQAZQB4AHQAVABvAFMAcABlAGUAYwBoAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAAAAABwAYgByAG8AdwBzAGUAcgBUAG8AbwBsAEIAYQByAQAAALr/////AAAAAAAAAAA=
+Width 1920=1868
+
+[MainWindowkontact_akregatorplugin][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[MainWindowkontact_journalplugin]
+Height 1080=868
+State=AAAA/wAAAAD9AAAAAAAABPgAAAJFAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAUAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAJABrAG8AcgBnAGEAbgBpAHoAZQByAF8AdABvAG8AbABiAGEAcgEAAAEc/////wAAAAAAAAAAAAAAIABzAGMAaABlAGQAdQBsAGUAXwB0AG8AbwBsAGIAYQByAAAAAAD/////AAAAAAAAAAAAAAAcAGYAaQBsAHQAZQByAF8AdABvAG8AbABiAGEAcgAAAAAA/////wAAAAAAAAAAAAAAIABuAGEAdgBpAGcAYQB0AG8AcgBUAG8AbwBsAEIAYQByAAAAAAD/////AAAAAAAAAAA=
+Width 1920=1868
+Window-Maximized 1080x1920=true
+
+[MainWindowkontact_journalplugin][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[MainWindowkontact_kaddressbookplugin]
+Height 1080=868
+State=AAAA/wAAAAD9AAAAAAAAAoAAAAGKAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIABuAGEAdgBpAGcAYQB0AG8AcgBUAG8AbwBsAEIAYQByAAAAAKH/////AAAAAAAAAAA=
+Width 1920=1868
+
+[MainWindowkontact_kaddressbookplugin][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[MainWindowkontact_kmailplugin]
+Height 1080=868
+State=AAAA/wAAAAD9AAAAAAAAB0wAAAMOAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIABuAGEAdgBpAGcAYQB0AG8AcgBUAG8AbwBsAEIAYQByAAAAAKH/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+Width 1920=1868
+
+[MainWindowkontact_kmailplugin][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[MainWindowkontact_knotesplugin]
+Height 1080=868
+State=AAAA/wAAAAD9AAAAAAAAB0wAAAMOAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIABuAGEAdgBpAGcAYQB0AG8AcgBUAG8AbwBsAEIAYQByAAAAAKH/////AAAAAAAAAAA=
+Width 1920=1868
+
+[MainWindowkontact_knotesplugin][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[MainWindowkontact_korganizerplugin]
+Height 1080=868
+State=AAAA/wAAAAD9AAAAAAAAB0wAAAMOAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAUAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAJABrAG8AcgBnAGEAbgBpAHoAZQByAF8AdABvAG8AbABiAGEAcgEAAADk/////wAAAAAAAAAAAAAAIABzAGMAaABlAGQAdQBsAGUAXwB0AG8AbwBsAGIAYQByAQAAAgz/////AAAAAAAAAAAAAAAcAGYAaQBsAHQAZQByAF8AdABvAG8AbABiAGEAcgEAAAT2/////wAAAAAAAAAAAAAAIABuAGEAdgBpAGcAYQB0AG8AcgBUAG8AbwBsAEIAYQByAAAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+Width 1920=1868
+
+[MainWindowkontact_korganizerplugin][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[MainWindowkontact_summaryplugin]
+Height 1080=868
+State=AAAA/wAAAAD9AAAAAAAAB0wAAAMOAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIABuAGEAdgBpAGcAYQB0AG8AcgBUAG8AbwBsAEIAYQByAAAAAKH/////AAAAAAAAAAA=
+Width 1920=1868
+
+[MainWindowkontact_summaryplugin][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[MainWindowkontact_todoplugin]
+Height 1080=868
+State=AAAA/wAAAAD9AAAAAAAAAoAAAAGQAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAUAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAJABrAG8AcgBnAGEAbgBpAHoAZQByAF8AdABvAG8AbABiAGEAcgEAAADk/////wAAAAAAAAAAAAAAIABzAGMAaABlAGQAdQBsAGUAXwB0AG8AbwBsAGIAYQByAAAAAAD/////AAAAAAAAAAAAAAAcAGYAaQBsAHQAZQByAF8AdABvAG8AbABiAGEAcgAAAAAA/////wAAAAAAAAAAAAAAIABuAGEAdgBpAGcAYQB0AG8AcgBUAG8AbwBsAEIAYQByAAAAAAD/////AAAAAAAAAAA=
+Width 1920=1868
+
+[MainWindowkontact_todoplugin][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[Migratekde4]
+Version=1
+
+[Month View]
+MonthViewColors=MonthItemResourceOnly
+
+[NoteEditDialog]
+Size=1002,498
+
+[Quickview]
+Separator=438,295
+Size=1246,878
+
+[Save Settings]
+Auto Export Interval=31
+
+[SearchDialog]
+Size=775,600
+
+[SelectedNotefolderDialog]
+Size=600,400
+
+[Settings]
+DateNavigatorVisible=true
+EventViewerVisible=true
+ResourceViewVisible=true
+TodoViewVisible=true
+
+[Sidebar Todo View]
+ColumnOrder=0,1,2,3,4,5,6,7,8
+ColumnVisibility=true,true,false,true,true,true,false,true,false
+ColumnWidths=83,67,0,83,85,79,0,93,0
+SortAscending=1
+SortColumn=0
+
+[Spelling]
+checkerEnabledByDefault=true
+
+[TagManagementDialog]
+Size=645,368
+
+[TagSelectionDialog]
+Size=791,431
+
+[Theming]
+Agenda Grid Background Color=255,240,73
+Use System Color=false
+
+[Time & Date]
+Holidays=fr_fr
+
+[Timescale]
+Timescale Timezones=
+
+[TipOfDay]
+RunOnStart=false
+
+[Todo View]
+ColumnOrder=0,1,2,3,4,5,6,7,8
+ColumnVisibility=true,false,true,true,true,true,true,true,false
+ColumnWidths=342,0,69,83,85,82,100,342,0
+Record Todos In Journals=true
+SortAscending=0
+SortColumn=7
+
+[TodoTreeViewState]
+Current=x-1
+Expansion=
+HorizontalScroll=0
+Selection=
+VerticalScroll=0
+
+[TodoTreeViewStateS]
+Current=x-1
+Expansion=
+HorizontalScroll=0
+Selection=
+VerticalScroll=0
+
+[Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[TranslatorWidget]
+mainSplitter=319,319
+
+[Views]
+Agenda View Tab Index=0
+Separator AgendaView=53,160,589
+ShownDatesCount=7
