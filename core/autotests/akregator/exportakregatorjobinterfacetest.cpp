@@ -42,11 +42,18 @@ ExportAkregatorJobInterfaceTest::ExportAkregatorJobInterfaceTest(QObject *parent
 {
 }
 
-void ExportAkregatorJobInterfaceTest::exportAkregatorConfigTest1()
+void ExportAkregatorJobInterfaceTest::exportAkregatorConfig_data()
 {
+    QTest::addColumn<QByteArray>("configpath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/test1/");
+    QTest::newRow("test1") << pathConfig;
+}
+
+void ExportAkregatorJobInterfaceTest::exportAkregatorConfig()
+{
+    QFETCH(QByteArray, configpath);
     TestExportFile *file = new TestExportFile(this);
-    const QByteArray pathConfig("/export/test1/");
-    file->setPathConfig(QByteArray(PIMDATAEXPORTER_DIR) + pathConfig);
+    file->setPathConfig(configpath);
     ExportAkregatorJobInterfaceTestImpl *exportNote = new ExportAkregatorJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(exportNote);
     file->start();

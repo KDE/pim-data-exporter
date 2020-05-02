@@ -74,14 +74,20 @@ ExportMailJobInterfaceTest::ExportMailJobInterfaceTest(QObject *parent)
 {
 }
 
-void ExportMailJobInterfaceTest::exportMailConfigTest1()
+void ExportMailJobInterfaceTest::exportMailConfig_data()
 {
-    TestExportFile *file = new TestExportFile(this);
-    const QByteArray pathConfig("/export/test1/");
-    file->setPathConfig(QByteArray(PIMDATAEXPORTER_DIR) + pathConfig);
-    ExportMailJobInterfaceTestImpl *impl = new ExportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(impl);
-    file->start();
-    delete impl;
+    QTest::addColumn<QByteArray>("configpath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/test1/");
+    QTest::newRow("test1") << pathConfig;
 }
 
+void ExportMailJobInterfaceTest::exportMailConfig()
+{
+    QFETCH(QByteArray, configpath);
+    TestExportFile *file = new TestExportFile(this);
+    file->setPathConfig(configpath);
+    ExportMailJobInterfaceTestImpl *exportNote = new ExportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(exportNote);
+    file->start();
+    delete exportNote;
+}

@@ -47,7 +47,8 @@ public:
     explicit ExportAddressbookJobInterfaceTest(QObject *parent = nullptr);
     ~ExportAddressbookJobInterfaceTest() = default;
 private Q_SLOTS:
-    void exportAddressBookConfigTest1();
+    void exportAddressBookConfig();
+    void exportAddressBookConfig_data();
 };
 
 #endif // EXPORTADDRESSBOOKJOBINTERFACETEST_H

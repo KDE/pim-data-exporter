@@ -51,13 +51,20 @@ ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent
 {
 }
 
-void ExportCalendarsJobInterfaceTest::exportCalendarConfigTest1()
+void ExportCalendarsJobInterfaceTest::exportCalendarConfig_data()
 {
+    QTest::addColumn<QByteArray>("configpath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/test1/");
+    QTest::newRow("test1") << pathConfig;
+}
+
+void ExportCalendarsJobInterfaceTest::exportCalendarConfig()
+{
+    QFETCH(QByteArray, configpath);
     TestExportFile *file = new TestExportFile(this);
-    const QByteArray pathConfig("/export/test1/");
-    file->setPathConfig(QByteArray(PIMDATAEXPORTER_DIR) + pathConfig);
-    ExportCalendarsJobInterfaceTestImpl *impl = new ExportCalendarsJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(impl);
+    file->setPathConfig(configpath);
+    ExportCalendarsJobInterfaceTestImpl *exportNote = new ExportCalendarsJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(exportNote);
     file->start();
-    delete impl;
+    delete exportNote;
 }

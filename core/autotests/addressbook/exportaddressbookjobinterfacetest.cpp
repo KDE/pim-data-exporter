@@ -63,15 +63,20 @@ ExportAddressbookJobInterfaceTest::ExportAddressbookJobInterfaceTest(QObject *pa
 {
 }
 
-void ExportAddressbookJobInterfaceTest::exportAddressBookConfigTest1()
+void ExportAddressbookJobInterfaceTest::exportAddressBookConfig_data()
 {
-    TestExportFile *file = new TestExportFile(this);
-    const QByteArray pathConfig("/export/test1/");
-    file->setPathConfig(QByteArray(PIMDATAEXPORTER_DIR) + pathConfig);
-    ExportAddressbookJobInterfaceTestImpl *impl = new ExportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(impl);
-    file->start();
-    delete impl;
+    QTest::addColumn<QByteArray>("configpath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/test1/");
+    QTest::newRow("test1") << pathConfig;
 }
 
-
+void ExportAddressbookJobInterfaceTest::exportAddressBookConfig()
+{
+    QFETCH(QByteArray, configpath);
+    TestExportFile *file = new TestExportFile(this);
+    file->setPathConfig(configpath);
+    ExportAddressbookJobInterfaceTestImpl *exportNote = new ExportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(exportNote);
+    file->start();
+    delete exportNote;
+}
