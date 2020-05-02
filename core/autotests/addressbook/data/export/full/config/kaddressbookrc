@@ -37,8 +37,6 @@ Selection=i731884
 VerticalScroll=0
 
 [KFileDialog Settings]
-Recent Files[$e]=file:$HOME/addressbook.vcf,file:$HOME/addressbook.gmxa,file:$HOME/Téléchargements/BadCard.vcf,file:$HOME/addressbook1.vcf,file:$HOME/Björn_Balazs.vcf
-Recent URLs[$e]=file:///compile/kde5/framework/kde/pim/kmail/
 detailViewIconSize=0
 
 [KPimPrintPreviewDialog]

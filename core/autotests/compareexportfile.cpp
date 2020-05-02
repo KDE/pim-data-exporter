@@ -25,6 +25,8 @@
 #include <QProcess>
 #include <KZip>
 
+//#define KEEP_TEMPORARY_FILES 1
+
 CompareExportFile::CompareExportFile()
 {
 }
@@ -63,6 +65,9 @@ void CompareExportFile::compareFiles()
         if (currentEntry && currentEntry->isFile()) {
             if (!mTempDir) {
                 mTempDir = new QTemporaryDir;
+#ifdef KEEP_TEMPORARY_FILES
+                mTempDir->setAutoRemove(false);
+#endif
             }
             const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
 

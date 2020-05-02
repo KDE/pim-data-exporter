@@ -9,13 +9,13 @@ Size=635,468
 
 [CollectionViewCheckState]
 Current=x-1
-Selection=c3647,c2656,c3840
+Selection=foo/bla bla/bli3647,foo/bla bla/bli2656,foo/bla bla/bli3840
 
 [CollectionViewState]
-Current=c3840
-Expansion=c2642,c2643,c2645,c2786,c3132
+Current=foo/bla bla/bli3840
+Expansion=foo/bla bla/bli2642,foo/bla bla/bli2643,foo/bla bla/bli2645,foo/bla bla/bli2786,foo/bla bla/bli3132
 HorizontalScroll=0
-Selection=c3840
+Selection=foo/bla bla/bli3840
 VerticalScroll=0
 
 [ConfigurePluginsWidget]
@@ -37,8 +37,6 @@ Selection=i731884
 VerticalScroll=0
 
 [KFileDialog Settings]
-Recent Files[$e]=file:$HOME/addressbook.vcf,file:$HOME/addressbook.gmxa,file:$HOME/Téléchargements/BadCard.vcf,file:$HOME/addressbook1.vcf,file:$HOME/Björn_Balazs.vcf
-Recent URLs[$e]=file:///compile/kde5/framework/kde/pim/kmail/
 detailViewIconSize=0
 
 [KPimPrintPreviewDialog]
