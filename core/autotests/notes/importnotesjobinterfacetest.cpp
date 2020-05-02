@@ -21,6 +21,7 @@
 #include "archivestorage.h"
 #include "notes/importnotesjobinterface.h"
 #include "resourceconvertertest.h"
+#include "compareimportfile.h"
 #include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportNotesJobInterfaceTest)
@@ -63,9 +64,10 @@ void ImportNotesJobInterfaceTest::importNoteConfig()
     //Don't use setTestModeEnabled otherwise we can set env
     //QStandardPaths::setTestModeEnabled(true);
 
+    const QByteArray path = QByteArray(PIMDATAEXPORTER_DIR) + "/import/test1/";
     //FIXME Extract in tmp !
-    qputenv("XDG_DATA_HOME", PIMDATAEXPORTER_DIR "/import/test1/share");
-    qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/import/test1/config");
+    qputenv("XDG_DATA_HOME", path + "share");
+    qputenv("XDG_CONFIG_HOME", path + "config");
 
     const QString temporaryFile = zipFilePath;
     const QString storeArchivePath(temporaryFile);
@@ -80,5 +82,9 @@ void ImportNotesJobInterfaceTest::importNoteConfig()
     QCOMPARE(error.count(), 0);
     delete importNote;
     delete archiveStorage;
-    //TODO compare this number of file extracted.
+
+    CompareImportFile importFile;
+    importFile.setArchiveFilePath(zipFilePath);
+    importFile.setListFilePath(QLatin1String(path) + QStringLiteral("list.txt"));
+    importFile.compareFile();
 }
