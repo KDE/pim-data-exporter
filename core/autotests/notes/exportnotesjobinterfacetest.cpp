@@ -20,10 +20,9 @@
 #include "exportnotesjobinterfacetest.h"
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
-#include "compareexportfile.h"
+#include "testexportfile.h"
 #include <QDebug>
 #include <QTest>
-#include <QSignalSpy>
 
 QTEST_MAIN(ExportNotesJobInterfaceTest)
 
@@ -61,34 +60,11 @@ ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
 
 void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
 {
-    //Don't use setTestModeEnabled otherwise we can set env
-    //QStandardPaths::setTestModeEnabled(true);
+    TestExportFile *file = new TestExportFile(this);
     const QByteArray pathConfig("/export/test1/");
-
-
-    qputenv("XDG_DATA_HOME", QByteArray(PIMDATAEXPORTER_DIR) + pathConfig + "/share");
-    qputenv("XDG_CONFIG_HOME", QByteArray(PIMDATAEXPORTER_DIR) + pathConfig + "/config");
-
-    //TODO fix file name.
-    const QString temporaryFile = QDir::tempPath() + QStringLiteral("/archive.zip");
-    ArchiveStorage *archiveStorage = new ArchiveStorage(temporaryFile, this);
-    Q_ASSERT(archiveStorage->openArchive(true));
-    Utils::addVersion(archiveStorage->archive());
-    //qDebug() << " temporaryFile " << temporaryFile;
-    Utils::storeDataExportInfo(archiveStorage->archive());
-
-    ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
-    QSignalSpy finish(exportNote, &ExportNotesJobInterfaceTestImpl::jobFinished);
-    QSignalSpy error(exportNote, &ExportNotesJobInterfaceTestImpl::error);
-    exportNote->start();
-    QVERIFY(finish.wait());
-    QCOMPARE(error.count(), 0);
+    file->setPathConfig(QByteArray(PIMDATAEXPORTER_DIR) + pathConfig);
+    ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(exportNote);
+    file->start();
     delete exportNote;
-    delete archiveStorage;
-
-    CompareExportFile compareExportFile;
-    compareExportFile.setTempFilePath(temporaryFile);
-    compareExportFile.setListFilePath(QLatin1String(QByteArray(PIMDATAEXPORTER_DIR + pathConfig)));
-    compareExportFile.compareFiles();
-    QVERIFY(QFile(temporaryFile).remove());
 }
