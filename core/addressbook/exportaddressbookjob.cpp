@@ -154,7 +154,7 @@ void ExportAddressbookJob::backupConfig()
             Utils::convertCollectionToRealPath(group, currentKey);
 
             currentKey = QStringLiteral("Expansion");
-            Utils::convertCollectionToRealPath(group, currentKey);
+            Utils::convertCollectionListToRealPath(group, currentKey);
 
             currentKey = QStringLiteral("Selection");
             Utils::convertCollectionToRealPath(group, currentKey);
