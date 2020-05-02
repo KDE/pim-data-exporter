@@ -52,7 +52,6 @@ Akonadi::Collection::Id ExportNotesJobInterfaceTestImpl::convertFolderPathToColl
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
-
 ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

@@ -30,7 +30,6 @@ public:
 
     void compareFile();
 
-
     Q_REQUIRED_RESULT QString archiveFilePath() const;
     void setArchiveFilePath(const QString &archiveFilePath);
 

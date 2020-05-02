@@ -61,7 +61,6 @@ void ExportCalendarJobInterfaceImpl::convertCollectionListToRealPath(KConfigGrou
     converter.convertCollectionListToRealPath(group, currentKey);
 }
 
-
 void ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated()
 {
     if (wasCanceled()) {
@@ -120,5 +119,4 @@ QString ExportCalendarJobInterfaceImpl::convertToFullCollectionPath(const qlongl
 {
     ResourceConverterImpl converter;
     return converter.convertToFullCollectionPath(collectionValue);
-
 }

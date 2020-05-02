@@ -36,7 +36,6 @@ protected:
 
 private:
     void restoreResources() override;
-
 };
 
 #endif // IMPORTNOTESJOB_H

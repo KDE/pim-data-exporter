@@ -99,7 +99,7 @@ void ExportCalendarJobInterface::backupConfig()
         if (korganizerConfig->hasGroup(collectionTreeViewStr)) {
             KConfigGroup group = korganizerConfig->group(collectionTreeViewStr);
             const QString selectionKey(QStringLiteral("Expansion"));
-           convertCollectionListToRealPath(group, selectionKey);
+            convertCollectionListToRealPath(group, selectionKey);
         }
 
         korganizerConfig->sync();

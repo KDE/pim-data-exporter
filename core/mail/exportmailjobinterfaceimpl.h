@@ -49,7 +49,6 @@ private:
 
     QDateTime mArchiveTime = QDateTime::currentDateTime();
     int mIndexIdentifier = 0;
-
 };
 
 #endif // ExportMailJob_H

@@ -112,7 +112,6 @@ void ImportNotesJobInterfaceImpl::restoreResources()
     startSynchronizeResources(listResource);
 }
 
-
 Akonadi::Collection::Id ImportNotesJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterImpl converter;

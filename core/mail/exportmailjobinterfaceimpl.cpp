@@ -180,7 +180,6 @@ void ExportMailJobInterfaceImpl::convertCollectionListToRealPath(KConfigGroup &g
     converter.convertCollectionListToRealPath(group, currentKey);
 }
 
-
 QVector<MailCommon::MailFilter *> ExportMailJobInterfaceImpl::filters()
 {
     return MailCommon::FilterManager::instance()->filters();
