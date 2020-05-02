@@ -59,7 +59,7 @@ void ExportAlarmJobInterfaceTest::exportAlarmConfigTest1()
     ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
     Q_ASSERT(archiveStorage->openArchive(true));
     Utils::addVersion(archiveStorage->archive());
-    Utils::storeDataExportInfo(storeArchivePath, archiveStorage->archive());
+    Utils::storeDataExportInfo( archiveStorage->archive());
 
     ExportAlarmJobInterfaceTestImpl *exportNote = new ExportAlarmJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
     QSignalSpy finish(exportNote, &ExportAlarmJobInterfaceTestImpl::jobFinished);

@@ -54,7 +54,7 @@ void ExportAkregatorJobInterfaceTest::exportAkregatorConfigTest1()
     ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
     Q_ASSERT(archiveStorage->openArchive(true));
     Utils::addVersion(archiveStorage->archive());
-    Utils::storeDataExportInfo(storeArchivePath, archiveStorage->archive());
+    Utils::storeDataExportInfo( archiveStorage->archive());
 
     ExportAkregatorJobInterfaceTestImpl *exportNote = new ExportAkregatorJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
     QSignalSpy finish(exportNote, &ExportAkregatorJobInterfaceTestImpl::jobFinished);

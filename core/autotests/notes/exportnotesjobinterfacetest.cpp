@@ -67,12 +67,12 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
     qputenv("XDG_CONFIG_HOME", PIMDATAEXPORTER_DIR "/export/test1/config");
 
     //TODO fix file name.
-    const QString temporaryFile = QStringLiteral("/tmp/foo.zip");
-    const QString storeArchivePath(temporaryFile);
-    ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
+    const QString temporaryFile = QDir::tempPath() + QStringLiteral("/archive.zip");
+    ArchiveStorage *archiveStorage = new ArchiveStorage(temporaryFile, this);
     Q_ASSERT(archiveStorage->openArchive(true));
     Utils::addVersion(archiveStorage->archive());
-    Utils::storeDataExportInfo(storeArchivePath, archiveStorage->archive());
+    //qDebug() << " temporaryFile " << temporaryFile;
+    Utils::storeDataExportInfo(archiveStorage->archive());
 
     ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
     QSignalSpy finish(exportNote, &ExportNotesJobInterfaceTestImpl::jobFinished);
@@ -87,4 +87,5 @@ void ExportNotesJobInterfaceTest::exportNoteConfigTest1()
     compareExportFile.setTempFilePath(temporaryFile);
     compareExportFile.setListFilePath(QStringLiteral(PIMDATAEXPORTER_DIR "/export/test1"));
     compareExportFile.compareFiles();
+    QVERIFY(QFile(temporaryFile).remove());
 }

@@ -110,7 +110,7 @@ bool PimDataBackupRestore::backupStart(const QString &filename)
     Utils::addVersion(mArchiveStorage->archive());
     //Add exported file info.
     //qDebug() << "mExportedInfoFileName" << mExportedInfoFileName;
-    Utils::storeDataExportInfo(mExportedInfoFileName, mArchiveStorage->archive());
+    Utils::storeDataExportInfo(mArchiveStorage->archive());
     backupNextStep();
     return true;
 }

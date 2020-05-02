@@ -71,7 +71,7 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfigTest1()
     ArchiveStorage *archiveStorage = new ArchiveStorage(storeArchivePath, this);
     Q_ASSERT(archiveStorage->openArchive(true));
     Utils::addVersion(archiveStorage->archive());
-    Utils::storeDataExportInfo(storeArchivePath, archiveStorage->archive());
+    Utils::storeDataExportInfo( archiveStorage->archive());
 
     ExportAddressbookJobInterfaceTestImpl *exportNote = new ExportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config}, archiveStorage, 1);
     QSignalSpy finish(exportNote, &ExportAddressbookJobInterfaceTestImpl::jobFinished);

@@ -172,15 +172,14 @@ KZip *Utils::openZip(const QString &filename, QString &errorMsg)
     return zip;
 }
 
-void Utils::storeDataExportInfo(const QString &filename, KZip *archive)
+void Utils::storeDataExportInfo(KZip *archive)
 {
-    if (QFileInfo::exists(filename)) {
-        const bool fileAdded = archive->addLocalFile(filename, Utils::infoPath() + Utils::exportDataTypeFileName());
-        if (fileAdded) {
-            qCDebug(PIMDATAEXPORTERCORE_LOG) << "exporteddata file can not add to archive" << filename << " to " << Utils::infoPath() + Utils::exportDataTypeFileName();
-        }
-    } else {
-        qCDebug(PIMDATAEXPORTERCORE_LOG) << "exported file was not created" << filename;
+    QTemporaryFile tmp;
+    tmp.open();
+    const bool fileAdded = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + Utils::exportDataTypeFileName());
+    qDebug() << " fileAdded "<< fileAdded;
+    if (fileAdded) {
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "storeDataExportInfo can't add to archive";
     }
 }
 
