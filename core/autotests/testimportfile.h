@@ -17,34 +17,34 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef TESTEXPORTFILE_H
-#define TESTEXPORTFILE_H
+#ifndef TESTIMPORTFILE_H
+#define TESTIMPORTFILE_H
 
 #include <QObject>
-class AbstractImportExportJob;
 class ArchiveStorage;
-class TestExportFile : public QObject
+class AbstractImportExportJob;
+class TestImportFile : public QObject
 {
     Q_OBJECT
 public:
-    explicit TestExportFile(QObject *parent = nullptr);
-    ~TestExportFile();
-
-    Q_REQUIRED_RESULT QByteArray pathConfig() const;
-    void setPathConfig(const QByteArray &pathConfig);
-
-    AbstractImportExportJob *abstractImportExportJob() const;
-    void setAbstractImportExportJob(AbstractImportExportJob *abstractImportExportJob);
+    explicit TestImportFile(const QString &archivePath, QObject *parent = nullptr);
+    ~TestImportFile();
 
     void start();
+    Q_REQUIRED_RESULT AbstractImportExportJob *abstractImportExportJob() const;
+    void setAbstractImportExportJob(AbstractImportExportJob *abstractImportExportJob);
 
     Q_REQUIRED_RESULT ArchiveStorage *archiveStorage() const;
+    void setArchiveStorage(ArchiveStorage *archiveStorage);
+
+    Q_REQUIRED_RESULT QString pathConfig() const;
+    void setPathConfig(const QString &pathConfig);
 
 private:
-    QByteArray mPathConfig;
     AbstractImportExportJob *mAbstractImportExportJob = nullptr;
     ArchiveStorage *mArchiveStorage = nullptr;
-    QString mTemporaryFile;
+    QString mArchivePath;
+    QString mPathConfig;
 };
 
-#endif // TESTEXPORTFILE_H
+#endif // TESTIMPORTFILE_H

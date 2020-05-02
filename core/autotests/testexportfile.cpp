@@ -30,8 +30,8 @@
 TestExportFile::TestExportFile(QObject *parent)
     : QObject(parent)
 {
-    const QString temporaryFile = QDir::tempPath() + QStringLiteral("/archive.zip");
-    mArchiveStorage = new ArchiveStorage(temporaryFile, this);
+    mTemporaryFile = QDir::tempPath() + QStringLiteral("/archive.zip");
+    mArchiveStorage = new ArchiveStorage(mTemporaryFile, this);
     Q_ASSERT(mArchiveStorage->openArchive(true));
 }
 
@@ -67,9 +67,7 @@ void TestExportFile::start()
     qputenv("XDG_CONFIG_HOME", mPathConfig + "/config");
 
     //TODO fix file name.
-    const QString temporaryFile = QDir::tempPath() + QStringLiteral("/archive.zip");
     Utils::addVersion(mArchiveStorage->archive());
-    //qDebug() << " temporaryFile " << temporaryFile;
     Utils::storeDataExportInfo(mArchiveStorage->archive());
 
     QSignalSpy finish(mAbstractImportExportJob, &AbstractImportExportJob::jobFinished);
@@ -81,10 +79,10 @@ void TestExportFile::start()
     mArchiveStorage = nullptr;
 
     CompareExportFile compareExportFile;
-    compareExportFile.setTempFilePath(temporaryFile);
+    compareExportFile.setTempFilePath(mTemporaryFile);
     compareExportFile.setListFilePath(QLatin1String(mPathConfig));
     compareExportFile.compareFiles();
-    QVERIFY(QFile(temporaryFile).remove());
+    QVERIFY(QFile(mTemporaryFile).remove());
 }
 
 ArchiveStorage *TestExportFile::archiveStorage() const
