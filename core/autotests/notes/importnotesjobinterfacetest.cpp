@@ -55,14 +55,12 @@ void ImportNotesJobInterfaceTest::importNoteConfig_data()
 {
     QTest::addColumn<QString>("zipFilePath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("test1") << QLatin1String(pathConfig) + QStringLiteral("test1/test1.zip");
+    QTest::newRow("test1") << QLatin1String(pathConfig) + QStringLiteral("test1/");
 }
 
 void ImportNotesJobInterfaceTest::importNoteConfig()
 {
     QFETCH(QString, zipFilePath);
-    const QString path = QLatin1String(PIMDATAEXPORTER_DIR) + QStringLiteral("/import/test1/");
-
     TestImportFile *file = new TestImportFile(zipFilePath, this);
     file->setPathConfig(path);
     ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
