@@ -129,8 +129,8 @@ void ExportCalendarJobInterface::backupConfig()
             for (const QString &key : keyList) {
                 const int collectionValue = key.toInt(&found);
                 if (found && collectionValue != -1) {
-                    //TODO fixme MailCommon::Util::fullCollectionPath
-                    const QString realPath = MailCommon::Util::fullCollectionPath(Akonadi::Collection(collectionValue));
+                    ResourceConverterImpl resourceConverter;
+                    const QString realPath = resourceConverter.convertToFullCollectionPath(collectionValue);
                     const QColor color = group.readEntry(key, QColor());
                     group.writeEntry(realPath, color);
                     group.deleteEntry(key);
