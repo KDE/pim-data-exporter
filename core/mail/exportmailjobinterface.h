@@ -25,6 +25,9 @@
 #include <KSharedConfig>
 #include <QDateTime>
 #include <time.h>
+namespace MailCommon {
+class MailFilter;
+}
 class ArchiveStorage;
 
 class PIMDATAEXPORTER_TESTS_EXPORT ExportMailJobInterface : public AbstractImportExportJob
@@ -45,6 +48,7 @@ protected:
     virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
     virtual void exportArchiveResource() = 0;
     virtual void backupResources() = 0;
+    virtual QVector<MailCommon::MailFilter *> filters() = 0;
     void slotCheckBackupResources();
 private:
     void slotCheckBackupIdentity();

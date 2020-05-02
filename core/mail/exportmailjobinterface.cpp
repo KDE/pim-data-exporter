@@ -21,7 +21,6 @@
 #include "importexportmailutil.h"
 
 #include <MailCommon/MailUtil>
-#include <MailCommon/FilterManager>
 #include <MailCommon/FilterImporterExporter>
 #include "importexportprogressindicatorbase.h"
 #include "exportresourcearchivejob.h"
@@ -170,7 +169,7 @@ void ExportMailJobInterface::backupConfig()
 {
     setProgressDialogLabel(i18n("Backing up config..."));
 
-    QVector<MailCommon::MailFilter *> lstFilter = MailCommon::FilterManager::instance()->filters();
+    QVector<MailCommon::MailFilter *> lstFilter = filters();
     if (!lstFilter.isEmpty()) {
         QTemporaryFile tmp;
         tmp.open();

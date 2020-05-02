@@ -41,6 +41,7 @@ protected:
     void exportArchiveResource() override;
     void backupResources() override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+    Q_REQUIRED_RESULT QVector<MailCommon::MailFilter *> filters() override;
 private:
     void slotCheckBackupMails();
     void slotWriteNextArchiveResource();
@@ -48,6 +49,7 @@ private:
 
     QDateTime mArchiveTime = QDateTime::currentDateTime();
     int mIndexIdentifier = 0;
+
 };
 
 #endif // ExportMailJob_H

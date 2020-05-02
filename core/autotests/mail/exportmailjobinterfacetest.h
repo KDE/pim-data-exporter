@@ -42,6 +42,8 @@ protected:
     void backupResources() override;
 
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+
+    Q_REQUIRED_RESULT QVector<MailCommon::MailFilter *> filters() override;
 };
 
 class ExportMailJobInterfaceTest : public QObject

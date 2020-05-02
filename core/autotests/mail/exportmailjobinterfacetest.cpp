@@ -64,6 +64,12 @@ Akonadi::Collection::Id ExportMailJobInterfaceTestImpl::convertFolderPathToColle
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
+QVector<MailCommon::MailFilter *> ExportMailJobInterfaceTestImpl::filters()
+{
+    //TODO implement it
+    return {};
+}
+
 void ExportMailJobInterfaceTestImpl::backupResources()
 {
     qDebug() << " not implement yet";

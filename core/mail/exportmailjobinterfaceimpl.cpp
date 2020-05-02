@@ -21,6 +21,7 @@
 #include "importexportmailutil.h"
 
 #include <MailCommon/MailUtil>
+#include <MailCommon/FilterManager>
 #include <KMime/Message>
 #include "importexportprogressindicatorbase.h"
 
@@ -177,4 +178,10 @@ void ExportMailJobInterfaceImpl::convertCollectionListToRealPath(KConfigGroup &g
 {
     ResourceConverterImpl converter;
     converter.convertCollectionListToRealPath(group, currentKey);
+}
+
+
+QVector<MailCommon::MailFilter *> ExportMailJobInterfaceImpl::filters()
+{
+    return MailCommon::FilterManager::instance()->filters();
 }
