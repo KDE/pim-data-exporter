@@ -105,6 +105,7 @@ void AbstractImportExportJob::backupUiRcFile(const QString &configFileName, cons
 {
     const QString configrcStr(configFileName);
     const QString configrc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kxmlgui5/") + application + QLatin1Char('/') + configrcStr;
+    qDebug() << "configrc " << configrc;
     if (QFileInfo::exists(configrc)) {
         backupFile(configrc, Utils::configsPath(), configrcStr);
     }

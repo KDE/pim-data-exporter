@@ -67,7 +67,8 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfig_data()
 {
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("test1") << pathConfig + QByteArray("test1/");
+    qDebug() << " pathConfig " << pathConfig;
+    QTest::newRow("full") << pathConfig + QByteArray("full/");
 }
 
 void ExportAddressbookJobInterfaceTest::exportAddressBookConfig()
