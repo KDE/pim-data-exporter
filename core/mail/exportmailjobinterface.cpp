@@ -237,7 +237,7 @@ void ExportMailJobInterface::backupConfig()
 
         for (const QString &str : archiveList) {
             KConfigGroup oldGroup = archiveConfig->group(str);
-            qint64 id = oldGroup.readEntry("topLevelCollectionId", -1);
+            const qint64 id = oldGroup.readEntry("topLevelCollectionId", -1);
             if (id != -1) {
                 const QString realPath = convertToFullCollectionPath(id);
                 if (!realPath.isEmpty()) {
