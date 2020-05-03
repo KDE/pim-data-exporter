@@ -124,7 +124,7 @@ void ImportAddressbookJobInterface::importkaddressBookConfig(const KArchiveFile 
         convertRealPathToCollection(group, currentKey, true);
 
         currentKey = QStringLiteral("Expansion");
-        convertRealPathToCollection(group, currentKey, true);
+        convertRealPathToCollectionList(group, currentKey, true);
 
         currentKey = QStringLiteral("Selection");
         convertRealPathToCollection(group, currentKey, true);
