@@ -104,7 +104,7 @@ void ExportCalendarJobInterfaceImpl::slotWriteNextArchiveResource()
                 QTimer::singleShot(0, this, &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);
             }
         } else if (identifier.contains(QLatin1String("akonadi_ical_resource_"))) {
-            backupResourceFile(agent, Utils::calendarPath());
+            backupResourceFile(identifier, Utils::calendarPath());
             QTimer::singleShot(0, this, &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);
         } else {
             QTimer::singleShot(0, this, &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);

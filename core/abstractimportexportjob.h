@@ -90,7 +90,7 @@ protected:
     Q_REQUIRED_RESULT int mergeConfigMessageBox(const QString &configName) const;
     Q_REQUIRED_RESULT bool overwriteConfigMessageBox(const QString &configName) const;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertPathToId(const QString &path);
-    void backupResourceFile(const Akonadi::AgentInstance &agent, const QString &defaultPath);
+    void backupResourceFile(const QString &agentIdentifier, const QString &defaultPath);
     Q_REQUIRED_RESULT QStringList restoreResourceFile(const QString &resourceName, const QString &defaultPath, const QString &storePath, bool overwriteResources = false);
     virtual void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings);
     void restoreConfigFile(const QString &configNameStr);

@@ -110,7 +110,7 @@ void ExportMailJobInterfaceImpl::slotWriteNextArchiveResource()
                         QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
                     }
                 } else if (identifier.contains(QLatin1String("akonadi_mbox_resource_"))) {
-                    backupResourceFile(agent, Utils::addressbookPath());
+                    backupResourceFile(identifier, Utils::addressbookPath());
                     QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
                 } else {
                     QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);

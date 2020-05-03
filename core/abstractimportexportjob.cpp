@@ -311,9 +311,8 @@ void AbstractImportExportJob::copyToFile(const KArchiveFile *archivefile, const 
     }
 }
 
-void AbstractImportExportJob::backupResourceFile(const Akonadi::AgentInstance &agent, const QString &defaultPath)
+void AbstractImportExportJob::backupResourceFile(const QString &identifier, const QString &defaultPath)
 {
-    const QString identifier = agent.identifier();
     const QString archivePath = defaultPath + identifier + QLatin1Char('/');
 
     ResourceConverterImpl converter;

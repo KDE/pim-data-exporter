@@ -86,7 +86,7 @@ void ExportAlarmJobInterfaceImpl::slotWriteNextArchiveResource()
                 QTimer::singleShot(0, this, &ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated);
             }
         } else if (identifier.contains(QLatin1String("akonadi_kalarm_resource_"))) {
-            backupResourceFile(agent, Utils::alarmPath());
+            backupResourceFile(identifier, Utils::alarmPath());
             QTimer::singleShot(0, this, &ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated);
         } else {
             QTimer::singleShot(0, this, &ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated);
