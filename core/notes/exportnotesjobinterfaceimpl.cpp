@@ -62,10 +62,10 @@ void ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource()
             const QString archivePath = Utils::notePath() + identifier + QLatin1Char('/');
 
             ResourceConverterImpl converter;
-            QString url = converter.resourcePath(identifier);
+            const QString url = converter.resourcePath(identifier);
             if (!mAgentPaths.contains(url) && QDir(url).exists()) {
-                mAgentPaths << url;
                 if (!url.isEmpty()) {
+                    mAgentPaths << url;
                     ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
                     resourceJob->setArchivePath(archivePath);
                     resourceJob->setUrl(url);
