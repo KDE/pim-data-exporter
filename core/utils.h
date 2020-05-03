@@ -28,7 +28,7 @@ namespace Akonadi {
 class AgentInstance;
 }
 
-struct resourceFiles {
+struct ResourceFiles {
     QString akonadiConfigFile;
     QString akonadiResources;
     QString akonadiAgentConfigFile;

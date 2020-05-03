@@ -65,7 +65,7 @@ void ImportAlarmJobInterfaceImpl::restoreResources()
 
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {
-            resourceFiles value = mListResourceFile.at(i);
+            ResourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
             if (value.akonadiConfigFile.contains(QLatin1String("akonadi_kalarm_dir_resource_"))
                 || value.akonadiConfigFile.contains(QLatin1String("akonadi_kalarm_resource_"))) {

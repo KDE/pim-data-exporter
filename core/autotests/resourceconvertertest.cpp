@@ -36,5 +36,10 @@ Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(c
 {
     QString str = path;
     str.remove(QStringLiteral("foo/bla bla/bli"));
-    return str.toLongLong();
+    auto result = str.toLongLong();
+    //Make sure that we use another number.
+    if (result != -1) {
+        result += 10;
+    }
+    return result;
 }

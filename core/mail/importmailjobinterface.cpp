@@ -133,7 +133,7 @@ void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *d
             const QStringList lst = resourceDir->entries();
             if (lst.count() >= 2) {
                 const QString archPath(prefix + QLatin1Char('/') + entryName + QLatin1Char('/'));
-                resourceFiles files;
+                ResourceFiles files;
                 for (const QString &name : lst) {
                     if (name.endsWith(QLatin1String("rc"))
                         && (name.contains(QLatin1String("akonadi_mbox_resource_"))
@@ -545,7 +545,7 @@ void ImportMailJobInterface::restoreMails()
     const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::mailsPath());
     const int numberOfResourceFile = mListResourceFile.size();
     for (int i = 0; i < numberOfResourceFile; ++i) {
-        resourceFiles value = mListResourceFile.at(i);
+        ResourceFiles value = mListResourceFile.at(i);
         value.debug();
         const QString resourceFile = value.akonadiConfigFile;
         const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(resourceFile);

@@ -62,7 +62,7 @@ void ImportNotesJobInterfaceImpl::restoreResources()
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::notePath());
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {
-            resourceFiles value = mListResourceFile.at(i);
+            ResourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
             if (value.akonadiConfigFile.contains(QLatin1String("akonadi_akonotes_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);

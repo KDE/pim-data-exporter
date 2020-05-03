@@ -188,7 +188,7 @@ void AbstractImportExportJob::storeArchiveInfoResources(const KArchiveDirectory 
 
             if (lst.count() >= 2) {
                 const QString archPath(prefix + QLatin1Char('/') + entryName + QLatin1Char('/'));
-                resourceFiles files;
+                ResourceFiles files;
                 for (const QString &name : lst) {
                     if (isAConfigFile(name)) {
                         files.akonadiConfigFile = archPath + name;
@@ -356,7 +356,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + defaultPath);
 
         for (int i = 0, total = mListResourceFile.size(); i < total; ++i) {
-            resourceFiles value = mListResourceFile.at(i);
+            ResourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
             if (value.akonadiConfigFile.contains(resourceBaseName + QLatin1Char('_'))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);

@@ -110,7 +110,7 @@ protected:
     void importDataSubdirectory(const QString &subdirectoryRelativePath);
 
     QHash<QString, Akonadi::Collection::Id> mHashConvertPathCollectionId;
-    QVector<resourceFiles> mListResourceFile;
+    QVector<ResourceFiles> mListResourceFile;
 
     QString mTempDirName;
     Utils::StoredTypes mTypeSelected;
