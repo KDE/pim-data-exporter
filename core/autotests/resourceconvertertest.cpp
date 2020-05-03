@@ -34,7 +34,7 @@ QString ResourceConverterTest::convertToFullCollectionPath(const qlonglong colle
 
 Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(const QString &path)
 {
-    //TODO implement it
-    qDebug() << " Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(const QString &path) not implemented yet";
-    return -1;
+    QString str = path;
+    str.remove(QStringLiteral("foo/bla bla/bli"));
+    return str.toLongLong();
 }
