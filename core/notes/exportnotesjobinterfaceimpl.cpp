@@ -56,7 +56,7 @@ void ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource()
     Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
     const Akonadi::AgentInstance::List list = manager->instances();
     if (mIndexIdentifier < list.count()) {
-        Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
+        const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
         const QString identifier = agent.identifier();
         if (identifier.contains(QLatin1String("akonadi_akonotes_resource_"))) {
             const QString archivePath = Utils::notePath() + identifier + QLatin1Char('/');
