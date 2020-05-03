@@ -66,8 +66,8 @@ void ExportAlarmJobInterfaceImpl::slotWriteNextArchiveResource()
             ResourceConverterImpl converter;
             const QString url = converter.resourcePath(identifier);
             if (!mAgentPaths.contains(url)) {
-                mAgentPaths << url;
                 if (!url.isEmpty()) {
+                    mAgentPaths << url;
                     ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
                     resourceJob->setArchivePath(archivePath);
                     resourceJob->setUrl(url);

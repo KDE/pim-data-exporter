@@ -69,8 +69,8 @@ void ExportAddressbookJobInterfaceImpl::slotWriteNextArchiveResource()
             ResourceConverterImpl converter;
             const QString url = converter.resourcePath(identifier, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts/"));
             if (!mAgentPaths.contains(url)) {
-                mAgentPaths << url;
                 if (!url.isEmpty()) {
+                    mAgentPaths << url;
                     ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
                     resourceJob->setArchivePath(archivePath);
                     resourceJob->setUrl(url);
