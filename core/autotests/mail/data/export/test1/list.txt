@@ -1,3 +1,5 @@
 configs/kmail2rc
 information/VERSION_2
 information/exportdatatype.xml
+configs/foldermailarchiverc
+configs/templatesconfigurationrc
