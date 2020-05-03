@@ -46,6 +46,12 @@ void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
     qDebug() << " not implement yet";
 }
 
+
+void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
+{
+    //TODO implement it
+}
+
 Akonadi::Collection::Id ExportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
@@ -75,3 +81,4 @@ void ExportNotesJobInterfaceTest::exportNoteConfig()
     file->start();
     delete exportNote;
 }
+

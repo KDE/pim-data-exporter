@@ -46,6 +46,11 @@ Akonadi::Collection::Id ExportAddressbookJobInterfaceTestImpl::convertFolderPath
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
+void ExportAddressbookJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
+{
+    //TODO implement it
+}
+
 void ExportAddressbookJobInterfaceTestImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;

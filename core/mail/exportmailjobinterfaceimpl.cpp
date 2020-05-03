@@ -91,17 +91,7 @@ void ExportMailJobInterfaceImpl::slotWriteNextArchiveResource()
                     if (!mAgentPaths.contains(url)) {
                         if (!url.isEmpty()) {
                             mAgentPaths << url;
-                            ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
-                            resourceJob->setArchivePath(archivePath);
-                            resourceJob->setUrl(url);
-                            resourceJob->setIdentifier(identifier);
-                            resourceJob->setArchive(archive());
-                            resourceJob->setArchiveName(QStringLiteral("mail.zip"));
-                            connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportMailJobInterfaceImpl::error);
-                            connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportMailJobInterfaceImpl::info);
-                            connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
-                            connect(this, &ExportMailJobInterfaceImpl::taskCanceled, resourceJob, &ExportResourceArchiveJob::slotTaskCanceled);
-                            resourceJob->start();
+                            exportResourceToArchive(archivePath, url, identifier);
                         } else {
                             qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
                             QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
@@ -124,6 +114,21 @@ void ExportMailJobInterfaceImpl::slotWriteNextArchiveResource()
     } else {
         QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotCheckBackupResources);
     }
+}
+
+void ExportMailJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
+{
+    ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
+    resourceJob->setArchivePath(archivePath);
+    resourceJob->setUrl(url);
+    resourceJob->setIdentifier(identifier);
+    resourceJob->setArchive(archive());
+    resourceJob->setArchiveName(QStringLiteral("mail.zip"));
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportMailJobInterfaceImpl::error);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportMailJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
+    connect(this, &ExportMailJobInterfaceImpl::taskCanceled, resourceJob, &ExportResourceArchiveJob::slotTaskCanceled);
+    resourceJob->start();
 }
 
 void ExportMailJobInterfaceImpl::backupResources()

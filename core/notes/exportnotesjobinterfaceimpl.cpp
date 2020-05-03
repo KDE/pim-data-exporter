@@ -66,16 +66,7 @@ void ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource()
             if (!mAgentPaths.contains(url) && QDir(url).exists()) {
                 if (!url.isEmpty()) {
                     mAgentPaths << url;
-                    ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
-                    resourceJob->setArchivePath(archivePath);
-                    resourceJob->setUrl(url);
-                    resourceJob->setIdentifier(identifier);
-                    resourceJob->setArchive(archive());
-                    resourceJob->setArchiveName(QStringLiteral("notes.zip"));
-                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJobInterfaceImpl::error);
-                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJobInterfaceImpl::info);
-                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
-                    resourceJob->start();
+                    exportResourceToArchive(archivePath, url, identifier);
                 } else {
                     qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
                     QTimer::singleShot(0, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
@@ -107,4 +98,19 @@ Akonadi::Collection::Id ExportNotesJobInterfaceImpl::convertFolderPathToCollecti
 {
     ResourceConverterImpl converter;
     return converter.convertFolderPathToCollectionId(path);
+}
+
+void ExportNotesJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
+{
+    ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
+    resourceJob->setArchivePath(archivePath);
+    resourceJob->setUrl(url);
+    resourceJob->setIdentifier(identifier);
+    resourceJob->setArchive(archive());
+    resourceJob->setArchiveName(QStringLiteral("notes.zip"));
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJobInterfaceImpl::error);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
+    resourceJob->start();
+
 }

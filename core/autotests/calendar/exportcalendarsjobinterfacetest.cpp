@@ -52,6 +52,11 @@ QString ExportCalendarsJobInterfaceTestImpl::convertToFullCollectionPath(const q
     return resourceConverterTest.convertToFullCollectionPath(collectionValue);
 }
 
+void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
+{
+    //TODO implement it
+}
+
 void ExportCalendarsJobInterfaceTestImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest converter;
@@ -80,3 +85,4 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfig()
     file->start();
     delete exportNote;
 }
+

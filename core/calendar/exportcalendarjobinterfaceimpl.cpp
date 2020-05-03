@@ -86,16 +86,7 @@ void ExportCalendarJobInterfaceImpl::slotWriteNextArchiveResource()
             if (!mAgentPaths.contains(url)) {
                 if (!url.isEmpty()) {
                     mAgentPaths << url;
-                    ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
-                    resourceJob->setArchivePath(archivePath);
-                    resourceJob->setUrl(url);
-                    resourceJob->setIdentifier(identifier);
-                    resourceJob->setArchive(archive());
-                    resourceJob->setArchiveName(QStringLiteral("calendar.zip"));
-                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportCalendarJobInterfaceImpl::error);
-                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportCalendarJobInterfaceImpl::info);
-                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);
-                    resourceJob->start();
+                    exportResourceToArchive(archivePath, url, identifier);
                 } else {
                     qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
                     QTimer::singleShot(0, this, &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);
@@ -119,4 +110,18 @@ QString ExportCalendarJobInterfaceImpl::convertToFullCollectionPath(const qlongl
 {
     ResourceConverterImpl converter;
     return converter.convertToFullCollectionPath(collectionValue);
+}
+
+void ExportCalendarJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
+{
+    ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
+    resourceJob->setArchivePath(archivePath);
+    resourceJob->setUrl(url);
+    resourceJob->setIdentifier(identifier);
+    resourceJob->setArchive(archive());
+    resourceJob->setArchiveName(QStringLiteral("calendar.zip"));
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportCalendarJobInterfaceImpl::error);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportCalendarJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);
+    resourceJob->start();
 }

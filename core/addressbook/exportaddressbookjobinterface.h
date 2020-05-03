@@ -38,6 +38,7 @@ protected:
     virtual void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
     virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
     void slotCheckBackupConfig();
+    virtual void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) = 0;
 private:
     void slotCheckBackupResource();
 

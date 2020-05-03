@@ -47,6 +47,11 @@ Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToColl
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
+void ExportAlarmJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
+{
+    //TODO implement me
+}
+
 ExportAlarmJobInterfaceTest::ExportAlarmJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

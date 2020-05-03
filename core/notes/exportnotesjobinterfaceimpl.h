@@ -35,6 +35,7 @@ protected:
     void exportArchiveResource() override;
     void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+    void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
 private:
     void slotNoteJobTerminated();
     void slotWriteNextArchiveResource();

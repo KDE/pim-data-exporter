@@ -107,3 +107,17 @@ Akonadi::Collection::Id ExportAlarmJobInterfaceImpl::convertFolderPathToCollecti
     ResourceConverterImpl converter;
     return converter.convertFolderPathToCollectionId(path);
 }
+
+void ExportAlarmJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
+{
+    ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
+    resourceJob->setArchivePath(archivePath);
+    resourceJob->setUrl(url);
+    resourceJob->setIdentifier(identifier);
+    resourceJob->setArchive(archive());
+    resourceJob->setArchiveName(QStringLiteral("alarm.zip"));
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAlarmJobInterfaceImpl::error);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAlarmJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated);
+    resourceJob->start();
+}
