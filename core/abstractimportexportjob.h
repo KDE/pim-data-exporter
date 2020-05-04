@@ -122,6 +122,7 @@ protected:
     PimCommon::CreateResource *mCreateResource = nullptr;
     QStringList mAgentPaths;
     QVector<Utils::StoredType> mListStep;
+    QVector<Utils::AkonadiInstanceInfo> mAkonadiInstanceInfo;
     int mIndex = -1;
     static int sArchiveVersion;
 

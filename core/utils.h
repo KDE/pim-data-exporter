@@ -24,9 +24,7 @@
 #include <KSharedConfig>
 #include "pimdataexportcore_debug.h"
 class KZip;
-namespace Akonadi {
-class AgentInstance;
-}
+
 
 struct ResourceFiles {
     QString akonadiConfigFile;
@@ -39,6 +37,10 @@ struct ResourceFiles {
 };
 
 namespace Utils {
+struct AkonadiInstanceInfo {
+    QString identifier;
+    QStringList mimeTypes;
+};
 enum StoredType {
     None = 0,
     Identity = 1,
@@ -92,6 +94,7 @@ PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString notePath();
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString prefixAkonadiConfigFile();
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString exportDataTypeFileName();
 Q_REQUIRED_RESULT QString akonadiAgentName(const QString &configPath);
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource();
 
 Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path);
 KZip *openZip(const QString &filename, QString &errorMsg);
@@ -104,4 +107,5 @@ Q_REQUIRED_RESULT int currentArchiveVersion();
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString appTypeToI18n(AppsType type);
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString storedTypeToI18n(StoredType type);
 }
+Q_DECLARE_TYPEINFO(Utils::AkonadiInstanceInfo, Q_MOVABLE_TYPE);
 #endif // UTILS_H

@@ -30,6 +30,7 @@
 #include <KLocalizedString>
 #include <KZip>
 
+#include <AkonadiCore/AgentManager>
 #include <QDir>
 #include <QStandardPaths>
 
@@ -251,3 +252,18 @@ QString Utils::storedTypeToI18n(StoredType type)
     qCDebug(PIMDATAEXPORTERCORE_LOG) << " type unknown " << type;
     return QString();
 }
+
+QVector<Utils::AkonadiInstanceInfo> Utils::listOfResource()
+{
+    QVector<Utils::AkonadiInstanceInfo> instanceInfoList;
+    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
+    const Akonadi::AgentInstance::List list = manager->instances();
+    for (const Akonadi::AgentInstance &agent : list) {
+        Utils::AkonadiInstanceInfo info;
+        info.identifier = agent.identifier();
+        info.mimeTypes = agent.type().mimeTypes();
+        instanceInfoList.append(info);
+    }
+    return instanceInfoList;
+}
+

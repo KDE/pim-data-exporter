@@ -39,6 +39,7 @@ protected:
     void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
+    Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
 };
 
 class ExportAddressbookJobInterfaceTest : public QObject

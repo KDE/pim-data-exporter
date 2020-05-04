@@ -41,8 +41,14 @@ ExportAddressbookJobInterfaceImpl::~ExportAddressbookJobInterfaceImpl()
 {
 }
 
+QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceImpl::listOfResource()
+{
+    return Utils::listOfResource();
+}
+
 void ExportAddressbookJobInterfaceImpl::exportArchiveResource()
 {
+    mAkonadiInstanceInfo = listOfResource();
     QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotWriteNextArchiveResource);
 }
 
@@ -58,11 +64,9 @@ void ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated()
 
 void ExportAddressbookJobInterfaceImpl::slotWriteNextArchiveResource()
 {
-    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
-    const Akonadi::AgentInstance::List list = manager->instances();
-    if (mIndexIdentifier < list.count()) {
-        const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
-        const QString identifier = agent.identifier();
+    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
+        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
+        const QString identifier = agent.identifier;
         if (identifier.contains(QLatin1String("akonadi_vcarddir_resource_")) || identifier.contains(QLatin1String("akonadi_contacts_resource_"))) {
             const QString archivePath = Utils::addressbookPath() + identifier + QLatin1Char('/');
 
