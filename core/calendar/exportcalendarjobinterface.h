@@ -47,7 +47,6 @@ private:
 
     void backupConfig();
     int mIndexIdentifier = 0;
-
 };
 
 #endif // EXPORTCALENDARJOBINTERFACE_H

@@ -69,7 +69,6 @@ private:
 private:
 
     int mIndexIdentifier = 0;
-
 };
 
 #endif // ExportMailJob_H

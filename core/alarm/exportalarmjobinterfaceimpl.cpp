@@ -46,7 +46,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceImpl::listOfResource(
     return Utils::listOfResource();
 }
 
-
 void ExportAlarmJobInterfaceImpl::exportArchiveResource()
 {
     mAkonadiInstanceInfo = listOfResource();

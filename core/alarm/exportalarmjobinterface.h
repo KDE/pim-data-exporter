@@ -46,7 +46,6 @@ private:
 private:
 
     int mIndexIdentifier = 0;
-
 };
 
 #endif // EXPORTALARMJOBINTERFACE_H

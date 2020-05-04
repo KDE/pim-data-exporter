@@ -105,7 +105,6 @@ void ExportAlarmJobInterface::slotWriteNextArchiveResource()
     }
 }
 
-
 void ExportAlarmJobInterface::slotCheckBackupResource()
 {
     setProgressDialogLabel(i18n("Backing up resources..."));

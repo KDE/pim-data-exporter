@@ -44,6 +44,7 @@ QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceImpl::listOfResource(
 {
     return Utils::listOfResource();
 }
+
 void ExportNotesJobInterfaceImpl::exportArchiveResource()
 {
     mAkonadiInstanceInfo = listOfResource();

@@ -114,7 +114,6 @@ void ExportAddressbookJobInterface::slotWriteNextArchiveResource()
     }
 }
 
-
 void ExportAddressbookJobInterface::backupConfig()
 {
     setProgressDialogLabel(i18n("Backing up config..."));
