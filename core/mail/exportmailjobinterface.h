@@ -49,7 +49,7 @@ protected:
     virtual void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
     virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
     virtual void exportArchiveResource() = 0;
-    virtual void backupResources() = 0;
+    void backupResources();
     virtual QVector<MailCommon::MailFilter *> filters() = 0;
     virtual Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
     void slotCheckBackupResources();

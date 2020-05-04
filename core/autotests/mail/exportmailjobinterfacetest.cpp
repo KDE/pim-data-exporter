@@ -71,11 +71,6 @@ QVector<MailCommon::MailFilter *> ExportMailJobInterfaceTestImpl::filters()
     return {};
 }
 
-void ExportMailJobInterfaceTestImpl::backupResources()
-{
-    qDebug() << " not implement yet";
-}
-
 void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
     qDebug() << " not implement yet";

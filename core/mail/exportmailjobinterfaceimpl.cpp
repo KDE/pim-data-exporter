@@ -117,31 +117,3 @@ void ExportMailJobInterfaceImpl::exportResourceToArchive(const QString &archiveP
     resourceJob->start();
 }
 
-void ExportMailJobInterfaceImpl::backupResources()
-{
-    setProgressDialogLabel(i18n("Backing up resources..."));
-
-    for (const Utils::AkonadiInstanceInfo &agent : qAsConst(mAkonadiInstanceInfo)) {
-        const QStringList capabilities(agent.capabilities);
-        if (agent.mimeTypes.contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QLatin1String("Resource"))
-                && !capabilities.contains(QLatin1String("Virtual"))
-                && !capabilities.contains(QLatin1String("MailTransport"))) {
-                const QString identifier = agent.identifier;
-                //Store just pop3/imap/kolab/gmail account. Store other config when we copy data.
-                if (identifier.contains(QLatin1String("pop3")) || identifier.contains(QLatin1String("imap"))
-                    || identifier.contains(QLatin1String("_kolab_")) || identifier.contains(QLatin1String("_gmail_"))) {
-                    const QString errorStr = Utils::storeResources(archive(), identifier, Utils::resourcesPath());
-                    if (!errorStr.isEmpty()) {
-                        Q_EMIT error(errorStr);
-                    }
-                } else {
-                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " resource \"" << identifier << "\" will not store";
-                }
-            }
-        }
-    }
-
-    Q_EMIT info(i18n("Resources backup done."));
-}
-
