@@ -29,7 +29,7 @@
 #include <QFile>
 #include <QDir>
 #include <QStandardPaths>
-#include <exportresourcearchivejob.h>
+#include "exportresourcearchivejob.h"
 #include "resourceconverterimpl.h"
 
 ExportAlarmJobInterfaceImpl::ExportAlarmJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
