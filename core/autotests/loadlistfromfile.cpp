@@ -29,7 +29,7 @@ LoadListFromFile::LoadListFromFile(const QString &filename)
     const QByteArray content = f.readAll();
     f.close();
     const QString contextStr = QString::fromUtf8(content);
-    mFileList = contextStr.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+    mFileList = contextStr.split(QLatin1Char('\n'), QString::SkipEmptyParts);
     mFileList.sort();
 }
 
