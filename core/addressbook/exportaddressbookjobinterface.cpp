@@ -18,7 +18,6 @@
 */
 
 #include "exportaddressbookjobinterface.h"
-#include "exportresourcearchivejob.h"
 
 #include <KLocalizedString>
 

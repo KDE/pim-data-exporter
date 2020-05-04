@@ -18,7 +18,6 @@
 */
 
 #include "exportnotesjobinterface.h"
-#include "exportresourcearchivejob.h"
 
 #include <KLocalizedString>
 #include <KZip>

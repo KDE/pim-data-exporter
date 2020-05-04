@@ -22,7 +22,6 @@
 
 #include <MailCommon/FilterImporterExporter>
 #include "importexportprogressindicatorbase.h"
-#include "exportresourcearchivejob.h"
 
 #include <MailTransport/TransportManager>
 
