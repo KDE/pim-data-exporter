@@ -32,7 +32,8 @@ public:
     ~ImportNotesJobInterface() override;
 
     void start() override;
-
+protected:
+    virtual Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree = false) = 0;
 private:
     void slotNextStep() override;
 private:

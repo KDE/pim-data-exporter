@@ -100,7 +100,7 @@ void ImportNotesJobInterfaceImpl::restoreResources()
                         }
                     }
 
-                    const QString newResource = mCreateResource->createResource(QStringLiteral("akonadi_akonotes_resource"), filename, settings, true);
+                    const QString newResource = createResource(QStringLiteral("akonadi_akonotes_resource"), filename, settings, true);
                     infoAboutNewResource(newResource);
                     qCDebug(PIMDATAEXPORTERCORE_LOG) << " newResource" << newResource;
                     listResource << newResource;
@@ -116,4 +116,9 @@ Akonadi::Collection::Id ImportNotesJobInterfaceImpl::convertFolderPathToCollecti
 {
     ResourceConverterImpl converter;
     return converter.convertFolderPathToCollectionId(path);
+}
+
+QString ImportNotesJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    return mCreateResource->createResource(resources, name, settings, synchronizeTree);
 }

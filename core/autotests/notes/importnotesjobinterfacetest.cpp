@@ -46,6 +46,12 @@ Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToColl
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
+QString ImportNotesJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    //TODO
+    return {};
+}
+
 ImportNotesJobInterfaceTest::ImportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
