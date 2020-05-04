@@ -267,4 +267,3 @@ QVector<Utils::AkonadiInstanceInfo> Utils::listOfResource()
     }
     return instanceInfoList;
 }
-

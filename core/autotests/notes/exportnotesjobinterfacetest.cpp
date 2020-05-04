@@ -86,5 +86,3 @@ void ExportNotesJobInterfaceTest::exportNoteConfig()
     file->start();
     delete exportNote;
 }
-
-

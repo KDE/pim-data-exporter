@@ -25,7 +25,6 @@
 #include "pimdataexportcore_debug.h"
 class KZip;
 
-
 struct ResourceFiles {
     QString akonadiConfigFile;
     QString akonadiResources;

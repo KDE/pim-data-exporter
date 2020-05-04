@@ -185,13 +185,11 @@ QVector<MailCommon::MailFilter *> ExportMailJobInterfaceImpl::filters()
     return MailCommon::FilterManager::instance()->filters();
 }
 
-
 QString ExportMailJobInterfaceImpl::convertToFullCollectionPath(const qlonglong collectionValue)
 {
     ResourceConverterImpl converter;
     return converter.convertToFullCollectionPath(collectionValue);
 }
-
 
 QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceImpl::listOfResource()
 {

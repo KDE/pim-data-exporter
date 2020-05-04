@@ -36,7 +36,6 @@ TestImportFile::TestImportFile(const QString &archivePath, QObject *parent)
 
 TestImportFile::~TestImportFile()
 {
-
 }
 
 void TestImportFile::start()

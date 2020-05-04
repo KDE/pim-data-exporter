@@ -92,5 +92,3 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfig()
     file->start();
     delete exportNote;
 }
-
-

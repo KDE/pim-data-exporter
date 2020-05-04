@@ -76,7 +76,6 @@ void ExportMailJobInterfaceTestImpl::backupResources()
     qDebug() << " not implement yet";
 }
 
-
 void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
     qDebug() << " not implement yet";
@@ -112,12 +111,8 @@ void ExportMailJobInterfaceTest::exportMailConfig()
     delete exportNote;
 }
 
-
 QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlonglong collectionValue)
 {
     ResourceConverterTest converter;
     return converter.convertToFullCollectionPath(collectionValue);
 }
-
-
-

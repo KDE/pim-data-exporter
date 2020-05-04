@@ -115,5 +115,4 @@ void ExportNotesJobInterfaceImpl::exportResourceToArchive(const QString &archive
     connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJobInterfaceImpl::info);
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
     resourceJob->start();
-
 }
