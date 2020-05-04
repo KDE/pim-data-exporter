@@ -82,6 +82,12 @@ void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &arch
     qDebug() << " not implement yet";
 }
 
+QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceTestImpl::listOfResource()
+{
+    //TODO
+    return {};
+}
+
 ExportMailJobInterfaceTest::ExportMailJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
@@ -112,4 +118,6 @@ QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlongl
     ResourceConverterTest converter;
     return converter.convertToFullCollectionPath(collectionValue);
 }
+
+
 

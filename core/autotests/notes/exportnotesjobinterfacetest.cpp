@@ -46,6 +46,11 @@ void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
     qDebug() << " not implement yet";
 }
 
+QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()
+{
+    //TODO
+    return {};
+}
 
 void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
@@ -81,4 +86,5 @@ void ExportNotesJobInterfaceTest::exportNoteConfig()
     file->start();
     delete exportNote;
 }
+
 

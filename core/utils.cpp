@@ -262,6 +262,7 @@ QVector<Utils::AkonadiInstanceInfo> Utils::listOfResource()
         Utils::AkonadiInstanceInfo info;
         info.identifier = agent.identifier();
         info.mimeTypes = agent.type().mimeTypes();
+        info.capabilities = agent.type().capabilities();
         instanceInfoList.append(info);
     }
     return instanceInfoList;

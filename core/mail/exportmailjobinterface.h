@@ -52,6 +52,7 @@ protected:
     virtual Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
     void slotCheckBackupResources();
     virtual void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) = 0;
+    virtual Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() = 0;
 private:
     void slotCheckBackupIdentity();
     void slotCheckBackupMailTransport();

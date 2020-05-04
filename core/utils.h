@@ -40,6 +40,7 @@ namespace Utils {
 struct AkonadiInstanceInfo {
     QString identifier;
     QStringList mimeTypes;
+    QStringList capabilities;
 };
 enum StoredType {
     None = 0,

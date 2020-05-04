@@ -115,6 +115,7 @@ void ExportMailJobInterface::slotCheckBackupConfig()
 
 void ExportMailJobInterface::slotCheckBackupMails()
 {
+    mAkonadiInstanceInfo = listOfResource();
     if (checkBackupType(Utils::Mails)) {
         increaseProgressDialog();
         setProgressDialogLabel(i18n("Backing up Mails..."));

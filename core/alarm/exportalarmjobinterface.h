@@ -36,7 +36,7 @@ protected:
     virtual void exportArchiveResource() = 0;
     void slotCheckBackupConfig();
     virtual void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) = 0;
-
+    virtual Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() = 0;
 private:
     void slotCheckBackupResource();
 

@@ -25,7 +25,6 @@
 #include <KMime/Message>
 #include "importexportprogressindicatorbase.h"
 
-#include <AkonadiCore/AgentManager>
 #include <AkonadiCore/Collection>
 
 #include <MailTransport/TransportManager>
@@ -73,16 +72,14 @@ void ExportMailJobInterfaceImpl::exportArchiveResource()
 
 void ExportMailJobInterfaceImpl::slotWriteNextArchiveResource()
 {
-    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
-    const Akonadi::AgentInstance::List list = manager->instances();
-    if (mIndexIdentifier < list.count()) {
-        const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
-        const QStringList capabilities(agent.type().capabilities());
-        if (agent.type().mimeTypes().contains(KMime::Message::mimeType())) {
+    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
+        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
+        const QStringList capabilities(agent.capabilities);
+        if (agent.mimeTypes.contains(KMime::Message::mimeType())) {
             if (capabilities.contains(QLatin1String("Resource"))
                 && !capabilities.contains(QLatin1String("Virtual"))
                 && !capabilities.contains(QLatin1String("MailTransport"))) {
-                const QString identifier = agent.identifier();
+                const QString identifier = agent.identifier;
                 if (identifier.contains(QLatin1String("akonadi_maildir_resource_"))
                     || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
                     const QString archivePath = Utils::mailsPath() + identifier + QLatin1Char('/');
@@ -135,15 +132,13 @@ void ExportMailJobInterfaceImpl::backupResources()
 {
     setProgressDialogLabel(i18n("Backing up resources..."));
 
-    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
-    const Akonadi::AgentInstance::List list = manager->instances();
-    for (const Akonadi::AgentInstance &agent : list) {
-        const QStringList capabilities(agent.type().capabilities());
-        if (agent.type().mimeTypes().contains(KMime::Message::mimeType())) {
+    for (const Utils::AkonadiInstanceInfo &agent : qAsConst(mAkonadiInstanceInfo)) {
+        const QStringList capabilities(agent.capabilities);
+        if (agent.mimeTypes.contains(KMime::Message::mimeType())) {
             if (capabilities.contains(QLatin1String("Resource"))
                 && !capabilities.contains(QLatin1String("Virtual"))
                 && !capabilities.contains(QLatin1String("MailTransport"))) {
-                const QString identifier = agent.identifier();
+                const QString identifier = agent.identifier;
                 //Store just pop3/imap/kolab/gmail account. Store other config when we copy data.
                 if (identifier.contains(QLatin1String("pop3")) || identifier.contains(QLatin1String("imap"))
                     || identifier.contains(QLatin1String("_kolab_")) || identifier.contains(QLatin1String("_gmail_"))) {
@@ -195,4 +190,10 @@ QString ExportMailJobInterfaceImpl::convertToFullCollectionPath(const qlonglong 
 {
     ResourceConverterImpl converter;
     return converter.convertToFullCollectionPath(collectionValue);
+}
+
+
+QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceImpl::listOfResource()
+{
+    return Utils::listOfResource();
 }

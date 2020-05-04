@@ -21,7 +21,6 @@
 #include "exportresourcearchivejob.h"
 #include "resourceconverterimpl.h"
 
-#include <AkonadiCore/AgentManager>
 #include <MailCommon/MailUtil>
 #include <KLocalizedString>
 #include <KZip>
@@ -41,6 +40,11 @@ ExportNotesJobInterfaceImpl::~ExportNotesJobInterfaceImpl()
 {
 }
 
+QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceImpl::listOfResource()
+{
+    return Utils::listOfResource();
+}
+
 void ExportNotesJobInterfaceImpl::slotNoteJobTerminated()
 {
     if (wasCanceled()) {
@@ -53,11 +57,9 @@ void ExportNotesJobInterfaceImpl::slotNoteJobTerminated()
 
 void ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource()
 {
-    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
-    const Akonadi::AgentInstance::List list = manager->instances();
-    if (mIndexIdentifier < list.count()) {
-        const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
-        const QString identifier = agent.identifier();
+    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
+        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
+        const QString identifier = agent.identifier;
         if (identifier.contains(QLatin1String("akonadi_akonotes_resource_"))) {
             const QString archivePath = Utils::notePath() + identifier + QLatin1Char('/');
 
@@ -85,7 +87,8 @@ void ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource()
 
 void ExportNotesJobInterfaceImpl::exportArchiveResource()
 {
-    slotNoteJobTerminated();
+    mAkonadiInstanceInfo = listOfResource();
+    QTimer::singleShot(0, this, &ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource);
 }
 
 void ExportNotesJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)

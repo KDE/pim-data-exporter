@@ -47,6 +47,7 @@ protected:
 
     Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
+    Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
 };
 
 class ExportMailJobInterfaceTest : public QObject

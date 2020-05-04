@@ -57,6 +57,12 @@ void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString 
     //TODO implement it
 }
 
+QVector<Utils::AkonadiInstanceInfo> ExportCalendarsJobInterfaceTestImpl::listOfResource()
+{
+    //TODO
+    return {};
+}
+
 void ExportCalendarsJobInterfaceTestImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest converter;
@@ -85,4 +91,6 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfig()
     file->start();
     delete exportNote;
 }
+
+
 

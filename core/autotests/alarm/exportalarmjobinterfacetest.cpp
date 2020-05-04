@@ -41,6 +41,12 @@ void ExportAlarmJobInterfaceTestImpl::exportArchiveResource()
     qDebug() << " not implement yet";
 }
 
+QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceTestImpl::listOfResource()
+{
+    //TODO
+    return {};
+}
+
 Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
@@ -74,3 +80,5 @@ void ExportAlarmJobInterfaceTest::exportAlarmConfig()
     file->start();
     delete exportNote;
 }
+
+

@@ -19,8 +19,6 @@
 
 #include "exportalarmjobinterfaceimpl.h"
 
-#include <AkonadiCore/AgentManager>
-
 #include <KLocalizedString>
 #include <MailCommon/MailUtil>
 
@@ -43,6 +41,11 @@ ExportAlarmJobInterfaceImpl::~ExportAlarmJobInterfaceImpl()
 {
 }
 
+QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceImpl::listOfResource()
+{
+    return Utils::listOfResource();
+}
+
 void ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated()
 {
     if (wasCanceled()) {
@@ -55,11 +58,9 @@ void ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated()
 
 void ExportAlarmJobInterfaceImpl::slotWriteNextArchiveResource()
 {
-    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
-    const Akonadi::AgentInstance::List list = manager->instances();
-    if (mIndexIdentifier < list.count()) {
-        const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
-        const QString identifier = agent.identifier();
+    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
+        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
+        const QString identifier = agent.identifier;
         if (identifier.contains(QLatin1String("akonadi_kalarm_dir_resource_"))) {
             const QString archivePath = Utils::alarmPath() + identifier + QLatin1Char('/');
 
@@ -99,6 +100,7 @@ void ExportAlarmJobInterfaceImpl::slotWriteNextArchiveResource()
 
 void ExportAlarmJobInterfaceImpl::exportArchiveResource()
 {
+    mAkonadiInstanceInfo = listOfResource();
     QTimer::singleShot(0, this, &ExportAlarmJobInterfaceImpl::slotWriteNextArchiveResource);
 }
 

@@ -19,7 +19,6 @@
 
 #include "exportcalendarjobinterfaceimpl.h"
 #include <MailCommon/MailUtil>
-#include <AkonadiCore/AgentManager>
 
 #include <KLocalizedString>
 
@@ -44,8 +43,14 @@ ExportCalendarJobInterfaceImpl::~ExportCalendarJobInterfaceImpl()
 {
 }
 
+QVector<Utils::AkonadiInstanceInfo> ExportCalendarJobInterfaceImpl::listOfResource()
+{
+    return Utils::listOfResource();
+}
+
 void ExportCalendarJobInterfaceImpl::exportArchiveResource()
 {
+    mAkonadiInstanceInfo = listOfResource();
     QTimer::singleShot(0, this, &ExportCalendarJobInterfaceImpl::slotWriteNextArchiveResource);
 }
 
@@ -73,11 +78,9 @@ void ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated()
 
 void ExportCalendarJobInterfaceImpl::slotWriteNextArchiveResource()
 {
-    Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
-    const Akonadi::AgentInstance::List list = manager->instances();
-    if (mIndexIdentifier < list.count()) {
-        const Akonadi::AgentInstance agent = list.at(mIndexIdentifier);
-        const QString identifier = agent.identifier();
+    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
+        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
+        const QString identifier = agent.identifier;
         if (identifier.contains(QLatin1String("akonadi_icaldir_resource_"))) {
             const QString archivePath = Utils::calendarPath() + identifier + QLatin1Char('/');
 
