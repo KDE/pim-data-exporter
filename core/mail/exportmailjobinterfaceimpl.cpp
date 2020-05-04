@@ -117,3 +117,7 @@ void ExportMailJobInterfaceImpl::exportResourceToArchive(const QString &archiveP
     resourceJob->start();
 }
 
+QString ExportMailJobInterfaceImpl::storeResources(KZip *archive, const QString &identifier, const QString &path)
+{
+    return Utils::storeResources(archive, identifier, path);
+}
