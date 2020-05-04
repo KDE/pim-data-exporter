@@ -44,51 +44,10 @@ QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceImpl::listOfResource(
 {
     return Utils::listOfResource();
 }
-
-void ExportNotesJobInterfaceImpl::slotNoteJobTerminated()
-{
-    if (wasCanceled()) {
-        Q_EMIT jobFinished();
-        return;
-    }
-    mIndexIdentifier++;
-    QTimer::singleShot(0, this, &ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource);
-}
-
-void ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource()
-{
-    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
-        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
-        const QString identifier = agent.identifier;
-        if (identifier.contains(QLatin1String("akonadi_akonotes_resource_"))) {
-            const QString archivePath = Utils::notePath() + identifier + QLatin1Char('/');
-
-            ResourceConverterImpl converter;
-            const QString url = converter.resourcePath(identifier);
-            if (!mAgentPaths.contains(url) && QDir(url).exists()) {
-                if (!url.isEmpty()) {
-                    mAgentPaths << url;
-                    exportResourceToArchive(archivePath, url, identifier);
-                } else {
-                    qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
-                    QTimer::singleShot(0, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
-                }
-            } else {
-                QTimer::singleShot(0, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
-            }
-        } else {
-            QTimer::singleShot(0, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
-        }
-    } else {
-        Q_EMIT info(i18n("Resources backup done."));
-        QTimer::singleShot(0, this, &ExportNotesJobInterface::slotCheckBackupConfig);
-    }
-}
-
 void ExportNotesJobInterfaceImpl::exportArchiveResource()
 {
     mAkonadiInstanceInfo = listOfResource();
-    QTimer::singleShot(0, this, &ExportNotesJobInterfaceImpl::slotWriteNextArchiveResource);
+    QTimer::singleShot(0, this, &ExportNotesJobInterface::slotWriteNextArchiveResource);
 }
 
 void ExportNotesJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)

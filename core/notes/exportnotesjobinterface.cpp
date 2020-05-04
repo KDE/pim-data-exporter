@@ -1,4 +1,4 @@
-/*
+﻿/*
    Copyright (C) 2013-2020 Laurent Montel <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
@@ -28,6 +28,7 @@
 #include <QDir>
 #include <QTimer>
 #include <QStandardPaths>
+#include <resourceconverterimpl.h>
 
 ExportNotesJobInterface::ExportNotesJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
@@ -120,4 +121,44 @@ void ExportNotesJobInterface::backupConfig()
     backupConfigFile(QStringLiteral("akonadi_notes_agent.notifyrc"));
     storeDirectory(QStringLiteral("/knotes/print/theme/"));
     Q_EMIT info(i18n("Config backup done."));
+}
+
+void ExportNotesJobInterface::slotNoteJobTerminated()
+{
+    if (wasCanceled()) {
+        Q_EMIT jobFinished();
+        return;
+    }
+    mIndexIdentifier++;
+    QTimer::singleShot(0, this, &ExportNotesJobInterface::slotWriteNextArchiveResource);
+}
+
+void ExportNotesJobInterface::slotWriteNextArchiveResource()
+{
+    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
+        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
+        const QString identifier = agent.identifier;
+        if (identifier.contains(QLatin1String("akonadi_akonotes_resource_"))) {
+            const QString archivePath = Utils::notePath() + identifier + QLatin1Char('/');
+
+            ResourceConverterImpl converter;
+            const QString url = converter.resourcePath(identifier);
+            if (!mAgentPaths.contains(url) && QDir(url).exists()) {
+                if (!url.isEmpty()) {
+                    mAgentPaths << url;
+                    exportResourceToArchive(archivePath, url, identifier);
+                } else {
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
+                    QTimer::singleShot(0, this, &ExportNotesJobInterface::slotNoteJobTerminated);
+                }
+            } else {
+                QTimer::singleShot(0, this, &ExportNotesJobInterface::slotNoteJobTerminated);
+            }
+        } else {
+            QTimer::singleShot(0, this, &ExportNotesJobInterface::slotNoteJobTerminated);
+        }
+    } else {
+        Q_EMIT info(i18n("Resources backup done."));
+        QTimer::singleShot(0, this, &ExportNotesJobInterface::slotCheckBackupConfig);
+    }
 }
