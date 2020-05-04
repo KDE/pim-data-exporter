@@ -55,62 +55,51 @@ ExportMailJobInterfaceImpl::~ExportMailJobInterfaceImpl()
 {
 }
 
-void ExportMailJobInterfaceImpl::slotMailsJobTerminated()
-{
-    if (wasCanceled()) {
-        Q_EMIT jobFinished();
-        return;
-    }
-    mIndexIdentifier++;
-    exportArchiveResource();
-}
 
 void ExportMailJobInterfaceImpl::exportArchiveResource()
 {
     QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotWriteNextArchiveResource);
 }
 
-void ExportMailJobInterfaceImpl::slotWriteNextArchiveResource()
+
+Akonadi::Collection::Id ExportMailJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
-    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
-        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
-        const QStringList capabilities(agent.capabilities);
-        if (agent.mimeTypes.contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QLatin1String("Resource"))
-                && !capabilities.contains(QLatin1String("Virtual"))
-                && !capabilities.contains(QLatin1String("MailTransport"))) {
-                const QString identifier = agent.identifier;
-                if (identifier.contains(QLatin1String("akonadi_maildir_resource_"))
-                    || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
-                    const QString archivePath = Utils::mailsPath() + identifier + QLatin1Char('/');
-                    ResourceConverterImpl converter;
-                    const QString url = converter.resourcePath(identifier);
-                    if (!mAgentPaths.contains(url)) {
-                        if (!url.isEmpty()) {
-                            mAgentPaths << url;
-                            exportResourceToArchive(archivePath, url, identifier);
-                        } else {
-                            qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
-                            QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
-                        }
-                    } else {
-                        QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
-                    }
-                } else if (identifier.contains(QLatin1String("akonadi_mbox_resource_"))) {
-                    backupResourceFile(identifier, Utils::addressbookPath());
-                    QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
-                } else {
-                    QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
-                }
-            } else {
-                QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
-            }
-        } else {
-            QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
-        }
-    } else {
-        QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotCheckBackupResources);
-    }
+    ResourceConverterImpl converter;
+    return converter.convertFolderPathToCollectionId(path);
+}
+
+void ExportMailJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
+{
+    ResourceConverterImpl converter;
+    converter.convertCollectionIdsToRealPath(group, currentKey, prefixCollection);
+}
+
+void ExportMailJobInterfaceImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
+{
+    ResourceConverterImpl converter;
+    converter.convertCollectionToRealPath(group, currentKey);
+}
+
+void ExportMailJobInterfaceImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
+{
+    ResourceConverterImpl converter;
+    converter.convertCollectionListToRealPath(group, currentKey);
+}
+
+QVector<MailCommon::MailFilter *> ExportMailJobInterfaceImpl::filters()
+{
+    return MailCommon::FilterManager::instance()->filters();
+}
+
+QString ExportMailJobInterfaceImpl::convertToFullCollectionPath(const qlonglong collectionValue)
+{
+    ResourceConverterImpl converter;
+    return converter.convertToFullCollectionPath(collectionValue);
+}
+
+QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceImpl::listOfResource()
+{
+    return Utils::listOfResource();
 }
 
 void ExportMailJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
@@ -156,42 +145,3 @@ void ExportMailJobInterfaceImpl::backupResources()
     Q_EMIT info(i18n("Resources backup done."));
 }
 
-Akonadi::Collection::Id ExportMailJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
-{
-    ResourceConverterImpl converter;
-    return converter.convertFolderPathToCollectionId(path);
-}
-
-void ExportMailJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
-{
-    ResourceConverterImpl converter;
-    converter.convertCollectionIdsToRealPath(group, currentKey, prefixCollection);
-}
-
-void ExportMailJobInterfaceImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
-{
-    ResourceConverterImpl converter;
-    converter.convertCollectionToRealPath(group, currentKey);
-}
-
-void ExportMailJobInterfaceImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
-{
-    ResourceConverterImpl converter;
-    converter.convertCollectionListToRealPath(group, currentKey);
-}
-
-QVector<MailCommon::MailFilter *> ExportMailJobInterfaceImpl::filters()
-{
-    return MailCommon::FilterManager::instance()->filters();
-}
-
-QString ExportMailJobInterfaceImpl::convertToFullCollectionPath(const qlonglong collectionValue)
-{
-    ResourceConverterImpl converter;
-    return converter.convertToFullCollectionPath(collectionValue);
-}
-
-QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceImpl::listOfResource()
-{
-    return Utils::listOfResource();
-}

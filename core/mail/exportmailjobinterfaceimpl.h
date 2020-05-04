@@ -39,19 +39,12 @@ protected:
     void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey) override;
     void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) override;
     void exportArchiveResource() override;
-    void backupResources() override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     Q_REQUIRED_RESULT QVector<MailCommon::MailFilter *> filters() override;
     Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
-private:
-    void slotCheckBackupMails();
-    void slotWriteNextArchiveResource();
-    void slotMailsJobTerminated();
-
-    QDateTime mArchiveTime = QDateTime::currentDateTime();
-    int mIndexIdentifier = 0;
+    void backupResources() override;
 };
 
 #endif // ExportMailJob_H

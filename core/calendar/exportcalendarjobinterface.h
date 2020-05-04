@@ -32,6 +32,8 @@ public:
     ~ExportCalendarJobInterface() override;
 
     void start() override;
+    void slotCalendarJobTerminated();
+    void slotWriteNextArchiveResource();
 
 protected:
     virtual void exportArchiveResource() = 0;
@@ -45,6 +47,7 @@ private:
 
     void backupConfig();
     int mIndexIdentifier = 0;
+
 };
 
 #endif // EXPORTCALENDARJOBINTERFACE_H

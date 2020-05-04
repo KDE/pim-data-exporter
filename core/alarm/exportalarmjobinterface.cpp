@@ -53,6 +53,59 @@ void ExportAlarmJobInterface::start()
     }
 }
 
+void ExportAlarmJobInterface::slotAlarmJobTerminated()
+{
+    if (wasCanceled()) {
+        Q_EMIT jobFinished();
+        return;
+    }
+    mIndexIdentifier++;
+    QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotWriteNextArchiveResource);
+}
+
+void ExportAlarmJobInterface::slotWriteNextArchiveResource()
+{
+    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
+        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
+        const QString identifier = agent.identifier;
+        if (identifier.contains(QLatin1String("akonadi_kalarm_dir_resource_"))) {
+            const QString archivePath = Utils::alarmPath() + identifier + QLatin1Char('/');
+
+            ResourceConverterImpl converter;
+            const QString url = converter.resourcePath(identifier);
+            if (!mAgentPaths.contains(url)) {
+                if (!url.isEmpty()) {
+                    mAgentPaths << url;
+                    ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
+                    resourceJob->setArchivePath(archivePath);
+                    resourceJob->setUrl(url);
+                    resourceJob->setIdentifier(identifier);
+                    resourceJob->setArchive(archive());
+                    resourceJob->setArchiveName(QStringLiteral("alarm.zip"));
+                    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAlarmJobInterface::error);
+                    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAlarmJobInterface::info);
+                    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
+                    resourceJob->start();
+                } else {
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
+                    QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
+                }
+            } else {
+                QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
+            }
+        } else if (identifier.contains(QLatin1String("akonadi_kalarm_resource_"))) {
+            backupResourceFile(identifier, Utils::alarmPath());
+            QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
+        } else {
+            QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
+        }
+    } else {
+        Q_EMIT info(i18n("Resources backup done."));
+        QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotCheckBackupConfig);
+    }
+}
+
+
 void ExportAlarmJobInterface::slotCheckBackupResource()
 {
     setProgressDialogLabel(i18n("Backing up resources..."));

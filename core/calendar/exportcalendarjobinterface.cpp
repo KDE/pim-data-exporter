@@ -28,6 +28,7 @@
 #include <QFile>
 #include <QDir>
 #include <QColor>
+#include <resourceconverterimpl.h>
 
 #include <QStandardPaths>
 #include <exportresourcearchivejob.h>
@@ -39,6 +40,49 @@ ExportCalendarJobInterface::ExportCalendarJobInterface(QObject *parent, Utils::S
 
 ExportCalendarJobInterface::~ExportCalendarJobInterface()
 {
+}
+
+void ExportCalendarJobInterface::slotCalendarJobTerminated()
+{
+    if (wasCanceled()) {
+        Q_EMIT jobFinished();
+        return;
+    }
+    mIndexIdentifier++;
+    QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotWriteNextArchiveResource);
+}
+
+void ExportCalendarJobInterface::slotWriteNextArchiveResource()
+{
+    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
+        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
+        const QString identifier = agent.identifier;
+        if (identifier.contains(QLatin1String("akonadi_icaldir_resource_"))) {
+            const QString archivePath = Utils::calendarPath() + identifier + QLatin1Char('/');
+
+            ResourceConverterImpl converter;
+            const QString url = converter.resourcePath(identifier);
+            if (!mAgentPaths.contains(url)) {
+                if (!url.isEmpty()) {
+                    mAgentPaths << url;
+                    exportResourceToArchive(archivePath, url, identifier);
+                } else {
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
+                    QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
+                }
+            } else {
+                QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
+            }
+        } else if (identifier.contains(QLatin1String("akonadi_ical_resource_"))) {
+            backupResourceFile(identifier, Utils::calendarPath());
+            QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
+        } else {
+            QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
+        }
+    } else {
+        Q_EMIT info(i18n("Resources backup done."));
+        QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCheckBackupConfig);
+    }
 }
 
 void ExportCalendarJobInterface::start()

@@ -32,6 +32,8 @@ public:
     ~ExportAddressbookJobInterface() override;
 
     void start() override;
+    void slotWriteNextArchiveResource();
+    void slotAddressbookJobTerminated();
 
 protected:
     virtual void exportArchiveResource() = 0;
@@ -44,6 +46,7 @@ private:
     void slotCheckBackupResource();
 
     void backupConfig();
+    int mIndexIdentifier = 0;
 };
 
 #endif // EXPORTADDRESSBOOKINTERFACE_H

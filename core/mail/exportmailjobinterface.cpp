@@ -31,12 +31,13 @@
 #include <QTemporaryFile>
 
 #include "pimdataexportcore_debug.h"
-
+#include <KMime/Message>
 #include <QFile>
 #include <QDir>
 #include <QTimer>
 #include <QStandardPaths>
 #include <QRegularExpression>
+#include <resourceconverterimpl.h>
 
 #include <KIdentityManagement/IdentityManager>
 #include <KIdentityManagement/Identity>
@@ -581,3 +582,57 @@ void ExportMailJobInterface::backupIdentity()
         }
     }
 }
+
+void ExportMailJobInterface::slotMailsJobTerminated()
+{
+    if (wasCanceled()) {
+        Q_EMIT jobFinished();
+        return;
+    }
+    mIndexIdentifier++;
+    exportArchiveResource();
+}
+
+void ExportMailJobInterface::slotWriteNextArchiveResource()
+{
+    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
+        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
+        const QStringList capabilities(agent.capabilities);
+        if (agent.mimeTypes.contains(KMime::Message::mimeType())) {
+            if (capabilities.contains(QLatin1String("Resource"))
+                && !capabilities.contains(QLatin1String("Virtual"))
+                && !capabilities.contains(QLatin1String("MailTransport"))) {
+                const QString identifier = agent.identifier;
+                if (identifier.contains(QLatin1String("akonadi_maildir_resource_"))
+                    || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
+                    const QString archivePath = Utils::mailsPath() + identifier + QLatin1Char('/');
+                    ResourceConverterImpl converter;
+                    const QString url = converter.resourcePath(identifier);
+                    if (!mAgentPaths.contains(url)) {
+                        if (!url.isEmpty()) {
+                            mAgentPaths << url;
+                            exportResourceToArchive(archivePath, url, identifier);
+                        } else {
+                            qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
+                            QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
+                        }
+                    } else {
+                        QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
+                    }
+                } else if (identifier.contains(QLatin1String("akonadi_mbox_resource_"))) {
+                    backupResourceFile(identifier, Utils::addressbookPath());
+                    QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
+                } else {
+                    QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
+                }
+            } else {
+                QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
+            }
+        } else {
+            QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
+        }
+    } else {
+        QTimer::singleShot(0, this, &ExportMailJobInterface::slotCheckBackupResources);
+    }
+}
+

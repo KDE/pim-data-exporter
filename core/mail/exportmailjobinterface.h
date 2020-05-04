@@ -38,6 +38,8 @@ public:
     ~ExportMailJobInterface() override;
 
     void start() override;
+    void slotWriteNextArchiveResource();
+    void slotMailsJobTerminated();
 
 Q_SIGNALS:
     void taskCanceled();
@@ -63,6 +65,10 @@ private:
     void backupTransports();
     void backupConfig();
     void backupIdentity();
+private:
+
+    int mIndexIdentifier = 0;
+
 };
 
 #endif // ExportMailJob_H

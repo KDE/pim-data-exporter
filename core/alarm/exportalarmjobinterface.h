@@ -32,6 +32,8 @@ public:
     ~ExportAlarmJobInterface() override;
 
     void start() override;
+    void slotAlarmJobTerminated();
+    void slotWriteNextArchiveResource();
 protected:
     virtual void exportArchiveResource() = 0;
     void slotCheckBackupConfig();
@@ -41,6 +43,10 @@ private:
     void slotCheckBackupResource();
 
     void backupConfig();
+private:
+
+    int mIndexIdentifier = 0;
+
 };
 
 #endif // EXPORTALARMJOBINTERFACE_H

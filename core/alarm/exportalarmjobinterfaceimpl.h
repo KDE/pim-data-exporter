@@ -37,11 +37,6 @@ protected:
 
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
-private:
-    void slotAlarmJobTerminated();
-    void slotWriteNextArchiveResource();
-
-    int mIndexIdentifier = 0;
 };
 
 #endif // EXPORTALARMJOBINTERFACEIMPL_H

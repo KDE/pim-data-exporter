@@ -52,48 +52,6 @@ void ExportAddressbookJobInterfaceImpl::exportArchiveResource()
     QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotWriteNextArchiveResource);
 }
 
-void ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated()
-{
-    if (wasCanceled()) {
-        Q_EMIT jobFinished();
-        return;
-    }
-    mIndexIdentifier++;
-    QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotWriteNextArchiveResource);
-}
-
-void ExportAddressbookJobInterfaceImpl::slotWriteNextArchiveResource()
-{
-    if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
-        const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
-        const QString identifier = agent.identifier;
-        if (identifier.contains(QLatin1String("akonadi_vcarddir_resource_")) || identifier.contains(QLatin1String("akonadi_contacts_resource_"))) {
-            const QString archivePath = Utils::addressbookPath() + identifier + QLatin1Char('/');
-
-            ResourceConverterImpl converter;
-            const QString url = converter.resourcePath(identifier, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts/"));
-            if (!mAgentPaths.contains(url)) {
-                if (!url.isEmpty()) {
-                    mAgentPaths << url;
-                    exportResourceToArchive(archivePath, url, identifier);
-                } else {
-                    qCDebug(PIMDATAEXPORTERCORE_LOG) << "Url is empty for " << identifier;
-                    QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated);
-                }
-            } else {
-                QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated);
-            }
-        } else if (identifier.contains(QLatin1String("akonadi_vcard_resource_"))) {
-            backupResourceFile(identifier, Utils::addressbookPath());
-            QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated);
-        } else {
-            QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated);
-        }
-    } else {
-        Q_EMIT info(i18n("Resources backup done."));
-        QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotCheckBackupConfig);
-    }
-}
 
 void ExportAddressbookJobInterfaceImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
