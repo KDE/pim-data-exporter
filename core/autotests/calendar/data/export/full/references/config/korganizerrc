@@ -33,7 +33,7 @@ AspectRatioMode=1
 Size=671,467
 
 [CollectionTreeView]
-Expansion=c1,c2642,c2643,c2644,c2762
+Expansion=foo/bla bla/bli1,foo/bla bla/bli2642,foo/bla bla/bli2643,foo/bla bla/bli2644,foo/bla bla/bli2762
 HorizontalScroll=0
 VerticalScroll=0
 
@@ -95,10 +95,10 @@ Week Numbers Show Work Week=true
 
 [GlobalCollectionSelection]
 Current=x-1
-Selection=c3845,c2334,c2333,c3095,c2737,c4054
+Selection=foo/bla bla/bli3845,foo/bla bla/bli2334,foo/bla bla/bli2333,foo/bla bla/bli3095,foo/bla bla/bli2737,foo/bla bla/bli4054
 
 [GlobalCollectionView]
-Expansion=c1,c2642,c2643,c2644,c2762
+Expansion=foo/bla bla/bli1,foo/bla bla/bli2642,foo/bla bla/bli2643,foo/bla bla/bli2644,foo/bla bla/bli2762
 HorizontalScroll=0
 VerticalScroll=0
 
