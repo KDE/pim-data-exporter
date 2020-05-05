@@ -161,7 +161,7 @@ void ExportCalendarJob::backupConfig()
         if (korganizerConfig->hasGroup(globalCollectionViewStr)) {
             KConfigGroup group = korganizerConfig->group(globalCollectionViewStr);
             const QString selectionKey(QStringLiteral("Expansion"));
-            convertCollectionListToRealPath(group, selectionKey);
+            Utils::convertCollectionListToRealPath(group, selectionKey);
         }
 
         korganizerConfig->sync();
