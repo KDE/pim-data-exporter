@@ -30,7 +30,7 @@ TestImportFile::TestImportFile(const QString &archivePath, QObject *parent)
     : QObject(parent)
     , mArchivePath(archivePath + QStringLiteral("archive.zip"))
 {
-    mArchiveStorage = new ArchiveStorage(archivePath, this);
+    mArchiveStorage = new ArchiveStorage(mArchivePath, this);
     Q_ASSERT(mArchiveStorage->openArchive(false));
 }
 

@@ -35,7 +35,7 @@ CompareImportFile::~CompareImportFile()
 void CompareImportFile::compareFile()
 {
     GenerateListFileFromArchive archive(mArchiveFilePath);
-    //qDebug() << " archive " << archive.listFile();
+    qDebug() << " archive " << archive.listFile();
 
     LoadListFromFile f(mListFilePath + QStringLiteral("/list.txt"));
     const QStringList archiveList = archive.listFile();

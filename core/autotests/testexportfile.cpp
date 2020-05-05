@@ -26,6 +26,7 @@
 #include <QDir>
 #include <QSignalSpy>
 #include <QTest>
+//#define REMOVE_CREATED_ZIP_FILE 1
 
 TestExportFile::TestExportFile(QObject *parent)
     : QObject(parent)
@@ -82,7 +83,9 @@ void TestExportFile::start()
     compareExportFile.setTempFilePath(mTemporaryFile);
     compareExportFile.setListFilePath(QLatin1String(mPathConfig));
     compareExportFile.compareFiles();
+#ifdef REMOVE_CREATED_ZIP_FILE
     QVERIFY(QFile(mTemporaryFile).remove());
+#endif
 }
 
 ArchiveStorage *TestExportFile::archiveStorage() const
