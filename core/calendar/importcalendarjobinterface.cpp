@@ -227,6 +227,7 @@ void ImportCalendarJobInterface::importkorganizerConfig(const KArchiveFile *file
 
     convertCollectionListStrToAkonadiId(korganizerConfig, QStringLiteral("GlobalCollectionSelection"), QStringLiteral("Selection"), true);
     convertCollectionListStrToAkonadiId(korganizerConfig, QStringLiteral("CollectionTreeView"), QStringLiteral("Expansion"), true);
+    convertCollectionListStrToAkonadiId(korganizerConfig, QStringLiteral("GlobalCollectionView"), QStringLiteral("Expansion"), true);
 
     korganizerConfig->sync();
 }
