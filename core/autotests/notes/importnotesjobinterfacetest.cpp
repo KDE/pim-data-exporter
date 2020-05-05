@@ -35,11 +35,6 @@ ImportNotesJobInterfaceTestImpl::~ImportNotesJobInterfaceTestImpl()
 {
 }
 
-void ImportNotesJobInterfaceTestImpl::restoreResources()
-{
-    qDebug() << " not implement yet";
-}
-
 Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
@@ -50,6 +45,11 @@ QString ImportNotesJobInterfaceTestImpl::createResource(const QString &resources
 {
     //TODO
     return {};
+}
+
+void ImportNotesJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
+{
+    //TODO
 }
 
 ImportNotesJobInterfaceTest::ImportNotesJobInterfaceTest(QObject *parent)
@@ -74,3 +74,5 @@ void ImportNotesJobInterfaceTest::importNoteConfig()
     file->start();
     delete impl;
 }
+
+
