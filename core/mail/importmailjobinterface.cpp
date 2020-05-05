@@ -653,7 +653,7 @@ void ImportMailJobInterface::restoreMails()
         }
     }
     Q_EMIT info(i18n("Mails restored."));
-    startSynchronizeResources(listResourceToSync);
+    synchronizeResource(listResourceToSync);
 }
 
 void ImportMailJobInterface::restoreConfig()
@@ -718,7 +718,7 @@ void ImportMailJobInterface::restoreConfig()
             MailCommon::FilterImporterExporter exportFilters;
             QVector<MailCommon::MailFilter *> lstFilter = exportFilters.importFilters(canceled, MailCommon::FilterImporterExporter::KMailFilter, filterFileName);
             if (canceled) {
-                MailCommon::FilterManager::instance()->appendFilters(lstFilter);
+                importFilters(lstFilter);
             }
         }
     }
@@ -955,18 +955,6 @@ void ImportMailJobInterface::importSimpleFilesInDirectory(const QString &relativ
             }
         }
     }
-}
-
-void ImportMailJobInterface::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
-{
-    auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection(colId), Akonadi::CollectionFetchJob::Base, this);
-    connect(fetch, &Akonadi::CollectionFetchJob::collectionsReceived,
-            this, [ type](const Akonadi::Collection::List &cols) {
-        if (cols.count() != 1) {
-            return;
-        }
-        Akonadi::SpecialMailCollections::self()->registerCollection(type, cols.first());
-    });
 }
 
 void ImportMailJobInterface::restoreIdentity()
@@ -1477,10 +1465,4 @@ void ImportMailJobInterface::convertCollectionStrToAkonadiId(const KSharedConfig
         KConfigGroup eventGroup = config->group(groupName);
         (void)convertRealPathToCollection(eventGroup, key, false);
     }
-}
-
-
-QString ImportMailJobInterface::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings)
-{
-    return mCreateResource->createResource(resources, name, settings);
 }

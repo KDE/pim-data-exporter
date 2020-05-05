@@ -22,7 +22,7 @@
 #include "importexportprogressindicatorbase.h"
 
 #include "mail/exportmailjobinterfaceimpl.h"
-#include "mail/importmailjobinterface.h"
+#include "mail/importmailjobinterfaceimpl.h"
 
 #include "addressbook/exportaddressbookjobinterfaceimpl.h"
 #include "addressbook/importaddressbookjobinterfaceimpl.h"
@@ -205,7 +205,7 @@ void PimDataBackupRestore::restoreNextStep()
         switch (mStoreIterator.key()) {
         case Utils::KMail:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportMailJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData = new ImportMailJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

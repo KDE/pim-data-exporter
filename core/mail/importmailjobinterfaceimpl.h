@@ -17,10 +17,10 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef ImportMailJobINTERFACE_H
-#define ImportMailJobINTERFACE_H
+#ifndef ImportMailJobINTERFACEIMPL_H
+#define ImportMailJobINTERFACEIMPL_H
 
-#include "abstractimportexportjob.h"
+#include "importmailjobinterface.h"
 #include "pimdataexportercore_private_export.h"
 #include <AkonadiCore/Collection>
 #include <Akonadi/KMime/SpecialMailCollections>
@@ -33,51 +33,17 @@ class ArchiveStorage;
 namespace MailTransport {
 class Transport;
 }
-class PIMDATAEXPORTER_TESTS_EXPORT ImportMailJobInterfaceImpl : public AbstractImportExportJob
+class PIMDATAEXPORTER_TESTS_EXPORT ImportMailJobInterfaceImpl : public ImportMailJobInterface
 {
     Q_OBJECT
 public:
     explicit ImportMailJobInterfaceImpl(QObject *widget, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportMailJobInterfaceImpl() override;
-
-    void start() override;
-
-    //For debugging
-    void importMailTransport(const QString &tempDirName);
 protected:
-    void slotNextStep() override;
-    void restoreResources() override;
-
-private:
-    void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId);
-    void restoreTransports();
-    void restoreMails();
-    void restoreConfig();
-    void restoreIdentity();
-
-    void importTemplatesConfig(const KArchiveFile *templatesconfiguration, const QString &templatesconfigurationrc, const QString &filename, const QString &prefix);
-    void importKmailConfig(const KArchiveFile *kmailsnippet, const QString &kmail2rc, const QString &filename, const QString &prefix);
-    void importArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix);
-    void importFolderArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix);
-    void searchAllMailsFiles(const KArchiveDirectory *dir, const QString &prefix);
-    void storeMailArchiveResource(const KArchiveDirectory *dir, const QString &prefix);
-
-    void importMailArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix);
-    void mergeLdapConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
-    void mergeKmailSnippetConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
-    void mergeArchiveMailAgentConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
-    void copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination);
-    void copyMailArchiveConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination);
-    void mergeMailArchiveConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
-    void mergeSieveTemplate(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
-    void importSimpleFilesInDirectory(const QString &relativePath);
-    void addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId);
-    Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
-
-    QHash<int, uint> mHashIdentity;
-    QHash<int, int> mHashTransport;
-    QHash<QString, QString> mHashResources;
-    QStringList mFileList;
+    void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) override;
+    Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings) override;
+    void synchronizeResource(const QStringList &lst) override;
+    void importFilters(const QVector<MailCommon::MailFilter *> &filters) override;
 };
 
 #endif // ImportMailJob_H

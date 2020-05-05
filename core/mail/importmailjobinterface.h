@@ -33,6 +33,9 @@ class ArchiveStorage;
 namespace MailTransport {
 class Transport;
 }
+namespace MailCommon {
+class MailFilter;
+}
 class PIMDATAEXPORTER_TESTS_EXPORT ImportMailJobInterface : public AbstractImportExportJob
 {
     Q_OBJECT
@@ -49,10 +52,13 @@ protected:
 
     void convertCollectionStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key);
     virtual void restoreMails();
-    virtual void restoreResources();
+    void restoreResources();
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
-    Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings);
-    virtual void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId);
+    virtual Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings) = 0;
+    virtual void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) = 0;
+    virtual void synchronizeResource(const QStringList &lst) = 0;
+    virtual void importFilters(const QVector<MailCommon::MailFilter *> &filters) = 0;
+
 private:
     void restoreTransports();
     void restoreConfig();
