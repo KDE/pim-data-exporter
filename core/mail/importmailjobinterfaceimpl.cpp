@@ -18,6 +18,7 @@
 */
 
 #include "importmailjobinterfaceimpl.h"
+#include "resourceconverterimpl.h"
 #include "archivestorage.h"
 #include <AkonadiCore/CollectionFetchJob>
 #include <PimCommonAkonadi/CreateResource>
@@ -59,4 +60,10 @@ void ImportMailJobInterfaceImpl::synchronizeResource(const QStringList &lst)
 void ImportMailJobInterfaceImpl::importFilters(const QVector<MailCommon::MailFilter *> &filters)
 {
     MailCommon::FilterManager::instance()->appendFilters(filters);
+}
+
+Collection::Id ImportMailJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
+{
+    ResourceConverterImpl converter;
+    return converter.convertFolderPathToCollectionId(path);
 }

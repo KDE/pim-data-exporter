@@ -527,12 +527,6 @@ void ImportMailJobInterface::restoreResources()
     QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
 }
 
-Collection::Id ImportMailJobInterface::convertFolderPathToCollectionId(const QString &path)
-{
-    ResourceConverterImpl converter;
-    return converter.convertFolderPathToCollectionId(path);
-}
-
 void ImportMailJobInterface::restoreMails()
 {
     increaseProgressDialog();
