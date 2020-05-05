@@ -36,8 +36,10 @@ public:
 
 protected:
     void slotNextStep() override;
-    virtual void restoreResources() = 0;
+    virtual void synchronizeResource(const QStringList &lst) = 0;
+    virtual Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) = 0;
 
+    void restoreResources();
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importkaddressBookConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);

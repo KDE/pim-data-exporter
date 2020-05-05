@@ -36,14 +36,17 @@ public:
 
 protected:
     void slotNextStep() override;
+    virtual Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) = 0;
+    virtual void synchronizeResource(const QStringList &lst)  = 0;
 
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importkorganizerConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
-    virtual void restoreResources() = 0;
+    void restoreResources();
     void restoreConfig();
     void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
+
 };
 
 #endif // IMPORTCALENDARJOBINTERFACE_H

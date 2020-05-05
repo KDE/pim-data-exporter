@@ -31,8 +31,10 @@ public:
     explicit ImportAlarmJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportAlarmJobInterfaceImpl() override;
 protected:
-    void restoreResources() override;
+    void restoreResources();
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+    void synchronizeResource(const QStringList &lst) override;
+    Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) override;
 };
 
 #endif // IMPORTALARMJOBINTERFACEIMPL_H

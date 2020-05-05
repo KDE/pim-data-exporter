@@ -36,6 +36,13 @@
 #include <QTimer>
 #include <QColor>
 
+namespace {
+inline const QString storeCalendar()
+{
+    return QStringLiteral("backupcalendar/");
+}
+}
+
 ImportCalendarJobInterface::ImportCalendarJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
@@ -244,4 +251,72 @@ void ImportCalendarJobInterface::importeventViewConfig(const KArchiveFile *file,
     }
 
     eventviewConfig->sync();
+}
+
+void ImportCalendarJobInterface::restoreResources()
+{
+    Q_EMIT info(i18n("Restore resources..."));
+    setProgressDialogLabel(i18n("Restore resources..."));
+    increaseProgressDialog();
+    QStringList listResource;
+    listResource << restoreResourceFile(QStringLiteral("akonadi_ical_resource"), Utils::calendarPath(), storeCalendar());
+
+    if (!mListResourceFile.isEmpty()) {
+        QDir dir(mTempDirName);
+        dir.mkdir(Utils::addressbookPath());
+        const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::calendarPath());
+
+        const int numberOfResourceFile = mListResourceFile.size();
+        for (int i = 0; i < numberOfResourceFile; ++i) {
+            ResourceFiles value = mListResourceFile.at(i);
+            QMap<QString, QVariant> settings;
+            if (value.akonadiConfigFile.contains(QLatin1String("akonadi_icaldir_resource_"))
+                || value.akonadiConfigFile.contains(QLatin1String("akonadi_ical_resource_"))) {
+                const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
+                if (fileResouceEntry && fileResouceEntry->isFile()) {
+                    const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
+                    copyArchiveFileTo(file, copyToDirName);
+                    QString resourceName(file->name());
+
+                    QString filename(resourceName);
+                    //TODO adapt filename otherwise it will use all the time the same filename.
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " filename :" << filename;
+
+                    KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
+
+                    ResourceConverterImpl converter;
+                    const QString newUrl = converter.adaptResourcePath(resourceConfig, storeCalendar());
+                    QFileInfo newUrlInfo(newUrl);
+
+                    const QString dataFile = value.akonadiResources;
+                    const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
+                    bool isDirResource = value.akonadiConfigFile.contains(QLatin1String("akonadi_icaldir_resource_"));
+                    if (dataResouceEntry->isFile()) {
+                        const KArchiveFile *file = static_cast<const KArchiveFile *>(dataResouceEntry);
+                        //TODO  adapt directory name too
+                        extractZipFile(file, copyToDirName, newUrlInfo.path(), value.akonadiConfigFile.contains(QLatin1String("akonadi_icaldir_resource_")));
+                    }
+                    settings.insert(QStringLiteral("Path"), newUrl);
+
+                    const QString agentConfigFile = value.akonadiAgentConfigFile;
+                    if (!agentConfigFile.isEmpty()) {
+                        const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
+                        if (akonadiAgentConfigEntry->isFile()) {
+                            const KArchiveFile *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
+                            copyArchiveFileTo(file, copyToDirName);
+                            resourceName = file->name();
+                            filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);
+                        }
+                    }
+                    const QString resourceTypeName = isDirResource ? QStringLiteral("akonadi_icaldir_resource") : QStringLiteral("akonadi_ical_resource");
+                    const QString newResource = createResource(resourceTypeName, filename, settings, true);
+                    infoAboutNewResource(newResource);
+                    listResource << newResource;
+                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " newResource" << newResource;
+                }
+            }
+        }
+    }
+    //It's maildir support. Need to add support
+    synchronizeResource(listResource);
 }

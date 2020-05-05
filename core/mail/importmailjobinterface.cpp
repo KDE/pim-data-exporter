@@ -407,7 +407,7 @@ void ImportMailJobInterface::restoreResources()
                         settings.insert(QStringLiteral("DownloadLater"), leaveOnserver.readEntry("downloadLater", QStringList()));
                     }
                     const QString newResourceName = resourceName.isEmpty() ? filename : resourceName;
-                    const QString newResource = mCreateResource->createResource(QStringLiteral("akonadi_pop3_resource"), newResourceName, settings);
+                    const QString newResource = createResource(QStringLiteral("akonadi_pop3_resource"), newResourceName, settings);
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
                         infoAboutNewResource(newResource);
@@ -505,11 +505,11 @@ void ImportMailJobInterface::restoreResources()
                     QString newResource;
                     const QString newResourceName = resourceName.isEmpty() ? filename : resourceName;
                     if (filename.contains(QLatin1String("kolab_"))) {
-                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_kolab_resource"), newResourceName, settings);
+                        newResource = createResource(QStringLiteral("akonadi_kolab_resource"), newResourceName, settings);
                     } else if (filename.contains(QLatin1String("gmail_"))) {
-                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_gmail_resource"), newResourceName, settings);
+                        newResource = createResource(QStringLiteral("akonadi_gmail_resource"), newResourceName, settings);
                     } else {
-                        newResource = mCreateResource->createResource(QStringLiteral("akonadi_imap_resource"), newResourceName, settings);
+                        newResource = createResource(QStringLiteral("akonadi_imap_resource"), newResourceName, settings);
                     }
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
@@ -610,7 +610,7 @@ void ImportMailJobInterface::restoreMails()
                         settings.insert(QStringLiteral("MessageCount"), compacting.readEntry(QStringLiteral("MessageCount"), 50));
                     }
                 }
-                const QString newResource = mCreateResource->createResource(QStringLiteral("akonadi_mbox_resource"), filename, settings);
+                const QString newResource = createResource(QStringLiteral("akonadi_mbox_resource"), filename, settings);
                 if (!newResource.isEmpty()) {
                     mHashResources.insert(filename, newResource);
                     infoAboutNewResource(newResource);
@@ -629,7 +629,7 @@ void ImportMailJobInterface::restoreMails()
                     settings.insert(QStringLiteral("MonitorFilesystem"), general.readEntry(QStringLiteral("MonitorFilesystem"), true));
                 }
 
-                const QString newResource = mCreateResource->createResource(resourceName.contains(QLatin1String("akonadi_mixedmaildir_resource_"))
+                const QString newResource = createResource(resourceName.contains(QLatin1String("akonadi_mixedmaildir_resource_"))
                                                                             ? QStringLiteral("akonadi_mixedmaildir_resource")
                                                                             : QStringLiteral("akonadi_maildir_resource"),
                                                                             filename, settings);
@@ -1477,4 +1477,10 @@ void ImportMailJobInterface::convertCollectionStrToAkonadiId(const KSharedConfig
         KConfigGroup eventGroup = config->group(groupName);
         (void)convertRealPathToCollection(eventGroup, key, false);
     }
+}
+
+
+QString ImportMailJobInterface::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings)
+{
+    return mCreateResource->createResource(resources, name, settings);
 }
