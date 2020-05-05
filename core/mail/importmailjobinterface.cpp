@@ -995,7 +995,7 @@ void ImportMailJobInterface::restoreIdentity()
                     if (group.hasKey(vcard)) {
                         const QString vcardFileName = group.readEntry(vcard);
                         if (!vcardFileName.isEmpty()) {
-                            QFileInfo fileInfo(vcardFileName);
+                            const QFileInfo fileInfo(vcardFileName);
                             QFile file(vcardFileName);
                             const KArchiveEntry *vcardEntry = mArchiveDirectory->entry(Utils::identitiesPath() + QString::number(oldUid) + QLatin1Char('/') + file.fileName());
                             if (vcardEntry && vcardEntry->isFile()) {
@@ -1013,7 +1013,7 @@ void ImportMailJobInterface::restoreIdentity()
                         }
                     }
                 }
-                QString name = group.readEntry(QStringLiteral("Name"));
+                const QString name = group.readEntry(QStringLiteral("Name"));
 
                 KIdentityManagement::Identity *identity = &mIdentityManager->newFromScratch(uniqueIdentityName(name));
                 group.writeEntry(QStringLiteral("Name"), name);
