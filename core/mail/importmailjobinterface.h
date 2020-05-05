@@ -51,9 +51,9 @@ protected:
     virtual void restoreMails();
     virtual void restoreResources();
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
-    QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings);
+    Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings);
+    virtual void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId);
 private:
-    void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId);
     void restoreTransports();
     void restoreConfig();
     void restoreIdentity();
