@@ -68,6 +68,7 @@ void ExportNotesJobInterface::slotCheckBackupResource()
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
     backupTheme();
+    mAkonadiInstanceInfo = listOfResource();
     exportArchiveResource();
 }
 

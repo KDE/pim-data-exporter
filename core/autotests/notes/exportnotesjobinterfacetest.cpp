@@ -44,8 +44,7 @@ void ExportNotesJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGrou
 void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
 {
     qDebug() << " not implement yet";
-    slotNoteJobTerminated();
-
+    slotWriteNextArchiveResource();
 }
 
 QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()

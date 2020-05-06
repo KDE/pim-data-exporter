@@ -47,7 +47,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceImpl::listOfResource(
 
 void ExportNotesJobInterfaceImpl::exportArchiveResource()
 {
-    mAkonadiInstanceInfo = listOfResource();
     QTimer::singleShot(0, this, &ExportNotesJobInterface::slotWriteNextArchiveResource);
 }
 
