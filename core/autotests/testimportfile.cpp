@@ -25,6 +25,7 @@
 
 #include <QSignalSpy>
 #include <QTest>
+#define REMOVE_TEMPORARY_DIR 1
 
 TestImportFile::TestImportFile(const QString &archivePath, QObject *parent)
     : QObject(parent)
@@ -68,6 +69,10 @@ void TestImportFile::start()
     compareExportFile.setListFilePath(mPathConfig);
     compareExportFile.setInstallPath(mExtractPath);
     compareExportFile.compareFile();
+
+#ifdef REMOVE_TEMPORARY_DIR
+    QVERIFY(QDir(mExtractPath).removeRecursively());
+#endif
 }
 
 AbstractImportExportJob *TestImportFile::abstractImportExportJob() const
