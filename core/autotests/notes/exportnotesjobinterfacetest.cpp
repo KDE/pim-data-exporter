@@ -44,10 +44,13 @@ void ExportNotesJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGrou
 void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
 {
     qDebug() << " not implement yet";
+    slotNoteJobTerminated();
+
 }
 
 QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()
 {
+    qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()";
     //TODO
     return {};
 }
@@ -55,6 +58,7 @@ QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResou
 void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
     //TODO implement it
+    qDebug() << " void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << archivePath << " url " << url << " identifier " << identifier;
 }
 
 Akonadi::Collection::Id ExportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
@@ -82,6 +86,25 @@ void ExportNotesJobInterfaceTest::exportNoteConfig()
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
     ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(exportNote);
+    file->start();
+    delete exportNote;
+}
+
+void ExportNotesJobInterfaceTest::exportNoteConfigAndResource_data()
+{
+    QTest::addColumn<QByteArray>("configpath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
+    QTest::newRow("test1") << pathConfig + QByteArray("test1/");
+    QTest::newRow("full") << pathConfig + QByteArray("full/");
+}
+
+void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()
+{
+    QFETCH(QByteArray, configpath);
+    TestExportFile *file = new TestExportFile(this);
+    file->setPathConfig(configpath);
+    ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(exportNote);
     file->start();
     delete exportNote;

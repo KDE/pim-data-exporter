@@ -48,6 +48,9 @@ public:
 private Q_SLOTS:
     void exportNoteConfig_data();
     void exportNoteConfig();
+
+    void exportNoteConfigAndResource();
+    void exportNoteConfigAndResource_data();
 };
 
 #endif // EXPORTNOTESJOBINTERFACETEST_H
