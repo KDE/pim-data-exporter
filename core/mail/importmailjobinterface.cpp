@@ -22,10 +22,8 @@
 #include "importexportmailutil.h"
 #include "resourceconverterimpl.h"
 
-#include <MailCommon/FilterManager>
 #include <MailCommon/FilterImporterExporter>
 #include <MailCommon/MailUtil>
-#include <PimCommonAkonadi/CreateResource>
 
 #include <MailTransport/TransportManager>
 
@@ -39,8 +37,6 @@
 #include <KArchiveFile>
 #include <KZip>
 #include "pimdataexportcore_debug.h"
-
-#include <AkonadiCore/CollectionFetchJob>
 
 #include <QMetaMethod>
 #include <QDir>
