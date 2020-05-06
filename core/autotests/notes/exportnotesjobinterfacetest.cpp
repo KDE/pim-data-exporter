@@ -47,11 +47,16 @@ void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
     slotWriteNextArchiveResource();
 }
 
+void ExportNotesJobInterfaceTestImpl::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
+{
+    mAkonadiInstanceInfo = instanceInfoList;
+}
+
 QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()
 {
     qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()";
     //TODO
-    return {};
+    return mListAkonadiInstanceInfo;
 }
 
 void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
@@ -94,8 +99,8 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource_data()
 {
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("test1") << pathConfig + QByteArray("test1/");
-    QTest::newRow("full") << pathConfig + QByteArray("full/");
+    QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
+    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
 }
 
 void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()

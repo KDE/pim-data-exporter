@@ -50,7 +50,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportCalendarJobInterfaceImpl::listOfResour
 
 void ExportCalendarJobInterfaceImpl::exportArchiveResource()
 {
-    mAkonadiInstanceInfo = listOfResource();
     QTimer::singleShot(0, this, &ExportCalendarJobInterfaceImpl::slotWriteNextArchiveResource);
 }
 

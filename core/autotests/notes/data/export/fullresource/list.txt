@@ -1,0 +1,5 @@
+configs/globalnotesettings
+configs/knotesrc
+information/VERSION_2
+information/exportdatatype.xml
+configs/akonadi_notes_agent.notifyrc

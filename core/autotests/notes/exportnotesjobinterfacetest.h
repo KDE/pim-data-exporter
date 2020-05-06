@@ -31,12 +31,16 @@ public:
     explicit ExportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportNotesJobInterfaceTestImpl();
 
+    void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
+
 protected:
     void exportArchiveResource() override;
     void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
+private:
+    QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
 };
 
 class ExportNotesJobInterfaceTest : public QObject

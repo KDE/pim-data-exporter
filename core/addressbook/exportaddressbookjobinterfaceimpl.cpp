@@ -48,7 +48,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceImpl::listOfRes
 
 void ExportAddressbookJobInterfaceImpl::exportArchiveResource()
 {
-    mAkonadiInstanceInfo = listOfResource();
     QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotWriteNextArchiveResource);
 }
 

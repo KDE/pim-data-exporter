@@ -99,6 +99,7 @@ void ExportCalendarJobInterface::start()
 
 void ExportCalendarJobInterface::slotCheckBackupResource()
 {
+    mAkonadiInstanceInfo = listOfResource();
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
     exportArchiveResource();

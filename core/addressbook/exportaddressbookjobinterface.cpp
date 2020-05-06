@@ -53,6 +53,7 @@ void ExportAddressbookJobInterface::start()
 
 void ExportAddressbookJobInterface::slotCheckBackupResource()
 {
+    mAkonadiInstanceInfo = listOfResource();
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
     exportArchiveResource();
