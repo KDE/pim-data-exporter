@@ -21,6 +21,7 @@
 #include "archivestorage.h"
 #include "importexportmailutil.h"
 #include "resourceconverterimpl.h"
+#include "pimdataexportcore_debug.h"
 
 #include <MailCommon/FilterImporterExporter>
 #include <MailCommon/MailUtil>
@@ -36,7 +37,6 @@
 #include <KMessageBox>
 #include <KArchiveFile>
 #include <KZip>
-#include "pimdataexportcore_debug.h"
 
 #include <QMetaMethod>
 #include <QDir>
@@ -1274,8 +1274,7 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
             KConfigGroup newGroup(kmailConfig, QStringLiteral("Automatic Add Contacts %1").arg(i.value()));
             identityGroup.copyTo(&newGroup);
             const QString automaticAddContactStr(QStringLiteral("Collection"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionIdsToRealPath(newGroup, automaticAddContactStr);
+            convertRealPathToCollectionList(newGroup, automaticAddContactStr);
             identityGroup.deleteGroup();
         }
         ++i;
