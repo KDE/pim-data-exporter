@@ -101,9 +101,9 @@ KZip *openZip(const QString &filename, QString &errorMsg);
 PIMDATAEXPORTER_EXPORT void storeDataExportInfo(KZip *archive);
 
 PIMDATAEXPORTER_EXPORT void addVersion(KZip *archive);
-Q_REQUIRED_RESULT int archiveVersion(KZip *archive);
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT int archiveVersion(KZip *archive);
 
-Q_REQUIRED_RESULT int currentArchiveVersion();
+PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT int currentArchiveVersion();
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString appTypeToI18n(AppsType type);
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString storedTypeToI18n(StoredType type);
 }
