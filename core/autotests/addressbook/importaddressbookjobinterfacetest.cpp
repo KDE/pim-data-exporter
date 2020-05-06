@@ -48,6 +48,7 @@ QString ImportAddressbookJobInterfaceTestImpl::createResource(const QString &res
 
 void ImportAddressbookJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 {
+    slotNextStep();
     //TODO
 }
 

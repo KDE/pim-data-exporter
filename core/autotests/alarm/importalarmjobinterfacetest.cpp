@@ -48,6 +48,7 @@ QString ImportAlarmJobInterfaceTestImpl::createResource(const QString &resources
 
 void ImportAlarmJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 {
+    slotNextStep();
     //TODO
 }
 
