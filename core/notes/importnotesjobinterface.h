@@ -35,7 +35,6 @@ public:
 protected:
     virtual Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree = false) = 0;
     virtual void synchronizeResource(const QStringList &lst) = 0;
-private:
     void slotNextStep() override;
 private:
     void importKNoteGlobalSettings(const KArchiveFile *kmailsnippet, const QString &kmail2rc, const QString &filename, const QString &prefix);

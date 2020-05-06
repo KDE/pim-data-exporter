@@ -43,13 +43,17 @@ Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToColl
 
 QString ImportNotesJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
+    qDebug() << " QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings)" << resources << " name " << name << " settings " << settings;
+
     //TODO
     return {};
 }
 
 void ImportNotesJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 {
-    //TODO
+    //TODO log it!
+    qDebug() << " void ImportNotesJobInterfaceTestImpl::synchronizeResource(const QStringList &lst) TODO IMPLEMENT" << lst;
+    slotNextStep();
 }
 
 ImportNotesJobInterfaceTest::ImportNotesJobInterfaceTest(QObject *parent)
@@ -69,7 +73,7 @@ void ImportNotesJobInterfaceTest::importNoteConfig()
 {
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
-    TestImportFile *file = new TestImportFile(zipFilePath, this);
+    TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
@@ -78,3 +82,28 @@ void ImportNotesJobInterfaceTest::importNoteConfig()
     delete impl;
     delete file;
 }
+
+void ImportNotesJobInterfaceTest::importNoteConfigAndResources_data()
+{
+    QTest::addColumn<QString>("zipFilePath");
+    QTest::addColumn<QString>("testPath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
+    QTest::newRow("test1") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1/");
+
+}
+
+void ImportNotesJobInterfaceTest::importNoteConfigAndResources()
+{
+    QFETCH(QString, zipFilePath);
+    QFETCH(QString, testPath);
+    TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
+    file->setPathConfig(zipFilePath + testPath);
+    file->setExtractPath(QDir::tempPath() + testPath);
+    ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(impl);
+    file->start();
+    delete impl;
+    delete file;
+
+}
+

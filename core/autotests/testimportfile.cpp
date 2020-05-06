@@ -25,12 +25,13 @@
 
 #include <QSignalSpy>
 #include <QTest>
-#define REMOVE_TEMPORARY_DIR 1
+//#define REMOVE_TEMPORARY_DIR 1
 
 TestImportFile::TestImportFile(const QString &archivePath, QObject *parent)
     : QObject(parent)
     , mArchivePath(archivePath + QStringLiteral("archive.zip"))
 {
+    //qDebug() << " mArchivePath " << mArchivePath;
     mArchiveStorage = new ArchiveStorage(mArchivePath, this);
     Q_ASSERT(mArchiveStorage->openArchive(false));
 }

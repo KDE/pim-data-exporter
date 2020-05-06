@@ -46,6 +46,8 @@ public:
 private Q_SLOTS:
     void importNoteConfig();
     void importNoteConfig_data();
+    void importNoteConfigAndResources();
+    void importNoteConfigAndResources_data();
 };
 
 #endif // IMPORTNOTESJOBINTERFACETEST_H

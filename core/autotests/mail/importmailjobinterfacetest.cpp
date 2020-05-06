@@ -42,11 +42,13 @@ Akonadi::Collection::Id ImportMailJobInterfaceTestImpl::convertFolderPathToColle
 
 void ImportMailJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 {
+    qDebug() << " void ImportMailJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)" << lst;
     //TODO
 }
 
 QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings)
 {
+    qDebug() << " QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings)" << resources << " name " << name << " settings " << settings;
     //TODO
     return {};
 }
