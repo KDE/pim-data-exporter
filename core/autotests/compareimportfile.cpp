@@ -20,7 +20,7 @@
 #include "compareimportfile.h"
 #include "generatelistfilefromarchive.h"
 #include "loadlistfromfile.h"
-
+#include "comparefilehelper.h"
 #include <QProcess>
 #include <QTest>
 
@@ -66,3 +66,4 @@ void CompareImportFile::setListFilePath(const QString &listFilePath)
 {
     mListFilePath = listFilePath;
 }
+

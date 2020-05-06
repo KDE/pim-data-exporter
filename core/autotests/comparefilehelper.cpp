@@ -17,30 +17,21 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef COMPAREEXPORTFILE_H
-#define COMPAREEXPORTFILE_H
+#include "comparefilehelper.h"
 
-#include <QString>
-class KZip;
-class QTemporaryDir;
-class CompareExportFile
+#include <QProcess>
+#include <QTest>
+
+void CompareFileHelper::compareFile(const QString &referenceFile, const QString &archiveFile)
 {
-public:
-    CompareExportFile();
-    ~CompareExportFile();
-    void compareFiles();
-
-    Q_REQUIRED_RESULT QString tempFilePath() const;
-    void setTempFilePath(const QString &tempFilePath);
-
-    Q_REQUIRED_RESULT QString listFilePath() const;
-    void setListFilePath(const QString &listFilePath);
-
-private:
-    QString mTempFilePath;
-    QString mListFilePath;
-    KZip *mZip = nullptr;
-    QTemporaryDir *mTempDir = nullptr;
-};
-
-#endif // COMPAREEXPORTFILE_H
+    //qDebug() << "referenceFile " << referenceFile << " archiveFile " << archiveFile;
+    QProcess proc;
+    const QStringList args = QStringList()
+                             << QStringLiteral("-u")
+                             << referenceFile
+                             << archiveFile;
+    proc.setProcessChannelMode(QProcess::ForwardedChannels);
+    proc.start(QStringLiteral("diff"), args);
+    QVERIFY(proc.waitForFinished());
+    QCOMPARE(proc.exitCode(), 0);
+}

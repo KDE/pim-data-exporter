@@ -47,6 +47,7 @@ void TestImportFile::start()
 
     qputenv("XDG_DATA_HOME", mExtractPath.toLatin1() + "/share");
     qputenv("XDG_CONFIG_HOME", mExtractPath.toLatin1() + "/config");
+    qDebug() << " mExtractPath.toLatin1()  " << mExtractPath.toLatin1() ;
 
     QSignalSpy finish(mAbstractImportExportJob, &AbstractImportExportJob::jobFinished);
     QSignalSpy error(mAbstractImportExportJob, &AbstractImportExportJob::error);

@@ -17,30 +17,14 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef COMPAREEXPORTFILE_H
-#define COMPAREEXPORTFILE_H
+#ifndef COMPAREFILEHELPER_H
+#define COMPAREFILEHELPER_H
 
 #include <QString>
-class KZip;
-class QTemporaryDir;
-class CompareExportFile
+
+namespace CompareFileHelper
 {
-public:
-    CompareExportFile();
-    ~CompareExportFile();
-    void compareFiles();
+void compareFile(const QString &referenceFile, const QString &archiveFile);
+}
 
-    Q_REQUIRED_RESULT QString tempFilePath() const;
-    void setTempFilePath(const QString &tempFilePath);
-
-    Q_REQUIRED_RESULT QString listFilePath() const;
-    void setListFilePath(const QString &listFilePath);
-
-private:
-    QString mTempFilePath;
-    QString mListFilePath;
-    KZip *mZip = nullptr;
-    QTemporaryDir *mTempDir = nullptr;
-};
-
-#endif // COMPAREEXPORTFILE_H
+#endif // COMPAREFILEHELPER_H

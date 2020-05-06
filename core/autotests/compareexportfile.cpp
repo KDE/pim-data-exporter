@@ -20,6 +20,7 @@
 #include "compareexportfile.h"
 #include "generatelistfilefromarchive.h"
 #include "loadlistfromfile.h"
+#include "comparefilehelper.h"
 #include <QTest>
 #include <QDebug>
 #include <QProcess>
@@ -88,23 +89,9 @@ void CompareExportFile::compareFiles()
             QCOMPARE(f.write(data), data.length());
             f.close();
 
-            compareFile(mListFilePath + QStringLiteral("/references/") + adaptFile, fileName);
+            CompareFileHelper::compareFile(mListFilePath + QStringLiteral("/references/") + adaptFile, fileName);
         }
     }
-}
-
-void CompareExportFile::compareFile(const QString &referenceFile, const QString &archiveFile)
-{
-    //qDebug() << "referenceFile " << referenceFile << " archiveFile " << archiveFile;
-    QProcess proc;
-    const QStringList args = QStringList()
-                             << QStringLiteral("-u")
-                             << referenceFile
-                             << archiveFile;
-    proc.setProcessChannelMode(QProcess::ForwardedChannels);
-    proc.start(QStringLiteral("diff"), args);
-    QVERIFY(proc.waitForFinished());
-    QCOMPARE(proc.exitCode(), 0);
 }
 
 QString CompareExportFile::tempFilePath() const
