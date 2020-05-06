@@ -1,0 +1,4 @@
+information/VERSION_2
+information/exportdatatype.xml
+configs/kaddressbookrc
+configs/kaddressbookui.rc
