@@ -45,6 +45,13 @@ void CompareImportFile::compareFile()
         qDebug() << "List File : " << archiveList;
     }
     QVERIFY(equal);
+    for (QString file : archiveList) {
+        file.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
+        if (file == QLatin1String("information/exportdatatype.xml") || file == QLatin1String("information/VERSION_2")) {
+            continue;
+        }
+        CompareFileHelper::compareFile(mListFilePath + QStringLiteral("/references/") + file, mInstallPath + QLatin1Char('/') + file);
+    }
 }
 
 QString CompareImportFile::archiveFilePath() const
@@ -65,5 +72,15 @@ QString CompareImportFile::listFilePath() const
 void CompareImportFile::setListFilePath(const QString &listFilePath)
 {
     mListFilePath = listFilePath;
+}
+
+QString CompareImportFile::installPath() const
+{
+    return mInstallPath;
+}
+
+void CompareImportFile::setInstallPath(const QString &installPath)
+{
+    mInstallPath = installPath;
 }
 

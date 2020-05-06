@@ -60,6 +60,7 @@ void TestImportFile::start()
     CompareImportFile compareExportFile;
     compareExportFile.setArchiveFilePath(mArchivePath);
     compareExportFile.setListFilePath(mPathConfig);
+    compareExportFile.setInstallPath(mExtractPath);
     compareExportFile.compareFile();
 }
 

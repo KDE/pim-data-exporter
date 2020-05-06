@@ -36,9 +36,13 @@ public:
     Q_REQUIRED_RESULT QString listFilePath() const;
     void setListFilePath(const QString &listFilePath);
 
+    Q_REQUIRED_RESULT QString installPath() const;
+    void setInstallPath(const QString &installPath);
+
 private:
     QString mArchiveFilePath;
     QString mListFilePath;
+    QString mInstallPath;
 };
 
 #endif // COMPAREIMPORTFILE_H
