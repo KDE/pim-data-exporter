@@ -6,3 +6,12 @@ add_executable( exportakregatorjobinterfacetest ${exportakregatorjobinterfacetes
 add_test(NAME exportakregatorjobinterfacetest COMMAND exportakregatorjobinterfacetest)
 ecm_mark_as_test(exportakregatorjobinterfacetest)
 target_link_libraries(exportakregatorjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
+
+#####
+
+set( importakregatorjobinterfacetest_SRCS importakregatorjobinterfacetest.cpp)
+
+add_executable( importakregatorjobinterfacetest ${importakregatorjobinterfacetest_SRCS})
+add_test(NAME importakregatorjobinterfacetest COMMAND importakregatorjobinterfacetest)
+ecm_mark_as_test(importakregatorjobinterfacetest)
+target_link_libraries(importakregatorjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
