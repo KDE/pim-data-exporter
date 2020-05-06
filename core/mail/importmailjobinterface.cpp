@@ -620,9 +620,9 @@ void ImportMailJobInterface::restoreMails()
                 }
 
                 const QString newResource = createResource(resourceName.contains(QLatin1String("akonadi_mixedmaildir_resource_"))
-                                                                            ? QStringLiteral("akonadi_mixedmaildir_resource")
-                                                                            : QStringLiteral("akonadi_maildir_resource"),
-                                                                            filename, settings);
+                                                           ? QStringLiteral("akonadi_mixedmaildir_resource")
+                                                           : QStringLiteral("akonadi_maildir_resource"),
+                                                           filename, settings);
                 if (!newResource.isEmpty()) {
                     mHashResources.insert(filename, newResource);
                     infoAboutNewResource(newResource);

@@ -78,5 +78,3 @@ void ImportNotesJobInterfaceTest::importNoteConfig()
     delete impl;
     delete file;
 }
-
-

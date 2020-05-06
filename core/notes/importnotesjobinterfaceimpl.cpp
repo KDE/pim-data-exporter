@@ -34,7 +34,6 @@
 #include <QTimer>
 #include "resourceconverterimpl.h"
 
-
 ImportNotesJobInterfaceImpl::ImportNotesJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportNotesJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {

@@ -39,7 +39,6 @@
 #include <QColor>
 #include "resourceconverterimpl.h"
 
-
 ImportCalendarJobInterfaceImpl::ImportCalendarJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportCalendarJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
@@ -54,7 +53,6 @@ Akonadi::Collection::Id ImportCalendarJobInterfaceImpl::convertFolderPathToColle
     ResourceConverterImpl converter;
     return converter.convertFolderPathToCollectionId(path);
 }
-
 
 QString ImportCalendarJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {

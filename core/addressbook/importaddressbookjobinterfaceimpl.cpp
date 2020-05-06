@@ -33,8 +33,6 @@
 #include <QStandardPaths>
 #include "resourceconverterimpl.h"
 
-
-
 ImportAddressbookJobInterfaceImpl::ImportAddressbookJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportAddressbookJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {

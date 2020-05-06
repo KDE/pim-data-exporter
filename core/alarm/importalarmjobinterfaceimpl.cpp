@@ -35,8 +35,6 @@
 #include <QTimer>
 #include "resourceconverterimpl.h"
 
-
-
 ImportAlarmJobInterfaceImpl::ImportAlarmJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportAlarmJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
@@ -46,13 +44,11 @@ ImportAlarmJobInterfaceImpl::~ImportAlarmJobInterfaceImpl()
 {
 }
 
-
 Akonadi::Collection::Id ImportAlarmJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterImpl converter;
     return converter.convertFolderPathToCollectionId(path);
 }
-
 
 QString ImportAlarmJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {

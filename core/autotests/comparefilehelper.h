@@ -22,8 +22,7 @@
 
 #include <QString>
 
-namespace CompareFileHelper
-{
+namespace CompareFileHelper {
 void compareFile(const QString &referenceFile, const QString &archiveFile);
 }
 

@@ -83,4 +83,3 @@ void CompareImportFile::setInstallPath(const QString &installPath)
 {
     mInstallPath = installPath;
 }
-

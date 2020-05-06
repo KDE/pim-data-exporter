@@ -48,13 +48,11 @@ void TestImportFile::start()
 
     qputenv("XDG_DATA_HOME", mExtractPath.toLatin1() + "/share");
     qputenv("XDG_CONFIG_HOME", mExtractPath.toLatin1() + "/config");
-    qDebug() << " mExtractPath.toLatin1()  " << mExtractPath.toLatin1() ;
+    qDebug() << " mExtractPath.toLatin1()  " << mExtractPath.toLatin1();
 
     const int version = Utils::archiveVersion(mArchiveStorage->archive());
     QVERIFY(version <= Utils::currentArchiveVersion());
     mAbstractImportExportJob->setArchiveVersion(version);
-
-
 
     QSignalSpy finish(mAbstractImportExportJob, &AbstractImportExportJob::jobFinished);
     QSignalSpy error(mAbstractImportExportJob, &AbstractImportExportJob::error);

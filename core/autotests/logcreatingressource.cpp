@@ -22,10 +22,8 @@
 LogCreatingResource::LogCreatingResource(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 LogCreatingResource::~LogCreatingResource()
 {
-
 }

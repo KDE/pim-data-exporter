@@ -46,7 +46,6 @@ private:
     void restoreResources();
     void restoreConfig();
     void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
-
 };
 
 #endif // IMPORTCALENDARJOBINTERFACE_H

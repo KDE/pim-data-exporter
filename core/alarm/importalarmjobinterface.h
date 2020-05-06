@@ -38,7 +38,6 @@ protected:
     virtual void synchronizeResource(const QStringList &lst) = 0;
     virtual Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) = 0;
 
-
     void restoreResources();
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
