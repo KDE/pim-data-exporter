@@ -31,7 +31,12 @@ public:
 
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
 
-    Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString()) override;
+    Q_REQUIRED_RESULT QString changeResourcePath(QString url) const override;
+
+    void setTestPath(const QString &testPath);
+
+private:
+    QString mTestPath;
 };
 
 #endif // RESOURCECONVERTERTEST_H

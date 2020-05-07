@@ -55,6 +55,7 @@ void ExportAlarmJobInterfaceTestImpl::setListOfResource(const QVector<Utils::Ako
 Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
@@ -66,6 +67,7 @@ void ExportAlarmJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
 QString ExportAlarmJobInterfaceTestImpl::resourcePath(const QString &identifier) const
 {
     ResourceConverterTest converter;
+    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     const QString url = converter.resourcePath(identifier);
     return url;
 }

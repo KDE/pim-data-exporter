@@ -43,24 +43,28 @@ void ExportMailJobInterfaceTestImpl::exportArchiveResource()
 void ExportMailJobInterfaceTestImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;
+    resourceConverter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     resourceConverter.convertCollectionToRealPath(group, currentKey);
 }
 
 void ExportMailJobInterfaceTestImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;
+    resourceConverter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     resourceConverter.convertCollectionListToRealPath(group, currentKey);
 }
 
 void ExportMailJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
 {
     ResourceConverterTest resourceConverter;
+    resourceConverter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     resourceConverter.convertCollectionIdsToRealPath(group, currentKey, prefixCollection);
 }
 
 Akonadi::Collection::Id ExportMailJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
@@ -115,6 +119,7 @@ void ExportMailJobInterfaceTest::exportMailConfig()
 QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlonglong collectionValue)
 {
     ResourceConverterTest converter;
+    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     return converter.convertToFullCollectionPath(collectionValue);
 }
 
@@ -122,6 +127,7 @@ QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlongl
 QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) const
 {
     ResourceConverterTest converter;
+    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     const QString url = converter.resourcePath(identifier);
     return url;
 }

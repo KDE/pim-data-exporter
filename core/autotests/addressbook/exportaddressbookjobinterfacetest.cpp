@@ -43,6 +43,7 @@ void ExportAddressbookJobInterfaceTestImpl::exportArchiveResource()
 Akonadi::Collection::Id ExportAddressbookJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
@@ -65,18 +66,21 @@ void ExportAddressbookJobInterfaceTestImpl::setListOfResource(const QVector<Util
 void ExportAddressbookJobInterfaceTestImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;
+    resourceConverter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     resourceConverter.convertCollectionToRealPath(group, currentKey);
 }
 
 void ExportAddressbookJobInterfaceTestImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;
+    resourceConverter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     resourceConverter.convertCollectionListToRealPath(group, currentKey);
 }
 
 QString ExportAddressbookJobInterfaceTestImpl::resourcePath(const QString &agentIdentifier, const QString &defaultPath) const
 {
     ResourceConverterTest converter;
+    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     const QString url = converter.resourcePath(agentIdentifier, defaultPath);
     return url;
 }

@@ -37,6 +37,7 @@ ImportAkregatorJobInterfaceTestImpl::~ImportAkregatorJobInterfaceTestImpl()
 Akonadi::Collection::Id ImportAkregatorJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 

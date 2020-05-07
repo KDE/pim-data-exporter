@@ -37,22 +37,3 @@ Akonadi::Collection::Id ResourceConverterImpl::convertFolderPathToCollectionId(c
 {
     return MailCommon::Util::convertFolderPathToCollectionId(path);
 }
-
-QString ResourceConverterImpl::resourcePath(const QString &agentIdentifier, const QString &defaultPath)
-{
-    const QString agentFileName = agentIdentifier + QStringLiteral("rc");
-    const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
-    qDebug() << "configFileName " << configFileName;
-
-    KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
-    const QString url = resourcePath(resourceConfig, defaultPath);
-    qDebug() << " resourcePath " << url;
-    return url;
-}
-
-QString ResourceConverterImpl::resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath)
-{
-    QString url = ResourceConverterBase::resourcePath(resourceConfig, defaultPath);
-    //TODO adapt path for test
-    return url;
-}

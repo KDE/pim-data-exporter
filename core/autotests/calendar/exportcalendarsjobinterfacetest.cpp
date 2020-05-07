@@ -43,12 +43,14 @@ void ExportCalendarsJobInterfaceTestImpl::exportArchiveResource()
 Akonadi::Collection::Id ExportCalendarsJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
 QString ExportCalendarsJobInterfaceTestImpl::convertToFullCollectionPath(const qlonglong collectionValue)
 {
     ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     return resourceConverterTest.convertToFullCollectionPath(collectionValue);
 }
 
@@ -71,6 +73,7 @@ void ExportCalendarsJobInterfaceTestImpl::setListOfResource(const QVector<Utils:
 void ExportCalendarsJobInterfaceTestImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest converter;
+    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     converter.convertCollectionListToRealPath(group, currentKey);
 }
 
@@ -100,6 +103,7 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfig()
 QString ExportCalendarsJobInterfaceTestImpl::resourcePath(const QString &identifier) const
 {
     ResourceConverterTest converter;
+    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     const QString url = converter.resourcePath(identifier);
     return url;
 }

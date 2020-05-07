@@ -1,2 +1,4 @@
 [General]
+Path[$e]=$HOME/.local/notes/akonadi_akonotes_resource_5
+TopLevelIsContainer=true
 

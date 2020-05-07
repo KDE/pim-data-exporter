@@ -67,6 +67,25 @@ QString ResourceConverterBase::resourcePath(const KSharedConfigPtr &resourceConf
     if (!url.isEmpty()) {
         url.replace(QLatin1String("$HOME"), QDir::homePath());
     }
+    url = changeResourcePath(url);
+    return url;
+}
+
+QString ResourceConverterBase::resourcePath(const QString &agentIdentifier, const QString &defaultPath)
+{
+    const QString agentFileName = agentIdentifier + QStringLiteral("rc");
+    const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
+    qDebug() << "configFileName " << configFileName;
+
+    KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
+    const QString url = resourcePath(resourceConfig, defaultPath);
+    qDebug() << " resourcePath " << url;
+    return url;
+}
+
+
+QString ResourceConverterBase::changeResourcePath(QString url) const
+{
     return url;
 }
 

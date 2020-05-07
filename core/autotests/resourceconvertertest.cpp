@@ -44,16 +44,18 @@ Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(c
     return result;
 }
 
-
-QString ResourceConverterTest::resourcePath(const QString &agentIdentifier, const QString &defaultPath)
+QString ResourceConverterTest::changeResourcePath(QString url) const
 {
-    const QString agentFileName = agentIdentifier + QStringLiteral("rc");
-    const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
-    qDebug() << "configFileName " << configFileName;
-
-    KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
-    //TODO fix me path
-    const QString url = ResourceConverterBase::resourcePath(resourceConfig, defaultPath);
-    qDebug() << " resourcePath " << url;
+    qDebug() << " need to fix " << url;
+    if (!url.isEmpty()) {
+        url.replace(QLatin1String("[TEST_PATH]"), mTestPath);
+    }
+    qDebug() <<" FIXED " << url;
+    //TODO FIXME
     return url;
+}
+
+void ResourceConverterTest::setTestPath(const QString &testPath)
+{
+    mTestPath = testPath;
 }
