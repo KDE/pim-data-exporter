@@ -45,7 +45,14 @@ QString ResourceConverterImpl::resourcePath(const QString &agentIdentifier, cons
     qDebug() << "configFileName " << configFileName;
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
-    const QString url = ResourceConverterBase::resourcePath(resourceConfig, defaultPath);
+    const QString url = resourcePath(resourceConfig, defaultPath);
     qDebug() << " resourcePath " << url;
+    return url;
+}
+
+QString ResourceConverterImpl::resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath)
+{
+    QString url = ResourceConverterBase::resourcePath(resourceConfig, defaultPath);
+    //TODO adapt path for test
     return url;
 }

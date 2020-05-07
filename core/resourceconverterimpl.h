@@ -30,6 +30,8 @@ public:
     Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString()) override;
+    Q_REQUIRED_RESULT QString resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath = QString()) override;
+protected:
 };
 
 #endif // RESOURCECONVERTERIMPL_H
