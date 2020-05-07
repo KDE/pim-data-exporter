@@ -107,7 +107,15 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()
     QFETCH(QByteArray, configpath);
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
+    QVector<Utils::AkonadiInstanceInfo> lstInfo;
+    Utils::AkonadiInstanceInfo info;
+    info.identifier = QStringLiteral("akonadi_akonotes_resource_1");
+    lstInfo << info;
+    info.identifier = QStringLiteral("akonadi_akonotes_resource_2");
+    lstInfo << info;
+
     ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    exportNote->setListOfResource(lstInfo);
     file->setAbstractImportExportJob(exportNote);
     file->start();
     delete exportNote;
