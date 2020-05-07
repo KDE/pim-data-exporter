@@ -82,3 +82,10 @@ void ExportAddressbookJobInterfaceImpl::exportResourceToArchive(const QString &a
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated);
     resourceJob->start();
 }
+
+QString ExportAddressbookJobInterfaceImpl::resourcePath(const QString &agentIdentifier, const QString &defaultPath) const
+{
+    ResourceConverterImpl converter;
+    const QString url = converter.resourcePath(agentIdentifier, defaultPath);
+    return url;
+}

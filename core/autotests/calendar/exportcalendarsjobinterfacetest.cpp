@@ -96,3 +96,10 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfig()
     file->start();
     delete exportNote;
 }
+
+QString ExportCalendarsJobInterfaceTestImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterTest converter;
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}

@@ -41,6 +41,7 @@ protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
+    Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString()) const override;
 private:
     QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
 };

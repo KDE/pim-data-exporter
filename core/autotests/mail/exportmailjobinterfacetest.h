@@ -48,6 +48,7 @@ protected:
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path) override;
+    Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
 };
 
 class ExportMailJobInterfaceTest : public QObject

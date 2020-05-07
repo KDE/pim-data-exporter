@@ -70,3 +70,11 @@ void ExportAlarmJobInterfaceImpl::exportResourceToArchive(const QString &archive
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated);
     resourceJob->start();
 }
+
+
+QString ExportAlarmJobInterfaceImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterImpl converter;
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}

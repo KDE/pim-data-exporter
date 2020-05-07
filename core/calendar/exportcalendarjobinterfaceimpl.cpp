@@ -84,3 +84,10 @@ void ExportCalendarJobInterfaceImpl::exportResourceToArchive(const QString &arch
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);
     resourceJob->start();
 }
+
+QString ExportCalendarJobInterfaceImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterImpl converter;
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}

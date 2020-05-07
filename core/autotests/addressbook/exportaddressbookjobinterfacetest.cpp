@@ -74,6 +74,13 @@ void ExportAddressbookJobInterfaceTestImpl::convertCollectionListToRealPath(KCon
     resourceConverter.convertCollectionListToRealPath(group, currentKey);
 }
 
+QString ExportAddressbookJobInterfaceTestImpl::resourcePath(const QString &agentIdentifier, const QString &defaultPath) const
+{
+    ResourceConverterTest converter;
+    const QString url = converter.resourcePath(agentIdentifier, defaultPath);
+    return url;
+}
+
 ExportAddressbookJobInterfaceTest::ExportAddressbookJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
@@ -97,3 +104,5 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfig()
     file->start();
     delete exportNote;
 }
+
+

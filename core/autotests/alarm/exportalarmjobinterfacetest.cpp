@@ -63,6 +63,13 @@ void ExportAlarmJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
     //TODO implement me
 }
 
+QString ExportAlarmJobInterfaceTestImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterTest converter;
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}
+
 ExportAlarmJobInterfaceTest::ExportAlarmJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

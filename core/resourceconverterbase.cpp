@@ -145,17 +145,6 @@ void ResourceConverterBase::convertCollectionToRealPath(KConfigGroup &group, con
     }
 }
 
-QString ResourceConverterBase::resourcePath(const QString &agentIdentifier, const QString &defaultPath)
-{
-    const QString agentFileName = agentIdentifier + QStringLiteral("rc");
-    const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
-    qDebug() << "configFileName " << configFileName;
-
-    KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
-    const QString url = ResourceConverterBase::resourcePath(resourceConfig, defaultPath);
-    return url;
-}
-
 QString ResourceConverterBase::agentFileName(const QString &filename)
 {
     QString agentFileConfigName = filename;

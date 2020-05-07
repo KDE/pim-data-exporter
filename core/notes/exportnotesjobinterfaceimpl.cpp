@@ -75,3 +75,11 @@ void ExportNotesJobInterfaceImpl::exportResourceToArchive(const QString &archive
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
     resourceJob->start();
 }
+
+QString ExportNotesJobInterfaceImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterImpl converter;
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}
+

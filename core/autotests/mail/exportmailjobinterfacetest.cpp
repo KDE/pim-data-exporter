@@ -117,3 +117,11 @@ QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlongl
     ResourceConverterTest converter;
     return converter.convertToFullCollectionPath(collectionValue);
 }
+
+
+QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterTest converter;
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}

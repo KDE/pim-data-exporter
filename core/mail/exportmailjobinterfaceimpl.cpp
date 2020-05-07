@@ -119,3 +119,10 @@ QString ExportMailJobInterfaceImpl::storeResources(KZip *archive, const QString 
 {
     return Utils::storeResources(archive, identifier, path);
 }
+
+QString ExportMailJobInterfaceImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterImpl converter;
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}

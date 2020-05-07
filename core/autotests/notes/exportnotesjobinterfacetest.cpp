@@ -120,3 +120,10 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()
     file->start();
     delete exportNote;
 }
+
+QString ExportNotesJobInterfaceTestImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterTest converter;
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}

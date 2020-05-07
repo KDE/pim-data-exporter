@@ -59,8 +59,7 @@ void ExportCalendarJobInterface::slotWriteNextArchiveResource()
         if (identifier.contains(QLatin1String("akonadi_icaldir_resource_"))) {
             const QString archivePath = Utils::calendarPath() + identifier + QLatin1Char('/');
 
-            ResourceConverterImpl converter;
-            const QString url = converter.resourcePath(identifier);
+            const QString url = resourcePath(identifier);
             if (!mAgentPaths.contains(url)) {
                 if (!url.isEmpty()) {
                     mAgentPaths << url;

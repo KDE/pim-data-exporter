@@ -90,8 +90,7 @@ void ExportAddressbookJobInterface::slotWriteNextArchiveResource()
         if (identifier.contains(QLatin1String("akonadi_vcarddir_resource_")) || identifier.contains(QLatin1String("akonadi_contacts_resource_"))) {
             const QString archivePath = Utils::addressbookPath() + identifier + QLatin1Char('/');
 
-            ResourceConverterImpl converter;
-            const QString url = converter.resourcePath(identifier, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts/"));
+            const QString url = resourcePath(identifier, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts/"));
             if (!mAgentPaths.contains(url)) {
                 if (!url.isEmpty()) {
                     mAgentPaths << url;
