@@ -53,8 +53,13 @@ void ExportAddressbookJobInterfaceTestImpl::exportResourceToArchive(const QStrin
 
 QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceTestImpl::listOfResource()
 {
-    //TODO
-    return {};
+    qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceTestImpl::listOfResource()";
+    return mListAkonadiInstanceInfo;
+}
+
+void ExportAddressbookJobInterfaceTestImpl::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
+{
+    mListAkonadiInstanceInfo = instanceInfoList;
 }
 
 void ExportAddressbookJobInterfaceTestImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)

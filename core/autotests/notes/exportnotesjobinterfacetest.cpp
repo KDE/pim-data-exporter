@@ -49,13 +49,12 @@ void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
 
 void ExportNotesJobInterfaceTestImpl::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
 {
-    mAkonadiInstanceInfo = instanceInfoList;
+    mListAkonadiInstanceInfo = instanceInfoList;
 }
 
 QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()
 {
     qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()";
-    //TODO
     return mListAkonadiInstanceInfo;
 }
 

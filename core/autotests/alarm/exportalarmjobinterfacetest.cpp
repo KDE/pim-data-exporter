@@ -43,8 +43,13 @@ void ExportAlarmJobInterfaceTestImpl::exportArchiveResource()
 
 QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceTestImpl::listOfResource()
 {
-    //TODO
-    return {};
+    qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceTestImpl::listOfResource()";
+    return mListAkonadiInstanceInfo;
+}
+
+void ExportAlarmJobInterfaceTestImpl::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
+{
+    mListAkonadiInstanceInfo = instanceInfoList;
 }
 
 Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)

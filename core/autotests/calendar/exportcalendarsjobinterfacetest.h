@@ -31,6 +31,7 @@ public:
     explicit ExportCalendarsJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportCalendarsJobInterfaceTestImpl();
 
+    void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
 protected:
     void exportArchiveResource() override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
@@ -38,6 +39,8 @@ protected:
     void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
+private:
+    QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
 };
 
 class ExportCalendarsJobInterfaceTest : public QObject

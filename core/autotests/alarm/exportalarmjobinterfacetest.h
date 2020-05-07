@@ -30,12 +30,14 @@ class ExportAlarmJobInterfaceTestImpl : public ExportAlarmJobInterface
 public:
     explicit ExportAlarmJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportAlarmJobInterfaceTestImpl();
-
+    void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
 protected:
     void exportArchiveResource() override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
+private:
+    QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
 };
 
 class ExportAlarmJobInterfaceTest : public QObject

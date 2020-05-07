@@ -30,6 +30,7 @@ class ExportAddressbookJobInterfaceTestImpl : public ExportAddressbookJobInterfa
 public:
     explicit ExportAddressbookJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportAddressbookJobInterfaceTestImpl();
+    void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
 
 protected:
     void exportArchiveResource() override;
@@ -40,6 +41,8 @@ protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
+private:
+    QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
 };
 
 class ExportAddressbookJobInterfaceTest : public QObject
