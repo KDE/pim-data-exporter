@@ -32,6 +32,7 @@ public:
     ~ExportNotesJobInterfaceTestImpl();
 
     void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
+    void setPathConfig(const QString &pathConfig);
 
 protected:
     void exportArchiveResource() override;
@@ -42,6 +43,7 @@ protected:
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
 private:
     QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
+    QString mPathConfig;
 };
 
 class ExportNotesJobInterfaceTest : public QObject

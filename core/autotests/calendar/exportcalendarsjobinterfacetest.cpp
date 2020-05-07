@@ -57,6 +57,7 @@ QString ExportCalendarsJobInterfaceTestImpl::convertToFullCollectionPath(const q
 void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
     //TODO implement it
+    slotCalendarJobTerminated();
 }
 
 QVector<Utils::AkonadiInstanceInfo> ExportCalendarsJobInterfaceTestImpl::listOfResource()

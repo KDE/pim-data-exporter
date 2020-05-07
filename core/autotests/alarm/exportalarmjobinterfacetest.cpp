@@ -62,6 +62,7 @@ Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToColl
 void ExportAlarmJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
     //TODO implement me
+    slotAlarmJobTerminated();
 }
 
 QString ExportAlarmJobInterfaceTestImpl::resourcePath(const QString &identifier) const

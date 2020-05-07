@@ -53,6 +53,11 @@ void ExportNotesJobInterfaceTestImpl::setListOfResource(const QVector<Utils::Ako
     mListAkonadiInstanceInfo = instanceInfoList;
 }
 
+void ExportNotesJobInterfaceTestImpl::setPathConfig(const QString &pathConfig)
+{
+    mPathConfig = pathConfig;
+}
+
 QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()
 {
     qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()";
@@ -63,6 +68,8 @@ void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
 {
     //TODO implement it
     qDebug() << " void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << archivePath << " url " << url << " identifier " << identifier;
+    //TODO implement it
+    slotNoteJobTerminated();
 }
 
 Akonadi::Collection::Id ExportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
@@ -118,6 +125,7 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()
 
     ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
+    exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);
     file->start();
     delete exportNote;
@@ -126,7 +134,7 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()
 QString ExportNotesJobInterfaceTestImpl::resourcePath(const QString &identifier) const
 {
     ResourceConverterTest converter;
-    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    converter.setTestPath(mPathConfig);
     const QString url = converter.resourcePath(identifier);
     return url;
 }

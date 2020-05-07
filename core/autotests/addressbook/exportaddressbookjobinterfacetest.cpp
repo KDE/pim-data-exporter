@@ -50,6 +50,7 @@ Akonadi::Collection::Id ExportAddressbookJobInterfaceTestImpl::convertFolderPath
 void ExportAddressbookJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
     //TODO implement it
+    slotAddressbookJobTerminated();
 }
 
 QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceTestImpl::listOfResource()
