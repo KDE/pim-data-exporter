@@ -27,3 +27,14 @@ LogCreatingResource::LogCreatingResource(QObject *parent)
 LogCreatingResource::~LogCreatingResource()
 {
 }
+
+void LogCreatingResource::appendText(const QString &str)
+{
+    //TODO
+}
+
+QString LogCreatingResource::logPath() const
+{
+    //TODO
+    return {};
+}

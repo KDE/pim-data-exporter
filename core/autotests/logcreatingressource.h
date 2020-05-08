@@ -28,6 +28,8 @@ class LogCreatingResource : public QObject
 public:
     explicit LogCreatingResource(QObject *parent = nullptr);
     ~LogCreatingResource();
+    void appendText(const QString &str);
+    Q_REQUIRED_RESULT QString logPath() const;
 };
 
 #endif // LOGCREATINGRESOURCE_H
