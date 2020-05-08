@@ -264,7 +264,7 @@ void PimDataExporterWindow::slotUpdateActions(bool inAction)
 void PimDataExporterWindow::slotRestoreFile(const QUrl &url)
 {
     if (!url.isEmpty()) {
-        loadData(url.path());
+        loadData(url.toLocalFile());
     }
 }
 
