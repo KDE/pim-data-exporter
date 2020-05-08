@@ -1,0 +1,4 @@
+[General]
+Path[$e]=[TEST_PATH]/
+TopLevelIsContainer=true
+
