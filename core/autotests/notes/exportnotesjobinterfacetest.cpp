@@ -69,6 +69,7 @@ void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
     //TODO implement it
     qDebug() << " void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << archivePath << " url " << url << " identifier " << identifier;
     //TODO implement it
+    QVERIFY(identifier.startsWith(QLatin1String("akonadi_akonotes_resource_")));
     slotNoteJobTerminated();
 }
 
@@ -130,6 +131,9 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()
     info.identifier = QStringLiteral("akonadi_akonotes_resource_1");
     lstInfo << info;
     info.identifier = QStringLiteral("akonadi_akonotes_resource_2");
+    lstInfo << info;
+    //Add extra resource.
+    info.identifier = QStringLiteral("akonadi_kontact_resource_2");
     lstInfo << info;
 
     ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
