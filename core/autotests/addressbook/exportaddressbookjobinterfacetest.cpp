@@ -43,7 +43,7 @@ void ExportAddressbookJobInterfaceTestImpl::exportArchiveResource()
 Akonadi::Collection::Id ExportAddressbookJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
@@ -67,23 +67,28 @@ void ExportAddressbookJobInterfaceTestImpl::setListOfResource(const QVector<Util
 void ExportAddressbookJobInterfaceTestImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;
-    resourceConverter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverter.setTestPath(mPathConfig);
     resourceConverter.convertCollectionToRealPath(group, currentKey);
 }
 
 void ExportAddressbookJobInterfaceTestImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;
-    resourceConverter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverter.setTestPath(mPathConfig);
     resourceConverter.convertCollectionListToRealPath(group, currentKey);
 }
 
 QString ExportAddressbookJobInterfaceTestImpl::resourcePath(const QString &agentIdentifier, const QString &defaultPath) const
 {
     ResourceConverterTest converter;
-    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    converter.setTestPath(mPathConfig);
     const QString url = converter.resourcePath(agentIdentifier, defaultPath);
     return url;
+}
+
+void ExportAddressbookJobInterfaceTestImpl::setPathConfig(const QString &pathConfig)
+{
+    mPathConfig = pathConfig;
 }
 
 ExportAddressbookJobInterfaceTest::ExportAddressbookJobInterfaceTest(QObject *parent)
@@ -105,6 +110,7 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfig()
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
     ExportAddressbookJobInterfaceTestImpl *exportNote = new ExportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);
     file->start();
     delete exportNote;

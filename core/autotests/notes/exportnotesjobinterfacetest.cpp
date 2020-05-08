@@ -38,7 +38,7 @@ ExportNotesJobInterfaceTestImpl::~ExportNotesJobInterfaceTestImpl()
 void ExportNotesJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     resourceConverterTest.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
 }
 
@@ -75,9 +75,18 @@ void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
 Akonadi::Collection::Id ExportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
+
+QString ExportNotesJobInterfaceTestImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterTest converter;
+    converter.setTestPath(mPathConfig);
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}
+
 
 ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
@@ -131,10 +140,3 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()
     delete exportNote;
 }
 
-QString ExportNotesJobInterfaceTestImpl::resourcePath(const QString &identifier) const
-{
-    ResourceConverterTest converter;
-    converter.setTestPath(mPathConfig);
-    const QString url = converter.resourcePath(identifier);
-    return url;
-}
