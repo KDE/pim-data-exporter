@@ -32,6 +32,7 @@ public:
     ~ExportCalendarsJobInterfaceTestImpl();
 
     void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
+    void setPathConfig(const QString &pathConfig);
 protected:
     void exportArchiveResource() override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
@@ -42,6 +43,7 @@ protected:
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
 private:
     QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
+    QString mPathConfig;
 };
 
 class ExportCalendarsJobInterfaceTest : public QObject

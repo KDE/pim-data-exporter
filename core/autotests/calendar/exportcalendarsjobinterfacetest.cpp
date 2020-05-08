@@ -43,14 +43,14 @@ void ExportCalendarsJobInterfaceTestImpl::exportArchiveResource()
 Akonadi::Collection::Id ExportCalendarsJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
 QString ExportCalendarsJobInterfaceTestImpl::convertToFullCollectionPath(const qlonglong collectionValue)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.convertToFullCollectionPath(collectionValue);
 }
 
@@ -71,12 +71,26 @@ void ExportCalendarsJobInterfaceTestImpl::setListOfResource(const QVector<Utils:
     mListAkonadiInstanceInfo = instanceInfoList;
 }
 
+void ExportCalendarsJobInterfaceTestImpl::setPathConfig(const QString &pathConfig)
+{
+    mPathConfig = pathConfig;
+}
+
 void ExportCalendarsJobInterfaceTestImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest converter;
-    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    converter.setTestPath(mPathConfig);
     converter.convertCollectionListToRealPath(group, currentKey);
 }
+
+QString ExportCalendarsJobInterfaceTestImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterTest converter;
+    converter.setTestPath(mPathConfig);
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}
+
 
 ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent)
     : QObject(parent)
@@ -95,16 +109,10 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfig()
     QFETCH(QByteArray, configpath);
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
-    ExportCalendarsJobInterfaceTestImpl *exportNote = new ExportCalendarsJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(exportNote);
+    ExportCalendarsJobInterfaceTestImpl *impl = new ExportCalendarsJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    impl->setPathConfig(QLatin1String(configpath));
+    file->setAbstractImportExportJob(impl);
     file->start();
-    delete exportNote;
+    delete impl;
 }
 
-QString ExportCalendarsJobInterfaceTestImpl::resourcePath(const QString &identifier) const
-{
-    ResourceConverterTest converter;
-    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
-    const QString url = converter.resourcePath(identifier);
-    return url;
-}

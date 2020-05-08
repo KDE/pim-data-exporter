@@ -52,10 +52,15 @@ void ExportAlarmJobInterfaceTestImpl::setListOfResource(const QVector<Utils::Ako
     mListAkonadiInstanceInfo = instanceInfoList;
 }
 
+void ExportAlarmJobInterfaceTestImpl::setPathConfig(const QString &pathConfig)
+{
+    mPathConfig = pathConfig;
+}
+
 Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
@@ -68,7 +73,7 @@ void ExportAlarmJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
 QString ExportAlarmJobInterfaceTestImpl::resourcePath(const QString &identifier) const
 {
     ResourceConverterTest converter;
-    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    converter.setTestPath(mPathConfig);
     const QString url = converter.resourcePath(identifier);
     return url;
 }
@@ -90,8 +95,9 @@ void ExportAlarmJobInterfaceTest::exportAlarmConfig()
     QFETCH(QByteArray, configpath);
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
-    ExportAlarmJobInterfaceTestImpl *exportNote = new ExportAlarmJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(exportNote);
+    ExportAlarmJobInterfaceTestImpl *impl = new ExportAlarmJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(impl);
+    impl->setPathConfig(QLatin1String(configpath));
     file->start();
-    delete exportNote;
+    delete impl;
 }
