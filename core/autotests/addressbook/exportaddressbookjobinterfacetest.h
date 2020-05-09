@@ -23,16 +23,13 @@
 #include <QObject>
 
 #include "addressbook/exportaddressbookjobinterface.h"
-
-class ExportAddressbookJobInterfaceTestImpl : public ExportAddressbookJobInterface
+#include "exportimportutil.h"
+class ExportAddressbookJobInterfaceTestImpl : public ExportAddressbookJobInterface, public ExportImportUtil
 {
     Q_OBJECT
 public:
     explicit ExportAddressbookJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportAddressbookJobInterfaceTestImpl();
-    void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
-
-    void setPathConfig(const QString &pathConfig);
 
 protected:
     void exportArchiveResource() override;
@@ -44,9 +41,6 @@ protected:
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString()) const override;
-private:
-    QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
-    QString mPathConfig;
 };
 
 class ExportAddressbookJobInterfaceTest : public QObject

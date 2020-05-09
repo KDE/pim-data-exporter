@@ -48,16 +48,6 @@ void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
     slotWriteNextArchiveResource();
 }
 
-void ExportNotesJobInterfaceTestImpl::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
-{
-    mListAkonadiInstanceInfo = instanceInfoList;
-}
-
-void ExportNotesJobInterfaceTestImpl::setPathConfig(const QString &pathConfig)
-{
-    mPathConfig = pathConfig;
-}
-
 QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()
 {
     qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()";

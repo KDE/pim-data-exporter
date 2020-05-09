@@ -66,16 +66,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportCalendarsJobInterfaceTestImpl::listOfR
     return mListAkonadiInstanceInfo;
 }
 
-void ExportCalendarsJobInterfaceTestImpl::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
-{
-    mListAkonadiInstanceInfo = instanceInfoList;
-}
-
-void ExportCalendarsJobInterfaceTestImpl::setPathConfig(const QString &pathConfig)
-{
-    mPathConfig = pathConfig;
-}
-
 void ExportCalendarsJobInterfaceTestImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest converter;

@@ -23,24 +23,20 @@
 #include <QObject>
 
 #include "alarm/exportalarmjobinterface.h"
+#include "exportimportutil.h"
 
-class ExportAlarmJobInterfaceTestImpl : public ExportAlarmJobInterface
+class ExportAlarmJobInterfaceTestImpl : public ExportAlarmJobInterface, public ExportImportUtil
 {
     Q_OBJECT
 public:
     explicit ExportAlarmJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportAlarmJobInterfaceTestImpl();
-    void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
-    void setPathConfig(const QString &pathConfig);
 protected:
     void exportArchiveResource() override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
-private:
-    QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
-    QString mPathConfig;
 };
 
 class ExportAlarmJobInterfaceTest : public QObject

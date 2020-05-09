@@ -23,16 +23,14 @@
 #include <QObject>
 
 #include "calendar/exportcalendarjobinterface.h"
-
-class ExportCalendarsJobInterfaceTestImpl : public ExportCalendarJobInterface
+#include "exportimportutil.h"
+class ExportCalendarsJobInterfaceTestImpl : public ExportCalendarJobInterface, public ExportImportUtil
 {
     Q_OBJECT
 public:
     explicit ExportCalendarsJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportCalendarsJobInterfaceTestImpl();
 
-    void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
-    void setPathConfig(const QString &pathConfig);
 protected:
     void exportArchiveResource() override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
@@ -41,9 +39,6 @@ protected:
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
-private:
-    QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
-    QString mPathConfig;
 };
 
 class ExportCalendarsJobInterfaceTest : public QObject

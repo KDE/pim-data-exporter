@@ -21,18 +21,16 @@
 #define EXPORTNOTESJOBINTERFACETEST_H
 
 #include <QObject>
+#include "exportimportutil.h"
 
 #include "notes/exportnotesjobinterface.h"
 
-class ExportNotesJobInterfaceTestImpl : public ExportNotesJobInterface
+class ExportNotesJobInterfaceTestImpl : public ExportNotesJobInterface, public ExportImportUtil
 {
     Q_OBJECT
 public:
     explicit ExportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportNotesJobInterfaceTestImpl();
-
-    void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
-    void setPathConfig(const QString &pathConfig);
 
 protected:
     void exportArchiveResource() override;
@@ -41,9 +39,6 @@ protected:
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
-private:
-    QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
-    QString mPathConfig;
 };
 
 class ExportNotesJobInterfaceTest : public QObject

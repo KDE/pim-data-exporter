@@ -59,10 +59,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceTestImpl::listO
     return mListAkonadiInstanceInfo;
 }
 
-void ExportAddressbookJobInterfaceTestImpl::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
-{
-    mListAkonadiInstanceInfo = instanceInfoList;
-}
 
 void ExportAddressbookJobInterfaceTestImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
@@ -84,11 +80,6 @@ QString ExportAddressbookJobInterfaceTestImpl::resourcePath(const QString &agent
     converter.setTestPath(mPathConfig);
     const QString url = converter.resourcePath(agentIdentifier, defaultPath);
     return url;
-}
-
-void ExportAddressbookJobInterfaceTestImpl::setPathConfig(const QString &pathConfig)
-{
-    mPathConfig = pathConfig;
 }
 
 ExportAddressbookJobInterfaceTest::ExportAddressbookJobInterfaceTest(QObject *parent)

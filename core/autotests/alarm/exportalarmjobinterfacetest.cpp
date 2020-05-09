@@ -47,16 +47,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceTestImpl::listOfResou
     return mListAkonadiInstanceInfo;
 }
 
-void ExportAlarmJobInterfaceTestImpl::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
-{
-    mListAkonadiInstanceInfo = instanceInfoList;
-}
-
-void ExportAlarmJobInterfaceTestImpl::setPathConfig(const QString &pathConfig)
-{
-    mPathConfig = pathConfig;
-}
-
 Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
