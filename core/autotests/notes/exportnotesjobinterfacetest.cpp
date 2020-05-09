@@ -21,6 +21,7 @@
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
 #include "testexportfile.h"
+#include <KZip>
 #include <QDebug>
 #include <QTest>
 
@@ -60,6 +61,9 @@ void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
     qDebug() << " void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << archivePath << " url " << url << " identifier " << identifier;
     //TODO implement it
     QVERIFY(identifier.startsWith(QLatin1String("akonadi_akonotes_resource_")));
+    qDebug() << "11 " << url + identifier + QLatin1String(".zip");
+    qDebug() << "22 " << archivePath + identifier + QLatin1String(".zip");
+    QVERIFY(mArchiveStorage->archive()->addLocalFile(url + identifier + QLatin1String(".zip"), archivePath + identifier + QLatin1String(".zip")));
     slotNoteJobTerminated();
 }
 
@@ -107,7 +111,7 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource_data()
 {
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
+    //QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
     QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
 }
 

@@ -1,4 +1,4 @@
 [General]
-Path[$e]=$HOME/.local/notes/akonadi_akonotes_resource_5
+Path[$e]=[TEST_PATH]/
 TopLevelIsContainer=true
 
