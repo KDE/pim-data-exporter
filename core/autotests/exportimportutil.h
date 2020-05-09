@@ -21,15 +21,21 @@
 
 #include <QVector>
 #include "utils.h"
+#include "logcreatingressource.h"
 
 class ExportImportUtil
 {
 public:
     ExportImportUtil();
+    ~ExportImportUtil();
     void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
     void setPathConfig(const QString &pathConfig);
+    void addLogCreateResource(const QString &str);
+
     QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
     QString mPathConfig;
+private:
+    LogCreatingResource *mLogCreateResource = nullptr;
 };
 
 #endif // EXPORTIMPORTUTIL_H

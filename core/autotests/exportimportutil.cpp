@@ -21,7 +21,12 @@
 
 ExportImportUtil::ExportImportUtil()
 {
+    mLogCreateResource = new LogCreatingResource(nullptr);
+}
 
+ExportImportUtil::~ExportImportUtil()
+{
+    delete mLogCreateResource;
 }
 
 void ExportImportUtil::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
@@ -32,4 +37,9 @@ void ExportImportUtil::setListOfResource(const QVector<Utils::AkonadiInstanceInf
 void ExportImportUtil::setPathConfig(const QString &pathConfig)
 {
     mPathConfig = pathConfig;
+}
+
+void ExportImportUtil::addLogCreateResource(const QString &str)
+{
+    mLogCreateResource->appendText(str);
 }
