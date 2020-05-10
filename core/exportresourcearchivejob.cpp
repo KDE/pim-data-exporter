@@ -19,6 +19,7 @@
 
 #include "exportresourcearchivejob.h"
 #include "utils.h"
+#include "storeresourcejob.h"
 #include "pimdataexportcore_debug.h"
 #include <pimdatabackupthread.h>
 #include <KLocalizedString>
@@ -79,21 +80,13 @@ void ExportResourceArchiveJob::start()
 void ExportResourceArchiveJob::slotTerminated(bool success)
 {
     if (success) {
-        const QString errorStr = Utils::storeResources(mZip, mIdentifier, mArchivePath);
-        if (!errorStr.isEmpty()) {
-            Q_EMIT error(errorStr);
-        }
-        const QString url = Akonadi::ServerManager::agentConfigFilePath(mIdentifier);
-        if (!url.isEmpty()) {
-            const QFileInfo fi(url);
-            const QString filename = fi.fileName();
-            const bool fileAdded = mZip->addLocalFile(url, mArchivePath + filename);
-            if (fileAdded) {
-                Q_EMIT info(i18n("\"%1\" was backed up.", filename));
-            } else {
-                Q_EMIT error(i18n("\"%1\" file cannot be added to backup file.", filename));
-            }
-        }
+        StoreResourceJob *job = new StoreResourceJob(this);
+        connect(job, &StoreResourceJob::error, this, &ExportResourceArchiveJob::error);
+        connect(job, &StoreResourceJob::info, this, &ExportResourceArchiveJob::info);
+        job->setArchivePath(mArchivePath);
+        job->setZip(mZip);
+        job->setIdentifier(mIdentifier);
+        job->start();
     }
     finished();
 }

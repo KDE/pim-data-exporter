@@ -21,6 +21,7 @@
 #include "archivestorage.h"
 #include "importexportprogressindicatorbase.h"
 #include "resourceconverterimpl.h"
+#include "storeresourcejob.h"
 #include "synchronizeresourcejob.h"
 
 #include <PimCommonAkonadi/CreateResource>
@@ -322,23 +323,15 @@ void AbstractImportExportJob::backupResourceFile(const QString &identifier, cons
         QString filename = fi.fileName();
         const bool fileAdded = archive()->addLocalFile(url, archivePath + filename);
         if (fileAdded) {
-            const QString errorStr = Utils::storeResources(archive(), identifier, archivePath);
-            if (!errorStr.isEmpty()) {
-                Q_EMIT error(errorStr);
-            }
             Q_EMIT info(i18n("\"%1\" was backed up.", filename));
 
-            url = Akonadi::ServerManager::agentConfigFilePath(identifier);
-            if (!url.isEmpty()) {
-                fi = QFileInfo(url);
-                filename = fi.fileName();
-                const bool fileAdded = archive()->addLocalFile(url, archivePath + filename);
-                if (fileAdded) {
-                    Q_EMIT info(i18n("\"%1\" was backed up.", filename));
-                } else {
-                    Q_EMIT error(i18n("\"%1\" file cannot be added to backup file.", filename));
-                }
-            }
+            StoreResourceJob *job = new StoreResourceJob(this);
+            connect(job, &StoreResourceJob::error, this, &AbstractImportExportJob::error);
+            connect(job, &StoreResourceJob::info, this, &AbstractImportExportJob::info);
+            job->setArchivePath(archivePath);
+            job->setZip(archive());
+            job->setIdentifier(identifier);
+            job->start();
         } else {
             Q_EMIT error(i18n("\"%1\" file cannot be added to backup file.", filename));
         }
