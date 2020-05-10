@@ -31,7 +31,6 @@
 
 #include <KZip>
 #include <KLocalizedString>
-#include <QTemporaryFile>
 
 #include "pimdataexportcore_debug.h"
 

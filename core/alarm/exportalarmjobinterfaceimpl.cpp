@@ -22,7 +22,6 @@
 #include <KLocalizedString>
 #include <MailCommon/MailUtil>
 
-#include <QTemporaryFile>
 #include <QTimer>
 #include <KConfigGroup>
 

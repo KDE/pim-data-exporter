@@ -24,7 +24,6 @@
 #include <MailCommon/MailUtil>
 #include <KLocalizedString>
 #include <KZip>
-#include <QTemporaryFile>
 #include <KConfigGroup>
 
 #include <QDir>
