@@ -20,7 +20,6 @@
 #include "resourceconvertertest.h"
 #include <QDebug>
 
-
 ResourceConverterTest::ResourceConverterTest()
 {
 }

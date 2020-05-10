@@ -83,7 +83,6 @@ QString ResourceConverterBase::resourcePath(const QString &agentIdentifier, cons
     return url;
 }
 
-
 QString ResourceConverterBase::changeResourcePath(QString url) const
 {
     return url;

@@ -161,4 +161,3 @@ void ExportNotesJobInterface::slotWriteNextArchiveResource()
         QTimer::singleShot(0, this, &ExportNotesJobInterface::slotCheckBackupConfig);
     }
 }
-

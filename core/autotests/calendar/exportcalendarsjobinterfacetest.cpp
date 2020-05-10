@@ -81,7 +81,6 @@ QString ExportCalendarsJobInterfaceTestImpl::resourcePath(const QString &identif
     return url;
 }
 
-
 ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
@@ -105,4 +104,3 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfig()
     file->start();
     delete impl;
 }
-

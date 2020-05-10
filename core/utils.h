@@ -98,7 +98,6 @@ PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString resourceAlarmArchiveName();
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString resourceCalendarArchiveName();
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString resourceMailArchiveName();
 
-
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString prefixAkonadiConfigFile();
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString exportDataTypeFileName();
 Q_REQUIRED_RESULT QString akonadiAgentName(const QString &configPath);

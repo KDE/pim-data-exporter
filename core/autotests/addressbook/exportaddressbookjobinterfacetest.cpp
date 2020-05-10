@@ -59,7 +59,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceTestImpl::listO
     return mListAkonadiInstanceInfo;
 }
 
-
 void ExportAddressbookJobInterfaceTestImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;
@@ -106,5 +105,3 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfig()
     file->start();
     delete exportNote;
 }
-
-

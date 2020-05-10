@@ -81,4 +81,3 @@ QString ExportNotesJobInterfaceImpl::resourcePath(const QString &identifier) con
     const QString url = converter.resourcePath(identifier);
     return url;
 }
-

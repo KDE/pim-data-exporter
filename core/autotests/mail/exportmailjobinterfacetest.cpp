@@ -123,7 +123,6 @@ QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlongl
     return converter.convertToFullCollectionPath(collectionValue);
 }
 
-
 QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) const
 {
     ResourceConverterTest converter;

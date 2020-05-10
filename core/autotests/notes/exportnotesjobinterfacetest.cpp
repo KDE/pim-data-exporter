@@ -77,7 +77,6 @@ QString ExportNotesJobInterfaceTestImpl::resourcePath(const QString &identifier)
     return url;
 }
 
-
 ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
@@ -132,4 +131,3 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()
     file->start();
     delete exportNote;
 }
-

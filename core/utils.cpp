@@ -291,4 +291,3 @@ QString Utils::resourceMailArchiveName()
 {
     return QStringLiteral("mail.zip");
 }
-

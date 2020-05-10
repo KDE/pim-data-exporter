@@ -70,7 +70,6 @@ void ExportAlarmJobInterfaceImpl::exportResourceToArchive(const QString &archive
     resourceJob->start();
 }
 
-
 QString ExportAlarmJobInterfaceImpl::resourcePath(const QString &identifier) const
 {
     ResourceConverterImpl converter;
