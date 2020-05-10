@@ -20,6 +20,7 @@
 #include "storeresourcejob.h"
 #include "utils.h"
 #include "pimdataexportcore_debug.h"
+#include "resourceconverterimpl.h"
 #include <KLocalizedString>
 #include <KZip>
 #include <AkonadiCore/ServerManager>
@@ -59,7 +60,9 @@ void StoreResourceJob::start()
         deleteLater();
         return;
     }
-    const QString errorStr = Utils::storeResources(mZip, mIdentifier, mArchivePath);
+
+    ResourceConverterImpl converter;
+    const QString errorStr = converter.storeResources(mZip, mIdentifier, mArchivePath);
     if (!errorStr.isEmpty()) {
         Q_EMIT error(errorStr);
     }

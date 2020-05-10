@@ -24,6 +24,7 @@
 #include <QString>
 #include <KSharedConfig>
 #include <AkonadiCore/Collection>
+class KZip;
 class PIMDATAEXPORTER_EXPORT ResourceConverterBase
 {
 public:
@@ -40,6 +41,7 @@ public:
 
     virtual Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
     virtual Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
+    Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path);
 };
 
 #endif // RESOURCECONVERTER_H

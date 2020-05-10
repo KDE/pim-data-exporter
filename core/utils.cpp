@@ -110,50 +110,6 @@ QString Utils::infoPath()
     return QStringLiteral("information/");
 }
 
-QString Utils::storeResources(KZip *archive, const QString &identifier, const QString &path)
-{
-    const QString agentFileName = identifier + QStringLiteral("rc");
-    const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
-    qCDebug(PIMDATAEXPORTERCORE_LOG) << "configFileName " << configFileName << "agentFileName " << configFileName;
-
-    KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
-    QTemporaryFile tmp;
-    tmp.open();
-    KConfig *config = resourceConfig->copyTo(tmp.fileName());
-
-    if (identifier.contains(POP3_RESOURCE_IDENTIFIER)) {
-        const QString targetCollection = QStringLiteral("targetCollection");
-        KConfigGroup group = config->group("General");
-        if (group.hasKey(targetCollection)) {
-            group.writeEntry(targetCollection, MailCommon::Util::fullCollectionPath(Akonadi::Collection(group.readEntry(targetCollection).toLongLong())));
-        }
-    } else if (PimCommon::Util::isImapResource(identifier)) {
-        const QString trash = QStringLiteral("TrashCollection");
-        KConfigGroup group = config->group("cache");
-        if (group.hasKey(trash)) {
-            group.writeEntry(trash, MailCommon::Util::fullCollectionPath(Akonadi::Collection(group.readEntry(trash).toLongLong())));
-        }
-    }
-    //Customize resource if necessary here.
-    config->sync();
-    bool fileAdded = archive->addLocalFile(tmp.fileName(), path + agentFileName);
-    delete config;
-    if (!fileAdded) {
-        return i18n("Resource file \"%1\" cannot be added to backup file.", agentFileName);
-    }
-
-    const QString agentConfigFileName = Utils::prefixAkonadiConfigFile() + identifier;
-    const QString agentConfigFileNamePath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1String("/akonadi/") + agentConfigFileName;
-    if (QFileInfo::exists(agentConfigFileNamePath)) {
-        fileAdded = archive->addLocalFile(agentConfigFileNamePath, path + agentConfigFileName);
-        if (!fileAdded) {
-            return i18n("Resource file \"%1\" cannot be added to backup file.", agentFileName);
-        }
-    }
-
-    return QString();
-}
-
 QString Utils::akonadiAgentName(const QString &configPath)
 {
     QSettings settings(configPath, QSettings::IniFormat);
