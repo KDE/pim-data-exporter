@@ -51,7 +51,6 @@ void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
 
 QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()
 {
-    qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()";
     return mListAkonadiInstanceInfo;
 }
 
