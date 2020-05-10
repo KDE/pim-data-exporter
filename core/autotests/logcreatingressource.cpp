@@ -19,9 +19,13 @@
 
 #include "logcreatingressource.h"
 
+#include <QTemporaryFile>
+
 LogCreatingResource::LogCreatingResource(QObject *parent)
     : QObject(parent)
 {
+    mTmpLogFile = new QTemporaryFile(this);
+    mTmpLogFile->open();
 }
 
 LogCreatingResource::~LogCreatingResource()
@@ -35,6 +39,5 @@ void LogCreatingResource::appendText(const QString &str)
 
 QString LogCreatingResource::logPath() const
 {
-    //TODO
-    return {};
+    return mTmpLogFile->fileName();
 }

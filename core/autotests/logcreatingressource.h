@@ -21,7 +21,7 @@
 #define LOGCREATINGRESOURCE_H
 
 #include <QObject>
-
+class QTemporaryFile;
 class LogCreatingResource : public QObject
 {
     Q_OBJECT
@@ -30,6 +30,8 @@ public:
     ~LogCreatingResource();
     void appendText(const QString &str);
     Q_REQUIRED_RESULT QString logPath() const;
+private:
+    QTemporaryFile *mTmpLogFile = nullptr;
 };
 
 #endif // LOGCREATINGRESOURCE_H
