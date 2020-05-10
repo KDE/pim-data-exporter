@@ -36,6 +36,7 @@ public:
     void setTestPath(const QString &testPath);
 
 private:
+    Q_REQUIRED_RESULT QString prefixStr() const;
     QString mTestPath;
 };
 

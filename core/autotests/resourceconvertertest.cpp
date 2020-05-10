@@ -19,6 +19,8 @@
 
 #include "resourceconvertertest.h"
 #include <QDebug>
+
+
 ResourceConverterTest::ResourceConverterTest()
 {
 }
@@ -27,15 +29,20 @@ ResourceConverterTest::~ResourceConverterTest()
 {
 }
 
+QString ResourceConverterTest::prefixStr() const
+{
+    return QStringLiteral("foo/bla bla/bli");
+}
+
 QString ResourceConverterTest::convertToFullCollectionPath(const qlonglong collectionValue)
 {
-    return QStringLiteral("foo/bla bla/bli%1").arg(collectionValue);
+    return prefixStr() + QString::number(collectionValue);
 }
 
 Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(const QString &path)
 {
     QString str = path;
-    str.remove(QStringLiteral("foo/bla bla/bli"));
+    str.remove(prefixStr());
     auto result = str.toLongLong();
     //Make sure that we use another number.
     if (result != -1) {
