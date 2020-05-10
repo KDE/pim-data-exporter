@@ -75,7 +75,7 @@ void ExportAddressbookJobInterfaceImpl::exportResourceToArchive(const QString &a
     resourceJob->setUrl(url);
     resourceJob->setIdentifier(identifier);
     resourceJob->setArchive(archive());
-    resourceJob->setArchiveName(QStringLiteral("addressbook.zip"));
+    resourceJob->setArchiveName(Utils::resourceAddressbookArchiveName());
     connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAddressbookJobInterfaceImpl::error);
     connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAddressbookJobInterfaceImpl::info);
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated);

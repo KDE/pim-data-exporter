@@ -106,7 +106,7 @@ void ExportMailJobInterfaceImpl::exportResourceToArchive(const QString &archiveP
     resourceJob->setUrl(url);
     resourceJob->setIdentifier(identifier);
     resourceJob->setArchive(archive());
-    resourceJob->setArchiveName(QStringLiteral("mail.zip"));
+    resourceJob->setArchiveName(Utils::resourceMailArchiveName());
     connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportMailJobInterfaceImpl::error);
     connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportMailJobInterfaceImpl::info);
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);

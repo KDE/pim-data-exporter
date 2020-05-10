@@ -78,7 +78,7 @@ void ExportCalendarJobInterfaceImpl::exportResourceToArchive(const QString &arch
     resourceJob->setUrl(url);
     resourceJob->setIdentifier(identifier);
     resourceJob->setArchive(archive());
-    resourceJob->setArchiveName(QStringLiteral("calendar.zip"));
+    resourceJob->setArchiveName(Utils::resourceCalendarArchiveName());
     connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportCalendarJobInterfaceImpl::error);
     connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportCalendarJobInterfaceImpl::info);
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);

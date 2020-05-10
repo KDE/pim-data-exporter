@@ -266,3 +266,29 @@ QVector<Utils::AkonadiInstanceInfo> Utils::listOfResource()
     }
     return instanceInfoList;
 }
+
+QString Utils::resourceNoteArchiveName()
+{
+    return QStringLiteral("notes.zip");
+}
+
+QString Utils::resourceAddressbookArchiveName()
+{
+    return QStringLiteral("addressbook.zip");
+}
+
+QString Utils::resourceAlarmArchiveName()
+{
+    return QStringLiteral("alarm.zip");
+}
+
+QString Utils::resourceCalendarArchiveName()
+{
+    return QStringLiteral("calendar.zip");
+}
+
+QString Utils::resourceMailArchiveName()
+{
+    return QStringLiteral("mail.zip");
+}
+

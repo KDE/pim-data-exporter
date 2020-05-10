@@ -68,7 +68,7 @@ void ExportNotesJobInterfaceImpl::exportResourceToArchive(const QString &archive
     resourceJob->setUrl(url);
     resourceJob->setIdentifier(identifier);
     resourceJob->setArchive(archive());
-    resourceJob->setArchiveName(QStringLiteral("notes.zip"));
+    resourceJob->setArchiveName(Utils::resourceNoteArchiveName());
     connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJobInterfaceImpl::error);
     connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJobInterfaceImpl::info);
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);

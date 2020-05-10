@@ -109,6 +109,10 @@ protected:
     void storeDirectory(const QString &subDirectory);
     void importDataSubdirectory(const QString &subdirectoryRelativePath);
 
+    void convertCollectionListStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key, bool addCollectionPrefix);
+    void convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = true);
+    virtual Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
+
     QHash<QString, Akonadi::Collection::Id> mHashConvertPathCollectionId;
     QVector<ResourceFiles> mListResourceFile;
 
@@ -126,9 +130,6 @@ protected:
     int mIndex = -1;
     static int sArchiveVersion;
 
-    void convertCollectionListStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key, bool addCollectionPrefix);
-    void convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = true);
-    virtual Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
 private:
     void slotAllResourceSynchronized();
     void slotSynchronizeInstanceDone(const QString &, const QString &identifier);

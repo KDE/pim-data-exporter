@@ -63,7 +63,7 @@ void ExportAlarmJobInterfaceImpl::exportResourceToArchive(const QString &archive
     resourceJob->setUrl(url);
     resourceJob->setIdentifier(identifier);
     resourceJob->setArchive(archive());
-    resourceJob->setArchiveName(QStringLiteral("alarm.zip"));
+    resourceJob->setArchiveName(Utils::resourceAlarmArchiveName());
     connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAlarmJobInterfaceImpl::error);
     connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAlarmJobInterfaceImpl::info);
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated);

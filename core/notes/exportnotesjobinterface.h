@@ -43,6 +43,7 @@ protected:
     virtual Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() = 0;
     void slotNoteJobTerminated();
     virtual Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const = 0;
+    Q_REQUIRED_RESULT QString resourceArchiveName() const;
 
 private:
     void slotCheckBackupResource();

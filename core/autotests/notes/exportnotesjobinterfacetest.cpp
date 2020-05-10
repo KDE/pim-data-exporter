@@ -62,7 +62,7 @@ void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
     QVERIFY(identifier.startsWith(QLatin1String("akonadi_akonotes_resource_")));
     qDebug() << "11 " << url + identifier + QLatin1String(".zip");
     qDebug() << "22 " << archivePath + identifier + QLatin1String(".zip");
-    QVERIFY(mArchiveStorage->archive()->addLocalFile(url + identifier + QLatin1String(".zip"), archivePath + identifier + QLatin1String(".zip")));
+    QVERIFY(mArchiveStorage->archive()->addLocalFile(url + identifier + QLatin1String(".zip"), archivePath + Utils::resourceNoteArchiveName()));
     slotNoteJobTerminated();
 }
 
