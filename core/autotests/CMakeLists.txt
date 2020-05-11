@@ -17,8 +17,9 @@ add_library(test_resourceconverter STATIC
     logcreatingressource.cpp
     comparefilehelper.cpp
     exportimportutil.cpp
+    saveresourceconfigtest.cpp
 )
-target_link_libraries(test_resourceconverter PUBLIC KF5::ConfigCore pimdataexporterprivate KF5::Archive Qt5::Test)
+target_link_libraries(test_resourceconverter PUBLIC KF5::ConfigCore pimdataexporterprivate KF5::Archive Qt5::Test KF5::AkonadiCore)
 
 
 #####

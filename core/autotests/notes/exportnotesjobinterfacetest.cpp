@@ -25,6 +25,7 @@
 #include <KZip>
 #include <QDebug>
 #include <QTest>
+#include <saveresourceconfigtest.h>
 
 QTEST_MAIN(ExportNotesJobInterfaceTest)
 
@@ -57,17 +58,9 @@ QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResou
 
 void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    qDebug() << " void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << archivePath << " url " << url << " identifier " << identifier;
-    QVERIFY(identifier.startsWith(QLatin1String("akonadi_akonotes_resource_")));
-    QVERIFY(mArchiveStorage->archive()->addLocalFile(url + identifier + QLatin1String(".zip"), archivePath + Utils::resourceNoteArchiveName()));
-    ResourceConverterTest converter;
-    const QString errorStr = converter.storeResources(archive(), identifier, archivePath);
-    QVERIFY(!errorStr.isEmpty());
-    const QString urlAgentConfig = Akonadi::ServerManager::agentConfigFilePath(identifier);
-    QVERIFY(!urlAgentConfig.isEmpty());
-    const QFileInfo fi(urlAgentConfig);
-    const QString filename = fi.fileName();
-    QVERIFY(mArchiveStorage->archive()->addLocalFile(urlAgentConfig, archivePath + filename));
+    SaveResoureConfigTest saveResourceConfig;
+    saveResourceConfig.setArchive(mArchiveStorage->archive());
+    saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceNoteArchiveName(), {QLatin1String("akonadi_akonotes_resource_")});
     slotNoteJobTerminated();
 }
 

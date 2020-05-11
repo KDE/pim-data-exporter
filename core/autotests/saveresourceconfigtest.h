@@ -17,30 +17,21 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "exportimportutil.h"
+#ifndef SAVERESOURECONFIGTEST_H
+#define SAVERESOURECONFIGTEST_H
 
-ExportImportUtil::ExportImportUtil()
+#include <KZip>
+
+class SaveResoureConfigTest
 {
-    mLogCreateResource = new LogCreatingResource(nullptr);
-}
+public:
+    SaveResoureConfigTest();
+    KZip *archive() const;
+    void setArchive(KZip *archive);
 
-ExportImportUtil::~ExportImportUtil()
-{
-    delete mLogCreateResource;
-}
+    void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier, const QString &resourceArchiveName, const QStringList &resourceIdentifierTypes);
+private:
+    KZip *mArchive = nullptr;
+};
 
-void ExportImportUtil::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
-{
-    mListAkonadiInstanceInfo = instanceInfoList;
-}
-
-void ExportImportUtil::setPathConfig(const QString &pathConfig)
-{
-    mPathConfig = pathConfig;
-}
-
-void ExportImportUtil::addLogCreateResource(const QString &str)
-{
-    mLogCreateResource->appendText(str);
-}
-
+#endif // SAVERESOURECONFIGTEST_H
