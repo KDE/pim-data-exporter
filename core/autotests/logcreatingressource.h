@@ -31,6 +31,7 @@ public:
     void appendText(const QString &str);
     Q_REQUIRED_RESULT QString logPath() const;
     void logCreateResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree);
+    void logSynchronizeResource(const QStringList &lst);
 private:
     QTemporaryFile *mTmpLogFile = nullptr;
 };

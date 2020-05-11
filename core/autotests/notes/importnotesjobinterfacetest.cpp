@@ -52,9 +52,7 @@ QString ImportNotesJobInterfaceTestImpl::createResource(const QString &resources
 
 void ImportNotesJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 {
-    //TODO log it!
-    qDebug() << " void ImportNotesJobInterfaceTestImpl::synchronizeResource(const QStringList &lst) TODO IMPLEMENT" << lst;
-    mLogCreateResource->appendText(lst.join(QLatin1Char('\n')));
+    mLogCreateResource->logSynchronizeResource(lst);
     slotNextStep();
 }
 

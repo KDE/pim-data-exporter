@@ -50,7 +50,8 @@ QString ImportCalendarJobInterfaceTestImpl::createResource(const QString &resour
 
 void ImportCalendarJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 {
-    //TODO
+    mLogCreateResource->logSynchronizeResource(lst);
+    slotNextStep();
 }
 
 ImportCalendarJobInterfaceTest::ImportCalendarJobInterfaceTest(QObject *parent)

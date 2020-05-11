@@ -50,8 +50,8 @@ QString ImportAlarmJobInterfaceTestImpl::createResource(const QString &resources
 
 void ImportAlarmJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 {
+    mLogCreateResource->logSynchronizeResource(lst);
     slotNextStep();
-    //TODO
 }
 
 ImportAlarmJobInterfaceTest::ImportAlarmJobInterfaceTest(QObject *parent)

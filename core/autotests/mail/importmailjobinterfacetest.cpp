@@ -43,7 +43,7 @@ Akonadi::Collection::Id ImportMailJobInterfaceTestImpl::convertFolderPathToColle
 
 void ImportMailJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 {
-    qDebug() << " void ImportMailJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)" << lst;
+    mLogCreateResource->logSynchronizeResource(lst);
     slotNextStep();
     //TODO
 }

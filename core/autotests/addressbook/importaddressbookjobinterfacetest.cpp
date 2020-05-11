@@ -50,8 +50,8 @@ QString ImportAddressbookJobInterfaceTestImpl::createResource(const QString &res
 
 void ImportAddressbookJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 {
+    mLogCreateResource->logSynchronizeResource(lst);
     slotNextStep();
-    //TODO
 }
 
 ImportAddressbookJobInterfaceTest::ImportAddressbookJobInterfaceTest(QObject *parent)

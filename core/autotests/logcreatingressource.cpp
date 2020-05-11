@@ -39,6 +39,13 @@ void LogCreatingResource::appendText(const QString &str)
     //TODO
 }
 
+void LogCreatingResource::logSynchronizeResource(const QStringList &lst)
+{
+    if (lst.isEmpty()) {
+        appendText(lst.join(QLatin1Char('\n')));
+    }
+}
+
 QString LogCreatingResource::logPath() const
 {
     return mTmpLogFile->fileName();
