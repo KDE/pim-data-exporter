@@ -34,7 +34,7 @@ public:
 
     QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
     QString mPathConfig;
-private:
+protected:
     LogCreatingResource *mLogCreateResource = nullptr;
 };
 

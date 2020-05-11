@@ -21,10 +21,11 @@
 #define IMPORTALARMJOBINTERFACETEST_H
 
 #include <QObject>
+#include "exportimportutil.h"
 
 #include "alarm/importalarmjobinterface.h"
 
-class ImportAlarmJobInterfaceTestImpl : public ImportAlarmJobInterface
+class ImportAlarmJobInterfaceTestImpl : public ImportAlarmJobInterface, public ExportImportUtil
 {
     Q_OBJECT
 public:

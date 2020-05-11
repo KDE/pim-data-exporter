@@ -21,10 +21,11 @@
 #define IMPORTCALENDARJOBINTERFACETEST_H
 
 #include <QObject>
+#include "exportimportutil.h"
 
 #include "calendar/importcalendarjobinterface.h"
 
-class ImportCalendarJobInterfaceTestImpl : public ImportCalendarJobInterface
+class ImportCalendarJobInterfaceTestImpl : public ImportCalendarJobInterface, public ExportImportUtil
 {
     Q_OBJECT
 public:

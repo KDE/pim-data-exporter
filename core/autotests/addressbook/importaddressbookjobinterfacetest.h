@@ -21,10 +21,11 @@
 #define IMPORTADDRESSBOOKJOBINTERFACETEST_H
 
 #include <QObject>
+#include "exportimportutil.h"
 
 #include "addressbook/importaddressbookjobinterface.h"
 
-class ImportAddressbookJobInterfaceTestImpl : public ImportAddressbookJobInterface
+class ImportAddressbookJobInterfaceTestImpl : public ImportAddressbookJobInterface, public ExportImportUtil
 {
     Q_OBJECT
 public:

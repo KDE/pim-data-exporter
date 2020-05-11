@@ -21,10 +21,11 @@
 #define IMPORTNOTESJOBINTERFACETEST_H
 
 #include <QObject>
+#include "exportimportutil.h"
 
 #include "notes/importnotesjobinterface.h"
 
-class ImportNotesJobInterfaceTestImpl : public ImportNotesJobInterface
+class ImportNotesJobInterfaceTestImpl : public ImportNotesJobInterface, public ExportImportUtil
 {
     Q_OBJECT
 public:

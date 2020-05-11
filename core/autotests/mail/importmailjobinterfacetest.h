@@ -21,10 +21,11 @@
 #define IMPORTMAILJOBINTERFACETEST_H
 
 #include <QObject>
+#include "exportimportutil.h"
 
 #include "mail/importmailjobinterface.h"
 
-class ImportMailJobInterfaceTestImpl : public ImportMailJobInterface
+class ImportMailJobInterfaceTestImpl : public ImportMailJobInterface, public ExportImportUtil
 {
     Q_OBJECT
 public:

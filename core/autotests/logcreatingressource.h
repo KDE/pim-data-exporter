@@ -30,6 +30,7 @@ public:
     ~LogCreatingResource();
     void appendText(const QString &str);
     Q_REQUIRED_RESULT QString logPath() const;
+    void logCreateResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree);
 private:
     QTemporaryFile *mTmpLogFile = nullptr;
 };
