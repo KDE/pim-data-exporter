@@ -66,7 +66,6 @@ void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString 
 
 QVector<Utils::AkonadiInstanceInfo> ExportCalendarsJobInterfaceTestImpl::listOfResource()
 {
-    qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()";
     return mListAkonadiInstanceInfo;
 }
 

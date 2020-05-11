@@ -60,7 +60,6 @@ void ExportAddressbookJobInterfaceTestImpl::exportResourceToArchive(const QStrin
 
 QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceTestImpl::listOfResource()
 {
-    qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceTestImpl::listOfResource()";
     return mListAkonadiInstanceInfo;
 }
 

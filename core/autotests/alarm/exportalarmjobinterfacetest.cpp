@@ -45,7 +45,6 @@ void ExportAlarmJobInterfaceTestImpl::exportArchiveResource()
 
 QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceTestImpl::listOfResource()
 {
-    qDebug() << " QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceTestImpl::listOfResource()";
     return mListAkonadiInstanceInfo;
 }
 
