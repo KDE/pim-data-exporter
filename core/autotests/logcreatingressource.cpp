@@ -20,6 +20,8 @@
 #include "logcreatingressource.h"
 
 #include <QTemporaryFile>
+#include <QTextStream>
+#include <QDebug>
 
 LogCreatingResource::LogCreatingResource(QObject *parent)
     : QObject(parent)
@@ -44,5 +46,10 @@ QString LogCreatingResource::logPath() const
 
 void LogCreatingResource::logCreateResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
-
+//    QTextStream stream(&mTmpLogFile);
+//    //stream << content; // content is a QString
+//    stream << resources << '\n';
+//    stream << name << '\n';
+//    stream << settings << '\n';
+    qDebug() << "settings  "<< settings;
 }
