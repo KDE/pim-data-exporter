@@ -47,6 +47,9 @@ public:
 private Q_SLOTS:
     void exportAlarmConfig();
     void exportAlarmConfig_data();
+
+    void exportAlarmConfigAndResource_data();
+    void exportAlarmConfigAndResource();
 };
 
 #endif // ExportAlarmJobInterfaceTest_H

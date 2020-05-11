@@ -88,3 +88,35 @@ void ExportAlarmJobInterfaceTest::exportAlarmConfig()
     file->start();
     delete impl;
 }
+
+void ExportAlarmJobInterfaceTest::exportAlarmConfigAndResource_data()
+{
+    QTest::addColumn<QByteArray>("configpath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
+    //QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
+    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
+}
+
+void ExportAlarmJobInterfaceTest::exportAlarmConfigAndResource()
+{
+    QFETCH(QByteArray, configpath);
+    TestExportFile *file = new TestExportFile(this);
+    file->setPathConfig(configpath);
+    QVector<Utils::AkonadiInstanceInfo> lstInfo;
+    Utils::AkonadiInstanceInfo info;
+    info.identifier = QLatin1String("akonadi_kalarm_dir_resource_1");
+    lstInfo << info;
+    info.identifier = QLatin1String("akonadi_kalarm_dir_resource_1");
+    lstInfo << info;
+    //Add extra resource.
+    info.identifier = QStringLiteral("akonadi_kolab_resource_2");
+    lstInfo << info;
+
+    ExportAlarmJobInterfaceTestImpl *exportNote = new ExportAlarmJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    exportNote->setListOfResource(lstInfo);
+    exportNote->setPathConfig(QLatin1String(configpath));
+    file->setAbstractImportExportJob(exportNote);
+    file->start();
+    delete exportNote;
+}
+
