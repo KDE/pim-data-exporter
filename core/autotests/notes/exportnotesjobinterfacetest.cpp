@@ -21,6 +21,7 @@
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
 #include "testexportfile.h"
+#include <AkonadiCore/ServerManager>
 #include <KZip>
 #include <QDebug>
 #include <QTest>
@@ -59,7 +60,14 @@ void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
     qDebug() << " void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << archivePath << " url " << url << " identifier " << identifier;
     QVERIFY(identifier.startsWith(QLatin1String("akonadi_akonotes_resource_")));
     QVERIFY(mArchiveStorage->archive()->addLocalFile(url + identifier + QLatin1String(".zip"), archivePath + Utils::resourceNoteArchiveName()));
-    //TODO export config file too.
+    ResourceConverterTest converter;
+    const QString errorStr = converter.storeResources(archive(), identifier, archivePath);
+    QVERIFY(!errorStr.isEmpty());
+    const QString urlAgentConfig = Akonadi::ServerManager::agentConfigFilePath(identifier);
+    QVERIFY(!urlAgentConfig.isEmpty());
+    const QFileInfo fi(urlAgentConfig);
+    const QString filename = fi.fileName();
+    QVERIFY(mArchiveStorage->archive()->addLocalFile(urlAgentConfig, archivePath + filename));
     slotNoteJobTerminated();
 }
 

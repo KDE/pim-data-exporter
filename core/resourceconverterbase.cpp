@@ -25,7 +25,6 @@
 #include <KZip>
 #include <QDir>
 #include <QFileInfo>
-#include <QFileInfo>
 #include <QTemporaryFile>
 
 ResourceConverterBase::ResourceConverterBase()
