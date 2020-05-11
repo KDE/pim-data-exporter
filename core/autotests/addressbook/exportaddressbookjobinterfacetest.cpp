@@ -39,6 +39,7 @@ ExportAddressbookJobInterfaceTestImpl::~ExportAddressbookJobInterfaceTestImpl()
 void ExportAddressbookJobInterfaceTestImpl::exportArchiveResource()
 {
     qDebug() << " not implement yet";
+    slotWriteNextArchiveResource();
 }
 
 Akonadi::Collection::Id ExportAddressbookJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
