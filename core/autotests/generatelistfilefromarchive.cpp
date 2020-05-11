@@ -52,6 +52,7 @@ void GenerateListFileFromArchive::generateList()
     (void)searchArchiveElement(Utils::configsPath(), topDirectory);
     (void)searchArchiveElement(Utils::transportsPath(), topDirectory);
     (void)searchArchiveElement(Utils::dataPath(), topDirectory);
+    (void)searchArchiveElement(Utils::notePath(), topDirectory);
     mListFile.sort();
 }
 
@@ -75,7 +76,6 @@ bool GenerateListFileFromArchive::searchArchiveElement(const QString &path, cons
 void GenerateListFileFromArchive::addSubItems(const QString &topLevelPath, const KArchiveEntry *entry, int indent, const QString &fullpath)
 {
     const KArchiveDirectory *dir = static_cast<const KArchiveDirectory *>(entry);
-    //++indent;
     const QString space = QString(indent * 2, QLatin1Char(' '));
     const QStringList lst = dir->entries();
     for (const QString &entryName : lst) {
@@ -83,7 +83,7 @@ void GenerateListFileFromArchive::addSubItems(const QString &topLevelPath, const
         if (entry) {
             if (entry->isDirectory()) {
                 const KArchiveDirectory *dirEntry = static_cast<const KArchiveDirectory *>(entry);
-                mListFile += space + dirEntry->name();
+                //mListFile += space + dirEntry->name();
                 addSubItems(topLevelPath, entry, indent, (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + dirEntry->name());
             } else if (entry->isFile()) {
                 const KArchiveFile *file = static_cast<const KArchiveFile *>(entry);
