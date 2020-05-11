@@ -69,7 +69,7 @@ void ExportNotesJobInterface::slotCheckBackupResource()
     increaseProgressDialog();
     backupTheme();
     mAkonadiInstanceInfo = listOfResource();
-    exportArchiveResource();
+    QTimer::singleShot(0, this, &ExportNotesJobInterface::slotWriteNextArchiveResource);
 }
 
 void ExportNotesJobInterface::slotCheckBackupConfig()

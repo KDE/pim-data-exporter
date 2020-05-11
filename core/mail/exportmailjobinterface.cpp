@@ -119,7 +119,7 @@ void ExportMailJobInterface::slotCheckBackupMails()
     if (checkBackupType(Utils::Mails)) {
         increaseProgressDialog();
         setProgressDialogLabel(i18n("Backing up Mails..."));
-        exportArchiveResource();
+        QTimer::singleShot(0, this, &ExportMailJobInterface::slotWriteNextArchiveResource);
         return;
     }
     QTimer::singleShot(0, this, &ExportMailJobInterface::slotCheckBackupResources);
@@ -589,7 +589,7 @@ void ExportMailJobInterface::slotMailsJobTerminated()
         return;
     }
     mIndexIdentifier++;
-    exportArchiveResource();
+    QTimer::singleShot(0, this, &ExportMailJobInterface::slotWriteNextArchiveResource);
 }
 
 void ExportMailJobInterface::slotWriteNextArchiveResource()

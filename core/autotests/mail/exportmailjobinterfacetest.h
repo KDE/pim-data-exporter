@@ -32,9 +32,6 @@ public:
     ~ExportMailJobInterfaceTestImpl();
 
 protected:
-    void exportArchiveResource() override;
-
-protected:
     void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey) override;
     void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) override;
 

@@ -36,11 +36,6 @@ ExportMailJobInterfaceTestImpl::~ExportMailJobInterfaceTestImpl()
 {
 }
 
-void ExportMailJobInterfaceTestImpl::exportArchiveResource()
-{
-    qDebug() << " not implement yet";
-}
-
 void ExportMailJobInterfaceTestImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;

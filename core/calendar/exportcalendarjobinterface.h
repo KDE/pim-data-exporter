@@ -36,7 +36,6 @@ public:
     void slotWriteNextArchiveResource();
 
 protected:
-    virtual void exportArchiveResource() = 0;
     void slotCheckBackupConfig();
     virtual Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
     virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) = 0;

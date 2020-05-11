@@ -36,12 +36,6 @@ ExportCalendarsJobInterfaceTestImpl::~ExportCalendarsJobInterfaceTestImpl()
 {
 }
 
-void ExportCalendarsJobInterfaceTestImpl::exportArchiveResource()
-{
-    qDebug() << " not implement yet";
-    slotWriteNextArchiveResource();
-}
-
 Akonadi::Collection::Id ExportCalendarsJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;

@@ -45,11 +45,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceImpl::listOfResource(
     return Utils::listOfResource();
 }
 
-void ExportAlarmJobInterfaceImpl::exportArchiveResource()
-{
-    QTimer::singleShot(0, this, &ExportAlarmJobInterfaceImpl::slotWriteNextArchiveResource);
-}
-
 Akonadi::Collection::Id ExportAlarmJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterImpl converter;

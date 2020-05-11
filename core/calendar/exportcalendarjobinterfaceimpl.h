@@ -32,7 +32,6 @@ public:
     ~ExportCalendarJobInterfaceImpl() override;
 
 protected:
-    void exportArchiveResource() override;
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) override;
     void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) override;

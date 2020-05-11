@@ -44,11 +44,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceImpl::listOfResource(
     return Utils::listOfResource();
 }
 
-void ExportNotesJobInterfaceImpl::exportArchiveResource()
-{
-    QTimer::singleShot(0, this, &ExportNotesJobInterface::slotWriteNextArchiveResource);
-}
-
 void ExportNotesJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
 {
     ResourceConverterImpl resourceImpl;

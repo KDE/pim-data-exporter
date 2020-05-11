@@ -48,11 +48,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportCalendarJobInterfaceImpl::listOfResour
     return Utils::listOfResource();
 }
 
-void ExportCalendarJobInterfaceImpl::exportArchiveResource()
-{
-    QTimer::singleShot(0, this, &ExportCalendarJobInterfaceImpl::slotWriteNextArchiveResource);
-}
-
 Akonadi::Collection::Id ExportCalendarJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterImpl converter;

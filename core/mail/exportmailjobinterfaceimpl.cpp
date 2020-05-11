@@ -54,11 +54,6 @@ ExportMailJobInterfaceImpl::~ExportMailJobInterfaceImpl()
 {
 }
 
-void ExportMailJobInterfaceImpl::exportArchiveResource()
-{
-    QTimer::singleShot(0, this, &ExportMailJobInterfaceImpl::slotWriteNextArchiveResource);
-}
-
 Akonadi::Collection::Id ExportMailJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterImpl converter;

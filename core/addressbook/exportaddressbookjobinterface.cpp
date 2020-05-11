@@ -56,7 +56,7 @@ void ExportAddressbookJobInterface::slotCheckBackupResource()
     mAkonadiInstanceInfo = listOfResource();
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
-    exportArchiveResource();
+    QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotWriteNextArchiveResource);
 }
 
 void ExportAddressbookJobInterface::slotCheckBackupConfig()

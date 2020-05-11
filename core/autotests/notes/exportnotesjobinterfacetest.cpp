@@ -45,12 +45,6 @@ void ExportNotesJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGrou
     resourceConverterTest.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
 }
 
-void ExportNotesJobInterfaceTestImpl::exportArchiveResource()
-{
-    qDebug() << " not implement yet";
-    slotWriteNextArchiveResource();
-}
-
 QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()
 {
     return mListAkonadiInstanceInfo;

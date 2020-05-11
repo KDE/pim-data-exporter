@@ -37,12 +37,6 @@ ExportAlarmJobInterfaceTestImpl::~ExportAlarmJobInterfaceTestImpl()
 {
 }
 
-void ExportAlarmJobInterfaceTestImpl::exportArchiveResource()
-{
-    qDebug() << " not implement yet";
-    slotWriteNextArchiveResource();
-}
-
 QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceTestImpl::listOfResource()
 {
     return mListAkonadiInstanceInfo;

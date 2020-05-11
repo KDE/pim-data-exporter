@@ -36,7 +36,6 @@ public:
     void slotAddressbookJobTerminated();
 
 protected:
-    virtual void exportArchiveResource() = 0;
     virtual void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
     virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
     void slotCheckBackupConfig();

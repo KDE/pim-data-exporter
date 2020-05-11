@@ -100,7 +100,7 @@ void ExportAlarmJobInterface::slotCheckBackupResource()
     mAkonadiInstanceInfo = listOfResource();
     setProgressDialogLabel(i18n("Backing up resources..."));
     increaseProgressDialog();
-    exportArchiveResource();
+    QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotWriteNextArchiveResource);
 }
 
 void ExportAlarmJobInterface::slotCheckBackupConfig()

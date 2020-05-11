@@ -37,7 +37,6 @@ public:
     void slotWriteNextArchiveResource();
 
 protected:
-    virtual void exportArchiveResource() = 0;
     virtual void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) = 0;
     virtual void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) = 0;
     virtual Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() = 0;

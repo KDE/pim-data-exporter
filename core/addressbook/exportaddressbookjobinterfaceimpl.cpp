@@ -45,11 +45,6 @@ QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceImpl::listOfRes
     return Utils::listOfResource();
 }
 
-void ExportAddressbookJobInterfaceImpl::exportArchiveResource()
-{
-    QTimer::singleShot(0, this, &ExportAddressbookJobInterfaceImpl::slotWriteNextArchiveResource);
-}
-
 void ExportAddressbookJobInterfaceImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterImpl converter;
