@@ -24,6 +24,7 @@
 #include <QDebug>
 #include <QTest>
 #include <QSignalSpy>
+#include <saveresourceconfigtest.h>
 
 QTEST_MAIN(ExportAlarmJobInterfaceTest)
 
@@ -56,7 +57,9 @@ Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToColl
 
 void ExportAlarmJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    //TODO implement me
+    SaveResoureConfigTest saveResourceConfig;
+    saveResourceConfig.setArchive(mArchiveStorage->archive());
+    saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceAlarmArchiveName(), { QLatin1String("akonadi_kalarm_dir_resource_")});
     slotAlarmJobTerminated();
 }
 

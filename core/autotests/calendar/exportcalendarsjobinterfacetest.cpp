@@ -23,6 +23,7 @@
 #include "testexportfile.h"
 #include <QDebug>
 #include <QTest>
+#include <saveresourceconfigtest.h>
 
 QTEST_MAIN(ExportCalendarsJobInterfaceTest)
 
@@ -56,7 +57,9 @@ QString ExportCalendarsJobInterfaceTestImpl::convertToFullCollectionPath(const q
 
 void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    //TODO implement it
+    SaveResoureConfigTest saveResourceConfig;
+    saveResourceConfig.setArchive(mArchiveStorage->archive());
+    saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceCalendarArchiveName(), { QLatin1String("akonadi_icaldir_resource_")});
     slotCalendarJobTerminated();
 }
 

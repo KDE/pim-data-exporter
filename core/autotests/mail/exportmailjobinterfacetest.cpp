@@ -23,6 +23,7 @@
 #include "testexportfile.h"
 #include <QDebug>
 #include <QTest>
+#include <saveresourceconfigtest.h>
 
 QTEST_MAIN(ExportMailJobInterfaceTest)
 
@@ -77,7 +78,11 @@ QVector<MailCommon::MailFilter *> ExportMailJobInterfaceTestImpl::filters()
 
 void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    qDebug() << " not implement yet";
+    SaveResoureConfigTest saveResourceConfig;
+    saveResourceConfig.setArchive(mArchiveStorage->archive());
+    saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceMailArchiveName(),
+    { QLatin1String("akonadi_maildir_resource_"), QLatin1String("akonadi_mixedmaildir_resource_")});
+    slotMailsJobTerminated();
 }
 
 QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceTestImpl::listOfResource()

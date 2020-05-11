@@ -23,6 +23,7 @@
 #include "resourceconvertertest.h"
 #include <QDebug>
 #include <QTest>
+#include <saveresourceconfigtest.h>
 
 QTEST_MAIN(ExportAddressbookJobInterfaceTest)
 
@@ -49,7 +50,10 @@ Akonadi::Collection::Id ExportAddressbookJobInterfaceTestImpl::convertFolderPath
 
 void ExportAddressbookJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    //TODO implement it
+    SaveResoureConfigTest saveResourceConfig;
+    saveResourceConfig.setArchive(mArchiveStorage->archive());
+    saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceAddressbookArchiveName(),
+    { QLatin1String("akonadi_vcarddir_resource_"), QLatin1String("akonadi_contacts_resource_") });
     slotAddressbookJobTerminated();
 }
 
