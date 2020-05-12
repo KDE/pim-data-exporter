@@ -618,7 +618,7 @@ void ExportMailJobInterface::slotWriteNextArchiveResource()
                         QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
                     }
                 } else if (identifier.contains(QLatin1String("akonadi_mbox_resource_"))) {
-                    backupResourceFile(identifier, Utils::addressbookPath()); //FIxME addressbookPath or MailPAth ???
+                    backupResourceFile(identifier, Utils::mailsPath()); //FIxME addressbookPath or MailPAth ???
                     QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
                 } else {
                     QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);

@@ -41,6 +41,8 @@ public:
 private Q_SLOTS:
     void exportAkregatorConfig();
     void exportAkregatorConfig_data();
+    void exportAkregatorConfigAndResource_data();
+    void exportAkregatorConfigAndResource();
 };
 
 #endif // EXPORTAKREGATORJOBINTERFACETEST_H

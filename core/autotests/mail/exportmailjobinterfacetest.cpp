@@ -82,14 +82,28 @@ void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &arch
 
 QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceTestImpl::listOfResource()
 {
-    //TODO
-    return {};
+    return mListAkonadiInstanceInfo;
 }
 
 QString ExportMailJobInterfaceTestImpl::storeResources(KZip *archive, const QString &identifier, const QString &path)
 {
     //TODO
     return {};
+}
+
+QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlonglong collectionValue)
+{
+    ResourceConverterTest converter;
+    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    return converter.convertToFullCollectionPath(collectionValue);
+}
+
+QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) const
+{
+    ResourceConverterTest converter;
+    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    const QString url = converter.resourcePath(identifier);
+    return url;
 }
 
 ExportMailJobInterfaceTest::ExportMailJobInterfaceTest(QObject *parent)
@@ -116,17 +130,37 @@ void ExportMailJobInterfaceTest::exportMailConfig()
     delete exportNote;
 }
 
-QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlonglong collectionValue)
+void ExportMailJobInterfaceTest::exportMailConfigAndResource_data()
 {
-    ResourceConverterTest converter;
-    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
-    return converter.convertToFullCollectionPath(collectionValue);
+    QTest::addColumn<QByteArray>("configpath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
+    //QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
+    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
 }
 
-QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) const
+void ExportMailJobInterfaceTest::exportMailConfigAndResource()
 {
-    ResourceConverterTest converter;
-    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
-    const QString url = converter.resourcePath(identifier);
-    return url;
+    QFETCH(QByteArray, configpath);
+    TestExportFile *file = new TestExportFile(this);
+    file->setPathConfig(configpath);
+    QVector<Utils::AkonadiInstanceInfo> lstInfo;
+    Utils::AkonadiInstanceInfo info;
+
+    info.identifier = QLatin1String("akonadi_mbox_resource_1");
+    lstInfo << info;
+    info.identifier = QLatin1String("akonadi_maildir_resource_1");
+    lstInfo << info;
+    info.identifier = QLatin1String("akonadi_mixedmaildir_resource_1");
+    lstInfo << info;
+    //Add extra resource.
+    info.identifier = QStringLiteral("akonadi_kolab_resource_2");
+    lstInfo << info;
+
+    ExportMailJobInterfaceTestImpl *exportNote = new ExportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    exportNote->setListOfResource(lstInfo);
+    exportNote->setPathConfig(QLatin1String(configpath));
+    file->setAbstractImportExportJob(exportNote);
+    file->start();
+    delete exportNote;
 }
+

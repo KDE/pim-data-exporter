@@ -21,10 +21,11 @@
 #define EXPORTMAILJOBINTERFACETEST_H
 
 #include <QObject>
+#include "exportimportutil.h"
 
 #include "mail/exportmailjobinterface.h"
 
-class ExportMailJobInterfaceTestImpl : public ExportMailJobInterface
+class ExportMailJobInterfaceTestImpl : public ExportMailJobInterface, public ExportImportUtil
 {
     Q_OBJECT
 public:
@@ -57,6 +58,8 @@ public:
 private Q_SLOTS:
     void exportMailConfig();
     void exportMailConfig_data();
+    void exportMailConfigAndResource_data();
+    void exportMailConfigAndResource();
 };
 
 #endif // EXPORTMAILJOBINTERFACETEST_H

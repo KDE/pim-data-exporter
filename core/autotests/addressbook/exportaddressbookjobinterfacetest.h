@@ -49,6 +49,8 @@ public:
 private Q_SLOTS:
     void exportAddressBookConfig();
     void exportAddressBookConfig_data();
+    void exportAddressBookConfigAndResource_data();
+    void exportAddressBookConfigAndResource();
 };
 
 #endif // EXPORTADDRESSBOOKJOBINTERFACETEST_H

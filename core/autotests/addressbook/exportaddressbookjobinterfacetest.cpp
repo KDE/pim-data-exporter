@@ -103,3 +103,38 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfig()
     file->start();
     delete exportNote;
 }
+
+void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource_data()
+{
+    QTest::addColumn<QByteArray>("configpath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
+    //QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
+    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
+}
+
+void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource()
+{
+    QFETCH(QByteArray, configpath);
+    TestExportFile *file = new TestExportFile(this);
+    file->setPathConfig(configpath);
+    QVector<Utils::AkonadiInstanceInfo> lstInfo;
+    Utils::AkonadiInstanceInfo info;
+
+    info.identifier = QLatin1String("akonadi_vcarddir_resource_1");
+    lstInfo << info;
+    info.identifier = QLatin1String("akonadi_contacts_resource_1");
+    lstInfo << info;
+    info.identifier = QLatin1String("akonadi_vcard_resource_1");
+    lstInfo << info;
+    //Add extra resource.
+    info.identifier = QStringLiteral("akonadi_kolab_resource_2");
+    lstInfo << info;
+
+    ExportAddressbookJobInterfaceTestImpl *exportNote = new ExportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    exportNote->setListOfResource(lstInfo);
+    exportNote->setPathConfig(QLatin1String(configpath));
+    file->setAbstractImportExportJob(exportNote);
+    file->start();
+    delete exportNote;
+}
+

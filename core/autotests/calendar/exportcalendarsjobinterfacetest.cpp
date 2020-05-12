@@ -101,3 +101,35 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfig()
     file->start();
     delete impl;
 }
+
+void ExportCalendarsJobInterfaceTest::exportCalendarConfigAndResource_data()
+{
+    QTest::addColumn<QByteArray>("configpath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
+    //QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
+    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
+}
+
+void ExportCalendarsJobInterfaceTest::exportCalendarConfigAndResource()
+{
+    QFETCH(QByteArray, configpath);
+    TestExportFile *file = new TestExportFile(this);
+    file->setPathConfig(configpath);
+    QVector<Utils::AkonadiInstanceInfo> lstInfo;
+    Utils::AkonadiInstanceInfo info;
+    info.identifier = QLatin1String("akonadi_icaldir_resource_1");
+    lstInfo << info;
+    info.identifier = QLatin1String("akonadi_ical_resource_2");
+    lstInfo << info;
+    //Add extra resource.
+    info.identifier = QStringLiteral("akonadi_kontact_resource_2");
+    lstInfo << info;
+
+    ExportCalendarsJobInterfaceTestImpl *exportNote = new ExportCalendarsJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    exportNote->setListOfResource(lstInfo);
+    exportNote->setPathConfig(QLatin1String(configpath));
+    file->setAbstractImportExportJob(exportNote);
+    file->start();
+    delete exportNote;
+}
+

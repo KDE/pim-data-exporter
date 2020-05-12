@@ -49,6 +49,9 @@ public:
 private Q_SLOTS:
     void exportCalendarConfig_data();
     void exportCalendarConfig();
+
+    void exportCalendarConfigAndResource_data();
+    void exportCalendarConfigAndResource();
 };
 
 #endif // EXPORTCALENDARSJOBINTERFACETEST_H
