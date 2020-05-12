@@ -79,4 +79,3 @@ void ExportAkregatorJobInterfaceTest::exportAkregatorConfigAndResource()
     file->start();
     delete exportNote;
 }
-

@@ -76,7 +76,7 @@ void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &arch
     SaveResoureConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
     saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceMailArchiveName(),
-    { QLatin1String("akonadi_maildir_resource_"), QLatin1String("akonadi_mixedmaildir_resource_")});
+                                               { QLatin1String("akonadi_maildir_resource_"), QLatin1String("akonadi_mixedmaildir_resource_")});
     slotMailsJobTerminated();
 }
 
@@ -163,4 +163,3 @@ void ExportMailJobInterfaceTest::exportMailConfigAndResource()
     file->start();
     delete exportNote;
 }
-

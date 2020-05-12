@@ -119,4 +119,3 @@ void ExportAlarmJobInterfaceTest::exportAlarmConfigAndResource()
     file->start();
     delete exportNote;
 }
-

@@ -24,7 +24,6 @@
 
 SaveResoureConfigTest::SaveResoureConfigTest()
 {
-
 }
 
 KZip *SaveResoureConfigTest::archive() const
@@ -41,7 +40,7 @@ void SaveResoureConfigTest::exportResourceToArchive(const QString &archivePath, 
 {
     QVERIFY(mArchive);
     bool typeIdentifierFound = false;
-    for (const QString & resourceType: resourceIdentifierTypes) {
+    for (const QString &resourceType: resourceIdentifierTypes) {
         typeIdentifierFound = identifier.startsWith(resourceType);
         if (typeIdentifierFound) {
             break;

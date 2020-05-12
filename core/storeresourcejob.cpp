@@ -30,12 +30,10 @@
 StoreResourceJob::StoreResourceJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 StoreResourceJob::~StoreResourceJob()
 {
-
 }
 
 void StoreResourceJob::setArchivePath(const QString &archivePath)

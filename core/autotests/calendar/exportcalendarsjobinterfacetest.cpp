@@ -132,4 +132,3 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfigAndResource()
     file->start();
     delete exportNote;
 }
-

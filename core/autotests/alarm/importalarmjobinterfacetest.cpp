@@ -80,4 +80,3 @@ void ImportAlarmJobInterfaceTest::importCalendarConfig()
     delete impl;
     delete file;
 }
-

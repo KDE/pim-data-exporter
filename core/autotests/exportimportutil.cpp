@@ -43,4 +43,3 @@ void ExportImportUtil::addLogCreateResource(const QString &str)
 {
     mLogCreateResource->appendText(str);
 }
-
