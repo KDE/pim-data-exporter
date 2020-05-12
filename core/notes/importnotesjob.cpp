@@ -80,6 +80,11 @@ void ImportNotesJob::start()
     QTimer::singleShot(0, this, &ImportNotesJob::slotNextStep);
 }
 
+bool ImportNotesJob::isAConfigFile(const QString &name) const
+{
+    return name.endsWith(QLatin1String("rc")) && (name.contains(QLatin1String("akonadi_akonotes_resource_")));
+}
+
 void ImportNotesJob::restoreConfig()
 {
     increaseProgressDialog();

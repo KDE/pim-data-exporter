@@ -34,7 +34,7 @@ struct resourceFiles {
     QString akonadiAgentConfigFile;
     void debug() const
     {
-        qCDebug(PIMDATAEXPORTERCORE_LOG) << " akonadiconfigfile :" << akonadiConfigFile << " akonadiResources:" << akonadiResources << " akonadiAgentConfigFile:" << akonadiAgentConfigFile;
+        qDebug() << " akonadiconfigfile :" << akonadiConfigFile << " akonadiResources:" << akonadiResources << " akonadiAgentConfigFile:" << akonadiAgentConfigFile;
     }
 };
 
