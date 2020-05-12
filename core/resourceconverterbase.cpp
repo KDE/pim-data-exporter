@@ -39,11 +39,11 @@ ResourceConverterBase::~ResourceConverterBase()
 QString ResourceConverterBase::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
     QString newUrl = ResourceConverterBase::resourcePath(resourceConfig);
-    if (!newUrl.contains(QDir::homePath())) {
+    if (!newUrl.contains(installDefaultDirectory())) {
         QFileInfo fileInfo(newUrl);
         fileInfo.fileName();
         //qCDebug(PIMDATAEXPORTERCORE_LOG)<<" url "<<url.path();
-        QString currentPath = QDir::homePath() + QLatin1Char('/') + storedData;
+        QString currentPath = installDefaultDirectory() + QLatin1Char('/') + storedData;
         newUrl = (currentPath + QLatin1Char('/') + fileInfo.fileName());
         if (!QDir(currentPath).exists()) {
             QDir().mkdir(currentPath);

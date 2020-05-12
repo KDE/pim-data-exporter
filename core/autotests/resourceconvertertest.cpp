@@ -19,6 +19,7 @@
 
 #include "resourceconvertertest.h"
 #include <QDebug>
+#include <QDir>
 
 ResourceConverterTest::ResourceConverterTest()
 {
@@ -64,4 +65,10 @@ QString ResourceConverterTest::changeResourcePath(QString url) const
 void ResourceConverterTest::setTestPath(const QString &testPath)
 {
     mTestPath = testPath;
+}
+
+//TODO use another one ?
+QString ResourceConverterTest::installDefaultDirectory()
+{
+    return QDir::tempPath();
 }

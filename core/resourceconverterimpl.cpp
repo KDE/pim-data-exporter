@@ -19,6 +19,7 @@
 
 #include "resourceconverterimpl.h"
 #include <MailCommon/MailUtil>
+#include <QDir>
 
 ResourceConverterImpl::ResourceConverterImpl()
 {
@@ -36,4 +37,10 @@ QString ResourceConverterImpl::convertToFullCollectionPath(const qlonglong colle
 Akonadi::Collection::Id ResourceConverterImpl::convertFolderPathToCollectionId(const QString &path)
 {
     return MailCommon::Util::convertFolderPathToCollectionId(path);
+}
+
+
+QString ResourceConverterImpl::installDefaultDirectory()
+{
+    return QDir::homePath();
 }

@@ -35,6 +35,7 @@ public:
 
     void setTestPath(const QString &testPath);
 
+    Q_REQUIRED_RESULT QString installDefaultDirectory() override;
 private:
     Q_REQUIRED_RESULT QString prefixStr() const;
     QString mTestPath;
