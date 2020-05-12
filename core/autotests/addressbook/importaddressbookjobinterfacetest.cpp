@@ -54,6 +54,13 @@ void ImportAddressbookJobInterfaceTestImpl::synchronizeResource(const QStringLis
     slotNextStep();
 }
 
+QString ImportAddressbookJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    return resourceConverterTest.adaptResourcePath(resourceConfig, storedData);
+}
+
 ImportAddressbookJobInterfaceTest::ImportAddressbookJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

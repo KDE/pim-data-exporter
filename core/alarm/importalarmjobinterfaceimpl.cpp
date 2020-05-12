@@ -50,6 +50,12 @@ Akonadi::Collection::Id ImportAlarmJobInterfaceImpl::convertFolderPathToCollecti
     return converter.convertFolderPathToCollectionId(path);
 }
 
+QString ImportAlarmJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptResourcePath(resourceConfig, storedData);
+}
+
 QString ImportAlarmJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     return mCreateResource->createResource(resources, name, settings, synchronizeTree);

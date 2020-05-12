@@ -32,7 +32,6 @@
 #include <QFile>
 #include <QStandardPaths>
 #include <QTimer>
-#include <resourceconverterimpl.h>
 
 namespace {
 inline const QString storeAlarm()
@@ -147,8 +146,7 @@ void ImportAlarmJobInterface::restoreResources()
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-                    ResourceConverterImpl converter;
-                    const QString newUrl = converter.adaptResourcePath(resourceConfig, storeAlarm());
+                    const QString newUrl = adaptResourcePath(resourceConfig, storeAlarm());
                     QFileInfo newUrlInfo(newUrl);
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);

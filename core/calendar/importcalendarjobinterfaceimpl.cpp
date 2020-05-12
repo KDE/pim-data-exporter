@@ -48,6 +48,12 @@ ImportCalendarJobInterfaceImpl::~ImportCalendarJobInterfaceImpl()
 {
 }
 
+QString ImportCalendarJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptResourcePath(resourceConfig, storedData);
+}
+
 Akonadi::Collection::Id ImportCalendarJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterImpl converter;

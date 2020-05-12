@@ -39,6 +39,8 @@ protected:
     Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings) override;
     void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) override;
     void importFilters(const QVector<MailCommon::MailFilter *> &filters) override;
+
+    Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
 };
 
 class ImportMailJobInterfaceTest : public QObject

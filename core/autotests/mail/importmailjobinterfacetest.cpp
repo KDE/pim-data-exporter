@@ -64,6 +64,13 @@ void ImportMailJobInterfaceTestImpl::importFilters(const QVector<MailCommon::Mai
 {
 }
 
+QString ImportMailJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    return resourceConverterTest.adaptResourcePath(resourceConfig, storedData);
+}
+
 ImportMailJobInterfaceTest::ImportMailJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
@@ -90,3 +97,5 @@ void ImportMailJobInterfaceTest::importMailConfig()
     delete impl;
     delete file;
 }
+
+

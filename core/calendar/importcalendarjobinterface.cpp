@@ -18,7 +18,6 @@
 */
 
 #include "importcalendarjobinterface.h"
-#include "resourceconverterimpl.h"
 #include "archivestorage.h"
 
 #include <KLocalizedString>
@@ -285,8 +284,7 @@ void ImportCalendarJobInterface::restoreResources()
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-                    ResourceConverterImpl converter;
-                    const QString newUrl = converter.adaptResourcePath(resourceConfig, storeCalendar());
+                    const QString newUrl = adaptResourcePath(resourceConfig, storeCalendar());
                     QFileInfo newUrlInfo(newUrl);
 
                     const QString dataFile = value.akonadiResources;

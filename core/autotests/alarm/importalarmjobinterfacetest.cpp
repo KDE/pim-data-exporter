@@ -54,6 +54,13 @@ void ImportAlarmJobInterfaceTestImpl::synchronizeResource(const QStringList &lst
     slotNextStep();
 }
 
+QString ImportAlarmJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    return resourceConverterTest.adaptResourcePath(resourceConfig, storedData);
+}
+
 ImportAlarmJobInterfaceTest::ImportAlarmJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

@@ -19,7 +19,6 @@
 
 #include "importnotesjobinterface.h"
 #include "archivestorage.h"
-#include "resourceconverterimpl.h"
 
 #include <KArchive>
 #include <KLocalizedString>
@@ -174,8 +173,7 @@ void ImportNotesJobInterface::restoreResources()
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-                    ResourceConverterImpl converter;
-                    const QString newUrl = converter.adaptResourcePath(resourceConfig, backupnote());
+                    const QString newUrl = adaptResourcePath(resourceConfig, backupnote());
                     QFileInfo newUrlInfo(newUrl);
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);

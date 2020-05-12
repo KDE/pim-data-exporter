@@ -54,6 +54,13 @@ void ImportCalendarJobInterfaceTestImpl::synchronizeResource(const QStringList &
     slotNextStep();
 }
 
+QString ImportCalendarJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    return resourceConverterTest.adaptResourcePath(resourceConfig, storedData);
+}
+
 ImportCalendarJobInterfaceTest::ImportCalendarJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

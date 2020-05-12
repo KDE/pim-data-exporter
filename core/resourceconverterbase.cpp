@@ -35,6 +35,7 @@ ResourceConverterBase::~ResourceConverterBase()
 {
 }
 
+
 QString ResourceConverterBase::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
     QString newUrl = ResourceConverterBase::resourcePath(resourceConfig);

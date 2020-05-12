@@ -56,6 +56,13 @@ void ImportNotesJobInterfaceTestImpl::synchronizeResource(const QStringList &lst
     slotNextStep();
 }
 
+QString ImportNotesJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    return resourceConverterTest.adaptResourcePath(resourceConfig, storedData);
+}
+
 ImportNotesJobInterfaceTest::ImportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

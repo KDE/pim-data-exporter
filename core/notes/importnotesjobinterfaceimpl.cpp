@@ -44,6 +44,12 @@ ImportNotesJobInterfaceImpl::~ImportNotesJobInterfaceImpl()
 {
 }
 
+QString ImportNotesJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptResourcePath(resourceConfig, storedData);
+}
+
 Akonadi::Collection::Id ImportNotesJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterImpl converter;

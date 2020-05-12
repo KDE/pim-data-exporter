@@ -58,3 +58,9 @@ QString ImportAddressbookJobInterfaceImpl::createResource(const QString &resourc
 {
     return mCreateResource->createResource(resources, name, settings, synchronizeTree);
 }
+
+QString ImportAddressbookJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptResourcePath(resourceConfig, storedData);
+}
