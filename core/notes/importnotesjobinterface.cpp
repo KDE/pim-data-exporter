@@ -70,7 +70,7 @@ void ImportNotesJobInterface::start()
 {
     Q_EMIT title(i18n("Starting to import KNotes settings..."));
     mArchiveDirectory = archive()->directory();
-    // FIXME search archive ? searchAllFiles(mArchiveDirectory, QString());
+    searchAllFiles(mArchiveDirectory, QString(), QStringLiteral("note"));
     createProgressDialog(i18n("Import KNotes settings"));
     initializeListStep();
     QTimer::singleShot(0, this, &ImportNotesJobInterface::slotNextStep);
