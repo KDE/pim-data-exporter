@@ -81,6 +81,7 @@ void ImportCalendarJobInterfaceTest::importCalendarConfig()
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
+    file->setExcludePath(Utils::calendarPath());
     ImportCalendarJobInterfaceTestImpl *impl = new ImportCalendarJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->start();

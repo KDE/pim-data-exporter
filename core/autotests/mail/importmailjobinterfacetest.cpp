@@ -91,6 +91,7 @@ void ImportMailJobInterfaceTest::importMailConfig()
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
+    file->setExcludePath(Utils::mailsPath()); // ???
     ImportMailJobInterfaceTestImpl *impl = new ImportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->start();

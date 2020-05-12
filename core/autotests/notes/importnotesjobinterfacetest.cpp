@@ -83,7 +83,7 @@ void ImportNotesJobInterfaceTest::importNoteConfig()
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
-    file->setExcludePath(QStringLiteral("note/"));
+    file->setExcludePath(Utils::notePath());
     ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->start();
@@ -106,6 +106,7 @@ void ImportNotesJobInterfaceTest::importNoteConfigAndResources()
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
+    file->setExcludePath(Utils::notePath());
     ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->start();

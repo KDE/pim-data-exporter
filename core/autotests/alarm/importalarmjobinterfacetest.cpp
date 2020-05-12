@@ -66,7 +66,7 @@ ImportAlarmJobInterfaceTest::ImportAlarmJobInterfaceTest(QObject *parent)
 {
 }
 
-void ImportAlarmJobInterfaceTest::importCalendarConfig_data()
+void ImportAlarmJobInterfaceTest::importAlarmConfig_data()
 {
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
@@ -74,12 +74,13 @@ void ImportAlarmJobInterfaceTest::importCalendarConfig_data()
     QTest::newRow("test1") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1/");
 }
 
-void ImportAlarmJobInterfaceTest::importCalendarConfig()
+void ImportAlarmJobInterfaceTest::importAlarmConfig()
 {
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
+    file->setExcludePath(Utils::alarmPath());
     file->setExtractPath(QDir::tempPath() + testPath);
     ImportAlarmJobInterfaceTestImpl *impl = new ImportAlarmJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);

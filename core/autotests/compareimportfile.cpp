@@ -50,6 +50,7 @@ void CompareImportFile::compareFile()
         if (file == QLatin1String("information/exportdatatype.xml") || file == QLatin1String("information/VERSION_2")) {
             continue;
         }
+        //Allow to remove some file from resources path
         if (file.startsWith(mExcludePath)) {
             continue;
         }

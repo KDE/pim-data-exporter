@@ -81,6 +81,7 @@ void ImportAddressbookJobInterfaceTest::importAddressbookConfig()
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
+    file->setExcludePath(Utils::addressbookPath());
     ImportAddressbookJobInterfaceTestImpl *impl = new ImportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->start();

@@ -46,8 +46,8 @@ public:
     explicit ImportAlarmJobInterfaceTest(QObject *parent = nullptr);
     ~ImportAlarmJobInterfaceTest() = default;
 private Q_SLOTS:
-    void importCalendarConfig();
-    void importCalendarConfig_data();
+    void importAlarmConfig();
+    void importAlarmConfig_data();
 };
 
 #endif // IMPORTALARMJOBINTERFACETEST_H
