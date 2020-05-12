@@ -87,8 +87,8 @@ QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceTestImpl::listOfResour
 
 QString ExportMailJobInterfaceTestImpl::storeResources(KZip *archive, const QString &identifier, const QString &path)
 {
-    //TODO
-    return {};
+    ResourceConverterTest converter;
+    return converter.storeResources(archive, identifier, path);
 }
 
 QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlonglong collectionValue)
