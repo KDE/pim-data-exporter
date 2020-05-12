@@ -81,7 +81,7 @@ void ImportMailJobInterfaceTest::importMailConfig()
 {
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
-    TestImportFile *file = new TestImportFile(zipFilePath, this);
+    TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     ImportMailJobInterfaceTestImpl *impl = new ImportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);

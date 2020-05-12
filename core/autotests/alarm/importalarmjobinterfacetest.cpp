@@ -71,7 +71,7 @@ void ImportAlarmJobInterfaceTest::importCalendarConfig()
 {
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
-    TestImportFile *file = new TestImportFile(zipFilePath, this);
+    TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     ImportAlarmJobInterfaceTestImpl *impl = new ImportAlarmJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
