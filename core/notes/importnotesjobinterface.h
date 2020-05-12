@@ -37,6 +37,7 @@ protected:
     virtual void synchronizeResource(const QStringList &lst) = 0;
     void slotNextStep() override;
 private:
+    Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importKNoteGlobalSettings(const KArchiveFile *kmailsnippet, const QString &kmail2rc, const QString &filename, const QString &prefix);
     void restoreConfig();
     void restoreData();
