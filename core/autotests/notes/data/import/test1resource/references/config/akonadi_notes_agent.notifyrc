@@ -1,0 +1,6 @@
+[Event/receivednotes]
+Action=Sound|Popup
+Execute=
+Logfile=
+Sound=
+TTS=
