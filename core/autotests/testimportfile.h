@@ -41,12 +41,17 @@ public:
     void setPathConfig(const QString &pathConfig);
 
     void setExtractPath(const QString &extractPath);
+
+    Q_REQUIRED_RESULT QString excludePath() const;
+    void setExcludePath(const QString &excludePath);
+
 private:
     AbstractImportExportJob *mAbstractImportExportJob = nullptr;
     ArchiveStorage *mArchiveStorage = nullptr;
     QString mArchivePath;
     QString mPathConfig;
     QString mExtractPath;
+    QString mExcludePath;
 };
 
 #endif // TESTIMPORTFILE_H

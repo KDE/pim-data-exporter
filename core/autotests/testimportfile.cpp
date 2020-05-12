@@ -73,6 +73,7 @@ void TestImportFile::start()
     compareExportFile.setArchiveFilePath(mArchivePath);
     compareExportFile.setListFilePath(mPathConfig);
     compareExportFile.setInstallPath(mExtractPath);
+    compareExportFile.setExcludePath(mExcludePath);
     compareExportFile.compareFile();
 
 #ifdef REMOVE_TEMPORARY_DIR
@@ -113,4 +114,14 @@ void TestImportFile::setPathConfig(const QString &pathConfig)
 void TestImportFile::setExtractPath(const QString &extractPath)
 {
     mExtractPath = extractPath;
+}
+
+QString TestImportFile::excludePath() const
+{
+    return mExcludePath;
+}
+
+void TestImportFile::setExcludePath(const QString &excludePath)
+{
+    mExcludePath = excludePath;
 }

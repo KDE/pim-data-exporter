@@ -50,6 +50,9 @@ void CompareImportFile::compareFile()
         if (file == QLatin1String("information/exportdatatype.xml") || file == QLatin1String("information/VERSION_2")) {
             continue;
         }
+        if (file.startsWith(mExcludePath)) {
+            continue;
+        }
         CompareFileHelper::compareFile(mListFilePath + QStringLiteral("/references/") + file, mInstallPath + QLatin1Char('/') + file);
     }
 }
@@ -82,4 +85,14 @@ QString CompareImportFile::installPath() const
 void CompareImportFile::setInstallPath(const QString &installPath)
 {
     mInstallPath = installPath;
+}
+
+QString CompareImportFile::excludePath() const
+{
+    return mExcludePath;
+}
+
+void CompareImportFile::setExcludePath(const QString &excludePath)
+{
+    mExcludePath = excludePath;
 }

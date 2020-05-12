@@ -39,10 +39,14 @@ public:
     Q_REQUIRED_RESULT QString installPath() const;
     void setInstallPath(const QString &installPath);
 
+    Q_REQUIRED_RESULT QString excludePath() const;
+    void setExcludePath(const QString &excludePath);
+
 private:
     QString mArchiveFilePath;
     QString mListFilePath;
     QString mInstallPath;
+    QString mExcludePath;
 };
 
 #endif // COMPAREIMPORTFILE_H
