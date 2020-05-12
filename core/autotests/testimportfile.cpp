@@ -62,6 +62,9 @@ void TestImportFile::start()
     QSignalSpy error(mAbstractImportExportJob, &AbstractImportExportJob::error);
     mAbstractImportExportJob->start();
     QVERIFY(finish.wait());
+    if (error.count()) {
+        qDebug() << error.at(0);
+    }
     QCOMPARE(error.count(), 0);
     delete mArchiveStorage;
     mArchiveStorage = nullptr;
