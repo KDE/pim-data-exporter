@@ -1,0 +1,6 @@
+configs/korganizerrc
+configs/eventviewsrc
+configs/korgacrc
+configs/calendar_printing.rc
+information/VERSION_2
+information/exportdatatype.xml
