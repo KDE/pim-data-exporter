@@ -45,6 +45,9 @@ public:
     Q_REQUIRED_RESULT QString excludePath() const;
     void setExcludePath(const QString &excludePath);
 
+    Q_REQUIRED_RESULT QString loggingFilePath() const;
+    void setLoggingFilePath(const QString &loggingFilePath);
+
 private:
     AbstractImportExportJob *mAbstractImportExportJob = nullptr;
     ArchiveStorage *mArchiveStorage = nullptr;
@@ -52,6 +55,7 @@ private:
     QString mPathConfig;
     QString mExtractPath;
     QString mExcludePath;
+    QString mLoggingFilePath;
 };
 
 #endif // TESTIMPORTFILE_H

@@ -36,7 +36,8 @@ LogCreatingResource::~LogCreatingResource()
 
 void LogCreatingResource::appendText(const QString &str)
 {
-    //TODO
+    QTextStream stream(mTmpLogFile);
+    stream << str << '\n';
 }
 
 void LogCreatingResource::logSynchronizeResource(const QStringList &lst)
@@ -53,10 +54,14 @@ QString LogCreatingResource::logPath() const
 
 void LogCreatingResource::logCreateResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
-//    QTextStream stream(&mTmpLogFile);
-//    //stream << content; // content is a QString
-//    stream << resources << '\n';
-//    stream << name << '\n';
-//    stream << settings << '\n';
+    QTextStream stream(mTmpLogFile);
+    stream << resources << '\n';
+    stream << name << '\n';
+    QMapIterator<QString, QVariant> i(settings);
+    while (i.hasNext()) {
+        i.next();
+        stream << i.key() << ' ' << i.value().toString() << '\n';
+    }
+    stream << synchronizeTree << '\n';
     qDebug() << "settings  "<< settings;
 }

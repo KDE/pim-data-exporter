@@ -125,3 +125,13 @@ void TestImportFile::setExcludePath(const QString &excludePath)
 {
     mExcludePath = excludePath;
 }
+
+QString TestImportFile::loggingFilePath() const
+{
+    return mLoggingFilePath;
+}
+
+void TestImportFile::setLoggingFilePath(const QString &loggingFilePath)
+{
+    mLoggingFilePath = loggingFilePath;
+}

@@ -43,3 +43,8 @@ void ExportImportUtil::addLogCreateResource(const QString &str)
 {
     mLogCreateResource->appendText(str);
 }
+
+QString ExportImportUtil::loggingFilePath() const
+{
+    return mLogCreateResource->logPath();
+}
