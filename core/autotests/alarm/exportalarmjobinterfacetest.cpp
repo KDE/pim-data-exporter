@@ -74,7 +74,7 @@ void ExportAlarmJobInterfaceTest::exportAlarmConfig_data()
 {
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("test1") << pathConfig + QByteArray("test1/");
+    QTest::newRow("alarmonlyconfig") << pathConfig + QByteArray("alarmonlyconfig/");
 }
 
 void ExportAlarmJobInterfaceTest::exportAlarmConfig()
@@ -94,7 +94,7 @@ void ExportAlarmJobInterfaceTest::exportAlarmConfigAndResource_data()
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
     //QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
-    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
+    QTest::newRow("alarmonlyconfig") << pathConfig + QByteArray("alarmonlyconfig/");
 }
 
 void ExportAlarmJobInterfaceTest::exportAlarmConfigAndResource()
