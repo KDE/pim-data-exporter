@@ -88,8 +88,7 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfig_data()
 {
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    qDebug() << " pathConfig " << pathConfig;
-    QTest::newRow("full") << pathConfig + QByteArray("full/");
+    QTest::newRow("addressbookonlyconfig") << pathConfig + QByteArray("addressbookonlyconfig/");
 }
 
 void ExportAddressbookJobInterfaceTest::exportAddressBookConfig()
@@ -108,8 +107,7 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource_data(
 {
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    //QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
-    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
+    QTest::newRow("addressbookconfigandresources") << pathConfig + QByteArray("addressbookconfigandresources/");
 }
 
 void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource()
