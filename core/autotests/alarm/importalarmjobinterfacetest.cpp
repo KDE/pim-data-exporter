@@ -32,6 +32,8 @@ ImportAlarmJobInterfaceTestImpl::ImportAlarmJobInterfaceTestImpl(QObject *parent
 
 ImportAlarmJobInterfaceTestImpl::~ImportAlarmJobInterfaceTestImpl()
 {
+    //Clean up temp repo
+    QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeAlarm()).removeRecursively());
 }
 
 Akonadi::Collection::Id ImportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)

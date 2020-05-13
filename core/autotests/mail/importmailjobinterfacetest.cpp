@@ -32,6 +32,8 @@ ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, 
 
 ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 {
+    //Clean up temp repo
+    QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeMails()).removeRecursively());
 }
 
 Akonadi::Collection::Id ImportMailJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
