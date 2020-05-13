@@ -28,6 +28,7 @@ LogCreatingResource::LogCreatingResource(QObject *parent)
 {
     mTmpLogFile = new QTemporaryFile(this);
     mTmpLogFile->open();
+    qDebug() << " mTmpLogFile "<< mTmpLogFile->fileName();
 }
 
 LogCreatingResource::~LogCreatingResource()

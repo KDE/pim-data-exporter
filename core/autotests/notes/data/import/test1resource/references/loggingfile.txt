@@ -1,0 +1,4 @@
+akonadi_akonotes_resource
+Notes
+Path /tmp/backupnote//0/
+1

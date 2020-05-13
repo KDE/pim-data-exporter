@@ -22,6 +22,7 @@
 #include "utils.h"
 #include "abstractimportexportjob.h"
 #include "compareimportfile.h"
+#include "compareloggingfile.h"
 
 #include <QSignalSpy>
 #include <QTest>
@@ -75,6 +76,12 @@ void TestImportFile::start()
     compareExportFile.setInstallPath(mExtractPath);
     compareExportFile.setExcludePath(mExcludePath);
     compareExportFile.compareFile();
+
+    CompareLoggingFile file;
+    file.setLoggingFilePath(mLoggingFilePath);
+    file.setListFilePath(mPathConfig);
+    file.compare();
+
 
 #ifdef REMOVE_TEMPORARY_DIR
     QVERIFY(QDir(mExtractPath).removeRecursively());

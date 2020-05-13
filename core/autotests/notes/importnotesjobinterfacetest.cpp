@@ -33,6 +33,8 @@ ImportNotesJobInterfaceTestImpl::ImportNotesJobInterfaceTestImpl(QObject *parent
 
 ImportNotesJobInterfaceTestImpl::~ImportNotesJobInterfaceTestImpl()
 {
+    //Clean up temp repo
+    QVERIFY(QDir(QDir::tempPath() + QStringLiteral("/backupnote/")).removeRecursively());
 }
 
 Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
@@ -110,6 +112,7 @@ void ImportNotesJobInterfaceTest::importNoteConfigAndResources()
     file->setExcludePath(Utils::notePath());
     ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
+    file->setLoggingFilePath(impl->loggingFilePath());
     file->start();
     delete impl;
     delete file;
