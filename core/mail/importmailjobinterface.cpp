@@ -45,12 +45,6 @@
 #include <QRegularExpression>
 
 using namespace Akonadi;
-namespace {
-inline const QString storeMails()
-{
-    return QStringLiteral("backupmail/");
-}
-}
 
 ImportMailJobInterface::ImportMailJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
@@ -547,7 +541,7 @@ void ImportMailJobInterface::restoreMails()
             //qCDebug(PIMDATAEXPORTERCORE_LOG)<<" filename "<<filename<<" resourceName"<<resourceName;
             KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-            const QString newUrl = adaptResourcePath(resourceConfig, storeMails());
+            const QString newUrl = adaptResourcePath(resourceConfig, Utils::storeMails());
 
             const QString agentConfigFile = value.akonadiAgentConfigFile;
             if (!agentConfigFile.isEmpty()) {

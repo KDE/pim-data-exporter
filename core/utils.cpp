@@ -34,6 +34,31 @@
 #include <QDir>
 #include <QStandardPaths>
 
+QString Utils::storeAddressbook()
+{
+    return QStringLiteral("backupaddressbook/");
+}
+
+QString Utils::storeAlarm()
+{
+    return QStringLiteral("backupalarm/");
+}
+
+QString Utils::storeCalendar()
+{
+    return QStringLiteral("backupcalendar/");
+}
+
+QString Utils::backupnote()
+{
+    return QStringLiteral("backupnote/");
+}
+
+QString Utils::storeMails()
+{
+    return QStringLiteral("backupmail/");
+}
+
 QString Utils::exportDataTypeFileName()
 {
     return QStringLiteral("exportdatatype.xml");

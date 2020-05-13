@@ -34,7 +34,7 @@ ImportNotesJobInterfaceTestImpl::ImportNotesJobInterfaceTestImpl(QObject *parent
 ImportNotesJobInterfaceTestImpl::~ImportNotesJobInterfaceTestImpl()
 {
     //Clean up temp repo
-    QVERIFY(QDir(QDir::tempPath() + QStringLiteral("/backupnote/")).removeRecursively());
+    QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::backupnote()).removeRecursively());
 }
 
 Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)

@@ -35,13 +35,6 @@
 #include <QTimer>
 #include <QColor>
 
-namespace {
-inline const QString storeCalendar()
-{
-    return QStringLiteral("backupcalendar/");
-}
-}
-
 ImportCalendarJobInterface::ImportCalendarJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
@@ -259,7 +252,7 @@ void ImportCalendarJobInterface::restoreResources()
     setProgressDialogLabel(i18n("Restore resources..."));
     increaseProgressDialog();
     QStringList listResource;
-    listResource << restoreResourceFile(QStringLiteral("akonadi_ical_resource"), Utils::calendarPath(), storeCalendar());
+    listResource << restoreResourceFile(QStringLiteral("akonadi_ical_resource"), Utils::calendarPath(), Utils::storeCalendar());
 
     if (!mListResourceFile.isEmpty()) {
         QDir dir(mTempDirName);
@@ -284,7 +277,7 @@ void ImportCalendarJobInterface::restoreResources()
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-                    const QString newUrl = adaptResourcePath(resourceConfig, storeCalendar());
+                    const QString newUrl = adaptResourcePath(resourceConfig, Utils::storeCalendar());
                     QFileInfo newUrlInfo(newUrl);
 
                     const QString dataFile = value.akonadiResources;

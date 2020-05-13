@@ -29,12 +29,7 @@
 #include <QFile>
 #include <QDir>
 #include <QStandardPaths>
-namespace {
-inline const QString storeAddressbook()
-{
-    return QStringLiteral("backupaddressbook/");
-}
-}
+
 ImportAddressbookJobInterface::ImportAddressbookJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
@@ -192,7 +187,7 @@ void ImportAddressbookJobInterface::restoreResources()
                     QString filename(resourceName);
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-                    //TODO fix default path
+                    //TODO fix default path ????? backupaddressbook ???
                     const QString newUrl = adaptResourcePath(resourceConfig, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts"));
                     QFileInfo newUrlInfo(newUrl);
                     const QString dataFile = value.akonadiResources;

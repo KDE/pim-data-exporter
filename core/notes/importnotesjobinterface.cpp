@@ -30,12 +30,7 @@
 #include <QStandardPaths>
 #include <QDir>
 #include <QTimer>
-namespace {
-inline const QString backupnote()
-{
-    return QStringLiteral("backupnote/");
-}
-}
+
 
 ImportNotesJobInterface::ImportNotesJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
@@ -173,7 +168,7 @@ void ImportNotesJobInterface::restoreResources()
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-                    const QString newUrl = adaptResourcePath(resourceConfig, backupnote());
+                    const QString newUrl = adaptResourcePath(resourceConfig, Utils::backupnote());
                     QFileInfo newUrlInfo(newUrl);
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
