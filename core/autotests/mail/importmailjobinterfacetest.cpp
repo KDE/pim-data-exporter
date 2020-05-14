@@ -83,7 +83,7 @@ void ImportMailJobInterfaceTest::importMailConfig_data()
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("test1") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1/");
+    QTest::newRow("mailonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/mailonlyconfig/");
 }
 
 void ImportMailJobInterfaceTest::importMailConfig()

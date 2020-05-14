@@ -73,7 +73,7 @@ void ImportAlarmJobInterfaceTest::importAlarmConfig_data()
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("test1") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1/");
+    QTest::newRow("alarmonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/alarmonlyconfig/");
 }
 
 void ImportAlarmJobInterfaceTest::importAlarmConfig()

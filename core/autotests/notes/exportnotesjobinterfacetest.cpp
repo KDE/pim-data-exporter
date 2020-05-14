@@ -101,8 +101,7 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource_data()
 {
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    //QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
-    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
+    QTest::newRow("noteconfigandresource") << pathConfig + QByteArray("noteconfigandresource/");
 }
 
 void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()

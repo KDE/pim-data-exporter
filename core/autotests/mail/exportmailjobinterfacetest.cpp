@@ -115,7 +115,7 @@ void ExportMailJobInterfaceTest::exportMailConfig_data()
 {
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("test1") << pathConfig + QByteArray("test1/");
+    QTest::newRow("mailonlyconfig") << pathConfig + QByteArray("mailonlyconfig/");
 }
 
 void ExportMailJobInterfaceTest::exportMailConfig()
@@ -134,8 +134,7 @@ void ExportMailJobInterfaceTest::exportMailConfigAndResource_data()
 {
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    //QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
-    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
+    QTest::newRow("mailconfigandconfig") << pathConfig + QByteArray("mailconfigandconfig/");
 }
 
 void ExportMailJobInterfaceTest::exportMailConfigAndResource()
