@@ -118,11 +118,11 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource()
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;
 
-    info.identifier = QLatin1String("akonadi_vcarddir_resource_1");
+    info.identifier = QStringLiteral("akonadi_vcarddir_resource_1");
     lstInfo << info;
-    info.identifier = QLatin1String("akonadi_contacts_resource_1");
+    info.identifier = QStringLiteral("akonadi_contacts_resource_1");
     lstInfo << info;
-    info.identifier = QLatin1String("akonadi_vcard_resource_1");
+    info.identifier = QStringLiteral("akonadi_vcard_resource_1");
     lstInfo << info;
     //Add extra resource.
     info.identifier = QStringLiteral("akonadi_kolab_resource_2");

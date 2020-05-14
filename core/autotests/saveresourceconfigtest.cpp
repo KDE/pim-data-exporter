@@ -47,6 +47,7 @@ void SaveResoureConfigTest::exportResourceToArchive(const QString &archivePath, 
         }
     }
     QVERIFY(typeIdentifierFound);
+    //qDebug() << "url " << url + identifier + QLatin1String(".zip");
     QVERIFY(mArchive->addLocalFile(url + identifier + QLatin1String(".zip"), archivePath + resourceArchiveName));
     ResourceConverterTest converter;
     const QString errorStr = converter.storeResources(mArchive, identifier, archivePath);
