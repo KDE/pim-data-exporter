@@ -30,6 +30,13 @@ add_test(NAME resourceconverterclasstest COMMAND resourceconverterclasstest)
 ecm_mark_as_test(resourceconverterclasstest)
 target_link_libraries( resourceconverterclasstest Qt5::Test KF5::ConfigCore test_resourceconverter)
 
+#####
+set( backupresourcefilejobtest_SRCS backupresourcefilejobtest.cpp )
+add_executable( backupresourcefilejobtest ${backupresourcefilejobtest_SRCS})
+add_test(NAME backupresourcefilejobtest COMMAND backupresourcefilejobtest)
+ecm_mark_as_test(backupresourcefilejobtest)
+target_link_libraries( backupresourcefilejobtest Qt5::Test KF5::ConfigCore pimdataexporterprivate)
+###
 
 add_subdirectory(notes)
 add_subdirectory(calendar)
