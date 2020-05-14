@@ -19,6 +19,7 @@
 
 #include "abstractimportexportjob.h"
 #include "archivestorage.h"
+#include "backupresourcefilejob.h"
 #include "importexportprogressindicatorbase.h"
 #include "resourceconverterimpl.h"
 #include "storeresourcejob.h"
@@ -314,28 +315,13 @@ void AbstractImportExportJob::copyToFile(const KArchiveFile *archivefile, const 
 
 void AbstractImportExportJob::backupResourceFile(const QString &identifier, const QString &defaultPath)
 {
-    const QString archivePath = defaultPath + identifier + QLatin1Char('/');
-
-    ResourceConverterImpl converter;
-    QString url = converter.resourcePath(identifier);
-    if (!url.isEmpty()) {
-        QFileInfo fi(url);
-        QString filename = fi.fileName();
-        const bool fileAdded = archive()->addLocalFile(url, archivePath + filename);
-        if (fileAdded) {
-            Q_EMIT info(i18n("\"%1\" was backed up.", filename));
-
-            StoreResourceJob *job = new StoreResourceJob(this);
-            connect(job, &StoreResourceJob::error, this, &AbstractImportExportJob::error);
-            connect(job, &StoreResourceJob::info, this, &AbstractImportExportJob::info);
-            job->setArchivePath(archivePath);
-            job->setZip(archive());
-            job->setIdentifier(identifier);
-            job->start();
-        } else {
-            Q_EMIT error(i18n("\"%1\" file cannot be added to backup file.", filename));
-        }
-    }
+    BackupResourceFileJob *job = new BackupResourceFileJob(this);
+    job->setDefaultPath(defaultPath);
+    job->setIdentifier(identifier);
+    job->setZip(archive());
+    connect(job, &BackupResourceFileJob::error, this, &AbstractImportExportJob::error);
+    connect(job, &BackupResourceFileJob::info, this, &AbstractImportExportJob::info);
+    job->start();
 }
 
 QStringList AbstractImportExportJob::restoreResourceFile(const QString &resourceBaseName, const QString &defaultPath, const QString &storePath, bool overwriteResources)
