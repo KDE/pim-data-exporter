@@ -18,19 +18,19 @@
 */
 
 
-#ifndef BACKUPRESOURCEFILEJOB_H
-#define BACKUPRESOURCEFILEJOB_H
+#ifndef BACKUPRESOURCEFILEJOBBASE_H
+#define BACKUPRESOURCEFILEJOBBASE_H
 
 #include <QObject>
 #include <KZip>
 
 #include "pimdataexporter_export.h"
-class PIMDATAEXPORTER_EXPORT BackupResourceFileJob : public QObject
+class PIMDATAEXPORTER_EXPORT BackupResourceFileJobBase : public QObject
 {
     Q_OBJECT
 public:
-    explicit BackupResourceFileJob(QObject *parent = nullptr);
-    ~BackupResourceFileJob();
+    explicit BackupResourceFileJobBase(QObject *parent = nullptr);
+    ~BackupResourceFileJobBase();
 
     void start();
 
@@ -46,6 +46,7 @@ public:
     Q_REQUIRED_RESULT QString defaultPath() const;
     void setDefaultPath(const QString &defaultPath);
 
+    virtual Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const;
 Q_SIGNALS:
     void error(const QString &);
     void info(const QString &);
@@ -56,4 +57,4 @@ private:
     KZip *mZip = nullptr;
 };
 
-#endif // BACKUPRESOURCEFILEJOB_H
+#endif // BACKUPRESOURCEFILEJOBBASE_H

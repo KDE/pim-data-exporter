@@ -19,6 +19,7 @@ add_library(test_resourceconverter STATIC
     exportimportutil.cpp
     saveresourceconfigtest.cpp
     compareloggingfile.cpp
+    testbackupresourcefilejob.cpp
 )
 target_link_libraries(test_resourceconverter PUBLIC KF5::ConfigCore pimdataexporterprivate KF5::Archive Qt5::Test KF5::AkonadiCore)
 

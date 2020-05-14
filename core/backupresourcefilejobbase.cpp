@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "backupresourcefilejob.h"
+#include "backupresourcefilejobbase.h"
 #include "resourceconverterimpl.h"
 #include "storeresourcejob.h"
 #include "pimdataexportcore_debug.h"
@@ -26,18 +26,25 @@
 
 #include <QFileInfo>
 
-BackupResourceFileJob::BackupResourceFileJob(QObject *parent)
+BackupResourceFileJobBase::BackupResourceFileJobBase(QObject *parent)
     : QObject(parent)
 {
 
 }
 
-BackupResourceFileJob::~BackupResourceFileJob()
+BackupResourceFileJobBase::~BackupResourceFileJobBase()
 {
 
 }
 
-void BackupResourceFileJob::start()
+QString BackupResourceFileJobBase::resourcePath(const QString &identifier) const
+{
+    ResourceConverterImpl converter;
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}
+
+void BackupResourceFileJobBase::start()
 {
     if (!canStart()) {
         qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to start backupResourceFileJob";
@@ -47,8 +54,7 @@ void BackupResourceFileJob::start()
 
     const QString archivePath = mDefaultPath + mIdentifier + QLatin1Char('/');
 
-    ResourceConverterImpl converter;
-    const QString url = converter.resourcePath(mIdentifier);
+    const QString url = resourcePath(mIdentifier);
     if (!url.isEmpty()) {
         QFileInfo fi(url);
         QString filename = fi.fileName();
@@ -57,8 +63,8 @@ void BackupResourceFileJob::start()
             Q_EMIT info(i18n("\"%1\" was backed up.", filename));
 
             StoreResourceJob *job = new StoreResourceJob(this);
-            connect(job, &StoreResourceJob::error, this, &BackupResourceFileJob::error);
-            connect(job, &StoreResourceJob::info, this, &BackupResourceFileJob::info);
+            connect(job, &StoreResourceJob::error, this, &BackupResourceFileJobBase::error);
+            connect(job, &StoreResourceJob::info, this, &BackupResourceFileJobBase::info);
             job->setArchivePath(archivePath);
             job->setZip(mZip);
             job->setIdentifier(mIdentifier);
@@ -70,37 +76,37 @@ void BackupResourceFileJob::start()
     deleteLater();
 }
 
-bool BackupResourceFileJob::canStart() const
+bool BackupResourceFileJobBase::canStart() const
 {
     return mZip && !mDefaultPath.isEmpty() && !mIdentifier.isEmpty();
 }
 
-QString BackupResourceFileJob::identifier() const
+QString BackupResourceFileJobBase::identifier() const
 {
     return mIdentifier;
 }
 
-void BackupResourceFileJob::setIdentifier(const QString &identifier)
+void BackupResourceFileJobBase::setIdentifier(const QString &identifier)
 {
     mIdentifier = identifier;
 }
 
-KZip *BackupResourceFileJob::zip() const
+KZip *BackupResourceFileJobBase::zip() const
 {
     return mZip;
 }
 
-void BackupResourceFileJob::setZip(KZip *zip)
+void BackupResourceFileJobBase::setZip(KZip *zip)
 {
     mZip = zip;
 }
 
-QString BackupResourceFileJob::defaultPath() const
+QString BackupResourceFileJobBase::defaultPath() const
 {
     return mDefaultPath;
 }
 
-void BackupResourceFileJob::setDefaultPath(const QString &defaultPath)
+void BackupResourceFileJobBase::setDefaultPath(const QString &defaultPath)
 {
     mDefaultPath = defaultPath;
 }

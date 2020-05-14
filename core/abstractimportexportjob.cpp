@@ -19,7 +19,7 @@
 
 #include "abstractimportexportjob.h"
 #include "archivestorage.h"
-#include "backupresourcefilejob.h"
+#include "backupresourcefilejobbase.h"
 #include "importexportprogressindicatorbase.h"
 #include "resourceconverterimpl.h"
 #include "storeresourcejob.h"
@@ -315,12 +315,12 @@ void AbstractImportExportJob::copyToFile(const KArchiveFile *archivefile, const 
 
 void AbstractImportExportJob::backupResourceFile(const QString &identifier, const QString &defaultPath)
 {
-    BackupResourceFileJob *job = new BackupResourceFileJob(this);
+    BackupResourceFileJobBase *job = new BackupResourceFileJobBase(this);
     job->setDefaultPath(defaultPath);
     job->setIdentifier(identifier);
     job->setZip(archive());
-    connect(job, &BackupResourceFileJob::error, this, &AbstractImportExportJob::error);
-    connect(job, &BackupResourceFileJob::info, this, &AbstractImportExportJob::info);
+    connect(job, &BackupResourceFileJobBase::error, this, &AbstractImportExportJob::error);
+    connect(job, &BackupResourceFileJobBase::info, this, &AbstractImportExportJob::info);
     job->start();
 }
 

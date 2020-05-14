@@ -17,21 +17,24 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "backupresourcefilejobtest.h"
-#include "backupresourcefilejobbase.h"
-#include <QTest>
-QTEST_MAIN(BackupResourceFileJobTest)
-BackupResourceFileJobTest::BackupResourceFileJobTest(QObject *parent)
-    : QObject(parent)
+
+#include "testbackupresourcefilejob.h"
+#include "resourceconvertertest.h"
+TestBackupResourceFileJob::TestBackupResourceFileJob(QObject *parent)
+    : BackupResourceFileJobBase(parent)
 {
 
 }
 
-void BackupResourceFileJobTest::shouldHaveDefaultValue()
+TestBackupResourceFileJob::~TestBackupResourceFileJob()
 {
-    BackupResourceFileJobBase *job = new BackupResourceFileJobBase;
-    QVERIFY(!job->canStart());
-    QVERIFY(job->identifier().isEmpty());
-    QVERIFY(!job->zip());
-    QVERIFY(job->defaultPath().isEmpty());
+
 }
+
+QString TestBackupResourceFileJob::resourcePath(const QString &identifier) const
+{
+    ResourceConverterTest converter;
+    const QString url = converter.resourcePath(identifier);
+    return url;
+}
+
