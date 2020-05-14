@@ -26,18 +26,18 @@
 
 #include <QFileInfo>
 
-backupResourceFileJob::backupResourceFileJob(QObject *parent)
+BackupResourceFileJob::BackupResourceFileJob(QObject *parent)
     : QObject(parent)
 {
 
 }
 
-backupResourceFileJob::~backupResourceFileJob()
+BackupResourceFileJob::~BackupResourceFileJob()
 {
 
 }
 
-void backupResourceFileJob::start()
+void BackupResourceFileJob::start()
 {
     if (!canStart()) {
         qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to start backupResourceFileJob";
@@ -57,8 +57,8 @@ void backupResourceFileJob::start()
             Q_EMIT info(i18n("\"%1\" was backed up.", filename));
 
             StoreResourceJob *job = new StoreResourceJob(this);
-            connect(job, &StoreResourceJob::error, this, &backupResourceFileJob::error);
-            connect(job, &StoreResourceJob::info, this, &backupResourceFileJob::info);
+            connect(job, &StoreResourceJob::error, this, &BackupResourceFileJob::error);
+            connect(job, &StoreResourceJob::info, this, &BackupResourceFileJob::info);
             job->setArchivePath(archivePath);
             job->setZip(mZip);
             job->setIdentifier(mIdentifier);
@@ -70,37 +70,37 @@ void backupResourceFileJob::start()
     deleteLater();
 }
 
-bool backupResourceFileJob::canStart() const
+bool BackupResourceFileJob::canStart() const
 {
     return mZip && !mDefaultPath.isEmpty() && !mIdentifier.isEmpty();
 }
 
-QString backupResourceFileJob::identifier() const
+QString BackupResourceFileJob::identifier() const
 {
     return mIdentifier;
 }
 
-void backupResourceFileJob::setIdentifier(const QString &identifier)
+void BackupResourceFileJob::setIdentifier(const QString &identifier)
 {
     mIdentifier = identifier;
 }
 
-KZip *backupResourceFileJob::zip() const
+KZip *BackupResourceFileJob::zip() const
 {
     return mZip;
 }
 
-void backupResourceFileJob::setZip(KZip *zip)
+void BackupResourceFileJob::setZip(KZip *zip)
 {
     mZip = zip;
 }
 
-QString backupResourceFileJob::defaultPath() const
+QString BackupResourceFileJob::defaultPath() const
 {
     return mDefaultPath;
 }
 
-void backupResourceFileJob::setDefaultPath(const QString &defaultPath)
+void BackupResourceFileJob::setDefaultPath(const QString &defaultPath)
 {
     mDefaultPath = defaultPath;
 }

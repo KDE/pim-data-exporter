@@ -22,12 +22,12 @@
 
 #include <QObject>
 
-class backupResourceFileJobTest : public QObject
+class BackupResourceFileJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit backupResourceFileJobTest(QObject *parent = nullptr);
-    ~backupResourceFileJobTest() = default;
+    explicit BackupResourceFileJobTest(QObject *parent = nullptr);
+    ~BackupResourceFileJobTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

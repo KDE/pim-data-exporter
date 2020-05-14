@@ -25,12 +25,12 @@
 #include <KZip>
 
 #include "pimdataexporter_export.h"
-class PIMDATAEXPORTER_EXPORT backupResourceFileJob : public QObject
+class PIMDATAEXPORTER_EXPORT BackupResourceFileJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit backupResourceFileJob(QObject *parent = nullptr);
-    ~backupResourceFileJob();
+    explicit BackupResourceFileJob(QObject *parent = nullptr);
+    ~BackupResourceFileJob();
 
     void start();
 

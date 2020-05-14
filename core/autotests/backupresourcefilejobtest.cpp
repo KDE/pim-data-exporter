@@ -20,16 +20,16 @@
 #include "backupresourcefilejobtest.h"
 #include "backupresourcefilejob.h"
 #include <QTest>
-QTEST_MAIN(backupResourceFileJobTest)
-backupResourceFileJobTest::backupResourceFileJobTest(QObject *parent)
+QTEST_MAIN(BackupResourceFileJobTest)
+BackupResourceFileJobTest::BackupResourceFileJobTest(QObject *parent)
     : QObject(parent)
 {
 
 }
 
-void backupResourceFileJobTest::shouldHaveDefaultValue()
+void BackupResourceFileJobTest::shouldHaveDefaultValue()
 {
-    backupResourceFileJob *job = new backupResourceFileJob;
+    BackupResourceFileJob *job = new BackupResourceFileJob;
     QVERIFY(!job->canStart());
     QVERIFY(job->identifier().isEmpty());
     QVERIFY(!job->zip());
