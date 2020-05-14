@@ -24,7 +24,8 @@
 #include <QObject>
 #include <KZip>
 
-class backupResourceFileJob : public QObject
+#include "pimdataexporter_export.h"
+class PIMDATAEXPORTER_EXPORT backupResourceFileJob : public QObject
 {
     Q_OBJECT
 public:
