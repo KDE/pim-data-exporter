@@ -20,6 +20,7 @@
 #include "backupresourcefilejob.h"
 #include "resourceconverterimpl.h"
 #include "storeresourcejob.h"
+#include "pimdataexportcore_debug.h"
 
 #include <KLocalizedString>
 
@@ -38,10 +39,16 @@ backupResourceFileJob::~backupResourceFileJob()
 
 void backupResourceFileJob::start()
 {
+    if (!canStart()) {
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to start backupResourceFileJob";
+        deleteLater();
+        return;
+    }
+
     const QString archivePath = mDefaultPath + mIdentifier + QLatin1Char('/');
 
     ResourceConverterImpl converter;
-    QString url = converter.resourcePath(mIdentifier);
+    const QString url = converter.resourcePath(mIdentifier);
     if (!url.isEmpty()) {
         QFileInfo fi(url);
         QString filename = fi.fileName();
@@ -61,6 +68,11 @@ void backupResourceFileJob::start()
         }
     }
     deleteLater();
+}
+
+bool backupResourceFileJob::canStart() const
+{
+    return mZip && !mDefaultPath.isEmpty() && !mIdentifier.isEmpty();
 }
 
 QString backupResourceFileJob::identifier() const
