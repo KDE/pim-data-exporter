@@ -35,7 +35,7 @@ set( backupresourcefilejobtest_SRCS backupresourcefilejobtest.cpp )
 add_executable( backupresourcefilejobtest ${backupresourcefilejobtest_SRCS})
 add_test(NAME backupresourcefilejobtest COMMAND backupresourcefilejobtest)
 ecm_mark_as_test(backupresourcefilejobtest)
-target_link_libraries( backupresourcefilejobtest Qt5::Test KF5::ConfigCore pimdataexporterprivate)
+target_link_libraries( backupresourcefilejobtest Qt5::Test KF5::ConfigCore pimdataexporterprivate KF5::Archive)
 ###
 
 add_subdirectory(notes)

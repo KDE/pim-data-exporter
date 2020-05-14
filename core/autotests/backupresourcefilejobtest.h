@@ -28,6 +28,8 @@ class backupResourceFileJobTest : public QObject
 public:
     explicit backupResourceFileJobTest(QObject *parent = nullptr);
     ~backupResourceFileJobTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // BACKUPRESOURCEFILEJOBTEST_H
