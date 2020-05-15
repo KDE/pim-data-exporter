@@ -102,7 +102,7 @@ void ImportAddressbookJobInterfaceTest::importAddressbookConfigAndResources_data
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("addressbookonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookconfigandresources/");
+    QTest::newRow("addressbookconfigandresources") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookconfigandresources/");
 }
 
 void ImportAddressbookJobInterfaceTest::importAddressbookConfigAndResources()

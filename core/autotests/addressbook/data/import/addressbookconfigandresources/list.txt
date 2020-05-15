@@ -10,4 +10,4 @@ addressbook/akonadi_vcarddir_resource_1/akonadi_vcarddir_resource_1rc
 configs/kaddressbookrc
 configs/kaddressbookui.rc
 information/VERSION_2
-information/exportdatatype.xml"
+information/exportdatatype.xml
