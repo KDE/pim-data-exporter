@@ -37,13 +37,6 @@ BackupResourceFileJobBase::~BackupResourceFileJobBase()
 
 }
 
-QString BackupResourceFileJobBase::resourcePath(const QString &identifier) const
-{
-    ResourceConverterImpl converter;
-    const QString url = converter.resourcePath(identifier);
-    return url;
-}
-
 void BackupResourceFileJobBase::start()
 {
     if (!canStart()) {

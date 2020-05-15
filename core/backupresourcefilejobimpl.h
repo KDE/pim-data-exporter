@@ -23,7 +23,8 @@
 
 #include "backupresourcefilejobbase.h"
 
-class BackupResourceFileJobImpl : public BackupResourceFileJobBase
+#include "pimdataexporter_export.h"
+class PIMDATAEXPORTER_EXPORT BackupResourceFileJobImpl : public BackupResourceFileJobBase
 {
     Q_OBJECT
 public:

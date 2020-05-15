@@ -46,7 +46,7 @@ public:
     Q_REQUIRED_RESULT QString defaultPath() const;
     void setDefaultPath(const QString &defaultPath);
 
-    virtual Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const;
+    virtual Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const = 0;
 Q_SIGNALS:
     void error(const QString &);
     void info(const QString &);

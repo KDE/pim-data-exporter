@@ -32,11 +32,11 @@ ecm_mark_as_test(resourceconverterclasstest)
 target_link_libraries( resourceconverterclasstest Qt5::Test KF5::ConfigCore test_resourceconverter)
 
 #####
-set( backupresourcefilejobtest_SRCS backupresourcefilejobtest.cpp )
-add_executable( backupresourcefilejobtest ${backupresourcefilejobtest_SRCS})
-add_test(NAME backupresourcefilejobtest COMMAND backupresourcefilejobtest)
-ecm_mark_as_test(backupresourcefilejobtest)
-target_link_libraries( backupresourcefilejobtest Qt5::Test KF5::ConfigCore pimdataexporterprivate KF5::Archive)
+set( backupresourcefilejobimpltest_SRCS backupresourcefilejobimpltest.cpp )
+add_executable( backupresourcefilejobimpltest ${backupresourcefilejobimpltest_SRCS})
+add_test(NAME backupresourcefilejobimpltest COMMAND backupresourcefilejobimpltest)
+ecm_mark_as_test(backupresourcefilejobimpltest)
+target_link_libraries( backupresourcefilejobimpltest Qt5::Test KF5::ConfigCore pimdataexporterprivate KF5::Archive)
 ###
 
 add_subdirectory(notes)
