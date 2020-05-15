@@ -118,7 +118,6 @@ void ExportMailJobInterfaceTestImpl::backupMailResourceFile(const QString &agent
     job->start();
 }
 
-
 ExportMailJobInterfaceTest::ExportMailJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

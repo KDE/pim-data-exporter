@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef BACKUPRESOURCEFILEJOBBASE_H
 #define BACKUPRESOURCEFILEJOBBASE_H
 
@@ -35,7 +34,6 @@ public:
     void start();
 
     Q_REQUIRED_RESULT bool canStart() const;
-
 
     Q_REQUIRED_RESULT QString identifier() const;
     void setIdentifier(const QString &identifier);

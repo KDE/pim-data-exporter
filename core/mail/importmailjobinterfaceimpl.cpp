@@ -40,7 +40,6 @@ QString ImportMailJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &re
     return converter.adaptResourcePath(resourceConfig, storedData);
 }
 
-
 void ImportMailJobInterfaceImpl::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
 {
     auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection(colId), Akonadi::CollectionFetchJob::Base, this);

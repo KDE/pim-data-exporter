@@ -23,7 +23,6 @@
 
 CompareLoggingFile::CompareLoggingFile()
 {
-
 }
 
 void CompareLoggingFile::compare()

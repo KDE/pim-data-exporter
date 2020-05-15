@@ -39,7 +39,6 @@ Akonadi::Collection::Id ResourceConverterImpl::convertFolderPathToCollectionId(c
     return MailCommon::Util::convertFolderPathToCollectionId(path);
 }
 
-
 QString ResourceConverterImpl::installDefaultDirectory()
 {
     return QDir::homePath();

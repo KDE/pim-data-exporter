@@ -101,5 +101,3 @@ void ImportMailJobInterfaceTest::importMailConfig()
     delete impl;
     delete file;
 }
-
-

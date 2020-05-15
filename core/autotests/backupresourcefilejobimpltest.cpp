@@ -24,7 +24,6 @@ QTEST_MAIN(BackupResourceFileJobImplTest)
 BackupResourceFileJobImplTest::BackupResourceFileJobImplTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void BackupResourceFileJobImplTest::shouldHaveDefaultValue()

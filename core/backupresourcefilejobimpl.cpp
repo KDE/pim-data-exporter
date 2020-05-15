@@ -17,19 +17,16 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "backupresourcefilejobimpl.h"
 #include "resourceconverterimpl.h"
 
 BackupResourceFileJobImpl::BackupResourceFileJobImpl(QObject *parent)
     : BackupResourceFileJobBase(parent)
 {
-
 }
 
 BackupResourceFileJobImpl::~BackupResourceFileJobImpl()
 {
-
 }
 
 QString BackupResourceFileJobImpl::resourcePath(const QString &identifier) const

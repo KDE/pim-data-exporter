@@ -29,12 +29,10 @@
 BackupResourceFileJobBase::BackupResourceFileJobBase(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 BackupResourceFileJobBase::~BackupResourceFileJobBase()
 {
-
 }
 
 void BackupResourceFileJobBase::start()

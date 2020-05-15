@@ -82,7 +82,6 @@ void TestImportFile::start()
     file.setListFilePath(mPathConfig);
     file.compare();
 
-
 #ifdef REMOVE_TEMPORARY_DIR
     QVERIFY(QDir(mExtractPath).removeRecursively());
 #endif

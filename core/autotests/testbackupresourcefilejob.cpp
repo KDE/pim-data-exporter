@@ -17,18 +17,15 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "testbackupresourcefilejob.h"
 #include "resourceconvertertest.h"
 TestBackupResourceFileJob::TestBackupResourceFileJob(QObject *parent)
     : BackupResourceFileJobBase(parent)
 {
-
 }
 
 TestBackupResourceFileJob::~TestBackupResourceFileJob()
 {
-
 }
 
 QString TestBackupResourceFileJob::resourcePath(const QString &identifier) const
@@ -37,4 +34,3 @@ QString TestBackupResourceFileJob::resourcePath(const QString &identifier) const
     const QString url = converter.resourcePath(identifier);
     return url;
 }
-
