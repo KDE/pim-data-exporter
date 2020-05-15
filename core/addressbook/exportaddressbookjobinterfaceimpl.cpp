@@ -94,3 +94,9 @@ QString ExportAddressbookJobInterfaceImpl::adaptNewResourceUrl(bool overwriteRes
     ResourceConverterImpl converter;
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
+
+QString ExportAddressbookJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    Q_UNREACHABLE();
+    return {};
+}

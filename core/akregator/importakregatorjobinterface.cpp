@@ -54,6 +54,11 @@ Akonadi::Collection::Id ImportAkregatorJobInterface::convertFolderPathToCollecti
     return -1;
 }
 
+QString ImportAkregatorJobInterface::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    return {};
+}
+
 QString ImportAkregatorJobInterface::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
 {
     //Unused
@@ -104,3 +109,5 @@ void ImportAkregatorJobInterface::restoreData()
     Q_EMIT info(i18n("Data restored."));
     QTimer::singleShot(0, this, &ImportAkregatorJobInterface::slotNextStep);
 }
+
+

@@ -50,9 +50,9 @@ void ImportMailJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
     //TODO
 }
 
-QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings)
+QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
-    mLogCreateResource->logCreateResource(resources, name, settings, false);
+    mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
     qDebug() << " QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings)" << resources << " name " << name << " settings " << settings;
     //TODO
     return {};

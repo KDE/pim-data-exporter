@@ -52,9 +52,9 @@ void ImportMailJobInterfaceImpl::registerSpecialCollection(Akonadi::SpecialMailC
     });
 }
 
-QString ImportMailJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings)
+QString ImportMailJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
-    return mCreateResource->createResource(resources, name, settings);
+    return mCreateResource->createResource(resources, name, settings, synchronizeTree);
 }
 
 void ImportMailJobInterfaceImpl::synchronizeResource(const QStringList &lst)

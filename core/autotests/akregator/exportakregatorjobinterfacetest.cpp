@@ -42,6 +42,12 @@ QString ExportAkregatorJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteR
     return {};
 }
 
+QString ExportAkregatorJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    Q_UNREACHABLE();
+    return {};
+}
+
 ExportAkregatorJobInterfaceTest::ExportAkregatorJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

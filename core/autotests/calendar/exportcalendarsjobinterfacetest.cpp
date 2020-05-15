@@ -98,6 +98,12 @@ QString ExportCalendarsJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteR
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
+QString ExportCalendarsJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    Q_UNREACHABLE();
+    return {};
+}
+
 ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

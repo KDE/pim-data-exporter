@@ -39,6 +39,7 @@ protected:
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
+    Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) override;
 };
 
 class ExportNotesJobInterfaceTest : public QObject

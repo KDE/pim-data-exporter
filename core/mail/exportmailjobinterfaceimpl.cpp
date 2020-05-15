@@ -133,3 +133,10 @@ QString ExportMailJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources,
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 
 }
+
+QString ExportMailJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    Q_UNREACHABLE();
+    return {};
+}
+

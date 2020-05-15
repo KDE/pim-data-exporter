@@ -97,3 +97,9 @@ QString ExportCalendarJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResour
     ResourceConverterImpl converter;
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
+
+QString ExportCalendarJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    Q_UNREACHABLE();
+    return {};
+}

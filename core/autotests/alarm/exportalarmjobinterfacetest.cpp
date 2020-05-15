@@ -85,6 +85,12 @@ QString ExportAlarmJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResou
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
+QString ExportAlarmJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    Q_UNREACHABLE();
+    return {};
+}
+
 ExportAlarmJobInterfaceTest::ExportAlarmJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

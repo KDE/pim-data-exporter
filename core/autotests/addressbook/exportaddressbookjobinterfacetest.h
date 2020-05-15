@@ -40,6 +40,8 @@ protected:
     Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString()) const override;
     void backupAddressBookResourceFile(const QString &agentIdentifier, const QString &defaultPath) override;
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
+    Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) override;
+
 };
 
 class ExportAddressbookJobInterfaceTest : public QObject

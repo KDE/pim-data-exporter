@@ -36,7 +36,7 @@ protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     void synchronizeResource(const QStringList &lst) override;
 
-    Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings) override;
+    Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree = false) override;
     void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) override;
     void importFilters(const QVector<MailCommon::MailFilter *> &filters) override;
 

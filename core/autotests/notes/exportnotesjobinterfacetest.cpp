@@ -80,6 +80,12 @@ QString ExportNotesJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResou
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
+QString ExportNotesJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    Q_UNREACHABLE();
+    return {};
+}
+
 ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

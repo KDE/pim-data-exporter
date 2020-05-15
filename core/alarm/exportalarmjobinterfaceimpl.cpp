@@ -82,3 +82,10 @@ QString ExportAlarmJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources
     ResourceConverterImpl converter;
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
+
+
+QString ExportAlarmJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    Q_UNREACHABLE();
+    return {};
+}

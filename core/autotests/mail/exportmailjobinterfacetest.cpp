@@ -126,6 +126,12 @@ QString ExportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResour
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
+QString ExportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+{
+    Q_UNREACHABLE();
+    return {};
+}
+
 ExportMailJobInterfaceTest::ExportMailJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
