@@ -45,6 +45,7 @@ protected:
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path) override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
+    void backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath) override;
 };
 
 #endif // ExportMailJob_H

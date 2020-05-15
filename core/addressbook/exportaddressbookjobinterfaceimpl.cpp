@@ -83,3 +83,9 @@ QString ExportAddressbookJobInterfaceImpl::resourcePath(const QString &agentIden
     const QString url = converter.resourcePath(agentIdentifier, defaultPath);
     return url;
 }
+
+
+void ExportAddressbookJobInterfaceImpl::backupAddressBookResourceFile(const QString &agentIdentifier, const QString &defaultPath)
+{
+    backupResourceFile(agentIdentifier, defaultPath);
+}

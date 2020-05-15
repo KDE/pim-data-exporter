@@ -24,6 +24,7 @@
 #include <QDebug>
 #include <QTest>
 #include <saveresourceconfigtest.h>
+#include <testbackupresourcefilejob.h>
 
 QTEST_MAIN(ExportAddressbookJobInterfaceTest)
 
@@ -77,6 +78,17 @@ QString ExportAddressbookJobInterfaceTestImpl::resourcePath(const QString &agent
     converter.setTestPath(mPathConfig);
     const QString url = converter.resourcePath(agentIdentifier, defaultPath);
     return url;
+}
+
+void ExportAddressbookJobInterfaceTestImpl::backupAddressBookResourceFile(const QString &agentIdentifier, const QString &defaultPath)
+{
+    TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
+    job->setDefaultPath(defaultPath);
+    job->setIdentifier(agentIdentifier);
+    job->setZip(archive());
+    connect(job, &TestBackupResourceFileJob::error, this, &ExportAddressbookJobInterfaceTestImpl::error);
+    connect(job, &TestBackupResourceFileJob::info, this, &ExportAddressbookJobInterfaceTestImpl::info);
+    job->start();
 }
 
 ExportAddressbookJobInterfaceTest::ExportAddressbookJobInterfaceTest(QObject *parent)
@@ -135,3 +147,5 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource()
     file->start();
     delete exportNote;
 }
+
+

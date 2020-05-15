@@ -24,6 +24,7 @@
 #include <QDebug>
 #include <QTest>
 #include <saveresourceconfigtest.h>
+#include <testbackupresourcefilejob.h>
 
 QTEST_MAIN(ExportMailJobInterfaceTest)
 
@@ -105,6 +106,18 @@ QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) 
     const QString url = converter.resourcePath(identifier);
     return url;
 }
+
+void ExportMailJobInterfaceTestImpl::backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath)
+{
+    TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
+    job->setDefaultPath(defaultPath);
+    job->setIdentifier(agentIdentifier);
+    job->setZip(archive());
+    connect(job, &TestBackupResourceFileJob::error, this, &ExportMailJobInterfaceTestImpl::error);
+    connect(job, &TestBackupResourceFileJob::info, this, &ExportMailJobInterfaceTestImpl::info);
+    job->start();
+}
+
 
 ExportMailJobInterfaceTest::ExportMailJobInterfaceTest(QObject *parent)
     : QObject(parent)

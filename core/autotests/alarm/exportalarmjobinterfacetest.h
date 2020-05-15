@@ -36,6 +36,7 @@ protected:
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
+    void backupAlarmResourceFile(const QString &agentIdentifier, const QString &defaultPath) override;
 };
 
 class ExportAlarmJobInterfaceTest : public QObject

@@ -71,3 +71,8 @@ QString ExportAlarmJobInterfaceImpl::resourcePath(const QString &identifier) con
     const QString url = converter.resourcePath(identifier);
     return url;
 }
+
+void ExportAlarmJobInterfaceImpl::backupAlarmResourceFile(const QString &agentIdentifier, const QString &defaultPath)
+{
+    backupResourceFile(agentIdentifier, defaultPath);
+}

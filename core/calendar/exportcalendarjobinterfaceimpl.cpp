@@ -86,3 +86,8 @@ QString ExportCalendarJobInterfaceImpl::resourcePath(const QString &identifier) 
     const QString url = converter.resourcePath(identifier);
     return url;
 }
+
+void ExportCalendarJobInterfaceImpl::backupCalendarResourceFile(const QString &agentIdentifier, const QString &defaultPath)
+{
+    backupResourceFile(agentIdentifier, defaultPath);
+}

@@ -24,6 +24,7 @@
 #include <QDebug>
 #include <QTest>
 #include <saveresourceconfigtest.h>
+#include <testbackupresourcefilejob.h>
 
 QTEST_MAIN(ExportCalendarsJobInterfaceTest)
 
@@ -76,6 +77,17 @@ QString ExportCalendarsJobInterfaceTestImpl::resourcePath(const QString &identif
     converter.setTestPath(mPathConfig);
     const QString url = converter.resourcePath(identifier);
     return url;
+}
+
+void ExportCalendarsJobInterfaceTestImpl::backupCalendarResourceFile(const QString &agentIdentifier, const QString &defaultPath)
+{
+    TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
+    job->setDefaultPath(defaultPath);
+    job->setIdentifier(agentIdentifier);
+    job->setZip(archive());
+    connect(job, &TestBackupResourceFileJob::error, this, &ExportCalendarsJobInterfaceTestImpl::error);
+    connect(job, &TestBackupResourceFileJob::info, this, &ExportCalendarsJobInterfaceTestImpl::info);
+    job->start();
 }
 
 ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent)

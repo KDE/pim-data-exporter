@@ -121,3 +121,9 @@ QString ExportMailJobInterfaceImpl::resourcePath(const QString &identifier) cons
     const QString url = converter.resourcePath(identifier);
     return url;
 }
+
+
+void ExportMailJobInterfaceImpl::backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath)
+{
+    backupResourceFile(agentIdentifier, defaultPath);
+}

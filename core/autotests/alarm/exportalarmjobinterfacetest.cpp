@@ -25,6 +25,7 @@
 #include <QTest>
 #include <QSignalSpy>
 #include <saveresourceconfigtest.h>
+#include <testbackupresourcefilejob.h>
 
 QTEST_MAIN(ExportAlarmJobInterfaceTest)
 
@@ -63,6 +64,17 @@ QString ExportAlarmJobInterfaceTestImpl::resourcePath(const QString &identifier)
     converter.setTestPath(mPathConfig);
     const QString url = converter.resourcePath(identifier);
     return url;
+}
+
+void ExportAlarmJobInterfaceTestImpl::backupAlarmResourceFile(const QString &agentIdentifier, const QString &defaultPath)
+{
+    TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
+    job->setDefaultPath(defaultPath);
+    job->setIdentifier(agentIdentifier);
+    job->setZip(archive());
+    connect(job, &TestBackupResourceFileJob::error, this, &ExportAlarmJobInterfaceTestImpl::error);
+    connect(job, &TestBackupResourceFileJob::info, this, &ExportAlarmJobInterfaceTestImpl::info);
+    job->start();
 }
 
 ExportAlarmJobInterfaceTest::ExportAlarmJobInterfaceTest(QObject *parent)
@@ -119,3 +131,5 @@ void ExportAlarmJobInterfaceTest::exportAlarmConfigAndResource()
     file->start();
     delete exportNote;
 }
+
+

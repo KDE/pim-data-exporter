@@ -103,7 +103,7 @@ void ExportAddressbookJobInterface::slotWriteNextArchiveResource()
                 QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
             }
         } else if (identifier.contains(QLatin1String("akonadi_vcard_resource_"))) {
-            backupResourceFile(identifier, Utils::addressbookPath());
+            backupAddressBookResourceFile(identifier, Utils::addressbookPath());
             QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
         } else {
             QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);

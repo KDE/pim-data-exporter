@@ -38,6 +38,7 @@ protected:
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath) const override;
+    void backupAddressBookResourceFile(const QString &agentIdentifier, const QString &defaultPath) override;
 };
 
 #endif // EXPORTADDRESSBOOKINTERFACEIMPL_H
