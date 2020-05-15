@@ -46,10 +46,7 @@ Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToColl
 
 QString ImportNotesJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
-    mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
-    qDebug() << " QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings)" << resources << " name " << name << " settings " << settings;
-    //TODO
-    return {};
+    return mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
 }
 
 void ImportNotesJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)

@@ -52,7 +52,7 @@ QString LogCreatingResource::logPath() const
     return mTmpLogFile->fileName();
 }
 
-void LogCreatingResource::logCreateResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString LogCreatingResource::logCreateResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     QTextStream stream(mTmpLogFile);
     stream << resources << '\n';
@@ -64,4 +64,5 @@ void LogCreatingResource::logCreateResource(const QString &resources, const QStr
     }
     stream << synchronizeTree << '\n';
     qDebug() << "settings  "<< settings;
+    return resources + QStringLiteral("new_resource1");
 }

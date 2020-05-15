@@ -45,9 +45,7 @@ Akonadi::Collection::Id ImportAddressbookJobInterfaceTestImpl::convertFolderPath
 
 QString ImportAddressbookJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
-    mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
-    //TODO
-    return {};
+    return mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
 }
 
 void ImportAddressbookJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)

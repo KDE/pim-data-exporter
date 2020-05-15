@@ -52,10 +52,7 @@ void ImportMailJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 
 QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
-    mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
-    qDebug() << " QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings)" << resources << " name " << name << " settings " << settings;
-    //TODO
-    return {};
+    return mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
 }
 
 void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
