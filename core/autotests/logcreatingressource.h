@@ -34,6 +34,7 @@ public:
     void logSynchronizeResource(const QStringList &lst);
 private:
     QTemporaryFile *mTmpLogFile = nullptr;
+    int mResourceIndex = 0;
 };
 
 #endif // LOGCREATINGRESOURCE_H

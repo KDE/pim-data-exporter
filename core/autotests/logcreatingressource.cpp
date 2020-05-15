@@ -38,11 +38,12 @@ void LogCreatingResource::appendText(const QString &str)
 {
     QTextStream stream(mTmpLogFile);
     stream << str << '\n';
+    stream << "--------------------------\n";
 }
 
 void LogCreatingResource::logSynchronizeResource(const QStringList &lst)
 {
-    if (lst.isEmpty()) {
+    if (!lst.isEmpty()) {
         appendText(lst.join(QLatin1Char('\n')));
     }
 }
@@ -63,6 +64,6 @@ QString LogCreatingResource::logCreateResource(const QString &resources, const Q
         stream << i.key() << ' ' << i.value().toString() << '\n';
     }
     stream << synchronizeTree << '\n';
-    qDebug() << "settings  "<< settings;
-    return resources + QStringLiteral("new_resource1");
+    stream << "--------------------------\n";
+    return resources + QStringLiteral("_new_resource_") + QString::number(mResourceIndex++);
 }
