@@ -384,6 +384,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
 
                     addSpecificResourceSettings(resourceConfig, resourceBaseName, settings);
 
+                    //FIXME
                     const QString newResource = mCreateResource->createResource(resourceBaseName, filename, settings);
                     infoAboutNewResource(newResource);
                     resourceToSync << newResource;

@@ -48,6 +48,8 @@ public:
 private Q_SLOTS:
     void importAddressbookConfig();
     void importAddressbookConfig_data();
+    void importAddressbookConfigAndResources();
+    void importAddressbookConfigAndResources_data();
 };
 
 #endif // IMPORTADDRESSBOOKJOBINTERFACETEST_H

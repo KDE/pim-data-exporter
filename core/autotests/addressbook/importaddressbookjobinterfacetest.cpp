@@ -91,3 +91,27 @@ void ImportAddressbookJobInterfaceTest::importAddressbookConfig()
     delete impl;
     delete file;
 }
+
+void ImportAddressbookJobInterfaceTest::importAddressbookConfigAndResources_data()
+{
+    QTest::addColumn<QString>("zipFilePath");
+    QTest::addColumn<QString>("testPath");
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
+    QTest::newRow("addressbookonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookconfigandresources/");
+}
+
+void ImportAddressbookJobInterfaceTest::importAddressbookConfigAndResources()
+{
+    QFETCH(QString, zipFilePath);
+    QFETCH(QString, testPath);
+    TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
+    file->setPathConfig(zipFilePath + testPath);
+    file->setExtractPath(QDir::tempPath() + testPath);
+    file->setExcludePath(Utils::addressbookPath());
+    ImportAddressbookJobInterfaceTestImpl *impl = new ImportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config | Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(impl);
+    file->setLoggingFilePath(impl->loggingFilePath());
+    file->start();
+    delete impl;
+    delete file;
+}

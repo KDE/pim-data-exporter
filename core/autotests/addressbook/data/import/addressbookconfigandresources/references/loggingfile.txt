@@ -1,0 +1,8 @@
+akonadi_vcarddir_resource
+Notes
+Path /tmp/backupaddressbook//0/
+1
+akonadi_contacts_resource
+Notes
+Path /tmp/backupaddressbook//1/
+1

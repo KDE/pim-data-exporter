@@ -50,6 +50,10 @@ void CompareImportFile::compareFile()
         if (file == QLatin1String("information/exportdatatype.xml") || file == QLatin1String("information/VERSION_2")) {
             continue;
         }
+        if (file.endsWith(QLatin1String("ui.rc"))) {
+            //TODO customize it
+            file.replace(QLatin1String("config/"), QLatin1String("share/kxmlgui5/kaddressbook/"));
+        }
         //Allow to remove some file from resources path
         if (file.startsWith(mExcludePath)) {
             continue;
