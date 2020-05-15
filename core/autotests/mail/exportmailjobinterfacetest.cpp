@@ -112,6 +112,7 @@ void ExportMailJobInterfaceTestImpl::backupMailResourceFile(const QString &agent
     TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
     job->setDefaultPath(defaultPath);
     job->setIdentifier(agentIdentifier);
+    job->setTestPath(mPathConfig);
     job->setZip(archive());
     connect(job, &TestBackupResourceFileJob::error, this, &ExportMailJobInterfaceTestImpl::error);
     connect(job, &TestBackupResourceFileJob::info, this, &ExportMailJobInterfaceTestImpl::info);

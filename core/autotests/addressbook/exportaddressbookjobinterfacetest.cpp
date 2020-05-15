@@ -85,6 +85,7 @@ void ExportAddressbookJobInterfaceTestImpl::backupAddressBookResourceFile(const 
     TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
     job->setDefaultPath(defaultPath);
     job->setIdentifier(agentIdentifier);
+    job->setTestPath(mPathConfig);
     job->setZip(archive());
     connect(job, &TestBackupResourceFileJob::error, this, &ExportAddressbookJobInterfaceTestImpl::error);
     connect(job, &TestBackupResourceFileJob::info, this, &ExportAddressbookJobInterfaceTestImpl::info);

@@ -19,6 +19,7 @@
 
 #include "testbackupresourcefilejob.h"
 #include "resourceconvertertest.h"
+#include <QDebug>
 TestBackupResourceFileJob::TestBackupResourceFileJob(QObject *parent)
     : BackupResourceFileJobBase(parent)
 {
@@ -31,6 +32,12 @@ TestBackupResourceFileJob::~TestBackupResourceFileJob()
 QString TestBackupResourceFileJob::resourcePath(const QString &identifier) const
 {
     ResourceConverterTest converter;
+    converter.setTestPath(mTestPath);
     const QString url = converter.resourcePath(identifier);
     return url;
+}
+
+void TestBackupResourceFileJob::setTestPath(const QString &str)
+{
+    mTestPath = str;
 }

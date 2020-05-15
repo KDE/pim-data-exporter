@@ -71,6 +71,7 @@ void ExportAlarmJobInterfaceTestImpl::backupAlarmResourceFile(const QString &age
     TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
     job->setDefaultPath(defaultPath);
     job->setIdentifier(agentIdentifier);
+    job->setTestPath(mPathConfig);
     job->setZip(archive());
     connect(job, &TestBackupResourceFileJob::error, this, &ExportAlarmJobInterfaceTestImpl::error);
     connect(job, &TestBackupResourceFileJob::info, this, &ExportAlarmJobInterfaceTestImpl::info);

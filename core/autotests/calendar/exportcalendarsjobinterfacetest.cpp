@@ -84,6 +84,7 @@ void ExportCalendarsJobInterfaceTestImpl::backupCalendarResourceFile(const QStri
     TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
     job->setDefaultPath(defaultPath);
     job->setIdentifier(agentIdentifier);
+    job->setTestPath(mPathConfig);
     job->setZip(archive());
     connect(job, &TestBackupResourceFileJob::error, this, &ExportCalendarsJobInterfaceTestImpl::error);
     connect(job, &TestBackupResourceFileJob::info, this, &ExportCalendarsJobInterfaceTestImpl::info);

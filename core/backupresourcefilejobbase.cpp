@@ -48,20 +48,24 @@ void BackupResourceFileJobBase::start()
     const QString url = resourcePath(mIdentifier);
     if (!url.isEmpty()) {
         QFileInfo fi(url);
-        QString filename = fi.fileName();
-        const bool fileAdded = mZip->addLocalFile(url, archivePath + filename);
-        if (fileAdded) {
-            Q_EMIT info(i18n("\"%1\" was backed up.", filename));
-
-            StoreResourceJob *job = new StoreResourceJob(this);
-            connect(job, &StoreResourceJob::error, this, &BackupResourceFileJobBase::error);
-            connect(job, &StoreResourceJob::info, this, &BackupResourceFileJobBase::info);
-            job->setArchivePath(archivePath);
-            job->setZip(mZip);
-            job->setIdentifier(mIdentifier);
-            job->start();
+        if (!fi.isFile()) {
+            Q_EMIT info(i18n("\"%1\" is not a file.", url));
         } else {
-            Q_EMIT error(i18n("\"%1\" file cannot be added to backup file.", filename));
+            const QString filename = fi.fileName();
+            const bool fileAdded = mZip->addLocalFile(url, archivePath + filename);
+            if (fileAdded) {
+                Q_EMIT info(i18n("\"%1\" was backed up.", filename));
+
+                StoreResourceJob *job = new StoreResourceJob(this);
+                connect(job, &StoreResourceJob::error, this, &BackupResourceFileJobBase::error);
+                connect(job, &StoreResourceJob::info, this, &BackupResourceFileJobBase::info);
+                job->setArchivePath(archivePath);
+                job->setZip(mZip);
+                job->setIdentifier(mIdentifier);
+                job->start();
+            } else {
+                Q_EMIT error(i18n("\"%1\" file cannot be added to backup file.", filename));
+            }
         }
     }
     deleteLater();
