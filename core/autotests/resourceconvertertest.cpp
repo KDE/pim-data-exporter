@@ -72,3 +72,14 @@ QString ResourceConverterTest::installDefaultDirectory()
 {
     return QDir::tempPath();
 }
+
+QString ResourceConverterTest::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    QString newUrl;
+    if (overwriteResources) {
+        newUrl = resourcePath(resourceConfig);
+    } else {
+        newUrl = adaptResourcePath(resourceConfig, storePath);
+    }
+    return newUrl;
+}

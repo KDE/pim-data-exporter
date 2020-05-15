@@ -39,6 +39,7 @@ protected:
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath = QString()) const override;
     void backupAddressBookResourceFile(const QString &agentIdentifier, const QString &defaultPath) override;
+    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };
 
 class ExportAddressbookJobInterfaceTest : public QObject

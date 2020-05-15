@@ -37,6 +37,11 @@ ExportAkregatorJobInterfaceTestImpl::~ExportAkregatorJobInterfaceTestImpl()
 {
 }
 
+QString ExportAkregatorJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    return {};
+}
+
 ExportAkregatorJobInterfaceTest::ExportAkregatorJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

@@ -73,6 +73,13 @@ QString ExportNotesJobInterfaceTestImpl::resourcePath(const QString &identifier)
     return url;
 }
 
+QString ExportNotesJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(mPathConfig);
+    return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}
+
 ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

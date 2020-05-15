@@ -61,6 +61,12 @@ QString ImportAlarmJobInterfaceImpl::createResource(const QString &resources, co
     return mCreateResource->createResource(resources, name, settings, synchronizeTree);
 }
 
+QString ImportAlarmJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}
+
 void ImportAlarmJobInterfaceImpl::synchronizeResource(const QStringList &lst)
 {
     startSynchronizeResources(lst);

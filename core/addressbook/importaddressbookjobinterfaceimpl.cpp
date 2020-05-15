@@ -64,3 +64,9 @@ QString ImportAddressbookJobInterfaceImpl::adaptResourcePath(const KSharedConfig
     ResourceConverterImpl converter;
     return converter.adaptResourcePath(resourceConfig, storedData);
 }
+
+QString ImportAddressbookJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}

@@ -76,3 +76,9 @@ QString ExportNotesJobInterfaceImpl::resourcePath(const QString &identifier) con
     const QString url = converter.resourcePath(identifier);
     return url;
 }
+
+QString ExportNotesJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}

@@ -352,14 +352,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
 
                     KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
 
-                    ResourceConverterImpl converter;
-                    QString newUrl;
-                    if (overwriteResources) {
-                        //TODO fix me too
-                        newUrl = converter.resourcePath(resourceConfig);
-                    } else {
-                        newUrl = converter.adaptResourcePath(resourceConfig, storePath);
-                    }
+                    QString newUrl = adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                     if (dataResouceEntry->isFile()) {

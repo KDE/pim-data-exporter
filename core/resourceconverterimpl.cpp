@@ -43,3 +43,15 @@ QString ResourceConverterImpl::installDefaultDirectory()
 {
     return QDir::homePath();
 }
+
+QString ResourceConverterImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    QString newUrl;
+    if (overwriteResources) {
+        //TODO fix me too
+        newUrl = resourcePath(resourceConfig);
+    } else {
+        newUrl = adaptResourcePath(resourceConfig, storePath);
+    }
+    return newUrl;
+}

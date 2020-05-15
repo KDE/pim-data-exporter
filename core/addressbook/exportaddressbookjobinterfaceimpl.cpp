@@ -88,3 +88,9 @@ void ExportAddressbookJobInterfaceImpl::backupAddressBookResourceFile(const QStr
 {
     backupResourceFile(agentIdentifier, defaultPath);
 }
+
+QString ExportAddressbookJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}

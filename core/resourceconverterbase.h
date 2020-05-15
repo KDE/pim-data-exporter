@@ -43,6 +43,7 @@ public:
     virtual Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
     Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path);
     virtual Q_REQUIRED_RESULT QString installDefaultDirectory() = 0;
+    virtual QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) = 0;
 };
 
 #endif // RESOURCECONVERTER_H

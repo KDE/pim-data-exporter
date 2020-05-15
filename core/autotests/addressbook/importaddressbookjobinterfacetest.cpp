@@ -39,7 +39,7 @@ ImportAddressbookJobInterfaceTestImpl::~ImportAddressbookJobInterfaceTestImpl()
 Akonadi::Collection::Id ImportAddressbookJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
@@ -59,8 +59,15 @@ void ImportAddressbookJobInterfaceTestImpl::synchronizeResource(const QStringLis
 QString ImportAddressbookJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.adaptResourcePath(resourceConfig, storedData);
+}
+
+QString ImportAddressbookJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(mPathConfig);
+    return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
 ImportAddressbookJobInterfaceTest::ImportAddressbookJobInterfaceTest(QObject *parent)

@@ -91,6 +91,13 @@ void ExportCalendarsJobInterfaceTestImpl::backupCalendarResourceFile(const QStri
     job->start();
 }
 
+QString ExportCalendarsJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(mPathConfig);
+    return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}
+
 ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

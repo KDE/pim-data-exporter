@@ -72,6 +72,13 @@ void ExportAddressbookJobInterfaceTestImpl::convertCollectionListToRealPath(KCon
     resourceConverter.convertCollectionListToRealPath(group, currentKey);
 }
 
+QString ExportAddressbookJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(mPathConfig);
+    return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}
+
 QString ExportAddressbookJobInterfaceTestImpl::resourcePath(const QString &agentIdentifier, const QString &defaultPath) const
 {
     ResourceConverterTest converter;
@@ -148,3 +155,5 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource()
     file->start();
     delete exportNote;
 }
+
+

@@ -53,6 +53,12 @@ Akonadi::Collection::Id ExportAkregatorJobInterface::convertFolderPathToCollecti
     return -1;
 }
 
+QString ExportAkregatorJobInterface::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    //Unused
+    return {};
+}
+
 void ExportAkregatorJobInterface::slotCheckBackupConfig()
 {
     increaseProgressDialog();

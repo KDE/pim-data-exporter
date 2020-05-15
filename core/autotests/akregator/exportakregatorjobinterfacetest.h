@@ -30,6 +30,8 @@ class ExportAkregatorJobInterfaceTestImpl : public ExportAkregatorJobInterface
 public:
     explicit ExportAkregatorJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ExportAkregatorJobInterfaceTestImpl();
+protected:
+    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };
 
 class ExportAkregatorJobInterfaceTest : public QObject

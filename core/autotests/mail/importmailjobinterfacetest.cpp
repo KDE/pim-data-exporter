@@ -39,7 +39,7 @@ ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 Akonadi::Collection::Id ImportMailJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
@@ -69,8 +69,15 @@ void ImportMailJobInterfaceTestImpl::importFilters(const QVector<MailCommon::Mai
 QString ImportMailJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.adaptResourcePath(resourceConfig, storedData);
+}
+
+QString ImportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(mPathConfig);
+    return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
 ImportMailJobInterfaceTest::ImportMailJobInterfaceTest(QObject *parent)

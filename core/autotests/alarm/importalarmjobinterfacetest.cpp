@@ -39,7 +39,7 @@ ImportAlarmJobInterfaceTestImpl::~ImportAlarmJobInterfaceTestImpl()
 Akonadi::Collection::Id ImportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
@@ -59,8 +59,15 @@ void ImportAlarmJobInterfaceTestImpl::synchronizeResource(const QStringList &lst
 QString ImportAlarmJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
     ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.adaptResourcePath(resourceConfig, storedData);
+}
+
+QString ImportAlarmJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(mPathConfig);
+    return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
 ImportAlarmJobInterfaceTest::ImportAlarmJobInterfaceTest(QObject *parent)

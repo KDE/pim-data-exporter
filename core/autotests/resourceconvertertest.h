@@ -36,6 +36,7 @@ public:
     void setTestPath(const QString &testPath);
 
     Q_REQUIRED_RESULT QString installDefaultDirectory() override;
+    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 private:
     Q_REQUIRED_RESULT QString prefixStr() const;
     QString mTestPath;

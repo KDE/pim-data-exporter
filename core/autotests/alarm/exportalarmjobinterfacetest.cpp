@@ -78,6 +78,13 @@ void ExportAlarmJobInterfaceTestImpl::backupAlarmResourceFile(const QString &age
     job->start();
 }
 
+QString ExportAlarmJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(mPathConfig);
+    return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}
+
 ExportAlarmJobInterfaceTest::ExportAlarmJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

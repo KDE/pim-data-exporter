@@ -41,6 +41,7 @@ protected:
     void importFilters(const QVector<MailCommon::MailFilter *> &filters) override;
 
     Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
+    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };
 
 class ImportMailJobInterfaceTest : public QObject

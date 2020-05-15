@@ -91,3 +91,9 @@ void ExportCalendarJobInterfaceImpl::backupCalendarResourceFile(const QString &a
 {
     backupResourceFile(agentIdentifier, defaultPath);
 }
+
+QString ExportCalendarJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}

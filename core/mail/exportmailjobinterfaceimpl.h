@@ -46,6 +46,7 @@ protected:
     Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path) override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
     void backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath) override;
+    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };
 
 #endif // ExportMailJob_H

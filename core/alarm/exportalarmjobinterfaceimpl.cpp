@@ -76,3 +76,9 @@ void ExportAlarmJobInterfaceImpl::backupAlarmResourceFile(const QString &agentId
 {
     backupResourceFile(agentIdentifier, defaultPath);
 }
+
+QString ExportAlarmJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}

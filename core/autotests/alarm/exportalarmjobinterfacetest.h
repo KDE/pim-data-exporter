@@ -37,6 +37,7 @@ protected:
     Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() override;
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
     void backupAlarmResourceFile(const QString &agentIdentifier, const QString &defaultPath) override;
+    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };
 
 class ExportAlarmJobInterfaceTest : public QObject

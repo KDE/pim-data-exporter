@@ -73,3 +73,9 @@ Collection::Id ImportMailJobInterfaceImpl::convertFolderPathToCollectionId(const
     ResourceConverterImpl converter;
     return converter.convertFolderPathToCollectionId(path);
 }
+
+QString ImportMailJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}

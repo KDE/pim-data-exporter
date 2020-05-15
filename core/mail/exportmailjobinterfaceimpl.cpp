@@ -126,3 +126,10 @@ void ExportMailJobInterfaceImpl::backupMailResourceFile(const QString &agentIden
 {
     backupResourceFile(agentIdentifier, defaultPath);
 }
+
+QString ExportMailJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+
+}

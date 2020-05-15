@@ -54,6 +54,12 @@ Akonadi::Collection::Id ImportAkregatorJobInterface::convertFolderPathToCollecti
     return -1;
 }
 
+QString ImportAkregatorJobInterface::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    //Unused
+    return {};
+}
+
 void ImportAkregatorJobInterface::slotNextStep()
 {
     ++mIndex;

@@ -66,3 +66,9 @@ void ImportNotesJobInterfaceImpl::synchronizeResource(const QStringList &lst)
     //It's maildir support. Need to add support
     startSynchronizeResources(lst);
 }
+
+QString ImportNotesJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
+{
+    ResourceConverterImpl converter;
+    return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}
