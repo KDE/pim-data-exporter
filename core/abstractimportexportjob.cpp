@@ -356,7 +356,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                     QString newUrl;
                     if (overwriteResources) {
                         //TODO fix me too
-                        newUrl = converter.ResourceConverterBase::resourcePath(resourceConfig);
+                        newUrl = converter.resourcePath(resourceConfig);
                     } else {
                         newUrl = converter.adaptResourcePath(resourceConfig, storePath);
                     }
