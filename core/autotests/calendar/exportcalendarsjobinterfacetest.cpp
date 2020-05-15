@@ -132,7 +132,7 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfigAndResource_data()
 {
     QTest::addColumn<QByteArray>("configpath");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("calendarconfigandconfig") << pathConfig + QByteArray("calendarconfigandconfig/");
+    QTest::newRow("calendarconfigandresources") << pathConfig + QByteArray("calendarconfigandresources/");
 }
 
 void ExportCalendarsJobInterfaceTest::exportCalendarConfigAndResource()
