@@ -39,6 +39,7 @@ ExportAkregatorJobInterfaceTestImpl::~ExportAkregatorJobInterfaceTestImpl()
 
 QString ExportAkregatorJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
 {
+    Q_UNREACHABLE();
     return {};
 }
 
