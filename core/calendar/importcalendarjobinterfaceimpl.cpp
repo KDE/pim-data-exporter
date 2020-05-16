@@ -70,7 +70,6 @@ void ImportCalendarJobInterfaceImpl::synchronizeResource(const QStringList &lst)
     startSynchronizeResources(lst);
 }
 
-
 QString ImportCalendarJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
 {
     ResourceConverterImpl converter;

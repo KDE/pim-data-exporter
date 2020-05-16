@@ -59,7 +59,6 @@ QString ExportAkregatorJobInterface::adaptNewResourceUrl(bool overwriteResources
     return {};
 }
 
-
 QString ExportAkregatorJobInterface::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     return {};
@@ -97,4 +96,3 @@ void ExportAkregatorJobInterface::slotCheckBackupData()
     }
     Q_EMIT jobFinished();
 }
-

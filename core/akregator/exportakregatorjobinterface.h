@@ -39,7 +39,6 @@ protected:
 private:
     void slotCheckBackupConfig();
     void slotCheckBackupData();
-
 };
 
 #endif // EXPORTAKREGATORJOBINTERFACE_H

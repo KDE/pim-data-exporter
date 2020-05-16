@@ -73,7 +73,7 @@ ImportAddressbookJobInterfaceTest::ImportAddressbookJobInterfaceTest(QObject *pa
 {
 }
 
-void ImportAddressbookJobInterfaceTest::importAddressbookConfig_data()
+void ImportAddressbookJobInterfaceTest::importAddressbook_data()
 {
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");

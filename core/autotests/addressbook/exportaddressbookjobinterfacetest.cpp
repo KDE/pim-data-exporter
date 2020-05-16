@@ -161,5 +161,3 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource()
     file->start();
     delete exportNote;
 }
-
-
