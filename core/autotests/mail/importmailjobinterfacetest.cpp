@@ -21,10 +21,10 @@
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
 #include "testimportfile.h"
+#include "utils.h"
 #include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportMailJobInterfaceTest)
-
 ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportMailJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
@@ -86,19 +86,22 @@ void ImportMailJobInterfaceTest::importMailConfig_data()
 {
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
+    QTest::addColumn<Utils::StoredTypes>("options");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("mailonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/mailonlyconfig/");
+    Utils::StoredTypes options = {Utils::StoredType::Config};
+    QTest::newRow("mailonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/mailonlyconfig/") << options;
 }
 
 void ImportMailJobInterfaceTest::importMailConfig()
 {
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
+    QFETCH(Utils::StoredTypes, options);
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::mailsPath()); // ???
-    ImportMailJobInterfaceTestImpl *impl = new ImportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    ImportMailJobInterfaceTestImpl *impl = new ImportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

@@ -120,4 +120,5 @@ PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString appTypeToI18n(AppsType type);
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString storedTypeToI18n(StoredType type);
 }
 Q_DECLARE_TYPEINFO(Utils::AkonadiInstanceInfo, Q_MOVABLE_TYPE);
+Q_DECLARE_METATYPE(Utils::StoredTypes)
 #endif // UTILS_H

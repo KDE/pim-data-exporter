@@ -137,35 +137,21 @@ ExportMailJobInterfaceTest::ExportMailJobInterfaceTest(QObject *parent)
 {
 }
 
-void ExportMailJobInterfaceTest::exportMailConfig_data()
+void ExportMailJobInterfaceTest::exportMail_data()
 {
     QTest::addColumn<QByteArray>("configpath");
+    QTest::addColumn<Utils::StoredTypes>("options");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("mailonlyconfig") << pathConfig + QByteArray("mailonlyconfig/");
+    Utils::StoredTypes options = {Utils::StoredType::Config};
+    QTest::newRow("mailonlyconfig") << pathConfig + QByteArray("mailonlyconfig/") << options;
+    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    QTest::newRow("mailconfigandconfig") << pathConfig + QByteArray("mailconfigandconfig/") << options;
 }
 
-void ExportMailJobInterfaceTest::exportMailConfig()
+void ExportMailJobInterfaceTest::exportMail()
 {
     QFETCH(QByteArray, configpath);
-    qDebug() << " configpath" << configpath;
-    TestExportFile *file = new TestExportFile(this);
-    file->setPathConfig(configpath);
-    ExportMailJobInterfaceTestImpl *exportNote = new ExportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(exportNote);
-    file->start();
-    delete exportNote;
-}
-
-void ExportMailJobInterfaceTest::exportMailConfigAndResource_data()
-{
-    QTest::addColumn<QByteArray>("configpath");
-    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("mailconfigandconfig") << pathConfig + QByteArray("mailconfigandconfig/");
-}
-
-void ExportMailJobInterfaceTest::exportMailConfigAndResource()
-{
-    QFETCH(QByteArray, configpath);
+    QFETCH(Utils::StoredTypes, options);
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
@@ -181,7 +167,7 @@ void ExportMailJobInterfaceTest::exportMailConfigAndResource()
     info.identifier = QStringLiteral("akonadi_kolab_resource_2");
     lstInfo << info;
 
-    ExportMailJobInterfaceTestImpl *exportNote = new ExportMailJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    ExportMailJobInterfaceTestImpl *exportNote = new ExportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
     exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);

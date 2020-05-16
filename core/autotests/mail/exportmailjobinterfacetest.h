@@ -60,10 +60,8 @@ public:
     explicit ExportMailJobInterfaceTest(QObject *parent = nullptr);
     ~ExportMailJobInterfaceTest() = default;
 private Q_SLOTS:
-    void exportMailConfig();
-    void exportMailConfig_data();
-    void exportMailConfigAndResource_data();
-    void exportMailConfigAndResource();
+    void exportMail();
+    void exportMail_data();
 };
 
 #endif // EXPORTMAILJOBINTERFACETEST_H
