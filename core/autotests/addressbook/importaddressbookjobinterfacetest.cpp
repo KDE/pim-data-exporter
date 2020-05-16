@@ -77,43 +77,26 @@ void ImportAddressbookJobInterfaceTest::importAddressbook_data()
 {
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
+    QTest::addColumn<Utils::StoredTypes>("options");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("addressbookonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookonlyconfig/");
+    Utils::StoredTypes options = {Utils::StoredType::Config};
+
+    QTest::newRow("addressbookonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookonlyconfig/") << options;
+    options = {Utils::StoredType::Config| Utils::StoredType::Resources};
+    QTest::newRow("addressbookconfigandresources") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookconfigandresources/") << options;
 }
 
-void ImportAddressbookJobInterfaceTest::importAddressbookConfig()
+void ImportAddressbookJobInterfaceTest::importAddressbook()
 {
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
+    QFETCH(Utils::StoredTypes, options);
+
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::addressbookPath());
-    ImportAddressbookJobInterfaceTestImpl *impl = new ImportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(impl);
-    file->setLoggingFilePath(impl->loggingFilePath());
-    file->start();
-    delete impl;
-    delete file;
-}
-
-void ImportAddressbookJobInterfaceTest::importAddressbookConfigAndResources_data()
-{
-    QTest::addColumn<QString>("zipFilePath");
-    QTest::addColumn<QString>("testPath");
-    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("addressbookconfigandresources") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookconfigandresources/");
-}
-
-void ImportAddressbookJobInterfaceTest::importAddressbookConfigAndResources()
-{
-    QFETCH(QString, zipFilePath);
-    QFETCH(QString, testPath);
-    TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
-    file->setPathConfig(zipFilePath + testPath);
-    file->setExtractPath(QDir::tempPath() + testPath);
-    file->setExcludePath(Utils::addressbookPath());
-    ImportAddressbookJobInterfaceTestImpl *impl = new ImportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config | Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    ImportAddressbookJobInterfaceTestImpl *impl = new ImportAddressbookJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

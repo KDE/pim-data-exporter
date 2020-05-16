@@ -82,7 +82,7 @@ ImportMailJobInterfaceTest::ImportMailJobInterfaceTest(QObject *parent)
 {
 }
 
-void ImportMailJobInterfaceTest::importMailConfig_data()
+void ImportMailJobInterfaceTest::importMail_data()
 {
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
@@ -92,7 +92,7 @@ void ImportMailJobInterfaceTest::importMailConfig_data()
     QTest::newRow("mailonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/mailonlyconfig/") << options;
 }
 
-void ImportMailJobInterfaceTest::importMailConfig()
+void ImportMailJobInterfaceTest::importMail()
 {
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);

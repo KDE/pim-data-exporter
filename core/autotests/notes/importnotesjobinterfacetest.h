@@ -47,10 +47,8 @@ public:
     explicit ImportNotesJobInterfaceTest(QObject *parent = nullptr);
     ~ImportNotesJobInterfaceTest() = default;
 private Q_SLOTS:
-    void importNoteConfig();
-    void importNoteConfig_data();
-    void importNoteConfigAndResources();
-    void importNoteConfigAndResources_data();
+    void importNote();
+    void importNote_data();
 };
 
 #endif // IMPORTNOTESJOBINTERFACETEST_H

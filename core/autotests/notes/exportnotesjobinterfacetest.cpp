@@ -91,35 +91,22 @@ ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
 {
 }
 
-void ExportNotesJobInterfaceTest::exportNoteConfig_data()
+void ExportNotesJobInterfaceTest::exportNote_data()
 {
     QTest::addColumn<QByteArray>("configpath");
+    QTest::addColumn<Utils::StoredTypes>("options");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("test1") << pathConfig + QByteArray("test1/");
-    QTest::newRow("full") << pathConfig + QByteArray("full/");
+    Utils::StoredTypes options = {Utils::StoredType::Config};
+    QTest::newRow("test1") << pathConfig + QByteArray("test1/") << options;
+    QTest::newRow("full") << pathConfig + QByteArray("full/") << options;
+    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    QTest::newRow("noteconfigandresource") << pathConfig + QByteArray("noteconfigandresource/") << options;
 }
 
-void ExportNotesJobInterfaceTest::exportNoteConfig()
+void ExportNotesJobInterfaceTest::exportNote()
 {
     QFETCH(QByteArray, configpath);
-    TestExportFile *file = new TestExportFile(this);
-    file->setPathConfig(configpath);
-    ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(exportNote);
-    file->start();
-    delete exportNote;
-}
-
-void ExportNotesJobInterfaceTest::exportNoteConfigAndResource_data()
-{
-    QTest::addColumn<QByteArray>("configpath");
-    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("noteconfigandresource") << pathConfig + QByteArray("noteconfigandresource/");
-}
-
-void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()
-{
-    QFETCH(QByteArray, configpath);
+    QFETCH(Utils::StoredTypes, options);
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
@@ -132,7 +119,7 @@ void ExportNotesJobInterfaceTest::exportNoteConfigAndResource()
     info.identifier = QStringLiteral("akonadi_kontact_resource_2");
     lstInfo << info;
 
-    ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
     exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);

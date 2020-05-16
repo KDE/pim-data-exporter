@@ -51,8 +51,8 @@ public:
     explicit ImportMailJobInterfaceTest(QObject *parent = nullptr);
     ~ImportMailJobInterfaceTest() = default;
 private Q_SLOTS:
-    void importMailConfig();
-    void importMailConfig_data();
+    void importMail();
+    void importMail_data();
 };
 
 #endif // IMPORTMAILJOBINTERFACETEST_H

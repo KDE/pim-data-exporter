@@ -50,10 +50,8 @@ public:
     explicit ExportAddressbookJobInterfaceTest(QObject *parent = nullptr);
     ~ExportAddressbookJobInterfaceTest() = default;
 private Q_SLOTS:
-    void exportAddressBookConfig();
-    void exportAddressBookConfig_data();
-    void exportAddressBookConfigAndResource_data();
-    void exportAddressBookConfigAndResource();
+    void exportAddressBook();
+    void exportAddressBook_data();
 };
 
 #endif // EXPORTADDRESSBOOKJOBINTERFACETEST_H

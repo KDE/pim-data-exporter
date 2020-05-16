@@ -74,47 +74,28 @@ ImportNotesJobInterfaceTest::ImportNotesJobInterfaceTest(QObject *parent)
 {
 }
 
-void ImportNotesJobInterfaceTest::importNoteConfig_data()
+void ImportNotesJobInterfaceTest::importNote_data()
 {
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
+    QTest::addColumn<Utils::StoredTypes>("options");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("test1") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1/");
+    Utils::StoredTypes options = {Utils::StoredType::Config};
+    QTest::newRow("test1") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1/") << options;
+    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    QTest::newRow("test1resource") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1resource/") << options;
 }
 
-void ImportNotesJobInterfaceTest::importNoteConfig()
+void ImportNotesJobInterfaceTest::importNote()
 {
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
+    QFETCH(Utils::StoredTypes, options);
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::notePath());
-    ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(impl);
-    file->setLoggingFilePath(impl->loggingFilePath());
-    file->start();
-    delete impl;
-    delete file;
-}
-
-void ImportNotesJobInterfaceTest::importNoteConfigAndResources_data()
-{
-    QTest::addColumn<QString>("zipFilePath");
-    QTest::addColumn<QString>("testPath");
-    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("test1resource") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1resource/");
-}
-
-void ImportNotesJobInterfaceTest::importNoteConfigAndResources()
-{
-    QFETCH(QString, zipFilePath);
-    QFETCH(QString, testPath);
-    TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
-    file->setPathConfig(zipFilePath + testPath);
-    file->setExtractPath(QDir::tempPath() + testPath);
-    file->setExcludePath(Utils::notePath());
-    ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

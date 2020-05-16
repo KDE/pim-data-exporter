@@ -110,35 +110,21 @@ ExportAddressbookJobInterfaceTest::ExportAddressbookJobInterfaceTest(QObject *pa
 {
 }
 
-void ExportAddressbookJobInterfaceTest::exportAddressBookConfig_data()
+void ExportAddressbookJobInterfaceTest::exportAddressBook_data()
 {
     QTest::addColumn<QByteArray>("configpath");
+    QTest::addColumn<Utils::StoredTypes>("options");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("addressbookonlyconfig") << pathConfig + QByteArray("addressbookonlyconfig/");
+    Utils::StoredTypes options = {Utils::StoredType::Config};
+    QTest::newRow("addressbookonlyconfig") << pathConfig + QByteArray("addressbookonlyconfig/") << options;
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
+    QTest::newRow("addressbookconfigandresources") << pathConfig + QByteArray("addressbookconfigandresources/") << options;
 }
 
-void ExportAddressbookJobInterfaceTest::exportAddressBookConfig()
+void ExportAddressbookJobInterfaceTest::exportAddressBook()
 {
     QFETCH(QByteArray, configpath);
-    TestExportFile *file = new TestExportFile(this);
-    file->setPathConfig(configpath);
-    ExportAddressbookJobInterfaceTestImpl *exportNote = new ExportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    exportNote->setPathConfig(QLatin1String(configpath));
-    file->setAbstractImportExportJob(exportNote);
-    file->start();
-    delete exportNote;
-}
-
-void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource_data()
-{
-    QTest::addColumn<QByteArray>("configpath");
-    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("addressbookconfigandresources") << pathConfig + QByteArray("addressbookconfigandresources/");
-}
-
-void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource()
-{
-    QFETCH(QByteArray, configpath);
+    QFETCH(Utils::StoredTypes, options);
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
@@ -154,7 +140,7 @@ void ExportAddressbookJobInterfaceTest::exportAddressBookConfigAndResource()
     info.identifier = QStringLiteral("akonadi_kolab_resource_2");
     lstInfo << info;
 
-    ExportAddressbookJobInterfaceTestImpl *exportNote = new ExportAddressbookJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    ExportAddressbookJobInterfaceTestImpl *exportNote = new ExportAddressbookJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
     exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);

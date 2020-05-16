@@ -47,10 +47,8 @@ public:
     explicit ImportAddressbookJobInterfaceTest(QObject *parent = nullptr);
     ~ImportAddressbookJobInterfaceTest() = default;
 private Q_SLOTS:
-    void importAddressbookConfig();
-    void importAddressbookConfig_data();
-    void importAddressbookConfigAndResources();
-    void importAddressbookConfigAndResources_data();
+    void importAddressbook();
+    void importAddressbook_data();
 };
 
 #endif // IMPORTADDRESSBOOKJOBINTERFACETEST_H

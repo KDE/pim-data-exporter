@@ -48,11 +48,8 @@ public:
     explicit ExportAlarmJobInterfaceTest(QObject *parent = nullptr);
     ~ExportAlarmJobInterfaceTest() = default;
 private Q_SLOTS:
-    void exportAlarmConfig();
-    void exportAlarmConfig_data();
-
-    void exportAlarmConfigAndResource_data();
-    void exportAlarmConfigAndResource();
+    void exportAlarm();
+    void exportAlarm_data();
 };
 
 #endif // ExportAlarmJobInterfaceTest_H
