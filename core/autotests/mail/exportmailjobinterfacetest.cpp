@@ -148,6 +148,8 @@ void ExportMailJobInterfaceTest::exportMail_data()
     QTest::newRow("mailconfigandresource") << pathConfig + QByteArray("mailconfigandresource/") << options;
     options = {Utils::StoredType::MailTransport};
     QTest::newRow("mailtransport") << pathConfig + QByteArray("mailtransport/") << options;
+    options = {Utils::StoredType::Identity};
+    QTest::newRow("identities") << pathConfig + QByteArray("identities/") << options;
 }
 
 void ExportMailJobInterfaceTest::exportMail()
