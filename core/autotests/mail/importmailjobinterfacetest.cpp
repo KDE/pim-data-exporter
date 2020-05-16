@@ -87,8 +87,8 @@ void ImportMailJobInterfaceTest::importMailConfig_data()
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
     QTest::addColumn<Utils::StoredTypes>("options");
-    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
     Utils::StoredTypes options = {Utils::StoredType::Config};
+    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
     QTest::newRow("mailonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/mailonlyconfig/") << options;
 }
 

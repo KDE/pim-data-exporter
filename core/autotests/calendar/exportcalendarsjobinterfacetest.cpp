@@ -109,35 +109,21 @@ ExportCalendarsJobInterfaceTest::ExportCalendarsJobInterfaceTest(QObject *parent
 {
 }
 
-void ExportCalendarsJobInterfaceTest::exportCalendarConfig_data()
+void ExportCalendarsJobInterfaceTest::exportCalendar_data()
 {
     QTest::addColumn<QByteArray>("configpath");
+    QTest::addColumn<Utils::StoredTypes>("options");
+    Utils::StoredTypes options = {Utils::StoredType::Config};
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("calendaronlyconfig") << pathConfig + QByteArray("calendaronlyconfig/");
+    QTest::newRow("calendaronlyconfig") << pathConfig + QByteArray("calendaronlyconfig/") << options;
+    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    QTest::newRow("calendarconfigandresources") << pathConfig + QByteArray("calendarconfigandresources/") << options;
 }
 
-void ExportCalendarsJobInterfaceTest::exportCalendarConfig()
+void ExportCalendarsJobInterfaceTest::exportCalendar()
 {
     QFETCH(QByteArray, configpath);
-    TestExportFile *file = new TestExportFile(this);
-    file->setPathConfig(configpath);
-    ExportCalendarsJobInterfaceTestImpl *impl = new ExportCalendarsJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    impl->setPathConfig(QLatin1String(configpath));
-    file->setAbstractImportExportJob(impl);
-    file->start();
-    delete impl;
-}
-
-void ExportCalendarsJobInterfaceTest::exportCalendarConfigAndResource_data()
-{
-    QTest::addColumn<QByteArray>("configpath");
-    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("calendarconfigandresources") << pathConfig + QByteArray("calendarconfigandresources/");
-}
-
-void ExportCalendarsJobInterfaceTest::exportCalendarConfigAndResource()
-{
-    QFETCH(QByteArray, configpath);
+    QFETCH(Utils::StoredTypes, options);
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
@@ -150,7 +136,7 @@ void ExportCalendarsJobInterfaceTest::exportCalendarConfigAndResource()
     info.identifier = QStringLiteral("akonadi_kontact_resource_2");
     lstInfo << info;
 
-    ExportCalendarsJobInterfaceTestImpl *exportNote = new ExportCalendarsJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
+    ExportCalendarsJobInterfaceTestImpl *exportNote = new ExportCalendarsJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
     exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);

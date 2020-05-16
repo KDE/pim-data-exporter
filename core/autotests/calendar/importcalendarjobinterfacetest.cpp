@@ -73,23 +73,27 @@ ImportCalendarJobInterfaceTest::ImportCalendarJobInterfaceTest(QObject *parent)
 {
 }
 
-void ImportCalendarJobInterfaceTest::importCalendarConfig_data()
+void ImportCalendarJobInterfaceTest::importCalendar_data()
 {
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
+    QTest::addColumn<Utils::StoredTypes>("options");
+    Utils::StoredTypes options = {Utils::StoredType::Config};
+
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("calendaronlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/calendaronlyconfig/");
+    QTest::newRow("calendaronlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/calendaronlyconfig/") << options;
 }
 
-void ImportCalendarJobInterfaceTest::importCalendarConfig()
+void ImportCalendarJobInterfaceTest::importCalendar()
 {
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
+    QFETCH(Utils::StoredTypes, options);
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::calendarPath());
-    ImportCalendarJobInterfaceTestImpl *impl = new ImportCalendarJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    ImportCalendarJobInterfaceTestImpl *impl = new ImportCalendarJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

@@ -47,8 +47,8 @@ public:
     explicit ImportCalendarJobInterfaceTest(QObject *parent = nullptr);
     ~ImportCalendarJobInterfaceTest() = default;
 private Q_SLOTS:
-    void importCalendarConfig();
-    void importCalendarConfig_data();
+    void importCalendar();
+    void importCalendar_data();
 };
 
 #endif // IMPORTCALENDARJOBINTERFACETEST_H

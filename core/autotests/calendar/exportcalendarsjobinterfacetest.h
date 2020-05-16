@@ -51,11 +51,8 @@ public:
     explicit ExportCalendarsJobInterfaceTest(QObject *parent = nullptr);
     ~ExportCalendarsJobInterfaceTest() = default;
 private Q_SLOTS:
-    void exportCalendarConfig_data();
-    void exportCalendarConfig();
-
-    void exportCalendarConfigAndResource_data();
-    void exportCalendarConfigAndResource();
+    void exportCalendar_data();
+    void exportCalendar();
 };
 
 #endif // EXPORTCALENDARSJOBINTERFACETEST_H
