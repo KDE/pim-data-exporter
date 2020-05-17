@@ -168,21 +168,7 @@ void ExportMailJobInterface::backupConfig()
 {
     setProgressDialogLabel(i18n("Backing up config..."));
 
-    QVector<MailCommon::MailFilter *> lstFilter = filters();
-    if (!lstFilter.isEmpty()) {
-        QTemporaryFile tmp;
-        tmp.open();
-        QUrl url = QUrl::fromLocalFile(tmp.fileName());
-        MailCommon::FilterImporterExporter exportFilters;
-        exportFilters.exportFilters(lstFilter, url, true);
-        tmp.close();
-        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("filters"));
-        if (fileAdded) {
-            Q_EMIT info(i18n("Filters backup done."));
-        } else {
-            Q_EMIT error(i18n("Filters cannot be exported."));
-        }
-    }
+    exportFilters();
 
     backupUiRcFile(QStringLiteral("sieveeditorui.rc"), QStringLiteral("sieveeditor"));
     backupUiRcFile(QStringLiteral("kmreadermainwin.rc"), QStringLiteral("kmail2"));

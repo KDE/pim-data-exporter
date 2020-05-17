@@ -22,6 +22,7 @@
 
 #include <MailCommon/MailUtil>
 #include <MailCommon/FilterManager>
+#include <MailCommon/FilterImporterExporter>
 #include <KMime/Message>
 #include "importexportprogressindicatorbase.h"
 
@@ -31,6 +32,7 @@
 
 #include <KZip>
 #include <KLocalizedString>
+#include <QTemporaryFile>
 
 #include "pimdataexportcore_debug.h"
 
@@ -138,3 +140,23 @@ QString ExportMailJobInterfaceImpl::createResource(const QString &resources, con
     Q_UNREACHABLE();
     return {};
 }
+
+void ExportMailJobInterfaceImpl::exportFilters()
+{
+    const QVector<MailCommon::MailFilter *> lstFilter = filters();
+    if (!lstFilter.isEmpty()) {
+        QTemporaryFile tmp;
+        tmp.open();
+        const QUrl url = QUrl::fromLocalFile(tmp.fileName());
+        MailCommon::FilterImporterExporter exportFilters;
+        exportFilters.exportFilters(lstFilter, url, true);
+        tmp.close();
+        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("filters"));
+        if (fileAdded) {
+            Q_EMIT info(i18n("Filters backup done."));
+        } else {
+            Q_EMIT error(i18n("Filters cannot be exported."));
+        }
+    }
+}
+

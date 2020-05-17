@@ -107,6 +107,11 @@ QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) 
     return url;
 }
 
+void ExportMailJobInterfaceTestImpl::exportFilters()
+{
+    qDebug() << " void ExportMailJobInterfaceTestImpl::exportFilters() not implemented yet";
+}
+
 void ExportMailJobInterfaceTestImpl::backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath)
 {
     TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
@@ -178,3 +183,5 @@ void ExportMailJobInterfaceTest::exportMail()
     file->start();
     delete exportNote;
 }
+
+
