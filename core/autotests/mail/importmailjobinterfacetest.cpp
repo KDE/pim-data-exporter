@@ -47,7 +47,6 @@ void ImportMailJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
 {
     mLogCreateResource->logSynchronizeResource(lst);
     slotNextStep();
-    //TODO
 }
 
 QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
@@ -57,10 +56,12 @@ QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources,
 
 void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
 {
+    qDebug() << "void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) not implemented yet ";
 }
 
 void ImportMailJobInterfaceTestImpl::importFilters(const QVector<MailCommon::MailFilter *> &filters)
 {
+    qDebug() << " void ImportMailJobInterfaceTestImpl::importFilters(const QVector<MailCommon::MailFilter *> &filters)";
 }
 
 QString ImportMailJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
