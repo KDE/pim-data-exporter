@@ -69,14 +69,14 @@ enabled=true
 folderArchiveType=0
 instanceName=akonadi_kolab_resource_1
 keepExistingStructure=false
-topLevelCollectionId=2378
+topLevelCollectionId=foo/bla bla/bli2378
 
 [FolderArchiveAccount akonadi_kolab_resource_8]
 enabled=true
 folderArchiveType=0
 instanceName=akonadi_kolab_resource_8
 keepExistingStructure=false
-topLevelCollectionId=4032
+topLevelCollectionId=foo/bla bla/bli4032
 
 [FolderArchiveAccount akonadi_maildir_resource_10]
 enabled=false
