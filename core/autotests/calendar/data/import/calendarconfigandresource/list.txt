@@ -1,3 +1,6 @@
+calendar/akonadi_ical_resource_2/agent_config_akonadi_ical_resource_2
+calendar/akonadi_ical_resource_2/akonadi_ical_resource_2rc
+calendar/akonadi_ical_resource_2/std.ics
 configs/korganizerrc
 configs/eventviewsrc
 configs/korgacrc

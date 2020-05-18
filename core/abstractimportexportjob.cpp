@@ -387,6 +387,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
         Q_EMIT info(i18n("Resources restored."));
     } else {
         Q_EMIT error(i18n("No resources files found."));
+        qDebug() << " resourceBaseName " << resourceBaseName;
     }
     return resourceToSync;
 }

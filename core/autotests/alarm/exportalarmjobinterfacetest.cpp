@@ -102,7 +102,7 @@ void ExportAlarmJobInterfaceTest::exportAlarm_data()
     QTest::addColumn<Utils::StoredTypes>("options");
     Utils::StoredTypes options = {Utils::StoredType::Config};
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("alarmonlyconfig") << pathConfig + QByteArray("alarmonlyconfig/");
+    QTest::newRow("alarmonlyconfig") << pathConfig + QByteArray("alarmonlyconfig/") << options;
     options = {Utils::StoredType::Config|Utils::StoredType::Resources};
     QTest::newRow("alarmonlyconfig") << pathConfig + QByteArray("alarmconfigresources/") << options;
 }
