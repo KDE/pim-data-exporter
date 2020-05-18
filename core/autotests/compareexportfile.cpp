@@ -26,7 +26,7 @@
 #include <QProcess>
 #include <KZip>
 
-//#define KEEP_TEMPORARY_FILES 1
+#define KEEP_TEMPORARY_FILES 1
 
 CompareExportFile::CompareExportFile()
 {

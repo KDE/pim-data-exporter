@@ -53,6 +53,7 @@ QString ExportCalendarsJobInterfaceTestImpl::convertToFullCollectionPath(const q
 
 void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
+    qDebug() << " void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << identifier;
     SaveResoureConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
     saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceCalendarArchiveName(), { QLatin1String("akonadi_icaldir_resource_")});
@@ -133,6 +134,8 @@ void ExportCalendarsJobInterfaceTest::exportCalendar()
     info.identifier = QLatin1String("akonadi_ical_resource_2");
     lstInfo << info;
     //Add extra resource.
+    info.identifier = QLatin1String("akonadi_contacts_resource_1");
+    lstInfo << info;
     info.identifier = QStringLiteral("akonadi_kontact_resource_2");
     lstInfo << info;
 

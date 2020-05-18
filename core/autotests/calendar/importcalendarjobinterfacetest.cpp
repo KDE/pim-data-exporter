@@ -82,6 +82,8 @@ void ImportCalendarJobInterfaceTest::importCalendar_data()
 
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
     QTest::newRow("calendaronlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/calendaronlyconfig/") << options;
+     options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+     QTest::newRow("calendarconfigandresource") << QString::fromLatin1(pathConfig) << QStringLiteral("/calendarconfigandresource/") << options;
 }
 
 void ImportCalendarJobInterfaceTest::importCalendar()
