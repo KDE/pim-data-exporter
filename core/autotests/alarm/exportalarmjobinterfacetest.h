@@ -39,6 +39,7 @@ protected:
     void backupAlarmResourceFile(const QString &agentIdentifier, const QString &defaultPath) override;
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
     Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) override;
+    void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) override;
 };
 
 class ExportAlarmJobInterfaceTest : public QObject

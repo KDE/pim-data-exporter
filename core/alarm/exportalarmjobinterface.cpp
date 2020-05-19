@@ -29,7 +29,6 @@
 #include <QFile>
 #include <QDir>
 #include <QStandardPaths>
-#include "resourceconverterimpl.h"
 
 ExportAlarmJobInterface::ExportAlarmJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
@@ -134,8 +133,7 @@ void ExportAlarmJobInterface::backupConfig()
         if (kalarmConfig->hasGroup(collectionsStr)) {
             KConfigGroup group = kalarmConfig->group(collectionsStr);
             const QString selectionKey(QStringLiteral("FavoriteCollectionIds"));
-            ResourceConverterImpl converter;
-            converter.convertCollectionIdsToRealPath(group, selectionKey);
+            convertCollectionIdsToRealPath(group, selectionKey);
         }
 
         kalarmConfig->sync();

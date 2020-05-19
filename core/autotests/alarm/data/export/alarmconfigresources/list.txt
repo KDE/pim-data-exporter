@@ -3,3 +3,4 @@ alarm/akonadi_kalarm_dir_resource_2/akonadi_kalarm_dir_resource_2rc
 alarm/akonadi_kalarm_dir_resource_2/alarm.zip
 information/VERSION_2
 information/exportdatatype.xml
+configs/kalarmrc

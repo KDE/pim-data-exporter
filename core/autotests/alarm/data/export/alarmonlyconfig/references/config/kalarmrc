@@ -1,0 +1,33 @@
+[$Version]
+update_info=kalarm.upd:1.9.5,kalarm.upd:1.9.9,kalarm.upd:1.9.12,kalarm.upd:2.0.0,kalarm.upd:2.0.2,kalarm.upd:2.1.5,kalarm.upd:2.3.2
+
+[AgentTypeDialog]
+Size=460,320
+
+[Collections]
+FavoriteCollectionIds=foo/bla bla/bli2635,foo/bla bla/bli2634,foo/bla bla/bli2632
+FavoriteCollectionLabels=Active Alarms,Alarm Templates,Archived Alarms
+
+[General]
+AutoStart=true
+Backend=Akonadi
+Version=3.0.0A
+
+[MainWindow]
+Splitter 1920=143
+State=AAAA/wAAAAD9AAAAAAAAAoAAAAGdAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+
+[Migratekde4]
+Version=1
+
+[Notification Messages]
+AskAutoStart=
+ConfirmAlarmDeletion=true
+EmailQueuedNotify=false
+QuitWarn=
+noWritableCal=false
+
+[View]
+ShowArchivedAlarms=true
+ShowResources=true

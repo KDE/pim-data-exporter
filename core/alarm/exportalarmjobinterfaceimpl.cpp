@@ -88,3 +88,10 @@ QString ExportAlarmJobInterfaceImpl::createResource(const QString &resources, co
     Q_UNREACHABLE();
     return {};
 }
+
+
+void ExportAlarmJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
+{
+    ResourceConverterImpl converter;
+    return converter.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
+}

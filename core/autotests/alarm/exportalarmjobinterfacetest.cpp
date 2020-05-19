@@ -85,6 +85,13 @@ QString ExportAlarmJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResou
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
+void ExportAlarmJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
+{
+    ResourceConverterTest resourceConverterTest;
+    resourceConverterTest.setTestPath(mPathConfig);
+    return resourceConverterTest.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
+}
+
 QString ExportAlarmJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     Q_UNREACHABLE();
@@ -130,3 +137,4 @@ void ExportAlarmJobInterfaceTest::exportAlarm()
     file->start();
     delete exportNote;
 }
+
