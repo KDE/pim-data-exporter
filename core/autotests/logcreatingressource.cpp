@@ -48,6 +48,13 @@ void LogCreatingResource::logSynchronizeResource(const QStringList &lst)
     }
 }
 
+void LogCreatingResource::logRegisterSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
+{
+    QTextStream stream(mTmpLogFile);
+    stream << "Special Collection : " << type << " colId " << colId << '\n';
+    stream << "--------------------------\n";
+}
+
 QString LogCreatingResource::logPath() const
 {
     return mTmpLogFile->fileName();

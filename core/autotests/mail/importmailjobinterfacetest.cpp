@@ -56,6 +56,7 @@ QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources,
 
 void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
 {
+    mLogCreateResource->logRegisterSpecialCollection(type, colId);
     qDebug() << "void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) not implemented yet ";
 }
 
@@ -107,7 +108,7 @@ void ImportMailJobInterfaceTest::importMail()
     QFETCH(Utils::StoredTypes, options);
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
-    file->setExtractPath(QDir::tempPath() + testPath);
+    file->setExtractPath(QDir::tempPath() + QLatin1Char('/') + testPath);
     file->setExcludePath(Utils::mailsPath()); // ???
     ImportMailJobInterfaceTestImpl *impl = new ImportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
