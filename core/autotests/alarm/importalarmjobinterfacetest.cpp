@@ -77,19 +77,24 @@ void ImportAlarmJobInterfaceTest::importAlarmConfig_data()
 {
     QTest::addColumn<QString>("zipFilePath");
     QTest::addColumn<QString>("testPath");
+    QTest::addColumn<Utils::StoredTypes>("options");
+    Utils::StoredTypes options = {Utils::StoredType::Config};
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("alarmonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/alarmonlyconfig/");
+    QTest::newRow("alarmonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/alarmonlyconfig/") << options;
+    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    QTest::newRow("alarmconfigresources") << QString::fromLatin1(pathConfig) << QStringLiteral("/alarmconfigresources/") << options;
 }
 
 void ImportAlarmJobInterfaceTest::importAlarmConfig()
 {
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
+    QFETCH(Utils::StoredTypes, options);
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExcludePath(Utils::alarmPath());
     file->setExtractPath(QDir::tempPath() + testPath);
-    ImportAlarmJobInterfaceTestImpl *impl = new ImportAlarmJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
+    ImportAlarmJobInterfaceTestImpl *impl = new ImportAlarmJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
 
