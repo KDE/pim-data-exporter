@@ -1,4 +1,2 @@
-configs/globalnotesettings
-configs/knotesrc
 information/VERSION_2
 information/exportdatatype.xml

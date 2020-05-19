@@ -104,7 +104,7 @@ void ExportAlarmJobInterfaceTest::exportAlarm_data()
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
     QTest::newRow("alarmonlyconfig") << pathConfig + QByteArray("alarmonlyconfig/") << options;
     options = {Utils::StoredType::Config|Utils::StoredType::Resources};
-    QTest::newRow("alarmonlyconfig") << pathConfig + QByteArray("alarmconfigresources/") << options;
+    QTest::newRow("alarmconfigresources") << pathConfig + QByteArray("alarmconfigresources/") << options;
 }
 
 void ExportAlarmJobInterfaceTest::exportAlarm()
@@ -117,7 +117,7 @@ void ExportAlarmJobInterfaceTest::exportAlarm()
     Utils::AkonadiInstanceInfo info;
     info.identifier = QLatin1String("akonadi_kalarm_dir_resource_1");
     lstInfo << info;
-    info.identifier = QLatin1String("akonadi_kalarm_dir_resource_1");
+    info.identifier = QLatin1String("akonadi_kalarm_dir_resource_2");
     lstInfo << info;
     //Add extra resource.
     info.identifier = QStringLiteral("akonadi_kolab_resource_2");
