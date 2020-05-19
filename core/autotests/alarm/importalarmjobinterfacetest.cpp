@@ -92,12 +92,11 @@ void ImportAlarmJobInterfaceTest::importAlarmConfig()
     QFETCH(Utils::StoredTypes, options);
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
-    file->setExcludePath(Utils::alarmPath());
     file->setExtractPath(QDir::tempPath() + testPath);
+    file->setExcludePath(Utils::alarmPath());
     ImportAlarmJobInterfaceTestImpl *impl = new ImportAlarmJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
-
     file->start();
     delete impl;
     delete file;
