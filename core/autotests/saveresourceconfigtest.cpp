@@ -46,9 +46,14 @@ void SaveResoureConfigTest::exportResourceToArchive(const QString &archivePath, 
             break;
         }
     }
+
     QVERIFY(typeIdentifierFound);
+    if (QFileInfo(url).isFile()) {
+        QVERIFY(mArchive->addLocalFile(url, archivePath + resourceArchiveName));
+    } else {
+        QVERIFY(mArchive->addLocalFile(url + identifier + QLatin1String(".zip"), archivePath + resourceArchiveName));
+    }
     //qDebug() << "url " << url + identifier + QLatin1String(".zip");
-    QVERIFY(mArchive->addLocalFile(url + identifier + QLatin1String(".zip"), archivePath + resourceArchiveName));
     ResourceConverterTest converter;
     const QString errorStr = converter.storeResources(mArchive, identifier, archivePath);
     QVERIFY(errorStr.isEmpty());
@@ -56,5 +61,6 @@ void SaveResoureConfigTest::exportResourceToArchive(const QString &archivePath, 
     QVERIFY(!urlAgentConfig.isEmpty());
     const QFileInfo fi(urlAgentConfig);
     const QString filename = fi.fileName();
+    qDebug() << "urlAgentConfig  " << urlAgentConfig;
     QVERIFY(mArchive->addLocalFile(urlAgentConfig, archivePath + filename));
 }
