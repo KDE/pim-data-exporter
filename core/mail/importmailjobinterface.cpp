@@ -286,6 +286,7 @@ void ImportMailJobInterface::addMailTransport(MailTransport::Transport *mt, int 
         MailTransport::TransportManager::self()->setDefaultTransport(mt->id());
     }
     mHashTransport.insert(transportId, mt->id());
+    qDebug() << " void ImportMailJobInterface::addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId)" << transportId;
 }
 
 void ImportMailJobInterface::restoreResources()
@@ -949,7 +950,6 @@ void ImportMailJobInterface::restoreIdentity()
         Q_EMIT error(i18n("emailidentities file could not be found in the archive."));
     } else {
         Q_EMIT info(i18n("Restoring identities..."));
-
         const KArchiveEntry *identity = mArchiveDirectory->entry(path);
         if (identity && identity->isFile()) {
             const KArchiveFile *fileIdentity = static_cast<const KArchiveFile *>(identity);
@@ -1012,17 +1012,6 @@ void ImportMailJobInterface::restoreIdentity()
         }
     }
     QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
-}
-
-QString ImportMailJobInterface::uniqueIdentityName(const QString &name)
-{
-    QString newName(name);
-    int i = 0;
-    while (!mIdentityManager->isUnique(newName)) {
-        newName = QStringLiteral("%1_%2").arg(name).arg(i);
-        ++i;
-    }
-    return newName;
 }
 
 void ImportMailJobInterface::importMailArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix)

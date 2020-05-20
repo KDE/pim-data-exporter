@@ -59,7 +59,6 @@ protected:
     virtual void importFilters(const QVector<MailCommon::MailFilter *> &filters) = 0;
     virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
     virtual void addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) = 0;
-    Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
 
     QHash<int, uint> mHashIdentity;
 

@@ -48,6 +48,8 @@ protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
     void addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) override;
+private:
+    Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
 };
 
 #endif // ImportMailJob_H

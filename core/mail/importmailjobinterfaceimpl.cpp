@@ -98,3 +98,15 @@ void ImportMailJobInterfaceImpl::addNewIdentity(const QString &name, KConfigGrou
     }
     mIdentityManager->commit();
 }
+
+QString ImportMailJobInterfaceImpl::uniqueIdentityName(const QString &name)
+{
+    QString newName(name);
+    int i = 0;
+    while (!mIdentityManager->isUnique(newName)) {
+        newName = QStringLiteral("%1_%2").arg(name).arg(i);
+        ++i;
+    }
+    return newName;
+}
+
