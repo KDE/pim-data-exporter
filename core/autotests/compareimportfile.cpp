@@ -54,6 +54,8 @@ void CompareImportFile::compareFile()
             //TODO customize it
             file.replace(QLatin1String("config/"), QLatin1String("share/kxmlgui5/kaddressbook/"));
         }
+        //file.replace(QStringLiteral("identities/"), QStringLiteral("config/"));
+        file.replace(QStringLiteral("transports/"), QStringLiteral("config/"));
         //Allow to remove some file from resources path
         if (file.startsWith(mExcludePath)) {
             continue;
