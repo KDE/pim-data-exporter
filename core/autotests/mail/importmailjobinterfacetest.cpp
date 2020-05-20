@@ -57,7 +57,6 @@ QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources,
 void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
 {
     mLogCreateResource->logRegisterSpecialCollection(type, colId);
-    qDebug() << "void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) not implemented yet ";
 }
 
 void ImportMailJobInterfaceTestImpl::importFilters(const QVector<MailCommon::MailFilter *> &filters)
