@@ -22,7 +22,6 @@
 #include "backupresourcefilejobbase.h"
 #include "backupresourcefilejobimpl.h"
 #include "importexportprogressindicatorbase.h"
-#include "resourceconverterimpl.h"
 #include "storeresourcejob.h"
 #include "synchronizeresourcejob.h"
 

@@ -18,7 +18,6 @@
 */
 
 #include "backupresourcefilejobbase.h"
-#include "resourceconverterimpl.h"
 #include "storeresourcejob.h"
 #include "pimdataexportcore_debug.h"
 
