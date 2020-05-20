@@ -23,6 +23,8 @@
 #include <AkonadiCore/CollectionFetchJob>
 #include <PimCommonAkonadi/CreateResource>
 #include <MailCommon/FilterManager>
+#include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
 using namespace Akonadi;
 
 ImportMailJobInterfaceImpl::ImportMailJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
@@ -78,4 +80,21 @@ QString ImportMailJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources,
 {
     ResourceConverterImpl converter;
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}
+
+void ImportMailJobInterfaceImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentity, int oldUid)
+{
+    KIdentityManagement::Identity *identity = &mIdentityManager->newFromScratch(uniqueIdentityName(name));
+    group.writeEntry(QStringLiteral("Name"), name);
+    group.sync();
+
+    identity->readConfig(group);
+
+    if (oldUid != -1) {
+        mHashIdentity.insert(oldUid, identity->uoid());
+        if (oldUid == defaultIdentity) {
+            mIdentityManager->setAsDefault(identity->uoid());
+        }
+    }
+    mIdentityManager->commit();
 }

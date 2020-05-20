@@ -1004,19 +1004,7 @@ void ImportMailJobInterface::restoreIdentity()
                 }
                 const QString name = group.readEntry(QStringLiteral("Name"));
 
-                KIdentityManagement::Identity *identity = &mIdentityManager->newFromScratch(uniqueIdentityName(name));
-                group.writeEntry(QStringLiteral("Name"), name);
-                group.sync();
-
-                identity->readConfig(group);
-
-                if (oldUid != -1) {
-                    mHashIdentity.insert(oldUid, identity->uoid());
-                    if (oldUid == defaultIdentity) {
-                        mIdentityManager->setAsDefault(identity->uoid());
-                    }
-                }
-                mIdentityManager->commit();
+                addNewIdentity(name, group, defaultIdentity, oldUid);
             }
             Q_EMIT info(i18n("Identities restored."));
         } else {

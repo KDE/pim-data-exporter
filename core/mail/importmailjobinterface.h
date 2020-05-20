@@ -58,6 +58,11 @@ protected:
     virtual void synchronizeResource(const QStringList &lst) = 0;
     virtual void importFilters(const QVector<MailCommon::MailFilter *> &filters) = 0;
     virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
+    virtual void addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) = 0;
+    Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
+
+    QHash<int, uint> mHashIdentity;
+
 
 private:
     void restoreTransports();
@@ -81,9 +86,7 @@ private:
     void mergeSieveTemplate(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void importSimpleFilesInDirectory(const QString &relativePath);
     void addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId);
-    Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
 
-    QHash<int, uint> mHashIdentity;
     QHash<int, int> mHashTransport;
     QHash<QString, QString> mHashResources;
     QStringList mFileList;

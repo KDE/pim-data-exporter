@@ -116,3 +116,9 @@ void ImportMailJobInterfaceTest::importMail()
     delete impl;
     delete file;
 }
+
+
+void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid)
+{
+    qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet";
+}
