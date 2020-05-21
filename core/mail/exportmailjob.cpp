@@ -583,9 +583,8 @@ void ExportMailJob::backupConfig()
         }
 
         //Automatic Add Contacts
-        KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
-        KIdentityManagement::IdentityManager::ConstIterator end = im->end();
-        for (KIdentityManagement::IdentityManager::ConstIterator it = im->begin(); it != end; ++it) {
+        KIdentityManagement::IdentityManager::ConstIterator end = mIdentityManager->end();
+        for (KIdentityManagement::IdentityManager::ConstIterator it = mIdentityManager->begin(); it != end; ++it) {
             const uint identity = (*it).uoid();
             const QString groupId = QStringLiteral("Automatic Add Contacts %1").arg(identity);
             if (kmailConfig->hasGroup(groupId)) {
