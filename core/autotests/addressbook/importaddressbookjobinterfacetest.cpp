@@ -97,6 +97,7 @@ void ImportAddressbookJobInterfaceTest::importAddressbook()
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::addressbookPath());
     ImportAddressbookJobInterfaceTestImpl *impl = new ImportAddressbookJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    impl->setPathConfig(file->pathConfig());
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

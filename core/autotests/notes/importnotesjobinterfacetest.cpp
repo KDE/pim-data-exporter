@@ -96,6 +96,7 @@ void ImportNotesJobInterfaceTest::importNote()
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::notePath());
     ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    impl->setPathConfig(file->pathConfig());
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

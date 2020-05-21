@@ -110,6 +110,7 @@ void ImportMailJobInterfaceTest::importMail()
     file->setExtractPath(QDir::tempPath() + QLatin1Char('/') + testPath);
     file->setExcludePath(Utils::mailsPath()); // ???
     ImportMailJobInterfaceTestImpl *impl = new ImportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    impl->setPathConfig(file->pathConfig());
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

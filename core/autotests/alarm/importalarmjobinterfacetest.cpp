@@ -95,6 +95,7 @@ void ImportAlarmJobInterfaceTest::importAlarmConfig()
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::alarmPath());
     ImportAlarmJobInterfaceTestImpl *impl = new ImportAlarmJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    impl->setPathConfig(file->pathConfig());
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();
