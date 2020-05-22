@@ -61,9 +61,9 @@ protected:
     virtual void addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) = 0;
     virtual void importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) = 0;
     virtual void importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId) = 0;
-    void addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId);
 
     QHash<int, uint> mHashIdentity;
+    QHash<int, int> mHashTransport;
 
 private:
     void restoreTransports();
@@ -87,7 +87,6 @@ private:
     void mergeSieveTemplate(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void importSimpleFilesInDirectory(const QString &relativePath);
 
-    QHash<int, int> mHashTransport;
     QHash<QString, QString> mHashResources;
     QStringList mFileList;
 };

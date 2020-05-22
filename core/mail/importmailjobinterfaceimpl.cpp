@@ -199,3 +199,15 @@ void ImportMailJobInterfaceImpl::importSmtpMailTransport(const KConfigGroup &gro
     }
     addMailTransport(mt, defaultTransport, transportId);
 }
+
+void ImportMailJobInterfaceImpl::addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId)
+{
+    mt->forceUniqueName();
+    mt->save();
+    MailTransport::TransportManager::self()->addTransport(mt);
+    if (transportId == defaultTransport) {
+        MailTransport::TransportManager::self()->setDefaultTransport(mt->id());
+    }
+    mHashTransport.insert(transportId, mt->id());
+    qDebug() << " void ImportMailJobInterface::addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId)" << transportId;
+}
