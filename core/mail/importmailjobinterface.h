@@ -65,7 +65,6 @@ protected:
 
     QHash<int, uint> mHashIdentity;
 
-
 private:
     void restoreTransports();
     void restoreConfig();

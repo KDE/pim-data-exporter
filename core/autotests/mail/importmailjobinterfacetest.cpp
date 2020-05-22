@@ -83,7 +83,6 @@ void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfig
     qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet";
 }
 
-
 void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId)
 {
     qDebug() << "importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) not implemented yet";
@@ -133,4 +132,3 @@ void ImportMailJobInterfaceTest::importMail()
     delete impl;
     delete file;
 }
-

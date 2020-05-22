@@ -28,9 +28,9 @@ void CompareFileHelper::compareFile(const QString &referenceFile, const QString 
     //qDebug() << "referenceFile " << referenceFile << " archiveFile " << archiveFile;
 #ifdef _WIN32
     QStringList args = QStringList()
-            << QStringLiteral("Compare-Object")
-            << QString(QStringLiteral("(Get-Content %1)")).arg(referenceFile)
-            << QString(QStringLiteral("(Get-Content %1)")).arg(archiveFile);
+                       << QStringLiteral("Compare-Object")
+                       << QString(QStringLiteral("(Get-Content %1)")).arg(referenceFile)
+                       << QString(QStringLiteral("(Get-Content %1)")).arg(archiveFile);
 
     proc.start(QStringLiteral("powershell"), args);
     QVERIFY(proc.waitForFinished());
@@ -45,14 +45,13 @@ void CompareFileHelper::compareFile(const QString &referenceFile, const QString 
 #else
     // compare to reference file
     QStringList args = QStringList()
-            << QStringLiteral("-u")
-            << referenceFile
-            << archiveFile;
+                       << QStringLiteral("-u")
+                       << referenceFile
+                       << archiveFile;
 
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
     proc.start(QStringLiteral("diff"), args);
     QVERIFY(proc.waitForFinished());
     QCOMPARE(proc.exitCode(), 0);
 #endif
-
 }

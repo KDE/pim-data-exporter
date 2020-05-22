@@ -111,7 +111,6 @@ QString ImportMailJobInterfaceImpl::uniqueIdentityName(const QString &name)
     return newName;
 }
 
-
 void ImportMailJobInterfaceImpl::importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId)
 {
     if (!identifierValue.isEmpty()) {
@@ -134,7 +133,6 @@ void ImportMailJobInterfaceImpl::importCustomMailTransport(const QString &identi
 
 void ImportMailJobInterfaceImpl::importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId)
 {
-
     MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
     mt->setName(group.readEntry(QStringLiteral("name")));
     const QString hostStr(QStringLiteral("host"));
