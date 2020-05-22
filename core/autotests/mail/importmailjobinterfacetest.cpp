@@ -22,6 +22,8 @@
 #include "resourceconvertertest.h"
 #include "testimportfile.h"
 #include "utils.h"
+#include <KConfigGroup>
+#include <KIdentityManagement/Identity>
 #include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportMailJobInterfaceTest)
@@ -81,6 +83,22 @@ QString ImportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResour
 void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid)
 {
     qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet";
+    KIdentityManagement::Identity identity;
+    group.writeEntry(QStringLiteral("Name"), name);
+    group.sync();
+
+    identity.readConfig(group);
+
+    if (oldUid != -1) {
+        mHashIdentity.insert(oldUid, identity.uoid());
+        if (oldUid == defaultIdentities) {
+            //TODO
+            //mIdentityManager->setAsDefault(identity->uoid());
+        }
+    }
+    //TODO log it.
+    //mIdentityManager->commit();
+
 }
 
 void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId)
