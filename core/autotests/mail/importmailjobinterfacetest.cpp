@@ -78,6 +78,17 @@ QString ImportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResour
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
+void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid)
+{
+    qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet";
+}
+
+
+void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId)
+{
+    qDebug() << "importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) not implemented yet";
+}
+
 ImportMailJobInterfaceTest::ImportMailJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
@@ -119,7 +130,3 @@ void ImportMailJobInterfaceTest::importMail()
 }
 
 
-void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid)
-{
-    qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet";
-}

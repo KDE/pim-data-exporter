@@ -167,22 +167,7 @@ void ImportMailJobInterface::importMailTransport(const QString &tempDirName)
         const QString identifierStr(QStringLiteral("identifier"));
         if (group.hasKey(identifierStr)) {
             const QString identifierValue = group.readEntry(identifierStr);
-            if (!identifierValue.isEmpty()) {
-                if (identifierValue == QLatin1String("sendmail") || identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
-                    MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
-                    mt->setName(group.readEntry(QStringLiteral("name")));
-                    const QString hostStr(QStringLiteral("host"));
-                    if (group.hasKey(hostStr)) {
-                        mt->setHost(group.readEntry(hostStr));
-                    }
-                    mt->setIdentifier(identifierValue);
-                    addMailTransport(mt, defaultTransport, transportId);
-                } else {
-                    qCWarning(PIMDATAEXPORTERCORE_LOG) << "Unknown identifier type " << identifierValue;
-                }
-            } else {
-                qCWarning(PIMDATAEXPORTERCORE_LOG) << "identifier value is empty";
-            }
+            importCustomMailTransport(identifierValue, group, defaultTransport, transportId);
         } else {
             MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
             mt->setName(group.readEntry(QStringLiteral("name")));

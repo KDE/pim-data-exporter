@@ -25,6 +25,7 @@
 #include <MailCommon/FilterManager>
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
+#include <MailTransport/TransportManager>
 using namespace Akonadi;
 
 ImportMailJobInterfaceImpl::ImportMailJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
@@ -110,3 +111,23 @@ QString ImportMailJobInterfaceImpl::uniqueIdentityName(const QString &name)
     return newName;
 }
 
+
+void ImportMailJobInterfaceImpl::importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId)
+{
+    if (!identifierValue.isEmpty()) {
+        if (identifierValue == QLatin1String("sendmail") || identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
+            MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
+            mt->setName(group.readEntry(QStringLiteral("name")));
+            const QString hostStr(QStringLiteral("host"));
+            if (group.hasKey(hostStr)) {
+                mt->setHost(group.readEntry(hostStr));
+            }
+            mt->setIdentifier(identifierValue);
+            addMailTransport(mt, defaultTransport, transportId);
+        } else {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Unknown identifier type " << identifierValue;
+        }
+    } else {
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "identifier value is empty";
+    }
+}
