@@ -169,71 +169,7 @@ void ImportMailJobInterface::importMailTransport(const QString &tempDirName)
             const QString identifierValue = group.readEntry(identifierStr);
             importCustomMailTransport(identifierValue, group, defaultTransport, transportId);
         } else {
-            MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
-            mt->setName(group.readEntry(QStringLiteral("name")));
-            const QString hostStr(QStringLiteral("host"));
-            if (group.hasKey(hostStr)) {
-                mt->setHost(group.readEntry(hostStr));
-            }
-            const QString portStr(QStringLiteral("port"));
-            if (group.hasKey(portStr)) {
-                mt->setPort(group.readEntry(portStr, -1));
-            }
-            const QString userNameStr(QStringLiteral("user"));
-            if (group.hasKey(userNameStr)) {
-                mt->setUserName(group.readEntry(userNameStr));
-            }
-            const QString precommandStr(QStringLiteral("precommand"));
-            if (group.hasKey(precommandStr)) {
-                mt->setPrecommand(group.readEntry(precommandStr));
-            }
-            const QString requiresAuthenticationStr(QStringLiteral("auth"));
-            if (group.hasKey(requiresAuthenticationStr)) {
-                mt->setRequiresAuthentication(group.readEntry(requiresAuthenticationStr, false));
-            }
-            const QString specifyHostnameStr(QStringLiteral("specifyHostname"));
-            if (group.hasKey(specifyHostnameStr)) {
-                mt->setSpecifyHostname(group.readEntry(specifyHostnameStr, false));
-            }
-            const QString localHostnameStr(QStringLiteral("localHostname"));
-            if (group.hasKey(localHostnameStr)) {
-                mt->setLocalHostname(group.readEntry(localHostnameStr));
-            }
-            const QString specifySenderOverwriteAddressStr(QStringLiteral("specifySenderOverwriteAddress"));
-            if (group.hasKey(specifySenderOverwriteAddressStr)) {
-                mt->setSpecifySenderOverwriteAddress(group.readEntry(specifySenderOverwriteAddressStr, false));
-            }
-            const QString storePasswordStr(QStringLiteral("storepass"));
-            if (group.hasKey(storePasswordStr)) {
-                mt->setStorePassword(group.readEntry(storePasswordStr, false));
-            }
-            const QString senderOverwriteAddressStr(QStringLiteral("senderOverwriteAddress"));
-            if (group.hasKey(senderOverwriteAddressStr)) {
-                mt->setSenderOverwriteAddress(group.readEntry(senderOverwriteAddressStr));
-            }
-            const QString encryptionStr(QStringLiteral("encryption"));
-            if (group.hasKey(encryptionStr)) {
-                const QString encryptionType = group.readEntry(encryptionStr, QString());
-                if (!encryptionType.isEmpty()) {
-                    if (encryptionType == QLatin1String("TLS")) {
-                        mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::TLS));
-                    } else if (encryptionType == QLatin1String("SSL")) {
-                        mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::SSL));
-                    } else if (encryptionType == QLatin1String("None")) {
-                        mt->setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::None));
-                    } else {
-                        qCWarning(PIMDATAEXPORTERCORE_LOG) << "Unknown encryption type " << encryptionType;
-                    }
-                } else {
-                    qCWarning(PIMDATAEXPORTERCORE_LOG) << "Encryption type is empty. It's a bug";
-                }
-                mt->setEncryption(group.readEntry(encryptionStr, 1)); //TODO verify
-            }
-            const QString authenticationTypeStr(QStringLiteral("authtype"));
-            if (group.hasKey(authenticationTypeStr)) {
-                mt->setAuthenticationType(group.readEntry(authenticationTypeStr, 1)); //TODO verify
-            }
-            addMailTransport(mt, defaultTransport, transportId);
+            importSmtpMailTransport(group, defaultTransport, transportId);
         }
     }
 }
