@@ -82,8 +82,9 @@ QString ImportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResour
 
 void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid)
 {
-    qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet";
+    qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet" << oldUid;
     KIdentityManagement::Identity identity;
+    identity.setUoid(mIdentityUoid++);
     group.writeEntry(QStringLiteral("Name"), name);
     group.sync();
 
@@ -96,6 +97,7 @@ void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfig
             //mIdentityManager->setAsDefault(identity->uoid());
         }
     }
+    //TODO write identity ?
     //TODO log it.
     //mIdentityManager->commit();
 

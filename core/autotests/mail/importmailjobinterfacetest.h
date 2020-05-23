@@ -45,6 +45,8 @@ protected:
     void addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) override;
     void importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) override;
     void importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId) override;
+private:
+    uint mIdentityUoid = 1;
 };
 
 class ImportMailJobInterfaceTest : public QObject
