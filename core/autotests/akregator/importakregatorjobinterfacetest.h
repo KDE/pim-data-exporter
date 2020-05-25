@@ -43,8 +43,8 @@ public:
     explicit ImportAkregatorJobInterfaceTest(QObject *parent = nullptr);
     ~ImportAkregatorJobInterfaceTest() = default;
 private Q_SLOTS:
-    void importCalendarConfig();
-    void importCalendarConfig_data();
+    void importAkegator_data();
+    void importAkegator();
 };
 
 #endif // IMPORTAKREGATORJOBINTERFACETEST_H
