@@ -50,17 +50,20 @@ void ImportAkregatorJobInterface::start()
 
 Akonadi::Collection::Id ImportAkregatorJobInterface::convertFolderPathToCollectionId(const QString &path)
 {
+    Q_UNREACHABLE();
     //Unused here.
     return -1;
 }
 
 QString ImportAkregatorJobInterface::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
+    Q_UNREACHABLE();
     return {};
 }
 
 QString ImportAkregatorJobInterface::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
 {
+    Q_UNREACHABLE();
     //Unused
     return {};
 }
