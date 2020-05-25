@@ -139,8 +139,7 @@ QString ExportMailJobInterfaceTestImpl::createResource(const QString &resources,
 
 QVector<uint> ExportMailJobInterfaceTestImpl::listIdentityUoid() const
 {
-    //TODO
-    return {};
+    return {10, 11, 12, 13, 14};
 }
 
 ExportMailJobInterfaceTest::ExportMailJobInterfaceTest(QObject *parent)
