@@ -59,9 +59,9 @@ void ImportAkregatorJobInterfaceTest::importAkegator_data()
     QTest::addColumn<Utils::StoredTypes>("options");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
     Utils::StoredTypes options = {Utils::StoredType::Config};
-    QTest::newRow("test1") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1/") << options;
+    QTest::newRow("test1") << QString::fromLatin1(pathConfig) << QStringLiteral("/akregatorconfig/") << options;
     options = {Utils::StoredType::Config|Utils::StoredType::Resources};
-    QTest::newRow("test1resource") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1resource/") << options;
+    QTest::newRow("test1resource") << QString::fromLatin1(pathConfig) << QStringLiteral("/akregatorresource/") << options;
 }
 
 void ImportAkregatorJobInterfaceTest::importAkegator()
