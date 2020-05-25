@@ -54,40 +54,26 @@ ExportAkregatorJobInterfaceTest::ExportAkregatorJobInterfaceTest(QObject *parent
 {
 }
 
-void ExportAkregatorJobInterfaceTest::exportAkregatorConfig_data()
+void ExportAkregatorJobInterfaceTest::exportAkregator_data()
 {
     QTest::addColumn<QByteArray>("configpath");
+    QTest::addColumn<Utils::StoredTypes>("options");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    QTest::newRow("test1") << pathConfig + QByteArray("test1/");
+    Utils::StoredTypes options = {Utils::StoredType::Config};
+    //TODO
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
+    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/") << options;
 }
 
-void ExportAkregatorJobInterfaceTest::exportAkregatorConfig()
+void ExportAkregatorJobInterfaceTest::exportAkregator()
 {
     QFETCH(QByteArray, configpath);
-    TestExportFile *file = new TestExportFile(this);
-    file->setPathConfig(configpath);
-    ExportAkregatorJobInterfaceTestImpl *exportNote = new ExportAkregatorJobInterfaceTestImpl(this, {Utils::StoredType::Config}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(exportNote);
-    file->start();
-    delete exportNote;
-}
-
-void ExportAkregatorJobInterfaceTest::exportAkregatorConfigAndResource_data()
-{
-    QTest::addColumn<QByteArray>("configpath");
-    const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    //QTest::newRow("test1resource") << pathConfig + QByteArray("test1resource/");
-    QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/");
-}
-
-void ExportAkregatorJobInterfaceTest::exportAkregatorConfigAndResource()
-{
-    QFETCH(QByteArray, configpath);
+    QFETCH(Utils::StoredTypes, options);
     TestExportFile *file = new TestExportFile(this);
     file->setPathConfig(configpath);
 
-    ExportAkregatorJobInterfaceTestImpl *exportNote = new ExportAkregatorJobInterfaceTestImpl(this, {Utils::StoredType::Config|Utils::StoredType::Resources}, file->archiveStorage(), 1);
-    file->setAbstractImportExportJob(exportNote);
+    ExportAkregatorJobInterfaceTestImpl *exportAkregator = new ExportAkregatorJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    file->setAbstractImportExportJob(exportAkregator);
     file->start();
-    delete exportNote;
+    delete exportAkregator;
 }

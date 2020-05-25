@@ -42,10 +42,8 @@ public:
     explicit ExportAkregatorJobInterfaceTest(QObject *parent = nullptr);
     ~ExportAkregatorJobInterfaceTest() = default;
 private Q_SLOTS:
-    void exportAkregatorConfig();
-    void exportAkregatorConfig_data();
-    void exportAkregatorConfigAndResource_data();
-    void exportAkregatorConfigAndResource();
+    void exportAkregator_data();
+    void exportAkregator();
 };
 
 #endif // EXPORTAKREGATORJOBINTERFACETEST_H
