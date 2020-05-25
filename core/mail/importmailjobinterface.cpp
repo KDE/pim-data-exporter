@@ -28,9 +28,6 @@
 
 #include <MailTransport/TransportManager>
 
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
-#include <KIdentityManagement/kidentitymanagement/identity.h>
-
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <KConfigGroup>
