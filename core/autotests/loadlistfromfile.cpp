@@ -25,7 +25,11 @@
 LoadListFromFile::LoadListFromFile(const QString &filename)
 {
     QFile f(filename);
-    QVERIFY(f.open(QIODevice::ReadOnly));
+    const bool openFile = f.open(QIODevice::ReadOnly);
+    if (!openFile) {
+        qDebug() << " Unable to open filename " << filename;
+    }
+    QVERIFY(openFile);
     const QByteArray content = f.readAll();
     f.close();
     const QString contextStr = QString::fromUtf8(content);
