@@ -58,6 +58,7 @@ protected:
     virtual Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const = 0;
     virtual void backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath) = 0;
     virtual void exportFilters() = 0;
+    virtual Q_REQUIRED_RESULT QVector<uint> listIdentityUoid() const = 0;
 private:
     void slotCheckBackupIdentity();
     void slotCheckBackupMailTransport();

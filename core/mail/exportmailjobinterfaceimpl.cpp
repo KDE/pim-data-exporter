@@ -159,3 +159,14 @@ void ExportMailJobInterfaceImpl::exportFilters()
         }
     }
 }
+
+QVector<uint> ExportMailJobInterfaceImpl::listIdentityUoid() const
+{
+    QVector<uint> listUiod;
+    KIdentityManagement::IdentityManager::ConstIterator end = mIdentityManager->end();
+    for (KIdentityManagement::IdentityManager::ConstIterator it = mIdentityManager->begin(); it != end; ++it) {
+        const uint identityUoid = (*it).uoid();
+        listUiod << identityUoid;
+    }
+    return listUiod;
+}
