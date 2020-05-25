@@ -30,6 +30,10 @@
 class KArchiveDirectory;
 class KArchiveFile;
 class ArchiveStorage;
+namespace KIdentityManagement {
+class Identity;
+class IdentityManager;
+}
 namespace MailTransport {
 class Transport;
 }
@@ -53,6 +57,7 @@ protected:
     void addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId);
 private:
     Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
+    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
 
 #endif // ImportMailJob_H

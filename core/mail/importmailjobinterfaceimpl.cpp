@@ -30,6 +30,7 @@ using namespace Akonadi;
 
 ImportMailJobInterfaceImpl::ImportMailJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportMailJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
+    , mIdentityManager(KIdentityManagement::IdentityManager::self())
 {
 }
 

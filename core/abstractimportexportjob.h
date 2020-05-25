@@ -33,11 +33,6 @@ class KZip;
 class KArchiveFile;
 class KArchiveEntry;
 
-namespace KIdentityManagement {
-class Identity;
-class IdentityManager;
-}
-
 namespace PimCommon {
 class CreateResource;
 }
@@ -123,7 +118,6 @@ protected:
     QString mTempDirName;
     Utils::StoredTypes mTypeSelected;
     ArchiveStorage *mArchiveStorage = nullptr;
-    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
     QTemporaryDir *mTempDir = nullptr;
     const KArchiveDirectory *mArchiveDirectory = nullptr;
     int mNumberOfStep = -1;

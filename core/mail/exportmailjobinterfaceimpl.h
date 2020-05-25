@@ -26,7 +26,10 @@
 #include <QDateTime>
 #include <time.h>
 class ArchiveStorage;
-
+namespace KIdentityManagement {
+class Identity;
+class IdentityManager;
+}
 class PIMDATAEXPORTER_TESTS_EXPORT ExportMailJobInterfaceImpl : public ExportMailJobInterface
 {
     Q_OBJECT
@@ -50,6 +53,8 @@ protected:
     Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) override;
     void exportFilters() override;
     Q_REQUIRED_RESULT QVector<uint> listIdentityUoid() const override;
+private:
+    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
 
 #endif // ExportMailJob_H

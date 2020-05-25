@@ -24,6 +24,7 @@
 #include <MailCommon/FilterManager>
 #include <MailCommon/FilterImporterExporter>
 #include <KMime/Message>
+#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 #include "importexportprogressindicatorbase.h"
 
 #include <AkonadiCore/Collection>
@@ -49,6 +50,7 @@
 
 ExportMailJobInterfaceImpl::ExportMailJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportMailJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
+    , mIdentityManager(KIdentityManagement::IdentityManager::self())
 {
 }
 

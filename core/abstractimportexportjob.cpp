@@ -27,7 +27,7 @@
 
 #include <PimCommonAkonadi/CreateResource>
 #include <AkonadiCore/AgentInstance>
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
+
 #include <KZip>
 #include <QTemporaryDir>
 #include <KLocalizedString>
@@ -38,6 +38,7 @@
 #include <QDir>
 #include <QStandardPaths>
 #include <QCoreApplication>
+#include <KConfigGroup>
 
 int AbstractImportExportJob::sArchiveVersion = -1;
 
@@ -45,7 +46,6 @@ AbstractImportExportJob::AbstractImportExportJob(QObject *parent, ArchiveStorage
     : QObject(parent)
     , mTypeSelected(typeSelected)
     , mArchiveStorage(archiveStorage)
-    , mIdentityManager(KIdentityManagement::IdentityManager::self())
     , mNumberOfStep(numberOfStep)
     , mImportExportProgressIndicator(new ImportExportProgressIndicatorBase(this))
 {
