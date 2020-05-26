@@ -17,6 +17,7 @@ set(pimdataexporter_mail_SRCS
     mail/exportmailjobinterfaceimpl.cpp
     mail/importmailjobinterfaceimpl.cpp
     mail/importexportmailutil.cpp
+    mail/smtpmailtransport.cpp
     )
 
 set(pimdataexporter_alarm_SRCS
