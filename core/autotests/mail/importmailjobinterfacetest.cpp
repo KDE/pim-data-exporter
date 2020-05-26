@@ -22,6 +22,7 @@
 #include "resourceconvertertest.h"
 #include "testimportfile.h"
 #include "utils.h"
+#include "mail/smtpmailtransport.h"
 #include <KConfigGroup>
 #include <KIdentityManagement/Identity>
 #include <QSignalSpy>
@@ -111,6 +112,7 @@ void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &id
 
 void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId)
 {
+    SmtpMailTransport smtpMailTransport(group);
     qDebug() << "ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId) not implement yet";
     qDebug() << " defaultTransport " << defaultTransport << " transportId " << transportId;
 }
