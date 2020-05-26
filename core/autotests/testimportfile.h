@@ -48,6 +48,8 @@ public:
     Q_REQUIRED_RESULT QString loggingFilePath() const;
     void setLoggingFilePath(const QString &loggingFilePath);
 
+    Q_REQUIRED_RESULT QString extractPath() const;
+
 private:
     AbstractImportExportJob *mAbstractImportExportJob = nullptr;
     ArchiveStorage *mArchiveStorage = nullptr;

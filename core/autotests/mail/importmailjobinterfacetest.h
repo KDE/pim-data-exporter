@@ -31,6 +31,7 @@ class ImportMailJobInterfaceTestImpl : public ImportMailJobInterface, public Exp
 public:
     explicit ImportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportMailJobInterfaceTestImpl();
+    void start() override;
 
 protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
@@ -47,6 +48,7 @@ protected:
     void importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId) override;
 private:
     uint mIdentityUoid = 1;
+
 };
 
 class ImportMailJobInterfaceTest : public QObject

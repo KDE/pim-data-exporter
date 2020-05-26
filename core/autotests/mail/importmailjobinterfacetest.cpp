@@ -35,8 +35,15 @@ ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, 
 
 ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 {
-    //Clean up temp repo
-    QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeMails()).removeRecursively());
+    //Clean up temp repo. FIXME !
+    QVERIFY(QDir(extractPath()).removeRecursively());
+}
+
+void ImportMailJobInterfaceTestImpl::start()
+{
+    QDir().mkpath(extractPath());
+    //Create temporary file for identities
+    ImportMailJobInterface::start();
 }
 
 Akonadi::Collection::Id ImportMailJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
@@ -149,9 +156,12 @@ void ImportMailJobInterfaceTest::importMail()
     file->setExcludePath(Utils::mailsPath()); // ???
     ImportMailJobInterfaceTestImpl *impl = new ImportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
+    impl->setExtractPath(file->extractPath());
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();
     delete impl;
     delete file;
 }
+
+

@@ -48,3 +48,13 @@ QString ExportImportUtil::loggingFilePath() const
 {
     return mLogCreateResource->logPath();
 }
+
+void ExportImportUtil::setExtractPath(const QString &extractPath)
+{
+    mExtractPath = extractPath;
+}
+
+QString ExportImportUtil::extractPath() const
+{
+    return mExtractPath;
+}

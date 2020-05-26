@@ -141,3 +141,8 @@ void TestImportFile::setLoggingFilePath(const QString &loggingFilePath)
 {
     mLoggingFilePath = loggingFilePath;
 }
+
+QString TestImportFile::extractPath() const
+{
+    return mExtractPath;
+}

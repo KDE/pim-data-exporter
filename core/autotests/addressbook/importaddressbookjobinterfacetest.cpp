@@ -33,7 +33,7 @@ ImportAddressbookJobInterfaceTestImpl::ImportAddressbookJobInterfaceTestImpl(QOb
 ImportAddressbookJobInterfaceTestImpl::~ImportAddressbookJobInterfaceTestImpl()
 {
     //Clean up temp repo
-    QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeAddressbook()).removeRecursively());
+     QVERIFY(QDir(extractPath()).removeRecursively());
 }
 
 Akonadi::Collection::Id ImportAddressbookJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
@@ -98,6 +98,7 @@ void ImportAddressbookJobInterfaceTest::importAddressbook()
     file->setExcludePath(Utils::addressbookPath());
     ImportAddressbookJobInterfaceTestImpl *impl = new ImportAddressbookJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
+    impl->setExtractPath(file->extractPath());
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

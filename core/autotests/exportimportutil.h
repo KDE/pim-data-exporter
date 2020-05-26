@@ -35,8 +35,14 @@ public:
 
     QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
     QString mPathConfig;
+    void setExtractPath(const QString &extractPath);
+
+    Q_REQUIRED_RESULT QString extractPath() const;
+
 protected:
     LogCreatingResource *mLogCreateResource = nullptr;
+private:
+    QString mExtractPath;
 };
 
 #endif // EXPORTIMPORTUTIL_H
