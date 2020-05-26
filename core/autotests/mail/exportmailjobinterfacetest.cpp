@@ -188,5 +188,3 @@ void ExportMailJobInterfaceTest::exportMail()
     file->start();
     delete exportNote;
 }
-
-

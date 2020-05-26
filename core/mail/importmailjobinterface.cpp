@@ -1331,4 +1331,3 @@ void ImportMailJobInterface::convertCollectionStrToAkonadiId(const KSharedConfig
         (void)convertRealPathToCollection(eventGroup, key, false);
     }
 }
-

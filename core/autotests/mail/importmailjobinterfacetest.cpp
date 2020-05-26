@@ -102,7 +102,6 @@ void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfig
     //TODO write identity ?
     //TODO log it.
     //mIdentityManager->commit();
-
 }
 
 void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId)

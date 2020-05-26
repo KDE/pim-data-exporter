@@ -51,7 +51,6 @@ ImportAkregatorJobInterfaceTest::ImportAkregatorJobInterfaceTest(QObject *parent
 {
 }
 
-
 void ImportAkregatorJobInterfaceTest::importAkegator_data()
 {
     QTest::addColumn<QString>("zipFilePath");
