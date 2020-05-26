@@ -23,7 +23,6 @@
 #include "importcalendarjobinterface.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
-class KArchive;
 
 class PIMDATAEXPORTER_TESTS_EXPORT ImportCalendarJobInterfaceImpl : public ImportCalendarJobInterface
 {

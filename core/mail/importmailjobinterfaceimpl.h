@@ -27,8 +27,6 @@
 #include <QStringList>
 #include <QHash>
 #include <KArchive>
-class KArchiveDirectory;
-class KArchiveFile;
 class ArchiveStorage;
 namespace KIdentityManagement {
 class Identity;

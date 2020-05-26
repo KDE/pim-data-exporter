@@ -23,7 +23,6 @@
 #include "importaddressbookjobinterface.h"
 #include "pimdataexportercore_private_export.h"
 class ArchiveStorage;
-class KArchiveFile;
 
 class PIMDATAEXPORTER_TESTS_EXPORT ImportAddressbookJobInterfaceImpl : public ImportAddressbookJobInterface
 {
