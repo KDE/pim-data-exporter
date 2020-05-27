@@ -20,7 +20,6 @@
 #include "importaddressbookjobinterfacetest.h"
 #include "importaddressbookjobinterfacetestimpl.h"
 #include "testimportfile.h"
-#include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportAddressbookJobInterfaceTest)
 

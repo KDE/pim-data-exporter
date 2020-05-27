@@ -23,7 +23,6 @@
 #include "saveresourceconfigtest.h"
 #include "testbackupresourcefilejob.h"
 #include <QDebug>
-#include <QTest>
 
 ExportMailJobInterfaceTestImpl::ExportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportMailJobInterface(parent, typeSelected, archiveStorage, numberOfStep)

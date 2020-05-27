@@ -22,7 +22,6 @@
 #include "resourceconvertertest.h"
 #include "testbackupresourcefilejob.h"
 #include "saveresourceconfigtest.h"
-#include <QDebug>
 
 ExportAlarmJobInterfaceTestImpl::ExportAlarmJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportAlarmJobInterface(parent, typeSelected, archiveStorage, numberOfStep)

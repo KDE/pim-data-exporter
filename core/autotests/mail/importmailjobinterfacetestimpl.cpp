@@ -25,7 +25,6 @@
 #include "mail/smtpmailtransport.h"
 #include <KConfigGroup>
 #include <KIdentityManagement/Identity>
-#include <QSignalSpy>
 #include <QTest>
 
 ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)

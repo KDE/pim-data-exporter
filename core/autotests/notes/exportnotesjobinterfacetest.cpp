@@ -21,8 +21,6 @@
 #include "exportnotesjobinterfacetestimpl.h"
 #include "archivestorage.h"
 #include "testexportfile.h"
-#include <KZip>
-#include <QDebug>
 #include <QTest>
 
 QTEST_MAIN(ExportNotesJobInterfaceTest)

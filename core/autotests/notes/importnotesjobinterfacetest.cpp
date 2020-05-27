@@ -21,7 +21,6 @@
 #include "importnotesjobinterfacetestimpl.h"
 #include "archivestorage.h"
 #include "testimportfile.h"
-#include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportNotesJobInterfaceTest)
 

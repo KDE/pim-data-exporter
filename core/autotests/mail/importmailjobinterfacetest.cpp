@@ -22,7 +22,6 @@
 #include "archivestorage.h"
 #include "testimportfile.h"
 #include "utils.h"
-#include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportMailJobInterfaceTest)
 

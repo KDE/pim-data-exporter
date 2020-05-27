@@ -21,8 +21,6 @@
 #include "resourceconvertertest.h"
 #include "saveresourceconfigtest.h"
 #include <KZip>
-#include <QDebug>
-#include <QTest>
 
 ExportNotesJobInterfaceTestImpl::ExportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportNotesJobInterface(parent, typeSelected, archiveStorage, numberOfStep)

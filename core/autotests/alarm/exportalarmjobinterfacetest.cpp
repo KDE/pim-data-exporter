@@ -21,9 +21,7 @@
 #include "exportalarmjobinterfacetestimpl.h"
 #include "archivestorage.h"
 #include "testexportfile.h"
-#include <QDebug>
 #include <QTest>
-#include <QSignalSpy>
 
 QTEST_MAIN(ExportAlarmJobInterfaceTest)
 

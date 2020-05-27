@@ -21,7 +21,6 @@
 #include "resourceconvertertest.h"
 #include "saveresourceconfigtest.h"
 #include "testbackupresourcefilejob.h"
-#include <QDebug>
 
 ExportAddressbookJobInterfaceTestImpl::ExportAddressbookJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportAddressbookJobInterface(parent, typeSelected, archiveStorage, numberOfStep)

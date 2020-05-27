@@ -19,7 +19,6 @@
 
 #include "testbackupresourcefilejob.h"
 #include "resourceconvertertest.h"
-#include <QDebug>
 TestBackupResourceFileJob::TestBackupResourceFileJob(QObject *parent)
     : BackupResourceFileJobBase(parent)
 {

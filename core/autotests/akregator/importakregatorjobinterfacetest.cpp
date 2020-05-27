@@ -21,7 +21,6 @@
 #include "importakregatorjobinterfacetestimpl.h"
 #include "archivestorage.h"
 #include "testimportfile.h"
-#include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportAkregatorJobInterfaceTest)
 

@@ -23,7 +23,6 @@
 #include "comparefilehelper.h"
 #include <QTest>
 #include <QDebug>
-#include <QProcess>
 #include <KZip>
 
 #define KEEP_TEMPORARY_FILES 1

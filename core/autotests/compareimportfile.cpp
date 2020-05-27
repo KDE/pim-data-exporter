@@ -21,7 +21,6 @@
 #include "generatelistfilefromarchive.h"
 #include "loadlistfromfile.h"
 #include "comparefilehelper.h"
-#include <QProcess>
 #include <QTest>
 
 CompareImportFile::CompareImportFile()

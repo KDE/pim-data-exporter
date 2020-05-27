@@ -21,7 +21,6 @@
 
 #include <QTemporaryFile>
 #include <QTextStream>
-#include <QDebug>
 
 LogCreatingResource::LogCreatingResource(QObject *parent)
     : QObject(parent)

@@ -21,7 +21,6 @@
 #include "exportcalendarsjobinterfacetestimpl.h"
 #include "archivestorage.h"
 #include "testexportfile.h"
-#include <QDebug>
 #include <QTest>
 
 QTEST_MAIN(ExportCalendarsJobInterfaceTest)
