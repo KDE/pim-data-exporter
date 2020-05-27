@@ -1023,9 +1023,9 @@ void ImportMailJob::restoreIdentity()
                         }
                     }
                 }
-                QString name = group.readEntry(QStringLiteral("Name"));
+                QString name = uniqueIdentityName(group.readEntry(QStringLiteral("Name")));
 
-                KIdentityManagement::Identity *identity = &mIdentityManager->newFromScratch(uniqueIdentityName(name));
+                KIdentityManagement::Identity *identity = &mIdentityManager->newFromScratch(name);
                 group.writeEntry(QStringLiteral("Name"), name);
                 group.sync();
 
