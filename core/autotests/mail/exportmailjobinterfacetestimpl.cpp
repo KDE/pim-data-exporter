@@ -72,7 +72,7 @@ QVector<MailCommon::MailFilter *> ExportMailJobInterfaceTestImpl::filters()
 
 void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    SaveResoureConfigTest saveResourceConfig;
+    SaveResourceConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
     saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceMailArchiveName(),
                                                { QLatin1String("akonadi_maildir_resource_"), QLatin1String("akonadi_mixedmaildir_resource_")});

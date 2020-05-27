@@ -22,10 +22,10 @@
 
 #include <KZip>
 
-class SaveResoureConfigTest
+class SaveResourceConfigTest
 {
 public:
-    SaveResoureConfigTest();
+    SaveResourceConfigTest();
     KZip *archive() const;
     void setArchive(KZip *archive);
 

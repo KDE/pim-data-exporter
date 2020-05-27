@@ -51,7 +51,7 @@ QString ExportCalendarsJobInterfaceTestImpl::convertToFullCollectionPath(const q
 void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
     qDebug() << " void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << identifier;
-    SaveResoureConfigTest saveResourceConfig;
+    SaveResourceConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
     saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceCalendarArchiveName(), { QLatin1String("akonadi_icaldir_resource_")});
     slotCalendarJobTerminated();

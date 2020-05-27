@@ -41,7 +41,7 @@ Akonadi::Collection::Id ExportAddressbookJobInterfaceTestImpl::convertFolderPath
 
 void ExportAddressbookJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    SaveResoureConfigTest saveResourceConfig;
+    SaveResourceConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
     saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceAddressbookArchiveName(),
                                                { QLatin1String("akonadi_vcarddir_resource_"), QLatin1String("akonadi_contacts_resource_") });

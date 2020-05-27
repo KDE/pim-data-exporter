@@ -47,7 +47,7 @@ Akonadi::Collection::Id ExportAlarmJobInterfaceTestImpl::convertFolderPathToColl
 
 void ExportAlarmJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    SaveResoureConfigTest saveResourceConfig;
+    SaveResourceConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
     saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceAlarmArchiveName(), { QLatin1String("akonadi_kalarm_dir_resource_")});
     slotAlarmJobTerminated();

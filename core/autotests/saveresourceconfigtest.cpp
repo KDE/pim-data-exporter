@@ -22,21 +22,21 @@
 #include <QTest>
 #include <AkonadiCore/ServerManager>
 
-SaveResoureConfigTest::SaveResoureConfigTest()
+SaveResourceConfigTest::SaveResourceConfigTest()
 {
 }
 
-KZip *SaveResoureConfigTest::archive() const
+KZip *SaveResourceConfigTest::archive() const
 {
     return mArchive;
 }
 
-void SaveResoureConfigTest::setArchive(KZip *archive)
+void SaveResourceConfigTest::setArchive(KZip *archive)
 {
     mArchive = archive;
 }
 
-void SaveResoureConfigTest::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier, const QString &resourceArchiveName, const QStringList &resourceIdentifierTypes)
+void SaveResourceConfigTest::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier, const QString &resourceArchiveName, const QStringList &resourceIdentifierTypes)
 {
     QVERIFY(mArchive);
     bool typeIdentifierFound = false;
