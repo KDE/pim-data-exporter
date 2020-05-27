@@ -129,9 +129,8 @@ void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &id
     qDebug() << "importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) not implemented yet";
 }
 
-void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId)
+void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId)
 {
-    SmtpMailTransport smtpMailTransport(group);
     qDebug() << "ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId) not implement yet";
     qDebug() << " defaultTransport " << defaultTransport << " transportId " << transportId;
 }

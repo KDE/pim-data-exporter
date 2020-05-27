@@ -22,6 +22,7 @@
 #include "importexportmailutil.h"
 #include "resourceconverterimpl.h"
 #include "pimdataexportcore_debug.h"
+#include "smtpmailtransport.h"
 
 #include <MailCommon/FilterImporterExporter>
 #include <MailCommon/MailUtil>
@@ -166,7 +167,8 @@ void ImportMailJobInterface::importMailTransport(const QString &tempDirName)
             const QString identifierValue = group.readEntry(identifierStr);
             importCustomMailTransport(identifierValue, group, defaultTransport, transportId);
         } else {
-            importSmtpMailTransport(group, defaultTransport, transportId);
+            SmtpMailTransport smtpMailTransport(group);
+            importSmtpMailTransport(smtpMailTransport, defaultTransport, transportId);
         }
     }
 }

@@ -30,6 +30,7 @@
 class KArchiveDirectory;
 class KArchiveFile;
 class ArchiveStorage;
+class SmtpMailTransport;
 namespace MailTransport {
 class Transport;
 }
@@ -61,7 +62,7 @@ protected:
     virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
     virtual void addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) = 0;
     virtual void importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) = 0;
-    virtual void importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId) = 0;
+    virtual void importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId) = 0;
 
     QHash<int, uint> mHashIdentity;
     QHash<int, int> mHashTransport;

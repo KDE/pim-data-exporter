@@ -134,9 +134,8 @@ void ImportMailJobInterfaceImpl::importCustomMailTransport(const QString &identi
     }
 }
 
-void ImportMailJobInterfaceImpl::importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId)
+void ImportMailJobInterfaceImpl::importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId)
 {
-    SmtpMailTransport smtpMailTransport(group);
     MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
     mt->setName(smtpMailTransport.name());
     mt->setHost(smtpMailTransport.host());
