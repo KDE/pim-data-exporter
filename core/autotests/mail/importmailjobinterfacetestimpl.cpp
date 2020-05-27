@@ -89,10 +89,11 @@ QString ImportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResour
 
 void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid)
 {
+    const QString uniqueName = uniqueIdentityName(name);
     qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet" << oldUid << " name " << name;
     KIdentityManagement::Identity identity;
     identity.setUoid(mIdentityUoid++);
-    group.writeEntry(QStringLiteral("Name"), name);
+    group.writeEntry(QStringLiteral("Name"), uniqueName);
     group.sync();
 
     identity.readConfig(group);
@@ -108,6 +109,20 @@ void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfig
     //TODO write identity ?
     //TODO log it.
     //mIdentityManager->commit();
+}
+
+QString ImportMailJobInterfaceTestImpl::uniqueIdentityName(const QString &name)
+{
+    QString newName(name);
+    int i = 0;
+
+    const QStringList existingIdentityNames{QStringLiteral("identity1"), QStringLiteral("identity2")};
+
+    while (!existingIdentityNames.contains(newName)) {
+        newName = QStringLiteral("%1_%2").arg(name).arg(i);
+        ++i;
+    }
+    return newName;
 }
 
 void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId)
