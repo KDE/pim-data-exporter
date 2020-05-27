@@ -87,8 +87,9 @@ QString ImportMailJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources,
 
 void ImportMailJobInterfaceImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentity, int oldUid)
 {
-    KIdentityManagement::Identity *identity = &mIdentityManager->newFromScratch(uniqueIdentityName(name));
-    group.writeEntry(QStringLiteral("Name"), name);
+    const QString uniqueName = uniqueIdentityName(name);
+    KIdentityManagement::Identity *identity = &mIdentityManager->newFromScratch(uniqueName);
+    group.writeEntry(QStringLiteral("Name"), uniqueName);
     group.sync();
 
     identity->readConfig(group);
