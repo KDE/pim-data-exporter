@@ -47,7 +47,6 @@ protected:
     void importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId) override;
 private:
     uint mIdentityUoid = 1;
-
 };
 
 #endif // IMPORTMAILJOBINTERFACETESTIMPL_H

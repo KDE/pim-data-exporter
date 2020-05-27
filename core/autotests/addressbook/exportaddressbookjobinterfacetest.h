@@ -22,7 +22,6 @@
 
 #include <QObject>
 
-
 class ExportAddressbookJobInterfaceTest : public QObject
 {
     Q_OBJECT

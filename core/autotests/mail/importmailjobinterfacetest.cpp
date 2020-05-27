@@ -26,7 +26,6 @@
 #include <QTest>
 QTEST_MAIN(ImportMailJobInterfaceTest)
 
-
 ImportMailJobInterfaceTest::ImportMailJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
@@ -67,5 +66,3 @@ void ImportMailJobInterfaceTest::importMail()
     delete impl;
     delete file;
 }
-
-

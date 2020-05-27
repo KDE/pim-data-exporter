@@ -25,7 +25,6 @@
 #include <QTest>
 QTEST_MAIN(ImportAkregatorJobInterfaceTest)
 
-
 ImportAkregatorJobInterfaceTest::ImportAkregatorJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

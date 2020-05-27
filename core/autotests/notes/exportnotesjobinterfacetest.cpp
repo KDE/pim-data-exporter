@@ -27,7 +27,6 @@
 
 QTEST_MAIN(ExportNotesJobInterfaceTest)
 
-
 ExportNotesJobInterfaceTest::ExportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

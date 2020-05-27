@@ -22,8 +22,6 @@
 
 #include <QObject>
 
-
-
 class ExportAkregatorJobInterfaceTest : public QObject
 {
     Q_OBJECT

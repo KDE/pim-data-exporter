@@ -22,7 +22,6 @@
 
 #include <QObject>
 
-
 class ExportAlarmJobInterfaceTest : public QObject
 {
     Q_OBJECT

@@ -22,7 +22,6 @@
 
 #include <QObject>
 
-
 class ImportAlarmJobInterfaceTest : public QObject
 {
     Q_OBJECT

@@ -22,7 +22,6 @@
 
 #include <QObject>
 
-
 class ImportNotesJobInterfaceTest : public QObject
 {
     Q_OBJECT

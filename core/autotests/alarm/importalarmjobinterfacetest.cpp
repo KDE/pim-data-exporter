@@ -25,7 +25,6 @@
 #include <QTest>
 QTEST_MAIN(ImportAlarmJobInterfaceTest)
 
-
 ImportAlarmJobInterfaceTest::ImportAlarmJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

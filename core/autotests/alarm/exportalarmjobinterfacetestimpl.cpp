@@ -92,4 +92,3 @@ QString ExportAlarmJobInterfaceTestImpl::createResource(const QString &resources
     Q_UNREACHABLE();
     return {};
 }
-

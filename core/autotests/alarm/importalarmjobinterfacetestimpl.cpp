@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "importalarmjobinterfacetestimpl.h"
 #include "archivestorage.h"
 #include "resourceconvertertest.h"

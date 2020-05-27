@@ -24,7 +24,6 @@
 
 QTEST_MAIN(ExportAddressbookJobInterfaceTest)
 
-
 ExportAddressbookJobInterfaceTest::ExportAddressbookJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

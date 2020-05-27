@@ -20,7 +20,6 @@
 #ifndef EXPORTADDRESSBOOKJOBINTERFACETESTIMPL_H
 #define EXPORTADDRESSBOOKJOBINTERFACETESTIMPL_H
 
-
 #include "addressbook/exportaddressbookjobinterface.h"
 #include "exportimportutil.h"
 class ExportAddressbookJobInterfaceTestImpl : public ExportAddressbookJobInterface, public ExportImportUtil

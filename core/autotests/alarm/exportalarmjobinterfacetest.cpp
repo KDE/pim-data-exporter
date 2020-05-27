@@ -27,8 +27,6 @@
 
 QTEST_MAIN(ExportAlarmJobInterfaceTest)
 
-
-
 ExportAlarmJobInterfaceTest::ExportAlarmJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

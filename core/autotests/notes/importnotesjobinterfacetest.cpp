@@ -25,7 +25,6 @@
 #include <QTest>
 QTEST_MAIN(ImportNotesJobInterfaceTest)
 
-
 ImportNotesJobInterfaceTest::ImportNotesJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

@@ -27,7 +27,6 @@
 
 QTEST_MAIN(ExportAkregatorJobInterfaceTest)
 
-
 ExportAkregatorJobInterfaceTest::ExportAkregatorJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

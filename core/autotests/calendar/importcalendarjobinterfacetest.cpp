@@ -25,7 +25,6 @@
 #include <QTest>
 QTEST_MAIN(ImportCalendarJobInterfaceTest)
 
-
 ImportCalendarJobInterfaceTest::ImportCalendarJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {

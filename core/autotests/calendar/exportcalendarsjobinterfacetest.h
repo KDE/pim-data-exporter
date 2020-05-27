@@ -22,8 +22,6 @@
 
 #include <QObject>
 
-
-
 class ExportCalendarsJobInterfaceTest : public QObject
 {
     Q_OBJECT

@@ -26,7 +26,6 @@
 
 QTEST_MAIN(ExportMailJobInterfaceTest)
 
-
 ExportMailJobInterfaceTest::ExportMailJobInterfaceTest(QObject *parent)
     : QObject(parent)
 {
