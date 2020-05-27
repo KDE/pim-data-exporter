@@ -53,6 +53,7 @@ void ImportCalendarJobInterfaceTest::importCalendar()
     file->setExcludePath(Utils::calendarPath());
     ImportCalendarJobInterfaceTestImpl *impl = new ImportCalendarJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
+    impl->setExtractPath(file->extractPath());
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

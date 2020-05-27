@@ -34,7 +34,6 @@ ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, 
 
 ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 {
-    //Clean up temp repo. FIXME !
     QVERIFY(QDir(extractPath()).removeRecursively());
 }
 
