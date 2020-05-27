@@ -18,55 +18,11 @@
 */
 
 #include "importaddressbookjobinterfacetest.h"
-#include "archivestorage.h"
-#include "resourceconvertertest.h"
+#include "importaddressbookjobinterfacetestimpl.h"
 #include "testimportfile.h"
 #include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportAddressbookJobInterfaceTest)
-
-ImportAddressbookJobInterfaceTestImpl::ImportAddressbookJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
-    : ImportAddressbookJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
-{
-}
-
-ImportAddressbookJobInterfaceTestImpl::~ImportAddressbookJobInterfaceTestImpl()
-{
-    //Clean up temp repo
-     QVERIFY(QDir(extractPath()).removeRecursively());
-}
-
-Akonadi::Collection::Id ImportAddressbookJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
-{
-    ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(mPathConfig);
-    return resourceConverterTest.convertFolderPathToCollectionId(path);
-}
-
-QString ImportAddressbookJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
-{
-    return mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
-}
-
-void ImportAddressbookJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
-{
-    mLogCreateResource->logSynchronizeResource(lst);
-    slotNextStep();
-}
-
-QString ImportAddressbookJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
-{
-    ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(mPathConfig);
-    return resourceConverterTest.adaptResourcePath(resourceConfig, storedData);
-}
-
-QString ImportAddressbookJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
-{
-    ResourceConverterTest resourceConverterTest;
-    resourceConverterTest.setTestPath(mPathConfig);
-    return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
-}
 
 ImportAddressbookJobInterfaceTest::ImportAddressbookJobInterfaceTest(QObject *parent)
     : QObject(parent)

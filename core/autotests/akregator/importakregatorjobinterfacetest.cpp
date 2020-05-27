@@ -18,33 +18,13 @@
 */
 
 #include "importakregatorjobinterfacetest.h"
+#include "importakregatorjobinterfacetestimpl.h"
 #include "archivestorage.h"
-#include "resourceconvertertest.h"
 #include "testimportfile.h"
 #include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(ImportAkregatorJobInterfaceTest)
 
-ImportAkregatorJobInterfaceTestImpl::ImportAkregatorJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
-    : ImportAkregatorJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
-{
-}
-
-ImportAkregatorJobInterfaceTestImpl::~ImportAkregatorJobInterfaceTestImpl()
-{
-}
-
-Akonadi::Collection::Id ImportAkregatorJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
-{
-    Q_UNREACHABLE();
-    return -1;
-}
-
-QString ImportAkregatorJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
-{
-    Q_UNREACHABLE();
-    return {};
-}
 
 ImportAkregatorJobInterfaceTest::ImportAkregatorJobInterfaceTest(QObject *parent)
     : QObject(parent)

@@ -1,6 +1,6 @@
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
-set( exportcalendarsjobinterfacetest_SRCS exportcalendarsjobinterfacetest.cpp)
+set( exportcalendarsjobinterfacetest_SRCS exportcalendarsjobinterfacetest.cpp exportcalendarsjobinterfacetestimpl.cpp)
 
 add_executable( exportcalendarsjobinterfacetest ${exportcalendarsjobinterfacetest_SRCS})
 add_test(NAME exportcalendarsjobinterfacetest COMMAND exportcalendarsjobinterfacetest)
@@ -9,7 +9,7 @@ target_link_libraries(exportcalendarsjobinterfacetest Qt5::Test pimdataexporterp
 
 #####
 
-set( importcalendarjobinterfacetest_SRCS importcalendarjobinterfacetest.cpp)
+set( importcalendarjobinterfacetest_SRCS importcalendarjobinterfacetest.cpp importcalendarjobinterfacetestimpl.cpp)
 
 add_executable( importcalendarjobinterfacetest ${importcalendarjobinterfacetest_SRCS})
 add_test(NAME importcalendarjobinterfacetest COMMAND importcalendarjobinterfacetest)

@@ -22,19 +22,7 @@
 
 #include <QObject>
 
-#include "akregator/importakregatorjobinterface.h"
 
-class ImportAkregatorJobInterfaceTestImpl : public ImportAkregatorJobInterface
-{
-    Q_OBJECT
-public:
-    explicit ImportAkregatorJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportAkregatorJobInterfaceTestImpl();
-
-protected:
-    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
-    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
-};
 
 class ImportAkregatorJobInterfaceTest : public QObject
 {

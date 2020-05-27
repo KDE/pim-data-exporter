@@ -18,36 +18,15 @@
 */
 
 #include "exportakregatorjobinterfacetest.h"
+#include "exportakregatorjobinterfacetestimpl.h"
 #include "archivestorage.h"
-#include "resourceconvertertest.h"
 #include "testexportfile.h"
-#include "compareexportfile.h"
 #include <QDebug>
 #include <QTest>
 #include <QSignalSpy>
 
 QTEST_MAIN(ExportAkregatorJobInterfaceTest)
 
-ExportAkregatorJobInterfaceTestImpl::ExportAkregatorJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
-    : ExportAkregatorJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
-{
-}
-
-ExportAkregatorJobInterfaceTestImpl::~ExportAkregatorJobInterfaceTestImpl()
-{
-}
-
-QString ExportAkregatorJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
-{
-    Q_UNREACHABLE();
-    return {};
-}
-
-QString ExportAkregatorJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
-{
-    Q_UNREACHABLE();
-    return {};
-}
 
 ExportAkregatorJobInterfaceTest::ExportAkregatorJobInterfaceTest(QObject *parent)
     : QObject(parent)

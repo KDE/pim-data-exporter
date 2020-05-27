@@ -1,6 +1,6 @@
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
-set( exportakregatorjobinterfacetest_SRCS exportakregatorjobinterfacetest.cpp)
+set( exportakregatorjobinterfacetest_SRCS exportakregatorjobinterfacetest.cpp exportakregatorjobinterfacetestimpl.cpp)
 
 add_executable( exportakregatorjobinterfacetest ${exportakregatorjobinterfacetest_SRCS})
 add_test(NAME exportakregatorjobinterfacetest COMMAND exportakregatorjobinterfacetest)
@@ -9,7 +9,7 @@ target_link_libraries(exportakregatorjobinterfacetest Qt5::Test pimdataexporterp
 
 #####
 
-set( importakregatorjobinterfacetest_SRCS importakregatorjobinterfacetest.cpp)
+set( importakregatorjobinterfacetest_SRCS importakregatorjobinterfacetest.cpp importakregatorjobinterfacetestimpl.cpp)
 
 add_executable( importakregatorjobinterfacetest ${importakregatorjobinterfacetest_SRCS})
 add_test(NAME importakregatorjobinterfacetest COMMAND importakregatorjobinterfacetest)

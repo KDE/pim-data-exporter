@@ -17,21 +17,21 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef IMPORTCALENDARJOBINTERFACETEST_H
-#define IMPORTCALENDARJOBINTERFACETEST_H
+#ifndef IMPORTAKREGATORJOBINTERFACETESTIMPL_H
+#define IMPORTAKREGATORJOBINTERFACETESTIMPL_H
 
-#include <QObject>
+#include "akregator/importakregatorjobinterface.h"
 
-
-class ImportCalendarJobInterfaceTest : public QObject
+class ImportAkregatorJobInterfaceTestImpl : public ImportAkregatorJobInterface
 {
     Q_OBJECT
 public:
-    explicit ImportCalendarJobInterfaceTest(QObject *parent = nullptr);
-    ~ImportCalendarJobInterfaceTest() = default;
-private Q_SLOTS:
-    void importCalendar();
-    void importCalendar_data();
+    explicit ImportAkregatorJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
+    ~ImportAkregatorJobInterfaceTestImpl();
+
+protected:
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };
 
-#endif // IMPORTCALENDARJOBINTERFACETEST_H
+#endif // IMPORTAKREGATORJOBINTERFACETESTIMPL_H

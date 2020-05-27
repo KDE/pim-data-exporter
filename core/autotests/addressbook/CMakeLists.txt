@@ -1,6 +1,6 @@
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
-set( exportaddressbookjobinterfacetest_SRCS exportaddressbookjobinterfacetest.cpp)
+set( exportaddressbookjobinterfacetest_SRCS exportaddressbookjobinterfacetest.cpp exportaddressbookjobinterfacetestimpl.cpp)
 
 add_executable( exportaddressbookjobinterfacetest ${exportaddressbookjobinterfacetest_SRCS})
 add_test(NAME exportaddressbookjobinterfacetest COMMAND exportaddressbookjobinterfacetest)
@@ -8,7 +8,7 @@ ecm_mark_as_test(exportaddressbookjobinterfacetest)
 target_link_libraries(exportaddressbookjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
 #####
 
-set( importaddressbookjobinterfacetest_SRCS importaddressbookjobinterfacetest.cpp)
+set( importaddressbookjobinterfacetest_SRCS importaddressbookjobinterfacetest.cpp importaddressbookjobinterfacetestimpl.cpp)
 
 add_executable( importaddressbookjobinterfacetest ${importaddressbookjobinterfacetest_SRCS})
 add_test(NAME importaddressbookjobinterfacetest COMMAND importaddressbookjobinterfacetest)

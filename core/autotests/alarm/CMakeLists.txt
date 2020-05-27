@@ -1,6 +1,6 @@
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
-set( exportalarmjobinterfacetest_SRCS exportalarmjobinterfacetest.cpp)
+set( exportalarmjobinterfacetest_SRCS exportalarmjobinterfacetest.cpp exportalarmjobinterfacetestimpl.cpp)
 
 add_executable( exportalarmjobinterfacetest ${exportalarmjobinterfacetest_SRCS})
 add_test(NAME exportalarmjobinterfacetest COMMAND exportalarmjobinterfacetest)
@@ -9,7 +9,7 @@ target_link_libraries(exportalarmjobinterfacetest Qt5::Test pimdataexporterpriva
 
 #####
 
-set( importalarmjobinterfacetest_SRCS importalarmjobinterfacetest.cpp)
+set( importalarmjobinterfacetest_SRCS importalarmjobinterfacetest.cpp importalarmjobinterfacetestimpl.cpp)
 
 add_executable( importalarmjobinterfacetest ${importalarmjobinterfacetest_SRCS})
 add_test(NAME importalarmjobinterfacetest COMMAND importalarmjobinterfacetest)
