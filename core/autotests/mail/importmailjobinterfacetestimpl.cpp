@@ -40,7 +40,6 @@ ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 void ImportMailJobInterfaceTestImpl::start()
 {
     QDir().mkpath(extractPath());
-    //Create temporary file for identities
     ImportMailJobInterface::start();
 }
 
@@ -88,6 +87,7 @@ QString ImportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResour
 
 void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid)
 {
+    //TODO order ????
     //qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet" << oldUid << " name " << name;
     const QString uniqueName = uniqueIdentityName(name);
     KIdentityManagement::Identity identity;
