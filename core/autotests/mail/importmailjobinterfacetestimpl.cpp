@@ -117,7 +117,7 @@ QString ImportMailJobInterfaceTestImpl::uniqueIdentityName(const QString &name)
 
     const QStringList existingIdentityNames{QStringLiteral("identity1"), QStringLiteral("identity2")};
 
-    while (!existingIdentityNames.contains(newName)) {
+    while (existingIdentityNames.contains(newName)) {
         newName = QStringLiteral("%1_%2").arg(name).arg(i);
         ++i;
     }
