@@ -136,4 +136,20 @@ void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTrans
 {
     qDebug() << "ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId) not implement yet";
     qDebug() << " defaultTransport " << defaultTransport << " transportId " << transportId;
+    KConfig config(QStringLiteral("/tmp/mailtransport/config/mailtransports"));
+#if 0
+    smtpMailTransport.name();
+    smtpMailTransport.host();
+    smtpMailTransport.port();
+    smtpMailTransport.userName();
+    smtpMailTransport.precommand();
+    smtpMailTransport.requiresAuthentication();
+    smtpMailTransport.specifyHostname();
+    smtpMailTransport.localHostname();
+    smtpMailTransport.specifySenderOverwriteAddress();
+    smtpMailTransport.storePassword();
+    smtpMailTransport.senderOverwriteAddress();
+    smtpMailTransport.encryption();
+    smtpMailTransport.authenticationType();
+#endif
 }
