@@ -88,26 +88,29 @@ QString ImportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResour
 
 void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid)
 {
+    //qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet" << oldUid << " name " << name;
     const QString uniqueName = uniqueIdentityName(name);
-    qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet" << oldUid << " name " << name;
     KIdentityManagement::Identity identity;
-    identity.setUoid(mIdentityUoid++);
+    uint value = mIdentityUoid;
+    mIdentityUoid++;
+    identity.setUoid(value);
     group.writeEntry(QStringLiteral("Name"), uniqueName);
     group.sync();
+
+    //TODO ????
+    KConfig config(QStringLiteral("/tmp/identities//identities/emailidentities"));
 
     identity.readConfig(group);
 
     if (oldUid != -1) {
         mHashIdentity.insert(oldUid, identity.uoid());
         if (oldUid == defaultIdentities) {
-            //TODO
-            //mIdentityManager->setAsDefault(identity->uoid());
+            KConfigGroup grpGeneral = config.group(QStringLiteral("General"));
+            grpGeneral.writeEntry("Default Identity", identity.uoid());
         }
     }
-//    identity.writeConfig();
-    //TODO write identity ?
-    //TODO log it.
-    //mIdentityManager->commit();
+    KConfigGroup grp = config.group(QStringLiteral("Identity #%1").arg(value-1));
+    identity.writeConfig(grp);
 }
 
 QString ImportMailJobInterfaceTestImpl::uniqueIdentityName(const QString &name)
