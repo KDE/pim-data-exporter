@@ -866,8 +866,9 @@ void ImportMailJobInterface::restoreIdentity()
             KConfigGroup general = identityConfig->group(QStringLiteral("General"));
             const int defaultIdentity = general.readEntry(QStringLiteral("Default Identity"), -1);
 
-            const QStringList identityList = identityConfig->groupList().filter(QRegularExpression(QStringLiteral("Identity #\\d+")));
-            for (const QString &identityStr : identityList) {
+            QStringList identityList = identityConfig->groupList().filter(QRegularExpression(QStringLiteral("Identity #\\d+")));
+            std::sort(identityList.begin(), identityList.end());
+            for (const QString &identityStr : qAsConst(identityList)) {
                 KConfigGroup group = identityConfig->group(identityStr);
                 int oldUid = -1;
                 const QString uidStr(QStringLiteral("uoid"));
