@@ -34,7 +34,7 @@ ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, 
 
 ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 {
-    QVERIFY(QDir(extractPath()).removeRecursively());
+    //QVERIFY(QDir(extractPath()).removeRecursively());
 }
 
 void ImportMailJobInterfaceTestImpl::start()
@@ -137,19 +137,40 @@ void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTrans
     qDebug() << "ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const KConfigGroup &group, int defaultTransport, int transportId) not implement yet";
     qDebug() << " defaultTransport " << defaultTransport << " transportId " << transportId;
     KConfig config(QStringLiteral("/tmp/mailtransport/config/mailtransports"));
-#if 0
-    smtpMailTransport.name();
-    smtpMailTransport.host();
-    smtpMailTransport.port();
-    smtpMailTransport.userName();
-    smtpMailTransport.precommand();
-    smtpMailTransport.requiresAuthentication();
-    smtpMailTransport.specifyHostname();
-    smtpMailTransport.localHostname();
-    smtpMailTransport.specifySenderOverwriteAddress();
-    smtpMailTransport.storePassword();
-    smtpMailTransport.senderOverwriteAddress();
-    smtpMailTransport.encryption();
-    smtpMailTransport.authenticationType();
-#endif
+    //TODO use transportId ?
+    const int transportValue = mMailTransportId;
+    mMailTransportId++;
+    KConfigGroup grp = config.group(QStringLiteral("Transport %1").arg(transportValue));
+
+    const auto name = smtpMailTransport.name();
+    grp.writeEntry(QStringLiteral("name"), name);
+    const auto host = smtpMailTransport.host();
+    grp.writeEntry(QStringLiteral("host"), host);
+    const auto port = smtpMailTransport.port();
+    grp.writeEntry(QStringLiteral("port"), port);
+    const auto userName = smtpMailTransport.userName();
+    grp.writeEntry(QStringLiteral("userName"), userName);
+    const auto precommand = smtpMailTransport.precommand();
+    grp.writeEntry(QStringLiteral("precommand"), precommand);
+    const auto requiresAuthentication = smtpMailTransport.requiresAuthentication();
+    grp.writeEntry(QStringLiteral("requiresAuthentication"), requiresAuthentication);
+    const auto specifyHostname = smtpMailTransport.specifyHostname();
+    grp.writeEntry(QStringLiteral("specifyHostname"), specifyHostname);
+    const auto localHostname = smtpMailTransport.localHostname();
+    grp.writeEntry(QStringLiteral("localHostname"), localHostname);
+    const auto specifySenderOverwriteAddress = smtpMailTransport.specifySenderOverwriteAddress();
+    grp.writeEntry(QStringLiteral("specifySenderOverwriteAddress"), specifySenderOverwriteAddress);
+    const auto storePassword = smtpMailTransport.storePassword();
+    grp.writeEntry(QStringLiteral("storePassword"), storePassword);
+    const auto senderOverwriteAddress = smtpMailTransport.senderOverwriteAddress();
+    grp.writeEntry(QStringLiteral("senderOverwriteAddress"), senderOverwriteAddress);
+    const auto encryption = smtpMailTransport.encryption();
+    grp.writeEntry(QStringLiteral("encryption"), encryption);
+    const auto authenticationType = smtpMailTransport.authenticationType();
+    grp.writeEntry(QStringLiteral("authenticationType"), authenticationType);
+
+    if (transportId == defaultTransport) {
+        KConfigGroup generalGrp = config.group(QStringLiteral("General"));
+        generalGrp.writeEntry(QStringLiteral("default-transport"), transportValue);
+    }
 }

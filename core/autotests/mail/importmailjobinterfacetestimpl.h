@@ -48,6 +48,7 @@ protected:
 private:
     Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
     uint mIdentityUoid = 1;
+    uint mMailTransportId = 1;
 };
 
 #endif // IMPORTMAILJOBINTERFACETESTIMPL_H

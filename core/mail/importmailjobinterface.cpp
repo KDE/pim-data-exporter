@@ -154,8 +154,9 @@ void ImportMailJobInterface::importMailTransport(const QString &tempDirName)
         defaultTransport = group.readEntry(QStringLiteral("default-transport"), -1);
     }
 
-    const QStringList transportList = transportConfig->groupList().filter(QRegularExpression(QStringLiteral("Transport \\d+")));
-    for (const QString &transport : transportList) {
+    QStringList transportList = transportConfig->groupList().filter(QRegularExpression(QStringLiteral("Transport \\d+")));
+    std::sort(transportList.begin(), transportList.end());
+    for (const QString &transport : qAsConst(transportList)) {
         KConfigGroup group = transportConfig->group(transport);
         const int transportId = group.readEntry(QStringLiteral("id"), -1);
         if (transportId == -1) {
