@@ -230,6 +230,8 @@ Size=870,649
 Size=588,545
 
 [Folder-foo/bla bla/bli118]
+Identity=221194058
+UseDefaultIdentity=false
 htmlLoadExternalOverride=true
 
 [Folder-foo/bla bla/bli1247]

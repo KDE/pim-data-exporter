@@ -3,3 +3,5 @@ information/VERSION_2
 information/exportdatatype.xml
 configs/foldermailarchiverc
 configs/templatesconfigurationrc
+configs/akonadi_archivemail_agentrc
+configs/kabldaprc
