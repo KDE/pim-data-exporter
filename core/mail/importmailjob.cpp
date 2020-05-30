@@ -1196,6 +1196,12 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
             KConfigGroup oldGroup = kmailConfig->group(str);
             ImportExportMailUtil::cleanupFolderSettings(oldGroup);
             if (!oldGroup.groupList().isEmpty()) {
+                if (oldGroup.hasKey(QStringLiteral("Identity"))) {
+                    const int identity = oldGroup.readEntry(QStringLiteral("Identity"), -1);
+                    if (identity != -1) {
+                        oldGroup.writeEntry(QStringLiteral("Identity"), mHashIdentity.value(identity));
+                    }
+                }
                 const Akonadi::Collection::Id id = convertPathToId(path);
                 if (id != -1) {
                     KConfigGroup newGroup(kmailConfig, folderGroupPattern + QString::number(id));
