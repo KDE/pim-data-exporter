@@ -63,10 +63,6 @@ void TestImportFile::start()
     QSignalSpy error(mAbstractImportExportJob, &AbstractImportExportJob::error);
     mAbstractImportExportJob->start();
     QVERIFY(finish.wait());
-    if (error.count()) {
-        qDebug() << error.at(0);
-    }
-    QCOMPARE(error.count(), 0);
     delete mArchiveStorage;
     mArchiveStorage = nullptr;
 
@@ -81,6 +77,11 @@ void TestImportFile::start()
     file.setLoggingFilePath(mLoggingFilePath);
     file.setListFilePath(mPathConfig);
     file.compare();
+
+    if (error.count()) {
+        qDebug() << error.at(0);
+    }
+    QCOMPARE(error.count(), 0);
 
 #ifdef REMOVE_TEMPORARY_DIR
     QVERIFY(QDir(mExtractPath).removeRecursively());
