@@ -1,0 +1,1032 @@
+[$Version]
+update_info=kmail.upd:1,kmail.upd:4,kmail.upd:5,kmail.upd:6,kmail.upd:7,kmail.upd:8,kmail.upd:9,kmail.upd:3.1-update-identities,kmail.upd:3.1-use-identity-uoids,kmail.upd:3.1-new-mail-notification,kmail.upd:3.2-update-loop-on-goto-unread-settings,kmail.upd:3.1.4-dont-use-UOID-0-for-any-identity,kmail.upd:3.2-misc,kmail.upd:3.2-moves,kmail.upd:3.3-use-ID-for-accounts,kmail.upd:3.3-update-filter-rules,kmail.upd:3.3-move-identities-to-own-file,kmail.upd:3.3-aegypten-kpgprc-to-kmailrc,kmail.upd:3.3-misc,kmail.upd:3.3b1-misc,kmail.upd:3.4,kmail.upd:3.4a,kmail.upd:3.4b,kmail.upd:3.4.1,kmail.upd:3.5.4,kmail.upd:3.5.7-imap-flag-migration,kmail.upd:4.0-misc,kmail.upd:4.2,kmail.upd:4.4-akonadi,kmail.upd:4.12,kmail.upd:4.13.2,newmailnotifier.upd:initial-newmailnotifier-migration,grantleetheme.upd:initial-grantlee-theme-migration,mailfilteragent.upd:initial-mailfilteragent-migration,messageviewer.upd:messageviewer_move_gravatar,webengineurlinterceptoradblock.upd:webengineurlinterceptoradblock_move_settings
+
+[AccountConfigOrderDialog]
+Size=600,400
+
+[AccountOrder]
+order=akonadi_maildir_resource_9,akonadi_kolab_resource_8
+
+[AdBlockHeaders]
+HeaderState=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\xa8\x00\x00\x00\x03\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00T\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00\xba\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01\xbe\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x010\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\xff\xff\xff\xff
+
+[AddHostDialog]
+Size=600,632
+
+[AddTransportDialog]
+Size=318,300
+
+[AddressLineEdit]
+AutoGroupExpand=true
+ShowOU=true
+
+[AgentTypeDialog]
+Size=856,371
+
+[AnnotationEditDialog]
+Size=346,311
+
+[AttachmentView]
+State=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x03\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x84\x00\x00\x00\x08\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00\xc8\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\xff\xff\xff\xff
+
+[AuditLogViewer]
+Size=1520,516
+
+[AutoCreateScriptDialog]
+Size=815,600
+mainSplitter=195,444
+
+[AutoResizeImage]
+FilterRecipientType=ResizeOneEmailContainsPattern
+maximum-height=240
+maximum-width=240
+minimum-height=240
+minimum-width=240
+reduce-image-to-maximum=false
+write-format=JPG
+
+[Autocorrect]
+add-non-breaking-space=true
+advanced-autocorrect=true
+auto-bold-underline=true
+auto-fractions=true
+capitalize-week-days=true
+enabled=true
+fix-two-upper-case-chars=true
+super-script=true
+upper-case-first-char-of-sentence=true
+
+[Automatic Add Contacts]
+Collection=2111
+Enabled=true
+
+[Automatic Add Contacts 10]
+Collection=foo/bla bla/bli3840
+Enabled=false
+
+[Automatic Add Contacts 11]
+Collection=foo/bla bla/bli3840
+Enabled=false
+
+[Automatic Add Contacts 12]
+Collection=foo/bla bla/bli3840
+Enabled=true
+
+[Behaviour]
+DelayedMarkAsRead=true
+
+[Check Before Send]
+CheckDuplicatedEmails=true
+CheckSendAttachment=true
+SendPlainText=true
+SmtpDefinedInIdentity=true
+
+[CheckAttachmentDialog]
+Size=500,300
+
+[CheckDuplicateEmailsDialog]
+Size=500,300
+
+[CollectionFolderView]
+BrokenAccountColor=218,68,83
+Current=c3732
+Expansion=c4035,c3729,c3731,c3788,c3793,c3796,c3798,c3827,c2652,c2653,c2741,c2716,c2809,c2709,c2654,c2766,c4066,c2758,c2907,c2764
+HeaderState=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x0e\x00\x00\x00\x03\x00\x00\x00\x01\x00\x00\x00(\x00\x00\x00\x02\x00\x00\x00(\x00\x00\x00\x03\x00\x00\x00d\x00\x00\x01Y\x00\x00\x00\x04\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x01Y\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x01N
+HorizontalScroll=0
+VerticalScroll=102
+
+[CollectionPropertiesDialog]
+Size=941,532
+
+[CompletionConfigureDialog]
+Size=600,400
+
+[Composer]
+CheckSendDefaultActionShortcut=true
+Height 1080=785
+Height 540=334
+PreviousDictionary=American English (United States)
+ShowSnippetManager=true
+SnippetSplitterPosition=1278,189
+State=AAAA/wAAAAD9AAAAAAAABbwAAAKoAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAGgAdABtAGwAVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAgAGQAaQByAGUAYwB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
+ToolBarsMovable=Disabled
+Width 1920=1468
+Width 960=636
+Window-Maximized 540x960=true
+autosave=1
+check-spelling-before-send=true
+confirm-before-send-when-use-shortcut=true
+current-transport=perso
+headers=-222
+pref-charsets=utf-8,iso-8859-1,us-ascii,locale
+previous-fcc=3734
+previous-identity=1
+showForgottenAttachmentWarning=true
+
+[ConfigureAgentsWidget]
+splitter=500,527
+
+[ConfigurePluginDialog]
+Size=1242,537
+
+[ConfigurePluginsWidget]
+splitter=599,598
+
+[Confirm Address]
+Domains=cvb
+Emails=dd
+Enabled=true
+
+[Confirm Address][Confirm Address ]
+Domains=xx
+Emails=vv
+
+[Confirm Address][Confirm Address 231896230]
+Domains=kde.org
+Emails=
+RejectDomain=true
+
+[DKIM]
+CheckIfEmailShouldBeSigned=true
+EnabledDkim=true
+PolicyRsaSha1=Warning
+SaveKey=SaveAndCompare
+UseAuthenticationResults=true
+UseDMarc=true
+VerifySignatureWhenOnlyTest=true
+
+[DKIM Key Record #2]
+Domain=kdab.com
+Key=v=DKIM1; k=rsa; s=email; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDKsR/vDU/d6+gFvamn6sg83T9+5OvB80QomtycOrxmTtxFOALVLVUjV7Rz8LNqXJd8uNtNUqsuNb+rRszg4NGKOGDnNB2D1gy3sVPSmfF/flrpCwBA28ryCsv1Th4oZhceVCurcHtYFmq58xmkVaAzRJYfnps6eJAOqdRApjGEGQIDAQAB
+Selector=dkim
+
+[DKIM Rule #0]
+Domain=wxvcwxvc
+Enabled=false
+From=wxvcwxvc
+List-Id=wxvc
+RuleType=3
+SignedDomainIdentifier=xwvc
+
+[DKIMAuthenticationVerifiedServerDialog]
+Size=600,400
+
+[DKIMConfigureDialog]
+Size=1243,400
+
+[DKIMKeyRecordWidget]
+Header=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\xa6\x00\x00\x00\x03\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x01s\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01\x8d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01\xa6\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x00T
+
+[DKIMManageRulesDialog]
+Header=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x94\x00\x00\x00\x07\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00.\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00T\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00T\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00T\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00T\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x8d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x89\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x00T
+Size=684,400
+
+[DKIMRuleDialog]
+Size=578,318
+
+[DeveloperToolDialog]
+Size=1370,771
+
+[DistributionListDialog]
+Header=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\xfb\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00T\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00T\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xa7\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x00T
+Size=1043,344
+
+[DownloadDialog Settings]
+Height 1080=477
+Width 1920=700
+
+[EmailAddressSelectionDialog]
+Size=652,347
+
+[EmailAddressSelectionLdapDialog]
+Size=792,254
+
+[Event]
+LastEventSelectedFolder=2747
+
+[External Composer]
+ComposerPath=gvim -f %f
+Enabled=false
+
+[FavoriteCollectionView]
+FavoriteCollectionViewHeight=105
+FavoriteCollectionViewMode=ListMode
+
+[FavoriteCollections]
+FavoriteCollectionIds=128,2338,2552,2724,2667
+FavoriteCollectionLabels=inbox (Local Folders),twitter (Local Folders),A-13-avril-2019 (Local Folders),TM-ddd (kolab),test-archive (kolab)
+
+[FavoriteCollectionsOrder]
+0=c128,c2552,c2338
+
+[FileDialogSize]
+Height 1080=686
+Width 1920=1162
+
+[FilterConvertToSieveResultDialog]
+Size=870,649
+
+[FilterSelectionDialog]
+Size=588,545
+
+[FolderSelectionDialog]
+LastSelectedFolder=2703
+Size=1151,571
+
+[Fonts]
+body-font=Sans Serif,15,-1,5,50,0,0,0,0,0
+composer-font=Sans Serif,15,-1,5,50,0,0,0,0,0
+defaultFonts=false
+fixed-font=DejaVu Sans Mono,12,-1,5,50,0,0,0,0,0,Book
+folder-font=Sans Serif,10,-1,5,50,0,0,0,0,0
+print-font=Sans Serif,10,-1,5,50,0,0,0,0,0
+quote1-font=Monospace,10,-1,5,50,0,0,0,0,0
+quote2-font=Monospace,10,-1,5,50,1,0,0,0,0
+quote3-font=Monospace,10,-1,5,50,2,0,0,0,0
+
+[General]
+AskEnableUnifiedMailboxes=false
+CloseToQuotaThreshold=2
+Enabled=true
+SystemTrayEnabled=true
+empty-trash-on-exit=true
+filters=31
+first-start=false
+startSpecificFolderAtStatup=false
+
+[General][DomainName]
+Domains=dvbcxvb
+
+[General][DomainName][WhiteList]
+Emails=xcvbcxvb
+
+[Geometry]
+ConfigureDialogHeight=869
+ConfigureDialogWidth=1356
+FolderTreeHeight=820
+FolderViewWidth=370
+Identity Dialog size=1105,562
+ReaderWindowHeight=593
+SearchAndHeaderHeight=332
+SearchAndHeaderWidth=1549
+SearchWidgetHeight=629
+SearchWidgetWidth=1343
+composer=1468,785
+filterDialogSize=1109,714
+
+[Grammalecte]
+grammalectepath=/compile/kde5/framework/kde/pim/grammalecte/grammalecte-cli.py
+options=
+pythonpath=/usr/bin/python3
+
+[GrammalecteConfigDialog]
+Size=500,300
+
+[Gravatar]
+FallbackToGravatar=true
+GravatarCacheSize=25
+GravatarHttpsSupport=true
+LibravatarSupportEnabled=true
+
+[IncompleteIndexDialog]
+Size=500,400
+
+[Internal]
+PreviousNewFeaturesMD5=iszdQzUXdey4RMTHvVGzfw==
+
+[InvalidFilterDialog]
+Size=825,500
+
+[KDIM Key Record #0]
+Domain=kde.org
+Key=v=DKIM1; k=rsa; s=email; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQD5KB/7OYdZVM7ZLsfjsycqE13NCSpFCXcKJcT2cdxHXi+RaBeS/GohVCQ6dINB7O8wJAYGA4avr/n70RF8TMGBQ1GrtoEPtCn6x7aGZr0glLZIQz58mT/rNecbQj19S4iuJR8IC3zpj6OIcLrAY7AqK5M9ax8Sb8pEMHdSVCNv2wIDAQAB
+Selector=transact
+
+[KDIM Key Record #1]
+Domain=kde.org
+Key=v=DKIM1; h=sha256; k=rsa; s=email; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5zpgWWyTFXq4jGmggkGvohUCqPqzEceEH/AkYRSGHMiFSkE3l59eCFnwoHynT/i5u8tmvcMfCM/Igb4Y11ls1z+SE7ZL9KmiCTgYxxVWXmKJnSqiYKND6UHxushOsBK2q8TDUbgCiaEWeyNVbWqHAYzG4Vplyp98CwkjlI7l0HMLqdw4XfMISGG5FezKWKwn7xIqh0RILyzI3v9jSdouKEMra6WW55HJDeyC8xNWnx2SeRUh7OLXQmf3mPS/ARjXdeNUxyTF0EBDAApcIEBWEKNuluaJ3zAgg5R1fAt6f8WfKCiBljbUl5CBAHLYb4QM6wscvXCwHhvzq08o1qdlwwIDAQAB
+Selector=lists
+
+[KFileDialog Settings]
+Height 1080=522
+Width 1920=960
+detailViewIconSize=0
+
+[KMKnotifyDialog]
+Size=503,638
+
+[Key Selection Dialog]
+Dialog size=742,536
+header=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\xce\x00\x00\x00\x02\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00h\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x02f\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x00T
+
+[LanguageTool]
+language=fr
+languagetoolpath=https://languagetool.org/api/v2
+useLocalInstance=false
+
+[LanguageToolConfigDialog]
+Size=500,300
+
+[MailSourceWebEngineViewer]
+Size=1276,723
+
+[Main Window]
+Height 1080=1015
+Height 540=507
+Height 768=551
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAOeAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1024=512
+Width 1920=1920
+Width 960=960
+Window-Maximized 1080x1920=true
+
+[MainFolderView]
+IconSize=22
+SortingPolicy=0
+ToolTipDisplayPolicy=0
+
+[ManageSieveScriptsDialog]
+Size=1014,556
+
+[Mardown]
+Enable Embedded Latex=false
+Enable Extra Definition Lists=false
+
+[MarkdownPreviewDialog]
+Size=1169,506
+
+[MessageListPane]
+currentIndex=0
+tabNumber=1
+
+[MessageListTab0]
+HeaderState=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x11\xec\xff\x01\x00\x00\x00\x0e\x00\x00\x00\x0c\x00\x00\x00\x16\x00\x00\x00\r\x00\x00\x00\x16\x00\x00\x00\x0e\x00\x00\x00\x16\x00\x00\x00\x0f\x00\x00\x00\x17\x00\x00\x00\x10\x00\x00\x00\x85\x00\x00\x00\x02\x00\x00\x00\x02\x00\x00\x00\x03\x00\x00\x00\x02\x00\x00\x00\x05\x00\x00\x00\x02\x00\x00\x00\x06\x00\x00\x00\x02\x00\x00\x00\x07\x00\x00\x00\x02\x00\x00\x00\x08\x00\x00\x00\x02\x00\x00\x00\t\x00\x00\x00\x02\x00\x00\x00\n\x00\x00\x004\x00\x00\x00\x0b\x00\x00\x00\x16\x00\x00\x05\xf8\x00\x00\x00\x11\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x02\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x11\x00\x00\x03\xda\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01\x10\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01\x0e\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x01\x00\x00\x01\r
+collectionId=3732
+
+[MessageListView]
+MessageToolTipEnabled=true
+TabsHaveCloseButton=true
+TagSelected=
+
+[MessageListView::Aggregations]
+Count=6
+Set0=0000cafe00001002000000180031003400330035003600340034003900350035002d003100000048004100630074006900760069007400e9002000610063007400750065006c006c0065002c002000660069006c002000640065002000640069007300630075007300730069006f006e0000020c00430065007400200061006600660069006300680061006700650020007500740069006c0069007300650020006400650073002000670072006f007500700065007300200064006500200064006100740065007300200069006e00740065006c006c006900670065006d006d0065006e00740020006400e900660069006e00690073002e0020004c006500730020006d00650073007300610067006500730020006e006500200073006f006e0074002000700061007300200061007300730065006d0062006c00e900730020007000610072002000660069006c002000640065002000640069007300630075007300730069006f006e002e00200050006100720020006500780065006d0070006c0065002c002000640061006e0073002000ab00a000410075006a006f007500720064002700680075006900a000bb002c00200076006f00750073002000740072006f00750076006500720065007a00200074006f007500730020006c006500730020006d006500730073006100670065007300200061007200720069007600e90073002000610075006a006f007500720064002700680075006900200065007400200074006f007500740020006c0065007300200066006c0075007800200071007500690020006f006e0074002000e9007400e900730020006100630074006900660073002000610075006a006f0075007200640027006800750069002e0100001009000000020000000000000000000000010000000300000001000000040000000000000000000000000000babe
+Set1=0000cafe00001002000000180031003400330035003600340034003900350035002d00320000003e004100630074006900760069007400e9002000610063007400750065006c006c0065002c0020006c0069007300740065002000730069006d0070006c0065000001d400430065007400200061006600660069006300680061006700650020007500740069006c0069007300650020006400650073002000670072006f007500700065007300200064006500200064006100740065007300200069006e00740065006c006c006900670065006d006d0065006e00740020006400e900660069006e00690073002e0020004c006500730020006d00650073007300610067006500730020006e006500200073006f006e0074002000700061007300200061007300730065006d0062006c00e900730020007000610072002000660069006c002000640065002000640069007300630075007300730069006f006e002e00200050006100720020006500780065006d0070006c0065002c002000640061006e00730020006c0065002000670072006f007500700065002000ab00a000410075006a006f007500720064002700680075006900a000bb002c00200076006f00750073002000740072006f00750076006500720065007a002000730069006d0070006c0065006d0065006e007400200074006f007500730020006c006500730020006d006500730073006100670065007300200061007200720069007600e90073002000610075006a006f0075007200640027006800750069002e0100001009000000020000000000000000000000010000000000000001000000000000000000000000000000000000babe
+Set2=0000cafe00001002000000180031003400330035003600340034003900350035002d003300000048004100630074006900760069007400e9002000700061007200200064006100740065002c002000660069006c002000640065002000640069007300630075007300730069006f006e0000025400430065007400200061006600660069006300680061006700650020007500740069006c0069007300650020006400650073002000670072006f00750070006500730020006a006f0075007200200070006100720020006a006f00750072002e0020004c006500730020006d006500730073006100670065007300200073006f006e007400200061007300730065006d0062006c00e900730020007000610072002000660069006c002000640065002000640069007300630075007300730069006f006e002e0020004c0065002000670072006f00750070006500200065007300740020006400e900660069006e006900200070006100720020006c00650020006d006500730073006100670065002000640027006f0072006900670069006e00650020006400650020006300680061007100750065002000660069006c002e00200050006100720020006500780065006d0070006c0065002c002000640061006e0073002000ab002000410075006a006f0075007200640027006800750069002000bb002c00200076006f00750073002000740072006f00750076006500720065007a00200074006f007500730020006c006500730020006d006500730073006100670065007300200061007200720069007600e90073002000610075006a006f007500720064002700680075006900200065007400200074006f007500740020006c0065007300200066006c0075007800200071007500690020006f006e0074002000e9007400e900730020006100630074006900660073002000610075006a006f0075007200640027006800750069002e0100001009000000010000000000000000000000010000000300000001000000040000000000000000000000000000babe
+Set3=0000cafe00001002000000180031003400330035003600340034003900350035002d00340000003e004100630074006900760069007400e9002000700061007200200064006100740065002c0020006c0069007300740065002000730069006d0070006c0065000001b000430065007400200061006600660069006300680061006700650020007500740069006c0069007300650020006400650073002000670072006f00750070006500730020006a006f0075007200200070006100720020006a006f00750072002e0020004c006500730020006d00650073007300610067006500730020006e006500200073006f006e0074002000700061007300200061007300730065006d0062006c00e900730020007000610072002000660069006c002000640065002000640069007300630075007300730069006f006e002e00200050006100720020006500780065006d0070006c0065002c002000640061006e00730020006c0065002000670072006f007500700065002000ab002000410075006a006f0075007200640027006800750069002000bb002c00200076006f00750073002000740072006f00750076006500720065007a002000730069006d0070006c0065006d0065006e007400200074006f007500730020006c006500730020006d006500730073006100670065007300200061007200720069007600e90073002000610075006a006f0075007200640027006800750069002e0100001009000000010000000000000000000000010000000000000000000000000000000000000000000000000000babe
+Set4=0000cafe00001002000000180031003400330035003600340034003900350035002d003500000036004c006900730074006500200064006500200064006900660066007500730069006f006e0020007300740061006e0064006100720064000000d60056006f0069006300690020006c00270061006600660069006300680061006700650020006400650020006c006900730074006500200064006500200064006900660066007500730069006f006e0020006200720075007400200065007400200061007200630068006100ef00710075006500a0003a0020007000610073002000640065002000670072006f007500700065002c0020007000610073002000640065002000660069006c0073002000640065002000640069007300630075007300730069006f006e0020006c006f007500720064002e0100001009000000000000000000000000000000000000000300000000000000040000000000000000000000000000babe
+Set5=0000cafe00001002000000180031003400330035003600340034003900350035002d00380000005800410075007400650075007200730020006400650020006c0027006f0072006900670069006e00650020006400270075006e002000660069006c0073002000640065002000640069007300630075007300730069006f006e0000010c004300650074002000610066006600690063006800610067006500200072006500670072006f0075007000650020006c006500730020006d006500730073006100670065007300200065006e002000660069006c0073002000640065002000640069007300630075007300730069006f006e00200065007400200063006c00610073007300650020006300650073002000660069006c007300200065006e00200066006f006e006300740069006f006e0020006400650020006c006100200070006500720073006f006e006e00650020006100790061006e00740020007200e900640069006700e90020006c0027006f0072006900670069006e0065002000640075002000660069006c002e0100001009000000030000000000000000000000000000000300000000000000000000000000000000000000010000babe
+Set6=0000cafe00001002000000180031003400330035003600340034003900350035002d00380000005800410075007400650075007200730020006400650020006c0027006f0072006900670069006e00650020006400270075006e002000660069006c0073002000640065002000640069007300630075007300730069006f006e0000010c004300650074002000610066006600690063006800610067006500200072006500670072006f0075007000650020006c006500730020006d006500730073006100670065007300200065006e002000660069006c0073002000640065002000640069007300630075007300730069006f006e00200065007400200063006c00610073007300650020006300650073002000660069006c007300200065006e00200066006f006e006300740069006f006e0020006400650020006c006100200070006500720073006f006e006e00650020006100790061006e00740020007200e900640069006700e90020006c0027006f0072006900670069006e0065002000640075002000660069006c002e0100001009000000030000000000000000000000000000000300000000000000000000000000000000000000010000babe
+Set7=0000cafe00001002000000180031003400330035003600340034003900350035002d00370000004e00450078007000e900640069007400650075007200a0002f002000640065007300740069006e006100740061006900720065002c0020006c0069007300740065002000730069006d0070006c00650000012c004300650074002000610066006600690063006800610067006500200072006500670072006f0075007000650020006c006500730020006d00650073007300610067006500730020007000610072002000650078007000e90064006900740065007500720020006f0075002000640065007300740069006e0061007400610069007200650020002800730065006c006f006e0020006c00650020007400790070006500200064007500200064006f007300730069006500720029002e0020004c006500730020006d00650073007300610067006500730020006e006500200073006f006e00740020007000610073002000670072006f0075007000e900730020007000610072002000660069006c002000640065002000640069007300630075007300730069006f006e002e0100001009000000030000000000000000000000000000000000000000000000000000000000000000000000010000babe
+
+[MessageListView::Colors]
+ImportantMessageColor=152,0,0
+TodoMessageColor=0,152,0
+UnreadMessageColor=0,0,255
+
+[MessageListView::Fonts]
+ImportantMessageFont=Sans Serif,15,-1,5,50,0,0,0,0,0
+TodoMessageFont=Sans Serif,15,-1,5,50,0,0,0,0,0
+UnreadMessageFont=Sans Serif,15,-1,5,50,0,0,0,0,0
+
+[MessageListView::StorageModelAggregations]
+DefaultSet=1435644955-3
+SetForStorageModel2079=1435644955-7
+
+[MessageListView::StorageModelSelectedMessages]
+MessageUniqueIdForStorageModel10:1119=276858
+MessageUniqueIdForStorageModel10:19=276805
+MessageUniqueIdForStorageModel2127:2134=404040
+MessageUniqueIdForStorageModel2132:2134=404064
+MessageUniqueIdForStorageModel2134:2144=401153
+MessageUniqueIdForStorageModelfoo/bla bla/bli10=271507
+MessageUniqueIdForStorageModelfoo/bla bla/bli100=15363
+MessageUniqueIdForStorageModelfoo/bla bla/bli1008=243675
+MessageUniqueIdForStorageModelfoo/bla bla/bli103=15391
+MessageUniqueIdForStorageModelfoo/bla bla/bli1057=280148
+MessageUniqueIdForStorageModelfoo/bla bla/bli1059=264152
+MessageUniqueIdForStorageModelfoo/bla bla/bli106=736384
+MessageUniqueIdForStorageModelfoo/bla bla/bli1060=280443
+MessageUniqueIdForStorageModelfoo/bla bla/bli1061=280751
+MessageUniqueIdForStorageModelfoo/bla bla/bli1065=280698
+MessageUniqueIdForStorageModelfoo/bla bla/bli1068=281130
+MessageUniqueIdForStorageModelfoo/bla bla/bli1069=280849
+MessageUniqueIdForStorageModelfoo/bla bla/bli1070=279553
+MessageUniqueIdForStorageModelfoo/bla bla/bli1103=139724
+MessageUniqueIdForStorageModelfoo/bla bla/bli1104=754332
+MessageUniqueIdForStorageModelfoo/bla bla/bli1105=825800
+MessageUniqueIdForStorageModelfoo/bla bla/bli1106=825606
+MessageUniqueIdForStorageModelfoo/bla bla/bli1107=825300
+MessageUniqueIdForStorageModelfoo/bla bla/bli1108=825578
+MessageUniqueIdForStorageModelfoo/bla bla/bli1112=825879
+MessageUniqueIdForStorageModelfoo/bla bla/bli112=717047
+MessageUniqueIdForStorageModelfoo/bla bla/bli113=139642
+MessageUniqueIdForStorageModelfoo/bla bla/bli1135=152640
+MessageUniqueIdForStorageModelfoo/bla bla/bli114=543157
+MessageUniqueIdForStorageModelfoo/bla bla/bli118=542741
+MessageUniqueIdForStorageModelfoo/bla bla/bli1189=165795
+MessageUniqueIdForStorageModelfoo/bla bla/bli119=409894
+MessageUniqueIdForStorageModelfoo/bla bla/bli12=258783
+MessageUniqueIdForStorageModelfoo/bla bla/bli120=361685
+MessageUniqueIdForStorageModelfoo/bla bla/bli121=508028
+MessageUniqueIdForStorageModelfoo/bla bla/bli123=54505
+MessageUniqueIdForStorageModelfoo/bla bla/bli1243=409621
+MessageUniqueIdForStorageModelfoo/bla bla/bli1247=543292
+MessageUniqueIdForStorageModelfoo/bla bla/bli125=54510
+MessageUniqueIdForStorageModelfoo/bla bla/bli1257=531568
+MessageUniqueIdForStorageModelfoo/bla bla/bli1259=500891
+MessageUniqueIdForStorageModelfoo/bla bla/bli1269=543102
+MessageUniqueIdForStorageModelfoo/bla bla/bli1285=219321
+MessageUniqueIdForStorageModelfoo/bla bla/bli1291=219168
+MessageUniqueIdForStorageModelfoo/bla bla/bli1295=219156
+MessageUniqueIdForStorageModelfoo/bla bla/bli1297=219152
+MessageUniqueIdForStorageModelfoo/bla bla/bli1299=505172
+MessageUniqueIdForStorageModelfoo/bla bla/bli13=264222
+MessageUniqueIdForStorageModelfoo/bla bla/bli1300=218614
+MessageUniqueIdForStorageModelfoo/bla bla/bli1306=542835
+MessageUniqueIdForStorageModelfoo/bla bla/bli1310=540579
+MessageUniqueIdForStorageModelfoo/bla bla/bli1315=209981
+MessageUniqueIdForStorageModelfoo/bla bla/bli1317=541969
+MessageUniqueIdForStorageModelfoo/bla bla/bli1320=358580
+MessageUniqueIdForStorageModelfoo/bla bla/bli1324=204358
+MessageUniqueIdForStorageModelfoo/bla bla/bli1327=204345
+MessageUniqueIdForStorageModelfoo/bla bla/bli1329=535266
+MessageUniqueIdForStorageModelfoo/bla bla/bli1330=275557
+MessageUniqueIdForStorageModelfoo/bla bla/bli1346=203662
+MessageUniqueIdForStorageModelfoo/bla bla/bli135=69912
+MessageUniqueIdForStorageModelfoo/bla bla/bli136=261227
+MessageUniqueIdForStorageModelfoo/bla bla/bli137=264751
+MessageUniqueIdForStorageModelfoo/bla bla/bli138=275711
+MessageUniqueIdForStorageModelfoo/bla bla/bli1451=535930
+MessageUniqueIdForStorageModelfoo/bla bla/bli147=54629
+MessageUniqueIdForStorageModelfoo/bla bla/bli1496=523179
+MessageUniqueIdForStorageModelfoo/bla bla/bli15=13094
+MessageUniqueIdForStorageModelfoo/bla bla/bli150=54637
+MessageUniqueIdForStorageModelfoo/bla bla/bli151=140031
+MessageUniqueIdForStorageModelfoo/bla bla/bli152=139555
+MessageUniqueIdForStorageModelfoo/bla bla/bli1521=370555
+MessageUniqueIdForStorageModelfoo/bla bla/bli153=67767
+MessageUniqueIdForStorageModelfoo/bla bla/bli156=126250
+MessageUniqueIdForStorageModelfoo/bla bla/bli1560=520967
+MessageUniqueIdForStorageModelfoo/bla bla/bli158=128548
+MessageUniqueIdForStorageModelfoo/bla bla/bli160=251493
+MessageUniqueIdForStorageModelfoo/bla bla/bli161=54786
+MessageUniqueIdForStorageModelfoo/bla bla/bli162=54787
+MessageUniqueIdForStorageModelfoo/bla bla/bli164=54788
+MessageUniqueIdForStorageModelfoo/bla bla/bli165=249235
+MessageUniqueIdForStorageModelfoo/bla bla/bli1673=539442
+MessageUniqueIdForStorageModelfoo/bla bla/bli1674=534936
+MessageUniqueIdForStorageModelfoo/bla bla/bli1675=542850
+MessageUniqueIdForStorageModelfoo/bla bla/bli1678=326311
+MessageUniqueIdForStorageModelfoo/bla bla/bli1679=543261
+MessageUniqueIdForStorageModelfoo/bla bla/bli1681=523307
+MessageUniqueIdForStorageModelfoo/bla bla/bli1682=540840
+MessageUniqueIdForStorageModelfoo/bla bla/bli1684=543074
+MessageUniqueIdForStorageModelfoo/bla bla/bli1685=538872
+MessageUniqueIdForStorageModelfoo/bla bla/bli1686=537229
+MessageUniqueIdForStorageModelfoo/bla bla/bli1689=307013
+MessageUniqueIdForStorageModelfoo/bla bla/bli17=305842
+MessageUniqueIdForStorageModelfoo/bla bla/bli170=358873
+MessageUniqueIdForStorageModelfoo/bla bla/bli18=16010
+MessageUniqueIdForStorageModelfoo/bla bla/bli1824=541999
+MessageUniqueIdForStorageModelfoo/bla bla/bli189=244393
+MessageUniqueIdForStorageModelfoo/bla bla/bli19=16032
+MessageUniqueIdForStorageModelfoo/bla bla/bli191=100505
+MessageUniqueIdForStorageModelfoo/bla bla/bli193=62658
+MessageUniqueIdForStorageModelfoo/bla bla/bli194=825852
+MessageUniqueIdForStorageModelfoo/bla bla/bli1950=409388
+MessageUniqueIdForStorageModelfoo/bla bla/bli1952=381516
+MessageUniqueIdForStorageModelfoo/bla bla/bli199=152624
+MessageUniqueIdForStorageModelfoo/bla bla/bli2040=731611
+MessageUniqueIdForStorageModelfoo/bla bla/bli2041=733778
+MessageUniqueIdForStorageModelfoo/bla bla/bli2042=729842
+MessageUniqueIdForStorageModelfoo/bla bla/bli2043=732236
+MessageUniqueIdForStorageModelfoo/bla bla/bli2044=660208
+MessageUniqueIdForStorageModelfoo/bla bla/bli2045=702756
+MessageUniqueIdForStorageModelfoo/bla bla/bli2047=377491
+MessageUniqueIdForStorageModelfoo/bla bla/bli2048=322462
+MessageUniqueIdForStorageModelfoo/bla bla/bli2049=710036
+MessageUniqueIdForStorageModelfoo/bla bla/bli2050=690404
+MessageUniqueIdForStorageModelfoo/bla bla/bli2051=733596
+MessageUniqueIdForStorageModelfoo/bla bla/bli2053=691451
+MessageUniqueIdForStorageModelfoo/bla bla/bli2054=706302
+MessageUniqueIdForStorageModelfoo/bla bla/bli2055=725208
+MessageUniqueIdForStorageModelfoo/bla bla/bli2056=700296
+MessageUniqueIdForStorageModelfoo/bla bla/bli2057=691099
+MessageUniqueIdForStorageModelfoo/bla bla/bli2058=687704
+MessageUniqueIdForStorageModelfoo/bla bla/bli2059=718522
+MessageUniqueIdForStorageModelfoo/bla bla/bli206=825851
+MessageUniqueIdForStorageModelfoo/bla bla/bli2060=707333
+MessageUniqueIdForStorageModelfoo/bla bla/bli2061=704708
+MessageUniqueIdForStorageModelfoo/bla bla/bli2062=731495
+MessageUniqueIdForStorageModelfoo/bla bla/bli2063=731942
+MessageUniqueIdForStorageModelfoo/bla bla/bli2064=712170
+MessageUniqueIdForStorageModelfoo/bla bla/bli2065=705809
+MessageUniqueIdForStorageModelfoo/bla bla/bli2066=719101
+MessageUniqueIdForStorageModelfoo/bla bla/bli2067=161619
+MessageUniqueIdForStorageModelfoo/bla bla/bli207=166775
+MessageUniqueIdForStorageModelfoo/bla bla/bli2072=454133
+MessageUniqueIdForStorageModelfoo/bla bla/bli2075=305841
+MessageUniqueIdForStorageModelfoo/bla bla/bli2078=458070
+MessageUniqueIdForStorageModelfoo/bla bla/bli2080=304596
+MessageUniqueIdForStorageModelfoo/bla bla/bli2081=304595
+MessageUniqueIdForStorageModelfoo/bla bla/bli209=168949
+MessageUniqueIdForStorageModelfoo/bla bla/bli2092=299947
+MessageUniqueIdForStorageModelfoo/bla bla/bli2096=306644
+MessageUniqueIdForStorageModelfoo/bla bla/bli21=16041
+MessageUniqueIdForStorageModelfoo/bla bla/bli210=139943
+MessageUniqueIdForStorageModelfoo/bla bla/bli2100=503688
+MessageUniqueIdForStorageModelfoo/bla bla/bli2104=307821
+MessageUniqueIdForStorageModelfoo/bla bla/bli2105=733562
+MessageUniqueIdForStorageModelfoo/bla bla/bli2115=299995
+MessageUniqueIdForStorageModelfoo/bla bla/bli212=169861
+MessageUniqueIdForStorageModelfoo/bla bla/bli2129=732688
+MessageUniqueIdForStorageModelfoo/bla bla/bli2189=541971
+MessageUniqueIdForStorageModelfoo/bla bla/bli219=367340
+MessageUniqueIdForStorageModelfoo/bla bla/bli2190=429783
+MessageUniqueIdForStorageModelfoo/bla bla/bli2191=541801
+MessageUniqueIdForStorageModelfoo/bla bla/bli2195=366236
+MessageUniqueIdForStorageModelfoo/bla bla/bli222=170314
+MessageUniqueIdForStorageModelfoo/bla bla/bli225=171201
+MessageUniqueIdForStorageModelfoo/bla bla/bli229=825296
+MessageUniqueIdForStorageModelfoo/bla bla/bli2300=543409
+MessageUniqueIdForStorageModelfoo/bla bla/bli2301=543043
+MessageUniqueIdForStorageModelfoo/bla bla/bli2302=542995
+MessageUniqueIdForStorageModelfoo/bla bla/bli2303=543096
+MessageUniqueIdForStorageModelfoo/bla bla/bli2304=543066
+MessageUniqueIdForStorageModelfoo/bla bla/bli2305=536132
+MessageUniqueIdForStorageModelfoo/bla bla/bli2306=542384
+MessageUniqueIdForStorageModelfoo/bla bla/bli2307=414041
+MessageUniqueIdForStorageModelfoo/bla bla/bli2308=533507
+MessageUniqueIdForStorageModelfoo/bla bla/bli2309=541684
+MessageUniqueIdForStorageModelfoo/bla bla/bli2310=543498
+MessageUniqueIdForStorageModelfoo/bla bla/bli2311=543442
+MessageUniqueIdForStorageModelfoo/bla bla/bli2312=543355
+MessageUniqueIdForStorageModelfoo/bla bla/bli2313=543231
+MessageUniqueIdForStorageModelfoo/bla bla/bli2326=539134
+MessageUniqueIdForStorageModelfoo/bla bla/bli2327=540949
+MessageUniqueIdForStorageModelfoo/bla bla/bli2328=542438
+MessageUniqueIdForStorageModelfoo/bla bla/bli2329=543108
+MessageUniqueIdForStorageModelfoo/bla bla/bli233=173919
+MessageUniqueIdForStorageModelfoo/bla bla/bli2330=542345
+MessageUniqueIdForStorageModelfoo/bla bla/bli2331=543073
+MessageUniqueIdForStorageModelfoo/bla bla/bli2332=542860
+MessageUniqueIdForStorageModelfoo/bla bla/bli2335=249236
+MessageUniqueIdForStorageModelfoo/bla bla/bli2337=538014
+MessageUniqueIdForStorageModelfoo/bla bla/bli2338=543226
+MessageUniqueIdForStorageModelfoo/bla bla/bli2339=297253
+MessageUniqueIdForStorageModelfoo/bla bla/bli2340=536765
+MessageUniqueIdForStorageModelfoo/bla bla/bli2341=538560
+MessageUniqueIdForStorageModelfoo/bla bla/bli2342=276333
+MessageUniqueIdForStorageModelfoo/bla bla/bli2343=278143
+MessageUniqueIdForStorageModelfoo/bla bla/bli2344=278148
+MessageUniqueIdForStorageModelfoo/bla bla/bli2345=538722
+MessageUniqueIdForStorageModelfoo/bla bla/bli2346=538562
+MessageUniqueIdForStorageModelfoo/bla bla/bli2347=542792
+MessageUniqueIdForStorageModelfoo/bla bla/bli2348=288479
+MessageUniqueIdForStorageModelfoo/bla bla/bli2349=541415
+MessageUniqueIdForStorageModelfoo/bla bla/bli235=77374
+MessageUniqueIdForStorageModelfoo/bla bla/bli2351=289578
+MessageUniqueIdForStorageModelfoo/bla bla/bli2352=289579
+MessageUniqueIdForStorageModelfoo/bla bla/bli2353=294581
+MessageUniqueIdForStorageModelfoo/bla bla/bli2359=308861
+MessageUniqueIdForStorageModelfoo/bla bla/bli2360=310372
+MessageUniqueIdForStorageModelfoo/bla bla/bli2376=305909
+MessageUniqueIdForStorageModelfoo/bla bla/bli2378=329288
+MessageUniqueIdForStorageModelfoo/bla bla/bli238=77457
+MessageUniqueIdForStorageModelfoo/bla bla/bli2413=342056
+MessageUniqueIdForStorageModelfoo/bla bla/bli2417=356932
+MessageUniqueIdForStorageModelfoo/bla bla/bli2418=345470
+MessageUniqueIdForStorageModelfoo/bla bla/bli2425=348437
+MessageUniqueIdForStorageModelfoo/bla bla/bli2426=349437
+MessageUniqueIdForStorageModelfoo/bla bla/bli2427=350139
+MessageUniqueIdForStorageModelfoo/bla bla/bli2430=489369
+MessageUniqueIdForStorageModelfoo/bla bla/bli2431=497035
+MessageUniqueIdForStorageModelfoo/bla bla/bli2434=487708
+MessageUniqueIdForStorageModelfoo/bla bla/bli2442=358553
+MessageUniqueIdForStorageModelfoo/bla bla/bli2467=367944
+MessageUniqueIdForStorageModelfoo/bla bla/bli2471=376255
+MessageUniqueIdForStorageModelfoo/bla bla/bli25=16096
+MessageUniqueIdForStorageModelfoo/bla bla/bli2501=414538
+MessageUniqueIdForStorageModelfoo/bla bla/bli2505=420475
+MessageUniqueIdForStorageModelfoo/bla bla/bli2511=432148
+MessageUniqueIdForStorageModelfoo/bla bla/bli2534=474550
+MessageUniqueIdForStorageModelfoo/bla bla/bli2535=475212
+MessageUniqueIdForStorageModelfoo/bla bla/bli2542=480594
+MessageUniqueIdForStorageModelfoo/bla bla/bli2545=492199
+MessageUniqueIdForStorageModelfoo/bla bla/bli2551=495417
+MessageUniqueIdForStorageModelfoo/bla bla/bli2553=499158
+MessageUniqueIdForStorageModelfoo/bla bla/bli2554=508051
+MessageUniqueIdForStorageModelfoo/bla bla/bli2578=537615
+MessageUniqueIdForStorageModelfoo/bla bla/bli26=142706
+MessageUniqueIdForStorageModelfoo/bla bla/bli261=141655
+MessageUniqueIdForStorageModelfoo/bla bla/bli2627=541459
+MessageUniqueIdForStorageModelfoo/bla bla/bli2628=541912
+MessageUniqueIdForStorageModelfoo/bla bla/bli2643=931183
+MessageUniqueIdForStorageModelfoo/bla bla/bli2651=604247
+MessageUniqueIdForStorageModelfoo/bla bla/bli2653=886131
+MessageUniqueIdForStorageModelfoo/bla bla/bli2655=604164
+MessageUniqueIdForStorageModelfoo/bla bla/bli2659=677969
+MessageUniqueIdForStorageModelfoo/bla bla/bli2664=604133
+MessageUniqueIdForStorageModelfoo/bla bla/bli2668=604111
+MessageUniqueIdForStorageModelfoo/bla bla/bli2670=604108
+MessageUniqueIdForStorageModelfoo/bla bla/bli2675=604071
+MessageUniqueIdForStorageModelfoo/bla bla/bli2677=603902
+MessageUniqueIdForStorageModelfoo/bla bla/bli2678=603901
+MessageUniqueIdForStorageModelfoo/bla bla/bli2684=746890
+MessageUniqueIdForStorageModelfoo/bla bla/bli2685=603877
+MessageUniqueIdForStorageModelfoo/bla bla/bli2693=842355
+MessageUniqueIdForStorageModelfoo/bla bla/bli2699=927458
+MessageUniqueIdForStorageModelfoo/bla bla/bli2701=603138
+MessageUniqueIdForStorageModelfoo/bla bla/bli2705=603130
+MessageUniqueIdForStorageModelfoo/bla bla/bli2712=603116
+MessageUniqueIdForStorageModelfoo/bla bla/bli2713=603114
+MessageUniqueIdForStorageModelfoo/bla bla/bli2714=603111
+MessageUniqueIdForStorageModelfoo/bla bla/bli2715=603100
+MessageUniqueIdForStorageModelfoo/bla bla/bli2726=930793
+MessageUniqueIdForStorageModelfoo/bla bla/bli2729=593668
+MessageUniqueIdForStorageModelfoo/bla bla/bli2731=929030
+MessageUniqueIdForStorageModelfoo/bla bla/bli2733=587255
+MessageUniqueIdForStorageModelfoo/bla bla/bli2736=586945
+MessageUniqueIdForStorageModelfoo/bla bla/bli2743=922755
+MessageUniqueIdForStorageModelfoo/bla bla/bli2748=786673
+MessageUniqueIdForStorageModelfoo/bla bla/bli275=399510
+MessageUniqueIdForStorageModelfoo/bla bla/bli2755=920891
+MessageUniqueIdForStorageModelfoo/bla bla/bli2760=927743
+MessageUniqueIdForStorageModelfoo/bla bla/bli2798=906370
+MessageUniqueIdForStorageModelfoo/bla bla/bli28=16134
+MessageUniqueIdForStorageModelfoo/bla bla/bli2800=852604
+MessageUniqueIdForStorageModelfoo/bla bla/bli2801=769139
+MessageUniqueIdForStorageModelfoo/bla bla/bli2802=753825
+MessageUniqueIdForStorageModelfoo/bla bla/bli2805=897121
+MessageUniqueIdForStorageModelfoo/bla bla/bli2806=859109
+MessageUniqueIdForStorageModelfoo/bla bla/bli2807=926524
+MessageUniqueIdForStorageModelfoo/bla bla/bli2808=900418
+MessageUniqueIdForStorageModelfoo/bla bla/bli2809=927130
+MessageUniqueIdForStorageModelfoo/bla bla/bli2811=921690
+MessageUniqueIdForStorageModelfoo/bla bla/bli2812=929514
+MessageUniqueIdForStorageModelfoo/bla bla/bli286=693156
+MessageUniqueIdForStorageModelfoo/bla bla/bli29=16144
+MessageUniqueIdForStorageModelfoo/bla bla/bli290=64420
+MessageUniqueIdForStorageModelfoo/bla bla/bli3035=626651
+MessageUniqueIdForStorageModelfoo/bla bla/bli3041=733613
+MessageUniqueIdForStorageModelfoo/bla bla/bli3042=732619
+MessageUniqueIdForStorageModelfoo/bla bla/bli3043=331858
+MessageUniqueIdForStorageModelfoo/bla bla/bli3046=692355
+MessageUniqueIdForStorageModelfoo/bla bla/bli3160=912580
+MessageUniqueIdForStorageModelfoo/bla bla/bli3161=923313
+MessageUniqueIdForStorageModelfoo/bla bla/bli32=144554
+MessageUniqueIdForStorageModelfoo/bla bla/bli325=127899
+MessageUniqueIdForStorageModelfoo/bla bla/bli327=730085
+MessageUniqueIdForStorageModelfoo/bla bla/bli3417=867425
+MessageUniqueIdForStorageModelfoo/bla bla/bli3419=898545
+MessageUniqueIdForStorageModelfoo/bla bla/bli37=144024
+MessageUniqueIdForStorageModelfoo/bla bla/bli3720=929197
+MessageUniqueIdForStorageModelfoo/bla bla/bli3721=931167
+MessageUniqueIdForStorageModelfoo/bla bla/bli3722=928102
+MessageUniqueIdForStorageModelfoo/bla bla/bli3723=887715
+MessageUniqueIdForStorageModelfoo/bla bla/bli3724=928088
+MessageUniqueIdForStorageModelfoo/bla bla/bli3725=826215
+MessageUniqueIdForStorageModelfoo/bla bla/bli3727=548816
+MessageUniqueIdForStorageModelfoo/bla bla/bli3729=627439
+MessageUniqueIdForStorageModelfoo/bla bla/bli3730=627442
+MessageUniqueIdForStorageModelfoo/bla bla/bli3731=772774
+MessageUniqueIdForStorageModelfoo/bla bla/bli3733=627842
+MessageUniqueIdForStorageModelfoo/bla bla/bli3744=731017
+MessageUniqueIdForStorageModelfoo/bla bla/bli3757=628122
+MessageUniqueIdForStorageModelfoo/bla bla/bli3772=628198
+MessageUniqueIdForStorageModelfoo/bla bla/bli3774=628239
+MessageUniqueIdForStorageModelfoo/bla bla/bli3775=628249
+MessageUniqueIdForStorageModelfoo/bla bla/bli3777=628251
+MessageUniqueIdForStorageModelfoo/bla bla/bli3778=931160
+MessageUniqueIdForStorageModelfoo/bla bla/bli3779=628271
+MessageUniqueIdForStorageModelfoo/bla bla/bli3781=628296
+MessageUniqueIdForStorageModelfoo/bla bla/bli3782=628297
+MessageUniqueIdForStorageModelfoo/bla bla/bli3784=921205
+MessageUniqueIdForStorageModelfoo/bla bla/bli3786=654822
+MessageUniqueIdForStorageModelfoo/bla bla/bli3787=928900
+MessageUniqueIdForStorageModelfoo/bla bla/bli3788=931249
+MessageUniqueIdForStorageModelfoo/bla bla/bli3789=930868
+MessageUniqueIdForStorageModelfoo/bla bla/bli3790=930856
+MessageUniqueIdForStorageModelfoo/bla bla/bli3791=931146
+MessageUniqueIdForStorageModelfoo/bla bla/bli3792=917255
+MessageUniqueIdForStorageModelfoo/bla bla/bli3793=931247
+MessageUniqueIdForStorageModelfoo/bla bla/bli3794=927969
+MessageUniqueIdForStorageModelfoo/bla bla/bli3795=922713
+MessageUniqueIdForStorageModelfoo/bla bla/bli3796=927149
+MessageUniqueIdForStorageModelfoo/bla bla/bli3797=930218
+MessageUniqueIdForStorageModelfoo/bla bla/bli3798=897377
+MessageUniqueIdForStorageModelfoo/bla bla/bli3799=926135
+MessageUniqueIdForStorageModelfoo/bla bla/bli3800=927489
+MessageUniqueIdForStorageModelfoo/bla bla/bli3801=910065
+MessageUniqueIdForStorageModelfoo/bla bla/bli3802=931010
+MessageUniqueIdForStorageModelfoo/bla bla/bli3803=930929
+MessageUniqueIdForStorageModelfoo/bla bla/bli3804=919427
+MessageUniqueIdForStorageModelfoo/bla bla/bli3805=930645
+MessageUniqueIdForStorageModelfoo/bla bla/bli3806=911865
+MessageUniqueIdForStorageModelfoo/bla bla/bli3807=928272
+MessageUniqueIdForStorageModelfoo/bla bla/bli3808=930512
+MessageUniqueIdForStorageModelfoo/bla bla/bli3809=920907
+MessageUniqueIdForStorageModelfoo/bla bla/bli3810=927499
+MessageUniqueIdForStorageModelfoo/bla bla/bli3811=917800
+MessageUniqueIdForStorageModelfoo/bla bla/bli3812=742109
+MessageUniqueIdForStorageModelfoo/bla bla/bli3813=654482
+MessageUniqueIdForStorageModelfoo/bla bla/bli3814=654483
+MessageUniqueIdForStorageModelfoo/bla bla/bli3817=931256
+MessageUniqueIdForStorageModelfoo/bla bla/bli3818=930493
+MessageUniqueIdForStorageModelfoo/bla bla/bli3819=654489
+MessageUniqueIdForStorageModelfoo/bla bla/bli3830=675570
+MessageUniqueIdForStorageModelfoo/bla bla/bli3831=781731
+MessageUniqueIdForStorageModelfoo/bla bla/bli3834=682513
+MessageUniqueIdForStorageModelfoo/bla bla/bli3835=682515
+MessageUniqueIdForStorageModelfoo/bla bla/bli3839=748313
+MessageUniqueIdForStorageModelfoo/bla bla/bli3844=697350
+MessageUniqueIdForStorageModelfoo/bla bla/bli3911=589364
+MessageUniqueIdForStorageModelfoo/bla bla/bli3912=705259
+MessageUniqueIdForStorageModelfoo/bla bla/bli3915=690513
+MessageUniqueIdForStorageModelfoo/bla bla/bli4=487684
+MessageUniqueIdForStorageModelfoo/bla bla/bli4027=627433
+MessageUniqueIdForStorageModelfoo/bla bla/bli4029=752264
+MessageUniqueIdForStorageModelfoo/bla bla/bli4030=871527
+MessageUniqueIdForStorageModelfoo/bla bla/bli4037=741720
+MessageUniqueIdForStorageModelfoo/bla bla/bli4038=746547
+MessageUniqueIdForStorageModelfoo/bla bla/bli4043=759589
+MessageUniqueIdForStorageModelfoo/bla bla/bli4055=899170
+MessageUniqueIdForStorageModelfoo/bla bla/bli4069=922593
+MessageUniqueIdForStorageModelfoo/bla bla/bli411=326370
+MessageUniqueIdForStorageModelfoo/bla bla/bli417=782093
+MessageUniqueIdForStorageModelfoo/bla bla/bli4191=871013
+MessageUniqueIdForStorageModelfoo/bla bla/bli432=696154
+MessageUniqueIdForStorageModelfoo/bla bla/bli437=711122
+MessageUniqueIdForStorageModelfoo/bla bla/bli44=19
+MessageUniqueIdForStorageModelfoo/bla bla/bli4412=927746
+MessageUniqueIdForStorageModelfoo/bla bla/bli4413=803299
+MessageUniqueIdForStorageModelfoo/bla bla/bli4419=818690
+MessageUniqueIdForStorageModelfoo/bla bla/bli4420=824040
+MessageUniqueIdForStorageModelfoo/bla bla/bli4432=833431
+MessageUniqueIdForStorageModelfoo/bla bla/bli4435=840403
+MessageUniqueIdForStorageModelfoo/bla bla/bli4440=861661
+MessageUniqueIdForStorageModelfoo/bla bla/bli4442=863755
+MessageUniqueIdForStorageModelfoo/bla bla/bli4443=924512
+MessageUniqueIdForStorageModelfoo/bla bla/bli4450=887703
+MessageUniqueIdForStorageModelfoo/bla bla/bli4453=899865
+MessageUniqueIdForStorageModelfoo/bla bla/bli4457=931157
+MessageUniqueIdForStorageModelfoo/bla bla/bli45=571
+MessageUniqueIdForStorageModelfoo/bla bla/bli47=1839
+MessageUniqueIdForStorageModelfoo/bla bla/bli4771=665413
+MessageUniqueIdForStorageModelfoo/bla bla/bli4772=703209
+MessageUniqueIdForStorageModelfoo/bla bla/bli4780=702523
+MessageUniqueIdForStorageModelfoo/bla bla/bli4793=700984
+MessageUniqueIdForStorageModelfoo/bla bla/bli48=379704
+MessageUniqueIdForStorageModelfoo/bla bla/bli480=775125
+MessageUniqueIdForStorageModelfoo/bla bla/bli4802=712329
+MessageUniqueIdForStorageModelfoo/bla bla/bli481=701432
+MessageUniqueIdForStorageModelfoo/bla bla/bli4810=733189
+MessageUniqueIdForStorageModelfoo/bla bla/bli482=783132
+MessageUniqueIdForStorageModelfoo/bla bla/bli4849=774081
+MessageUniqueIdForStorageModelfoo/bla bla/bli4861=697271
+MessageUniqueIdForStorageModelfoo/bla bla/bli4864=705336
+MessageUniqueIdForStorageModelfoo/bla bla/bli4867=743470
+MessageUniqueIdForStorageModelfoo/bla bla/bli4897=754811
+MessageUniqueIdForStorageModelfoo/bla bla/bli4898=754874
+MessageUniqueIdForStorageModelfoo/bla bla/bli49=2366
+MessageUniqueIdForStorageModelfoo/bla bla/bli493=142744
+MessageUniqueIdForStorageModelfoo/bla bla/bli494=141670
+MessageUniqueIdForStorageModelfoo/bla bla/bli5=303383
+MessageUniqueIdForStorageModelfoo/bla bla/bli50=2368
+MessageUniqueIdForStorageModelfoo/bla bla/bli505=61588
+MessageUniqueIdForStorageModelfoo/bla bla/bli51=2379
+MessageUniqueIdForStorageModelfoo/bla bla/bli52=417024
+MessageUniqueIdForStorageModelfoo/bla bla/bli53=2389
+MessageUniqueIdForStorageModelfoo/bla bla/bli56=2413
+MessageUniqueIdForStorageModelfoo/bla bla/bli560=722541
+MessageUniqueIdForStorageModelfoo/bla bla/bli561=662692
+MessageUniqueIdForStorageModelfoo/bla bla/bli58=339463
+MessageUniqueIdForStorageModelfoo/bla bla/bli598=708773
+MessageUniqueIdForStorageModelfoo/bla bla/bli61=2422
+MessageUniqueIdForStorageModelfoo/bla bla/bli611=119655
+MessageUniqueIdForStorageModelfoo/bla bla/bli612=119879
+MessageUniqueIdForStorageModelfoo/bla bla/bli626=654398
+MessageUniqueIdForStorageModelfoo/bla bla/bli63=127537
+MessageUniqueIdForStorageModelfoo/bla bla/bli64=2432
+MessageUniqueIdForStorageModelfoo/bla bla/bli66=2454
+MessageUniqueIdForStorageModelfoo/bla bla/bli664=455975
+MessageUniqueIdForStorageModelfoo/bla bla/bli68=2464
+MessageUniqueIdForStorageModelfoo/bla bla/bli692=139726
+MessageUniqueIdForStorageModelfoo/bla bla/bli693=128673
+MessageUniqueIdForStorageModelfoo/bla bla/bli694=139924
+MessageUniqueIdForStorageModelfoo/bla bla/bli72=2478
+MessageUniqueIdForStorageModelfoo/bla bla/bli73=2489
+MessageUniqueIdForStorageModelfoo/bla bla/bli76=2495
+MessageUniqueIdForStorageModelfoo/bla bla/bli775=718159
+MessageUniqueIdForStorageModelfoo/bla bla/bli776=716348
+MessageUniqueIdForStorageModelfoo/bla bla/bli777=732354
+MessageUniqueIdForStorageModelfoo/bla bla/bli78=2504
+MessageUniqueIdForStorageModelfoo/bla bla/bli79=2512
+MessageUniqueIdForStorageModelfoo/bla bla/bli794=511490
+MessageUniqueIdForStorageModelfoo/bla bla/bli795=511491
+MessageUniqueIdForStorageModelfoo/bla bla/bli80=2516
+MessageUniqueIdForStorageModelfoo/bla bla/bli81=316942
+MessageUniqueIdForStorageModelfoo/bla bla/bli82=2627
+MessageUniqueIdForStorageModelfoo/bla bla/bli84=1026
+MessageUniqueIdForStorageModelfoo/bla bla/bli852=595308
+MessageUniqueIdForStorageModelfoo/bla bla/bli87=733239
+MessageUniqueIdForStorageModelfoo/bla bla/bli88=15222
+MessageUniqueIdForStorageModelfoo/bla bla/bli90=141707
+MessageUniqueIdForStorageModelfoo/bla bla/bli913=13701
+MessageUniqueIdForStorageModelfoo/bla bla/bli919=318464
+MessageUniqueIdForStorageModelfoo/bla bla/bli923=824853
+MessageUniqueIdForStorageModelfoo/bla bla/bli924=73147
+MessageUniqueIdForStorageModelfoo/bla bla/bli925=73148
+MessageUniqueIdForStorageModelfoo/bla bla/bli928=295416
+MessageUniqueIdForStorageModelfoo/bla bla/bli931=341725
+MessageUniqueIdForStorageModelfoo/bla bla/bli933=306743
+MessageUniqueIdForStorageModelfoo/bla bla/bli978=782660
+MessageUniqueIdForStorageModelfoo/bla bla/bli979=782659
+MessageUniqueIdForStorageModelfoo/bla bla/bli991=280132
+MessageUniqueIdForStorageModelfoo/bla bla/bli992=281132
+
+[MessageListView::StorageModelSortOrder]
+GlobalSortOrderGroupSortDirection=Ascending
+GlobalSortOrderGroupSorting=SortGroupsByDateTime
+GlobalSortOrderMessageSortDirection=Ascending
+GlobalSortOrderMessageSorting=SortMessagesByDateTime
+
+[MessageListView::StorageModelThemes]
+DefaultSet=1498206271-12
+
+[MessageListView::Themes]
+Count=3
+Set0=0000cafe000010020000001a0031003400390038003200300036003200370031002d003100320000000e0043006c006100730073006900630000005e0041002000730069006d0070006c0065002c0020006200610063006b007700610072006400200063006f006d00700061007400690062006c0065002c002000730069006e0067006c006500200072006f00770020007400680065006d006501000010190000000100ffff0000000000000000000000070000000000000010000000110000000e005300750062006a006500630074ffffffff01000000000600000001000000020152000f0000000000ffff00000000000000000015000a0000000800ffff0000000000000000000000000000000100000007004800150000000000ffff0000000000000000004a00080000000100ffff0000000000000000014a00170000000100ffff0000000000000000004800180000000100ffff0000000000000000004a00110000000100ffff0000000000000000004a00100000000100ffff0000000000000000002d00010000000000ffff00000000000000000000000000000001408ed000000000000000001e00530065006e006400650072002f00520065006300650069007600650072ffffffff010100000003000000000000000100000001000d00030000000000ffff0000000000000000000000000000000140710000000000000000000c00530065006e006400650072ffffffff000000000004000000000000000100000001000d00040000000000ffff00000000000000000000000000000000bff00000000000000000001000520065006300650069007600650072ffffffff000000000005000000000000000100000001000d00050000000000ffff00000000000000000000000000000000bff0000000000000000000080044006100740065ffffffff010000000001000000000000000100000001001d00020000000000ffff000000000000000000000000000000014070e0000000000000000020004d006f0073007400200052006500630065006e007400200044006100740065ffffffff0000000000020000000100000001001d00140000000000ffff0000000000000000000000000000000100000001001d00140000000000ffff00000000000000000000000000000000bff00000000000000000000800530069007a0065ffffffff000000000007000000000000000100000001000d00060000000000ffff00000000000000000000000000000000bff000000000000000000014004100740074006100630068006d0065006e00740000001e006d00610069006c002d006100740074006100630068006d0065006e007400000000000b000000000000000100000001004a00080000000200ffff00000000000000000000000000000000bff0000000000000000000160052006500610064002f0055006e007200650061006400000028006d00610069006c002d006d00610072006b002d0075006e0072006500610064002d006e00650077000000000009000000000000000100000001004800070000000200ffff00000000000000000000000000000000bff00000000000000000000e005200650070006c00690065006400000018006d00610069006c002d007200650070006c006900650064000000000000000000000000000100000001004a00090000000200ffff00000000000000000000000000000000bff0000000000000000000120049006d0070006f007200740061006e0074000000200065006d0062006c0065006d002d0069006d0070006f007200740061006e007400000000000a000000000000000100000001014a000c0000000200ffff00000000000000000000000000000000bff0000000000000000000160041006300740069006f006e0020004900740065006d00000012006d00610069006c002d007400610073006b000000000008000000000000000100000001014a000b0000000200ffff00000000000000000000000000000000bff000000000000000000010005300700061006d002f00480061006d0000001c006d00610069006c002d006d00610072006b002d006a0075006e006b000000000000000000000000000100000001014a000d0000000200ffff00000000000000000000000000000000bff00000000000000000001e0057006100740063006800650064002f00490067006e006f00720065006400000022006d00610069006c002d007400680072006500610064002d00770061007400630068000000000000000000000000000100000001014a000e0000000200ffff00000000000000000000000000000000bff0000000000000000000140045006e006300720079007000740069006f006e00000026006d00610069006c002d0065006e0063007200790070007400650064002d00660075006c006c000000000000000000000000000100000001004a00100000000200ffff00000000000000000000000000000000bff000000000000000000012005300690067006e0061007400750072006500000028006d00610069006c002d007300690067006e00650064002d00760065007200690066006900650064000000000000000000000000000100000001004a00110000000200ffff00000000000000000000000000000000bff0000000000000000000100054006100670020004c0069007300740000001c0066006500650064002d007300750062007300630072006900620065000000000000000000000000000100000001004800160000000200ffff00000000000000000000000000000000bff00000000000000000babe
+Set1=0000cafe000010020000001a0031003400390038003200300036003200370031002d003100330000000a0053006d0061007200740000004c004100200073006d0061007200740020006d0075006c00740069006c0069006e006500200061006e00640020006d0075006c007400690020006900740065006d0020007400680065006d006501000010190000000100ffff0000000000000000000000070000000100000010000000010000000e004d006500730073006100670065ffffffff01000000000000000001000000020152000f0000000000ffff00000000000000000015000a0000000800ffff0000000000000000000000000000000200000001002d00010000000000ffff00000000000000000000000c004800070000000000ffff0000000000000000004a00090000000100ffff0000000000000000004a00080000000100ffff0000000000000000014a00170000000100ffff0000000000000000004800180000000100ffff0000000000000000004a00100000000100ffff0000000000000000004a00110000000100ffff0000000000000000004800160000000100ffff0000000000000000014a000b0000000100ffff0000000000000000014a000c0000000100ffff0000000000000000014a000d0000000100ffff0000000000000000014a000e0000000100ffff000000000000000000000001000d00030000003000ffff000000000000000000000001001d00020000003000ffff00000000000000000000000140943000000000000000babe
+Set2=0000cafe000010020000001a0031003400390038003200300036003200370031002d00310034000000360053006d0061007200740020007700690074006800200043006c00690063006b00610062006c006500200053007400610074007500730000008a004100200073006d0061007200740020006d0075006c00740069006c0069006e006500200061006e00640020006d0075006c007400690020006900740065006d0020007400680065006d0065002000770069007400680020006100200063006c00690063006b00610062006c0065002000730074006100740075007300200063006f006c0075006d006e01000010190000000100ffff0000000000000000000000070000000000000010000000020000000e004d006500730073006100670065ffffffff01000000000000000001000000020152000f0000000000ffff00000000000000000015000a0000000800ffff0000000000000000000000000000000200000001002d00010000000000ffff000000000000000000000008004800070000000000ffff0000000000000000004a00090000000100ffff0000000000000000004a00080000000100ffff0000000000000000014a00170000000100ffff0000000000000000004800180000000100ffff0000000000000000004a00100000000100ffff0000000000000000004a00110000000100ffff0000000000000000004800160000000100ffff000000000000000000000001000d00030000003000ffff000000000000000000000001001d00020000003000ffff000000000000000000000001bff00000000000000000000c005300740061007400750073ffffffff010000000000000000000000000200000002014a000b0000000200ffff0000000000000000014a000c0000000200ffff00000000000000000000000000000002014a000d0000000200ffff0000000000000000014a000e0000000200ffff00000000000000000000000000000001bff00000000000000000babe
+Set3=0000cafe000010020000001a0031003400340032003400300039003700390034002d00310032000000120043006c0061007300730069007100750065000000740055006e00200074006800e8006d0065002000730069006d0070006c00650020006500740020007200e900740072006f002d0063006f006d00700061007400690062006c0065002c002000730075007200200075006e00650020007300650075006c006500200063006f006c006f006e006e006501000010190000000100ffff0000000000000000000000070000000000000010000000110000000a00530075006a00650074ffffffff01000000000600000001000000020152000f0000000000ffff00000000000000000015000a0000000800ffff0000000000000000000000000000000100000007004800150000000000ffff0000000000000000004a00080000000100ffff0000000000000000014a00170000000100ffff0000000000000000004800180000000100ffff0000000000000000004a00110000000100ffff0000000000000000004a00100000000100ffff0000000000000000002d00010000000000ffff00000000000000000000000000000001000003190000003200450078007000e900640069007400650075007200a0002f002000640065007300740069006e006100740061006900720065ffffffff010100000003000000000000000100000001000d00030000000000ffff00000000000000000000000000000001000000a80000001400450078007000e9006400690074006500750072ffffffff000000000004000000000000000100000001000d00040000000000ffff00000000000000000000000000000000ffffffff0000001800440065007300740069006e006100740061006900720065ffffffff000000000005000000000000000100000001000d00050000000000ffff00000000000000000000000000000000ffffffff000000080044006100740065ffffffff010000000001000000000000000100000001001d00020000000000ffff00000000000000000000000000000001000000a80000002800440061007400650020006c006100200070006c007500730020007200e900630065006e00740065ffffffff0000000000020000000100000001001d00140000000000ffff0000000000000000000000000000000100000001001d00140000000000ffff00000000000000000000000000000001000000e80000000c005400610069006c006c0065ffffffff000000000007000000000000000100000001000d00060000000000ffff00000000000000000000000000000000ffffffff000000180050006900e8006300650020006a006f0069006e007400650000001e006d00610069006c002d006100740074006100630068006d0065006e007400000000000b000000000000000100000001004a00080000000200ffff00000000000000000000000000000000ffffffff00000016004c007500a0002f0020006e006f006e0020006c00750000001e006d00610069006c002d0075006e0072006500610064002d006e00650077000000000009000000000000000100000001004800070000000200ffff00000000000000000000000000000000ffffffff0000000e005200e90070006f006e0064007500000018006d00610069006c002d007200650070006c006900650064000000000000000000000000000100000001004a00090000000200ffff00000000000000000000000000000000ffffffff000000120049006d0070006f007200740061006e0074000000200065006d0062006c0065006d002d0069006d0070006f007200740061006e007400000000000a000000000000000100000001014a000c0000000200ffff00000000000000000000000000000000ffffffff000000240041006300740069006f006e002000e0002000650066006600650063007400750065007200000012006d00610069006c002d007400610073006b000000000008000000000000000100000001014a000b0000000200ffff00000000000000000000000000000000ffffffff000000260050006f00750072007200690065006c00a0002f00200043006f00750072007200690065006c0000001c006d00610069006c002d006d00610072006b002d006a0075006e006b000000000000000000000000000100000001014a000d0000000200ffff00000000000000000000000000000000ffffffff000000160056007500a0002f002000490067006e006f007200e900000022006d00610069006c002d007400680072006500610064002d00770061007400630068000000000000000000000000000100000001014a000e0000000200ffff00000000000000000000000000000000ffffffff000000160043006800690066006600720065006d0065006e007400000026006d00610069006c002d0065006e0063007200790070007400650064002d00660075006c006c000000000000000000000000000100000001004a00100000000200ffff00000000000000000000000000000000ffffffff00000012005300690067006e0061007400750072006500000028006d00610069006c002d007300690067006e00650064002d00760065007200690066006900650064000000000000000000000000000100000001004a00110000000200ffff00000000000000000000000000000000ffffffff00000024004c006900730074006500200064002700e90074006900710075006500740074006500730000001c0066006500650064002d007300750062007300630072006900620065000000000000000000000000000100000001004800160000000200ffff00000000000000000000000000000000ffffffff0000babe
+Set4=0000cafe000010020000001a0031003400340032003400300039003700390034002d00310032000000120043006c0061007300730069007100750065000000740055006e00200074006800e8006d0065002000730069006d0070006c00650020006500740020007200e900740072006f002d0063006f006d00700061007400690062006c0065002c002000730075007200200075006e00650020007300650075006c006500200063006f006c006f006e006e006501000010190000000100ffff0000000000000000000000070000000000000010000000110000000a00530075006a00650074ffffffff01000000000600000001000000020152000f0000000000ffff00000000000000000015000a0000000800ffff0000000000000000000000000000000100000007004800150000000000ffff0000000000000000004a00080000000100ffff0000000000000000014a00170000000100ffff0000000000000000004800180000000100ffff0000000000000000004a00110000000100ffff0000000000000000004a00100000000100ffff0000000000000000002d00010000000000ffff00000000000000000000000000000001000001520000003200450078007000e900640069007400650075007200a0002f002000640065007300740069006e006100740061006900720065ffffffff010100000003000000000000000100000001000d00030000000000ffff000000000000000000000000000000010000005d0000001400450078007000e9006400690074006500750072ffffffff000000000004000000000000000100000001000d00040000000000ffff00000000000000000000000000000000ffffffff0000001800440065007300740069006e006100740061006900720065ffffffff000000000005000000000000000100000001000d00050000000000ffff00000000000000000000000000000000ffffffff000000080044006100740065ffffffff010000000001000000000000000100000001001d00020000000000ffff000000000000000000000000000000010000044f0000002800440061007400650020006c006100200070006c007500730020007200e900630065006e00740065ffffffff0000000000020000000100000001001d00140000000000ffff0000000000000000000000000000000100000001001d00140000000000ffff00000000000000000000000000000000ffffffff0000000c005400610069006c006c0065ffffffff000000000007000000000000000100000001000d00060000000000ffff00000000000000000000000000000000ffffffff000000180050006900e8006300650020006a006f0069006e007400650000001e006d00610069006c002d006100740074006100630068006d0065006e007400000000000b000000000000000100000001004a00080000000200ffff00000000000000000000000000000000ffffffff00000016004c007500a0002f0020006e006f006e0020006c00750000001e006d00610069006c002d0075006e0072006500610064002d006e00650077000000000009000000000000000100000001004800070000000200ffff00000000000000000000000000000000ffffffff0000000e005200e90070006f006e0064007500000018006d00610069006c002d007200650070006c006900650064000000000000000000000000000100000001004a00090000000200ffff00000000000000000000000000000000ffffffff000000120049006d0070006f007200740061006e0074000000200065006d0062006c0065006d002d0069006d0070006f007200740061006e007400000000000a000000000000000100000001014a000c0000000200ffff00000000000000000000000000000000ffffffff000000240041006300740069006f006e002000e0002000650066006600650063007400750065007200000012006d00610069006c002d007400610073006b000000000008000000000000000100000001014a000b0000000200ffff00000000000000000000000000000000ffffffff000000260050006f00750072007200690065006c00a0002f00200043006f00750072007200690065006c0000001c006d00610069006c002d006d00610072006b002d006a0075006e006b000000000000000000000000000100000001014a000d0000000200ffff00000000000000000000000000000000ffffffff000000160056007500a0002f002000490067006e006f007200e900000022006d00610069006c002d007400680072006500610064002d00770061007400630068000000000000000000000000000100000001014a000e0000000200ffff00000000000000000000000000000000ffffffff000000160043006800690066006600720065006d0065006e007400000026006d00610069006c002d0065006e0063007200790070007400650064002d00660075006c006c000000000000000000000000000100000001004a00100000000200ffff00000000000000000000000000000000ffffffff00000012005300690067006e0061007400750072006500000028006d00610069006c002d007300690067006e00650064002d00760065007200690066006900650064000000000000000000000000000100000001004a00110000000200ffff00000000000000000000000000000000ffffffff00000024004c006900730074006500200064002700e90074006900710075006500740074006500730000001c0066006500650064002d007300750062007300630072006900620065000000000000000000000000000100000001004800160000000200ffff00000000000000000000000000000000ffffffff0000babe
+
+[Migratekde4]
+Version=1
+
+[MimePartTree]
+State=\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x05\xf4\x00\x00\x00\x03\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00d\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x03\x00\x00\x00\x03\x00\x00\x00\x98\x00\x00\x00\x01\x00\x00\x00\x03\x00\x00\x00\x8d\x00\x00\x00\x01\x00\x00\x00\x03\x00\x00\x04\xcf\x00\x00\x00\x01\x00\x00\x00\x03\x00\x00\x03\xe8\x00\xff\xff\xff\xff
+
+[MultiImapVacationDialog]
+Size=539,601
+
+[Note]
+LastNoteSelectedFolder=2683
+
+[Open-with settings]
+CompletionMode=5
+History=firefox,kate,kwrite,fire,okular,gwenview %U,chromium %u,/opt/kde5/bin/korganizer,chromium,kmail,gimp-2.8 %U,blogilo
+
+[Print]
+print-background-color-images=false
+
+[QuickSearchWarning]
+QuickSearchWarningDoNotShowAgain=true
+QuickSearchWarningNotRemember=true
+
+[QuickTextConfigureDialog]
+Size=100,30
+
+[ReactionToInvitationDialog]
+Size=600,400
+
+[Reader]
+AlwaysDecrypt=true
+AutoImportKeys=true
+CloseToQuotaColor=218,68,83
+CollapseQuoteLevelSpin=0
+ColorbarBackgroundHTML=0,0,0
+ColorbarBackgroundPlain=255,85,0
+ColorbarForegroundHTML=255,255,255
+ColorbarForegroundPlain=0,0,0
+FallbackCharacterEncoding=ISO-8859-15
+FollowedColor=127,140,141
+HTMLWarningColor=255,64,64
+LinkColor=41,128,185
+MessagePaneHeight=383
+MimePaneHeight=191
+MisspelledColor=255,0,0
+PGPMessageEncr=0,128,255
+PGPMessageErr=255,0,0
+PGPMessageOkKeyBad=255,255,64
+PGPMessageOkKeyOk=213,250,226
+PGPMessageWarn=255,255,64
+QuotedText1=0,0,255
+QuotedText2=255,0,0
+QuotedText3=0,96,0
+RecycleQuoteColors=true
+ScamDetectionEnabled=false
+ScamDetectionWhiteList=noreply_support@comodo.com
+ShowExpandQuotesMark=true
+ShowUserAgent=true
+attachment-strategy=inlined
+defaultColors=false
+realHtmlMailColor=true
+
+[ReaderWindow]
+Height 1080=665
+State=AAAA/wAAAAD9AAAAAAAABPgAAAJAAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=1272
+
+[RecipientsPicker]
+Size=1186,522
+
+[ScamDetectionDetailsDialog]
+Size=600,400
+
+[SelectAddressBookDialog]
+Size=600,400
+
+[SelectHeadersDialog]
+Size=729,450
+
+[SelectImapFolderDialog]
+Size=500,300
+
+[SelectMailDialog]
+Size=963,298
+
+[SelectSpecialCharDialog]
+Size=407,296
+
+[Separate Reader Window]
+Height 1080=667
+State=AAAA/wAAAAD9AAAAAAAABQAAAAJCAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=1280
+
+[ShortUrl]
+Engine=4
+EngineName=urlcashorturl
+
+[Shortcut Schemes]
+Current Scheme=Default
+
+[SieveEditor]
+Size=1447,838
+extraSplitter=276,203
+mainSplitter=492,170
+templateSplitter=1082,344
+
+[SieveTemplateEditDialog]
+Size=600,400
+
+[SnippetCustomFileAttachmentNameDialog]
+Size=710,135
+
+[SnippetDialog]
+Size=1100,767
+
+[SnippetSelectAttachmentDialog]
+Size=831,504
+
+[SnippetVariableDialog]
+Size=1096,360
+
+[Spelling]
+Language=fr_FR
+backgroundCheckerEnabled=false
+checkerEnabledByDefault=true
+
+[SubscriptionDialog]
+Size=1118,625
+
+[TemplateParser]
+CustomTemplates=testtemplate
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[TextToSpeech]
+localename=en_US
+volume=19
+
+[TextToSpeechConfigDialog]
+Size=300,263
+
+[Todo]
+LastSelectedFolder=2672
+
+[TranslatorWidget]
+FromLanguage=auto
+ToLanguage=fr
+mainSplitter=271,368
+
+[UserInterface]
+EnableFolderQuickSearch=true
+
+[VCardViewer]
+Size=443,435
+
+[ViewerPluginExternalEditDialog]
+Size=350,202
+
+[addressbook]
+themeName=
+
+[mail]
+themeName=Modern-Headers-0.2
