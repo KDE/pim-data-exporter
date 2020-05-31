@@ -98,7 +98,7 @@ void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfig
     group.sync();
 
     //TODO ????
-    KConfig config(QStringLiteral("/tmp/identities//identities/emailidentities"));
+    KConfig config(extractPath() + QStringLiteral("/identities/emailidentities"));
 
     identity.readConfig(group);
 
