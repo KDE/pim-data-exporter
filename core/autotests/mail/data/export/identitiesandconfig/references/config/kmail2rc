@@ -230,7 +230,7 @@ Size=870,649
 Size=588,545
 
 [Folder-foo/bla bla/bli118]
-Identity=221194058
+Identity=870821069
 UseDefaultIdentity=false
 htmlLoadExternalOverride=true
 
@@ -239,6 +239,10 @@ htmlLoadExternalOverride=true
 
 [Folder-foo/bla bla/bli2699]
 displayFormatOverride=2
+
+[Folder-foo/bla bla/bli3778]
+Identity=870821069
+UseDefaultIdentity=false
 
 [Folder-foo/bla bla/bli3817]
 displayFormatOverride=2
