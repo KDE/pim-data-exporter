@@ -1294,7 +1294,7 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
             KConfigGroup newGroup(kmailConfig, QStringLiteral("Automatic Add Contacts %1").arg(i.value()));
             identityGroup.copyTo(&newGroup);
             const QString automaticAddContactStr(QStringLiteral("Collection"));
-            convertRealPathToCollectionList(newGroup, automaticAddContactStr);
+            convertRealPathToCollectionList(newGroup, automaticAddContactStr, false);
             identityGroup.deleteGroup();
         }
         ++i;
