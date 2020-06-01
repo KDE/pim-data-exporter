@@ -60,17 +60,17 @@ upper-case-first-char-of-sentence=true
 Collection=2111
 Enabled=true
 
-[Automatic Add Contacts 10]
-Collection=foo/bla bla/bli3840
-Enabled=false
-
-[Automatic Add Contacts 11]
-Collection=foo/bla bla/bli3840
+[Automatic Add Contacts 1]
+Collection=3850
 Enabled=false
 
 [Automatic Add Contacts 12]
 Collection=foo/bla bla/bli3840
 Enabled=true
+
+[Automatic Add Contacts 2]
+Collection=3850
+Enabled=false
 
 [Behaviour]
 DelayedMarkAsRead=true
