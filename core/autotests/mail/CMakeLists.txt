@@ -5,7 +5,7 @@ set( exportmailjobinterfacetest_SRCS exportmailjobinterfacetest.cpp exportmailjo
 add_executable( exportmailjobinterfacetest ${exportmailjobinterfacetest_SRCS})
 add_test(NAME exportmailjobinterfacetest COMMAND exportmailjobinterfacetest)
 ecm_mark_as_test(exportmailjobinterfacetest)
-target_link_libraries(exportmailjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter KF5::MailCommon)
+target_link_libraries(exportmailjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
 
 #####
 

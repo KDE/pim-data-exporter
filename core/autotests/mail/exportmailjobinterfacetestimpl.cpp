@@ -22,7 +22,6 @@
 #include "resourceconvertertest.h"
 #include "saveresourceconfigtest.h"
 #include "testbackupresourcefilejob.h"
-#include <MailCommon/FilterImporterExporter>
 #include <QDebug>
 
 ExportMailJobInterfaceTestImpl::ExportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
@@ -64,13 +63,7 @@ Akonadi::Collection::Id ExportMailJobInterfaceTestImpl::convertFolderPathToColle
 
 QVector<MailCommon::MailFilter *> ExportMailJobInterfaceTestImpl::filters()
 {
-    MailCommon::FilterImporterExporter exportFilters;
-    const QString filename = mPathConfig + QLatin1String("filters");
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(filename);
-    qDebug() << "  filename " << filename;
-    QStringList lst;
-    const QVector<MailCommon::MailFilter *> filters = exportFilters.readFiltersFromConfig(config, lst);
-    return filters;
+    return {};
 }
 
 void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
@@ -136,4 +129,15 @@ QString ExportMailJobInterfaceTestImpl::createResource(const QString &resources,
 QVector<uint> ExportMailJobInterfaceTestImpl::listIdentityUoid() const
 {
     return {10, 11, 12, 13, 14};
+}
+
+void ExportMailJobInterfaceTestImpl::exportFilters()
+{
+    const QString filename = mPathConfig + QLatin1String("filters");
+    const bool fileAdded = archive()->addLocalFile(filename, Utils::configsPath() + QStringLiteral("filters"));
+    if (fileAdded) {
+        Q_EMIT info(QStringLiteral("Filters backup done."));
+    } else {
+        Q_EMIT error(QStringLiteral("Filters cannot be exported."));
+    }
 }
