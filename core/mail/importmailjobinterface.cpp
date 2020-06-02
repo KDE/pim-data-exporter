@@ -24,7 +24,6 @@
 #include "pimdataexportcore_debug.h"
 #include "smtpmailtransport.h"
 
-#include <MailCommon/FilterImporterExporter>
 #include <MailCommon/MailUtil>
 
 #include <MailTransport/TransportManager>
@@ -606,13 +605,7 @@ void ImportMailJobInterface::restoreConfig()
                 }
             }
             filtersConfig->sync();
-
-            bool canceled = false;
-            MailCommon::FilterImporterExporter exportFilters;
-            QVector<MailCommon::MailFilter *> lstFilter = exportFilters.importFilters(canceled, MailCommon::FilterImporterExporter::KMailFilter, filterFileName);
-            if (canceled) {
-                importFilters(lstFilter);
-            }
+            importFilters(filterFileName);
         }
     }
     const QString kmailsnippetrcStr(QStringLiteral("kmailsnippetrc"));

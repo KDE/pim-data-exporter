@@ -66,7 +66,7 @@ void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialM
     mLogCreateResource->logRegisterSpecialCollection(type, colId);
 }
 
-void ImportMailJobInterfaceTestImpl::importFilters(const QVector<MailCommon::MailFilter *> &filters)
+void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)
 {
     qDebug() << " void ImportMailJobInterfaceTestImpl::importFilters(const QVector<MailCommon::MailFilter *> &filters)";
 }

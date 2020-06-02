@@ -26,6 +26,7 @@
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
 #include <MailTransport/TransportManager>
+#include <MailCommon/FilterImporterExporter>
 #include "smtpmailtransport.h"
 using namespace Akonadi;
 
@@ -68,9 +69,14 @@ void ImportMailJobInterfaceImpl::synchronizeResource(const QStringList &lst)
     startSynchronizeResources(lst);
 }
 
-void ImportMailJobInterfaceImpl::importFilters(const QVector<MailCommon::MailFilter *> &filters)
+void ImportMailJobInterfaceImpl::importFilters(const QString &filename)
 {
-    MailCommon::FilterManager::instance()->appendFilters(filters);
+    bool canceled = false;
+    MailCommon::FilterImporterExporter exportFilters;
+    QVector<MailCommon::MailFilter *> lstFilter = exportFilters.importFilters(canceled, MailCommon::FilterImporterExporter::KMailFilter, filename);
+    if (canceled) {
+        MailCommon::FilterManager::instance()->appendFilters(lstFilter);
+    }
 }
 
 Collection::Id ImportMailJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
