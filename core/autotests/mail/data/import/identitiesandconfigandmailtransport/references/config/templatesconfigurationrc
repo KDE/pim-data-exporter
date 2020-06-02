@@ -1,0 +1,344 @@
+[Templates #1]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #128]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #1325]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #1694]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #1696]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #170]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2199]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2201]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2310]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2311]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2312]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2314]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2316]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2319]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2320]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2323]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2337]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2338]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2340]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2341]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2342]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2355]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2357]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #2709]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3170]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3171]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3731]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3766]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3771]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3786]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3795]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3797]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR\n%OFROMFNAME\n%OFROMLNAME\n%OFROMADDR
+UseCustomTemplates=true
+
+[Templates #3798]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3799]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3800]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3801]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3802]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3803]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3810]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3813]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3815]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3816]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #3817]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR\n\nsdfdqsf\ndf\nqf\nqd\n%OTOADDR\n%OTOLNAME\n%OTONAME\ndgdfg\ng\nfgf\nsdsdf\n\n%OFROMADDR\n%OFROMNAME\n%OFROMFNAME\n%OFROMLNAME\nddddd
+UseCustomTemplates=true
+
+[Templates #3818]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #4422]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #4453]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #4467]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR
+
+[Templates #74]
+QuoteString=>\s
+TemplateForward=%REM="Modèle « Faire suivre » par défaut"%-\n\n----------  Message transmis  ----------\nObjet : %OFULLSUBJECT\nDate : %ODATE, %OTIMELONG\nDe : %OFROMADDR\n %OADDRESSEESADDR\n\n%QUOTE\n-----------------------------------------
+TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
+TemplateReply=%REM="Modèle de réponse par défaut"%-\nLe %ODATE %OTIMELONG, vous avez écrit :\n%QUOTE\n%CURSOR
+TemplateReplyAll=%REM="Modèle « Répondre à tous » par défaut"%-\nLe %ODATE, %OTIMELONG %OFROMNAME a écrit :\n%QUOTE\n%CURSOR

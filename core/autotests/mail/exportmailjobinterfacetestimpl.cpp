@@ -22,6 +22,7 @@
 #include "resourceconvertertest.h"
 #include "saveresourceconfigtest.h"
 #include "testbackupresourcefilejob.h"
+#include <MailCommon/FilterImporterExporter>
 #include <QDebug>
 
 ExportMailJobInterfaceTestImpl::ExportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
@@ -63,9 +64,13 @@ Akonadi::Collection::Id ExportMailJobInterfaceTestImpl::convertFolderPathToColle
 
 QVector<MailCommon::MailFilter *> ExportMailJobInterfaceTestImpl::filters()
 {
-    qDebug() << " not implement yet ExportMailJobInterfaceTestImpl::filters()";
-    //TODO implement it
-    return {};
+    MailCommon::FilterImporterExporter exportFilters;
+    const QString filename = mPathConfig + QLatin1String("filters");
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(filename);
+    qDebug() << "  filename " << filename;
+    QStringList lst;
+    const QVector<MailCommon::MailFilter *> filters = exportFilters.readFiltersFromConfig(config, lst);
+    return filters;
 }
 
 void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
@@ -101,11 +106,6 @@ QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) 
     converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
     const QString url = converter.resourcePath(identifier);
     return url;
-}
-
-void ExportMailJobInterfaceTestImpl::exportFilters()
-{
-    qDebug() << " void ExportMailJobInterfaceTestImpl::exportFilters() not implemented yet";
 }
 
 void ExportMailJobInterfaceTestImpl::backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath)

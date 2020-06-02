@@ -1,0 +1,32 @@
+[General]
+default-transport=2
+
+[Transport 1]
+authenticationType=0
+encryption=1
+host=smtp.foo.fr
+localHostname=
+name=transportname1
+port=465
+precommand=
+requiresAuthentication=false
+senderOverwriteAddress=bla@foo.fr
+specifyHostname=false
+specifySenderOverwriteAddress=true
+storePassword=true
+userName=vla@bla.fr
+
+[Transport 2]
+authenticationType=0
+encryption=1
+host=smtp.bla.org
+localHostname=
+name=transportname2
+port=587
+precommand=
+requiresAuthentication=true
+senderOverwriteAddress=
+specifyHostname=false
+specifySenderOverwriteAddress=false
+storePassword=true
+userName=foo@bla.org

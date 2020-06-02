@@ -68,10 +68,10 @@ void ExportMailJobInterfaceTest::exportMail()
     info.identifier = QStringLiteral("akonadi_kolab_resource_2");
     lstInfo << info;
 
-    ExportMailJobInterfaceTestImpl *exportNote = new ExportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
-    exportNote->setListOfResource(lstInfo);
-    exportNote->setPathConfig(QLatin1String(configpath));
-    file->setAbstractImportExportJob(exportNote);
+    ExportMailJobInterfaceTestImpl *exportMail = new ExportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    exportMail->setListOfResource(lstInfo);
+    exportMail->setPathConfig(QLatin1String(configpath));
+    file->setAbstractImportExportJob(exportMail);
     file->start();
-    delete exportNote;
+    delete exportMail;
 }

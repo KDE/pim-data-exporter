@@ -135,7 +135,7 @@ void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &id
 void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId)
 {
     //qDebug() << " defaultTransport " << defaultTransport << " transportId " << transportId;
-    KConfig config(QStringLiteral("/tmp/mailtransport/config/mailtransports"));
+    KConfig config(extractPath() + QStringLiteral("/config/mailtransports"));
     const int transportValue = mMailTransportId;
     mMailTransportId++;
     KConfigGroup grp = config.group(QStringLiteral("Transport %1").arg(transportValue));
