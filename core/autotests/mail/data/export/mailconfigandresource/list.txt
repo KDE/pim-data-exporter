@@ -3,3 +3,4 @@ information/VERSION_2
 information/exportdatatype.xml
 configs/foldermailarchiverc
 configs/templatesconfigurationrc
+configs/filters

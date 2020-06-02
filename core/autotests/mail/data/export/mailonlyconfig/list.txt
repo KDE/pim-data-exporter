@@ -5,3 +5,4 @@ configs/foldermailarchiverc
 configs/templatesconfigurationrc
 configs/akonadi_archivemail_agentrc
 configs/kabldaprc
+configs/filters

@@ -7,3 +7,4 @@ configs/kabldaprc
 configs/kmail2rc
 configs/templatesconfigurationrc
 transports/mailtransports
+configs/filters
