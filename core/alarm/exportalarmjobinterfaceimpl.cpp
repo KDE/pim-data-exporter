@@ -92,5 +92,5 @@ QString ExportAlarmJobInterfaceImpl::createResource(const QString &resources, co
 void ExportAlarmJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
 {
     ResourceConverterImpl converter;
-    return converter.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
+    converter.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
 }
