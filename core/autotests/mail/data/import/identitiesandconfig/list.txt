@@ -6,3 +6,4 @@ configs/foldermailarchiverc
 configs/kabldaprc
 configs/kmail2rc
 configs/templatesconfigurationrc
+configs/filters
