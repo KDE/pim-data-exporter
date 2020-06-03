@@ -68,7 +68,9 @@ void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialM
 
 void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)
 {
-    qDebug() << " void ImportMailJobInterfaceTestImpl::importFilters(const QVector<MailCommon::MailFilter *> &filters)";
+    qDebug() << " void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)" << filename;
+    QFile f(filename);
+    QVERIFY(f.copy(extractPath() + QStringLiteral("/config/filters")));
 }
 
 QString ImportMailJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
