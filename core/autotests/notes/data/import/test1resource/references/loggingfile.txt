@@ -1,10 +1,10 @@
 akonadi_akonotes_resource
-Notes
+Notes2
 Path /tmp/backupnote//0/
 1
 --------------------------
 akonadi_akonotes_resource
-Notes2
+Notes
 Path /tmp/backupnote//1/
 1
 --------------------------
