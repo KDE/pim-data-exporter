@@ -25,7 +25,7 @@
 #include <QDebug>
 #include <KZip>
 
-#define KEEP_TEMPORARY_FILES 1
+#define REMOVE_TEMPORARY_FILES 1
 
 CompareExportFile::CompareExportFile()
 {
@@ -65,7 +65,9 @@ void CompareExportFile::compareFiles()
         if (currentEntry && currentEntry->isFile()) {
             if (!mTempDir) {
                 mTempDir = new QTemporaryDir;
-#ifdef KEEP_TEMPORARY_FILES
+#ifdef REMOVE_TEMPORARY_FILES
+                mTempDir->setAutoRemove(true);
+#else
                 mTempDir->setAutoRemove(false);
 #endif
             }

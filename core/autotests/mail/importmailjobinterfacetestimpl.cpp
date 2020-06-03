@@ -34,7 +34,7 @@ ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, 
 
 ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 {
-    //QVERIFY(QDir(extractPath()).removeRecursively());
+    QVERIFY(QDir(extractPath()).removeRecursively());
 }
 
 void ImportMailJobInterfaceTestImpl::start()

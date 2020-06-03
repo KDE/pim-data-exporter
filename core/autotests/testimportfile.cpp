@@ -26,7 +26,7 @@
 
 #include <QSignalSpy>
 #include <QTest>
-//#define REMOVE_TEMPORARY_DIR 1
+#define REMOVE_TEMPORARY_DIR 1
 
 TestImportFile::TestImportFile(const QString &archivePath, QObject *parent)
     : QObject(parent)
