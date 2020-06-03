@@ -1,2 +1,6 @@
 information/VERSION_2
 information/exportdatatype.xml
+alarm/akonadi_kalarm_dir_resource_2/agent_config_akonadi_kalarm_dir_resource_2
+alarm/akonadi_kalarm_dir_resource_2/akonadi_kalarm_dir_resource_2rc
+alarm/akonadi_kalarm_dir_resource_2/alarm.zip
+configs/kalarmrc

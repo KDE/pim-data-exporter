@@ -1,0 +1,7 @@
+akonadi_kalarm_dir_resource
+Active Alarms2
+Path /tmp/backupalarm//calendar.ics
+1
+--------------------------
+akonadi_kalarm_dir_resource_new_resource_0
+--------------------------

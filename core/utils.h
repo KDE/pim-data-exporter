@@ -33,6 +33,9 @@ struct ResourceFiles {
     {
         qDebug() << " akonadiconfigfile :" << akonadiConfigFile << " akonadiResources:" << akonadiResources << " akonadiAgentConfigFile:" << akonadiAgentConfigFile;
     }
+    bool operator<(const ResourceFiles &other) const {
+        return other.akonadiConfigFile < akonadiConfigFile;
+    }
 };
 
 namespace Utils {

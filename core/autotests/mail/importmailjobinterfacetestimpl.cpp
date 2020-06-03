@@ -35,6 +35,7 @@ ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, 
 ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 {
     QVERIFY(QDir(extractPath()).removeRecursively());
+    QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeMails()).removeRecursively());
 }
 
 void ImportMailJobInterfaceTestImpl::start()
@@ -68,8 +69,10 @@ void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialM
 
 void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)
 {
-    qDebug() << " void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)" << filename;
+    //qDebug() << " void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)" << filename << " extractpath " << extractPath();
     QFile f(filename);
+    QDir dir(extractPath());
+    QVERIFY(dir.mkpath(QStringLiteral("config")));
     QVERIFY(f.copy(extractPath() + QStringLiteral("/config/filters")));
 }
 
@@ -89,7 +92,6 @@ QString ImportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResour
 
 void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid)
 {
-    //TODO order ????
     //qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet" << oldUid << " name " << name;
     const QString uniqueName = uniqueIdentityName(name);
     KIdentityManagement::Identity identity;
@@ -99,7 +101,6 @@ void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfig
     group.writeEntry(QStringLiteral("Name"), uniqueName);
     group.sync();
 
-    //TODO ????
     KConfig config(extractPath() + QStringLiteral("/identities/emailidentities"));
 
     identity.readConfig(group);
