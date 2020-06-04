@@ -49,6 +49,8 @@ void ImportMailJobInterfaceTest::importMail_data()
     QTest::newRow("identitiesandconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfig/") << options;
     options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport};
     QTest::newRow("identitiesandconfigandmailtransport") << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfigandmailtransport/") << options;
+    options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport|Utils::StoredType::Resources};
+    QTest::newRow("identitiesandconfigandmailtransportandresources") << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfigandmailtransportandresources/") << options;
 }
 
 void ImportMailJobInterfaceTest::importMail()

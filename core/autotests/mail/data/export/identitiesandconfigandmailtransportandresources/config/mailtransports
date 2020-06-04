@@ -1,0 +1,25 @@
+[General]
+default-transport=1701481874
+
+[Transport 1100263210]
+authtype=0
+encryption=SSL
+host=smtp.foo.fr
+id=1100263210
+name=transportname1
+port=465
+senderOverwriteAddress=bla@foo.fr
+specifySenderOverwriteAddress=true
+storepass=true
+user=vla@bla.fr
+
+[Transport 1701481874]
+auth=true
+authtype=0
+encryption=TLS
+host=smtp.bla.org
+id=1701481874
+name=transportname2
+port=587
+storepass=true
+user=foo@bla.org

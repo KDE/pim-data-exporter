@@ -1,0 +1,72 @@
+[Filter #0]
+Applicability=0
+AutomaticName=true
+ConfigureShortcut=false
+ConfigureToolbar=false
+Enabled=true
+Icon=system-run
+StopProcessingHere=true
+ToolbarName=<List-Id>: <development.lists.qt-project.org>
+action-args-0=3807
+action-name-0=transfer
+actions=1
+apply-on=check-mail,manual-filtering
+contentsA=<development.lists.qt-project.org>
+fieldA=List-Id
+funcA=contains
+identifier=oFmAmBrxrnkSmZZi
+name=<List-Id>: <development.lists.qt-project.org>
+operator=and
+rules=1
+
+[Filter #1]
+Applicability=0
+AutomaticName=true
+ConfigureShortcut=false
+ConfigureToolbar=false
+Enabled=true
+Icon=system-run
+StopProcessingHere=true
+ToolbarName=<List-Id>: <interest.lists.qt-project.org>
+action-args-0=3808
+action-name-0=transfer
+actions=1
+apply-on=check-mail,manual-filtering
+contentsA=<interest.lists.qt-project.org>
+fieldA=List-Id
+funcA=contains
+identifier=g4zR6v8Ic9wEsrWK
+name=<List-Id>: <interest.lists.qt-project.org>
+operator=and
+rules=1
+
+[Filter #2]
+Applicability=0
+AutomaticName=false
+ConfigureShortcut=false
+ConfigureToolbar=false
+Enabled=true
+StopProcessingHere=true
+ToolbarName=test
+action-args-0=2
+action-args-1=1
+action-name-0=set transport
+action-name-1=set identity
+actions=2
+apply-on=check-mail,manual-filtering
+contentsA=foo
+fieldA=<message>
+funcA=contains
+identifier=bxqGtCbFxMcmNjQ5
+name=test
+operator=and
+rules=1
+
+[FilterActionMissingAccountDialog]
+Size=1280,669
+
+[General]
+filters=3
+
+[Geometry]
+filterLogSize=600,400

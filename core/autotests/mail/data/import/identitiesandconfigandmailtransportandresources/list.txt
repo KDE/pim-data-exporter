@@ -1,0 +1,10 @@
+identities/emailidentities
+information/VERSION_2
+information/exportdatatype.xml
+configs/akonadi_archivemail_agentrc
+configs/foldermailarchiverc
+configs/kabldaprc
+configs/kmail2rc
+configs/templatesconfigurationrc
+transports/mailtransports
+configs/filters
