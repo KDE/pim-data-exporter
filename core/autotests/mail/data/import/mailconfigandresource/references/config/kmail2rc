@@ -229,6 +229,21 @@ Size=870,649
 [FilterSelectionDialog]
 Size=588,545
 
+[Folder-1257]
+htmlLoadExternalOverride=true
+
+[Folder-128]
+htmlLoadExternalOverride=true
+
+[Folder-2709]
+displayFormatOverride=2
+
+[Folder-3827]
+displayFormatOverride=2
+
+[Folder-4467]
+displayFormatOverride=2
+
 [FolderSelectionDialog]
 LastSelectedFolder=2703
 Size=1151,571

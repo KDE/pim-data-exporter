@@ -27,6 +27,8 @@
 #include <KIdentityManagement/Identity>
 #include <QTest>
 
+#define REMOVE_TEMPORARY_DIRECTORIES 1
+
 ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportMailJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
@@ -34,8 +36,10 @@ ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, 
 
 ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 {
+#ifdef REMOVE_TEMPORARY_DIRECTORIES
     QVERIFY(QDir(extractPath()).removeRecursively());
     QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeMails()).removeRecursively());
+#endif
 }
 
 void ImportMailJobInterfaceTestImpl::start()
