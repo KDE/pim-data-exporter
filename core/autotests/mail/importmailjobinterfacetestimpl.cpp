@@ -178,4 +178,5 @@ void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTrans
         KConfigGroup generalGrp = config.group(QStringLiteral("General"));
         generalGrp.writeEntry(QStringLiteral("default-transport"), transportValue);
     }
+    mHashTransport.insert(transportId, transportValue);
 }
