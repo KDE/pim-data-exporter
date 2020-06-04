@@ -26,7 +26,7 @@
 #include <QDir>
 #include <QSignalSpy>
 #include <QTest>
-#define REMOVE_CREATED_ZIP_FILE 1
+//#define REMOVE_CREATED_ZIP_FILE 1
 
 TestExportFile::TestExportFile(QObject *parent)
     : QObject(parent)
