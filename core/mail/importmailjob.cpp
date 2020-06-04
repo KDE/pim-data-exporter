@@ -1195,7 +1195,7 @@ void ImportMailJob::importKmailConfig(const KArchiveFile *kmailsnippet, const QS
         if (!path.isEmpty()) {
             KConfigGroup oldGroup = kmailConfig->group(str);
             ImportExportMailUtil::cleanupFolderSettings(oldGroup);
-            if (!oldGroup.groupList().isEmpty()) {
+            if (!oldGroup.keyList().isEmpty()) {
                 if (oldGroup.hasKey(QStringLiteral("Identity"))) {
                     const int identity = oldGroup.readEntry(QStringLiteral("Identity"), -1);
                     if (identity != -1) {
