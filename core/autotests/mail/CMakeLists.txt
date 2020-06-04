@@ -5,7 +5,7 @@ set( exportmailjobinterfacetest_SRCS exportmailjobinterfacetest.cpp exportmailjo
 add_executable( exportmailjobinterfacetest ${exportmailjobinterfacetest_SRCS})
 add_test(NAME exportmailjobinterfacetest COMMAND exportmailjobinterfacetest)
 ecm_mark_as_test(exportmailjobinterfacetest)
-target_link_libraries(exportmailjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
+target_link_libraries(exportmailjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter KF5::Mime)
 
 #####
 
@@ -14,4 +14,4 @@ set( importmailjobinterfacetest_SRCS importmailjobinterfacetest.cpp importmailjo
 add_executable( importmailjobinterfacetest ${importmailjobinterfacetest_SRCS})
 add_test(NAME importmailjobinterfacetest COMMAND importmailjobinterfacetest)
 ecm_mark_as_test(importmailjobinterfacetest)
-target_link_libraries(importmailjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore KF5::AkonadiMime test_resourceconverter KF5::IdentityManagement)
+target_link_libraries(importmailjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore KF5::AkonadiMime test_resourceconverter KF5::IdentityManagement KF5::Mime)

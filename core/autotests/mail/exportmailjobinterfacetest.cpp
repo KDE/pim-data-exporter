@@ -21,6 +21,7 @@
 #include "exportmailjobinterfacetestimpl.h"
 #include "archivestorage.h"
 #include "testexportfile.h"
+#include <KMime/Message>
 #include <QTest>
 
 QTEST_MAIN(ExportMailJobInterfaceTest)
@@ -47,7 +48,7 @@ void ExportMailJobInterfaceTest::exportMail_data()
     QTest::newRow("identitiesandconfig") << pathConfig + QByteArray("identitiesandconfig/") << options;
     options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport};
     QTest::newRow("identitiesandconfigandmailtransport") << pathConfig + QByteArray("identitiesandconfigandmailtransport/") << options;
-    options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport|Utils::StoredType::Resources};
+    options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport|Utils::StoredType::Resources|Utils::StoredType::Mails};
     QTest::newRow("identitiesandconfigandmailtransportandresources") << pathConfig + QByteArray("identitiesandconfigandmailtransportandresources/") << options;
 }
 
@@ -61,13 +62,21 @@ void ExportMailJobInterfaceTest::exportMail()
     Utils::AkonadiInstanceInfo info;
 
     info.identifier = QLatin1String("akonadi_mbox_resource_1");
+    info.mimeTypes = QStringList() << KMime::Message::mimeType();
+    info.capabilities = QStringList() << QLatin1String("Resource");
     lstInfo << info;
     info.identifier = QLatin1String("akonadi_maildir_resource_1");
+    info.mimeTypes = QStringList() << KMime::Message::mimeType();
+    info.capabilities = QStringList() << QLatin1String("Resource");
     lstInfo << info;
     info.identifier = QLatin1String("akonadi_mixedmaildir_resource_1");
+    info.mimeTypes = QStringList() << KMime::Message::mimeType();
+    info.capabilities = QStringList() << QLatin1String("Resource");
     lstInfo << info;
+    //TODO add kolab and other
+
     //Add extra resource.
-    info.identifier = QStringLiteral("akonadi_kolab_resource_2");
+    info.identifier = QStringLiteral("akonadi_kalarm_dir_resource_2");
     lstInfo << info;
 
     ExportMailJobInterfaceTestImpl *exportMail = new ExportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
