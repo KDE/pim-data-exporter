@@ -51,9 +51,13 @@ void SaveResourceConfigTest::exportResourceToArchive(const QString &archivePath,
     if (QFileInfo(url).isFile()) {
         QVERIFY(mArchive->addLocalFile(url, archivePath + resourceArchiveName));
     } else {
-        QVERIFY(mArchive->addLocalFile(url + identifier + QLatin1String(".zip"), archivePath + resourceArchiveName));
+        const QString zipFile = url + identifier + QLatin1String(".zip");
+        const bool success = mArchive->addLocalFile(zipFile, archivePath + resourceArchiveName);
+        if (!success) {
+            qDebug() << " zip file " << zipFile;
+        }
+        QVERIFY(success);
     }
-    //qDebug() << "url " << url + identifier + QLatin1String(".zip");
     ResourceConverterTest converter;
     const QString errorStr = converter.storeResources(mArchive, identifier, archivePath);
     QVERIFY(errorStr.isEmpty());
