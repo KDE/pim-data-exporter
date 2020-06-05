@@ -36,21 +36,21 @@ ExportMailJobInterfaceTestImpl::~ExportMailJobInterfaceTestImpl()
 void ExportMailJobInterfaceTestImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;
-    resourceConverter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverter.setTestPath(mPathConfig);
     resourceConverter.convertCollectionToRealPath(group, currentKey);
 }
 
 void ExportMailJobInterfaceTestImpl::convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey)
 {
     ResourceConverterTest resourceConverter;
-    resourceConverter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverter.setTestPath(mPathConfig);
     resourceConverter.convertCollectionListToRealPath(group, currentKey);
 }
 
 void ExportMailJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGroup &group, const QString &currentKey, const QString &prefixCollection)
 {
     ResourceConverterTest resourceConverter;
-    resourceConverter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    resourceConverter.setTestPath(mPathConfig);
     resourceConverter.convertCollectionIdsToRealPath(group, currentKey, prefixCollection);
 }
 
@@ -68,7 +68,7 @@ QVector<MailCommon::MailFilter *> ExportMailJobInterfaceTestImpl::filters()
 
 void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    qDebug() << " void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << identifier;
+    //qDebug() << " void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << identifier;
     SaveResourceConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
     saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceMailArchiveName(),
@@ -90,14 +90,14 @@ QString ExportMailJobInterfaceTestImpl::storeResources(KZip *archive, const QStr
 QString ExportMailJobInterfaceTestImpl::convertToFullCollectionPath(const qlonglong collectionValue)
 {
     ResourceConverterTest converter;
-    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    converter.setTestPath(mPathConfig);
     return converter.convertToFullCollectionPath(collectionValue);
 }
 
 QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) const
 {
     ResourceConverterTest converter;
-    converter.setTestPath(QLatin1String(PIMDATAEXPORTER_DIR));
+    converter.setTestPath(mPathConfig);
     const QString url = converter.resourcePath(identifier);
     return url;
 }
