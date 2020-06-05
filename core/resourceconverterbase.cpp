@@ -79,11 +79,11 @@ QString ResourceConverterBase::resourcePath(const QString &agentIdentifier, cons
 {
     const QString agentFileName = agentIdentifier + QStringLiteral("rc");
     const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
-    qDebug() << "configFileName " << configFileName;
+    //qDebug() << "configFileName " << configFileName;
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
     const QString url = resourcePath(resourceConfig, defaultPath);
-    qDebug() << " resourcePath " << url;
+    //qDebug() << " resourcePath " << url;
     return url;
 }
 

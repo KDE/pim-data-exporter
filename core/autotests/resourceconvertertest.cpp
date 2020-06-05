@@ -53,12 +53,11 @@ Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(c
 
 QString ResourceConverterTest::changeResourcePath(QString url) const
 {
-    qDebug() << " need to fix " << url << " mTestPath " << mTestPath;
+    //qDebug() << " need to fix " << url << " mTestPath " << mTestPath;
     if (!url.isEmpty()) {
         url.replace(QLatin1String("[TEST_PATH]"), mTestPath);
     }
-    qDebug() <<" FIXED " << url;
-    //TODO FIXME
+    //qDebug() <<" FIXED " << url;
     return url;
 }
 

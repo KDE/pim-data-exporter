@@ -65,6 +65,6 @@ void SaveResourceConfigTest::exportResourceToArchive(const QString &archivePath,
     QVERIFY(!urlAgentConfig.isEmpty());
     const QFileInfo fi(urlAgentConfig);
     const QString filename = fi.fileName();
-    qDebug() << "urlAgentConfig  " << urlAgentConfig;
+    //qDebug() << "urlAgentConfig  " << urlAgentConfig;
     QVERIFY(mArchive->addLocalFile(urlAgentConfig, archivePath + filename));
 }
