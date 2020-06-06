@@ -141,6 +141,7 @@ void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *d
             }
         }
     }
+    std::sort(mListResourceFile.begin(), mListResourceFile.end());
 }
 
 void ImportMailJobInterface::importMailTransport(const QString &tempDirName)
