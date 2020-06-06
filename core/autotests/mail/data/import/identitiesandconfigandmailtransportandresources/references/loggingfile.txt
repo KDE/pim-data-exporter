@@ -1,3 +1,9 @@
+akonadi_mixedmaildir_resource
+Local Folders
+Path /tmp/backupmail//0/
+TopLevelIsContainer true
+0
+--------------------------
 akonadi_mbox_resource
 mbox1
 Path /tmp/backupmail//akonadi_mbox_resource_1.mbox
@@ -5,18 +11,12 @@ Path /tmp/backupmail//akonadi_mbox_resource_1.mbox
 --------------------------
 akonadi_maildir_resource
 maildir 1
-Path /tmp/backupmail//0/
-TopLevelIsContainer true
-0
---------------------------
-akonadi_mixedmaildir_resource
-Local Folders
 Path /tmp/backupmail//1/
 TopLevelIsContainer true
 0
 --------------------------
-akonadi_maildir_resource_new_resource_1
-akonadi_mixedmaildir_resource_new_resource_2
+akonadi_mixedmaildir_resource_new_resource_0
+akonadi_maildir_resource_new_resource_2
 --------------------------
 Special Collection : 3 colId 3734
 --------------------------
