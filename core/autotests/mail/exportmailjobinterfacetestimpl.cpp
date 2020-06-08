@@ -84,6 +84,7 @@ QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceTestImpl::listOfResour
 QString ExportMailJobInterfaceTestImpl::storeResources(KZip *archive, const QString &identifier, const QString &path)
 {
     ResourceConverterTest converter;
+    converter.setTestPath(mPathConfig);
     return converter.storeResources(archive, identifier, path);
 }
 

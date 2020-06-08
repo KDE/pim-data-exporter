@@ -180,7 +180,7 @@ QString ResourceConverterBase::storeResources(KZip *archive, const QString &iden
 {
     const QString agentFileName = identifier + QStringLiteral("rc");
     const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
-    qCDebug(PIMDATAEXPORTERCORE_LOG) << "configFileName " << configFileName << "agentFileName " << configFileName;
+    qCWarning(PIMDATAEXPORTERCORE_LOG) << "configFileName " << configFileName << "agentFileName " << configFileName;
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
     QTemporaryFile tmp;

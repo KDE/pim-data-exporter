@@ -1,0 +1,15 @@
+[General]
+host=pop3.foo.org
+intervalCheckEnabled=true
+intervalCheckInterval=24
+leaveOnServer=true
+leaveOnServerDays=25
+login=kde%foo.org
+name=kde
+pipelining=true
+targetCollection=3778
+useTLS=true
+
+[LeaveOnServer]
+seenUidList=1589466101.18581.mail175.ha.foo.net\\,S=6906,1589466102.10772.mail114.ha.foo.net\\
+seenUidTimeList=1589467684,1589467684

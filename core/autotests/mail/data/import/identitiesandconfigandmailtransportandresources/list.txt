@@ -17,3 +17,4 @@ mails/akonadi_mixedmaildir_resource_1/agent_config_akonadi_mixedmaildir_resource
 mails/akonadi_mixedmaildir_resource_1/akonadi_mixedmaildir_resource_1rc
 mails/akonadi_mixedmaildir_resource_1/mail.zip
 transports/mailtransports
+resources/akonadi_pop3_resource_1rc

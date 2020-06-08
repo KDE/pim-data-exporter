@@ -73,6 +73,13 @@ void ExportMailJobInterfaceTest::exportMail()
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
     info.capabilities = QStringList() << QLatin1String("Resource");
     lstInfo << info;
+
+    //Pop3 support
+    info.identifier = QLatin1String("akonadi_pop3_resource_1");
+    info.mimeTypes = QStringList() << KMime::Message::mimeType();
+    info.capabilities = QStringList() << QLatin1String("Resource");
+    lstInfo << info;
+
     //TODO add kolab and other
 
     //Add extra resource.

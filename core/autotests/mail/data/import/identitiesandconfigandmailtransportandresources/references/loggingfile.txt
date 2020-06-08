@@ -18,6 +18,10 @@ TopLevelIsContainer true
 akonadi_mixedmaildir_resource_new_resource_0
 akonadi_maildir_resource_new_resource_2
 --------------------------
+akonadi_pop3_resource
+akonadi_pop3_resource_1rc
+0
+--------------------------
 Special Collection : 3 colId 3734
 --------------------------
 Special Collection : 5 colId 3730

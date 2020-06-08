@@ -4,3 +4,4 @@ information/exportdatatype.xml
 configs/foldermailarchiverc
 configs/templatesconfigurationrc
 configs/filters
+resources/akonadi_pop3_resource_1rc
