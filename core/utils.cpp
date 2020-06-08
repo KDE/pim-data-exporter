@@ -148,6 +148,7 @@ KZip *Utils::openZip(const QString &filename, QString &errorMsg)
     const bool result = zip->open(QIODevice::ReadOnly);
     if (!result) {
         errorMsg = i18n("Archive cannot be opened in read mode.");
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open archive: " << filename;
         delete zip;
         return nullptr;
     }

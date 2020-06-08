@@ -35,7 +35,7 @@ TestImportFile::TestImportFile(const QString &archivePath, QObject *parent)
     mArchiveStorage = new ArchiveStorage(mArchivePath, this);
     const bool archiveOpened = mArchiveStorage->openArchive(false);
     if (!archiveOpened) {
-        qDebug() << " mArchivePath " << mArchivePath;
+        qDebug() << " mArchivePath can't be opened :" << mArchivePath;
     }
     Q_ASSERT(archiveOpened);
 }
