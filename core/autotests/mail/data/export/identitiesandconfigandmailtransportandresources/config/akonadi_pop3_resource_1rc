@@ -7,7 +7,7 @@ leaveOnServerDays=25
 login=kde%foo.org
 name=kde
 pipelining=true
-targetCollection=foo/bla bla/bli3778
+targetCollection=3778
 useTLS=true
 
 [LeaveOnServer]
