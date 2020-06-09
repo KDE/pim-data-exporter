@@ -55,7 +55,6 @@ protected:
     void convertCollectionStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key);
     virtual void restoreMails();
     void restoreResources();
-    virtual Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
     virtual void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) = 0;
     virtual void synchronizeResource(const QStringList &lst) = 0;
     virtual void importFilters(const QString &filename) = 0;

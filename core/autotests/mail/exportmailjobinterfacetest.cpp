@@ -61,23 +61,23 @@ void ExportMailJobInterfaceTest::exportMail()
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;
 
-    info.identifier = QLatin1String("akonadi_mbox_resource_1");
+    info.identifier = QStringLiteral("akonadi_mbox_resource_1");
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
-    info.capabilities = QStringList() << QLatin1String("Resource");
+    info.capabilities = QStringList() << QStringLiteral("Resource");
     lstInfo << info;
-    info.identifier = QLatin1String("akonadi_maildir_resource_1");
+    info.identifier = QStringLiteral("akonadi_maildir_resource_1");
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
-    info.capabilities = QStringList() << QLatin1String("Resource");
+    info.capabilities = QStringList() << QStringLiteral("Resource");
     lstInfo << info;
-    info.identifier = QLatin1String("akonadi_mixedmaildir_resource_1");
+    info.identifier = QStringLiteral("akonadi_mixedmaildir_resource_1");
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
-    info.capabilities = QStringList() << QLatin1String("Resource");
+    info.capabilities = QStringList() << QStringLiteral("Resource");
     lstInfo << info;
 
     //Pop3 support
-    info.identifier = QLatin1String("akonadi_pop3_resource_1");
+    info.identifier = QStringLiteral("akonadi_pop3_resource_1");
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
-    info.capabilities = QStringList() << QLatin1String("Resource");
+    info.capabilities = QStringList() << QStringLiteral("Resource");
     lstInfo << info;
 
     //TODO add kolab and other

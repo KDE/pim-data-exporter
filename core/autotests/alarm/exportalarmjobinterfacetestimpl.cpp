@@ -83,7 +83,7 @@ void ExportAlarmJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGrou
 {
     ResourceConverterTest resourceConverterTest;
     resourceConverterTest.setTestPath(mPathConfig);
-    return resourceConverterTest.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
+    resourceConverterTest.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
 }
 
 QString ExportAlarmJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)

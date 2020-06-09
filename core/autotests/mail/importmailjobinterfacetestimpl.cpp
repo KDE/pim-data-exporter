@@ -37,7 +37,7 @@ ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, 
 ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 {
 #ifdef REMOVE_TEMPORARY_DIRECTORIES
-    QVERIFY(QDir(extractPath()).removeRecursively());
+    //QVERIFY(QDir(extractPath()).removeRecursively());
     QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeMails()).removeRecursively());
 #endif
 }

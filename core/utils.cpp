@@ -239,6 +239,7 @@ QVector<Utils::AkonadiInstanceInfo> Utils::listOfResource()
     QVector<Utils::AkonadiInstanceInfo> instanceInfoList;
     Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
     const Akonadi::AgentInstance::List list = manager->instances();
+    instanceInfoList.reserve(list.count());
     for (const Akonadi::AgentInstance &agent : list) {
         Utils::AkonadiInstanceInfo info;
         info.identifier = agent.identifier();

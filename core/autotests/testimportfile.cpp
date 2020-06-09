@@ -78,7 +78,7 @@ void TestImportFile::start()
     file.setListFilePath(mPathConfig);
     file.compare();
 
-    if (error.count()) {
+    if (!error.isEmpty()) {
         qDebug() << error.at(0);
     }
     QCOMPARE(error.count(), 0);
