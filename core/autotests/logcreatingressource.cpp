@@ -74,7 +74,11 @@ QString LogCreatingResource::logCreateResource(const QString &resources, const Q
     QMapIterator<QString, QVariant> i(settings);
     while (i.hasNext()) {
         i.next();
-        stream << i.key() << ' ' << i.value().toString() << '\n';
+        if (i.value().canConvert<QStringList>()) {
+            stream << i.key() << ' ' << i.value().toStringList().join(QLatin1Char(',')) << '\n';
+        } else {
+            stream << i.key() << ' ' << i.value().toString() << '\n';
+        }
     }
     stream << synchronizeTree << '\n';
     stream << "--------------------------\n";

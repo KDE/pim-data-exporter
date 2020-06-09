@@ -20,6 +20,16 @@ akonadi_maildir_resource_new_resource_2
 --------------------------
 akonadi_pop3_resource
 akonadi_pop3_resource_1rc
+Host pop3.foo.org
+IntervalCheckEnabled true
+IntervalCheckInterval 24
+LeaveOnServer true
+LeaveOnServerDays 25
+Login kde%foo.org
+Pipelining true
+SeenUidList 1589466101.18581.mail175.ha.foo.net,S=6906,1589466102.10772.mail114.ha.foo.net
+TargetCollection 3788
+UseTLS true
 0
 --------------------------
 Special Collection : 3 colId 3734
