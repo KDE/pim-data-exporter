@@ -5,3 +5,5 @@ configs/foldermailarchiverc
 configs/templatesconfigurationrc
 configs/filters
 resources/akonadi_pop3_resource_1rc
+resources/akonadi_imap_resource_1rc
+resources/akonadi_kolab_resource_1rc
