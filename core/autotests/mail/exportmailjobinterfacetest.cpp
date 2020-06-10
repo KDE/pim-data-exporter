@@ -80,7 +80,17 @@ void ExportMailJobInterfaceTest::exportMail()
     info.capabilities = QStringList() << QStringLiteral("Resource");
     lstInfo << info;
 
-    //TODO add kolab and other
+    //Imap support
+    info.identifier = QStringLiteral("akonadi_imap_resource_1");
+    info.mimeTypes = QStringList() << KMime::Message::mimeType();
+    info.capabilities = QStringList() << QStringLiteral("Resource");
+    lstInfo << info;
+
+    //Kolab support
+    info.identifier = QStringLiteral("akonadi_kolab_resource_1");
+    info.mimeTypes = QStringList() << KMime::Message::mimeType();
+    info.capabilities = QStringList() << QStringLiteral("Resource");
+    lstInfo << info;
 
     //Add extra resource.
     info.identifier = QStringLiteral("akonadi_kalarm_dir_resource_2");
