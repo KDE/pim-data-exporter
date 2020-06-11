@@ -19,7 +19,7 @@
 
 #include "logwidget.h"
 
-#include <Libkdepim/CustomLogWidget>
+#include <PimCommon/CustomLogWidget>
 
 #include <QHBoxLayout>
 
@@ -27,7 +27,7 @@ LogWidget::LogWidget(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-    mCustomLogWidget = new KPIM::CustomLogWidget(this);
+    mCustomLogWidget = new PimCommon::CustomLogWidget(this);
     layout->addWidget(mCustomLogWidget);
 }
 

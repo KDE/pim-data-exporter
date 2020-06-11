@@ -75,7 +75,6 @@ target_link_libraries(pimdataexporter
     KF5::DBusAddons
     KF5::MailCommon
     KF5::PimCommon
-    KF5::Libkdepim
     pimdataexporterprivate
     KF5::Archive
     KF5::ItemViews

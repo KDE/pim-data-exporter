@@ -21,7 +21,7 @@
 #define LOGWIDGET_H
 
 #include <QWidget>
-namespace KPIM {
+namespace PimCommon {
 class CustomLogWidget;
 }
 
@@ -42,7 +42,7 @@ public:
     Q_REQUIRED_RESULT bool isEmpty() const;
 
 private:
-    KPIM::CustomLogWidget *mCustomLogWidget = nullptr;
+    PimCommon::CustomLogWidget *mCustomLogWidget = nullptr;
 };
 
 #endif // LOGWIDGET_H
