@@ -623,7 +623,7 @@ void ExportMailJobInterface::backupResources()
     setProgressDialogLabel(i18n("Backing up resources..."));
 
     for (const Utils::AkonadiInstanceInfo &agent : qAsConst(mAkonadiInstanceInfo)) {
-        const QStringList capabilities(agent.capabilities);
+        const QStringList capabilities = agent.capabilities;
         if (agent.mimeTypes.contains(KMime::Message::mimeType())) {
             if (capabilities.contains(QLatin1String("Resource"))
                 && !capabilities.contains(QLatin1String("Virtual"))
