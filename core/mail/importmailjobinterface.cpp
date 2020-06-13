@@ -108,6 +108,7 @@ void ImportMailJobInterface::searchAllMailsFiles(const KArchiveDirectory *dir, c
             mFileList << fileName;
         }
     }
+    std::sort(mFileList.begin(), mFileList.end());
 }
 
 void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *dir, const QString &prefix)
