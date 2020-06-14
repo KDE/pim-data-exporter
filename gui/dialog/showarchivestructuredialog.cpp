@@ -34,13 +34,8 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-#include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
-#else
-#include <KRun>
-#endif
 #include <QFileDialog>
 #include <QTemporaryDir>
 #include <KTreeWidgetSearchLine>
@@ -125,15 +120,10 @@ void ShowArchiveStructureDialog::slotOpenFile()
                     qCWarning(PIMDATAEXPORTERGUI_LOG) << "Impossible to copy file: " << currentItem->text(0);
                     return;
                 }
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
                 KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl::fromLocalFile(fileName));
                 job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
                 job->setRunExecutables(false);
                 job->start();
-#else
-                KRun *runner = new KRun(QUrl::fromLocalFile(fileName), this);   // will delete itself
-                runner->setRunExecutables(false);
-#endif
             }
         }
     }
