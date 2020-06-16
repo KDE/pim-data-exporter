@@ -55,6 +55,9 @@ public:
 
     ImportExportProgressIndicatorBase *importExportProgressIndicator() const;
 
+    //Only for test
+    void setTempDirName(const QString &tempDirName);
+
 Q_SIGNALS:
     void info(const QString &);
     void error(const QString &);

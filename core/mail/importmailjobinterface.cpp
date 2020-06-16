@@ -219,6 +219,7 @@ void ImportMailJobInterface::restoreResources()
                 if (agentFileConfigEntry && agentFileConfigEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(agentFileConfigEntry);
                     const QString destDirectory = mTempDirName + QLatin1Char('/') + Utils::resourcesPath();
+                    qDebug() << " destDirectory " << destDirectory;
                     copyArchiveFileTo(file, destDirectory);
                     const QString filename(file->name());
                     const QString agentResourceFileName = destDirectory + QLatin1Char('/') + filename;

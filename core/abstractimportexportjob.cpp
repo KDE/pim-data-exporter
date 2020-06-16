@@ -618,3 +618,8 @@ void AbstractImportExportJob::convertRealPathToCollectionList(KConfigGroup &grou
         }
     }
 }
+
+void AbstractImportExportJob::setTempDirName(const QString &tempDirName)
+{
+    mTempDirName = tempDirName;
+}
