@@ -54,6 +54,7 @@ void ImportAddressbookJobInterfaceTest::importAddressbook()
     ImportAddressbookJobInterfaceTestImpl *impl = new ImportAddressbookJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
     impl->setExtractPath(file->extractPath());
+    impl->setTempDirName(file->extractPath());
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();
