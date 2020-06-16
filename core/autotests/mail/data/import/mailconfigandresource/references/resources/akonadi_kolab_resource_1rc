@@ -1,0 +1,13 @@
+[SubscriptionDialog]
+Size=1007,746
+
+[cache]
+TrashCollection=foo/bla bla/bli235
+TrashCollectionMigrated=true
+
+[idle]
+IdleRidPath=/INBOX,imap://foo@bla.com@bli.bla.com/
+
+[network]
+ImapServer=bli.bla.com
+UserName=bla@bla.com
