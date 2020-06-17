@@ -156,6 +156,7 @@ void ImportAlarmJobInterface::restoreResources()
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
                             const KArchiveFile *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
+                            QDir().mkpath(copyToDirName);
                             copyArchiveFileTo(file, copyToDirName);
                             resourceName = file->name();
                             filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);
