@@ -1,16 +1,16 @@
 akonadi_vcard_resource
 Notes
-Path /tmp/backupaddressbook//0/
+Path /tmp/backupaddressbook//akonadi_vcard_resource_1.zip
 0
 --------------------------
 akonadi_vcarddir_resource
 Notes
-Path /tmp/backupaddressbook//1/
+Path /tmp/backupaddressbook//0/
 1
 --------------------------
 akonadi_contacts_resource
 Notes
-Path /tmp/backupaddressbook//2/
+Path /tmp/backupaddressbook//1/
 1
 --------------------------
 akonadi_vcard_resource_new_resource_0

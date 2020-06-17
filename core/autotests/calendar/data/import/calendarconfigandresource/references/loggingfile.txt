@@ -1,6 +1,6 @@
 akonadi_ical_resource
 schedule.ics
-Path /tmp/backupcalendar//0/
+Path /tmp/backupcalendar//std.ics
 0
 --------------------------
 akonadi_ical_resource_new_resource_0
