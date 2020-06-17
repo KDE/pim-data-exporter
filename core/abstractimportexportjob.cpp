@@ -152,13 +152,13 @@ void AbstractImportExportJob::overwriteDirectory(const QString &path, const KArc
         if (overwriteDirectoryMessageBox(path)) {
             const KArchiveDirectory *dirEntry = static_cast<const KArchiveDirectory *>(entry);
             if (!dirEntry->copyTo(path)) {
-                qCDebug(PIMDATAEXPORTERCORE_LOG) << "directory cannot overwrite to " << path;
+                qCWarning(PIMDATAEXPORTERCORE_LOG) << "directory cannot overwrite to " << path;
             }
         }
     } else {
         const KArchiveDirectory *dirEntry = static_cast<const KArchiveDirectory *>(entry);
         if (dirEntry->copyTo(path)) {
-            qCDebug(PIMDATAEXPORTERCORE_LOG) << "directory cannot overwrite to " << path;
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "directory cannot overwrite to " << path;
         }
     }
 }
@@ -203,7 +203,7 @@ void AbstractImportExportJob::storeArchiveInfoResources(const KArchiveDirectory 
                 files.debug();
                 mListResourceFile.append(files);
             } else {
-                qCDebug(PIMDATAEXPORTERCORE_LOG) << " Problem in archive. number of file " << lst.count();
+                qCWarning(PIMDATAEXPORTERCORE_LOG) << " Problem in archive. number of file " << lst.count();
             }
         }
     }
@@ -288,11 +288,11 @@ void AbstractImportExportJob::copyToFile(const KArchiveFile *archivefile, const 
     const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
     const bool created = dir.mkpath(copyToDirName);
     if (!created) {
-        qCDebug(PIMDATAEXPORTERCORE_LOG) << " directory :" << prefix << " not created";
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << " directory :" << prefix << " not created";
     }
 
     if (!archivefile->copyTo(copyToDirName)) {
-        qCDebug(PIMDATAEXPORTERCORE_LOG) << "file " << filename << " can not copy to " << dest;
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "file " << filename << " can not copy to " << dest;
     }
     QFile file;
     file.setFileName(copyToDirName + QLatin1Char('/') + filename);
@@ -343,7 +343,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
                     if (!file->copyTo(copyToDirName)) {
-                        qCDebug(PIMDATAEXPORTERCORE_LOG) << "file " << value.akonadiConfigFile << " can not copy to " << copyToDirName;
+                        qCWarning(PIMDATAEXPORTERCORE_LOG) << "file " << value.akonadiConfigFile << " can not copy to " << copyToDirName;
                     }
                     QString resourceName(file->name());
 
@@ -359,7 +359,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                     if (dataResouceEntry->isFile()) {
                         const KArchiveFile *file = static_cast<const KArchiveFile *>(dataResouceEntry);
                         if (!file->copyTo(newUrl)) {
-                            qCDebug(PIMDATAEXPORTERCORE_LOG) << "file " << dataFile << " can not copy to " << newUrl;
+                            qCWarning(PIMDATAEXPORTERCORE_LOG) << "file " << dataFile << " can not copy to " << newUrl;
                         }
                     }
                     settings.insert(QStringLiteral("Path"), newUrl);
@@ -402,7 +402,7 @@ bool AbstractImportExportJob::copyArchiveFileTo(const KArchiveFile *file, const 
 {
     const bool result = file->copyTo(destination);
     if (!result) {
-        qCDebug(PIMDATAEXPORTERCORE_LOG) << "file " << file->name() << " can not copy to " << destination;
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "file " << file->name() << " can not copy to " << destination;
     }
     return result;
 }
@@ -410,7 +410,7 @@ bool AbstractImportExportJob::copyArchiveFileTo(const KArchiveFile *file, const 
 void AbstractImportExportJob::extractZipFile(const KArchiveFile *file, const QString &source, const QString &destination, bool isStoredAsZippedArchive)
 {
     if (!file->copyTo(source)) {
-        qCDebug(PIMDATAEXPORTERCORE_LOG) << "file " << file->name() << " can not copy to " << source;
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "file " << file->name() << " can not copy to " << source;
     }
     QDir dest(destination);
     if (!dest.exists()) {
