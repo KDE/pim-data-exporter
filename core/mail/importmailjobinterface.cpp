@@ -439,6 +439,7 @@ void ImportMailJobInterface::restoreMails()
     QDir dir(mTempDirName);
     dir.mkdir(Utils::mailsPath());
     const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::mailsPath());
+    QDir().mkpath(copyToDirName);
     const int numberOfResourceFile = mListResourceFile.size();
     for (int i = 0; i < numberOfResourceFile; ++i) {
         ResourceFiles value = mListResourceFile.at(i);
@@ -460,7 +461,6 @@ void ImportMailJobInterface::restoreMails()
                 const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                 if (akonadiAgentConfigEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
-                    QDir().mkpath(copyToDirName);
                     copyArchiveFileTo(file, copyToDirName);
                     resourceName = file->name();
                     filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);

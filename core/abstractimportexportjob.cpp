@@ -333,6 +333,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
         QDir dir(mTempDirName);
         dir.mkdir(defaultPath);
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + defaultPath);
+        QDir().mkpath(copyToDirName);
 
         for (int i = 0, total = mListResourceFile.size(); i < total; ++i) {
             ResourceFiles value = mListResourceFile.at(i);
@@ -368,7 +369,6 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
                             const KArchiveFile *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
-                            QDir().mkpath(copyToDirName);
                             file->copyTo(copyToDirName);
                             resourceName = file->name();
                             const QString configPath = copyToDirName + QLatin1Char('/') + resourceName;
