@@ -94,7 +94,7 @@ void ImportCalendarJob::restoreResources()
         QDir dir(mTempDirName);
         dir.mkdir(Utils::addressbookPath());
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::calendarPath());
-
+        QDir().mkpath(copyToDirName);
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {
             resourceFiles value = mListResourceFile.at(i);
@@ -103,6 +103,7 @@ void ImportCalendarJob::restoreResources()
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
+
                     copyArchiveFileTo(file, copyToDirName);
                     QString resourceName(file->name());
 

@@ -88,6 +88,7 @@ void ImportAddressbookJob::restoreResources()
         QDir dir(mTempDirName);
         dir.mkdir(Utils::addressbookPath());
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::addressbookPath());
+        QDir().mkpath(copyToDirName);
 
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {

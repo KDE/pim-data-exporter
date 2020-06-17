@@ -379,6 +379,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
         QDir dir(mTempDirName);
         dir.mkdir(defaultPath);
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + defaultPath);
+        QDir().mkpath(copyToDirName);
 
         for (int i = 0; i < mListResourceFile.size(); ++i) {
             resourceFiles value = mListResourceFile.at(i);
