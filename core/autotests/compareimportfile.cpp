@@ -50,8 +50,11 @@ void CompareImportFile::compareFile()
             continue;
         }
         if (file.endsWith(QLatin1String("ui.rc"))) {
-            //TODO customize it
-            file.replace(QLatin1String("config/"), QLatin1String("share/kxmlgui5/kaddressbook/"));
+            QString fileName = file;
+            fileName.remove(QStringLiteral("config/"));
+            const QString fileuirc = fileName;
+            fileName.remove(QStringLiteral("ui.rc"));
+            file = QStringLiteral("share/kxmlgui5/") + fileName + QLatin1Char('/') + fileuirc;
         }
         //file.replace(QStringLiteral("identities/"), QStringLiteral("config/"));
         file.replace(QStringLiteral("transports/"), QStringLiteral("config/"));
