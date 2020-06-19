@@ -260,7 +260,7 @@ void ExportMailJobInterface::backupConfig()
                     const QString collectionPath(archiveGroupPattern + realPath);
                     KConfigGroup newGroup(archiveConfig, collectionPath);
                     oldGroup.copyTo(&newGroup);
-                    newGroup.writeEntry(QStringLiteral("saveCollectionId"), collectionPath);
+                    newGroup.writeEntry(QStringLiteral("saveCollectionId"), realPath);
                 }
                 oldGroup.deleteGroup();
             }

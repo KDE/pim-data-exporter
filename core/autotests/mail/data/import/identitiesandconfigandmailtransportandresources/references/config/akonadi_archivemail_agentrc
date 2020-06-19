@@ -1,2 +1,15 @@
+[ArchiveMailCollection 4048]
+archiveAge=3
+archiveType=2
+archiveUnit=0
+enabled=true
+maximumArchiveCount=0
+saveCollectionId=4048
+saveSubCollection=true
+storePath=/home/laurent/a
+
 [ArchiveMailDialog]
+Size=500,300
+
+[FolderSelectionDialog]
 Size=500,300

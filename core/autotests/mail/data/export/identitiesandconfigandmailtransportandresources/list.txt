@@ -8,6 +8,7 @@ configs/kmail2rc
 configs/templatesconfigurationrc
 transports/mailtransports
 configs/filters
+configs/kontactui.rc
 mails/akonadi_mbox_resource_1/agent_config_akonadi_mbox_resource_1
 mails/akonadi_mbox_resource_1/akonadi_mbox_resource_1.mbox
 mails/akonadi_mbox_resource_1/akonadi_mbox_resource_1rc
