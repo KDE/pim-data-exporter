@@ -300,7 +300,7 @@ void Utils::storeDataExportInfo(const QString &filename, KZip *archive)
 {
     if (QFileInfo::exists(filename)) {
         const bool fileAdded = archive->addLocalFile(filename, Utils::infoPath() + Utils::exportDataTypeFileName());
-        if (fileAdded) {
+        if (!fileAdded) {
             qCDebug(PIMDATAEXPORTERCORE_LOG) << "exporteddata file can not add to archive" << filename << " to " << Utils::infoPath() + Utils::exportDataTypeFileName();
         }
     } else {
