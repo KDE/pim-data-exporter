@@ -160,8 +160,8 @@ void Utils::storeDataExportInfo(KZip *archive)
     QTemporaryFile tmp;
     tmp.open();
     const bool fileAdded = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + Utils::exportDataTypeFileName());
-    if (fileAdded) {
-        qCDebug(PIMDATAEXPORTERCORE_LOG) << "storeDataExportInfo can't add to archive";
+    if (!fileAdded) {
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "storeDataExportInfo can't add to archive" << Utils::infoPath() + Utils::exportDataTypeFileName();
     }
 }
 
