@@ -33,4 +33,5 @@ void BackupResourceFileJobImplTest::shouldHaveDefaultValue()
     QVERIFY(job->identifier().isEmpty());
     QVERIFY(!job->zip());
     QVERIFY(job->defaultPath().isEmpty());
+    delete job;
 }
