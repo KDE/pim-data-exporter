@@ -1,0 +1,95 @@
+<!DOCTYPE gui>
+<gui version="530" name="kmreadermainwin" translationDomain="kmail">
+ <MenuBar>
+  <Menu noMerge="1" name="file" >
+   <text>&amp;File</text>
+   <Action name="save_message" />
+   <Separator/>
+   <Action name="file_export_pdf" />
+   <Separator/>
+   <Action name="file_print_preview"/>
+   <Action name="file_print" />
+   <Separator/>
+   <Action name="move_to_trash" />
+   <Separator/>
+   <Action name="file_close" />
+  </Menu>
+  <Menu noMerge="1" name="edit">
+   <text>&amp;Edit</text>
+   <Action name="kmail_copy"/>
+   <Action name="find_in_messages" />
+   <Separator/>
+   <Action name="mark_all_text" />
+   <Separator/>
+   <ActionList name="kmail_plugins_edit"/>
+  </Menu>
+  <Menu noMerge="1" name="view">
+   <text>&amp;View</text>
+   <Action name="view_headers"/>
+   <Action name="view_attachments"/>
+   <Separator/>
+   <Action name="toggle_fixedfont"/>
+   <Separator/>
+   <Action name="disable_emoticon"/>
+   <Separator/>
+   <Action name="encoding" />
+   <Separator/>
+   <Action name="zoom_menu"/>
+  </Menu>
+  <Menu noMerge="1" name="message" >
+   <text>&amp;Message</text>
+   <Action name="new_message" />
+   <Action name="post_message" />
+   <Separator/>
+   <Action name="reply" />
+   <Action name="reply_all" />
+   <Menu noMerge="1" name="reply_special" >
+     <text>Reply Special</text>
+     <Action name="reply_author" />
+     <Action name="reply_list" />
+     <Action name="noquotereply" />
+     <Separator/>
+     <Action name="custom_reply" />
+     <Action name="custom_reply_all" />
+   </Menu>
+   <Menu name="menubar_message_forward">
+     <text>&amp;Forward</text>
+     <ActionList name="forward_action_list"/>
+     <Separator/>
+     <Action name="custom_forward" />
+   </Menu>
+   <Action name="send_again" />
+   <Action name="mailing_list"/>
+   <Separator/>
+   <Action name="set_status" />
+   <Separator/>
+   <Action name="create_todo"/>
+   <Action name="create_event"/>
+   <Action name="create_note"/>>
+   <Separator/>
+   <Action name="view_source"/>
+   <Separator/>
+   <ActionList name="kmail_plugins_message"/>
+  </Menu>
+  <Menu noMerge="1" name="settings">
+   <text>&amp;Settings</text>
+   <Merge name="StandardToolBarMenuHandler"/>
+   <Action name="options_show_menubar" group="settings_configure" />
+   <Separator/>
+   <Action name="options_configure_keybinding" group="settings_configure"/>
+   <Action name="options_configure_toolbars" group="settings_configure" />
+   <Action name="kmail_configure_kmail" group="settings_configure"/>
+  </Menu>
+ </MenuBar>
+ <ToolBar noMerge="1" name="mainToolBar" fullWidth="true" >
+  <text>Main Toolbar</text>
+  <Action name="file_print" />
+  <Separator/>
+  <Action name="message_reply_menu" />
+  <Action name="message_forward"/>
+  <Separator/>
+  <Action name="move_to_trash" />
+  <Separator/>
+  <Action name="create_todo"/>
+ </ToolBar>
+</gui>
