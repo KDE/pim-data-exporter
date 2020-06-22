@@ -23,7 +23,6 @@
 #include "exportmailjobinterface.h"
 #include "pimdataexportercore_private_export.h"
 #include <KSharedConfig>
-#include <QDateTime>
 #include <time.h>
 class ArchiveStorage;
 namespace KIdentityManagement {

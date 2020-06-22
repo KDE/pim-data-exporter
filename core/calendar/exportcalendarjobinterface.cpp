@@ -26,10 +26,10 @@
 
 #include <QTimer>
 #include <QFile>
-#include <QDir>
 #include <QColor>
 #include <resourceconverterimpl.h>
 
+#include <QFileInfo>
 #include <QStandardPaths>
 
 ExportCalendarJobInterface::ExportCalendarJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)

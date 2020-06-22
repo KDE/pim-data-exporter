@@ -23,7 +23,6 @@
 #include <PimCommon/PimUtil>
 
 #include <QSettings>
-#include <KConfigGroup>
 
 #include <KSharedConfig>
 #include <QTemporaryFile>
@@ -31,7 +30,6 @@
 #include <KZip>
 
 #include <AkonadiCore/AgentManager>
-#include <QDir>
 #include <QStandardPaths>
 
 QString Utils::storeAddressbook()

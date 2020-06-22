@@ -24,15 +24,9 @@
 #include <MailCommon/MailUtil>
 
 #include <KArchive>
-#include <KLocalizedString>
-#include <KConfigGroup>
-#include <KZip>
 #include <KArchiveEntry>
 
-#include <QDir>
-#include <QFile>
 #include <QStandardPaths>
-#include <QTimer>
 #include "resourceconverterimpl.h"
 
 ImportAlarmJobInterfaceImpl::ImportAlarmJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)

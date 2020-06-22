@@ -22,13 +22,10 @@
 
 #include <AkonadiCore/AgentManager>
 #include <MailCommon/MailUtil>
-#include <KLocalizedString>
 
 #include <KConfigGroup>
 
-#include <QDir>
 #include <QStandardPaths>
-#include <QTimer>
 #include "resourceconverterimpl.h"
 
 ExportAddressbookJobInterfaceImpl::ExportAddressbookJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)

@@ -27,7 +27,7 @@
 #include <KConfigGroup>
 
 #include <QFile>
-#include <QDir>
+#include <QFileInfo>
 #include <QStandardPaths>
 
 ExportAlarmJobInterface::ExportAlarmJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)

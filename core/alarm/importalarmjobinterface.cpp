@@ -24,7 +24,6 @@
 
 #include <KArchive>
 #include <KLocalizedString>
-#include <KConfigGroup>
 #include <KZip>
 #include <KArchiveEntry>
 

@@ -23,8 +23,8 @@
 
 #include <QTemporaryFile>
 #include <KConfigGroup>
+#include <QFileInfo>
 
-#include <QDir>
 #include <QStandardPaths>
 #include <QTimer>
 #include <resourceconverterimpl.h>

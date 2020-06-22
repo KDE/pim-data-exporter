@@ -23,7 +23,6 @@
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
 #include <KSharedConfig>
-#include <QDateTime>
 #include <time.h>
 namespace MailCommon {
 class MailFilter;

@@ -20,15 +20,9 @@
 #include "exportcalendarjobinterfaceimpl.h"
 #include <MailCommon/MailUtil>
 
-#include <KLocalizedString>
 
-#include <QTemporaryFile>
 #include <KConfigGroup>
 
-#include <QTimer>
-#include <QFile>
-#include <QDir>
-#include <QColor>
 #include "resourceconverterimpl.h"
 
 #include <QStandardPaths>

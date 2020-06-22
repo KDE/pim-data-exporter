@@ -23,15 +23,9 @@
 #include <PimCommonAkonadi/CreateResource>
 
 #include <KArchive>
-#include <KLocalizedString>
 
-#include <KZip>
-#include <KConfigGroup>
 
-#include <QFile>
 #include <QStandardPaths>
-#include <QDir>
-#include <QTimer>
 #include "resourceconverterimpl.h"
 
 ImportNotesJobInterfaceImpl::ImportNotesJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
