@@ -35,7 +35,6 @@ namespace MailTransport {
 class Transport;
 }
 namespace MailCommon {
-class MailFilter;
 }
 
 class PIMDATAEXPORTER_TESTS_EXPORT ImportMailJobInterface : public AbstractImportExportJob
