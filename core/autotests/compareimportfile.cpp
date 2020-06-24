@@ -49,13 +49,26 @@ void CompareImportFile::compareFile()
         if (file == QLatin1String("information/exportdatatype.xml") || file == QLatin1String("information/VERSION_2")) {
             continue;
         }
-        if (file.endsWith(QLatin1String("ui.rc"))) {
+        file.replace(QStringLiteral("config/kleopatra.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kleopatra/kleopatra.rc"));
+        file.replace(QStringLiteral("config/akonadiconsoleui.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("akonadiconsole/akonadiconsoleui.rc"));
+        file.replace(QStringLiteral("config/kmail_part.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kmail2/kmail_part.rc"));
+        file.replace(QStringLiteral("config/kmcomposerui.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kmail2/kmcomposerui.rc"));
+        file.replace(QStringLiteral("config/kmmainwin.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kmail2/kmmainwin.rc"));
+        file.replace(QStringLiteral("config/kmreadermainwin.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kmail2/kmmainwin.rc"));
+        file.replace(QStringLiteral("config/kontactsummary_part.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kontactsummary/kontactsummary_part.rc"));
+        file.replace(QStringLiteral("config/kwatchgnupgui.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kwatchgnupg/kwatchgnupgui.rc"));
+        if (file.endsWith(QLatin1String("ui.rc"))
+                && !file.contains(QStringLiteral("kmcomposerui.rc"))
+                && !file.contains(QStringLiteral("akonadiconsoleui.rc"))
+                && !file.contains(QStringLiteral("kwatchgnupgui.rc"))) {
             QString fileName = file;
             fileName.remove(QStringLiteral("config/"));
             const QString fileuirc = fileName;
             fileName.remove(QStringLiteral("ui.rc"));
             file = QStringLiteral("share/kxmlgui5/") + fileName + QLatin1Char('/') + fileuirc;
         }
+
+
         //file.replace(QStringLiteral("identities/"), QStringLiteral("config/"));
         file.replace(QStringLiteral("transports/"), QStringLiteral("config/"));
         //Allow to remove some file from resources path
