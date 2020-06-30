@@ -180,3 +180,9 @@ void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTrans
     }
     mHashTransport.insert(transportId, transportValue);
 }
+
+QString ImportMailJobInterfaceTestImpl::configLocation() const
+{
+    //TODO implement
+    return {};
+}

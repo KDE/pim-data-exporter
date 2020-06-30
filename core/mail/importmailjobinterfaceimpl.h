@@ -53,6 +53,7 @@ protected:
     void importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) override;
     void importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId) override;
     void addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId);
+    Q_REQUIRED_RESULT QString configLocation() const override;
 private:
     Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
