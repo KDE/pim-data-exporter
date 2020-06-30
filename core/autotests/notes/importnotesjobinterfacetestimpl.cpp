@@ -64,3 +64,9 @@ QString ImportNotesJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResou
     resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
+
+QString ImportNotesJobInterfaceTestImpl::configLocation() const
+{
+    //TODO
+    return {};
+}

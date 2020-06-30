@@ -34,6 +34,11 @@ ImportNotesJobInterfaceImpl::ImportNotesJobInterfaceImpl(QObject *parent, Utils:
     initializeImportJob();
 }
 
+QString ImportNotesJobInterfaceImpl::configLocation() const
+{
+    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
+}
+
 ImportNotesJobInterfaceImpl::~ImportNotesJobInterfaceImpl()
 {
 }
