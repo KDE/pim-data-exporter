@@ -38,7 +38,7 @@ protected:
     void slotNextStep() override;
     virtual void synchronizeResource(const QStringList &lst) = 0;
     virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
-
+    virtual Q_REQUIRED_RESULT QString configLocation() const = 0;
     void restoreResources();
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;

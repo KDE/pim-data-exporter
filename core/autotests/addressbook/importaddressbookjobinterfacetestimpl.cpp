@@ -67,3 +67,9 @@ QString ImportAddressbookJobInterfaceTestImpl::adaptNewResourceUrl(bool overwrit
     resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
+
+QString ImportAddressbookJobInterfaceTestImpl::configLocation() const
+{
+    //TODO
+    return {};
+}

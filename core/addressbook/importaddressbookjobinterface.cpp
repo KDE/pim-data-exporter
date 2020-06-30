@@ -96,7 +96,7 @@ void ImportAddressbookJobInterface::restoreConfig()
     const KArchiveEntry *kaddressbookrcentry = mArchiveDirectory->entry(Utils::configsPath() + kaddressbookStr);
     if (kaddressbookrcentry && kaddressbookrcentry->isFile()) {
         const KArchiveFile *kaddressbookrcFile = static_cast<const KArchiveFile *>(kaddressbookrcentry);
-        const QString kaddressbookrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kaddressbookStr;
+        const QString kaddressbookrc = configLocation() + kaddressbookStr;
         if (QFileInfo::exists(kaddressbookrc)) {
             if (overwriteConfigMessageBox(kaddressbookStr)) {
                 importkaddressBookConfig(kaddressbookrcFile, kaddressbookrc, kaddressbookStr, Utils::configsPath());
