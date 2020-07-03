@@ -58,13 +58,16 @@ void ImportMailJobInterfaceTest::importMail()
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
     QFETCH(Utils::StoredTypes, options);
-    TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
-    file->setPathConfig(zipFilePath + testPath);
+    const QString fullTestPath = zipFilePath + testPath;
+    TestImportFile *file = new TestImportFile(fullTestPath, this);
+    file->setPathConfig(fullTestPath);
     file->setExtractPath(QDir::tempPath() + QLatin1Char('/') + testPath);
     file->setExcludePath(Utils::mailsPath()); // ???
     ImportMailJobInterfaceTestImpl *impl = new ImportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
     impl->setExtractPath(file->extractPath());
+    impl->setTempDirName(file->extractPath());
+    impl->setExistingPathConfig(fullTestPath + QStringLiteral("/existingconfig"));
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

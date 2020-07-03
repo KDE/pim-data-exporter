@@ -19,6 +19,7 @@
 
 #include "importexportprogressindicatorbase.h"
 #include <KMessageBox>
+#include <QDebug>
 
 ImportExportProgressIndicatorBase::ImportExportProgressIndicatorBase(QObject *parent)
     : QObject(parent)
@@ -75,6 +76,5 @@ bool ImportExportProgressIndicatorBase::overwriteDirectoryMessageBox(const QStri
 
 void ImportExportProgressIndicatorBase::showErrorMessage(const QString &message, const QString &title)
 {
-    Q_UNUSED(message);
-    Q_UNUSED(title);
+    qDebug() << " message : " << message << " title " << title;
 }

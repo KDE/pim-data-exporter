@@ -22,14 +22,9 @@
 #include <MailCommon/MailUtil>
 #include <PimCommonAkonadi/CreateResource>
 
-#include <KLocalizedString>
-#include <KConfigGroup>
 #include <KZip>
 #include <KArchiveEntry>
 
-#include <QTimer>
-#include <QFile>
-#include <QDir>
 #include <QStandardPaths>
 #include "resourceconverterimpl.h"
 

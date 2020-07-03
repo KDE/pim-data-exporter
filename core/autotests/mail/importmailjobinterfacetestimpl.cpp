@@ -37,7 +37,7 @@ ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, 
 ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 {
 #ifdef REMOVE_TEMPORARY_DIRECTORIES
-    //QVERIFY(QDir(extractPath()).removeRecursively());
+    QVERIFY(QDir(extractPath()).removeRecursively());
     QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeMails()).removeRecursively());
 #endif
 }
@@ -46,6 +46,11 @@ void ImportMailJobInterfaceTestImpl::start()
 {
     QDir().mkpath(extractPath());
     ImportMailJobInterface::start();
+}
+
+void ImportMailJobInterfaceTestImpl::setExistingPathConfig(const QString &path)
+{
+    mExistingPathConfig = path;
 }
 
 Akonadi::Collection::Id ImportMailJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
@@ -179,4 +184,10 @@ void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTrans
         generalGrp.writeEntry(QStringLiteral("default-transport"), transportValue);
     }
     mHashTransport.insert(transportId, transportValue);
+}
+
+QString ImportMailJobInterfaceTestImpl::configLocation() const
+{
+    qDebug()  << " QString ImportMailJobInterfaceTestImpl::configLocation() const "<< mExistingPathConfig;
+    return mExistingPathConfig;
 }

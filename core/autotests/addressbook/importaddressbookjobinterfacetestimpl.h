@@ -38,6 +38,7 @@ protected:
     void synchronizeResource(const QStringList &lst) override;
     Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
+    Q_REQUIRED_RESULT QString configLocation() const override;
 };
 
 #endif // IMPORTADDRESSBOOKJOBINTERFACETESTIMPL_H

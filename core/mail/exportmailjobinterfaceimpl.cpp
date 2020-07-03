@@ -37,12 +37,8 @@
 
 #include "pimdataexportcore_debug.h"
 
-#include <QFile>
-#include <QDir>
-#include <QTimer>
 #include <QStandardPaths>
 #include "exportresourcearchivejob.h"
-#include <QRegularExpression>
 #include "resourceconverterimpl.h"
 
 #include <KIdentityManagement/IdentityManager>

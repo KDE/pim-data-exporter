@@ -19,14 +19,10 @@
 
 #include "exportalarmjobinterfaceimpl.h"
 
-#include <KLocalizedString>
 #include <MailCommon/MailUtil>
 
-#include <QTimer>
 #include <KConfigGroup>
 
-#include <QFile>
-#include <QDir>
 #include <QStandardPaths>
 #include "exportresourcearchivejob.h"
 #include "resourceconverterimpl.h"

@@ -213,8 +213,10 @@ QString ResourceConverterBase::storeResources(KZip *archive, const QString &iden
     if (QFileInfo::exists(agentConfigFileNamePath)) {
         fileAdded = archive->addLocalFile(agentConfigFileNamePath, path + agentConfigFileName);
         if (!fileAdded) {
-            return i18n("Resource file \"%1\" cannot be added to backup file.", agentFileName);
+            return i18n("Resource file \"%1\" cannot be added to backup file.", agentConfigFileNamePath);
         }
+    } else {
+        return i18n("Resource config file \"%1\" doesn't exist.", agentConfigFileNamePath);
     }
 
     return QString();

@@ -33,6 +33,11 @@ ImportNotesJobInterfaceTestImpl::~ImportNotesJobInterfaceTestImpl()
     QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::backupnote()).removeRecursively());
 }
 
+void ImportNotesJobInterfaceTestImpl::setExistingPathConfig(const QString &path)
+{
+    mExistingPathConfig = path;
+}
+
 Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
@@ -63,4 +68,9 @@ QString ImportNotesJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResou
     ResourceConverterTest resourceConverterTest;
     resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
+}
+
+QString ImportNotesJobInterfaceTestImpl::configLocation() const
+{
+    return mExistingPathConfig;
 }

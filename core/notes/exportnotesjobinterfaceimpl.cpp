@@ -22,12 +22,9 @@
 #include "resourceconverterimpl.h"
 
 #include <MailCommon/MailUtil>
-#include <KLocalizedString>
 #include <KZip>
 #include <KConfigGroup>
 
-#include <QDir>
-#include <QTimer>
 #include <QStandardPaths>
 
 ExportNotesJobInterfaceImpl::ExportNotesJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)

@@ -35,7 +35,6 @@ namespace MailTransport {
 class Transport;
 }
 namespace MailCommon {
-class MailFilter;
 }
 
 class PIMDATAEXPORTER_TESTS_EXPORT ImportMailJobInterface : public AbstractImportExportJob
@@ -58,6 +57,7 @@ protected:
     virtual void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) = 0;
     virtual void synchronizeResource(const QStringList &lst) = 0;
     virtual void importFilters(const QString &filename) = 0;
+    virtual Q_REQUIRED_RESULT QString configLocation() const = 0;
     virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
     virtual void addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) = 0;
     virtual void importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) = 0;

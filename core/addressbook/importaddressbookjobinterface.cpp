@@ -40,6 +40,17 @@ ImportAddressbookJobInterface::~ImportAddressbookJobInterface()
 {
 }
 
+QString ImportAddressbookJobInterface::configLocation() const
+{
+    return installConfigLocation();
+}
+
+QString ImportAddressbookJobInterface::installConfigLocation() const
+{
+    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
+}
+
+
 void ImportAddressbookJobInterface::start()
 {
     Q_EMIT title(i18n("Starting to import KAddressBook settings..."));
@@ -96,7 +107,11 @@ void ImportAddressbookJobInterface::restoreConfig()
     const KArchiveEntry *kaddressbookrcentry = mArchiveDirectory->entry(Utils::configsPath() + kaddressbookStr);
     if (kaddressbookrcentry && kaddressbookrcentry->isFile()) {
         const KArchiveFile *kaddressbookrcFile = static_cast<const KArchiveFile *>(kaddressbookrcentry);
-        const QString kaddressbookrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kaddressbookStr;
+        const QString kaddressbookrc = configLocation() + kaddressbookStr;
+
+//        +            const QString searchExistingGlobalNoterc = configLocation() + globalNoteStr;
+//        +            const QString installPathGlobalNoterc = installConfigLocation() + globalNoteStr;
+
         if (QFileInfo::exists(kaddressbookrc)) {
             if (overwriteConfigMessageBox(kaddressbookStr)) {
                 importkaddressBookConfig(kaddressbookrcFile, kaddressbookrc, kaddressbookStr, Utils::configsPath());
@@ -170,7 +185,7 @@ void ImportAddressbookJobInterface::restoreResources()
         QDir dir(mTempDirName);
         dir.mkdir(Utils::addressbookPath());
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::addressbookPath());
-
+        QDir().mkpath(copyToDirName);
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {
             ResourceFiles value = mListResourceFile.at(i);

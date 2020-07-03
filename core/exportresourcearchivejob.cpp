@@ -22,9 +22,7 @@
 #include "storeresourcejob.h"
 #include "pimdataexportcore_debug.h"
 #include <pimdatabackupthread.h>
-#include <KLocalizedString>
 #include <KZip>
-#include <QFileInfo>
 
 #include <AkonadiCore/ServerManager>
 

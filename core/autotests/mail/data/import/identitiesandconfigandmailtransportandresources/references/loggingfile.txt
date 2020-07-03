@@ -18,8 +18,19 @@ TopLevelIsContainer true
 akonadi_mixedmaildir_resource_new_resource_0
 akonadi_maildir_resource_new_resource_2
 --------------------------
+akonadi_imap_resource
+akonadi_imap_resource_1rc
+0
+--------------------------
+akonadi_kolab_resource
+perso
+ImapServer bli.bla.com
+TrashCollection 245
+UserName bla@bla.com
+0
+--------------------------
 akonadi_pop3_resource
-akonadi_pop3_resource_1rc
+perso3
 Host pop3.foo.org
 IntervalCheckEnabled true
 IntervalCheckInterval 24

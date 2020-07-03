@@ -74,6 +74,16 @@ bool ImportNotesJobInterface::isAConfigFile(const QString &name) const
     return name.endsWith(QLatin1String("rc")) && (name.contains(QLatin1String("akonadi_akonotes_resource_")));
 }
 
+QString ImportNotesJobInterface::configLocation() const
+{
+    return installConfigLocation();
+}
+
+QString ImportNotesJobInterface::installConfigLocation() const
+{
+    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
+}
+
 void ImportNotesJobInterface::restoreConfig()
 {
     increaseProgressDialog();
@@ -88,13 +98,15 @@ void ImportNotesJobInterface::restoreConfig()
         const KArchiveEntry *globalNotecentry = mArchiveDirectory->entry(Utils::configsPath() + globalNoteStr);
         if (globalNotecentry && globalNotecentry->isFile()) {
             const KArchiveFile *globalNotecentryrc = static_cast<const KArchiveFile *>(globalNotecentry);
-            const QString globalNoterc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + globalNoteStr;
-            if (QFileInfo::exists(globalNoterc)) {
+            const QString searchExistingGlobalNoterc = configLocation() + globalNoteStr;
+            const QString installPathGlobalNoterc = installConfigLocation() + globalNoteStr;
+
+            if (QFileInfo::exists(searchExistingGlobalNoterc)) {
                 if (overwriteConfigMessageBox(globalNoteStr)) {
-                    importKNoteGlobalSettings(globalNotecentryrc, globalNoterc, globalNoteStr, Utils::configsPath());
-                }
+                    importKNoteGlobalSettings(globalNotecentryrc, installPathGlobalNoterc, globalNoteStr, Utils::configsPath());
+                } //Else merge!
             } else {
-                importKNoteGlobalSettings(globalNotecentryrc, globalNoterc, globalNoteStr, Utils::configsPath());
+                importKNoteGlobalSettings(globalNotecentryrc, installPathGlobalNoterc, globalNoteStr, Utils::configsPath());
             }
         }
     }
@@ -150,6 +162,7 @@ void ImportNotesJobInterface::restoreResources()
         QDir dir(mTempDirName);
         dir.mkdir(Utils::notePath());
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::notePath());
+        QDir().mkpath(copyToDirName);
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {
             ResourceFiles value = mListResourceFile.at(i);

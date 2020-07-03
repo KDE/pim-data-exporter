@@ -24,7 +24,6 @@
 
 #include <KArchive>
 #include <KLocalizedString>
-#include <KConfigGroup>
 #include <KZip>
 #include <KArchiveEntry>
 
@@ -120,6 +119,7 @@ void ImportAlarmJobInterface::restoreResources()
         QDir dir(mTempDirName);
         dir.mkdir(Utils::alarmPath());
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::alarmPath());
+        QDir().mkpath(copyToDirName);
 
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {

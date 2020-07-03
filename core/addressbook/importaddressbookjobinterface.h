@@ -38,13 +38,14 @@ protected:
     void slotNextStep() override;
     virtual void synchronizeResource(const QStringList &lst) = 0;
     virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
-
+    virtual Q_REQUIRED_RESULT QString configLocation() const;
     void restoreResources();
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importkaddressBookConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void restoreConfig();
     void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
+    Q_REQUIRED_RESULT QString installConfigLocation() const;
 };
 
 #endif // IMPORTADDRESSBOOKJOBINTERFACE_H

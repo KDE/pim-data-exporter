@@ -33,9 +33,11 @@ public:
 
     void start() override;
 protected:
+    virtual Q_REQUIRED_RESULT QString configLocation() const;
     virtual void synchronizeResource(const QStringList &lst) = 0;
     virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
     void slotNextStep() override;
+    Q_REQUIRED_RESULT QString installConfigLocation() const;
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importKNoteGlobalSettings(const KArchiveFile *kmailsnippet, const QString &configrc, const QString &filename, const QString &prefix);

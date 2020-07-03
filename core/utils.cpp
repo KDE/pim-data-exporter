@@ -23,7 +23,6 @@
 #include <PimCommon/PimUtil>
 
 #include <QSettings>
-#include <KConfigGroup>
 
 #include <KSharedConfig>
 #include <QTemporaryFile>
@@ -31,7 +30,6 @@
 #include <KZip>
 
 #include <AkonadiCore/AgentManager>
-#include <QDir>
 #include <QStandardPaths>
 
 QString Utils::storeAddressbook()
@@ -160,8 +158,8 @@ void Utils::storeDataExportInfo(KZip *archive)
     QTemporaryFile tmp;
     tmp.open();
     const bool fileAdded = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + Utils::exportDataTypeFileName());
-    if (fileAdded) {
-        qCDebug(PIMDATAEXPORTERCORE_LOG) << "storeDataExportInfo can't add to archive";
+    if (!fileAdded) {
+        qCDebug(PIMDATAEXPORTERCORE_LOG) << "storeDataExportInfo can't add to archive" << Utils::infoPath() + Utils::exportDataTypeFileName();
     }
 }
 

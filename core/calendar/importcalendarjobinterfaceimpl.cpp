@@ -22,21 +22,14 @@
 
 #include <PimCommonAkonadi/CreateResource>
 
-#include <KLocalizedString>
-#include <KConfigGroup>
 #include <KArchiveDirectory>
 #include <KArchiveEntry>
 #include <KArchive>
-#include <KZip>
 
 #include "pimdataexportcore_debug.h"
 
 #include <MailCommon/MailUtil>
-#include <QFile>
-#include <QDir>
 #include <QStandardPaths>
-#include <QTimer>
-#include <QColor>
 #include "resourceconverterimpl.h"
 
 ImportCalendarJobInterfaceImpl::ImportCalendarJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
