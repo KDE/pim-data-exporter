@@ -31,6 +31,7 @@ public:
     explicit ImportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportMailJobInterfaceTestImpl();
     void start() override;
+    void setExistingPathConfig(const QString &path);
 
 protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
@@ -50,6 +51,7 @@ private:
     Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
     uint mIdentityUoid = 1;
     uint mMailTransportId = 1;
+    QString mExistingPathConfig;
 
 };
 

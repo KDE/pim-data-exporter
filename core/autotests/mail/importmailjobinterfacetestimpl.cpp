@@ -48,6 +48,11 @@ void ImportMailJobInterfaceTestImpl::start()
     ImportMailJobInterface::start();
 }
 
+void ImportMailJobInterfaceTestImpl::setExistingPathConfig(const QString &path)
+{
+    mExistingPathConfig = path;
+}
+
 Akonadi::Collection::Id ImportMailJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;
@@ -183,6 +188,6 @@ void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTrans
 
 QString ImportMailJobInterfaceTestImpl::configLocation() const
 {
-    //TODO implement
-    return {};
+    qDebug()  << " QString ImportMailJobInterfaceTestImpl::configLocation() const "<< mExistingPathConfig;
+    return mExistingPathConfig;
 }
