@@ -74,6 +74,11 @@ bool ImportNotesJobInterface::isAConfigFile(const QString &name) const
     return name.endsWith(QLatin1String("rc")) && (name.contains(QLatin1String("akonadi_akonotes_resource_")));
 }
 
+QString ImportNotesJobInterface::configLocation() const
+{
+    return installConfigLocation();
+}
+
 QString ImportNotesJobInterface::installConfigLocation() const
 {
     return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');

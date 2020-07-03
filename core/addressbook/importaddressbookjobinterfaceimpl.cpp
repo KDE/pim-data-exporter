@@ -37,11 +37,6 @@ ImportAddressbookJobInterfaceImpl::~ImportAddressbookJobInterfaceImpl()
 {
 }
 
-QString ImportAddressbookJobInterfaceImpl::configLocation() const
-{
-    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
-}
-
 Akonadi::Collection::Id ImportAddressbookJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterImpl converter;

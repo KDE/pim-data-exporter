@@ -40,6 +40,17 @@ ImportAddressbookJobInterface::~ImportAddressbookJobInterface()
 {
 }
 
+QString ImportAddressbookJobInterface::configLocation() const
+{
+    return installConfigLocation();
+}
+
+QString ImportAddressbookJobInterface::installConfigLocation() const
+{
+    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
+}
+
+
 void ImportAddressbookJobInterface::start()
 {
     Q_EMIT title(i18n("Starting to import KAddressBook settings..."));
@@ -97,6 +108,10 @@ void ImportAddressbookJobInterface::restoreConfig()
     if (kaddressbookrcentry && kaddressbookrcentry->isFile()) {
         const KArchiveFile *kaddressbookrcFile = static_cast<const KArchiveFile *>(kaddressbookrcentry);
         const QString kaddressbookrc = configLocation() + kaddressbookStr;
+
+//        +            const QString searchExistingGlobalNoterc = configLocation() + globalNoteStr;
+//        +            const QString installPathGlobalNoterc = installConfigLocation() + globalNoteStr;
+
         if (QFileInfo::exists(kaddressbookrc)) {
             if (overwriteConfigMessageBox(kaddressbookStr)) {
                 importkaddressBookConfig(kaddressbookrcFile, kaddressbookrc, kaddressbookStr, Utils::configsPath());

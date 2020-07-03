@@ -30,6 +30,7 @@ class ImportNotesJobInterfaceTestImpl : public ImportNotesJobInterface, public E
 public:
     explicit ImportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
     ~ImportNotesJobInterfaceTestImpl();
+    void setExistingPathConfig(const QString &path);
 
 protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
@@ -38,6 +39,8 @@ protected:
     Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
     Q_REQUIRED_RESULT QString configLocation() const override;
+private:
+    QString mExistingPathConfig;
 };
 
 #endif // IMPORTNOTESJOBINTERFACETESTIMPL_H
