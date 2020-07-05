@@ -107,17 +107,15 @@ void ImportAddressbookJobInterface::restoreConfig()
     const KArchiveEntry *kaddressbookrcentry = mArchiveDirectory->entry(Utils::configsPath() + kaddressbookStr);
     if (kaddressbookrcentry && kaddressbookrcentry->isFile()) {
         const KArchiveFile *kaddressbookrcFile = static_cast<const KArchiveFile *>(kaddressbookrcentry);
-        const QString kaddressbookrc = configLocation() + kaddressbookStr;
+        const QString searchExistingFilerc = configLocation() + kaddressbookStr;
+        const QString installPathFilerc = installConfigLocation() + kaddressbookStr;
 
-//        +            const QString searchExistingGlobalNoterc = configLocation() + globalNoteStr;
-//        +            const QString installPathGlobalNoterc = installConfigLocation() + globalNoteStr;
-
-        if (QFileInfo::exists(kaddressbookrc)) {
+        if (QFileInfo::exists(searchExistingFilerc)) {
             if (overwriteConfigMessageBox(kaddressbookStr)) {
-                importkaddressBookConfig(kaddressbookrcFile, kaddressbookrc, kaddressbookStr, Utils::configsPath());
-            }
+                importkaddressBookConfig(kaddressbookrcFile, installPathFilerc, kaddressbookStr, Utils::configsPath());
+            } //Else merge!
         } else {
-            importkaddressBookConfig(kaddressbookrcFile, kaddressbookrc, kaddressbookStr, Utils::configsPath());
+            importkaddressBookConfig(kaddressbookrcFile, installPathFilerc, kaddressbookStr, Utils::configsPath());
         }
     }
     restoreUiRcFile(QStringLiteral("kaddressbookui.rc"), QStringLiteral("kaddressbook"));
