@@ -100,7 +100,6 @@ void ImportNotesJobInterface::restoreConfig()
             const KArchiveFile *globalNotecentryrc = static_cast<const KArchiveFile *>(globalNotecentry);
             const QString searchExistingGlobalNoterc = configLocation() + globalNoteStr;
             const QString installPathGlobalNoterc = installConfigLocation() + globalNoteStr;
-            qDebug() << " searchExistingGlobalNoterc "<< searchExistingGlobalNoterc << " installPathGlobalNoterc " << installPathGlobalNoterc;
 
             if (QFileInfo::exists(searchExistingGlobalNoterc)) {
                 if (overwriteConfigMessageBox(globalNoteStr)) {
