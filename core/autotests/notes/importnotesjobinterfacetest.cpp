@@ -47,11 +47,13 @@ void ImportNotesJobInterfaceTest::importNote()
     QFETCH(QString, testPath);
     QFETCH(Utils::StoredTypes, options);
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
-    file->setPathConfig(zipFilePath + testPath);
+    const QString fullTestPath = zipFilePath + testPath;
+    file->setPathConfig(fullTestPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::notePath());
     ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
+    impl->setExistingPathConfig(fullTestPath + QStringLiteral("/existingconfig/"));
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

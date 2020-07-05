@@ -67,7 +67,7 @@ void ImportMailJobInterfaceTest::importMail()
     impl->setPathConfig(file->pathConfig());
     impl->setExtractPath(file->extractPath());
     impl->setTempDirName(file->extractPath());
-    impl->setExistingPathConfig(fullTestPath + QStringLiteral("/existingconfig"));
+    impl->setExistingPathConfig(fullTestPath + QStringLiteral("/existingconfig/"));
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();
