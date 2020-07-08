@@ -65,3 +65,13 @@ QString ImportCalendarJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteRe
     resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
+
+QString ImportCalendarJobInterfaceTestImpl::configLocation() const
+{
+    return mExistingPathConfig;
+}
+
+void ImportCalendarJobInterfaceTestImpl::setExistingPathConfig(const QString &path)
+{
+    mExistingPathConfig = path;
+}

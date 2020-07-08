@@ -311,3 +311,13 @@ void ImportCalendarJobInterface::restoreResources()
     //It's maildir support. Need to add support
     synchronizeResource(listResource);
 }
+
+QString ImportCalendarJobInterface::configLocation() const
+{
+    return installConfigLocation();
+}
+
+QString ImportCalendarJobInterface::installConfigLocation() const
+{
+    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
+}

@@ -39,6 +39,7 @@ protected:
     virtual void synchronizeResource(const QStringList &lst) = 0;
     virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
 
+    virtual Q_REQUIRED_RESULT QString configLocation() const;
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importkorganizerConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
@@ -46,6 +47,7 @@ private:
     void restoreResources();
     void restoreConfig();
     void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
+    Q_REQUIRED_RESULT QString installConfigLocation() const;
 };
 
 #endif // IMPORTCALENDARJOBINTERFACE_H
