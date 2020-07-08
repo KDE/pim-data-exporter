@@ -45,7 +45,6 @@ QString ImportMailJobInterfaceImpl::configLocation() const
     return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
 }
 
-
 QString ImportMailJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
     ResourceConverterImpl converter;

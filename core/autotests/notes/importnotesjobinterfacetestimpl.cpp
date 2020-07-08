@@ -33,8 +33,6 @@ ImportNotesJobInterfaceTestImpl::~ImportNotesJobInterfaceTestImpl()
     QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::backupnote()).removeRecursively());
 }
 
-
-
 Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
     ResourceConverterTest resourceConverterTest;

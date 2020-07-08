@@ -20,7 +20,6 @@
 #include "exportcalendarjobinterfaceimpl.h"
 #include <MailCommon/MailUtil>
 
-
 #include <KConfigGroup>
 
 #include "resourceconverterimpl.h"

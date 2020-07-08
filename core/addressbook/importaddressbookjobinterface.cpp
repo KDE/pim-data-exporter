@@ -50,7 +50,6 @@ QString ImportAddressbookJobInterface::installConfigLocation() const
     return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
 }
 
-
 void ImportAddressbookJobInterface::start()
 {
     Q_EMIT title(i18n("Starting to import KAddressBook settings..."));

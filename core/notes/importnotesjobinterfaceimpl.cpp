@@ -24,7 +24,6 @@
 
 #include <KArchive>
 
-
 #include <QStandardPaths>
 #include "resourceconverterimpl.h"
 

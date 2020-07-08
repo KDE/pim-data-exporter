@@ -52,7 +52,6 @@ private:
     uint mIdentityUoid = 1;
     uint mMailTransportId = 1;
     QString mExistingPathConfig;
-
 };
 
 #endif // IMPORTMAILJOBINTERFACETESTIMPL_H

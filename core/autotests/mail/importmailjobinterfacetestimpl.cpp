@@ -188,6 +188,6 @@ void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTrans
 
 QString ImportMailJobInterfaceTestImpl::configLocation() const
 {
-    qDebug()  << " QString ImportMailJobInterfaceTestImpl::configLocation() const "<< mExistingPathConfig;
+    qDebug() << " QString ImportMailJobInterfaceTestImpl::configLocation() const "<< mExistingPathConfig;
     return mExistingPathConfig;
 }
