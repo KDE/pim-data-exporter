@@ -76,6 +76,16 @@ bool ImportAlarmJobInterface::isAConfigFile(const QString &name) const
                                                   || name.contains(QLatin1String("akonadi_kalarm_dir_resource_")));
 }
 
+QString ImportAlarmJobInterface::configLocation() const
+{
+    return installConfigLocation();
+}
+
+QString ImportAlarmJobInterface::installConfigLocation() const
+{
+    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
+}
+
 void ImportAlarmJobInterface::restoreConfig()
 {
     increaseProgressDialog();
@@ -84,13 +94,14 @@ void ImportAlarmJobInterface::restoreConfig()
     const KArchiveEntry *kalarmrcentry = mArchiveDirectory->entry(Utils::configsPath() + kalarmStr);
     if (kalarmrcentry && kalarmrcentry->isFile()) {
         const KArchiveFile *kalarmrcFile = static_cast<const KArchiveFile *>(kalarmrcentry);
-        const QString kalarmrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalarmStr;
-        if (QFileInfo::exists(kalarmrc)) {
+        const QString searchExistingkalarmrc = configLocation() + kalarmStr;
+        const QString installPathkalarmrc = installConfigLocation() + kalarmStr;
+        if (QFileInfo::exists(searchExistingkalarmrc)) {
             if (overwriteConfigMessageBox(kalarmStr)) {
-                importkalarmConfig(kalarmrcFile, kalarmrc, kalarmStr, Utils::configsPath());
+                importkalarmConfig(kalarmrcFile, installPathkalarmrc, kalarmStr, Utils::configsPath());
             }
         } else {
-            importkalarmConfig(kalarmrcFile, kalarmrc, kalarmStr, Utils::configsPath());
+            importkalarmConfig(kalarmrcFile, installPathkalarmrc, kalarmStr, Utils::configsPath());
         }
     }
     restoreUiRcFile(QStringLiteral("kalarmui.rc"), QStringLiteral("kalarm"));

@@ -67,3 +67,13 @@ QString ImportAlarmJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResou
     resourceConverterTest.setTestPath(mPathConfig);
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
+
+void ImportAlarmJobInterfaceTestImpl::setExistingPathConfig(const QString &path)
+{
+    mExistingPathConfig = path;
+}
+
+QString ImportAlarmJobInterfaceTestImpl::configLocation() const
+{
+    return mExistingPathConfig;
+}

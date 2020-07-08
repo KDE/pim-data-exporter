@@ -39,10 +39,12 @@ protected:
     virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
 
     void restoreResources();
+    virtual Q_REQUIRED_RESULT QString configLocation() const;
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importkalarmConfig(const KArchiveFile *kalarmFile, const QString &kalarmrc, const QString &filename, const QString &prefix);
     void restoreConfig();
+    Q_REQUIRED_RESULT QString installConfigLocation() const;
 };
 
 #endif // IMPORTALARMJOBINTERFACE_H
