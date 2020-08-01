@@ -34,6 +34,7 @@
   <summary xml:lang="ca">Desa totes les dades de les aplicacions PIM i les restaura en altres sistemes.</summary>
   <summary xml:lang="ca-valencia">Guarda totes les dades de les aplicacions PIM i les restaura en altres sistemes.</summary>
   <summary xml:lang="cs">Ukládá všechna data z aplikací PIM a obnovuje je na jiných systémech.</summary>
+  <summary xml:lang="da">Gemmer alle data fra PIM-programmer og genopretter dem på andre systemer.</summary>
   <summary xml:lang="de">Speichert alle Daten von PIM-Anwendungen, um sie später in anderen Systemen wiederherzustellen.</summary>
   <summary xml:lang="en-GB">Saves all data from PIM apps and restore them in other systems.</summary>
   <summary xml:lang="es">Guarda todos los datos desde aplicaciones PIM y las restaura en otros sistemas.</summary>
@@ -60,6 +61,7 @@
   <developer_name xml:lang="ca">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca-valencia">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="cs">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="da">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="de">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="en-GB">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="es">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -90,6 +92,7 @@
     <p xml:lang="ca">L'Exportador de les dades PIM exporta i importa la configuració PIM</p>
     <p xml:lang="ca-valencia">L'Exportador de les dades PIM exporta i importa la configuració PIM</p>
     <p xml:lang="cs">Exportér dat PIM exportuje a importuje nastavení PIM</p>
+    <p xml:lang="da">Eksportør af PIM-data eksporterer og importerer PIM-indstillinger</p>
     <p xml:lang="de">Mit PIM-Daten-Export können Sie PIM-Einstellungen exportieren oder importieren.</p>
     <p xml:lang="en-GB">PIM Data Exporter exports and imports PIM settings</p>
     <p xml:lang="es">El exportador de datos  PIM exporta e importa preferencias de PIM</p>
