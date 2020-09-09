@@ -52,9 +52,9 @@ private:
     void closeLogFile();
     QString mTemplateFileName;
     QString mImportExportFileName;
-    PimDataBackupRestore *mPimDataBackupRestore = nullptr;
+    PimDataBackupRestore *const mPimDataBackupRestore;
     LogInFile *mLogInFile = nullptr;
-    LogInfo *mLogInfo = nullptr;
+    LogInfo *const mLogInfo;
     Mode mMode = Import;
     bool mInProgress = false;
 };

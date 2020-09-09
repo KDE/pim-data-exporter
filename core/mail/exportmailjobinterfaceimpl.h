@@ -40,7 +40,7 @@ protected:
     void exportFilters() override;
     Q_REQUIRED_RESULT QVector<uint> listIdentityUoid() const override;
 private:
-    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
+    KIdentityManagement::IdentityManager *const mIdentityManager;
 };
 
 #endif // ExportMailJob_H

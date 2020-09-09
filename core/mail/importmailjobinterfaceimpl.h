@@ -43,7 +43,7 @@ protected:
     Q_REQUIRED_RESULT QString configLocation() const override;
 private:
     Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
-    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
+    KIdentityManagement::IdentityManager *const mIdentityManager;
 };
 
 #endif // ImportMailJob_H

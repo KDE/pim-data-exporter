@@ -25,10 +25,10 @@ protected:
     void run() override;
 
 private:
-    QString mUrl;
-    QString mArchivePath;
-    QString mArchiveName;
-    KZip *mZip = nullptr;
+    const QString mUrl;
+    const QString mArchivePath;
+    const QString mArchiveName;
+    KZip *const mZip;
 };
 
 #endif // PIMDATABACKUPTHREAD_H

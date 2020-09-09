@@ -106,11 +106,11 @@ protected:
     QVector<ResourceFiles> mListResourceFile;
 
     QString mTempDirName;
-    Utils::StoredTypes mTypeSelected;
-    ArchiveStorage *mArchiveStorage = nullptr;
+    const Utils::StoredTypes mTypeSelected;
+    ArchiveStorage *const mArchiveStorage;
     QTemporaryDir *mTempDir = nullptr;
     const KArchiveDirectory *mArchiveDirectory = nullptr;
-    int mNumberOfStep = -1;
+    const int mNumberOfStep = -1;
     PimCommon::CreateResource *mCreateResource = nullptr;
     QStringList mAgentPaths;
     QVector<Utils::StoredType> mListStep;
