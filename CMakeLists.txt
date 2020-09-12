@@ -52,6 +52,7 @@ set(KPIMTEXTEDIT_LIB_VERSION "5.15.40")
 set(MAILCOMMON_LIB_VERSION "5.15.40")
 set(PIMCOMMON_LIB_VERSION "5.15.40")
 set(AKONADINOTES_LIB_VERSION "5.15.40")
+set(GRANTLEETHEME_LIB_VERSION "5.15.40")
 
 # Find KF5 package
 find_package(KF5Archive ${KF5_MIN_VERSION} REQUIRED)
@@ -79,6 +80,7 @@ find_package(KF5PimCommonAkonadi ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5CalendarCore ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5AkonadiNotes ${AKONADINOTES_LIB_VERSION} CONFIG REQUIRED)
+find_package(KF5GrantleeTheme ${GRANTLEETHEME_LIB_VERSION} CONFIG REQUIRED)
 
 find_package(KUserFeedback 0.9.90 CONFIG) # Needs Provider::describeDataSources()
 set_package_properties(KUserFeedback PROPERTIES DESCRIPTION "User Feedback lib" TYPE OPTIONAL PURPOSE "Allow to send Telemetry Information (optional). It can be disable in apps.")
