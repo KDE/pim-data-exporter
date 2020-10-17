@@ -28,7 +28,6 @@ public:
 
 private:
     void slotExportAsLogFile();
-    void exportAsLogFile();
     Q_REQUIRED_RESULT bool fillTree();
     void readConfig();
     void writeConfig();
