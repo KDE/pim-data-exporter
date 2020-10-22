@@ -8,7 +8,6 @@
 #include "core/utils.h"
 #include "pimdataexportgui_debug.h"
 #include <PimCommon/PimUtil>
-#include <QDialog>
 #include <KLocalizedString>
 #include <KZip>
 #include <KMessageBox>

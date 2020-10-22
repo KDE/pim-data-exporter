@@ -10,7 +10,6 @@
 #include <AkonadiCore/AgentInstance>
 #include <AkonadiCore/AgentManager>
 
-#include <QStringList>
 #include <QTimer>
 #include "pimdataexportcore_debug.h"
 

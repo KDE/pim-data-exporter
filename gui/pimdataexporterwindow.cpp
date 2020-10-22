@@ -15,7 +15,6 @@
 #include "pimdataimportdatainfofile.h"
 #include "pimdataexporterkernel.h"
 #include "dialog/selectiontypedialog.h"
-#include "utils.h"
 #include "pimdatabackuprestoreui.h"
 #include "dialog/synchronizeresourcedialog.h"
 

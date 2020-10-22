@@ -11,7 +11,6 @@
 
 #include <QSettings>
 
-#include <KSharedConfig>
 #include <QTemporaryFile>
 #include <KLocalizedString>
 #include <KZip>
