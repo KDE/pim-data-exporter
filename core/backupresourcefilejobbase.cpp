@@ -42,7 +42,7 @@ void BackupResourceFileJobBase::start()
             if (fileAdded) {
                 Q_EMIT info(i18n("\"%1\" was backed up.", filename));
 
-                StoreResourceJob *job = new StoreResourceJob(this);
+                auto *job = new StoreResourceJob(this);
                 connect(job, &StoreResourceJob::error, this, &BackupResourceFileJobBase::error);
                 connect(job, &StoreResourceJob::info, this, &BackupResourceFileJobBase::info);
                 job->setArchivePath(archivePath);

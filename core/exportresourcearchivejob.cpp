@@ -65,7 +65,7 @@ void ExportResourceArchiveJob::start()
 void ExportResourceArchiveJob::slotTerminated(bool success)
 {
     if (success) {
-        StoreResourceJob *job = new StoreResourceJob(this);
+        auto *job = new StoreResourceJob(this);
         connect(job, &StoreResourceJob::error, this, &ExportResourceArchiveJob::error);
         connect(job, &StoreResourceJob::info, this, &ExportResourceArchiveJob::info);
         job->setArchivePath(mArchivePath);

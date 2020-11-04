@@ -136,13 +136,13 @@ void AbstractImportExportJob::overwriteDirectory(const QString &path, const KArc
 {
     if (QDir(path).exists()) {
         if (overwriteDirectoryMessageBox(path)) {
-            const KArchiveDirectory *dirEntry = static_cast<const KArchiveDirectory *>(entry);
+            const auto *dirEntry = static_cast<const KArchiveDirectory *>(entry);
             if (!dirEntry->copyTo(path)) {
                 qCWarning(PIMDATAEXPORTERCORE_LOG) << "directory cannot overwrite to " << path;
             }
         }
     } else {
-        const KArchiveDirectory *dirEntry = static_cast<const KArchiveDirectory *>(entry);
+        const auto *dirEntry = static_cast<const KArchiveDirectory *>(entry);
         if (dirEntry->copyTo(path)) {
             qCWarning(PIMDATAEXPORTERCORE_LOG) << "directory cannot overwrite to " << path;
         }
@@ -171,7 +171,7 @@ void AbstractImportExportJob::storeArchiveInfoResources(const KArchiveDirectory 
     for (const QString &entryName : lst) {
         const KArchiveEntry *entry = dir->entry(entryName);
         if (entry && entry->isDirectory()) {
-            const KArchiveDirectory *resourceDir = static_cast<const KArchiveDirectory *>(entry);
+            const auto *resourceDir = static_cast<const KArchiveDirectory *>(entry);
             const QStringList lst = resourceDir->entries();
 
             if (lst.count() >= 2) {
@@ -261,7 +261,7 @@ void AbstractImportExportJob::initializeImportJob()
 
 void AbstractImportExportJob::copyToDirectory(const KArchiveEntry *entry, const QString &dest)
 {
-    const KArchiveDirectory *subfolderDir = static_cast<const KArchiveDirectory *>(entry);
+    const auto *subfolderDir = static_cast<const KArchiveDirectory *>(entry);
     if (!subfolderDir->copyTo(dest)) {
         qCDebug(PIMDATAEXPORTERCORE_LOG) << "directory cannot copy to " << dest;
     }
@@ -302,7 +302,7 @@ void AbstractImportExportJob::copyToFile(const KArchiveFile *archivefile, const 
 
 void AbstractImportExportJob::backupResourceFile(const QString &identifier, const QString &defaultPath)
 {
-    BackupResourceFileJobImpl *job = new BackupResourceFileJobImpl(this);
+    auto *job = new BackupResourceFileJobImpl(this);
     job->setDefaultPath(defaultPath);
     job->setIdentifier(identifier);
     job->setZip(archive());
@@ -327,7 +327,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
             if (value.akonadiConfigFile.contains(resourceBaseName + QLatin1Char('_'))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
-                    const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
+                    const auto *file = static_cast<const KArchiveFile *>(fileResouceEntry);
                     if (!file->copyTo(copyToDirName)) {
                         qCWarning(PIMDATAEXPORTERCORE_LOG) << "file " << value.akonadiConfigFile << " can not copy to " << copyToDirName;
                     }
@@ -343,7 +343,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                     if (dataResouceEntry->isFile()) {
-                        const KArchiveFile *file = static_cast<const KArchiveFile *>(dataResouceEntry);
+                        const auto *file = static_cast<const KArchiveFile *>(dataResouceEntry);
                         if (!file->copyTo(newUrl)) {
                             qCWarning(PIMDATAEXPORTERCORE_LOG) << "file " << dataFile << " can not copy to " << newUrl;
                         }
@@ -354,7 +354,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
-                            const KArchiveFile *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
+                            const auto *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
                             file->copyTo(copyToDirName);
                             resourceName = file->name();
                             const QString configPath = copyToDirName + QLatin1Char('/') + resourceName;
@@ -412,10 +412,10 @@ void AbstractImportExportJob::extractZipFile(const KArchiveFile *file, const QSt
                 const KArchiveEntry *entry = zipDir->entry(entryName);
                 if (entry) {
                     if (entry->isDirectory()) {
-                        const KArchiveDirectory *dir = static_cast<const KArchiveDirectory *>(entry);
+                        const auto *dir = static_cast<const KArchiveDirectory *>(entry);
                         dir->copyTo(destination + QLatin1Char('/') + dir->name(), true);
                     } else if (entry->isFile()) {
-                        const KArchiveFile *dir = static_cast<const KArchiveFile *>(entry);
+                        const auto *dir = static_cast<const KArchiveFile *>(entry);
                         dir->copyTo(destination);
                     }
                 }
@@ -437,7 +437,7 @@ void AbstractImportExportJob::restoreUiRcFile(const QString &configNameStr, cons
 {
     const KArchiveEntry *configNameentry = mArchiveDirectory->entry(Utils::configsPath() + configNameStr);
     if (configNameentry && configNameentry->isFile()) {
-        const KArchiveFile *configNameconfiguration = static_cast<const KArchiveFile *>(configNameentry);
+        const auto *configNameconfiguration = static_cast<const KArchiveFile *>(configNameentry);
         const QString configNamerc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kxmlgui5/") + applicationName + QLatin1Char('/') + configNameStr;
         if (QFileInfo::exists(configNamerc)) {
             if (overwriteConfigMessageBox(configNameStr)) {
@@ -453,7 +453,7 @@ void AbstractImportExportJob::restoreConfigFile(const QString &configNameStr)
 {
     const KArchiveEntry *configNameentry = mArchiveDirectory->entry(Utils::configsPath() + configNameStr);
     if (configNameentry && configNameentry->isFile()) {
-        const KArchiveFile *configNameconfiguration = static_cast<const KArchiveFile *>(configNameentry);
+        const auto *configNameconfiguration = static_cast<const KArchiveFile *>(configNameentry);
         const QString configNamerc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + configNameStr;
         if (QFileInfo::exists(configNamerc)) {
             //TODO 4.12 allow to merge config.
@@ -506,7 +506,7 @@ void AbstractImportExportJob::slotNextStep()
 void AbstractImportExportJob::startSynchronizeResources(const QStringList &listResourceToSync)
 {
     Q_EMIT info(i18n("Start synchronizing..."));
-    SynchronizeResourceJob *job = new SynchronizeResourceJob(this);
+    auto *job = new SynchronizeResourceJob(this);
     job->setListResources(listResourceToSync);
     connect(job, &SynchronizeResourceJob::synchronizationFinished, this, &AbstractImportExportJob::slotAllResourceSynchronized);
     connect(job, &SynchronizeResourceJob::synchronizationInstanceDone, this, &AbstractImportExportJob::slotSynchronizeInstanceDone);
@@ -553,7 +553,7 @@ void AbstractImportExportJob::importDataSubdirectory(const QString &subdirectory
 {
     const KArchiveEntry *themeEntry = mArchiveDirectory->entry(Utils::dataPath() + subdirectoryRelativePath);
     if (themeEntry && themeEntry->isDirectory()) {
-        const KArchiveDirectory *themeDir = static_cast<const KArchiveDirectory *>(themeEntry);
+        const auto *themeDir = static_cast<const KArchiveDirectory *>(themeEntry);
         const QStringList lst = themeDir->entries();
         for (const QString &entryName : lst) {
             const KArchiveEntry *entry = themeDir->entry(entryName);

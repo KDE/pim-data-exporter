@@ -23,7 +23,7 @@ PimDataExporterConsole::PimDataExporterConsole(QObject *parent)
 {
     //Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
-    PimDataExporterKernel *kernel = new PimDataExporterKernel(this);
+    auto *kernel = new PimDataExporterKernel(this);
     CommonKernel->registerKernelIf(kernel);   //register KernelIf early, it is used by the Filter classes
     CommonKernel->registerSettingsIf(kernel);   //SettingsIf is used in FolderTreeWidget
 

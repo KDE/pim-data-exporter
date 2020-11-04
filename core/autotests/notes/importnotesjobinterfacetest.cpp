@@ -38,7 +38,7 @@ void ImportNotesJobInterfaceTest::importNote()
     file->setPathConfig(fullTestPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::notePath());
-    ImportNotesJobInterfaceTestImpl *impl = new ImportNotesJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    auto *impl = new ImportNotesJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
     impl->setExistingPathConfig(fullTestPath + QStringLiteral("/existingconfig/"));
     file->setAbstractImportExportJob(impl);

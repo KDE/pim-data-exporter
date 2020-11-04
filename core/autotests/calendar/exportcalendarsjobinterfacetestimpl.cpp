@@ -65,7 +65,7 @@ QString ExportCalendarsJobInterfaceTestImpl::resourcePath(const QString &identif
 
 void ExportCalendarsJobInterfaceTestImpl::backupCalendarResourceFile(const QString &agentIdentifier, const QString &defaultPath)
 {
-    TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
+    auto *job = new TestBackupResourceFileJob(this);
     job->setDefaultPath(defaultPath);
     job->setIdentifier(agentIdentifier);
     job->setTestPath(mPathConfig);

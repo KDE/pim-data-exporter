@@ -32,7 +32,7 @@ void ExportCalendarsJobInterfaceTest::exportCalendar()
 {
     QFETCH(QByteArray, configpath);
     QFETCH(Utils::StoredTypes, options);
-    TestExportFile *file = new TestExportFile(this);
+    auto *file = new TestExportFile(this);
     file->setPathConfig(configpath);
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;
@@ -46,7 +46,7 @@ void ExportCalendarsJobInterfaceTest::exportCalendar()
     info.identifier = QStringLiteral("akonadi_kontact_resource_2");
     lstInfo << info;
 
-    ExportCalendarsJobInterfaceTestImpl *exportNote = new ExportCalendarsJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    auto *exportNote = new ExportCalendarsJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
     exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);

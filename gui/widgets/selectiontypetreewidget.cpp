@@ -178,7 +178,7 @@ void SelectionTypeTreeWidget::createSubItem(QTreeWidgetItem *parent, Utils::Stor
         break;
     case Utils::Identity:
     {
-        QTreeWidgetItem *item = new QTreeWidgetItem(parent);
+        auto *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Identity));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);
@@ -186,7 +186,7 @@ void SelectionTypeTreeWidget::createSubItem(QTreeWidgetItem *parent, Utils::Stor
     }
     case Utils::Mails:
     {
-        QTreeWidgetItem *item = new QTreeWidgetItem(parent);
+        auto *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Mails));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);
@@ -194,7 +194,7 @@ void SelectionTypeTreeWidget::createSubItem(QTreeWidgetItem *parent, Utils::Stor
     }
     case Utils::MailTransport:
     {
-        QTreeWidgetItem *item = new QTreeWidgetItem(parent);
+        auto *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::MailTransport));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);
@@ -202,7 +202,7 @@ void SelectionTypeTreeWidget::createSubItem(QTreeWidgetItem *parent, Utils::Stor
     }
     case Utils::Resources:
     {
-        QTreeWidgetItem *item = new QTreeWidgetItem(parent);
+        auto *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Resources));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);
@@ -210,7 +210,7 @@ void SelectionTypeTreeWidget::createSubItem(QTreeWidgetItem *parent, Utils::Stor
     }
     case Utils::Config:
     {
-        QTreeWidgetItem *item = new QTreeWidgetItem(parent);
+        auto *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Config));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);
@@ -218,7 +218,7 @@ void SelectionTypeTreeWidget::createSubItem(QTreeWidgetItem *parent, Utils::Stor
     }
     case Utils::Data:
     {
-        QTreeWidgetItem *item = new QTreeWidgetItem(parent);
+        auto *item = new QTreeWidgetItem(parent);
         item->setText(0, Utils::storedTypeToI18n(Utils::Data));
         item->setCheckState(0, Qt::Checked);
         item->setData(0, action, type);

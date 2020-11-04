@@ -28,23 +28,23 @@ SynchronizeResourceDialogTest::~SynchronizeResourceDialogTest()
 void SynchronizeResourceDialogTest::shouldHaveDefaultValue()
 {
     SynchronizeResourceDialog dlg;
-    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    auto *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
     QVERIFY(buttonBox);
 
-    QListWidget *listWidget = dlg.findChild<QListWidget *>(QStringLiteral("listresourcewidget"));
+    auto *listWidget = dlg.findChild<QListWidget *>(QStringLiteral("listresourcewidget"));
     QVERIFY(listWidget);
 
-    KListWidgetSearchLine *searchLine = dlg.findChild<KListWidgetSearchLine *>(QStringLiteral("listwidgetsearchline"));
+    auto *searchLine = dlg.findChild<KListWidgetSearchLine *>(QStringLiteral("listwidgetsearchline"));
     QVERIFY(searchLine);
 
-    QLabel *label = dlg.findChild<QLabel *>(QStringLiteral("label"));
+    auto *label = dlg.findChild<QLabel *>(QStringLiteral("label"));
     QVERIFY(label);
     QVERIFY(label->wordWrap());
 
-    QPushButton *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectall_button"));
+    auto *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectall_button"));
     QVERIFY(selectAll);
 
-    QPushButton *unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectall_button"));
+    auto *unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectall_button"));
     QVERIFY(unselectAll);
 
     QVERIFY(dlg.resources().isEmpty());
@@ -53,7 +53,7 @@ void SynchronizeResourceDialogTest::shouldHaveDefaultValue()
 void SynchronizeResourceDialogTest::shouldNotEmptyList()
 {
     SynchronizeResourceDialog dlg;
-    QListWidget *listWidget = dlg.findChild<QListWidget *>(QStringLiteral("listresourcewidget"));
+    auto *listWidget = dlg.findChild<QListWidget *>(QStringLiteral("listresourcewidget"));
     QHash<QString, QString> lst;
     lst.insert(QStringLiteral("foo"), QStringLiteral("foo"));
     lst.insert(QStringLiteral("faa"), QStringLiteral("faa"));

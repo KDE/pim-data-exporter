@@ -36,7 +36,7 @@ void SynchronizeResourceJob::slotNextSync()
     if (mIndex < mListResources.count()) {
         const Akonadi::AgentInstance resource = Akonadi::AgentManager::self()->instance(mListResources.at(mIndex));
         qCDebug(PIMDATAEXPORTERCORE_LOG) << " resource.name" << resource.name();
-        Akonadi::ResourceSynchronizationJob *job = new Akonadi::ResourceSynchronizationJob(resource);
+        auto *job = new Akonadi::ResourceSynchronizationJob(resource);
         job->setTimeoutCountLimit(10);
         job->setCollectionTreeOnly(mOnlyCollection);
         connect(job, &Akonadi::ResourceSynchronizationJob::result, this, &SynchronizeResourceJob::slotSynchronizationFinished);
@@ -48,7 +48,7 @@ void SynchronizeResourceJob::slotNextSync()
 
 void SynchronizeResourceJob::slotSynchronizationFinished(KJob *job)
 {
-    Akonadi::ResourceSynchronizationJob *resourceSync = qobject_cast<Akonadi::ResourceSynchronizationJob *>(job);
+    auto *resourceSync = qobject_cast<Akonadi::ResourceSynchronizationJob *>(job);
     const QString instanceName = resourceSync->resource().name();
     if (job->error()) {
         Q_EMIT synchronizationInstanceFailed(instanceName);

@@ -32,16 +32,16 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
 {
     setWindowTitle(i18nc("@title:window", "Show Archive Content on file \"%1\"", filename));
     setModal(true);
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
 
     mTreeWidget = new QTreeWidget(this);
     mTreeWidget->header()->hide();
     mTreeWidget->setAlternatingRowColors(true);
 
-    KTreeWidgetSearchLine *searchLine = new KTreeWidgetSearchLine(this, mTreeWidget);
+    auto *searchLine = new KTreeWidgetSearchLine(this, mTreeWidget);
     searchLine->setPlaceholderText(i18n("Search..."));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    QPushButton *user1Button = new QPushButton(this);
+    auto *user1Button = new QPushButton(this);
     user1Button->setText(i18n("Save As Text..."));
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
 
@@ -90,7 +90,7 @@ void ShowArchiveStructureDialog::slotOpenFile()
             const KArchiveDirectory *topDirectory = mZip->directory();
             const KArchiveEntry *currentEntry = topDirectory->entry(fullPath);
             if (currentEntry && currentEntry->isFile()) {
-                const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
+                const auto *currentFile = static_cast<const KArchiveFile *>(currentEntry);
 
                 if (!mTempDir) {
                     mTempDir = new QTemporaryDir;
@@ -124,7 +124,7 @@ void ShowArchiveStructureDialog::slotExtractFile()
             const KArchiveDirectory *topDirectory = mZip->directory();
             const KArchiveEntry *currentEntry = topDirectory->entry(fullPath);
             if (currentEntry && currentEntry->isFile()) {
-                const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
+                const auto *currentFile = static_cast<const KArchiveFile *>(currentEntry);
                 const QString dir = QFileDialog::getExistingDirectory(this, i18n("Select Directory"),
                                                                       QDir::homePath(),
                                                                       QFileDialog::ShowDirsOnly
@@ -208,7 +208,7 @@ bool ShowArchiveStructureDialog::searchArchiveElement(const QString &path, const
 
 void ShowArchiveStructureDialog::addSubItems(const QString &topLevelPath, QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent, const QString &fullpath)
 {
-    const KArchiveDirectory *dir = static_cast<const KArchiveDirectory *>(entry);
+    const auto *dir = static_cast<const KArchiveDirectory *>(entry);
     ++indent;
     const QString space = QString(indent * 2, QLatin1Char(' '));
     const QStringList lst = dir->entries();
@@ -216,7 +216,7 @@ void ShowArchiveStructureDialog::addSubItems(const QString &topLevelPath, QTreeW
         const KArchiveEntry *entry = dir->entry(entryName);
         if (entry) {
             if (entry->isDirectory()) {
-                const KArchiveDirectory *dirEntry = static_cast<const KArchiveDirectory *>(entry);
+                const auto *dirEntry = static_cast<const KArchiveDirectory *>(entry);
                 QTreeWidgetItem *newTopItem = addItem(parent, dirEntry->name(), QString());
                 QFont font(newTopItem->font(0));
                 font.setBold(true);
@@ -224,7 +224,7 @@ void ShowArchiveStructureDialog::addSubItems(const QString &topLevelPath, QTreeW
                 newTopItem->setFont(0, font);
                 addSubItems(topLevelPath, newTopItem, entry, indent, (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + dirEntry->name());
             } else if (entry->isFile()) {
-                const KArchiveFile *file = static_cast<const KArchiveFile *>(entry);
+                const auto *file = static_cast<const KArchiveFile *>(entry);
                 const QString fileFullPath = topLevelPath + (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + file->name();
                 //qDebug() << " fileFullPath " <<fileFullPath;
                 addItem(parent, file->name(), fileFullPath);
@@ -236,7 +236,7 @@ void ShowArchiveStructureDialog::addSubItems(const QString &topLevelPath, QTreeW
 
 QTreeWidgetItem *ShowArchiveStructureDialog::addItem(QTreeWidgetItem *parent, const QString &name, const QString &fillFullPath)
 {
-    QTreeWidgetItem *item = new QTreeWidgetItem(parent);
+    auto *item = new QTreeWidgetItem(parent);
     item->setText(0, name);
     item->setData(0, FullPath, fillFullPath);
     return item;
@@ -244,7 +244,7 @@ QTreeWidgetItem *ShowArchiveStructureDialog::addItem(QTreeWidgetItem *parent, co
 
 QTreeWidgetItem *ShowArchiveStructureDialog::addTopItem(const QString &name)
 {
-    QTreeWidgetItem *item = new QTreeWidgetItem;
+    auto *item = new QTreeWidgetItem;
     QFont font = item->font(0);
     font.setBold(true);
     item->setFont(0, font);

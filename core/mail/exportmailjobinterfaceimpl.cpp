@@ -83,7 +83,7 @@ QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceImpl::listOfResource()
 
 void ExportMailJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    ExportResourceArchiveJob *resourceJob = new ExportResourceArchiveJob(this);
+    auto *resourceJob = new ExportResourceArchiveJob(this);
     resourceJob->setArchivePath(archivePath);
     resourceJob->setUrl(url);
     resourceJob->setIdentifier(identifier);

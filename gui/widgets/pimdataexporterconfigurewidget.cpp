@@ -14,14 +14,14 @@
 PimDataExporterConfigureWidget::PimDataExporterConfigureWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    auto *layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
     QGroupBox *groupBox = new QGroupBox(i18n("Import"));
     groupBox->setObjectName(QStringLiteral("import_groupbox"));
     layout->addWidget(groupBox);
 
-    QVBoxLayout *groupBoxLayout = new QVBoxLayout;
+    auto *groupBoxLayout = new QVBoxLayout;
     groupBox->setLayout(groupBoxLayout);
 
     mAlwaysOverrideFile = new QCheckBox(i18n("Always Override File"));

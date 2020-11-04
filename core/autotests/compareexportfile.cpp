@@ -58,7 +58,7 @@ void CompareExportFile::compareFiles()
                 mTempDir->setAutoRemove(false);
 #endif
             }
-            const KArchiveFile *currentFile = static_cast<const KArchiveFile *>(currentEntry);
+            const auto *currentFile = static_cast<const KArchiveFile *>(currentEntry);
 
             QString adaptFile = file;
             //We store in zip as configs, but we extract in config/

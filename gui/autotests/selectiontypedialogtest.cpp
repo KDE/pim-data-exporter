@@ -32,29 +32,29 @@ void SelectionTypeDialogTest::shouldHaveDefaultValue()
     QVERIFY(dlg.isModal());
     QVERIFY(!dlg.windowTitle().isEmpty());
 
-    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    auto *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
     QVERIFY(buttonBox);
 
-    SelectionTypeTreeWidget *mSelectionTreeWidget = dlg.findChild<SelectionTypeTreeWidget *>(QStringLiteral("mSelectionTreeWidget"));
+    auto *mSelectionTreeWidget = dlg.findChild<SelectionTypeTreeWidget *>(QStringLiteral("mSelectionTreeWidget"));
     QVERIFY(mSelectionTreeWidget);
 
-    QCheckBox *mUseTemplateByDefault = dlg.findChild<QCheckBox *>(QStringLiteral("mUseTemplateByDefault"));
+    auto *mUseTemplateByDefault = dlg.findChild<QCheckBox *>(QStringLiteral("mUseTemplateByDefault"));
     QVERIFY(mUseTemplateByDefault);
     QVERIFY(!mUseTemplateByDefault->isChecked());
 
-    QPushButton *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectAll"));
+    auto *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectAll"));
     QVERIFY(selectAll);
     QVERIFY(selectAll->isEnabled());
 
-    QPushButton *unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectAll"));
+    auto *unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectAll"));
     QVERIFY(unselectAll);
     QVERIFY(unselectAll->isEnabled());
 
-    QPushButton *mSaveTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mSaveTemplate"));
+    auto *mSaveTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mSaveTemplate"));
     QVERIFY(mSaveTemplate);
     QVERIFY(mSaveTemplate->isEnabled());
 
-    QPushButton *mLoadTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mLoadTemplate"));
+    auto *mLoadTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mLoadTemplate"));
     QVERIFY(mLoadTemplate);
     QVERIFY(mLoadTemplate->isEnabled());
 }
@@ -63,19 +63,19 @@ void SelectionTypeDialogTest::shouldHideButtons()
 {
     SelectionTypeDialog dlg(false);
     dlg.removeNotSelectedItems();
-    QPushButton *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectAll"));
+    auto *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectAll"));
     QVERIFY(!selectAll->isHidden());
 
-    QPushButton *unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectAll"));
+    auto *unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectAll"));
     QVERIFY(!unselectAll->isHidden());
 
-    QPushButton *mSaveTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mSaveTemplate"));
+    auto *mSaveTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mSaveTemplate"));
     QVERIFY(mSaveTemplate->isHidden());
 
-    QPushButton *mLoadTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mLoadTemplate"));
+    auto *mLoadTemplate = dlg.findChild<QPushButton *>(QStringLiteral("mLoadTemplate"));
     QVERIFY(mLoadTemplate->isHidden());
 
-    QCheckBox *mUseTemplateByDefault = dlg.findChild<QCheckBox *>(QStringLiteral("mUseTemplateByDefault"));
+    auto *mUseTemplateByDefault = dlg.findChild<QCheckBox *>(QStringLiteral("mUseTemplateByDefault"));
     QVERIFY(mUseTemplateByDefault->isHidden());
 }
 
@@ -95,13 +95,13 @@ void checkState(SelectionTypeTreeWidget *mSelectionTreeWidget, bool checked)
 void SelectionTypeDialogTest::shouldSelectAllItems()
 {
     SelectionTypeDialog dlg(false);
-    SelectionTypeTreeWidget *mSelectionTreeWidget = dlg.findChild<SelectionTypeTreeWidget *>(QStringLiteral("mSelectionTreeWidget"));
-    QPushButton *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectAll"));
+    auto *mSelectionTreeWidget = dlg.findChild<SelectionTypeTreeWidget *>(QStringLiteral("mSelectionTreeWidget"));
+    auto *selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectAll"));
     QTest::mouseClick(selectAll, Qt::LeftButton);
 
     checkState(mSelectionTreeWidget, true);
 
-    QPushButton *unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectAll"));
+    auto *unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectAll"));
     QTest::mouseClick(unselectAll, Qt::LeftButton);
     checkState(mSelectionTreeWidget, false);
 }

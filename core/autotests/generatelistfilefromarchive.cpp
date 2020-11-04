@@ -62,18 +62,18 @@ bool GenerateListFileFromArchive::searchArchiveElement(const QString &path, cons
 
 void GenerateListFileFromArchive::addSubItems(const QString &topLevelPath, const KArchiveEntry *entry, int indent, const QString &fullpath)
 {
-    const KArchiveDirectory *dir = static_cast<const KArchiveDirectory *>(entry);
+    const auto *dir = static_cast<const KArchiveDirectory *>(entry);
     const QString space = QString(indent * 2, QLatin1Char(' '));
     const QStringList lst = dir->entries();
     for (const QString &entryName : lst) {
         const KArchiveEntry *entry = dir->entry(entryName);
         if (entry) {
             if (entry->isDirectory()) {
-                const KArchiveDirectory *dirEntry = static_cast<const KArchiveDirectory *>(entry);
+                const auto *dirEntry = static_cast<const KArchiveDirectory *>(entry);
                 //mListFile += space + dirEntry->name();
                 addSubItems(topLevelPath, entry, indent, (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + dirEntry->name());
             } else if (entry->isFile()) {
-                const KArchiveFile *file = static_cast<const KArchiveFile *>(entry);
+                const auto *file = static_cast<const KArchiveFile *>(entry);
                 const QString fileFullPath = topLevelPath + (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + file->name();
                 mListFile += space + fileFullPath;
             }

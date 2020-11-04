@@ -92,7 +92,7 @@ void ImportAddressbookJobInterface::restoreConfig()
     const QString kaddressbookStr(QStringLiteral("kaddressbookrc"));
     const KArchiveEntry *kaddressbookrcentry = mArchiveDirectory->entry(Utils::configsPath() + kaddressbookStr);
     if (kaddressbookrcentry && kaddressbookrcentry->isFile()) {
-        const KArchiveFile *kaddressbookrcFile = static_cast<const KArchiveFile *>(kaddressbookrcentry);
+        const auto *kaddressbookrcFile = static_cast<const KArchiveFile *>(kaddressbookrcentry);
         const QString searchExistingFilerc = configLocation() + kaddressbookStr;
         const QString installPathFilerc = installConfigLocation() + kaddressbookStr;
 
@@ -131,12 +131,12 @@ void ImportAddressbookJobInterface::importkaddressBookConfig(const KArchiveFile 
     const QString cvsTemplateDirName = QStringLiteral("/kaddressbook/csv-templates/");
     const KArchiveEntry *csvtemplateEntry = mArchiveDirectory->entry(Utils::dataPath() + cvsTemplateDirName);
     if (csvtemplateEntry && csvtemplateEntry->isDirectory()) {
-        const KArchiveDirectory *csvTemplateDir = static_cast<const KArchiveDirectory *>(csvtemplateEntry);
+        const auto *csvTemplateDir = static_cast<const KArchiveDirectory *>(csvtemplateEntry);
         const QStringList lst = csvTemplateDir->entries();
         for (const QString &entryName : lst) {
             const KArchiveEntry *entry = csvTemplateDir->entry(entryName);
             if (entry && entry->isFile()) {
-                const KArchiveFile *csvTemplateFile = static_cast<const KArchiveFile *>(entry);
+                const auto *csvTemplateFile = static_cast<const KArchiveFile *>(entry);
                 const QString name = csvTemplateFile->name();
                 QString autocorrectionPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + cvsTemplateDirName;
                 if (QFileInfo::exists(autocorrectionPath)) {
@@ -178,7 +178,7 @@ void ImportAddressbookJobInterface::restoreResources()
                 || value.akonadiConfigFile.contains(QLatin1String("akonadi_contacts_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
-                    const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
+                    const auto *file = static_cast<const KArchiveFile *>(fileResouceEntry);
                     copyArchiveFileTo(file, copyToDirName);
                     QString resourceName(file->name());
 
@@ -191,7 +191,7 @@ void ImportAddressbookJobInterface::restoreResources()
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                     if (dataResouceEntry->isFile()) {
-                        const KArchiveFile *file = static_cast<const KArchiveFile *>(dataResouceEntry);
+                        const auto *file = static_cast<const KArchiveFile *>(dataResouceEntry);
                         //TODO  adapt directory name too
                         extractZipFile(file, copyToDirName, newUrlInfo.path(), value.akonadiConfigFile.contains(QLatin1String("akonadi_contacts_resource_")));
                     }
@@ -201,7 +201,7 @@ void ImportAddressbookJobInterface::restoreResources()
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
-                            const KArchiveFile *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
+                            const auto *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
                             copyArchiveFileTo(file, copyToDirName);
                             resourceName = file->name();
                             filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);

@@ -33,7 +33,7 @@ void ExportNotesJobInterfaceTest::exportNote()
 {
     QFETCH(QByteArray, configpath);
     QFETCH(Utils::StoredTypes, options);
-    TestExportFile *file = new TestExportFile(this);
+    auto *file = new TestExportFile(this);
     file->setPathConfig(configpath);
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;
@@ -45,7 +45,7 @@ void ExportNotesJobInterfaceTest::exportNote()
     info.identifier = QStringLiteral("akonadi_kontact_resource_2");
     lstInfo << info;
 
-    ExportNotesJobInterfaceTestImpl *exportNote = new ExportNotesJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    auto *exportNote = new ExportNotesJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
     exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);

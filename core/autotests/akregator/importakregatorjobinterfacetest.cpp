@@ -36,7 +36,7 @@ void ImportAkregatorJobInterfaceTest::importAkegator()
     TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
-    ImportAkregatorJobInterfaceTestImpl *impl = new ImportAkregatorJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    auto *impl = new ImportAkregatorJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(impl);
     file->start();
     delete impl;

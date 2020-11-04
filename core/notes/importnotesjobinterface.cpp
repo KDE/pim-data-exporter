@@ -84,7 +84,7 @@ void ImportNotesJobInterface::restoreConfig()
         const QString globalNoteStr(QStringLiteral("globalnotesettings"));
         const KArchiveEntry *globalNotecentry = mArchiveDirectory->entry(Utils::configsPath() + globalNoteStr);
         if (globalNotecentry && globalNotecentry->isFile()) {
-            const KArchiveFile *globalNotecentryrc = static_cast<const KArchiveFile *>(globalNotecentry);
+            const auto *globalNotecentryrc = static_cast<const KArchiveFile *>(globalNotecentry);
             const QString searchExistingGlobalNoterc = configLocation() + globalNoteStr;
             const QString installPathGlobalNoterc = installConfigLocation() + globalNoteStr;
 
@@ -157,7 +157,7 @@ void ImportNotesJobInterface::restoreResources()
             if (value.akonadiConfigFile.contains(QLatin1String("akonadi_akonotes_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
-                    const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
+                    const auto *file = static_cast<const KArchiveFile *>(fileResouceEntry);
                     copyArchiveFileTo(file, copyToDirName);
                     QString resourceName(file->name());
 
@@ -172,7 +172,7 @@ void ImportNotesJobInterface::restoreResources()
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                     if (dataResouceEntry->isFile()) {
-                        const KArchiveFile *file = static_cast<const KArchiveFile *>(dataResouceEntry);
+                        const auto *file = static_cast<const KArchiveFile *>(dataResouceEntry);
                         //TODO  adapt directory name too
                         extractZipFile(file, copyToDirName, newUrlInfo.path());
                     }
@@ -182,7 +182,7 @@ void ImportNotesJobInterface::restoreResources()
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
-                            const KArchiveFile *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
+                            const auto *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
                             copyArchiveFileTo(file, copyToDirName);
                             resourceName = file->name();
                             filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);

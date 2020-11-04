@@ -80,7 +80,7 @@ void ImportAlarmJobInterface::restoreConfig()
     const QString kalarmStr(QStringLiteral("kalarmrc"));
     const KArchiveEntry *kalarmrcentry = mArchiveDirectory->entry(Utils::configsPath() + kalarmStr);
     if (kalarmrcentry && kalarmrcentry->isFile()) {
-        const KArchiveFile *kalarmrcFile = static_cast<const KArchiveFile *>(kalarmrcentry);
+        const auto *kalarmrcFile = static_cast<const KArchiveFile *>(kalarmrcentry);
         const QString searchExistingkalarmrc = configLocation() + kalarmStr;
         const QString installPathkalarmrc = installConfigLocation() + kalarmStr;
         if (QFileInfo::exists(searchExistingkalarmrc)) {
@@ -127,7 +127,7 @@ void ImportAlarmJobInterface::restoreResources()
                 || value.akonadiConfigFile.contains(QLatin1String("akonadi_kalarm_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
-                    const KArchiveFile *file = static_cast<const KArchiveFile *>(fileResouceEntry);
+                    const auto *file = static_cast<const KArchiveFile *>(fileResouceEntry);
                     copyArchiveFileTo(file, copyToDirName);
                     QString resourceName(file->name());
 
@@ -143,7 +143,7 @@ void ImportAlarmJobInterface::restoreResources()
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                     bool isDirResource = value.akonadiConfigFile.contains(QLatin1String("akonadi_kalarm_dir_resource_"));
                     if (dataResouceEntry->isFile()) {
-                        const KArchiveFile *file = static_cast<const KArchiveFile *>(dataResouceEntry);
+                        const auto *file = static_cast<const KArchiveFile *>(dataResouceEntry);
                         //TODO  adapt directory name too
                         extractZipFile(file, copyToDirName, newUrlInfo.path(), isDirResource);
                     }
@@ -153,7 +153,7 @@ void ImportAlarmJobInterface::restoreResources()
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
-                            const KArchiveFile *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
+                            const auto *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
                             copyArchiveFileTo(file, copyToDirName);
                             resourceName = file->name();
                             filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);

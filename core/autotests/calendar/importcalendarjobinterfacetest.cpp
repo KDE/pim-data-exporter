@@ -36,11 +36,11 @@ void ImportCalendarJobInterfaceTest::importCalendar()
     QFETCH(Utils::StoredTypes, options);
     const QString fullTestPath = zipFilePath + testPath;
 
-    TestImportFile *file = new TestImportFile(fullTestPath, this);
+    auto *file = new TestImportFile(fullTestPath, this);
     file->setPathConfig(fullTestPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::calendarPath());
-    ImportCalendarJobInterfaceTestImpl *impl = new ImportCalendarJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    auto *impl = new ImportCalendarJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
     impl->setExtractPath(file->extractPath());
     impl->setTempDirName(file->extractPath());

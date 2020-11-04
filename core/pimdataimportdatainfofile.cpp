@@ -39,7 +39,7 @@ QString PimDataImportDataInfoFile::importDataInfoPath()
     } else {
         const KArchiveEntry *informationFile = archive->directory()->entry(Utils::infoPath() + Utils::exportDataTypeFileName());
         if (informationFile && informationFile->isFile()) {
-            const KArchiveFile *file = static_cast<const KArchiveFile *>(informationFile);
+            const auto *file = static_cast<const KArchiveFile *>(informationFile);
             temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();
             if (file->copyTo(mTempDir->path())) {
                 temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();

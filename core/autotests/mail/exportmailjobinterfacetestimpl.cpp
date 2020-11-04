@@ -92,7 +92,7 @@ QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) 
 
 void ExportMailJobInterfaceTestImpl::backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath)
 {
-    TestBackupResourceFileJob *job = new TestBackupResourceFileJob(this);
+    auto *job = new TestBackupResourceFileJob(this);
     job->setDefaultPath(defaultPath);
     job->setIdentifier(agentIdentifier);
     job->setTestPath(mPathConfig);
