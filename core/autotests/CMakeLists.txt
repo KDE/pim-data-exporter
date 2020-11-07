@@ -26,7 +26,7 @@ target_link_libraries(test_resourceconverter PUBLIC KF5::ConfigCore pimdataexpor
 
 
 #####
-set( resourceconverterclasstest_SRCS resourceconverterclasstest.cpp resourceconvertertest.cpp )
+set( resourceconverterclasstest_SRCS resourceconverterclasstest.cpp)
 add_executable( resourceconverterclasstest ${resourceconverterclasstest_SRCS})
 add_test(NAME resourceconverterclasstest COMMAND resourceconverterclasstest)
 ecm_mark_as_test(resourceconverterclasstest)
