@@ -9,7 +9,7 @@
 
 #include "resourceconverterbase.h"
 #include "pimdataexporter_export.h"
-class PIMDATAEXPORTER_EXPORT ResourceConverterTest : public ResourceConverterBase
+class ResourceConverterTest : public ResourceConverterBase
 {
 public:
     ResourceConverterTest();
