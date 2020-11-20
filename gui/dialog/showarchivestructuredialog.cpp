@@ -147,7 +147,7 @@ void ShowArchiveStructureDialog::slotExtractFile()
 
 void ShowArchiveStructureDialog::slotItemClicked(QTreeWidgetItem *item, int column)
 {
-    Q_UNUSED(column);
+    Q_UNUSED(column)
     if (item) {
         const QString fullPath = item->data(0, FullPath).toString();
         const bool enableButton = !fullPath.isEmpty();

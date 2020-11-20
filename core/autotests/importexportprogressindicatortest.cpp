@@ -15,18 +15,18 @@ ImportExportProgressIndicatorTest::ImportExportProgressIndicatorTest(QObject *pa
 
 int ImportExportProgressIndicatorTest::mergeConfigMessageBox(const QString &configName) const
 {
-    Q_UNUSED(configName);
+    Q_UNUSED(configName)
     return KMessageBox::Yes;
 }
 
 bool ImportExportProgressIndicatorTest::overwriteConfigMessageBox(const QString &configName) const
 {
-    Q_UNUSED(configName);
+    Q_UNUSED(configName)
     return true;
 }
 
 bool ImportExportProgressIndicatorTest::overwriteDirectoryMessageBox(const QString &directory) const
 {
-    Q_UNUSED(directory);
+    Q_UNUSED(directory)
     return true;
 }

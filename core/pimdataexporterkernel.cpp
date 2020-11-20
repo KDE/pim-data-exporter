@@ -126,11 +126,11 @@ Akonadi::Collection::Id PimDataExporterKernel::lastSelectedFolder()
 
 void PimDataExporterKernel::setLastSelectedFolder(Akonadi::Collection::Id col)
 {
-    Q_UNUSED(col);
+    Q_UNUSED(col)
 }
 
 void PimDataExporterKernel::expunge(Akonadi::Collection::Id col, bool sync)
 {
-    Q_UNUSED(col);
-    Q_UNUSED(sync);
+    Q_UNUSED(col)
+    Q_UNUSED(sync)
 }

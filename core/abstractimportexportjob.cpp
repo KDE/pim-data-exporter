@@ -198,7 +198,7 @@ void AbstractImportExportJob::storeArchiveInfoResources(const KArchiveDirectory 
 
 bool AbstractImportExportJob::isAConfigFile(const QString &name) const
 {
-    Q_UNUSED(name);
+    Q_UNUSED(name)
     //Redefine in subclass
     return true;
 }

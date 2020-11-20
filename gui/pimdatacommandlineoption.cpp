@@ -23,7 +23,7 @@ PimDataCommandLineOption::~PimDataCommandLineOption()
 
 void PimDataCommandLineOption::slotActivateRequested(const QStringList &arguments, const QString &workingDirectory)
 {
-    Q_UNUSED(workingDirectory);
+    Q_UNUSED(workingDirectory)
     if (!arguments.isEmpty()) {
         if (mParser.parse(arguments)) {
             handleCommandLine();
