@@ -14,7 +14,7 @@ class ExportCalendarsJobInterfaceTestImpl : public ExportCalendarJobInterface, p
     Q_OBJECT
 public:
     explicit ExportCalendarsJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportCalendarsJobInterfaceTestImpl();
+    ~ExportCalendarsJobInterfaceTestImpl() override;
 
 protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;

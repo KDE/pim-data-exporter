@@ -16,7 +16,7 @@ class ImportNotesJobInterfaceTestImpl : public ImportNotesJobInterface, public E
     Q_OBJECT
 public:
     explicit ImportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportNotesJobInterfaceTestImpl();
+    ~ImportNotesJobInterfaceTestImpl() override;
     void setExistingPathConfig(const QString &path);
 
 protected:

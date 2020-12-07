@@ -14,7 +14,7 @@ class TestBackupResourceFileJob : public BackupResourceFileJobBase
     Q_OBJECT
 public:
     explicit TestBackupResourceFileJob(QObject *parent = nullptr);
-    ~TestBackupResourceFileJob();
+    ~TestBackupResourceFileJob() override;
 
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
     void setTestPath(const QString &str);

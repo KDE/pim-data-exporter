@@ -14,7 +14,7 @@ class ExportAddressbookJobInterfaceTestImpl : public ExportAddressbookJobInterfa
     Q_OBJECT
 public:
     explicit ExportAddressbookJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportAddressbookJobInterfaceTestImpl();
+    ~ExportAddressbookJobInterfaceTestImpl() override;
 
 protected:
     void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey) override;

@@ -16,7 +16,7 @@ class ExportMailJobInterfaceTestImpl : public ExportMailJobInterface, public Exp
     Q_OBJECT
 public:
     explicit ExportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportMailJobInterfaceTestImpl();
+    ~ExportMailJobInterfaceTestImpl() override;
 
 protected:
     void convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey) override;

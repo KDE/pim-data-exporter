@@ -16,7 +16,7 @@ class ImportAlarmJobInterfaceTestImpl : public ImportAlarmJobInterface, public E
     Q_OBJECT
 public:
     explicit ImportAlarmJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportAlarmJobInterfaceTestImpl();
+    ~ImportAlarmJobInterfaceTestImpl() override;
 
     void setExistingPathConfig(const QString &path);
 protected:

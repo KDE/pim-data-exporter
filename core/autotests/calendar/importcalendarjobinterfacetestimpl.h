@@ -16,7 +16,7 @@ class ImportCalendarJobInterfaceTestImpl : public ImportCalendarJobInterface, pu
     Q_OBJECT
 public:
     explicit ImportCalendarJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportCalendarJobInterfaceTestImpl();
+    ~ImportCalendarJobInterfaceTestImpl() override;
 
     void setExistingPathConfig(const QString &path);
 protected:

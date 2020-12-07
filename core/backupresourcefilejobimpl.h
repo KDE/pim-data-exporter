@@ -15,7 +15,7 @@ class PIMDATAEXPORTER_EXPORT BackupResourceFileJobImpl : public BackupResourceFi
     Q_OBJECT
 public:
     explicit BackupResourceFileJobImpl(QObject *parent = nullptr);
-    ~BackupResourceFileJobImpl();
+    ~BackupResourceFileJobImpl() override;
 
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
 };

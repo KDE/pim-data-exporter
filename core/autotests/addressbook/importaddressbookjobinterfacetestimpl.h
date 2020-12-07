@@ -17,7 +17,7 @@ class ImportAddressbookJobInterfaceTestImpl : public ImportAddressbookJobInterfa
     Q_OBJECT
 public:
     explicit ImportAddressbookJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportAddressbookJobInterfaceTestImpl();
+    ~ImportAddressbookJobInterfaceTestImpl() override;
 
 protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;

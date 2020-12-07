@@ -14,7 +14,7 @@ class ImportAkregatorJobInterfaceTestImpl : public ImportAkregatorJobInterface
     Q_OBJECT
 public:
     explicit ImportAkregatorJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportAkregatorJobInterfaceTestImpl();
+    ~ImportAkregatorJobInterfaceTestImpl() override;
 
 protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;

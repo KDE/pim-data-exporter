@@ -15,7 +15,7 @@ class ExportAlarmJobInterfaceTestImpl : public ExportAlarmJobInterface, public E
     Q_OBJECT
 public:
     explicit ExportAlarmJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportAlarmJobInterfaceTestImpl();
+    ~ExportAlarmJobInterfaceTestImpl() override;
 protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;

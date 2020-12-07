@@ -18,7 +18,7 @@ class ExportNotesJobInterfaceTestImpl : public ExportNotesJobInterface, public E
     Q_OBJECT
 public:
     explicit ExportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ExportNotesJobInterfaceTestImpl();
+    ~ExportNotesJobInterfaceTestImpl() override;
 
 protected:
     void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) override;

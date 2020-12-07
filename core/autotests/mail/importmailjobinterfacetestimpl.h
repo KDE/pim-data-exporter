@@ -16,7 +16,7 @@ class ImportMailJobInterfaceTestImpl : public ImportMailJobInterface, public Exp
     Q_OBJECT
 public:
     explicit ImportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep);
-    ~ImportMailJobInterfaceTestImpl();
+    ~ImportMailJobInterfaceTestImpl() override;
     void start() override;
     void setExistingPathConfig(const QString &path);
 
