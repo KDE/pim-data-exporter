@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-set(PIM_VERSION "5.16.0")
+set(PIM_VERSION "5.16.1")
 project(pim-data-exporter VERSION ${PIM_VERSION})
 set(RELEASE_SERVICE_VERSION "20.12.0")
 set(KF5_MIN_VERSION "5.75.0")
