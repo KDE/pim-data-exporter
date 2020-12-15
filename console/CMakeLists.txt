@@ -19,6 +19,9 @@ ecm_qt_declare_logging_category(pimdataexporterconsole_SRCS HEADER pimdataexport
     )
 
 add_executable(pimdataexporterconsole ${pimdataexporterconsole_SRCS})
+if (COMPILE_WITH_CMAKE_SUPPORT)
+    set_target_properties(pimdataexporterconsole PROPERTIES UNITY_BUILD ON)
+endif()
 
 target_link_libraries(pimdataexporterconsole KF5::ConfigCore KF5::CoreAddons KF5::I18n KF5::Archive KF5::AkonadiCore   KF5::MailCommon
     pimdataexporterprivate
