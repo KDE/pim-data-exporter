@@ -63,7 +63,7 @@ qt5_add_resources(pimdataexporter_SRCS pimdataexporter.qrc)
 ecm_qt_declare_logging_category(pimdataexporter_SRCS HEADER pimdataexportgui_debug.h IDENTIFIER PIMDATAEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimdataexportergui)
 
 add_executable(pimdataexporter ${pimdataexporter_SRCS})
-if (COMPILE_WITH_CMAKE_SUPPORT)
+if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(pimdataexporter PROPERTIES UNITY_BUILD ON)
 endif()
 
