@@ -23,7 +23,7 @@
   <name xml:lang="pl">Eksportowanie danych ZIO</name>
   <name xml:lang="pt">Exportação dos Dados PIM</name>
   <name xml:lang="pt-BR">Exportador de dados PIM</name>
-  <name xml:lang="ru">Экспорт данных PIM</name>
+  <name xml:lang="ru">Средство экспорта данных PIM</name>
   <name xml:lang="sk">Exportér údajov PIM</name>
   <name xml:lang="sl">PIM Data Exporter</name>
   <name xml:lang="sv">Export av data för personlig informationshantering</name>
@@ -108,7 +108,7 @@
     <p xml:lang="pl">Eksportowanie danych ZIO umożliwia eksportowanie/importowanie ustawień ZIO</p>
     <p xml:lang="pt">A Exportação de Dados PIM permite exportar ou importar configurações de PIM.</p>
     <p xml:lang="pt-BR">O Exportador de dados PIM exporta e importa configurações do PIM.</p>
-    <p xml:lang="ru">Экспорт и импорт настроек PIM</p>
+    <p xml:lang="ru">Экспорт и импорт параметров PIM</p>
     <p xml:lang="sk">Exportér údajov PIM exportuje a importuje nastavenia PIM</p>
     <p xml:lang="sl">PIM Data Exporter izvaža in uvaža nastavitve programov za upravljanje osebnih podatkov</p>
     <p xml:lang="sv">Export av data för personlig informationshantering exporterar och importerar inställningar för personlig informationshantering.</p>
