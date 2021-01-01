@@ -14,7 +14,7 @@ class PimDataExporterConfigureWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit PimDataExporterConfigureWidgetTest(QObject *parent = nullptr);
-    ~PimDataExporterConfigureWidgetTest();
+    ~PimDataExporterConfigureWidgetTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

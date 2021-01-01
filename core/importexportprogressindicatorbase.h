@@ -14,7 +14,7 @@ class PIMDATAEXPORTER_EXPORT ImportExportProgressIndicatorBase : public QObject
     Q_OBJECT
 public:
     explicit ImportExportProgressIndicatorBase(QObject *parent = nullptr);
-    ~ImportExportProgressIndicatorBase();
+    ~ImportExportProgressIndicatorBase() override;
 
     virtual void increaseProgressDialog();
     virtual void createProgressDialog(const QString &title);

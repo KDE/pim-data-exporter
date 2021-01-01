@@ -15,7 +15,7 @@ class TestImportFile : public QObject
     Q_OBJECT
 public:
     explicit TestImportFile(const QString &archivePath, QObject *parent = nullptr);
-    ~TestImportFile();
+    ~TestImportFile() override;
 
     void start();
     Q_REQUIRED_RESULT AbstractImportExportJob *abstractImportExportJob() const;

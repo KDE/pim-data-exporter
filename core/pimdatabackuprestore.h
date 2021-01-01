@@ -18,7 +18,7 @@ class PIMDATAEXPORTER_EXPORT PimDataBackupRestore : public QObject
     Q_OBJECT
 public:
     explicit PimDataBackupRestore(QObject *parent = nullptr);
-    ~PimDataBackupRestore();
+    ~PimDataBackupRestore() override;
 
     Q_REQUIRED_RESULT bool backupStart(const QString &filename);
     Q_REQUIRED_RESULT bool restoreStart(const QString &filename);

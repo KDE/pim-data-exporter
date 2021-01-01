@@ -14,7 +14,7 @@ class ExportAkregatorJobInterfaceTest : public QObject
     Q_OBJECT
 public:
     explicit ExportAkregatorJobInterfaceTest(QObject *parent = nullptr);
-    ~ExportAkregatorJobInterfaceTest() = default;
+    ~ExportAkregatorJobInterfaceTest() override = default;
 private Q_SLOTS:
     void exportAkregator_data();
     void exportAkregator();

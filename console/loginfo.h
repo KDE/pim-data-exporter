@@ -14,7 +14,7 @@ class LogInfo : public QObject
     Q_OBJECT
 public:
     explicit LogInfo(QObject *parent = nullptr);
-    ~LogInfo();
+    ~LogInfo() override;
 
     void addInfoLogEntry(const QString &log);
     void addErrorLogEntry(const QString &log);

@@ -14,7 +14,7 @@ class ExportAlarmJobInterfaceTest : public QObject
     Q_OBJECT
 public:
     explicit ExportAlarmJobInterfaceTest(QObject *parent = nullptr);
-    ~ExportAlarmJobInterfaceTest() = default;
+    ~ExportAlarmJobInterfaceTest() override = default;
 private Q_SLOTS:
     void exportAlarm();
     void exportAlarm_data();

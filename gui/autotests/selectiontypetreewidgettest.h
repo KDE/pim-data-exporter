@@ -14,7 +14,7 @@ class SelectionTypeTreeWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit SelectionTypeTreeWidgetTest(QObject *parent = nullptr);
-    ~SelectionTypeTreeWidgetTest();
+    ~SelectionTypeTreeWidgetTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultSelectedWidget();
     void shouldLoadTemplate();

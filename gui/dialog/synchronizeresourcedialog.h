@@ -14,7 +14,7 @@ class SynchronizeResourceDialog : public QDialog
     Q_OBJECT
 public:
     explicit SynchronizeResourceDialog(QWidget *parent = nullptr);
-    ~SynchronizeResourceDialog();
+    ~SynchronizeResourceDialog() override;
 
     void setResources(const QHash<QString, QString> &resources);
     Q_REQUIRED_RESULT QStringList resources() const;

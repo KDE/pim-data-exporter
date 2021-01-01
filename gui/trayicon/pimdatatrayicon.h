@@ -14,7 +14,7 @@ class PimDataTrayIcon : public KStatusNotifierItem
     Q_OBJECT
 public:
     explicit PimDataTrayIcon(QObject *parent = nullptr);
-    ~PimDataTrayIcon();
+    ~PimDataTrayIcon() override;
 };
 
 #endif // PIMDATATRAYICON_H

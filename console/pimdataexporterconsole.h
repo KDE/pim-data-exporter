@@ -21,7 +21,7 @@ public:
     };
 
     explicit PimDataExporterConsole(QObject *parent = nullptr);
-    ~PimDataExporterConsole();
+    ~PimDataExporterConsole() override;
 
     Q_REQUIRED_RESULT Mode mode() const;
     void setMode(Mode mode);

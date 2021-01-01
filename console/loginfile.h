@@ -15,7 +15,7 @@ class LogInFile : public QObject
     Q_OBJECT
 public:
     explicit LogInFile(QObject *parent = nullptr);
-    ~LogInFile();
+    ~LogInFile() override;
 
     Q_REQUIRED_RESULT QString fileName() const;
     void setFileName(const QString &fileName);

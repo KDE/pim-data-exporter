@@ -14,7 +14,7 @@ class ExportCalendarsJobInterfaceTest : public QObject
     Q_OBJECT
 public:
     explicit ExportCalendarsJobInterfaceTest(QObject *parent = nullptr);
-    ~ExportCalendarsJobInterfaceTest() = default;
+    ~ExportCalendarsJobInterfaceTest() override = default;
 private Q_SLOTS:
     void exportCalendar_data();
     void exportCalendar();

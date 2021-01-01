@@ -29,7 +29,7 @@ class PIMDATAEXPORTER_EXPORT AbstractImportExportJob : public QObject
     Q_OBJECT
 public:
     explicit AbstractImportExportJob(QObject *parent, ArchiveStorage *archiveStorage, Utils::StoredTypes typeSelected, int numberOfStep);
-    ~AbstractImportExportJob();
+    ~AbstractImportExportJob() override;
 
     virtual void start() = 0;
 

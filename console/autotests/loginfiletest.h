@@ -14,7 +14,7 @@ class LogInFileTest : public QObject
     Q_OBJECT
 public:
     explicit LogInFileTest(QObject *parent = nullptr);
-    ~LogInFileTest();
+    ~LogInFileTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

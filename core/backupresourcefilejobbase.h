@@ -16,7 +16,7 @@ class PIMDATAEXPORTER_EXPORT BackupResourceFileJobBase : public QObject
     Q_OBJECT
 public:
     explicit BackupResourceFileJobBase(QObject *parent = nullptr);
-    ~BackupResourceFileJobBase();
+    ~BackupResourceFileJobBase() override;
 
     void start();
 

@@ -17,7 +17,7 @@ class PimDataCommandLineOption : public QObject
     Q_OBJECT
 public:
     explicit PimDataCommandLineOption(QObject *parent = nullptr);
-    ~PimDataCommandLineOption();
+    ~PimDataCommandLineOption() override;
 
     void createParser(const QApplication &app);
     void setExportWindow(PimDataExporterWindow *exporterWindow);

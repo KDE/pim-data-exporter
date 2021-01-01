@@ -14,7 +14,7 @@ class PimDataExporterConfigureDialogTest : public QObject
     Q_OBJECT
 public:
     explicit PimDataExporterConfigureDialogTest(QObject *parent = nullptr);
-    ~PimDataExporterConfigureDialogTest();
+    ~PimDataExporterConfigureDialogTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

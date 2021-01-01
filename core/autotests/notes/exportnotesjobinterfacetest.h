@@ -13,7 +13,7 @@ class ExportNotesJobInterfaceTest : public QObject
     Q_OBJECT
 public:
     explicit ExportNotesJobInterfaceTest(QObject *parent = nullptr);
-    ~ExportNotesJobInterfaceTest() = default;
+    ~ExportNotesJobInterfaceTest() override = default;
 private Q_SLOTS:
     void exportNote_data();
     void exportNote();

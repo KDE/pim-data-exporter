@@ -19,7 +19,7 @@ class PimDataExporterWindow : public KXmlGuiWindow
     Q_OBJECT
 public:
     explicit PimDataExporterWindow(QWidget *parent = nullptr);
-    ~PimDataExporterWindow();
+    ~PimDataExporterWindow() override;
     void handleCommandLine(const QCommandLineParser &parser);
 
 private:

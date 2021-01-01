@@ -16,7 +16,7 @@ class PIMDATAEXPORTER_EXPORT PimDataImportDataInfoFile : public QObject
     Q_OBJECT
 public:
     explicit PimDataImportDataInfoFile(QObject *parent = nullptr);
-    ~PimDataImportDataInfoFile();
+    ~PimDataImportDataInfoFile() override;
 
     void setCurrentFileName(const QString &filename);
 

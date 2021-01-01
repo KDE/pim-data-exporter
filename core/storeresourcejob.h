@@ -14,7 +14,7 @@ class StoreResourceJob : public QObject
     Q_OBJECT
 public:
     explicit StoreResourceJob(QObject *parent = nullptr);
-    ~StoreResourceJob();
+    ~StoreResourceJob() override;
 
     void start();
 

@@ -14,7 +14,7 @@ class ExportMailJobInterfaceTest : public QObject
     Q_OBJECT
 public:
     explicit ExportMailJobInterfaceTest(QObject *parent = nullptr);
-    ~ExportMailJobInterfaceTest() = default;
+    ~ExportMailJobInterfaceTest() override = default;
 private Q_SLOTS:
     void exportMail();
     void exportMail_data();

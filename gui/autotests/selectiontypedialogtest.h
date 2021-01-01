@@ -14,7 +14,7 @@ class SelectionTypeDialogTest : public QObject
     Q_OBJECT
 public:
     explicit SelectionTypeDialogTest(QObject *parent = nullptr);
-    ~SelectionTypeDialogTest();
+    ~SelectionTypeDialogTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldHideButtons();

@@ -17,7 +17,7 @@ class LogWidget : public QWidget
     Q_OBJECT
 public:
     explicit LogWidget(QWidget *parent);
-    ~LogWidget();
+    ~LogWidget() override;
 
     void addInfoLogEntry(const QString &log);
     void addErrorLogEntry(const QString &log);

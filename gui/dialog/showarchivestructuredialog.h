@@ -20,7 +20,7 @@ class ShowArchiveStructureDialog : public QDialog
     Q_OBJECT
 public:
     explicit ShowArchiveStructureDialog(const QString &filename, QWidget *parent = nullptr);
-    ~ShowArchiveStructureDialog();
+    ~ShowArchiveStructureDialog() override;
 
     enum File {
         FullPath = Qt::UserRole + 1

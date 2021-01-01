@@ -19,7 +19,7 @@ class PimDataExporterConfigureDialog : public KPageDialog
     Q_OBJECT
 public:
     explicit PimDataExporterConfigureDialog(QWidget *parent = nullptr);
-    ~PimDataExporterConfigureDialog();
+    ~PimDataExporterConfigureDialog() override;
 
 private:
     void slotAccepted();

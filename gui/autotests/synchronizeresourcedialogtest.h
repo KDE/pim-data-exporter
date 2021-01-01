@@ -14,7 +14,7 @@ class SynchronizeResourceDialogTest : public QObject
     Q_OBJECT
 public:
     explicit SynchronizeResourceDialogTest(QObject *parent = nullptr);
-    ~SynchronizeResourceDialogTest();
+    ~SynchronizeResourceDialogTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldNotEmptyList();

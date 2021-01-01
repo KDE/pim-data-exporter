@@ -15,7 +15,7 @@ class PIMDATAEXPORTER_EXPORT ArchiveStorage : public QObject
     Q_OBJECT
 public:
     explicit ArchiveStorage(const QString &filename, QObject *parent = nullptr);
-    ~ArchiveStorage();
+    ~ArchiveStorage() override;
 
     void closeArchive();
     Q_REQUIRED_RESULT bool openArchive(bool write);

@@ -14,7 +14,7 @@ class ImportCalendarJobInterfaceTest : public QObject
     Q_OBJECT
 public:
     explicit ImportCalendarJobInterfaceTest(QObject *parent = nullptr);
-    ~ImportCalendarJobInterfaceTest() = default;
+    ~ImportCalendarJobInterfaceTest() override = default;
 private Q_SLOTS:
     void importCalendar();
     void importCalendar_data();

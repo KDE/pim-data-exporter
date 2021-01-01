@@ -14,7 +14,7 @@ class ResourceConverterClassTest : public QObject
     Q_OBJECT
 public:
     explicit ResourceConverterClassTest(QObject *parent = nullptr);
-    ~ResourceConverterClassTest() = default;
+    ~ResourceConverterClassTest() override = default;
 private Q_SLOTS:
     void shouldGetAgentFileName();
 };

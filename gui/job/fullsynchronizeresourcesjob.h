@@ -17,7 +17,7 @@ class FullSynchronizeResourcesJob : public QObject
     Q_OBJECT
 public:
     explicit FullSynchronizeResourcesJob(QObject *parent = nullptr);
-    ~FullSynchronizeResourcesJob();
+    ~FullSynchronizeResourcesJob() override;
 
     void setResources(const QStringList &lst);
 

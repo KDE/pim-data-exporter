@@ -14,7 +14,7 @@ class ImportMailJobInterfaceTest : public QObject
     Q_OBJECT
 public:
     explicit ImportMailJobInterfaceTest(QObject *parent = nullptr);
-    ~ImportMailJobInterfaceTest() = default;
+    ~ImportMailJobInterfaceTest() override = default;
 private Q_SLOTS:
     void importMail();
     void importMail_data();

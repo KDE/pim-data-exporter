@@ -15,7 +15,7 @@ class TestExportFile : public QObject
     Q_OBJECT
 public:
     explicit TestExportFile(QObject *parent = nullptr);
-    ~TestExportFile();
+    ~TestExportFile() override;
 
     Q_REQUIRED_RESULT QByteArray pathConfig() const;
     void setPathConfig(const QByteArray &pathConfig);

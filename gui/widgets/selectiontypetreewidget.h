@@ -18,7 +18,7 @@ class SelectionTypeTreeWidget : public QTreeWidget
     Q_OBJECT
 public:
     explicit SelectionTypeTreeWidget(bool backupData, QWidget *parent = nullptr);
-    ~SelectionTypeTreeWidget();
+    ~SelectionTypeTreeWidget() override;
 
     Q_REQUIRED_RESULT QHash<Utils::AppsType, Utils::importExportParameters> storedType() const;
 

@@ -14,7 +14,7 @@ class ImportAlarmJobInterfaceTest : public QObject
     Q_OBJECT
 public:
     explicit ImportAlarmJobInterfaceTest(QObject *parent = nullptr);
-    ~ImportAlarmJobInterfaceTest() = default;
+    ~ImportAlarmJobInterfaceTest() override = default;
 private Q_SLOTS:
     void importAlarmConfig();
     void importAlarmConfig_data();

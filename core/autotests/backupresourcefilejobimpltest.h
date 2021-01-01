@@ -14,7 +14,7 @@ class BackupResourceFileJobImplTest : public QObject
     Q_OBJECT
 public:
     explicit BackupResourceFileJobImplTest(QObject *parent = nullptr);
-    ~BackupResourceFileJobImplTest() = default;
+    ~BackupResourceFileJobImplTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

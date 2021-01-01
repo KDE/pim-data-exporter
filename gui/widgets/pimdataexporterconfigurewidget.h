@@ -14,7 +14,7 @@ class PimDataExporterConfigureWidget : public QWidget
     Q_OBJECT
 public:
     explicit PimDataExporterConfigureWidget(QWidget *parent = nullptr);
-    ~PimDataExporterConfigureWidget();
+    ~PimDataExporterConfigureWidget() override;
 
     void save();
 
