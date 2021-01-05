@@ -40,11 +40,15 @@ QString PimDataImportDataInfoFile::importDataInfoPath()
         const KArchiveEntry *informationFile = archive->directory()->entry(Utils::infoPath() + Utils::exportDataTypeFileName());
         if (informationFile && informationFile->isFile()) {
             const auto *file = static_cast<const KArchiveFile *>(informationFile);
-            temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();
-            if (file->copyTo(mTempDir->path())) {
-                temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();
+            if (file->size() == 0) {
+                qCWarning(PIMDATAEXPORTERCORE_LOG) << "Empty exporteddata information file, skipping it";
             } else {
-                qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to copy to temporary file" << temporaryFilePath;
+                temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();
+                if (file->copyTo(mTempDir->path())) {
+                    temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();
+                } else {
+                    qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to copy to temporary file" << temporaryFilePath;
+                }
             }
         } else {
             qCWarning(PIMDATAEXPORTERCORE_LOG) << "Old archive without exporteddata information";
