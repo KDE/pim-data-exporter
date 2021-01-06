@@ -56,7 +56,7 @@ void TestExportFile::start()
 
     //TODO fix file name.
     Utils::addVersion(mArchiveStorage->archive());
-    Utils::storeDataExportInfo(mArchiveStorage->archive());
+    Utils::storeDataExportInfo(mArchiveStorage->archive(), QString()); //TODO fix me ?
 
     QSignalSpy finish(mAbstractImportExportJob, &AbstractImportExportJob::jobFinished);
     QSignalSpy error(mAbstractImportExportJob, &AbstractImportExportJob::error);
