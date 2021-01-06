@@ -139,13 +139,13 @@ KZip *Utils::openZip(const QString &filename, QString &errorMsg)
     return zip;
 }
 
-void Utils::storeDataExportInfo(KZip *archive)
+void Utils::storeDataExportInfo(KZip *archive, const QString &exportInfoFileName)
 {
-    QTemporaryFile tmp;
-    tmp.open();
-    const bool fileAdded = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + Utils::exportDataTypeFileName());
-    if (!fileAdded) {
-        qCDebug(PIMDATAEXPORTERCORE_LOG) << "storeDataExportInfo can't add to archive" << Utils::infoPath() + Utils::exportDataTypeFileName();
+    if (!exportInfoFileName.isEmpty()) {
+        const bool fileAdded = archive->addLocalFile(exportInfoFileName, Utils::infoPath() + Utils::exportDataTypeFileName());
+        if (!fileAdded) {
+            qCDebug(PIMDATAEXPORTERCORE_LOG) << "storeDataExportInfo can't add to archive" << Utils::infoPath() + Utils::exportDataTypeFileName();
+        }
     }
 }
 

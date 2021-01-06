@@ -102,7 +102,7 @@ Q_REQUIRED_RESULT QString akonadiAgentName(const QString &configPath);
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource();
 
 KZip *openZip(const QString &filename, QString &errorMsg);
-PIMDATAEXPORTER_EXPORT void storeDataExportInfo(KZip *archive);
+PIMDATAEXPORTER_EXPORT void storeDataExportInfo(KZip *archive, const QString &exportInfoFileName);
 
 PIMDATAEXPORTER_EXPORT void addVersion(KZip *archive);
 PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT int archiveVersion(KZip *archive);
