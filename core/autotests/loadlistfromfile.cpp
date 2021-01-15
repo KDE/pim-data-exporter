@@ -20,11 +20,7 @@ LoadListFromFile::LoadListFromFile(const QString &filename)
     const QByteArray content = f.readAll();
     f.close();
     const QString contextStr = QString::fromUtf8(content);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    mFileList = contextStr.split(QLatin1Char('\n'), QString::SkipEmptyParts);
-#else
     mFileList = contextStr.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
-#endif
     mFileList.sort();
 }
 
