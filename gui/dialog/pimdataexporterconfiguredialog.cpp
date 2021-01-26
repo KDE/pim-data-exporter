@@ -9,7 +9,7 @@
 #include <KLocalizedString>
 #include <QPushButton>
 #include <QDialogButtonBox>
-#include <kpagewidgetmodel.h>
+#include <KPageWidgetModel>
 #include "../widgets/pimdataexporterconfigurewidget.h"
 #include <KConfigGroup>
 #include <KSharedConfig>

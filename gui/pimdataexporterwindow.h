@@ -6,7 +6,7 @@
 
 #ifndef PIMDATAEXPORTERWINDOW_H
 #define PIMDATAEXPORTERWINDOW_H
-#include <kxmlguiwindow.h>
+#include <KXmlGuiWindow>
 #include "utils.h"
 class LogWidget;
 class KRecentFilesAction;
