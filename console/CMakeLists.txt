@@ -29,5 +29,5 @@ target_link_libraries(pimdataexporterconsole KF5::ConfigCore KF5::CoreAddons KF5
 if (BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
-install(TARGETS pimdataexporterconsole ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS pimdataexporterconsole ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
