@@ -54,9 +54,8 @@ set(pimdataexporter_SRCS
     importexportprogressindicatorgui.cpp
     pimdataexporterwindow.cpp
     pimdatacommandlineoption.cpp
-    main.cpp)
-
-qt5_add_resources(pimdataexporter_SRCS pimdataexporter.qrc)
+    main.cpp
+    pimdataexporter.qrc)
 
 #TODO create lib
 
