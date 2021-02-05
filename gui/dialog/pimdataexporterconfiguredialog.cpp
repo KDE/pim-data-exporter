@@ -28,7 +28,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
 
     //General page
     QWidget *generalConfigureWiget = new QWidget;
-    auto *layout = new QVBoxLayout(generalConfigureWiget);
+    auto layout = new QVBoxLayout(generalConfigureWiget);
     mConfigureWidget = new PimDataExporterConfigureWidget(this);
     mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
 
@@ -44,7 +44,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
 
     mUserFeedbackWidget = new KUserFeedback::FeedbackConfigWidget(this);
 
-    auto *userFeedBackLayout = new QHBoxLayout(userFeedBackWidget);
+    auto userFeedBackLayout = new QHBoxLayout(userFeedBackWidget);
     userFeedBackLayout->setContentsMargins(0, 0, 0, 0);
     userFeedBackLayout->addWidget(mUserFeedbackWidget);
 

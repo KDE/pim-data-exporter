@@ -34,11 +34,12 @@ void ImportAlarmJobInterfaceTest::importAlarmConfig()
     QFETCH(QString, testPath);
     QFETCH(Utils::StoredTypes, options);
     const QString fullTestPath = zipFilePath + testPath;
-    auto *file = new TestImportFile(fullTestPath, this);
+    auto file = new TestImportFile(fullTestPath, this);
     file->setPathConfig(fullTestPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::alarmPath());
-    auto *impl = new ImportAlarmJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    auto impl = new ImportAlarmJobInterfaceTestImpl(this, options,
+                                                    file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
     impl->setExtractPath(file->extractPath());
     impl->setTempDirName(file->extractPath());

@@ -49,14 +49,16 @@ QString ExportAlarmJobInterfaceTestImpl::resourcePath(const QString &identifier)
 
 void ExportAlarmJobInterfaceTestImpl::backupAlarmResourceFile(const QString &agentIdentifier, const QString &defaultPath)
 {
-    auto *job = new TestBackupResourceFileJob(this);
-    job->setDefaultPath(defaultPath);
-    job->setIdentifier(agentIdentifier);
-    job->setTestPath(mPathConfig);
-    job->setZip(archive());
-    connect(job, &TestBackupResourceFileJob::error, this, &ExportAlarmJobInterfaceTestImpl::error);
-    connect(job, &TestBackupResourceFileJob::info, this, &ExportAlarmJobInterfaceTestImpl::info);
-    job->start();
+  auto job = new TestBackupResourceFileJob(this);
+  job->setDefaultPath(defaultPath);
+  job->setIdentifier(agentIdentifier);
+  job->setTestPath(mPathConfig);
+  job->setZip(archive());
+  connect(job, &TestBackupResourceFileJob::error, this,
+          &ExportAlarmJobInterfaceTestImpl::error);
+  connect(job, &TestBackupResourceFileJob::info, this,
+          &ExportAlarmJobInterfaceTestImpl::info);
+  job->start();
 }
 
 QString ExportAlarmJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)

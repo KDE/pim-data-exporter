@@ -80,16 +80,19 @@ void ImportAlarmJobInterface::restoreConfig()
     const QString kalarmStr(QStringLiteral("kalarmrc"));
     const KArchiveEntry *kalarmrcentry = mArchiveDirectory->entry(Utils::configsPath() + kalarmStr);
     if (kalarmrcentry && kalarmrcentry->isFile()) {
-        const auto *kalarmrcFile = static_cast<const KArchiveFile *>(kalarmrcentry);
-        const QString searchExistingkalarmrc = configLocation() + kalarmStr;
-        const QString installPathkalarmrc = installConfigLocation() + kalarmStr;
-        if (QFileInfo::exists(searchExistingkalarmrc)) {
-            if (overwriteConfigMessageBox(kalarmStr)) {
-                importkalarmConfig(kalarmrcFile, installPathkalarmrc, kalarmStr, Utils::configsPath());
-            }
-        } else {
-            importkalarmConfig(kalarmrcFile, installPathkalarmrc, kalarmStr, Utils::configsPath());
+      const auto kalarmrcFile =
+          static_cast<const KArchiveFile *>(kalarmrcentry);
+      const QString searchExistingkalarmrc = configLocation() + kalarmStr;
+      const QString installPathkalarmrc = installConfigLocation() + kalarmStr;
+      if (QFileInfo::exists(searchExistingkalarmrc)) {
+        if (overwriteConfigMessageBox(kalarmStr)) {
+          importkalarmConfig(kalarmrcFile, installPathkalarmrc, kalarmStr,
+                             Utils::configsPath());
         }
+      } else {
+        importkalarmConfig(kalarmrcFile, installPathkalarmrc, kalarmStr,
+                           Utils::configsPath());
+      }
     }
     restoreUiRcFile(QStringLiteral("kalarmui.rc"), QStringLiteral("kalarm"));
     Q_EMIT info(i18n("Config restored."));
@@ -127,36 +130,46 @@ void ImportAlarmJobInterface::restoreResources()
                 || value.akonadiConfigFile.contains(QLatin1String("akonadi_kalarm_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
-                    const auto *file = static_cast<const KArchiveFile *>(fileResouceEntry);
-                    copyArchiveFileTo(file, copyToDirName);
-                    QString resourceName(file->name());
+                  const auto file =
+                      static_cast<const KArchiveFile *>(fileResouceEntry);
+                  copyArchiveFileTo(file, copyToDirName);
+                  QString resourceName(file->name());
 
-                    QString filename(resourceName);
-                    //TODO adapt filename otherwise it will use all the time the same filename.
-                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " filename :" << filename;
+                  QString filename(resourceName);
+                  // TODO adapt filename otherwise it will use all the time the
+                  // same filename.
+                  qCDebug(PIMDATAEXPORTERCORE_LOG) << " filename :" << filename;
 
-                    KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
+                  KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(
+                      copyToDirName + QLatin1Char('/') + resourceName);
 
-                    const QString newUrl = adaptResourcePath(resourceConfig, Utils::storeAlarm());
-                    QFileInfo newUrlInfo(newUrl);
-                    const QString dataFile = value.akonadiResources;
-                    const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
-                    bool isDirResource = value.akonadiConfigFile.contains(QLatin1String("akonadi_kalarm_dir_resource_"));
-                    if (dataResouceEntry->isFile()) {
-                        const auto *file = static_cast<const KArchiveFile *>(dataResouceEntry);
-                        //TODO  adapt directory name too
-                        extractZipFile(file, copyToDirName, newUrlInfo.path(), isDirResource);
-                    }
+                  const QString newUrl =
+                      adaptResourcePath(resourceConfig, Utils::storeAlarm());
+                  QFileInfo newUrlInfo(newUrl);
+                  const QString dataFile = value.akonadiResources;
+                  const KArchiveEntry *dataResouceEntry =
+                      mArchiveDirectory->entry(dataFile);
+                  bool isDirResource = value.akonadiConfigFile.contains(
+                      QLatin1String("akonadi_kalarm_dir_resource_"));
+                  if (dataResouceEntry->isFile()) {
+                    const auto file =
+                        static_cast<const KArchiveFile *>(dataResouceEntry);
+                    // TODO  adapt directory name too
+                    extractZipFile(file, copyToDirName, newUrlInfo.path(),
+                                   isDirResource);
+                  }
                     settings.insert(QStringLiteral("Path"), newUrl);
 
                     const QString agentConfigFile = value.akonadiAgentConfigFile;
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
-                            const auto *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
-                            copyArchiveFileTo(file, copyToDirName);
-                            resourceName = file->name();
-                            filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);
+                          const auto file = static_cast<const KArchiveFile *>(
+                              akonadiAgentConfigEntry);
+                          copyArchiveFileTo(file, copyToDirName);
+                          resourceName = file->name();
+                          filename = Utils::akonadiAgentName(
+                              copyToDirName + QLatin1Char('/') + resourceName);
                         }
                     }
                     const QString archiveNameType = isDirResource ? QStringLiteral("akonadi_kalarm_dir_resource") : QStringLiteral("akonadi_kalarm_resource");

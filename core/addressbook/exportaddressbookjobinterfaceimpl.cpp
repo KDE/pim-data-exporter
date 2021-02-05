@@ -49,16 +49,19 @@ Akonadi::Collection::Id ExportAddressbookJobInterfaceImpl::convertFolderPathToCo
 
 void ExportAddressbookJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    auto *resourceJob = new ExportResourceArchiveJob(this);
-    resourceJob->setArchivePath(archivePath);
-    resourceJob->setUrl(url);
-    resourceJob->setIdentifier(identifier);
-    resourceJob->setArchive(archive());
-    resourceJob->setArchiveName(Utils::resourceAddressbookArchiveName());
-    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAddressbookJobInterfaceImpl::error);
-    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAddressbookJobInterfaceImpl::info);
-    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated);
-    resourceJob->start();
+  auto resourceJob = new ExportResourceArchiveJob(this);
+  resourceJob->setArchivePath(archivePath);
+  resourceJob->setUrl(url);
+  resourceJob->setIdentifier(identifier);
+  resourceJob->setArchive(archive());
+  resourceJob->setArchiveName(Utils::resourceAddressbookArchiveName());
+  connect(resourceJob, &ExportResourceArchiveJob::error, this,
+          &ExportAddressbookJobInterfaceImpl::error);
+  connect(resourceJob, &ExportResourceArchiveJob::info, this,
+          &ExportAddressbookJobInterfaceImpl::info);
+  connect(resourceJob, &ExportResourceArchiveJob::terminated, this,
+          &ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated);
+  resourceJob->start();
 }
 
 QString ExportAddressbookJobInterfaceImpl::resourcePath(const QString &agentIdentifier, const QString &defaultPath) const

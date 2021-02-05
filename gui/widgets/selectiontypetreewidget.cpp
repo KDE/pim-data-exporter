@@ -178,51 +178,51 @@ void SelectionTypeTreeWidget::createSubItem(QTreeWidgetItem *parent, Utils::Stor
         break;
     case Utils::Identity:
     {
-        auto *item = new QTreeWidgetItem(parent);
-        item->setText(0, Utils::storedTypeToI18n(Utils::Identity));
-        item->setCheckState(0, Qt::Checked);
-        item->setData(0, action, type);
-        break;
+      auto item = new QTreeWidgetItem(parent);
+      item->setText(0, Utils::storedTypeToI18n(Utils::Identity));
+      item->setCheckState(0, Qt::Checked);
+      item->setData(0, action, type);
+      break;
     }
     case Utils::Mails:
     {
-        auto *item = new QTreeWidgetItem(parent);
-        item->setText(0, Utils::storedTypeToI18n(Utils::Mails));
-        item->setCheckState(0, Qt::Checked);
-        item->setData(0, action, type);
-        break;
+      auto item = new QTreeWidgetItem(parent);
+      item->setText(0, Utils::storedTypeToI18n(Utils::Mails));
+      item->setCheckState(0, Qt::Checked);
+      item->setData(0, action, type);
+      break;
     }
     case Utils::MailTransport:
     {
-        auto *item = new QTreeWidgetItem(parent);
-        item->setText(0, Utils::storedTypeToI18n(Utils::MailTransport));
-        item->setCheckState(0, Qt::Checked);
-        item->setData(0, action, type);
-        break;
+      auto item = new QTreeWidgetItem(parent);
+      item->setText(0, Utils::storedTypeToI18n(Utils::MailTransport));
+      item->setCheckState(0, Qt::Checked);
+      item->setData(0, action, type);
+      break;
     }
     case Utils::Resources:
     {
-        auto *item = new QTreeWidgetItem(parent);
-        item->setText(0, Utils::storedTypeToI18n(Utils::Resources));
-        item->setCheckState(0, Qt::Checked);
-        item->setData(0, action, type);
-        break;
+      auto item = new QTreeWidgetItem(parent);
+      item->setText(0, Utils::storedTypeToI18n(Utils::Resources));
+      item->setCheckState(0, Qt::Checked);
+      item->setData(0, action, type);
+      break;
     }
     case Utils::Config:
     {
-        auto *item = new QTreeWidgetItem(parent);
-        item->setText(0, Utils::storedTypeToI18n(Utils::Config));
-        item->setCheckState(0, Qt::Checked);
-        item->setData(0, action, type);
-        break;
+      auto item = new QTreeWidgetItem(parent);
+      item->setText(0, Utils::storedTypeToI18n(Utils::Config));
+      item->setCheckState(0, Qt::Checked);
+      item->setData(0, action, type);
+      break;
     }
     case Utils::Data:
     {
-        auto *item = new QTreeWidgetItem(parent);
-        item->setText(0, Utils::storedTypeToI18n(Utils::Data));
-        item->setCheckState(0, Qt::Checked);
-        item->setData(0, action, type);
-        break;
+      auto item = new QTreeWidgetItem(parent);
+      item->setText(0, Utils::storedTypeToI18n(Utils::Data));
+      item->setCheckState(0, Qt::Checked);
+      item->setData(0, action, type);
+      break;
     }
     }
 }

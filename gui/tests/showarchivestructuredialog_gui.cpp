@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     if (fileName.isEmpty()) {
         return 0;
     }
-    auto *dialog = new ShowArchiveStructureDialog(fileName);
+    auto dialog = new ShowArchiveStructureDialog(fileName);
     dialog->resize(800, 600);
     dialog->show();
     app.exec();

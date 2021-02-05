@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
         qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Log file " << logFile;
     }
 
-    auto *console = new PimDataExporterConsole;
+    auto console = new PimDataExporterConsole;
     if (!importFile.isEmpty()) {
         console->setMode(PimDataExporterConsole::Import);
         qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Import Mode" << importFile;

@@ -20,7 +20,7 @@ SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18nc("@title:window", "Synchronize Resources"));
-    auto *topLayout = new QVBoxLayout(this);
+    auto topLayout = new QVBoxLayout(this);
 
     QLabel *lab = new QLabel(i18n("Some resources were added but data were not sync. Select resources that you want to sync:"), this);
     lab->setWordWrap(true);
@@ -33,10 +33,11 @@ SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     mListResourceWidget = new QListWidget(this);
     mListResourceWidget->setObjectName(QStringLiteral("listresourcewidget"));
-    auto *listWidgetSearchLine = new KListWidgetSearchLine(this, mListResourceWidget);
+    auto listWidgetSearchLine =
+        new KListWidgetSearchLine(this, mListResourceWidget);
     listWidgetSearchLine->setObjectName(QStringLiteral("listwidgetsearchline"));
 
-    auto *hbox = new QHBoxLayout;
+    auto hbox = new QHBoxLayout;
     QPushButton *selectAll = new QPushButton(i18n("Select All"));
     selectAll->setObjectName(QStringLiteral("selectall_button"));
     connect(selectAll, &QPushButton::clicked, this, &SynchronizeResourceDialog::slotSelectAll);
@@ -87,7 +88,7 @@ void SynchronizeResourceDialog::setResources(const QHash<QString, QString> &reso
     QHashIterator<QString, QString> i(resources);
     while (i.hasNext()) {
         i.next();
-        auto *item = new QListWidgetItem(mListResourceWidget);
+        auto item = new QListWidgetItem(mListResourceWidget);
         item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
         item->setCheckState(Qt::Unchecked);
         item->setText(i.key());

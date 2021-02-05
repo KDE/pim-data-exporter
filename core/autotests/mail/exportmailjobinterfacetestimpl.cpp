@@ -92,14 +92,16 @@ QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) 
 
 void ExportMailJobInterfaceTestImpl::backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath)
 {
-    auto *job = new TestBackupResourceFileJob(this);
-    job->setDefaultPath(defaultPath);
-    job->setIdentifier(agentIdentifier);
-    job->setTestPath(mPathConfig);
-    job->setZip(archive());
-    connect(job, &TestBackupResourceFileJob::error, this, &ExportMailJobInterfaceTestImpl::error);
-    connect(job, &TestBackupResourceFileJob::info, this, &ExportMailJobInterfaceTestImpl::info);
-    job->start();
+  auto job = new TestBackupResourceFileJob(this);
+  job->setDefaultPath(defaultPath);
+  job->setIdentifier(agentIdentifier);
+  job->setTestPath(mPathConfig);
+  job->setZip(archive());
+  connect(job, &TestBackupResourceFileJob::error, this,
+          &ExportMailJobInterfaceTestImpl::error);
+  connect(job, &TestBackupResourceFileJob::info, this,
+          &ExportMailJobInterfaceTestImpl::info);
+  job->start();
 }
 
 QString ExportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)

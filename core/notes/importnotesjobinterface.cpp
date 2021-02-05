@@ -84,17 +84,24 @@ void ImportNotesJobInterface::restoreConfig()
         const QString globalNoteStr(QStringLiteral("globalnotesettings"));
         const KArchiveEntry *globalNotecentry = mArchiveDirectory->entry(Utils::configsPath() + globalNoteStr);
         if (globalNotecentry && globalNotecentry->isFile()) {
-            const auto *globalNotecentryrc = static_cast<const KArchiveFile *>(globalNotecentry);
-            const QString searchExistingGlobalNoterc = configLocation() + globalNoteStr;
-            const QString installPathGlobalNoterc = installConfigLocation() + globalNoteStr;
+          const auto globalNotecentryrc =
+              static_cast<const KArchiveFile *>(globalNotecentry);
+          const QString searchExistingGlobalNoterc =
+              configLocation() + globalNoteStr;
+          const QString installPathGlobalNoterc =
+              installConfigLocation() + globalNoteStr;
 
-            if (QFileInfo::exists(searchExistingGlobalNoterc)) {
-                if (overwriteConfigMessageBox(globalNoteStr)) {
-                    importKNoteGlobalSettings(globalNotecentryrc, installPathGlobalNoterc, globalNoteStr, Utils::configsPath());
-                } //Else merge!
-            } else {
-                importKNoteGlobalSettings(globalNotecentryrc, installPathGlobalNoterc, globalNoteStr, Utils::configsPath());
-            }
+          if (QFileInfo::exists(searchExistingGlobalNoterc)) {
+            if (overwriteConfigMessageBox(globalNoteStr)) {
+              importKNoteGlobalSettings(globalNotecentryrc,
+                                        installPathGlobalNoterc, globalNoteStr,
+                                        Utils::configsPath());
+            } // Else merge!
+          } else {
+            importKNoteGlobalSettings(globalNotecentryrc,
+                                      installPathGlobalNoterc, globalNoteStr,
+                                      Utils::configsPath());
+          }
         }
     }
 
@@ -157,35 +164,43 @@ void ImportNotesJobInterface::restoreResources()
             if (value.akonadiConfigFile.contains(QLatin1String("akonadi_akonotes_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
-                    const auto *file = static_cast<const KArchiveFile *>(fileResouceEntry);
-                    copyArchiveFileTo(file, copyToDirName);
-                    QString resourceName(file->name());
+                  const auto file =
+                      static_cast<const KArchiveFile *>(fileResouceEntry);
+                  copyArchiveFileTo(file, copyToDirName);
+                  QString resourceName(file->name());
 
-                    QString filename(resourceName);
-                    //TODO adapt filename otherwise it will use all the time the same filename.
-                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " filename :" << filename;
+                  QString filename(resourceName);
+                  // TODO adapt filename otherwise it will use all the time the
+                  // same filename.
+                  qCDebug(PIMDATAEXPORTERCORE_LOG) << " filename :" << filename;
 
-                    KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
+                  KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(
+                      copyToDirName + QLatin1Char('/') + resourceName);
 
-                    const QString newUrl = adaptResourcePath(resourceConfig, Utils::backupnote());
-                    QFileInfo newUrlInfo(newUrl);
-                    const QString dataFile = value.akonadiResources;
-                    const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
-                    if (dataResouceEntry->isFile()) {
-                        const auto *file = static_cast<const KArchiveFile *>(dataResouceEntry);
-                        //TODO  adapt directory name too
-                        extractZipFile(file, copyToDirName, newUrlInfo.path());
-                    }
+                  const QString newUrl =
+                      adaptResourcePath(resourceConfig, Utils::backupnote());
+                  QFileInfo newUrlInfo(newUrl);
+                  const QString dataFile = value.akonadiResources;
+                  const KArchiveEntry *dataResouceEntry =
+                      mArchiveDirectory->entry(dataFile);
+                  if (dataResouceEntry->isFile()) {
+                    const auto file =
+                        static_cast<const KArchiveFile *>(dataResouceEntry);
+                    // TODO  adapt directory name too
+                    extractZipFile(file, copyToDirName, newUrlInfo.path());
+                  }
                     settings.insert(QStringLiteral("Path"), newUrl);
 
                     const QString agentConfigFile = value.akonadiAgentConfigFile;
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
-                            const auto *file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
-                            copyArchiveFileTo(file, copyToDirName);
-                            resourceName = file->name();
-                            filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);
+                          const auto file = static_cast<const KArchiveFile *>(
+                              akonadiAgentConfigEntry);
+                          copyArchiveFileTo(file, copyToDirName);
+                          resourceName = file->name();
+                          filename = Utils::akonadiAgentName(
+                              copyToDirName + QLatin1Char('/') + resourceName);
                         }
                     }
 

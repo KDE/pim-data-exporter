@@ -38,15 +38,15 @@ int main(int argc, char *argv[])
     parser.createParser(app);
 #ifdef WITH_KUSERFEEDBACK
     if (parser.parseUserFeedback()) {
-        auto *provider = new PimDataExportedUserFeedbackProvider;
-        QTextStream(stdout) << provider->describeDataSources() << '\n';
-        delete provider;
-        return 0;
+      auto provider = new PimDataExportedUserFeedbackProvider;
+      QTextStream(stdout) << provider->describeDataSources() << '\n';
+      delete provider;
+      return 0;
     }
 #endif
     KDBusService service(KDBusService::Unique);
 
-    auto *backupMailWin = new PimDataExporterWindow();
+    auto backupMailWin = new PimDataExporterWindow();
     parser.setExportWindow(backupMailWin);
     QObject::connect(&service, &KDBusService::activateRequested,
                      &parser, &PimDataCommandLineOption::slotActivateRequested);

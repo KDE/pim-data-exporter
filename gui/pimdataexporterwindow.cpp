@@ -59,7 +59,7 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     //Initialize
     (void)UserFeedBackManager::self();
 #endif
-    auto *kernel = new PimDataExporterKernel(this);
+    auto kernel = new PimDataExporterKernel(this);
     CommonKernel->registerKernelIf(kernel);   //register KernelIf early, it is used by the Filter classes
     CommonKernel->registerSettingsIf(kernel);   //SettingsIf is used in FolderTreeWidget
 
@@ -73,7 +73,8 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     statusBar()->hide();
     mTrayIcon = new PimDataTrayIcon(this);
 #ifdef WITH_KUSERFEEDBACK
-    auto *userFeedBackNotificationPopup = new KUserFeedback::NotificationPopup(this);
+    auto userFeedBackNotificationPopup =
+        new KUserFeedback::NotificationPopup(this);
     userFeedBackNotificationPopup->setFeedbackProvider(UserFeedBackManager::self()->userFeedbackProvider());
 #endif
 }
@@ -128,7 +129,7 @@ void PimDataExporterWindow::slotRestoreDone()
         delete dlg;
         if (!list.isEmpty()) {
             slotAddInfo(i18n("Full sync starts..."));
-            auto *job = new FullSynchronizeResourcesJob(this);
+            auto job = new FullSynchronizeResourcesJob(this);
             job->setWindowParent(this);
             job->setResources(list);
             connect(job, &FullSynchronizeResourcesJob::synchronizeFinished, this, &PimDataExporterWindow::slotFullSyncFinished);

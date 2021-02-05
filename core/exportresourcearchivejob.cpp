@@ -65,13 +65,15 @@ void ExportResourceArchiveJob::start()
 void ExportResourceArchiveJob::slotTerminated(bool success)
 {
     if (success) {
-        auto *job = new StoreResourceJob(this);
-        connect(job, &StoreResourceJob::error, this, &ExportResourceArchiveJob::error);
-        connect(job, &StoreResourceJob::info, this, &ExportResourceArchiveJob::info);
-        job->setArchivePath(mArchivePath);
-        job->setZip(mZip);
-        job->setIdentifier(mIdentifier);
-        job->start();
+      auto job = new StoreResourceJob(this);
+      connect(job, &StoreResourceJob::error, this,
+              &ExportResourceArchiveJob::error);
+      connect(job, &StoreResourceJob::info, this,
+              &ExportResourceArchiveJob::info);
+      job->setArchivePath(mArchivePath);
+      job->setZip(mZip);
+      job->setIdentifier(mIdentifier);
+      job->start();
     }
     finished();
 }

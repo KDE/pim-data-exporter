@@ -42,16 +42,19 @@ Akonadi::Collection::Id ExportNotesJobInterfaceImpl::convertFolderPathToCollecti
 
 void ExportNotesJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    auto *resourceJob = new ExportResourceArchiveJob(this);
-    resourceJob->setArchivePath(archivePath);
-    resourceJob->setUrl(url);
-    resourceJob->setIdentifier(identifier);
-    resourceJob->setArchive(archive());
-    resourceJob->setArchiveName(Utils::resourceNoteArchiveName());
-    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJobInterfaceImpl::error);
-    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJobInterfaceImpl::info);
-    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
-    resourceJob->start();
+  auto resourceJob = new ExportResourceArchiveJob(this);
+  resourceJob->setArchivePath(archivePath);
+  resourceJob->setUrl(url);
+  resourceJob->setIdentifier(identifier);
+  resourceJob->setArchive(archive());
+  resourceJob->setArchiveName(Utils::resourceNoteArchiveName());
+  connect(resourceJob, &ExportResourceArchiveJob::error, this,
+          &ExportNotesJobInterfaceImpl::error);
+  connect(resourceJob, &ExportResourceArchiveJob::info, this,
+          &ExportNotesJobInterfaceImpl::info);
+  connect(resourceJob, &ExportResourceArchiveJob::terminated, this,
+          &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
+  resourceJob->start();
 }
 
 QString ExportNotesJobInterfaceImpl::resourcePath(const QString &identifier) const

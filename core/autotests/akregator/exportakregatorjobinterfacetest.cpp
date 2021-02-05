@@ -32,10 +32,11 @@ void ExportAkregatorJobInterfaceTest::exportAkregator()
 {
     QFETCH(QByteArray, configpath);
     QFETCH(Utils::StoredTypes, options);
-    auto *file = new TestExportFile(this);
+    auto file = new TestExportFile(this);
     file->setPathConfig(configpath);
 
-    auto *exportAkregator = new ExportAkregatorJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    auto exportAkregator = new ExportAkregatorJobInterfaceTestImpl(
+        this, options, file->archiveStorage(), 1);
     file->setAbstractImportExportJob(exportAkregator);
     file->start();
     delete exportAkregator;

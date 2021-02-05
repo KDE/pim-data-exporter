@@ -13,9 +13,9 @@
 LogWidget::LogWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto *layout = new QHBoxLayout(this);
-    mCustomLogWidget = new PimCommon::CustomLogWidget(this);
-    layout->addWidget(mCustomLogWidget);
+  auto layout = new QHBoxLayout(this);
+  mCustomLogWidget = new PimCommon::CustomLogWidget(this);
+  layout->addWidget(mCustomLogWidget);
 }
 
 LogWidget::~LogWidget()

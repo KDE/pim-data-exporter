@@ -43,7 +43,7 @@ void ExportMailJobInterfaceTest::exportMail()
 {
     QFETCH(QByteArray, configpath);
     QFETCH(Utils::StoredTypes, options);
-    auto *file = new TestExportFile(this);
+    auto file = new TestExportFile(this);
     file->setPathConfig(configpath);
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;
@@ -83,7 +83,8 @@ void ExportMailJobInterfaceTest::exportMail()
     info.identifier = QStringLiteral("akonadi_kalarm_dir_resource_2");
     lstInfo << info;
 
-    auto *exportMail = new ExportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
+    auto exportMail = new ExportMailJobInterfaceTestImpl(
+        this, options, file->archiveStorage(), 1);
     exportMail->setListOfResource(lstInfo);
     exportMail->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportMail);

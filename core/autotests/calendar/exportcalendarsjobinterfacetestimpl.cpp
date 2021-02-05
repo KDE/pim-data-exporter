@@ -65,14 +65,16 @@ QString ExportCalendarsJobInterfaceTestImpl::resourcePath(const QString &identif
 
 void ExportCalendarsJobInterfaceTestImpl::backupCalendarResourceFile(const QString &agentIdentifier, const QString &defaultPath)
 {
-    auto *job = new TestBackupResourceFileJob(this);
-    job->setDefaultPath(defaultPath);
-    job->setIdentifier(agentIdentifier);
-    job->setTestPath(mPathConfig);
-    job->setZip(archive());
-    connect(job, &TestBackupResourceFileJob::error, this, &ExportCalendarsJobInterfaceTestImpl::error);
-    connect(job, &TestBackupResourceFileJob::info, this, &ExportCalendarsJobInterfaceTestImpl::info);
-    job->start();
+  auto job = new TestBackupResourceFileJob(this);
+  job->setDefaultPath(defaultPath);
+  job->setIdentifier(agentIdentifier);
+  job->setTestPath(mPathConfig);
+  job->setZip(archive());
+  connect(job, &TestBackupResourceFileJob::error, this,
+          &ExportCalendarsJobInterfaceTestImpl::error);
+  connect(job, &TestBackupResourceFileJob::info, this,
+          &ExportCalendarsJobInterfaceTestImpl::info);
+  job->start();
 }
 
 QString ExportCalendarsJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)

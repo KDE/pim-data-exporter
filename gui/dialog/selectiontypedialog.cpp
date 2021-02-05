@@ -22,7 +22,7 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Select Type"));
     setModal(true);
 
-    auto *topLayout = new QVBoxLayout(this);
+    auto topLayout = new QVBoxLayout(this);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
@@ -41,7 +41,7 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     mUseTemplateByDefault->setObjectName(QStringLiteral("mUseTemplateByDefault"));
     topLayout->addWidget(mUseTemplateByDefault);
 
-    auto *hbox = new QHBoxLayout;
+    auto hbox = new QHBoxLayout;
     QPushButton *selectAll = new QPushButton(i18n("Select All"), this);
     selectAll->setObjectName(QStringLiteral("selectAll"));
     connect(selectAll, &QPushButton::clicked, this, &SelectionTypeDialog::slotSelectAll);

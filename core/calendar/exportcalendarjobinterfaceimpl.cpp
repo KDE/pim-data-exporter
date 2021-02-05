@@ -48,16 +48,19 @@ QString ExportCalendarJobInterfaceImpl::convertToFullCollectionPath(const qlongl
 
 void ExportCalendarJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    auto *resourceJob = new ExportResourceArchiveJob(this);
-    resourceJob->setArchivePath(archivePath);
-    resourceJob->setUrl(url);
-    resourceJob->setIdentifier(identifier);
-    resourceJob->setArchive(archive());
-    resourceJob->setArchiveName(Utils::resourceCalendarArchiveName());
-    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportCalendarJobInterfaceImpl::error);
-    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportCalendarJobInterfaceImpl::info);
-    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);
-    resourceJob->start();
+  auto resourceJob = new ExportResourceArchiveJob(this);
+  resourceJob->setArchivePath(archivePath);
+  resourceJob->setUrl(url);
+  resourceJob->setIdentifier(identifier);
+  resourceJob->setArchive(archive());
+  resourceJob->setArchiveName(Utils::resourceCalendarArchiveName());
+  connect(resourceJob, &ExportResourceArchiveJob::error, this,
+          &ExportCalendarJobInterfaceImpl::error);
+  connect(resourceJob, &ExportResourceArchiveJob::info, this,
+          &ExportCalendarJobInterfaceImpl::info);
+  connect(resourceJob, &ExportResourceArchiveJob::terminated, this,
+          &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);
+  resourceJob->start();
 }
 
 QString ExportCalendarJobInterfaceImpl::resourcePath(const QString &identifier) const

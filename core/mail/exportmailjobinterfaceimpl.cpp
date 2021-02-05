@@ -83,17 +83,21 @@ QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceImpl::listOfResource()
 
 void ExportMailJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    auto *resourceJob = new ExportResourceArchiveJob(this);
-    resourceJob->setArchivePath(archivePath);
-    resourceJob->setUrl(url);
-    resourceJob->setIdentifier(identifier);
-    resourceJob->setArchive(archive());
-    resourceJob->setArchiveName(Utils::resourceMailArchiveName());
-    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportMailJobInterfaceImpl::error);
-    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportMailJobInterfaceImpl::info);
-    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
-    connect(this, &ExportMailJobInterfaceImpl::taskCanceled, resourceJob, &ExportResourceArchiveJob::slotTaskCanceled);
-    resourceJob->start();
+  auto resourceJob = new ExportResourceArchiveJob(this);
+  resourceJob->setArchivePath(archivePath);
+  resourceJob->setUrl(url);
+  resourceJob->setIdentifier(identifier);
+  resourceJob->setArchive(archive());
+  resourceJob->setArchiveName(Utils::resourceMailArchiveName());
+  connect(resourceJob, &ExportResourceArchiveJob::error, this,
+          &ExportMailJobInterfaceImpl::error);
+  connect(resourceJob, &ExportResourceArchiveJob::info, this,
+          &ExportMailJobInterfaceImpl::info);
+  connect(resourceJob, &ExportResourceArchiveJob::terminated, this,
+          &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
+  connect(this, &ExportMailJobInterfaceImpl::taskCanceled, resourceJob,
+          &ExportResourceArchiveJob::slotTaskCanceled);
+  resourceJob->start();
 }
 
 QString ExportMailJobInterfaceImpl::storeResources(KZip *archive, const QString &identifier, const QString &path)
