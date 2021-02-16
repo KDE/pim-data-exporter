@@ -105,8 +105,6 @@ if (USE_UNITY_CMAKE_SUPPORT)
 endif()
 
 configure_file(pimdataexporter-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/pimdataexporter-version.h @ONLY)
-add_definitions(-DQT_NO_FOREACH)
-add_definitions(-DQT_NO_KEYWORDS)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
