@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTMAILJOBINTERFACETESTIMPL_H
-#define IMPORTMAILJOBINTERFACETESTIMPL_H
+#pragma once
 
 #include "exportimportutil.h"
 
@@ -41,4 +40,3 @@ private:
     QString mExistingPathConfig;
 };
 
-#endif // IMPORTMAILJOBINTERFACETESTIMPL_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef COMPARELOGGINGFILE_H
-#define COMPARELOGGINGFILE_H
+#pragma once
 
 #include <QString>
 
@@ -28,4 +27,3 @@ private:
     QString mListFilePath;
 };
 
-#endif // COMPARELOGGINGFILE_H

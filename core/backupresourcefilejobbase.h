@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef BACKUPRESOURCEFILEJOBBASE_H
-#define BACKUPRESOURCEFILEJOBBASE_H
+#pragma once
 
 #include <QObject>
 #include <KZip>
@@ -42,4 +41,3 @@ private:
     KZip *mZip = nullptr;
 };
 
-#endif // BACKUPRESOURCEFILEJOBBASE_H

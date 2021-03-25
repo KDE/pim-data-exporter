@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTMAILJOBINTERFACETEST_H
-#define IMPORTMAILJOBINTERFACETEST_H
+#pragma once
 
 #include <QObject>
 
@@ -20,4 +19,3 @@ private Q_SLOTS:
     void importMail_data();
 };
 
-#endif // IMPORTMAILJOBINTERFACETEST_H

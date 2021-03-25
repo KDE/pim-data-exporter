@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef RESOURCECONVERTERTEST_H
-#define RESOURCECONVERTERTEST_H
+#pragma once
 
 #include "resourceconverterbase.h"
 #include "pimdataexporter_export.h"
@@ -29,4 +28,3 @@ private:
     QString mTestPath;
 };
 
-#endif // RESOURCECONVERTERTEST_H

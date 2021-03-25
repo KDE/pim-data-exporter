@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef BACKUPFILESTRUCTUREINFODIALOG_H
-#define BACKUPFILESTRUCTUREINFODIALOG_H
+#pragma once
 
 #include <QDialog>
 namespace KPIMTextEdit {
@@ -25,4 +24,3 @@ private:
     KPIMTextEdit::PlainTextEditorWidget *mEditor = nullptr;
 };
 
-#endif // BACKUPFILESTRUCTUREINFODIALOG_H

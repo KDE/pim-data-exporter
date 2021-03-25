@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef FULLSYNCHRONIZERESOURCESJOB_H
-#define FULLSYNCHRONIZERESOURCESJOB_H
+#pragma once
 
 #include <QObject>
 #include <QStringList>
@@ -39,4 +38,3 @@ private:
     QProgressDialog *mProgressDialog = nullptr;
 };
 
-#endif // FULLSYNCHRONIZERESOURCESJOB_H

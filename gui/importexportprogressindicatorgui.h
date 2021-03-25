@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTEXPORTPROGRESSINDICATORGUI_H
-#define IMPORTEXPORTPROGRESSINDICATORGUI_H
+#pragma once
 
 #include "importexportprogressindicatorbase.h"
 class QProgressDialog;
@@ -31,4 +30,3 @@ private:
     QWidget *mParentWidget = nullptr;
 };
 
-#endif // IMPORTEXPORTPROGRESSINDICATORGUI_H

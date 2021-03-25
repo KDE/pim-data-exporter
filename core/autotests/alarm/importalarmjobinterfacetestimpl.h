@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTALARMJOBINTERFACETESTIMPL_H
-#define IMPORTALARMJOBINTERFACETESTIMPL_H
+#pragma once
 
 #include "exportimportutil.h"
 
@@ -30,4 +29,3 @@ private:
     QString mExistingPathConfig;
 };
 
-#endif // IMPORTALARMJOBINTERFACETESTIMPL_H

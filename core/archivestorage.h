@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef ARCHIVESTORAGE_H
-#define ARCHIVESTORAGE_H
+#pragma once
 #include <QObject>
 #include "pimdataexporter_export.h"
 class KZip;
@@ -30,4 +29,3 @@ private:
     KZip *mArchive = nullptr;
 };
 
-#endif // ARCHIVESTORAGE_H

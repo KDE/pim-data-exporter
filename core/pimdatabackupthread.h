@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PIMDATABACKUPTHREAD_H
-#define PIMDATABACKUPTHREAD_H
+#pragma once
 
 #include <QThread>
 class KZip;
@@ -31,4 +30,3 @@ private:
     KZip *const mZip;
 };
 
-#endif // PIMDATABACKUPTHREAD_H

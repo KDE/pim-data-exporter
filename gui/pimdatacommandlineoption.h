@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PIMDATACOMMANDLINEOPTION_H
-#define PIMDATACOMMANDLINEOPTION_H
+#pragma once
 
 #include <QObject>
 #include <QCommandLineParser>
@@ -33,4 +32,3 @@ private:
     PimDataExporterWindow *mExporterWindow = nullptr;
 };
 
-#endif // PIMDATACOMMANDLINEOPTION_H

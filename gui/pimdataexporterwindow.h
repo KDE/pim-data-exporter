@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PIMDATAEXPORTERWINDOW_H
-#define PIMDATAEXPORTERWINDOW_H
+#pragma once
 #include <KXmlGuiWindow>
 #include "utils.h"
 class LogWidget;
@@ -65,4 +64,3 @@ private:
     PimDataTrayIcon *mTrayIcon = nullptr;
 };
 
-#endif /* PIMDATAEXPORTERWINDOW_H */

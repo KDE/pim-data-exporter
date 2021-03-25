@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef EXPORTALARMJOBINTERFACEIMPL_H
-#define EXPORTALARMJOBINTERFACEIMPL_H
+#pragma once
 
 #include "exportalarmjobinterface.h"
 #include "pimdataexportercore_private_export.h"
@@ -30,4 +29,3 @@ protected:
     void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) override;
 };
 
-#endif // EXPORTALARMJOBINTERFACEIMPL_H

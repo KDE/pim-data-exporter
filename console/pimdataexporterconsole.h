@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PIMDATAEXPORTERCONSOLE_H
-#define PIMDATAEXPORTERCONSOLE_H
+#pragma once
 
 #include <QObject>
 class PimDataBackupRestore;
@@ -59,4 +58,3 @@ private:
     bool mInProgress = false;
 };
 
-#endif // PIMDATAEXPORTERCONSOLE_H

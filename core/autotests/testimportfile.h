@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef TESTIMPORTFILE_H
-#define TESTIMPORTFILE_H
+#pragma once
 
 #include <QObject>
 class ArchiveStorage;
@@ -47,4 +46,3 @@ private:
     QString mLoggingFilePath;
 };
 
-#endif // TESTIMPORTFILE_H

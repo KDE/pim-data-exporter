@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef BACKUPRESOURCEFILEJOBIMPL_H
-#define BACKUPRESOURCEFILEJOBIMPL_H
+#pragma once
 
 #include "backupresourcefilejobbase.h"
 
@@ -20,4 +19,3 @@ public:
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
 };
 
-#endif // BACKUPRESOURCEFILEJOBIMPL_H

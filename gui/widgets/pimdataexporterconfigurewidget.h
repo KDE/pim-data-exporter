@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PIMDATAEXPORTERCONFIGUREWIDGET_H
-#define PIMDATAEXPORTERCONFIGUREWIDGET_H
+#pragma once
 
 #include <QWidget>
 class QCheckBox;
@@ -28,4 +27,3 @@ private:
     QCheckBox *mAlwaysMergeConfigFile = nullptr;
 };
 
-#endif // PIMDATAEXPORTERCONFIGUREWIDGET_H

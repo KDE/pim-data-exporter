@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef SELECTIONTYPETREEWIDGET_H
-#define SELECTIONTYPETREEWIDGET_H
+#pragma once
 
 #include <QTreeWidget>
 #include <QHash>
@@ -60,4 +59,3 @@ private:
     QTreeWidgetItem *mAkregatorItem = nullptr;
 };
 
-#endif // SELECTIONTYPETREEWIDGET_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef EXPORTNOTESJOBINTERFACETEST_H
-#define EXPORTNOTESJOBINTERFACETEST_H
+#pragma once
 
 #include <QObject>
 class ExportNotesJobInterfaceTest : public QObject
@@ -19,4 +18,3 @@ private Q_SLOTS:
     void exportNote();
 };
 
-#endif // EXPORTNOTESJOBINTERFACETEST_H

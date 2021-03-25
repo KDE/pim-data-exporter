@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PIMDATAEXPORTER_CORE_PRIVATE_EXPORT_H
-#define PIMDATAEXPORTER_CORE_PRIVATE_EXPORT_H
+#pragma once
 
 #include "pimdataexporter_export.h"
 
@@ -18,4 +17,3 @@
 # define PIMDATAEXPORTER_TESTS_EXPORT
 #endif
 
-#endif

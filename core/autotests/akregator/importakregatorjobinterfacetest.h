@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTAKREGATORJOBINTERFACETEST_H
-#define IMPORTAKREGATORJOBINTERFACETEST_H
+#pragma once
 
 #include <QObject>
 
@@ -20,4 +19,3 @@ public:
     void importAkegator();
 };
 
-#endif // IMPORTAKREGATORJOBINTERFACETEST_H

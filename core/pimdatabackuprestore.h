@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PIMDATABACKUPRESTORE_H
-#define PIMDATABACKUPRESTORE_H
+#pragma once
 
 #include <QObject>
 #include <QHash>
@@ -67,4 +66,3 @@ private:
     ArchiveStorage *mArchiveStorage = nullptr;
 };
 
-#endif // PIMDATABACKUPRESTORE_H

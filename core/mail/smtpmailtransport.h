@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef SMTPMAILTRANSPORT_H
-#define SMTPMAILTRANSPORT_H
+#pragma once
 #include "pimdataexportercore_private_export.h"
 #include <KConfigGroup>
 #include <QString>
@@ -69,4 +68,3 @@ private:
     bool mStorePassword = false;
 };
 
-#endif // SMTPMAILTRANSPORT_H

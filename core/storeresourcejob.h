@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef STORERESOURCEJOB_H
-#define STORERESOURCEJOB_H
+#pragma once
 
 #include <QObject>
 class KZip;
@@ -32,4 +31,3 @@ private:
     KZip *mZip = nullptr;
 };
 
-#endif // STORERESOURCEJOB_H

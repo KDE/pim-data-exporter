@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTCALENDARJOBINTERFACETEST_H
-#define IMPORTCALENDARJOBINTERFACETEST_H
+#pragma once
 
 #include <QObject>
 
@@ -20,4 +19,3 @@ private Q_SLOTS:
     void importCalendar_data();
 };
 
-#endif // IMPORTCALENDARJOBINTERFACETEST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef ABSTRACTIMPORTEXPORTJOB_H
-#define ABSTRACTIMPORTEXPORTJOB_H
+#pragma once
 
 #include <QObject>
 #include "utils.h"
@@ -127,4 +126,3 @@ private:
     ImportExportProgressIndicatorBase *mImportExportProgressIndicator = nullptr;
 };
 
-#endif // ABSTRACTIMPORTEXPORTJOB_H

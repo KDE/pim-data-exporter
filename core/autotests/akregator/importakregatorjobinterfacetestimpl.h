@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTAKREGATORJOBINTERFACETESTIMPL_H
-#define IMPORTAKREGATORJOBINTERFACETESTIMPL_H
+#pragma once
 
 #include "akregator/importakregatorjobinterface.h"
 
@@ -21,4 +20,3 @@ protected:
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };
 
-#endif // IMPORTAKREGATORJOBINTERFACETESTIMPL_H

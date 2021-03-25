@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: GPL-2.0-or-later
 */
-#ifndef EXPORTIMPORTUTIL_H
-#define EXPORTIMPORTUTIL_H
+#pragma once
 
 #include <QVector>
 #include "utils.h"
@@ -32,4 +31,3 @@ private:
     QString mExtractPath;
 };
 
-#endif // EXPORTIMPORTUTIL_H

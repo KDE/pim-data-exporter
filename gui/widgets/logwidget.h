@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef LOGWIDGET_H
-#define LOGWIDGET_H
+#pragma once
 
 #include <QWidget>
 namespace PimCommon {
@@ -32,4 +31,3 @@ private:
     PimCommon::CustomLogWidget *mCustomLogWidget = nullptr;
 };
 
-#endif // LOGWIDGET_H

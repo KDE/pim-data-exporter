@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef USERFEEDBACKMANAGER_H
-#define USERFEEDBACKMANAGER_H
+#pragma once
 
 #include <QObject>
 namespace KUserFeedback {
@@ -24,4 +23,3 @@ private:
     KUserFeedback::Provider *mUserFeedbackProvider = nullptr;
 };
 
-#endif // USERFEEDBACKMANAGER_H

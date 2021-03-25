@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef UTILS_H
-#define UTILS_H
+#pragma once
 #include "pimdataexporter_export.h"
 #include <QString>
 #include <KSharedConfig>
@@ -113,4 +112,3 @@ PIMDATAEXPORTER_EXPORT Q_REQUIRED_RESULT QString storedTypeToI18n(StoredType typ
 }
 Q_DECLARE_TYPEINFO(Utils::AkonadiInstanceInfo, Q_MOVABLE_TYPE);
 Q_DECLARE_METATYPE(Utils::StoredTypes)
-#endif // UTILS_H

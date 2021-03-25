@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: GPL-2.0-or-later
 */
-#ifndef LOADLISTFROMFILE_H
-#define LOADLISTFROMFILE_H
+#pragma once
 
 #include <QString>
 #include <QStringList>
@@ -19,4 +18,3 @@ private:
     QStringList mFileList;
 };
 
-#endif // LOADLISTFROMFILE_H

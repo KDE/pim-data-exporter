@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef GENERATELISTFILEFROMARCHIVE_H
-#define GENERATELISTFILEFROMARCHIVE_H
+#pragma once
 
 #include <QString>
 #include <QStringList>
@@ -28,4 +27,3 @@ private:
     KZip *mZip = nullptr;
 };
 
-#endif // GENERATELISTFILEFROMARCHIVE_H

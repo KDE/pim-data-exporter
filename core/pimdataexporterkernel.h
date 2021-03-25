@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: GPL-2.0-or-later
 */
-#ifndef PIMDATAEXPORTERKERNEL_H
-#define PIMDATAEXPORTERKERNEL_H
+#pragma once
 
 #include <MailCommon/MailInterfaces>
 #include "pimdataexporter_export.h"
@@ -48,4 +47,3 @@ private:
     Akonadi::EntityMimeTypeFilterModel *mCollectionModel = nullptr;
 };
 
-#endif

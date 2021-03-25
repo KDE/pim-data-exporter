@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef EXPORTRESOURCEARCHIVEJOB_H
-#define EXPORTRESOURCEARCHIVEJOB_H
+#pragma once
 
 #include <QObject>
 class KZip;
@@ -46,4 +45,3 @@ private:
     PimDataBackupThread *mThread = nullptr;
 };
 
-#endif // EXPORTRESOURCEARCHIVEJOB_H

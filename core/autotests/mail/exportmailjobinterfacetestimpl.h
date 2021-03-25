@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef EXPORTMAILJOBINTERFACETESTIMPL_H
-#define EXPORTMAILJOBINTERFACETESTIMPL_H
+#pragma once
 
 #include "exportimportutil.h"
 
@@ -39,4 +38,3 @@ protected:
     Q_REQUIRED_RESULT QVector<uint> listIdentityUoid() const override;
     void exportFilters() override;
 };
-#endif // EXPORTMAILJOBINTERFACETESTIMPL_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTALARMJOBINTERFACEIMPL_H
-#define IMPORTALARMJOBINTERFACEIMPL_H
+#pragma once
 
 #include "importalarmjobinterface.h"
 #include "pimdataexportercore_private_export.h"
@@ -26,4 +25,3 @@ protected:
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };
 
-#endif // IMPORTALARMJOBINTERFACEIMPL_H

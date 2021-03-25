@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef EXPORTNOTESJOBINTERFACETESTIMPL_H
-#define EXPORTNOTESJOBINTERFACETESTIMPL_H
+#pragma once
 
 #include "exportimportutil.h"
 #include "core/utils.h"
@@ -30,4 +29,3 @@ protected:
     Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) override;
 };
 
-#endif // EXPORTNOTESJOBINTERFACETESTIMPL_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef EXPORTADDRESSBOOKJOBINTERFACETESTIMPL_H
-#define EXPORTADDRESSBOOKJOBINTERFACETESTIMPL_H
+#pragma once
 
 #include "addressbook/exportaddressbookjobinterface.h"
 #include "exportimportutil.h"
@@ -28,4 +27,3 @@ protected:
     Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) override;
 };
 
-#endif // EXPORTADDRESSBOOKJOBINTERFACETESTIMPL_H

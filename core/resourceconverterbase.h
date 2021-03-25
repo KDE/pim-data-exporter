@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef RESOURCECONVERTERBASE_H
-#define RESOURCECONVERTERBASE_H
+#pragma once
 
 #include "pimdataexporter_export.h"
 #include <QString>
@@ -33,4 +32,3 @@ public:
     virtual QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) = 0;
 };
 
-#endif // RESOURCECONVERTER_H

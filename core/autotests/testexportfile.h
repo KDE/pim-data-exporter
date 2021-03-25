@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef TESTEXPORTFILE_H
-#define TESTEXPORTFILE_H
+#pragma once
 
 #include <QObject>
 class AbstractImportExportJob;
@@ -34,4 +33,3 @@ private:
     QString mTemporaryFile;
 };
 
-#endif // TESTEXPORTFILE_H

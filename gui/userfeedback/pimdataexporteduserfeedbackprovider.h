@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PIMDATAEXPORTEDUSERFEEDBACKPROVIDER_H
-#define PIMDATAEXPORTEDUSERFEEDBACKPROVIDER_H
+#pragma once
 
 #include <KUserFeedback/Provider>
 
@@ -17,4 +16,3 @@ public:
     ~PimDataExportedUserFeedbackProvider();
 };
 
-#endif // PIMDATAEXPORTEDUSERFEEDBACKPROVIDER_H

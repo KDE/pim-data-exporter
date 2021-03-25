@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef TEMPLATESELECTION_H
-#define TEMPLATESELECTION_H
+#pragma once
 
 #include "pimdataexporter_export.h"
 #include <QHash>
@@ -32,4 +31,3 @@ private:
     QString mSaveTemplate;
 };
 
-#endif // TEMPLATESELECTION_H

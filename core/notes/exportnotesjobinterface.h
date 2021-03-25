@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef EXPORTNOTESJOBINTERFACE_H
-#define EXPORTNOTESJOBINTERFACE_H
+#pragma once
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
@@ -39,4 +38,3 @@ private:
     int mIndexIdentifier = 0;
 };
 
-#endif // EXPORTNOTESJOBINTERFACE_H

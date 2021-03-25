@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTEXPORTPROGRESSINDICATORBASE_H
-#define IMPORTEXPORTPROGRESSINDICATORBASE_H
+#pragma once
 
 #include <QObject>
 #include "pimdataexporter_export.h"
@@ -36,4 +35,3 @@ protected:
     int mNumberOfStep = 0;
 };
 
-#endif // IMPORTEXPORTPROGRESSINDICATORBASE_H

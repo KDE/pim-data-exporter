@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef COMPAREEXPORTFILE_H
-#define COMPAREEXPORTFILE_H
+#pragma once
 
 #include <QString>
 class KZip;
@@ -30,4 +29,3 @@ private:
     QTemporaryDir *mTempDir = nullptr;
 };
 
-#endif // COMPAREEXPORTFILE_H

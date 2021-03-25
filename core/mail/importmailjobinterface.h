@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef ImportMailJobINTERFACE_H
-#define ImportMailJobINTERFACE_H
+#pragma once
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
@@ -79,4 +78,3 @@ private:
     QStringList mFileList;
 };
 
-#endif // ImportMailJob_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef SYNCHRONIZERESOURCEDIALOG_H
-#define SYNCHRONIZERESOURCEDIALOG_H
+#pragma once
 
 #include <QDialog>
 class QListWidget;
@@ -34,4 +33,3 @@ private:
     QListWidget *mListResourceWidget = nullptr;
 };
 
-#endif // SYNCHRONIZERESOURCEDIALOG_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTEXPORTPROGRESSINDICATORCONSOLE_H
-#define IMPORTEXPORTPROGRESSINDICATORCONSOLE_H
+#pragma once
 
 #include "importexportprogressindicatorbase.h"
 
@@ -21,4 +20,3 @@ private:
     void showErrorMessage(const QString &message, const QString &title) override;
 };
 
-#endif // IMPORTEXPORTPROGRESSINDICATORCONSOLE_H

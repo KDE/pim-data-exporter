@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PIMDATABACKUPRESTOREUI_H
-#define PIMDATABACKUPRESTOREUI_H
+#pragma once
 
 #include "pimdatabackuprestore.h"
 
@@ -23,4 +22,3 @@ private:
     QWidget *mParentWidget = nullptr;
 };
 
-#endif // PIMDATABACKUPRESTOREUI_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef EXPORTAKREGATORJOBINTERFACE_H
-#define EXPORTAKREGATORJOBINTERFACE_H
+#pragma once
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
@@ -28,4 +27,3 @@ private:
     void slotCheckBackupData();
 };
 
-#endif // EXPORTAKREGATORJOBINTERFACE_H

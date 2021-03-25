@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef SAVERESOURECONFIGTEST_H
-#define SAVERESOURECONFIGTEST_H
+#pragma once
 
 #include <KZip>
 
@@ -21,4 +20,3 @@ private:
     KZip *mArchive = nullptr;
 };
 
-#endif // SAVERESOURECONFIGTEST_H

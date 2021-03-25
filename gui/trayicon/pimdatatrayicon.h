@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PIMDATATRAYICON_H
-#define PIMDATATRAYICON_H
+#pragma once
 
 #include <KStatusNotifierItem>
 
@@ -17,4 +16,3 @@ public:
     ~PimDataTrayIcon() override;
 };
 
-#endif // PIMDATATRAYICON_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTCALENDARJOBINTERFACE_H
-#define IMPORTCALENDARJOBINTERFACE_H
+#pragma once
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
@@ -37,4 +36,3 @@ private:
     Q_REQUIRED_RESULT QString installConfigLocation() const;
 };
 
-#endif // IMPORTCALENDARJOBINTERFACE_H

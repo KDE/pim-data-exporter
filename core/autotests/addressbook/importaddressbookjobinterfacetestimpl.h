@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTADDRESSBOOKJOBINTERFACETESTIMPL_H
-#define IMPORTADDRESSBOOKJOBINTERFACETESTIMPL_H
+#pragma once
 
 #include "exportimportutil.h"
 #include "core/utils.h"
@@ -28,4 +27,3 @@ protected:
     Q_REQUIRED_RESULT QString configLocation() const override;
 };
 
-#endif // IMPORTADDRESSBOOKJOBINTERFACETESTIMPL_H

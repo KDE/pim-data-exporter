@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef LOGCREATINGRESOURCE_H
-#define LOGCREATINGRESOURCE_H
+#pragma once
 
 #include <QObject>
 #include <Akonadi/KMime/SpecialMailCollections>
@@ -26,4 +25,3 @@ private:
     int mResourceIndex = 0;
 };
 
-#endif // LOGCREATINGRESOURCE_H

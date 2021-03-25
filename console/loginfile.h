@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef LOGINFILE_H
-#define LOGINFILE_H
+#pragma once
 
 #include <QObject>
 #include <QTextStream>
@@ -39,4 +38,3 @@ private:
     QFile *mFile = nullptr;
 };
 
-#endif // LOGINFILE_H

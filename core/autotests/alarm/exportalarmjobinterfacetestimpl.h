@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef EXPORTALARMJOBINTERFACETESTIMPL_H
-#define EXPORTALARMJOBINTERFACETESTIMPL_H
+#pragma once
 
 #include "alarm/exportalarmjobinterface.h"
 #include "exportimportutil.h"
@@ -27,4 +26,3 @@ protected:
     void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) override;
 };
 
-#endif // EXPORTALARMJOBINTERFACETESTIMPL_H

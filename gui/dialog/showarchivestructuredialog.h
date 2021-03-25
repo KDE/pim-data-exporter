@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef SHOWARCHIVESTRUCTUREDIALOG_H
-#define SHOWARCHIVESTRUCTUREDIALOG_H
+#pragma once
 
 #include <QDialog>
 class QTreeWidget;
@@ -48,4 +47,3 @@ private:
     QTemporaryDir *mTempDir = nullptr;
 };
 
-#endif // SHOWARCHIVESTRUCTUREDIALOG_H

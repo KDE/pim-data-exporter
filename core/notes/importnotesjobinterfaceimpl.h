@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTNOTESJOBIMPLEMENTIMPL_H
-#define IMPORTNOTESJOBIMPLEMENTIMPL_H
+#pragma once
 
 #include "importnotesjobinterface.h"
 #include "pimdataexportercore_private_export.h"
@@ -27,4 +26,3 @@ protected:
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };
 
-#endif // IMPORTNOTESJOB_H

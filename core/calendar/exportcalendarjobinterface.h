@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef EXPORTCALENDARJOBINTERFACE_H
-#define EXPORTCALENDARJOBINTERFACE_H
+#pragma once
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
@@ -37,4 +36,3 @@ private:
     int mIndexIdentifier = 0;
 };
 
-#endif // EXPORTCALENDARJOBINTERFACE_H

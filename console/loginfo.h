@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef LOGINFO_H
-#define LOGINFO_H
+#pragma once
 
 #include <QObject>
 
@@ -30,4 +29,3 @@ private:
     void addLogLine(const QString &message, LogType type);
 };
 
-#endif // LOGINFO_H

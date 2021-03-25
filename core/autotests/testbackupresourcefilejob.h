@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef TESTBACKUPRESOURCEFILEJOB_H
-#define TESTBACKUPRESOURCEFILEJOB_H
+#pragma once
 
 #include <backupresourcefilejobbase.h>
 
@@ -22,4 +21,3 @@ private:
     QString mTestPath;
 };
 
-#endif // TESTBACKUPRESOURCEFILEJOB_H

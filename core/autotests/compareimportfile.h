@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef COMPAREIMPORTFILE_H
-#define COMPAREIMPORTFILE_H
+#pragma once
 
 #include <QString>
 
@@ -36,4 +35,3 @@ private:
     QString mExcludePath;
 };
 
-#endif // COMPAREIMPORTFILE_H

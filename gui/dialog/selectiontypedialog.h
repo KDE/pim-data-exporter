@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef SELECTIONTYPEDIALOG_H
-#define SELECTIONTYPEDIALOG_H
+#pragma once
 
 #include <QDialog>
 #include "utils.h"
@@ -40,4 +39,3 @@ private:
     QPushButton *mLoadTemplate = nullptr;
 };
 
-#endif // SELECTIONTYPEDIALOG_H

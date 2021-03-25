@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef IMPORTEXPORTPROGRESSINDICATORTEST_H
-#define IMPORTEXPORTPROGRESSINDICATORTEST_H
+#pragma once
 
 #include <importexportprogressindicatorbase.h>
 
@@ -19,4 +18,3 @@ public:
     Q_REQUIRED_RESULT bool overwriteDirectoryMessageBox(const QString &directory) const override;
 };
 
-#endif // IMPORTEXPORTPROGRESSINDICATORTEST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef ImportMailJobINTERFACEIMPL_H
-#define ImportMailJobINTERFACEIMPL_H
+#pragma once
 
 #include "importmailjobinterface.h"
 #include "pimdataexportercore_private_export.h"
@@ -46,4 +45,3 @@ private:
     KIdentityManagement::IdentityManager *const mIdentityManager;
 };
 
-#endif // ImportMailJob_H

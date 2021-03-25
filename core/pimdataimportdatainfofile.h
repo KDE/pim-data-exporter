@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PIMDATAIMPORTDATAINFOFILE_H
-#define PIMDATAIMPORTDATAINFOFILE_H
+#pragma once
 
 #include <QObject>
 #include <QString>
@@ -26,4 +25,3 @@ private:
     QString mFilename;
 };
 
-#endif // PIMDATAIMPORTDATAINFOFILE_H
