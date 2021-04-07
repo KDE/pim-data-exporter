@@ -62,13 +62,13 @@ void BackupFileStructureInfoDialog::loadStructure()
 
 void BackupFileStructureInfoDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "BackupFileStructureInfoDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "BackupFileStructureInfoDialog");
     group.writeEntry("Size", size());
 }
 
 void BackupFileStructureInfoDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "BackupFileStructureInfoDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "BackupFileStructureInfoDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);

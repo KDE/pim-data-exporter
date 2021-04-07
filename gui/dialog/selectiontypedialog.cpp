@@ -75,13 +75,13 @@ SelectionTypeDialog::~SelectionTypeDialog()
 
 void SelectionTypeDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SelectionTypeDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectionTypeDialog");
     group.writeEntry("Size", size());
 }
 
 void SelectionTypeDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SelectionTypeDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectionTypeDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);

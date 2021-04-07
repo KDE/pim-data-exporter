@@ -271,13 +271,13 @@ QTreeWidgetItem *ShowArchiveStructureDialog::addTopItem(const QString &name)
 
 void ShowArchiveStructureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "ShowArchiveStructureDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "ShowArchiveStructureDialog");
     group.writeEntry("Size", size());
 }
 
 void ShowArchiveStructureDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "ShowArchiveStructureDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "ShowArchiveStructureDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);

@@ -115,7 +115,7 @@ void SynchronizeResourceDialog::slotAccepted()
 
 void SynchronizeResourceDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SynchronizeResourceDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SynchronizeResourceDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -124,6 +124,6 @@ void SynchronizeResourceDialog::readConfig()
 
 void SynchronizeResourceDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SynchronizeResourceDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SynchronizeResourceDialog");
     group.writeEntry("Size", size());
 }

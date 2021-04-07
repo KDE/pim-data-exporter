@@ -79,7 +79,7 @@ void PimDataExporterConfigureDialog::slotAccepted()
 
 void PimDataExporterConfigureDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "PimDataExporterConfigureDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "PimDataExporterConfigureDialog");
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -88,7 +88,7 @@ void PimDataExporterConfigureDialog::readConfig()
 
 void PimDataExporterConfigureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "PimDataExporterConfigureDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "PimDataExporterConfigureDialog");
     group.writeEntry("Size", size());
     group.sync();
 }
