@@ -5,7 +5,7 @@ set( exportalarmjobinterfacetest_SRCS exportalarmjobinterfacetest.cpp exportalar
 add_executable( exportalarmjobinterfacetest ${exportalarmjobinterfacetest_SRCS})
 add_test(NAME exportalarmjobinterfacetest COMMAND exportalarmjobinterfacetest)
 ecm_mark_as_test(exportalarmjobinterfacetest)
-target_link_libraries(exportalarmjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
+target_link_libraries(exportalarmjobinterfacetest Qt::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
 
 #####
 
@@ -14,4 +14,4 @@ set( importalarmjobinterfacetest_SRCS importalarmjobinterfacetest.cpp importalar
 add_executable( importalarmjobinterfacetest ${importalarmjobinterfacetest_SRCS})
 add_test(NAME importalarmjobinterfacetest COMMAND importalarmjobinterfacetest)
 ecm_mark_as_test(importalarmjobinterfacetest)
-target_link_libraries(importalarmjobinterfacetest Qt5::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
+target_link_libraries(importalarmjobinterfacetest Qt::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
