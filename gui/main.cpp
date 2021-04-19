@@ -10,7 +10,10 @@
 #include <KLocalizedString>
 #include <KDBusService>
 #include <QApplication>
+#include <kcoreaddons_version.h>
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <Kdelibs4ConfigMigrator>
+#endif
 #include <KCrash>
 #ifdef WITH_KUSERFEEDBACK
 #include "userfeedback/pimdataexporteduserfeedbackprovider.h"
@@ -27,11 +30,13 @@ int main(int argc, char *argv[])
 
     KCrash::initialize();
     app.setDesktopFileName(QStringLiteral("org.kde.pimdataexporter"));
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Kdelibs4ConfigMigrator migrate(QStringLiteral("pimdataexporter"));
     //old migration. Don't change it
     migrate.setConfigFiles(QStringList() << QStringLiteral("pimsettingexporterrc"));
     migrate.setUiFiles(QStringList() << QStringLiteral("pimsettingexporter.rc"));
     migrate.migrate();
+#endif
     QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("kontact")));
 
     PimDataCommandLineOption parser;
