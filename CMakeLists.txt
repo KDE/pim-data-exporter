@@ -61,13 +61,19 @@ find_package(KF5ConfigWidgets ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5CoreAddons ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5Crash ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5DBusAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5DocTools ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5ItemViews ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5KIO ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5Notifications ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5XmlGui ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5WidgetsAddons ${KF5_MIN_VERSION} REQUIRED)
+
+find_package(KF5DocTools ${KF5_MIN_VERSION})
+set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
+    "Tools to generate documentation"
+    TYPE OPTIONAL
+)
+
 
 # Find KdepimLibs Package
 find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
@@ -121,8 +127,10 @@ ecm_qt_install_logging_categories(
 
 install(FILES org.kde.pimdataexporter.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
+if(KF5DocTools_FOUND)
+    kdoctools_install(po)
+    add_subdirectory(doc)
+endif()
 
-add_subdirectory(doc)
 ki18n_install(po)
-kdoctools_install(po)
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
