@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-set(PIM_VERSION "5.17.1")
+set(PIM_VERSION "5.17.2")
 project(pim-data-exporter VERSION ${PIM_VERSION})
-set(RELEASE_SERVICE_VERSION "21.04.1")
+set(RELEASE_SERVICE_VERSION "21.04.2")
 set(KF5_MIN_VERSION "5.79.0")
 
 find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
