@@ -8,7 +8,7 @@
 #include <KXmlGuiWindow>
 #include "utils.h"
 class LogWidget;
-class KRecentFilesAction;
+class KRecentFilesMenu;
 class QAction;
 class QCommandLineParser;
 class PimDataBackupRestoreUI;
@@ -53,7 +53,7 @@ private:
     // Name, identifier
     QHash<QString, QString> mNeedToSyncResources;
     LogWidget *mLogWidget = nullptr;
-    KRecentFilesAction *mRecentFilesAction = nullptr;
+    KRecentFilesMenu *mRecentFilesMenu = nullptr;
     QAction *mBackupAction = nullptr;
     QAction *mRestoreAction = nullptr;
     QAction *mSaveLogAction = nullptr;

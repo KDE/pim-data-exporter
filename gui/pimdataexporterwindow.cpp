@@ -33,7 +33,7 @@
 #include <KMessageBox>
 #include <KLocalizedString>
 #include <QStatusBar>
-#include <KRecentFilesAction>
+#include <KRecentFilesMenu>
 #include <QPointer>
 #include <KSharedConfig>
 #include <KFileWidget>
@@ -82,9 +82,6 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
 PimDataExporterWindow::~PimDataExporterWindow()
 {
     MailCommon::FilterManager::instance()->cleanup();
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup groupConfig = config->group(QStringLiteral("Recent File"));
-    mRecentFilesAction->saveEntries(groupConfig);
 }
 
 void PimDataExporterWindow::initializeBackupRestoreUi()
@@ -222,11 +219,9 @@ void PimDataExporterWindow::setupActions(bool canZipFile)
     mShowArchiveInformationsAboutCurrentArchiveAction->setEnabled(false);
 
     KStandardAction::quit(this, &PimDataExporterWindow::close, ac);
-    mRecentFilesAction = KStandardAction::openRecent(this, &PimDataExporterWindow::slotRestoreFile, ac);
-
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup groupConfig = config->group(QStringLiteral("Recent File"));
-    mRecentFilesAction->loadEntries(groupConfig);
+    mRecentFilesMenu = new KRecentFilesMenu(this);
+    actionCollection()->addAction(QStringLiteral("pimdataexporter_file_open_recent"), mRecentFilesMenu->menuAction());
+    connect(mRecentFilesMenu, &KRecentFilesMenu::urlTriggered, this, &PimDataExporterWindow::slotRestoreFile);
 
     KStandardAction::preferences(this, &PimDataExporterWindow::slotConfigure, ac);
 }
@@ -312,7 +307,7 @@ void PimDataExporterWindow::backupData(const QString &filename, const QString &t
             if (!recentDirClass.isEmpty()) {
                 KRecentDirs::add(recentDirClass, currentFileName);
             }
-            mRecentFilesAction->addUrl(QUrl::fromLocalFile(currentFileName));
+            mRecentFilesMenu->addUrl(QUrl::fromLocalFile(currentFileName));
         }
         mTrayIcon->setStatus(KStatusNotifierItem::Active);
         mTrayIcon->setToolTipSubTitle(i18n("Backup in progress..."));
