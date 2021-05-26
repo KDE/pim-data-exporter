@@ -1,31 +1,20 @@
-include_directories( 
-    ${pim-data-exporter_SOURCE_DIR}/core/
-    ${pim-data-exporter_BINARY_DIR}/core/
-    )
+add_library(pimdataexporterprivate)
 
-set(pimdataexporter_calendar_SRCS
+target_sources(pimdataexporterprivate PRIVATE
     calendar/exportcalendarjobinterfaceimpl.cpp
     calendar/importcalendarjobinterfaceimpl.cpp
-    )
 
-set(pimdataexporter_addressbook_SRCS
     addressbook/exportaddressbookjobinterfaceimpl.cpp
     addressbook/importaddressbookjobinterfaceimpl.cpp
-    )
 
-set(pimdataexporter_mail_SRCS
     mail/exportmailjobinterfaceimpl.cpp
     mail/importmailjobinterfaceimpl.cpp
     mail/importexportmailutil.cpp
     mail/smtpmailtransport.cpp
-    )
 
-set(pimdataexporter_alarm_SRCS
     alarm/exportalarmjobinterfaceimpl.cpp
     alarm/importalarmjobinterfaceimpl.cpp
-    )
 
-set(pimdataexporter_interfaces_SRCS
     notes/exportnotesjobinterface.cpp
     notes/importnotesjobinterface.cpp
     calendar/exportcalendarjobinterface.cpp
@@ -36,33 +25,13 @@ set(pimdataexporter_interfaces_SRCS
     alarm/exportalarmjobinterface.cpp
     mail/exportmailjobinterface.cpp
     mail/importmailjobinterface.cpp
-   )
 
-set(pimdataexporter_notes_SRCS
     notes/exportnotesjobinterfaceimpl.cpp
     notes/importnotesjobinterfaceimpl.cpp
-    )
-
-set(pimdataexporter_xml_SRCS
     xml/templateselection.cpp
-    )
-
-set(pimdataexporter_akregator_SRCS
     akregator/exportakregatorjobinterface.cpp
     akregator/importakregatorjobinterface.cpp
-    )
 
-
-set(pimdataexporter_LIB_SRCS
-    ${pimdataexporter_xml_SRCS}
-    ${pimdataexporter_notes_SRCS}
-    ${pimdataexporter_alarm_SRCS}
-    ${pimdataexporter_mail_SRCS}
-    ${pimdataexporter_calendar_SRCS}
-    ${pimdataexporter_addressbook_SRCS}
-    ${pimdataexporter_jot_SRCS}
-    ${pimdataexporter_akregator_SRCS}
-    ${pimdataexporter_interfaces_SRCS}
     abstractimportexportjob.cpp
     pimdataexporterkernel.cpp
     utils.cpp
@@ -80,13 +49,13 @@ set(pimdataexporter_LIB_SRCS
     backupresourcefilejobimpl.cpp
     )
 
-ecm_qt_declare_logging_category(pimdataexporter_LIB_SRCS HEADER pimdataexportcore_debug.h IDENTIFIER PIMDATAEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore
+ecm_qt_declare_logging_category(pimdataexporterprivate HEADER pimdataexportcore_debug.h IDENTIFIER PIMDATAEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore
         DESCRIPTION "pimdataexporter (pimdataexporter lib core)"
         OLD_CATEGORY_NAMES log_pimsettingexportercore org.kde.pim.pimsettingexportercore
         EXPORT PIMDATAEXPORTER
     )
 
-add_library(pimdataexporterprivate ${pimdataexporter_LIB_SRCS})
+
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(pimdataexporterprivate PROPERTIES UNITY_BUILD ON)
 endif()

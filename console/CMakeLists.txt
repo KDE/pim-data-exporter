@@ -2,9 +2,9 @@
 include_directories(${AKONADI_INCLUDE_DIR} 
     ${pim-data-exporter_SOURCE_DIR}/core/
     )
+add_executable(pimdataexporterconsole)
 
-
-set(pimdataexporterconsole_SRCS
+target_sources(pimdataexporterconsole PRIVATE
     importexportprogressindicatorconsole.cpp
     pimdataexporterconsole.cpp
     loginfo.cpp
@@ -12,13 +12,13 @@ set(pimdataexporterconsole_SRCS
     main.cpp)
 
 
-ecm_qt_declare_logging_category(pimdataexporterconsole_SRCS HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole
+ecm_qt_declare_logging_category(pimdataexporterconsole HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole
         DESCRIPTION "pimdataexporter (pimdataexporter console)"
         OLD_CATEGORY_NAMES log_pimsettingexporterconsole org.kde.pim.pimsettingexporterconsole
         EXPORT PIMDATAEXPORTER
     )
 
-add_executable(pimdataexporterconsole ${pimdataexporterconsole_SRCS})
+
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(pimdataexporterconsole PROPERTIES UNITY_BUILD ON)
 endif()

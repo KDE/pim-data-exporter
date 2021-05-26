@@ -1,6 +1,5 @@
 ####
-set( utilstest_SRCS utilstest.cpp  )
-add_executable( utilstest ${utilstest_SRCS})
+add_executable( utilstest utilstest.cpp)
 add_test(NAME utilstest COMMAND utilstest)
 ecm_mark_as_test(utilstest)
 target_link_libraries( utilstest Qt::Test pimdataexporterprivate KF5::ConfigCore)
@@ -29,15 +28,13 @@ target_link_libraries(test_resourceconverter PUBLIC KF5::ConfigCore pimdataexpor
 
 
 #####
-set( resourceconverterclasstest_SRCS resourceconverterclasstest.cpp)
-add_executable( resourceconverterclasstest ${resourceconverterclasstest_SRCS})
+add_executable( resourceconverterclasstest resourceconverterclasstest.cpp)
 add_test(NAME resourceconverterclasstest COMMAND resourceconverterclasstest)
 ecm_mark_as_test(resourceconverterclasstest)
 target_link_libraries( resourceconverterclasstest Qt::Test KF5::ConfigCore test_resourceconverter)
 
 #####
-set( backupresourcefilejobimpltest_SRCS backupresourcefilejobimpltest.cpp )
-add_executable( backupresourcefilejobimpltest ${backupresourcefilejobimpltest_SRCS})
+add_executable( backupresourcefilejobimpltest backupresourcefilejobimpltest.cpp)
 add_test(NAME backupresourcefilejobimpltest COMMAND backupresourcefilejobimpltest)
 ecm_mark_as_test(backupresourcefilejobimpltest)
 target_link_libraries( backupresourcefilejobimpltest Qt::Test KF5::ConfigCore pimdataexporterprivate KF5::Archive)

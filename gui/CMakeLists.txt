@@ -1,11 +1,13 @@
 
+add_executable(pimdataexporter)
+
 if (TARGET KUserFeedbackWidgets)
     add_definitions(-DWITH_KUSERFEEDBACK)
 endif()
 
 set(pimdataexporter_userfeedback_SRCS)
 if (TARGET KUserFeedbackWidgets)
-    set(pimdataexporter_userfeedback_SRCS ${pimdataexporter_userfeedback_SRCS}
+    target_sources(pimdataexporter PRIVATE
         userfeedback/userfeedbackmanager.cpp
         userfeedback/pimdataexporteduserfeedbackprovider.cpp
         )
@@ -16,40 +18,24 @@ include_directories(
     )
 
 
-set( pimdataexporter_kcfg_SRCS settings/pimdataexporterglobalconfig.kcfgc )
-
-kconfig_add_kcfg_files(pimdataexporter_kcfg_SRCS ${pimdataexporter_kcfg_SRCS})
+kconfig_add_kcfg_files(pimdataexporter settings/pimdataexporterglobalconfig.kcfgc)
 
 
-set(pimdataexporter_widget_SRCS
+target_sources(pimdataexporter PRIVATE
     widgets/selectiontypetreewidget.cpp
     widgets/logwidget.cpp
     widgets/pimdataexporterconfigurewidget.cpp
-    )
 
-set(pimdataexporter_dialog_SRCS
     dialog/selectiontypedialog.cpp
     dialog/backupfilestructureinfodialog.cpp
     dialog/showarchivestructuredialog.cpp
     dialog/synchronizeresourcedialog.cpp
     dialog/pimdataexporterconfiguredialog.cpp
-    )
 
-set(pimdataexporter_job_SRCS
     job/fullsynchronizeresourcesjob.cpp
-    )
 
-set(pimdataexporter_trayicon_SRCS
     trayicon/pimdatatrayicon.cpp
-    )
 
-set(pimdataexporter_SRCS
-    ${pimdataexporter_kcfg_SRCS}
-    ${pimdataexporter_widget_SRCS}
-    ${pimdataexporter_userfeedback_SRCS}
-    ${pimdataexporter_dialog_SRCS}
-    ${pimdataexporter_job_SRCS}
-    ${pimdataexporter_trayicon_SRCS}
     pimdatabackuprestoreui.cpp
     importexportprogressindicatorgui.cpp
     pimdataexporterwindow.cpp
@@ -59,16 +45,13 @@ set(pimdataexporter_SRCS
 
 #TODO create lib
 
-ecm_qt_declare_logging_category(pimdataexporter_SRCS HEADER pimdataexportgui_debug.h IDENTIFIER PIMDATAEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimdataexportergui)
-
-add_executable(pimdataexporter ${pimdataexporter_SRCS})
+ecm_qt_declare_logging_category(pimdataexporter HEADER pimdataexportgui_debug.h IDENTIFIER PIMDATAEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimdataexportergui)
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(pimdataexporter PROPERTIES UNITY_BUILD ON)
 endif()
 
-set(pimdataexporter_userfeedback_LIB)
 if (TARGET KUserFeedbackWidgets)
-	set(pimdataexporter_userfeedback_LIB KUserFeedbackWidgets)
+        target_link_libraries(pimdataexporter PRIVATE KUserFeedbackWidgets)
 endif()
 
 target_link_libraries(pimdataexporter
