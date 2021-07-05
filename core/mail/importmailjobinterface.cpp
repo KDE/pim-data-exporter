@@ -148,7 +148,7 @@ void ImportMailJobInterface::importMailTransport(const QString &tempDirName)
 
     QStringList transportList = transportConfig->groupList().filter(QRegularExpression(QStringLiteral("Transport \\d+")));
     std::sort(transportList.begin(), transportList.end());
-    for (const QString &transport : qAsConst(transportList)) {
+    for (const QString &transport : std::as_const(transportList)) {
         KConfigGroup group = transportConfig->group(transport);
         const int transportId = group.readEntry(QStringLiteral("id"), -1);
         if (transportId == -1) {
@@ -200,7 +200,7 @@ void ImportMailJobInterface::restoreResources()
     QDir dir(mTempDirName);
     dir.mkdir(Utils::resourcesPath());
     ResourceConverterImpl converter;
-    for (const QString &filename : qAsConst(mFileList)) {
+    for (const QString &filename : std::as_const(mFileList)) {
         //We need to find akonadi_* and agent_config_akonadi_*
         if (filename.startsWith(Utils::resourcesPath() + QStringLiteral("akonadi_"))) {
             const QString agentFileConfigName = converter.agentFileName(filename);
@@ -1005,7 +1005,7 @@ void ImportMailJobInterface::restoreIdentity()
           QStringList identityList = identityConfig->groupList().filter(
               QRegularExpression(QStringLiteral("Identity #\\d+")));
           std::sort(identityList.begin(), identityList.end());
-          for (const QString &identityStr : qAsConst(identityList)) {
+          for (const QString &identityStr : std::as_const(identityList)) {
             KConfigGroup group = identityConfig->group(identityStr);
             int oldUid = -1;
             const QString uidStr(QStringLiteral("uoid"));
