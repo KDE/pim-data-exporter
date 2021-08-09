@@ -186,6 +186,7 @@ void ExportMailJobInterface::backupConfig()
     backupConfigFile(QStringLiteral("texttospeechrc"));
     backupConfigFile(QStringLiteral("kleopatracertificateselectiondialogrc"));
     backupConfigFile(QStringLiteral("dkimsettingsrc"));
+    backupConfigFile(QStringLiteral("confirmbeforedeletingrc"));
 
     //Notify file config
     backupConfigFile(QStringLiteral("akonadi_mailfilter_agent.notifyrc"));

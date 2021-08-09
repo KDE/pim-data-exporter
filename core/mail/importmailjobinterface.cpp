@@ -891,6 +891,7 @@ void ImportMailJobInterface::restoreConfig()
     restoreConfigFile(QStringLiteral("texttospeechrc"));
     restoreConfigFile(QStringLiteral("kleopatracertificateselectiondialogrc"));
     restoreConfigFile(QStringLiteral("dkimsettingsrc"));
+    restoreConfigFile(QStringLiteral("confirmbeforedeletingrc"));
 
     //Restore notify file
     const QStringList lstNotify = {
