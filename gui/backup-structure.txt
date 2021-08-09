@@ -113,6 +113,7 @@ Root
 |       |---------pimpluginsrc
 |       |---------eventviewsrc
 |       |---------dkimsettingsrc
+|       |---------confirmbeforedeletingrc
 |
 |-----akonadi
 |       |---------<archive akonadi>
