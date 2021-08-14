@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 set(PIM_VERSION "5.18.40")
 project(pim-data-exporter VERSION ${PIM_VERSION})
 set(RELEASE_SERVICE_VERSION "21.11.40")
-set(KF5_MIN_VERSION "5.84.0")
+set(KF5_MIN_VERSION "5.85.0")
 
 find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -21,6 +21,7 @@ include(ECMGeneratePriFile)
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
+set(KDE_COMPILERSETTINGS_LEVEL 5.85.0)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMAddAppIcon)
 include(ECMQtDeclareLoggingCategory)
@@ -97,7 +98,7 @@ include_directories(${pim-data-exporter_SOURCE_DIR} ${pim-data-exporter_BINARY_D
 add_definitions(-DTRANSLATION_DOMAIN=\"pimdataexporter\")
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055500)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055600)
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
