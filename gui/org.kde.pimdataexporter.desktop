@@ -63,6 +63,7 @@ GenericName[zh_CN]=保存并恢复所有来自个人信息管理应用程序的�
 Comment=PIM Setting Exporter allows to save all data from PIM apps and restore them in other systems.
 Comment[ca]=L'exportador de la configuració PIM permet desar totes les dades de les aplicacions PIM i restaura-les en altres sistemes.
 Comment[ca@valencia]=L'exportador de la configuració PIM permet guardar totes les dades de les aplicacions PIM i restaura-les en altres sistemes.
+Comment[cs]=Exportér nastavení PIM vám umožní uložit všechna data z aplikací PIM a obnovit je na jiných systémech.
 Comment[da]=Eksportør af PIM-indstillinger lader dig gemme alle data fra PIM-programmer og gendanne dem på andre systemer.
 Comment[de]=Speichert alle Daten von PIM-Anwendungen, um sie später in anderen Systemen wiederherzustellen.
 Comment[en_GB]=PIM Setting Exporter allows to save all data from PIM apps and restore them in other systems.
