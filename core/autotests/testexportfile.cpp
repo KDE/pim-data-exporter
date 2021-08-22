@@ -10,6 +10,7 @@
 #include "abstractimportexportjob.h"
 #include "utils.h"
 
+#include <QTemporaryFile>
 #include <QDir>
 #include <QSignalSpy>
 #include <QTest>
@@ -56,7 +57,9 @@ void TestExportFile::start()
 
     //TODO fix file name.
     Utils::addVersion(mArchiveStorage->archive());
-    Utils::storeDataExportInfo(mArchiveStorage->archive(), QString()); //TODO fix me ?
+    QTemporaryFile exportedFileInfoDummy;
+    exportedFileInfoDummy.open();
+    Utils::storeDataExportInfo(mArchiveStorage->archive(), exportedFileInfoDummy.fileName());
 
     QSignalSpy finish(mAbstractImportExportJob, &AbstractImportExportJob::jobFinished);
     QSignalSpy error(mAbstractImportExportJob, &AbstractImportExportJob::error);
