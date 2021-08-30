@@ -17,7 +17,6 @@ include(ECMGenerateHeaders)
 
 include(FeatureSummary)
 include(CheckFunctionExists)
-include(ECMGeneratePriFile)
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
