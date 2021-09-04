@@ -36,12 +36,12 @@ void ExportCalendarsJobInterfaceTest::exportCalendar()
     file->setPathConfig(configpath);
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;
-    info.identifier = QLatin1String("akonadi_icaldir_resource_1");
+    info.identifier = QStringLiteral("akonadi_icaldir_resource_1");
     lstInfo << info;
-    info.identifier = QLatin1String("akonadi_ical_resource_2");
+    info.identifier = QStringLiteral("akonadi_ical_resource_2");
     lstInfo << info;
     //Add extra resource.
-    info.identifier = QLatin1String("akonadi_contacts_resource_1");
+    info.identifier = QStringLiteral("akonadi_contacts_resource_1");
     lstInfo << info;
     info.identifier = QStringLiteral("akonadi_kontact_resource_2");
     lstInfo << info;
