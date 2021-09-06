@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: None
+# SPDX-License-Identifier: CC0-1.0
+
+Dependencies:
+- 'on': ['@all']
+  'require':
+    'frameworks/kcontacts' : '@latest'
+    'frameworks/kcalendarcore' : '@latest'
+    'kde/pim/akonadi' : '@latest'
+    'kde/pim/kidentitymanagement' : '@latest'
+    'kde/pim/kmailtransport' : '@latest'
+    'kde/pim/kmime' : '@latest'
+    'kde/pim/kpimtextedit' : '@latest'
+    'kde/pim/libkdepim' : '@latest'
+    'kde/pim/mailcommon' : '@latest'
+    'kde/pim/pimcommon' : '@latest'
+    'kde/pim/akonadi-notes' : '@latest'
