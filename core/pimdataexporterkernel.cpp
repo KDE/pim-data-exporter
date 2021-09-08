@@ -13,7 +13,7 @@
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
 #include <Akonadi/Notes/NoteUtils>
-#include <AkonadiCore/session.h>
+#include <Akonadi/Session>
 #include <KCalendarCore/Event>
 #include <KCalendarCore/Todo>
 #include <KSharedConfig>
