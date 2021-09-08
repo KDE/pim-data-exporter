@@ -25,7 +25,7 @@
 
 #include <PimCommon/PimUtil>
 
-#include <AkonadiWidgets/ControlGui>
+#include <Akonadi/ControlGui>
 
 #include <KStandardAction>
 #include <KConfigGroup>

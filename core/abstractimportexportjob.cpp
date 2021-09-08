@@ -12,14 +12,14 @@
 #include "storeresourcejob.h"
 #include "synchronizeresourcejob.h"
 
+#include <Akonadi/AgentInstance>
 #include <PimCommonAkonadi/CreateResource>
-#include <AkonadiCore/AgentInstance>
 
 #include <KZip>
 #include <QTemporaryDir>
 #include <KLocalizedString>
 
-#include <AkonadiCore/ServerManager>
+#include <Akonadi/ServerManager>
 
 #include <QFile>
 #include <QDir>

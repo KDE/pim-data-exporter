@@ -5,12 +5,12 @@
 */
 
 #include "storeresourcejob.h"
-#include "utils.h"
 #include "pimdataexportcore_debug.h"
 #include "resourceconverterimpl.h"
+#include "utils.h"
+#include <Akonadi/ServerManager>
 #include <KLocalizedString>
 #include <KZip>
-#include <AkonadiCore/ServerManager>
 
 #include <QFileInfo>
 

@@ -5,16 +5,16 @@
 */
 
 #include "importmailjobinterfaceimpl.h"
-#include "resourceconverterimpl.h"
 #include "archivestorage.h"
-#include <AkonadiCore/CollectionFetchJob>
-#include <PimCommonAkonadi/CreateResource>
-#include <MailCommon/FilterManager>
+#include "resourceconverterimpl.h"
+#include "smtpmailtransport.h"
+#include <Akonadi/CollectionFetchJob>
 #include <KIdentityManagement/Identity>
 #include <KIdentityManagement/IdentityManager>
-#include <MailTransport/TransportManager>
 #include <MailCommon/FilterImporterExporter>
-#include "smtpmailtransport.h"
+#include <MailCommon/FilterManager>
+#include <MailTransport/TransportManager>
+#include <PimCommonAkonadi/CreateResource>
 using namespace Akonadi;
 
 ImportMailJobInterfaceImpl::ImportMailJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)

@@ -8,11 +8,11 @@
 
 #include "importmailjobinterface.h"
 #include "pimdataexportercore_private_export.h"
-#include <AkonadiCore/Collection>
+#include <Akonadi/Collection>
 #include <Akonadi/KMime/SpecialMailCollections>
-#include <QStringList>
-#include <QHash>
 #include <KArchive>
+#include <QHash>
+#include <QStringList>
 class ArchiveStorage;
 namespace KIdentityManagement {
 class Identity;

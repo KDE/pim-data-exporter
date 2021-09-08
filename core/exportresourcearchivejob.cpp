@@ -11,7 +11,7 @@
 #include <pimdatabackupthread.h>
 #include <KZip>
 
-#include <AkonadiCore/ServerManager>
+#include <Akonadi/ServerManager>
 
 ExportResourceArchiveJob::ExportResourceArchiveJob(QObject *parent)
     : QObject(parent)

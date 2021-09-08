@@ -7,9 +7,9 @@
 #pragma once
 
 #include "pimdataexporter_export.h"
-#include <QString>
+#include <Akonadi/Collection>
 #include <KSharedConfig>
-#include <AkonadiCore/Collection>
+#include <QString>
 class KZip;
 class PIMDATAEXPORTER_EXPORT ResourceConverterBase
 {

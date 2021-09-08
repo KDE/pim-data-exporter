@@ -6,10 +6,10 @@
 
 #pragma once
 
-#include <QObject>
-#include "utils.h"
-#include <AkonadiCore/Collection>
 #include "pimdataexporter_export.h"
+#include "utils.h"
+#include <Akonadi/Collection>
+#include <QObject>
 #include <QStringList>
 
 class ArchiveStorage;

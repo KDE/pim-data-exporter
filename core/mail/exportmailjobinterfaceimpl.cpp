@@ -14,7 +14,7 @@
 #include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 #include "importexportprogressindicatorbase.h"
 
-#include <AkonadiCore/Collection>
+#include <Akonadi/Collection>
 
 #include <MailTransport/TransportManager>
 

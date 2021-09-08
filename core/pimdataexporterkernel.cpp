@@ -9,17 +9,17 @@
 #include <KContacts/Addressee>
 #include <KContacts/ContactGroup>
 
-#include <kidentitymanagement/identitymanager.h>
-#include <MessageComposer/AkonadiSender>
-#include <MailCommon/FolderCollectionMonitor>
-#include <AkonadiCore/session.h>
-#include <AkonadiCore/entitytreemodel.h>
-#include <AkonadiCore/entitymimetypefiltermodel.h>
-#include <AkonadiCore/changerecorder.h>
+#include <Akonadi/ChangeRecorder>
+#include <Akonadi/EntityMimeTypeFilterModel>
+#include <Akonadi/EntityTreeModel>
 #include <Akonadi/Notes/NoteUtils>
-#include <KCalendarCore/Todo>
+#include <AkonadiCore/session.h>
 #include <KCalendarCore/Event>
+#include <KCalendarCore/Todo>
 #include <KSharedConfig>
+#include <MailCommon/FolderCollectionMonitor>
+#include <MessageComposer/AkonadiSender>
+#include <kidentitymanagement/identitymanager.h>
 
 //Same element as kalarmcal
 const QLatin1String MIME_ACTIVE("application/x-vnd.kde.alarm.active");

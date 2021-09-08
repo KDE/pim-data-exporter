@@ -6,8 +6,8 @@
 
 #include "saveresourceconfigtest.h"
 #include "resourceconvertertest.h"
+#include <Akonadi/ServerManager>
 #include <QTest>
-#include <AkonadiCore/ServerManager>
 
 SaveResourceConfigTest::SaveResourceConfigTest()
 {

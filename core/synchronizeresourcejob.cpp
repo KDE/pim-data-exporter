@@ -6,9 +6,9 @@
 
 #include "synchronizeresourcejob.h"
 
-#include <AkonadiCore/resourcesynchronizationjob.h>
-#include <AkonadiCore/AgentInstance>
-#include <AkonadiCore/AgentManager>
+#include <Akonadi/AgentInstance>
+#include <Akonadi/AgentManager>
+#include <Akonadi/ResourceSynchronizationJob>
 
 #include <QTimer>
 #include "pimdataexportcore_debug.h"

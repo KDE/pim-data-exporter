@@ -15,7 +15,7 @@
 #include <KLocalizedString>
 #include <KZip>
 
-#include <AkonadiCore/AgentManager>
+#include <Akonadi/AgentManager>
 #include <QStandardPaths>
 
 QString Utils::storeAddressbook()

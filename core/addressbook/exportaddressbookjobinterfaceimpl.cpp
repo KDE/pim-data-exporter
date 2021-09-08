@@ -7,7 +7,7 @@
 #include "exportaddressbookjobinterfaceimpl.h"
 #include "exportresourcearchivejob.h"
 
-#include <AkonadiCore/AgentManager>
+#include <Akonadi/AgentManager>
 #include <MailCommon/MailUtil>
 
 #include <KConfigGroup>
