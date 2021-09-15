@@ -16,10 +16,10 @@
 #include <Akonadi/Session>
 #include <KCalendarCore/Event>
 #include <KCalendarCore/Todo>
+#include <KIdentityManagement/IdentityManager>
 #include <KSharedConfig>
 #include <MailCommon/FolderCollectionMonitor>
 #include <MessageComposer/AkonadiSender>
-#include <kidentitymanagement/identitymanager.h>
 
 //Same element as kalarmcal
 const QLatin1String MIME_ACTIVE("application/x-vnd.kde.alarm.active");
