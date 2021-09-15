@@ -7,12 +7,12 @@
 #include "exportmailjobinterfaceimpl.h"
 #include "importexportmailutil.h"
 
-#include <MailCommon/MailUtil>
-#include <MailCommon/FilterManager>
-#include <MailCommon/FilterImporterExporter>
-#include <KMime/Message>
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 #include "importexportprogressindicatorbase.h"
+#include <KIdentityManagement/IdentityManager>
+#include <KMime/Message>
+#include <MailCommon/FilterImporterExporter>
+#include <MailCommon/FilterManager>
+#include <MailCommon/MailUtil>
 
 #include <Akonadi/Collection>
 
