@@ -58,7 +58,7 @@
   <summary xml:lang="sv">Sparar alla data från program för personlig informationshantering och återställer dem på andra system.</summary>
   <summary xml:lang="uk">Зберігає усі дані з програм PIM і відновлює їх у інших системах.</summary>
   <summary xml:lang="x-test">xxSaves all data from PIM apps and restore them in other systems.xx</summary>
-  <summary xml:lang="zh-CN">保存源自个人信息管理程序的所有数据，并在其它系统上恢复它们。</summary>
+  <summary xml:lang="zh-CN">保存源自个人信息管理程序的所有数据，并在其他系统上恢复它们。</summary>
   <developer_name>Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca-valencia">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
