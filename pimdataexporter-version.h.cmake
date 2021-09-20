@@ -15,10 +15,5 @@
   build against older kdelibs releases.
 */
 
-#ifndef PIMDATAEXPORTER_VERSION_H
-#define PIMDATAEXPORTER_VERSION_H
-
-
+#pragma once
 #define PIMDATAEXPORTER_VERSION "@KDEPIM_VERSION@"
-
-#endif
