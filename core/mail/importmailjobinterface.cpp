@@ -106,12 +106,12 @@ void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *d
         if (entry && entry->isDirectory()) {
           const auto resourceDir =
               static_cast<const KArchiveDirectory *>(entry);
-          const QStringList lst = resourceDir->entries();
-          if (lst.count() >= 2) {
+          const QStringList lstResourceDirEntries = resourceDir->entries();
+          if (lstResourceDirEntries.count() >= 2) {
             const QString archPath(prefix + QLatin1Char('/') + entryName +
                                    QLatin1Char('/'));
             ResourceFiles files;
-            for (const QString &name : lst) {
+            for (const QString &name : lstResourceDirEntries) {
               if (name.endsWith(QLatin1String("rc")) &&
                   (name.contains(QLatin1String("akonadi_mbox_resource_")) ||
                    name.contains(
@@ -129,7 +129,7 @@ void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *d
             mListResourceFile.append(files);
           } else {
             qCDebug(PIMDATAEXPORTERCORE_LOG)
-                << " Problem in archive. number of file " << lst.count();
+                << " Problem in archive. number of file " << lstResourceDirEntries.count();
           }
         }
     }
@@ -533,10 +533,10 @@ void ImportMailJobInterface::restoreMails()
             const KArchiveEntry *akonadiAgentConfigEntry =
                 mArchiveDirectory->entry(agentConfigFile);
             if (akonadiAgentConfigEntry->isFile()) {
-              const auto file =
+              const auto fileEntry =
                   static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
-              copyArchiveFileTo(file, copyToDirName);
-              resourceName = file->name();
+              copyArchiveFileTo(fileEntry, copyToDirName);
+              resourceName = fileEntry->name();
               filename = Utils::akonadiAgentName(
                   copyToDirName + QLatin1Char('/') + resourceName);
             }
@@ -613,10 +613,10 @@ void ImportMailJobInterface::restoreMails()
                 const QString mailFile = value.akonadiResources;
                 const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(mailFile);
                 if (dataResouceEntry && dataResouceEntry->isFile()) {
-                  const auto file =
+                  const auto fileEntry =
                       static_cast<const KArchiveFile *>(dataResouceEntry);
                   // TODO Fix me not correct zip filename.
-                  extractZipFile(file, copyToDirName, newUrl);
+                  extractZipFile(fileEntry, copyToDirName, newUrl);
                 }
                 listResourceToSync << newResource;
             } else {
@@ -1149,8 +1149,8 @@ void ImportMailJobInterface::copyArchiveMailAgentConfigGroup(const KSharedConfig
                 KConfigGroup newGroup(archiveConfigDestination, archiveGroupPattern + QString::number(id));
                 oldGroup.copyTo(&newGroup);
                 newGroup.writeEntry(QStringLiteral("saveCollectionId"), id);
-                QUrl path = newGroup.readEntry("storePath", QUrl());
-                if (!QDir(path.path()).exists()) {
+                QUrl storePath = newGroup.readEntry("storePath", QUrl());
+                if (!QDir(storePath.path()).exists()) {
                     newGroup.writeEntry(QStringLiteral("storePath"), QUrl::fromLocalFile(QDir::homePath()));
                 }
             }

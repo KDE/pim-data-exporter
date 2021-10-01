@@ -66,17 +66,17 @@ void GenerateListFileFromArchive::addSubItems(const QString &topLevelPath, const
   const QString space = QString(indent * 2, QLatin1Char(' '));
   const QStringList lst = dir->entries();
   for (const QString &entryName : lst) {
-    const KArchiveEntry *entry = dir->entry(entryName);
-    if (entry) {
-      if (entry->isDirectory()) {
-        const auto dirEntry = static_cast<const KArchiveDirectory *>(entry);
+    const KArchiveEntry *archiveEntry = dir->entry(entryName);
+    if (archiveEntry) {
+      if (archiveEntry->isDirectory()) {
+        const auto dirEntry = static_cast<const KArchiveDirectory *>(archiveEntry);
         // mListFile += space + dirEntry->name();
         addSubItems(
-            topLevelPath, entry, indent,
+            topLevelPath, archiveEntry, indent,
             (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) +
                 dirEntry->name());
-      } else if (entry->isFile()) {
-        const auto file = static_cast<const KArchiveFile *>(entry);
+      } else if (archiveEntry->isFile()) {
+        const auto file = static_cast<const KArchiveFile *>(archiveEntry);
         const QString fileFullPath =
             topLevelPath +
             (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) +

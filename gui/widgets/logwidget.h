@@ -28,6 +28,6 @@ public:
     Q_REQUIRED_RESULT bool isEmpty() const;
 
 private:
-    PimCommon::CustomLogWidget *mCustomLogWidget = nullptr;
+    PimCommon::CustomLogWidget *const mCustomLogWidget;
 };
 

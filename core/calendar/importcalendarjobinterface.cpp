@@ -306,11 +306,11 @@ void ImportCalendarJobInterface::restoreResources()
                   bool isDirResource = value.akonadiConfigFile.contains(
                       QLatin1String("akonadi_icaldir_resource_"));
                   if (dataResouceEntry->isFile()) {
-                    const auto file =
+                    const auto fileEntry =
                         static_cast<const KArchiveFile *>(dataResouceEntry);
                     // TODO  adapt directory name too
                     extractZipFile(
-                        file, copyToDirName, newUrlInfo.path(),
+                        fileEntry, copyToDirName, newUrlInfo.path(),
                         value.akonadiConfigFile.contains(
                             QLatin1String("akonadi_icaldir_resource_")));
                   }
@@ -320,10 +320,10 @@ void ImportCalendarJobInterface::restoreResources()
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
-                          const auto file = static_cast<const KArchiveFile *>(
+                          const auto fileEntry = static_cast<const KArchiveFile *>(
                               akonadiAgentConfigEntry);
-                          copyArchiveFileTo(file, copyToDirName);
-                          resourceName = file->name();
+                          copyArchiveFileTo(fileEntry, copyToDirName);
+                          resourceName = fileEntry->name();
                           filename = Utils::akonadiAgentName(
                               copyToDirName + QLatin1Char('/') + resourceName);
                         }

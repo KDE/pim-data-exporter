@@ -18,8 +18,8 @@
 
 TestExportFile::TestExportFile(QObject *parent)
     : QObject(parent)
+    , mTemporaryFile(QDir::tempPath() + QStringLiteral("/archive.zip"))
 {
-    mTemporaryFile = QDir::tempPath() + QStringLiteral("/archive.zip");
     mArchiveStorage = new ArchiveStorage(mTemporaryFile, this);
     Q_ASSERT(mArchiveStorage->openArchive(true));
 }

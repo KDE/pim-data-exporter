@@ -209,11 +209,11 @@ void ImportAddressbookJobInterface::restoreResources()
                   const KArchiveEntry *dataResouceEntry =
                       mArchiveDirectory->entry(dataFile);
                   if (dataResouceEntry->isFile()) {
-                    const auto file =
+                    const auto fileEntry =
                         static_cast<const KArchiveFile *>(dataResouceEntry);
                     // TODO  adapt directory name too
                     extractZipFile(
-                        file, copyToDirName, newUrlInfo.path(),
+                        fileEntry, copyToDirName, newUrlInfo.path(),
                         value.akonadiConfigFile.contains(
                             QLatin1String("akonadi_contacts_resource_")));
                   }

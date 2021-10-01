@@ -152,10 +152,10 @@ void ImportAlarmJobInterface::restoreResources()
                   bool isDirResource = value.akonadiConfigFile.contains(
                       QLatin1String("akonadi_kalarm_dir_resource_"));
                   if (dataResouceEntry->isFile()) {
-                    const auto file =
+                    const auto fileEntry =
                         static_cast<const KArchiveFile *>(dataResouceEntry);
                     // TODO  adapt directory name too
-                    extractZipFile(file, copyToDirName, newUrlInfo.path(),
+                    extractZipFile(fileEntry, copyToDirName, newUrlInfo.path(),
                                    isDirResource);
                   }
                     settings.insert(QStringLiteral("Path"), newUrl);

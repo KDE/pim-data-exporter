@@ -195,10 +195,10 @@ void ImportNotesJobInterface::restoreResources()
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
-                          const auto file = static_cast<const KArchiveFile *>(
+                          const auto fileEntry = static_cast<const KArchiveFile *>(
                               akonadiAgentConfigEntry);
-                          copyArchiveFileTo(file, copyToDirName);
-                          resourceName = file->name();
+                          copyArchiveFileTo(fileEntry, copyToDirName);
+                          resourceName = fileEntry->name();
                           filename = Utils::akonadiAgentName(
                               copyToDirName + QLatin1Char('/') + resourceName);
                         }
