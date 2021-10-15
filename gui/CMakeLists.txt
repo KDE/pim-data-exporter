@@ -71,7 +71,6 @@ target_link_libraries(pimdataexporter
     KF5::WidgetsAddons
     )
 
-add_subdirectory(kconf_update)
 
 install(TARGETS pimdataexporter ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
 
