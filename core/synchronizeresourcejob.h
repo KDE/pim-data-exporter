@@ -15,7 +15,7 @@ class PIMDATAEXPORTER_EXPORT SynchronizeResourceJob : public QObject
     Q_OBJECT
 public:
     explicit SynchronizeResourceJob(QObject *parent = nullptr);
-    ~SynchronizeResourceJob();
+    ~SynchronizeResourceJob() override;
 
     void start();
     void setListResources(const QStringList &resources);

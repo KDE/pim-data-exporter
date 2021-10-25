@@ -13,6 +13,6 @@ class PimDataExportedUserFeedbackProvider : public KUserFeedback::Provider
     Q_OBJECT
 public:
     explicit PimDataExportedUserFeedbackProvider(QObject *parent = nullptr);
-    ~PimDataExportedUserFeedbackProvider();
+    ~PimDataExportedUserFeedbackProvider() override;
 };
 

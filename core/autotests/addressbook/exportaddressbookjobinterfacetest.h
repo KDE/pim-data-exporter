@@ -13,7 +13,7 @@ class ExportAddressbookJobInterfaceTest : public QObject
     Q_OBJECT
 public:
     explicit ExportAddressbookJobInterfaceTest(QObject *parent = nullptr);
-    ~ExportAddressbookJobInterfaceTest() = default;
+    ~ExportAddressbookJobInterfaceTest() override = default;
 private Q_SLOTS:
     void exportAddressBook();
     void exportAddressBook_data();
