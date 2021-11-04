@@ -10,6 +10,9 @@ if (TARGET KUserFeedbackWidgets)
     target_sources(pimdataexporter PRIVATE
         userfeedback/userfeedbackmanager.cpp
         userfeedback/pimdataexporteduserfeedbackprovider.cpp
+        userfeedback/userfeedbackmanager.h
+        userfeedback/pimdataexporteduserfeedbackprovider.h
+
         )
 endif()
 
@@ -51,8 +54,6 @@ target_sources(pimdataexporter PRIVATE
     dialog/showarchivestructuredialog.h
     dialog/synchronizeresourcedialog.h
     pimdataexporterwindow.h
-    userfeedback/userfeedbackmanager.h
-    userfeedback/pimdataexporteduserfeedbackprovider.h
     widgets/selectiontypetreewidget.h
     widgets/pimdataexporterconfigurewidget.h
     widgets/logwidget.h
