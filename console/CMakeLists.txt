@@ -9,7 +9,12 @@ target_sources(pimdataexporterconsole PRIVATE
     pimdataexporterconsole.cpp
     loginfo.cpp
     loginfile.cpp
-    main.cpp)
+    main.cpp
+    importexportprogressindicatorconsole.h
+    pimdataexporterconsole.h
+    loginfo.h
+    loginfile.h
+    )
 
 
 ecm_qt_declare_logging_category(pimdataexporterconsole HEADER pimdataexportconsole_debug.h IDENTIFIER PIMDATAEXPORTERCONSOLE_LOG CATEGORY_NAME org.kde.pim.pimdataexporterconsole

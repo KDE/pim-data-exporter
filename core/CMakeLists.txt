@@ -47,6 +47,48 @@ target_sources(pimdataexporterprivate PRIVATE
     storeresourcejob.cpp
     backupresourcefilejobbase.cpp
     backupresourcefilejobimpl.cpp
+    utils.h
+    alarm/exportalarmjobinterface.h
+    alarm/importalarmjobinterfaceimpl.h
+    alarm/exportalarmjobinterfaceimpl.h
+    alarm/importalarmjobinterface.h
+    abstractimportexportjob.h
+    backupresourcefilejobimpl.h
+    akregator/importakregatorjobinterface.h
+    akregator/exportakregatorjobinterface.h
+    pimdatabackupthread.h
+    xml/templateselection.h
+    pimdataimportdatainfofile.h
+    mail/smtpmailtransport.h
+    mail/importmailjobinterfaceimpl.h
+    mail/importmailjobinterface.h
+    mail/exportmailjobinterfaceimpl.h
+    mail/importexportmailutil.h
+    mail/exportmailjobinterface.h
+    resourceconverterbase.h
+    notes/importnotesjobinterfaceimpl.h
+    notes/exportnotesjobinterface.h
+    notes/importnotesjobinterface.h
+    notes/exportnotesjobinterfaceimpl.h
+    storeresourcejob.h
+    calendar/exportcalendarjobinterfaceimpl.h
+    calendar/importcalendarjobinterfaceimpl.h
+    calendar/exportcalendarjobinterface.h
+    calendar/importcalendarjobinterface.h
+    pimdataexporterkernel.h
+    importexportprogressindicatorbase.h
+    resourceconverterimpl.h
+    archivestorage.h
+    pimdataexportercore_private_export.h
+    pimdatabackuprestore.h
+    addressbook/exportaddressbookjobinterface.h
+    addressbook/exportaddressbookjobinterfaceimpl.h
+    addressbook/importaddressbookjobinterfaceimpl.h
+    addressbook/importaddressbookjobinterface.h
+    exportresourcearchivejob.h
+    synchronizeresourcejob.h
+    backupresourcefilejobbase.h
+
     )
 
 ecm_qt_declare_logging_category(pimdataexporterprivate HEADER pimdataexportcore_debug.h IDENTIFIER PIMDATAEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore

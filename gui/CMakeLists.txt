@@ -41,7 +41,24 @@ target_sources(pimdataexporter PRIVATE
     pimdataexporterwindow.cpp
     pimdatacommandlineoption.cpp
     main.cpp
-    pimdataexporter.qrc)
+    pimdataexporter.qrc
+    pimdatacommandlineoption.h
+    job/fullsynchronizeresourcesjob.h
+    trayicon/pimdatatrayicon.h
+    dialog/backupfilestructureinfodialog.h
+    dialog/pimdataexporterconfiguredialog.h
+    dialog/selectiontypedialog.h
+    dialog/showarchivestructuredialog.h
+    dialog/synchronizeresourcedialog.h
+    pimdataexporterwindow.h
+    userfeedback/userfeedbackmanager.h
+    userfeedback/pimdataexporteduserfeedbackprovider.h
+    widgets/selectiontypetreewidget.h
+    widgets/pimdataexporterconfigurewidget.h
+    widgets/logwidget.h
+    pimdatabackuprestoreui.h
+    importexportprogressindicatorgui.h
+    )
 
 #TODO create lib
 
