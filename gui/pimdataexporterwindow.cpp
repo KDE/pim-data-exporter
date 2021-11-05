@@ -351,11 +351,12 @@ void PimDataExporterWindow::slotRestoreData()
 
 void PimDataExporterWindow::loadData(const QString &filename, const QString &templateFile)
 {
-    if (KMessageBox::warningYesNo(
-            this,
-            i18n("Before restoring data you must close all kdepim applications. "
-                 "Do you want to continue?"),
-            i18n("Backup")) == KMessageBox::No) {
+    const int answer = KMessageBox::warningYesNo(this,
+                                                 i18n("Before restoring data you must close all kdepim applications. Do you want to continue?"),
+                                                 i18n("Backup"),
+                                                 KStandardGuiItem::cont(),
+                                                 KStandardGuiItem::cancel());
+    if (answer == KMessageBox::No) {
         return;
     }
 

@@ -71,7 +71,12 @@ bool ImportExportProgressIndicatorGui::overwriteConfigMessageBox(const QString &
     if (PimDataExportGlobalConfig::self()->alwaysOverrideFile()) {
         return true;
     }
-    return KMessageBox::warningYesNo(mParentWidget, i18n("\"%1\" already exists. Do you want to overwrite it?", configName), i18n("Restore")) == KMessageBox::Yes;
+    const int answer = KMessageBox::warningYesNo(mParentWidget,
+                                                 i18n("\"%1\" already exists. Do you want to overwrite it?", configName),
+                                                 i18n("Restore"),
+                                                 KStandardGuiItem::overwrite(),
+                                                 KStandardGuiItem::cancel());
+    return (answer == KMessageBox::Yes);
 }
 
 bool ImportExportProgressIndicatorGui::overwriteDirectoryMessageBox(const QString &directory) const
@@ -79,7 +84,12 @@ bool ImportExportProgressIndicatorGui::overwriteDirectoryMessageBox(const QStrin
     if (PimDataExportGlobalConfig::self()->alwaysOverrideDirectory()) {
         return true;
     }
-    return KMessageBox::warningYesNo(mParentWidget, i18n("Directory \"%1\" already exists. Do you want to overwrite it?", directory), i18n("Restore")) == KMessageBox::Yes;
+    const int answer = KMessageBox::warningYesNo(mParentWidget,
+                                                 i18n("Directory \"%1\" already exists. Do you want to overwrite it?", directory),
+                                                 i18n("Restore"),
+                                                 KStandardGuiItem::overwrite(),
+                                                 KStandardGuiItem::cancel());
+    return (answer == KMessageBox::Yes);
 }
 
 void ImportExportProgressIndicatorGui::showErrorMessage(const QString &message, const QString &title)
