@@ -61,6 +61,9 @@ void ExportCalendarJobInterface::slotWriteNextArchiveResource()
         } else if (identifier.contains(QLatin1String("akonadi_ical_resource_"))) {
             backupCalendarResourceFile(identifier, Utils::calendarPath());
             QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
+        } else if (identifier.contains(QLatin1String("akonadi_davgroupware_resource_"))) {
+            backupCalendarResourceFile(identifier, Utils::calendarPath());
+            QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
         } else {
             QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
         }
