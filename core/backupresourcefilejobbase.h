@@ -36,6 +36,7 @@ Q_SIGNALS:
     void info(const QString &);
 
 private:
+    void storeResource(const QString &archivePath);
     QString mDefaultPath;
     QString mIdentifier;
     KZip *mZip = nullptr;

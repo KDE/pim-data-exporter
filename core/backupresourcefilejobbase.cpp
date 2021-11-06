@@ -21,6 +21,17 @@ BackupResourceFileJobBase::~BackupResourceFileJobBase()
 {
 }
 
+void BackupResourceFileJobBase::storeResource(const QString &archivePath)
+{
+    auto job = new StoreResourceJob(this);
+    connect(job, &StoreResourceJob::error, this, &BackupResourceFileJobBase::error);
+    connect(job, &StoreResourceJob::info, this, &BackupResourceFileJobBase::info);
+    job->setArchivePath(archivePath);
+    job->setZip(mZip);
+    job->setIdentifier(mIdentifier);
+    job->start();
+}
+
 void BackupResourceFileJobBase::start()
 {
     if (!canStart()) {
@@ -40,22 +51,15 @@ void BackupResourceFileJobBase::start()
             const QString filename = fi.fileName();
             const bool fileAdded = mZip->addLocalFile(url, archivePath + filename);
             if (fileAdded) {
+                storeResource(archivePath);
                 Q_EMIT info(i18n("\"%1\" was backed up.", filename));
-
-                auto job = new StoreResourceJob(this);
-                connect(job, &StoreResourceJob::error, this, &BackupResourceFileJobBase::error);
-                connect(job, &StoreResourceJob::info, this, &BackupResourceFileJobBase::info);
-                job->setArchivePath(archivePath);
-                job->setZip(mZip);
-                job->setIdentifier(mIdentifier);
-                job->start();
             } else {
                 Q_EMIT error(i18n("\"%1\" file cannot be added to backup file.", filename));
             }
         }
     } else {
-        qCWarning(PIMDATAEXPORTERCORE_LOG) << "resource not added : " << mIdentifier;
-        Q_EMIT error(i18n("\"%1\" resource not added.", mIdentifier));
+        storeResource(archivePath);
+        Q_EMIT info(i18n("\"%1\" was backed up.", mIdentifier));
     }
     deleteLater();
 }
