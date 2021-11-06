@@ -53,6 +53,9 @@ void BackupResourceFileJobBase::start()
                 Q_EMIT error(i18n("\"%1\" file cannot be added to backup file.", filename));
             }
         }
+    } else {
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "resource not added : " << mIdentifier;
+        Q_EMIT error(i18n("\"%1\" resource not added.", mIdentifier));
     }
     deleteLater();
 }
