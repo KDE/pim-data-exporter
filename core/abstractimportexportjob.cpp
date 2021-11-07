@@ -326,7 +326,9 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
         QDir dir(mTempDirName);
         dir.mkdir(defaultPath);
         const QString copyToDirName(mTempDirName + QLatin1Char('/') + defaultPath);
-        QDir().mkpath(copyToDirName);
+        if (!QDir().mkpath(copyToDirName)) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << " impossible to create :" << copyToDirName;
+        }
 
         for (int i = 0, total = mListResourceFile.size(); i < total; ++i) {
             ResourceFiles value = mListResourceFile.at(i);
