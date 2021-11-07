@@ -26,6 +26,6 @@ Q_SIGNALS:
     void error(const QString &);
 
 private:
-    KZip *mArchive = nullptr;
+    KZip *const mArchive;
 };
 

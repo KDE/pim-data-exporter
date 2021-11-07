@@ -18,7 +18,6 @@ ArchiveStorage::~ArchiveStorage()
 {
     closeArchive();
     delete mArchive;
-    mArchive = nullptr;
 }
 
 void ArchiveStorage::closeArchive()
