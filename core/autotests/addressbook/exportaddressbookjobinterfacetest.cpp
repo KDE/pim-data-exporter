@@ -31,7 +31,7 @@ void ExportAddressbookJobInterfaceTest::exportAddressBook()
 {
     QFETCH(QByteArray, configpath);
     QFETCH(Utils::StoredTypes, options);
-    auto file = new TestExportFile(this);
+    std::unique_ptr<TestExportFile> file{new TestExportFile(this)};
     file->setPathConfig(configpath);
     QVector<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;

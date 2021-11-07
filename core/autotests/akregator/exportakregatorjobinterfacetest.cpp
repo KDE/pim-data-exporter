@@ -32,7 +32,7 @@ void ExportAkregatorJobInterfaceTest::exportAkregator()
 {
     QFETCH(QByteArray, configpath);
     QFETCH(Utils::StoredTypes, options);
-    auto file = new TestExportFile(this);
+    std::unique_ptr<TestExportFile> file{new TestExportFile(this)};
     file->setPathConfig(configpath);
 
     auto exportAkregator = new ExportAkregatorJobInterfaceTestImpl(
