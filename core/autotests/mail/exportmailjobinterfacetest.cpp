@@ -25,16 +25,22 @@ void ExportMailJobInterfaceTest::exportMail_data()
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
     Utils::StoredTypes options = {Utils::StoredType::Config};
     QTest::newRow("mailonlyconfig") << pathConfig + QByteArray("mailonlyconfig/") << options;
+
     options = {Utils::StoredType::Config|Utils::StoredType::Resources};
     QTest::newRow("mailconfigandresource") << pathConfig + QByteArray("mailconfigandresource/") << options;
+
     options = {Utils::StoredType::MailTransport};
     QTest::newRow("mailtransport") << pathConfig + QByteArray("mailtransport/") << options;
+
     options = {Utils::StoredType::Identity};
     QTest::newRow("identities") << pathConfig + QByteArray("identities/") << options;
+
     options = {Utils::StoredType::Identity|Utils::StoredType::Config};
     QTest::newRow("identitiesandconfig") << pathConfig + QByteArray("identitiesandconfig/") << options;
+
     options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport};
     QTest::newRow("identitiesandconfigandmailtransport") << pathConfig + QByteArray("identitiesandconfigandmailtransport/") << options;
+
     options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport|Utils::StoredType::Resources|Utils::StoredType::Mails};
     QTest::newRow("identitiesandconfigandmailtransportandresources") << pathConfig + QByteArray("identitiesandconfigandmailtransportandresources/") << options;
 }

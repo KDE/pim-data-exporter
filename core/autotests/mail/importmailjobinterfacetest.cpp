@@ -26,16 +26,22 @@ void ImportMailJobInterfaceTest::importMail_data()
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
 
     QTest::newRow("mailonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/mailonlyconfig/") << options;
+
     options = {Utils::StoredType::Config|Utils::StoredType::Resources};
     QTest::newRow("mailconfigandresource") << QString::fromLatin1(pathConfig) <<  QStringLiteral("mailconfigandresource/") << options;
+
     options = {Utils::StoredType::MailTransport};
     QTest::newRow("mailtransport") << QString::fromLatin1(pathConfig) << QStringLiteral("mailtransport/") << options;
+
     options = {Utils::StoredType::Identity};
     QTest::newRow("identities") << QString::fromLatin1(pathConfig) << QStringLiteral("identities/") << options;
+
     options = {Utils::StoredType::Config|Utils::StoredType::Identity};
     QTest::newRow("identitiesandconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfig/") << options;
+
     options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport};
     QTest::newRow("identitiesandconfigandmailtransport") << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfigandmailtransport/") << options;
+
     options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport|Utils::StoredType::Resources|Utils::Mails};
     QTest::newRow("identitiesandconfigandmailtransportandresources") << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfigandmailtransportandresources/") << options;
 }
