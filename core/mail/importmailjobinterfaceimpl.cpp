@@ -87,7 +87,7 @@ void ImportMailJobInterfaceImpl::addNewIdentity(const QString &name, KConfigGrou
 {
     const QString uniqueName = uniqueIdentityName(name);
     KIdentityManagement::Identity *identity = &mIdentityManager->newFromScratch(uniqueName);
-    group.writeEntry(QStringLiteral("Name"), uniqueName);
+    group.writeEntry(QStringLiteral("Identity"), uniqueName);
     group.sync();
 
     identity->readConfig(group);

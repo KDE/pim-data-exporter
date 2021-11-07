@@ -1062,7 +1062,7 @@ void ImportMailJobInterface::restoreIdentity()
                 }
               }
             }
-            const QString name = group.readEntry(QStringLiteral("Name"));
+            const QString name = group.readEntry(QStringLiteral("Identity"));
             addNewIdentity(name, group, defaultIdentity, oldUid);
           }
             Q_EMIT info(i18n("Identities restored."));
