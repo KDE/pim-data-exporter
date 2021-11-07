@@ -40,6 +40,8 @@ void ExportCalendarsJobInterfaceTest::exportCalendar()
     lstInfo << info;
     info.identifier = QStringLiteral("akonadi_ical_resource_2");
     lstInfo << info;
+    info.identifier = QStringLiteral("akonadi_davgroupware_resource_0");
+    lstInfo << info;
     //Add extra resource.
     info.identifier = QStringLiteral("akonadi_contacts_resource_1");
     lstInfo << info;

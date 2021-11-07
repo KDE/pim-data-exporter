@@ -1,0 +1,5 @@
+[General]
+defaultUsername=kde
+displayName=caldav
+remoteUrls=$default$|CalDav|https://caldav.kde.com/
+settingsVersion=3
