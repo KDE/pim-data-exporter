@@ -77,6 +77,7 @@ void TestExportFile::start()
     compareExportFile.setTempFilePath(mTemporaryFile);
     compareExportFile.setListFilePath(QLatin1String(mPathConfig));
     compareExportFile.compareFiles();
+    qDebug() << " mTemporaryFile : " << mTemporaryFile;
 #ifdef REMOVE_CREATED_ZIP_FILE
     QVERIFY(QFile(mTemporaryFile).remove());
 #endif
