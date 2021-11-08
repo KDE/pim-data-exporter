@@ -620,7 +620,7 @@ void ImportMailJobInterface::restoreConfig()
     const KArchiveEntry *kabldapentry = mArchiveDirectory->entry(Utils::configsPath() + labldaprcStr);
     if (kabldapentry && kabldapentry->isFile()) {
         const auto kabldap = static_cast<const KArchiveFile *>(kabldapentry);
-        const QString kabldaprc = configLocation() + labldaprcStr;
+        const QString kabldaprc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + labldaprcStr;
         if (QFileInfo::exists(kabldaprc)) {
             const int result = mergeConfigMessageBox(labldaprcStr);
             if (result == KMessageBox::Yes) {
@@ -636,7 +636,7 @@ void ImportMailJobInterface::restoreConfig()
     const KArchiveEntry *archiveconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + archiveconfigurationrcStr);
     if (archiveconfigurationentry && archiveconfigurationentry->isFile()) {
         const auto archiveconfiguration = static_cast<const KArchiveFile *>(archiveconfigurationentry);
-        const QString archiveconfigurationrc = configLocation() + archiveconfigurationrcStr;
+        const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveconfigurationrcStr;
         if (QFileInfo::exists(archiveconfigurationrc)) {
             const int result = mergeConfigMessageBox(archiveconfigurationrcStr);
             if (result == KMessageBox::Yes) {
@@ -653,7 +653,7 @@ void ImportMailJobInterface::restoreConfig()
     const KArchiveEntry *archivemailentry = mArchiveDirectory->entry(Utils::configsPath() + folderMailArchiveStr);
     if (archivemailentry && archivemailentry->isFile()) {
         const auto archiveconfiguration = static_cast<const KArchiveFile *>(archivemailentry);
-        const QString archiveconfigurationrc = configLocation() + folderMailArchiveStr;
+        const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + folderMailArchiveStr;
         if (QFileInfo::exists(archiveconfigurationrc)) {
             const int result = mergeConfigMessageBox(folderMailArchiveStr);
             if (result == KMessageBox::Yes) {
@@ -670,7 +670,8 @@ void ImportMailJobInterface::restoreConfig()
     const KArchiveEntry *templatesconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + templatesconfigurationrcStr);
     if (templatesconfigurationentry && templatesconfigurationentry->isFile()) {
         const auto templatesconfiguration = static_cast<const KArchiveFile *>(templatesconfigurationentry);
-        const QString templatesconfigurationrc = configLocation() + templatesconfigurationrcStr;
+        const QString templatesconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + templatesconfigurationrcStr;
+
         if (QFileInfo::exists(templatesconfigurationrc)) {
             // TODO 4.13 allow to merge config.
             if (overwriteConfigMessageBox(templatesconfigurationrcStr)) {
@@ -685,7 +686,7 @@ void ImportMailJobInterface::restoreConfig()
     const KArchiveEntry *kmail2rcentry = mArchiveDirectory->entry(Utils::configsPath() + kmailStr);
     if (kmail2rcentry && kmail2rcentry->isFile()) {
         const auto kmailrc = static_cast<const KArchiveFile *>(kmail2rcentry);
-        const QString kmail2rc = configLocation() + kmailStr;
+        const QString kmail2rc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kmailStr;
         if (QFileInfo::exists(kmail2rc)) {
             if (overwriteConfigMessageBox(kmailStr)) {
                 importKmailConfig(kmailrc, kmail2rc, kmailStr, Utils::configsPath());
