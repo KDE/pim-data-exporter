@@ -308,33 +308,33 @@ void ImportCalendarJobInterface::restoreResources()
                   bool isDirResource = value.akonadiConfigFile.contains(
                       QLatin1String("akonadi_icaldir_resource_"));
                   if (dataResouceEntry->isFile()) {
-                    const auto fileEntry =
-                        static_cast<const KArchiveFile *>(dataResouceEntry);
-                    // TODO  adapt directory name too
-                    extractZipFile(
-                        fileEntry, copyToDirName, newUrlInfo.path(),
-                        value.akonadiConfigFile.contains(
-                            QLatin1String("akonadi_icaldir_resource_")));
+                      const auto fileEntry =
+                          static_cast<const KArchiveFile *>(dataResouceEntry);
+                      // TODO  adapt directory name too
+                      extractZipFile(
+                          fileEntry, copyToDirName, newUrlInfo.path(),
+                          value.akonadiConfigFile.contains(
+                              QLatin1String("akonadi_icaldir_resource_")));
                   }
-                    settings.insert(QStringLiteral("Path"), newUrl);
+                  settings.insert(QStringLiteral("Path"), newUrl);
 
-                    const QString agentConfigFile = value.akonadiAgentConfigFile;
-                    if (!agentConfigFile.isEmpty()) {
-                        const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
-                        if (akonadiAgentConfigEntry->isFile()) {
+                  const QString agentConfigFile = value.akonadiAgentConfigFile;
+                  if (!agentConfigFile.isEmpty()) {
+                      const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
+                      if (akonadiAgentConfigEntry->isFile()) {
                           const auto fileEntry = static_cast<const KArchiveFile *>(
                               akonadiAgentConfigEntry);
                           copyArchiveFileTo(fileEntry, copyToDirName);
                           resourceName = fileEntry->name();
                           filename = Utils::akonadiAgentName(
                               copyToDirName + QLatin1Char('/') + resourceName);
-                        }
-                    }
-                    const QString resourceTypeName = isDirResource ? QStringLiteral("akonadi_icaldir_resource") : QStringLiteral("akonadi_ical_resource");
-                    const QString newResource = createResource(resourceTypeName, filename, settings, true);
-                    infoAboutNewResource(newResource);
-                    listResource << newResource;
-                    qCDebug(PIMDATAEXPORTERCORE_LOG) << " newResource" << newResource;
+                      }
+                  }
+                  const QString resourceTypeName = isDirResource ? QStringLiteral("akonadi_icaldir_resource") : QStringLiteral("akonadi_ical_resource");
+                  const QString newResource = createResource(resourceTypeName, filename, settings, true);
+                  infoAboutNewResource(newResource);
+                  listResource << newResource;
+                  qCDebug(PIMDATAEXPORTERCORE_LOG) << " newResource" << newResource;
                 }
             }
         }

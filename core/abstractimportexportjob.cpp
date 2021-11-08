@@ -336,13 +336,13 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
             if (value.akonadiConfigFile.contains(resourceBaseName + QLatin1Char('_'))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
-                  const auto file =
-                      static_cast<const KArchiveFile *>(fileResouceEntry);
-                  if (!file->copyTo(copyToDirName)) {
-                    qCWarning(PIMDATAEXPORTERCORE_LOG)
-                        << "AbstractImportExportJob file " << value.akonadiConfigFile
-                        << " can not copy to " << copyToDirName;
-                  }
+                    const auto file =
+                        static_cast<const KArchiveFile *>(fileResouceEntry);
+                    if (!file->copyTo(copyToDirName)) {
+                        qCWarning(PIMDATAEXPORTERCORE_LOG)
+                            << "AbstractImportExportJob file " << value.akonadiConfigFile
+                            << " can not copy to " << copyToDirName;
+                    }
                     QString resourceName(file->name());
 
                     QString filename(file->name());
@@ -355,13 +355,13 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                     if (dataResouceEntry->isFile()) {
-                      const auto file =
-                          static_cast<const KArchiveFile *>(dataResouceEntry);
-                      if (!file->copyTo(newUrl)) {
-                        qCWarning(PIMDATAEXPORTERCORE_LOG)
-                            << "AbstractImportExportJob: file " << dataFile << " can not copy to "
-                            << newUrl;
-                      }
+                        const auto file =
+                            static_cast<const KArchiveFile *>(dataResouceEntry);
+                        if (!file->copyTo(newUrl)) {
+                            qCWarning(PIMDATAEXPORTERCORE_LOG)
+                                << "AbstractImportExportJob: file " << dataFile << " can not copy to "
+                                << newUrl;
+                        }
                     }
                     settings.insert(QStringLiteral("Path"), newUrl);
 
@@ -369,13 +369,13 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
-                          const auto file = static_cast<const KArchiveFile *>(
-                              akonadiAgentConfigEntry);
-                          file->copyTo(copyToDirName);
-                          resourceName = file->name();
-                          const QString configPath =
-                              copyToDirName + QLatin1Char('/') + resourceName;
-                          filename = Utils::akonadiAgentName(configPath);
+                            const auto file = static_cast<const KArchiveFile *>(
+                                akonadiAgentConfigEntry);
+                            file->copyTo(copyToDirName);
+                            resourceName = file->name();
+                            const QString configPath =
+                                copyToDirName + QLatin1Char('/') + resourceName;
+                            filename = Utils::akonadiAgentName(configPath);
                         }
                     }
 
