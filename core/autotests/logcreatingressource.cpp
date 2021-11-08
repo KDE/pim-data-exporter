@@ -9,13 +9,13 @@
 #include <QTemporaryFile>
 #include <QTextStream>
 
-#define REMOVE_TEMPORATY_FILE 1
+#define REMOVE_TEMPORARY_FILE 1
 
 LogCreatingResource::LogCreatingResource(QObject *parent)
     : QObject(parent)
 {
     mTmpLogFile = new QTemporaryFile(this);
-#ifdef REMOVE_TEMPORATY_FILE
+#ifdef REMOVE_TEMPORARY_FILE
     mTmpLogFile->setAutoRemove(true);
 #else
     mTmpLogFile->setAutoRemove(false);
