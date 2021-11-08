@@ -271,7 +271,7 @@ void ImportCalendarJobInterface::restoreResources()
     increaseProgressDialog();
     QStringList listResource;
     listResource << restoreResourceFile(QStringLiteral("akonadi_ical_resource"), Utils::calendarPath(), Utils::storeCalendar());
-    listResource << restoreResourceFile(QStringLiteral("akonadi_davgroupware_resource_"), Utils::calendarPath(), Utils::storeCalendar());
+    listResource << restoreResourceFile(QStringLiteral("akonadi_davgroupware_resource"), Utils::calendarPath(), Utils::storeCalendar());
 
     if (!mListResourceFile.isEmpty()) {
         QDir dir(mTempDirName);
