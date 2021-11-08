@@ -354,7 +354,7 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                     QString newUrl = adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
-                    if (dataResouceEntry->isFile()) {
+                    if (dataResouceEntry && dataResouceEntry->isFile()) {
                         const auto file =
                             static_cast<const KArchiveFile *>(dataResouceEntry);
                         if (!file->copyTo(newUrl)) {
@@ -363,7 +363,9 @@ QStringList AbstractImportExportJob::restoreResourceFile(const QString &resource
                                 << newUrl;
                         }
                     }
-                    settings.insert(QStringLiteral("Path"), newUrl);
+                    if (!newUrl.isEmpty()) {
+                        settings.insert(QStringLiteral("Path"), newUrl);
+                    }
 
                     const QString agentConfigFile = value.akonadiAgentConfigFile;
                     if (!agentConfigFile.isEmpty()) {
