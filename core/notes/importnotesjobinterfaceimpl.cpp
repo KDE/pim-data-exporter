@@ -11,8 +11,8 @@
 
 #include <KArchive>
 
-#include <QStandardPaths>
 #include "resourceconverterimpl.h"
+#include <QStandardPaths>
 
 ImportNotesJobInterfaceImpl::ImportNotesJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportNotesJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
@@ -36,14 +36,15 @@ Akonadi::Collection::Id ImportNotesJobInterfaceImpl::convertFolderPathToCollecti
     return converter.convertFolderPathToCollectionId(path);
 }
 
-QString ImportNotesJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ImportNotesJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     return mCreateResource->createResource(resources, name, settings, synchronizeTree);
 }
 
 void ImportNotesJobInterfaceImpl::synchronizeResource(const QStringList &lst)
 {
-    //It's maildir support. Need to add support
+    // It's maildir support. Need to add support
     startSynchronizeResources(lst);
 }
 

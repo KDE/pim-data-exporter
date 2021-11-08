@@ -6,10 +6,10 @@
 
 #include "importexportprogressindicatorgui.h"
 #include "pimdataexporterglobalconfig.h"
-#include <QProgressDialog>
-#include <KMessageBox>
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <KStandardGuiItem>
+#include <QProgressDialog>
 
 ImportExportProgressIndicatorGui::ImportExportProgressIndicatorGui(QWidget *parentWidget, QObject *parent)
     : ImportExportProgressIndicatorBase(parent)
@@ -62,7 +62,10 @@ int ImportExportProgressIndicatorGui::mergeConfigMessageBox(const QString &confi
     if (PimDataExportGlobalConfig::self()->alwaysMergeConfigFile()) {
         return KMessageBox::Yes;
     }
-    return KMessageBox::warningYesNoCancel(mParentWidget, i18n("\"%1\" already exists. Do you want to overwrite it or merge it?", configName), i18n("Restore"), KStandardGuiItem::overwrite(),
+    return KMessageBox::warningYesNoCancel(mParentWidget,
+                                           i18n("\"%1\" already exists. Do you want to overwrite it or merge it?", configName),
+                                           i18n("Restore"),
+                                           KStandardGuiItem::overwrite(),
                                            KGuiItem(i18n("Merge")));
 }
 

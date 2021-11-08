@@ -23,13 +23,10 @@ private:
     void slotSelectAll();
     void slotUnselectAll();
 
-    enum DataType {
-        ResourceIdentifier = Qt::UserRole + 1
-    };
+    enum DataType { ResourceIdentifier = Qt::UserRole + 1 };
 
     void readConfig();
     void writeConfig();
     void selectItem(bool state);
     QListWidget *mListResourceWidget = nullptr;
 };
-

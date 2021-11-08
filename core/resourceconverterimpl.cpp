@@ -35,7 +35,7 @@ QString ResourceConverterImpl::adaptNewResourceUrl(bool overwriteResources, cons
 {
     QString newUrl;
     if (overwriteResources) {
-        //TODO fix me too
+        // TODO fix me too
         newUrl = resourcePath(resourceConfig);
     } else {
         newUrl = adaptResourcePath(resourceConfig, storePath);

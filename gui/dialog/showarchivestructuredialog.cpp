@@ -7,24 +7,24 @@
 #include "showarchivestructuredialog.h"
 #include "core/utils.h"
 #include "pimdataexportgui_debug.h"
-#include <PimCommon/PimUtil>
 #include <KLocalizedString>
-#include <KZip>
 #include <KMessageBox>
+#include <KZip>
+#include <PimCommon/PimUtil>
 
-#include <QTreeWidget>
-#include <QHeaderView>
+#include <KConfigGroup>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
-#include <KConfigGroup>
+#include <QHeaderView>
 #include <QPushButton>
+#include <QTreeWidget>
 #include <QVBoxLayout>
 
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
+#include <KTreeWidgetSearchLine>
 #include <QFileDialog>
 #include <QTemporaryDir>
-#include <KTreeWidgetSearchLine>
 
 ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, QWidget *parent)
     : QDialog(parent)
@@ -90,12 +90,11 @@ void ShowArchiveStructureDialog::slotOpenFile()
             const KArchiveDirectory *topDirectory = mZip->directory();
             const KArchiveEntry *currentEntry = topDirectory->entry(fullPath);
             if (currentEntry && currentEntry->isFile()) {
-              const auto currentFile =
-                  static_cast<const KArchiveFile *>(currentEntry);
+                const auto currentFile = static_cast<const KArchiveFile *>(currentEntry);
 
-              if (!mTempDir) {
-                mTempDir = new QTemporaryDir;
-              }
+                if (!mTempDir) {
+                    mTempDir = new QTemporaryDir;
+                }
                 const QString fileName = mTempDir->path() + QLatin1Char('/') + currentItem->text(0);
                 QFile f(fileName);
                 if (!f.open(QIODevice::WriteOnly)) {
@@ -125,31 +124,27 @@ void ShowArchiveStructureDialog::slotExtractFile()
             const KArchiveDirectory *topDirectory = mZip->directory();
             const KArchiveEntry *currentEntry = topDirectory->entry(fullPath);
             if (currentEntry && currentEntry->isFile()) {
-              const auto currentFile =
-                  static_cast<const KArchiveFile *>(currentEntry);
-              const QString dir = QFileDialog::getExistingDirectory(
-                  this, i18n("Select Directory"), QDir::homePath(),
-                  QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-              if (!dir.isEmpty()) {
-                if (QFile(dir + QLatin1Char('/') + currentFile->name())
-                        .exists()) {
-                    if (KMessageBox::questionYesNo(this,
-                                                   i18n("Do you want to overwrite %1?", currentFile->name()),
-                                                   i18n("File Already Exist"),
-                                                   KStandardGuiItem::overwrite(),
-                                                   KStandardGuiItem::cancel())
-                        == KMessageBox::No) {
-                        return;
+                const auto currentFile = static_cast<const KArchiveFile *>(currentEntry);
+                const QString dir = QFileDialog::getExistingDirectory(this,
+                                                                      i18n("Select Directory"),
+                                                                      QDir::homePath(),
+                                                                      QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+                if (!dir.isEmpty()) {
+                    if (QFile(dir + QLatin1Char('/') + currentFile->name()).exists()) {
+                        if (KMessageBox::questionYesNo(this,
+                                                       i18n("Do you want to overwrite %1?", currentFile->name()),
+                                                       i18n("File Already Exist"),
+                                                       KStandardGuiItem::overwrite(),
+                                                       KStandardGuiItem::cancel())
+                            == KMessageBox::No) {
+                            return;
+                        }
+                    }
+                    if (!currentFile->copyTo(dir)) {
+                        KMessageBox::error(this, i18n("Impossible to copy %1 in %2.", currentFile->name(), dir));
+                        qCWarning(PIMDATAEXPORTERGUI_LOG) << "Impossible to extract file: " << currentItem->text(0) << " to " << dir;
                     }
                 }
-                if (!currentFile->copyTo(dir)) {
-                  KMessageBox::error(this, i18n("Impossible to copy %1 in %2.",
-                                                currentFile->name(), dir));
-                  qCWarning(PIMDATAEXPORTERGUI_LOG)
-                      << "Impossible to extract file: " << currentItem->text(0)
-                      << " to " << dir;
-                }
-              }
             }
         }
     }
@@ -168,7 +163,10 @@ void ShowArchiveStructureDialog::slotItemClicked(QTreeWidgetItem *item, int colu
 
 void ShowArchiveStructureDialog::slotExportAsLogFile()
 {
-    PimCommon::Util::saveTextAs(mLogFile, QStringLiteral("%1 (*.txt)").arg(i18nc("qfiledialog filter files text", "Text Files")), this, QUrl(),
+    PimCommon::Util::saveTextAs(mLogFile,
+                                QStringLiteral("%1 (*.txt)").arg(i18nc("qfiledialog filter files text", "Text Files")),
+                                this,
+                                QUrl(),
                                 i18nc("@title:window", "Export Log File"));
 }
 
@@ -216,58 +214,55 @@ bool ShowArchiveStructureDialog::searchArchiveElement(const QString &path, const
     return result;
 }
 
-void ShowArchiveStructureDialog::addSubItems(const QString &topLevelPath, QTreeWidgetItem *parent, const KArchiveEntry *entry, int indent, const QString &fullpath)
+void ShowArchiveStructureDialog::addSubItems(const QString &topLevelPath,
+                                             QTreeWidgetItem *parent,
+                                             const KArchiveEntry *entry,
+                                             int indent,
+                                             const QString &fullpath)
 {
-  const auto dir = static_cast<const KArchiveDirectory *>(entry);
-  ++indent;
-  const QString space = QString(indent * 2, QLatin1Char(' '));
-  const QStringList lst = dir->entries();
-  for (const QString &entryName : lst) {
-    const KArchiveEntry *archiveEntry = dir->entry(entryName);
-    if (archiveEntry) {
-      if (archiveEntry->isDirectory()) {
-        const auto dirEntry = static_cast<const KArchiveDirectory *>(archiveEntry);
-        QTreeWidgetItem *newTopItem =
-            addItem(parent, dirEntry->name(), QString());
-        QFont font(newTopItem->font(0));
-        font.setBold(true);
-        mLogFile += space + dirEntry->name() + QLatin1Char('\n');
-        newTopItem->setFont(0, font);
-        addSubItems(
-            topLevelPath, newTopItem, archiveEntry, indent,
-            (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) +
-                dirEntry->name());
-      } else if (archiveEntry->isFile()) {
-        const auto file = static_cast<const KArchiveFile *>(archiveEntry);
-        const QString fileFullPath =
-            topLevelPath +
-            (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) +
-            file->name();
-        // qDebug() << " fileFullPath " <<fileFullPath;
-        addItem(parent, file->name(), fileFullPath);
-        mLogFile += space + file->name() + QLatin1Char('\n');
-      }
+    const auto dir = static_cast<const KArchiveDirectory *>(entry);
+    ++indent;
+    const QString space = QString(indent * 2, QLatin1Char(' '));
+    const QStringList lst = dir->entries();
+    for (const QString &entryName : lst) {
+        const KArchiveEntry *archiveEntry = dir->entry(entryName);
+        if (archiveEntry) {
+            if (archiveEntry->isDirectory()) {
+                const auto dirEntry = static_cast<const KArchiveDirectory *>(archiveEntry);
+                QTreeWidgetItem *newTopItem = addItem(parent, dirEntry->name(), QString());
+                QFont font(newTopItem->font(0));
+                font.setBold(true);
+                mLogFile += space + dirEntry->name() + QLatin1Char('\n');
+                newTopItem->setFont(0, font);
+                addSubItems(topLevelPath, newTopItem, archiveEntry, indent, (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + dirEntry->name());
+            } else if (archiveEntry->isFile()) {
+                const auto file = static_cast<const KArchiveFile *>(archiveEntry);
+                const QString fileFullPath = topLevelPath + (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + file->name();
+                // qDebug() << " fileFullPath " <<fileFullPath;
+                addItem(parent, file->name(), fileFullPath);
+                mLogFile += space + file->name() + QLatin1Char('\n');
+            }
+        }
     }
-  }
 }
 
 QTreeWidgetItem *ShowArchiveStructureDialog::addItem(QTreeWidgetItem *parent, const QString &name, const QString &fillFullPath)
 {
-  auto item = new QTreeWidgetItem(parent);
-  item->setText(0, name);
-  item->setData(0, FullPath, fillFullPath);
-  return item;
+    auto item = new QTreeWidgetItem(parent);
+    item->setText(0, name);
+    item->setData(0, FullPath, fillFullPath);
+    return item;
 }
 
 QTreeWidgetItem *ShowArchiveStructureDialog::addTopItem(const QString &name)
 {
-  auto item = new QTreeWidgetItem;
-  QFont font = item->font(0);
-  font.setBold(true);
-  item->setFont(0, font);
-  item->setText(0, name);
-  mTreeWidget->addTopLevelItem(item);
-  return item;
+    auto item = new QTreeWidgetItem;
+    QFont font = item->font(0);
+    font.setBold(true);
+    item->setFont(0, font);
+    item->setText(0, name);
+    mTreeWidget->addTopLevelItem(item);
+    return item;
 }
 
 void ShowArchiveStructureDialog::writeConfig()

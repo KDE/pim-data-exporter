@@ -5,10 +5,10 @@
 */
 
 #include "pimdatabackuprestoreui.h"
-#include "importexportprogressindicatorgui.h"
 #include "abstractimportexportjob.h"
-#include <KMessageBox>
+#include "importexportprogressindicatorgui.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 
 PimDataBackupRestoreUI::PimDataBackupRestoreUI(QWidget *parentWidget, QObject *parent)
     : PimDataBackupRestore(parent)

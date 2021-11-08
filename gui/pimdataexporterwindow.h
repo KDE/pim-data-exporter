@@ -5,8 +5,8 @@
 */
 
 #pragma once
-#include <KXmlGuiWindow>
 #include "utils.h"
+#include <KXmlGuiWindow>
 class LogWidget;
 class KRecentFilesMenu;
 class QAction;
@@ -43,6 +43,7 @@ private:
     void slotFullSyncInstanceFailed(const QString &identifier);
     void slotRestoreDone();
     void slotConfigure();
+
 private:
     void initializeBackupRestoreUi();
     void backupData(const QString &filename = QString(), const QString &templateFile = QString());
@@ -63,4 +64,3 @@ private:
     PimDataBackupRestoreUI *mPimDataBackupRestoreUI = nullptr;
     PimDataTrayIcon *mTrayIcon = nullptr;
 };
-

@@ -7,9 +7,9 @@
 #include "pimdatabackupthread.h"
 #include "pimdataexportcore_debug.h"
 
+#include <KLocalizedString>
 #include <KZip>
 #include <QTemporaryFile>
-#include <KLocalizedString>
 
 PimDataBackupThread::PimDataBackupThread(KZip *zip, const QString &url, const QString &archivePath, const QString &archivename, QObject *parent)
     : QThread(parent)
@@ -49,7 +49,7 @@ void PimDataBackupThread::run()
     archiveFile->close();
     tmp.close();
 
-    const bool fileAdded = mZip->addLocalFile(tmp.fileName(), mArchivePath  + mArchiveName);
+    const bool fileAdded = mZip->addLocalFile(tmp.fileName(), mArchivePath + mArchiveName);
     if (fileAdded) {
         Q_EMIT info(i18n("\"%1\" was backed up.", mUrl));
     } else {

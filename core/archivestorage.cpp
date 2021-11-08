@@ -5,8 +5,8 @@
 */
 
 #include "archivestorage.h"
-#include <KZip>
 #include <KLocalizedString>
+#include <KZip>
 
 ArchiveStorage::ArchiveStorage(const QString &filename, QObject *parent)
     : QObject(parent)

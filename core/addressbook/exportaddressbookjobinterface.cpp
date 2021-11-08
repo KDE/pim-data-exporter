@@ -8,9 +8,9 @@
 
 #include <KLocalizedString>
 
-#include <QTemporaryFile>
 #include <KConfigGroup>
 #include <QFileInfo>
+#include <QTemporaryFile>
 
 #include <QStandardPaths>
 #include <QTimer>

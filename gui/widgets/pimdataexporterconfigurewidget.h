@@ -26,4 +26,3 @@ private:
     QCheckBox *mAlwaysOverrideDirectory = nullptr;
     QCheckBox *mAlwaysMergeConfigFile = nullptr;
 };
-

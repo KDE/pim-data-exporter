@@ -6,9 +6,9 @@
 
 #pragma once
 
+#include "pimdataexporter_export.h"
 #include <QObject>
 #include <QStringList>
-#include "pimdataexporter_export.h"
 class KJob;
 class PIMDATAEXPORTER_EXPORT SynchronizeResourceJob : public QObject
 {
@@ -34,4 +34,3 @@ private:
     int mIndex = 0;
     bool mOnlyCollection = true;
 };
-

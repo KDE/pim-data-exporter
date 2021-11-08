@@ -11,14 +11,17 @@
 #include <QDir>
 #include <QTest>
 
-ImportAlarmJobInterfaceTestImpl::ImportAlarmJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportAlarmJobInterfaceTestImpl::ImportAlarmJobInterfaceTestImpl(QObject *parent,
+                                                                 Utils::StoredTypes typeSelected,
+                                                                 ArchiveStorage *archiveStorage,
+                                                                 int numberOfStep)
     : ImportAlarmJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
 
 ImportAlarmJobInterfaceTestImpl::~ImportAlarmJobInterfaceTestImpl()
 {
-    //Clean up temp repo
+    // Clean up temp repo
     QVERIFY(QDir(extractPath()).removeRecursively());
     QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeAlarm()).removeRecursively());
 }
@@ -30,7 +33,8 @@ Akonadi::Collection::Id ImportAlarmJobInterfaceTestImpl::convertFolderPathToColl
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
-QString ImportAlarmJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ImportAlarmJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     return mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
 }

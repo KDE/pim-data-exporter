@@ -18,4 +18,3 @@ private Q_SLOTS:
     void importCalendar();
     void importCalendar_data();
 };
-

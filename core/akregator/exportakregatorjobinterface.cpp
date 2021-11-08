@@ -37,18 +37,19 @@ void ExportAkregatorJobInterface::start()
 Akonadi::Collection::Id ExportAkregatorJobInterface::convertFolderPathToCollectionId(const QString &path)
 {
     Q_UNREACHABLE();
-    //Unusued
+    // Unusued
     return -1;
 }
 
 QString ExportAkregatorJobInterface::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
 {
     Q_UNREACHABLE();
-    //Unused
+    // Unused
     return {};
 }
 
-QString ExportAkregatorJobInterface::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ExportAkregatorJobInterface::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     Q_UNREACHABLE();
     return {};
@@ -77,7 +78,7 @@ void ExportAkregatorJobInterface::slotCheckBackupData()
         const QString akregatorDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/akregator");
         QDir akregatorDirectory(akregatorDir);
         if (akregatorDirectory.exists()) {
-            const bool akregatorDirAdded = archive()->addLocalDirectory(akregatorDir, Utils::dataPath() +  QStringLiteral("akregator"));
+            const bool akregatorDirAdded = archive()->addLocalDirectory(akregatorDir, Utils::dataPath() + QStringLiteral("akregator"));
             if (!akregatorDirAdded) {
                 Q_EMIT error(i18n("\"%1\" directory cannot be added to backup file.", akregatorDir));
             }

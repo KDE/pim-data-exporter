@@ -19,4 +19,3 @@ private:
     void setProgressDialogLabel(const QString &text) override;
     void showErrorMessage(const QString &message, const QString &title) override;
 };
-

@@ -29,4 +29,3 @@ private:
     QProgressDialog *mProgressDialog = nullptr;
     QWidget *mParentWidget = nullptr;
 };
-

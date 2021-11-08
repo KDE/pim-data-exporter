@@ -6,21 +6,21 @@
 
 #include "backupfilestructureinfodialog.h"
 
-#include <KPIMTextEdit/PlainTextEditorWidget>
 #include <KPIMTextEdit/PlainTextEditor>
+#include <KPIMTextEdit/PlainTextEditorWidget>
 
 #include <KLocalizedString>
 #include <KSharedConfig>
 
 #include <KMessageBox>
 
+#include <KConfigGroup>
+#include <QDialogButtonBox>
 #include <QFile>
 #include <QLabel>
-#include <QVBoxLayout>
-#include <QStandardPaths>
-#include <QDialogButtonBox>
-#include <KConfigGroup>
 #include <QPushButton>
+#include <QStandardPaths>
+#include <QVBoxLayout>
 
 BackupFileStructureInfoDialog::BackupFileStructureInfoDialog(QWidget *parent)
     : QDialog(parent)

@@ -5,8 +5,8 @@
 */
 
 #include "importnotesjobinterfacetest.h"
-#include "importnotesjobinterfacetestimpl.h"
 #include "archivestorage.h"
+#include "importnotesjobinterfacetestimpl.h"
 #include "testimportfile.h"
 #include <QTest>
 QTEST_MAIN(ImportNotesJobInterfaceTest)
@@ -24,7 +24,7 @@ void ImportNotesJobInterfaceTest::importNote_data()
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
     Utils::StoredTypes options = {Utils::StoredType::Config};
     QTest::newRow("test1") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1/") << options;
-    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
     QTest::newRow("test1resource") << QString::fromLatin1(pathConfig) << QStringLiteral("/test1resource/") << options;
 }
 
@@ -38,8 +38,7 @@ void ImportNotesJobInterfaceTest::importNote()
     file->setPathConfig(fullTestPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::notePath());
-    auto impl = new ImportNotesJobInterfaceTestImpl(this, options,
-                                                    file->archiveStorage(), 1);
+    auto impl = new ImportNotesJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
     impl->setExistingPathConfig(fullTestPath + QStringLiteral("/existingconfig/"));
     file->setAbstractImportExportJob(impl);

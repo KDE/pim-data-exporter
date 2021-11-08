@@ -10,10 +10,9 @@
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-# ifndef PIMDATAEXPORTER_TESTS_EXPORT
-#  define PIMDATAEXPORTER_TESTS_EXPORT PIMDATAEXPORTER_EXPORT
-# endif
-#else /* not compiling tests */
-# define PIMDATAEXPORTER_TESTS_EXPORT
+#ifndef PIMDATAEXPORTER_TESTS_EXPORT
+#define PIMDATAEXPORTER_TESTS_EXPORT PIMDATAEXPORTER_EXPORT
 #endif
-
+#else /* not compiling tests */
+#define PIMDATAEXPORTER_TESTS_EXPORT
+#endif

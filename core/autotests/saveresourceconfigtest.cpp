@@ -23,11 +23,15 @@ void SaveResourceConfigTest::setArchive(KZip *archive)
     mArchive = archive;
 }
 
-void SaveResourceConfigTest::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier, const QString &resourceArchiveName, const QStringList &resourceIdentifierTypes)
+void SaveResourceConfigTest::exportResourceToArchive(const QString &archivePath,
+                                                     const QString &url,
+                                                     const QString &identifier,
+                                                     const QString &resourceArchiveName,
+                                                     const QStringList &resourceIdentifierTypes)
 {
     QVERIFY(mArchive);
     bool typeIdentifierFound = false;
-    for (const QString &resourceType: resourceIdentifierTypes) {
+    for (const QString &resourceType : resourceIdentifierTypes) {
         typeIdentifierFound = identifier.startsWith(resourceType);
         if (typeIdentifierFound) {
             break;
@@ -52,6 +56,6 @@ void SaveResourceConfigTest::exportResourceToArchive(const QString &archivePath,
     QVERIFY(!urlAgentConfig.isEmpty());
     const QFileInfo fi(urlAgentConfig);
     const QString filename = fi.fileName();
-    //qDebug() << "urlAgentConfig  " << urlAgentConfig;
+    // qDebug() << "urlAgentConfig  " << urlAgentConfig;
     QVERIFY(mArchive->addLocalFile(urlAgentConfig, archivePath + filename));
 }

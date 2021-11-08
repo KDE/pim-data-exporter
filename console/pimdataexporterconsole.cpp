@@ -5,30 +5,30 @@
 */
 
 #include "pimdataexporterconsole.h"
-#include "pimdatabackuprestore.h"
-#include "pimdataexportconsole_debug.h"
 #include "loginfile.h"
 #include "loginfo.h"
+#include "pimdatabackuprestore.h"
+#include "pimdataexportconsole_debug.h"
 #include "xml/templateselection.h"
 
+#include <MailCommon/FilterManager>
+#include <MailCommon/MailKernel>
 #include <QTimer>
 #include <pimdataexporterkernel.h>
-#include <MailCommon/MailKernel>
-#include <MailCommon/FilterManager>
 
 PimDataExporterConsole::PimDataExporterConsole(QObject *parent)
     : QObject(parent)
     , mPimDataBackupRestore(new PimDataBackupRestore(this))
     , mLogInfo(new LogInfo(this))
 {
-    //Initialize filtermanager
+    // Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
     auto kernel = new PimDataExporterKernel(this);
-    CommonKernel->registerKernelIf(kernel);   //register KernelIf early, it is used by the Filter classes
-    CommonKernel->registerSettingsIf(kernel);   //SettingsIf is used in FolderTreeWidget
+    CommonKernel->registerKernelIf(kernel); // register KernelIf early, it is used by the Filter classes
+    CommonKernel->registerSettingsIf(kernel); // SettingsIf is used in FolderTreeWidget
 
     initializeLogInFile();
-    //TODO initialize akonadi server
+    // TODO initialize akonadi server
 }
 
 PimDataExporterConsole::~PimDataExporterConsole()
@@ -128,7 +128,7 @@ void PimDataExporterConsole::setImportExportFileName(const QString &filename)
 
 void PimDataExporterConsole::start()
 {
-    //Load template if necessary
+    // Load template if necessary
     if (!mTemplateFileName.isEmpty()) {
         TemplateSelection selection;
         const QHash<Utils::AppsType, Utils::importExportParameters> templateElements = selection.loadTemplate(mTemplateFileName);

@@ -29,10 +29,10 @@ protected:
     virtual Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() = 0;
     virtual Q_REQUIRED_RESULT QString resourcePath(const QString &agentIdentifier, const QString &defaultPath) const = 0;
     virtual void backupAddressBookResourceFile(const QString &agentIdentifier, const QString &defaultPath) = 0;
+
 private:
     void slotCheckBackupResource();
 
     void backupConfig();
     int mIndexIdentifier = 0;
 };
-

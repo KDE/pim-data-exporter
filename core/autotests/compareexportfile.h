@@ -28,4 +28,3 @@ private:
     KZip *mZip = nullptr;
     QTemporaryDir *mTempDir = nullptr;
 };
-

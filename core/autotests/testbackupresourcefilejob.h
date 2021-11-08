@@ -17,7 +17,7 @@ public:
 
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
     void setTestPath(const QString &str);
+
 private:
     QString mTestPath;
 };
-

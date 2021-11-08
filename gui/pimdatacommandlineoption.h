@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include <QObject>
 #include <QCommandLineParser>
+#include <QObject>
 
 class QApplication;
 class PimDataExporterWindow;
@@ -31,4 +31,3 @@ private:
     QCommandLineParser mParser;
     PimDataExporterWindow *mExporterWindow = nullptr;
 };
-

@@ -10,7 +10,8 @@
 #include "pimdataexportercore_private_export.h"
 #include <KSharedConfig>
 #include <time.h>
-namespace MailCommon {
+namespace MailCommon
+{
 class MailFilter;
 }
 class ArchiveStorage;
@@ -44,6 +45,7 @@ protected:
     virtual void backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath) = 0;
     virtual void exportFilters() = 0;
     virtual Q_REQUIRED_RESULT QVector<uint> listIdentityUoid() const = 0;
+
 private:
     void slotCheckBackupIdentity();
     void slotCheckBackupMailTransport();
@@ -54,8 +56,7 @@ private:
     void backupTransports();
     void backupConfig();
     void backupIdentity();
-private:
 
+private:
     int mIndexIdentifier = 0;
 };
-

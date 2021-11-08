@@ -5,16 +5,16 @@
 */
 
 #include "synchronizeresourcedialog.h"
-#include <KLocalizedString>
 #include <KListWidgetSearchLine>
+#include <KLocalizedString>
 
-#include <QPushButton>
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
-#include <QListWidget>
-#include <QLabel>
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QDialogButtonBox>
+#include <QLabel>
+#include <QListWidget>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     : QDialog(parent)
@@ -33,8 +33,7 @@ SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     mListResourceWidget = new QListWidget(this);
     mListResourceWidget->setObjectName(QStringLiteral("listresourcewidget"));
-    auto listWidgetSearchLine =
-        new KListWidgetSearchLine(this, mListResourceWidget);
+    auto listWidgetSearchLine = new KListWidgetSearchLine(this, mListResourceWidget);
     listWidgetSearchLine->setObjectName(QStringLiteral("listwidgetsearchline"));
 
     auto hbox = new QHBoxLayout;

@@ -66,11 +66,11 @@ SmtpMailTransport::SmtpMailTransport(const KConfigGroup &group)
         } else {
             qCWarning(PIMDATAEXPORTERCORE_LOG) << "Encryption type is empty. It's a bug";
         }
-        setEncryption(group.readEntry(encryptionStr, 1)); //TODO verify
+        setEncryption(group.readEntry(encryptionStr, 1)); // TODO verify
     }
     const QString authenticationTypeStr(QStringLiteral("authtype"));
     if (group.hasKey(authenticationTypeStr)) {
-        setAuthenticationType(group.readEntry(authenticationTypeStr, 1)); //TODO verify
+        setAuthenticationType(group.readEntry(authenticationTypeStr, 1)); // TODO verify
     }
 }
 

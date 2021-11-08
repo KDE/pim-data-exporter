@@ -11,10 +11,13 @@
 
 #include "resourceconverterimpl.h"
 
-#include <QStandardPaths>
 #include "exportresourcearchivejob.h"
+#include <QStandardPaths>
 
-ExportCalendarJobInterfaceImpl::ExportCalendarJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportCalendarJobInterfaceImpl::ExportCalendarJobInterfaceImpl(QObject *parent,
+                                                               Utils::StoredTypes typeSelected,
+                                                               ArchiveStorage *archiveStorage,
+                                                               int numberOfStep)
     : ExportCalendarJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
@@ -48,19 +51,16 @@ QString ExportCalendarJobInterfaceImpl::convertToFullCollectionPath(const qlongl
 
 void ExportCalendarJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-  auto resourceJob = new ExportResourceArchiveJob(this);
-  resourceJob->setArchivePath(archivePath);
-  resourceJob->setUrl(url);
-  resourceJob->setIdentifier(identifier);
-  resourceJob->setArchive(archive());
-  resourceJob->setArchiveName(Utils::resourceCalendarArchiveName());
-  connect(resourceJob, &ExportResourceArchiveJob::error, this,
-          &ExportCalendarJobInterfaceImpl::error);
-  connect(resourceJob, &ExportResourceArchiveJob::info, this,
-          &ExportCalendarJobInterfaceImpl::info);
-  connect(resourceJob, &ExportResourceArchiveJob::terminated, this,
-          &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);
-  resourceJob->start();
+    auto resourceJob = new ExportResourceArchiveJob(this);
+    resourceJob->setArchivePath(archivePath);
+    resourceJob->setUrl(url);
+    resourceJob->setIdentifier(identifier);
+    resourceJob->setArchive(archive());
+    resourceJob->setArchiveName(Utils::resourceCalendarArchiveName());
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportCalendarJobInterfaceImpl::error);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportCalendarJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportCalendarJobInterfaceImpl::slotCalendarJobTerminated);
+    resourceJob->start();
 }
 
 QString ExportCalendarJobInterfaceImpl::resourcePath(const QString &identifier) const
@@ -81,7 +81,8 @@ QString ExportCalendarJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResour
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
-QString ExportCalendarJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ExportCalendarJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     Q_UNREACHABLE();
     return {};

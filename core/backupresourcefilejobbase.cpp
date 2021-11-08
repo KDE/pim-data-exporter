@@ -5,8 +5,8 @@
 */
 
 #include "backupresourcefilejobbase.h"
-#include "storeresourcejob.h"
 #include "pimdataexportcore_debug.h"
+#include "storeresourcejob.h"
 
 #include <KLocalizedString>
 

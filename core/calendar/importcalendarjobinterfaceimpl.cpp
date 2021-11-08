@@ -9,17 +9,20 @@
 
 #include <PimCommonAkonadi/CreateResource>
 
+#include <KArchive>
 #include <KArchiveDirectory>
 #include <KArchiveEntry>
-#include <KArchive>
 
 #include "pimdataexportcore_debug.h"
 
+#include "resourceconverterimpl.h"
 #include <MailCommon/MailUtil>
 #include <QStandardPaths>
-#include "resourceconverterimpl.h"
 
-ImportCalendarJobInterfaceImpl::ImportCalendarJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportCalendarJobInterfaceImpl::ImportCalendarJobInterfaceImpl(QObject *parent,
+                                                               Utils::StoredTypes typeSelected,
+                                                               ArchiveStorage *archiveStorage,
+                                                               int numberOfStep)
     : ImportCalendarJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
@@ -40,7 +43,8 @@ Akonadi::Collection::Id ImportCalendarJobInterfaceImpl::convertFolderPathToColle
     return converter.convertFolderPathToCollectionId(path);
 }
 
-QString ImportCalendarJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ImportCalendarJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     return mCreateResource->createResource(resources, name, settings, synchronizeTree);
 }

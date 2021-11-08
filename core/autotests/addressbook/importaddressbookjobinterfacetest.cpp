@@ -24,7 +24,7 @@ void ImportAddressbookJobInterfaceTest::importAddressbook_data()
     Utils::StoredTypes options = {Utils::StoredType::Config};
 
     QTest::newRow("addressbookonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookonlyconfig/") << options;
-    options = {Utils::StoredType::Config| Utils::StoredType::Resources};
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
     QTest::newRow("addressbookconfigandresources") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookconfigandresources/") << options;
 }
 
@@ -38,8 +38,7 @@ void ImportAddressbookJobInterfaceTest::importAddressbook()
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::addressbookPath());
-    auto impl = new ImportAddressbookJobInterfaceTestImpl(
-        this, options, file->archiveStorage(), 1);
+    auto impl = new ImportAddressbookJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
     impl->setExtractPath(file->extractPath());
     impl->setTempDirName(file->extractPath());

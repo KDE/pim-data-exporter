@@ -67,4 +67,3 @@ private:
     bool mSpecifySenderOverwriteAddress = false;
     bool mStorePassword = false;
 };
-

@@ -21,7 +21,7 @@
 #include <MailCommon/FolderCollectionMonitor>
 #include <MessageComposer/AkonadiSender>
 
-//Same element as kalarmcal
+// Same element as kalarmcal
 const QLatin1String MIME_ACTIVE("application/x-vnd.kde.alarm.active");
 const QLatin1String MIME_ARCHIVED("application/x-vnd.kde.alarm.archived");
 const QLatin1String MIME_TEMPLATE("application/x-vnd.kde.alarm.template");

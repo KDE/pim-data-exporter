@@ -7,7 +7,8 @@
 #pragma once
 
 #include <QObject>
-namespace KUserFeedback {
+namespace KUserFeedback
+{
 class Provider;
 }
 class UserFeedBackManager : public QObject
@@ -22,4 +23,3 @@ public:
 private:
     KUserFeedback::Provider *mUserFeedbackProvider = nullptr;
 };
-

@@ -15,10 +15,10 @@ BackupResourceFileJobImplTest::BackupResourceFileJobImplTest(QObject *parent)
 
 void BackupResourceFileJobImplTest::shouldHaveDefaultValue()
 {
-  auto job = new BackupResourceFileJobImpl;
-  QVERIFY(!job->canStart());
-  QVERIFY(job->identifier().isEmpty());
-  QVERIFY(!job->zip());
-  QVERIFY(job->defaultPath().isEmpty());
-  delete job;
+    auto job = new BackupResourceFileJobImpl;
+    QVERIFY(!job->canStart());
+    QVERIFY(job->identifier().isEmpty());
+    QVERIFY(!job->zip());
+    QVERIFY(job->defaultPath().isEmpty());
+    delete job;
 }

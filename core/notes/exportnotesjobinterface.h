@@ -37,4 +37,3 @@ private:
     void backupTheme();
     int mIndexIdentifier = 0;
 };
-

@@ -11,7 +11,10 @@
 #include "testbackupresourcefilejob.h"
 #include <QDebug>
 
-ExportMailJobInterfaceTestImpl::ExportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportMailJobInterfaceTestImpl::ExportMailJobInterfaceTestImpl(QObject *parent,
+                                                               Utils::StoredTypes typeSelected,
+                                                               ArchiveStorage *archiveStorage,
+                                                               int numberOfStep)
     : ExportMailJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
@@ -55,11 +58,15 @@ QVector<MailCommon::MailFilter *> ExportMailJobInterfaceTestImpl::filters()
 
 void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    //qDebug() << " void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << identifier;
+    // qDebug() << " void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" <<
+    // identifier;
     SaveResourceConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
-    saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceMailArchiveName(),
-                                               { QLatin1String("akonadi_maildir_resource_"), QLatin1String("akonadi_mixedmaildir_resource_")});
+    saveResourceConfig.exportResourceToArchive(archivePath,
+                                               url,
+                                               identifier,
+                                               Utils::resourceMailArchiveName(),
+                                               {QLatin1String("akonadi_maildir_resource_"), QLatin1String("akonadi_mixedmaildir_resource_")});
     slotMailsJobTerminated();
 }
 
@@ -92,16 +99,14 @@ QString ExportMailJobInterfaceTestImpl::resourcePath(const QString &identifier) 
 
 void ExportMailJobInterfaceTestImpl::backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath)
 {
-  auto job = new TestBackupResourceFileJob(this);
-  job->setDefaultPath(defaultPath);
-  job->setIdentifier(agentIdentifier);
-  job->setTestPath(mPathConfig);
-  job->setZip(archive());
-  connect(job, &TestBackupResourceFileJob::error, this,
-          &ExportMailJobInterfaceTestImpl::error);
-  connect(job, &TestBackupResourceFileJob::info, this,
-          &ExportMailJobInterfaceTestImpl::info);
-  job->start();
+    auto job = new TestBackupResourceFileJob(this);
+    job->setDefaultPath(defaultPath);
+    job->setIdentifier(agentIdentifier);
+    job->setTestPath(mPathConfig);
+    job->setZip(archive());
+    connect(job, &TestBackupResourceFileJob::error, this, &ExportMailJobInterfaceTestImpl::error);
+    connect(job, &TestBackupResourceFileJob::info, this, &ExportMailJobInterfaceTestImpl::info);
+    job->start();
 }
 
 QString ExportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
@@ -111,7 +116,8 @@ QString ExportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResour
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
-QString ExportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ExportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     Q_UNREACHABLE();
     return {};

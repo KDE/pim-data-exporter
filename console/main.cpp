@@ -4,15 +4,15 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
+#include "pimdataexportconsole_debug.h"
 #include "pimdataexporter-version.h"
 #include "pimdataexporterconsole.h"
-#include "pimdataexportconsole_debug.h"
 #include <KAboutData>
 #include <KLocalizedString>
 
+#include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QCoreApplication>
-#include <QCommandLineOption>
 
 #include <QTimer>
 
@@ -21,14 +21,19 @@ int main(int argc, char *argv[])
     QCoreApplication app(argc, argv);
 
     QCommandLineParser parser;
-    KAboutData aboutData(QStringLiteral("pimdataexporterconsole"), i18n("PIM Data Exporter Console"),
-                         QStringLiteral(PIMDATAEXPORTER_VERSION), i18n("PIM Data Exporter Console"), KAboutLicense::GPL_V2,
+    KAboutData aboutData(QStringLiteral("pimdataexporterconsole"),
+                         i18n("PIM Data Exporter Console"),
+                         QStringLiteral(PIMDATAEXPORTER_VERSION),
+                         i18n("PIM Data Exporter Console"),
+                         KAboutLicense::GPL_V2,
                          i18n("Copyright © 2015-2021 pimdataexporter authors"));
     aboutData.addAuthor(i18n("Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
-    parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("logfile"), i18n("File to log information to."), QStringLiteral("file")));
-    parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("template"), i18n("Template file to define what data, settings to import or export."), QStringLiteral("file")));
-    parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("import"), i18n("Import the given file."), QStringLiteral("file")));
-    parser.addOption(QCommandLineOption(QStringList() <<  QStringLiteral("export"), i18n("Export the given file."), QStringLiteral("file")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("logfile"), i18n("File to log information to."), QStringLiteral("file")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("template"),
+                                        i18n("Template file to define what data, settings to import or export."),
+                                        QStringLiteral("file")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("import"), i18n("Import the given file."), QStringLiteral("file")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("export"), i18n("Export the given file."), QStringLiteral("file")));
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);

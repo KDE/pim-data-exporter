@@ -18,4 +18,3 @@ public:
 
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
 };
-

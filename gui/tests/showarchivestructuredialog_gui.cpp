@@ -6,10 +6,10 @@
 
 #include "../dialog/showarchivestructuredialog.h"
 
-#include <QFileDialog>
 #include <QApplication>
-#include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <QCommandLineParser>
+#include <QFileDialog>
 #include <QStandardPaths>
 
 int main(int argc, char **argv)

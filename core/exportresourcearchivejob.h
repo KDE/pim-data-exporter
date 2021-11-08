@@ -44,4 +44,3 @@ private:
     KZip *mZip = nullptr;
     PimDataBackupThread *mThread = nullptr;
 };
-

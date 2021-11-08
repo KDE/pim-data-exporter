@@ -5,8 +5,8 @@
 */
 
 #include "exportmailjobinterfacetest.h"
-#include "exportmailjobinterfacetestimpl.h"
 #include "archivestorage.h"
+#include "exportmailjobinterfacetestimpl.h"
 #include "testexportfile.h"
 #include <KMime/Message>
 #include <QTest>
@@ -26,7 +26,7 @@ void ExportMailJobInterfaceTest::exportMail_data()
     Utils::StoredTypes options = {Utils::StoredType::Config};
     QTest::newRow("mailonlyconfig") << pathConfig + QByteArray("mailonlyconfig/") << options;
 
-    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
     QTest::newRow("mailconfigandresource") << pathConfig + QByteArray("mailconfigandresource/") << options;
 
     options = {Utils::StoredType::MailTransport};
@@ -35,13 +35,14 @@ void ExportMailJobInterfaceTest::exportMail_data()
     options = {Utils::StoredType::Identity};
     QTest::newRow("identities") << pathConfig + QByteArray("identities/") << options;
 
-    options = {Utils::StoredType::Identity|Utils::StoredType::Config};
+    options = {Utils::StoredType::Identity | Utils::StoredType::Config};
     QTest::newRow("identitiesandconfig") << pathConfig + QByteArray("identitiesandconfig/") << options;
 
-    options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport};
+    options = {Utils::StoredType::Config | Utils::StoredType::Identity | Utils::StoredType::MailTransport};
     QTest::newRow("identitiesandconfigandmailtransport") << pathConfig + QByteArray("identitiesandconfigandmailtransport/") << options;
 
-    options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport|Utils::StoredType::Resources|Utils::StoredType::Mails};
+    options = {Utils::StoredType::Config | Utils::StoredType::Identity | Utils::StoredType::MailTransport | Utils::StoredType::Resources
+               | Utils::StoredType::Mails};
     QTest::newRow("identitiesandconfigandmailtransportandresources") << pathConfig + QByteArray("identitiesandconfigandmailtransportandresources/") << options;
 }
 
@@ -67,30 +68,29 @@ void ExportMailJobInterfaceTest::exportMail()
     info.capabilities = QStringList() << QStringLiteral("Resource");
     lstInfo << info;
 
-    //Pop3 support
+    // Pop3 support
     info.identifier = QStringLiteral("akonadi_pop3_resource_1");
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
     info.capabilities = QStringList() << QStringLiteral("Resource");
     lstInfo << info;
 
-    //Imap support
+    // Imap support
     info.identifier = QStringLiteral("akonadi_imap_resource_1");
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
     info.capabilities = QStringList() << QStringLiteral("Resource");
     lstInfo << info;
 
-    //Kolab support
+    // Kolab support
     info.identifier = QStringLiteral("akonadi_kolab_resource_1");
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
     info.capabilities = QStringList() << QStringLiteral("Resource");
     lstInfo << info;
 
-    //Add extra resource.
+    // Add extra resource.
     info.identifier = QStringLiteral("akonadi_kalarm_dir_resource_2");
     lstInfo << info;
 
-    auto exportMail = new ExportMailJobInterfaceTestImpl(
-        this, options, file->archiveStorage(), 1);
+    auto exportMail = new ExportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportMail->setListOfResource(lstInfo);
     exportMail->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportMail);

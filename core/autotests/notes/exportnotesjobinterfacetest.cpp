@@ -5,8 +5,8 @@
 */
 
 #include "exportnotesjobinterfacetest.h"
-#include "exportnotesjobinterfacetestimpl.h"
 #include "archivestorage.h"
+#include "exportnotesjobinterfacetestimpl.h"
 #include "testexportfile.h"
 #include <QTest>
 
@@ -25,7 +25,7 @@ void ExportNotesJobInterfaceTest::exportNote_data()
     Utils::StoredTypes options = {Utils::StoredType::Config};
     QTest::newRow("test1") << pathConfig + QByteArray("test1/") << options;
     QTest::newRow("full") << pathConfig + QByteArray("full/") << options;
-    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
     QTest::newRow("noteconfigandresource") << pathConfig + QByteArray("noteconfigandresource/") << options;
 }
 
@@ -41,12 +41,11 @@ void ExportNotesJobInterfaceTest::exportNote()
     lstInfo << info;
     info.identifier = QStringLiteral("akonadi_akonotes_resource_2");
     lstInfo << info;
-    //Add extra resource.
+    // Add extra resource.
     info.identifier = QStringLiteral("akonadi_kontact_resource_2");
     lstInfo << info;
 
-    auto exportNote = new ExportNotesJobInterfaceTestImpl(
-        this, options, file->archiveStorage(), 1);
+    auto exportNote = new ExportNotesJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
     exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);

@@ -9,7 +9,10 @@
 #include "saveresourceconfigtest.h"
 #include "testbackupresourcefilejob.h"
 
-ExportAddressbookJobInterfaceTestImpl::ExportAddressbookJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportAddressbookJobInterfaceTestImpl::ExportAddressbookJobInterfaceTestImpl(QObject *parent,
+                                                                             Utils::StoredTypes typeSelected,
+                                                                             ArchiveStorage *archiveStorage,
+                                                                             int numberOfStep)
     : ExportAddressbookJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
@@ -29,8 +32,11 @@ void ExportAddressbookJobInterfaceTestImpl::exportResourceToArchive(const QStrin
 {
     SaveResourceConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
-    saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceAddressbookArchiveName(),
-                                               { QLatin1String("akonadi_vcarddir_resource_"), QLatin1String("akonadi_contacts_resource_") });
+    saveResourceConfig.exportResourceToArchive(archivePath,
+                                               url,
+                                               identifier,
+                                               Utils::resourceAddressbookArchiveName(),
+                                               {QLatin1String("akonadi_vcarddir_resource_"), QLatin1String("akonadi_contacts_resource_")});
     slotAddressbookJobTerminated();
 }
 
@@ -60,7 +66,10 @@ QString ExportAddressbookJobInterfaceTestImpl::adaptNewResourceUrl(bool overwrit
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
-QString ExportAddressbookJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString ExportAddressbookJobInterfaceTestImpl::createResource(const QString &resources,
+                                                              const QString &name,
+                                                              const QMap<QString, QVariant> &settings,
+                                                              bool synchronizeTree)
 {
     Q_UNREACHABLE();
     return {};
@@ -76,14 +85,12 @@ QString ExportAddressbookJobInterfaceTestImpl::resourcePath(const QString &agent
 
 void ExportAddressbookJobInterfaceTestImpl::backupAddressBookResourceFile(const QString &agentIdentifier, const QString &defaultPath)
 {
-  auto job = new TestBackupResourceFileJob(this);
-  job->setDefaultPath(defaultPath);
-  job->setIdentifier(agentIdentifier);
-  job->setTestPath(mPathConfig);
-  job->setZip(archive());
-  connect(job, &TestBackupResourceFileJob::error, this,
-          &ExportAddressbookJobInterfaceTestImpl::error);
-  connect(job, &TestBackupResourceFileJob::info, this,
-          &ExportAddressbookJobInterfaceTestImpl::info);
-  job->start();
+    auto job = new TestBackupResourceFileJob(this);
+    job->setDefaultPath(defaultPath);
+    job->setIdentifier(agentIdentifier);
+    job->setTestPath(mPathConfig);
+    job->setZip(archive());
+    connect(job, &TestBackupResourceFileJob::error, this, &ExportAddressbookJobInterfaceTestImpl::error);
+    connect(job, &TestBackupResourceFileJob::info, this, &ExportAddressbookJobInterfaceTestImpl::info);
+    job->start();
 }

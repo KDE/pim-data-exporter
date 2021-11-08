@@ -4,11 +4,11 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "pimdataexporterwindow.h"
 #include "pimdatacommandlineoption.h"
+#include "pimdataexporterwindow.h"
 
-#include <KLocalizedString>
 #include <KDBusService>
+#include <KLocalizedString>
 #include <QApplication>
 #include <kcoreaddons_version.h>
 #if KCOREADDONS_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     app.setDesktopFileName(QStringLiteral("org.kde.pimdataexporter"));
 #if KCOREADDONS_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Kdelibs4ConfigMigrator migrate(QStringLiteral("pimdataexporter"));
-    //old migration. Don't change it
+    // old migration. Don't change it
     migrate.setConfigFiles(QStringList() << QStringLiteral("pimsettingexporterrc"));
     migrate.setUiFiles(QStringList() << QStringLiteral("pimsettingexporter.rc"));
     migrate.migrate();
@@ -43,18 +43,17 @@ int main(int argc, char *argv[])
     parser.createParser(app);
 #ifdef WITH_KUSERFEEDBACK
     if (parser.parseUserFeedback()) {
-      auto provider = new PimDataExportedUserFeedbackProvider;
-      QTextStream(stdout) << provider->describeDataSources() << '\n';
-      delete provider;
-      return 0;
+        auto provider = new PimDataExportedUserFeedbackProvider;
+        QTextStream(stdout) << provider->describeDataSources() << '\n';
+        delete provider;
+        return 0;
     }
 #endif
     KDBusService service(KDBusService::Unique);
 
     auto backupMailWin = new PimDataExporterWindow();
     parser.setExportWindow(backupMailWin);
-    QObject::connect(&service, &KDBusService::activateRequested,
-                     &parser, &PimDataCommandLineOption::slotActivateRequested);
+    QObject::connect(&service, &KDBusService::activateRequested, &parser, &PimDataCommandLineOption::slotActivateRequested);
     backupMailWin->show();
     parser.handleCommandLine();
 

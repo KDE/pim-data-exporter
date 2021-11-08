@@ -5,14 +5,14 @@
 */
 
 #include "testexportfile.h"
+#include "abstractimportexportjob.h"
 #include "archivestorage.h"
 #include "compareexportfile.h"
-#include "abstractimportexportjob.h"
 #include "utils.h"
 
-#include <QTemporaryFile>
 #include <QDir>
 #include <QSignalSpy>
+#include <QTemporaryFile>
 #include <QTest>
 //#define REMOVE_CREATED_ZIP_FILE 1
 
@@ -50,12 +50,12 @@ void TestExportFile::setAbstractImportExportJob(AbstractImportExportJob *abstrac
 
 void TestExportFile::start()
 {
-    //Don't use setTestModeEnabled otherwise we can set env
-    //QStandardPaths::setTestModeEnabled(true);
+    // Don't use setTestModeEnabled otherwise we can set env
+    // QStandardPaths::setTestModeEnabled(true);
     qputenv("XDG_DATA_HOME", mPathConfig + "/share");
     qputenv("XDG_CONFIG_HOME", mPathConfig + "/config");
 
-    //TODO fix file name.
+    // TODO fix file name.
     Utils::addVersion(mArchiveStorage->archive());
     QTemporaryFile exportedFileInfoDummy;
     exportedFileInfoDummy.open();

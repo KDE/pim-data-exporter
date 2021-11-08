@@ -6,14 +6,14 @@
 
 #include "exportnotesjobinterface.h"
 
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KZip>
 #include <QTemporaryFile>
-#include <KConfigGroup>
 
 #include <QDir>
-#include <QTimer>
 #include <QStandardPaths>
+#include <QTimer>
 #include <resourceconverterimpl.h>
 
 ExportNotesJobInterface::ExportNotesJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
@@ -43,7 +43,7 @@ void ExportNotesJobInterface::backupTheme()
     const QString notesThemeDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/knotes/print/");
     QDir notesThemeDirectory(notesThemeDir);
     if (notesThemeDirectory.exists()) {
-        const bool notesDirAdded = archive()->addLocalDirectory(notesThemeDir, Utils::dataPath() +  QStringLiteral("knotes/print"));
+        const bool notesDirAdded = archive()->addLocalDirectory(notesThemeDir, Utils::dataPath() + QStringLiteral("knotes/print"));
         if (!notesDirAdded) {
             Q_EMIT error(i18n("\"%1\" directory cannot be added to backup file.", notesThemeDir));
         }

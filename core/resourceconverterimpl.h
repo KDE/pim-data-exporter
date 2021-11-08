@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include "resourceconverterbase.h"
 #include "pimdataexporter_export.h"
+#include "resourceconverterbase.h"
 class PIMDATAEXPORTER_EXPORT ResourceConverterImpl : public ResourceConverterBase
 {
 public:
@@ -19,4 +19,3 @@ public:
 
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };
-

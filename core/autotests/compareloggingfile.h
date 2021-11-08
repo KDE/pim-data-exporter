@@ -26,4 +26,3 @@ private:
     QString mLoggingFilePath;
     QString mListFilePath;
 };
-

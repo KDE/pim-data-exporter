@@ -8,12 +8,12 @@
 
 #include <KLocalizedString>
 
-#include <QTemporaryFile>
 #include <KConfigGroup>
+#include <QTemporaryFile>
 
-#include <QTimer>
-#include <QFile>
 #include <QColor>
+#include <QFile>
+#include <QTimer>
 #include <resourceconverterimpl.h>
 
 #include <QFileInfo>

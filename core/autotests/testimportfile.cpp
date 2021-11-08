@@ -5,11 +5,11 @@
 */
 
 #include "testimportfile.h"
-#include "archivestorage.h"
-#include "utils.h"
 #include "abstractimportexportjob.h"
+#include "archivestorage.h"
 #include "compareimportfile.h"
 #include "compareloggingfile.h"
+#include "utils.h"
 
 #include <QSignalSpy>
 #include <QTest>
@@ -33,9 +33,9 @@ TestImportFile::~TestImportFile()
 
 void TestImportFile::start()
 {
-    //Don't use setTestModeEnabled otherwise we can set env
-    //QStandardPaths::setTestModeEnabled(true);
-    //TODO define extract path
+    // Don't use setTestModeEnabled otherwise we can set env
+    // QStandardPaths::setTestModeEnabled(true);
+    // TODO define extract path
     QVERIFY(!mExtractPath.isEmpty());
 
     qputenv("XDG_DATA_HOME", mExtractPath.toLatin1() + "/share");

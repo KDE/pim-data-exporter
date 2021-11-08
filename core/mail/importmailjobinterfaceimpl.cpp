@@ -41,8 +41,7 @@ QString ImportMailJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &re
 void ImportMailJobInterfaceImpl::registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId)
 {
     auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection(colId), Akonadi::CollectionFetchJob::Base, this);
-    connect(fetch, &Akonadi::CollectionFetchJob::collectionsReceived,
-            this, [ type](const Akonadi::Collection::List &cols) {
+    connect(fetch, &Akonadi::CollectionFetchJob::collectionsReceived, this, [type](const Akonadi::Collection::List &cols) {
         if (cols.count() != 1) {
             return;
         }
@@ -57,7 +56,7 @@ QString ImportMailJobInterfaceImpl::createResource(const QString &resources, con
 
 void ImportMailJobInterfaceImpl::synchronizeResource(const QStringList &lst)
 {
-    //It's maildir support. Need to add support
+    // It's maildir support. Need to add support
     startSynchronizeResources(lst);
 }
 

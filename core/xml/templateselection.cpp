@@ -53,7 +53,7 @@ QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTem
         return {};
     }
     QFile file(path);
-    if (!file.open(QIODevice::ReadOnly|QIODevice::Text)) {
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qCDebug(PIMDATAEXPORTERCORE_LOG) << "Unable to load file:" << path;
         return {};
     } else {
@@ -62,7 +62,7 @@ QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTem
 
     QHash<Utils::AppsType, Utils::importExportParameters> value;
     if (mStreamReader->readNextStartElement()) {
-        //Compatibility with old version
+        // Compatibility with old version
         if ((mStreamReader->name() == QLatin1String("pimsettingexporter")) || (mStreamReader->name() == QLatin1String("pimdataexporter"))) {
             while (mStreamReader->readNextStartElement()) {
                 Utils::AppsType type = Utils::Unknown;

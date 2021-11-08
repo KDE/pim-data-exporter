@@ -11,7 +11,8 @@
 #include <KSharedConfig>
 #include <time.h>
 class ArchiveStorage;
-namespace KIdentityManagement {
+namespace KIdentityManagement
+{
 class Identity;
 class IdentityManager;
 }
@@ -35,10 +36,13 @@ protected:
     Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
     void backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath) override;
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
-    Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) override;
+    Q_REQUIRED_RESULT QString createResource(const QString &resources,
+                                             const QString &name,
+                                             const QMap<QString, QVariant> &settings,
+                                             bool synchronizeTree) override;
     void exportFilters() override;
     Q_REQUIRED_RESULT QVector<uint> listIdentityUoid() const override;
+
 private:
     KIdentityManagement::IdentityManager *const mIdentityManager;
 };
-

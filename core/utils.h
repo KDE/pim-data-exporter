@@ -5,10 +5,10 @@
 */
 
 #pragma once
-#include "pimdataexporter_export.h"
-#include <QString>
-#include <KSharedConfig>
 #include "pimdataexportcore_debug.h"
+#include "pimdataexporter_export.h"
+#include <KSharedConfig>
+#include <QString>
 class KZip;
 
 struct ResourceFiles {
@@ -17,7 +17,8 @@ struct ResourceFiles {
     QString akonadiAgentConfigFile;
     void debug() const
     {
-        qDebug() << " akonadiconfigfile :" << akonadiConfigFile << " akonadiResources:" << akonadiResources << " akonadiAgentConfigFile:" << akonadiAgentConfigFile;
+        qDebug() << " akonadiconfigfile :" << akonadiConfigFile << " akonadiResources:" << akonadiResources
+                 << " akonadiAgentConfigFile:" << akonadiAgentConfigFile;
     }
 
     bool operator<(const ResourceFiles &other) const
@@ -26,7 +27,8 @@ struct ResourceFiles {
     }
 };
 
-namespace Utils {
+namespace Utils
+{
 struct AkonadiInstanceInfo {
     QString identifier;
     QStringList mimeTypes;
@@ -40,19 +42,11 @@ enum StoredType {
     Resources = 8,
     Config = 16,
     Data = 32
-           //TODO add more type to import/export
+    // TODO add more type to import/export
 };
 Q_DECLARE_FLAGS(StoredTypes, StoredType)
 
-enum AppsType {
-    Unknown = 0,
-    KMail,
-    KAddressBook,
-    KAlarm,
-    KOrganizer,
-    KNotes,
-    Akregator
-};
+enum AppsType { Unknown = 0, KMail, KAddressBook, KAlarm, KOrganizer, KNotes, Akregator };
 
 struct importExportParameters {
     importExportParameters()

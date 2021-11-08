@@ -15,4 +15,3 @@ public:
     explicit PimDataExportedUserFeedbackProvider(QObject *parent = nullptr);
     ~PimDataExportedUserFeedbackProvider() override;
 };
-

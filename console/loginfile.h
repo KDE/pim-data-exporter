@@ -25,16 +25,11 @@ public Q_SLOTS:
     void addError(const QString &message);
     void addInfo(const QString &message);
     void addTitle(const QString &message);
+
 private:
-    enum LogType {
-        AddEndLine = 0,
-        AddInfo,
-        AddError,
-        AddTitle
-    };
+    enum LogType { AddEndLine = 0, AddInfo, AddError, AddTitle };
     void addLogLine(const QString &message, LogType type);
     QString mFileName;
     QTextStream mTextStream;
     QFile *mFile = nullptr;
 };
-

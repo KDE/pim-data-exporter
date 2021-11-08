@@ -15,10 +15,10 @@
 #include <KLocalizedString>
 #include <QTemporaryFile>
 
-#include <QTreeWidgetItem>
-#include <QHeaderView>
 #include "gui/pimdataexportgui_debug.h"
+#include <QHeaderView>
 #include <QPointer>
+#include <QTreeWidgetItem>
 
 SelectionTypeTreeWidget::SelectionTypeTreeWidget(bool backupData, QWidget *parent)
     : QTreeWidget(parent)
@@ -176,53 +176,47 @@ void SelectionTypeTreeWidget::createSubItem(QTreeWidgetItem *parent, Utils::Stor
     switch (type) {
     case Utils::None:
         break;
-    case Utils::Identity:
-    {
-      auto item = new QTreeWidgetItem(parent);
-      item->setText(0, Utils::storedTypeToI18n(Utils::Identity));
-      item->setCheckState(0, Qt::Checked);
-      item->setData(0, action, type);
-      break;
+    case Utils::Identity: {
+        auto item = new QTreeWidgetItem(parent);
+        item->setText(0, Utils::storedTypeToI18n(Utils::Identity));
+        item->setCheckState(0, Qt::Checked);
+        item->setData(0, action, type);
+        break;
     }
-    case Utils::Mails:
-    {
-      auto item = new QTreeWidgetItem(parent);
-      item->setText(0, Utils::storedTypeToI18n(Utils::Mails));
-      item->setCheckState(0, Qt::Checked);
-      item->setData(0, action, type);
-      break;
+    case Utils::Mails: {
+        auto item = new QTreeWidgetItem(parent);
+        item->setText(0, Utils::storedTypeToI18n(Utils::Mails));
+        item->setCheckState(0, Qt::Checked);
+        item->setData(0, action, type);
+        break;
     }
-    case Utils::MailTransport:
-    {
-      auto item = new QTreeWidgetItem(parent);
-      item->setText(0, Utils::storedTypeToI18n(Utils::MailTransport));
-      item->setCheckState(0, Qt::Checked);
-      item->setData(0, action, type);
-      break;
+    case Utils::MailTransport: {
+        auto item = new QTreeWidgetItem(parent);
+        item->setText(0, Utils::storedTypeToI18n(Utils::MailTransport));
+        item->setCheckState(0, Qt::Checked);
+        item->setData(0, action, type);
+        break;
     }
-    case Utils::Resources:
-    {
-      auto item = new QTreeWidgetItem(parent);
-      item->setText(0, Utils::storedTypeToI18n(Utils::Resources));
-      item->setCheckState(0, Qt::Checked);
-      item->setData(0, action, type);
-      break;
+    case Utils::Resources: {
+        auto item = new QTreeWidgetItem(parent);
+        item->setText(0, Utils::storedTypeToI18n(Utils::Resources));
+        item->setCheckState(0, Qt::Checked);
+        item->setData(0, action, type);
+        break;
     }
-    case Utils::Config:
-    {
-      auto item = new QTreeWidgetItem(parent);
-      item->setText(0, Utils::storedTypeToI18n(Utils::Config));
-      item->setCheckState(0, Qt::Checked);
-      item->setData(0, action, type);
-      break;
+    case Utils::Config: {
+        auto item = new QTreeWidgetItem(parent);
+        item->setText(0, Utils::storedTypeToI18n(Utils::Config));
+        item->setCheckState(0, Qt::Checked);
+        item->setData(0, action, type);
+        break;
     }
-    case Utils::Data:
-    {
-      auto item = new QTreeWidgetItem(parent);
-      item->setText(0, Utils::storedTypeToI18n(Utils::Data));
-      item->setCheckState(0, Qt::Checked);
-      item->setData(0, action, type);
-      break;
+    case Utils::Data: {
+        auto item = new QTreeWidgetItem(parent);
+        item->setText(0, Utils::storedTypeToI18n(Utils::Data));
+        item->setCheckState(0, Qt::Checked);
+        item->setData(0, action, type);
+        break;
     }
     }
 }
@@ -264,10 +258,10 @@ void SelectionTypeTreeWidget::slotItemChanged(QTreeWidgetItem *item, int column)
     if (column != 0) {
         return;
     }
-    //Parent
+    // Parent
     if (item->childCount() != 0) {
         changeState(item, item->checkState(0) == Qt::Checked);
-    } else { //child
+    } else { // child
         blockSignals(true);
         QTreeWidgetItem *parent = item->parent();
         Qt::CheckState state = Qt::PartiallyChecked;
@@ -296,7 +290,7 @@ void SelectionTypeTreeWidget::loadFileName(const QString &fileName)
 
 void SelectionTypeTreeWidget::loadDefaultTemplate()
 {
-    //Keep old name for compatibility
+    // Keep old name for compatibility
     QString ret = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/pimsettingexporter/defaulttemplate.xml"));
     if (ret.isEmpty()) {
         ret = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/pimdataexporter/defaulttemplate.xml"));

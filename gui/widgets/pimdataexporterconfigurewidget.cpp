@@ -6,40 +6,38 @@
 
 #include "pimdataexporterconfigurewidget.h"
 #include "pimdataexporterglobalconfig.h"
-#include <QVBoxLayout>
-#include <QCheckBox>
 #include <KLocalizedString>
+#include <QCheckBox>
 #include <QGroupBox>
+#include <QVBoxLayout>
 
 PimDataExporterConfigureWidget::PimDataExporterConfigureWidget(QWidget *parent)
     : QWidget(parent)
 {
-  auto layout = new QVBoxLayout(this);
-  layout->setContentsMargins(0, 0, 0, 0);
+    auto layout = new QVBoxLayout(this);
+    layout->setContentsMargins(0, 0, 0, 0);
 
-  QGroupBox *groupBox = new QGroupBox(i18n("Import"));
-  groupBox->setObjectName(QStringLiteral("import_groupbox"));
-  layout->addWidget(groupBox);
+    QGroupBox *groupBox = new QGroupBox(i18n("Import"));
+    groupBox->setObjectName(QStringLiteral("import_groupbox"));
+    layout->addWidget(groupBox);
 
-  auto groupBoxLayout = new QVBoxLayout;
-  groupBox->setLayout(groupBoxLayout);
+    auto groupBoxLayout = new QVBoxLayout;
+    groupBox->setLayout(groupBoxLayout);
 
-  mAlwaysOverrideFile = new QCheckBox(i18n("Always Override File"));
-  mAlwaysOverrideFile->setObjectName(QStringLiteral("alwaysoverridefile"));
-  groupBoxLayout->addWidget(mAlwaysOverrideFile);
+    mAlwaysOverrideFile = new QCheckBox(i18n("Always Override File"));
+    mAlwaysOverrideFile->setObjectName(QStringLiteral("alwaysoverridefile"));
+    groupBoxLayout->addWidget(mAlwaysOverrideFile);
 
-  mAlwaysOverrideDirectory = new QCheckBox(i18n("Always Override Directory"));
-  mAlwaysOverrideDirectory->setObjectName(
-      QStringLiteral("alwaysoverridedirectory"));
-  groupBoxLayout->addWidget(mAlwaysOverrideDirectory);
+    mAlwaysOverrideDirectory = new QCheckBox(i18n("Always Override Directory"));
+    mAlwaysOverrideDirectory->setObjectName(QStringLiteral("alwaysoverridedirectory"));
+    groupBoxLayout->addWidget(mAlwaysOverrideDirectory);
 
-  mAlwaysMergeConfigFile = new QCheckBox(i18n("Always Merge Config File"));
-  mAlwaysMergeConfigFile->setObjectName(
-      QStringLiteral("alwaysmergeconfigfile"));
-  groupBoxLayout->addWidget(mAlwaysMergeConfigFile);
-  groupBoxLayout->addStretch(1);
+    mAlwaysMergeConfigFile = new QCheckBox(i18n("Always Merge Config File"));
+    mAlwaysMergeConfigFile->setObjectName(QStringLiteral("alwaysmergeconfigfile"));
+    groupBoxLayout->addWidget(mAlwaysMergeConfigFile);
+    groupBoxLayout->addStretch(1);
 
-  initialize();
+    initialize();
 }
 
 PimDataExporterConfigureWidget::~PimDataExporterConfigureWidget()

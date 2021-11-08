@@ -25,9 +25,9 @@ public:
 Q_SIGNALS:
     void error(const QString &);
     void info(const QString &);
+
 private:
     QString mArchivePath;
     QString mIdentifier;
     KZip *mZip = nullptr;
 };
-

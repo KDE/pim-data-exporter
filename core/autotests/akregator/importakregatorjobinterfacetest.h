@@ -14,8 +14,7 @@ class ImportAkregatorJobInterfaceTest : public QObject
 public:
     explicit ImportAkregatorJobInterfaceTest(QObject *parent = nullptr);
     ~ImportAkregatorJobInterfaceTest() override = default;
-//private Q_SLOTS: //TODO reactivate
+    // private Q_SLOTS: //TODO reactivate
     void importAkegator_data();
     void importAkegator();
 };
-

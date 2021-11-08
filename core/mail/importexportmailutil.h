@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include <KConfigGroup>
 #include "pimdataexportercore_private_export.h"
-namespace ImportExportMailUtil {
+#include <KConfigGroup>
+namespace ImportExportMailUtil
+{
 PIMDATAEXPORTER_TESTS_EXPORT void cleanupFolderSettings(KConfigGroup &oldGroup);
 }
-

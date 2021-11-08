@@ -5,9 +5,9 @@
 */
 #pragma once
 
-#include <QVector>
-#include "utils.h"
 #include "logcreatingressource.h"
+#include "utils.h"
+#include <QVector>
 
 class ExportImportUtil
 {
@@ -27,7 +27,7 @@ public:
 
 protected:
     LogCreatingResource *mLogCreateResource = nullptr;
+
 private:
     QString mExtractPath;
 };
-

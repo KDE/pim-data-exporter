@@ -7,11 +7,14 @@
 #include "exportcalendarsjobinterfacetestimpl.h"
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
-#include "testbackupresourcefilejob.h"
 #include "saveresourceconfigtest.h"
+#include "testbackupresourcefilejob.h"
 #include <QDebug>
 
-ExportCalendarsJobInterfaceTestImpl::ExportCalendarsJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportCalendarsJobInterfaceTestImpl::ExportCalendarsJobInterfaceTestImpl(QObject *parent,
+                                                                         Utils::StoredTypes typeSelected,
+                                                                         ArchiveStorage *archiveStorage,
+                                                                         int numberOfStep)
     : ExportCalendarJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
@@ -36,10 +39,15 @@ QString ExportCalendarsJobInterfaceTestImpl::convertToFullCollectionPath(const q
 
 void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-    qDebug() << " void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)" << identifier;
+    qDebug() << " void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)"
+             << identifier;
     SaveResourceConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
-    saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceCalendarArchiveName(), { QLatin1String("akonadi_icaldir_resource_")});
+    saveResourceConfig.exportResourceToArchive(archivePath,
+                                               url,
+                                               identifier,
+                                               Utils::resourceCalendarArchiveName(),
+                                               {QLatin1String("akonadi_icaldir_resource_")});
     slotCalendarJobTerminated();
 }
 
@@ -65,16 +73,14 @@ QString ExportCalendarsJobInterfaceTestImpl::resourcePath(const QString &identif
 
 void ExportCalendarsJobInterfaceTestImpl::backupCalendarResourceFile(const QString &agentIdentifier, const QString &defaultPath)
 {
-  auto job = new TestBackupResourceFileJob(this);
-  job->setDefaultPath(defaultPath);
-  job->setIdentifier(agentIdentifier);
-  job->setTestPath(mPathConfig);
-  job->setZip(archive());
-  connect(job, &TestBackupResourceFileJob::error, this,
-          &ExportCalendarsJobInterfaceTestImpl::error);
-  connect(job, &TestBackupResourceFileJob::info, this,
-          &ExportCalendarsJobInterfaceTestImpl::info);
-  job->start();
+    auto job = new TestBackupResourceFileJob(this);
+    job->setDefaultPath(defaultPath);
+    job->setIdentifier(agentIdentifier);
+    job->setTestPath(mPathConfig);
+    job->setZip(archive());
+    connect(job, &TestBackupResourceFileJob::error, this, &ExportCalendarsJobInterfaceTestImpl::error);
+    connect(job, &TestBackupResourceFileJob::info, this, &ExportCalendarsJobInterfaceTestImpl::info);
+    job->start();
 }
 
 QString ExportCalendarsJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
@@ -84,7 +90,10 @@ QString ExportCalendarsJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteR
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
-QString ExportCalendarsJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString ExportCalendarsJobInterfaceTestImpl::createResource(const QString &resources,
+                                                            const QString &name,
+                                                            const QMap<QString, QVariant> &settings,
+                                                            bool synchronizeTree)
 {
     Q_UNREACHABLE();
     return {};

@@ -29,4 +29,3 @@ private:
     const QString mArchiveName;
     KZip *const mZip;
 };
-

@@ -52,6 +52,6 @@ void LogInfo::addLogLine(const QString &message, LogType type)
         newMessage = message;
         break;
     }
-    //Laurent: Don't use qCDebug here.
+    // Laurent: Don't use qCDebug here.
     qDebug() << newMessage;
 }

@@ -7,7 +7,8 @@
 #pragma once
 
 #include <QDialog>
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class PlainTextEditorWidget;
 }
 class BackupFileStructureInfoDialog : public QDialog
@@ -23,4 +24,3 @@ private:
     void loadStructure();
     KPIMTextEdit::PlainTextEditorWidget *mEditor = nullptr;
 };
-

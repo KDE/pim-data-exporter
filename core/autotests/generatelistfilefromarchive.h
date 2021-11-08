@@ -26,4 +26,3 @@ private:
     QStringList mListFile;
     KZip *mZip = nullptr;
 };
-

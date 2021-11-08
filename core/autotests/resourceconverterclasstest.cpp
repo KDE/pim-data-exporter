@@ -5,8 +5,8 @@
 */
 
 #include "resourceconverterclasstest.h"
-#include "resourceconvertertest.h"
 #include "../utils.h"
+#include "resourceconvertertest.h"
 #include <QTest>
 QTEST_MAIN(ResourceConverterClassTest)
 

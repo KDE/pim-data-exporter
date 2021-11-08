@@ -5,12 +5,12 @@
 */
 
 #include "compareexportfile.h"
+#include "comparefilehelper.h"
 #include "generatelistfilefromarchive.h"
 #include "loadlistfromfile.h"
-#include "comparefilehelper.h"
-#include <QTest>
-#include <QDebug>
 #include <KZip>
+#include <QDebug>
+#include <QTest>
 
 #define REMOVE_TEMPORARY_FILES 1
 
@@ -29,7 +29,7 @@ CompareExportFile::~CompareExportFile()
 void CompareExportFile::compareFiles()
 {
     GenerateListFileFromArchive archive(mTempFilePath);
-    //qDebug() << " archive " << archive.listFile();
+    // qDebug() << " archive " << archive.listFile();
 
     LoadListFromFile f(mListFilePath + QStringLiteral("/list.txt"));
     const QStringList archiveList = archive.listFile();
@@ -40,7 +40,7 @@ void CompareExportFile::compareFiles()
     }
     QVERIFY(equal);
     mZip = new KZip(mTempFilePath);
-    //qDebug() << " mFileName" << mFileName;
+    // qDebug() << " mFileName" << mFileName;
     const bool result = mZip->open(QIODevice::ReadOnly);
     QVERIFY(result);
     const KArchiveDirectory *topDirectory = mZip->directory();
@@ -58,22 +58,21 @@ void CompareExportFile::compareFiles()
                 mTempDir->setAutoRemove(false);
 #endif
             }
-            const auto currentFile =
-                static_cast<const KArchiveFile *>(currentEntry);
+            const auto currentFile = static_cast<const KArchiveFile *>(currentEntry);
 
             QString adaptFile = file;
-            //We store in zip as configs, but we extract in config/
+            // We store in zip as configs, but we extract in config/
             adaptFile.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
             const QString fileName = mTempDir->path() + QLatin1Char('/') + adaptFile;
-            //create path
+            // create path
             const QFileInfo fileInfo(fileName);
             QDir().mkpath(fileInfo.dir().path());
 
             QFile f(fileName);
-            //qDebug() << " fileName" << fileName;
+            // qDebug() << " fileName" << fileName;
             QVERIFY(f.open(QIODevice::WriteOnly));
 
-            //Store data.
+            // Store data.
             const QByteArray data = currentFile->data();
             QCOMPARE(f.write(data), data.length());
             f.close();

@@ -18,4 +18,3 @@ private Q_SLOTS:
     void exportAddressBook();
     void exportAddressBook_data();
 };
-

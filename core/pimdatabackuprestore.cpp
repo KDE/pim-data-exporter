@@ -14,8 +14,8 @@
 #include "addressbook/exportaddressbookjobinterfaceimpl.h"
 #include "addressbook/importaddressbookjobinterfaceimpl.h"
 
-#include "calendar/importcalendarjobinterfaceimpl.h"
 #include "calendar/exportcalendarjobinterfaceimpl.h"
+#include "calendar/importcalendarjobinterfaceimpl.h"
 
 #include "alarm/exportalarmjobinterfaceimpl.h"
 #include "alarm/importalarmjobinterfaceimpl.h"
@@ -93,10 +93,10 @@ bool PimDataBackupRestore::backupStart(const QString &filename)
     addDate();
     Q_EMIT addInfo(i18n("Starting to backup data in \'%1\'", mArchiveStorage->filename()));
     Q_EMIT addEndLine();
-    //Add version
+    // Add version
     Utils::addVersion(mArchiveStorage->archive());
-    //Add exported file info.
-    //qDebug() << "mExportedInfoFileName" << mExportedInfoFileName;
+    // Add exported file info.
+    // qDebug() << "mExportedInfoFileName" << mExportedInfoFileName;
     Utils::storeDataExportInfo(mArchiveStorage->archive(), mExportedInfoFileName);
     backupNextStep();
     return true;
@@ -127,7 +127,8 @@ void PimDataBackupRestore::backupNextStep()
             break;
         case Utils::KAddressBook:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportAddressbookJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData =
+                    new ExportAddressbookJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
@@ -180,7 +181,7 @@ void PimDataBackupRestore::closeArchive()
 void PimDataBackupRestore::backupFinished()
 {
     Q_EMIT addInfo(i18n("Backup in \'%1\' done.", mArchiveStorage->filename()));
-    //At the end
+    // At the end
     closeArchive();
     Q_EMIT backupDone();
     deleteLater();
@@ -198,7 +199,8 @@ void PimDataBackupRestore::restoreNextStep()
             break;
         case Utils::KAddressBook:
             if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportAddressbookJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
+                mImportExportData =
+                    new ImportAddressbookJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;
@@ -283,7 +285,7 @@ bool PimDataBackupRestore::restoreStart(const QString &filename)
 void PimDataBackupRestore::restoreFinished()
 {
     Q_EMIT addInfo(i18n("Restoring data from \'%1\' done.", mArchiveStorage->filename()));
-    //At the end
+    // At the end
     mArchiveStorage->closeArchive();
     delete mArchiveStorage;
     mArchiveStorage = nullptr;

@@ -5,19 +5,19 @@
 */
 
 #include "pimdataexporterconfiguredialog.h"
-#include <QVBoxLayout>
-#include <KLocalizedString>
-#include <QPushButton>
-#include <QDialogButtonBox>
-#include <KPageWidgetModel>
 #include "../widgets/pimdataexporterconfigurewidget.h"
 #include <KConfigGroup>
+#include <KLocalizedString>
+#include <KPageWidgetModel>
 #include <KSharedConfig>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 #ifdef WITH_KUSERFEEDBACK
-#include <KUserFeedback/Provider>
-#include <KUserFeedback/FeedbackConfigWidget>
 #include "userfeedback/userfeedbackmanager.h"
+#include <KUserFeedback/FeedbackConfigWidget>
+#include <KUserFeedback/Provider>
 #endif
 
 PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
@@ -26,7 +26,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     setFaceType(KPageDialog::List);
     setWindowTitle(i18nc("@title:window", "Configure PimDataExporter"));
 
-    //General page
+    // General page
     QWidget *generalConfigureWiget = new QWidget(this);
     auto layout = new QVBoxLayout(generalConfigureWiget);
     mConfigureWidget = new PimDataExporterConfigureWidget(this);
@@ -54,7 +54,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     addPage(userFeedBackPageWidgetPage);
 #endif
 
-    buttonBox()->setStandardButtons(QDialogButtonBox::Ok| QDialogButtonBox::Cancel);
+    buttonBox()->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
     connect(buttonBox(), &QDialogButtonBox::accepted, this, &PimDataExporterConfigureDialog::accept);
     connect(buttonBox(), &QDialogButtonBox::rejected, this, &PimDataExporterConfigureDialog::reject);

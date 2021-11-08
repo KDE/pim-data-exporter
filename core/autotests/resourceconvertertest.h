@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include "resourceconverterbase.h"
 #include "pimdataexporter_export.h"
+#include "resourceconverterbase.h"
 class ResourceConverterTest : public ResourceConverterBase
 {
 public:
@@ -23,8 +23,8 @@ public:
 
     Q_REQUIRED_RESULT QString installDefaultDirectory() override;
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
+
 private:
     Q_REQUIRED_RESULT QString prefixStr() const;
     QString mTestPath;
 };
-

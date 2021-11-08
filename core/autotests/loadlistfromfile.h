@@ -14,7 +14,7 @@ public:
     explicit LoadListFromFile(const QString &filename);
     ~LoadListFromFile();
     Q_REQUIRED_RESULT QStringList fileList() const;
+
 private:
     QStringList mFileList;
 };
-

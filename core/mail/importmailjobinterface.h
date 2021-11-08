@@ -17,10 +17,12 @@ class KArchiveDirectory;
 class KArchiveFile;
 class ArchiveStorage;
 class SmtpMailTransport;
-namespace MailTransport {
+namespace MailTransport
+{
 class Transport;
 }
-namespace MailCommon {
+namespace MailCommon
+{
 }
 
 class PIMDATAEXPORTER_TESTS_EXPORT ImportMailJobInterface : public AbstractImportExportJob
@@ -32,8 +34,9 @@ public:
 
     void start() override;
 
-    //For debugging
+    // For debugging
     void importMailTransport(const QString &tempDirName);
+
 protected:
     void slotNextStep() override;
 
@@ -57,14 +60,17 @@ private:
     void restoreConfig();
     void restoreIdentity();
 
-    void importTemplatesConfig(const KArchiveFile *templatesconfiguration, const QString &templatesconfigurationrc, const QString &filename, const QString &prefix);
+    void
+    importTemplatesConfig(const KArchiveFile *templatesconfiguration, const QString &templatesconfigurationrc, const QString &filename, const QString &prefix);
     void importKmailConfig(const KArchiveFile *kmailsnippet, const QString &kmail2rc, const QString &filename, const QString &prefix);
     void importArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix);
-    void importFolderArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix);
+    void
+    importFolderArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix);
     void searchAllMailsFiles(const KArchiveDirectory *dir, const QString &prefix);
     void storeMailArchiveResource(const KArchiveDirectory *dir, const QString &prefix);
 
-    void importMailArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix);
+    void
+    importMailArchiveConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix);
     void mergeLdapConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void mergeKmailSnippetConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void mergeArchiveMailAgentConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
@@ -77,4 +83,3 @@ private:
     QHash<QString, QString> mHashResources;
     QStringList mFileList;
 };
-

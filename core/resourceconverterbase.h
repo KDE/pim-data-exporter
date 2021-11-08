@@ -31,4 +31,3 @@ public:
     virtual Q_REQUIRED_RESULT QString installDefaultDirectory() = 0;
     virtual QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) = 0;
 };
-

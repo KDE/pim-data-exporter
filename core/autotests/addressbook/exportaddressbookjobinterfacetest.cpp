@@ -42,12 +42,11 @@ void ExportAddressbookJobInterfaceTest::exportAddressBook()
     lstInfo << info;
     info.identifier = QStringLiteral("akonadi_vcard_resource_1");
     lstInfo << info;
-    //Add extra resource.
+    // Add extra resource.
     info.identifier = QStringLiteral("akonadi_kolab_resource_2");
     lstInfo << info;
 
-    auto exportNote = new ExportAddressbookJobInterfaceTestImpl(
-        this, options, file->archiveStorage(), 1);
+    auto exportNote = new ExportAddressbookJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
     exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);

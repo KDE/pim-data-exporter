@@ -5,8 +5,8 @@
 */
 
 #include "exportalarmjobinterfacetest.h"
-#include "exportalarmjobinterfacetestimpl.h"
 #include "archivestorage.h"
+#include "exportalarmjobinterfacetestimpl.h"
 #include "testexportfile.h"
 #include <QTest>
 
@@ -24,7 +24,7 @@ void ExportAlarmJobInterfaceTest::exportAlarm_data()
     Utils::StoredTypes options = {Utils::StoredType::Config};
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
     QTest::newRow("alarmonlyconfig") << pathConfig + QByteArray("alarmonlyconfig/") << options;
-    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
     QTest::newRow("alarmconfigresources") << pathConfig + QByteArray("alarmconfigresources/") << options;
 }
 
@@ -40,12 +40,11 @@ void ExportAlarmJobInterfaceTest::exportAlarm()
     lstInfo << info;
     info.identifier = QStringLiteral("akonadi_kalarm_dir_resource_2");
     lstInfo << info;
-    //Add extra resource.
+    // Add extra resource.
     info.identifier = QStringLiteral("akonadi_kolab_resource_2");
     lstInfo << info;
 
-    auto exportNote = new ExportAlarmJobInterfaceTestImpl(
-        this, options, file->archiveStorage(), 1);
+    auto exportNote = new ExportAlarmJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
     exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);

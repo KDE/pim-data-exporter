@@ -5,8 +5,8 @@
 */
 
 #include "exportcalendarsjobinterfacetest.h"
-#include "exportcalendarsjobinterfacetestimpl.h"
 #include "archivestorage.h"
+#include "exportcalendarsjobinterfacetestimpl.h"
 #include "testexportfile.h"
 #include <QTest>
 #include <memory>
@@ -24,7 +24,7 @@ void ExportCalendarsJobInterfaceTest::exportCalendar_data()
     Utils::StoredTypes options = {Utils::StoredType::Config};
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
     QTest::newRow("calendaronlyconfig") << pathConfig + QByteArray("calendaronlyconfig/") << options;
-    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
     QTest::newRow("calendarconfigandresources") << pathConfig + QByteArray("calendarconfigandresources/") << options;
 }
 
@@ -42,14 +42,13 @@ void ExportCalendarsJobInterfaceTest::exportCalendar()
     lstInfo << info;
     info.identifier = QStringLiteral("akonadi_davgroupware_resource_0");
     lstInfo << info;
-    //Add extra resource.
+    // Add extra resource.
     info.identifier = QStringLiteral("akonadi_contacts_resource_1");
     lstInfo << info;
     info.identifier = QStringLiteral("akonadi_kontact_resource_2");
     lstInfo << info;
 
-    auto exportNote = new ExportCalendarsJobInterfaceTestImpl(
-        this, options, file->archiveStorage(), 1);
+    auto exportNote = new ExportCalendarsJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
     exportNote->setPathConfig(QLatin1String(configpath));
     file->setAbstractImportExportJob(exportNote);

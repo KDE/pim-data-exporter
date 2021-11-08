@@ -23,7 +23,10 @@ protected:
     Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     void synchronizeResource(const QStringList &lst) override;
 
-    Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree = false) override;
+    Q_REQUIRED_RESULT QString createResource(const QString &resources,
+                                             const QString &name,
+                                             const QMap<QString, QVariant> &settings,
+                                             bool synchronizeTree = false) override;
     void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) override;
     void importFilters(const QString &filename) override;
 
@@ -33,10 +36,10 @@ protected:
     void importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) override;
     void importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId) override;
     Q_REQUIRED_RESULT QString configLocation() const override;
+
 private:
     Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
     uint mIdentityUoid = 1;
     uint mMailTransportId = 1;
     QString mExistingPathConfig;
 };
-

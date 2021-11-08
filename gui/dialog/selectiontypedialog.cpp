@@ -7,14 +7,14 @@
 #include "selectiontypedialog.h"
 #include "gui/widgets/selectiontypetreewidget.h"
 
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
+#include <QCheckBox>
+#include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QPushButton>
-#include <KSharedConfig>
-#include <KConfigGroup>
-#include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QCheckBox>
 
 SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     : QDialog(parent)

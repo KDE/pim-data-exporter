@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include <QTreeWidget>
-#include <QHash>
 #include "utils.h"
+#include <QHash>
+#include <QTreeWidget>
 
 class QTreeWidgetItem;
 
@@ -35,9 +35,7 @@ public:
 private:
     void slotItemChanged(QTreeWidgetItem *, int);
 
-    enum ActionType {
-        action = Qt::UserRole + 1
-    };
+    enum ActionType { action = Qt::UserRole + 1 };
 
     void initialize(bool backupData);
     void setSelectItems(bool b);
@@ -58,4 +56,3 @@ private:
     QTreeWidgetItem *mKNotesItem = nullptr;
     QTreeWidgetItem *mAkregatorItem = nullptr;
 };
-

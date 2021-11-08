@@ -7,10 +7,13 @@
 #include "exportalarmjobinterfacetestimpl.h"
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
-#include "testbackupresourcefilejob.h"
 #include "saveresourceconfigtest.h"
+#include "testbackupresourcefilejob.h"
 
-ExportAlarmJobInterfaceTestImpl::ExportAlarmJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportAlarmJobInterfaceTestImpl::ExportAlarmJobInterfaceTestImpl(QObject *parent,
+                                                                 Utils::StoredTypes typeSelected,
+                                                                 ArchiveStorage *archiveStorage,
+                                                                 int numberOfStep)
     : ExportAlarmJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
@@ -35,7 +38,11 @@ void ExportAlarmJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
 {
     SaveResourceConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
-    saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceAlarmArchiveName(), { QLatin1String("akonadi_kalarm_dir_resource_")});
+    saveResourceConfig.exportResourceToArchive(archivePath,
+                                               url,
+                                               identifier,
+                                               Utils::resourceAlarmArchiveName(),
+                                               {QLatin1String("akonadi_kalarm_dir_resource_")});
     slotAlarmJobTerminated();
 }
 
@@ -49,16 +56,14 @@ QString ExportAlarmJobInterfaceTestImpl::resourcePath(const QString &identifier)
 
 void ExportAlarmJobInterfaceTestImpl::backupAlarmResourceFile(const QString &agentIdentifier, const QString &defaultPath)
 {
-  auto job = new TestBackupResourceFileJob(this);
-  job->setDefaultPath(defaultPath);
-  job->setIdentifier(agentIdentifier);
-  job->setTestPath(mPathConfig);
-  job->setZip(archive());
-  connect(job, &TestBackupResourceFileJob::error, this,
-          &ExportAlarmJobInterfaceTestImpl::error);
-  connect(job, &TestBackupResourceFileJob::info, this,
-          &ExportAlarmJobInterfaceTestImpl::info);
-  job->start();
+    auto job = new TestBackupResourceFileJob(this);
+    job->setDefaultPath(defaultPath);
+    job->setIdentifier(agentIdentifier);
+    job->setTestPath(mPathConfig);
+    job->setZip(archive());
+    connect(job, &TestBackupResourceFileJob::error, this, &ExportAlarmJobInterfaceTestImpl::error);
+    connect(job, &TestBackupResourceFileJob::info, this, &ExportAlarmJobInterfaceTestImpl::info);
+    job->start();
 }
 
 QString ExportAlarmJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
@@ -75,7 +80,8 @@ void ExportAlarmJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGrou
     resourceConverterTest.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
 }
 
-QString ExportAlarmJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ExportAlarmJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     Q_UNREACHABLE();
     return {};

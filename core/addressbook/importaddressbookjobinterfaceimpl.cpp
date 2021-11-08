@@ -8,14 +8,17 @@
 #include "archivestorage.h"
 #include <MailCommon/MailUtil>
 #include <PimCommonAkonadi/CreateResource>
-
-#include <KZip>
+#include <KArchive>
 #include <KArchiveEntry>
+#include <KZip>
 
-#include <QStandardPaths>
 #include "resourceconverterimpl.h"
+#include <QStandardPaths>
 
-ImportAddressbookJobInterfaceImpl::ImportAddressbookJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportAddressbookJobInterfaceImpl::ImportAddressbookJobInterfaceImpl(QObject *parent,
+                                                                     Utils::StoredTypes typeSelected,
+                                                                     ArchiveStorage *archiveStorage,
+                                                                     int numberOfStep)
     : ImportAddressbookJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
@@ -32,11 +35,12 @@ Akonadi::Collection::Id ImportAddressbookJobInterfaceImpl::convertFolderPathToCo
 
 void ImportAddressbookJobInterfaceImpl::synchronizeResource(const QStringList &lst)
 {
-    //It's maildir support. Need to add support
+    // It's maildir support. Need to add support
     startSynchronizeResources(lst);
 }
 
-QString ImportAddressbookJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ImportAddressbookJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     return mCreateResource->createResource(resources, name, settings, synchronizeTree);
 }

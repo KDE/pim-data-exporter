@@ -5,8 +5,8 @@
 */
 
 #include "importmailjobinterfacetest.h"
-#include "importmailjobinterfacetestimpl.h"
 #include "archivestorage.h"
+#include "importmailjobinterfacetestimpl.h"
 #include "testimportfile.h"
 #include "utils.h"
 #include <QTest>
@@ -27,8 +27,8 @@ void ImportMailJobInterfaceTest::importMail_data()
 
     QTest::newRow("mailonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/mailonlyconfig/") << options;
 
-    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
-    QTest::newRow("mailconfigandresource") << QString::fromLatin1(pathConfig) <<  QStringLiteral("mailconfigandresource/") << options;
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
+    QTest::newRow("mailconfigandresource") << QString::fromLatin1(pathConfig) << QStringLiteral("mailconfigandresource/") << options;
 
     options = {Utils::StoredType::MailTransport};
     QTest::newRow("mailtransport") << QString::fromLatin1(pathConfig) << QStringLiteral("mailtransport/") << options;
@@ -36,14 +36,16 @@ void ImportMailJobInterfaceTest::importMail_data()
     options = {Utils::StoredType::Identity};
     QTest::newRow("identities") << QString::fromLatin1(pathConfig) << QStringLiteral("identities/") << options;
 
-    options = {Utils::StoredType::Config|Utils::StoredType::Identity};
+    options = {Utils::StoredType::Config | Utils::StoredType::Identity};
     QTest::newRow("identitiesandconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfig/") << options;
 
-    options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport};
-    QTest::newRow("identitiesandconfigandmailtransport") << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfigandmailtransport/") << options;
+    options = {Utils::StoredType::Config | Utils::StoredType::Identity | Utils::StoredType::MailTransport};
+    QTest::newRow("identitiesandconfigandmailtransport")
+        << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfigandmailtransport/") << options;
 
-    options = {Utils::StoredType::Config|Utils::StoredType::Identity|Utils::StoredType::MailTransport|Utils::StoredType::Resources|Utils::Mails};
-    QTest::newRow("identitiesandconfigandmailtransportandresources") << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfigandmailtransportandresources/") << options;
+    options = {Utils::StoredType::Config | Utils::StoredType::Identity | Utils::StoredType::MailTransport | Utils::StoredType::Resources | Utils::Mails};
+    QTest::newRow("identitiesandconfigandmailtransportandresources")
+        << QString::fromLatin1(pathConfig) << QStringLiteral("identitiesandconfigandmailtransportandresources/") << options;
 }
 
 void ImportMailJobInterfaceTest::importMail()
@@ -56,8 +58,7 @@ void ImportMailJobInterfaceTest::importMail()
     file->setPathConfig(fullTestPath);
     file->setExtractPath(QDir::tempPath() + QLatin1Char('/') + testPath);
     file->setExcludePath(Utils::mailsPath()); // ???
-    auto impl = new ImportMailJobInterfaceTestImpl(this, options,
-                                                   file->archiveStorage(), 1);
+    auto impl = new ImportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
     impl->setExtractPath(file->extractPath());
     impl->setTempDirName(file->extractPath());

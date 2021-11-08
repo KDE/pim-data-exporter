@@ -8,9 +8,9 @@
 #include "exportresourcearchivejob.h"
 #include "resourceconverterimpl.h"
 
-#include <MailCommon/MailUtil>
-#include <KZip>
 #include <KConfigGroup>
+#include <KZip>
+#include <MailCommon/MailUtil>
 
 #include <QStandardPaths>
 
@@ -42,19 +42,16 @@ Akonadi::Collection::Id ExportNotesJobInterfaceImpl::convertFolderPathToCollecti
 
 void ExportNotesJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-  auto resourceJob = new ExportResourceArchiveJob(this);
-  resourceJob->setArchivePath(archivePath);
-  resourceJob->setUrl(url);
-  resourceJob->setIdentifier(identifier);
-  resourceJob->setArchive(archive());
-  resourceJob->setArchiveName(Utils::resourceNoteArchiveName());
-  connect(resourceJob, &ExportResourceArchiveJob::error, this,
-          &ExportNotesJobInterfaceImpl::error);
-  connect(resourceJob, &ExportResourceArchiveJob::info, this,
-          &ExportNotesJobInterfaceImpl::info);
-  connect(resourceJob, &ExportResourceArchiveJob::terminated, this,
-          &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
-  resourceJob->start();
+    auto resourceJob = new ExportResourceArchiveJob(this);
+    resourceJob->setArchivePath(archivePath);
+    resourceJob->setUrl(url);
+    resourceJob->setIdentifier(identifier);
+    resourceJob->setArchive(archive());
+    resourceJob->setArchiveName(Utils::resourceNoteArchiveName());
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJobInterfaceImpl::error);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
+    resourceJob->start();
 }
 
 QString ExportNotesJobInterfaceImpl::resourcePath(const QString &identifier) const
@@ -70,7 +67,8 @@ QString ExportNotesJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
-QString ExportNotesJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ExportNotesJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     Q_UNREACHABLE();
     return {};

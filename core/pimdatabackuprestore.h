@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include <QObject>
-#include <QHash>
 #include "utils.h"
+#include <QHash>
+#include <QObject>
 class AbstractImportExportJob;
 class ArchiveStorage;
 
@@ -45,12 +45,10 @@ protected:
 
     virtual void addExportProgressIndicator();
     AbstractImportExportJob *mImportExportData = nullptr;
+
 private:
     void slotJobFinished();
-    enum Action {
-        Backup,
-        Restore
-    };
+    enum Action { Backup, Restore };
     Q_REQUIRED_RESULT bool openArchive(const QString &filename, bool readWrite);
     void backupNextStep();
     void restoreNextStep();
@@ -65,4 +63,3 @@ private:
     Action mAction = Backup;
     ArchiveStorage *mArchiveStorage = nullptr;
 };
-

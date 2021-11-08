@@ -7,7 +7,8 @@
 #pragma once
 
 #include <QWidget>
-namespace PimCommon {
+namespace PimCommon
+{
 class CustomLogWidget;
 }
 
@@ -30,4 +31,3 @@ public:
 private:
     PimCommon::CustomLogWidget *const mCustomLogWidget;
 };
-

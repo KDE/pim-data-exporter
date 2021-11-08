@@ -8,7 +8,8 @@
 #include "../utils.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(UtilsTest)
-UtilsTest::UtilsTest(QObject *parent) : QObject(parent)
+UtilsTest::UtilsTest(QObject *parent)
+    : QObject(parent)
 {
 }
 

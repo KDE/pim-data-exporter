@@ -19,12 +19,12 @@ ImportExportProgressIndicatorBase::~ImportExportProgressIndicatorBase()
 
 void ImportExportProgressIndicatorBase::increaseProgressDialog()
 {
-    //Nothing
+    // Nothing
 }
 
 void ImportExportProgressIndicatorBase::createProgressDialog(const QString &title)
 {
-    //Nothing
+    // Nothing
     Q_UNUSED(title)
 }
 

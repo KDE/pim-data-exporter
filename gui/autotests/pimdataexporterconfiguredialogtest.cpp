@@ -6,9 +6,9 @@
 
 #include "pimdataexporterconfiguredialogtest.h"
 #include "../dialog/pimdataexporterconfiguredialog.h"
+#include "../widgets/pimdataexporterconfigurewidget.h"
 #include <QDialogButtonBox>
 #include <QTest>
-#include "../widgets/pimdataexporterconfigurewidget.h"
 
 PimDataExporterConfigureDialogTest::PimDataExporterConfigureDialogTest(QObject *parent)
     : QObject(parent)

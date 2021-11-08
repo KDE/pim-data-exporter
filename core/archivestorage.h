@@ -5,8 +5,8 @@
 */
 
 #pragma once
-#include <QObject>
 #include "pimdataexporter_export.h"
+#include <QObject>
 class KZip;
 
 class PIMDATAEXPORTER_EXPORT ArchiveStorage : public QObject
@@ -28,4 +28,3 @@ Q_SIGNALS:
 private:
     KZip *const mArchive;
 };
-

@@ -15,8 +15,12 @@ public:
     KZip *archive() const;
     void setArchive(KZip *archive);
 
-    void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier, const QString &resourceArchiveName, const QStringList &resourceIdentifierTypes);
+    void exportResourceToArchive(const QString &archivePath,
+                                 const QString &url,
+                                 const QString &identifier,
+                                 const QString &resourceArchiveName,
+                                 const QStringList &resourceIdentifierTypes);
+
 private:
     KZip *mArchive = nullptr;
 };
-

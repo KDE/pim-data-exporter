@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include <QDialog>
 #include "utils.h"
+#include <QDialog>
 class SelectionTypeTreeWidget;
 class QCheckBox;
 class SelectionTypeDialog : public QDialog
@@ -23,6 +23,7 @@ public:
 
     Q_REQUIRED_RESULT QString exportedFileInfo() const;
     void removeNotSelectedItems();
+
 private:
     void slotSelectAll();
     void slotUnselectAll();
@@ -38,4 +39,3 @@ private:
     QPushButton *mSaveTemplate = nullptr;
     QPushButton *mLoadTemplate = nullptr;
 };
-

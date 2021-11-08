@@ -8,7 +8,8 @@
 
 #include <KPageDialog>
 #ifdef WITH_KUSERFEEDBACK
-namespace KUserFeedback {
+namespace KUserFeedback
+{
 class FeedbackConfigWidget;
 }
 #endif
@@ -30,4 +31,3 @@ private:
     KUserFeedback::FeedbackConfigWidget *mUserFeedbackWidget = nullptr;
 #endif
 };
-

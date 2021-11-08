@@ -9,7 +9,10 @@
 #include "saveresourceconfigtest.h"
 #include <KZip>
 
-ExportNotesJobInterfaceTestImpl::ExportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportNotesJobInterfaceTestImpl::ExportNotesJobInterfaceTestImpl(QObject *parent,
+                                                                 Utils::StoredTypes typeSelected,
+                                                                 ArchiveStorage *archiveStorage,
+                                                                 int numberOfStep)
     : ExportNotesJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
@@ -60,7 +63,8 @@ QString ExportNotesJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResou
     return resourceConverterTest.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
-QString ExportNotesJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ExportNotesJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     Q_UNREACHABLE();
     return {};

@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include <QObject>
 #include "pimdataexporter_export.h"
+#include <QObject>
 class PIMDATAEXPORTER_EXPORT ImportExportProgressIndicatorBase : public QObject
 {
     Q_OBJECT
@@ -34,4 +34,3 @@ Q_SIGNALS:
 protected:
     int mNumberOfStep = 0;
 };
-

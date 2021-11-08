@@ -31,7 +31,7 @@ Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(c
     QString str = path;
     str.remove(prefixStr());
     auto result = str.toLongLong();
-    //Make sure that we use another number.
+    // Make sure that we use another number.
     if (result != -1) {
         result += 10;
     }
@@ -40,11 +40,11 @@ Akonadi::Collection::Id ResourceConverterTest::convertFolderPathToCollectionId(c
 
 QString ResourceConverterTest::changeResourcePath(QString url) const
 {
-    //qDebug() << " need to fix " << url << " mTestPath " << mTestPath;
+    // qDebug() << " need to fix " << url << " mTestPath " << mTestPath;
     if (!url.isEmpty()) {
         url.replace(QLatin1String("[TEST_PATH]"), mTestPath);
     }
-    //qDebug() <<" FIXED " << url;
+    // qDebug() <<" FIXED " << url;
     return url;
 }
 
@@ -53,7 +53,7 @@ void ResourceConverterTest::setTestPath(const QString &testPath)
     mTestPath = testPath;
 }
 
-//TODO use another one ?
+// TODO use another one ?
 QString ResourceConverterTest::installDefaultDirectory()
 {
     return QDir::tempPath();

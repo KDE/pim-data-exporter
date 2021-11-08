@@ -45,4 +45,3 @@ private:
     QString mExcludePath;
     QString mLoggingFilePath;
 };
-

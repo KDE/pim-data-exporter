@@ -18,4 +18,3 @@ private Q_SLOTS:
     void exportAlarm();
     void exportAlarm_data();
 };
-

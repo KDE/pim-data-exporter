@@ -7,40 +7,40 @@
 #include "pimdataexporterwindow.h"
 #include "dialog/showarchivestructuredialog.h"
 #include "importexportprogressindicatorgui.h"
-#include "widgets/logwidget.h"
-#include "pimdataexportgui_debug.h"
 #include "job/fullsynchronizeresourcesjob.h"
+#include "pimdataexportgui_debug.h"
 #include "trayicon/pimdatatrayicon.h"
+#include "widgets/logwidget.h"
 
-#include "pimdataimportdatainfofile.h"
-#include "pimdataexporterkernel.h"
 #include "dialog/selectiontypedialog.h"
-#include "pimdatabackuprestoreui.h"
 #include "dialog/synchronizeresourcedialog.h"
+#include "pimdatabackuprestoreui.h"
+#include "pimdataexporterkernel.h"
+#include "pimdataimportdatainfofile.h"
 
 #include "dialog/backupfilestructureinfodialog.h"
 
-#include <MailCommon/MailKernel>
 #include <MailCommon/FilterManager>
+#include <MailCommon/MailKernel>
 
 #include <PimCommon/PimUtil>
 
 #include <Akonadi/ControlGui>
 
-#include <KStandardAction>
-#include <KConfigGroup>
 #include <KActionCollection>
-#include <KMessageBox>
-#include <KLocalizedString>
-#include <QStatusBar>
-#include <KRecentFilesMenu>
-#include <QPointer>
-#include <KSharedConfig>
+#include <KConfigGroup>
 #include <KFileWidget>
+#include <KLocalizedString>
+#include <KMessageBox>
 #include <KRecentDirs>
-#include <QStandardPaths>
-#include <QFileDialog>
+#include <KRecentFilesMenu>
+#include <KSharedConfig>
+#include <KStandardAction>
 #include <QCommandLineParser>
+#include <QFileDialog>
+#include <QPointer>
+#include <QStandardPaths>
+#include <QStatusBar>
 
 #include <dialog/pimdataexporterconfiguredialog.h>
 
@@ -53,15 +53,15 @@
 PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
 {
-    //Initialize filtermanager
+    // Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
 #ifdef WITH_KUSERFEEDBACK
-    //Initialize
+    // Initialize
     (void)UserFeedBackManager::self();
 #endif
     auto kernel = new PimDataExporterKernel(this);
-    CommonKernel->registerKernelIf(kernel);   //register KernelIf early, it is used by the Filter classes
-    CommonKernel->registerSettingsIf(kernel);   //SettingsIf is used in FolderTreeWidget
+    CommonKernel->registerKernelIf(kernel); // register KernelIf early, it is used by the Filter classes
+    CommonKernel->registerSettingsIf(kernel); // SettingsIf is used in FolderTreeWidget
 
     setupActions(true);
     setupGUI(Keys | StatusBar | Save | Create, QStringLiteral("pimdataexporter.rc"));
@@ -73,8 +73,7 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     statusBar()->hide();
     mTrayIcon = new PimDataTrayIcon(this);
 #ifdef WITH_KUSERFEEDBACK
-    auto userFeedBackNotificationPopup =
-        new KUserFeedback::NotificationPopup(this);
+    auto userFeedBackNotificationPopup = new KUserFeedback::NotificationPopup(this);
     userFeedBackNotificationPopup->setFeedbackProvider(UserFeedBackManager::self()->userFeedbackProvider());
 #endif
 }
@@ -165,12 +164,11 @@ void PimDataExporterWindow::slotFullSyncInstanceFailed(const QString &identifier
 
 void PimDataExporterWindow::showFinishInformation()
 {
-    KMessageBox::information(
-        this,
-        i18n("For restoring data, you must use \"pimdataexporter\". "
-             "Be careful as it can overwrite your existing settings and data."),
-        i18n("Backup"),
-        QStringLiteral("setProgressDialogLabelBackupInfos"));
+    KMessageBox::information(this,
+                             i18n("For restoring data, you must use \"pimdataexporter\". "
+                                  "Be careful as it can overwrite your existing settings and data."),
+                             i18n("Backup"),
+                             QStringLiteral("setProgressDialogLabelBackupInfos"));
     mTrayIcon->setStatus(KStatusNotifierItem::Passive);
 }
 
@@ -214,7 +212,8 @@ void PimDataExporterWindow::setupActions(bool canZipFile)
     mShowArchiveInformationsAction = ac->addAction(QStringLiteral("show_archive_info"), this, &PimDataExporterWindow::slotShowArchiveInformations);
     mShowArchiveInformationsAction->setText(i18n("Show Archive Information..."));
 
-    mShowArchiveInformationsAboutCurrentArchiveAction = ac->addAction(QStringLiteral("show_current_archive_info"), this, &PimDataExporterWindow::slotShowCurrentArchiveInformations);
+    mShowArchiveInformationsAboutCurrentArchiveAction =
+        ac->addAction(QStringLiteral("show_current_archive_info"), this, &PimDataExporterWindow::slotShowCurrentArchiveInformations);
     mShowArchiveInformationsAboutCurrentArchiveAction->setText(i18n("Show Information on current Archive..."));
     mShowArchiveInformationsAboutCurrentArchiveAction->setEnabled(false);
 
@@ -275,10 +274,8 @@ void PimDataExporterWindow::slotSaveLog()
 
 void PimDataExporterWindow::slotBackupData()
 {
-    if (KMessageBox::warningContinueCancel(
-            this,
-            i18n("Please quit all kdepim applications before backing up your data."),
-            i18n("Backup")) == KMessageBox::Cancel) {
+    if (KMessageBox::warningContinueCancel(this, i18n("Please quit all kdepim applications before backing up your data."), i18n("Backup"))
+        == KMessageBox::Cancel) {
         return;
     }
     backupData();
@@ -298,9 +295,11 @@ void PimDataExporterWindow::backupData(const QString &filename, const QString &t
 
         if (currentFileName.isEmpty()) {
             QString recentDirClass;
-            currentFileName = QFileDialog::getSaveFileName(this, i18n("Create backup"),
-                                                           KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")), recentDirClass).toLocalFile(),
-                                                           i18n("Zip file (*.zip)"));
+            currentFileName =
+                QFileDialog::getSaveFileName(this,
+                                             i18n("Create backup"),
+                                             KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")), recentDirClass).toLocalFile(),
+                                             i18n("Zip file (*.zip)"));
             if (currentFileName.isEmpty()) {
                 return;
             }
@@ -360,17 +359,15 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
         return;
     }
 
-    //First select filename.
+    // First select filename.
     QString currentFileName = filename;
     if (currentFileName.isEmpty()) {
         QString recentDirClass;
-        currentFileName
-            = QFileDialog::getOpenFileName(
-                  this,
-                  i18n("Restore backup"),
-                  KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimdataexporter")),
-                                           recentDirClass).toLocalFile(),
-                  QStringLiteral("%1 (*.zip)").arg(i18n("Zip File")));
+        currentFileName =
+            QFileDialog::getOpenFileName(this,
+                                         i18n("Restore backup"),
+                                         KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimdataexporter")), recentDirClass).toLocalFile(),
+                                         QStringLiteral("%1 (*.zip)").arg(i18n("Zip File")));
         if (currentFileName.isEmpty()) {
             return;
         }

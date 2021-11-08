@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include <QObject>
 #include <Akonadi/KMime/SpecialMailCollections>
+#include <QObject>
 class QTemporaryFile;
 class LogCreatingResource : public QObject
 {
@@ -20,8 +20,8 @@ public:
     Q_REQUIRED_RESULT QString logCreateResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree);
     void logSynchronizeResource(const QStringList &lst);
     void logRegisterSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId);
+
 private:
     QTemporaryFile *mTmpLogFile = nullptr;
     int mResourceIndex = 0;
 };
-

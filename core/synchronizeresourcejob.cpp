@@ -10,8 +10,8 @@
 #include <Akonadi/AgentManager>
 #include <Akonadi/ResourceSynchronizationJob>
 
-#include <QTimer>
 #include "pimdataexportcore_debug.h"
+#include <QTimer>
 
 SynchronizeResourceJob::SynchronizeResourceJob(QObject *parent)
     : QObject(parent)
@@ -48,14 +48,13 @@ void SynchronizeResourceJob::slotNextSync()
 
 void SynchronizeResourceJob::slotSynchronizationFinished(KJob *job)
 {
-  auto resourceSync = qobject_cast<Akonadi::ResourceSynchronizationJob *>(job);
-  const QString instanceName = resourceSync->resource().name();
-  if (job->error()) {
-    Q_EMIT synchronizationInstanceFailed(instanceName);
-  } else {
-    Q_EMIT synchronizationInstanceDone(instanceName,
-                                       resourceSync->resource().identifier());
-  }
+    auto resourceSync = qobject_cast<Akonadi::ResourceSynchronizationJob *>(job);
+    const QString instanceName = resourceSync->resource().name();
+    if (job->error()) {
+        Q_EMIT synchronizationInstanceFailed(instanceName);
+    } else {
+        Q_EMIT synchronizationInstanceDone(instanceName, resourceSync->resource().identifier());
+    }
     ++mIndex;
     QTimer::singleShot(0, this, &SynchronizeResourceJob::slotNextSync);
 }

@@ -6,17 +6,20 @@
 
 #include "importnotesjobinterfacetestimpl.h"
 #include "resourceconvertertest.h"
-#include <QTest>
 #include <QDir>
+#include <QTest>
 
-ImportNotesJobInterfaceTestImpl::ImportNotesJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportNotesJobInterfaceTestImpl::ImportNotesJobInterfaceTestImpl(QObject *parent,
+                                                                 Utils::StoredTypes typeSelected,
+                                                                 ArchiveStorage *archiveStorage,
+                                                                 int numberOfStep)
     : ImportNotesJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
 
 ImportNotesJobInterfaceTestImpl::~ImportNotesJobInterfaceTestImpl()
 {
-    //Clean up temp repo
+    // Clean up temp repo
     QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::backupnote()).removeRecursively());
 }
 
@@ -27,7 +30,8 @@ Akonadi::Collection::Id ImportNotesJobInterfaceTestImpl::convertFolderPathToColl
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
-QString ImportNotesJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ImportNotesJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     return mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
 }

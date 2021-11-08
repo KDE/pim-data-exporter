@@ -7,8 +7,8 @@
 #include "selectiontypetreewidgettest.h"
 #include "../widgets/selectiontypetreewidget.h"
 #include <QFile>
-#include <QTest>
 #include <QStandardPaths>
+#include <QTest>
 //#define SHOW_WIDGET
 SelectionTypeTreeWidgetTest::SelectionTypeTreeWidgetTest(QObject *parent)
     : QObject(parent)

@@ -24,7 +24,7 @@ GenerateListFileFromArchive::~GenerateListFileFromArchive()
 void GenerateListFileFromArchive::generateList()
 {
     mZip = new KZip(mFileName);
-    //qDebug() << " mFileName" << mFileName;
+    // qDebug() << " mFileName" << mFileName;
     bool result = mZip->open(QIODevice::ReadOnly);
     QVERIFY(result);
     const KArchiveDirectory *topDirectory = mZip->directory();
@@ -62,27 +62,21 @@ bool GenerateListFileFromArchive::searchArchiveElement(const QString &path, cons
 
 void GenerateListFileFromArchive::addSubItems(const QString &topLevelPath, const KArchiveEntry *entry, int indent, const QString &fullpath)
 {
-  const auto dir = static_cast<const KArchiveDirectory *>(entry);
-  const QString space = QString(indent * 2, QLatin1Char(' '));
-  const QStringList lst = dir->entries();
-  for (const QString &entryName : lst) {
-    const KArchiveEntry *archiveEntry = dir->entry(entryName);
-    if (archiveEntry) {
-      if (archiveEntry->isDirectory()) {
-        const auto dirEntry = static_cast<const KArchiveDirectory *>(archiveEntry);
-        // mListFile += space + dirEntry->name();
-        addSubItems(
-            topLevelPath, archiveEntry, indent,
-            (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) +
-                dirEntry->name());
-      } else if (archiveEntry->isFile()) {
-        const auto file = static_cast<const KArchiveFile *>(archiveEntry);
-        const QString fileFullPath =
-            topLevelPath +
-            (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) +
-            file->name();
-        mListFile += space + fileFullPath;
-      }
+    const auto dir = static_cast<const KArchiveDirectory *>(entry);
+    const QString space = QString(indent * 2, QLatin1Char(' '));
+    const QStringList lst = dir->entries();
+    for (const QString &entryName : lst) {
+        const KArchiveEntry *archiveEntry = dir->entry(entryName);
+        if (archiveEntry) {
+            if (archiveEntry->isDirectory()) {
+                const auto dirEntry = static_cast<const KArchiveDirectory *>(archiveEntry);
+                // mListFile += space + dirEntry->name();
+                addSubItems(topLevelPath, archiveEntry, indent, (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + dirEntry->name());
+            } else if (archiveEntry->isFile()) {
+                const auto file = static_cast<const KArchiveFile *>(archiveEntry);
+                const QString fileFullPath = topLevelPath + (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + file->name();
+                mListFile += space + fileFullPath;
+            }
+        }
     }
-  }
 }

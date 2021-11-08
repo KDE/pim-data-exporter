@@ -10,7 +10,6 @@
 ImportExportProgressIndicatorTest::ImportExportProgressIndicatorTest(QObject *parent)
     : ImportExportProgressIndicatorBase(parent)
 {
-
 }
 
 int ImportExportProgressIndicatorTest::mergeConfigMessageBox(const QString &configName) const

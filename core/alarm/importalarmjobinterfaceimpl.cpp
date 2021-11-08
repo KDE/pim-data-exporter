@@ -7,14 +7,14 @@
 #include "importalarmjobinterfaceimpl.h"
 #include "archivestorage.h"
 
-#include <PimCommonAkonadi/CreateResource>
 #include <MailCommon/MailUtil>
+#include <PimCommonAkonadi/CreateResource>
 
 #include <KArchive>
 #include <KArchiveEntry>
 
-#include <QStandardPaths>
 #include "resourceconverterimpl.h"
+#include <QStandardPaths>
 
 ImportAlarmJobInterfaceImpl::ImportAlarmJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportAlarmJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
@@ -37,7 +37,8 @@ QString ImportAlarmJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &r
     return converter.adaptResourcePath(resourceConfig, storedData);
 }
 
-QString ImportAlarmJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ImportAlarmJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     return mCreateResource->createResource(resources, name, settings, synchronizeTree);
 }

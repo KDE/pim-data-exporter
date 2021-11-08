@@ -32,4 +32,3 @@ private:
     ArchiveStorage *mArchiveStorage = nullptr;
     QString mTemporaryFile;
 };
-

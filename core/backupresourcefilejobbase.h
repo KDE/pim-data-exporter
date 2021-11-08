@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include <QObject>
 #include <KZip>
+#include <QObject>
 
 #include "pimdataexporter_export.h"
 class PIMDATAEXPORTER_EXPORT BackupResourceFileJobBase : public QObject
@@ -41,4 +41,3 @@ private:
     QString mIdentifier;
     KZip *mZip = nullptr;
 };
-

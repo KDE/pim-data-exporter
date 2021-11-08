@@ -6,7 +6,10 @@
 
 #include "importakregatorjobinterfacetestimpl.h"
 
-ImportAkregatorJobInterfaceTestImpl::ImportAkregatorJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportAkregatorJobInterfaceTestImpl::ImportAkregatorJobInterfaceTestImpl(QObject *parent,
+                                                                         Utils::StoredTypes typeSelected,
+                                                                         ArchiveStorage *archiveStorage,
+                                                                         int numberOfStep)
     : ImportAkregatorJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }

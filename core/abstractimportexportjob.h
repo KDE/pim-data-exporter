@@ -19,7 +19,8 @@ class KZip;
 class KArchiveFile;
 class KArchiveEntry;
 
-namespace PimCommon {
+namespace PimCommon
+{
 class CreateResource;
 }
 class ImportExportProgressIndicatorBase;
@@ -41,7 +42,7 @@ public:
 
     ImportExportProgressIndicatorBase *importExportProgressIndicator() const;
 
-    //Only for test
+    // Only for test
     void setTempDirName(const QString &tempDirName);
 
 Q_SIGNALS:
@@ -77,7 +78,10 @@ protected:
 
     void backupResourceFile(const QString &agentIdentifier, const QString &defaultPath);
 
-    Q_REQUIRED_RESULT QStringList restoreResourceFile(const QString &resourceName, const QString &defaultPath, const QString &storePath, bool overwriteResources = false);
+    Q_REQUIRED_RESULT QStringList restoreResourceFile(const QString &resourceName,
+                                                      const QString &defaultPath,
+                                                      const QString &storePath,
+                                                      bool overwriteResources = false);
     virtual void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings);
     void restoreConfigFile(const QString &configNameStr);
     Q_REQUIRED_RESULT bool overwriteDirectoryMessageBox(const QString &directory) const;
@@ -99,7 +103,10 @@ protected:
     void convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = true);
     virtual Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
     virtual QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) = 0;
-    virtual Q_REQUIRED_RESULT QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree = false) = 0;
+    virtual Q_REQUIRED_RESULT QString createResource(const QString &resources,
+                                                     const QString &name,
+                                                     const QMap<QString, QVariant> &settings,
+                                                     bool synchronizeTree = false) = 0;
 
     QHash<QString, Akonadi::Collection::Id> mHashConvertPathCollectionId;
     QVector<ResourceFiles> mListResourceFile;
@@ -125,4 +132,3 @@ private:
 
     ImportExportProgressIndicatorBase *mImportExportProgressIndicator = nullptr;
 };
-

@@ -17,4 +17,3 @@ public:
     Q_REQUIRED_RESULT bool overwriteConfigMessageBox(const QString &configName) const override;
     Q_REQUIRED_RESULT bool overwriteDirectoryMessageBox(const QString &directory) const override;
 };
-

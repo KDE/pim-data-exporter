@@ -9,7 +9,7 @@
 #include <QTemporaryFile>
 #include <QTextStream>
 
-#define REMOVE_TEMPORARY_FILE 1
+//#define REMOVE_TEMPORARY_FILE 1
 
 LogCreatingResource::LogCreatingResource(QObject *parent)
     : QObject(parent)
@@ -21,6 +21,7 @@ LogCreatingResource::LogCreatingResource(QObject *parent)
     mTmpLogFile->setAutoRemove(false);
 #endif
     mTmpLogFile->open();
+    qDebug() << " mTmpLogFile*************" << mTmpLogFile->fileName();
 }
 
 LogCreatingResource::~LogCreatingResource()
@@ -69,5 +70,7 @@ QString LogCreatingResource::logCreateResource(const QString &resources, const Q
     }
     stream << synchronizeTree << '\n';
     stream << "--------------------------\n";
-    return resources + QStringLiteral("_new_resource_") + QString::number(mResourceIndex++);
+    const QString resourceName = resources + QStringLiteral("_new_resource_") + QString::number(mResourceIndex++);
+    qDebug() << " RESOURCE NAME " << resourceName;
+    return resourceName;
 }

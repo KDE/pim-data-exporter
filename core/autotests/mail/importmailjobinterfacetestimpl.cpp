@@ -6,17 +6,20 @@
 
 #include "importmailjobinterfacetestimpl.h"
 #include "archivestorage.h"
+#include "mail/smtpmailtransport.h"
 #include "resourceconvertertest.h"
 #include "testimportfile.h"
 #include "utils.h"
-#include "mail/smtpmailtransport.h"
 #include <KConfigGroup>
 #include <KIdentityManagement/Identity>
 #include <QTest>
 
 #define REMOVE_TEMPORARY_DIRECTORIES 1
 
-ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportMailJobInterfaceTestImpl::ImportMailJobInterfaceTestImpl(QObject *parent,
+                                                               Utils::StoredTypes typeSelected,
+                                                               ArchiveStorage *archiveStorage,
+                                                               int numberOfStep)
     : ImportMailJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
@@ -53,7 +56,8 @@ void ImportMailJobInterfaceTestImpl::synchronizeResource(const QStringList &lst)
     slotNextStep();
 }
 
-QString ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ImportMailJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     return mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
 }
@@ -65,7 +69,7 @@ void ImportMailJobInterfaceTestImpl::registerSpecialCollection(Akonadi::SpecialM
 
 void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)
 {
-    //qDebug() << " void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)" << filename << " extractpath " << extractPath();
+    // qDebug() << " void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)" << filename << " extractpath " << extractPath();
     QFile f(filename);
     QDir dir(extractPath());
     QVERIFY(dir.mkpath(QStringLiteral("config")));
@@ -88,7 +92,8 @@ QString ImportMailJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResour
 
 void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid)
 {
-    //qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not implemented yet" << oldUid << " name " << name;
+    // qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not
+    // implemented yet" << oldUid << " name " << name;
     const QString uniqueName = uniqueIdentityName(name);
     KIdentityManagement::Identity identity;
     uint value = mIdentityUoid;
@@ -108,7 +113,7 @@ void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfig
             grpGeneral.writeEntry("Default Identity", identity.uoid());
         }
     }
-    KConfigGroup grp = config.group(QStringLiteral("Identity #%1").arg(value-1));
+    KConfigGroup grp = config.group(QStringLiteral("Identity #%1").arg(value - 1));
     identity.writeConfig(grp);
 }
 
@@ -128,12 +133,13 @@ QString ImportMailJobInterfaceTestImpl::uniqueIdentityName(const QString &name)
 
 void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId)
 {
-    qDebug() << "importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) not implemented yet";
+    qDebug()
+        << "importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) not implemented yet";
 }
 
 void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId)
 {
-    //qDebug() << " defaultTransport " << defaultTransport << " transportId " << transportId;
+    // qDebug() << " defaultTransport " << defaultTransport << " transportId " << transportId;
     KConfig config(extractPath() + QStringLiteral("/config/mailtransports"));
     const int transportValue = mMailTransportId;
     mMailTransportId++;
@@ -175,6 +181,6 @@ void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTrans
 
 QString ImportMailJobInterfaceTestImpl::configLocation() const
 {
-    qDebug() << " QString ImportMailJobInterfaceTestImpl::configLocation() const "<< mExistingPathConfig;
+    qDebug() << " QString ImportMailJobInterfaceTestImpl::configLocation() const " << mExistingPathConfig;
     return mExistingPathConfig;
 }

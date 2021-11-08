@@ -5,11 +5,11 @@
 */
 
 #include "exportresourcearchivejob.h"
-#include "utils.h"
-#include "storeresourcejob.h"
 #include "pimdataexportcore_debug.h"
-#include <pimdatabackupthread.h>
+#include "storeresourcejob.h"
+#include "utils.h"
 #include <KZip>
+#include <pimdatabackupthread.h>
 
 #include <Akonadi/ServerManager>
 
@@ -65,15 +65,13 @@ void ExportResourceArchiveJob::start()
 void ExportResourceArchiveJob::slotTerminated(bool success)
 {
     if (success) {
-      auto job = new StoreResourceJob(this);
-      connect(job, &StoreResourceJob::error, this,
-              &ExportResourceArchiveJob::error);
-      connect(job, &StoreResourceJob::info, this,
-              &ExportResourceArchiveJob::info);
-      job->setArchivePath(mArchivePath);
-      job->setZip(mZip);
-      job->setIdentifier(mIdentifier);
-      job->start();
+        auto job = new StoreResourceJob(this);
+        connect(job, &StoreResourceJob::error, this, &ExportResourceArchiveJob::error);
+        connect(job, &StoreResourceJob::info, this, &ExportResourceArchiveJob::info);
+        job->setArchivePath(mArchivePath);
+        job->setZip(mZip);
+        job->setIdentifier(mIdentifier);
+        job->start();
     }
     finished();
 }
@@ -81,7 +79,7 @@ void ExportResourceArchiveJob::slotTerminated(bool success)
 void ExportResourceArchiveJob::slotTaskCanceled()
 {
     qCDebug(PIMDATAEXPORTERCORE_LOG) << " void ExportResourceArchiveJob::slotTaskCanceled()";
-    //TODO
+    // TODO
     if (mThread) {
         mThread->exit();
     }

@@ -7,8 +7,8 @@
 #pragma once
 
 #include "pimdataexporter_export.h"
-#include <QHash>
 #include "utils.h"
+#include <QHash>
 class QXmlStreamWriter;
 class QXmlStreamReader;
 class PIMDATAEXPORTER_EXPORT TemplateSelection
@@ -30,4 +30,3 @@ private:
     QXmlStreamReader *mStreamReader = nullptr;
     QString mSaveTemplate;
 };
-

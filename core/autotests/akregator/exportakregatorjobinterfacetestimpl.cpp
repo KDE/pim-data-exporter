@@ -6,7 +6,10 @@
 
 #include "exportakregatorjobinterfacetestimpl.h"
 
-ExportAkregatorJobInterfaceTestImpl::ExportAkregatorJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ExportAkregatorJobInterfaceTestImpl::ExportAkregatorJobInterfaceTestImpl(QObject *parent,
+                                                                         Utils::StoredTypes typeSelected,
+                                                                         ArchiveStorage *archiveStorage,
+                                                                         int numberOfStep)
     : ExportAkregatorJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
@@ -21,7 +24,10 @@ QString ExportAkregatorJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteR
     return {};
 }
 
-QString ExportAkregatorJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString ExportAkregatorJobInterfaceTestImpl::createResource(const QString &resources,
+                                                            const QString &name,
+                                                            const QMap<QString, QVariant> &settings,
+                                                            bool synchronizeTree)
 {
     Q_UNREACHABLE();
     return {};

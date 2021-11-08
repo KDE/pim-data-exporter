@@ -37,4 +37,3 @@ private:
     QWidget *mWindowParent = nullptr;
     QProgressDialog *mProgressDialog = nullptr;
 };
-

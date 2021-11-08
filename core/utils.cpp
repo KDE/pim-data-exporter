@@ -11,9 +11,9 @@
 
 #include <QSettings>
 
-#include <QTemporaryFile>
 #include <KLocalizedString>
 #include <KZip>
+#include <QTemporaryFile>
 
 #include <Akonadi/AgentManager>
 #include <QStandardPaths>
@@ -50,7 +50,7 @@ QString Utils::exportDataTypeFileName()
 
 int Utils::currentArchiveVersion()
 {
-    //Increase it when we add major feature!
+    // Increase it when we add major feature!
     return 2;
 }
 
@@ -155,7 +155,7 @@ void Utils::addVersion(KZip *archive)
     tmp.open();
     const bool fileAdded = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + QStringLiteral("VERSION_%1").arg(currentArchiveVersion()));
     if (!fileAdded) {
-        //TODO add i18n ?
+        // TODO add i18n ?
         qCDebug(PIMDATAEXPORTERCORE_LOG) << "version file can not add to archive";
     }
 }
@@ -170,7 +170,7 @@ int Utils::archiveVersion(KZip *archive)
     if (informationFile && informationFile->isFile()) {
         return 1;
     }
-    //TODO add more version when new version
+    // TODO add more version when new version
     return 0;
 }
 

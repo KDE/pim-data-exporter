@@ -11,14 +11,17 @@
 
 #include <QDir>
 
-ImportAddressbookJobInterfaceTestImpl::ImportAddressbookJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportAddressbookJobInterfaceTestImpl::ImportAddressbookJobInterfaceTestImpl(QObject *parent,
+                                                                             Utils::StoredTypes typeSelected,
+                                                                             ArchiveStorage *archiveStorage,
+                                                                             int numberOfStep)
     : ImportAddressbookJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
 
 ImportAddressbookJobInterfaceTestImpl::~ImportAddressbookJobInterfaceTestImpl()
 {
-    //Clean up temp repo
+    // Clean up temp repo
     QVERIFY(QDir(extractPath()).removeRecursively());
     QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeAddressbook()).removeRecursively());
 }
@@ -30,7 +33,10 @@ Akonadi::Collection::Id ImportAddressbookJobInterfaceTestImpl::convertFolderPath
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
-QString ImportAddressbookJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString ImportAddressbookJobInterfaceTestImpl::createResource(const QString &resources,
+                                                              const QString &name,
+                                                              const QMap<QString, QVariant> &settings,
+                                                              bool synchronizeTree)
 {
     return mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
 }
@@ -57,6 +63,6 @@ QString ImportAddressbookJobInterfaceTestImpl::adaptNewResourceUrl(bool overwrit
 
 QString ImportAddressbookJobInterfaceTestImpl::configLocation() const
 {
-    //TODO
+    // TODO
     return {};
 }

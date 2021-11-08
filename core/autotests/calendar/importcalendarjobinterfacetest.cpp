@@ -5,8 +5,8 @@
 */
 
 #include "importcalendarjobinterfacetest.h"
-#include "importcalendarjobinterfacetestimpl.h"
 #include "archivestorage.h"
+#include "importcalendarjobinterfacetestimpl.h"
 #include "testimportfile.h"
 #include <QTest>
 QTEST_MAIN(ImportCalendarJobInterfaceTest)
@@ -25,7 +25,7 @@ void ImportCalendarJobInterfaceTest::importCalendar_data()
 
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
     QTest::newRow("calendaronlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/calendaronlyconfig/") << options;
-    options = {Utils::StoredType::Config|Utils::StoredType::Resources};
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
     QTest::newRow("calendarconfigandresource") << QString::fromLatin1(pathConfig) << QStringLiteral("/calendarconfigandresource/") << options;
 }
 
@@ -40,8 +40,7 @@ void ImportCalendarJobInterfaceTest::importCalendar()
     file->setPathConfig(fullTestPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::calendarPath());
-    auto impl = new ImportCalendarJobInterfaceTestImpl(
-        this, options, file->archiveStorage(), 1);
+    auto impl = new ImportCalendarJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     impl->setPathConfig(file->pathConfig());
     impl->setExtractPath(file->extractPath());
     impl->setTempDirName(file->extractPath());

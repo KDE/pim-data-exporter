@@ -15,4 +15,3 @@ public:
     explicit PimDataTrayIcon(QObject *parent = nullptr);
     ~PimDataTrayIcon() override;
 };
-

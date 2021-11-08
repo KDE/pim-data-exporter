@@ -11,8 +11,8 @@
 #include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QPushButton>
-#include <qtestmouse.h>
 #include <QTest>
+#include <qtestmouse.h>
 
 #include <gui/widgets/selectiontypetreewidget.h>
 

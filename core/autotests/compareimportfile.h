@@ -34,4 +34,3 @@ private:
     QString mInstallPath;
     QString mExcludePath;
 };
-

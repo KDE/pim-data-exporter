@@ -10,9 +10,9 @@
 
 #include <KConfigGroup>
 
-#include <QStandardPaths>
 #include "exportresourcearchivejob.h"
 #include "resourceconverterimpl.h"
+#include <QStandardPaths>
 
 ExportAlarmJobInterfaceImpl::ExportAlarmJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportAlarmJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
@@ -36,19 +36,16 @@ Akonadi::Collection::Id ExportAlarmJobInterfaceImpl::convertFolderPathToCollecti
 
 void ExportAlarmJobInterfaceImpl::exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier)
 {
-  auto resourceJob = new ExportResourceArchiveJob(this);
-  resourceJob->setArchivePath(archivePath);
-  resourceJob->setUrl(url);
-  resourceJob->setIdentifier(identifier);
-  resourceJob->setArchive(archive());
-  resourceJob->setArchiveName(Utils::resourceAlarmArchiveName());
-  connect(resourceJob, &ExportResourceArchiveJob::error, this,
-          &ExportAlarmJobInterfaceImpl::error);
-  connect(resourceJob, &ExportResourceArchiveJob::info, this,
-          &ExportAlarmJobInterfaceImpl::info);
-  connect(resourceJob, &ExportResourceArchiveJob::terminated, this,
-          &ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated);
-  resourceJob->start();
+    auto resourceJob = new ExportResourceArchiveJob(this);
+    resourceJob->setArchivePath(archivePath);
+    resourceJob->setUrl(url);
+    resourceJob->setIdentifier(identifier);
+    resourceJob->setArchive(archive());
+    resourceJob->setArchiveName(Utils::resourceAlarmArchiveName());
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAlarmJobInterfaceImpl::error);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAlarmJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated);
+    resourceJob->start();
 }
 
 QString ExportAlarmJobInterfaceImpl::resourcePath(const QString &identifier) const
@@ -69,7 +66,8 @@ QString ExportAlarmJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
 
-QString ExportAlarmJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ExportAlarmJobInterfaceImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     Q_UNREACHABLE();
     return {};

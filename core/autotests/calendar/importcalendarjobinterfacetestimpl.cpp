@@ -9,14 +9,17 @@
 #include "resourceconvertertest.h"
 #include <QTest>
 
-ImportCalendarJobInterfaceTestImpl::ImportCalendarJobInterfaceTestImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
+ImportCalendarJobInterfaceTestImpl::ImportCalendarJobInterfaceTestImpl(QObject *parent,
+                                                                       Utils::StoredTypes typeSelected,
+                                                                       ArchiveStorage *archiveStorage,
+                                                                       int numberOfStep)
     : ImportCalendarJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
 {
 }
 
 ImportCalendarJobInterfaceTestImpl::~ImportCalendarJobInterfaceTestImpl()
 {
-    //Clean up temp repo
+    // Clean up temp repo
     QVERIFY(QDir(extractPath()).removeRecursively());
     QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeCalendar()).removeRecursively());
 }
@@ -28,7 +31,8 @@ Akonadi::Collection::Id ImportCalendarJobInterfaceTestImpl::convertFolderPathToC
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
-QString ImportCalendarJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
+QString
+ImportCalendarJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
     return mLogCreateResource->logCreateResource(resources, name, settings, synchronizeTree);
 }

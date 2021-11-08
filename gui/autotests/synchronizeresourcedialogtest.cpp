@@ -6,11 +6,11 @@
 
 #include "synchronizeresourcedialogtest.h"
 #include "../dialog/synchronizeresourcedialog.h"
-#include <QDialogButtonBox>
-#include <QTest>
-#include <QListWidget>
 #include <KListWidgetSearchLine>
+#include <QDialogButtonBox>
+#include <QListWidget>
 #include <QStandardPaths>
+#include <QTest>
 
 #include <QLabel>
 #include <QPushButton>

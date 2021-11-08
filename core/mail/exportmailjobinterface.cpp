@@ -7,26 +7,26 @@
 #include "exportmailjobinterface.h"
 #include "importexportmailutil.h"
 
-#include <MailCommon/FilterImporterExporter>
 #include "importexportprogressindicatorbase.h"
+#include <MailCommon/FilterImporterExporter>
 
 #include <MailTransport/TransportManager>
 
-#include <KZip>
 #include <KLocalizedString>
+#include <KZip>
 #include <QTemporaryFile>
 
 #include "pimdataexportcore_debug.h"
 #include <KMime/Message>
-#include <QFile>
 #include <QDir>
-#include <QTimer>
-#include <QStandardPaths>
+#include <QFile>
 #include <QRegularExpression>
+#include <QStandardPaths>
+#include <QTimer>
 #include <resourceconverterimpl.h>
 
-#include <KIdentityManagement/IdentityManager>
 #include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
 
 ExportMailJobInterface::ExportMailJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
@@ -188,7 +188,7 @@ void ExportMailJobInterface::backupConfig()
     backupConfigFile(QStringLiteral("dkimsettingsrc"));
     backupConfigFile(QStringLiteral("confirmbeforedeletingrc"));
 
-    //Notify file config
+    // Notify file config
     backupConfigFile(QStringLiteral("akonadi_mailfilter_agent.notifyrc"));
     backupConfigFile(QStringLiteral("akonadi_sendlater_agent.notifyrc"));
     backupConfigFile(QStringLiteral("akonadi_archivemail_agent.notifyrc"));
@@ -227,7 +227,8 @@ void ExportMailJobInterface::backupConfig()
     }
 
     const QString archiveMailAgentConfigurationStr(QStringLiteral("akonadi_archivemail_agentrc"));
-    const QString archiveMailAgentconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveMailAgentConfigurationStr;
+    const QString archiveMailAgentconfigurationrc =
+        QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveMailAgentConfigurationStr;
     if (QFileInfo::exists(archiveMailAgentconfigurationrc)) {
         KSharedConfigPtr archivemailrc = KSharedConfig::openConfig(archiveMailAgentConfigurationStr);
 
@@ -408,13 +409,13 @@ void ExportMailJobInterface::backupConfig()
         const QString favoriteCollectionOrderStr(QStringLiteral("FavoriteCollectionsOrder"));
         if (kmailConfig->hasGroup(favoriteCollectionOrderStr)) {
             KConfigGroup favoriteGroup = kmailConfig->group(favoriteCollectionOrderStr);
-            //For favorite id for root collection == 0 and we store only folder => c
+            // For favorite id for root collection == 0 and we store only folder => c
             const QString favoriteCollectionIdsStr(QStringLiteral("0"));
             const QString prefixCollection(QStringLiteral("c"));
             convertCollectionIdsToRealPath(favoriteGroup, favoriteCollectionIdsStr, prefixCollection);
         }
 
-        //Event collection
+        // Event collection
         const QString eventCollectionStr(QStringLiteral("Event"));
         if (kmailConfig->hasGroup(eventCollectionStr)) {
             KConfigGroup eventGroup = kmailConfig->group(eventCollectionStr);
@@ -422,14 +423,14 @@ void ExportMailJobInterface::backupConfig()
             convertCollectionIdsToRealPath(eventGroup, eventLastEventSelectedFolder);
         }
 
-        //Todo collection
+        // Todo collection
         const QString todoCollectionStr(QStringLiteral("Todo"));
         if (kmailConfig->hasGroup(todoCollectionStr)) {
             KConfigGroup todoGroup = kmailConfig->group(todoCollectionStr);
             const QString todoLastEventSelectedFolder(QStringLiteral("LastSelectedFolder"));
             convertCollectionIdsToRealPath(todoGroup, todoLastEventSelectedFolder);
         }
-        //FolderSelectionDialog collection
+        // FolderSelectionDialog collection
         const QString folderSelectionCollectionStr(QStringLiteral("FolderSelectionDialog"));
         if (kmailConfig->hasGroup(folderSelectionCollectionStr)) {
             KConfigGroup folderSelectionGroup = kmailConfig->group(folderSelectionCollectionStr);
@@ -437,7 +438,7 @@ void ExportMailJobInterface::backupConfig()
             convertCollectionIdsToRealPath(folderSelectionGroup, folderSelectionSelectedFolder);
         }
 
-        //Note collection
+        // Note collection
         const QString noteCollectionStr(QStringLiteral("Note"));
         if (kmailConfig->hasGroup(noteCollectionStr)) {
             KConfigGroup noteGroup = kmailConfig->group(noteCollectionStr);
@@ -445,7 +446,7 @@ void ExportMailJobInterface::backupConfig()
             convertCollectionIdsToRealPath(noteGroup, noteLastEventSelectedFolder);
         }
 
-        //Convert MessageListTab collection id
+        // Convert MessageListTab collection id
         const QString messageListPaneStr(QStringLiteral("MessageListPane"));
         if (kmailConfig->hasGroup(messageListPaneStr)) {
             KConfigGroup messageListPaneGroup = kmailConfig->group(messageListPaneStr);
@@ -457,7 +458,7 @@ void ExportMailJobInterface::backupConfig()
             }
         }
 
-        //Automatic Add Contacts
+        // Automatic Add Contacts
         const QVector<uint> listIdentities = listIdentityUoid();
         for (uint identity : listIdentities) {
             const QString groupId = QStringLiteral("Automatic Add Contacts %1").arg(identity);
@@ -468,9 +469,9 @@ void ExportMailJobInterface::backupConfig()
             }
         }
 
-        //TODO add confirm address too
+        // TODO add confirm address too
 
-        //Clean up kmail2rc
+        // Clean up kmail2rc
         const QString tipOfDaysStr(QStringLiteral("TipOfDay"));
         if (kmailConfig->hasGroup(tipOfDaysStr)) {
             kmailConfig->deleteGroup(tipOfDaysStr);
@@ -532,7 +533,8 @@ void ExportMailJobInterface::backupIdentity()
                     const int uoid = group.readEntry(QStringLiteral("uoid"), -1);
                     QFile file(vcardFileName);
                     if (file.exists()) {
-                        const bool fileAdded = archive()->addLocalFile(vcardFileName, Utils::identitiesPath() + QString::number(uoid) + QLatin1Char('/') + file.fileName());
+                        const bool fileAdded =
+                            archive()->addLocalFile(vcardFileName, Utils::identitiesPath() + QString::number(uoid) + QLatin1Char('/') + file.fileName());
                         if (!fileAdded) {
                             Q_EMIT error(i18n("vCard file \"%1\" cannot be saved.", file.fileName()));
                         }
@@ -570,12 +572,10 @@ void ExportMailJobInterface::slotWriteNextArchiveResource()
         const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
         const QStringList capabilities(agent.capabilities);
         if (agent.mimeTypes.contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QLatin1String("Resource"))
-                && !capabilities.contains(QLatin1String("Virtual"))
+            if (capabilities.contains(QLatin1String("Resource")) && !capabilities.contains(QLatin1String("Virtual"))
                 && !capabilities.contains(QLatin1String("MailTransport"))) {
                 const QString identifier = agent.identifier;
-                if (identifier.contains(QLatin1String("akonadi_maildir_resource_"))
-                    || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
+                if (identifier.contains(QLatin1String("akonadi_maildir_resource_")) || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
                     const QString archivePath = Utils::mailsPath() + identifier + QLatin1Char('/');
                     const QString url = resourcePath(identifier);
                     if (!mAgentPaths.contains(url)) {
@@ -590,7 +590,7 @@ void ExportMailJobInterface::slotWriteNextArchiveResource()
                         QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
                     }
                 } else if (identifier.contains(QLatin1String("akonadi_mbox_resource_"))) {
-                    backupMailResourceFile(identifier, Utils::mailsPath()); //FIxME addressbookPath or MailPAth ???
+                    backupMailResourceFile(identifier, Utils::mailsPath()); // FIxME addressbookPath or MailPAth ???
                     QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
                 } else {
                     QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
@@ -613,13 +613,12 @@ void ExportMailJobInterface::backupResources()
     for (const Utils::AkonadiInstanceInfo &agent : std::as_const(mAkonadiInstanceInfo)) {
         const QStringList capabilities = agent.capabilities;
         if (agent.mimeTypes.contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QLatin1String("Resource"))
-                && !capabilities.contains(QLatin1String("Virtual"))
+            if (capabilities.contains(QLatin1String("Resource")) && !capabilities.contains(QLatin1String("Virtual"))
                 && !capabilities.contains(QLatin1String("MailTransport"))) {
                 const QString identifier = agent.identifier;
-                //Store just pop3/imap/kolab/gmail account. Store other config when we copy data.
-                if (identifier.contains(QLatin1String("pop3")) || identifier.contains(QLatin1String("imap"))
-                    || identifier.contains(QLatin1String("_kolab_")) || identifier.contains(QLatin1String("_gmail_"))) {
+                // Store just pop3/imap/kolab/gmail account. Store other config when we copy data.
+                if (identifier.contains(QLatin1String("pop3")) || identifier.contains(QLatin1String("imap")) || identifier.contains(QLatin1String("_kolab_"))
+                    || identifier.contains(QLatin1String("_gmail_"))) {
                     const QString errorStr = storeResources(archive(), identifier, Utils::resourcesPath());
                     if (!errorStr.isEmpty()) {
                         Q_EMIT error(errorStr);

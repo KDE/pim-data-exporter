@@ -5,9 +5,9 @@
 */
 
 #include "compareimportfile.h"
+#include "comparefilehelper.h"
 #include "generatelistfilefromarchive.h"
 #include "loadlistfromfile.h"
-#include "comparefilehelper.h"
 #include <QTest>
 
 CompareImportFile::CompareImportFile()
@@ -21,7 +21,7 @@ CompareImportFile::~CompareImportFile()
 void CompareImportFile::compareFile()
 {
     GenerateListFileFromArchive archive(mArchiveFilePath);
-    //qDebug() << " archive " << archive.listFile();
+    // qDebug() << " archive " << archive.listFile();
 
     LoadListFromFile f(mListFilePath + QStringLiteral("/list.txt"));
     const QStringList archiveList = archive.listFile();
@@ -42,11 +42,10 @@ void CompareImportFile::compareFile()
         file.replace(QStringLiteral("config/kmcomposerui.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kmail2/kmcomposerui.rc"));
         file.replace(QStringLiteral("config/kmmainwin.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kmail2/kmmainwin.rc"));
         file.replace(QStringLiteral("config/kmreadermainwin.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kmail2/kmmainwin.rc"));
-        file.replace(QStringLiteral("config/kontactsummary_part.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kontactsummary/kontactsummary_part.rc"));
+        file.replace(QStringLiteral("config/kontactsummary_part.rc"),
+                     QStringLiteral("share/kxmlgui5/") + QStringLiteral("kontactsummary/kontactsummary_part.rc"));
         file.replace(QStringLiteral("config/kwatchgnupgui.rc"), QStringLiteral("share/kxmlgui5/") + QStringLiteral("kwatchgnupg/kwatchgnupgui.rc"));
-        if (file.endsWith(QLatin1String("ui.rc"))
-            && !file.contains(QStringLiteral("kmcomposerui.rc"))
-            && !file.contains(QStringLiteral("akonadiconsoleui.rc"))
+        if (file.endsWith(QLatin1String("ui.rc")) && !file.contains(QStringLiteral("kmcomposerui.rc")) && !file.contains(QStringLiteral("akonadiconsoleui.rc"))
             && !file.contains(QStringLiteral("kwatchgnupgui.rc"))) {
             QString fileName = file;
             fileName.remove(QStringLiteral("config/"));
@@ -55,9 +54,9 @@ void CompareImportFile::compareFile()
             file = QStringLiteral("share/kxmlgui5/") + fileName + QLatin1Char('/') + fileuirc;
         }
 
-        //file.replace(QStringLiteral("identities/"), QStringLiteral("config/"));
+        // file.replace(QStringLiteral("identities/"), QStringLiteral("config/"));
         file.replace(QStringLiteral("transports/"), QStringLiteral("config/"));
-        //Allow to remove some file from resources path
+        // Allow to remove some file from resources path
         if (file.startsWith(mExcludePath)) {
             continue;
         }
