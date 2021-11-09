@@ -1022,28 +1022,22 @@ void ImportMailJobInterface::copyMailArchiveConfig(const KSharedConfig::Ptr &arc
 
 void ImportMailJobInterface::copyUnifiedMailBoxConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
-#if 0
-    const QString archiveGroupPattern = QStringLiteral("FolderArchiveAccount ");
-    const QStringList archiveList = archiveConfigOrigin->groupList().filter(archiveGroupPattern);
-    for (const QString &str : archiveList) {
-        const QString resourcename = str.right(str.length() - archiveGroupPattern.length());
-        if (!resourcename.isEmpty()) {
-            KConfigGroup oldGroup = archiveConfigOrigin->group(str);
-            QString newResourceName;
-            if (mHashResources.contains(resourcename)) {
-                newResourceName = mHashResources.value(resourcename);
-
-                const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(QStringLiteral("topLevelCollectionId")));
-                if (id != -1) {
-                    KConfigGroup newGroup(archiveConfigDestination, archiveGroupPattern + newResourceName);
-                    oldGroup.copyTo(&newGroup);
-                    newGroup.writeEntry(QStringLiteral("topLevelCollectionId"), id);
-                }
-            }
-            oldGroup.deleteGroup();
+    auto group = archiveConfigOrigin->group("UnifiedMailboxes");
+    auto groupCopy = archiveConfigDestination->group("UnifiedMailboxes");
+    const auto boxGroups = group.groupList();
+    for (const auto &str : boxGroups) {
+        KConfigGroup oldGroup = group.group(str);
+        const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(QStringLiteral("collectionId")));
+        if (id != -1) {
+            KConfigGroup newGroup = groupCopy.group(str);
+            oldGroup.copyTo(&newGroup);
+            newGroup.writeEntry(QStringLiteral("collectionId"), id);
         }
+        // FIXME convertCollectionListStrToAkonadiId(kaddressBookConfig, str, QStringLiteral("sources"), true);
+        //const QString sourceKey(QStringLiteral("sources"));
+        //convertCollectionListToRealPath(oldGroup, sourceKey);
+        oldGroup.deleteGroup();
     }
-#endif
 }
 
 
