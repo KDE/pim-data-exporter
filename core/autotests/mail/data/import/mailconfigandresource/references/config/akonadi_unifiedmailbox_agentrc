@@ -1,0 +1,13 @@
+[General]
+createDefaultBoxes=false
+enabled=true
+fixedSpecialCollections=true
+
+[KFileDialog Settings]
+detailViewIconSize=16
+
+[UnifiedMailboxEditorDialog]
+Size=1075,695
+
+[UnifiedMailboxSettingsDialog]
+Size=500,500
