@@ -82,7 +82,9 @@ bool ImportCalendarJobInterface::isAConfigFile(const QString &name) const
 {
     return name.endsWith(QLatin1String("rc"))
         && (name.contains(QLatin1String("akonadi_ical_resource_")) || name.contains(QLatin1String("akonadi_davgroupware_resource_"))
-            || name.contains(QLatin1String("akonadi_icaldir_resource_")));
+            || name.contains(QLatin1String("akonadi_icaldir_resource_"))
+             || name.contains(QLatin1String("akonadi_openxchange_resource_"))
+             || name.contains(QLatin1String("akonadi_google_resource_")));
 }
 
 void ImportCalendarJobInterface::restoreConfig()
@@ -246,6 +248,8 @@ void ImportCalendarJobInterface::restoreResources()
     QStringList listResource;
     listResource << restoreResourceFile(QStringLiteral("akonadi_ical_resource"), Utils::calendarPath(), Utils::storeCalendar());
     listResource << restoreResourceFile(QStringLiteral("akonadi_davgroupware_resource"), Utils::calendarPath(), Utils::storeCalendar());
+    listResource << restoreResourceFile(QStringLiteral("akonadi_openxchange_resource"), Utils::calendarPath(), Utils::storeCalendar());
+    listResource << restoreResourceFile(QStringLiteral("akonadi_google_resource"), Utils::calendarPath(), Utils::storeCalendar());
 
     if (!mListResourceFile.isEmpty()) {
         QDir dir(mTempDirName);
