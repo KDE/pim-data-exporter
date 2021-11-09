@@ -11,3 +11,27 @@ Size=1075,695
 
 [UnifiedMailboxSettingsDialog]
 Size=500,500
+
+[UnifiedMailboxes][drafts]
+collectionId=1394
+icon=document-properties
+name=Drafts
+sources=22
+
+[UnifiedMailboxes][inbox]
+collectionId=1395
+icon=mail-folder-inbox
+name=Inbox
+sources=21,26
+
+[UnifiedMailboxes][sent-mail]
+collectionId=1393
+icon=mail-folder-sent
+name=Sent
+sources=16
+
+[UnifiedMailboxes][test-unified]
+collectionId=1396
+icon=akonadi
+name=test-unified
+sources=74,1387,1389,64,65

@@ -616,89 +616,98 @@ void ImportMailJobInterface::restoreConfig()
         }
     }
 
-    const QString labldaprcStr(QStringLiteral("kabldaprc"));
-    const KArchiveEntry *kabldapentry = mArchiveDirectory->entry(Utils::configsPath() + labldaprcStr);
-    if (kabldapentry && kabldapentry->isFile()) {
-        const auto kabldap = static_cast<const KArchiveFile *>(kabldapentry);
-        const QString kabldaprc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + labldaprcStr;
-        if (QFileInfo::exists(kabldaprc)) {
-            const int result = mergeConfigMessageBox(labldaprcStr);
-            if (result == KMessageBox::Yes) {
+    {
+        const QString labldaprcStr(QStringLiteral("kabldaprc"));
+        const KArchiveEntry *kabldapentry = mArchiveDirectory->entry(Utils::configsPath() + labldaprcStr);
+        if (kabldapentry && kabldapentry->isFile()) {
+            const auto kabldap = static_cast<const KArchiveFile *>(kabldapentry);
+            const QString kabldaprc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + labldaprcStr;
+            if (QFileInfo::exists(kabldaprc)) {
+                const int result = mergeConfigMessageBox(labldaprcStr);
+                if (result == KMessageBox::Yes) {
+                    copyToFile(kabldap, kabldaprc, labldaprcStr, Utils::configsPath());
+                } else if (result == KMessageBox::No) {
+                    mergeLdapConfig(kabldap, labldaprcStr, Utils::configsPath());
+                }
+            } else {
                 copyToFile(kabldap, kabldaprc, labldaprcStr, Utils::configsPath());
-            } else if (result == KMessageBox::No) {
-                mergeLdapConfig(kabldap, labldaprcStr, Utils::configsPath());
             }
-        } else {
-            copyToFile(kabldap, kabldaprc, labldaprcStr, Utils::configsPath());
         }
     }
-    const QString archiveconfigurationrcStr(QStringLiteral("akonadi_archivemail_agentrc"));
-    const KArchiveEntry *archiveconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + archiveconfigurationrcStr);
-    if (archiveconfigurationentry && archiveconfigurationentry->isFile()) {
-        const auto archiveconfiguration = static_cast<const KArchiveFile *>(archiveconfigurationentry);
-        const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveconfigurationrcStr;
-        if (QFileInfo::exists(archiveconfigurationrc)) {
-            const int result = mergeConfigMessageBox(archiveconfigurationrcStr);
-            if (result == KMessageBox::Yes) {
+    {
+        const QString archiveconfigurationrcStr(QStringLiteral("akonadi_archivemail_agentrc"));
+        const KArchiveEntry *archiveconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + archiveconfigurationrcStr);
+        if (archiveconfigurationentry && archiveconfigurationentry->isFile()) {
+            const auto archiveconfiguration = static_cast<const KArchiveFile *>(archiveconfigurationentry);
+            const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveconfigurationrcStr;
+            if (QFileInfo::exists(archiveconfigurationrc)) {
+                const int result = mergeConfigMessageBox(archiveconfigurationrcStr);
+                if (result == KMessageBox::Yes) {
+                    importArchiveConfig(archiveconfiguration, archiveconfigurationrc, archiveconfigurationrcStr, Utils::configsPath());
+                } else if (result == KMessageBox::No) {
+                    mergeArchiveMailAgentConfig(archiveconfiguration, archiveconfigurationrcStr, Utils::configsPath());
+                }
+            } else {
                 importArchiveConfig(archiveconfiguration, archiveconfigurationrc, archiveconfigurationrcStr, Utils::configsPath());
-            } else if (result == KMessageBox::No) {
-                mergeArchiveMailAgentConfig(archiveconfiguration, archiveconfigurationrcStr, Utils::configsPath());
             }
-        } else {
-            importArchiveConfig(archiveconfiguration, archiveconfigurationrc, archiveconfigurationrcStr, Utils::configsPath());
         }
     }
 
-    const QString folderMailArchiveStr(QStringLiteral("foldermailarchiverc"));
-    const KArchiveEntry *archivemailentry = mArchiveDirectory->entry(Utils::configsPath() + folderMailArchiveStr);
-    if (archivemailentry && archivemailentry->isFile()) {
-        const auto archiveconfiguration = static_cast<const KArchiveFile *>(archivemailentry);
-        const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + folderMailArchiveStr;
-        if (QFileInfo::exists(archiveconfigurationrc)) {
-            const int result = mergeConfigMessageBox(folderMailArchiveStr);
-            if (result == KMessageBox::Yes) {
+    {
+        const QString folderMailArchiveStr(QStringLiteral("foldermailarchiverc"));
+        const KArchiveEntry *archivemailentry = mArchiveDirectory->entry(Utils::configsPath() + folderMailArchiveStr);
+        if (archivemailentry && archivemailentry->isFile()) {
+            const auto archiveconfiguration = static_cast<const KArchiveFile *>(archivemailentry);
+            const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + folderMailArchiveStr;
+            if (QFileInfo::exists(archiveconfigurationrc)) {
+                const int result = mergeConfigMessageBox(folderMailArchiveStr);
+                if (result == KMessageBox::Yes) {
+                    importMailArchiveConfig(archiveconfiguration, archiveconfigurationrc, folderMailArchiveStr, Utils::configsPath());
+                } else if (result == KMessageBox::No) {
+                    mergeMailArchiveConfig(archiveconfiguration, folderMailArchiveStr, Utils::configsPath());
+                }
+            } else {
                 importMailArchiveConfig(archiveconfiguration, archiveconfigurationrc, folderMailArchiveStr, Utils::configsPath());
-            } else if (result == KMessageBox::No) {
-                mergeMailArchiveConfig(archiveconfiguration, folderMailArchiveStr, Utils::configsPath());
             }
-        } else {
-            importMailArchiveConfig(archiveconfiguration, archiveconfigurationrc, folderMailArchiveStr, Utils::configsPath());
         }
     }
 
-    const QString unifiedMailBoxStr(QStringLiteral("akonadi_unifiedmailbox_agentrc"));
-    const KArchiveEntry *unifiedMailBoxEntry = mArchiveDirectory->entry(Utils::configsPath() + unifiedMailBoxStr);
-    if (unifiedMailBoxEntry && unifiedMailBoxEntry->isFile()) {
-        const auto archiveconfiguration = static_cast<const KArchiveFile *>(archivemailentry);
-        const QString unifiedMailBoxrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + unifiedMailBoxStr;
-        if (QFileInfo::exists(unifiedMailBoxrc)) {
-            const int result = mergeConfigMessageBox(unifiedMailBoxStr);
-            if (result == KMessageBox::Yes) {
+    {
+        const QString unifiedMailBoxStr(QStringLiteral("akonadi_unifiedmailbox_agentrc"));
+        const KArchiveEntry *unifiedMailBoxEntry = mArchiveDirectory->entry(Utils::configsPath() + unifiedMailBoxStr);
+        if (unifiedMailBoxEntry && unifiedMailBoxEntry->isFile()) {
+            const auto archiveconfiguration = static_cast<const KArchiveFile *>(unifiedMailBoxEntry);
+            const QString unifiedMailBoxrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + unifiedMailBoxStr;
+            if (QFileInfo::exists(unifiedMailBoxrc)) {
+                const int result = mergeConfigMessageBox(unifiedMailBoxStr);
+                if (result == KMessageBox::Yes) {
+                    importUnifiedMailBoxConfig(archiveconfiguration, unifiedMailBoxrc, unifiedMailBoxStr, Utils::configsPath());
+                } else if (result == KMessageBox::No) {
+                    mergeUnifiedMailBoxConfig(archiveconfiguration, unifiedMailBoxStr, Utils::configsPath());
+                }
+            } else {
                 importUnifiedMailBoxConfig(archiveconfiguration, unifiedMailBoxrc, unifiedMailBoxStr, Utils::configsPath());
-            } else if (result == KMessageBox::No) {
-                mergeUnifiedMailBoxConfig(archiveconfiguration, unifiedMailBoxStr, Utils::configsPath());
             }
-        } else {
-            importUnifiedMailBoxConfig(archiveconfiguration, unifiedMailBoxrc, unifiedMailBoxStr, Utils::configsPath());
         }
     }
 
-    const QString templatesconfigurationrcStr(QStringLiteral("templatesconfigurationrc"));
-    const KArchiveEntry *templatesconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + templatesconfigurationrcStr);
-    if (templatesconfigurationentry && templatesconfigurationentry->isFile()) {
-        const auto templatesconfiguration = static_cast<const KArchiveFile *>(templatesconfigurationentry);
-        const QString templatesconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + templatesconfigurationrcStr;
+    {
+        const QString templatesconfigurationrcStr(QStringLiteral("templatesconfigurationrc"));
+        const KArchiveEntry *templatesconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + templatesconfigurationrcStr);
+        if (templatesconfigurationentry && templatesconfigurationentry->isFile()) {
+            const auto templatesconfiguration = static_cast<const KArchiveFile *>(templatesconfigurationentry);
+            const QString templatesconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + templatesconfigurationrcStr;
 
-        if (QFileInfo::exists(templatesconfigurationrc)) {
-            // TODO 4.13 allow to merge config.
-            if (overwriteConfigMessageBox(templatesconfigurationrcStr)) {
+            if (QFileInfo::exists(templatesconfigurationrc)) {
+                // TODO 4.13 allow to merge config.
+                if (overwriteConfigMessageBox(templatesconfigurationrcStr)) {
+                    importTemplatesConfig(templatesconfiguration, templatesconfigurationrc, templatesconfigurationrcStr, Utils::configsPath());
+                }
+            } else {
                 importTemplatesConfig(templatesconfiguration, templatesconfigurationrc, templatesconfigurationrcStr, Utils::configsPath());
             }
-        } else {
-            importTemplatesConfig(templatesconfiguration, templatesconfigurationrc, templatesconfigurationrcStr, Utils::configsPath());
         }
     }
-
     const QString kmailStr(QStringLiteral("kmail2rc"));
     const KArchiveEntry *kmail2rcentry = mArchiveDirectory->entry(Utils::configsPath() + kmailStr);
     if (kmail2rcentry && kmail2rcentry->isFile()) {
@@ -729,34 +738,38 @@ void ImportMailJobInterface::restoreConfig()
             copyToFile(sievetemplateconfiguration, sievetemplaterc, sievetemplatercStr, Utils::configsPath());
         }
     }
+    {
 
-    const QString customTemplateStr(QStringLiteral("customtemplatesrc"));
-    const KArchiveEntry *customtemplatentry = mArchiveDirectory->entry(Utils::configsPath() + customTemplateStr);
-    if (customtemplatentry && customtemplatentry->isFile()) {
-        const auto customtemplateconfiguration = static_cast<const KArchiveFile *>(customtemplatentry);
-        const QString customtemplaterc = configLocation() + customTemplateStr;
-        if (QFileInfo::exists(customtemplaterc)) {
-            // TODO 4.13 allow to merge config.
-            if (overwriteConfigMessageBox(customTemplateStr)) {
+        const QString customTemplateStr(QStringLiteral("customtemplatesrc"));
+        const KArchiveEntry *customtemplatentry = mArchiveDirectory->entry(Utils::configsPath() + customTemplateStr);
+        if (customtemplatentry && customtemplatentry->isFile()) {
+            const auto customtemplateconfiguration = static_cast<const KArchiveFile *>(customtemplatentry);
+            const QString customtemplaterc = configLocation() + customTemplateStr;
+            if (QFileInfo::exists(customtemplaterc)) {
+                // TODO 4.13 allow to merge config.
+                if (overwriteConfigMessageBox(customTemplateStr)) {
+                    copyToFile(customtemplateconfiguration, customtemplaterc, customTemplateStr, Utils::configsPath());
+                }
+            } else {
                 copyToFile(customtemplateconfiguration, customtemplaterc, customTemplateStr, Utils::configsPath());
             }
-        } else {
-            copyToFile(customtemplateconfiguration, customtemplaterc, customTemplateStr, Utils::configsPath());
         }
     }
 
-    const QString adblockStr(QStringLiteral("messagevieweradblockrc"));
-    const KArchiveEntry *adblockentry = mArchiveDirectory->entry(Utils::configsPath() + adblockStr);
-    if (adblockentry && adblockentry->isFile()) {
-        const auto adblockconfiguration = static_cast<const KArchiveFile *>(adblockentry);
-        const QString adblockrc = configLocation() + adblockStr;
-        if (QFileInfo::exists(adblockrc)) {
-            // TODO 4.13 allow to merge config.
-            if (overwriteConfigMessageBox(adblockStr)) {
+    {
+        const QString adblockStr(QStringLiteral("messagevieweradblockrc"));
+        const KArchiveEntry *adblockentry = mArchiveDirectory->entry(Utils::configsPath() + adblockStr);
+        if (adblockentry && adblockentry->isFile()) {
+            const auto adblockconfiguration = static_cast<const KArchiveFile *>(adblockentry);
+            const QString adblockrc = configLocation() + adblockStr;
+            if (QFileInfo::exists(adblockrc)) {
+                // TODO 4.13 allow to merge config.
+                if (overwriteConfigMessageBox(adblockStr)) {
+                    copyToFile(adblockconfiguration, adblockrc, adblockStr, Utils::configsPath());
+                }
+            } else {
                 copyToFile(adblockconfiguration, adblockrc, adblockStr, Utils::configsPath());
             }
-        } else {
-            copyToFile(adblockconfiguration, adblockrc, adblockStr, Utils::configsPath());
         }
     }
 
@@ -1033,10 +1046,9 @@ void ImportMailJobInterface::copyUnifiedMailBoxConfig(const KSharedConfig::Ptr &
             oldGroup.copyTo(&newGroup);
             newGroup.writeEntry(QStringLiteral("collectionId"), id);
         }
-        // FIXME convertCollectionListStrToAkonadiId(kaddressBookConfig, str, QStringLiteral("sources"), true);
-        //const QString sourceKey(QStringLiteral("sources"));
-        //convertCollectionListToRealPath(oldGroup, sourceKey);
-        oldGroup.deleteGroup();
+        const QString sourceKey(QStringLiteral("sources"));
+        convertRealPathToCollectionList(oldGroup, sourceKey, false);
+        //oldGroup.deleteGroup();
     }
 }
 
