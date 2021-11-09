@@ -943,13 +943,11 @@ void ImportMailJobInterface::importUnifiedMailBoxConfig(const KArchiveFile *arch
                                                      const QString &filename,
                                                      const QString &prefix)
 {
-#if 0 //PORT ME
     copyToFile(archiveconfiguration, archiveconfigurationrc, filename, prefix);
     KSharedConfig::Ptr archiveConfig = KSharedConfig::openConfig(archiveconfigurationrc);
 
-    copyArchiveMailAgentConfigGroup(archiveConfig, archiveConfig);
+    copyUnifiedMailBoxConfig(archiveConfig, archiveConfig);
     archiveConfig->sync();
-#endif
 }
 
 void ImportMailJobInterface::importMailArchiveConfig(const KArchiveFile *archiveconfiguration,
@@ -1021,6 +1019,27 @@ void ImportMailJobInterface::copyMailArchiveConfig(const KSharedConfig::Ptr &arc
         }
     }
 }
+
+void ImportMailJobInterface::copyUnifiedMailBoxConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
+{
+    auto group = archiveConfigOrigin->group("UnifiedMailboxes");
+    auto groupCopy = archiveConfigDestination->group("UnifiedMailboxes");
+    const auto boxGroups = group.groupList();
+    for (const auto &str : boxGroups) {
+        KConfigGroup oldGroup = group.group(str);
+        const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(QStringLiteral("collectionId")));
+        if (id != -1) {
+            KConfigGroup newGroup = groupCopy.group(str);
+            oldGroup.copyTo(&newGroup);
+            newGroup.writeEntry(QStringLiteral("collectionId"), id);
+        }
+        // FIXME convertCollectionListStrToAkonadiId(kaddressBookConfig, str, QStringLiteral("sources"), true);
+        //const QString sourceKey(QStringLiteral("sources"));
+        //convertCollectionListToRealPath(oldGroup, sourceKey);
+        oldGroup.deleteGroup();
+    }
+}
+
 
 void ImportMailJobInterface::copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
@@ -1301,7 +1320,6 @@ void ImportMailJobInterface::mergeLdapConfig(const KArchiveFile *archivefile, co
 
 void ImportMailJobInterface::mergeUnifiedMailBoxConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
 {
-#if 0 //FIXME
     QDir dir(mTempDirName);
     dir.mkdir(prefix);
 
@@ -1312,9 +1330,8 @@ void ImportMailJobInterface::mergeUnifiedMailBoxConfig(const KArchiveFile *archi
 
     KSharedConfig::Ptr importingMailArchiveConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + filename);
 
-    copyMailArchiveConfig(importingMailArchiveConfig, existingConfig);
+    copyUnifiedMailBoxConfig(importingMailArchiveConfig, existingConfig);
     existingConfig->sync();
-#endif
 }
 
 
