@@ -80,6 +80,7 @@ private:
     void mergeUnifiedMailBoxConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void mergeSieveTemplate(const KArchiveFile *archivefile, const QString &filename, const QString &prefix);
     void importSimpleFilesInDirectory(const QString &relativePath);
+    void copyUnifiedMailBoxConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination);
     void importUnifiedMailBoxConfig(const KArchiveFile *archiveconfiguration, const QString &archiveconfigurationrc, const QString &filename, const QString &prefix);
 
     QHash<QString, QString> mHashResources;
