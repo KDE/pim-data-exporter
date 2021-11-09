@@ -666,6 +666,23 @@ void ImportMailJobInterface::restoreConfig()
         }
     }
 
+    const QString unifiedMailBoxStr(QStringLiteral("akonadi_unifiedmailbox_agentrc"));
+    const KArchiveEntry *unifiedMailBoxEntry = mArchiveDirectory->entry(Utils::configsPath() + unifiedMailBoxStr);
+    if (unifiedMailBoxEntry && unifiedMailBoxEntry->isFile()) {
+        const auto archiveconfiguration = static_cast<const KArchiveFile *>(archivemailentry);
+        const QString unifiedMailBoxrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + unifiedMailBoxStr;
+        if (QFileInfo::exists(unifiedMailBoxrc)) {
+            const int result = mergeConfigMessageBox(unifiedMailBoxStr);
+            if (result == KMessageBox::Yes) {
+                importUnifiedMailBoxConfig(archiveconfiguration, unifiedMailBoxrc, unifiedMailBoxStr, Utils::configsPath());
+            } else if (result == KMessageBox::No) {
+                mergeUnifiedMailBoxConfig(archiveconfiguration, unifiedMailBoxStr, Utils::configsPath());
+            }
+        } else {
+            importUnifiedMailBoxConfig(archiveconfiguration, unifiedMailBoxrc, unifiedMailBoxStr, Utils::configsPath());
+        }
+    }
+
     const QString templatesconfigurationrcStr(QStringLiteral("templatesconfigurationrc"));
     const KArchiveEntry *templatesconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + templatesconfigurationrcStr);
     if (templatesconfigurationentry && templatesconfigurationentry->isFile()) {
@@ -920,15 +937,29 @@ void ImportMailJobInterface::restoreIdentity()
     QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
 }
 
-void ImportMailJobInterface::importMailArchiveConfig(const KArchiveFile *archiveconfiguration,
+
+void ImportMailJobInterface::importUnifiedMailBoxConfig(const KArchiveFile *archiveconfiguration,
                                                      const QString &archiveconfigurationrc,
                                                      const QString &filename,
                                                      const QString &prefix)
 {
+#if 0 //PORT ME
     copyToFile(archiveconfiguration, archiveconfigurationrc, filename, prefix);
     KSharedConfig::Ptr archiveConfig = KSharedConfig::openConfig(archiveconfigurationrc);
 
-    // TODO fix FolderArchiveAccount
+    copyArchiveMailAgentConfigGroup(archiveConfig, archiveConfig);
+    archiveConfig->sync();
+#endif
+}
+
+void ImportMailJobInterface::importMailArchiveConfig(const KArchiveFile *archiveconfiguration,
+                                                        const QString &archiveconfigurationrc,
+                                                        const QString &filename,
+                                                        const QString &prefix)
+{
+    copyToFile(archiveconfiguration, archiveconfigurationrc, filename, prefix);
+    KSharedConfig::Ptr archiveConfig = KSharedConfig::openConfig(archiveconfigurationrc);
+
     copyArchiveMailAgentConfigGroup(archiveConfig, archiveConfig);
     archiveConfig->sync();
 }
@@ -1267,6 +1298,25 @@ void ImportMailJobInterface::mergeLdapConfig(const KArchiveFile *archivefile, co
 
     grpExisting.sync();
 }
+
+void ImportMailJobInterface::mergeUnifiedMailBoxConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
+{
+#if 0 //FIXME
+    QDir dir(mTempDirName);
+    dir.mkdir(prefix);
+
+    const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
+    archivefile->copyTo(copyToDirName);
+
+    KSharedConfig::Ptr existingConfig = KSharedConfig::openConfig(filename);
+
+    KSharedConfig::Ptr importingMailArchiveConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + filename);
+
+    copyMailArchiveConfig(importingMailArchiveConfig, existingConfig);
+    existingConfig->sync();
+#endif
+}
+
 
 void ImportMailJobInterface::mergeKmailSnippetConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
 {
