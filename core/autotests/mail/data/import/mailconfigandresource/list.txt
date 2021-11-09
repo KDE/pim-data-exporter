@@ -1,3 +1,4 @@
+configs/akonadi_unifiedmailbox_agentrc
 configs/foldermailarchiverc
 configs/kmail2rc
 configs/templatesconfigurationrc

@@ -21,7 +21,7 @@ LogCreatingResource::LogCreatingResource(QObject *parent)
     mTmpLogFile->setAutoRemove(false);
 #endif
     mTmpLogFile->open();
-    qDebug() << " mTmpLogFile*************" << mTmpLogFile->fileName();
+    //qDebug() << " mTmpLogFile*************" << mTmpLogFile->fileName();
 }
 
 LogCreatingResource::~LogCreatingResource()
@@ -71,6 +71,6 @@ QString LogCreatingResource::logCreateResource(const QString &resources, const Q
     stream << synchronizeTree << '\n';
     stream << "--------------------------\n";
     const QString resourceName = resources + QStringLiteral("_new_resource_") + QString::number(mResourceIndex++);
-    qDebug() << " RESOURCE NAME " << resourceName;
+    // qDebug() << " RESOURCE NAME " << resourceName;
     return resourceName;
 }
