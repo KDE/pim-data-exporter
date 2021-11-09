@@ -1,0 +1,37 @@
+[General]
+createDefaultBoxes=false
+enabled=true
+fixedSpecialCollections=true
+
+[KFileDialog Settings]
+detailViewIconSize=16
+
+[UnifiedMailboxEditorDialog]
+Size=1075,695
+
+[UnifiedMailboxSettingsDialog]
+Size=500,500
+
+[UnifiedMailboxes][drafts]
+collectionId=foo/bla bla/bli1384
+icon=document-properties
+name=Drafts
+sources=foo/bla bla/bli12
+
+[UnifiedMailboxes][inbox]
+collectionId=foo/bla bla/bli1385
+icon=mail-folder-inbox
+name=Inbox
+sources=foo/bla bla/bli11,foo/bla bla/bli16
+
+[UnifiedMailboxes][sent-mail]
+collectionId=foo/bla bla/bli1383
+icon=mail-folder-sent
+name=Sent
+sources=foo/bla bla/bli6
+
+[UnifiedMailboxes][test-unified]
+collectionId=foo/bla bla/bli1386
+icon=akonadi
+name=test-unified
+sources=foo/bla bla/bli64,foo/bla bla/bli1377,foo/bla bla/bli1379,foo/bla bla/bli54,foo/bla bla/bli55
