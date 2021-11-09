@@ -198,6 +198,7 @@ void ExportMailJobInterface::backupConfig()
     backupConfigFile(QStringLiteral("akonadi_followupreminder_agent.notifyrc"));
     backupConfigFile(QStringLiteral("messagevieweradblockrc"));
     backupConfigFile(QStringLiteral("messageviewer.notifyrc"));
+    backupConfigFile(QStringLiteral("akonadi_newmailnotifier_agentrc"));
 
     const QString folderMailArchiveStr(QStringLiteral("foldermailarchiverc"));
     const QString folderMailArchiverc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + folderMailArchiveStr;

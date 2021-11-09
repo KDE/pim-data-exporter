@@ -114,6 +114,7 @@ Root
 |       |---------eventviewsrc
 |       |---------dkimsettingsrc
 |       |---------confirmbeforedeletingrc
+|       |---------akonadi_newmailnotifier_agentrc
 |
 |-----akonadi
 |       |---------<archive akonadi>
