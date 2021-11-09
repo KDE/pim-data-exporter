@@ -6,7 +6,7 @@ enabled=true
 maximumArchiveCount=0
 saveCollectionId=4048
 saveSubCollection=true
-storePath=file:///home/laurent
+storePath=/home/laurent
 
 [ArchiveMailDialog]
 Size=500,300
