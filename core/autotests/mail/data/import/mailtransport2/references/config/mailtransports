@@ -1,0 +1,17 @@
+[General]
+default-transport=1
+
+[Transport 1]
+authenticationType=1
+encryption=1
+host=mail.kde.com
+localHostname=
+name=test-transport
+port=587
+precommand=
+requiresAuthentication=true
+senderOverwriteAddress=
+specifyHostname=false
+specifySenderOverwriteAddress=false
+storePassword=true
+userName=foo.bla

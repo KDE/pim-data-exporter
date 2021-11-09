@@ -1,0 +1,13 @@
+[General]
+default-transport=765206269
+
+[Transport 765206269]
+auth=true
+authtype=1
+encryption=TLS
+host=mail.kde.com
+id=765206269
+name=test-transport
+port=587
+storepass=true
+user=foo.bla

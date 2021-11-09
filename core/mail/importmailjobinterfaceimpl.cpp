@@ -13,7 +13,6 @@
 #include <KIdentityManagement/IdentityManager>
 #include <MailCommon/FilterImporterExporter>
 #include <MailCommon/FilterManager>
-#include <MailTransport/TransportManager>
 #include <PimCommonAkonadi/CreateResource>
 using namespace Akonadi;
 
@@ -131,6 +130,19 @@ void ImportMailJobInterfaceImpl::importCustomMailTransport(const QString &identi
     }
 }
 
+int ImportMailJobInterfaceImpl::convertEncryptionEnum(int val)
+{
+    switch(val) {
+    case 0:
+        return MailTransport::Transport::EnumEncryption::None;
+    case 1:
+        return MailTransport::Transport::EnumEncryption::TLS;
+    case 2:
+        return MailTransport::Transport::EnumEncryption::SSL;
+    }
+    return MailTransport::Transport::EnumEncryption::None;
+}
+
 void ImportMailJobInterfaceImpl::importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId)
 {
     MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
@@ -145,7 +157,7 @@ void ImportMailJobInterfaceImpl::importSmtpMailTransport(const SmtpMailTransport
     mt->setSpecifySenderOverwriteAddress(smtpMailTransport.specifySenderOverwriteAddress());
     mt->setStorePassword(smtpMailTransport.storePassword());
     mt->setSenderOverwriteAddress(smtpMailTransport.senderOverwriteAddress());
-    mt->setEncryption(smtpMailTransport.encryption());
+    mt->setEncryption(convertEncryptionEnum(smtpMailTransport.encryption()));
     mt->setAuthenticationType(smtpMailTransport.authenticationType());
     addMailTransport(mt, defaultTransport, transportId);
 }

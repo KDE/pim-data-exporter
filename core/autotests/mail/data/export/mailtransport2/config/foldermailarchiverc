@@ -1,0 +1,127 @@
+[FolderArchiveAccount akonadi_akonotes_resource_0]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_akonotes_resource_0
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_akonotes_resource_1]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_akonotes_resource_1
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_akonotes_resource_2]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_akonotes_resource_2
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_akonotes_resource_3]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_akonotes_resource_3
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_akonotes_resource_5]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_akonotes_resource_5
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_akonotes_resource_6]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_akonotes_resource_6
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_imap_resource_2]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_imap_resource_2
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_imap_resource_3]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_imap_resource_3
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_imap_resource_4]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_imap_resource_4
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_imap_resource_43]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_imap_resource_43
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_imap_resource_5]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_imap_resource_5
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_kolab_resource_1]
+enabled=true
+folderArchiveType=0
+instanceName=akonadi_kolab_resource_1
+keepExistingStructure=false
+topLevelCollectionId=2378
+
+[FolderArchiveAccount akonadi_kolab_resource_8]
+enabled=true
+folderArchiveType=0
+instanceName=akonadi_kolab_resource_8
+keepExistingStructure=false
+topLevelCollectionId=4032
+
+[FolderArchiveAccount akonadi_maildir_resource_10]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_maildir_resource_10
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_maildir_resource_3]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_maildir_resource_3
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_maildir_resource_4]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_maildir_resource_4
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_maildir_resource_5]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_maildir_resource_5
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_maildir_resource_6]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_maildir_resource_6
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_maildir_resource_7]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_maildir_resource_7
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_maildir_resource_8]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_maildir_resource_8
+keepExistingStructure=false
+
+[FolderArchiveAccount akonadi_maildir_resource_9]
+enabled=false
+folderArchiveType=0
+instanceName=akonadi_maildir_resource_9
+keepExistingStructure=false
