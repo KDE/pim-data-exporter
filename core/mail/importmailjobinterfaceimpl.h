@@ -13,6 +13,7 @@
 #include <KArchive>
 #include <QHash>
 #include <QStringList>
+#include <MailTransport/TransportManager>
 class ArchiveStorage;
 namespace KIdentityManagement
 {
@@ -48,6 +49,7 @@ protected:
     Q_REQUIRED_RESULT QString configLocation() const override;
 
 private:
+    Q_REQUIRED_RESULT int convertEncryptionEnum(int val);
     Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
     KIdentityManagement::IdentityManager *const mIdentityManager;
 };
