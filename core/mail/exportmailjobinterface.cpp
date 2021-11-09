@@ -226,7 +226,6 @@ void ExportMailJobInterface::backupConfig()
         backupFile(tmp.fileName(), Utils::configsPath(), folderMailArchiveStr);
         delete archiveConfig;
     }
-#if 0 // PORT it
     const QString unifiedMailBoxStr(QStringLiteral("akonadi_unifiedmailbox_agentrc"));
     const QString unifiedMailBoxrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + unifiedMailBoxStr;
     if (QFileInfo::exists(unifiedMailBoxrc)) {
@@ -236,24 +235,26 @@ void ExportMailJobInterface::backupConfig()
         tmp.open();
 
         KConfig *archiveConfig = mboxrc->copyTo(tmp.fileName());
-        const QStringList archiveList = archiveConfig->groupList().filter(QRegularExpression(QStringLiteral("FolderArchiveAccount")));
+        auto group = archiveConfig->group("UnifiedMailboxes");
+        const auto boxGroups = group.groupList();
+        for (const auto &str : boxGroups) {
+            KConfigGroup oldGroup = group.group(str);
 
-        for (const QString &str : archiveList) {
-            KConfigGroup oldGroup = archiveConfig->group(str);
-            const qint64 id = oldGroup.readEntry("topLevelCollectionId", -1);
+            const qint64 id = oldGroup.readEntry("collectionId", -1);
             if (id != -1) {
                 const QString realPath = convertToFullCollectionPath(id);
                 if (!realPath.isEmpty()) {
-                    oldGroup.writeEntry(QStringLiteral("topLevelCollectionId"), realPath);
+                    oldGroup.writeEntry(QStringLiteral("collectionId"), realPath);
                 }
             }
+            const QString sourceKey(QStringLiteral("sources"));
+            convertCollectionListToRealPath(oldGroup, sourceKey);
         }
         archiveConfig->sync();
 
         backupFile(tmp.fileName(), Utils::configsPath(), unifiedMailBoxStr);
         delete archiveConfig;
     }
-#endif
 
     const QString archiveMailAgentConfigurationStr(QStringLiteral("akonadi_archivemail_agentrc"));
     const QString archiveMailAgentconfigurationrc =

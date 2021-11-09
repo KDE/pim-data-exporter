@@ -4,6 +4,7 @@ information/exportdatatype.xml
 configs/foldermailarchiverc
 configs/templatesconfigurationrc
 configs/filters
+configs/akonadi_unifiedmailbox_agentrc
 resources/akonadi_pop3_resource_1rc
 resources/akonadi_imap_resource_1rc
 resources/akonadi_kolab_resource_1rc
