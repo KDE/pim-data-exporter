@@ -226,6 +226,34 @@ void ExportMailJobInterface::backupConfig()
         backupFile(tmp.fileName(), Utils::configsPath(), folderMailArchiveStr);
         delete archiveConfig;
     }
+#if 0 // PORT it
+    const QString unifiedMailBoxStr(QStringLiteral("akonadi_unifiedmailbox_agentrc"));
+    const QString unifiedMailBoxrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + unifiedMailBoxStr;
+    if (QFileInfo::exists(unifiedMailBoxrc)) {
+        KSharedConfigPtr mboxrc = KSharedConfig::openConfig(unifiedMailBoxrc);
+
+        QTemporaryFile tmp;
+        tmp.open();
+
+        KConfig *archiveConfig = mboxrc->copyTo(tmp.fileName());
+        const QStringList archiveList = archiveConfig->groupList().filter(QRegularExpression(QStringLiteral("FolderArchiveAccount")));
+
+        for (const QString &str : archiveList) {
+            KConfigGroup oldGroup = archiveConfig->group(str);
+            const qint64 id = oldGroup.readEntry("topLevelCollectionId", -1);
+            if (id != -1) {
+                const QString realPath = convertToFullCollectionPath(id);
+                if (!realPath.isEmpty()) {
+                    oldGroup.writeEntry(QStringLiteral("topLevelCollectionId"), realPath);
+                }
+            }
+        }
+        archiveConfig->sync();
+
+        backupFile(tmp.fileName(), Utils::configsPath(), unifiedMailBoxStr);
+        delete archiveConfig;
+    }
+#endif
 
     const QString archiveMailAgentConfigurationStr(QStringLiteral("akonadi_archivemail_agentrc"));
     const QString archiveMailAgentconfigurationrc =
