@@ -9,8 +9,8 @@
 
 UserFeedBackManager::UserFeedBackManager(QObject *parent)
     : QObject(parent)
+    , mUserFeedbackProvider(new PimDataExportedUserFeedbackProvider(this))
 {
-    mUserFeedbackProvider = new PimDataExportedUserFeedbackProvider(this);
 }
 
 UserFeedBackManager *UserFeedBackManager::self()

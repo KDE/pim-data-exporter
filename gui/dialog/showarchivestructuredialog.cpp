@@ -29,12 +29,12 @@
 ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, QWidget *parent)
     : QDialog(parent)
     , mFileName(filename)
+    , mTreeWidget(new QTreeWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Show Archive Content on file \"%1\"", filename));
     setModal(true);
     auto mainLayout = new QVBoxLayout(this);
 
-    mTreeWidget = new QTreeWidget(this);
     mTreeWidget->header()->hide();
     mTreeWidget->setAlternatingRowColors(true);
 

@@ -22,7 +22,7 @@ public Q_SLOTS:
 
 private:
     void initialize();
-    QCheckBox *mAlwaysOverrideFile = nullptr;
-    QCheckBox *mAlwaysOverrideDirectory = nullptr;
-    QCheckBox *mAlwaysMergeConfigFile = nullptr;
+    QCheckBox *const mAlwaysOverrideFile;
+    QCheckBox *const mAlwaysOverrideDirectory;
+    QCheckBox *const mAlwaysMergeConfigFile;
 };

@@ -38,7 +38,7 @@ private:
     QTreeWidgetItem *addItem(QTreeWidgetItem *parent, const QString &name, const QString &fillFullPath);
     QString mFileName;
     QString mLogFile;
-    QTreeWidget *mTreeWidget = nullptr;
+    QTreeWidget *const mTreeWidget;
     QPushButton *mExtractFile = nullptr;
     QPushButton *mOpenFile = nullptr;
     KZip *mZip = nullptr;
