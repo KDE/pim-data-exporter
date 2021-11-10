@@ -26,7 +26,7 @@ private:
     void readConfig();
     void writeConfig();
 
-    PimDataExporterConfigureWidget *mConfigureWidget = nullptr;
+    PimDataExporterConfigureWidget *const mConfigureWidget;
 #ifdef WITH_KUSERFEEDBACK
     KUserFeedback::FeedbackConfigWidget *mUserFeedbackWidget = nullptr;
 #endif
