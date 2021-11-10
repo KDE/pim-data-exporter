@@ -53,7 +53,7 @@ private:
     QString mLastArchiveFileName;
     // Name, identifier
     QHash<QString, QString> mNeedToSyncResources;
-    LogWidget *mLogWidget = nullptr;
+    LogWidget *const mLogWidget;
     KRecentFilesMenu *mRecentFilesMenu = nullptr;
     QAction *mBackupAction = nullptr;
     QAction *mRestoreAction = nullptr;

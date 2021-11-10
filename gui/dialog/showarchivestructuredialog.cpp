@@ -30,6 +30,8 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     : QDialog(parent)
     , mFileName(filename)
     , mTreeWidget(new QTreeWidget(this))
+    , mExtractFile(new QPushButton(i18n("Extract Selected File"), this))
+    , mOpenFile(new QPushButton(i18n("Open Selected File"), this))
 {
     setWindowTitle(i18nc("@title:window", "Show Archive Content on file \"%1\"", filename));
     setModal(true);
@@ -47,14 +49,10 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
 
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ShowArchiveStructureDialog::reject);
 
-    mExtractFile = new QPushButton(this);
-    mExtractFile->setText(i18n("Extract Selected File"));
     mExtractFile->setEnabled(false);
     connect(mExtractFile, &QPushButton::clicked, this, &ShowArchiveStructureDialog::slotExtractFile);
     buttonBox->addButton(mExtractFile, QDialogButtonBox::ActionRole);
 
-    mOpenFile = new QPushButton(this);
-    mOpenFile->setText(i18n("Open Selected File"));
     mOpenFile->setEnabled(false);
     connect(mOpenFile, &QPushButton::clicked, this, &ShowArchiveStructureDialog::slotOpenFile);
     buttonBox->addButton(mOpenFile, QDialogButtonBox::ActionRole);

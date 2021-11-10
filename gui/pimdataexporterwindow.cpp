@@ -52,6 +52,7 @@
 
 PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
+    , mLogWidget(new LogWidget(this))
 {
     // Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
@@ -65,7 +66,6 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
 
     setupActions(true);
     setupGUI(Keys | StatusBar | Save | Create, QStringLiteral("pimdataexporter.rc"));
-    mLogWidget = new LogWidget(this);
 
     setCentralWidget(mLogWidget);
     resize(800, 600);

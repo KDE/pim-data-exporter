@@ -39,8 +39,8 @@ private:
     QString mFileName;
     QString mLogFile;
     QTreeWidget *const mTreeWidget;
-    QPushButton *mExtractFile = nullptr;
-    QPushButton *mOpenFile = nullptr;
+    QPushButton *const mExtractFile;
+    QPushButton *const mOpenFile;
     KZip *mZip = nullptr;
     QTemporaryDir *mTempDir = nullptr;
 };

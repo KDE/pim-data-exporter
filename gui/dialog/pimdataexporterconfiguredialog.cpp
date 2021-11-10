@@ -22,6 +22,7 @@
 
 PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     : KPageDialog(parent)
+    , mConfigureWidget(new PimDataExporterConfigureWidget(this))
 {
     setFaceType(KPageDialog::List);
     setWindowTitle(i18nc("@title:window", "Configure PimDataExporter"));
@@ -29,7 +30,6 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     // General page
     QWidget *generalConfigureWiget = new QWidget(this);
     auto layout = new QVBoxLayout(generalConfigureWiget);
-    mConfigureWidget = new PimDataExporterConfigureWidget(this);
     mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
 
     layout->addWidget(mConfigureWidget);
