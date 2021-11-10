@@ -28,5 +28,5 @@ private:
     void readConfig();
     void writeConfig();
     void selectItem(bool state);
-    QListWidget *mListResourceWidget = nullptr;
+    QListWidget *const mListResourceWidget;
 };

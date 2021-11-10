@@ -18,6 +18,7 @@
 
 SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     : QDialog(parent)
+    , mListResourceWidget(new QListWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Synchronize Resources"));
     auto topLayout = new QVBoxLayout(this);
@@ -31,7 +32,6 @@ SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-    mListResourceWidget = new QListWidget(this);
     mListResourceWidget->setObjectName(QStringLiteral("listresourcewidget"));
     auto listWidgetSearchLine = new KListWidgetSearchLine(this, mListResourceWidget);
     listWidgetSearchLine->setObjectName(QStringLiteral("listwidgetsearchline"));
