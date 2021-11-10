@@ -13,6 +13,9 @@
 
 PimDataExporterConfigureWidget::PimDataExporterConfigureWidget(QWidget *parent)
     : QWidget(parent)
+    , mAlwaysOverrideFile(new QCheckBox(i18n("Always Override File")))
+    , mAlwaysOverrideDirectory(new QCheckBox(i18n("Always Override Directory")))
+    , mAlwaysMergeConfigFile(new QCheckBox(i18n("Always Merge Config File")))
 {
     auto layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
@@ -24,15 +27,12 @@ PimDataExporterConfigureWidget::PimDataExporterConfigureWidget(QWidget *parent)
     auto groupBoxLayout = new QVBoxLayout;
     groupBox->setLayout(groupBoxLayout);
 
-    mAlwaysOverrideFile = new QCheckBox(i18n("Always Override File"));
     mAlwaysOverrideFile->setObjectName(QStringLiteral("alwaysoverridefile"));
     groupBoxLayout->addWidget(mAlwaysOverrideFile);
 
-    mAlwaysOverrideDirectory = new QCheckBox(i18n("Always Override Directory"));
     mAlwaysOverrideDirectory->setObjectName(QStringLiteral("alwaysoverridedirectory"));
     groupBoxLayout->addWidget(mAlwaysOverrideDirectory);
 
-    mAlwaysMergeConfigFile = new QCheckBox(i18n("Always Merge Config File"));
     mAlwaysMergeConfigFile->setObjectName(QStringLiteral("alwaysmergeconfigfile"));
     groupBoxLayout->addWidget(mAlwaysMergeConfigFile);
     groupBoxLayout->addStretch(1);

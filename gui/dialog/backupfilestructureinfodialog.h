@@ -22,5 +22,5 @@ private:
     void readConfig();
     void writeConfig();
     void loadStructure();
-    KPIMTextEdit::PlainTextEditorWidget *mEditor = nullptr;
+    KPIMTextEdit::PlainTextEditorWidget *const mEditor;
 };

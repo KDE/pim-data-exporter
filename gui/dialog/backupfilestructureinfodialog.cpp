@@ -24,12 +24,12 @@
 
 BackupFileStructureInfoDialog::BackupFileStructureInfoDialog(QWidget *parent)
     : QDialog(parent)
+    , mEditor(new KPIMTextEdit::PlainTextEditorWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Archive File Structure"));
     auto mainLayout = new QVBoxLayout(this);
     QLabel *lab = new QLabel(i18n("Backup Archive Structure:"));
     mainLayout->addWidget(lab);
-    mEditor = new KPIMTextEdit::PlainTextEditorWidget;
     mEditor->editor()->setWebShortcutSupport(false);
     mEditor->setReadOnly(true);
     mainLayout->addWidget(mEditor);

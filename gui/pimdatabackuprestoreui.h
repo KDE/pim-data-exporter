@@ -20,5 +20,5 @@ protected:
     void addExportProgressIndicator() override;
 
 private:
-    QWidget *mParentWidget = nullptr;
+    QWidget *const mParentWidget;
 };
