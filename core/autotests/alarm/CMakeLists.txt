@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
 set( exportalarmjobinterfacetest_SRCS exportalarmjobinterfacetest.cpp exportalarmjobinterfacetestimpl.cpp)

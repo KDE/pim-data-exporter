@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
 
 include_directories(${AKONADI_INCLUDE_DIR} 
     ${pim-data-exporter_SOURCE_DIR}/core/

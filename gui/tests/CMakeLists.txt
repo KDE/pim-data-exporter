@@ -1,4 +1,6 @@
-include_directories( 
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+include_directories(
     ${pim-data-exporter_SOURCE_DIR}/core/
     ${pim-data-exporter_BINARY_DIR}/core/
     ${pim-data-exporter_SOURCE_DIR}/gui/

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 ####
 add_executable( utilstest utilstest.cpp)
 add_test(NAME utilstest COMMAND utilstest)
