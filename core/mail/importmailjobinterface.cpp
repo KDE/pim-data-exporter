@@ -639,7 +639,8 @@ void ImportMailJobInterface::restoreConfig()
         const KArchiveEntry *archiveconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + archiveconfigurationrcStr);
         if (archiveconfigurationentry && archiveconfigurationentry->isFile()) {
             const auto archiveconfiguration = static_cast<const KArchiveFile *>(archiveconfigurationentry);
-            const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveconfigurationrcStr;
+            const QString archiveconfigurationrc =
+                QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveconfigurationrcStr;
             if (QFileInfo::exists(archiveconfigurationrc)) {
                 const int result = mergeConfigMessageBox(archiveconfigurationrcStr);
                 if (result == KMessageBox::Yes) {
@@ -696,7 +697,8 @@ void ImportMailJobInterface::restoreConfig()
         const KArchiveEntry *templatesconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + templatesconfigurationrcStr);
         if (templatesconfigurationentry && templatesconfigurationentry->isFile()) {
             const auto templatesconfiguration = static_cast<const KArchiveFile *>(templatesconfigurationentry);
-            const QString templatesconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + templatesconfigurationrcStr;
+            const QString templatesconfigurationrc =
+                QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + templatesconfigurationrcStr;
 
             if (QFileInfo::exists(templatesconfigurationrc)) {
                 // TODO 4.13 allow to merge config.
@@ -739,7 +741,6 @@ void ImportMailJobInterface::restoreConfig()
         }
     }
     {
-
         const QString customTemplateStr(QStringLiteral("customtemplatesrc"));
         const KArchiveEntry *customtemplatentry = mArchiveDirectory->entry(Utils::configsPath() + customTemplateStr);
         if (customtemplatentry && customtemplatentry->isFile()) {
@@ -950,11 +951,10 @@ void ImportMailJobInterface::restoreIdentity()
     QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
 }
 
-
 void ImportMailJobInterface::importUnifiedMailBoxConfig(const KArchiveFile *archiveconfiguration,
-                                                     const QString &archiveconfigurationrc,
-                                                     const QString &filename,
-                                                     const QString &prefix)
+                                                        const QString &archiveconfigurationrc,
+                                                        const QString &filename,
+                                                        const QString &prefix)
 {
     copyToFile(archiveconfiguration, archiveconfigurationrc, filename, prefix);
     KSharedConfig::Ptr archiveConfig = KSharedConfig::openConfig(archiveconfigurationrc);
@@ -964,9 +964,9 @@ void ImportMailJobInterface::importUnifiedMailBoxConfig(const KArchiveFile *arch
 }
 
 void ImportMailJobInterface::importMailArchiveConfig(const KArchiveFile *archiveconfiguration,
-                                                        const QString &archiveconfigurationrc,
-                                                        const QString &filename,
-                                                        const QString &prefix)
+                                                     const QString &archiveconfigurationrc,
+                                                     const QString &filename,
+                                                     const QString &prefix)
 {
     copyToFile(archiveconfiguration, archiveconfigurationrc, filename, prefix);
     KSharedConfig::Ptr archiveConfig = KSharedConfig::openConfig(archiveconfigurationrc);
@@ -1048,10 +1048,9 @@ void ImportMailJobInterface::copyUnifiedMailBoxConfig(const KSharedConfig::Ptr &
         }
         const QString sourceKey(QStringLiteral("sources"));
         convertRealPathToCollectionList(oldGroup, sourceKey, false);
-        //oldGroup.deleteGroup();
+        // oldGroup.deleteGroup();
     }
 }
-
 
 void ImportMailJobInterface::copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
@@ -1345,7 +1344,6 @@ void ImportMailJobInterface::mergeUnifiedMailBoxConfig(const KArchiveFile *archi
     copyUnifiedMailBoxConfig(importingMailArchiveConfig, existingConfig);
     existingConfig->sync();
 }
-
 
 void ImportMailJobInterface::mergeKmailSnippetConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
 {

@@ -132,7 +132,7 @@ void ImportMailJobInterfaceImpl::importCustomMailTransport(const QString &identi
 
 int ImportMailJobInterfaceImpl::convertEncryptionEnum(int val)
 {
-    switch(val) {
+    switch (val) {
     case 0:
         return MailTransport::Transport::EnumEncryption::None;
     case 1:

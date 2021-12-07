@@ -21,7 +21,7 @@ LogCreatingResource::LogCreatingResource(QObject *parent)
     mTmpLogFile->setAutoRemove(false);
 #endif
     mTmpLogFile->open();
-    //qDebug() << " mTmpLogFile*************" << mTmpLogFile->fileName();
+    // qDebug() << " mTmpLogFile*************" << mTmpLogFile->fileName();
 }
 
 LogCreatingResource::~LogCreatingResource()

@@ -82,9 +82,8 @@ bool ImportCalendarJobInterface::isAConfigFile(const QString &name) const
 {
     return name.endsWith(QLatin1String("rc"))
         && (name.contains(QLatin1String("akonadi_ical_resource_")) || name.contains(QLatin1String("akonadi_davgroupware_resource_"))
-            || name.contains(QLatin1String("akonadi_icaldir_resource_"))
-             || name.contains(QLatin1String("akonadi_openxchange_resource_"))
-             || name.contains(QLatin1String("akonadi_google_resource_")));
+            || name.contains(QLatin1String("akonadi_icaldir_resource_")) || name.contains(QLatin1String("akonadi_openxchange_resource_"))
+            || name.contains(QLatin1String("akonadi_google_resource_")));
 }
 
 void ImportCalendarJobInterface::restoreConfig()

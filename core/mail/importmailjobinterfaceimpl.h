@@ -11,9 +11,9 @@
 #include <Akonadi/Collection>
 #include <Akonadi/KMime/SpecialMailCollections>
 #include <KArchive>
+#include <MailTransport/TransportManager>
 #include <QHash>
 #include <QStringList>
-#include <MailTransport/TransportManager>
 class ArchiveStorage;
 namespace KIdentityManagement
 {
