@@ -1,4 +1,8 @@
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
+<!--
+  SPDX-FileCopyrightText: none
+  SPDX-License-Identifier: BSD-3-Clause
+-->
 <gui name="PimDataExporter" version="9">
 <MenuBar>
   <Menu name="file"><text>&amp;File</text>
