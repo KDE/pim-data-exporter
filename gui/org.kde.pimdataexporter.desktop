@@ -97,3 +97,4 @@ Categories=Qt;KDE;Network;Email;
 X-DocPath=pimdataexporter/index.html
 X-DBUS-StartupType=Unique
 X-DBUS-ServiceName=org.kde.pimdataexporter
+X-GNOME-SingleWindow=true
