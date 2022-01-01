@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2015-2021 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2015-2022 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
                          QStringLiteral(PIMDATAEXPORTER_VERSION),
                          i18n("PIM Data Exporter Console"),
                          KAboutLicense::GPL_V2,
-                         i18n("Copyright © 2015-2021 pimdataexporter authors"));
+                         i18n("Copyright © 2015-%1 pimdataexporter authors", QStringLiteral("2022")));
     aboutData.addAuthor(i18n("Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("logfile"), i18n("File to log information to."), QStringLiteral("file")));
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("template"),
