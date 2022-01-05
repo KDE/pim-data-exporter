@@ -3,6 +3,11 @@ Upstream-Name: pim-data-exporter
 Upstream-Contact: Montel Laurent <montel@kde.org>
 Source: https://invent.kde.org/pim/pim-data-exporter
 
-Files: core/autotests/notes/data/* core/autotests/mail/data/* core/autotests/calendar/data/* core/autotests/alarm/data/* core/autotests/addressbook/data/* core/autotests/akregator/data/* gui/autotests/data/* TODO MAINTAINERS gui/autotests/data/*.xml gui/backup-structure.txt doc/*
+Files: core/autotests/notes/data/* core/autotests/mail/data/* core/autotests/calendar/data/* core/autotests/alarm/data/* core/autotests/addressbook/data/* core/autotests/akregator/data/* gui/autotests/data/* TODO MAINTAINERS gui/autotests/data/*.xml gui/backup-structure.txt doc/selection-dialog.png
 Copyright: Montel Laurent <montel@kde.org>
 License: CC0-1.0
+
+Files: doc/index.docbook
+Copyright: none
+License: GFDL-1.2-or-later
+
