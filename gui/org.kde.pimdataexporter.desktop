@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=PIM Data Exporter
+Name[ar]=مصدّر بيانات PIM
 Name[az]=PİM verilənlərinin ixracatçısı
 Name[ca]=Exportador de les dades PIM
 Name[ca@valencia]=Exportador de les dades PIM
@@ -33,6 +34,7 @@ Exec=pimdataexporter
 Type=Application
 Icon=kontact
 GenericName=Saves and restores all data from PIM apps
+GenericName[ar]=تحفظ وتستعيد كل بيانات من جميع تطبيقات إدارة البيانات الشخصية
 GenericName[az]=PİM tətbiqlərindən bütün verilənləri saxlayır və bərpa edir
 GenericName[ca]=Desa i emmagatzema totes les dades de les aplicacions PIM
 GenericName[ca@valencia]=Guarda i emmagatzema totes les dades de les aplicacions PIM
@@ -63,6 +65,7 @@ GenericName[uk]=Збереження і відновлення усіх дани
 GenericName[x-test]=xxSaves and restores all data from PIM appsxx
 GenericName[zh_CN]=保存并恢复所有来自个人信息管理应用程序的数据
 Comment=PIM Setting Exporter allows to save all data from PIM apps and restore them in other systems.
+Comment[ar]=يتيح لك «مصدّر إعدادات PIM» حفظ كلّ البيانات من تطبيقات PIM واسترجاعها في الأنظمة الأخرى.
 Comment[az]=PİM Ayarlar İxracatçısı PİM tətbiqlərindən bütün verilənləri saxlamağa və onları başqa sistemdə bərpa etməyə imkan verir.
 Comment[ca]=L'exportador de la configuració PIM permet desar totes les dades de les aplicacions PIM i restaura-les en altres sistemes.
 Comment[ca@valencia]=L'exportador de la configuració PIM permet guardar totes les dades de les aplicacions PIM i restaura-les en altres sistemes.
