@@ -7,7 +7,7 @@ set( exportcalendarsjobinterfacetest_SRCS exportcalendarsjobinterfacetest.cpp ex
 add_executable( exportcalendarsjobinterfacetest ${exportcalendarsjobinterfacetest_SRCS})
 add_test(NAME exportcalendarsjobinterfacetest COMMAND exportcalendarsjobinterfacetest)
 ecm_mark_as_test(exportcalendarsjobinterfacetest)
-target_link_libraries(exportcalendarsjobinterfacetest Qt::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
+target_link_libraries(exportcalendarsjobinterfacetest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
 
 #####
 
@@ -16,4 +16,4 @@ set( importcalendarjobinterfacetest_SRCS importcalendarjobinterfacetest.cpp impo
 add_executable( importcalendarjobinterfacetest ${importcalendarjobinterfacetest_SRCS})
 add_test(NAME importcalendarjobinterfacetest COMMAND importcalendarjobinterfacetest)
 ecm_mark_as_test(importcalendarjobinterfacetest)
-target_link_libraries(importcalendarjobinterfacetest Qt::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
+target_link_libraries(importcalendarjobinterfacetest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter)
