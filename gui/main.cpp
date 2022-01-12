@@ -10,8 +10,7 @@
 #include <KDBusService>
 #include <KLocalizedString>
 #include <QApplication>
-#include <kcoreaddons_version.h>
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <Kdelibs4ConfigMigrator>
 #endif
 #include <KCrash>
@@ -32,7 +31,7 @@ int main(int argc, char *argv[])
 
     KCrash::initialize();
     app.setDesktopFileName(QStringLiteral("org.kde.pimdataexporter"));
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Kdelibs4ConfigMigrator migrate(QStringLiteral("pimdataexporter"));
     // old migration. Don't change it
     migrate.setConfigFiles(QStringList() << QStringLiteral("pimsettingexporterrc"));
