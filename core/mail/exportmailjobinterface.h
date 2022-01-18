@@ -36,15 +36,15 @@ protected:
     virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
     void backupResources();
     virtual QVector<MailCommon::MailFilter *> filters() = 0;
-    virtual Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
+    Q_REQUIRED_RESULT virtual QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
     void slotCheckBackupResources();
     virtual void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) = 0;
-    virtual Q_REQUIRED_RESULT QVector<Utils::AkonadiInstanceInfo> listOfResource() = 0;
-    virtual Q_REQUIRED_RESULT QString storeResources(KZip *archive, const QString &identifier, const QString &path) = 0;
-    virtual Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const = 0;
+    Q_REQUIRED_RESULT virtual QVector<Utils::AkonadiInstanceInfo> listOfResource() = 0;
+    Q_REQUIRED_RESULT virtual QString storeResources(KZip *archive, const QString &identifier, const QString &path) = 0;
+    Q_REQUIRED_RESULT virtual QString resourcePath(const QString &identifier) const = 0;
     virtual void backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath) = 0;
     virtual void exportFilters() = 0;
-    virtual Q_REQUIRED_RESULT QVector<uint> listIdentityUoid() const = 0;
+    Q_REQUIRED_RESULT virtual QVector<uint> listIdentityUoid() const = 0;
 
 private:
     void slotCheckBackupIdentity();

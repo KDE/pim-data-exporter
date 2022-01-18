@@ -23,8 +23,8 @@ public:
 protected:
     void slotNextStep() override;
     virtual void synchronizeResource(const QStringList &lst) = 0;
-    virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
-    virtual Q_REQUIRED_RESULT QString configLocation() const;
+    Q_REQUIRED_RESULT virtual QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
+    Q_REQUIRED_RESULT virtual QString configLocation() const;
     void restoreResources();
 
 private:

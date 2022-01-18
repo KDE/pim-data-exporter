@@ -20,9 +20,9 @@ public:
     void start() override;
 
 protected:
-    virtual Q_REQUIRED_RESULT QString configLocation() const;
+    Q_REQUIRED_RESULT virtual QString configLocation() const;
     virtual void synchronizeResource(const QStringList &lst) = 0;
-    virtual Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
+    Q_REQUIRED_RESULT virtual QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
     void slotNextStep() override;
     Q_REQUIRED_RESULT QString installConfigLocation() const;
 
