@@ -101,12 +101,10 @@ protected:
 
     void convertCollectionListStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key, bool addCollectionPrefix);
     void convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = true);
-    virtual Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
+    Q_REQUIRED_RESULT virtual Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
     virtual QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) = 0;
-    virtual Q_REQUIRED_RESULT QString createResource(const QString &resources,
-                                                     const QString &name,
-                                                     const QMap<QString, QVariant> &settings,
-                                                     bool synchronizeTree = false) = 0;
+    Q_REQUIRED_RESULT virtual QString
+    createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree = false) = 0;
 
     QHash<QString, Akonadi::Collection::Id> mHashConvertPathCollectionId;
     QVector<ResourceFiles> mListResourceFile;
