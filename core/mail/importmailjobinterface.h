@@ -9,7 +9,7 @@
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
 #include <Akonadi/Collection>
-#include <Akonadi/KMime/SpecialMailCollections>
+#include <Akonadi/SpecialMailCollections>
 #include <KArchive>
 #include <QHash>
 #include <QStringList>

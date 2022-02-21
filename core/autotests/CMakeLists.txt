@@ -27,7 +27,7 @@ add_library(test_resourceconverter STATIC
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(test_resourceconverter PROPERTIES UNITY_BUILD ON)
 endif()
-target_link_libraries(test_resourceconverter PUBLIC KF5::ConfigCore pimdataexporterprivate KF5::Archive Qt${QT_MAJOR_VERSION}::Test KF5::AkonadiCore KF5::WidgetsAddons)
+target_link_libraries(test_resourceconverter PUBLIC KF5::ConfigCore pimdataexporterprivate KF5::Archive Qt${QT_MAJOR_VERSION}::Test  KF5::AkonadiMime KF5::AkonadiCore KF5::WidgetsAddons)
 
 
 #####

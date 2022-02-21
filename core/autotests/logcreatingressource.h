@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <Akonadi/KMime/SpecialMailCollections>
+#include <Akonadi/SpecialMailCollections>
 #include <QObject>
 class QTemporaryFile;
 class LogCreatingResource : public QObject
