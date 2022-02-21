@@ -12,7 +12,7 @@
 #include <Akonadi/ChangeRecorder>
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
-#include <Akonadi/Notes/NoteUtils>
+#include <Akonadi/NoteUtils>
 #include <Akonadi/Session>
 #include <KCalendarCore/Event>
 #include <KCalendarCore/Todo>
