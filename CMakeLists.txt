@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2011-2022 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(PIM_VERSION "5.19.40")
+set(PIM_VERSION "5.19.80")
 project(pim-data-exporter VERSION ${PIM_VERSION})
 set(RELEASE_SERVICE_VERSION "22.03.40")
 set(KF5_MIN_VERSION "5.91.0")
