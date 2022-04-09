@@ -101,3 +101,4 @@ X-DocPath=pimdataexporter/index.html
 X-DBUS-StartupType=Unique
 X-DBUS-ServiceName=org.kde.pimdataexporter
 SingleMainWindow=true
+Version=1.5
