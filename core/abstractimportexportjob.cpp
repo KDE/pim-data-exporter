@@ -371,7 +371,7 @@ AbstractImportExportJob::restoreResourceFile(const QString &resourceBaseName, co
 
                     addSpecificResourceSettings(resourceConfig, resourceBaseName, settings);
 
-                    const QString newResource = createResource(resourceBaseName, filename, settings);
+                    const QString newResource = createResource(resourceBaseName, filename, settings, false);
                     infoAboutNewResource(newResource);
                     resourceToSync << newResource;
                     qCDebug(PIMDATAEXPORTERCORE_LOG) << " newResource" << newResource;

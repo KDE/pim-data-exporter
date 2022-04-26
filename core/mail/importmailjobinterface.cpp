@@ -172,11 +172,16 @@ void ImportMailJobInterface::restoreTransports()
         Q_EMIT info(i18n("Restore transports..."));
 
         const KArchiveEntry *transport = mArchiveDirectory->entry(path);
+        bool importDone = false;
         if (transport && transport->isFile()) {
             const auto fileTransport = static_cast<const KArchiveFile *>(transport);
 
-            copyArchiveFileTo(fileTransport, mTempDirName);
-            importMailTransport(mTempDirName);
+            importDone = copyArchiveFileTo(fileTransport, mTempDirName);
+            if (importDone) {
+                importMailTransport(mTempDirName);
+            }
+        }
+        if (importDone) {
             Q_EMIT info(i18n("Transports restored."));
         } else {
             Q_EMIT error(i18n("Failed to restore transports file."));
@@ -295,7 +300,7 @@ void ImportMailJobInterface::restoreResources()
                         settings.insert(QStringLiteral("DownloadLater"), leaveOnserver.readEntry("downloadLater", QStringList()));
                     }
                     const QString newResourceName = resourceName.isEmpty() ? filename : resourceName;
-                    const QString newResource = createResource(QStringLiteral("akonadi_pop3_resource"), newResourceName, settings);
+                    const QString newResource = createResource(QStringLiteral("akonadi_pop3_resource"), newResourceName, settings, false);
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
                         infoAboutNewResource(newResource);
@@ -394,11 +399,11 @@ void ImportMailJobInterface::restoreResources()
                     QString newResource;
                     const QString newResourceName = resourceName.isEmpty() ? filename : resourceName;
                     if (filename.contains(QLatin1String("kolab_"))) {
-                        newResource = createResource(QStringLiteral("akonadi_kolab_resource"), newResourceName, settings);
+                        newResource = createResource(QStringLiteral("akonadi_kolab_resource"), newResourceName, settings, true);
                     } else if (filename.contains(QLatin1String("gmail_"))) {
-                        newResource = createResource(QStringLiteral("akonadi_gmail_resource"), newResourceName, settings);
+                        newResource = createResource(QStringLiteral("akonadi_gmail_resource"), newResourceName, settings, true);
                     } else {
-                        newResource = createResource(QStringLiteral("akonadi_imap_resource"), newResourceName, settings);
+                        newResource = createResource(QStringLiteral("akonadi_imap_resource"), newResourceName, settings, true);
                     }
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
@@ -494,7 +499,7 @@ void ImportMailJobInterface::restoreMails()
                         settings.insert(QStringLiteral("MessageCount"), compacting.readEntry(QStringLiteral("MessageCount"), 50));
                     }
                 }
-                const QString newResource = createResource(QStringLiteral("akonadi_mbox_resource"), filename, settings);
+                const QString newResource = createResource(QStringLiteral("akonadi_mbox_resource"), filename, settings, true);
                 if (!newResource.isEmpty()) {
                     mHashResources.insert(filename, newResource);
                     infoAboutNewResource(newResource);
@@ -517,7 +522,8 @@ void ImportMailJobInterface::restoreMails()
                     createResource(resourceName.contains(QLatin1String("akonadi_mixedmaildir_resource_")) ? QStringLiteral("akonadi_mixedmaildir_resource")
                                                                                                           : QStringLiteral("akonadi_maildir_resource"),
                                    filename,
-                                   settings);
+                                   settings,
+                                   true);
                 if (!newResource.isEmpty()) {
                     mHashResources.insert(filename, newResource);
                     infoAboutNewResource(newResource);

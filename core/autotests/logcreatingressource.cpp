@@ -68,7 +68,7 @@ QString LogCreatingResource::logCreateResource(const QString &resources, const Q
             stream << i.key() << ' ' << i.value().toString() << '\n';
         }
     }
-    stream << synchronizeTree << '\n';
+    stream << "synchronizeTree: " << (synchronizeTree ? "true" : "false") << '\n';
     stream << "--------------------------\n";
     const QString resourceName = resources + QStringLiteral("_new_resource_") + QString::number(mResourceIndex++);
     // qDebug() << " RESOURCE NAME " << resourceName;

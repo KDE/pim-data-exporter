@@ -1,13 +1,13 @@
 akonadi_imap_resource
 akonadi_imap_resource_1rc
-0
+synchronizeTree: true
 --------------------------
 akonadi_kolab_resource
 perso
 ImapServer bli.bla.com
 TrashCollection 245
 UserName bla@bla.com
-0
+synchronizeTree: true
 --------------------------
 akonadi_pop3_resource
 perso3
@@ -21,5 +21,5 @@ Pipelining true
 SeenUidList 1589466101.18581.mail175.ha.foo.net,S=6906,1589466102.10772.mail114.ha.foo.net
 TargetCollection 3788
 UseTLS true
-0
+synchronizeTree: false
 --------------------------

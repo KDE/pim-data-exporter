@@ -36,7 +36,7 @@ protected:
     Q_REQUIRED_RESULT QString createResource(const QString &resources,
                                              const QString &name,
                                              const QMap<QString, QVariant> &settings,
-                                             bool synchronizeTree = false) override;
+                                             bool synchronizeTree) override;
     Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
     void synchronizeResource(const QStringList &lst) override;
     void importFilters(const QString &filename) override;

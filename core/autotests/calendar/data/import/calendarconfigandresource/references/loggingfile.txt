@@ -1,12 +1,12 @@
 akonadi_ical_resource
 schedule.ics
 Path /tmp/backupcalendar//std.ics
-0
+synchronizeTree: false
 --------------------------
 akonadi_davgroupware_resource
 caldav
 Path /tmp/backupcalendar//0/
-0
+synchronizeTree: false
 --------------------------
 akonadi_ical_resource_new_resource_0
 akonadi_davgroupware_resource_new_resource_1

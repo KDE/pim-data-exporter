@@ -1,12 +1,12 @@
 akonadi_akonotes_resource
 Notes2
 Path /tmp/backupnote//0/
-1
+synchronizeTree: true
 --------------------------
 akonadi_akonotes_resource
 Notes
 Path /tmp/backupnote//1/
-1
+synchronizeTree: true
 --------------------------
 akonadi_akonotes_resource_new_resource_0
 akonadi_akonotes_resource_new_resource_1

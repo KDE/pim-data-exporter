@@ -57,7 +57,7 @@ protected:
     virtual void slotNextStep();
 
 protected:
-    Q_REQUIRED_RESULT bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
+    bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
     void initializeListStep();
     virtual void startSynchronizeResources(const QStringList &listResourceToSync);
     void infoAboutNewResource(const QString &resourceName);
@@ -104,7 +104,7 @@ protected:
     Q_REQUIRED_RESULT virtual Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
     virtual QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) = 0;
     Q_REQUIRED_RESULT virtual QString
-    createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree = false) = 0;
+    createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) = 0;
 
     QHash<QString, Akonadi::Collection::Id> mHashConvertPathCollectionId;
     QVector<ResourceFiles> mListResourceFile;

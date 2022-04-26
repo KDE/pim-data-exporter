@@ -23,7 +23,7 @@ protected:
     Q_REQUIRED_RESULT QString createResource(const QString &resources,
                                              const QString &name,
                                              const QMap<QString, QVariant> &settings,
-                                             bool synchronizeTree = false) override;
+                                             bool synchronizeTree) override;
     void synchronizeResource(const QStringList &lst) override;
     Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
     Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
