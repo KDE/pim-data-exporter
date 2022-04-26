@@ -199,6 +199,7 @@ void ImportMailJobInterface::restoreResources()
     QDir dir(mTempDirName);
     dir.mkdir(Utils::resourcesPath());
     ResourceConverterImpl converter;
+    QStringList listResourceToSync;
     for (const QString &filename : std::as_const(mFileList)) {
         // We need to find akonadi_* and agent_config_akonadi_*
         if (filename.startsWith(Utils::resourcesPath() + QStringLiteral("akonadi_"))) {
@@ -304,6 +305,7 @@ void ImportMailJobInterface::restoreResources()
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
                         infoAboutNewResource(newResource);
+                        listResourceToSync << newResource;
                     }
                 } else if (filename.contains(QLatin1String("imap")) || filename.contains(QLatin1String("kolab_"))
                            || filename.contains(QLatin1String("gmail_"))) {
@@ -408,6 +410,7 @@ void ImportMailJobInterface::restoreResources()
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
                         infoAboutNewResource(newResource);
+                        listResourceToSync << newResource;
                     }
                 } else {
                     qCWarning(PIMDATAEXPORTERCORE_LOG) << " problem with resource: " << filename;
@@ -415,10 +418,8 @@ void ImportMailJobInterface::restoreResources()
             }
         }
     }
-    // TODO synctree ?
-
     Q_EMIT info(i18n("Resources restored."));
-    QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
+    synchronizeResource(listResourceToSync);
 }
 
 void ImportMailJobInterface::restoreMails()

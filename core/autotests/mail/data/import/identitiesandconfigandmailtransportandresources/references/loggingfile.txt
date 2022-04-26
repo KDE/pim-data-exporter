@@ -43,6 +43,10 @@ TargetCollection 3788
 UseTLS true
 synchronizeTree: false
 --------------------------
+akonadi_imap_resource_new_resource_3
+akonadi_kolab_resource_new_resource_4
+akonadi_pop3_resource_new_resource_5
+--------------------------
 Special Collection : 3 colId 3734
 --------------------------
 Special Collection : 5 colId 3730
