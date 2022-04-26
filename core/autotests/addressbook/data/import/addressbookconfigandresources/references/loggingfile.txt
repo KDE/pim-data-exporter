@@ -1,17 +1,17 @@
 akonadi_vcard_resource
 Notes
 Path /tmp/backupaddressbook//akonadi_vcard_resource_1.zip
-0
+synchronizeTree: false
 --------------------------
 akonadi_vcarddir_resource
 Notes
 Path /tmp/backupaddressbook//0/
-1
+synchronizeTree: true
 --------------------------
 akonadi_contacts_resource
 Notes
 Path /tmp/backupaddressbook//1/
-1
+synchronizeTree: true
 --------------------------
 akonadi_vcard_resource_new_resource_0
 akonadi_vcarddir_resource_new_resource_1
