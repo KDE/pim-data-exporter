@@ -24,10 +24,10 @@ SynchronizeResourceJob::~SynchronizeResourceJob()
 
 void SynchronizeResourceJob::start()
 {
-    if (!mListResources.isEmpty()) {
-        QTimer::singleShot(0, this, &SynchronizeResourceJob::slotNextSync);
-    } else {
+    if (mListResources.isEmpty()) {
         Q_EMIT synchronizationFinished();
+    } else {
+        QTimer::singleShot(0, this, &SynchronizeResourceJob::slotNextSync);
     }
 }
 
