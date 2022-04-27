@@ -5,7 +5,7 @@ calendar/akonadi_ical_resource_2/akonadi_ical_resource_2rc
 calendar/akonadi_ical_resource_2/std.ics
 configs/calendar_printing.rc
 configs/eventviewsrc
-configs/korgacrc
+configs/kalendaracrc
 configs/korganizerrc
 information/VERSION_2
 information/exportdatatype.xml

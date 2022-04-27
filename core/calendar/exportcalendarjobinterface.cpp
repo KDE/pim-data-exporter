@@ -113,10 +113,68 @@ void ExportCalendarJobInterface::slotCheckBackupConfig()
     Q_EMIT jobFinished();
 }
 
-void ExportCalendarJobInterface::backupConfig()
+void ExportCalendarJobInterface::exportEventViewConfig()
 {
-    setProgressDialogLabel(i18n("Backing up config..."));
+    const QString eventviewsrcStr(QStringLiteral("eventviewsrc"));
+    const QString eventviewsrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + eventviewsrcStr;
+    if (QFileInfo::exists(eventviewsrc)) {
+        KSharedConfigPtr eventviews = KSharedConfig::openConfig(eventviewsrc);
 
+        QTemporaryFile tmp;
+        tmp.open();
+
+        KConfig *eventviewConfig = eventviews->copyTo(tmp.fileName());
+
+        const QString resourceColorStr(QStringLiteral("Resources Colors"));
+        if (eventviewConfig->hasGroup(resourceColorStr)) {
+            KConfigGroup group = eventviewConfig->group(resourceColorStr);
+
+            const QStringList keyList = group.keyList();
+            bool found = false;
+            for (const QString &key : keyList) {
+                const int collectionValue = key.toInt(&found);
+                if (found && collectionValue != -1) {
+                    const QString realPath = convertToFullCollectionPath(collectionValue);
+                    const QColor color = group.readEntry(key, QColor());
+                    group.writeEntry(realPath, color);
+                    group.deleteEntry(key);
+                }
+            }
+        }
+
+        eventviewConfig->sync();
+        backupFile(tmp.fileName(), Utils::configsPath(), eventviewsrcStr);
+        delete eventviewConfig;
+    }
+}
+
+void ExportCalendarJobInterface::exportReminderAgentConfig()
+{
+    const QString kalendarcStr(QStringLiteral("kalendaracrc"));
+    const QString kalendarcrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendarcStr;
+    if (QFileInfo::exists(kalendarcrc)) {
+        KSharedConfigPtr kalendarc = KSharedConfig::openConfig(kalendarcrc);
+
+        QTemporaryFile tmp;
+        tmp.open();
+        tmp.setAutoRemove(false);
+
+        KConfig *kalendarcConfig = kalendarc->copyTo(tmp.fileName());
+        const QString globalCollectionsStr(QStringLiteral("Alarms"));
+        if (kalendarcConfig->hasGroup(globalCollectionsStr)) {
+            KConfigGroup group = kalendarcConfig->group(globalCollectionsStr);
+            const QString selectionKey(QStringLiteral("CalendarsLastChecked"));
+            convertCollectionListToRealPath(group, selectionKey);
+        }
+
+        kalendarcConfig->sync();
+        backupFile(tmp.fileName(), Utils::configsPath(), kalendarcStr);
+        delete kalendarcConfig;
+    }
+}
+
+void ExportCalendarJobInterface::exportKorganizerConfig()
+{
     const QString korganizerStr(QStringLiteral("korganizerrc"));
     const QString korganizerrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + korganizerStr;
     if (QFileInfo::exists(korganizerrc)) {
@@ -152,40 +210,17 @@ void ExportCalendarJobInterface::backupConfig()
         backupFile(tmp.fileName(), Utils::configsPath(), korganizerStr);
         delete korganizerConfig;
     }
-    const QString eventviewsrcStr(QStringLiteral("eventviewsrc"));
-    const QString eventviewsrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + eventviewsrcStr;
-    if (QFileInfo::exists(eventviewsrc)) {
-        KSharedConfigPtr eventviews = KSharedConfig::openConfig(eventviewsrc);
+}
 
-        QTemporaryFile tmp;
-        tmp.open();
+void ExportCalendarJobInterface::backupConfig()
+{
+    setProgressDialogLabel(i18n("Backing up config..."));
 
-        KConfig *eventviewConfig = eventviews->copyTo(tmp.fileName());
-
-        const QString resourceColorStr(QStringLiteral("Resources Colors"));
-        if (eventviewConfig->hasGroup(resourceColorStr)) {
-            KConfigGroup group = eventviewConfig->group(resourceColorStr);
-
-            const QStringList keyList = group.keyList();
-            bool found = false;
-            for (const QString &key : keyList) {
-                const int collectionValue = key.toInt(&found);
-                if (found && collectionValue != -1) {
-                    const QString realPath = convertToFullCollectionPath(collectionValue);
-                    const QColor color = group.readEntry(key, QColor());
-                    group.writeEntry(realPath, color);
-                    group.deleteEntry(key);
-                }
-            }
-        }
-
-        eventviewConfig->sync();
-        backupFile(tmp.fileName(), Utils::configsPath(), eventviewsrcStr);
-        delete eventviewConfig;
-    }
+    exportKorganizerConfig();
+    exportEventViewConfig();
+    exportReminderAgentConfig();
 
     backupConfigFile(QStringLiteral("calendar_printing.rc"));
-    backupConfigFile(QStringLiteral("korgacrc"));
 
     const QString freebusyurlsStr(QStringLiteral("korganizer/freebusyurls"));
     const QString freebusyurls = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + freebusyurlsStr;
