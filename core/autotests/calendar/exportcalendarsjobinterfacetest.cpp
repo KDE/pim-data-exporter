@@ -26,6 +26,8 @@ void ExportCalendarsJobInterfaceTest::exportCalendar_data()
     QTest::newRow("calendaronlyconfig") << pathConfig + QByteArray("calendaronlyconfig/") << options;
     options = {Utils::StoredType::Config | Utils::StoredType::Resources};
     QTest::newRow("calendarconfigandresources") << pathConfig + QByteArray("calendarconfigandresources/") << options;
+    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
+    QTest::newRow("calendarconfigandresourceskalendar") << pathConfig + QByteArray("calendarconfigandresourceskalendar/") << options;
 }
 
 void ExportCalendarsJobInterfaceTest::exportCalendar()

@@ -1,0 +1,45 @@
+[Agenda View]
+agendaViewItemIcons=\x01\x01\x00\x01\x01\x01\x00\x00\x00\x00
+
+[Internal Settings]
+Decorations At Agenda View Bottom=thisdayinhistory,picoftheday
+Decorations At Agenda View Top=datenums
+
+[KOrganizer Plugins]
+SelectedPlugins=datenums
+
+[Month View]
+monthViewItemIcons=\x01\x01\x01\x00\x00\x01\x00\x00\x00\x00
+
+[Resources Colors]
+foo/bla bla/bli115=248,43,164
+foo/bla bla/bli1252=58,212,197
+foo/bla bla/bli1390=81,42,19
+foo/bla bla/bli1472=30,184,12
+foo/bla bla/bli1479=103,115,227
+foo/bla bla/bli2110=255,85,0
+foo/bla bla/bli2118=0,255,255
+foo/bla bla/bli2209=85,255,0
+foo/bla bla/bli2333=129,52,253
+foo/bla bla/bli2334=10,179,166
+foo/bla bla/bli2367=7,41,100
+foo/bla bla/bli2502=110,39,127
+foo/bla bla/bli2503=190,165,13
+foo/bla bla/bli2519=119,197,150
+foo/bla bla/bli2522=113,101,228
+foo/bla bla/bli2523=203,83,247
+foo/bla bla/bli2563=64,96,220
+foo/bla bla/bli2737=179,35,181
+foo/bla bla/bli2762=61,205,154
+foo/bla bla/bli3096=203,33,161
+foo/bla bla/bli3841=171,152,184
+foo/bla bla/bli3845=136,205,247
+foo/bla bla/bli3846=19,37,172
+foo/bla bla/bli4054=112,22,169
+foo/bla bla/bli6=110,9,184
+
+[Timescale]
+Timescale Timezones=Europe/Paris
+
+[Todo View]
+Full View Todo=false
