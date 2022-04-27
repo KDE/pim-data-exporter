@@ -1,0 +1,45 @@
+[Agenda View]
+agendaViewItemIcons=\x01\x01\x00\x01\x01\x01\x00\x00\x00\x00
+
+[Internal Settings]
+Decorations At Agenda View Bottom=thisdayinhistory,picoftheday
+Decorations At Agenda View Top=datenums
+
+[KOrganizer Plugins]
+SelectedPlugins=datenums
+
+[Month View]
+monthViewItemIcons=\x01\x01\x01\x00\x00\x01\x00\x00\x00\x00
+
+[Resources Colors]
+115=248,43,164
+1252=58,212,197
+1390=81,42,19
+1472=30,184,12
+1479=103,115,227
+2110=255,85,0
+2118=0,255,255
+2209=85,255,0
+2333=129,52,253
+2334=10,179,166
+2367=7,41,100
+2502=110,39,127
+2503=190,165,13
+2519=119,197,150
+2522=113,101,228
+2523=203,83,247
+2563=64,96,220
+2737=179,35,181
+2762=61,205,154
+3096=203,33,161
+3841=171,152,184
+3845=136,205,247
+3846=19,37,172
+4054=112,22,169
+6=110,9,184
+
+[Timescale]
+Timescale Timezones=Europe/Paris
+
+[Todo View]
+Full View Todo=false
