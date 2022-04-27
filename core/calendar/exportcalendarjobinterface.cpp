@@ -173,6 +173,33 @@ void ExportCalendarJobInterface::exportReminderAgentConfig()
     }
 }
 
+void ExportCalendarJobInterface::exportKalendarConfig()
+{
+    const QString kalendarStr(QStringLiteral("kalendarrc"));
+    const QString kalendarrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendarStr;
+    if (QFileInfo::exists(kalendarrc)) {
+        KSharedConfigPtr kalendar = KSharedConfig::openConfig(kalendarrc);
+
+        QTemporaryFile tmp;
+        tmp.open();
+
+        KConfig *kalendarConfig = kalendar->copyTo(tmp.fileName());
+
+        const QString globalCollectionsStr(QStringLiteral("GlobalCollectionSelection"));
+        if (kalendarConfig->hasGroup(globalCollectionsStr)) {
+            KConfigGroup group = kalendarConfig->group(globalCollectionsStr);
+            const QString selectionKey(QStringLiteral("Selection"));
+            convertCollectionListToRealPath(group, selectionKey);
+            // Add Current
+        }
+
+        // Add Resources Colors
+        kalendarConfig->sync();
+        backupFile(tmp.fileName(), Utils::configsPath(), kalendarStr);
+        delete kalendarConfig;
+    }
+}
+
 void ExportCalendarJobInterface::exportKorganizerConfig()
 {
     const QString korganizerStr(QStringLiteral("korganizerrc"));
@@ -219,6 +246,7 @@ void ExportCalendarJobInterface::backupConfig()
     exportKorganizerConfig();
     exportEventViewConfig();
     exportReminderAgentConfig();
+    exportKalendarConfig();
 
     backupConfigFile(QStringLiteral("calendar_printing.rc"));
 

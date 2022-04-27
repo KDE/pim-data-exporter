@@ -160,6 +160,20 @@ void ImportCalendarJobInterface::restoreConfig()
         }
     }
 
+    const QString kalendarStr(QStringLiteral("kalendarrc"));
+    const KArchiveEntry *kalendarentry = mArchiveDirectory->entry(Utils::configsPath() + kalendarStr);
+    if (kalendarentry && kalendarentry->isFile()) {
+        const auto kalendarentryFile = static_cast<const KArchiveFile *>(kalendarentry);
+        const QString kalendarentrycrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendaracStr;
+        if (QFileInfo::exists(kalendarentrycrc)) {
+            if (overwriteConfigMessageBox(kalendaracStr)) {
+                importKalendarConfig(kalendarentryFile, kalendarentrycrc, kalendaracStr, Utils::configsPath());
+            }
+        } else {
+            importKalendarConfig(kalendarentryFile, kalendarentrycrc, kalendaracStr, Utils::configsPath());
+        }
+    }
+
     const QString freebusyStr(QStringLiteral("freebusyurls"));
     const KArchiveEntry *freebusyentry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("korganizer/") + freebusyStr);
     if (freebusyentry && freebusyentry->isFile()) {
@@ -215,6 +229,17 @@ void ImportCalendarJobInterface::importkorganizerConfig(const KArchiveFile *file
     convertCollectionListStrToAkonadiId(korganizerConfig, QStringLiteral("GlobalCollectionView"), QStringLiteral("Expansion"), true);
 
     korganizerConfig->sync();
+}
+
+void ImportCalendarJobInterface::importKalendarConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
+{
+    copyToFile(file, config, filename, prefix);
+    KSharedConfig::Ptr kalendarConfig = KSharedConfig::openConfig(config);
+
+    convertCollectionListStrToAkonadiId(kalendarConfig, QStringLiteral("GlobalCollectionSelection"), QStringLiteral("Selection"), true);
+    // TODO Resources Colors
+
+    kalendarConfig->sync();
 }
 
 void ImportCalendarJobInterface::importReminderAgentConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
