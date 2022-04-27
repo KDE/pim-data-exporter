@@ -1,0 +1,12 @@
+[Alarms]
+CalendarsLastChecked=2022,4,27,12,41,0.167
+
+[General]
+Autostart=true
+Enabled=true
+
+[Suspended][45bfaf0e-5335-479d-a56a-7db0f0509794]
+Occurrence=0,0,0,-1,-1,-1.001
+RemindAt=2022,1,7,10,45,0.128
+Text=REMINDER
+UID=45bfaf0e-5335-479d-a56a-7db0f0509794

@@ -146,17 +146,17 @@ void ImportCalendarJobInterface::restoreConfig()
         }
     }
 
-    const QString korgacStr(QStringLiteral("korgacrc"));
-    const KArchiveEntry *korgacrcentry = mArchiveDirectory->entry(Utils::configsPath() + korgacStr);
-    if (korgacrcentry && korgacrcentry->isFile()) {
-        const auto korgacrcFile = static_cast<const KArchiveFile *>(korgacrcentry);
-        const QString korgacrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + korgacStr;
-        if (QFileInfo::exists(korgacrc)) {
-            if (overwriteConfigMessageBox(korgacStr)) {
-                copyToFile(korgacrcFile, korgacrc, korgacStr, Utils::configsPath());
+    const QString kalendaracStr(QStringLiteral("kalendaracrc"));
+    const KArchiveEntry *kalendaracentry = mArchiveDirectory->entry(Utils::configsPath() + kalendaracStr);
+    if (kalendaracentry && kalendaracentry->isFile()) {
+        const auto kalendaracFile = static_cast<const KArchiveFile *>(kalendaracentry);
+        const QString kalendaracrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendaracStr;
+        if (QFileInfo::exists(kalendaracrc)) {
+            if (overwriteConfigMessageBox(kalendaracStr)) {
+                importReminderAgentConfig(kalendaracFile, kalendaracrc, kalendaracStr, Utils::configsPath());
             }
         } else {
-            copyToFile(korgacrcFile, korgacrc, korgacStr, Utils::configsPath());
+            importReminderAgentConfig(kalendaracFile, kalendaracrc, kalendaracStr, Utils::configsPath());
         }
     }
 
@@ -215,6 +215,14 @@ void ImportCalendarJobInterface::importkorganizerConfig(const KArchiveFile *file
     convertCollectionListStrToAkonadiId(korganizerConfig, QStringLiteral("GlobalCollectionView"), QStringLiteral("Expansion"), true);
 
     korganizerConfig->sync();
+}
+
+void ImportCalendarJobInterface::importReminderAgentConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
+{
+    copyToFile(file, config, filename, prefix);
+    KSharedConfig::Ptr reminderAgentConfig = KSharedConfig::openConfig(config);
+    convertCollectionListStrToAkonadiId(reminderAgentConfig, QStringLiteral("Alarms"), QStringLiteral("CalendarsLastChecked"), false);
+    reminderAgentConfig->sync();
 }
 
 void ImportCalendarJobInterface::importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)

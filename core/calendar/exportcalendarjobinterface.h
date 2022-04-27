@@ -32,6 +32,9 @@ protected:
 
 private:
     void slotCheckBackupResource();
+    void exportEventViewConfig();
+    void exportKorganizerConfig();
+    void exportReminderAgentConfig();
 
     void backupConfig();
     int mIndexIdentifier = 0;
