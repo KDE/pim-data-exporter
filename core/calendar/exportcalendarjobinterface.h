@@ -35,6 +35,7 @@ private:
     void exportEventViewConfig();
     void exportKorganizerConfig();
     void exportReminderAgentConfig();
+    void exportKalendarConfig();
 
     void backupConfig();
     int mIndexIdentifier = 0;

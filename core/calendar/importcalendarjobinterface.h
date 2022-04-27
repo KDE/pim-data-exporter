@@ -32,6 +32,7 @@ private:
     void importkorganizerConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void importReminderAgentConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
+    void importKalendarConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void restoreResources();
     void restoreConfig();
     void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
