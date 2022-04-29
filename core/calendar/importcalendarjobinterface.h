@@ -37,4 +37,5 @@ private:
     void restoreConfig();
     void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings) override;
     Q_REQUIRED_RESULT QString installConfigLocation() const;
+    void convertResourceColors(const KSharedConfig::Ptr &config);
 };
