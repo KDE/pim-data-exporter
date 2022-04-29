@@ -5,7 +5,7 @@ showMenubar=true
 
 [GlobalCollectionSelection]
 Current=x-1
-Selection=c2,c150,c647,c655
+Selection=c12,c160,c657,c665
 
 [KFileDialog Settings]
 detailViewIconSize=16

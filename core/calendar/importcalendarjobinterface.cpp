@@ -118,96 +118,108 @@ void ImportCalendarJobInterface::restoreConfig()
         }
     }
 
-    const QString korganizerStr(QStringLiteral("korganizerrc"));
-    const KArchiveEntry *korganizerrcentry = mArchiveDirectory->entry(Utils::configsPath() + korganizerStr);
-    if (korganizerrcentry && korganizerrcentry->isFile()) {
-        const auto korganizerrcFile = static_cast<const KArchiveFile *>(korganizerrcentry);
-        const QString korganizerrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + korganizerStr;
-        if (QFileInfo::exists(korganizerrc)) {
-            if (overwriteConfigMessageBox(korganizerStr)) {
+    {
+        const QString korganizerStr(QStringLiteral("korganizerrc"));
+        const KArchiveEntry *korganizerrcentry = mArchiveDirectory->entry(Utils::configsPath() + korganizerStr);
+        if (korganizerrcentry && korganizerrcentry->isFile()) {
+            const auto korganizerrcFile = static_cast<const KArchiveFile *>(korganizerrcentry);
+            const QString korganizerrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + korganizerStr;
+            if (QFileInfo::exists(korganizerrc)) {
+                if (overwriteConfigMessageBox(korganizerStr)) {
+                    importkorganizerConfig(korganizerrcFile, korganizerrc, korganizerStr, Utils::configsPath());
+                }
+            } else {
                 importkorganizerConfig(korganizerrcFile, korganizerrc, korganizerStr, Utils::configsPath());
             }
-        } else {
-            importkorganizerConfig(korganizerrcFile, korganizerrc, korganizerStr, Utils::configsPath());
         }
     }
 
-    const QString eventviewStr(QStringLiteral("eventviewsrc"));
-    const KArchiveEntry *eventviewentry = mArchiveDirectory->entry(Utils::configsPath() + eventviewStr);
-    if (eventviewentry && eventviewentry->isFile()) {
-        const auto eventviewrcFile = static_cast<const KArchiveFile *>(eventviewentry);
-        const QString eventviewrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + eventviewStr;
-        if (QFileInfo::exists(eventviewrc)) {
-            if (overwriteConfigMessageBox(eventviewStr)) {
+    {
+        const QString eventviewStr(QStringLiteral("eventviewsrc"));
+        const KArchiveEntry *eventviewentry = mArchiveDirectory->entry(Utils::configsPath() + eventviewStr);
+        if (eventviewentry && eventviewentry->isFile()) {
+            const auto eventviewrcFile = static_cast<const KArchiveFile *>(eventviewentry);
+            const QString eventviewrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + eventviewStr;
+            if (QFileInfo::exists(eventviewrc)) {
+                if (overwriteConfigMessageBox(eventviewStr)) {
+                    importeventViewConfig(eventviewrcFile, eventviewrc, eventviewStr, Utils::configsPath());
+                }
+            } else {
                 importeventViewConfig(eventviewrcFile, eventviewrc, eventviewStr, Utils::configsPath());
             }
-        } else {
-            importeventViewConfig(eventviewrcFile, eventviewrc, eventviewStr, Utils::configsPath());
         }
     }
-
-    const QString kalendaracStr(QStringLiteral("kalendaracrc"));
-    const KArchiveEntry *kalendaracentry = mArchiveDirectory->entry(Utils::configsPath() + kalendaracStr);
-    if (kalendaracentry && kalendaracentry->isFile()) {
-        const auto kalendaracFile = static_cast<const KArchiveFile *>(kalendaracentry);
-        const QString kalendaracrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendaracStr;
-        if (QFileInfo::exists(kalendaracrc)) {
-            if (overwriteConfigMessageBox(kalendaracStr)) {
+    {
+        const QString kalendaracStr(QStringLiteral("kalendaracrc"));
+        const KArchiveEntry *kalendaracentry = mArchiveDirectory->entry(Utils::configsPath() + kalendaracStr);
+        if (kalendaracentry && kalendaracentry->isFile()) {
+            const auto kalendaracFile = static_cast<const KArchiveFile *>(kalendaracentry);
+            const QString kalendaracrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendaracStr;
+            if (QFileInfo::exists(kalendaracrc)) {
+                if (overwriteConfigMessageBox(kalendaracStr)) {
+                    importReminderAgentConfig(kalendaracFile, kalendaracrc, kalendaracStr, Utils::configsPath());
+                }
+            } else {
                 importReminderAgentConfig(kalendaracFile, kalendaracrc, kalendaracStr, Utils::configsPath());
             }
-        } else {
-            importReminderAgentConfig(kalendaracFile, kalendaracrc, kalendaracStr, Utils::configsPath());
         }
     }
-
-    const QString kalendarStr(QStringLiteral("kalendarrc"));
-    const KArchiveEntry *kalendarentry = mArchiveDirectory->entry(Utils::configsPath() + kalendarStr);
-    if (kalendarentry && kalendarentry->isFile()) {
-        const auto kalendarentryFile = static_cast<const KArchiveFile *>(kalendarentry);
-        const QString kalendarentrycrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendaracStr;
-        if (QFileInfo::exists(kalendarentrycrc)) {
-            if (overwriteConfigMessageBox(kalendaracStr)) {
-                importKalendarConfig(kalendarentryFile, kalendarentrycrc, kalendaracStr, Utils::configsPath());
+    {
+        const QString kalendarStr(QStringLiteral("kalendarrc"));
+        const KArchiveEntry *kalendarentry = mArchiveDirectory->entry(Utils::configsPath() + kalendarStr);
+        if (kalendarentry && kalendarentry->isFile()) {
+            const auto kalendarentryFile = static_cast<const KArchiveFile *>(kalendarentry);
+            const QString kalendarentrycrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendarStr;
+            if (QFileInfo::exists(kalendarentrycrc)) {
+                if (overwriteConfigMessageBox(kalendarStr)) {
+                    importKalendarConfig(kalendarentryFile, kalendarentrycrc, kalendarStr, Utils::configsPath());
+                }
+            } else {
+                importKalendarConfig(kalendarentryFile, kalendarentrycrc, kalendarStr, Utils::configsPath());
             }
-        } else {
-            importKalendarConfig(kalendarentryFile, kalendarentrycrc, kalendaracStr, Utils::configsPath());
         }
     }
 
-    const QString freebusyStr(QStringLiteral("freebusyurls"));
-    const KArchiveEntry *freebusyentry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("korganizer/") + freebusyStr);
-    if (freebusyentry && freebusyentry->isFile()) {
-        const auto freebusyrcFile = static_cast<const KArchiveFile *>(freebusyentry);
+    {
+        const QString freebusyStr(QStringLiteral("freebusyurls"));
+        const KArchiveEntry *freebusyentry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("korganizer/") + freebusyStr);
+        if (freebusyentry && freebusyentry->isFile()) {
+            const auto freebusyrcFile = static_cast<const KArchiveFile *>(freebusyentry);
 
-        const QString freebusypath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/korganizer/") + freebusyStr;
-        if (QFileInfo::exists(freebusypath)) {
-            // TODO 4.12 merge it.
-            if (overwriteConfigMessageBox(freebusyStr)) {
+            const QString freebusypath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/korganizer/") + freebusyStr;
+            if (QFileInfo::exists(freebusypath)) {
+                // TODO 4.12 merge it.
+                if (overwriteConfigMessageBox(freebusyStr)) {
+                    copyToFile(freebusyrcFile, freebusypath, freebusyStr, Utils::dataPath());
+                }
+            } else {
                 copyToFile(freebusyrcFile, freebusypath, freebusyStr, Utils::dataPath());
             }
-        } else {
-            copyToFile(freebusyrcFile, freebusypath, freebusyStr, Utils::dataPath());
         }
     }
 
-    const KArchiveEntry *templateEntry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("korganizer/templates/"));
-    if (templateEntry && templateEntry->isDirectory()) {
-        // TODO 4.12 verify if template already exists.
-        const QString templatePath =
-            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("korganizer/templates/");
-        const auto templateDir = static_cast<const KArchiveDirectory *>(templateEntry);
-        if (!templateDir->copyTo(templatePath)) {
-            qCDebug(PIMDATAEXPORTERCORE_LOG) << "template cannot copy to " << templatePath;
+    {
+        const KArchiveEntry *templateEntry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("korganizer/templates/"));
+        if (templateEntry && templateEntry->isDirectory()) {
+            // TODO 4.12 verify if template already exists.
+            const QString templatePath =
+                QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("korganizer/templates/");
+            const auto templateDir = static_cast<const KArchiveDirectory *>(templateEntry);
+            if (!templateDir->copyTo(templatePath)) {
+                qCDebug(PIMDATAEXPORTERCORE_LOG) << "template cannot copy to " << templatePath;
+            }
         }
     }
 
-    const KArchiveEntry *designerEntry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("korganizer/designer/"));
-    if (designerEntry && designerEntry->isDirectory()) {
-        const QString templatePath =
-            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("korganizer/designer/");
-        const auto templateDir = static_cast<const KArchiveDirectory *>(designerEntry);
-        if (!templateDir->copyTo(templatePath)) {
-            qCDebug(PIMDATAEXPORTERCORE_LOG) << "template cannot copy to " << templatePath;
+    {
+        const KArchiveEntry *designerEntry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("korganizer/designer/"));
+        if (designerEntry && designerEntry->isDirectory()) {
+            const QString templatePath =
+                QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("korganizer/designer/");
+            const auto templateDir = static_cast<const KArchiveDirectory *>(designerEntry);
+            if (!templateDir->copyTo(templatePath)) {
+                qCDebug(PIMDATAEXPORTERCORE_LOG) << "template cannot copy to " << templatePath;
+            }
         }
     }
 
@@ -238,7 +250,6 @@ void ImportCalendarJobInterface::importKalendarConfig(const KArchiveFile *file, 
 
     convertCollectionListStrToAkonadiId(kalendarConfig, QStringLiteral("GlobalCollectionSelection"), QStringLiteral("Selection"), true);
     // TODO Resources Colors
-
     kalendarConfig->sync();
 }
 
