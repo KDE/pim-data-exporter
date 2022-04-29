@@ -36,6 +36,7 @@ private:
     void exportKorganizerConfig();
     void exportReminderAgentConfig();
     void exportKalendarConfig();
+    void exportResourceColors(KConfig *config);
 
     void backupConfig();
     int mIndexIdentifier = 0;

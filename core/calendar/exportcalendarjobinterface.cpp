@@ -124,27 +124,33 @@ void ExportCalendarJobInterface::exportEventViewConfig()
         tmp.open();
 
         KConfig *eventviewConfig = eventviews->copyTo(tmp.fileName());
-
-        const QString resourceColorStr(QStringLiteral("Resources Colors"));
-        if (eventviewConfig->hasGroup(resourceColorStr)) {
-            KConfigGroup group = eventviewConfig->group(resourceColorStr);
-
-            const QStringList keyList = group.keyList();
-            bool found = false;
-            for (const QString &key : keyList) {
-                const int collectionValue = key.toInt(&found);
-                if (found && collectionValue != -1) {
-                    const QString realPath = convertToFullCollectionPath(collectionValue);
-                    const QColor color = group.readEntry(key, QColor());
-                    group.writeEntry(realPath, color);
-                    group.deleteEntry(key);
-                }
-            }
-        }
+        exportResourceColors(eventviewConfig);
 
         eventviewConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), eventviewsrcStr);
         delete eventviewConfig;
+    }
+}
+
+void ExportCalendarJobInterface::exportResourceColors(KConfig *config)
+{
+    const QString resourceColorStr(QStringLiteral("Resources Colors"));
+    if (config->hasGroup(resourceColorStr)) {
+        KConfigGroup group = config->group(resourceColorStr);
+
+        const QStringList keyList = group.keyList();
+        bool found = false;
+        for (const QString &key : keyList) {
+            const int collectionValue = key.toInt(&found);
+            if (found && collectionValue != -1) {
+                const QString realPath = convertToFullCollectionPath(collectionValue);
+                const QColor color = group.readEntry(key, QColor());
+                if (color.isValid()) {
+                    group.writeEntry(realPath, color);
+                }
+                group.deleteEntry(key);
+            }
+        }
     }
 }
 
@@ -193,7 +199,7 @@ void ExportCalendarJobInterface::exportKalendarConfig()
             // Add Current
         }
 
-        // Add Resources Colors
+        exportResourceColors(kalendarConfig);
         kalendarConfig->sync();
         backupFile(tmp.fileName(), Utils::configsPath(), kalendarStr);
         delete kalendarConfig;

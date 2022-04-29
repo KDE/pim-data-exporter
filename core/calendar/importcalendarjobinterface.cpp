@@ -249,7 +249,7 @@ void ImportCalendarJobInterface::importKalendarConfig(const KArchiveFile *file, 
     KSharedConfig::Ptr kalendarConfig = KSharedConfig::openConfig(config);
 
     convertCollectionListStrToAkonadiId(kalendarConfig, QStringLiteral("GlobalCollectionSelection"), QStringLiteral("Selection"), true);
-    // TODO Resources Colors
+    convertResourceColors(kalendarConfig);
     kalendarConfig->sync();
 }
 
@@ -265,10 +265,15 @@ void ImportCalendarJobInterface::importeventViewConfig(const KArchiveFile *file,
 {
     copyToFile(file, config, filename, prefix);
     KSharedConfig::Ptr eventviewConfig = KSharedConfig::openConfig(config);
+    convertResourceColors(eventviewConfig);
+    eventviewConfig->sync();
+}
 
+void ImportCalendarJobInterface::convertResourceColors(const KSharedConfig::Ptr &config)
+{
     const QString resourceColorStr(QStringLiteral("Resources Colors"));
-    if (eventviewConfig->hasGroup(resourceColorStr)) {
-        KConfigGroup group = eventviewConfig->group(resourceColorStr);
+    if (config->hasGroup(resourceColorStr)) {
+        KConfigGroup group = config->group(resourceColorStr);
         const QStringList keyList = group.keyList();
         for (const QString &key : keyList) {
             const Akonadi::Collection::Id id = convertPathToId(key);
@@ -279,8 +284,6 @@ void ImportCalendarJobInterface::importeventViewConfig(const KArchiveFile *file,
             group.deleteEntry(key);
         }
     }
-
-    eventviewConfig->sync();
 }
 
 void ImportCalendarJobInterface::restoreResources()
