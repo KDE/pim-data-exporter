@@ -154,31 +154,6 @@ void ExportCalendarJobInterface::exportResourceColors(KConfig *config)
     }
 }
 
-void ExportCalendarJobInterface::exportReminderAgentConfig()
-{
-    const QString kalendarcStr(QStringLiteral("kalendaracrc"));
-    const QString kalendarcrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendarcStr;
-    if (QFileInfo::exists(kalendarcrc)) {
-        KSharedConfigPtr kalendarc = KSharedConfig::openConfig(kalendarcrc);
-
-        QTemporaryFile tmp;
-        tmp.open();
-        tmp.setAutoRemove(false);
-
-        KConfig *kalendarcConfig = kalendarc->copyTo(tmp.fileName());
-        const QString globalCollectionsStr(QStringLiteral("Alarms"));
-        if (kalendarcConfig->hasGroup(globalCollectionsStr)) {
-            KConfigGroup group = kalendarcConfig->group(globalCollectionsStr);
-            const QString selectionKey(QStringLiteral("CalendarsLastChecked"));
-            convertCollectionListToRealPath(group, selectionKey);
-        }
-
-        kalendarcConfig->sync();
-        backupFile(tmp.fileName(), Utils::configsPath(), kalendarcStr);
-        delete kalendarcConfig;
-    }
-}
-
 void ExportCalendarJobInterface::exportKalendarConfig()
 {
     const QString kalendarStr(QStringLiteral("kalendarrc"));
@@ -251,7 +226,7 @@ void ExportCalendarJobInterface::backupConfig()
 
     exportKorganizerConfig();
     exportEventViewConfig();
-    exportReminderAgentConfig();
+    backupConfigFile(QStringLiteral("kalendaracrc"));
     exportKalendarConfig();
 
     backupConfigFile(QStringLiteral("calendar_printing.rc"));

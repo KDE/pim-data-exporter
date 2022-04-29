@@ -31,7 +31,6 @@ private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
     void importkorganizerConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
-    void importReminderAgentConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void importKalendarConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix);
     void restoreResources();
     void restoreConfig();

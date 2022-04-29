@@ -1,5 +1,5 @@
 [Alarms]
-CalendarsLastChecked=foo/bla bla/bli2022,foo/bla bla/bli4,foo/bla bla/bli27,foo/bla bla/bli12,foo/bla bla/bli41
+CalendarsLastChecked=2022,4,27,12,41,0.167
 
 [General]
 Autostart=true
