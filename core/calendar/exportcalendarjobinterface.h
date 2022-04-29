@@ -34,7 +34,6 @@ private:
     void slotCheckBackupResource();
     void exportEventViewConfig();
     void exportKorganizerConfig();
-    void exportReminderAgentConfig();
     void exportKalendarConfig();
     void exportResourceColors(KConfig *config);
 

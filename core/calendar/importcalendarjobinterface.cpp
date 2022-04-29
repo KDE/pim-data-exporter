@@ -157,10 +157,10 @@ void ImportCalendarJobInterface::restoreConfig()
             const QString kalendaracrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendaracStr;
             if (QFileInfo::exists(kalendaracrc)) {
                 if (overwriteConfigMessageBox(kalendaracStr)) {
-                    importReminderAgentConfig(kalendaracFile, kalendaracrc, kalendaracStr, Utils::configsPath());
+                    copyToFile(kalendaracFile, kalendaracrc, kalendaracStr, Utils::configsPath());
                 }
             } else {
-                importReminderAgentConfig(kalendaracFile, kalendaracrc, kalendaracStr, Utils::configsPath());
+                copyToFile(kalendaracFile, kalendaracrc, kalendaracStr, Utils::configsPath());
             }
         }
     }
@@ -251,14 +251,6 @@ void ImportCalendarJobInterface::importKalendarConfig(const KArchiveFile *file, 
     convertCollectionListStrToAkonadiId(kalendarConfig, QStringLiteral("GlobalCollectionSelection"), QStringLiteral("Selection"), true);
     convertResourceColors(kalendarConfig);
     kalendarConfig->sync();
-}
-
-void ImportCalendarJobInterface::importReminderAgentConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
-{
-    copyToFile(file, config, filename, prefix);
-    KSharedConfig::Ptr reminderAgentConfig = KSharedConfig::openConfig(config);
-    convertCollectionListStrToAkonadiId(reminderAgentConfig, QStringLiteral("Alarms"), QStringLiteral("CalendarsLastChecked"), false);
-    reminderAgentConfig->sync();
 }
 
 void ImportCalendarJobInterface::importeventViewConfig(const KArchiveFile *file, const QString &config, const QString &filename, const QString &prefix)
