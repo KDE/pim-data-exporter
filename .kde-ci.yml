@@ -15,3 +15,6 @@ Dependencies:
     'pim/mailcommon' : '@same'
     'pim/pimcommon' : '@same'
     'pim/akonadi-notes' : '@same'
+
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD' ]      
