@@ -57,7 +57,7 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     connect(mOpenFile, &QPushButton::clicked, this, &ShowArchiveStructureDialog::slotOpenFile);
     buttonBox->addButton(mOpenFile, QDialogButtonBox::ActionRole);
 
-    connect(mTreeWidget, &QTreeWidget::itemClicked, this, &ShowArchiveStructureDialog::slotItemClicked);
+    connect(mTreeWidget, &QTreeWidget::itemActivated, this, &ShowArchiveStructureDialog::slotItemClicked);
 
     mainLayout->addWidget(searchLine);
     mainLayout->addWidget(mTreeWidget);
