@@ -71,6 +71,10 @@ QString ExportAddressbookJobInterfaceTestImpl::createResource(const QString &res
                                                               const QMap<QString, QVariant> &settings,
                                                               bool synchronizeTree)
 {
+    Q_UNUSED(resources);
+    Q_UNUSED(settings);
+    Q_UNUSED(name);
+    Q_UNUSED(synchronizeTree);
     Q_UNREACHABLE();
     return {};
 }
