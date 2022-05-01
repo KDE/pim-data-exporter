@@ -2,7 +2,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
-set( exportmailjobinterfacetest_SRCS exportmailjobinterfacetest.cpp exportmailjobinterfacetestimpl.cpp)
+set( exportmailjobinterfacetest_SRCS exportmailjobinterfacetest.cpp exportmailjobinterfacetestimpl.cpp
+    exportmailjobinterfacetest.h exportmailjobinterfacetestimpl.h)
 
 add_executable( exportmailjobinterfacetest ${exportmailjobinterfacetest_SRCS})
 add_test(NAME exportmailjobinterfacetest COMMAND exportmailjobinterfacetest)
@@ -11,7 +12,8 @@ target_link_libraries(exportmailjobinterfacetest Qt${QT_MAJOR_VERSION}::Test pim
 
 #####
 
-set( importmailjobinterfacetest_SRCS importmailjobinterfacetest.cpp importmailjobinterfacetestimpl.cpp)
+set( importmailjobinterfacetest_SRCS importmailjobinterfacetest.cpp importmailjobinterfacetestimpl.cpp
+    importmailjobinterfacetest.h importmailjobinterfacetestimpl.h)
 
 add_executable( importmailjobinterfacetest ${importmailjobinterfacetest_SRCS})
 add_test(NAME importmailjobinterfacetest COMMAND importmailjobinterfacetest)

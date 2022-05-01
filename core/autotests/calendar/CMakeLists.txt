@@ -2,7 +2,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
-set( exportcalendarsjobinterfacetest_SRCS exportcalendarsjobinterfacetest.cpp exportcalendarsjobinterfacetestimpl.cpp)
+set( exportcalendarsjobinterfacetest_SRCS exportcalendarsjobinterfacetest.cpp exportcalendarsjobinterfacetestimpl.cpp
+    exportcalendarsjobinterfacetest.h exportcalendarsjobinterfacetestimpl.h)
 
 add_executable( exportcalendarsjobinterfacetest ${exportcalendarsjobinterfacetest_SRCS})
 add_test(NAME exportcalendarsjobinterfacetest COMMAND exportcalendarsjobinterfacetest)
@@ -11,7 +12,8 @@ target_link_libraries(exportcalendarsjobinterfacetest Qt${QT_MAJOR_VERSION}::Tes
 
 #####
 
-set( importcalendarjobinterfacetest_SRCS importcalendarjobinterfacetest.cpp importcalendarjobinterfacetestimpl.cpp)
+set( importcalendarjobinterfacetest_SRCS importcalendarjobinterfacetest.cpp importcalendarjobinterfacetestimpl.cpp
+    importcalendarjobinterfacetest.h importcalendarjobinterfacetestimpl.h)
 
 add_executable( importcalendarjobinterfacetest ${importcalendarjobinterfacetest_SRCS})
 add_test(NAME importcalendarjobinterfacetest COMMAND importcalendarjobinterfacetest)

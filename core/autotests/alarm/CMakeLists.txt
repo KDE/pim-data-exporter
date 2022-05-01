@@ -2,7 +2,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
-set( exportalarmjobinterfacetest_SRCS exportalarmjobinterfacetest.cpp exportalarmjobinterfacetestimpl.cpp)
+set( exportalarmjobinterfacetest_SRCS exportalarmjobinterfacetest.cpp exportalarmjobinterfacetestimpl.cpp
+    exportalarmjobinterfacetest.h exportalarmjobinterfacetestimpl.h)
 
 add_executable( exportalarmjobinterfacetest ${exportalarmjobinterfacetest_SRCS})
 add_test(NAME exportalarmjobinterfacetest COMMAND exportalarmjobinterfacetest)
@@ -11,7 +12,8 @@ target_link_libraries(exportalarmjobinterfacetest Qt${QT_MAJOR_VERSION}::Test pi
 
 #####
 
-set( importalarmjobinterfacetest_SRCS importalarmjobinterfacetest.cpp importalarmjobinterfacetestimpl.cpp)
+set( importalarmjobinterfacetest_SRCS importalarmjobinterfacetest.cpp importalarmjobinterfacetestimpl.cpp
+    importalarmjobinterfacetest.h importalarmjobinterfacetestimpl.h)
 
 add_executable( importalarmjobinterfacetest ${importalarmjobinterfacetest_SRCS})
 add_test(NAME importalarmjobinterfacetest COMMAND importalarmjobinterfacetest)
