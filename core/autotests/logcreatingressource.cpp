@@ -13,8 +13,8 @@
 
 LogCreatingResource::LogCreatingResource(QObject *parent)
     : QObject(parent)
+    , mTmpLogFile(new QTemporaryFile(this))
 {
-    mTmpLogFile = new QTemporaryFile(this);
 #ifdef REMOVE_TEMPORARY_FILE
     mTmpLogFile->setAutoRemove(true);
 #else

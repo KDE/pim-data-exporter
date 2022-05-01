@@ -22,6 +22,6 @@ public:
     void logRegisterSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId);
 
 private:
-    QTemporaryFile *mTmpLogFile = nullptr;
+    QTemporaryFile *const mTmpLogFile;
     int mResourceIndex = 0;
 };
