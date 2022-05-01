@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2011-2022 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
+add_definitions( -DPIMDATAINSTALL_DIR="${CMAKE_CURRENT_BINARY_DIR}/install" )
 
 ####
 add_executable( utilstest utilstest.cpp)
