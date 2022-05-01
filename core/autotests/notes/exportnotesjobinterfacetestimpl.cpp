@@ -66,6 +66,10 @@ QString ExportNotesJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResou
 QString
 ExportNotesJobInterfaceTestImpl::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
+    Q_UNUSED(resources);
+    Q_UNUSED(settings);
+    Q_UNUSED(name);
+    Q_UNUSED(synchronizeTree);
     Q_UNREACHABLE();
     return {};
 }

@@ -20,6 +20,9 @@ ExportAkregatorJobInterfaceTestImpl::~ExportAkregatorJobInterfaceTestImpl()
 
 QString ExportAkregatorJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
 {
+    Q_UNUSED(overwriteResources);
+    Q_UNUSED(resourceConfig);
+    Q_UNUSED(storePath);
     Q_UNREACHABLE();
     return {};
 }
@@ -29,6 +32,10 @@ QString ExportAkregatorJobInterfaceTestImpl::createResource(const QString &resou
                                                             const QMap<QString, QVariant> &settings,
                                                             bool synchronizeTree)
 {
+    Q_UNUSED(resources);
+    Q_UNUSED(settings);
+    Q_UNUSED(name);
+    Q_UNUSED(synchronizeTree);
     Q_UNREACHABLE();
     return {};
 }

@@ -133,6 +133,10 @@ QString ImportMailJobInterfaceTestImpl::uniqueIdentityName(const QString &name)
 
 void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId)
 {
+    Q_UNUSED(identifierValue);
+    Q_UNUSED(group);
+    Q_UNUSED(defaultTransport);
+    Q_UNUSED(transportId);
     qDebug()
         << "importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) not implemented yet";
 }
