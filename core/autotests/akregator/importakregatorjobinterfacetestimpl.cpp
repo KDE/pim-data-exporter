@@ -20,12 +20,16 @@ ImportAkregatorJobInterfaceTestImpl::~ImportAkregatorJobInterfaceTestImpl()
 
 Akonadi::Collection::Id ImportAkregatorJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {
+    Q_UNUSED(path);
     Q_UNREACHABLE();
     return -1;
 }
 
 QString ImportAkregatorJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
 {
+    Q_UNUSED(overwriteResources);
+    Q_UNUSED(resourceConfig);
+    Q_UNUSED(storePath);
     Q_UNREACHABLE();
     return {};
 }
