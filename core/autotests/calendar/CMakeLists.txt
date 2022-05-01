@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2011-2022 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
-add_definitions( -DPIMDATAINSTALL_DIR="${CMAKE_CURRENT_BINARY_DIR}/install" )
+
 
 set( exportcalendarsjobinterfacetest_SRCS exportcalendarsjobinterfacetest.cpp exportcalendarsjobinterfacetestimpl.cpp
     exportcalendarsjobinterfacetest.h exportcalendarsjobinterfacetestimpl.h)
