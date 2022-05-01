@@ -3,7 +3,7 @@
 add_definitions( -DPIMDATAINSTALL_DIR="${CMAKE_CURRENT_BINARY_DIR}/install" )
 
 ####
-add_executable( utilstest utilstest.cpp)
+add_executable( utilstest utilstest.cpp utilstest.h)
 add_test(NAME utilstest COMMAND utilstest)
 ecm_mark_as_test(utilstest)
 target_link_libraries( utilstest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::ConfigCore)
@@ -24,6 +24,20 @@ add_library(test_resourceconverter STATIC
     compareloggingfile.cpp
     testbackupresourcefilejob.cpp
     importexportprogressindicatortest.cpp
+    resourceconvertertest.h
+    generatelistfilefromarchive.h
+    loadlistfromfile.h
+    compareexportfile.h
+    compareimportfile.h
+    testexportfile.h
+    testimportfile.h
+    logcreatingressource.h
+    comparefilehelper.h
+    exportimportutil.h
+    saveresourceconfigtest.h
+    compareloggingfile.h
+    testbackupresourcefilejob.h
+    importexportprogressindicatortest.h
 )
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(test_resourceconverter PROPERTIES UNITY_BUILD ON)
@@ -32,13 +46,13 @@ target_link_libraries(test_resourceconverter PUBLIC KF5::ConfigCore pimdataexpor
 
 
 #####
-add_executable( resourceconverterclasstest resourceconverterclasstest.cpp)
+add_executable( resourceconverterclasstest resourceconverterclasstest.cpp resourceconverterclasstest.h)
 add_test(NAME resourceconverterclasstest COMMAND resourceconverterclasstest)
 ecm_mark_as_test(resourceconverterclasstest)
 target_link_libraries( resourceconverterclasstest Qt${QT_MAJOR_VERSION}::Test KF5::ConfigCore test_resourceconverter)
 
 #####
-add_executable( backupresourcefilejobimpltest backupresourcefilejobimpltest.cpp)
+add_executable( backupresourcefilejobimpltest backupresourcefilejobimpltest.cpp backupresourcefilejobimpltest.h)
 add_test(NAME backupresourcefilejobimpltest COMMAND backupresourcefilejobimpltest)
 ecm_mark_as_test(backupresourcefilejobimpltest)
 target_link_libraries( backupresourcefilejobimpltest Qt${QT_MAJOR_VERSION}::Test KF5::ConfigCore pimdataexporterprivate KF5::Archive)
