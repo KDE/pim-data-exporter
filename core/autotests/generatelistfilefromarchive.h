@@ -22,7 +22,7 @@ private:
     Q_REQUIRED_RESULT bool searchArchiveElement(const QString &path, const KArchiveDirectory *topDirectory);
     void addSubItems(const QString &topLevelPath, const KArchiveEntry *entry, int indent, const QString &fullpath = QString());
     void generateList();
-    QString mFileName;
+    const QString mFileName;
     QStringList mListFile;
     KZip *mZip = nullptr;
 };
