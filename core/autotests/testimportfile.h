@@ -39,7 +39,7 @@ public:
 private:
     AbstractImportExportJob *mAbstractImportExportJob = nullptr;
     ArchiveStorage *mArchiveStorage = nullptr;
-    QString mArchivePath;
+    const QString mArchivePath;
     QString mPathConfig;
     QString mExtractPath;
     QString mExcludePath;
