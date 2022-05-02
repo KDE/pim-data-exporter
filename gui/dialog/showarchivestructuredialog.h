@@ -36,7 +36,7 @@ private:
     Q_REQUIRED_RESULT bool searchArchiveElement(const QString &path, const KArchiveDirectory *topDirectory, const QString &name);
     QTreeWidgetItem *addTopItem(const QString &name);
     QTreeWidgetItem *addItem(QTreeWidgetItem *parent, const QString &name, const QString &fillFullPath);
-    QString mFileName;
+    const QString mFileName;
     QString mLogFile;
     QTreeWidget *const mTreeWidget;
     QPushButton *const mExtractFile;

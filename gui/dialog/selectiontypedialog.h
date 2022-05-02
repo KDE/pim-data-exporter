@@ -34,7 +34,7 @@ private:
     void writeConfig();
     void loadDefaultTemplate();
     void saveDefaultTemplate();
-    SelectionTypeTreeWidget *mSelectionTreeWidget = nullptr;
+    SelectionTypeTreeWidget *const mSelectionTreeWidget;
     QCheckBox *mUseTemplateByDefault = nullptr;
     QPushButton *mSaveTemplate = nullptr;
     QPushButton *mLoadTemplate = nullptr;
