@@ -30,5 +30,5 @@ private:
     QByteArray mPathConfig;
     AbstractImportExportJob *mAbstractImportExportJob = nullptr;
     ArchiveStorage *mArchiveStorage = nullptr;
-    QString mTemporaryFile;
+    const QString mTemporaryFile;
 };
