@@ -30,7 +30,7 @@ PimDataExporterKernel::PimDataExporterKernel(QObject *parent)
     : QObject(parent)
 {
     mIdentityManager = KIdentityManagement::IdentityManager::self();
-    Akonadi::Session *session = new Akonadi::Session("Backup Mail Kernel ETM", this);
+    auto session = new Akonadi::Session("Backup Mail Kernel ETM", this);
 
     mFolderCollectionMonitor = new MailCommon::FolderCollectionMonitor(session, this);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KContacts::Addressee::mimeType(), true);

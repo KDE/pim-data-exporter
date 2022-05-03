@@ -30,7 +30,7 @@ void PimDataBackupThread::run()
 {
     QTemporaryFile tmp;
     tmp.open();
-    KZip *archiveFile = new KZip(tmp.fileName());
+    auto archiveFile = new KZip(tmp.fileName());
     archiveFile->setCompression(KZip::NoCompression);
     bool result = archiveFile->open(QIODevice::WriteOnly);
     if (!result) {

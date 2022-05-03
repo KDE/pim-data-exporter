@@ -25,10 +25,10 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
 
     auto topLayout = new QVBoxLayout(this);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
 
-    QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
+    auto okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &SelectionTypeDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SelectionTypeDialog::reject);
@@ -47,7 +47,7 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     connect(selectAll, &QPushButton::clicked, this, &SelectionTypeDialog::slotSelectAll);
     hbox->addWidget(selectAll);
 
-    QPushButton *unselectAll = new QPushButton(i18n("Unselect All"), this);
+    auto unselectAll = new QPushButton(i18n("Unselect All"), this);
     unselectAll->setObjectName(QStringLiteral("unselectAll"));
     connect(unselectAll, &QPushButton::clicked, this, &SelectionTypeDialog::slotUnselectAll);
     hbox->addWidget(unselectAll);
