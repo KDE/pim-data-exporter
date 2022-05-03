@@ -36,6 +36,7 @@ void ExportAkregatorJobInterface::start()
 
 Akonadi::Collection::Id ExportAkregatorJobInterface::convertFolderPathToCollectionId(const QString &path)
 {
+    Q_UNUSED(path);
     Q_UNREACHABLE();
     // Unusued
     return -1;
@@ -43,6 +44,9 @@ Akonadi::Collection::Id ExportAkregatorJobInterface::convertFolderPathToCollecti
 
 QString ExportAkregatorJobInterface::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
 {
+    Q_UNUSED(overwriteResources);
+    Q_UNUSED(resourceConfig);
+    Q_UNUSED(storePath);
     Q_UNREACHABLE();
     // Unused
     return {};
@@ -51,6 +55,10 @@ QString ExportAkregatorJobInterface::adaptNewResourceUrl(bool overwriteResources
 QString
 ExportAkregatorJobInterface::createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree)
 {
+    Q_UNUSED(resources);
+    Q_UNUSED(name);
+    Q_UNUSED(settings);
+    Q_UNUSED(synchronizeTree);
     Q_UNREACHABLE();
     return {};
 }

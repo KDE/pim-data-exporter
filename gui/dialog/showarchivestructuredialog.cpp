@@ -42,7 +42,7 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
 
     auto searchLine = new KTreeWidgetSearchLine(this, mTreeWidget);
     searchLine->setPlaceholderText(i18n("Search..."));
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     auto user1Button = new QPushButton(this);
     user1Button->setText(i18n("Save As Text..."));
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
@@ -104,7 +104,7 @@ void ShowArchiveStructureDialog::slotOpenFile()
                     qCWarning(PIMDATAEXPORTERGUI_LOG) << "Impossible to copy file: " << currentItem->text(0);
                     return;
                 }
-                KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl::fromLocalFile(fileName));
+                auto job = new KIO::OpenUrlJob(QUrl::fromLocalFile(fileName));
                 job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
                 job->setRunExecutables(false);
                 job->start();

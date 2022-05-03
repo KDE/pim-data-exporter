@@ -28,7 +28,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Configure PimDataExporter"));
 
     // General page
-    QWidget *generalConfigureWiget = new QWidget(this);
+    auto generalConfigureWiget = new QWidget(this);
     auto layout = new QVBoxLayout(generalConfigureWiget);
     mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
 
@@ -39,7 +39,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     addPage(generalPageWidgetPage);
 
 #ifdef WITH_KUSERFEEDBACK
-    QWidget *userFeedBackWidget = new QWidget;
+    auto userFeedBackWidget = new QWidget;
     userFeedBackWidget->setObjectName(QStringLiteral("userFeedBackWidget"));
 
     mUserFeedbackWidget = new KUserFeedback::FeedbackConfigWidget(this);
@@ -49,7 +49,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     userFeedBackLayout->addWidget(mUserFeedbackWidget);
 
     mUserFeedbackWidget->setFeedbackProvider(UserFeedBackManager::self()->userFeedbackProvider());
-    KPageWidgetItem *userFeedBackPageWidgetPage = new KPageWidgetItem(userFeedBackWidget, i18n("User Feedback"));
+    auto userFeedBackPageWidgetPage = new KPageWidgetItem(userFeedBackWidget, i18n("User Feedback"));
     userFeedBackPageWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("preferences-other")));
     addPage(userFeedBackPageWidgetPage);
 #endif

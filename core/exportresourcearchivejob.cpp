@@ -79,7 +79,6 @@ void ExportResourceArchiveJob::slotTerminated(bool success)
 void ExportResourceArchiveJob::slotTaskCanceled()
 {
     qCDebug(PIMDATAEXPORTERCORE_LOG) << " void ExportResourceArchiveJob::slotTaskCanceled()";
-    // TODO
     if (mThread) {
         mThread->exit();
     }

@@ -28,13 +28,13 @@ BackupFileStructureInfoDialog::BackupFileStructureInfoDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Archive File Structure"));
     auto mainLayout = new QVBoxLayout(this);
-    QLabel *lab = new QLabel(i18n("Backup Archive Structure:"));
+    auto lab = new QLabel(i18n("Backup Archive Structure:"));
     mainLayout->addWidget(lab);
     mEditor->editor()->setWebShortcutSupport(false);
     mEditor->setReadOnly(true);
     mainLayout->addWidget(mEditor);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &BackupFileStructureInfoDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &BackupFileStructureInfoDialog::reject);
     buttonBox->button(QDialogButtonBox::Close)->setDefault(true);
