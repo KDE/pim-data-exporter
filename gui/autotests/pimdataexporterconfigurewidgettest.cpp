@@ -23,16 +23,16 @@ void PimDataExporterConfigureWidgetTest::shouldHaveDefaultValue()
 {
     PimDataExporterConfigureWidget w;
 
-    auto *importGroupBox = w.findChild<QGroupBox *>(QStringLiteral("import_groupbox"));
+    auto importGroupBox = w.findChild<QGroupBox *>(QStringLiteral("import_groupbox"));
     QVERIFY(importGroupBox);
 
-    auto *alwaysOverrideFile = w.findChild<QCheckBox *>(QStringLiteral("alwaysoverridefile"));
+    auto alwaysOverrideFile = w.findChild<QCheckBox *>(QStringLiteral("alwaysoverridefile"));
     QVERIFY(alwaysOverrideFile);
 
-    auto *alwaysOverrideDirectory = w.findChild<QCheckBox *>(QStringLiteral("alwaysoverridedirectory"));
+    auto alwaysOverrideDirectory = w.findChild<QCheckBox *>(QStringLiteral("alwaysoverridedirectory"));
     QVERIFY(alwaysOverrideDirectory);
 
-    auto *alwaysMergeConfigFile = w.findChild<QCheckBox *>(QStringLiteral("alwaysmergeconfigfile"));
+    auto alwaysMergeConfigFile = w.findChild<QCheckBox *>(QStringLiteral("alwaysmergeconfigfile"));
     QVERIFY(alwaysMergeConfigFile);
 }
 
