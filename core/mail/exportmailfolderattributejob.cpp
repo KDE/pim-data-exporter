@@ -37,6 +37,7 @@ void ExportMailFolderAttributeJob::start()
     auto job = new Akonadi::CollectionFetchJob(Akonadi::Collection::root(), Akonadi::CollectionFetchJob::Recursive, this);
     job->fetchScope().fetchAttribute<MailCommon::ExpireCollectionAttribute>();
     job->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
+    job->fetchScope().setContentMimeTypes({QStringLiteral("message/rfc822")});
     connect(job, &Akonadi::CollectionFetchJob::result, this, &ExportMailFolderAttributeJob::slotFetchFinished);
 }
 
