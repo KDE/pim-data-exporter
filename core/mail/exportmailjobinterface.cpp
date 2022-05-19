@@ -111,6 +111,9 @@ void ExportMailJobInterface::slotCheckBackupMails()
 
 void ExportMailJobInterface::backupFolderAttributes()
 {
+    setProgressDialogLabel(i18n("Backing up Folder Attributes..."));
+    // TODO use ExportMailFolderAttributes
+
     // TODO fetch all collection => store expire attribute/display attribute too
     setProgressDialogLabel(i18n("Backing up Mails..."));
     QTimer::singleShot(0, this, &ExportMailJobInterface::slotWriteNextArchiveResource);
