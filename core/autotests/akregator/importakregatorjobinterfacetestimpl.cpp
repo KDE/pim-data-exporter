@@ -14,9 +14,7 @@ ImportAkregatorJobInterfaceTestImpl::ImportAkregatorJobInterfaceTestImpl(QObject
 {
 }
 
-ImportAkregatorJobInterfaceTestImpl::~ImportAkregatorJobInterfaceTestImpl()
-{
-}
+ImportAkregatorJobInterfaceTestImpl::~ImportAkregatorJobInterfaceTestImpl() = default;
 
 Akonadi::Collection::Id ImportAkregatorJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {

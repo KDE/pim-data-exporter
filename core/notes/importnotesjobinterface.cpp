@@ -24,9 +24,7 @@ ImportNotesJobInterface::ImportNotesJobInterface(QObject *parent, Utils::StoredT
     initializeImportJob();
 }
 
-ImportNotesJobInterface::~ImportNotesJobInterface()
-{
-}
+ImportNotesJobInterface::~ImportNotesJobInterface() = default;
 
 void ImportNotesJobInterface::slotNextStep()
 {

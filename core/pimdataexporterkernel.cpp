@@ -109,7 +109,7 @@ qreal PimDataExporterKernel::closeToQuotaThreshold()
 QStringList PimDataExporterKernel::customTemplates()
 {
     Q_ASSERT(false);
-    return QStringList();
+    return {};
 }
 
 bool PimDataExporterKernel::excludeImportantMailFromExpiry()

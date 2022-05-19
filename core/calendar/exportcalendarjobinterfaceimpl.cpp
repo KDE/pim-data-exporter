@@ -22,9 +22,7 @@ ExportCalendarJobInterfaceImpl::ExportCalendarJobInterfaceImpl(QObject *parent,
 {
 }
 
-ExportCalendarJobInterfaceImpl::~ExportCalendarJobInterfaceImpl()
-{
-}
+ExportCalendarJobInterfaceImpl::~ExportCalendarJobInterfaceImpl() = default;
 
 QVector<Utils::AkonadiInstanceInfo> ExportCalendarJobInterfaceImpl::listOfResource()
 {

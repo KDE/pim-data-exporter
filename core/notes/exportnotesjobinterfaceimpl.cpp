@@ -19,9 +19,7 @@ ExportNotesJobInterfaceImpl::ExportNotesJobInterfaceImpl(QObject *parent, Utils:
 {
 }
 
-ExportNotesJobInterfaceImpl::~ExportNotesJobInterfaceImpl()
-{
-}
+ExportNotesJobInterfaceImpl::~ExportNotesJobInterfaceImpl() = default;
 
 QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceImpl::listOfResource()
 {

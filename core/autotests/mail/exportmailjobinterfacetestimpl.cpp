@@ -19,9 +19,7 @@ ExportMailJobInterfaceTestImpl::ExportMailJobInterfaceTestImpl(QObject *parent,
 {
 }
 
-ExportMailJobInterfaceTestImpl::~ExportMailJobInterfaceTestImpl()
-{
-}
+ExportMailJobInterfaceTestImpl::~ExportMailJobInterfaceTestImpl() = default;
 
 void ExportMailJobInterfaceTestImpl::convertCollectionToRealPath(KConfigGroup &group, const QString &currentKey)
 {

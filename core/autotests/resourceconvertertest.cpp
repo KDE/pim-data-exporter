@@ -8,13 +8,9 @@
 #include <QDebug>
 #include <QDir>
 
-ResourceConverterTest::ResourceConverterTest()
-{
-}
+ResourceConverterTest::ResourceConverterTest() = default;
 
-ResourceConverterTest::~ResourceConverterTest()
-{
-}
+ResourceConverterTest::~ResourceConverterTest() = default;
 
 QString ResourceConverterTest::prefixStr() const
 {

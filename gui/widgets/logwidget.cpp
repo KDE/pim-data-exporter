@@ -18,9 +18,7 @@ LogWidget::LogWidget(QWidget *parent)
     layout->addWidget(mCustomLogWidget);
 }
 
-LogWidget::~LogWidget()
-{
-}
+LogWidget::~LogWidget() = default;
 
 void LogWidget::clear()
 {

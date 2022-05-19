@@ -42,7 +42,7 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     topLayout->addWidget(mUseTemplateByDefault);
 
     auto hbox = new QHBoxLayout;
-    QPushButton *selectAll = new QPushButton(i18n("Select All"), this);
+    auto *selectAll = new QPushButton(i18n("Select All"), this);
     selectAll->setObjectName(QStringLiteral("selectAll"));
     connect(selectAll, &QPushButton::clicked, this, &SelectionTypeDialog::slotSelectAll);
     hbox->addWidget(selectAll);

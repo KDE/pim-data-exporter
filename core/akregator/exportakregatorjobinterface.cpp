@@ -17,9 +17,7 @@ ExportAkregatorJobInterface::ExportAkregatorJobInterface(QObject *parent, Utils:
 {
 }
 
-ExportAkregatorJobInterface::~ExportAkregatorJobInterface()
-{
-}
+ExportAkregatorJobInterface::~ExportAkregatorJobInterface() = default;
 
 void ExportAkregatorJobInterface::start()
 {

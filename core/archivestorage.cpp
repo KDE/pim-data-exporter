@@ -32,7 +32,7 @@ QString ArchiveStorage::filename() const
     if (mArchive) {
         return mArchive->fileName();
     }
-    return QString();
+    return {};
 }
 
 bool ArchiveStorage::openArchive(bool write)

@@ -22,9 +22,7 @@ ExportAlarmJobInterface::ExportAlarmJobInterface(QObject *parent, Utils::StoredT
 {
 }
 
-ExportAlarmJobInterface::~ExportAlarmJobInterface()
-{
-}
+ExportAlarmJobInterface::~ExportAlarmJobInterface() = default;
 
 void ExportAlarmJobInterface::start()
 {

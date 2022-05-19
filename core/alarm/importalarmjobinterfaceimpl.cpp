@@ -21,9 +21,7 @@ ImportAlarmJobInterfaceImpl::ImportAlarmJobInterfaceImpl(QObject *parent, Utils:
 {
 }
 
-ImportAlarmJobInterfaceImpl::~ImportAlarmJobInterfaceImpl()
-{
-}
+ImportAlarmJobInterfaceImpl::~ImportAlarmJobInterfaceImpl() = default;
 
 Akonadi::Collection::Id ImportAlarmJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {

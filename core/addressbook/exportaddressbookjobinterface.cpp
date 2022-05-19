@@ -21,9 +21,7 @@ ExportAddressbookJobInterface::ExportAddressbookJobInterface(QObject *parent, Ut
 {
 }
 
-ExportAddressbookJobInterface::~ExportAddressbookJobInterface()
-{
-}
+ExportAddressbookJobInterface::~ExportAddressbookJobInterface() = default;
 
 void ExportAddressbookJobInterface::start()
 {

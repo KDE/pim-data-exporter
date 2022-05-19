@@ -24,9 +24,7 @@ TestExportFile::TestExportFile(QObject *parent)
     Q_ASSERT(mArchiveStorage->openArchive(true));
 }
 
-TestExportFile::~TestExportFile()
-{
-}
+TestExportFile::~TestExportFile() = default;
 
 QByteArray TestExportFile::pathConfig() const
 {

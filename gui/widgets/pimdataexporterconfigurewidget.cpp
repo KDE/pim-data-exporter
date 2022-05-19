@@ -40,9 +40,7 @@ PimDataExporterConfigureWidget::PimDataExporterConfigureWidget(QWidget *parent)
     initialize();
 }
 
-PimDataExporterConfigureWidget::~PimDataExporterConfigureWidget()
-{
-}
+PimDataExporterConfigureWidget::~PimDataExporterConfigureWidget() = default;
 
 void PimDataExporterConfigureWidget::initialize()
 {

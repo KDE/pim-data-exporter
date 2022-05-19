@@ -28,9 +28,7 @@ SelectionTypeTreeWidget::SelectionTypeTreeWidget(bool backupData, QWidget *paren
     header()->hide();
 }
 
-SelectionTypeTreeWidget::~SelectionTypeTreeWidget()
-{
-}
+SelectionTypeTreeWidget::~SelectionTypeTreeWidget() = default;
 
 void SelectionTypeTreeWidget::initialize(bool backupData)
 {

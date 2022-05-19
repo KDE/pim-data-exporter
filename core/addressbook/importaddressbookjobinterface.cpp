@@ -24,9 +24,7 @@ ImportAddressbookJobInterface::ImportAddressbookJobInterface(QObject *parent, Ut
     initializeImportJob();
 }
 
-ImportAddressbookJobInterface::~ImportAddressbookJobInterface()
-{
-}
+ImportAddressbookJobInterface::~ImportAddressbookJobInterface() = default;
 
 QString ImportAddressbookJobInterface::configLocation() const
 {

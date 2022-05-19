@@ -21,9 +21,7 @@ SynchronizeResourceDialogTest::SynchronizeResourceDialogTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-SynchronizeResourceDialogTest::~SynchronizeResourceDialogTest()
-{
-}
+SynchronizeResourceDialogTest::~SynchronizeResourceDialogTest() = default;
 
 void SynchronizeResourceDialogTest::shouldHaveDefaultValue()
 {

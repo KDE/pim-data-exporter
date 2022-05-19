@@ -11,9 +11,7 @@ LogInfo::LogInfo(QObject *parent)
 {
 }
 
-LogInfo::~LogInfo()
-{
-}
+LogInfo::~LogInfo() = default;
 
 void LogInfo::addInfoLogEntry(const QString &log)
 {

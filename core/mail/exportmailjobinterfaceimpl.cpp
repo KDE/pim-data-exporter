@@ -37,9 +37,7 @@ ExportMailJobInterfaceImpl::ExportMailJobInterfaceImpl(QObject *parent, Utils::S
 {
 }
 
-ExportMailJobInterfaceImpl::~ExportMailJobInterfaceImpl()
-{
-}
+ExportMailJobInterfaceImpl::~ExportMailJobInterfaceImpl() = default;
 
 Akonadi::Collection::Id ExportMailJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {

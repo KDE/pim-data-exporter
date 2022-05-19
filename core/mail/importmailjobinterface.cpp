@@ -36,9 +36,7 @@ ImportMailJobInterface::ImportMailJobInterface(QObject *parent, Utils::StoredTyp
     initializeImportJob();
 }
 
-ImportMailJobInterface::~ImportMailJobInterface()
-{
-}
+ImportMailJobInterface::~ImportMailJobInterface() = default;
 
 void ImportMailJobInterface::start()
 {

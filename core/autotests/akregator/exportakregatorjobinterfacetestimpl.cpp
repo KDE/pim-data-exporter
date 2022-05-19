@@ -14,9 +14,7 @@ ExportAkregatorJobInterfaceTestImpl::ExportAkregatorJobInterfaceTestImpl(QObject
 {
 }
 
-ExportAkregatorJobInterfaceTestImpl::~ExportAkregatorJobInterfaceTestImpl()
-{
-}
+ExportAkregatorJobInterfaceTestImpl::~ExportAkregatorJobInterfaceTestImpl() = default;
 
 QString ExportAkregatorJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
 {

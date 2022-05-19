@@ -28,9 +28,7 @@ ImportCalendarJobInterface::ImportCalendarJobInterface(QObject *parent, Utils::S
     initializeImportJob();
 }
 
-ImportCalendarJobInterface::~ImportCalendarJobInterface()
-{
-}
+ImportCalendarJobInterface::~ImportCalendarJobInterface() = default;
 
 void ImportCalendarJobInterface::start()
 {

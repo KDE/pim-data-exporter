@@ -9,9 +9,7 @@
 #include <QFile>
 #include <QXmlStreamWriter>
 
-TemplateSelection::TemplateSelection()
-{
-}
+TemplateSelection::TemplateSelection() = default;
 
 TemplateSelection::~TemplateSelection()
 {

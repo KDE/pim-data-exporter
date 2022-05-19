@@ -27,9 +27,7 @@ TestImportFile::TestImportFile(const QString &archivePath, QObject *parent)
     Q_ASSERT(archiveOpened);
 }
 
-TestImportFile::~TestImportFile()
-{
-}
+TestImportFile::~TestImportFile() = default;
 
 void TestImportFile::start()
 {

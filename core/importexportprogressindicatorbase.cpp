@@ -13,9 +13,7 @@ ImportExportProgressIndicatorBase::ImportExportProgressIndicatorBase(QObject *pa
 {
 }
 
-ImportExportProgressIndicatorBase::~ImportExportProgressIndicatorBase()
-{
-}
+ImportExportProgressIndicatorBase::~ImportExportProgressIndicatorBase() = default;
 
 void ImportExportProgressIndicatorBase::increaseProgressDialog()
 {

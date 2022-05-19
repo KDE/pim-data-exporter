@@ -193,14 +193,14 @@ QString Utils::appTypeToI18n(AppsType type)
         break;
     }
     qCDebug(PIMDATAEXPORTERCORE_LOG) << " type unknown " << type;
-    return QString();
+    return {};
 }
 
 QString Utils::storedTypeToI18n(StoredType type)
 {
     switch (type) {
     case None:
-        return QString();
+        return {};
     case Identity:
         return i18n("Identity");
     case Mails:
@@ -215,7 +215,7 @@ QString Utils::storedTypeToI18n(StoredType type)
         return i18n("Data");
     }
     qCDebug(PIMDATAEXPORTERCORE_LOG) << " type unknown " << type;
-    return QString();
+    return {};
 }
 
 QVector<Utils::AkonadiInstanceInfo> Utils::listOfResource()

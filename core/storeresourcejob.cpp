@@ -19,9 +19,7 @@ StoreResourceJob::StoreResourceJob(QObject *parent)
 {
 }
 
-StoreResourceJob::~StoreResourceJob()
-{
-}
+StoreResourceJob::~StoreResourceJob() = default;
 
 void StoreResourceJob::setArchivePath(const QString &archivePath)
 {

@@ -25,9 +25,7 @@ ImportAlarmJobInterface::ImportAlarmJobInterface(QObject *parent, Utils::StoredT
     initializeImportJob();
 }
 
-ImportAlarmJobInterface::~ImportAlarmJobInterface()
-{
-}
+ImportAlarmJobInterface::~ImportAlarmJobInterface() = default;
 
 void ImportAlarmJobInterface::start()
 {

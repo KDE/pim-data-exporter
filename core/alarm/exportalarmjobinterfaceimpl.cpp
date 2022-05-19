@@ -19,9 +19,7 @@ ExportAlarmJobInterfaceImpl::ExportAlarmJobInterfaceImpl(QObject *parent, Utils:
 {
 }
 
-ExportAlarmJobInterfaceImpl::~ExportAlarmJobInterfaceImpl()
-{
-}
+ExportAlarmJobInterfaceImpl::~ExportAlarmJobInterfaceImpl() = default;
 
 QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceImpl::listOfResource()
 {

@@ -24,9 +24,7 @@ ExportCalendarJobInterface::ExportCalendarJobInterface(QObject *parent, Utils::S
 {
 }
 
-ExportCalendarJobInterface::~ExportCalendarJobInterface()
-{
-}
+ExportCalendarJobInterface::~ExportCalendarJobInterface() = default;
 
 void ExportCalendarJobInterface::slotCalendarJobTerminated()
 {

@@ -14,9 +14,7 @@
 
 #define REMOVE_TEMPORARY_FILES 1
 
-CompareExportFile::CompareExportFile()
-{
-}
+CompareExportFile::CompareExportFile() = default;
 
 CompareExportFile::~CompareExportFile()
 {

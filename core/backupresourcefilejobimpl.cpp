@@ -12,9 +12,7 @@ BackupResourceFileJobImpl::BackupResourceFileJobImpl(QObject *parent)
 {
 }
 
-BackupResourceFileJobImpl::~BackupResourceFileJobImpl()
-{
-}
+BackupResourceFileJobImpl::~BackupResourceFileJobImpl() = default;
 
 QString BackupResourceFileJobImpl::resourcePath(const QString &identifier) const
 {

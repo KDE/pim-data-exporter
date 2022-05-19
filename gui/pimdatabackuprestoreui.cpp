@@ -16,9 +16,7 @@ PimDataBackupRestoreUI::PimDataBackupRestoreUI(QWidget *parentWidget, QObject *p
 {
 }
 
-PimDataBackupRestoreUI::~PimDataBackupRestoreUI()
-{
-}
+PimDataBackupRestoreUI::~PimDataBackupRestoreUI() = default;
 
 bool PimDataBackupRestoreUI::continueToRestore()
 {

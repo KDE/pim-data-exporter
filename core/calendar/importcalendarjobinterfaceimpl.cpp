@@ -27,9 +27,7 @@ ImportCalendarJobInterfaceImpl::ImportCalendarJobInterfaceImpl(QObject *parent,
 {
 }
 
-ImportCalendarJobInterfaceImpl::~ImportCalendarJobInterfaceImpl()
-{
-}
+ImportCalendarJobInterfaceImpl::~ImportCalendarJobInterfaceImpl() = default;
 
 QString ImportCalendarJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {

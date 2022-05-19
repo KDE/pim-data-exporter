@@ -9,7 +9,7 @@
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
 #include <KSharedConfig>
-#include <time.h>
+#include <ctime>
 namespace MailCommon
 {
 class MailFilter;

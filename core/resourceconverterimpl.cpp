@@ -8,13 +8,9 @@
 #include <MailCommon/MailUtil>
 #include <QDir>
 
-ResourceConverterImpl::ResourceConverterImpl()
-{
-}
+ResourceConverterImpl::ResourceConverterImpl() = default;
 
-ResourceConverterImpl::~ResourceConverterImpl()
-{
-}
+ResourceConverterImpl::~ResourceConverterImpl() = default;
 
 QString ResourceConverterImpl::convertToFullCollectionPath(const qlonglong collectionValue)
 {

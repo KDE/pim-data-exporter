@@ -18,9 +18,7 @@ ExportResourceArchiveJob::ExportResourceArchiveJob(QObject *parent)
 {
 }
 
-ExportResourceArchiveJob::~ExportResourceArchiveJob()
-{
-}
+ExportResourceArchiveJob::~ExportResourceArchiveJob() = default;
 
 void ExportResourceArchiveJob::setArchive(KZip *zip)
 {

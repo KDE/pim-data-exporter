@@ -33,6 +33,4 @@ PimDataExportedUserFeedbackProvider::PimDataExportedUserFeedbackProvider(QObject
     addDataSource(new KUserFeedback::LocaleInfoSource);
 }
 
-PimDataExportedUserFeedbackProvider::~PimDataExportedUserFeedbackProvider()
-{
-}
+PimDataExportedUserFeedbackProvider::~PimDataExportedUserFeedbackProvider() = default;

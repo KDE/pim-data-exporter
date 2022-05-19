@@ -15,9 +15,7 @@ PimDataExporterConfigureWidgetTest::PimDataExporterConfigureWidgetTest(QObject *
 {
 }
 
-PimDataExporterConfigureWidgetTest::~PimDataExporterConfigureWidgetTest()
-{
-}
+PimDataExporterConfigureWidgetTest::~PimDataExporterConfigureWidgetTest() = default;
 
 void PimDataExporterConfigureWidgetTest::shouldHaveDefaultValue()
 {

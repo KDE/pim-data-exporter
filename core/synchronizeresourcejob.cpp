@@ -18,9 +18,7 @@ SynchronizeResourceJob::SynchronizeResourceJob(QObject *parent)
 {
 }
 
-SynchronizeResourceJob::~SynchronizeResourceJob()
-{
-}
+SynchronizeResourceJob::~SynchronizeResourceJob() = default;
 
 void SynchronizeResourceJob::start()
 {

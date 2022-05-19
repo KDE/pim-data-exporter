@@ -17,9 +17,7 @@ PimDataCommandLineOption::PimDataCommandLineOption(QObject *parent)
 {
 }
 
-PimDataCommandLineOption::~PimDataCommandLineOption()
-{
-}
+PimDataCommandLineOption::~PimDataCommandLineOption() = default;
 
 void PimDataCommandLineOption::slotActivateRequested(const QStringList &arguments, const QString &workingDirectory)
 {

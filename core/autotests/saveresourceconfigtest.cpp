@@ -9,9 +9,7 @@
 #include <Akonadi/ServerManager>
 #include <QTest>
 
-SaveResourceConfigTest::SaveResourceConfigTest()
-{
-}
+SaveResourceConfigTest::SaveResourceConfigTest() = default;
 
 KZip *SaveResourceConfigTest::archive() const
 {

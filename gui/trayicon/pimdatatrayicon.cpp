@@ -14,6 +14,4 @@ PimDataTrayIcon::PimDataTrayIcon(QObject *parent)
     setIconByName(QStringLiteral("kontact"));
 }
 
-PimDataTrayIcon::~PimDataTrayIcon()
-{
-}
+PimDataTrayIcon::~PimDataTrayIcon() = default;

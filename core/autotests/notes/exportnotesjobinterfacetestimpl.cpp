@@ -17,9 +17,7 @@ ExportNotesJobInterfaceTestImpl::ExportNotesJobInterfaceTestImpl(QObject *parent
 {
 }
 
-ExportNotesJobInterfaceTestImpl::~ExportNotesJobInterfaceTestImpl()
-{
-}
+ExportNotesJobInterfaceTestImpl::~ExportNotesJobInterfaceTestImpl() = default;
 
 void ExportNotesJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr)
 {

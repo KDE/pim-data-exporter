@@ -11,9 +11,7 @@ TestBackupResourceFileJob::TestBackupResourceFileJob(QObject *parent)
 {
 }
 
-TestBackupResourceFileJob::~TestBackupResourceFileJob()
-{
-}
+TestBackupResourceFileJob::~TestBackupResourceFileJob() = default;
 
 QString TestBackupResourceFileJob::resourcePath(const QString &identifier) const
 {

@@ -21,9 +21,7 @@ ExportNotesJobInterface::ExportNotesJobInterface(QObject *parent, Utils::StoredT
 {
 }
 
-ExportNotesJobInterface::~ExportNotesJobInterface()
-{
-}
+ExportNotesJobInterface::~ExportNotesJobInterface() = default;
 
 void ExportNotesJobInterface::start()
 {

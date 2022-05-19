@@ -19,9 +19,7 @@ ExportCalendarsJobInterfaceTestImpl::ExportCalendarsJobInterfaceTestImpl(QObject
 {
 }
 
-ExportCalendarsJobInterfaceTestImpl::~ExportCalendarsJobInterfaceTestImpl()
-{
-}
+ExportCalendarsJobInterfaceTestImpl::~ExportCalendarsJobInterfaceTestImpl() = default;
 
 Akonadi::Collection::Id ExportCalendarsJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {

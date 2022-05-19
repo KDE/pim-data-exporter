@@ -12,9 +12,7 @@ ImportExportProgressIndicatorConsole::ImportExportProgressIndicatorConsole(QObje
 {
 }
 
-ImportExportProgressIndicatorConsole::~ImportExportProgressIndicatorConsole()
-{
-}
+ImportExportProgressIndicatorConsole::~ImportExportProgressIndicatorConsole() = default;
 
 void ImportExportProgressIndicatorConsole::setProgressDialogLabel(const QString &text)
 {

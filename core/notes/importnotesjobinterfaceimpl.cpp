@@ -20,9 +20,7 @@ ImportNotesJobInterfaceImpl::ImportNotesJobInterfaceImpl(QObject *parent, Utils:
     initializeImportJob();
 }
 
-ImportNotesJobInterfaceImpl::~ImportNotesJobInterfaceImpl()
-{
-}
+ImportNotesJobInterfaceImpl::~ImportNotesJobInterfaceImpl() = default;
 
 QString ImportNotesJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {

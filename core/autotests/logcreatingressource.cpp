@@ -24,9 +24,7 @@ LogCreatingResource::LogCreatingResource(QObject *parent)
     // qDebug() << " mTmpLogFile*************" << mTmpLogFile->fileName();
 }
 
-LogCreatingResource::~LogCreatingResource()
-{
-}
+LogCreatingResource::~LogCreatingResource() = default;
 
 void LogCreatingResource::appendText(const QString &str)
 {

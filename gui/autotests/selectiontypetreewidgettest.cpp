@@ -16,9 +16,7 @@ SelectionTypeTreeWidgetTest::SelectionTypeTreeWidgetTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-SelectionTypeTreeWidgetTest::~SelectionTypeTreeWidgetTest()
-{
-}
+SelectionTypeTreeWidgetTest::~SelectionTypeTreeWidgetTest() = default;
 
 void SelectionTypeTreeWidgetTest::shouldHaveDefaultSelectedWidget()
 {

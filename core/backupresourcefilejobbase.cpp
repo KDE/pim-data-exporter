@@ -17,9 +17,7 @@ BackupResourceFileJobBase::BackupResourceFileJobBase(QObject *parent)
 {
 }
 
-BackupResourceFileJobBase::~BackupResourceFileJobBase()
-{
-}
+BackupResourceFileJobBase::~BackupResourceFileJobBase() = default;
 
 void BackupResourceFileJobBase::storeResource(const QString &archivePath)
 {

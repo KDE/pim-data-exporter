@@ -31,9 +31,7 @@ PimDataExporterConsole::PimDataExporterConsole(QObject *parent)
     // TODO initialize akonadi server
 }
 
-PimDataExporterConsole::~PimDataExporterConsole()
-{
-}
+PimDataExporterConsole::~PimDataExporterConsole() = default;
 
 void PimDataExporterConsole::initializeLogInFile()
 {

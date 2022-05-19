@@ -8,9 +8,7 @@
 #include "comparefilehelper.h"
 #include <QDebug>
 
-CompareLoggingFile::CompareLoggingFile()
-{
-}
+CompareLoggingFile::CompareLoggingFile() = default;
 
 void CompareLoggingFile::compare()
 {

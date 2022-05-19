@@ -22,9 +22,7 @@ ImportMailJobInterfaceImpl::ImportMailJobInterfaceImpl(QObject *parent, Utils::S
 {
 }
 
-ImportMailJobInterfaceImpl::~ImportMailJobInterfaceImpl()
-{
-}
+ImportMailJobInterfaceImpl::~ImportMailJobInterfaceImpl() = default;
 
 QString ImportMailJobInterfaceImpl::configLocation() const
 {

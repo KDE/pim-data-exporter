@@ -24,9 +24,7 @@ LoadListFromFile::LoadListFromFile(const QString &filename)
     mFileList.sort();
 }
 
-LoadListFromFile::~LoadListFromFile()
-{
-}
+LoadListFromFile::~LoadListFromFile() = default;
 
 QStringList LoadListFromFile::fileList() const
 {

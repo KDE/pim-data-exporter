@@ -33,9 +33,7 @@ ExportMailJobInterface::ExportMailJobInterface(QObject *parent, Utils::StoredTyp
 {
 }
 
-ExportMailJobInterface::~ExportMailJobInterface()
-{
-}
+ExportMailJobInterface::~ExportMailJobInterface() = default;
 
 bool ExportMailJobInterface::checkBackupType(Utils::StoredType type) const
 {

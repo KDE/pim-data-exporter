@@ -33,7 +33,7 @@ void ImportAkregatorJobInterfaceTest::importAkegator()
     QFETCH(QString, zipFilePath);
     QFETCH(QString, testPath);
     QFETCH(Utils::StoredTypes, options);
-    TestImportFile *file = new TestImportFile(zipFilePath + testPath, this);
+    auto *file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     auto impl = new ImportAkregatorJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);

@@ -16,9 +16,7 @@ FullSynchronizeResourcesJob::FullSynchronizeResourcesJob(QObject *parent)
 {
 }
 
-FullSynchronizeResourcesJob::~FullSynchronizeResourcesJob()
-{
-}
+FullSynchronizeResourcesJob::~FullSynchronizeResourcesJob() = default;
 
 void FullSynchronizeResourcesJob::setResources(const QStringList &lst)
 {

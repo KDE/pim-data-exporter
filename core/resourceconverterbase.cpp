@@ -14,13 +14,9 @@
 #include <QFileInfo>
 #include <QTemporaryFile>
 
-ResourceConverterBase::ResourceConverterBase()
-{
-}
+ResourceConverterBase::ResourceConverterBase() = default;
 
-ResourceConverterBase::~ResourceConverterBase()
-{
-}
+ResourceConverterBase::~ResourceConverterBase() = default;
 
 QString ResourceConverterBase::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
 {
@@ -210,5 +206,5 @@ QString ResourceConverterBase::storeResources(KZip *archive, const QString &iden
         return i18n("Resource config file \"%1\" doesn't exist.", agentConfigFileNamePath);
     }
 
-    return QString();
+    return {};
 }

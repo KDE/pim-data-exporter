@@ -22,9 +22,7 @@ ImportAkregatorJobInterface::ImportAkregatorJobInterface(QObject *parent, Utils:
     initializeImportJob();
 }
 
-ImportAkregatorJobInterface::~ImportAkregatorJobInterface()
-{
-}
+ImportAkregatorJobInterface::~ImportAkregatorJobInterface() = default;
 
 void ImportAkregatorJobInterface::start()
 {

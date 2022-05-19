@@ -23,9 +23,7 @@ ImportAddressbookJobInterfaceImpl::ImportAddressbookJobInterfaceImpl(QObject *pa
 {
 }
 
-ImportAddressbookJobInterfaceImpl::~ImportAddressbookJobInterfaceImpl()
-{
-}
+ImportAddressbookJobInterfaceImpl::~ImportAddressbookJobInterfaceImpl() = default;
 
 Akonadi::Collection::Id ImportAddressbookJobInterfaceImpl::convertFolderPathToCollectionId(const QString &path)
 {

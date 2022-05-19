@@ -17,9 +17,7 @@ ExportAddressbookJobInterfaceTestImpl::ExportAddressbookJobInterfaceTestImpl(QOb
 {
 }
 
-ExportAddressbookJobInterfaceTestImpl::~ExportAddressbookJobInterfaceTestImpl()
-{
-}
+ExportAddressbookJobInterfaceTestImpl::~ExportAddressbookJobInterfaceTestImpl() = default;
 
 Akonadi::Collection::Id ExportAddressbookJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)
 {

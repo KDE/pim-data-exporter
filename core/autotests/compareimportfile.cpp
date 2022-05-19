@@ -10,13 +10,9 @@
 #include "loadlistfromfile.h"
 #include <QTest>
 
-CompareImportFile::CompareImportFile()
-{
-}
+CompareImportFile::CompareImportFile() = default;
 
-CompareImportFile::~CompareImportFile()
-{
-}
+CompareImportFile::~CompareImportFile() = default;
 
 void CompareImportFile::compareFile()
 {

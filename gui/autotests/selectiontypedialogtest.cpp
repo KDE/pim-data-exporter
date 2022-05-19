@@ -22,9 +22,7 @@ SelectionTypeDialogTest::SelectionTypeDialogTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-SelectionTypeDialogTest::~SelectionTypeDialogTest()
-{
-}
+SelectionTypeDialogTest::~SelectionTypeDialogTest() = default;
 
 void SelectionTypeDialogTest::shouldHaveDefaultValue()
 {
