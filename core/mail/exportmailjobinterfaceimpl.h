@@ -42,6 +42,7 @@ protected:
                                              bool synchronizeTree) override;
     void exportFilters() override;
     Q_REQUIRED_RESULT QVector<uint> listIdentityUoid() const override;
+    void exportFolderAttributes() override;
 
 private:
     KIdentityManagement::IdentityManager *const mIdentityManager;

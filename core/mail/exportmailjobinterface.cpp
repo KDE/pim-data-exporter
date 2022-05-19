@@ -112,6 +112,7 @@ void ExportMailJobInterface::slotCheckBackupMails()
 void ExportMailJobInterface::backupFolderAttributes()
 {
     setProgressDialogLabel(i18n("Backing up Folder Attributes..."));
+    exportFolderAttributes();
     // TODO use ExportMailFolderAttributes
 
     // TODO fetch all collection => store expire attribute/display attribute too

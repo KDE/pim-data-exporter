@@ -5,6 +5,7 @@
 */
 
 #include "exportmailjobinterfaceimpl.h"
+#include "exportmailfolderattributejob.h"
 #include "importexportmailutil.h"
 
 #include "importexportprogressindicatorbase.h"
@@ -157,4 +158,13 @@ QVector<uint> ExportMailJobInterfaceImpl::listIdentityUoid() const
         listUiod << identityUoid;
     }
     return listUiod;
+}
+
+void ExportMailJobInterfaceImpl::exportFolderAttributes()
+{
+    auto job = new ExportMailFolderAttributeJob(this);
+    connect(job, &ExportMailFolderAttributeJob::finished, this, [this]() {
+        Q_EMIT info(i18n("Backing up Folder Attributes done."));
+    });
+    job->start();
 }

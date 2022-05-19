@@ -4,10 +4,10 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-
+#include "pimdataexportercore_private_export.h"
 #include <QObject>
-
-class ExportMailFolderAttributeJob : public QObject
+class KJob;
+class PIMDATAEXPORTER_TESTS_EXPORT ExportMailFolderAttributeJob : public QObject
 {
     Q_OBJECT
 public:
@@ -22,4 +22,5 @@ Q_SIGNALS:
     void finished();
 
 private:
+    void slotFetchFinished(KJob *job);
 };

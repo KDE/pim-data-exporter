@@ -140,3 +140,9 @@ void ExportMailJobInterfaceTestImpl::exportFilters()
         Q_EMIT error(QStringLiteral("Filters cannot be exported."));
     }
 }
+
+void ExportMailJobInterfaceTestImpl::exportFolderAttributes()
+{
+    // TODO export file
+    Q_EMIT info(QStringLiteral("Folder Attributes backup done."));
+}

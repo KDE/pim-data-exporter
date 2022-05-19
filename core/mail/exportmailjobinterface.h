@@ -46,6 +46,8 @@ protected:
     virtual void exportFilters() = 0;
     Q_REQUIRED_RESULT virtual QVector<uint> listIdentityUoid() const = 0;
 
+    virtual void exportFolderAttributes() = 0;
+
 private:
     void slotCheckBackupIdentity();
     void slotCheckBackupMailTransport();

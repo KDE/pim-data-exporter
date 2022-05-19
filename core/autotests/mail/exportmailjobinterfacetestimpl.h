@@ -40,4 +40,5 @@ protected:
                                              bool synchronizeTree) override;
     Q_REQUIRED_RESULT QVector<uint> listIdentityUoid() const override;
     void exportFilters() override;
+    void exportFolderAttributes() override;
 };
