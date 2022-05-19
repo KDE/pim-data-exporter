@@ -8,6 +8,7 @@
 #include "pimdataexportcore_debug.h"
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
+#include <Akonadi/EntityDisplayAttribute>
 #include <MailCommon/ExpireCollectionAttribute>
 
 ExportMailFolderAttributeJob::ExportMailFolderAttributeJob(QObject *parent)
@@ -35,6 +36,7 @@ void ExportMailFolderAttributeJob::start()
 
     auto job = new Akonadi::CollectionFetchJob(Akonadi::Collection::root(), Akonadi::CollectionFetchJob::Recursive, this);
     job->fetchScope().fetchAttribute<MailCommon::ExpireCollectionAttribute>();
+    job->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
     connect(job, &Akonadi::CollectionFetchJob::result, this, &ExportMailFolderAttributeJob::slotFetchFinished);
 }
 
@@ -54,6 +56,8 @@ void ExportMailFolderAttributeJob::slotFetchFinished(KJob *job)
         deleteLater();
         return;
     }
+    // TODO store data
+
     Q_EMIT finished();
     deleteLater();
 }
