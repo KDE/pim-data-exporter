@@ -103,11 +103,17 @@ void ExportMailJobInterface::slotCheckBackupMails()
     mAkonadiInstanceInfo = listOfResource();
     if (checkBackupType(Utils::Mails)) {
         increaseProgressDialog();
-        setProgressDialogLabel(i18n("Backing up Mails..."));
-        QTimer::singleShot(0, this, &ExportMailJobInterface::slotWriteNextArchiveResource);
+        backupFolderAttributes();
         return;
     }
     QTimer::singleShot(0, this, &ExportMailJobInterface::slotCheckBackupResources);
+}
+
+void ExportMailJobInterface::backupFolderAttributes()
+{
+    // TODO fetch all collection => store expire attribute/display attribute too
+    setProgressDialogLabel(i18n("Backing up Mails..."));
+    QTimer::singleShot(0, this, &ExportMailJobInterface::slotWriteNextArchiveResource);
 }
 
 void ExportMailJobInterface::backupTransports()

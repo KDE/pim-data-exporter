@@ -56,6 +56,7 @@ private:
     void backupTransports();
     void backupConfig();
     void backupIdentity();
+    void backupFolderAttributes();
 
 private:
     int mIndexIdentifier = 0;
