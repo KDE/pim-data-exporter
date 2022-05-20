@@ -25,7 +25,7 @@ ExportMailFolderAttributeJob::~ExportMailFolderAttributeJob()
 
 bool ExportMailFolderAttributeJob::canStart() const
 {
-    return (mZip != nullptr);
+    return (mArchive != nullptr);
 }
 
 void ExportMailFolderAttributeJob::start()
@@ -42,6 +42,11 @@ void ExportMailFolderAttributeJob::start()
     job->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
     job->fetchScope().setContentMimeTypes({QStringLiteral("message/rfc822")});
     connect(job, &Akonadi::CollectionFetchJob::result, this, &ExportMailFolderAttributeJob::slotFetchFinished);
+}
+
+void ExportMailFolderAttributeJob::setArchive(KZip *zip)
+{
+    mArchive = zip;
 }
 
 void ExportMailFolderAttributeJob::slotFetchFinished(KJob *job)
@@ -78,7 +83,7 @@ void ExportMailFolderAttributeJob::slotFetchFinished(KJob *job)
     MailCommon::FilterImporterExporter exportFilters;
     exportFilters.exportFilters(lstFilter, url, true);
     tmp.close();
-    const bool fileAdded = mZip->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("mailfolderattributes"));
+    const bool fileAdded = mArchive->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("mailfolderattributes"));
 #endif
 
     Q_EMIT successed();

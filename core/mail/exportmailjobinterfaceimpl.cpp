@@ -163,6 +163,7 @@ QVector<uint> ExportMailJobInterfaceImpl::listIdentityUoid() const
 void ExportMailJobInterfaceImpl::exportFolderAttributes()
 {
     auto job = new ExportMailFolderAttributeJob(this);
+    job->setArchive(archive());
     connect(job, &ExportMailFolderAttributeJob::successed, this, [this]() {
         Q_EMIT info(i18n("Backing up Folder Attributes done."));
     });

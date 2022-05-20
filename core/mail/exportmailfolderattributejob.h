@@ -18,7 +18,7 @@ public:
     Q_REQUIRED_RESULT bool canStart() const;
 
     void start();
-    void setZip(KZip *zip);
+    void setArchive(KZip *zip);
 
 Q_SIGNALS:
     void successed();
@@ -26,5 +26,5 @@ Q_SIGNALS:
 
 private:
     void slotFetchFinished(KJob *job);
-    KZip *mZip = nullptr;
+    KZip *mArchive = nullptr;
 };
