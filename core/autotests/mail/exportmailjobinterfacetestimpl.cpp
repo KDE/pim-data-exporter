@@ -6,6 +6,7 @@
 
 #include "exportmailjobinterfacetestimpl.h"
 #include "archivestorage.h"
+#include "exportmailfolderattributejobtestimpl.h"
 #include "resourceconvertertest.h"
 #include "saveresourceconfigtest.h"
 #include "testbackupresourcefilejob.h"
@@ -143,7 +144,15 @@ void ExportMailJobInterfaceTestImpl::exportFilters()
 
 void ExportMailJobInterfaceTestImpl::exportFolderAttributes()
 {
-    // TODO export file
-    Q_EMIT info(QStringLiteral("Folder Attributes backup done."));
-    Q_EMIT exportAttributeDone();
+    auto job = new ExportMailFolderAttributeJobTestImpl(this);
+    job->setArchive(archive());
+    connect(job, &ExportMailFolderAttributeJobTestImpl::successed, this, [this]() {
+        Q_EMIT info(QStringLiteral("Backing up Folder Attributes done."));
+        Q_EMIT exportAttributeDone();
+    });
+    connect(job, &ExportMailFolderAttributeJobTestImpl::failed, this, [this]() {
+        Q_EMIT error(QStringLiteral("Folder Attributes cannot be exported."));
+        Q_EMIT exportAttributeDone();
+    });
+    job->start();
 }
