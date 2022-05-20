@@ -72,7 +72,12 @@ void ImportMailJobInterface::slotNextStep()
             slotNextStep();
         }
     } else {
-        Q_EMIT jobFinished();
+        // Reapply attribute at the end (after sync
+        if (mListStep.contains(Utils::Mails)) {
+            importFolderAttributes();
+        } else {
+            Q_EMIT jobFinished();
+        }
     }
 }
 

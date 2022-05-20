@@ -6,6 +6,7 @@
 
 #include "importmailjobinterfacetestimpl.h"
 #include "archivestorage.h"
+#include "importmailfolderattributejobtestimpl.h"
 #include "mail/smtpmailtransport.h"
 #include "resourceconvertertest.h"
 #include "testimportfile.h"
@@ -187,4 +188,20 @@ QString ImportMailJobInterfaceTestImpl::configLocation() const
 {
     qDebug() << " QString ImportMailJobInterfaceTestImpl::configLocation() const " << mExistingPathConfig;
     return mExistingPathConfig;
+}
+
+void ImportMailJobInterfaceTestImpl::importFolderAttributes()
+{
+    auto job = new ImportMailFolderAttributeJobTestImpl(this);
+    job->setArchive(archive());
+    job->setExportInterface(this);
+    connect(job, &ImportMailFolderAttributeJobTestImpl::successed, this, [this]() {
+        Q_EMIT info(QStringLiteral("Backing up Folder Attributes done."));
+        Q_EMIT jobFinished();
+    });
+    connect(job, &ImportMailFolderAttributeJobTestImpl::failed, this, [this]() {
+        Q_EMIT error(QStringLiteral("Folder Attributes cannot be exported."));
+        Q_EMIT jobFinished();
+    });
+    job->start();
 }

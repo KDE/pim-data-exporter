@@ -47,6 +47,7 @@ protected:
     void importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId) override;
     void addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId);
     Q_REQUIRED_RESULT QString configLocation() const override;
+    void importFolderAttributes() override final;
 
 private:
     Q_REQUIRED_RESULT int convertEncryptionEnum(int val);

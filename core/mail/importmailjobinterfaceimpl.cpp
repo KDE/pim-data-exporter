@@ -6,6 +6,7 @@
 
 #include "importmailjobinterfaceimpl.h"
 #include "archivestorage.h"
+#include "importmailfolderattributejobimpl.h"
 #include "resourceconverterimpl.h"
 #include "smtpmailtransport.h"
 #include <Akonadi/CollectionFetchJob>
@@ -27,6 +28,22 @@ ImportMailJobInterfaceImpl::~ImportMailJobInterfaceImpl() = default;
 QString ImportMailJobInterfaceImpl::configLocation() const
 {
     return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
+}
+
+void ImportMailJobInterfaceImpl::importFolderAttributes()
+{
+    auto job = new ImportMailFolderAttributeJobImpl(this);
+    job->setArchive(archive());
+    job->setExportInterface(this);
+    connect(job, &ImportMailFolderAttributeJobImpl::successed, this, [this]() {
+        Q_EMIT info(i18n("Restoring Folder Attributes done."));
+        Q_EMIT jobFinished();
+    });
+    connect(job, &ImportMailFolderAttributeJobImpl::failed, this, [this]() {
+        Q_EMIT error(i18n("Folder Attributes cannot be restored."));
+        Q_EMIT jobFinished();
+    });
+    job->start();
 }
 
 QString ImportMailJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
@@ -61,7 +78,7 @@ void ImportMailJobInterfaceImpl::importFilters(const QString &filename)
 {
     bool canceled = false;
     MailCommon::FilterImporterExporter exportFilters;
-    QVector<MailCommon::MailFilter *> lstFilter = exportFilters.importFilters(canceled, MailCommon::FilterImporterExporter::KMailFilter, filename);
+    const QVector<MailCommon::MailFilter *> lstFilter = exportFilters.importFilters(canceled, MailCommon::FilterImporterExporter::KMailFilter, filename);
     if (!canceled) {
         MailCommon::FilterManager::instance()->appendFilters(lstFilter);
     }

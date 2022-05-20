@@ -14,4 +14,7 @@ class ImportMailFolderAttributeJobImpl : public ImportMailFolderAttributeJob
 public:
     explicit ImportMailFolderAttributeJobImpl(QObject *parent = nullptr);
     ~ImportMailFolderAttributeJobImpl() override;
+
+protected:
+    void applyAttributes() override final;
 };

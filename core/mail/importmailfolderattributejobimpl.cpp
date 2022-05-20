@@ -16,3 +16,8 @@ ImportMailFolderAttributeJobImpl::ImportMailFolderAttributeJobImpl(QObject *pare
 }
 
 ImportMailFolderAttributeJobImpl::~ImportMailFolderAttributeJobImpl() = default;
+
+void ImportMailFolderAttributeJobImpl::applyAttributes()
+{
+    // TODO
+}

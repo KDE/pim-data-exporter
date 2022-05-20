@@ -36,6 +36,7 @@ protected:
     void importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) override;
     void importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId) override;
     Q_REQUIRED_RESULT QString configLocation() const override;
+    void importFolderAttributes() override final;
 
 private:
     Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);

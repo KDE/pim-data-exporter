@@ -19,10 +19,18 @@ public:
 
     Q_REQUIRED_RESULT bool canStart() const;
 
+    void setArchive(KZip *zip);
+    void setExportInterface(ImportMailJobInterface *interface);
+
     void start();
+
 Q_SIGNALS:
     void successed();
     void failed();
+
+protected:
+    virtual void applyAttributes() = 0;
+    void restoreFileFolderAttribute();
 
 private:
     KZip *mArchive = nullptr;

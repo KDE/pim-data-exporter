@@ -21,6 +21,16 @@ bool ImportMailFolderAttributeJob::canStart() const
     return (mArchive != nullptr);
 }
 
+void ImportMailFolderAttributeJob::setArchive(KZip *zip)
+{
+    mArchive = zip;
+}
+
+void ImportMailFolderAttributeJob::setExportInterface(ImportMailJobInterface *interface)
+{
+    mInterface = interface;
+}
+
 void ImportMailFolderAttributeJob::start()
 {
     if (!canStart()) {
@@ -29,5 +39,12 @@ void ImportMailFolderAttributeJob::start()
         deleteLater();
         return;
     }
+    applyAttributes();
+}
+
+void ImportMailFolderAttributeJob::restoreFileFolderAttribute()
+{
     // TODO
+    Q_EMIT successed();
+    deleteLater();
 }
