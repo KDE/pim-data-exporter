@@ -5,6 +5,7 @@
 */
 
 #include "importmailfolderattributejob.h"
+#include "pimdataexportcore_debug.h"
 
 ImportMailFolderAttributeJob::ImportMailFolderAttributeJob(QObject *parent)
     : QObject{parent}
@@ -17,11 +18,16 @@ ImportMailFolderAttributeJob::~ImportMailFolderAttributeJob()
 
 bool ImportMailFolderAttributeJob::canStart() const
 {
-    // TODO
-    return false;
+    return (mArchive != nullptr);
 }
 
 void ImportMailFolderAttributeJob::start()
 {
+    if (!canStart()) {
+        Q_EMIT failed();
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << " Impossible to start job";
+        deleteLater();
+        return;
+    }
     // TODO
 }

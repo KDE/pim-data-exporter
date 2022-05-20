@@ -8,6 +8,8 @@
 
 #include "pimdataexportercore_private_export.h"
 #include <QObject>
+class KZip;
+class ImportMailJobInterface;
 class PIMDATAEXPORTER_TESTS_EXPORT ImportMailFolderAttributeJob : public QObject
 {
     Q_OBJECT
@@ -18,4 +20,11 @@ public:
     Q_REQUIRED_RESULT bool canStart() const;
 
     void start();
+Q_SIGNALS:
+    void successed();
+    void failed();
+
+private:
+    KZip *mArchive = nullptr;
+    ImportMailJobInterface *mInterface = nullptr;
 };
