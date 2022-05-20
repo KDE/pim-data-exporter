@@ -166,9 +166,11 @@ void ExportMailJobInterfaceImpl::exportFolderAttributes()
     job->setArchive(archive());
     connect(job, &ExportMailFolderAttributeJob::successed, this, [this]() {
         Q_EMIT info(i18n("Backing up Folder Attributes done."));
+        Q_EMIT exportAttributeDone();
     });
     connect(job, &ExportMailFolderAttributeJob::failed, this, [this]() {
         Q_EMIT error(i18n("Folder Attributes cannot be exported."));
+        Q_EMIT exportAttributeDone();
     });
     job->start();
 }

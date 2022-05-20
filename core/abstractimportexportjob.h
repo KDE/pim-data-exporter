@@ -52,6 +52,7 @@ Q_SIGNALS:
     void endLine();
     void needSynchronizeResource(const QString &name, const QString &identifier);
     void jobFinished();
+    void exportAttributeDone();
 
 protected:
     virtual void slotNextStep();

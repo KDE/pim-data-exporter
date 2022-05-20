@@ -112,9 +112,12 @@ void ExportMailJobInterface::slotCheckBackupMails()
 void ExportMailJobInterface::backupFolderAttributes()
 {
     setProgressDialogLabel(i18n("Backing up Folder Attributes..."));
+    connect(this, &ExportMailJobInterface::exportAttributeDone, this, [this]() {
+        setProgressDialogLabel(i18n("Backing up Mails..."));
+        Q_EMIT info(i18n("Start export resource..."));
+        QTimer::singleShot(0, this, &ExportMailJobInterface::slotWriteNextArchiveResource);
+    });
     exportFolderAttributes();
-    setProgressDialogLabel(i18n("Backing up Mails..."));
-    QTimer::singleShot(0, this, &ExportMailJobInterface::slotWriteNextArchiveResource);
 }
 
 void ExportMailJobInterface::backupTransports()
