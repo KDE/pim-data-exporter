@@ -10,6 +10,8 @@
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
 #include <Akonadi/EntityDisplayAttribute>
+#include <KConfigGroup>
+#include <KZip>
 #include <MailCommon/ExpireCollectionAttribute>
 #include <QTemporaryFile>
 #include <QUrl>
@@ -65,27 +67,32 @@ void ExportMailFolderAttributeJob::slotFetchFinished(KJob *job)
         deleteLater();
         return;
     }
-    // TODO store data
+    QTemporaryFile tmp;
+    tmp.open();
+    KConfig conf(tmp.fileName());
+    KConfigGroup displayAttribute = conf.group(QStringLiteral("Display"));
+
+    KConfigGroup expireAttribute = conf.group(QStringLiteral("Expire"));
     for (const auto &col : cols) {
         const auto *attr = col.attribute<MailCommon::ExpireCollectionAttribute>();
         if (attr) {
             qDebug() << " col.id : " << col.id() << " serialize" << attr->serialized();
+            displayAttribute.writeEntry(QString::number(col.id()), attr->serialized());
         }
         const auto *attrDisplay = col.attribute<Akonadi::EntityDisplayAttribute>();
         if (attrDisplay) {
             qDebug() << " col.id : " << col.id() << " serialize" << attrDisplay->serialized();
+            expireAttribute.writeEntry(QString::number(col.id()), attrDisplay->serialized());
         }
     }
-#if 0
-    QTemporaryFile tmp;
-    tmp.open();
-    const QUrl url = QUrl::fromLocalFile(tmp.fileName());
-    MailCommon::FilterImporterExporter exportFilters;
-    exportFilters.exportFilters(lstFilter, url, true);
+    conf.sync();
+
     tmp.close();
     const bool fileAdded = mArchive->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("mailfolderattributes"));
-#endif
-
-    Q_EMIT successed();
+    if (fileAdded) {
+        Q_EMIT successed();
+    } else {
+        Q_EMIT failed();
+    }
     deleteLater();
 }
