@@ -6,6 +6,7 @@
 
 #include "importmailfolderattributejobimpl.h"
 #include "pimdataexportcore_debug.h"
+#include <Akonadi/CollectionModifyJob>
 #include <Akonadi/EntityDisplayAttribute>
 #include <MailCommon/ExpireCollectionAttribute>
 
