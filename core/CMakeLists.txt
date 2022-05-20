@@ -94,6 +94,9 @@ target_sources(pimdataexporterprivate PRIVATE
     mail/exportmailfolderattributejob.h
     mail/exportmailfolderattributejob.cpp
 
+    mail/importmailfolderattributejob.h
+    mail/importmailfolderattributejob.cpp
+
     )
 
 ecm_qt_declare_logging_category(pimdataexporterprivate HEADER pimdataexportcore_debug.h IDENTIFIER PIMDATAEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore
