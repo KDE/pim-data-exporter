@@ -3,10 +3,12 @@
 add_definitions( -DPIMDATAEXPORTER_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
 
-set( exportmailjobinterfacetest_SRCS exportmailjobinterfacetest.cpp exportmailjobinterfacetestimpl.cpp
-    exportmailjobinterfacetest.h exportmailjobinterfacetestimpl.h)
 
-add_executable( exportmailjobinterfacetest ${exportmailjobinterfacetest_SRCS})
+add_executable( exportmailjobinterfacetest)
+target_sources( exportmailjobinterfacetest PRIVATE exportmailjobinterfacetest.cpp exportmailjobinterfacetestimpl.cpp
+    exportmailjobinterfacetest.h exportmailjobinterfacetestimpl.h
+    exportmailfolderattributejobtestimpl.h exportmailfolderattributejobtestimpl.cpp)
+
 add_test(NAME exportmailjobinterfacetest COMMAND exportmailjobinterfacetest)
 ecm_mark_as_test(exportmailjobinterfacetest)
 target_link_libraries(exportmailjobinterfacetest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter KF5::Mime)

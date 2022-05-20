@@ -8,6 +8,21 @@
 
 #include <QObject>
 
+#include "mail/exportmailfolderattributejob.h"
+
+class ExportMailFolderAttributeJobImplTest : public ExportMailFolderAttributeJob
+{
+    Q_OBJECT
+public:
+    explicit ExportMailFolderAttributeJobImplTest(QObject *parent = nullptr);
+    ~ExportMailFolderAttributeJobImplTest() override = default;
+
+protected:
+    void fetchAttributes() override final
+    {
+    }
+};
+
 class ExportMailFolderAttributeJobTest : public QObject
 {
     Q_OBJECT

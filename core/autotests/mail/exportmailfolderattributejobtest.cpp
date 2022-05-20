@@ -9,6 +9,7 @@
 #include <QSignalSpy>
 #include <QTest>
 QTEST_GUILESS_MAIN(ExportMailFolderAttributeJobTest)
+
 ExportMailFolderAttributeJobTest::ExportMailFolderAttributeJobTest(QObject *parent)
     : QObject{parent}
 {
@@ -16,14 +17,20 @@ ExportMailFolderAttributeJobTest::ExportMailFolderAttributeJobTest(QObject *pare
 
 void ExportMailFolderAttributeJobTest::shouldHaveDefaultValues()
 {
-    ExportMailFolderAttributeJob job;
+    ExportMailFolderAttributeJobImplTest job;
     QVERIFY(!job.canStart());
 }
 
 void ExportMailFolderAttributeJobTest::shouldEmitSignal()
 {
-    ExportMailFolderAttributeJob job;
-    QSignalSpy spyFinished(&job, &ExportMailFolderAttributeJob::failed);
+    // Emit signal when we can't start.
+    ExportMailFolderAttributeJobImplTest job;
+    QSignalSpy spyFinished(&job, &ExportMailFolderAttributeJobImplTest::failed);
     job.start();
     QCOMPARE(spyFinished.count(), 1);
+}
+
+ExportMailFolderAttributeJobImplTest::ExportMailFolderAttributeJobImplTest(QObject *parent)
+    : ExportMailFolderAttributeJob(parent)
+{
 }

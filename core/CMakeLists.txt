@@ -93,6 +93,8 @@ target_sources(pimdataexporterprivate PRIVATE
 
     mail/exportmailfolderattributejob.h
     mail/exportmailfolderattributejob.cpp
+    mail/exportmailfolderattributejobimpl.h
+    mail/exportmailfolderattributejobimpl.cpp
 
     mail/importmailfolderattributejob.h
     mail/importmailfolderattributejob.cpp
