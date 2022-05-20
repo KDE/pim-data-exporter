@@ -113,9 +113,6 @@ void ExportMailJobInterface::backupFolderAttributes()
 {
     setProgressDialogLabel(i18n("Backing up Folder Attributes..."));
     exportFolderAttributes();
-    // TODO use ExportMailFolderAttributes
-
-    // TODO fetch all collection => store expire attribute/display attribute too
     setProgressDialogLabel(i18n("Backing up Mails..."));
     QTimer::singleShot(0, this, &ExportMailJobInterface::slotWriteNextArchiveResource);
 }
@@ -628,7 +625,7 @@ void ExportMailJobInterface::slotWriteNextArchiveResource()
                         QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
                     }
                 } else if (identifier.contains(QLatin1String("akonadi_mbox_resource_"))) {
-                    backupMailResourceFile(identifier, Utils::mailsPath()); // FIxME addressbookPath or MailPAth ???
+                    backupMailResourceFile(identifier, Utils::mailsPath()); // FIXME addressbookPath or MailPAth ???
                     QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
                 } else {
                     QTimer::singleShot(0, this, &ExportMailJobInterface::slotMailsJobTerminated);
