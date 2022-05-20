@@ -7,12 +7,8 @@
 #include "exportmailfolderattributejob.h"
 #include "pimdataexportcore_debug.h"
 #include "utils.h"
-#include <Akonadi/CollectionFetchJob>
-#include <Akonadi/CollectionFetchScope>
-#include <Akonadi/EntityDisplayAttribute>
 #include <KConfigGroup>
 #include <KZip>
-#include <MailCommon/ExpireCollectionAttribute>
 #include <QTemporaryFile>
 #include <QUrl>
 
@@ -38,12 +34,7 @@ void ExportMailFolderAttributeJob::start()
         deleteLater();
         return;
     }
-
-    auto job = new Akonadi::CollectionFetchJob(Akonadi::Collection::root(), Akonadi::CollectionFetchJob::Recursive, this);
-    job->fetchScope().fetchAttribute<MailCommon::ExpireCollectionAttribute>();
-    job->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
-    job->fetchScope().setContentMimeTypes({QStringLiteral("message/rfc822")});
-    connect(job, &Akonadi::CollectionFetchJob::result, this, &ExportMailFolderAttributeJob::slotFetchFinished);
+    fetchAttributes();
 }
 
 void ExportMailFolderAttributeJob::setArchive(KZip *zip)
@@ -51,43 +42,29 @@ void ExportMailFolderAttributeJob::setArchive(KZip *zip)
     mArchive = zip;
 }
 
-void ExportMailFolderAttributeJob::slotFetchFinished(KJob *job)
+void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, AttributeInfo> &lstAttributeInfo)
 {
-    if (job->error()) {
-        Q_EMIT failed();
-        deleteLater();
-        return;
-    }
-
-    auto list = static_cast<Akonadi::CollectionFetchJob *>(job);
-    const Akonadi::Collection::List cols = list->collections();
-    if (cols.isEmpty()) {
-        Q_EMIT successed();
-        qCWarning(PIMDATAEXPORTERCORE_LOG) << "It seems wierd that there is not collection.";
-        deleteLater();
-        return;
-    }
     QTemporaryFile tmp;
     tmp.open();
     KConfig conf(tmp.fileName());
     KConfigGroup displayAttribute = conf.group(QStringLiteral("Display"));
 
     KConfigGroup expireAttribute = conf.group(QStringLiteral("Expire"));
-    for (const auto &col : cols) {
-        const auto *attr = col.attribute<MailCommon::ExpireCollectionAttribute>();
-        if (attr) {
-            // qDebug() << " col.id : " << col.id() << " serialize" << attr->serialized();
-            displayAttribute.writeEntry(QString::number(col.id()), attr->serialized());
+
+    QMapIterator<QString, AttributeInfo> i(lstAttributeInfo);
+    while (i.hasNext()) {
+        i.next();
+        auto attr = i.value();
+        if (!attr.displayAttribute.isEmpty()) {
+            displayAttribute.writeEntry(i.key(), attr.displayAttribute);
         }
-        const auto *attrDisplay = col.attribute<Akonadi::EntityDisplayAttribute>();
-        if (attrDisplay) {
-            // qDebug() << " col.id : " << col.id() << " serialize" << attrDisplay->serialized();
-            expireAttribute.writeEntry(QString::number(col.id()), attrDisplay->serialized());
+        if (!attr.expireAttribute.isEmpty()) {
+            expireAttribute.writeEntry(i.key(), attr.expireAttribute);
         }
     }
     conf.sync();
-
     tmp.close();
+
     const bool fileAdded = mArchive->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("mailfolderattributes"));
     if (fileAdded) {
         Q_EMIT successed();

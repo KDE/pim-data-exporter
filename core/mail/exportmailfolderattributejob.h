@@ -12,6 +12,15 @@ class PIMDATAEXPORTER_TESTS_EXPORT ExportMailFolderAttributeJob : public QObject
 {
     Q_OBJECT
 public:
+    struct AttributeInfo {
+        QByteArray displayAttribute;
+        QByteArray expireAttribute;
+        Q_REQUIRED_RESULT bool isValid() const
+        {
+            return !displayAttribute.isEmpty() || !expireAttribute.isEmpty();
+        }
+    };
+
     explicit ExportMailFolderAttributeJob(QObject *parent = nullptr);
     ~ExportMailFolderAttributeJob() override;
 
@@ -24,7 +33,10 @@ Q_SIGNALS:
     void successed();
     void failed();
 
-private:
-    void slotFetchFinished(KJob *job);
+protected:
+    virtual void fetchAttributes() = 0;
+
+    void storeFileFolderAttribute(const QMap<QString, AttributeInfo> &lstAttributeInfo);
+
     KZip *mArchive = nullptr;
 };
