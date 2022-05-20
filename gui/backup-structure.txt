@@ -1,4 +1,4 @@
-2022-04-22:
+2022-05-20:
 -----------
 
 2015-1-29: New VERSION for archive => VERSION_2 => knote-akonadi
@@ -116,6 +116,7 @@ Root
 |       |---------confirmbeforedeletingrc
 |       |---------akonadi_newmailnotifier_agentrc
 |       |---------kalendarrc
+|       |---------mailfolderattributes
 |
 |-----akonadi
 |       |---------<archive akonadi>
