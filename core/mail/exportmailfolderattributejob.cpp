@@ -28,7 +28,7 @@ bool ExportMailFolderAttributeJob::canStart() const
 void ExportMailFolderAttributeJob::start()
 {
     if (!canStart()) {
-        Q_EMIT finished();
+        Q_EMIT failed();
         qCWarning(PIMDATAEXPORTERCORE_LOG) << " Impossible to start job";
         deleteLater();
         return;
@@ -44,22 +44,21 @@ void ExportMailFolderAttributeJob::start()
 void ExportMailFolderAttributeJob::slotFetchFinished(KJob *job)
 {
     if (job->error()) {
-        Q_EMIT finished();
+        Q_EMIT failed();
         deleteLater();
-
         return;
     }
 
     auto list = static_cast<Akonadi::CollectionFetchJob *>(job);
     const Akonadi::Collection::List cols = list->collections();
     if (cols.isEmpty()) {
-        Q_EMIT finished();
+        Q_EMIT successed();
         qCWarning(PIMDATAEXPORTERCORE_LOG) << "It seems wierd that there is not collection.";
         deleteLater();
         return;
     }
     // TODO store data
 
-    Q_EMIT finished();
+    Q_EMIT successed();
     deleteLater();
 }

@@ -19,7 +19,8 @@ public:
     void start();
 
 Q_SIGNALS:
-    void finished();
+    void successed();
+    void failed();
 
 private:
     void slotFetchFinished(KJob *job);

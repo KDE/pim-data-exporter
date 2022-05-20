@@ -23,7 +23,7 @@ void ExportMailFolderAttributeJobTest::shouldHaveDefaultValues()
 void ExportMailFolderAttributeJobTest::shouldEmitSignal()
 {
     ExportMailFolderAttributeJob job;
-    QSignalSpy spyFinished(&job, &ExportMailFolderAttributeJob::finished);
+    QSignalSpy spyFinished(&job, &ExportMailFolderAttributeJob::successed);
     job.start();
     QCOMPARE(spyFinished.count(), 1);
 }

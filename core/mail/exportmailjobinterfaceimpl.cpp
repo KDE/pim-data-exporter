@@ -163,8 +163,11 @@ QVector<uint> ExportMailJobInterfaceImpl::listIdentityUoid() const
 void ExportMailJobInterfaceImpl::exportFolderAttributes()
 {
     auto job = new ExportMailFolderAttributeJob(this);
-    connect(job, &ExportMailFolderAttributeJob::finished, this, [this]() {
+    connect(job, &ExportMailFolderAttributeJob::successed, this, [this]() {
         Q_EMIT info(i18n("Backing up Folder Attributes done."));
+    });
+    connect(job, &ExportMailFolderAttributeJob::failed, this, [this]() {
+        Q_EMIT error(i18n("Folder Attributes cannot be exported."));
     });
     job->start();
 }
