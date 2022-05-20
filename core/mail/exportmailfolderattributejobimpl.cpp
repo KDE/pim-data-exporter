@@ -5,6 +5,7 @@
 */
 
 #include "exportmailfolderattributejobimpl.h"
+#include "exportmailjobinterface.h"
 #include "pimdataexportcore_debug.h"
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
@@ -56,7 +57,7 @@ void ExportMailFolderAttributeJobImpl::slotFetchFinished(KJob *job)
             info.expireAttribute = attrDisplay->serialized();
         }
         if (info.isValid()) {
-            lstAttributeInfo.insert(QString::number(col.id()), info);
+            lstAttributeInfo.insert(mInterface->convertToFullCollectionPath(col.id()), info);
         }
     }
     storeFileFolderAttribute(lstAttributeInfo);

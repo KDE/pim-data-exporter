@@ -8,6 +8,7 @@
 #include <QObject>
 class KJob;
 class KZip;
+class ExportMailJobInterface;
 class PIMDATAEXPORTER_TESTS_EXPORT ExportMailFolderAttributeJob : public QObject
 {
     Q_OBJECT
@@ -28,6 +29,7 @@ public:
 
     void start();
     void setArchive(KZip *zip);
+    void setExportInterface(ExportMailJobInterface *interface);
 
 Q_SIGNALS:
     void successed();
@@ -39,4 +41,5 @@ protected:
     void storeFileFolderAttribute(const QMap<QString, AttributeInfo> &lstAttributeInfo);
 
     KZip *mArchive = nullptr;
+    ExportMailJobInterface *mInterface = nullptr;
 };

@@ -26,6 +26,7 @@ public:
     void start() override;
     void slotWriteNextArchiveResource();
     void slotMailsJobTerminated();
+    Q_REQUIRED_RESULT virtual QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
 
 Q_SIGNALS:
     void taskCanceled();
@@ -36,7 +37,6 @@ protected:
     virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
     void backupResources();
     virtual QVector<MailCommon::MailFilter *> filters() = 0;
-    Q_REQUIRED_RESULT virtual QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
     void slotCheckBackupResources();
     virtual void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) = 0;
     Q_REQUIRED_RESULT virtual QVector<Utils::AkonadiInstanceInfo> listOfResource() = 0;

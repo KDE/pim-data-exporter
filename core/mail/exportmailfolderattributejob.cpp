@@ -42,6 +42,11 @@ void ExportMailFolderAttributeJob::setArchive(KZip *zip)
     mArchive = zip;
 }
 
+void ExportMailFolderAttributeJob::setExportInterface(ExportMailJobInterface *interface)
+{
+    mInterface = interface;
+}
+
 void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, AttributeInfo> &lstAttributeInfo)
 {
     QTemporaryFile tmp;

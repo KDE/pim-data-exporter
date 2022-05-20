@@ -5,7 +5,7 @@
 */
 
 #include "exportmailfolderattributejobtestimpl.h"
-
+#include "mail/exportmailjobinterface.h"
 #include <QMap>
 
 ExportMailFolderAttributeJobTestImpl::ExportMailFolderAttributeJobTestImpl(QObject *parent)
@@ -20,7 +20,7 @@ void ExportMailFolderAttributeJobTestImpl::fetchAttributes()
         AttributeInfo att;
         att.displayAttribute = QByteArrayLiteral("foo") + QByteArray::number(i);
         att.expireAttribute = QByteArrayLiteral("bla") + QByteArray::number(i);
-        lstAttributeInfo.insert(QString::number(i), att);
+        lstAttributeInfo.insert(mInterface->convertToFullCollectionPath(i), att);
     }
     storeFileFolderAttribute(lstAttributeInfo);
 }

@@ -146,6 +146,7 @@ void ExportMailJobInterfaceTestImpl::exportFolderAttributes()
 {
     auto job = new ExportMailFolderAttributeJobTestImpl(this);
     job->setArchive(archive());
+    job->setExportInterface(this);
     connect(job, &ExportMailFolderAttributeJobTestImpl::successed, this, [this]() {
         Q_EMIT info(QStringLiteral("Backing up Folder Attributes done."));
         Q_EMIT exportAttributeDone();

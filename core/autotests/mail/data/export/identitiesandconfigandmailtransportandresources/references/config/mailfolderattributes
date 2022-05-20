@@ -1,23 +1,23 @@
 [Display]
-0=foo0
-1=foo1
-2=foo2
-3=foo3
-4=foo4
-5=foo5
-6=foo6
-7=foo7
-8=foo8
-9=foo9
+foo/bla bla/bli0=foo0
+foo/bla bla/bli1=foo1
+foo/bla bla/bli2=foo2
+foo/bla bla/bli3=foo3
+foo/bla bla/bli4=foo4
+foo/bla bla/bli5=foo5
+foo/bla bla/bli6=foo6
+foo/bla bla/bli7=foo7
+foo/bla bla/bli8=foo8
+foo/bla bla/bli9=foo9
 
 [Expire]
-0=bla0
-1=bla1
-2=bla2
-3=bla3
-4=bla4
-5=bla5
-6=bla6
-7=bla7
-8=bla8
-9=bla9
+foo/bla bla/bli0=bla0
+foo/bla bla/bli1=bla1
+foo/bla bla/bli2=bla2
+foo/bla bla/bli3=bla3
+foo/bla bla/bli4=bla4
+foo/bla bla/bli5=bla5
+foo/bla bla/bli6=bla6
+foo/bla bla/bli7=bla7
+foo/bla bla/bli8=bla8
+foo/bla bla/bli9=bla9
