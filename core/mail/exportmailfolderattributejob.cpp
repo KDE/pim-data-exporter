@@ -54,6 +54,7 @@ void ExportMailFolderAttributeJob::slotFetchFinished(KJob *job)
     const Akonadi::Collection::List cols = list->collections();
     if (cols.isEmpty()) {
         Q_EMIT finished();
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "It seems wierd that there is not collection.";
         deleteLater();
         return;
     }
