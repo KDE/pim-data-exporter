@@ -6,10 +6,13 @@
 
 #include "exportmailfolderattributejob.h"
 #include "pimdataexportcore_debug.h"
+#include "utils.h"
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
 #include <Akonadi/EntityDisplayAttribute>
 #include <MailCommon/ExpireCollectionAttribute>
+#include <QTemporaryFile>
+#include <QUrl>
 
 ExportMailFolderAttributeJob::ExportMailFolderAttributeJob(QObject *parent)
     : QObject{parent}
@@ -22,7 +25,7 @@ ExportMailFolderAttributeJob::~ExportMailFolderAttributeJob()
 
 bool ExportMailFolderAttributeJob::canStart() const
 {
-    return true;
+    return (mZip != nullptr);
 }
 
 void ExportMailFolderAttributeJob::start()
@@ -68,6 +71,16 @@ void ExportMailFolderAttributeJob::slotFetchFinished(KJob *job)
             qDebug() << " col.id : " << col.id() << " serialize" << attrDisplay->serialized();
         }
     }
+#if 0
+    QTemporaryFile tmp;
+    tmp.open();
+    const QUrl url = QUrl::fromLocalFile(tmp.fileName());
+    MailCommon::FilterImporterExporter exportFilters;
+    exportFilters.exportFilters(lstFilter, url, true);
+    tmp.close();
+    const bool fileAdded = mZip->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("mailfolderattributes"));
+#endif
+
     Q_EMIT successed();
     deleteLater();
 }

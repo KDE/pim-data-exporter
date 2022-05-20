@@ -17,13 +17,13 @@ ExportMailFolderAttributeJobTest::ExportMailFolderAttributeJobTest(QObject *pare
 void ExportMailFolderAttributeJobTest::shouldHaveDefaultValues()
 {
     ExportMailFolderAttributeJob job;
-    QVERIFY(job.canStart());
+    QVERIFY(!job.canStart());
 }
 
 void ExportMailFolderAttributeJobTest::shouldEmitSignal()
 {
     ExportMailFolderAttributeJob job;
-    QSignalSpy spyFinished(&job, &ExportMailFolderAttributeJob::successed);
+    QSignalSpy spyFinished(&job, &ExportMailFolderAttributeJob::failed);
     job.start();
     QCOMPARE(spyFinished.count(), 1);
 }

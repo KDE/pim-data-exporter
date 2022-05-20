@@ -7,6 +7,7 @@
 #include "pimdataexportercore_private_export.h"
 #include <QObject>
 class KJob;
+class KZip;
 class PIMDATAEXPORTER_TESTS_EXPORT ExportMailFolderAttributeJob : public QObject
 {
     Q_OBJECT
@@ -17,6 +18,7 @@ public:
     Q_REQUIRED_RESULT bool canStart() const;
 
     void start();
+    void setZip(KZip *zip);
 
 Q_SIGNALS:
     void successed();
@@ -24,4 +26,5 @@ Q_SIGNALS:
 
 private:
     void slotFetchFinished(KJob *job);
+    KZip *mZip = nullptr;
 };
