@@ -76,12 +76,12 @@ void ExportMailFolderAttributeJob::slotFetchFinished(KJob *job)
     for (const auto &col : cols) {
         const auto *attr = col.attribute<MailCommon::ExpireCollectionAttribute>();
         if (attr) {
-            qDebug() << " col.id : " << col.id() << " serialize" << attr->serialized();
+            // qDebug() << " col.id : " << col.id() << " serialize" << attr->serialized();
             displayAttribute.writeEntry(QString::number(col.id()), attr->serialized());
         }
         const auto *attrDisplay = col.attribute<Akonadi::EntityDisplayAttribute>();
         if (attrDisplay) {
-            qDebug() << " col.id : " << col.id() << " serialize" << attrDisplay->serialized();
+            // qDebug() << " col.id : " << col.id() << " serialize" << attrDisplay->serialized();
             expireAttribute.writeEntry(QString::number(col.id()), attrDisplay->serialized());
         }
     }
