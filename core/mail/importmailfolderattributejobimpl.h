@@ -16,5 +16,5 @@ public:
     ~ImportMailFolderAttributeJobImpl() override;
 
 protected:
-    void applyAttributes(const QMap<Akonadi::Collection::Id, AttributeInfo> &list) override final;
+    void applyAttributes(const QMap<Akonadi::Collection::Id, AttributeInfo> &map) override final;
 };

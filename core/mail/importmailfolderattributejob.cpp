@@ -62,8 +62,6 @@ void ImportMailFolderAttributeJob::start()
         const QString mailFolderAttributesFileName = destDirectory + QLatin1Char('/') + filename;
         KConfig conf(mailFolderAttributesFileName);
 
-        // TODO store as
-
         // Display Attributes
         QMap<Akonadi::Collection::Id, QByteArray> displayMap;
         QMap<Akonadi::Collection::Id, QByteArray> expireMap;
@@ -95,7 +93,25 @@ void ImportMailFolderAttributeJob::start()
                 }
             }
         }
-        // TODO create list
+        QMapIterator<Akonadi::Collection::Id, QByteArray> indexDisplayMap(displayMap);
+        while (indexDisplayMap.hasNext()) {
+            indexDisplayMap.next();
+            AttributeInfo info;
+            info.displayAttribute = indexDisplayMap.value();
+            if (expireMap.contains(indexDisplayMap.key())) {
+                info.expireAttribute = expireMap.value(indexDisplayMap.key());
+                expireMap.remove(indexDisplayMap.key());
+            }
+            mapAttributeInfo.insert(indexDisplayMap.key(), info);
+        }
+
+        QMapIterator<Akonadi::Collection::Id, QByteArray> indexExpireMap(expireMap);
+        while (indexExpireMap.hasNext()) {
+            indexExpireMap.next();
+            AttributeInfo info;
+            info.expireAttribute = indexExpireMap.value();
+            mapAttributeInfo.insert(indexExpireMap.key(), info);
+        }
     }
     applyAttributes(mapAttributeInfo);
 }
