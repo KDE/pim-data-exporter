@@ -194,6 +194,7 @@ void ImportMailJobInterfaceTestImpl::importFolderAttributes()
 {
     auto job = new ImportMailFolderAttributeJobTestImpl(this);
     job->setArchiveDirectory(mArchiveDirectory);
+    job->setExtractPath(extractPath());
     job->setExportInterface(this);
     connect(job, &ImportMailFolderAttributeJobTestImpl::successed, this, [this]() {
         Q_EMIT info(QStringLiteral("Backing up Folder Attributes done."));

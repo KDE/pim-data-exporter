@@ -44,6 +44,8 @@ public:
 
     // Only for test
     void setTempDirName(const QString &tempDirName);
+    bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertPathToId(const QString &path);
 
 Q_SIGNALS:
     void info(const QString &);
@@ -58,7 +60,6 @@ protected:
     virtual void slotNextStep();
 
 protected:
-    bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
     void initializeListStep();
     virtual void startSynchronizeResources(const QStringList &listResourceToSync);
     void infoAboutNewResource(const QString &resourceName);
@@ -75,7 +76,6 @@ protected:
 
     Q_REQUIRED_RESULT int mergeConfigMessageBox(const QString &configName) const;
     Q_REQUIRED_RESULT bool overwriteConfigMessageBox(const QString &configName) const;
-    Q_REQUIRED_RESULT Akonadi::Collection::Id convertPathToId(const QString &path);
 
     void backupResourceFile(const QString &agentIdentifier, const QString &defaultPath);
 

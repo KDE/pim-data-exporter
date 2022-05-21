@@ -5,12 +5,14 @@
 */
 
 #include "importmailfolderattributejob.h"
+#include "importmailjobinterface.h"
 #include "pimdataexportcore_debug.h"
 #include "utils.h"
 
 #include <KArchive>
 #include <KArchiveDirectory>
 #include <KArchiveFile>
+#include <KConfigGroup>
 
 ImportMailFolderAttributeJob::ImportMailFolderAttributeJob(QObject *parent)
     : QObject{parent}
@@ -54,12 +56,34 @@ void ImportMailFolderAttributeJob::start()
         const auto file = static_cast<const KArchiveFile *>(mailFolderAttributeFile);
         const QString destDirectory = mExtractPath + QLatin1Char('/') + Utils::resourcesPath();
         // qDebug() << " destDirectory " << destDirectory;
-#if 0
-        copyArchiveFileTo(file, destDirectory);
+        mInterface->copyArchiveFileTo(file, destDirectory);
         const QString filename(file->name());
-        const QString agentResourceFileName = destDirectory + QLatin1Char('/') + filename;
-        resourceName = Utils::akonadiAgentName(agentResourceFileName);
-#endif
+        const QString mailFolderAttributesFileName = destDirectory + QLatin1Char('/') + filename;
+        KConfig conf(mailFolderAttributesFileName);
+        const QString displayStr(QStringLiteral("Display"));
+        const QString expireStr(QStringLiteral("Expire"));
+        if (conf.hasGroup(displayStr)) {
+            KConfigGroup group = conf.group(displayStr);
+            const QStringList keyList = group.keyList();
+            for (const QString &key : keyList) {
+                const Akonadi::Collection::Id id = mInterface->convertPathToId(key);
+                if (id != -1) {
+                    const QByteArray displayBa = group.readEntry(key, QByteArray());
+                    qDebug() << " displayBa " << displayBa;
+                }
+            }
+        }
+        if (conf.hasGroup(expireStr)) {
+            KConfigGroup group = conf.group(expireStr);
+            const QStringList keyList = group.keyList();
+            for (const QString &key : keyList) {
+                const Akonadi::Collection::Id id = mInterface->convertPathToId(key);
+                if (id != -1) {
+                    const QByteArray expireBa = group.readEntry(key, QByteArray());
+                    qDebug() << " expireBa " << expireBa;
+                }
+            }
+        }
     }
     applyAttributes();
 }
