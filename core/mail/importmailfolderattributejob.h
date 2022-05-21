@@ -41,9 +41,9 @@ Q_SIGNALS:
 protected:
     virtual void applyAttributes(const QMap<Akonadi::Collection::Id, AttributeInfo> &) = 0;
     void restoreFileFolderAttribute();
+    QString mExtractPath;
 
 private:
-    QString mExtractPath;
     const KArchiveDirectory *mArchiveDirectory = nullptr;
     ImportMailJobInterface *mInterface = nullptr;
 };

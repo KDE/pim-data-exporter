@@ -74,7 +74,7 @@ void ImportMailFolderAttributeJob::start()
                 if (id != -1) {
                     const QByteArray displayBa = group.readEntry(key, QByteArray());
                     displayMap.insert(id, displayBa);
-                    qDebug() << " displayBa " << displayBa;
+                    // qDebug() << " displayBa " << displayBa;
                 }
             }
         }
@@ -89,7 +89,7 @@ void ImportMailFolderAttributeJob::start()
                 if (id != -1) {
                     const QByteArray expireBa = group.readEntry(key, QByteArray());
                     expireMap.insert(id, expireBa);
-                    qDebug() << " expireBa " << expireBa;
+                    // qDebug() << " expireBa " << expireBa;
                 }
             }
         }
@@ -118,7 +118,6 @@ void ImportMailFolderAttributeJob::start()
 
 void ImportMailFolderAttributeJob::restoreFileFolderAttribute()
 {
-    // TODO
     Q_EMIT successed();
     deleteLater();
 }

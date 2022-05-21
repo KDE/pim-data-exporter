@@ -6,6 +6,7 @@
 
 #include "importmailfolderattributejobtestimpl.h"
 #include <QDebug>
+#include <QFile>
 ImportMailFolderAttributeJobTestImpl::ImportMailFolderAttributeJobTestImpl(QObject *parent)
     : ImportMailFolderAttributeJob{parent}
 {
@@ -17,11 +18,15 @@ ImportMailFolderAttributeJobTestImpl::~ImportMailFolderAttributeJobTestImpl()
 
 void ImportMailFolderAttributeJobTestImpl::applyAttributes(const QMap<Akonadi::Collection::Id, AttributeInfo> &map)
 {
-    QMapIterator<Akonadi::Collection::Id, AttributeInfo> indexMap(map);
-    while (indexMap.hasNext()) {
-        indexMap.next();
-        // TODO
+    QMapIterator<Akonadi::Collection::Id, AttributeInfo> indexDisplayMap(map);
+    QFile data(mExtractPath + QStringLiteral("/config/mailfolderattributes"));
+    if (data.open(QFile::WriteOnly | QFile::Truncate)) {
+        QTextStream out(&data);
+        while (indexDisplayMap.hasNext()) {
+            indexDisplayMap.next();
+            out << "Collection " << indexDisplayMap.key() << " display " << indexDisplayMap.value().displayAttribute << " expire "
+                << indexDisplayMap.value().expireAttribute << "\n";
+        }
     }
-    // TODO
     restoreFileFolderAttribute();
 }
