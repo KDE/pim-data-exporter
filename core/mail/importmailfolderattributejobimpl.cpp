@@ -34,6 +34,7 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
         fetch->fetchScope().fetchAttribute<MailCommon::ExpireCollectionAttribute>();
         connect(fetch, &Akonadi::CollectionFetchJob::collectionsReceived, this, [this](const Akonadi::Collection::List &cols) {
             if (cols.count() != 1) {
+                nextAttribute();
                 return;
             }
             Akonadi::Collection col = cols.first();
