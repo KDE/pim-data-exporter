@@ -17,7 +17,7 @@ ImportMailFolderAttributeJobImpl::ImportMailFolderAttributeJobImpl(QObject *pare
 
 ImportMailFolderAttributeJobImpl::~ImportMailFolderAttributeJobImpl() = default;
 
-void ImportMailFolderAttributeJobImpl::applyAttributes()
+void ImportMailFolderAttributeJobImpl::applyAttributes(const QMap<Akonadi::Collection::Id, AttributeInfo> &list)
 {
     // TODO
 }

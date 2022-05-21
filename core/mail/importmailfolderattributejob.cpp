@@ -52,6 +52,7 @@ void ImportMailFolderAttributeJob::start()
         return;
     }
     const KArchiveEntry *mailFolderAttributeFile = mArchiveDirectory->entry(Utils::configsPath() + QStringLiteral("mailfolderattributes"));
+    QMap<Akonadi::Collection::Id, AttributeInfo> mapAttributeInfo;
     if (mailFolderAttributeFile && mailFolderAttributeFile->isFile()) {
         const auto file = static_cast<const KArchiveFile *>(mailFolderAttributeFile);
         const QString destDirectory = mExtractPath + QLatin1Char('/') + Utils::resourcesPath();
@@ -64,6 +65,8 @@ void ImportMailFolderAttributeJob::start()
         // TODO store as
 
         // Display Attributes
+        QMap<Akonadi::Collection::Id, QByteArray> displayMap;
+        QMap<Akonadi::Collection::Id, QByteArray> expireMap;
         const QString displayStr(QStringLiteral("Display"));
         if (conf.hasGroup(displayStr)) {
             KConfigGroup group = conf.group(displayStr);
@@ -72,6 +75,7 @@ void ImportMailFolderAttributeJob::start()
                 const Akonadi::Collection::Id id = mInterface->convertPathToId(key);
                 if (id != -1) {
                     const QByteArray displayBa = group.readEntry(key, QByteArray());
+                    displayMap.insert(id, displayBa);
                     qDebug() << " displayBa " << displayBa;
                 }
             }
@@ -86,12 +90,14 @@ void ImportMailFolderAttributeJob::start()
                 const Akonadi::Collection::Id id = mInterface->convertPathToId(key);
                 if (id != -1) {
                     const QByteArray expireBa = group.readEntry(key, QByteArray());
+                    expireMap.insert(id, expireBa);
                     qDebug() << " expireBa " << expireBa;
                 }
             }
         }
+        // TODO create list
     }
-    applyAttributes();
+    applyAttributes(mapAttributeInfo);
 }
 
 void ImportMailFolderAttributeJob::restoreFileFolderAttribute()

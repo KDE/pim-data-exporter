@@ -15,7 +15,7 @@ ImportMailFolderAttributeJobTestImpl::~ImportMailFolderAttributeJobTestImpl()
 {
 }
 
-void ImportMailFolderAttributeJobTestImpl::applyAttributes()
+void ImportMailFolderAttributeJobTestImpl::applyAttributes(const QMap<Akonadi::Collection::Id, AttributeInfo> &)
 {
     // TODO
     restoreFileFolderAttribute();
