@@ -60,8 +60,11 @@ void ImportMailFolderAttributeJob::start()
         const QString filename(file->name());
         const QString mailFolderAttributesFileName = destDirectory + QLatin1Char('/') + filename;
         KConfig conf(mailFolderAttributesFileName);
+
+        // TODO store as
+
+        // Display Attributes
         const QString displayStr(QStringLiteral("Display"));
-        const QString expireStr(QStringLiteral("Expire"));
         if (conf.hasGroup(displayStr)) {
             KConfigGroup group = conf.group(displayStr);
             const QStringList keyList = group.keyList();
@@ -73,6 +76,9 @@ void ImportMailFolderAttributeJob::start()
                 }
             }
         }
+
+        // Expire attributes
+        const QString expireStr(QStringLiteral("Expire"));
         if (conf.hasGroup(expireStr)) {
             KConfigGroup group = conf.group(expireStr);
             const QStringList keyList = group.keyList();

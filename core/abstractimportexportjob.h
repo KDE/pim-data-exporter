@@ -28,6 +28,7 @@ class PIMDATAEXPORTER_EXPORT AbstractImportExportJob : public QObject
 {
     Q_OBJECT
 public:
+    friend class ImportMailFolderAttributeJob;
     explicit AbstractImportExportJob(QObject *parent, ArchiveStorage *archiveStorage, Utils::StoredTypes typeSelected, int numberOfStep);
     ~AbstractImportExportJob() override;
 
@@ -44,8 +45,6 @@ public:
 
     // Only for test
     void setTempDirName(const QString &tempDirName);
-    bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
-    Q_REQUIRED_RESULT Akonadi::Collection::Id convertPathToId(const QString &path);
 
 Q_SIGNALS:
     void info(const QString &);
@@ -90,6 +89,9 @@ protected:
     virtual bool isAConfigFile(const QString &name) const;
     void searchAllFiles(const KArchiveDirectory *dir, const QString &prefix, const QString &searchEntryName);
     void storeArchiveInfoResources(const KArchiveDirectory *dir, const QString &prefix);
+
+    bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
+    Q_REQUIRED_RESULT Akonadi::Collection::Id convertPathToId(const QString &path);
 
     Q_REQUIRED_RESULT KZip *archive() const;
 
