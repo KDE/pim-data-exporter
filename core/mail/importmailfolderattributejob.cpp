@@ -6,6 +6,11 @@
 
 #include "importmailfolderattributejob.h"
 #include "pimdataexportcore_debug.h"
+#include "utils.h"
+
+#include <KArchive>
+#include <KArchiveDirectory>
+#include <KArchiveFile>
 
 ImportMailFolderAttributeJob::ImportMailFolderAttributeJob(QObject *parent)
     : QObject{parent}
@@ -18,12 +23,12 @@ ImportMailFolderAttributeJob::~ImportMailFolderAttributeJob()
 
 bool ImportMailFolderAttributeJob::canStart() const
 {
-    return (mArchive != nullptr);
+    return (mArchiveDirectory != nullptr);
 }
 
-void ImportMailFolderAttributeJob::setArchive(KZip *zip)
+void ImportMailFolderAttributeJob::setArchiveDirectory(const KArchiveDirectory *zip)
 {
-    mArchive = zip;
+    mArchiveDirectory = zip;
 }
 
 void ImportMailFolderAttributeJob::setExportInterface(ImportMailJobInterface *interface)
@@ -38,6 +43,18 @@ void ImportMailFolderAttributeJob::start()
         qCWarning(PIMDATAEXPORTERCORE_LOG) << " Impossible to start job";
         deleteLater();
         return;
+    }
+    const KArchiveEntry *mailFolderAttributeFile = mArchiveDirectory->entry(Utils::configsPath() + QStringLiteral("mailfolderattributes"));
+    if (mailFolderAttributeFile && mailFolderAttributeFile->isFile()) {
+        const auto file = static_cast<const KArchiveFile *>(mailFolderAttributeFile);
+#if 0
+        const QString destDirectory = mTempDirName + QLatin1Char('/') + Utils::resourcesPath();
+        // qDebug() << " destDirectory " << destDirectory;
+        copyArchiveFileTo(file, destDirectory);
+        const QString filename(file->name());
+        const QString agentResourceFileName = destDirectory + QLatin1Char('/') + filename;
+        resourceName = Utils::akonadiAgentName(agentResourceFileName);
+#endif
     }
     applyAttributes();
 }

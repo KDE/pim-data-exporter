@@ -193,7 +193,7 @@ QString ImportMailJobInterfaceTestImpl::configLocation() const
 void ImportMailJobInterfaceTestImpl::importFolderAttributes()
 {
     auto job = new ImportMailFolderAttributeJobTestImpl(this);
-    job->setArchive(archive());
+    job->setArchiveDirectory(mArchiveDirectory);
     job->setExportInterface(this);
     connect(job, &ImportMailFolderAttributeJobTestImpl::successed, this, [this]() {
         Q_EMIT info(QStringLiteral("Backing up Folder Attributes done."));

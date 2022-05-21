@@ -8,7 +8,7 @@
 
 #include "pimdataexportercore_private_export.h"
 #include <QObject>
-class KZip;
+class KArchiveDirectory;
 class ImportMailJobInterface;
 class PIMDATAEXPORTER_TESTS_EXPORT ImportMailFolderAttributeJob : public QObject
 {
@@ -19,7 +19,7 @@ public:
 
     Q_REQUIRED_RESULT bool canStart() const;
 
-    void setArchive(KZip *zip);
+    void setArchiveDirectory(const KArchiveDirectory *zip);
     void setExportInterface(ImportMailJobInterface *interface);
 
     void start();
@@ -33,6 +33,6 @@ protected:
     void restoreFileFolderAttribute();
 
 private:
-    KZip *mArchive = nullptr;
+    const KArchiveDirectory *mArchiveDirectory = nullptr;
     ImportMailJobInterface *mInterface = nullptr;
 };
