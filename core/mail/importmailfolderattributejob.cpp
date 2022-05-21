@@ -23,7 +23,7 @@ ImportMailFolderAttributeJob::~ImportMailFolderAttributeJob()
 
 bool ImportMailFolderAttributeJob::canStart() const
 {
-    return (mArchiveDirectory != nullptr);
+    return (mArchiveDirectory != nullptr) && !mExtractPath.isEmpty();
 }
 
 void ImportMailFolderAttributeJob::setArchiveDirectory(const KArchiveDirectory *zip)
@@ -34,6 +34,11 @@ void ImportMailFolderAttributeJob::setArchiveDirectory(const KArchiveDirectory *
 void ImportMailFolderAttributeJob::setExportInterface(ImportMailJobInterface *interface)
 {
     mInterface = interface;
+}
+
+void ImportMailFolderAttributeJob::setExtractPath(const QString &extractPath)
+{
+    mExtractPath = extractPath;
 }
 
 void ImportMailFolderAttributeJob::start()
@@ -47,9 +52,9 @@ void ImportMailFolderAttributeJob::start()
     const KArchiveEntry *mailFolderAttributeFile = mArchiveDirectory->entry(Utils::configsPath() + QStringLiteral("mailfolderattributes"));
     if (mailFolderAttributeFile && mailFolderAttributeFile->isFile()) {
         const auto file = static_cast<const KArchiveFile *>(mailFolderAttributeFile);
-#if 0
-        const QString destDirectory = mTempDirName + QLatin1Char('/') + Utils::resourcesPath();
+        const QString destDirectory = mExtractPath + QLatin1Char('/') + Utils::resourcesPath();
         // qDebug() << " destDirectory " << destDirectory;
+#if 0
         copyArchiveFileTo(file, destDirectory);
         const QString filename(file->name());
         const QString agentResourceFileName = destDirectory + QLatin1Char('/') + filename;

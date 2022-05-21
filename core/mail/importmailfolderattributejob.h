@@ -21,7 +21,7 @@ public:
 
     void setArchiveDirectory(const KArchiveDirectory *zip);
     void setExportInterface(ImportMailJobInterface *interface);
-
+    void setExtractPath(const QString &extractPath);
     void start();
 
 Q_SIGNALS:
@@ -33,6 +33,7 @@ protected:
     void restoreFileFolderAttribute();
 
 private:
+    QString mExtractPath;
     const KArchiveDirectory *mArchiveDirectory = nullptr;
     ImportMailJobInterface *mInterface = nullptr;
 };
