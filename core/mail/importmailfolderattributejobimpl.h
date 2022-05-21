@@ -7,7 +7,8 @@
 #pragma once
 
 #include "importmailfolderattributejob.h"
-
+#include <Akonadi/Collection>
+class KJob;
 class ImportMailFolderAttributeJobImpl : public ImportMailFolderAttributeJob
 {
     Q_OBJECT
@@ -17,4 +18,9 @@ public:
 
 protected:
     void applyAttributes(const QMap<Akonadi::Collection::Id, AttributeInfo> &map) override final;
+
+private:
+    void nextAttribute();
+    void slotCollectionModifyDone(KJob *job);
+    QScopedPointer<QMapIterator<Akonadi::Collection::Id, AttributeInfo>> mIndexMap;
 };
