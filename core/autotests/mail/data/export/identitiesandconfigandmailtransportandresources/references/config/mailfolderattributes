@@ -1,39 +1,49 @@
 [foo/bla bla/bli0]
 Display=foo0
 Expire=bla0
+Favorite=blu0
 
 [foo/bla bla/bli1]
 Display=foo1
 Expire=bla1
+Favorite=blu1
 
 [foo/bla bla/bli2]
 Display=foo2
 Expire=bla2
+Favorite=blu2
 
 [foo/bla bla/bli3]
 Display=foo3
 Expire=bla3
+Favorite=blu3
 
 [foo/bla bla/bli4]
 Display=foo4
 Expire=bla4
+Favorite=blu4
 
 [foo/bla bla/bli5]
 Display=foo5
 Expire=bla5
+Favorite=blu5
 
 [foo/bla bla/bli6]
 Display=foo6
 Expire=bla6
+Favorite=blu6
 
 [foo/bla bla/bli7]
 Display=foo7
 Expire=bla7
+Favorite=blu7
 
 [foo/bla bla/bli8]
 Display=foo8
 Expire=bla8
+Favorite=blu8
 
 [foo/bla bla/bli9]
 Display=foo9
 Expire=bla9
+Favorite=blu9

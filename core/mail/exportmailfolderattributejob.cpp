@@ -65,6 +65,9 @@ void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, 
         if (!attr.expireAttribute.isEmpty()) {
             attributeGroup.writeEntry(QStringLiteral("Expire"), attr.expireAttribute);
         }
+        if (!attr.favoriteAttribute.isEmpty()) {
+            attributeGroup.writeEntry(QStringLiteral("Favorite"), attr.favoriteAttribute);
+        }
     }
     conf.sync();
     tmp.close();

@@ -20,6 +20,7 @@ void ExportMailFolderAttributeJobTestImpl::fetchAttributes()
         ImportExportMailUtil::AttributeInfo att;
         att.displayAttribute = QByteArrayLiteral("foo") + QByteArray::number(i);
         att.expireAttribute = QByteArrayLiteral("bla") + QByteArray::number(i);
+        att.favoriteAttribute = QByteArrayLiteral("blu") + QByteArray::number(i);
         lstAttributeInfo.insert(mInterface->convertToFullCollectionPath(i), att);
     }
     storeFileFolderAttribute(lstAttributeInfo);

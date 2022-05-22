@@ -10,6 +10,7 @@
 #include <Akonadi/CollectionFetchScope>
 #include <Akonadi/CollectionModifyJob>
 #include <Akonadi/EntityDisplayAttribute>
+#include <Akonadi/FavoriteCollectionAttribute>
 #include <MailCommon/ExpireCollectionAttribute>
 
 ImportMailFolderAttributeJobImpl::ImportMailFolderAttributeJobImpl(QObject *parent)
@@ -38,10 +39,20 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
                 return;
             }
             Akonadi::Collection col = cols.first();
-            MailCommon::ExpireCollectionAttribute *expireAttribute = col.attribute<MailCommon::ExpireCollectionAttribute>(Akonadi::Collection::AddIfMissing);
-            expireAttribute->deserialize(mIndexMap->value().expireAttribute);
-            Akonadi::EntityDisplayAttribute *entityAttribute = col.attribute<Akonadi::EntityDisplayAttribute>(Akonadi::Collection::AddIfMissing);
-            entityAttribute->deserialize(mIndexMap->value().displayAttribute);
+            if (!mIndexMap->value().expireAttribute.isEmpty()) {
+                MailCommon::ExpireCollectionAttribute *expireAttribute =
+                    col.attribute<MailCommon::ExpireCollectionAttribute>(Akonadi::Collection::AddIfMissing);
+                expireAttribute->deserialize(mIndexMap->value().expireAttribute);
+            }
+            if (!mIndexMap->value().displayAttribute.isEmpty()) {
+                Akonadi::EntityDisplayAttribute *entityAttribute = col.attribute<Akonadi::EntityDisplayAttribute>(Akonadi::Collection::AddIfMissing);
+                entityAttribute->deserialize(mIndexMap->value().displayAttribute);
+            }
+            if (!mIndexMap->value().favoriteAttribute.isEmpty()) {
+                Akonadi::FavoriteCollectionAttribute *favoriteAttribute =
+                    col.attribute<Akonadi::FavoriteCollectionAttribute>(Akonadi::Collection::AddIfMissing);
+                favoriteAttribute->deserialize(mIndexMap->value().favoriteAttribute);
+            }
 
             auto job = new Akonadi::CollectionModifyJob(col, this);
             connect(job, &Akonadi::CollectionModifyJob::result, this, &ImportMailFolderAttributeJobImpl::slotCollectionModifyDone);

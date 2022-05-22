@@ -58,6 +58,10 @@ void ExportMailFolderAttributeJobImpl::slotFetchFinished(KJob *job)
         if (attrDisplay) {
             info.expireAttribute = attrDisplay->serialized();
         }
+        const auto *attrFavorite = col.attribute<Akonadi::FavoriteCollectionAttribute>();
+        if (attrFavorite) {
+            info.favoriteAttribute = attrFavorite->serialized();
+        }
         if (info.isValid()) {
             lstAttributeInfo.insert(mInterface->convertToFullCollectionPath(col.id()), info);
         }
