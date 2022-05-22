@@ -51,20 +51,19 @@ void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, 
 {
     QTemporaryFile tmp;
     tmp.open();
+
     KConfig conf(tmp.fileName());
-    KConfigGroup displayAttribute = conf.group(QStringLiteral("Display"));
-
-    KConfigGroup expireAttribute = conf.group(QStringLiteral("Expire"));
-
     QMapIterator<QString, AttributeInfo> i(lstAttributeInfo);
     while (i.hasNext()) {
         i.next();
+        KConfigGroup attributeGroup = conf.group(i.key());
+
         auto attr = i.value();
         if (!attr.displayAttribute.isEmpty()) {
-            displayAttribute.writeEntry(i.key(), attr.displayAttribute);
+            attributeGroup.writeEntry(QStringLiteral("Display"), attr.displayAttribute);
         }
         if (!attr.expireAttribute.isEmpty()) {
-            expireAttribute.writeEntry(i.key(), attr.expireAttribute);
+            attributeGroup.writeEntry(QStringLiteral("Expire"), attr.expireAttribute);
         }
     }
     conf.sync();
