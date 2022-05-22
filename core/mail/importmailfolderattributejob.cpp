@@ -5,6 +5,7 @@
 */
 
 #include "importmailfolderattributejob.h"
+#include "importexportmailutil.h"
 #include "importmailjobinterface.h"
 #include "pimdataexportcore_debug.h"
 #include "utils.h"
@@ -52,7 +53,7 @@ void ImportMailFolderAttributeJob::start()
         return;
     }
     const KArchiveEntry *mailFolderAttributeFile = mArchiveDirectory->entry(Utils::configsPath() + QStringLiteral("mailfolderattributes"));
-    QMap<Akonadi::Collection::Id, AttributeInfo> mapAttributeInfo;
+    QMap<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo> mapAttributeInfo;
     if (mailFolderAttributeFile && mailFolderAttributeFile->isFile()) {
         const auto file = static_cast<const KArchiveFile *>(mailFolderAttributeFile);
         const QString destDirectory = mExtractPath + QLatin1Char('/') + Utils::resourcesPath();
@@ -64,7 +65,7 @@ void ImportMailFolderAttributeJob::start()
 
         const QStringList groupList = conf.groupList();
         for (const QString &groupStr : groupList) {
-            AttributeInfo info;
+            ImportExportMailUtil::AttributeInfo info;
             KConfigGroup group = conf.group(groupStr);
             const Akonadi::Collection::Id id = mInterface->convertPathToId(groupStr);
             const QString displayStr(QStringLiteral("Display"));

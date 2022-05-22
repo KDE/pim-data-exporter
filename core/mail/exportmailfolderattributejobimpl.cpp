@@ -10,6 +10,7 @@
 #include <Akonadi/CollectionFetchJob>
 #include <Akonadi/CollectionFetchScope>
 #include <Akonadi/EntityDisplayAttribute>
+#include <Akonadi/FavoriteCollectionAttribute>
 #include <MailCommon/ExpireCollectionAttribute>
 
 ExportMailFolderAttributeJobImpl::ExportMailFolderAttributeJobImpl(QObject *parent)
@@ -24,6 +25,7 @@ void ExportMailFolderAttributeJobImpl::fetchAttributes()
     auto job = new Akonadi::CollectionFetchJob(Akonadi::Collection::root(), Akonadi::CollectionFetchJob::Recursive, this);
     job->fetchScope().fetchAttribute<MailCommon::ExpireCollectionAttribute>();
     job->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
+    job->fetchScope().fetchAttribute<Akonadi::FavoriteCollectionAttribute>();
     job->fetchScope().setContentMimeTypes({QStringLiteral("message/rfc822")});
     connect(job, &Akonadi::CollectionFetchJob::result, this, &ExportMailFolderAttributeJobImpl::slotFetchFinished);
 }
@@ -44,9 +46,9 @@ void ExportMailFolderAttributeJobImpl::slotFetchFinished(KJob *job)
         deleteLater();
         return;
     }
-    QMap<QString, AttributeInfo> lstAttributeInfo;
+    QMap<QString, ImportExportMailUtil::AttributeInfo> lstAttributeInfo;
     for (const auto &col : cols) {
-        AttributeInfo info;
+        ImportExportMailUtil::AttributeInfo info;
 
         const auto *attr = col.attribute<MailCommon::ExpireCollectionAttribute>();
         if (attr) {

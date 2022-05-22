@@ -31,12 +31,12 @@ add_executable( exportmailfolderattributejobtest)
 target_sources( exportmailfolderattributejobtest PRIVATE exportmailfolderattributejobtest.cpp exportmailfolderattributejobtest.h)
 add_test(NAME exportmailfolderattributejobtest COMMAND exportmailfolderattributejobtest)
 ecm_mark_as_test(exportmailfolderattributejobtest)
-target_link_libraries(exportmailfolderattributejobtest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate)
+target_link_libraries(exportmailfolderattributejobtest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::ConfigCore)
 
 #####
 add_executable( importmailfolderattributejobtest)
 target_sources( importmailfolderattributejobtest PRIVATE importmailfolderattributejobtest.cpp importmailfolderattributejobtest.h)
 add_test(NAME importmailfolderattributejobtest COMMAND importmailfolderattributejobtest)
 ecm_mark_as_test(importmailfolderattributejobtest)
-target_link_libraries(importmailfolderattributejobtest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::AkonadiCore)
+target_link_libraries(importmailfolderattributejobtest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::AkonadiCore KF5::ConfigCore)
 

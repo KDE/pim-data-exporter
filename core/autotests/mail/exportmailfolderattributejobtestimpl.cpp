@@ -15,9 +15,9 @@ ExportMailFolderAttributeJobTestImpl::ExportMailFolderAttributeJobTestImpl(QObje
 
 void ExportMailFolderAttributeJobTestImpl::fetchAttributes()
 {
-    QMap<QString, AttributeInfo> lstAttributeInfo;
+    QMap<QString, ImportExportMailUtil::AttributeInfo> lstAttributeInfo;
     for (int i = 0; i < 10; ++i) {
-        AttributeInfo att;
+        ImportExportMailUtil::AttributeInfo att;
         att.displayAttribute = QByteArrayLiteral("foo") + QByteArray::number(i);
         att.expireAttribute = QByteArrayLiteral("bla") + QByteArray::number(i);
         lstAttributeInfo.insert(mInterface->convertToFullCollectionPath(i), att);

@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "mail/importexportmailutil.h"
 #include "mail/importmailfolderattributejob.h"
 #include <QObject>
 
@@ -20,7 +21,7 @@ public:
     ~ImportMailFolderAttributeJobImplTest() override = default;
 
 protected:
-    void applyAttributes(const QMap<Akonadi::Collection::Id, AttributeInfo> &) override
+    void applyAttributes(const QMap<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo> &) override
     {
         // Nothing
     }

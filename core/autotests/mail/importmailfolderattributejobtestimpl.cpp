@@ -16,9 +16,9 @@ ImportMailFolderAttributeJobTestImpl::~ImportMailFolderAttributeJobTestImpl()
 {
 }
 
-void ImportMailFolderAttributeJobTestImpl::applyAttributes(const QMap<Akonadi::Collection::Id, AttributeInfo> &map)
+void ImportMailFolderAttributeJobTestImpl::applyAttributes(const QMap<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo> &map)
 {
-    QMapIterator<Akonadi::Collection::Id, AttributeInfo> indexDisplayMap(map);
+    QMapIterator<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo> indexDisplayMap(map);
     QFile data(mExtractPath + QStringLiteral("/config/mailfolderattributes"));
     if (data.open(QFile::WriteOnly | QFile::Truncate)) {
         QTextStream out(&data);

@@ -4,6 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
+#include "importexportmailutil.h"
 #include "pimdataexportercore_private_export.h"
 #include <QObject>
 class KJob;
@@ -13,15 +14,6 @@ class PIMDATAEXPORTER_TESTS_EXPORT ExportMailFolderAttributeJob : public QObject
 {
     Q_OBJECT
 public:
-    struct AttributeInfo {
-        QByteArray displayAttribute;
-        QByteArray expireAttribute;
-        Q_REQUIRED_RESULT bool isValid() const
-        {
-            return !displayAttribute.isEmpty() || !expireAttribute.isEmpty();
-        }
-    };
-
     explicit ExportMailFolderAttributeJob(QObject *parent = nullptr);
     ~ExportMailFolderAttributeJob() override;
 
@@ -38,7 +30,7 @@ Q_SIGNALS:
 protected:
     virtual void fetchAttributes() = 0;
 
-    void storeFileFolderAttribute(const QMap<QString, AttributeInfo> &lstAttributeInfo);
+    void storeFileFolderAttribute(const QMap<QString, ImportExportMailUtil::AttributeInfo> &lstAttributeInfo);
 
     KZip *mArchive = nullptr;
     ExportMailJobInterface *mInterface = nullptr;

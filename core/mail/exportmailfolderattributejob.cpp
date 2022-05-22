@@ -47,13 +47,13 @@ void ExportMailFolderAttributeJob::setExportInterface(ExportMailJobInterface *in
     mInterface = interface;
 }
 
-void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, AttributeInfo> &lstAttributeInfo)
+void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, ImportExportMailUtil::AttributeInfo> &lstAttributeInfo)
 {
     QTemporaryFile tmp;
     tmp.open();
 
     KConfig conf(tmp.fileName());
-    QMapIterator<QString, AttributeInfo> i(lstAttributeInfo);
+    QMapIterator<QString, ImportExportMailUtil::AttributeInfo> i(lstAttributeInfo);
     while (i.hasNext()) {
         i.next();
         KConfigGroup attributeGroup = conf.group(i.key());
