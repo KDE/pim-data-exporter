@@ -60,57 +60,23 @@ void ImportMailFolderAttributeJob::start()
         mInterface->copyArchiveFileTo(file, destDirectory);
         const QString filename(file->name());
         const QString mailFolderAttributesFileName = destDirectory + QLatin1Char('/') + filename;
-        KConfig conf(mailFolderAttributesFileName);
+        KConfig conf(mailFolderAttributesFileName, KConfig::SimpleConfig);
 
-        // Display Attributes
-        QMap<Akonadi::Collection::Id, QByteArray> displayMap;
-        QMap<Akonadi::Collection::Id, QByteArray> expireMap;
-        const QString displayStr(QStringLiteral("Display"));
-        if (conf.hasGroup(displayStr)) {
-            KConfigGroup group = conf.group(displayStr);
-            const QStringList keyList = group.keyList();
-            for (const QString &key : keyList) {
-                const Akonadi::Collection::Id id = mInterface->convertPathToId(key);
-                if (id != -1) {
-                    const QByteArray displayBa = group.readEntry(key, QByteArray());
-                    displayMap.insert(id, displayBa);
-                    // qDebug() << " displayBa " << displayBa;
-                }
-            }
-        }
-
-        // Expire attributes
-        const QString expireStr(QStringLiteral("Expire"));
-        if (conf.hasGroup(expireStr)) {
-            KConfigGroup group = conf.group(expireStr);
-            const QStringList keyList = group.keyList();
-            for (const QString &key : keyList) {
-                const Akonadi::Collection::Id id = mInterface->convertPathToId(key);
-                if (id != -1) {
-                    const QByteArray expireBa = group.readEntry(key, QByteArray());
-                    expireMap.insert(id, expireBa);
-                    // qDebug() << " expireBa " << expireBa;
-                }
-            }
-        }
-        QMapIterator<Akonadi::Collection::Id, QByteArray> indexDisplayMap(displayMap);
-        while (indexDisplayMap.hasNext()) {
-            indexDisplayMap.next();
+        const QStringList groupList = conf.groupList();
+        for (const QString &groupStr : groupList) {
             AttributeInfo info;
-            info.displayAttribute = indexDisplayMap.value();
-            if (expireMap.contains(indexDisplayMap.key())) {
-                info.expireAttribute = expireMap.value(indexDisplayMap.key());
-                expireMap.remove(indexDisplayMap.key());
+            KConfigGroup group = conf.group(groupStr);
+            const Akonadi::Collection::Id id = mInterface->convertPathToId(groupStr);
+            const QString displayStr(QStringLiteral("Display"));
+            if (group.hasKey(displayStr)) {
+                info.displayAttribute = group.readEntry(displayStr, QByteArray());
             }
-            mapAttributeInfo.insert(indexDisplayMap.key(), info);
-        }
-
-        QMapIterator<Akonadi::Collection::Id, QByteArray> indexExpireMap(expireMap);
-        while (indexExpireMap.hasNext()) {
-            indexExpireMap.next();
-            AttributeInfo info;
-            info.expireAttribute = indexExpireMap.value();
-            mapAttributeInfo.insert(indexExpireMap.key(), info);
+            const QString expireStr(QStringLiteral("Expire"));
+            if (group.hasKey(expireStr)) {
+                info.expireAttribute = group.readEntry(expireStr, QByteArray());
+            }
+            // qDebug() << " ***** " << id << " info.expireAttribute " << info.expireAttribute << " info.displayAttribute " << info.displayAttribute;
+            mapAttributeInfo.insert(id, info);
         }
     }
     applyAttributes(mapAttributeInfo);
