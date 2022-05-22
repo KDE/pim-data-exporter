@@ -76,6 +76,10 @@ void ImportMailFolderAttributeJob::start()
             if (group.hasKey(expireStr)) {
                 info.expireAttribute = group.readEntry(expireStr, QByteArray());
             }
+            const QString favoriteStr(QStringLiteral("Favorite"));
+            if (group.hasKey(favoriteStr)) {
+                info.favoriteAttribute = group.readEntry(favoriteStr, QByteArray());
+            }
             // qDebug() << " ***** " << id << " info.expireAttribute " << info.expireAttribute << " info.displayAttribute " << info.displayAttribute;
             mapAttributeInfo.insert(id, info);
         }

@@ -1,10 +1,10 @@
-Collection 10 display foo0 expire bla0
-Collection 11 display foo1 expire bla1
-Collection 12 display foo2 expire bla2
-Collection 13 display foo3 expire bla3
-Collection 14 display foo4 expire bla4
-Collection 15 display foo5 expire bla5
-Collection 16 display foo6 expire bla6
-Collection 17 display foo7 expire bla7
-Collection 18 display foo8 expire bla8
-Collection 19 display foo9 expire bla9
+Collection 10 display foo0 expire bla0 favorite blu0
+Collection 11 display foo1 expire bla1 favorite blu1
+Collection 12 display foo2 expire bla2 favorite blu2
+Collection 13 display foo3 expire bla3 favorite blu3
+Collection 14 display foo4 expire bla4 favorite blu4
+Collection 15 display foo5 expire bla5 favorite blu5
+Collection 16 display foo6 expire bla6 favorite blu6
+Collection 17 display foo7 expire bla7 favorite blu7
+Collection 18 display foo8 expire bla8 favorite blu8
+Collection 19 display foo9 expire bla9 favorite blu9
