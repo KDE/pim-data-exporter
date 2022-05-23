@@ -187,5 +187,5 @@ void ImportMailJobInterfaceImpl::addMailTransport(MailTransport::Transport *mt, 
         MailTransport::TransportManager::self()->setDefaultTransport(mt->id());
     }
     mHashTransport.insert(transportId, mt->id());
-    qDebug() << " void ImportMailJobInterface::addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId)" << transportId;
+    // qDebug() << " void ImportMailJobInterface::addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId)" << transportId;
 }

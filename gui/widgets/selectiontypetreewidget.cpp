@@ -318,8 +318,11 @@ QString SelectionTypeTreeWidget::exportedFileInfo()
     const QString templateStr = templateSelectionToString();
     QTemporaryFile tmp;
     tmp.open();
-    tmp.setAutoRemove(false);
-    PimCommon::Util::saveToFile(tmp.fileName(), templateStr);
+    if (!PimCommon::Util::saveToFile(tmp.fileName(), templateStr)) {
+        return {};
+    } else {
+        tmp.setAutoRemove(false);
+    }
     return tmp.fileName();
 }
 
@@ -334,10 +337,12 @@ QString SelectionTypeTreeWidget::templateSelectionToString()
 void SelectionTypeTreeWidget::saveAsDefaultTemplate()
 {
     const QString templateStr = templateSelectionToString();
-    QString ret = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/pimdataexporter/");
+    const QString ret = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/pimdataexporter/");
     QDir().mkpath(ret);
 
-    PimCommon::Util::saveToFile(ret + QStringLiteral("defaulttemplate.xml"), templateStr);
+    if (!PimCommon::Util::saveToFile(ret + QStringLiteral("defaulttemplate.xml"), templateStr)) {
+        qWarning() << "Impossible to save as defaulttemplate.xml";
+    }
 }
 
 void SelectionTypeTreeWidget::saveAsTemplate()

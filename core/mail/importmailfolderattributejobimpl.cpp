@@ -66,7 +66,7 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
 void ImportMailFolderAttributeJobImpl::slotCollectionModifyDone(KJob *job)
 {
     if (job->error()) {
-        qCWarning(PIMDATAEXPORTERCORE_LOG) << " Error when we modified collection";
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "Error when we modified collection: " << job->errorString();
     }
     nextAttribute();
 }
