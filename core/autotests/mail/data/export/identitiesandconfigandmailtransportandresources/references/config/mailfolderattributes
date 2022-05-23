@@ -2,48 +2,70 @@
 Display=foo0
 Expire=bla0
 Favorite=blu0
+Folder=bli0
 
 [foo/bla bla/bli1]
 Display=foo1
 Expire=bla1
 Favorite=blu1
+Folder=bli1
+
+[foo/bla bla/bli12]
+Folder=kul12
+
+[foo/bla bla/bli13]
+Favorite=klo13
+
+[foo/bla bla/bli14]
+Display=osd14
+
+[foo/bla bla/bli15]
+Expire=plo15
 
 [foo/bla bla/bli2]
 Display=foo2
 Expire=bla2
 Favorite=blu2
+Folder=bli2
 
 [foo/bla bla/bli3]
 Display=foo3
 Expire=bla3
 Favorite=blu3
+Folder=bli3
 
 [foo/bla bla/bli4]
 Display=foo4
 Expire=bla4
 Favorite=blu4
+Folder=bli4
 
 [foo/bla bla/bli5]
 Display=foo5
 Expire=bla5
 Favorite=blu5
+Folder=bli5
 
 [foo/bla bla/bli6]
 Display=foo6
 Expire=bla6
 Favorite=blu6
+Folder=bli6
 
 [foo/bla bla/bli7]
 Display=foo7
 Expire=bla7
 Favorite=blu7
+Folder=bli7
 
 [foo/bla bla/bli8]
 Display=foo8
 Expire=bla8
 Favorite=blu8
+Folder=bli8
 
 [foo/bla bla/bli9]
 Display=foo9
 Expire=bla9
 Favorite=blu9
+Folder=bli9

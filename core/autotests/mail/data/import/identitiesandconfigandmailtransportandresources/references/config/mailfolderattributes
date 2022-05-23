@@ -1,10 +1,14 @@
-Collection 10 display foo0 expire bla0 favorite blu0
-Collection 11 display foo1 expire bla1 favorite blu1
-Collection 12 display foo2 expire bla2 favorite blu2
-Collection 13 display foo3 expire bla3 favorite blu3
-Collection 14 display foo4 expire bla4 favorite blu4
-Collection 15 display foo5 expire bla5 favorite blu5
-Collection 16 display foo6 expire bla6 favorite blu6
-Collection 17 display foo7 expire bla7 favorite blu7
-Collection 18 display foo8 expire bla8 favorite blu8
-Collection 19 display foo9 expire bla9 favorite blu9
+Collection 10 display foo0 expire bla0 favorite blu0 folder bli0
+Collection 11 display foo1 expire bla1 favorite blu1 folder bli1
+Collection 12 display foo2 expire bla2 favorite blu2 folder bli2
+Collection 13 display foo3 expire bla3 favorite blu3 folder bli3
+Collection 14 display foo4 expire bla4 favorite blu4 folder bli4
+Collection 15 display foo5 expire bla5 favorite blu5 folder bli5
+Collection 16 display foo6 expire bla6 favorite blu6 folder bli6
+Collection 17 display foo7 expire bla7 favorite blu7 folder bli7
+Collection 18 display foo8 expire bla8 favorite blu8 folder bli8
+Collection 19 display foo9 expire bla9 favorite blu9 folder bli9
+Collection 22 display  expire  favorite  folder kul12
+Collection 23 display  expire  favorite klo13 folder 
+Collection 24 display osd14 expire  favorite  folder 
+Collection 25 display  expire plo15 favorite  folder 

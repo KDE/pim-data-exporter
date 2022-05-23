@@ -80,6 +80,10 @@ void ImportMailFolderAttributeJob::start()
             if (group.hasKey(favoriteStr)) {
                 info.favoriteAttribute = group.readEntry(favoriteStr, QByteArray());
             }
+            const QString folderStr(QStringLiteral("Folder"));
+            if (group.hasKey(folderStr)) {
+                info.folderAttribute = group.readEntry(folderStr, QByteArray());
+            }
             // qDebug() << " ***** " << id << " info.expireAttribute " << info.expireAttribute << " info.displayAttribute " << info.displayAttribute;
             mapAttributeInfo.insert(id, info);
         }

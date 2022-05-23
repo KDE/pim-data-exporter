@@ -25,7 +25,8 @@ void ImportMailFolderAttributeJobTestImpl::applyAttributes(const QMap<Akonadi::C
         while (indexDisplayMap.hasNext()) {
             indexDisplayMap.next();
             out << "Collection " << indexDisplayMap.key() << " display " << indexDisplayMap.value().displayAttribute << " expire "
-                << indexDisplayMap.value().expireAttribute << " favorite " << indexDisplayMap.value().favoriteAttribute << "\n";
+                << indexDisplayMap.value().expireAttribute << " favorite " << indexDisplayMap.value().favoriteAttribute << " folder "
+                << indexDisplayMap.value().folderAttribute << "\n";
         }
     }
     restoreFileFolderAttribute();

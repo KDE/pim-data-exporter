@@ -11,6 +11,7 @@
 #include <Akonadi/CollectionFetchScope>
 #include <Akonadi/EntityDisplayAttribute>
 #include <Akonadi/FavoriteCollectionAttribute>
+#include <Akonadi/MessageFolderAttribute>
 #include <MailCommon/ExpireCollectionAttribute>
 
 ExportMailFolderAttributeJobImpl::ExportMailFolderAttributeJobImpl(QObject *parent)
@@ -26,6 +27,7 @@ void ExportMailFolderAttributeJobImpl::fetchAttributes()
     job->fetchScope().fetchAttribute<MailCommon::ExpireCollectionAttribute>();
     job->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
     job->fetchScope().fetchAttribute<Akonadi::FavoriteCollectionAttribute>();
+    job->fetchScope().fetchAttribute<Akonadi::MessageFolderAttribute>();
     job->fetchScope().setContentMimeTypes({QStringLiteral("message/rfc822")});
     connect(job, &Akonadi::CollectionFetchJob::result, this, &ExportMailFolderAttributeJobImpl::slotFetchFinished);
 }
@@ -61,6 +63,10 @@ void ExportMailFolderAttributeJobImpl::slotFetchFinished(KJob *job)
         const auto *attrFavorite = col.attribute<Akonadi::FavoriteCollectionAttribute>();
         if (attrFavorite) {
             info.favoriteAttribute = attrFavorite->serialized();
+        }
+        const auto *attrFolder = col.attribute<Akonadi::MessageFolderAttribute>();
+        if (attrFolder) {
+            info.folderAttribute = attrFolder->serialized();
         }
         if (info.isValid()) {
             lstAttributeInfo.insert(mInterface->convertToFullCollectionPath(col.id()), info);
