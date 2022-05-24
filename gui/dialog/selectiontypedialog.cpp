@@ -19,6 +19,9 @@
 SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     : QDialog(parent)
     , mSelectionTreeWidget(new SelectionTypeTreeWidget(backupData, this))
+    , mUseTemplateByDefault(new QCheckBox(i18n("Use this template by default"), this))
+    , mSaveTemplate(new QPushButton(i18n("Save as Template..."), this))
+    , mLoadTemplate(new QPushButton(i18n("Load Template..."), this))
 {
     setWindowTitle(i18nc("@title:window", "Select Type"));
     setModal(true);
@@ -37,7 +40,6 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     mSelectionTreeWidget->setObjectName(QStringLiteral("mSelectionTreeWidget"));
     topLayout->addWidget(mSelectionTreeWidget);
 
-    mUseTemplateByDefault = new QCheckBox(i18n("Use this template by default"), this);
     mUseTemplateByDefault->setObjectName(QStringLiteral("mUseTemplateByDefault"));
     topLayout->addWidget(mUseTemplateByDefault);
 
@@ -52,12 +54,10 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     connect(unselectAll, &QPushButton::clicked, this, &SelectionTypeDialog::slotUnselectAll);
     hbox->addWidget(unselectAll);
 
-    mSaveTemplate = new QPushButton(i18n("Save as Template..."), this);
     mSaveTemplate->setObjectName(QStringLiteral("mSaveTemplate"));
     connect(mSaveTemplate, &QPushButton::clicked, this, &SelectionTypeDialog::slotSaveAsTemplate);
     hbox->addWidget(mSaveTemplate);
 
-    mLoadTemplate = new QPushButton(i18n("Load Template..."), this);
     mLoadTemplate->setObjectName(QStringLiteral("mLoadTemplate"));
     connect(mLoadTemplate, &QPushButton::clicked, this, &SelectionTypeDialog::slotLoadTemplate);
     hbox->addWidget(mLoadTemplate);
