@@ -8,6 +8,7 @@
 
 #include <QTemporaryFile>
 #include <QTextStream>
+#include <QVariant>
 
 //#define REMOVE_TEMPORARY_FILE 1
 
