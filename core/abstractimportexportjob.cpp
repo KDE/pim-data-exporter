@@ -37,7 +37,7 @@ AbstractImportExportJob::AbstractImportExportJob(QObject *parent, ArchiveStorage
     , mImportExportProgressIndicator(new ImportExportProgressIndicatorBase(this))
 {
     mImportExportProgressIndicator->setNumberOfStep(numberOfStep);
-    connect(mImportExportProgressIndicator, &ImportExportProgressIndicatorBase::info, this, &AbstractImportExportJob::info);
+    connect(mImportExportProgressIndicator, &ImportExportProgressIndicatorBase::info, this, &AbstractImportExportJob::emitInfo);
 }
 
 AbstractImportExportJob::~AbstractImportExportJob()
@@ -255,7 +255,7 @@ void AbstractImportExportJob::initializeImportJob()
         mTempDir = new QTemporaryDir();
         mTempDirName = mTempDir->path();
         mCreateResource = new PimCommon::CreateResource();
-        connect(mCreateResource, &PimCommon::CreateResource::createResourceInfo, this, &AbstractImportExportJob::info);
+        connect(mCreateResource, &PimCommon::CreateResource::createResourceInfo, this, &AbstractImportExportJob::emitInfo);
         connect(mCreateResource, &PimCommon::CreateResource::createResourceError, this, &AbstractImportExportJob::error);
     }
 }
@@ -308,7 +308,7 @@ void AbstractImportExportJob::backupResourceFile(const QString &identifier, cons
     job->setIdentifier(identifier);
     job->setZip(archive());
     connect(job, &BackupResourceFileJobImpl::error, this, &AbstractImportExportJob::error);
-    connect(job, &BackupResourceFileJobImpl::info, this, &AbstractImportExportJob::info);
+    connect(job, &BackupResourceFileJobImpl::info, this, &AbstractImportExportJob::emitInfo);
     job->start();
 }
 
