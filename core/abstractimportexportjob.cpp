@@ -256,7 +256,7 @@ void AbstractImportExportJob::initializeImportJob()
         mTempDirName = mTempDir->path();
         mCreateResource = new PimCommon::CreateResource();
         connect(mCreateResource, &PimCommon::CreateResource::createResourceInfo, this, &AbstractImportExportJob::emitInfo);
-        connect(mCreateResource, &PimCommon::CreateResource::createResourceError, this, &AbstractImportExportJob::error);
+        connect(mCreateResource, &PimCommon::CreateResource::createResourceError, this, &AbstractImportExportJob::emitError);
     }
 }
 
@@ -307,7 +307,7 @@ void AbstractImportExportJob::backupResourceFile(const QString &identifier, cons
     job->setDefaultPath(defaultPath);
     job->setIdentifier(identifier);
     job->setZip(archive());
-    connect(job, &BackupResourceFileJobImpl::error, this, &AbstractImportExportJob::error);
+    connect(job, &BackupResourceFileJobImpl::error, this, &AbstractImportExportJob::emitError);
     connect(job, &BackupResourceFileJobImpl::info, this, &AbstractImportExportJob::emitInfo);
     job->start();
 }
@@ -521,6 +521,11 @@ QString AbstractImportExportJob::generateInfo(const QString &info)
 void AbstractImportExportJob::emitInfo(const QString &str)
 {
     Q_EMIT info(generateInfo(str));
+}
+
+void AbstractImportExportJob::emitError(const QString &str)
+{
+    Q_EMIT error(generateInfo(str));
 }
 
 void AbstractImportExportJob::startSynchronizeResources(const QStringList &listResourceToSync)

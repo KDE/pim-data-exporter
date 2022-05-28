@@ -60,6 +60,7 @@ protected:
 
 protected:
     void emitInfo(const QString &str);
+    void emitError(const QString &str);
     virtual QString applicationName() const = 0;
     Q_REQUIRED_RESULT QString generateInfo(const QString &info);
     void initializeListStep();
