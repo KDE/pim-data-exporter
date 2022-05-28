@@ -142,7 +142,7 @@ void ExportMailJobInterfaceImpl::exportFilters()
         tmp.close();
         const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("filters"));
         if (fileAdded) {
-            Q_EMIT info(i18n("Filters backup done."));
+            emitInfo(i18n("Filters backup done."));
         } else {
             Q_EMIT error(i18n("Filters cannot be exported."));
         }
@@ -166,7 +166,7 @@ void ExportMailJobInterfaceImpl::exportFolderAttributes()
     job->setArchive(archive());
     job->setExportInterface(this);
     connect(job, &ExportMailFolderAttributeJobImpl::successed, this, [this]() {
-        Q_EMIT info(i18n("Backing up Folder Attributes done."));
+        emitInfo(i18n("Backing up Folder Attributes done."));
         Q_EMIT exportAttributeDone();
     });
     connect(job, &ExportMailFolderAttributeJobImpl::failed, this, [this]() {

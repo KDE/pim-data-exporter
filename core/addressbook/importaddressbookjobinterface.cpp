@@ -106,7 +106,7 @@ void ImportAddressbookJobInterface::restoreConfig()
         }
     }
     restoreUiRcFile(QStringLiteral("kaddressbookui.rc"), QStringLiteral("kaddressbook"));
-    Q_EMIT info(i18n("Config restored."));
+    emitInfo(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportAddressbookJobInterface::slotNextStep);
 }
 
@@ -159,7 +159,7 @@ void ImportAddressbookJobInterface::importkaddressBookConfig(const KArchiveFile 
 
 void ImportAddressbookJobInterface::restoreResources()
 {
-    Q_EMIT info(i18n("Restore resources..."));
+    emitInfo(i18n("Restore resources..."));
     setProgressDialogLabel(i18n("Restore resources..."));
     increaseProgressDialog();
     QStringList listResource;
@@ -228,7 +228,12 @@ void ImportAddressbookJobInterface::restoreResources()
         }
     }
 
-    Q_EMIT info(i18n("Resources restored."));
+    emitInfo(i18n("Resources restored."));
     // It's maildir support. Need to add support
     synchronizeResource(listResource);
+}
+
+QString ImportAddressbookJobInterface::applicationName() const
+{
+    return QStringLiteral("[KAddressBook]");
 }

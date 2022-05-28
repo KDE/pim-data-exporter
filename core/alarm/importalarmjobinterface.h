@@ -26,6 +26,7 @@ protected:
 
     void restoreResources();
     Q_REQUIRED_RESULT virtual QString configLocation() const;
+    Q_REQUIRED_RESULT QString applicationName() const override;
 
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;

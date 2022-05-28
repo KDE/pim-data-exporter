@@ -29,6 +29,7 @@ protected:
     Q_REQUIRED_RESULT virtual QVector<Utils::AkonadiInstanceInfo> listOfResource() = 0;
     Q_REQUIRED_RESULT virtual QString resourcePath(const QString &agentIdentifier, const QString &defaultPath) const = 0;
     virtual void backupAddressBookResourceFile(const QString &agentIdentifier, const QString &defaultPath) = 0;
+    Q_REQUIRED_RESULT QString applicationName() const override;
 
 private:
     void slotCheckBackupResource();

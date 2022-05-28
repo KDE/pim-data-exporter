@@ -225,7 +225,7 @@ void ImportCalendarJobInterface::restoreConfig()
     restoreUiRcFile(QStringLiteral("korganizer_part.rc"), QStringLiteral("korganizer"));
 
     restoreConfigFile(QStringLiteral("eventviewsrc"));
-    Q_EMIT info(i18n("Config restored."));
+    emitInfo(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportCalendarJobInterface::slotNextStep);
 }
 
@@ -278,7 +278,7 @@ void ImportCalendarJobInterface::convertResourceColors(const KSharedConfig::Ptr 
 
 void ImportCalendarJobInterface::restoreResources()
 {
-    Q_EMIT info(i18n("Restore resources..."));
+    emitInfo(i18n("Restore resources..."));
     setProgressDialogLabel(i18n("Restore resources..."));
     increaseProgressDialog();
     QStringList listResource;
@@ -352,6 +352,11 @@ void ImportCalendarJobInterface::restoreResources()
 QString ImportCalendarJobInterface::configLocation() const
 {
     return installConfigLocation();
+}
+
+QString ImportCalendarJobInterface::applicationName() const
+{
+    return QStringLiteral("[Korganizer]");
 }
 
 QString ImportCalendarJobInterface::installConfigLocation() const

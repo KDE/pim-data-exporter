@@ -26,6 +26,7 @@ protected:
                                              const QString &name,
                                              const QMap<QString, QVariant> &settings,
                                              bool synchronizeTree) override;
+    Q_REQUIRED_RESULT QString applicationName() const override;
 
 private:
     void slotNextStep() override;

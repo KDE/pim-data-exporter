@@ -29,6 +29,7 @@ protected:
     void slotNoteJobTerminated();
     Q_REQUIRED_RESULT virtual QString resourcePath(const QString &identifier) const = 0;
     Q_REQUIRED_RESULT QString resourceArchiveName() const;
+    Q_REQUIRED_RESULT QString applicationName() const override;
 
 private:
     void slotCheckBackupResource();

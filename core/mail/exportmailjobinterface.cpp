@@ -114,7 +114,7 @@ void ExportMailJobInterface::backupFolderAttributes()
     setProgressDialogLabel(i18n("Backing up Folder Attributes..."));
     connect(this, &ExportMailJobInterface::exportAttributeDone, this, [this]() {
         setProgressDialogLabel(i18n("Backing up Mails..."));
-        Q_EMIT info(i18n("Start export resource..."));
+        emitInfo(i18n("Start export resource..."));
         QTimer::singleShot(0, this, &ExportMailJobInterface::slotWriteNextArchiveResource);
     });
     exportFolderAttributes();
@@ -127,7 +127,7 @@ void ExportMailJobInterface::backupTransports()
     const QString mailtransportsStr(QStringLiteral("mailtransports"));
     const QString maitransportsrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + mailtransportsStr;
     if (!QFileInfo::exists(maitransportsrc)) {
-        Q_EMIT info(i18n("Transports backup done."));
+        emitInfo(i18n("Transports backup done."));
     } else {
         KSharedConfigPtr mailtransportsConfig = KSharedConfig::openConfig(mailtransportsStr);
 
@@ -139,7 +139,7 @@ void ExportMailJobInterface::backupTransports()
         const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::transportsPath() + QStringLiteral("mailtransports"));
         delete config;
         if (fileAdded) {
-            Q_EMIT info(i18n("Transports backup done."));
+            emitInfo(i18n("Transports backup done."));
         } else {
             Q_EMIT error(i18n("Transport file cannot be added to backup file."));
         }
@@ -157,6 +157,11 @@ void ExportMailJobInterface::slotCheckBackupResources()
         }
     }
     Q_EMIT jobFinished();
+}
+
+QString ExportMailJobInterface::applicationName() const
+{
+    return QStringLiteral("[KMail]");
 }
 
 void ExportMailJobInterface::backupConfig()
@@ -546,7 +551,7 @@ void ExportMailJobInterface::backupConfig()
         delete kmailConfig;
     }
 
-    Q_EMIT info(i18n("Config backup done."));
+    emitInfo(i18n("Config backup done."));
 }
 
 void ExportMailJobInterface::backupIdentity()
@@ -603,7 +608,7 @@ void ExportMailJobInterface::backupIdentity()
         const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::identitiesPath() + QStringLiteral("emailidentities"));
         delete identityConfig;
         if (fileAdded) {
-            Q_EMIT info(i18n("Identity backup done."));
+            emitInfo(i18n("Identity backup done."));
         } else {
             Q_EMIT error(i18n("Identity file cannot be added to backup file."));
         }
@@ -684,5 +689,5 @@ void ExportMailJobInterface::backupResources()
         }
     }
 
-    Q_EMIT info(i18n("Resources backup done."));
+    emitInfo(i18n("Resources backup done."));
 }

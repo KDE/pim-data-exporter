@@ -69,6 +69,11 @@ QString ImportNotesJobInterface::installConfigLocation() const
     return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
 }
 
+QString ImportNotesJobInterface::applicationName() const
+{
+    return QStringLiteral("[KNotes]");
+}
+
 void ImportNotesJobInterface::restoreConfig()
 {
     increaseProgressDialog();
@@ -101,7 +106,7 @@ void ImportNotesJobInterface::restoreConfig()
     restoreUiRcFile(QStringLiteral("knotes_part.rc"), QStringLiteral("knotes"));
     restoreConfigFile(QStringLiteral("akonadi_notes_agent.notifyrc"));
 
-    Q_EMIT info(i18n("Config restored."));
+    emitInfo(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportNotesJobInterface::slotNextStep);
 }
 
@@ -121,7 +126,7 @@ void ImportNotesJobInterface::restoreData()
         restoreResources();
     }
     importDataSubdirectory(QStringLiteral("/knotes/print/theme/"));
-    Q_EMIT info(i18n("Data restored."));
+    emitInfo(i18n("Data restored."));
 }
 
 void ImportNotesJobInterface::importKNoteGlobalSettings(const KArchiveFile *archive, const QString &configrc, const QString &filename, const QString &prefix)
@@ -140,7 +145,7 @@ void ImportNotesJobInterface::importKNoteGlobalSettings(const KArchiveFile *arch
 
 void ImportNotesJobInterface::restoreResources()
 {
-    Q_EMIT info(i18n("Restore resources..."));
+    emitInfo(i18n("Restore resources..."));
     setProgressDialogLabel(i18n("Restore resources..."));
     QStringList listResource;
     if (!mListResourceFile.isEmpty()) {

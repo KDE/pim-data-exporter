@@ -57,6 +57,11 @@ void ExportAddressbookJobInterface::slotCheckBackupConfig()
     Q_EMIT jobFinished();
 }
 
+QString ExportAddressbookJobInterface::applicationName() const
+{
+    return QStringLiteral("[KAddressBook]");
+}
+
 void ExportAddressbookJobInterface::slotAddressbookJobTerminated()
 {
     if (wasCanceled()) {
@@ -94,7 +99,7 @@ void ExportAddressbookJobInterface::slotWriteNextArchiveResource()
             QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
         }
     } else {
-        Q_EMIT info(i18n("Resources backup done."));
+        emitInfo(i18n("Resources backup done."));
         QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotCheckBackupConfig);
     }
 }
@@ -142,5 +147,5 @@ void ExportAddressbookJobInterface::backupConfig()
     storeDirectory(QStringLiteral("/kaddressbook/viewertemplates/"));
     storeDirectory(QStringLiteral("/kaddressbook/printing/"));
 
-    Q_EMIT info(i18n("Config backup done."));
+    emitInfo(i18n("Config backup done."));
 }

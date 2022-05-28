@@ -72,7 +72,7 @@ void ExportCalendarJobInterface::slotWriteNextArchiveResource()
             QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
         }
     } else {
-        Q_EMIT info(i18n("Resources backup done."));
+        emitInfo(i18n("Resources backup done."));
         QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCheckBackupConfig);
     }
 }
@@ -109,6 +109,11 @@ void ExportCalendarJobInterface::slotCheckBackupConfig()
         }
     }
     Q_EMIT jobFinished();
+}
+
+QString ExportCalendarJobInterface::applicationName() const
+{
+    return QStringLiteral("[Calendar]");
 }
 
 void ExportCalendarJobInterface::exportEventViewConfig()
@@ -240,5 +245,5 @@ void ExportCalendarJobInterface::backupConfig()
 
     backupUiRcFile(QStringLiteral("korganizerui.rc"), QStringLiteral("korganizer"));
     backupUiRcFile(QStringLiteral("korganizer_part.rc"), QStringLiteral("korganizer"));
-    Q_EMIT info(i18n("Config backup done."));
+    emitInfo(i18n("Config backup done."));
 }

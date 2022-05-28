@@ -114,7 +114,7 @@ void AbstractImportExportJob::backupFile(const QString &filename, const QString 
     if (QFileInfo::exists(filename)) {
         const bool fileAdded = archive()->addLocalFile(filename, path + storedName);
         if (fileAdded) {
-            Q_EMIT info(i18n("\"%1\" backup done.", path + storedName));
+            emitInfo(i18n("\"%1\" backup done.", path + storedName));
         } else {
             Q_EMIT error(i18n("\"%1\" cannot be exported.", path + storedName));
         }
@@ -266,7 +266,7 @@ void AbstractImportExportJob::copyToDirectory(const KArchiveEntry *entry, const 
     if (!subfolderDir->copyTo(dest)) {
         qCDebug(PIMDATAEXPORTERCORE_LOG) << "directory cannot copy to " << dest;
     }
-    Q_EMIT info(i18n("\"%1\" was copied.", dest));
+    emitInfo(i18n("\"%1\" was copied.", dest));
 }
 
 void AbstractImportExportJob::copyToFile(const KArchiveFile *archivefile, const QString &dest, const QString &filename, const QString &prefix)
@@ -297,7 +297,7 @@ void AbstractImportExportJob::copyToFile(const KArchiveFile *archivefile, const 
     if (!file.copy(dest)) {
         mImportExportProgressIndicator->showErrorMessage(i18n("File \"%1\" cannot be copied to \"%2\".", filename, dest), i18n("Copy file"));
     } else {
-        Q_EMIT info(i18n("\"%1\" was restored.", filename));
+        emitInfo(i18n("\"%1\" was restored.", filename));
     }
 }
 
@@ -378,7 +378,7 @@ AbstractImportExportJob::restoreResourceFile(const QString &resourceBaseName, co
                 }
             }
         }
-        Q_EMIT info(i18n("Resources restored."));
+        emitInfo(i18n("Resources restored."));
     } else {
         Q_EMIT error(i18n("No resources files found."));
         qDebug() << " resourceBaseName " << resourceBaseName;
@@ -478,7 +478,7 @@ void AbstractImportExportJob::restoreConfigFile(const QString &configNameStr)
 
 void AbstractImportExportJob::infoAboutNewResource(const QString &resourceName)
 {
-    Q_EMIT info(i18n("Resource \'%1\' created.", resourceName));
+    emitInfo(i18n("Resource \'%1\' created.", resourceName));
 }
 
 int AbstractImportExportJob::archiveVersion()
@@ -498,13 +498,13 @@ void AbstractImportExportJob::slotSynchronizeInstanceFailed(const QString &insta
 
 void AbstractImportExportJob::slotSynchronizeInstanceDone(const QString &name, const QString &identifier)
 {
-    Q_EMIT info(i18n("Resource %1 synchronized.", name));
+    emitInfo(i18n("Resource %1 synchronized.", name));
     Q_EMIT needSynchronizeResource(name, identifier);
 }
 
 void AbstractImportExportJob::slotAllResourceSynchronized()
 {
-    Q_EMIT info(i18n("All resources synchronized."));
+    emitInfo(i18n("All resources synchronized."));
     slotNextStep();
 }
 
@@ -513,9 +513,19 @@ void AbstractImportExportJob::slotNextStep()
     // Implement in sub class.
 }
 
+QString AbstractImportExportJob::generateInfo(const QString &info)
+{
+    return applicationName() + QLatin1Char(' ') + info;
+}
+
+void AbstractImportExportJob::emitInfo(const QString &str)
+{
+    Q_EMIT info(generateInfo(str));
+}
+
 void AbstractImportExportJob::startSynchronizeResources(const QStringList &listResourceToSync)
 {
-    Q_EMIT info(i18n("Start synchronizing..."));
+    emitInfo(i18n("Start synchronizing..."));
     auto job = new SynchronizeResourceJob(this);
     job->setListResources(listResourceToSync);
     connect(job, &SynchronizeResourceJob::synchronizationFinished, this, &AbstractImportExportJob::slotAllResourceSynchronized);
@@ -552,7 +562,7 @@ void AbstractImportExportJob::storeDirectory(const QString &subDirectory)
     if (directoryToStore.exists()) {
         const bool templateDirAdded = archive()->addLocalDirectory(directoryToStore.path(), Utils::dataPath() + subDirectory);
         if (templateDirAdded) {
-            Q_EMIT info(i18n("Directory \"%1\" added to backup file.", directoryToStore.path()));
+            emitInfo(i18n("Directory \"%1\" added to backup file.", directoryToStore.path()));
         } else {
             Q_EMIT error(i18n("Directory \"%1\" cannot be added to backup file.", directoryToStore.path()));
         }

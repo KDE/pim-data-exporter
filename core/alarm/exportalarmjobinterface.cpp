@@ -74,7 +74,7 @@ void ExportAlarmJobInterface::slotWriteNextArchiveResource()
             QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotAlarmJobTerminated);
         }
     } else {
-        Q_EMIT info(i18n("Resources backup done."));
+        emitInfo(i18n("Resources backup done."));
         QTimer::singleShot(0, this, &ExportAlarmJobInterface::slotCheckBackupConfig);
     }
 }
@@ -98,6 +98,11 @@ void ExportAlarmJobInterface::slotCheckBackupConfig()
         }
     }
     Q_EMIT jobFinished();
+}
+
+QString ExportAlarmJobInterface::applicationName() const
+{
+    return QStringLiteral("[Alarm]");
 }
 
 void ExportAlarmJobInterface::backupConfig()
@@ -128,5 +133,5 @@ void ExportAlarmJobInterface::backupConfig()
 
     backupUiRcFile(QStringLiteral("kalarmui.rc"), QStringLiteral("kalarm"));
 
-    Q_EMIT info(i18n("Config backup done."));
+    emitInfo(i18n("Config backup done."));
 }

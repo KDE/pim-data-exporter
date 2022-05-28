@@ -59,6 +59,9 @@ protected:
     virtual void slotNextStep();
 
 protected:
+    void emitInfo(const QString &str);
+    virtual QString applicationName() const = 0;
+    Q_REQUIRED_RESULT QString generateInfo(const QString &info);
     void initializeListStep();
     virtual void startSynchronizeResources(const QStringList &listResourceToSync);
     void infoAboutNewResource(const QString &resourceName);

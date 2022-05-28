@@ -37,7 +37,7 @@ void ImportMailJobInterfaceImpl::importFolderAttributes()
     job->setExportInterface(this);
     job->setExtractPath(mTempDirName);
     connect(job, &ImportMailFolderAttributeJobImpl::successed, this, [this]() {
-        Q_EMIT info(i18n("Restoring Folder Attributes done."));
+        emitInfo(i18n("Restoring Folder Attributes done."));
         Q_EMIT jobFinished();
     });
     connect(job, &ImportMailFolderAttributeJobImpl::failed, this, [this]() {

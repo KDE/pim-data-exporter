@@ -52,6 +52,8 @@ protected:
     virtual void importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) = 0;
     virtual void importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId) = 0;
 
+    Q_REQUIRED_RESULT QString applicationName() const override;
+
     virtual void importFolderAttributes() = 0;
 
     QHash<int, uint> mHashIdentity;

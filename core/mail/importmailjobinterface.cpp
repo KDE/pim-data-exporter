@@ -172,7 +172,7 @@ void ImportMailJobInterface::restoreTransports()
     if (!mFileList.contains(path)) {
         Q_EMIT error(i18n("mailtransports file could not be found in the archive."));
     } else {
-        Q_EMIT info(i18n("Restore transports..."));
+        emitInfo(i18n("Restore transports..."));
 
         const KArchiveEntry *transport = mArchiveDirectory->entry(path);
         bool importDone = false;
@@ -185,7 +185,7 @@ void ImportMailJobInterface::restoreTransports()
             }
         }
         if (importDone) {
-            Q_EMIT info(i18n("Transports restored."));
+            emitInfo(i18n("Transports restored."));
         } else {
             Q_EMIT error(i18n("Failed to restore transports file."));
         }
@@ -197,7 +197,7 @@ void ImportMailJobInterface::restoreResources()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore resources..."));
-    Q_EMIT info(i18n("Restore resources..."));
+    emitInfo(i18n("Restore resources..."));
 
     QDir dir(mTempDirName);
     dir.mkdir(Utils::resourcesPath());
@@ -421,8 +421,13 @@ void ImportMailJobInterface::restoreResources()
             }
         }
     }
-    Q_EMIT info(i18n("Resources restored."));
+    emitInfo(i18n("Resources restored."));
     synchronizeResource(listResourceToSync);
+}
+
+QString ImportMailJobInterface::applicationName() const
+{
+    return QStringLiteral("[KMail]");
 }
 
 void ImportMailJobInterface::restoreMails()
@@ -430,7 +435,7 @@ void ImportMailJobInterface::restoreMails()
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore mails..."));
     QStringList listResourceToSync;
-    Q_EMIT info(i18n("Restore mails..."));
+    emitInfo(i18n("Restore mails..."));
 
     QDir dir(mTempDirName);
     dir.mkdir(Utils::mailsPath());
@@ -547,7 +552,7 @@ void ImportMailJobInterface::restoreMails()
             // qCDebug(PIMDATAEXPORTERCORE_LOG)<<"url "<<url;
         }
     }
-    Q_EMIT info(i18n("Mails restored."));
+    emitInfo(i18n("Mails restored."));
     synchronizeResource(listResourceToSync);
 }
 
@@ -856,7 +861,7 @@ void ImportMailJobInterface::restoreConfig()
     importDataSubdirectory(QStringLiteral("/messageviewer/themes/"));
     importDataSubdirectory(QStringLiteral("/messageviewerplugins/"));
 
-    Q_EMIT info(i18n("Config restored."));
+    emitInfo(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
 }
 
@@ -894,7 +899,7 @@ void ImportMailJobInterface::restoreIdentity()
     if (!mFileList.contains(path)) {
         Q_EMIT error(i18n("emailidentities file could not be found in the archive."));
     } else {
-        Q_EMIT info(i18n("Restoring identities..."));
+        emitInfo(i18n("Restoring identities..."));
         const KArchiveEntry *identity = mArchiveDirectory->entry(path);
         if (identity && identity->isFile()) {
             const auto fileIdentity = static_cast<const KArchiveFile *>(identity);
@@ -953,7 +958,7 @@ void ImportMailJobInterface::restoreIdentity()
                 const QString name = group.readEntry(QStringLiteral("Identity"));
                 addNewIdentity(name, group, defaultIdentity, oldUid);
             }
-            Q_EMIT info(i18n("Identities restored."));
+            emitInfo(i18n("Identities restored."));
         } else {
             Q_EMIT error(i18n("Failed to restore identity file."));
         }

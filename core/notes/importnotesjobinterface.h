@@ -25,6 +25,7 @@ protected:
     Q_REQUIRED_RESULT virtual QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
     void slotNextStep() override;
     Q_REQUIRED_RESULT QString installConfigLocation() const;
+    Q_REQUIRED_RESULT QString applicationName() const override;
 
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;

@@ -61,6 +61,11 @@ ExportAkregatorJobInterface::createResource(const QString &resources, const QStr
     return {};
 }
 
+QString ExportAkregatorJobInterface::applicationName() const
+{
+    return QStringLiteral("[Akregator]");
+}
+
 void ExportAkregatorJobInterface::slotCheckBackupConfig()
 {
     increaseProgressDialog();
@@ -71,7 +76,7 @@ void ExportAkregatorJobInterface::slotCheckBackupConfig()
     backupUiRcFile(QStringLiteral("akregator_shell.rc"), QStringLiteral("akregator"));
     backupConfigFile(QStringLiteral("akregator.notifyrc"));
 
-    Q_EMIT info(i18n("Config backup done."));
+    emitInfo(i18n("Config backup done."));
     QTimer::singleShot(0, this, &ExportAkregatorJobInterface::slotCheckBackupData);
 }
 
@@ -89,7 +94,7 @@ void ExportAkregatorJobInterface::slotCheckBackupData()
                 Q_EMIT error(i18n("\"%1\" directory cannot be added to backup file.", akregatorDir));
             }
         }
-        Q_EMIT info(i18n("Data backup done."));
+        emitInfo(i18n("Data backup done."));
     }
     Q_EMIT jobFinished();
 }

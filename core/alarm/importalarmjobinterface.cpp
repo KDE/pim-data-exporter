@@ -66,6 +66,11 @@ QString ImportAlarmJobInterface::configLocation() const
     return installConfigLocation();
 }
 
+QString ImportAlarmJobInterface::applicationName() const
+{
+    return QStringLiteral("[Alarm]");
+}
+
 QString ImportAlarmJobInterface::installConfigLocation() const
 {
     return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
@@ -90,7 +95,7 @@ void ImportAlarmJobInterface::restoreConfig()
         }
     }
     restoreUiRcFile(QStringLiteral("kalarmui.rc"), QStringLiteral("kalarm"));
-    Q_EMIT info(i18n("Config restored."));
+    emitInfo(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportAlarmJobInterface::slotNextStep);
 }
 
@@ -106,7 +111,7 @@ void ImportAlarmJobInterface::importkalarmConfig(const KArchiveFile *kalarmFile,
 
 void ImportAlarmJobInterface::restoreResources()
 {
-    Q_EMIT info(i18n("Restore resources..."));
+    emitInfo(i18n("Restore resources..."));
     setProgressDialogLabel(i18n("Restore resources..."));
     increaseProgressDialog();
     QStringList listResource;

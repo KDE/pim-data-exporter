@@ -47,6 +47,7 @@ protected:
     Q_REQUIRED_RESULT virtual QVector<uint> listIdentityUoid() const = 0;
 
     virtual void exportFolderAttributes() = 0;
+    Q_REQUIRED_RESULT QString applicationName() const override;
 
 private:
     void slotCheckBackupIdentity();

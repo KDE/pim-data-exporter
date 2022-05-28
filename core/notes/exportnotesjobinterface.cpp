@@ -105,7 +105,7 @@ void ExportNotesJobInterface::backupConfig()
     backupUiRcFile(QStringLiteral("knotes_part.rc"), QStringLiteral("knotes"));
     backupConfigFile(QStringLiteral("akonadi_notes_agent.notifyrc"));
     storeDirectory(QStringLiteral("/knotes/print/theme/"));
-    Q_EMIT info(i18n("Config backup done."));
+    emitInfo(i18n("Config backup done."));
 }
 
 void ExportNotesJobInterface::slotNoteJobTerminated()
@@ -116,6 +116,11 @@ void ExportNotesJobInterface::slotNoteJobTerminated()
     }
     mIndexIdentifier++;
     QTimer::singleShot(0, this, &ExportNotesJobInterface::slotWriteNextArchiveResource);
+}
+
+QString ExportNotesJobInterface::applicationName() const
+{
+    return QStringLiteral("[KNotes]");
 }
 
 void ExportNotesJobInterface::slotWriteNextArchiveResource()
@@ -142,7 +147,7 @@ void ExportNotesJobInterface::slotWriteNextArchiveResource()
             QTimer::singleShot(0, this, &ExportNotesJobInterface::slotNoteJobTerminated);
         }
     } else {
-        Q_EMIT info(i18n("Resources backup done."));
+        emitInfo(i18n("Resources backup done."));
         QTimer::singleShot(0, this, &ExportNotesJobInterface::slotCheckBackupConfig);
     }
 }

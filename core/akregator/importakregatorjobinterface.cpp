@@ -53,6 +53,11 @@ ImportAkregatorJobInterface::createResource(const QString &resources, const QStr
     return {};
 }
 
+QString ImportAkregatorJobInterface::applicationName() const
+{
+    return QStringLiteral("[Akregator]");
+}
+
 QString ImportAkregatorJobInterface::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
 {
     Q_UNUSED(overwriteResources);
@@ -91,7 +96,7 @@ void ImportAkregatorJobInterface::restoreConfig()
     restoreUiRcFile(QStringLiteral("akregator_shell.rc"), QStringLiteral("akregator"));
     restoreConfigFile(QStringLiteral("akregator.notifyrc"));
 
-    Q_EMIT info(i18n("Config restored."));
+    emitInfo(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportAkregatorJobInterface::slotNextStep);
 }
 
@@ -104,6 +109,6 @@ void ImportAkregatorJobInterface::restoreData()
         const QString akregatorPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("akregator/");
         overwriteDirectory(akregatorPath, akregatorEntry);
     }
-    Q_EMIT info(i18n("Data restored."));
+    emitInfo(i18n("Data restored."));
     QTimer::singleShot(0, this, &ImportAkregatorJobInterface::slotNextStep);
 }

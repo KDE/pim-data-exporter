@@ -26,6 +26,7 @@ protected:
     Q_REQUIRED_RESULT virtual QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) = 0;
     Q_REQUIRED_RESULT virtual QString configLocation() const;
     void restoreResources();
+    Q_REQUIRED_RESULT QString applicationName() const override;
 
 private:
     Q_REQUIRED_RESULT bool isAConfigFile(const QString &name) const override;
