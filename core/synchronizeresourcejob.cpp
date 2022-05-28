@@ -49,6 +49,7 @@ void SynchronizeResourceJob::slotSynchronizationFinished(KJob *job)
     auto resourceSync = qobject_cast<Akonadi::ResourceSynchronizationJob *>(job);
     const QString instanceName = resourceSync->resource().name();
     if (job->error()) {
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << " Failed to synchronize :" << job->errorString();
         Q_EMIT synchronizationInstanceFailed(instanceName);
     } else {
         Q_EMIT synchronizationInstanceDone(instanceName, resourceSync->resource().identifier());
