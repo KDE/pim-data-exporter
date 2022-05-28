@@ -493,12 +493,12 @@ void AbstractImportExportJob::setArchiveVersion(int version)
 
 void AbstractImportExportJob::slotSynchronizeInstanceFailed(const QString &instance)
 {
-    Q_EMIT error(i18n("Failed to synchronize %1.", instance));
+    Q_EMIT error(i18n("Failed to synchronize \'%1\'.", instance));
 }
 
 void AbstractImportExportJob::slotSynchronizeInstanceDone(const QString &name, const QString &identifier)
 {
-    emitInfo(i18n("Resource %1 synchronized.", name));
+    emitInfo(i18n("Resource \'%1\' synchronized.", name));
     Q_EMIT needSynchronizeResource(name, identifier);
 }
 
