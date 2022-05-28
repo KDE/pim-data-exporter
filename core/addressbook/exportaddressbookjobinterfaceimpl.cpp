@@ -56,8 +56,8 @@ void ExportAddressbookJobInterfaceImpl::exportResourceToArchive(const QString &a
     resourceJob->setIdentifier(identifier);
     resourceJob->setArchive(archive());
     resourceJob->setArchiveName(Utils::resourceAddressbookArchiveName());
-    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAddressbookJobInterfaceImpl::error);
-    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAddressbookJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAddressbookJobInterfaceImpl::emitError);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAddressbookJobInterfaceImpl::emitInfo);
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAddressbookJobInterfaceImpl::slotAddressbookJobTerminated);
     resourceJob->start();
 }
