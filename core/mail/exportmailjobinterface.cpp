@@ -141,7 +141,7 @@ void ExportMailJobInterface::backupTransports()
         if (fileAdded) {
             emitInfo(i18n("Transports backup done."));
         } else {
-            Q_EMIT error(i18n("Transport file cannot be added to backup file."));
+            emitError(i18n("Transport file cannot be added to backup file."));
         }
     }
 }
@@ -595,7 +595,7 @@ void ExportMailJobInterface::backupIdentity()
                         const bool fileAdded =
                             archive()->addLocalFile(vcardFileName, Utils::identitiesPath() + QString::number(uoid) + QLatin1Char('/') + file.fileName());
                         if (!fileAdded) {
-                            Q_EMIT error(i18n("vCard file \"%1\" cannot be saved.", file.fileName()));
+                            emitError(i18n("vCard file \"%1\" cannot be saved.", file.fileName()));
                         }
                     } else {
                         group.deleteEntry(vcard);
@@ -610,7 +610,7 @@ void ExportMailJobInterface::backupIdentity()
         if (fileAdded) {
             emitInfo(i18n("Identity backup done."));
         } else {
-            Q_EMIT error(i18n("Identity file cannot be added to backup file."));
+            emitError(i18n("Identity file cannot be added to backup file."));
         }
     }
 }
@@ -680,7 +680,7 @@ void ExportMailJobInterface::backupResources()
                     || identifier.contains(QLatin1String("_gmail_"))) {
                     const QString errorStr = storeResources(archive(), identifier, Utils::resourcesPath());
                     if (!errorStr.isEmpty()) {
-                        Q_EMIT error(errorStr);
+                        emitError(errorStr);
                     }
                 } else {
                     qCDebug(PIMDATAEXPORTERCORE_LOG) << " resource \"" << identifier << "\" will not store";

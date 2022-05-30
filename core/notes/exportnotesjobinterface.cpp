@@ -43,7 +43,7 @@ void ExportNotesJobInterface::backupTheme()
     if (notesThemeDirectory.exists()) {
         const bool notesDirAdded = archive()->addLocalDirectory(notesThemeDir, Utils::dataPath() + QStringLiteral("knotes/print"));
         if (!notesDirAdded) {
-            Q_EMIT error(i18n("\"%1\" directory cannot be added to backup file.", notesThemeDir));
+            emitError(i18n("\"%1\" directory cannot be added to backup file.", notesThemeDir));
         }
     }
 }

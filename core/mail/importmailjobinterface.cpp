@@ -170,7 +170,7 @@ void ImportMailJobInterface::restoreTransports()
     increaseProgressDialog();
     const QString path = Utils::transportsPath() + QStringLiteral("mailtransports");
     if (!mFileList.contains(path)) {
-        Q_EMIT error(i18n("mailtransports file could not be found in the archive."));
+        emitError(i18n("mailtransports file could not be found in the archive."));
     } else {
         emitInfo(i18n("Restore transports..."));
 
@@ -187,7 +187,7 @@ void ImportMailJobInterface::restoreTransports()
         if (importDone) {
             emitInfo(i18n("Transports restored."));
         } else {
-            Q_EMIT error(i18n("Failed to restore transports file."));
+            emitError(i18n("Failed to restore transports file."));
         }
     }
     QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
@@ -562,7 +562,7 @@ void ImportMailJobInterface::restoreConfig()
     setProgressDialogLabel(i18n("Restore config..."));
     const QString filtersPath(Utils::configsPath() + QStringLiteral("filters"));
     if (!mFileList.contains(filtersPath)) {
-        Q_EMIT error(i18n("filters file could not be found in the archive."));
+        emitError(i18n("filters file could not be found in the archive."));
     } else {
         const KArchiveEntry *filter = mArchiveDirectory->entry(filtersPath);
         if (filter && filter->isFile()) {
@@ -897,7 +897,7 @@ void ImportMailJobInterface::restoreIdentity()
     setProgressDialogLabel(i18n("Restoring identities..."));
     const QString path(Utils::identitiesPath() + QStringLiteral("emailidentities"));
     if (!mFileList.contains(path)) {
-        Q_EMIT error(i18n("emailidentities file could not be found in the archive."));
+        emitError(i18n("emailidentities file could not be found in the archive."));
     } else {
         emitInfo(i18n("Restoring identities..."));
         const KArchiveEntry *identity = mArchiveDirectory->entry(path);
@@ -960,7 +960,7 @@ void ImportMailJobInterface::restoreIdentity()
             }
             emitInfo(i18n("Identities restored."));
         } else {
-            Q_EMIT error(i18n("Failed to restore identity file."));
+            emitError(i18n("Failed to restore identity file."));
         }
     }
     QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);

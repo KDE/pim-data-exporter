@@ -144,7 +144,7 @@ void ExportMailJobInterfaceImpl::exportFilters()
         if (fileAdded) {
             emitInfo(i18n("Filters backup done."));
         } else {
-            Q_EMIT error(i18n("Filters cannot be exported."));
+            emitError(i18n("Filters cannot be exported."));
         }
     }
 }
@@ -170,7 +170,7 @@ void ExportMailJobInterfaceImpl::exportFolderAttributes()
         Q_EMIT exportAttributeDone();
     });
     connect(job, &ExportMailFolderAttributeJobImpl::failed, this, [this]() {
-        Q_EMIT error(i18n("Folder Attributes cannot be exported."));
+        emitError(i18n("Folder Attributes cannot be exported."));
         Q_EMIT exportAttributeDone();
     });
     job->start();

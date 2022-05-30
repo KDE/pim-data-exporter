@@ -41,7 +41,7 @@ void ImportMailJobInterfaceImpl::importFolderAttributes()
         Q_EMIT jobFinished();
     });
     connect(job, &ImportMailFolderAttributeJobImpl::failed, this, [this]() {
-        Q_EMIT error(i18n("Folder Attributes cannot be restored."));
+        emitError(i18n("Folder Attributes cannot be restored."));
         Q_EMIT jobFinished();
     });
     job->start();
