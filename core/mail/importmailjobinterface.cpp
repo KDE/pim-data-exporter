@@ -566,6 +566,7 @@ void ImportMailJobInterface::restoreConfig()
     } else {
         const KArchiveEntry *filter = mArchiveDirectory->entry(filtersPath);
         if (filter && filter->isFile()) {
+            emitInfo(i18n("Restore filters..."));
             const auto fileFilter = static_cast<const KArchiveFile *>(filter);
 
             copyArchiveFileTo(fileFilter, mTempDirName);
@@ -614,6 +615,7 @@ void ImportMailJobInterface::restoreConfig()
             }
             filtersConfig->sync();
             importFilters(filterFileName);
+            emitInfo(i18n("Filters restored."));
         }
     }
     const QString kmailsnippetrcStr(QStringLiteral("kmailsnippetrc"));
@@ -1282,6 +1284,7 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
     }
 
     kmailConfig->sync();
+    emitInfo(i18n("\"%1\" migration done.", filename));
 }
 
 void ImportMailJobInterface::mergeLdapConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)

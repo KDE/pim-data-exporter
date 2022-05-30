@@ -32,6 +32,7 @@ QString ImportMailJobInterfaceImpl::configLocation() const
 
 void ImportMailJobInterfaceImpl::importFolderAttributes()
 {
+    emitInfo(i18n("Restoring folder attributes..."));
     auto job = new ImportMailFolderAttributeJobImpl(this);
     job->setArchiveDirectory(mArchiveDirectory);
     job->setExportInterface(this);

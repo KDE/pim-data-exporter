@@ -271,6 +271,7 @@ void AbstractImportExportJob::copyToDirectory(const KArchiveEntry *entry, const 
 
 void AbstractImportExportJob::copyToFile(const KArchiveFile *archivefile, const QString &dest, const QString &filename, const QString &prefix)
 {
+    emitInfo(i18n("Restoring \"%1\"...", filename));
     QDir dir(mTempDirName);
     const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
     const bool created = dir.mkpath(copyToDirName);
