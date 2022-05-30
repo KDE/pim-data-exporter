@@ -104,7 +104,7 @@ QString ExportMailJobInterfaceImpl::storeResources(KZip *archive, const QString 
 QString ExportMailJobInterfaceImpl::resourcePath(const QString &identifier) const
 {
     ResourceConverterImpl converter;
-    const QString url = converter.resourcePath(identifier);
+    const QString url = converter.resourcePath(identifier, QStringLiteral("$HOME/.local/share/local-mail/"));
     return url;
 }
 
