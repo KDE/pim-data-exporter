@@ -61,7 +61,7 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
                 favoriteAttribute->deserialize(mIndexMap->value().favoriteAttribute);
             }
 
-            qDebug() << " mopdify folder attribute " << mIndexMap->key();
+            qDebug() << " modify folder attribute " << mIndexMap->key();
             auto job = new Akonadi::CollectionModifyJob(col, this);
             connect(job, &Akonadi::CollectionModifyJob::result, this, &ImportMailFolderAttributeJobImpl::slotCollectionModifyDone);
         });
