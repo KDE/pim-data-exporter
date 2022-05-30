@@ -8,7 +8,7 @@
 
 #include "pimdataexporter_export.h"
 #include "utils.h"
-#include <QHash>
+#include <QMap>
 class QXmlStreamWriter;
 class QXmlStreamReader;
 class PIMDATAEXPORTER_EXPORT TemplateSelection
@@ -17,9 +17,9 @@ public:
     TemplateSelection();
     ~TemplateSelection();
 
-    void createTemplate(const QHash<Utils::AppsType, Utils::importExportParameters> &stored);
+    void createTemplate(const QMap<Utils::AppsType, Utils::importExportParameters> &stored);
 
-    Q_REQUIRED_RESULT QHash<Utils::AppsType, Utils::importExportParameters> loadTemplate(const QString &path);
+    Q_REQUIRED_RESULT QMap<Utils::AppsType, Utils::importExportParameters> loadTemplate(const QString &path);
 
     Q_REQUIRED_RESULT QString saveTemplate() const;
 

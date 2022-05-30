@@ -7,7 +7,7 @@
 #pragma once
 
 #include "utils.h"
-#include <QHash>
+#include <QMap>
 #include <QTreeWidget>
 
 class QTreeWidgetItem;
@@ -19,7 +19,7 @@ public:
     explicit SelectionTypeTreeWidget(bool backupData, QWidget *parent = nullptr);
     ~SelectionTypeTreeWidget() override;
 
-    Q_REQUIRED_RESULT QHash<Utils::AppsType, Utils::importExportParameters> storedType() const;
+    Q_REQUIRED_RESULT QMap<Utils::AppsType, Utils::importExportParameters> storedType() const;
 
     void selectAllItems();
     void unSelectAllItems();
@@ -41,7 +41,7 @@ private:
     void setSelectItems(bool b);
     void changeState(QTreeWidgetItem *item, bool b);
     void createSubItem(QTreeWidgetItem *parent, Utils::StoredType type);
-    void setParameters(const QHash<Utils::AppsType, Utils::importExportParameters> &params);
+    void setParameters(const QMap<Utils::AppsType, Utils::importExportParameters> &params);
 
     Q_REQUIRED_RESULT Utils::importExportParameters typeChecked(QTreeWidgetItem *parent) const;
     void initializeSubItem(QTreeWidgetItem *item, Utils::StoredTypes types);

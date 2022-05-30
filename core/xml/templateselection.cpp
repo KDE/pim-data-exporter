@@ -45,7 +45,7 @@ Utils::StoredTypes TemplateSelection::loadStoredTypes(int &numberOfStep)
     return types;
 }
 
-QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTemplate(const QString &path)
+QMap<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTemplate(const QString &path)
 {
     if (path.isEmpty()) {
         return {};
@@ -58,7 +58,7 @@ QHash<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTem
         mStreamReader = new QXmlStreamReader(&file);
     }
 
-    QHash<Utils::AppsType, Utils::importExportParameters> value;
+    QMap<Utils::AppsType, Utils::importExportParameters> value;
     if (mStreamReader->readNextStartElement()) {
         // Compatibility with old version
         if ((mStreamReader->name() == QLatin1String("pimsettingexporter")) || (mStreamReader->name() == QLatin1String("pimdataexporter"))) {
@@ -127,7 +127,7 @@ QString TemplateSelection::saveTemplate() const
     return mSaveTemplate;
 }
 
-void TemplateSelection::createTemplate(const QHash<Utils::AppsType, Utils::importExportParameters> &stored)
+void TemplateSelection::createTemplate(const QMap<Utils::AppsType, Utils::importExportParameters> &stored)
 {
     mSaveTemplate.clear();
     delete mStreamWriter;
@@ -138,7 +138,7 @@ void TemplateSelection::createTemplate(const QHash<Utils::AppsType, Utils::impor
 
     mStreamWriter->writeStartElement(QStringLiteral("pimdataexporter"));
 
-    QHash<Utils::AppsType, Utils::importExportParameters>::const_iterator i = stored.constBegin();
+    QMap<Utils::AppsType, Utils::importExportParameters>::const_iterator i = stored.constBegin();
     while (i != stored.constEnd()) {
         switch (i.key()) {
         case Utils::KMail:

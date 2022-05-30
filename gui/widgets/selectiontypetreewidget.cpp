@@ -120,9 +120,9 @@ bool SelectionTypeTreeWidget::removeNotSelectedItem(QTreeWidgetItem *parent)
     return hasChildren;
 }
 
-QHash<Utils::AppsType, Utils::importExportParameters> SelectionTypeTreeWidget::storedType() const
+QMap<Utils::AppsType, Utils::importExportParameters> SelectionTypeTreeWidget::storedType() const
 {
-    QHash<Utils::AppsType, Utils::importExportParameters> stored;
+    QMap<Utils::AppsType, Utils::importExportParameters> stored;
     Utils::importExportParameters var = typeChecked(mKmailItem);
     if (!var.isEmpty()) {
         stored.insert(Utils::KMail, var);
@@ -282,7 +282,7 @@ void SelectionTypeTreeWidget::loadFileName(const QString &fileName)
 {
     unSelectAllItems();
     TemplateSelection templateSelection;
-    const QHash<Utils::AppsType, Utils::importExportParameters> params = templateSelection.loadTemplate(fileName);
+    const QMap<Utils::AppsType, Utils::importExportParameters> params = templateSelection.loadTemplate(fileName);
     setParameters(params);
 }
 
@@ -364,9 +364,9 @@ void SelectionTypeTreeWidget::initializeSubItem(QTreeWidgetItem *item, Utils::St
     }
 }
 
-void SelectionTypeTreeWidget::setParameters(const QHash<Utils::AppsType, Utils::importExportParameters> &params)
+void SelectionTypeTreeWidget::setParameters(const QMap<Utils::AppsType, Utils::importExportParameters> &params)
 {
-    QHash<Utils::AppsType, Utils::importExportParameters>::const_iterator i = params.constBegin();
+    QMap<Utils::AppsType, Utils::importExportParameters>::const_iterator i = params.constBegin();
     while (i != params.constEnd()) {
         switch (i.key()) {
         case Utils::KMail:

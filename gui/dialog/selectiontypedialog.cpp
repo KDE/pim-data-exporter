@@ -89,7 +89,7 @@ void SelectionTypeDialog::readConfig()
     loadDefaultTemplate();
 }
 
-QHash<Utils::AppsType, Utils::importExportParameters> SelectionTypeDialog::storedType() const
+QMap<Utils::AppsType, Utils::importExportParameters> SelectionTypeDialog::storedType() const
 {
     return mSelectionTreeWidget->storedType();
 }
