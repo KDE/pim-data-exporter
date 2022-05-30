@@ -356,7 +356,8 @@ AbstractImportExportJob::restoreResourceFile(const QString &resourceBaseName, co
                     }
                     // setPath doesn't exist in groupware
                     if (resourceBaseName != QStringLiteral("akonadi_davgroupware_resource")
-                        && resourceBaseName != QStringLiteral("akonadi_openxchange_resource")) {
+                        && resourceBaseName != QStringLiteral("akonadi_openxchange_resource")
+                        && resourceBaseName != QStringLiteral("akonadi_google_resource")) {
                         if (!newUrl.isEmpty()) {
                             settings.insert(QStringLiteral("Path"), newUrl);
                         }
