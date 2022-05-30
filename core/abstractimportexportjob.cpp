@@ -423,14 +423,21 @@ void AbstractImportExportJob::extractZipFile(const KArchiveFile *file, const QSt
             const KArchiveDirectory *zipDir = zip->directory();
             const QStringList lst = zipDir->entries();
             for (const QString &entryName : lst) {
+                qDebug() << " entryName " << entryName;
                 const KArchiveEntry *entry = zipDir->entry(entryName);
                 if (entry) {
                     if (entry->isDirectory()) {
                         const auto dir = static_cast<const KArchiveDirectory *>(entry);
-                        dir->copyTo(destination + QLatin1Char('/') + dir->name(), true);
+                        qDebug() << " copy as directory";
+                        if (!dir->copyTo(destination + QLatin1Char('/') + dir->name(), true)) {
+                            qWarning() << " Error to copy directory" << destination + QLatin1Char('/') + dir->name();
+                        }
                     } else if (entry->isFile()) {
                         const auto dir = static_cast<const KArchiveFile *>(entry);
-                        dir->copyTo(destination);
+                        qDebug() << " copy as file";
+                        if (dir->copyTo(destination)) {
+                            qWarning() << " Error to copy file" << destination;
+                        }
                     }
                 }
                 qApp->processEvents();
