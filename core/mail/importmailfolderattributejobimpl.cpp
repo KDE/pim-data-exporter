@@ -30,10 +30,15 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
 {
     if (mIndexMap->hasNext()) {
         mIndexMap->next();
+        qDebug() << " restoring folder attribute " << mIndexMap->key();
+        if (mIndexMap->key() == -1) {
+            qWarning() << " It's a bug !  restoring folder attribute " << mIndexMap->key();
+            nextAttribute();
+            return;
+        }
         auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection(mIndexMap->key()), Akonadi::CollectionFetchJob::Base, this);
         fetch->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
         fetch->fetchScope().fetchAttribute<MailCommon::ExpireCollectionAttribute>();
-        qDebug() << " restoring folder attribute " << mIndexMap->key();
         connect(fetch, &Akonadi::CollectionFetchJob::result, this, &ImportMailFolderAttributeJobImpl::collectionFetchResult);
         connect(fetch, &Akonadi::CollectionFetchJob::collectionsReceived, this, [this](const Akonadi::Collection::List &cols) {
             if (cols.count() != 1) {
