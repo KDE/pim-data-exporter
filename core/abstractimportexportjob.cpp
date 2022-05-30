@@ -435,7 +435,7 @@ void AbstractImportExportJob::extractZipFile(const KArchiveFile *file, const QSt
                     } else if (entry->isFile()) {
                         const auto dir = static_cast<const KArchiveFile *>(entry);
                         qDebug() << " copy as file";
-                        if (dir->copyTo(destination)) {
+                        if (!dir->copyTo(destination)) {
                             qWarning() << " Error to copy file" << destination;
                         }
                     }
