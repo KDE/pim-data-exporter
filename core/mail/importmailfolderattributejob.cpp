@@ -67,6 +67,7 @@ void ImportMailFolderAttributeJob::start()
         for (const QString &groupStr : groupList) {
             ImportExportMailUtil::AttributeInfo info;
             KConfigGroup group = conf.group(groupStr);
+            qDebug() << "groupStr  " << groupStr;
             const Akonadi::Collection::Id id = mInterface->convertPathToId(groupStr);
             const QString displayStr(QStringLiteral("Display"));
             if (group.hasKey(displayStr)) {
@@ -84,7 +85,7 @@ void ImportMailFolderAttributeJob::start()
             if (group.hasKey(folderStr)) {
                 info.folderAttribute = group.readEntry(folderStr, QByteArray());
             }
-            // qDebug() << " ***** " << id << " info.expireAttribute " << info.expireAttribute << " info.displayAttribute " << info.displayAttribute;
+            qDebug() << " identifier " << id << " info.expireAttribute " << info.expireAttribute << " info.displayAttribute " << info.displayAttribute;
             mapAttributeInfo.insert(id, info);
         }
     }
