@@ -353,10 +353,13 @@ AbstractImportExportJob::restoreResourceFile(const QString &resourceBaseName, co
                             qCWarning(PIMDATAEXPORTERCORE_LOG) << "AbstractImportExportJob: file " << dataFile << " can not copy to " << newUrl;
                         }
                     }
-                    if (!newUrl.isEmpty()) {
-                        settings.insert(QStringLiteral("Path"), newUrl);
+                    // setPath doesn't exist in groupware
+                    if (resourceBaseName != QStringLiteral("akonadi_davgroupware_resource")
+                        && resourceBaseName != QStringLiteral("akonadi_openxchange_resource")) {
+                        if (!newUrl.isEmpty()) {
+                            settings.insert(QStringLiteral("Path"), newUrl);
+                        }
                     }
-
                     const QString agentConfigFile = value.akonadiAgentConfigFile;
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
