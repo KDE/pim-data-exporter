@@ -40,8 +40,8 @@ void ExportAlarmJobInterfaceImpl::exportResourceToArchive(const QString &archive
     resourceJob->setIdentifier(identifier);
     resourceJob->setArchive(archive());
     resourceJob->setArchiveName(Utils::resourceAlarmArchiveName());
-    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAlarmJobInterfaceImpl::error);
-    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAlarmJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportAlarmJobInterfaceImpl::emitError);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportAlarmJobInterfaceImpl::emitInfo);
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportAlarmJobInterfaceImpl::slotAlarmJobTerminated);
     resourceJob->start();
 }

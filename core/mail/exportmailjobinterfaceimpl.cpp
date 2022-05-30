@@ -88,8 +88,8 @@ void ExportMailJobInterfaceImpl::exportResourceToArchive(const QString &archiveP
     resourceJob->setIdentifier(identifier);
     resourceJob->setArchive(archive());
     resourceJob->setArchiveName(Utils::resourceMailArchiveName());
-    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportMailJobInterfaceImpl::error);
-    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportMailJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportMailJobInterfaceImpl::emitError);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportMailJobInterfaceImpl::emitInfo);
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportMailJobInterfaceImpl::slotMailsJobTerminated);
     connect(this, &ExportMailJobInterfaceImpl::taskCanceled, resourceJob, &ExportResourceArchiveJob::slotTaskCanceled);
     resourceJob->start();

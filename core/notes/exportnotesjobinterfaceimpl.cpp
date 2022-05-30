@@ -46,8 +46,8 @@ void ExportNotesJobInterfaceImpl::exportResourceToArchive(const QString &archive
     resourceJob->setIdentifier(identifier);
     resourceJob->setArchive(archive());
     resourceJob->setArchiveName(Utils::resourceNoteArchiveName());
-    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJobInterfaceImpl::error);
-    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJobInterfaceImpl::info);
+    connect(resourceJob, &ExportResourceArchiveJob::error, this, &ExportNotesJobInterfaceImpl::emitError);
+    connect(resourceJob, &ExportResourceArchiveJob::info, this, &ExportNotesJobInterfaceImpl::emitInfo);
     connect(resourceJob, &ExportResourceArchiveJob::terminated, this, &ExportNotesJobInterfaceImpl::slotNoteJobTerminated);
     resourceJob->start();
 }
