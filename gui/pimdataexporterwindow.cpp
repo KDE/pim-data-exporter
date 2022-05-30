@@ -227,9 +227,8 @@ void PimDataExporterWindow::setupActions(bool canZipFile)
 
 void PimDataExporterWindow::slotConfigure()
 {
-    QPointer<PimDataExporterConfigureDialog> dlg = new PimDataExporterConfigureDialog(this);
-    dlg->exec();
-    delete dlg;
+    PimDataExporterConfigureDialog dlg(this);
+    dlg.exec();
 }
 
 void PimDataExporterWindow::slotUpdateActions(bool inAction)
@@ -256,9 +255,8 @@ void PimDataExporterWindow::slotShowArchiveInformations()
         return;
     }
 
-    QPointer<ShowArchiveStructureDialog> dlg = new ShowArchiveStructureDialog(filename, this);
-    dlg->exec();
-    delete dlg;
+    ShowArchiveStructureDialog dlg(filename, this);
+    dlg.exec();
 }
 
 void PimDataExporterWindow::slotSaveLog()
@@ -410,16 +408,14 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
 
 void PimDataExporterWindow::slotShowStructureInfos()
 {
-    QPointer<BackupFileStructureInfoDialog> dlg = new BackupFileStructureInfoDialog(this);
-    dlg->exec();
-    delete dlg;
+    BackupFileStructureInfoDialog dlg(this);
+    dlg.exec();
 }
 
 void PimDataExporterWindow::slotShowCurrentArchiveInformations()
 {
     if (!mLastArchiveFileName.isEmpty()) {
-        QPointer<ShowArchiveStructureDialog> dlg = new ShowArchiveStructureDialog(mLastArchiveFileName, this);
-        dlg->exec();
-        delete dlg;
+        ShowArchiveStructureDialog dlg(mLastArchiveFileName, this);
+        dlg.exec();
     }
 }
