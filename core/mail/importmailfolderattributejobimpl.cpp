@@ -33,6 +33,7 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
         auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection(mIndexMap->key()), Akonadi::CollectionFetchJob::Base, this);
         fetch->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
         fetch->fetchScope().fetchAttribute<MailCommon::ExpireCollectionAttribute>();
+        qDebug() << " restoring folder attribute " << mIndexMap->key();
         connect(fetch, &Akonadi::CollectionFetchJob::collectionsReceived, this, [this](const Akonadi::Collection::List &cols) {
             if (cols.count() != 1) {
                 nextAttribute();
@@ -54,11 +55,13 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
                 favoriteAttribute->deserialize(mIndexMap->value().favoriteAttribute);
             }
 
+            qDebug() << " mopdify folder attribute " << mIndexMap->key();
             auto job = new Akonadi::CollectionModifyJob(col, this);
             connect(job, &Akonadi::CollectionModifyJob::result, this, &ImportMailFolderAttributeJobImpl::slotCollectionModifyDone);
         });
     } else {
         // Call it when all is finished!
+        qDebug() << " restoring folder attribute finished";
         restoreFileFolderAttribute();
     }
 }
