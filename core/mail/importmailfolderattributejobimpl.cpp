@@ -34,6 +34,7 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
         fetch->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
         fetch->fetchScope().fetchAttribute<MailCommon::ExpireCollectionAttribute>();
         qDebug() << " restoring folder attribute " << mIndexMap->key();
+        connect(fetch, &Akonadi::CollectionFetchJob::result, this, &ImportMailFolderAttributeJobImpl::collectionFetchResult);
         connect(fetch, &Akonadi::CollectionFetchJob::collectionsReceived, this, [this](const Akonadi::Collection::List &cols) {
             if (cols.count() != 1) {
                 nextAttribute();
@@ -63,6 +64,14 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
         // Call it when all is finished!
         qDebug() << " restoring folder attribute finished";
         restoreFileFolderAttribute();
+    }
+}
+
+void ImportMailFolderAttributeJobImpl::collectionFetchResult(KJob *job)
+{
+    if (job->error()) {
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "Error when we fetch collection: " << job->errorString();
+        nextAttribute();
     }
 }
 
