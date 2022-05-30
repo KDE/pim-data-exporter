@@ -22,7 +22,7 @@ public:
     Q_REQUIRED_RESULT bool backupStart(const QString &filename);
     Q_REQUIRED_RESULT bool restoreStart(const QString &filename);
 
-    void setStoredParameters(const QHash<Utils::AppsType, Utils::importExportParameters> &stored);
+    void setStoredParameters(const QMap<Utils::AppsType, Utils::importExportParameters> &stored);
 
     void nextStep();
     void closeArchive();
@@ -58,8 +58,8 @@ private:
     void addDate();
 
     QString mExportedInfoFileName;
-    QHash<Utils::AppsType, Utils::importExportParameters> mStored;
-    QHash<Utils::AppsType, Utils::importExportParameters>::const_iterator mStoreIterator;
+    QMap<Utils::AppsType, Utils::importExportParameters> mStored;
+    QMap<Utils::AppsType, Utils::importExportParameters>::const_iterator mStoreIterator;
     Action mAction = Backup;
     ArchiveStorage *mArchiveStorage = nullptr;
 };

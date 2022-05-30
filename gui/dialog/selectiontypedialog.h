@@ -17,7 +17,7 @@ public:
     explicit SelectionTypeDialog(bool backupData, QWidget *parent = nullptr);
     ~SelectionTypeDialog() override;
 
-    Q_REQUIRED_RESULT QHash<Utils::AppsType, Utils::importExportParameters> storedType() const;
+    Q_REQUIRED_RESULT QMap<Utils::AppsType, Utils::importExportParameters> storedType() const;
 
     void loadTemplate(const QString &fileName);
 

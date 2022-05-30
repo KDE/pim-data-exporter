@@ -56,7 +56,7 @@ void PimDataBackupRestore::setExportedInfoFileName(const QString &filename)
     mExportedInfoFileName = filename;
 }
 
-void PimDataBackupRestore::setStoredParameters(const QHash<Utils::AppsType, Utils::importExportParameters> &stored)
+void PimDataBackupRestore::setStoredParameters(const QMap<Utils::AppsType, Utils::importExportParameters> &stored)
 {
     mStored = stored;
 }
