@@ -350,7 +350,7 @@ AbstractImportExportJob::restoreResourceFile(const QString &resourceBaseName, co
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                     if (dataResouceEntry && dataResouceEntry->isFile()) {
                         const auto file = static_cast<const KArchiveFile *>(dataResouceEntry);
-                        if (!file->copyTo(newUrl)) {
+                        if (!file->copyTo(QFileInfo(newUrl).path())) {
                             qCWarning(PIMDATAEXPORTERCORE_LOG) << "AbstractImportExportJob: file " << dataFile << " can not copy to " << newUrl;
                         }
                     }
