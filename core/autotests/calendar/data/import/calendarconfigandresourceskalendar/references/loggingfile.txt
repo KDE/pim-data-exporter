@@ -5,7 +5,6 @@ synchronizeTree: false
 --------------------------
 akonadi_davgroupware_resource
 caldav
-Path /tmp/backupcalendar//0/
 synchronizeTree: false
 --------------------------
 akonadi_ical_resource_new_resource_0
