@@ -28,7 +28,7 @@ QString ResourceConverterBase::adaptResourcePath(const KSharedConfigPtr &resourc
         QString currentPath = installDefaultDirectory() + QLatin1Char('/') + storedData;
         newUrl = (currentPath + QLatin1Char('/') + fileInfo.fileName());
         if (!QDir(currentPath).exists()) {
-            if (!QDir().mkdir(currentPath)) {
+            if (!QDir().mkpath(currentPath)) {
                 qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to create subpath " << currentPath;
             }
         }
@@ -40,7 +40,7 @@ QString ResourceConverterBase::adaptResourcePath(const KSharedConfigPtr &resourc
             const QString currentPath = fileInfo.path() + QLatin1Char('/') + QString::number(i) + QLatin1Char('/');
             newFileName = currentPath + fileInfo.fileName();
             if (!QFileInfo::exists(newFileName)) {
-                if (!QDir().mkdir(currentPath)) {
+                if (!QDir().mkpath(currentPath)) {
                     qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to create subpath " << currentPath;
                 }
                 break;
