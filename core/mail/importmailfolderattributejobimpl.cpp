@@ -32,7 +32,7 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
         mIndexMap->next();
         qDebug() << " restoring folder attribute " << mIndexMap->key();
         if (mIndexMap->key() == -1) {
-            qWarning() << " It's a bug !  restoring folder attribute " << mIndexMap->key();
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << " It's a bug !  restoring folder attribute " << mIndexMap->key();
             nextAttribute();
             return;
         }
