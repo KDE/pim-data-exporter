@@ -50,6 +50,7 @@ private:
     void loadData(const QString &filename = QString(), const QString &templateFile = QString());
     void setupActions(bool canZipFile);
     void showFinishInformation();
+    void importDone();
     QString mLastArchiveFileName;
     // Name, identifier
     QHash<QString, QString> mNeedToSyncResources;

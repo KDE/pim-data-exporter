@@ -132,9 +132,11 @@ void PimDataExporterWindow::slotRestoreDone()
             connect(job, &FullSynchronizeResourcesJob::synchronizeInstanceDone, this, &PimDataExporterWindow::slotFullSyncInstanceDone);
             connect(job, &FullSynchronizeResourcesJob::synchronizeInstanceFailed, this, &PimDataExporterWindow::slotFullSyncInstanceFailed);
             job->start();
+        } else {
+            importDone();
         }
     } else {
-        slotUpdateActions(false);
+        importDone();
     }
 }
 
@@ -143,12 +145,17 @@ void PimDataExporterWindow::slotShowBackupFinishDialogInformation()
     showFinishInformation();
 }
 
-void PimDataExporterWindow::slotFullSyncFinished()
+void PimDataExporterWindow::importDone()
 {
     slotUpdateActions(false);
+    mTrayIcon->setStatus(KStatusNotifierItem::Passive);
+}
+
+void PimDataExporterWindow::slotFullSyncFinished()
+{
+    importDone();
     const QString str = i18n("Full sync finished.");
     slotAddInfo(str);
-    mTrayIcon->setStatus(KStatusNotifierItem::Passive);
     mTrayIcon->setToolTipSubTitle(str);
 }
 
