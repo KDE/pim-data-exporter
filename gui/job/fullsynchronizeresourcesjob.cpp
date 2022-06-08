@@ -45,7 +45,7 @@ void FullSynchronizeResourcesJob::start()
     mProgressDialog->setCancelButton(nullptr);
 
     auto job = new SynchronizeResourceJob(this);
-    // Full synch
+    // Full sync
     job->setSynchronizeOnlyCollection(false);
     job->setListResources(mResources);
     connect(job, &SynchronizeResourceJob::synchronizationFinished, this, &FullSynchronizeResourcesJob::slotSynchronizeFinished);
