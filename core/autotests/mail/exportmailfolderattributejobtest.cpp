@@ -5,7 +5,6 @@
 */
 
 #include "exportmailfolderattributejobtest.h"
-#include "mail/exportmailfolderattributejob.h"
 #include <QSignalSpy>
 #include <QTest>
 QTEST_GUILESS_MAIN(ExportMailFolderAttributeJobTest)

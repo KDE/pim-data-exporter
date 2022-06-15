@@ -5,7 +5,6 @@
 */
 
 #include "importmailfolderattributejob.h"
-#include "importexportmailutil.h"
 #include "importmailjobinterface.h"
 #include "pimdataexportcore_debug.h"
 #include "utils.h"
