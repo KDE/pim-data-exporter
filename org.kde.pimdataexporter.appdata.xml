@@ -10,6 +10,7 @@
   <name>PIM Data Exporter</name>
   <name xml:lang="ar">مصدّر بيانات إدارة البيانات الشخصية</name>
   <name xml:lang="az">PİM verilənlərinin ixracatçısı</name>
+  <name xml:lang="bg">Експортиране на данни на PIM</name>
   <name xml:lang="ca">Exportador de les dades PIM</name>
   <name xml:lang="ca-valencia">Exportador de les dades PIM</name>
   <name xml:lang="cs">Exportér dat PIM</name>
@@ -41,6 +42,7 @@
   <summary>Saves all data from PIM apps and restore them in other systems.</summary>
   <summary xml:lang="ar">تحفظ كل بيانات تطبيقات إدارة البيانات الشخصية وتستعيدها في الأنظمة الأخرى.</summary>
   <summary xml:lang="az">PİM tətbiqlərindən bütün verilənləri saxlayır və onları başqa sistemdə bərpa edir</summary>
+  <summary xml:lang="bg">Запазва всички данни от приложенията на PIM и ги възстановява в други системи.</summary>
   <summary xml:lang="ca">Desa totes les dades de les aplicacions PIM i les restaura en altres sistemes.</summary>
   <summary xml:lang="ca-valencia">Guarda totes les dades de les aplicacions PIM i les restaura en altres sistemes.</summary>
   <summary xml:lang="cs">Ukládá všechna data z aplikací PIM a obnovuje je na jiných systémech.</summary>
@@ -72,6 +74,7 @@
   <developer_name>Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ar">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="az">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="bg">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ca-valencia">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="cs">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -107,6 +110,7 @@
     </p>
     <p xml:lang="ar">مصدّر بيانات إدارة البيانات الشخصية يصدر ويستورد إعدادات تطبيقات إدارة البيانات الشخصية</p>
     <p xml:lang="az">PİM verilənləri ixracatçısı PİM ayarlarını ixrac və idxal edir</p>
+    <p xml:lang="bg">Програма за експортиране и импортиране на настройки за PIM</p>
     <p xml:lang="ca">L'Exportador de les dades PIM exporta i importa la configuració PIM</p>
     <p xml:lang="ca-valencia">L'Exportador de les dades PIM exporta i importa la configuració PIM</p>
     <p xml:lang="cs">Exportér dat PIM exportuje a importuje nastavení PIM</p>
