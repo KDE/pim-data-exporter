@@ -32,6 +32,7 @@ QString ImportMailJobInterfaceImpl::configLocation() const
 
 void ImportMailJobInterfaceImpl::importFolderAttributes()
 {
+#if 0
     emitInfo(i18n("Restoring folder attributes..."));
     auto job = new ImportMailFolderAttributeJobImpl(this);
     job->setArchiveDirectory(mArchiveDirectory);
@@ -46,6 +47,9 @@ void ImportMailJobInterfaceImpl::importFolderAttributes()
         Q_EMIT jobFinished();
     });
     job->start();
+#else
+    Q_EMIT jobFinished();
+#endif
 }
 
 QString ImportMailJobInterfaceImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
