@@ -28,12 +28,16 @@ int main(int argc, char *argv[])
                          KAboutLicense::GPL_V2,
                          i18n("Copyright © 2015-%1 pimdataexporter authors", QStringLiteral("2022")));
     aboutData.addAuthor(i18n("Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("logfile"), i18n("File to log information to."), QStringLiteral("file")));
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("template"),
-                                        i18n("Template file to define what data, settings to import or export."),
-                                        QStringLiteral("file")));
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("import"), i18n("Import the given file."), QStringLiteral("file")));
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("export"), i18n("Export the given file."), QStringLiteral("file")));
+    const QCommandLineOption logOption(QStringList() << QStringLiteral("logfile"), i18n("File to log information to."), QStringLiteral("file"));
+    parser.addOption(logOption);
+    const QCommandLineOption templateOption(QStringList() << QStringLiteral("template"),
+                                            i18n("Template file to define what data, settings to import or export."),
+                                            QStringLiteral("file"));
+    parser.addOption(templateOption);
+    const QCommandLineOption importOption(QStringList() << QStringLiteral("import"), i18n("Import the given file."), QStringLiteral("file"));
+    parser.addOption(importOption);
+    const QCommandLineOption exportOption(QStringList() << QStringLiteral("export"), i18n("Export the given file."), QStringLiteral("file"));
+    parser.addOption(exportOption);
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);
@@ -41,10 +45,10 @@ int main(int argc, char *argv[])
 
     QString importFile;
     QString exportFile;
-    if (parser.isSet(QStringLiteral("import"))) {
-        importFile = parser.value(QStringLiteral("import"));
-    } else if (parser.isSet(QStringLiteral("export"))) {
-        exportFile = parser.value(QStringLiteral("export"));
+    if (parser.isSet(importOption)) {
+        importFile = parser.value(importOption);
+    } else if (parser.isSet(exportOption)) {
+        exportFile = parser.value(exportOption);
     }
     if (importFile.isEmpty() && exportFile.isEmpty()) {
         parser.showHelp();
@@ -52,12 +56,12 @@ int main(int argc, char *argv[])
     }
     QString logFile;
     QString templateFile;
-    if (parser.isSet(QStringLiteral("template"))) {
-        templateFile = parser.value(QStringLiteral("template"));
+    if (parser.isSet(templateOption)) {
+        templateFile = parser.value(templateOption);
         qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Template file " << templateFile;
     }
-    if (parser.isSet(QStringLiteral("logfile"))) {
-        logFile = parser.value(QStringLiteral("logfile"));
+    if (parser.isSet(logOption)) {
+        logFile = parser.value(logOption);
         qCDebug(PIMDATAEXPORTERCONSOLE_LOG) << "Log file " << logFile;
     }
 
