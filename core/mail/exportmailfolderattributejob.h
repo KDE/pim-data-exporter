@@ -7,7 +7,6 @@
 #include "importexportmailutil.h"
 #include "pimdataexportercore_private_export.h"
 #include <QObject>
-class KJob;
 class KZip;
 class ExportMailJobInterface;
 class PIMDATAEXPORTER_TESTS_EXPORT ExportMailFolderAttributeJob : public QObject

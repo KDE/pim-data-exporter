@@ -7,7 +7,7 @@
 #pragma once
 
 #include "exportmailfolderattributejob.h"
-
+class KJob;
 class ExportMailFolderAttributeJobImpl : public ExportMailFolderAttributeJob
 {
     Q_OBJECT
