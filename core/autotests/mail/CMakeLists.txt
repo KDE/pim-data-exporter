@@ -11,7 +11,7 @@ target_sources( exportmailjobinterfacetest PRIVATE exportmailjobinterfacetest.cp
 
 add_test(NAME exportmailjobinterfacetest COMMAND exportmailjobinterfacetest)
 ecm_mark_as_test(exportmailjobinterfacetest)
-target_link_libraries(exportmailjobinterfacetest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter KF5::Mime)
+target_link_libraries(exportmailjobinterfacetest Qt::Test pimdataexporterprivate KF5::ConfigCore test_resourceconverter KF5::Mime)
 
 #####
 
@@ -24,19 +24,19 @@ target_sources( importmailjobinterfacetest PRIVATE importmailjobinterfacetest.cp
 
 add_test(NAME importmailjobinterfacetest COMMAND importmailjobinterfacetest)
 ecm_mark_as_test(importmailjobinterfacetest)
-target_link_libraries(importmailjobinterfacetest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::ConfigCore KF5::AkonadiCore KF5::AkonadiMime test_resourceconverter KF5::IdentityManagement KF5::Mime)
+target_link_libraries(importmailjobinterfacetest Qt::Test pimdataexporterprivate KF5::ConfigCore KF5::AkonadiCore KF5::AkonadiMime test_resourceconverter KF5::IdentityManagement KF5::Mime)
 
 #####
 add_executable( exportmailfolderattributejobtest)
 target_sources( exportmailfolderattributejobtest PRIVATE exportmailfolderattributejobtest.cpp exportmailfolderattributejobtest.h)
 add_test(NAME exportmailfolderattributejobtest COMMAND exportmailfolderattributejobtest)
 ecm_mark_as_test(exportmailfolderattributejobtest)
-target_link_libraries(exportmailfolderattributejobtest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::ConfigCore)
+target_link_libraries(exportmailfolderattributejobtest Qt::Test pimdataexporterprivate KF5::ConfigCore)
 
 #####
 add_executable( importmailfolderattributejobtest)
 target_sources( importmailfolderattributejobtest PRIVATE importmailfolderattributejobtest.cpp importmailfolderattributejobtest.h)
 add_test(NAME importmailfolderattributejobtest COMMAND importmailfolderattributejobtest)
 ecm_mark_as_test(importmailfolderattributejobtest)
-target_link_libraries(importmailfolderattributejobtest Qt${QT_MAJOR_VERSION}::Test pimdataexporterprivate KF5::AkonadiCore KF5::ConfigCore)
+target_link_libraries(importmailfolderattributejobtest Qt::Test pimdataexporterprivate KF5::AkonadiCore KF5::ConfigCore)
 
