@@ -101,7 +101,6 @@ Comment[tr]=PIM Ayar Dışa Aktarıcı, tüm PIM uygulamalarındaki veriyi kayde
 Comment[uk]=За допомогою програми для експортування параметрів системи особистих даних ви зможете зберегти всі параметри програм для роботи з особистими даним, а потім відновити їх у інших системах.
 Comment[x-test]=xxPIM Setting Exporter allows to save all data from PIM apps and restore them in other systems.xx
 Comment[zh_CN]=个人信息管理设置导出器可以保存所有个人信息管理程序的数据并且将其在其他系统中恢复。
-Terminal=false
 Categories=Qt;KDE;Network;Email;
 X-DocPath=pimdataexporter/index.html
 X-DBUS-StartupType=Unique
