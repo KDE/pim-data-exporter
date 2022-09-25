@@ -5,7 +5,6 @@
 */
 
 #include "importmailfolderattributejobtestimpl.h"
-#include <QDebug>
 #include <QFile>
 ImportMailFolderAttributeJobTestImpl::ImportMailFolderAttributeJobTestImpl(QObject *parent)
     : ImportMailFolderAttributeJob{parent}

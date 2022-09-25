@@ -7,7 +7,6 @@
 #pragma once
 
 #include "utils.h"
-#include <QHash>
 #include <QObject>
 class AbstractImportExportJob;
 class ArchiveStorage;

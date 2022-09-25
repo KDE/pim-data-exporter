@@ -28,7 +28,6 @@
 #include <Akonadi/ControlGui>
 
 #include <KActionCollection>
-#include <KConfigGroup>
 #include <KFileWidget>
 #include <KLocalizedString>
 #include <KMessageBox>

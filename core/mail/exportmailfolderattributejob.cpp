@@ -10,7 +10,6 @@
 #include <KConfigGroup>
 #include <KZip>
 #include <QTemporaryFile>
-#include <QUrl>
 
 ExportMailFolderAttributeJob::ExportMailFolderAttributeJob(QObject *parent)
     : QObject{parent}

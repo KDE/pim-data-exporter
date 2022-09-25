@@ -8,7 +8,6 @@
 #include "archivestorage.h"
 #include <KArchive>
 #include <KArchiveEntry>
-#include <KZip>
 #include <MailCommon/MailUtil>
 #include <PimCommonAkonadi/CreateResource>
 

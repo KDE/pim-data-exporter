@@ -10,7 +10,6 @@
 
 #include "importexportprogressindicatorbase.h"
 #include <KIdentityManagement/IdentityManager>
-#include <KMime/Message>
 #include <MailCommon/FilterImporterExporter>
 #include <MailCommon/FilterManager>
 #include <MailCommon/MailUtil>

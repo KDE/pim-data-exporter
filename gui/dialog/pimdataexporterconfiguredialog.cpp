@@ -8,7 +8,6 @@
 #include "../widgets/pimdataexporterconfigurewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
-#include <KPageWidgetModel>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
