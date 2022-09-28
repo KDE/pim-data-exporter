@@ -13,8 +13,6 @@
 #include <KArchiveDirectory>
 #include <KArchiveEntry>
 
-#include "pimdataexportcore_debug.h"
-
 #include "resourceconverterimpl.h"
 #include <MailCommon/MailUtil>
 #include <QStandardPaths>

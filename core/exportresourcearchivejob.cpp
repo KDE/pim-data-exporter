@@ -7,7 +7,6 @@
 #include "exportresourcearchivejob.h"
 #include "pimdataexportcore_debug.h"
 #include "storeresourcejob.h"
-#include "utils.h"
 #include <KZip>
 #include <pimdatabackupthread.h>
 

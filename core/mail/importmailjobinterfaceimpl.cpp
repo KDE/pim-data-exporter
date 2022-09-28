@@ -6,7 +6,6 @@
 
 #include "importmailjobinterfaceimpl.h"
 #include "archivestorage.h"
-#include "importmailfolderattributejobimpl.h"
 #include "resourceconverterimpl.h"
 #include "smtpmailtransport.h"
 #include <Akonadi/CollectionFetchJob>

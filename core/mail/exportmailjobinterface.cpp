@@ -7,7 +7,6 @@
 #include "exportmailjobinterface.h"
 #include "importexportmailutil.h"
 
-#include "importexportprogressindicatorbase.h"
 #include <MailCommon/FilterImporterExporter>
 
 #include <MailTransport/TransportManager>

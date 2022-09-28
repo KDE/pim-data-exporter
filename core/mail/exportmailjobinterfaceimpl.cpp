@@ -6,9 +6,6 @@
 
 #include "exportmailjobinterfaceimpl.h"
 #include "exportmailfolderattributejobimpl.h"
-#include "importexportmailutil.h"
-
-#include "importexportprogressindicatorbase.h"
 #include <KIdentityManagement/IdentityManager>
 #include <MailCommon/FilterImporterExporter>
 #include <MailCommon/FilterManager>
@@ -21,8 +18,6 @@
 #include <KLocalizedString>
 #include <KZip>
 #include <QTemporaryFile>
-
-#include "pimdataexportcore_debug.h"
 
 #include "exportresourcearchivejob.h"
 #include "resourceconverterimpl.h"

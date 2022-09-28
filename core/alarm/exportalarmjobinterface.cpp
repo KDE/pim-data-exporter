@@ -5,7 +5,6 @@
 */
 
 #include "exportalarmjobinterface.h"
-#include "exportresourcearchivejob.h"
 
 #include <KLocalizedString>
 
