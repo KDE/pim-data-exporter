@@ -1,0 +1,217 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-pimdataexporter "<application
+>Esportatore dei dati di PIM</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+> 
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
+]>
+
+<article id="pimdataexporter" lang="&language;">
+
+<articleinfo id="pimdataexporterinfo">
+<title
+>Manuale di &i18n-pimdataexporter;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Luigi</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>luigi.toscano@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2016-07-27</date>
+<releaseinfo
+>5.3.40 (Applications 16.08)</releaseinfo>
+
+</articleinfo>
+
+
+<sect1 id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>&i18n-pimdataexporter; ti permette di esportare e importare le impostazioni di PIM e la posta locale. Puoi effettuare copie di sicurezza e ripristinare le impostazioni dai seguenti programmi: <simplelist>
+<member
+>&kmail;</member>
+<member
+>&knotes;</member>
+<member
+>&akregator;</member>
+<member
+>&kaddressbook;</member>
+<member
+>&kalarm;</member>
+<member
+>&korganizer;</member>
+</simplelist>
+</para>
+
+<sect2 id="using-kapp">
+<title
+>Uso di &i18n-pimdataexporter;</title>
+<para
+>Il salvataggio delle copie di sicurezza è una pratica essenziale per tutti gli utenti. &i18n-pimdataexporter; è un ottimo strumento per salvare o spostare tutte le impostazioni e la posta elettronica in una nuova installazione. Puoi usare &i18n-pimdataexporter; anche per importare delle copie di sicurezza effettuate precedentemente.</para>
+<para
+>Puoi usare <menuchoice
+><guimenu
+>Strumenti</guimenu
+><guimenuitem
+>Esporta dati di &kmail;...</guimenuitem
+></menuchoice
+> tramite la finestra di visualizzazione dei messaggi, oppure puoi avviare &i18n-pimdataexporter; come programma autonomo eseguendo &i18n-pimdataexporter; nel menu di avvio delle applicazioni.</para>
+
+<para
+>Per creare una copia di sicurezza <action
+>seleziona <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Salva dati...</guimenuitem
+></menuchoice
+></action
+>, ti verrà richiesto di chiudere tutte le applicazioni di KDEPIM. <warning
+><para
+>Assicurati di chiudere tutte le finestre, in caso contrario è possibile perdere dei dati.</para
+></warning
+> Una volta che hai chiuso tutte le finestre fai clic su <guibutton
+>Sì</guibutton
+> per continuare o <guibutton
+>No</guibutton
+> per annullare.</para>
+<para
+>Ti sarà richiesto di creare un nome per la copia di sicurezza; inseriscilo nella casella di testo <guilabel
+>File</guilabel
+>, &eg; <replaceable
+>lemieimpostazionidiposta</replaceable
+>. Il tipo di file predefinito utilizzato per salvare il file è <filename role="extension"
+>.zip</filename
+>. </para>
+<para
+>La schermata successiva ti permetterà di selezionare quello che vuoi salvare; come impostazioni predefinita tutte le scelte sono selezionate. <note
+> <para
+>Scegliendo i messaggi di posta di &kmail; verranno create copie di sicurezza solo dei messaggi nelle <quote
+>Cartelle locali</quote
+>, il programma salverà le impostazioni &imap; e scaricherà i messaggi in fase di ripristino. Se hai dei messaggi che vuoi salvare su un server &imap;, dovresti usare <ulink url="help:/akonadi_folderarchive_agent"
+>l'agente di archiviazione per cartelle</ulink
+> per archiviare tali messaggi nelle cartelle locali.</para>
+</note
+></para>
+<screenshot>
+<screeninfo
+>Finestra di selezione</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="selection-dialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Finestra di selezione</phrase>
+    </textobject>
+    <caption>
+      <para
+>Finestra di selezione</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+<para
+>La schermata finale mostra il registro della creazione della copia di sicurezza. Puoi chiudere la finestra dopo averlo controllato e verificato che la creazione della copia di sicurezza è andata a buon fine.</para>
+<para
+>Per ripristinare la copia di sicurezza seleziona <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Ripristina dati...</guimenuitem
+></menuchoice
+> da &i18n-pimdataexporter;.</para>
+<para
+>Usando <menuchoice
+><guimenu
+>Strumenti</guimenu
+><guimenuitem
+>Mostra informazioni sull'archivio</guimenuitem
+></menuchoice
+> puoi selezionare una copia di sicurezza e visualizzarne il contenuto.</para>
+</sect2>
+</sect1>
+
+<sect1 id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+<para
+>&i18n-pimdataexporter;</para>
+<para
+>Copyright del programma 2019 &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Copyright della documentazione &copy; 2019 &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail; </para>
+
+<para
+>Traduzione di Luigi Toscano <email
+>luigi.toscano@tiscali.it</email
+></para
+> &underFDL; &underGPL; </sect1>
+
+&documentation.index;
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

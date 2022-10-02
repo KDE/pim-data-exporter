@@ -1,0 +1,1374 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Shinjo Park <kde@peremen.name>, 2013, 2014, 2015, 2019, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-29 00:47+0000\n"
+"PO-Revision-Date: 2022-07-13 12:13+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "박신조"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#: console/main.cpp:25 console/main.cpp:27
+#, kde-format
+msgid "PIM Data Exporter Console"
+msgstr "PIM 데이터 내보내기 콘솔"
+
+#: console/main.cpp:29
+#, kde-format
+msgid "Copyright © 2015-%1 pimdataexporter authors"
+msgstr "Copyright © 2015-%1 pimdataexporter authors"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Maintainer"
+msgstr "관리자"
+
+#: console/main.cpp:31
+#, kde-format
+msgid "File to log information to."
+msgstr "로그를 기록할 파일입니다."
+
+#: console/main.cpp:34
+#, kde-format
+msgid "Template file to define what data, settings to import or export."
+msgstr "가져오거나 내보낼 데이터, 설정을 정의하는 템플릿 파일입니다."
+
+#: console/main.cpp:37
+#, kde-format
+msgid "Import the given file."
+msgstr "지정한 파일을 가져옵니다."
+
+#: console/main.cpp:39
+#, kde-format
+msgid "Export the given file."
+msgstr "지정한 파일로 내보냅니다."
+
+#: core/abstractimportexportjob.cpp:56
+#, kde-format
+msgid "Task Canceled"
+msgstr "작업 취소됨"
+
+#: core/abstractimportexportjob.cpp:116
+#, kde-format
+msgid "\"%1\" backup done."
+msgstr "\"%1\"을(를) 백업했습니다."
+
+#: core/abstractimportexportjob.cpp:118
+#, kde-format
+msgid "\"%1\" cannot be exported."
+msgstr "\"%1\"을(를) 내보낼 수 없습니다."
+
+#: core/abstractimportexportjob.cpp:121
+#, kde-format
+msgid "\"%1\" does not exist."
+msgstr "\"%1\"이(가) 없습니다."
+
+#: core/abstractimportexportjob.cpp:268
+#, kde-format
+msgid "\"%1\" was copied."
+msgstr "\"%1\"이(가) 복사되었습니다."
+
+#: core/abstractimportexportjob.cpp:273
+#, kde-format
+msgid "Restoring \"%1\"..."
+msgstr "\"%1\" 복원 중..."
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "File \"%1\" cannot be copied to \"%2\"."
+msgstr "파일 \"%1\"을(를) \"%2\"(으)로 복사할 수 없습니다."
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "Copy file"
+msgstr "파일 복사"
+
+#: core/abstractimportexportjob.cpp:300
+#, kde-format
+msgid "\"%1\" was restored."
+msgstr "\"%1\"이(가) 복원되었습니다."
+
+#: core/abstractimportexportjob.cpp:385
+#: core/addressbook/importaddressbookjobinterface.cpp:231
+#: core/mail/importmailjobinterface.cpp:424
+#, kde-format
+msgid "Resources restored."
+msgstr "자원을 복원했습니다."
+
+#: core/abstractimportexportjob.cpp:387
+#, kde-format
+msgid "No resources files found."
+msgstr "자원을 찾을 수 없습니다."
+
+#: core/abstractimportexportjob.cpp:448
+#, kde-format
+msgid "Unable to copy file %1"
+msgstr "파일 %1을(를) 복사할 수 없음"
+
+#: core/abstractimportexportjob.cpp:489
+#, kde-format
+msgid "Resource '%1' created."
+msgstr "자원 '%1'을(를) 만들었습니다."
+
+#: core/abstractimportexportjob.cpp:504
+#, kde-format
+msgid "Failed to synchronize '%1'."
+msgstr "'%1'을(를) 동기화할 수 없습니다."
+
+#: core/abstractimportexportjob.cpp:509
+#, kde-format
+msgid "Resource '%1' synchronized."
+msgstr "자원 '%1'을(를) 동기화했습니다."
+
+#: core/abstractimportexportjob.cpp:515
+#, kde-format
+msgid "All resources synchronized."
+msgstr "모든 자원을 동기화했습니다."
+
+#: core/abstractimportexportjob.cpp:541
+#, kde-format
+msgid "Start synchronizing..."
+msgstr "동기화 시작 중..."
+
+#: core/abstractimportexportjob.cpp:578
+#, kde-format
+msgid "Directory \"%1\" added to backup file."
+msgstr "디렉터리 \"%1\"을(를) 백업 파일에 추가했습니다."
+
+#: core/abstractimportexportjob.cpp:580
+#, kde-format
+msgid "Directory \"%1\" cannot be added to backup file."
+msgstr "디렉터리 \"%1\"을(를) 백업 파일에 추가할 수 없습니다."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAddressBook settings..."
+msgstr "KAddressBook 설정을 내보내는 중..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:29
+#, kde-format
+msgid "Export KAddressBook settings"
+msgstr "KAddressBook 설정 내보내기"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:42
+#: core/alarm/exportalarmjobinterface.cpp:84
+#: core/calendar/exportcalendarjobinterface.cpp:96
+#: core/mail/exportmailjobinterface.cpp:668
+#: core/notes/exportnotesjobinterface.cpp:53
+#, kde-format
+msgid "Backing up resources..."
+msgstr "자원 백업 중..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:102
+#: core/alarm/exportalarmjobinterface.cpp:76
+#: core/calendar/exportcalendarjobinterface.cpp:75
+#: core/mail/exportmailjobinterface.cpp:690
+#: core/notes/exportnotesjobinterface.cpp:150
+#, kde-format
+msgid "Resources backup done."
+msgstr "자원을 백업했습니다."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:109
+#: core/akregator/exportakregatorjobinterface.cpp:72
+#: core/alarm/exportalarmjobinterface.cpp:109
+#: core/calendar/exportcalendarjobinterface.cpp:228
+#: core/mail/exportmailjobinterface.cpp:167
+#: core/notes/exportnotesjobinterface.cpp:75
+#, kde-format
+msgid "Backing up config..."
+msgstr "설정 백업 중..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:150
+#: core/akregator/exportakregatorjobinterface.cpp:79
+#: core/alarm/exportalarmjobinterface.cpp:135
+#: core/calendar/exportcalendarjobinterface.cpp:248
+#: core/mail/exportmailjobinterface.cpp:552
+#: core/notes/exportnotesjobinterface.cpp:108
+#, kde-format
+msgid "Config backup done."
+msgstr "설정을 백업했습니다."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:41
+#, kde-format
+msgid "Starting to import KAddressBook settings..."
+msgstr "KAddressBook 설정을 가져오는 중..."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:43
+#, kde-format
+msgid "Import KAddressBook settings"
+msgstr "KAddressBook 설정 가져오기"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:92
+#: core/akregator/importakregatorjobinterface.cpp:93
+#: core/alarm/importalarmjobinterface.cpp:82
+#: core/calendar/importcalendarjobinterface.cpp:90
+#: core/notes/importnotesjobinterface.cpp:80
+#, kde-format
+msgid "Restore configs..."
+msgstr "설정 복원 중..."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:109
+#: core/akregator/importakregatorjobinterface.cpp:99
+#: core/alarm/importalarmjobinterface.cpp:98
+#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/mail/importmailjobinterface.cpp:866
+#: core/notes/importnotesjobinterface.cpp:109
+#, kde-format
+msgid "Config restored."
+msgstr "설정을 복원했습니다."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:162
+#: core/addressbook/importaddressbookjobinterface.cpp:163
+#: core/alarm/importalarmjobinterface.cpp:114
+#: core/alarm/importalarmjobinterface.cpp:115
+#: core/calendar/importcalendarjobinterface.cpp:281
+#: core/calendar/importcalendarjobinterface.cpp:282
+#: core/mail/importmailjobinterface.cpp:199
+#: core/mail/importmailjobinterface.cpp:200
+#: core/notes/importnotesjobinterface.cpp:148
+#: core/notes/importnotesjobinterface.cpp:149
+#, kde-format
+msgid "Restore resources..."
+msgstr "자원 복원 중..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:24
+#, kde-format
+msgid "Start export Akregator settings..."
+msgstr "Akregator 설정을 내보내는 중..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:25
+#, kde-format
+msgid "Export Akregator settings"
+msgstr "Akregator 설정 내보내기"
+
+#: core/akregator/exportakregatorjobinterface.cpp:87
+#, kde-format
+msgid "Backing up data..."
+msgstr "데이터 백업 중..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:94
+#: core/notes/exportnotesjobinterface.cpp:46
+#, kde-format
+msgid "\"%1\" directory cannot be added to backup file."
+msgstr "디렉터리 \"%1\"을(를) 백업 파일에 추가할 수 없습니다."
+
+#: core/akregator/exportakregatorjobinterface.cpp:97
+#, kde-format
+msgid "Data backup done."
+msgstr "데이터를 백업했습니다."
+
+#: core/akregator/importakregatorjobinterface.cpp:29
+#, kde-format
+msgid "Starting to import Akregator settings..."
+msgstr "Akregator 설정 가져오기 시작 중..."
+
+#: core/akregator/importakregatorjobinterface.cpp:32
+#, kde-format
+msgid "Import Akregator settings"
+msgstr "Akregator 설정 가져오기"
+
+#: core/akregator/importakregatorjobinterface.cpp:106
+#: core/notes/importnotesjobinterface.cpp:116
+#, kde-format
+msgid "Restore data..."
+msgstr "데이터 복원..."
+
+#: core/akregator/importakregatorjobinterface.cpp:112
+#: core/notes/importnotesjobinterface.cpp:129
+#, kde-format
+msgid "Data restored."
+msgstr "데이터를 복원했습니다."
+
+#: core/alarm/exportalarmjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAlarm settings..."
+msgstr "KAlarm 설정을 내보내는 중..."
+
+#: core/alarm/exportalarmjobinterface.cpp:29
+#, kde-format
+msgid "Export KAlarm settings"
+msgstr "KAlarm 설정 내보내기"
+
+#: core/alarm/importalarmjobinterface.cpp:32
+#, kde-format
+msgid "Starting to import KAlarm settings..."
+msgstr "KAlarm 설정 가져오기 시작 중..."
+
+#: core/alarm/importalarmjobinterface.cpp:33
+#, kde-format
+msgid "Import KAlarm settings"
+msgstr "KAlarm 설정 가져오기"
+
+#: core/archivestorage.cpp:43
+#, kde-format
+msgid "Archive cannot be opened in write mode."
+msgstr "쓰기 모드로 보관 파일을 열 수 없습니다."
+
+#: core/archivestorage.cpp:45 core/utils.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Archive cannot be opened in read mode."
+msgstr "읽기 모드로 보관 파일을 열 수 없습니다."
+
+#: core/backupresourcefilejobbase.cpp:47
+#, kde-format
+msgid "\"%1\" is not a file."
+msgstr "\"%1\"이(가) 파일이 아닙니다."
+
+#: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
+#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
+#, kde-format
+msgid "\"%1\" was backed up."
+msgstr "\"%1\"을(를) 백업했습니다."
+
+#: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
+#: core/storeresourcejob.cpp:59
+#, kde-format
+msgid "\"%1\" file cannot be added to backup file."
+msgstr "\"%1\"을(를) 백업 파일에 추가할 수 없습니다."
+
+#: core/calendar/exportcalendarjobinterface.cpp:82
+#, kde-format
+msgid "Start export KOrganizer settings..."
+msgstr "KOrganizer 설정을 내보내는 중..."
+
+#: core/calendar/exportcalendarjobinterface.cpp:83
+#, kde-format
+msgid "Export KOrganizer settings"
+msgstr "KOrganizer 설정 내보내기"
+
+#: core/calendar/importcalendarjobinterface.cpp:35
+#, kde-format
+msgid "Starting to import KOrganizer settings..."
+msgstr "KOrganizer 설정 가져오기 시작 중..."
+
+#: core/calendar/importcalendarjobinterface.cpp:37
+#, kde-format
+msgid "Import KOrganizer settings"
+msgstr "KOrganizer 설정 가져오기"
+
+#: core/mail/exportmailjobinterface.cpp:43
+#, kde-format
+msgid "Start export KMail settings..."
+msgstr "KMail 설정 내보내기 시작 중..."
+
+#: core/mail/exportmailjobinterface.cpp:44
+#, kde-format
+msgid "Export KMail settings"
+msgstr "KMail 설정 내보내기"
+
+#: core/mail/exportmailjobinterface.cpp:112
+#, kde-format
+msgid "Backing up Folder Attributes..."
+msgstr "폴더 속성 백업 중..."
+
+#: core/mail/exportmailjobinterface.cpp:114
+#, kde-format
+msgid "Backing up Mails..."
+msgstr "메일 백업 중..."
+
+#: core/mail/exportmailjobinterface.cpp:115
+#, kde-format
+msgid "Start export resource..."
+msgstr "자원 내보내기 시작 중..."
+
+#: core/mail/exportmailjobinterface.cpp:123
+#, kde-format
+msgid "Backing up transports..."
+msgstr "전송 방식 백업 중..."
+
+#: core/mail/exportmailjobinterface.cpp:128
+#: core/mail/exportmailjobinterface.cpp:140
+#, kde-format
+msgid "Transports backup done."
+msgstr "전송 방식을 백업했습니다."
+
+#: core/mail/exportmailjobinterface.cpp:142
+#, kde-format
+msgid "Transport file cannot be added to backup file."
+msgstr "전송 방식 파일을 백업 파일에 추가할 수 없습니다."
+
+#: core/mail/exportmailjobinterface.cpp:557
+#, kde-format
+msgid "Backing up identity..."
+msgstr "프로필 백업 중..."
+
+#: core/mail/exportmailjobinterface.cpp:596
+#, kde-format
+msgid "vCard file \"%1\" cannot be saved."
+msgstr "vCard 파일 \"%1\"을(를) 저장할 수 없습니다."
+
+#: core/mail/exportmailjobinterface.cpp:609
+#, kde-format
+msgid "Identity backup done."
+msgstr "프로필을 백업했습니다."
+
+#: core/mail/exportmailjobinterface.cpp:611
+#, kde-format
+msgid "Identity file cannot be added to backup file."
+msgstr "프로필을 백업 파일에 추가할 수 없습니다."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:139
+#, kde-format
+msgid "Filters backup done."
+msgstr "필터를 백업했습니다."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#, kde-format
+msgid "Filters cannot be exported."
+msgstr "필터를 내보낼 수 없습니다."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#, kde-format
+msgid "Backing up Folder Attributes done."
+msgstr "폴더 속성을 백업했습니다."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#, kde-format
+msgid "Folder Attributes cannot be exported."
+msgstr "폴더 속성을 내보낼 수 없습니다."
+
+#: core/mail/importmailjobinterface.cpp:43
+#, kde-format
+msgid "Starting to import KMail settings..."
+msgstr "KMail 설정 가져오기 시작 중..."
+
+#: core/mail/importmailjobinterface.cpp:44
+#, kde-format
+msgid "Import KMail settings"
+msgstr "KMail 설정 가져오기"
+
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
+#, kde-format
+msgid "Restore transports..."
+msgstr "전송 방식 복원 중..."
+
+#: core/mail/importmailjobinterface.cpp:173
+#, kde-format
+msgid "mailtransports file could not be found in the archive."
+msgstr "보관 파일에서 mailtransports 파일을 찾을 수 없습니다."
+
+#: core/mail/importmailjobinterface.cpp:188
+#, kde-format
+msgid "Transports restored."
+msgstr "전송 방식을 복원했습니다."
+
+#: core/mail/importmailjobinterface.cpp:190
+#, kde-format
+msgid "Failed to restore transports file."
+msgstr "transports 파일을 복원할 수 없습니다."
+
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
+#, kde-format
+msgid "Restore mails..."
+msgstr "메일 복원 중..."
+
+#: core/mail/importmailjobinterface.cpp:555
+#, kde-format
+msgid "Mails restored."
+msgstr "메일을 복원했습니다."
+
+#: core/mail/importmailjobinterface.cpp:562
+#, kde-format
+msgid "Restore config..."
+msgstr "설정 복원 중..."
+
+#: core/mail/importmailjobinterface.cpp:565
+#, kde-format
+msgid "filters file could not be found in the archive."
+msgstr "보관 파일에서 filters 파일을 찾을 수 없습니다."
+
+#: core/mail/importmailjobinterface.cpp:569
+#, kde-format
+msgid "Restore filters..."
+msgstr "필터 복원 중..."
+
+#: core/mail/importmailjobinterface.cpp:618
+#, kde-format
+msgid "Filters restored."
+msgstr "필터를 복원했습니다."
+
+#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:904
+#, kde-format
+msgid "Restoring identities..."
+msgstr "프로필 복원 중..."
+
+#: core/mail/importmailjobinterface.cpp:902
+#, kde-format
+msgid "emailidentities file could not be found in the archive."
+msgstr "보관 파일에서 emailidentities 파일을 찾을 수 없습니다."
+
+#: core/mail/importmailjobinterface.cpp:963
+#, kde-format
+msgid "Identities restored."
+msgstr "프로필을 복원했습니다."
+
+#: core/mail/importmailjobinterface.cpp:965
+#, kde-format
+msgid "Failed to restore identity file."
+msgstr "identity 파일을 복원할 수 없습니다."
+
+#: core/mail/importmailjobinterface.cpp:1287
+#, kde-format
+msgid "\"%1\" migration done."
+msgstr "\"%1\"을(를) 이전했습니다."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:35
+#, kde-format
+msgid "Restoring folder attributes..."
+msgstr "폴더 속성 복원 중..."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:41
+#, kde-format
+msgid "Restoring Folder Attributes done."
+msgstr "폴더 속성을 복원했습니다."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:45
+#, kde-format
+msgid "Folder Attributes cannot be restored."
+msgstr "폴더 속성을 복원할 수 없습니다."
+
+#: core/notes/exportnotesjobinterface.cpp:28
+#, kde-format
+msgid "Start export KNotes settings..."
+msgstr "KNotes 설정을 내보내는 중..."
+
+#: core/notes/exportnotesjobinterface.cpp:29
+#, kde-format
+msgid "Export KNotes settings"
+msgstr "KNotes 설정 내보내기"
+
+#: core/notes/importnotesjobinterface.cpp:49
+#, kde-format
+msgid "Starting to import KNotes settings..."
+msgstr "KNotes 설정 가져오기 시작 중..."
+
+#: core/notes/importnotesjobinterface.cpp:52
+#, kde-format
+msgid "Import KNotes settings"
+msgstr "KNotes 설정 가져오기"
+
+#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#, kde-format
+msgid "No data selected."
+msgstr "데이터를 선택하지 않았습니다."
+
+#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#, kde-format
+msgid "Unable to open file \"%1\"."
+msgstr "파일 \"%1\"을(를) 열 수 없습니다."
+
+#: core/pimdatabackuprestore.cpp:94
+#, kde-format
+msgid "Starting to backup data in '%1'"
+msgstr "'%1'의 데이터 백업 시작 중"
+
+#: core/pimdatabackuprestore.cpp:183
+#, kde-format
+msgid "Backup in '%1' done."
+msgstr "'%1'에 백업이 완료되었습니다."
+
+#: core/pimdatabackuprestore.cpp:279
+#, kde-format
+msgid "Starting to restore data from '%1'"
+msgstr "'%1'에서 데이터 복원 시작 중"
+
+#: core/pimdatabackuprestore.cpp:287
+#, kde-format
+msgid "Restoring data from '%1' done."
+msgstr "'%1'에서 데이터를 복원했습니다."
+
+#: core/pimdatabackupthread.cpp:37
+#, kde-format
+msgid "Impossible to open archive file."
+msgstr "보관 파일을 열 수 없습니다."
+
+#: core/pimdatabackupthread.cpp:44
+#, kde-format
+msgid "Impossible to backup \"%1\"."
+msgstr "\"%1\"을(를) 백업할 수 없습니다."
+
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
+#, kde-format
+msgid "Resource file \"%1\" cannot be added to backup file."
+msgstr "자원 파일 \"%1\"을(를) 백업 파일에 추가할 수 없습니다."
+
+#: core/resourceconverterbase.cpp:206
+#, kde-format
+msgid "Resource config file \"%1\" doesn't exist."
+msgstr "자원 설정 파일 \"%1\"이(가) 없습니다."
+
+#: core/utils.cpp:181
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: core/utils.cpp:183
+#, kde-format
+msgid "KAddressBook"
+msgstr "KAddressBook"
+
+#: core/utils.cpp:185
+#, kde-format
+msgid "KAlarm"
+msgstr "KAlarm"
+
+#: core/utils.cpp:187
+#, kde-format
+msgid "KOrganizer"
+msgstr "KOrganizer"
+
+#: core/utils.cpp:189
+#, kde-format
+msgid "KNotes"
+msgstr "KNotes"
+
+#: core/utils.cpp:191
+#, kde-format
+msgid "Akregator"
+msgstr "Akregator"
+
+#: core/utils.cpp:205
+#, kde-format
+msgid "Identity"
+msgstr "프로필"
+
+#: core/utils.cpp:207
+#, kde-format
+msgid "Mails"
+msgstr "메일"
+
+#: core/utils.cpp:209
+#, kde-format
+msgid "Mail Transport"
+msgstr "메일 전송 방법"
+
+#: core/utils.cpp:211
+#, kde-format
+msgid "Resources"
+msgstr "자원"
+
+#: core/utils.cpp:213
+#, kde-format
+msgid "Config"
+msgstr "설정"
+
+#: core/utils.cpp:215
+#, kde-format
+msgid "Data"
+msgstr "데이터"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Archive File Structure"
+msgstr "보관 파일 구조"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:31
+#, kde-format
+msgid "Backup Archive Structure:"
+msgstr "백업 파일 구조:"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:57
+#, kde-format
+msgid "backup-structure.txt file was not found."
+msgstr "backup-structure.txt 파일을 찾을 수 없습니다."
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure PimDataExporter"
+msgstr "PIM 설정 내보내기 설정"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
+#, kde-format
+msgid "General"
+msgstr "일반"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:51
+#, kde-format
+msgid "User Feedback"
+msgstr "사용자 피드백"
+
+#: gui/dialog/selectiontypedialog.cpp:22
+#, kde-format
+msgid "Use this template by default"
+msgstr "기본값으로 이 템플릿 사용"
+
+#: gui/dialog/selectiontypedialog.cpp:23
+#, kde-format
+msgid "Save as Template..."
+msgstr "템플릿으로 저장..."
+
+#: gui/dialog/selectiontypedialog.cpp:24
+#, kde-format
+msgid "Load Template..."
+msgstr "템플릿 불러오기..."
+
+#: gui/dialog/selectiontypedialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Type"
+msgstr "종류 선택"
+
+#: gui/dialog/selectiontypedialog.cpp:47
+#: gui/dialog/synchronizeresourcedialog.cpp:40
+#, kde-format
+msgid "Select All"
+msgstr "모두 선택"
+
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:45
+#, kde-format
+msgid "Unselect All"
+msgstr "모두 선택 해제"
+
+#: gui/dialog/showarchivestructuredialog.cpp:33
+#, kde-format
+msgid "Extract Selected File"
+msgstr "선택한 파일 추출"
+
+#: gui/dialog/showarchivestructuredialog.cpp:34
+#, kde-format
+msgid "Open Selected File"
+msgstr "선택한 파일 열기"
+
+#: gui/dialog/showarchivestructuredialog.cpp:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Show Archive Content on file \"%1\""
+msgstr "파일 \"%1\"의 내용 보기"
+
+#: gui/dialog/showarchivestructuredialog.cpp:44
+#, kde-format
+msgid "Search..."
+msgstr "검색..."
+
+#: gui/dialog/showarchivestructuredialog.cpp:47
+#, kde-format
+msgid "Save As Text..."
+msgstr "텍스트로 저장..."
+
+#: gui/dialog/showarchivestructuredialog.cpp:127
+#, kde-format
+msgid "Select Directory"
+msgstr "디렉터리 선택"
+
+#: gui/dialog/showarchivestructuredialog.cpp:133
+#, kde-format
+msgid "Do you want to overwrite %1?"
+msgstr "%1을(를) 덮어쓰시겠습니까?"
+
+#: gui/dialog/showarchivestructuredialog.cpp:134
+#, kde-format
+msgid "File Already Exist"
+msgstr "파일이 이미 존재함"
+
+#: gui/dialog/showarchivestructuredialog.cpp:142
+#, kde-format
+msgid "Impossible to copy %1 in %2."
+msgstr "%2에 %1을(를) 복사할 수 없습니다."
+
+#: gui/dialog/showarchivestructuredialog.cpp:165
+#, kde-format
+msgctxt "qfiledialog filter files text"
+msgid "Text Files"
+msgstr "텍스트 파일"
+
+#: gui/dialog/showarchivestructuredialog.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Log File"
+msgstr "로그 파일 내보내기"
+
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Cannot open archive"
+msgstr "압축 파일을 열 수 없음"
+
+#: gui/dialog/showarchivestructuredialog.cpp:182
+#, kde-format
+msgid "Info"
+msgstr "정보"
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "This is not pim archive."
+msgstr "PIM 보관 파일이 아닙니다."
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "Show information"
+msgstr "정보 보기"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Synchronize Resources"
+msgstr "자원 동기화"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:26
+#, kde-format
+msgid ""
+"Some resources were added but data were not sync. Select resources that you "
+"want to sync:"
+msgstr ""
+"일부 자원을 추가했으나 데이터가 동기화되지 않았습니다. 동기화할 자원을 선택하"
+"십시오:"
+
+#: gui/importexportprogressindicatorgui.cpp:35
+#: gui/job/fullsynchronizeresourcesjob.cpp:39
+#, kde-format
+msgid "Cancel"
+msgstr "취소"
+
+#: gui/importexportprogressindicatorgui.cpp:66
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
+msgstr "\"%1\"이(가) 이미 존재합니다. 덮어쓰거나 합치시겠습니까?"
+
+#: gui/importexportprogressindicatorgui.cpp:67
+#: gui/importexportprogressindicatorgui.cpp:79
+#: gui/importexportprogressindicatorgui.cpp:92
+#, kde-format
+msgid "Restore"
+msgstr "복원"
+
+#: gui/importexportprogressindicatorgui.cpp:69
+#, kde-format
+msgid "Merge"
+msgstr "합치기"
+
+#: gui/importexportprogressindicatorgui.cpp:78
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it?"
+msgstr "\"%1\"이(가) 이미 존재합니다. 덮어쓰시겠습니까?"
+
+#: gui/importexportprogressindicatorgui.cpp:91
+#, kde-format
+msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
+msgstr "디렉터리 \"%1\"이(가) 이미 존재합니다. 덮어쓰시겠습니까?"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:41
+#, kde-format
+msgctxt "@title:window"
+msgid "Synchronize resources"
+msgstr "자원 동기화"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:42
+#, kde-format
+msgid "Synchronize resources... It can take some time."
+msgstr "자원 동기화 중... 시간이 걸립니다."
+
+#: gui/pimdatabackuprestoreui.cpp:24
+#, kde-format
+msgid ""
+"The archive was created by a newer version of this program. It might contain "
+"additional data which will be skipped during import. Do you want to import "
+"it?"
+msgstr ""
+"이 보관 파일은 프로그램의 새 버전에서 만들었습니다. 가져오는 중 건너뛸 데이터"
+"가 들어 있을 수도 있습니다. 계속 진행하시겠습니까?"
+
+#: gui/pimdatabackuprestoreui.cpp:26
+#, kde-format
+msgid "Not correct version"
+msgstr "버전이 일치하지 않음"
+
+#: gui/pimdatabackuprestoreui.cpp:27
+#, kde-format
+msgctxt "@action:button"
+msgid "Import"
+msgstr "가져오기"
+
+#: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
+#, kde-format
+msgid "PIM Data Exporter"
+msgstr "PIM 데이터 내보내기"
+
+#: gui/pimdatacommandlineoption.cpp:41
+#, kde-format
+msgid "Copyright © 2012-%1 pimdataexporter authors"
+msgstr "Copyright © 2012-%1 pimdataexporter authors"
+
+#: gui/pimdatacommandlineoption.cpp:46
+#, kde-format
+msgid "Template file uses to define what data, settings to import or export"
+msgstr "가져오거나 내보낼 데이터, 설정을 정의하는 템플릿 파일"
+
+#: gui/pimdatacommandlineoption.cpp:48
+#, kde-format
+msgid "Import the given file"
+msgstr "지정한 파일 가져오기"
+
+#: gui/pimdatacommandlineoption.cpp:49
+#, kde-format
+msgid "Export the given file"
+msgstr "지정한 파일로 내보내기"
+
+#: gui/pimdatacommandlineoption.cpp:50
+#, kde-format
+msgid "File or url. The user will be asked whether to import or export."
+msgstr "파일이나 URL입니다. 사용자에게 가져오거나 내보낼지 여부를 물어봅니다."
+
+#: gui/pimdatacommandlineoption.cpp:52
+#, kde-format
+msgid "Lists the available options for user feedback"
+msgstr "사용자 피드백 옵션을 표시합니다"
+
+#. i18n: ectx: Menu (file)
+#: gui/pimdataexporter.rc:8
+#, kde-format
+msgid "&File"
+msgstr "파일(&F)"
+
+#. i18n: ectx: Menu (tools)
+#: gui/pimdataexporter.rc:21
+#, kde-format
+msgid "&Tools"
+msgstr "도구(&T)"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: gui/pimdataexporter.rc:28
+#, kde-format
+msgid "Main Toolbar"
+msgstr "주 도구 모음"
+
+#: gui/pimdataexporterwindow.cpp:126
+#, kde-format
+msgid "Full sync starts..."
+msgstr "전체 동기화 시작 중..."
+
+#: gui/pimdataexporterwindow.cpp:156
+#, kde-format
+msgid "Full sync finished."
+msgstr "전체 동기화가 완료되었습니다."
+
+#: gui/pimdataexporterwindow.cpp:163
+#, kde-format
+msgid "Full sync for \"%1\" done."
+msgstr "\"%1\"의 전체 동기화가 완료되었습니다."
+
+#: gui/pimdataexporterwindow.cpp:168
+#, kde-format
+msgid "Full sync for \"%1\" failed."
+msgstr "\"%1\"의 전체 동기화가 실패했습니다."
+
+#: gui/pimdataexporterwindow.cpp:174
+#, kde-format
+msgid ""
+"For restoring data, you must use \"pimdataexporter\". Be careful as it can "
+"overwrite your existing settings and data."
+msgstr ""
+"데이터를 복원하려면 \"pimdataexporter\"를 사용하십시오. 기존 설정 및 데이터"
+"를 덮어쓸 수 있습니다."
+
+#: gui/pimdataexporterwindow.cpp:176 gui/pimdataexporterwindow.cpp:281
+#: gui/pimdataexporterwindow.cpp:359
+#, kde-format
+msgid "Backup"
+msgstr "백업"
+
+#: gui/pimdataexporterwindow.cpp:203
+#, kde-format
+msgid "Export Data..."
+msgstr "데이터 내보내기..."
+
+#: gui/pimdataexporterwindow.cpp:208
+#, kde-format
+msgid "Import Data..."
+msgstr "데이터 가져오기..."
+
+#: gui/pimdataexporterwindow.cpp:213
+#, kde-format
+msgid "Save log..."
+msgstr "기록 저장..."
+
+#: gui/pimdataexporterwindow.cpp:216
+#, kde-format
+msgid "Show Archive Structure Information..."
+msgstr "보관 파일 구조 정보 보기..."
+
+#: gui/pimdataexporterwindow.cpp:219
+#, kde-format
+msgid "Show Archive Information..."
+msgstr "보관 파일 정보 보기..."
+
+#: gui/pimdataexporterwindow.cpp:223
+#, kde-format
+msgid "Show Information on current Archive..."
+msgstr "현재 보관 파일의 정보 표시..."
+
+#: gui/pimdataexporterwindow.cpp:259
+#, kde-format
+msgid "Select Archive"
+msgstr "보관 파일 선택"
+
+#: gui/pimdataexporterwindow.cpp:259
+#, kde-format
+msgid "Zip file"
+msgstr "ZIP 파일"
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Log is empty."
+msgstr "기록이 비어 있습니다."
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Save log"
+msgstr "기록 저장"
+
+#: gui/pimdataexporterwindow.cpp:275
+#, kde-format
+msgid "HTML Files (*.html)"
+msgstr "HTML 파일 (*.html)"
+
+#: gui/pimdataexporterwindow.cpp:281
+#, kde-format
+msgid "Please quit all kdepim applications before backing up your data."
+msgstr "데이터를 백업하기 전에 모든 KDE PIM 프로그램을 종료하십시오."
+
+#: gui/pimdataexporterwindow.cpp:304
+#, kde-format
+msgid "Create backup"
+msgstr "백업 만들기"
+
+#: gui/pimdataexporterwindow.cpp:306
+#, kde-format
+msgid "Zip file (*.zip)"
+msgstr "ZIP 파일 (*.zip)"
+
+#: gui/pimdataexporterwindow.cpp:316
+#, kde-format
+msgid "Backup in progress..."
+msgstr "백업 진행 중..."
+
+#: gui/pimdataexporterwindow.cpp:358
+#, kde-format
+msgid ""
+"Before restoring data you must close all kdepim applications. Do you want to "
+"continue?"
+msgstr ""
+"데이터를 복원하기 전에 모든 KDE PIM 프로그램을 종료하십시오. 계속 진행하시겠"
+"습니까?"
+
+#: gui/pimdataexporterwindow.cpp:372
+#, kde-format
+msgid "Restore backup"
+msgstr "백업 복원"
+
+#: gui/pimdataexporterwindow.cpp:374
+#, kde-format
+msgid "Zip File"
+msgstr "ZIP 파일"
+
+#: gui/pimdataexporterwindow.cpp:406
+#, kde-format
+msgid "Restore in progress..."
+msgstr "복원 진행 중..."
+
+#: gui/trayicon/pimdatatrayicon.cpp:13
+#, kde-format
+msgid "Pim Data Exporter"
+msgstr "PIM 데이터 내보내기"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:16
+#, kde-format
+msgid "Always Override File"
+msgstr "항상 파일 덮어쓰기"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:17
+#, kde-format
+msgid "Always Override Directory"
+msgstr "항상 디렉터리 덮어쓰기"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:18
+#, kde-format
+msgid "Always Merge Config File"
+msgstr "항상 설정 파일 합치기"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:23
+#, kde-format
+msgid "Import"
+msgstr "가져오기"
+
+#: gui/widgets/selectiontypetreewidget.cpp:351
+#, kde-format
+msgid "Template Files (*.xml)"
+msgstr "템플릿 파일 (*.xml)"
+
+#~ msgid "&New"
+#~ msgstr "새로 만들기(&N)"
+
+#~ msgid "&Edit"
+#~ msgstr "편집(&E)"
+
+#~ msgid "&View"
+#~ msgstr "보기(&V)"
+
+#~ msgid "&Action"
+#~ msgstr "동작(&A)"
+
+#~ msgid "&Settings"
+#~ msgstr "설정(&S)"
+
+#~ msgid "&Help"
+#~ msgstr "도움말(&H)"
+
+#~ msgid "&Export"
+#~ msgstr "내보내기(&E)"
+
+#~ msgid "&Collection"
+#~ msgstr "모음집(&A)"
+
+#~ msgid "&Item"
+#~ msgstr "항목(&I)"
+
+#~ msgid "&Cache"
+#~ msgstr "캐시(&C)"
+
+#~ msgid "&Server"
+#~ msgstr "서버(&S)"
+
+#~ msgid "&Certificates"
+#~ msgstr "인증서(&C)"
+
+#~ msgid "&Window"
+#~ msgstr "창(&W)"
+
+#~ msgctxt "@title:menu New message, folder or new window."
+#~ msgid "New"
+#~ msgstr "새로 만들기"
+
+#~ msgid "&Go"
+#~ msgstr "이동(&G)"
+
+#~ msgid "F&older"
+#~ msgstr "폴더(&O)"
+
+#~ msgid "Apply Filters on Folder"
+#~ msgstr "폴더에 필터 적용"
+
+#~ msgid "Apply Filters on Folder and all its Subfolders"
+#~ msgstr "이 폴더와 모든 하위 폴더에 필터 적용"
+
+#~ msgid "&Message"
+#~ msgstr "메시지(&M)"
+
+#~ msgid "Reply Special"
+#~ msgstr "특수 답장"
+
+#~ msgid "&Forward"
+#~ msgstr "전달(&F)"
+
+#~ msgid "A&pply Filter"
+#~ msgstr "필터 적용(&P)"
+
+#~ msgid "&Options"
+#~ msgstr "옵션(&O)"
+
+#~ msgid "&Attach"
+#~ msgstr "첨부(&A)"
+
+#~ msgid "HTML Toolbar"
+#~ msgstr "HTML 도구 모음"
+
+#~ msgid "Text Direction Toolbar"
+#~ msgstr "텍스트 방향 도구 모음"
+
+#~ msgid "Navigator"
+#~ msgstr "탐색기"
+
+#~ msgid "PIM Setting Exporter"
+#~ msgstr "PIM 설정 내보내기"
+
+#~ msgid "Start export Blogilo settings..."
+#~ msgstr "Blogilo 설정을 내보내는 중..."
+
+#, fuzzy
+#~| msgid "Start export Blogilo settings..."
+#~ msgid "Export Blogilo settings"
+#~ msgstr "Blogilo 설정을 내보내는 중..."
+
+#, fuzzy
+#~| msgid "Start import Blogilo settings..."
+#~ msgid "Starting to import Blogilo settings..."
+#~ msgstr "Blogilo 설정을 가져오는 중..."
+
+#, fuzzy
+#~| msgid "Start export Blogilo settings..."
+#~ msgid "Import Blogilo settings"
+#~ msgstr "Blogilo 설정을 내보내는 중..."
+
+#~ msgid "Blogilo"
+#~ msgstr "Blogilo"
+
+#~ msgid "Backup infos."
+#~ msgstr "정보를 백업합니다."
+
+#, fuzzy
+#~| msgid ""
+#~| "Before to backup data, close all kdepim applications. Do you want to "
+#~| "continue?"
+#~ msgid ""
+#~ "Before backing up data, it is recommended to quit all kdepim applications."
+#~ msgstr ""
+#~ "데이터를 백업하기 전에 모든 KDE PIM 프로그램을 닫으십시오. 계속 진행하시겠"
+#~ "습니까?"
+
+#~ msgid "Akonadi database file could not be found in the archive."
+#~ msgstr "보관 파일에서 Akonadi 데이터베이스 파일을 찾을 수 없습니다."
+
+#~ msgid "Restore Akonadi Database..."
+#~ msgstr "Akonadi 데이터베이스 복원 중..."
+
+#~ msgid "Database driver \"%1\" not supported."
+#~ msgstr "데이터베이스 드라이버 \"%1\"을(를) 지원하지 않습니다."
+
+#~ msgid "Could not find \"%1\" necessary to restore database."
+#~ msgstr "데이터베이스를 복원할 \"%1\"을(를) 찾을 수 없습니다."
+
+#~ msgid "Failed to restore Akonadi Database."
+#~ msgstr "Akonadi 데이터베이스를 복원할 수 없습니다."
+
+#~ msgid "Akonadi Database restored."
+#~ msgstr "Akonadi 데이터베이스를 복원했습니다."
+
+#~ msgid "Akonadi Database"
+#~ msgstr "Akonadi 데이터베이스"
+
+#~ msgid "Overwrite"
+#~ msgstr "덮어쓰기"
+
+#~ msgid "Copyright © 2012-2015 pimsettingexporter authors"
+#~ msgstr "Copyright © 2012-2015 pimsettingexporter authors"
+
+#~ msgid "Back Up Data..."
+#~ msgstr "데이터 백업..."
+
+#~ msgid "Copyright © 2015 pimsettingexporter authors"
+#~ msgstr "Copyright © 2015 pimsettingexporter authors"
+
+#~ msgid "mysqldump not found. Export data aborted"
+#~ msgstr "mysqldump를 찾을 수 없습니다. 데이터 내보내기를 중단합니다"
+
+#~ msgid "Backing up Akonadi Database..."
+#~ msgstr "Akonadi 데이터베이스 백업 중..."
+
+#~ msgid "Could not find \"%1\" necessary to dump database."
+#~ msgstr "데이터베이스를 덤프할 \"%1\"을(를) 찾을 수 없습니다."
+
+#~ msgid "Akonadi Database \"%1\" cannot be added to backup file."
+#~ msgstr "Akonadi 데이터베이스 \"%1\"을(를) 백업 파일에 추가할 수 없습니다."
+
+#~ msgid "Akonadi Database backup done."
+#~ msgstr "Akonadi 데이터베이스를 백업했습니다."
+
+#~ msgid "Theme directory \"%1\" cannot be added to backup file."
+#~ msgstr "테마 디렉터리 \"%1\"을(를) 백업 파일에 추가할 수 없습니다."
+
+#~ msgid "Resource was not configured correctly, not archiving it."
+#~ msgstr "자원이 올바르게 설정되지 않아서 보관하지 않습니다."
+
+#~ msgid "Zip program not found. Install it before to launch this application."
+#~ msgstr ""
+#~ "Zip 프로그램을 찾을 수 없습니다. 이 프로그램을 실행하기 전에 설치하십시오."
+
+#~ msgid "Zip program not found."
+#~ msgstr "Zip 프로그램을 찾을 수 없습니다."
+
+#~ msgid "Mails backup done."
+#~ msgstr "메일을 백업했습니다."
+
+#, fuzzy
+#~| msgid "Copyright © 2012-2014 pimsettingexporter authors"
+#~ msgid "Copyright © 2012-2014 pimsettingexporter authors"
+#~ msgstr "Copyright © 2012-2014 pimsettingexporter authors"
+
+#~ msgid "Start export KJots settings..."
+#~ msgstr "KJots 설정을 내보내는 중..."
+
+#~ msgid "Start import KJots settings..."
+#~ msgstr "KJots 설정을 가져오는 중..."
+
+#~ msgid "KJots"
+#~ msgstr "KJots"
+
+#~ msgid "Start export KNode settings..."
+#~ msgstr "KNode 설정을 내보내는 중..."
+
+#~ msgid "Start import KNode settings..."
+#~ msgstr "KNode 설정을 가져오는 중..."
+
+#~ msgid "KNode"
+#~ msgstr "KNode"
+
+#~ msgid "Backing up Nepomuk Database..."
+#~ msgstr "Nepomuk 데이터베이스 백업 중..."
+
+#~ msgid "Nepomuk Database backup done."
+#~ msgstr "Nepomuk 데이터베이스를 백업하였습니다."
+
+#~ msgid "Nepomuk Database restored."
+#~ msgstr "Nepomuk 데이터베이스를 복원하였습니다."
+
+#~ msgid "Failed to restore Nepomuk Database."
+#~ msgstr "Nepomuk 데이터베이스를 복원할 수 없습니다."
+
+#~ msgid "Nepomuk Database"
+#~ msgstr "Nepomuk 데이터베이스"
+
+#, fuzzy
+#~| msgid "Config"
+#~ msgid "Configs"
+#~ msgstr "설정"
+
+#, fuzzy
+#~| msgid "Transports backup done."
+#~ msgid "Transports Config"
+#~ msgstr "전송 방식을 백업하였습니다."
+
+#, fuzzy
+#~| msgid "Akonadi Database"
+#~ msgid "Akonadi"
+#~ msgstr "Akonadi 데이터베이스"
+
+#~ msgid "Mail \"%1\" file cannot be added to backup file."
+#~ msgstr "메일 \"%1\"을(를) 백업 파일에 추가할 수 없습니다."
+
+#~ msgid "Mail \"%1\" was backuped."
+#~ msgstr "메일 \"%1\"을(를) 백업하였습니다."
+
+#~ msgid "MBox \"%1\" was backuped."
+#~ msgstr "MBox \"%1\"을(를) 백업하였습니다."
+
+#~ msgid "MBox \"%1\" file cannot be added to backup file."
+#~ msgstr "MBox \"%1\"을(를) 백업 파일에 추가할 수 없습니다."

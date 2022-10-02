@@ -1,0 +1,220 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-pimsettingexporter "<application
+>Exportação da Configuração PIM</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Portuguese "INCLUDE"
+> 
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
+]>
+
+<article id="pimsettingexporter" lang="&language;">
+
+<articleinfo id="pimsettingexporterinfo">
+<title
+>O Manual do &i18n-pimsettingexporter;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2016-07-27</date>
+<releaseinfo
+>5.3.40 (Aplicações 16.08)</releaseinfo>
+
+</articleinfo>
+
+
+<sect1 id="introduction">
+<title
+>Introdução</title>
+
+<para
+>O &i18n-pimsettingexporter; permite exportar e importar definições de PIM e o correio local. Poderá criar cópias de segurança e repo-las a partir dos seguintes programas: <simplelist>
+<member
+>&kmail;</member>
+<member
+>&knotes;</member>
+<member
+>&akregator;</member>
+<member
+>&kaddressbook;</member>
+<member
+>&kalarm;</member>
+<member
+>&korganizer;</member>
+<member
+>&blogilo;</member>
+</simplelist>
+</para>
+
+<sect2 id="using-kapp">
+<title
+>Usar o &i18n-pimsettingexporter;</title>
+<para
+>A salvaguarda dos dados é uma boa-prática essencial para todos os utilizadores. O &i18n-pimsettingexporter; é uma ferramenta óptima para salvaguardar ou mover todas as suas definições para uma nova instalação. Também poderá usar o &i18n-pimsettingexporter; para importar as cópias de segurança anteriores.</para>
+<para
+>Poderá usar a opção <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Exportar os Dados do &kmail;...</guimenuitem
+></menuchoice
+> através da janela de mensagem; o &i18n-pimsettingexporter; poderá ser executado como uma aplicação autónoma se executar o &i18n-pimsettingexporter; no lançador de aplicações.</para>
+
+<para
+>Para criar uma cópia de segurança, <action
+>seleccione a opção <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guimenuitem
+>Salvaguardar os Dados...</guimenuitem
+></menuchoice
+></action
+>, que lhe irá pedir para fechar todas as aplicações do 'kdepim'. <warning
+><para
+>Certifique-se que fecha todas as janelas; é possível alguma perda de dados se não o fizer.</para
+></warning
+> Assim que as tiver fechado, carregue em <guibutton
+>Sim</guibutton
+> para continuar ou em <guibutton
+>Não</guibutton
+> para cancelar.</para>
+<para
+>Ser-lhe-á pedido para criar um nome para a cópia de segurança, indicando esse nome no campo de texto <guilabel
+>Ficheiro</guilabel
+>, &eg; <replaceable
+>minhas-definicoes</replaceable
+>. O tipo de ficheiro que é usado na gravação é o <filename role="extension"
+>.zip</filename
+>. </para>
+<para
+>O ecrã seguinte permitir-lhe-á seleccionar o que deseja salvaguardar; por omissão, está tudo seleccionado. <note
+> <para
+>&kmail; A selecção do correio só irá salvaguardar as mensagens nas suas <quote
+>Pastas Locais</quote
+>, as definições do &imap; e irá transferir as mensagens ao repor. Se tiver mensagens num servidor de &imap; que deseja salvaguardar, deverá usar o <ulink url="help:/akonadi_folderarchive_agent"
+>Agente de Arquivo de Pastas</ulink
+> para arquivar essas mensagens numa pasta local.</para>
+</note
+></para>
+<screenshot>
+<screeninfo
+>Janela de Selecção</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="selection-dialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Janela de Selecção</phrase>
+    </textobject>
+    <caption>
+      <para
+>Janela de Selecção</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+<para
+>O ecrã final mostra o registo do processo de geração da cópia de segurança. Poderá fechar a janela assim que tiver revisto o registo e validado que a sua cópia de segurança foi criada com sucesso.</para>
+<para
+>Para repor a sua cópia de segurança, seleccione a opção <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guimenuitem
+>Repor os Dados...</guimenuitem
+></menuchoice
+> dentro do &i18n-pimsettingexporter;.</para>
+<para
+>Se usar a opção <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Mostrar a Informação do Arquivo</guimenuitem
+></menuchoice
+>, poderá seleccionar um pacote de arquivo de salvaguarda (cópia de segurança) e ver o seu conteúdo.</para>
+</sect2>
+</sect1>
+
+<sect1 id="credits">
+
+<title
+>Créditos e Licença</title>
+<para
+>&i18n-pimsettingexporter;</para>
+<para
+>Programa com 'copyright' 2013 de &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Documentação com 'copyright' &copy; 2013 de &Laurent.Montel; &Laurent.Montel.mail; </para>
+
+<para
+>Tradução de José Nuno Pires <email
+>zepires@gmail.com</email
+></para
+> 
+&underFDL; &underGPL; </sect1>
+
+&documentation.index;
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

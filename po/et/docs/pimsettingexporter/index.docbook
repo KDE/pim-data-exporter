@@ -1,0 +1,227 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-pimsettingexporter "<application
+>PIM-i seadistuste eksportija</application
+>">
+  <!ENTITY knode "<application
+>Knode</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Estonian  "INCLUDE"
+> 
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
+]>
+
+<article id="pimsettingexporter" lang="&language;">
+
+<articleinfo id="pimsettingexporterinfo">
+<title
+>&i18n-pimsettingexporter; käsiraamat</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2013-12-02</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+
+</articleinfo>
+
+
+<sect1 id="introduction">
+<title
+>Sissejuhatus</title>
+
+<para
+>&i18n-pimsettingexporter; võimaldab eksportida ja importida PIM-i seadistusi ja kohalikke kirju. Varundada ja taastada saab järgmiste rakenduste seadistusi: <simplelist>
+<member
+>&kmail;</member>
+<member
+>&knotes;</member>
+<member
+>&knode;</member>
+<member
+>&akregator;</member>
+<member
+>&aadressiraamat;</member>
+<member
+>&kalarm;</member>
+<member
+>&kjots;</member>
+</simplelist>
+</para>
+
+<sect2 id="using-kapp">
+<title
+>&i18n-pimsettingexporter; kasutamine</title>
+<para
+>Varundamine on äärmiselt oluline kõigile kasutajatele. &i18n-pimsettingexporter; on suurepärane tööriist kõigi sinu seadistuste ja kirjade varundamisel või liigutamisel uude süsteemi. Samuti saab &i18n-pimsettingexporter;t kasutada varasemate varukoopiate importimiseks.</para>
+<para
+>Võib valida menüükäsu <menuchoice
+><guimenu
+>Tööriistad</guimenu
+><guimenuitem
+>Ekspordi &kmail;i andmed...</guimenuitem
+></menuchoice
+> kirjade vaate aknas, aga &i18n-pimsettingexporter; võib käivitada ka iseseisvalt, kui valida rakenduste käivitajas &i18n-pimsettingexporter;.</para>
+<screenshot>
+<screeninfo
+>&i18n-pimsettingexporter; dialoog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="pimsettingexporter.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>&i18n-pimsettingexporter; dialoog</phrase>
+    </textobject>
+    <caption>
+      <para
+>&i18n-pimsettingexporter; dialoog</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+<para
+>Varundamiseks <action
+>vali <menuchoice
+><guimenu
+>Fail</guimenu
+><guimenuitem
+>Varunda andmed...</guimenuitem
+></menuchoice
+></action
+>, mille järel palutakse sulgeda kõik KDE-PIM-i aknad. <warning
+><para
+>Kontrolli, et oleksid sulgenud kõik aknad, sest muidu võivad andmed kaotsi minna.</para
+></warning
+> Kui oled aknad sulgenud, klõpsa nupule <guibutton
+>Jah</guibutton
+> jätkamiseks või <guibutton
+>Ei</guibutton
+> loobumiseks.</para>
+<para
+>Sul palutakse määrata varukoopia nimi. Kirjuta see tekstikasti <guilabel
+>Fail</guilabel
+> (&eg; <replaceable
+>minukirjadeseadistused</replaceable
+>). Vaikimisi salvestatakse fail laiendiga <filename role="extension"
+>.zip</filename
+>. Kui soovid salvestada mõnda teist tüüpi faili, eemalda märge <guilabel
+>Failinimi valitakse automaatselt</guilabel
+> eest ja kirjuta soovitud laiend failinime lõppu.</para>
+<para
+>Järgmisel ekraanil saad valida, mida varundada. Vaikimisi on valitud kõik. <note
+> <para
+>&kmail;i kirjade valimine varundab ainult <quote
+>kohalikes kaustades</quote
+> leiduvad kirjad. &imap; seadistused salvestatakse samuti ning kirjad laaditakse alla taastamise järel. Kui sul on kirju &imap; serveris, mida soovid varundada, tuleks nende arhiveerimiseks kohalikku kausta kasutada <ulink url="help:/akonadi_folderarchive_agent"
+>kausta arhiveerimise agenti</ulink
+>.</para>
+</note
+></para>
+<para
+>Viimane ekraan näitab varundamise logi. Selle võib sulgeda, kui oled logi üle vaadanud ja veendunud, et varundamine kulges edukalt.</para>
+<para
+>Varukoopia taastamiseks vali &i18n-pimsettingexporter;s <menuchoice
+><guimenu
+>Fail</guimenu
+><guimenuitem
+>Taasta andmed...</guimenuitem
+></menuchoice
+></para>
+</sect2>
+</sect1>
+
+<sect1 id="credits">
+
+<title
+>Autorid ja litsents</title>
+<para
+>&i18n-pimsettingexporter;</para>
+<para
+>Rakenduse autoriõigus 2013: &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Dokumentatsiooni autoriõigus &copy; 2013: &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail; </para>
+
+<para
+>Tõlge eesti keelde: Marek Laane <email
+>bald@smail.ee</email
+></para
+> 
+&underFDL; &underGPL; </sect1>
+
+<appendix id="installation">
+<title
+>Paigaldamine</title>
+
+<sect1 id="compilation">
+<title
+>Kompileerimine ja paigaldamine</title>
+&install.compile.documentation; </sect1>
+
+</appendix>
+
+&documentation.index;
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

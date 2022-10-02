@@ -1,0 +1,1202 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2012, 2013, 2014, 2015.
+# pan93412 <pan93412@gmail.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-29 00:47+0000\n"
+"PO-Revision-Date: 2019-05-14 22:35+0800\n"
+"Last-Translator: pan93412 <pan93412@gmail.com>\n"
+"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.04.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Franklin Weng"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "franklin@goodhorse.idv.tw"
+
+#: console/main.cpp:25 console/main.cpp:27
+#, fuzzy, kde-format
+#| msgid "PIM Setting Exporter Console"
+msgid "PIM Data Exporter Console"
+msgstr "PIM 設定匯出器主控台"
+
+#: console/main.cpp:29
+#, fuzzy, kde-format
+#| msgid "Copyright © 2012-2015 pimsettingexporter authors"
+msgid "Copyright © 2015-%1 pimdataexporter authors"
+msgstr "Copyright © 2012-2015 pimsettingexporter 作者群"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Maintainer"
+msgstr "維護者"
+
+#: console/main.cpp:31
+#, fuzzy, kde-format
+#| msgid "Show information"
+msgid "File to log information to."
+msgstr "顯示資訊"
+
+#: console/main.cpp:34
+#, fuzzy, kde-format
+#| msgid "Template file uses to define what data, settings to import or export"
+msgid "Template file to define what data, settings to import or export."
+msgstr "定義哪些資料、設定要匯入或匯出的樣本檔"
+
+#: console/main.cpp:37
+#, fuzzy, kde-format
+#| msgid "Import the given file"
+msgid "Import the given file."
+msgstr "匯入指定的檔案"
+
+#: console/main.cpp:39
+#, fuzzy, kde-format
+#| msgid "Export the given file"
+msgid "Export the given file."
+msgstr "匯出指定的檔案"
+
+#: core/abstractimportexportjob.cpp:56
+#, kde-format
+msgid "Task Canceled"
+msgstr ""
+
+#: core/abstractimportexportjob.cpp:116
+#, kde-format
+msgid "\"%1\" backup done."
+msgstr "\"%1\" 已完成備份。"
+
+#: core/abstractimportexportjob.cpp:118
+#, kde-format
+msgid "\"%1\" cannot be exported."
+msgstr "無法匯出 \"%1\"。"
+
+#: core/abstractimportexportjob.cpp:121
+#, kde-format
+msgid "\"%1\" does not exist."
+msgstr ""
+
+#: core/abstractimportexportjob.cpp:268
+#, kde-format
+msgid "\"%1\" was copied."
+msgstr "\"%1\" 已複製。"
+
+#: core/abstractimportexportjob.cpp:273
+#, fuzzy, kde-format
+#| msgid "Restore identities..."
+msgid "Restoring \"%1\"..."
+msgstr "回復身份..."
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "File \"%1\" cannot be copied to \"%2\"."
+msgstr "檔案 \"%1\" 無法複製到 \"%2\"。"
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "Copy file"
+msgstr "複製檔案"
+
+#: core/abstractimportexportjob.cpp:300
+#, fuzzy, kde-format
+#| msgid "\"%1\" was copied."
+msgid "\"%1\" was restored."
+msgstr "\"%1\" 已複製。"
+
+#: core/abstractimportexportjob.cpp:385
+#: core/addressbook/importaddressbookjobinterface.cpp:231
+#: core/mail/importmailjobinterface.cpp:424
+#, kde-format
+msgid "Resources restored."
+msgstr "資源已回復。"
+
+#: core/abstractimportexportjob.cpp:387
+#, kde-format
+msgid "No resources files found."
+msgstr "找不到資源檔。"
+
+#: core/abstractimportexportjob.cpp:448
+#, fuzzy, kde-format
+#| msgid "Failed to synchronize %1."
+msgid "Unable to copy file %1"
+msgstr "同步 %1 失敗。"
+
+#: core/abstractimportexportjob.cpp:489
+#, kde-format
+msgid "Resource '%1' created."
+msgstr "資源 '%1' 已建立。"
+
+#: core/abstractimportexportjob.cpp:504
+#, fuzzy, kde-format
+#| msgid "Failed to synchronize %1."
+msgid "Failed to synchronize '%1'."
+msgstr "同步 %1 失敗。"
+
+#: core/abstractimportexportjob.cpp:509
+#, fuzzy, kde-format
+#| msgid "Resource %1 synchronized."
+msgid "Resource '%1' synchronized."
+msgstr "資源 %1 已同步。"
+
+#: core/abstractimportexportjob.cpp:515
+#, kde-format
+msgid "All resources synchronized."
+msgstr "所有資源均已同步。"
+
+#: core/abstractimportexportjob.cpp:541
+#, kde-format
+msgid "Start synchronizing..."
+msgstr ""
+
+#: core/abstractimportexportjob.cpp:578
+#, fuzzy, kde-format
+#| msgid "Theme directory \"%1\" cannot be added to backup file."
+msgid "Directory \"%1\" added to backup file."
+msgstr "主題目錄 \"%1\" 無法加入備份檔。"
+
+#: core/abstractimportexportjob.cpp:580
+#, fuzzy, kde-format
+#| msgid "Theme directory \"%1\" cannot be added to backup file."
+msgid "Directory \"%1\" cannot be added to backup file."
+msgstr "主題目錄 \"%1\" 無法加入備份檔。"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAddressBook settings..."
+msgstr "開始匯出 KAddressBook 設定..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:29
+#, fuzzy, kde-format
+#| msgid "Start export KAddressBook settings..."
+msgid "Export KAddressBook settings"
+msgstr "開始匯出 KAddressBook 設定..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:42
+#: core/alarm/exportalarmjobinterface.cpp:84
+#: core/calendar/exportcalendarjobinterface.cpp:96
+#: core/mail/exportmailjobinterface.cpp:668
+#: core/notes/exportnotesjobinterface.cpp:53
+#, kde-format
+msgid "Backing up resources..."
+msgstr "備份資源中..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:102
+#: core/alarm/exportalarmjobinterface.cpp:76
+#: core/calendar/exportcalendarjobinterface.cpp:75
+#: core/mail/exportmailjobinterface.cpp:690
+#: core/notes/exportnotesjobinterface.cpp:150
+#, kde-format
+msgid "Resources backup done."
+msgstr "資源已完成備份。"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:109
+#: core/akregator/exportakregatorjobinterface.cpp:72
+#: core/alarm/exportalarmjobinterface.cpp:109
+#: core/calendar/exportcalendarjobinterface.cpp:228
+#: core/mail/exportmailjobinterface.cpp:167
+#: core/notes/exportnotesjobinterface.cpp:75
+#, kde-format
+msgid "Backing up config..."
+msgstr "備份設定中..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:150
+#: core/akregator/exportakregatorjobinterface.cpp:79
+#: core/alarm/exportalarmjobinterface.cpp:135
+#: core/calendar/exportcalendarjobinterface.cpp:248
+#: core/mail/exportmailjobinterface.cpp:552
+#: core/notes/exportnotesjobinterface.cpp:108
+#, kde-format
+msgid "Config backup done."
+msgstr "設定已完成備份。"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:41
+#, fuzzy, kde-format
+#| msgid "Start import KAddressBook settings..."
+msgid "Starting to import KAddressBook settings..."
+msgstr "開始匯入 KAddressBook 設定..."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:43
+#, fuzzy, kde-format
+#| msgid "Start export KAddressBook settings..."
+msgid "Import KAddressBook settings"
+msgstr "開始匯出 KAddressBook 設定..."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:92
+#: core/akregator/importakregatorjobinterface.cpp:93
+#: core/alarm/importalarmjobinterface.cpp:82
+#: core/calendar/importcalendarjobinterface.cpp:90
+#: core/notes/importnotesjobinterface.cpp:80
+#, fuzzy, kde-format
+#| msgid "Restore mails..."
+msgid "Restore configs..."
+msgstr "回復郵件..."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:109
+#: core/akregator/importakregatorjobinterface.cpp:99
+#: core/alarm/importalarmjobinterface.cpp:98
+#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/mail/importmailjobinterface.cpp:866
+#: core/notes/importnotesjobinterface.cpp:109
+#, kde-format
+msgid "Config restored."
+msgstr "設定已回復。"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:162
+#: core/addressbook/importaddressbookjobinterface.cpp:163
+#: core/alarm/importalarmjobinterface.cpp:114
+#: core/alarm/importalarmjobinterface.cpp:115
+#: core/calendar/importcalendarjobinterface.cpp:281
+#: core/calendar/importcalendarjobinterface.cpp:282
+#: core/mail/importmailjobinterface.cpp:199
+#: core/mail/importmailjobinterface.cpp:200
+#: core/notes/importnotesjobinterface.cpp:148
+#: core/notes/importnotesjobinterface.cpp:149
+#, kde-format
+msgid "Restore resources..."
+msgstr "回復資源..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:24
+#, kde-format
+msgid "Start export Akregator settings..."
+msgstr "開始匯出 Akregator 設定..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:25
+#, fuzzy, kde-format
+#| msgid "Start export Akregator settings..."
+msgid "Export Akregator settings"
+msgstr "開始匯出 Akregator 設定..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:87
+#, kde-format
+msgid "Backing up data..."
+msgstr "備份資料中..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:94
+#: core/notes/exportnotesjobinterface.cpp:46
+#, kde-format
+msgid "\"%1\" directory cannot be added to backup file."
+msgstr "檔案 \"%1\" 無法加入備份檔。"
+
+#: core/akregator/exportakregatorjobinterface.cpp:97
+#, kde-format
+msgid "Data backup done."
+msgstr "資料已完成備份。"
+
+#: core/akregator/importakregatorjobinterface.cpp:29
+#, fuzzy, kde-format
+#| msgid "Start import Akregator settings..."
+msgid "Starting to import Akregator settings..."
+msgstr "開始匯入 Akregator 設定..."
+
+#: core/akregator/importakregatorjobinterface.cpp:32
+#, fuzzy, kde-format
+#| msgid "Start export Akregator settings..."
+msgid "Import Akregator settings"
+msgstr "開始匯出 Akregator 設定..."
+
+#: core/akregator/importakregatorjobinterface.cpp:106
+#: core/notes/importnotesjobinterface.cpp:116
+#, fuzzy, kde-format
+#| msgid "Restore Data..."
+msgid "Restore data..."
+msgstr "回復資料..."
+
+#: core/akregator/importakregatorjobinterface.cpp:112
+#: core/notes/importnotesjobinterface.cpp:129
+#, kde-format
+msgid "Data restored."
+msgstr "資料已回復。"
+
+#: core/alarm/exportalarmjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAlarm settings..."
+msgstr "開始匯出 KAlarm 設定..."
+
+#: core/alarm/exportalarmjobinterface.cpp:29
+#, fuzzy, kde-format
+#| msgid "Start export KAlarm settings..."
+msgid "Export KAlarm settings"
+msgstr "開始匯出 KAlarm 設定..."
+
+#: core/alarm/importalarmjobinterface.cpp:32
+#, fuzzy, kde-format
+#| msgid "Start import KAlarm settings..."
+msgid "Starting to import KAlarm settings..."
+msgstr "開始匯入 KAlarm 設定..."
+
+#: core/alarm/importalarmjobinterface.cpp:33
+#, fuzzy, kde-format
+#| msgid "Start export KAlarm settings..."
+msgid "Import KAlarm settings"
+msgstr "開始匯出 KAlarm 設定..."
+
+#: core/archivestorage.cpp:43
+#, kde-format
+msgid "Archive cannot be opened in write mode."
+msgstr "封存無法以寫入模式開啟。"
+
+#: core/archivestorage.cpp:45 core/utils.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Archive cannot be opened in read mode."
+msgstr "封存無法以讀取模式開啟。"
+
+#: core/backupresourcefilejobbase.cpp:47
+#, fuzzy, kde-format
+#| msgid "\"%1\" was copied."
+msgid "\"%1\" is not a file."
+msgstr "\"%1\" 已複製。"
+
+#: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
+#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
+#, kde-format
+msgid "\"%1\" was backed up."
+msgstr "\"%1\" 已備份。"
+
+#: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
+#: core/storeresourcejob.cpp:59
+#, kde-format
+msgid "\"%1\" file cannot be added to backup file."
+msgstr "檔案 \"%1\" 無法加入備份檔。"
+
+#: core/calendar/exportcalendarjobinterface.cpp:82
+#, kde-format
+msgid "Start export KOrganizer settings..."
+msgstr "開始匯出 KOrganizer 設定..."
+
+#: core/calendar/exportcalendarjobinterface.cpp:83
+#, fuzzy, kde-format
+#| msgid "Start export KOrganizer settings..."
+msgid "Export KOrganizer settings"
+msgstr "開始匯出 KOrganizer 設定..."
+
+#: core/calendar/importcalendarjobinterface.cpp:35
+#, fuzzy, kde-format
+#| msgid "Start import KOrganizer settings..."
+msgid "Starting to import KOrganizer settings..."
+msgstr "開始匯入 KOrganizer 設定..."
+
+#: core/calendar/importcalendarjobinterface.cpp:37
+#, fuzzy, kde-format
+#| msgid "Start export KOrganizer settings..."
+msgid "Import KOrganizer settings"
+msgstr "開始匯出 KOrganizer 設定..."
+
+#: core/mail/exportmailjobinterface.cpp:43
+#, fuzzy, kde-format
+#| msgid "Start import KMail settings..."
+msgid "Start export KMail settings..."
+msgstr "開始匯入 KMail 設定..."
+
+#: core/mail/exportmailjobinterface.cpp:44
+#, fuzzy, kde-format
+#| msgid "Start import KMail settings..."
+msgid "Export KMail settings"
+msgstr "開始匯入 KMail 設定..."
+
+#: core/mail/exportmailjobinterface.cpp:112
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Backing up Folder Attributes..."
+msgstr "備份身份中..."
+
+#: core/mail/exportmailjobinterface.cpp:114
+#, kde-format
+msgid "Backing up Mails..."
+msgstr "備份郵件中..."
+
+#: core/mail/exportmailjobinterface.cpp:115
+#, fuzzy, kde-format
+#| msgid "Start export Akregator settings..."
+msgid "Start export resource..."
+msgstr "開始匯出 Akregator 設定..."
+
+#: core/mail/exportmailjobinterface.cpp:123
+#, kde-format
+msgid "Backing up transports..."
+msgstr "備份傳輸中..."
+
+#: core/mail/exportmailjobinterface.cpp:128
+#: core/mail/exportmailjobinterface.cpp:140
+#, kde-format
+msgid "Transports backup done."
+msgstr "傳輸已完成備份。"
+
+#: core/mail/exportmailjobinterface.cpp:142
+#, kde-format
+msgid "Transport file cannot be added to backup file."
+msgstr "傳輸檔無法加入備份檔。"
+
+#: core/mail/exportmailjobinterface.cpp:557
+#, kde-format
+msgid "Backing up identity..."
+msgstr "備份身份中..."
+
+#: core/mail/exportmailjobinterface.cpp:596
+#, kde-format
+msgid "vCard file \"%1\" cannot be saved."
+msgstr "vCard 檔 \"%1\" 無法儲存。"
+
+#: core/mail/exportmailjobinterface.cpp:609
+#, kde-format
+msgid "Identity backup done."
+msgstr "身份已完成備份。"
+
+#: core/mail/exportmailjobinterface.cpp:611
+#, kde-format
+msgid "Identity file cannot be added to backup file."
+msgstr "身份檔無法加入備份檔。"
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:139
+#, kde-format
+msgid "Filters backup done."
+msgstr "過濾器已完成備份。"
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#, kde-format
+msgid "Filters cannot be exported."
+msgstr "無法匯出過濾器。"
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Backing up Folder Attributes done."
+msgstr "備份身份中..."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Folder Attributes cannot be exported."
+msgstr "無法匯出過濾器。"
+
+#: core/mail/importmailjobinterface.cpp:43
+#, fuzzy, kde-format
+#| msgid "Start import KMail settings..."
+msgid "Starting to import KMail settings..."
+msgstr "開始匯入 KMail 設定..."
+
+#: core/mail/importmailjobinterface.cpp:44
+#, fuzzy, kde-format
+#| msgid "Start import KMail settings..."
+msgid "Import KMail settings"
+msgstr "開始匯入 KMail 設定..."
+
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
+#, kde-format
+msgid "Restore transports..."
+msgstr "回復傳輸..."
+
+#: core/mail/importmailjobinterface.cpp:173
+#, kde-format
+msgid "mailtransports file could not be found in the archive."
+msgstr "封存中找不到郵件傳輸檔案。"
+
+#: core/mail/importmailjobinterface.cpp:188
+#, kde-format
+msgid "Transports restored."
+msgstr "傳輸已回復。"
+
+#: core/mail/importmailjobinterface.cpp:190
+#, kde-format
+msgid "Failed to restore transports file."
+msgstr "回復傳輸檔失敗。"
+
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
+#, kde-format
+msgid "Restore mails..."
+msgstr "回復郵件..."
+
+#: core/mail/importmailjobinterface.cpp:555
+#, kde-format
+msgid "Mails restored."
+msgstr "郵件已回復。"
+
+#: core/mail/importmailjobinterface.cpp:562
+#, fuzzy, kde-format
+#| msgid "Restore mails..."
+msgid "Restore config..."
+msgstr "回復郵件..."
+
+#: core/mail/importmailjobinterface.cpp:565
+#, kde-format
+msgid "filters file could not be found in the archive."
+msgstr "封存中找不到過濾器檔。"
+
+#: core/mail/importmailjobinterface.cpp:569
+#, fuzzy, kde-format
+#| msgid "Restore mails..."
+msgid "Restore filters..."
+msgstr "回復郵件..."
+
+#: core/mail/importmailjobinterface.cpp:618
+#, fuzzy, kde-format
+#| msgid "Mails restored."
+msgid "Filters restored."
+msgstr "郵件已回復。"
+
+#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:904
+#, fuzzy, kde-format
+#| msgid "Restore identities..."
+msgid "Restoring identities..."
+msgstr "回復身份..."
+
+#: core/mail/importmailjobinterface.cpp:902
+#, kde-format
+msgid "emailidentities file could not be found in the archive."
+msgstr "封存中找不到身份檔。"
+
+#: core/mail/importmailjobinterface.cpp:963
+#, kde-format
+msgid "Identities restored."
+msgstr "身份已回復。"
+
+#: core/mail/importmailjobinterface.cpp:965
+#, kde-format
+msgid "Failed to restore identity file."
+msgstr "回復身份檔失敗。"
+
+#: core/mail/importmailjobinterface.cpp:1287
+#, fuzzy, kde-format
+#| msgid "\"%1\" backup done."
+msgid "\"%1\" migration done."
+msgstr "\"%1\" 已完成備份。"
+
+#: core/mail/importmailjobinterfaceimpl.cpp:35
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Restoring folder attributes..."
+msgstr "備份身份中..."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:41
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Restoring Folder Attributes done."
+msgstr "備份身份中..."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:45
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Folder Attributes cannot be restored."
+msgstr "無法匯出過濾器。"
+
+#: core/notes/exportnotesjobinterface.cpp:28
+#, kde-format
+msgid "Start export KNotes settings..."
+msgstr "開始匯出 KNotes 設定..."
+
+#: core/notes/exportnotesjobinterface.cpp:29
+#, fuzzy, kde-format
+#| msgid "Start export KNotes settings..."
+msgid "Export KNotes settings"
+msgstr "開始匯出 KNotes 設定..."
+
+#: core/notes/importnotesjobinterface.cpp:49
+#, fuzzy, kde-format
+#| msgid "Start import KNotes settings..."
+msgid "Starting to import KNotes settings..."
+msgstr "開始匯入 KNotes 設定..."
+
+#: core/notes/importnotesjobinterface.cpp:52
+#, fuzzy, kde-format
+#| msgid "Start export KNotes settings..."
+msgid "Import KNotes settings"
+msgstr "開始匯出 KNotes 設定..."
+
+#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#, kde-format
+msgid "No data selected."
+msgstr ""
+
+#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#, fuzzy, kde-format
+#| msgid "Failed to synchronize %1."
+msgid "Unable to open file \"%1\"."
+msgstr "同步 %1 失敗。"
+
+#: core/pimdatabackuprestore.cpp:94
+#, fuzzy, kde-format
+#| msgid "Start to backup data in '%1'"
+msgid "Starting to backup data in '%1'"
+msgstr "開始在 '%1' 備份資料"
+
+#: core/pimdatabackuprestore.cpp:183
+#, kde-format
+msgid "Backup in '%1' done."
+msgstr "在 '%1' 的備份已完成。"
+
+#: core/pimdatabackuprestore.cpp:279
+#, fuzzy, kde-format
+#| msgid "Start to restore data from '%1'"
+msgid "Starting to restore data from '%1'"
+msgstr "開始從 '%1' 回復資料"
+
+#: core/pimdatabackuprestore.cpp:287
+#, kde-format
+msgid "Restoring data from '%1' done."
+msgstr "從 '%1' 回復資料已完成。"
+
+#: core/pimdatabackupthread.cpp:37
+#, fuzzy, kde-format
+#| msgid "Import the given file"
+msgid "Impossible to open archive file."
+msgstr "匯入指定的檔案"
+
+#: core/pimdatabackupthread.cpp:44
+#, kde-format
+msgid "Impossible to backup \"%1\"."
+msgstr ""
+
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
+#, kde-format
+msgid "Resource file \"%1\" cannot be added to backup file."
+msgstr "資源檔 \"%1\" 無法加入備份檔。"
+
+#: core/resourceconverterbase.cpp:206
+#, kde-format
+msgid "Resource config file \"%1\" doesn't exist."
+msgstr ""
+
+#: core/utils.cpp:181
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: core/utils.cpp:183
+#, kde-format
+msgid "KAddressBook"
+msgstr "KAddressBook"
+
+#: core/utils.cpp:185
+#, kde-format
+msgid "KAlarm"
+msgstr "KAlarm"
+
+#: core/utils.cpp:187
+#, kde-format
+msgid "KOrganizer"
+msgstr "KOrganizer"
+
+#: core/utils.cpp:189
+#, kde-format
+msgid "KNotes"
+msgstr "KNotes"
+
+#: core/utils.cpp:191
+#, kde-format
+msgid "Akregator"
+msgstr "Akregator"
+
+#: core/utils.cpp:205
+#, kde-format
+msgid "Identity"
+msgstr "身份"
+
+#: core/utils.cpp:207
+#, kde-format
+msgid "Mails"
+msgstr "郵件"
+
+#: core/utils.cpp:209
+#, kde-format
+msgid "Mail Transport"
+msgstr "郵件傳送"
+
+#: core/utils.cpp:211
+#, kde-format
+msgid "Resources"
+msgstr "資源"
+
+#: core/utils.cpp:213
+#, kde-format
+msgid "Config"
+msgstr "設定"
+
+#: core/utils.cpp:215
+#, kde-format
+msgid "Data"
+msgstr "資料"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:29
+#, fuzzy, kde-format
+#| msgid "Archive File Structure"
+msgctxt "@title:window"
+msgid "Archive File Structure"
+msgstr "封存檔案結構"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:31
+#, kde-format
+msgid "Backup Archive Structure:"
+msgstr "備份封存結構："
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:57
+#, kde-format
+msgid "backup-structure.txt file was not found."
+msgstr "找不到 backup-structure.txt 檔。"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:27
+#, fuzzy, kde-format
+#| msgid "PIM Setting Exporter"
+msgctxt "@title:window"
+msgid "Configure PimDataExporter"
+msgstr "PIM 設定匯出器"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
+#, kde-format
+msgid "General"
+msgstr ""
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:51
+#, kde-format
+msgid "User Feedback"
+msgstr ""
+
+#: gui/dialog/selectiontypedialog.cpp:22
+#, kde-format
+msgid "Use this template by default"
+msgstr ""
+
+#: gui/dialog/selectiontypedialog.cpp:23
+#, kde-format
+msgid "Save as Template..."
+msgstr "存為樣本..."
+
+#: gui/dialog/selectiontypedialog.cpp:24
+#, kde-format
+msgid "Load Template..."
+msgstr "載入樣本..."
+
+#: gui/dialog/selectiontypedialog.cpp:26
+#, fuzzy, kde-format
+#| msgid "Select Type"
+msgctxt "@title:window"
+msgid "Select Type"
+msgstr "選擇型態"
+
+#: gui/dialog/selectiontypedialog.cpp:47
+#: gui/dialog/synchronizeresourcedialog.cpp:40
+#, kde-format
+msgid "Select All"
+msgstr "全部選取"
+
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:45
+#, kde-format
+msgid "Unselect All"
+msgstr "全部取消選取"
+
+#: gui/dialog/showarchivestructuredialog.cpp:33
+#, kde-format
+msgid "Extract Selected File"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:34
+#, kde-format
+msgid "Open Selected File"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:36
+#, fuzzy, kde-format
+#| msgid "Show Archive Content on file \"%1\""
+msgctxt "@title:window"
+msgid "Show Archive Content on file \"%1\""
+msgstr "顯示檔案 \"%1\" 的封存內容"
+
+#: gui/dialog/showarchivestructuredialog.cpp:44
+#, kde-format
+msgid "Search..."
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:47
+#, kde-format
+msgid "Save As Text..."
+msgstr "存成文字..."
+
+#: gui/dialog/showarchivestructuredialog.cpp:127
+#, fuzzy, kde-format
+#| msgid "Select Archive"
+msgid "Select Directory"
+msgstr "選取封存"
+
+#: gui/dialog/showarchivestructuredialog.cpp:133
+#, fuzzy, kde-format
+#| msgid "\"%1\" already exists. Do you want to overwrite it?"
+msgid "Do you want to overwrite %1?"
+msgstr "\"%1\" 已存在。您要覆寫它嗎？"
+
+#: gui/dialog/showarchivestructuredialog.cpp:134
+#, kde-format
+msgid "File Already Exist"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:142
+#, fuzzy, kde-format
+#| msgid "Import the given file"
+msgid "Impossible to copy %1 in %2."
+msgstr "匯入指定的檔案"
+
+#: gui/dialog/showarchivestructuredialog.cpp:165
+#, kde-format
+msgctxt "qfiledialog filter files text"
+msgid "Text Files"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Log File"
+msgstr "匯出紀錄檔"
+
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Cannot open archive"
+msgstr "無法開啟封存"
+
+#: gui/dialog/showarchivestructuredialog.cpp:182
+#, kde-format
+msgid "Info"
+msgstr "資訊"
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, fuzzy, kde-format
+#| msgid "This is not kdepim archive."
+msgid "This is not pim archive."
+msgstr "這不是 kdepim 封存。"
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "Show information"
+msgstr "顯示資訊"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:23
+#, fuzzy, kde-format
+#| msgid "Resources"
+msgctxt "@title:window"
+msgid "Synchronize Resources"
+msgstr "資源"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:26
+#, kde-format
+msgid ""
+"Some resources were added but data were not sync. Select resources that you "
+"want to sync:"
+msgstr ""
+
+#: gui/importexportprogressindicatorgui.cpp:35
+#: gui/job/fullsynchronizeresourcesjob.cpp:39
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#: gui/importexportprogressindicatorgui.cpp:66
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
+msgstr "\"%1\" 已存在。您要覆寫它還是合併它？"
+
+#: gui/importexportprogressindicatorgui.cpp:67
+#: gui/importexportprogressindicatorgui.cpp:79
+#: gui/importexportprogressindicatorgui.cpp:92
+#, kde-format
+msgid "Restore"
+msgstr "回復"
+
+#: gui/importexportprogressindicatorgui.cpp:69
+#, kde-format
+msgid "Merge"
+msgstr "合併"
+
+#: gui/importexportprogressindicatorgui.cpp:78
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it?"
+msgstr "\"%1\" 已存在。您要覆寫它嗎？"
+
+#: gui/importexportprogressindicatorgui.cpp:91
+#, kde-format
+msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
+msgstr "目錄 \"%1\" 已存在。您要覆寫它嗎？"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:41
+#, fuzzy, kde-format
+#| msgid "Resources"
+msgctxt "@title:window"
+msgid "Synchronize resources"
+msgstr "資源"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:42
+#, kde-format
+msgid "Synchronize resources... It can take some time."
+msgstr ""
+
+#: gui/pimdatabackuprestoreui.cpp:24
+#, kde-format
+msgid ""
+"The archive was created by a newer version of this program. It might contain "
+"additional data which will be skipped during import. Do you want to import "
+"it?"
+msgstr ""
+"此封存是用新版的程式建立的。它可能包含一些額外的資料，但是在此版匯入時這些資"
+"料會被丟棄。您要匯入嗎？"
+
+#: gui/pimdatabackuprestoreui.cpp:26
+#, kde-format
+msgid "Not correct version"
+msgstr "版本不正確"
+
+#: gui/pimdatabackuprestoreui.cpp:27
+#, fuzzy, kde-format
+#| msgid "Restore Data..."
+msgctxt "@action:button"
+msgid "Import"
+msgstr "回復資料..."
+
+#: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
+#, fuzzy, kde-format
+#| msgid "PIM Setting Exporter"
+msgid "PIM Data Exporter"
+msgstr "PIM 設定匯出器"
+
+#: gui/pimdatacommandlineoption.cpp:41
+#, fuzzy, kde-format
+#| msgid "Copyright © 2012-2015 pimsettingexporter authors"
+msgid "Copyright © 2012-%1 pimdataexporter authors"
+msgstr "Copyright © 2012-2015 pimsettingexporter 作者群"
+
+#: gui/pimdatacommandlineoption.cpp:46
+#, kde-format
+msgid "Template file uses to define what data, settings to import or export"
+msgstr "定義哪些資料、設定要匯入或匯出的樣本檔"
+
+#: gui/pimdatacommandlineoption.cpp:48
+#, kde-format
+msgid "Import the given file"
+msgstr "匯入指定的檔案"
+
+#: gui/pimdatacommandlineoption.cpp:49
+#, kde-format
+msgid "Export the given file"
+msgstr "匯出指定的檔案"
+
+#: gui/pimdatacommandlineoption.cpp:50
+#, kde-format
+msgid "File or url. The user will be asked whether to import or export."
+msgstr "檔案或網址。使用者會被詢問是否要匯入。"
+
+#: gui/pimdatacommandlineoption.cpp:52
+#, kde-format
+msgid "Lists the available options for user feedback"
+msgstr ""
+
+#. i18n: ectx: Menu (file)
+#: gui/pimdataexporter.rc:8
+#, kde-format
+msgid "&File"
+msgstr ""
+
+#. i18n: ectx: Menu (tools)
+#: gui/pimdataexporter.rc:21
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: gui/pimdataexporter.rc:28
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:126
+#, kde-format
+msgid "Full sync starts..."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:156
+#, kde-format
+msgid "Full sync finished."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:163
+#, kde-format
+msgid "Full sync for \"%1\" done."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:168
+#, kde-format
+msgid "Full sync for \"%1\" failed."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:174
+#, fuzzy, kde-format
+#| msgid ""
+#| "For restoring data, you must use \"pimsettingexporter\". Be careful it "
+#| "can overwrite existing settings, data."
+msgid ""
+"For restoring data, you must use \"pimdataexporter\". Be careful as it can "
+"overwrite your existing settings and data."
+msgstr ""
+"您需要使用 \"pimsettingexporter\" 才能回復資料。注意，它可能會覆寫掉您現有的"
+"設定與資料。"
+
+#: gui/pimdataexporterwindow.cpp:176 gui/pimdataexporterwindow.cpp:281
+#: gui/pimdataexporterwindow.cpp:359
+#, kde-format
+msgid "Backup"
+msgstr "備份"
+
+#: gui/pimdataexporterwindow.cpp:203
+#, fuzzy, kde-format
+#| msgid "Restore Data..."
+msgid "Export Data..."
+msgstr "回復資料..."
+
+#: gui/pimdataexporterwindow.cpp:208
+#, fuzzy, kde-format
+#| msgid "Restore Data..."
+msgid "Import Data..."
+msgstr "回復資料..."
+
+#: gui/pimdataexporterwindow.cpp:213
+#, kde-format
+msgid "Save log..."
+msgstr "儲存紀錄..."
+
+#: gui/pimdataexporterwindow.cpp:216
+#, kde-format
+msgid "Show Archive Structure Information..."
+msgstr "顯示封存結構資訊..."
+
+#: gui/pimdataexporterwindow.cpp:219
+#, kde-format
+msgid "Show Archive Information..."
+msgstr "顯示封存資訊..."
+
+#: gui/pimdataexporterwindow.cpp:223
+#, kde-format
+msgid "Show Information on current Archive..."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:259
+#, kde-format
+msgid "Select Archive"
+msgstr "選取封存"
+
+#: gui/pimdataexporterwindow.cpp:259
+#, fuzzy, kde-format
+#| msgid "Copy file"
+msgid "Zip file"
+msgstr "複製檔案"
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Log is empty."
+msgstr "紀錄是空的。"
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Save log"
+msgstr "儲存紀錄"
+
+#: gui/pimdataexporterwindow.cpp:275
+#, fuzzy, kde-format
+#| msgid "Html Files (*.html)"
+msgid "HTML Files (*.html)"
+msgstr "HTML 檔 (*.html)"
+
+#: gui/pimdataexporterwindow.cpp:281
+#, kde-format
+msgid "Please quit all kdepim applications before backing up your data."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:304
+#, kde-format
+msgid "Create backup"
+msgstr "選擇型態"
+
+#: gui/pimdataexporterwindow.cpp:306
+#, kde-format
+msgid "Zip file (*.zip)"
+msgstr "Zip 檔 (*.zip)"
+
+#: gui/pimdataexporterwindow.cpp:316
+#, fuzzy, kde-format
+#| msgid "Backing up resources..."
+msgid "Backup in progress..."
+msgstr "備份資源中..."
+
+#: gui/pimdataexporterwindow.cpp:358
+#, fuzzy, kde-format
+#| msgid ""
+#| "Before to restore data, close all kdepim applications. Do you want to "
+#| "continue?"
+msgid ""
+"Before restoring data you must close all kdepim applications. Do you want to "
+"continue?"
+msgstr "在回復資料前，請先關閉所有 kdepim 的應用程式。您要繼續嗎？"
+
+#: gui/pimdataexporterwindow.cpp:372
+#, kde-format
+msgid "Restore backup"
+msgstr "回復備份"
+
+#: gui/pimdataexporterwindow.cpp:374
+#, fuzzy, kde-format
+#| msgid "Zip File (*.zip)"
+msgid "Zip File"
+msgstr "Zip 檔 (*.zip)"
+
+#: gui/pimdataexporterwindow.cpp:406
+#, fuzzy, kde-format
+#| msgid "Restore resources..."
+msgid "Restore in progress..."
+msgstr "回復資源..."
+
+#: gui/trayicon/pimdatatrayicon.cpp:13
+#, fuzzy, kde-format
+#| msgid "PIM Setting Exporter"
+msgid "Pim Data Exporter"
+msgstr "PIM 設定匯出器"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:16
+#, kde-format
+msgid "Always Override File"
+msgstr ""
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:17
+#, kde-format
+msgid "Always Override Directory"
+msgstr ""
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:18
+#, kde-format
+msgid "Always Merge Config File"
+msgstr ""
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:23
+#, kde-format
+msgid "Import"
+msgstr ""
+
+#: gui/widgets/selectiontypetreewidget.cpp:351
+#, fuzzy, kde-format
+#| msgid "Template File (*.xml)"
+msgid "Template Files (*.xml)"
+msgstr "樣本檔 (*.xml)"

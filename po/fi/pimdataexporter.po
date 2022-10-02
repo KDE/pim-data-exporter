@@ -1,0 +1,1392 @@
+# KDE Finnish translation sprint participants:
+# Jiri Grönroos <jiri.gronroos+kde@iki.fi>, 2012.
+# Tommi Nieminen <translator@legisign.org>, 2012, 2013, 2015, 2017, 2018, 2019, 2020, 2021, 2022.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2013, 2014, 2015, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: backupmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-29 00:47+0000\n"
+"PO-Revision-Date: 2022-07-11 18:45+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POT-Import-Date: 2012-12-01 22:25:15+0000\n"
+"X-Generator: Lokalize 20.12.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Tommi Nieminen,Lasse Liehu"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "translator@legisign.org,lasse.liehu@gmail.com"
+
+#: console/main.cpp:25 console/main.cpp:27
+#, kde-format
+msgid "PIM Data Exporter Console"
+msgstr "PIM-tietojen vientikonsoli"
+
+#: console/main.cpp:29
+#, kde-format
+msgid "Copyright © 2015-%1 pimdataexporter authors"
+msgstr "Tekijänoikeudet © 2015–%1 pimdataexporterin tekijät"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Maintainer"
+msgstr "Ylläpitäjä"
+
+#: console/main.cpp:31
+#, kde-format
+msgid "File to log information to."
+msgstr "Tiedosto, johon tiedot lokitetaan."
+
+#: console/main.cpp:34
+#, kde-format
+msgid "Template file to define what data, settings to import or export."
+msgstr ""
+"Mallipohjatiedosto, joka määrittää mitä tietoja ja asetuksia tuodaan tai "
+"viedään."
+
+#: console/main.cpp:37
+#, kde-format
+msgid "Import the given file."
+msgstr "Tuo annettu tiedosto."
+
+#: console/main.cpp:39
+#, kde-format
+msgid "Export the given file."
+msgstr "Vie annettu tiedosto."
+
+#: core/abstractimportexportjob.cpp:56
+#, kde-format
+msgid "Task Canceled"
+msgstr "Tehtävä peruttu"
+
+#: core/abstractimportexportjob.cpp:116
+#, kde-format
+msgid "\"%1\" backup done."
+msgstr "Varmuuskopiointi valmis: ”%1”."
+
+#: core/abstractimportexportjob.cpp:118
+#, kde-format
+msgid "\"%1\" cannot be exported."
+msgstr "Ei voida viedä: ”%1”."
+
+#: core/abstractimportexportjob.cpp:121
+#, kde-format
+msgid "\"%1\" does not exist."
+msgstr "”%1” ei ole olemassa."
+
+#: core/abstractimportexportjob.cpp:268
+#, kde-format
+msgid "\"%1\" was copied."
+msgstr "”%1” kopioitiin."
+
+#: core/abstractimportexportjob.cpp:273
+#, kde-format
+msgid "Restoring \"%1\"..."
+msgstr "Palautetaan: %1…"
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "File \"%1\" cannot be copied to \"%2\"."
+msgstr "Tiedostoa ”%1” ei voi kopioida kohteeseen ”%2”."
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "Copy file"
+msgstr "Kopioi tiedosto"
+
+#: core/abstractimportexportjob.cpp:300
+#, kde-format
+msgid "\"%1\" was restored."
+msgstr "”%1” palautettiin."
+
+#: core/abstractimportexportjob.cpp:385
+#: core/addressbook/importaddressbookjobinterface.cpp:231
+#: core/mail/importmailjobinterface.cpp:424
+#, kde-format
+msgid "Resources restored."
+msgstr "Resurssit palautettu."
+
+#: core/abstractimportexportjob.cpp:387
+#, kde-format
+msgid "No resources files found."
+msgstr "Resurssitiedostoja ei löytynyt."
+
+#: core/abstractimportexportjob.cpp:448
+#, kde-format
+msgid "Unable to copy file %1"
+msgstr "Tiedostoa %1 ei voida kopioida"
+
+#: core/abstractimportexportjob.cpp:489
+#, kde-format
+msgid "Resource '%1' created."
+msgstr "Resurssi ”%1” luotu."
+
+#: core/abstractimportexportjob.cpp:504
+#, kde-format
+msgid "Failed to synchronize '%1'."
+msgstr "Synkronointi epäonnistui: ”%1”."
+
+#: core/abstractimportexportjob.cpp:509
+#, kde-format
+msgid "Resource '%1' synchronized."
+msgstr "Resurssi ”%1” synkronoitu."
+
+#: core/abstractimportexportjob.cpp:515
+#, kde-format
+msgid "All resources synchronized."
+msgstr "Kaikki resurssit synkronoitu."
+
+#: core/abstractimportexportjob.cpp:541
+#, kde-format
+msgid "Start synchronizing..."
+msgstr "Aloita synkronointi…"
+
+#: core/abstractimportexportjob.cpp:578
+#, kde-format
+msgid "Directory \"%1\" added to backup file."
+msgstr "Kansio ”%1” lisättiin varmuuskopiotiedostoon."
+
+#: core/abstractimportexportjob.cpp:580
+#, kde-format
+msgid "Directory \"%1\" cannot be added to backup file."
+msgstr "Kansiota ”%1” ei voi lisätä varmuuskopiotiedostoon."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAddressBook settings..."
+msgstr "Aloita KAddressBookin asetusten vienti…"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:29
+#, kde-format
+msgid "Export KAddressBook settings"
+msgstr "Vie KAddressBookin asetukset"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:42
+#: core/alarm/exportalarmjobinterface.cpp:84
+#: core/calendar/exportcalendarjobinterface.cpp:96
+#: core/mail/exportmailjobinterface.cpp:668
+#: core/notes/exportnotesjobinterface.cpp:53
+#, kde-format
+msgid "Backing up resources..."
+msgstr "Varmuuskopioidaan resursseja…"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:102
+#: core/alarm/exportalarmjobinterface.cpp:76
+#: core/calendar/exportcalendarjobinterface.cpp:75
+#: core/mail/exportmailjobinterface.cpp:690
+#: core/notes/exportnotesjobinterface.cpp:150
+#, kde-format
+msgid "Resources backup done."
+msgstr "Resurssit varmuuskopioitu."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:109
+#: core/akregator/exportakregatorjobinterface.cpp:72
+#: core/alarm/exportalarmjobinterface.cpp:109
+#: core/calendar/exportcalendarjobinterface.cpp:228
+#: core/mail/exportmailjobinterface.cpp:167
+#: core/notes/exportnotesjobinterface.cpp:75
+#, kde-format
+msgid "Backing up config..."
+msgstr "Varmuuskopioidaan asetuksia…"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:150
+#: core/akregator/exportakregatorjobinterface.cpp:79
+#: core/alarm/exportalarmjobinterface.cpp:135
+#: core/calendar/exportcalendarjobinterface.cpp:248
+#: core/mail/exportmailjobinterface.cpp:552
+#: core/notes/exportnotesjobinterface.cpp:108
+#, kde-format
+msgid "Config backup done."
+msgstr "Asetukset varmuuskopioitu."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:41
+#, kde-format
+msgid "Starting to import KAddressBook settings..."
+msgstr "Aloitetaan KAddressBookin asetusten tuonti…"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:43
+#, kde-format
+msgid "Import KAddressBook settings"
+msgstr "Tuo KAddressBookin asetukset"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:92
+#: core/akregator/importakregatorjobinterface.cpp:93
+#: core/alarm/importalarmjobinterface.cpp:82
+#: core/calendar/importcalendarjobinterface.cpp:90
+#: core/notes/importnotesjobinterface.cpp:80
+#, kde-format
+msgid "Restore configs..."
+msgstr "Palauta asetukset…"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:109
+#: core/akregator/importakregatorjobinterface.cpp:99
+#: core/alarm/importalarmjobinterface.cpp:98
+#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/mail/importmailjobinterface.cpp:866
+#: core/notes/importnotesjobinterface.cpp:109
+#, kde-format
+msgid "Config restored."
+msgstr "Asetukset palautettu."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:162
+#: core/addressbook/importaddressbookjobinterface.cpp:163
+#: core/alarm/importalarmjobinterface.cpp:114
+#: core/alarm/importalarmjobinterface.cpp:115
+#: core/calendar/importcalendarjobinterface.cpp:281
+#: core/calendar/importcalendarjobinterface.cpp:282
+#: core/mail/importmailjobinterface.cpp:199
+#: core/mail/importmailjobinterface.cpp:200
+#: core/notes/importnotesjobinterface.cpp:148
+#: core/notes/importnotesjobinterface.cpp:149
+#, kde-format
+msgid "Restore resources..."
+msgstr "Palauta resurssit…"
+
+#: core/akregator/exportakregatorjobinterface.cpp:24
+#, kde-format
+msgid "Start export Akregator settings..."
+msgstr "Aloita Akregatorin asetusten vienti…"
+
+#: core/akregator/exportakregatorjobinterface.cpp:25
+#, kde-format
+msgid "Export Akregator settings"
+msgstr "Vie Akregatorin asetukset"
+
+#: core/akregator/exportakregatorjobinterface.cpp:87
+#, kde-format
+msgid "Backing up data..."
+msgstr "Varmuuskopioidaan tietoja…"
+
+#: core/akregator/exportakregatorjobinterface.cpp:94
+#: core/notes/exportnotesjobinterface.cpp:46
+#, kde-format
+msgid "\"%1\" directory cannot be added to backup file."
+msgstr "Kansiota ”%1” ei voitu lisätä varmuuskopiotiedostoon."
+
+#: core/akregator/exportakregatorjobinterface.cpp:97
+#, kde-format
+msgid "Data backup done."
+msgstr "Tiedot varmuuskopioitu."
+
+#: core/akregator/importakregatorjobinterface.cpp:29
+#, kde-format
+msgid "Starting to import Akregator settings..."
+msgstr "Aloitetaan Akregatorin asetusten tuonti…"
+
+#: core/akregator/importakregatorjobinterface.cpp:32
+#, kde-format
+msgid "Import Akregator settings"
+msgstr "Tuo Akregatorin asetukset"
+
+#: core/akregator/importakregatorjobinterface.cpp:106
+#: core/notes/importnotesjobinterface.cpp:116
+#, kde-format
+msgid "Restore data..."
+msgstr "Palauta tiedot…"
+
+#: core/akregator/importakregatorjobinterface.cpp:112
+#: core/notes/importnotesjobinterface.cpp:129
+#, kde-format
+msgid "Data restored."
+msgstr "Tiedot palautettu."
+
+#: core/alarm/exportalarmjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAlarm settings..."
+msgstr "Aloita KAlarmin asetusten vienti…"
+
+#: core/alarm/exportalarmjobinterface.cpp:29
+#, kde-format
+msgid "Export KAlarm settings"
+msgstr "Vie KAlarmin asetukset"
+
+#: core/alarm/importalarmjobinterface.cpp:32
+#, kde-format
+msgid "Starting to import KAlarm settings..."
+msgstr "Aloitetaan KAlarmin asetusten tuonti…"
+
+#: core/alarm/importalarmjobinterface.cpp:33
+#, kde-format
+msgid "Import KAlarm settings"
+msgstr "Tuo KAlarmin asetukset"
+
+#: core/archivestorage.cpp:43
+#, kde-format
+msgid "Archive cannot be opened in write mode."
+msgstr "Arkistoa ei saatu avattua kirjoitettavaksi."
+
+#: core/archivestorage.cpp:45 core/utils.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Archive cannot be opened in read mode."
+msgstr "Arkistoa ei saatu avattua luettavaksi."
+
+#: core/backupresourcefilejobbase.cpp:47
+#, kde-format
+msgid "\"%1\" is not a file."
+msgstr "”%1” ei ole tiedosto."
+
+#: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
+#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
+#, kde-format
+msgid "\"%1\" was backed up."
+msgstr "”%1” varmuuskopioitiin."
+
+#: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
+#: core/storeresourcejob.cpp:59
+#, kde-format
+msgid "\"%1\" file cannot be added to backup file."
+msgstr "Tiedostoa ”%1” ei voitu lisätä varmuuskopiotiedostoon."
+
+#: core/calendar/exportcalendarjobinterface.cpp:82
+#, kde-format
+msgid "Start export KOrganizer settings..."
+msgstr "Aloita KOrganizerin asetusten vienti…"
+
+#: core/calendar/exportcalendarjobinterface.cpp:83
+#, kde-format
+msgid "Export KOrganizer settings"
+msgstr "Vie KOrganizerin asetukset"
+
+#: core/calendar/importcalendarjobinterface.cpp:35
+#, kde-format
+msgid "Starting to import KOrganizer settings..."
+msgstr "Aloitetaan KOrganizerin asetusten tuonti…"
+
+#: core/calendar/importcalendarjobinterface.cpp:37
+#, kde-format
+msgid "Import KOrganizer settings"
+msgstr "Tuo KOrganizerin asetukset"
+
+#: core/mail/exportmailjobinterface.cpp:43
+#, kde-format
+msgid "Start export KMail settings..."
+msgstr "Aloita KMailin asetusten vienti…"
+
+#: core/mail/exportmailjobinterface.cpp:44
+#, kde-format
+msgid "Export KMail settings"
+msgstr "Vie KMailin asetukset"
+
+#: core/mail/exportmailjobinterface.cpp:112
+#, kde-format
+msgid "Backing up Folder Attributes..."
+msgstr "Varmuuskopioidaan kansiomääritteitä…"
+
+#: core/mail/exportmailjobinterface.cpp:114
+#, kde-format
+msgid "Backing up Mails..."
+msgstr "Varmuuskopioidaan sähköposteja…"
+
+#: core/mail/exportmailjobinterface.cpp:115
+#, kde-format
+msgid "Start export resource..."
+msgstr "Aloita resurssin vienti…"
+
+#: core/mail/exportmailjobinterface.cpp:123
+#, kde-format
+msgid "Backing up transports..."
+msgstr "Varmuuskopioidaan postinvälityksiä…"
+
+#: core/mail/exportmailjobinterface.cpp:128
+#: core/mail/exportmailjobinterface.cpp:140
+#, kde-format
+msgid "Transports backup done."
+msgstr "Postinvälitykset varmuuskopioitu."
+
+#: core/mail/exportmailjobinterface.cpp:142
+#, kde-format
+msgid "Transport file cannot be added to backup file."
+msgstr "Postinvälitystiedostoa ei voitu lisätä varmuuskopiotiedostoon."
+
+#: core/mail/exportmailjobinterface.cpp:557
+#, kde-format
+msgid "Backing up identity..."
+msgstr "Varmuuskopioidaan henkilöyksiä…"
+
+#: core/mail/exportmailjobinterface.cpp:596
+#, kde-format
+msgid "vCard file \"%1\" cannot be saved."
+msgstr "vCard-tiedostoa ”%1” ei voi tallentaa."
+
+#: core/mail/exportmailjobinterface.cpp:609
+#, kde-format
+msgid "Identity backup done."
+msgstr "Henkilöydet varmuuskopioitu."
+
+#: core/mail/exportmailjobinterface.cpp:611
+#, kde-format
+msgid "Identity file cannot be added to backup file."
+msgstr "Henkilöystiedostoa ei voitu lisätä varmuuskopiotiedostoon."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:139
+#, kde-format
+msgid "Filters backup done."
+msgstr "Suotimet varmuuskopioitu."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#, kde-format
+msgid "Filters cannot be exported."
+msgstr "Suotimia ei voi viedä."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#, kde-format
+msgid "Backing up Folder Attributes done."
+msgstr "Kansiomääritteiden varmuuskopiointi valmis."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#, kde-format
+msgid "Folder Attributes cannot be exported."
+msgstr "Kansiomääritteitä ei voi viedä."
+
+#: core/mail/importmailjobinterface.cpp:43
+#, kde-format
+msgid "Starting to import KMail settings..."
+msgstr "Aloitetaan KMailin asetusten tuonti…"
+
+#: core/mail/importmailjobinterface.cpp:44
+#, kde-format
+msgid "Import KMail settings"
+msgstr "Tuo KMailin asetukset"
+
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
+#, kde-format
+msgid "Restore transports..."
+msgstr "Palauta postinvälitykset…"
+
+#: core/mail/importmailjobinterface.cpp:173
+#, kde-format
+msgid "mailtransports file could not be found in the archive."
+msgstr "Postinvälitystiedostoa ei löytynyt arkistosta."
+
+#: core/mail/importmailjobinterface.cpp:188
+#, kde-format
+msgid "Transports restored."
+msgstr "Postinvälitykset palautettu."
+
+#: core/mail/importmailjobinterface.cpp:190
+#, kde-format
+msgid "Failed to restore transports file."
+msgstr "Postinvälitystiedoston palauttaminen epäonnistui."
+
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
+#, kde-format
+msgid "Restore mails..."
+msgstr "Palauta sähköpostit…"
+
+#: core/mail/importmailjobinterface.cpp:555
+#, kde-format
+msgid "Mails restored."
+msgstr "Sähköpostit palautettu."
+
+#: core/mail/importmailjobinterface.cpp:562
+#, kde-format
+msgid "Restore config..."
+msgstr "Palauta asetukset…"
+
+#: core/mail/importmailjobinterface.cpp:565
+#, kde-format
+msgid "filters file could not be found in the archive."
+msgstr "Suodintiedostoa ei löytynyt arkistosta."
+
+#: core/mail/importmailjobinterface.cpp:569
+#, kde-format
+msgid "Restore filters..."
+msgstr "Palauta suodattimet…"
+
+#: core/mail/importmailjobinterface.cpp:618
+#, kde-format
+msgid "Filters restored."
+msgstr "Suodattimet palautettu."
+
+#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:904
+#, kde-format
+msgid "Restoring identities..."
+msgstr "Palautetaan henkilöydet…"
+
+#: core/mail/importmailjobinterface.cpp:902
+#, kde-format
+msgid "emailidentities file could not be found in the archive."
+msgstr "Sähköpostihenkilöyksien tiedostoa ei löytynyt arkistosta."
+
+#: core/mail/importmailjobinterface.cpp:963
+#, kde-format
+msgid "Identities restored."
+msgstr "Henkilöydet palautettu."
+
+#: core/mail/importmailjobinterface.cpp:965
+#, kde-format
+msgid "Failed to restore identity file."
+msgstr "Henkilöystiedoston palauttaminen epäonnistui."
+
+#: core/mail/importmailjobinterface.cpp:1287
+#, kde-format
+msgid "\"%1\" migration done."
+msgstr "”%1”: siirto valmis."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:35
+#, kde-format
+msgid "Restoring folder attributes..."
+msgstr "Palautetaan kansiomääritteitä…"
+
+#: core/mail/importmailjobinterfaceimpl.cpp:41
+#, kde-format
+msgid "Restoring Folder Attributes done."
+msgstr "Kansiomääritteiden palautus valmis."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:45
+#, kde-format
+msgid "Folder Attributes cannot be restored."
+msgstr "Kansiomääritteitä ei voi palauttaa."
+
+#: core/notes/exportnotesjobinterface.cpp:28
+#, kde-format
+msgid "Start export KNotes settings..."
+msgstr "Aloita KNotesin asetusten vienti…"
+
+#: core/notes/exportnotesjobinterface.cpp:29
+#, kde-format
+msgid "Export KNotes settings"
+msgstr "Vie KNotesin asetukset"
+
+#: core/notes/importnotesjobinterface.cpp:49
+#, kde-format
+msgid "Starting to import KNotes settings..."
+msgstr "Aloitetaan KNotesin asetusten tuonti…"
+
+#: core/notes/importnotesjobinterface.cpp:52
+#, kde-format
+msgid "Import KNotes settings"
+msgstr "Tuo KNotesin asetukset"
+
+#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#, kde-format
+msgid "No data selected."
+msgstr "Tietoja ei ole valittu."
+
+#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#, kde-format
+msgid "Unable to open file \"%1\"."
+msgstr "Tiedostoa ”%1” ei voida avata."
+
+#: core/pimdatabackuprestore.cpp:94
+#, kde-format
+msgid "Starting to backup data in '%1'"
+msgstr "Aloitetaan tietojen varmuuskopiointi arkistoon ”%1”"
+
+#: core/pimdatabackuprestore.cpp:183
+#, kde-format
+msgid "Backup in '%1' done."
+msgstr "Varmuuskopioitu arkistoon ”%1”."
+
+#: core/pimdatabackuprestore.cpp:279
+#, kde-format
+msgid "Starting to restore data from '%1'"
+msgstr "Aloitetaan tietojen palautus arkistosta ”%1”."
+
+#: core/pimdatabackuprestore.cpp:287
+#, kde-format
+msgid "Restoring data from '%1' done."
+msgstr "Tiedot on palautettu arkistosta ”%1”."
+
+#: core/pimdatabackupthread.cpp:37
+#, kde-format
+msgid "Impossible to open archive file."
+msgstr "Arkistotiedostoa on mahdotonta avata."
+
+#: core/pimdatabackupthread.cpp:44
+#, kde-format
+msgid "Impossible to backup \"%1\"."
+msgstr "Kohdetta ”%1” on mahdotonta varmuuskopioida."
+
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
+#, kde-format
+msgid "Resource file \"%1\" cannot be added to backup file."
+msgstr "Resurssitiedostoa ”%1” ei voi lisätä varmuuskopiotiedostoon."
+
+#: core/resourceconverterbase.cpp:206
+#, kde-format
+msgid "Resource config file \"%1\" doesn't exist."
+msgstr "Resurssiasetustiedostoa ”%1” ei ole olemassa."
+
+#: core/utils.cpp:181
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: core/utils.cpp:183
+#, kde-format
+msgid "KAddressBook"
+msgstr "KAddressBook"
+
+#: core/utils.cpp:185
+#, kde-format
+msgid "KAlarm"
+msgstr "KAlarm"
+
+#: core/utils.cpp:187
+#, kde-format
+msgid "KOrganizer"
+msgstr "KOrganizer"
+
+#: core/utils.cpp:189
+#, kde-format
+msgid "KNotes"
+msgstr "KNotes"
+
+#: core/utils.cpp:191
+#, kde-format
+msgid "Akregator"
+msgstr "Akregator"
+
+# Koska tämä liittyy jotenkin id:iden sarjaan, joka alkaa Resources, monikko on luontevampi
+#: core/utils.cpp:205
+#, kde-format
+msgid "Identity"
+msgstr "Henkilöydet"
+
+#: core/utils.cpp:207
+#, kde-format
+msgid "Mails"
+msgstr "Sähköpostit"
+
+# Koska tämä liittyy jotenkin id:iden sarjaan, joka alkaa Resources, monikko on luontevampi
+#: core/utils.cpp:209
+#, kde-format
+msgid "Mail Transport"
+msgstr "Postivälitykset"
+
+#: core/utils.cpp:211
+#, kde-format
+msgid "Resources"
+msgstr "Resurssit"
+
+# Koska tämä liittyy jotenkin id:iden sarjaan, joka alkaa Resources, monikko on luontevampi
+#: core/utils.cpp:213
+#, kde-format
+msgid "Config"
+msgstr "Asetukset"
+
+#: core/utils.cpp:215
+#, kde-format
+msgid "Data"
+msgstr "Tiedot"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Archive File Structure"
+msgstr "Arkistotiedoston rakenne"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:31
+#, kde-format
+msgid "Backup Archive Structure:"
+msgstr "Varmuuskopioarkiston rakenne:"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:57
+#, kde-format
+msgid "backup-structure.txt file was not found."
+msgstr "backup-structure.txt-tiedostoa ei löytynyt."
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure PimDataExporter"
+msgstr "PIM-tietojen viennin asetukset"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
+#, kde-format
+msgid "General"
+msgstr "Perusasetukset"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:51
+#, kde-format
+msgid "User Feedback"
+msgstr "Käyttäjäpalaute"
+
+#: gui/dialog/selectiontypedialog.cpp:22
+#, kde-format
+msgid "Use this template by default"
+msgstr "Käytä tätä pohjaa oletuksena"
+
+#: gui/dialog/selectiontypedialog.cpp:23
+#, kde-format
+msgid "Save as Template..."
+msgstr "Tallenna mallipohjaksi…"
+
+#: gui/dialog/selectiontypedialog.cpp:24
+#, kde-format
+msgid "Load Template..."
+msgstr "Lataa mallipohja…"
+
+#: gui/dialog/selectiontypedialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Type"
+msgstr "Valitse tyyppi"
+
+#: gui/dialog/selectiontypedialog.cpp:47
+#: gui/dialog/synchronizeresourcedialog.cpp:40
+#, kde-format
+msgid "Select All"
+msgstr "Valitse kaikki"
+
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:45
+#, kde-format
+msgid "Unselect All"
+msgstr "Poista kaikki valinnat"
+
+#: gui/dialog/showarchivestructuredialog.cpp:33
+#, kde-format
+msgid "Extract Selected File"
+msgstr "Pura valittu tiedosto"
+
+#: gui/dialog/showarchivestructuredialog.cpp:34
+#, kde-format
+msgid "Open Selected File"
+msgstr "Avaa valittu tiedosto"
+
+#: gui/dialog/showarchivestructuredialog.cpp:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Show Archive Content on file \"%1\""
+msgstr "Näytä tiedoston ”%1” arkistosisältö"
+
+#: gui/dialog/showarchivestructuredialog.cpp:44
+#, kde-format
+msgid "Search..."
+msgstr "Etsi…"
+
+#: gui/dialog/showarchivestructuredialog.cpp:47
+#, kde-format
+msgid "Save As Text..."
+msgstr "Tallenna tekstinä…"
+
+#: gui/dialog/showarchivestructuredialog.cpp:127
+#, kde-format
+msgid "Select Directory"
+msgstr "Valitse kansio"
+
+#: gui/dialog/showarchivestructuredialog.cpp:133
+#, kde-format
+msgid "Do you want to overwrite %1?"
+msgstr "Haluatko korvata tiedoston %1?"
+
+#: gui/dialog/showarchivestructuredialog.cpp:134
+#, kde-format
+msgid "File Already Exist"
+msgstr "Tiedosto on jo olemassa"
+
+#: gui/dialog/showarchivestructuredialog.cpp:142
+#, kde-format
+msgid "Impossible to copy %1 in %2."
+msgstr "Lähteen %1 kopioiminen kohteeseen %2 on mahdotonta."
+
+#: gui/dialog/showarchivestructuredialog.cpp:165
+#, kde-format
+msgctxt "qfiledialog filter files text"
+msgid "Text Files"
+msgstr "Tekstitiedostot"
+
+#: gui/dialog/showarchivestructuredialog.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Log File"
+msgstr "Vie lokitiedosto"
+
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Cannot open archive"
+msgstr "Arkistoa ei saatu avattua"
+
+#: gui/dialog/showarchivestructuredialog.cpp:182
+#, kde-format
+msgid "Info"
+msgstr "Tiedot"
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "This is not pim archive."
+msgstr "Tämä ei ole PIM-arkisto."
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "Show information"
+msgstr "Näytä tiedot"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Synchronize Resources"
+msgstr "Synkronoi resurssit"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:26
+#, kde-format
+msgid ""
+"Some resources were added but data were not sync. Select resources that you "
+"want to sync:"
+msgstr ""
+"Joitakin resursseja lisättiin, mutta tiedot eivät ole ajan tasalla. Valitse "
+"synkronoitavat resurssit:"
+
+#: gui/importexportprogressindicatorgui.cpp:35
+#: gui/job/fullsynchronizeresourcesjob.cpp:39
+#, kde-format
+msgid "Cancel"
+msgstr "Peru"
+
+#: gui/importexportprogressindicatorgui.cpp:66
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
+msgstr "”%1” on jo olemassa. Haluatko korvata sen vai yhdistää tiedot?"
+
+#: gui/importexportprogressindicatorgui.cpp:67
+#: gui/importexportprogressindicatorgui.cpp:79
+#: gui/importexportprogressindicatorgui.cpp:92
+#, kde-format
+msgid "Restore"
+msgstr "Palauta"
+
+#: gui/importexportprogressindicatorgui.cpp:69
+#, kde-format
+msgid "Merge"
+msgstr "Yhdistä"
+
+#: gui/importexportprogressindicatorgui.cpp:78
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it?"
+msgstr "”%1” on jo olemassa. Haluatko korvata sen?"
+
+#: gui/importexportprogressindicatorgui.cpp:91
+#, kde-format
+msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
+msgstr "Kansio ”%1” on jo olemassa. Haluatko korvata sen?"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:41
+#, kde-format
+msgctxt "@title:window"
+msgid "Synchronize resources"
+msgstr "Synkronoi resurssit"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:42
+#, kde-format
+msgid "Synchronize resources... It can take some time."
+msgstr "Synkronoidaan resursseja… Tämä voi kestää tovin."
+
+#: gui/pimdatabackuprestoreui.cpp:24
+#, kde-format
+msgid ""
+"The archive was created by a newer version of this program. It might contain "
+"additional data which will be skipped during import. Do you want to import "
+"it?"
+msgstr ""
+"Arkisto on luotu ohjelman uudemmalla versiolla. Siinä saattaa olla "
+"uudenlaisia tietoja, jotka ohitetaan tuonnissa. Haluatko tuoda arkiston?"
+
+#: gui/pimdatabackuprestoreui.cpp:26
+#, kde-format
+msgid "Not correct version"
+msgstr "Väärä versio"
+
+#: gui/pimdatabackuprestoreui.cpp:27
+#, kde-format
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Tuo"
+
+#: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
+#, kde-format
+msgid "PIM Data Exporter"
+msgstr "PIM-tietojen vienti"
+
+#: gui/pimdatacommandlineoption.cpp:41
+#, kde-format
+msgid "Copyright © 2012-%1 pimdataexporter authors"
+msgstr "Tekijänoikeudet © 2012–%1 pimdataexporterin tekijät"
+
+#: gui/pimdatacommandlineoption.cpp:46
+#, kde-format
+msgid "Template file uses to define what data, settings to import or export"
+msgstr ""
+"Mallipohjatiedosto käyttää määrittääkseen mitä tietoja ja asetuksia tuodaan "
+"tai viedään"
+
+#: gui/pimdatacommandlineoption.cpp:48
+#, kde-format
+msgid "Import the given file"
+msgstr "Tuo annettu tiedosto"
+
+#: gui/pimdatacommandlineoption.cpp:49
+#, kde-format
+msgid "Export the given file"
+msgstr "Vie annettu tiedosto"
+
+#: gui/pimdatacommandlineoption.cpp:50
+#, kde-format
+msgid "File or url. The user will be asked whether to import or export."
+msgstr "Tiedosto tai osoite. Käyttäjältä kysytään tuodaanko tai viedäänkö."
+
+#: gui/pimdatacommandlineoption.cpp:52
+#, kde-format
+msgid "Lists the available options for user feedback"
+msgstr "Luettelee käyttäjäpalautteeseen käytettävissä olevat valinnat"
+
+#. i18n: ectx: Menu (file)
+#: gui/pimdataexporter.rc:8
+#, kde-format
+msgid "&File"
+msgstr "&Tiedosto"
+
+#. i18n: ectx: Menu (tools)
+#: gui/pimdataexporter.rc:21
+#, kde-format
+msgid "&Tools"
+msgstr "T&yökalut"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: gui/pimdataexporter.rc:28
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Päätyökalurivi"
+
+#: gui/pimdataexporterwindow.cpp:126
+#, kde-format
+msgid "Full sync starts..."
+msgstr "Täysi synkronointi alkaa…"
+
+#: gui/pimdataexporterwindow.cpp:156
+#, kde-format
+msgid "Full sync finished."
+msgstr "Täysi synkronointi on valmis."
+
+#: gui/pimdataexporterwindow.cpp:163
+#, kde-format
+msgid "Full sync for \"%1\" done."
+msgstr "Kohteen ”%1” täysi synkronointi on tehty."
+
+#: gui/pimdataexporterwindow.cpp:168
+#, kde-format
+msgid "Full sync for \"%1\" failed."
+msgstr "Kohteen ”%1” täysi synkronointi epäonnistui."
+
+#: gui/pimdataexporterwindow.cpp:174
+#, kde-format
+msgid ""
+"For restoring data, you must use \"pimdataexporter\". Be careful as it can "
+"overwrite your existing settings and data."
+msgstr ""
+"Tietojen palauttamiseen tulee käyttää pimsettingexporter-ohjelmaa. Ole "
+"varovainen: se voi korvata nykyiset asetukset ja tiedot."
+
+#: gui/pimdataexporterwindow.cpp:176 gui/pimdataexporterwindow.cpp:281
+#: gui/pimdataexporterwindow.cpp:359
+#, kde-format
+msgid "Backup"
+msgstr "Varmuuskopioi"
+
+#: gui/pimdataexporterwindow.cpp:203
+#, kde-format
+msgid "Export Data..."
+msgstr "Vie tiedot…"
+
+#: gui/pimdataexporterwindow.cpp:208
+#, kde-format
+msgid "Import Data..."
+msgstr "Tuo tiedot…"
+
+#: gui/pimdataexporterwindow.cpp:213
+#, kde-format
+msgid "Save log..."
+msgstr "Tallenna loki…"
+
+#: gui/pimdataexporterwindow.cpp:216
+#, kde-format
+msgid "Show Archive Structure Information..."
+msgstr "Näytä arkiston rakennetiedot…"
+
+#: gui/pimdataexporterwindow.cpp:219
+#, kde-format
+msgid "Show Archive Information..."
+msgstr "Näytä arkiston tiedot…"
+
+#: gui/pimdataexporterwindow.cpp:223
+#, kde-format
+msgid "Show Information on current Archive..."
+msgstr "Näytä nykyiset arkiston tiedot…"
+
+#: gui/pimdataexporterwindow.cpp:259
+#, kde-format
+msgid "Select Archive"
+msgstr "Valitse arkisto"
+
+#: gui/pimdataexporterwindow.cpp:259
+#, kde-format
+msgid "Zip file"
+msgstr "Zippaa tiedosto"
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Log is empty."
+msgstr "Loki on tyhjä."
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Save log"
+msgstr "Tallenna loki"
+
+#: gui/pimdataexporterwindow.cpp:275
+#, kde-format
+msgid "HTML Files (*.html)"
+msgstr "HTML-tiedostot (*.html)"
+
+#: gui/pimdataexporterwindow.cpp:281
+#, kde-format
+msgid "Please quit all kdepim applications before backing up your data."
+msgstr "Lopeta kaikki KDEPIM-sovellukset ennen tietojen varmuuskopioimista."
+
+#: gui/pimdataexporterwindow.cpp:304
+#, kde-format
+msgid "Create backup"
+msgstr "Luo varmuuskopio"
+
+#: gui/pimdataexporterwindow.cpp:306
+#, kde-format
+msgid "Zip file (*.zip)"
+msgstr "Zip-tiedosto (*.zip)"
+
+#: gui/pimdataexporterwindow.cpp:316
+#, kde-format
+msgid "Backup in progress..."
+msgstr "Varmuuskopiointi käynnissä…"
+
+#: gui/pimdataexporterwindow.cpp:358
+#, kde-format
+msgid ""
+"Before restoring data you must close all kdepim applications. Do you want to "
+"continue?"
+msgstr ""
+"Ennen tietojen palauttamista, sulje kaikki KDEPIM-sovellukset. Haluatko "
+"jatkaa?"
+
+#: gui/pimdataexporterwindow.cpp:372
+#, kde-format
+msgid "Restore backup"
+msgstr "Palauta varmuuskopio"
+
+#: gui/pimdataexporterwindow.cpp:374
+#, kde-format
+msgid "Zip File"
+msgstr "Zip-tiedosto"
+
+#: gui/pimdataexporterwindow.cpp:406
+#, kde-format
+msgid "Restore in progress..."
+msgstr "Palautus käynnissä…"
+
+#: gui/trayicon/pimdatatrayicon.cpp:13
+#, kde-format
+msgid "Pim Data Exporter"
+msgstr "PIM-tietojen vienti"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:16
+#, kde-format
+msgid "Always Override File"
+msgstr "Korvaa tiedosto aina"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:17
+#, kde-format
+msgid "Always Override Directory"
+msgstr "Korvaa kansio aina"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:18
+#, kde-format
+msgid "Always Merge Config File"
+msgstr "Yhdistä asetustiedosto aina"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:23
+#, kde-format
+msgid "Import"
+msgstr "Tuonti"
+
+#: gui/widgets/selectiontypetreewidget.cpp:351
+#, kde-format
+msgid "Template Files (*.xml)"
+msgstr "Mallipohjatiedostot (*.xml)"
+
+#~ msgid "&New"
+#~ msgstr "&Uusi"
+
+#~ msgid "&Edit"
+#~ msgstr "&Muokkaa"
+
+#~ msgid "&View"
+#~ msgstr "&Näkymä"
+
+#~ msgid "&Action"
+#~ msgstr "&Toiminto"
+
+#~ msgid "&Settings"
+#~ msgstr "&Asetukset"
+
+#~ msgid "&Help"
+#~ msgstr "&Ohje"
+
+#~ msgid "&Export"
+#~ msgstr "&Vie"
+
+#~ msgid "&Collection"
+#~ msgstr "&Kokoelma"
+
+#~ msgid "&Item"
+#~ msgstr "&Tietue"
+
+#~ msgid "&Cache"
+#~ msgstr "Väli&muisti"
+
+#~ msgid "&Server"
+#~ msgstr "&Palvelin"
+
+#~ msgid "&Certificates"
+#~ msgstr "&Varmenteet"
+
+#~ msgid "&Window"
+#~ msgstr "&Ikkuna"
+
+#~ msgctxt "@title:menu New message, folder or new window."
+#~ msgid "New"
+#~ msgstr "Uusi"
+
+#~ msgid "&Go"
+#~ msgstr "&Siirry"
+
+#~ msgid "F&older"
+#~ msgstr "K&ansio"
+
+#~ msgid "Apply Filters on Folder"
+#~ msgstr "Käytä kansiossa suodattimia"
+
+#~ msgid "Apply Filters on Folder and all its Subfolders"
+#~ msgstr "Käytä kansiossa alikansioineen suodattimia"
+
+#~ msgid "&Message"
+#~ msgstr "&Viesti"
+
+#~ msgid "Reply Special"
+#~ msgstr "Vastaa"
+
+#~ msgid "&Forward"
+#~ msgstr "&Eteenpäin"
+
+#~ msgid "A&pply Filter"
+#~ msgstr "Käy&tä suodatinta"
+
+#~ msgid "&Options"
+#~ msgstr "&Valinnat"
+
+#~ msgid "&Attach"
+#~ msgstr "&Liitä"
+
+#~ msgid "HTML Toolbar"
+#~ msgstr "HTML-työkalurivi"
+
+#~ msgid "Text Direction Toolbar"
+#~ msgstr "Tekstin suunta -työkalurivi"
+
+#~ msgid "Navigator"
+#~ msgstr "Navigointi"
+
+#~ msgid "PIM Setting Exporter"
+#~ msgstr "PIM-asetusten vienti"
+
+#~ msgid "Start export Blogilo settings..."
+#~ msgstr "Aloita Blogilon asetusten vienti…"
+
+#~ msgid "Export Blogilo settings"
+#~ msgstr "Vie Blogilon asetukset"
+
+#~ msgid "Starting to import Blogilo settings..."
+#~ msgstr "Aloitetaan Blogilon asetusten tuonti…"
+
+#~ msgid "Import Blogilo settings"
+#~ msgstr "Tuo Blogilon asetukset"
+
+#~ msgid "Blogilo"
+#~ msgstr "Blogilo"
+
+#~ msgid "Backup infos."
+#~ msgstr "Varmuuskopioi tiedot."
+
+#~ msgid ""
+#~ "Before backing up data, it is recommended to quit all kdepim applications."
+#~ msgstr ""
+#~ "Ennen tietojen varmuuskopiointia on suositeltavaa sulkea kaikki kdepim-"
+#~ "sovellukset."
+
+#~ msgid "Akonadi database file could not be found in the archive."
+#~ msgstr "Akonadi-tietokantatiedostoa ei löytynyt arkistosta."
+
+#~ msgid "Restore Akonadi Database..."
+#~ msgstr "Palauta Akonadi-tietokanta…"
+
+#~ msgid "Database driver \"%1\" not supported."
+#~ msgstr "Tietokanta-ajuri \"%1\" ei ole tuettu."
+
+# %1 on ohjelmabinaarin nimi
+#~ msgid "Could not find \"%1\" necessary to restore database."
+#~ msgstr "Tietokannan palauttamiseen tarvittavaa ohjelmaa ”%1” ei löytynyt."
+
+#~ msgid "Failed to restore Akonadi Database."
+#~ msgstr "Akonadi-tietokannan palautus epäonnistui."
+
+#~ msgid "Akonadi Database restored."
+#~ msgstr "Akonadi-tietokanta palautettu."
+
+#~ msgid "Akonadi Database"
+#~ msgstr "Akonadi-tietokanta"
+
+#~ msgid "Overwrite"
+#~ msgstr "Korvaa"
+
+#~ msgid "Copyright © 2012-2015 pimsettingexporter authors"
+#~ msgstr "Tekijänoikeudet © 2012–2015 pimsettingexporterin tekijät"
+
+#~ msgid "Back Up Data..."
+#~ msgstr "Varmuuskopioi tiedot…"
+
+#~ msgid "Copyright © 2015 pimsettingexporter authors"
+#~ msgstr "Tekijänoikeudet © 2015 pimsettingexporterin tekijät"
+
+#~ msgid "mysqldump not found. Export data aborted"
+#~ msgstr "mysqldump-ohjelmaa ei löydy. Tietojen vienti keskeytettiin"
+
+#~ msgid "Backing up Akonadi Database..."
+#~ msgstr "Varmuuskopioidaan Akonadi-tietokantaa…"
+
+# %1 on ohjelmabinaarin nimi
+#~ msgid "Could not find \"%1\" necessary to dump database."
+#~ msgstr "Tietokannan vedostamiseen tarvittavaa ohjelmaa ”%1” ei löydy."
+
+#~ msgid "Akonadi Database \"%1\" cannot be added to backup file."
+#~ msgstr "Akonadi-tietokantaa \"%1\" ei voi lisätä varmuuskopiotiedostoon."
+
+#~ msgid "Akonadi Database backup done."
+#~ msgstr "Akonadi-tietokannan varmuuskopiointi valmistui."
+
+#~ msgid "Theme directory \"%1\" cannot be added to backup file."
+#~ msgstr "Teemakansiota ”%1” ei voitu lisätä varmuuskopiotiedostoon."
+
+#~ msgid "Resource was not configured correctly, not archiving it."
+#~ msgstr "Resurssia ei ollut määritetty oikein. Sitä ei arkistoida."
+
+#~ msgid "Zip program not found. Install it before to launch this application."
+#~ msgstr ""
+#~ "Zip-ohjelmaa ei löytynyt. Asenna se ennen tämän sovelluksen "
+#~ "käynnistämistä."
+
+#~ msgid "Zip program not found."
+#~ msgstr "Zip-ohjelmaa ei löytynyt."
+
+#~ msgid "Mails backup done."
+#~ msgstr "Sähköpostit varmuuskopioitu."
+
+#~ msgid "Copyright © 2012-2014 pimsettingexporter authors"
+#~ msgstr "Tekijänoikeudet © 2012–14 pimsettingexporterin tekijät"
+
+#~ msgid "Start export KJots settings..."
+#~ msgstr "Aloita KJotsin asetusten vienti…"
+
+#~ msgid "Start import KJots settings..."
+#~ msgstr "Aloita KJotsin asetusten tuonti…"
+
+#~ msgid "KJots"
+#~ msgstr "KJots"
+
+#~ msgid "Start export KNode settings..."
+#~ msgstr "Aloita KNoden asetusten vienti…"
+
+#~ msgid "Start import KNode settings..."
+#~ msgstr "Aloita KNoden asetusten tuonti…"
+
+#~ msgid "KNode"
+#~ msgstr "KNode"
+
+#~ msgid ""
+#~ "Archive is newer that apps can import. Perhaps some features will not "
+#~ "correctly import. Do you want to import it?"
+#~ msgstr ""
+#~ "Arkisto on uudempi kuin mitä ohjelmat osaavat tuoda. Joitakin "
+#~ "ominaisuuksia ei tuoda oikein. Haluatko tuoda arkiston?"
+
+#~ msgid "Backing up Nepomuk Database..."
+#~ msgstr "Varmuuskopioidaan Nepomuk-tietokantaa…"
+
+#~ msgid "Nepomuk Database backup done."
+#~ msgstr "Nepomuk-tietokannan varmuuskopiointi valmistui."
+
+#~ msgid "Nepomuk Database restored."
+#~ msgstr "Nepomuk-tietokanta palautettu."
+
+#~ msgid "Failed to restore Nepomuk Database."
+#~ msgstr "Nepomuk-tietokannan palautus epäonnistui."
+
+#~ msgid "Nepomuk Database"
+#~ msgstr "Nepomuk-tietokanta"
+
+# Koska tämä liittyy jotenkin id:iden sarjaan, joka alkaa Resources, monikko on luontevampi
+#, fuzzy
+#~| msgid "Config"
+#~ msgid "Configs"
+#~ msgstr "Asetukset"
+
+#, fuzzy
+#~| msgid "Transports backup done."
+#~ msgid "Transports Config"
+#~ msgstr "Postinvälitykset varmuuskopioitu."
+
+#, fuzzy
+#~| msgid "Akonadi Database"
+#~ msgid "Akonadi"
+#~ msgstr "Akonadi-tietokanta"
+
+#, fuzzy
+#~| msgid "Data"
+#~ msgid "Datas"
+#~ msgstr "Tiedot"
+
+#~ msgid "Mail \"%1\" file cannot be added to backup file."
+#~ msgstr "Sähköpostin ”%1” tiedostoa ei voitu lisätä varmuuskopiotiedostoon."
+
+#~ msgid "Mail \"%1\" was backuped."
+#~ msgstr "Sähköposti ”%1” varmuuskopioitiin."
+
+#~ msgid "MBox \"%1\" was backuped."
+#~ msgstr "MBox-tiedosto ”%1” varmuuskopioitiin."
+
+#~ msgid "MBox \"%1\" file cannot be added to backup file."
+#~ msgstr "MBox-tiedostoa ”%1” ei voitu lisätä varmuuskopiotiedostoon."
+
+#~ msgid "backupmail"
+#~ msgstr "backupmail"
+
+#~ msgid "PIM Backup Mail"
+#~ msgstr "PIM Backup Mail"

@@ -1,0 +1,1313 @@
+# translation of backupmail.po to Khmer
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2012.
+# sutha <sutha@khmeros.info>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: backupmail\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-29 00:47+0000\n"
+"PO-Revision-Date: 2012-12-31 14:00+0700\n"
+"Last-Translator: sutha <sutha@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: WordForge 0.8 RC1\n"
+"X-Language: km-KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, សេង សុត្ថា, សុខ សុភា"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "khoemsokhem@open.org.kh,sutha@open.org.kh,sophea@open.org.kh"
+
+#: console/main.cpp:25 console/main.cpp:27
+#, fuzzy, kde-format
+#| msgid "PIM Setting Exporter"
+msgid "PIM Data Exporter Console"
+msgstr "កម្មវិធី​នាំចេញ​ការ​កំណត់​របស់ PIM"
+
+#: console/main.cpp:29
+#, fuzzy, kde-format
+#| msgid "Copyright © 2012 pimsettingexporter authors"
+msgid "Copyright © 2015-%1 pimdataexporter authors"
+msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ២០១២ ដោយ​អ្នក​និពន្ធ pimsettingexporter"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Maintainer"
+msgstr "អ្នក​ថែទាំ"
+
+#: console/main.cpp:31
+#, kde-format
+msgid "File to log information to."
+msgstr ""
+
+#: console/main.cpp:34
+#, kde-format
+msgid "Template file to define what data, settings to import or export."
+msgstr ""
+
+#: console/main.cpp:37
+#, kde-format
+msgid "Import the given file."
+msgstr ""
+
+#: console/main.cpp:39
+#, kde-format
+msgid "Export the given file."
+msgstr ""
+
+#: core/abstractimportexportjob.cpp:56
+#, kde-format
+msgid "Task Canceled"
+msgstr ""
+
+#: core/abstractimportexportjob.cpp:116
+#, kde-format
+msgid "\"%1\" backup done."
+msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក \"%1\" រួច​រាល់ ។"
+
+#: core/abstractimportexportjob.cpp:118
+#, kde-format
+msgid "\"%1\" cannot be exported."
+msgstr "មិន​អាច​នាំ \"%1\" ចេញ​បាន​ទេ ។"
+
+#: core/abstractimportexportjob.cpp:121
+#, kde-format
+msgid "\"%1\" does not exist."
+msgstr ""
+
+#: core/abstractimportexportjob.cpp:268
+#, fuzzy, kde-format
+#| msgid "MBox \"%1\" was backuped."
+msgid "\"%1\" was copied."
+msgstr "MBox \"%1\" ត្រូវបាន​បម្រុង​ទុក ។"
+
+#: core/abstractimportexportjob.cpp:273
+#, fuzzy, kde-format
+#| msgid "Restore identities..."
+msgid "Restoring \"%1\"..."
+msgstr "ស្ដារ​អត្តសញ្ញាណ..."
+
+#: core/abstractimportexportjob.cpp:298
+#, fuzzy, kde-format
+#| msgid "File \"%1\" can not be copied to \"%2\"."
+msgid "File \"%1\" cannot be copied to \"%2\"."
+msgstr "ឯកសារ \"%1\" មិន​អាច​ត្រូវ​បាន​ចម្លង​ទៅ \"%2\"បាន​ទេ ។"
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "Copy file"
+msgstr "ចម្លង​ឯកសារ"
+
+#: core/abstractimportexportjob.cpp:300
+#, fuzzy, kde-format
+#| msgid "MBox \"%1\" was backuped."
+msgid "\"%1\" was restored."
+msgstr "MBox \"%1\" ត្រូវបាន​បម្រុង​ទុក ។"
+
+#: core/abstractimportexportjob.cpp:385
+#: core/addressbook/importaddressbookjobinterface.cpp:231
+#: core/mail/importmailjobinterface.cpp:424
+#, kde-format
+msgid "Resources restored."
+msgstr "បាន​ស្ដារ​ធនធាន ។"
+
+#: core/abstractimportexportjob.cpp:387
+#, fuzzy, kde-format
+#| msgid "Resources restored."
+msgid "No resources files found."
+msgstr "បាន​ស្ដារ​ធនធាន ។"
+
+#: core/abstractimportexportjob.cpp:448
+#, kde-format
+msgid "Unable to copy file %1"
+msgstr ""
+
+#: core/abstractimportexportjob.cpp:489
+#, fuzzy, kde-format
+#| msgid "Resources restored."
+msgid "Resource '%1' created."
+msgstr "បាន​ស្ដារ​ធនធាន ។"
+
+#: core/abstractimportexportjob.cpp:504
+#, kde-format
+msgid "Failed to synchronize '%1'."
+msgstr ""
+
+#: core/abstractimportexportjob.cpp:509
+#, fuzzy, kde-format
+#| msgid "Resources restored."
+msgid "Resource '%1' synchronized."
+msgstr "បាន​ស្ដារ​ធនធាន ។"
+
+#: core/abstractimportexportjob.cpp:515
+#, fuzzy, kde-format
+#| msgid "Resources restored."
+msgid "All resources synchronized."
+msgstr "បាន​ស្ដារ​ធនធាន ។"
+
+#: core/abstractimportexportjob.cpp:541
+#, kde-format
+msgid "Start synchronizing..."
+msgstr ""
+
+#: core/abstractimportexportjob.cpp:578
+#, fuzzy, kde-format
+#| msgid "MBox \"%1\" file cannot be added to backup file."
+msgid "Directory \"%1\" added to backup file."
+msgstr "ឯកសារ MBox \"%1\" មិនអាច​បន្ថែម​ទៅ​ឯកសារ​បម្រុ​ងទុកបាន​ទេ ។"
+
+#: core/abstractimportexportjob.cpp:580
+#, fuzzy, kde-format
+#| msgid "MBox \"%1\" file cannot be added to backup file."
+msgid "Directory \"%1\" cannot be added to backup file."
+msgstr "ឯកសារ MBox \"%1\" មិនអាច​បន្ថែម​ទៅ​ឯកសារ​បម្រុ​ងទុកបាន​ទេ ។"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAddressBook settings..."
+msgstr ""
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:29
+#, kde-format
+msgid "Export KAddressBook settings"
+msgstr ""
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:42
+#: core/alarm/exportalarmjobinterface.cpp:84
+#: core/calendar/exportcalendarjobinterface.cpp:96
+#: core/mail/exportmailjobinterface.cpp:668
+#: core/notes/exportnotesjobinterface.cpp:53
+#, kde-format
+msgid "Backing up resources..."
+msgstr "កំពុង​បម្រុងទុក​ធនធាន..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:102
+#: core/alarm/exportalarmjobinterface.cpp:76
+#: core/calendar/exportcalendarjobinterface.cpp:75
+#: core/mail/exportmailjobinterface.cpp:690
+#: core/notes/exportnotesjobinterface.cpp:150
+#, kde-format
+msgid "Resources backup done."
+msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​ធនធាន ។"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:109
+#: core/akregator/exportakregatorjobinterface.cpp:72
+#: core/alarm/exportalarmjobinterface.cpp:109
+#: core/calendar/exportcalendarjobinterface.cpp:228
+#: core/mail/exportmailjobinterface.cpp:167
+#: core/notes/exportnotesjobinterface.cpp:75
+#, kde-format
+msgid "Backing up config..."
+msgstr "កំពុង​បម្រុងទុក​ការ​កំណត់​រចនាសម្ព័ន្ធ..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:150
+#: core/akregator/exportakregatorjobinterface.cpp:79
+#: core/alarm/exportalarmjobinterface.cpp:135
+#: core/calendar/exportcalendarjobinterface.cpp:248
+#: core/mail/exportmailjobinterface.cpp:552
+#: core/notes/exportnotesjobinterface.cpp:108
+#, kde-format
+msgid "Config backup done."
+msgstr "បាន​ធ្វើការ​បម្រុងទុក​ការ​កំណត់​រចនាសម្ព័ន្ធ ។"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:41
+#, kde-format
+msgid "Starting to import KAddressBook settings..."
+msgstr ""
+
+#: core/addressbook/importaddressbookjobinterface.cpp:43
+#, kde-format
+msgid "Import KAddressBook settings"
+msgstr ""
+
+#: core/addressbook/importaddressbookjobinterface.cpp:92
+#: core/akregator/importakregatorjobinterface.cpp:93
+#: core/alarm/importalarmjobinterface.cpp:82
+#: core/calendar/importcalendarjobinterface.cpp:90
+#: core/notes/importnotesjobinterface.cpp:80
+#, fuzzy, kde-format
+#| msgid "Restore mails..."
+msgid "Restore configs..."
+msgstr "ស្ដារ​សំបុត្រ..."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:109
+#: core/akregator/importakregatorjobinterface.cpp:99
+#: core/alarm/importalarmjobinterface.cpp:98
+#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/mail/importmailjobinterface.cpp:866
+#: core/notes/importnotesjobinterface.cpp:109
+#, kde-format
+msgid "Config restored."
+msgstr "បាន​ស្ដារ​ការ​កំណត់​រចនាសម្ព័ន្ធ ។"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:162
+#: core/addressbook/importaddressbookjobinterface.cpp:163
+#: core/alarm/importalarmjobinterface.cpp:114
+#: core/alarm/importalarmjobinterface.cpp:115
+#: core/calendar/importcalendarjobinterface.cpp:281
+#: core/calendar/importcalendarjobinterface.cpp:282
+#: core/mail/importmailjobinterface.cpp:199
+#: core/mail/importmailjobinterface.cpp:200
+#: core/notes/importnotesjobinterface.cpp:148
+#: core/notes/importnotesjobinterface.cpp:149
+#, kde-format
+msgid "Restore resources..."
+msgstr "ស្ដារ​ធនធាន..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:24
+#, kde-format
+msgid "Start export Akregator settings..."
+msgstr ""
+
+#: core/akregator/exportakregatorjobinterface.cpp:25
+#, kde-format
+msgid "Export Akregator settings"
+msgstr ""
+
+#: core/akregator/exportakregatorjobinterface.cpp:87
+#, fuzzy, kde-format
+#| msgid "Backing up Mails..."
+msgid "Backing up data..."
+msgstr "កំពុង​បម្រុង​ទុក​សំបុត្រ..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:94
+#: core/notes/exportnotesjobinterface.cpp:46
+#, fuzzy, kde-format
+#| msgid "MBox \"%1\" file cannot be added to backup file."
+msgid "\"%1\" directory cannot be added to backup file."
+msgstr "ឯកសារ MBox \"%1\" មិនអាច​បន្ថែម​ទៅ​ឯកសារ​បម្រុ​ងទុកបាន​ទេ ។"
+
+#: core/akregator/exportakregatorjobinterface.cpp:97
+#, fuzzy, kde-format
+#| msgid "Mails backup done."
+msgid "Data backup done."
+msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​សំបុត្រ ។"
+
+#: core/akregator/importakregatorjobinterface.cpp:29
+#, kde-format
+msgid "Starting to import Akregator settings..."
+msgstr ""
+
+#: core/akregator/importakregatorjobinterface.cpp:32
+#, kde-format
+msgid "Import Akregator settings"
+msgstr ""
+
+#: core/akregator/importakregatorjobinterface.cpp:106
+#: core/notes/importnotesjobinterface.cpp:116
+#, fuzzy, kde-format
+#| msgid "Restore Data..."
+msgid "Restore data..."
+msgstr "ស្ដារ​ទិន្នន័យ..."
+
+#: core/akregator/importakregatorjobinterface.cpp:112
+#: core/notes/importnotesjobinterface.cpp:129
+#, fuzzy, kde-format
+#| msgid "Mails restored."
+msgid "Data restored."
+msgstr "បាន​ស្ដារ​សំបុត្រ ។"
+
+#: core/alarm/exportalarmjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAlarm settings..."
+msgstr ""
+
+#: core/alarm/exportalarmjobinterface.cpp:29
+#, kde-format
+msgid "Export KAlarm settings"
+msgstr ""
+
+#: core/alarm/importalarmjobinterface.cpp:32
+#, kde-format
+msgid "Starting to import KAlarm settings..."
+msgstr ""
+
+#: core/alarm/importalarmjobinterface.cpp:33
+#, kde-format
+msgid "Import KAlarm settings"
+msgstr ""
+
+#: core/archivestorage.cpp:43
+#, kde-format
+msgid "Archive cannot be opened in write mode."
+msgstr "មិន​អាច​បើក​ប័ណ្ណសារ​ក្នុង​របៀប​សរសេរ​បាន​ទេ ។"
+
+#: core/archivestorage.cpp:45 core/utils.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Archive cannot be opened in read mode."
+msgstr "មិន​អាច​បើកប័ណ្ណសារ​ក្នុង​របៀប​អាន​បាន​ទេ ។"
+
+#: core/backupresourcefilejobbase.cpp:47
+#, fuzzy, kde-format
+#| msgid "MBox \"%1\" was backuped."
+msgid "\"%1\" is not a file."
+msgstr "MBox \"%1\" ត្រូវបាន​បម្រុង​ទុក ។"
+
+#: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
+#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
+#, fuzzy, kde-format
+#| msgid "MBox \"%1\" was backuped."
+msgid "\"%1\" was backed up."
+msgstr "MBox \"%1\" ត្រូវបាន​បម្រុង​ទុក ។"
+
+#: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
+#: core/storeresourcejob.cpp:59
+#, fuzzy, kde-format
+#| msgid "MBox \"%1\" file cannot be added to backup file."
+msgid "\"%1\" file cannot be added to backup file."
+msgstr "ឯកសារ MBox \"%1\" មិនអាច​បន្ថែម​ទៅ​ឯកសារ​បម្រុ​ងទុកបាន​ទេ ។"
+
+#: core/calendar/exportcalendarjobinterface.cpp:82
+#, kde-format
+msgid "Start export KOrganizer settings..."
+msgstr ""
+
+#: core/calendar/exportcalendarjobinterface.cpp:83
+#, kde-format
+msgid "Export KOrganizer settings"
+msgstr ""
+
+#: core/calendar/importcalendarjobinterface.cpp:35
+#, kde-format
+msgid "Starting to import KOrganizer settings..."
+msgstr ""
+
+#: core/calendar/importcalendarjobinterface.cpp:37
+#, kde-format
+msgid "Import KOrganizer settings"
+msgstr ""
+
+#: core/mail/exportmailjobinterface.cpp:43
+#, kde-format
+msgid "Start export KMail settings..."
+msgstr ""
+
+#: core/mail/exportmailjobinterface.cpp:44
+#, kde-format
+msgid "Export KMail settings"
+msgstr ""
+
+#: core/mail/exportmailjobinterface.cpp:112
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Backing up Folder Attributes..."
+msgstr "កំពុង​បម្រុងទុក​អត្តសញ្ញាណ..."
+
+#: core/mail/exportmailjobinterface.cpp:114
+#, kde-format
+msgid "Backing up Mails..."
+msgstr "កំពុង​បម្រុង​ទុក​សំបុត្រ..."
+
+#: core/mail/exportmailjobinterface.cpp:115
+#, fuzzy, kde-format
+#| msgid "Restore resources..."
+msgid "Start export resource..."
+msgstr "ស្ដារ​ធនធាន..."
+
+#: core/mail/exportmailjobinterface.cpp:123
+#, kde-format
+msgid "Backing up transports..."
+msgstr "កំពុង​បម្រុងទុក​ការ​ដឹក​ជញ្ជូន..."
+
+#: core/mail/exportmailjobinterface.cpp:128
+#: core/mail/exportmailjobinterface.cpp:140
+#, kde-format
+msgid "Transports backup done."
+msgstr "បាន​ធ្វើ​​បម្រុងទុក​កា​រដឹក​ជញ្ជូន ។"
+
+#: core/mail/exportmailjobinterface.cpp:142
+#, kde-format
+msgid "Transport file cannot be added to backup file."
+msgstr "មិន​អាច​​បន្ថែម​ឯកសារ​ដឹក​ជញ្ជូន​ទៅ​ឯកសារ​បម្រុង​ទុក​បាន​ទេ ។"
+
+#: core/mail/exportmailjobinterface.cpp:557
+#, kde-format
+msgid "Backing up identity..."
+msgstr "កំពុង​បម្រុងទុក​អត្តសញ្ញាណ..."
+
+#: core/mail/exportmailjobinterface.cpp:596
+#, fuzzy, kde-format
+#| msgid "vcard file \"%1\" cannot be saved."
+msgid "vCard file \"%1\" cannot be saved."
+msgstr "មិន​អាច​រក្សាទុក \"%1\" ឯកសារ vcard ។"
+
+#: core/mail/exportmailjobinterface.cpp:609
+#, kde-format
+msgid "Identity backup done."
+msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​អត្តសញ្ញាណ ។"
+
+#: core/mail/exportmailjobinterface.cpp:611
+#, kde-format
+msgid "Identity file cannot be added to backup file."
+msgstr "មិន​អាច​បន្ថែម​ឯកសារ​អត្តសញ្ញាណ​ទៅ​ឯកសារ​បម្រុងទុក​បាន​ទេ ។"
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:139
+#, kde-format
+msgid "Filters backup done."
+msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​តម្រង ។"
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#, kde-format
+msgid "Filters cannot be exported."
+msgstr "តម្រង​មិន​អាច​ត្រូវ​បាន​នាំចេញ​ទេ ។"
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Backing up Folder Attributes done."
+msgstr "កំពុង​បម្រុងទុក​អត្តសញ្ញាណ..."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Folder Attributes cannot be exported."
+msgstr "តម្រង​មិន​អាច​ត្រូវ​បាន​នាំចេញ​ទេ ។"
+
+#: core/mail/importmailjobinterface.cpp:43
+#, kde-format
+msgid "Starting to import KMail settings..."
+msgstr ""
+
+#: core/mail/importmailjobinterface.cpp:44
+#, kde-format
+msgid "Import KMail settings"
+msgstr ""
+
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
+#, kde-format
+msgid "Restore transports..."
+msgstr "ស្ដារ​កា​រដឹក​ជញ្ជូន..."
+
+#: core/mail/importmailjobinterface.cpp:173
+#, kde-format
+msgid "mailtransports file could not be found in the archive."
+msgstr "រក​មិន​ឃើញ​ឯកសារ mailtransports នៅ​ក្នុង​ប័ណ្ណសារ ។"
+
+#: core/mail/importmailjobinterface.cpp:188
+#, kde-format
+msgid "Transports restored."
+msgstr "បាន​ស្ដារ​ការ​ដឹកជញ្ជូន ។"
+
+#: core/mail/importmailjobinterface.cpp:190
+#, kde-format
+msgid "Failed to restore transports file."
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ស្ដារ​ឯកសារ​ដឹក​ជញ្ជូន ។"
+
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
+#, kde-format
+msgid "Restore mails..."
+msgstr "ស្ដារ​សំបុត្រ..."
+
+#: core/mail/importmailjobinterface.cpp:555
+#, kde-format
+msgid "Mails restored."
+msgstr "បាន​ស្ដារ​សំបុត្រ ។"
+
+#: core/mail/importmailjobinterface.cpp:562
+#, fuzzy, kde-format
+#| msgid "Restore mails..."
+msgid "Restore config..."
+msgstr "ស្ដារ​សំបុត្រ..."
+
+#: core/mail/importmailjobinterface.cpp:565
+#, kde-format
+msgid "filters file could not be found in the archive."
+msgstr "រក​មិន​ឃើញ​​ឯកសារ​តម្រង​នៅ​ក្នុង​ប័ណ្ណសារ ។"
+
+#: core/mail/importmailjobinterface.cpp:569
+#, fuzzy, kde-format
+#| msgid "Restore mails..."
+msgid "Restore filters..."
+msgstr "ស្ដារ​សំបុត្រ..."
+
+#: core/mail/importmailjobinterface.cpp:618
+#, fuzzy, kde-format
+#| msgid "Mails restored."
+msgid "Filters restored."
+msgstr "បាន​ស្ដារ​សំបុត្រ ។"
+
+#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:904
+#, fuzzy, kde-format
+#| msgid "Restore identities..."
+msgid "Restoring identities..."
+msgstr "ស្ដារ​អត្តសញ្ញាណ..."
+
+#: core/mail/importmailjobinterface.cpp:902
+#, kde-format
+msgid "emailidentities file could not be found in the archive."
+msgstr "រក​មិន​ឃើញ​ឯកសារ emailidentities នៅ​ក្នុង​ប័ណ្ណសារ ។"
+
+#: core/mail/importmailjobinterface.cpp:963
+#, kde-format
+msgid "Identities restored."
+msgstr "បាន​ស្ដារ​អត្តសញ្ញាណ ។"
+
+#: core/mail/importmailjobinterface.cpp:965
+#, kde-format
+msgid "Failed to restore identity file."
+msgstr "បាន​បរាជ័យ​ក្នុងការ​ស្ដារ​​ឯកសារ​អត្តសញ្ញាណ ។"
+
+#: core/mail/importmailjobinterface.cpp:1287
+#, fuzzy, kde-format
+#| msgid "\"%1\" backup done."
+msgid "\"%1\" migration done."
+msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក \"%1\" រួច​រាល់ ។"
+
+#: core/mail/importmailjobinterfaceimpl.cpp:35
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Restoring folder attributes..."
+msgstr "កំពុង​បម្រុងទុក​អត្តសញ្ញាណ..."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:41
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Restoring Folder Attributes done."
+msgstr "កំពុង​បម្រុងទុក​អត្តសញ្ញាណ..."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:45
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Folder Attributes cannot be restored."
+msgstr "តម្រង​មិន​អាច​ត្រូវ​បាន​នាំចេញ​ទេ ។"
+
+#: core/notes/exportnotesjobinterface.cpp:28
+#, kde-format
+msgid "Start export KNotes settings..."
+msgstr ""
+
+#: core/notes/exportnotesjobinterface.cpp:29
+#, kde-format
+msgid "Export KNotes settings"
+msgstr ""
+
+#: core/notes/importnotesjobinterface.cpp:49
+#, kde-format
+msgid "Starting to import KNotes settings..."
+msgstr ""
+
+#: core/notes/importnotesjobinterface.cpp:52
+#, kde-format
+msgid "Import KNotes settings"
+msgstr ""
+
+#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#, kde-format
+msgid "No data selected."
+msgstr ""
+
+#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#, kde-format
+msgid "Unable to open file \"%1\"."
+msgstr ""
+
+#: core/pimdatabackuprestore.cpp:94
+#, kde-format
+msgid "Starting to backup data in '%1'"
+msgstr ""
+
+#: core/pimdatabackuprestore.cpp:183
+#, kde-format
+msgid "Backup in '%1' done."
+msgstr ""
+
+#: core/pimdatabackuprestore.cpp:279
+#, kde-format
+msgid "Starting to restore data from '%1'"
+msgstr ""
+
+#: core/pimdatabackuprestore.cpp:287
+#, kde-format
+msgid "Restoring data from '%1' done."
+msgstr ""
+
+#: core/pimdatabackupthread.cpp:37
+#, kde-format
+msgid "Impossible to open archive file."
+msgstr ""
+
+#: core/pimdatabackupthread.cpp:44
+#, kde-format
+msgid "Impossible to backup \"%1\"."
+msgstr ""
+
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
+#, kde-format
+msgid "Resource file \"%1\" cannot be added to backup file."
+msgstr "មិន​អាច​បន្ថែម​ឯកសារ​ធនធាន \"%1\" ទៅ​ឯកសារ​បម្រុងទុក​បាន​ទេ ។"
+
+#: core/resourceconverterbase.cpp:206
+#, kde-format
+msgid "Resource config file \"%1\" doesn't exist."
+msgstr ""
+
+#: core/utils.cpp:181
+#, fuzzy, kde-format
+#| msgid "Mails"
+msgid "KMail"
+msgstr "សំបុត្រ"
+
+#: core/utils.cpp:183
+#, kde-format
+msgid "KAddressBook"
+msgstr ""
+
+#: core/utils.cpp:185
+#, kde-format
+msgid "KAlarm"
+msgstr ""
+
+#: core/utils.cpp:187
+#, kde-format
+msgid "KOrganizer"
+msgstr ""
+
+#: core/utils.cpp:189
+#, kde-format
+msgid "KNotes"
+msgstr ""
+
+#: core/utils.cpp:191
+#, kde-format
+msgid "Akregator"
+msgstr ""
+
+#: core/utils.cpp:205
+#, kde-format
+msgid "Identity"
+msgstr "អត្តសញ្ញាណ"
+
+#: core/utils.cpp:207
+#, kde-format
+msgid "Mails"
+msgstr "សំបុត្រ"
+
+#: core/utils.cpp:209
+#, kde-format
+msgid "Mail Transport"
+msgstr "ការ​ដឹកជញ្ជូន​សំបុត្រ"
+
+#: core/utils.cpp:211
+#, kde-format
+msgid "Resources"
+msgstr "ធនធាន"
+
+#: core/utils.cpp:213
+#, kde-format
+msgid "Config"
+msgstr "កំណត់​រចនាសម្ព័ន្ធ"
+
+#: core/utils.cpp:215
+#, kde-format
+msgid "Data"
+msgstr ""
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Archive File Structure"
+msgstr ""
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:31
+#, kde-format
+msgid "Backup Archive Structure:"
+msgstr ""
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:57
+#, kde-format
+msgid "backup-structure.txt file was not found."
+msgstr ""
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:27
+#, fuzzy, kde-format
+#| msgid "PIM Setting Exporter"
+msgctxt "@title:window"
+msgid "Configure PimDataExporter"
+msgstr "កម្មវិធី​នាំចេញ​ការ​កំណត់​របស់ PIM"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
+#, kde-format
+msgid "General"
+msgstr ""
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:51
+#, kde-format
+msgid "User Feedback"
+msgstr ""
+
+#: gui/dialog/selectiontypedialog.cpp:22
+#, kde-format
+msgid "Use this template by default"
+msgstr ""
+
+#: gui/dialog/selectiontypedialog.cpp:23
+#, kde-format
+msgid "Save as Template..."
+msgstr ""
+
+#: gui/dialog/selectiontypedialog.cpp:24
+#, kde-format
+msgid "Load Template..."
+msgstr ""
+
+#: gui/dialog/selectiontypedialog.cpp:26
+#, fuzzy, kde-format
+#| msgid "Select Type"
+msgctxt "@title:window"
+msgid "Select Type"
+msgstr "ជ្រើស​ប្រភេទ"
+
+#: gui/dialog/selectiontypedialog.cpp:47
+#: gui/dialog/synchronizeresourcedialog.cpp:40
+#, fuzzy, kde-format
+#| msgid "Select Type"
+msgid "Select All"
+msgstr "ជ្រើស​ប្រភេទ"
+
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:45
+#, kde-format
+msgid "Unselect All"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:33
+#, kde-format
+msgid "Extract Selected File"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:34
+#, kde-format
+msgid "Open Selected File"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Show Archive Content on file \"%1\""
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:44
+#, kde-format
+msgid "Search..."
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:47
+#, kde-format
+msgid "Save As Text..."
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:127
+#, fuzzy, kde-format
+#| msgid "Select Type"
+msgid "Select Directory"
+msgstr "ជ្រើស​ប្រភេទ"
+
+#: gui/dialog/showarchivestructuredialog.cpp:133
+#, fuzzy, kde-format
+#| msgid "\"%1\" already exists. Do you want to overwrite it?"
+msgid "Do you want to overwrite %1?"
+msgstr "មាន​ \"%1\" រួច​ហើយ ។ តើ​អ្នក​ចង់​សរសេរ​ជាន់​វា​ដែរឬទេ ?"
+
+#: gui/dialog/showarchivestructuredialog.cpp:134
+#, kde-format
+msgid "File Already Exist"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:142
+#, kde-format
+msgid "Impossible to copy %1 in %2."
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:165
+#, kde-format
+msgctxt "qfiledialog filter files text"
+msgid "Text Files"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Log File"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Cannot open archive"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:182
+#, kde-format
+msgid "Info"
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "This is not pim archive."
+msgstr ""
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "Show information"
+msgstr ""
+
+#: gui/dialog/synchronizeresourcedialog.cpp:23
+#, fuzzy, kde-format
+#| msgid "Resources"
+msgctxt "@title:window"
+msgid "Synchronize Resources"
+msgstr "ធនធាន"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:26
+#, kde-format
+msgid ""
+"Some resources were added but data were not sync. Select resources that you "
+"want to sync:"
+msgstr ""
+
+#: gui/importexportprogressindicatorgui.cpp:35
+#: gui/job/fullsynchronizeresourcesjob.cpp:39
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#: gui/importexportprogressindicatorgui.cpp:66
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
+msgstr "មាន​ \"%1\" រួច​ហើយ ។ តើ​អ្នក​ចង់​សរសេរ​ជាន់​វា​ដែរឬទេ ?"
+
+#: gui/importexportprogressindicatorgui.cpp:67
+#: gui/importexportprogressindicatorgui.cpp:79
+#: gui/importexportprogressindicatorgui.cpp:92
+#, kde-format
+msgid "Restore"
+msgstr "ស្ដារ"
+
+#: gui/importexportprogressindicatorgui.cpp:69
+#, kde-format
+msgid "Merge"
+msgstr "បញ្ចូល​ចូលគ្នា"
+
+#: gui/importexportprogressindicatorgui.cpp:78
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it?"
+msgstr "មាន​ \"%1\" រួច​ហើយ ។ តើ​អ្នក​ចង់​សរសេរ​ជាន់​វា​ដែរឬទេ ?"
+
+#: gui/importexportprogressindicatorgui.cpp:91
+#, fuzzy, kde-format
+#| msgid "\"%1\" already exists. Do you want to overwrite it?"
+msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
+msgstr "មាន​ \"%1\" រួច​ហើយ ។ តើ​អ្នក​ចង់​សរសេរ​ជាន់​វា​ដែរឬទេ ?"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:41
+#, fuzzy, kde-format
+#| msgid "Resources"
+msgctxt "@title:window"
+msgid "Synchronize resources"
+msgstr "ធនធាន"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:42
+#, kde-format
+msgid "Synchronize resources... It can take some time."
+msgstr ""
+
+#: gui/pimdatabackuprestoreui.cpp:24
+#, kde-format
+msgid ""
+"The archive was created by a newer version of this program. It might contain "
+"additional data which will be skipped during import. Do you want to import "
+"it?"
+msgstr ""
+
+#: gui/pimdatabackuprestoreui.cpp:26
+#, kde-format
+msgid "Not correct version"
+msgstr ""
+
+#: gui/pimdatabackuprestoreui.cpp:27
+#, fuzzy, kde-format
+#| msgid "Restore Data..."
+msgctxt "@action:button"
+msgid "Import"
+msgstr "ស្ដារ​ទិន្នន័យ..."
+
+#: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
+#, fuzzy, kde-format
+#| msgid "PIM Setting Exporter"
+msgid "PIM Data Exporter"
+msgstr "កម្មវិធី​នាំចេញ​ការ​កំណត់​របស់ PIM"
+
+#: gui/pimdatacommandlineoption.cpp:41
+#, fuzzy, kde-format
+#| msgid "Copyright © 2012 pimsettingexporter authors"
+msgid "Copyright © 2012-%1 pimdataexporter authors"
+msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ២០១២ ដោយ​អ្នក​និពន្ធ pimsettingexporter"
+
+#: gui/pimdatacommandlineoption.cpp:46
+#, kde-format
+msgid "Template file uses to define what data, settings to import or export"
+msgstr ""
+
+#: gui/pimdatacommandlineoption.cpp:48
+#, kde-format
+msgid "Import the given file"
+msgstr ""
+
+#: gui/pimdatacommandlineoption.cpp:49
+#, kde-format
+msgid "Export the given file"
+msgstr ""
+
+#: gui/pimdatacommandlineoption.cpp:50
+#, kde-format
+msgid "File or url. The user will be asked whether to import or export."
+msgstr ""
+
+#: gui/pimdatacommandlineoption.cpp:52
+#, kde-format
+msgid "Lists the available options for user feedback"
+msgstr ""
+
+#. i18n: ectx: Menu (file)
+#: gui/pimdataexporter.rc:8
+#, kde-format
+msgid "&File"
+msgstr ""
+
+#. i18n: ectx: Menu (tools)
+#: gui/pimdataexporter.rc:21
+#, kde-format
+msgid "&Tools"
+msgstr ""
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: gui/pimdataexporter.rc:28
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:126
+#, kde-format
+msgid "Full sync starts..."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:156
+#, kde-format
+msgid "Full sync finished."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:163
+#, kde-format
+msgid "Full sync for \"%1\" done."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:168
+#, kde-format
+msgid "Full sync for \"%1\" failed."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:174
+#, kde-format
+msgid ""
+"For restoring data, you must use \"pimdataexporter\". Be careful as it can "
+"overwrite your existing settings and data."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:176 gui/pimdataexporterwindow.cpp:281
+#: gui/pimdataexporterwindow.cpp:359
+#, kde-format
+msgid "Backup"
+msgstr "បម្រុង​ទុក"
+
+#: gui/pimdataexporterwindow.cpp:203
+#, fuzzy, kde-format
+#| msgid "Restore Data..."
+msgid "Export Data..."
+msgstr "ស្ដារ​ទិន្នន័យ..."
+
+#: gui/pimdataexporterwindow.cpp:208
+#, fuzzy, kde-format
+#| msgid "Restore Data..."
+msgid "Import Data..."
+msgstr "ស្ដារ​ទិន្នន័យ..."
+
+#: gui/pimdataexporterwindow.cpp:213
+#, kde-format
+msgid "Save log..."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:216
+#, kde-format
+msgid "Show Archive Structure Information..."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:219
+#, kde-format
+msgid "Show Archive Information..."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:223
+#, kde-format
+msgid "Show Information on current Archive..."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:259
+#, fuzzy, kde-format
+#| msgid "Select Type"
+msgid "Select Archive"
+msgstr "ជ្រើស​ប្រភេទ"
+
+#: gui/pimdataexporterwindow.cpp:259
+#, fuzzy, kde-format
+#| msgid "Copy file"
+msgid "Zip file"
+msgstr "ចម្លង​ឯកសារ"
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Log is empty."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Save log"
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:275
+#, kde-format
+msgid "HTML Files (*.html)"
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:281
+#, kde-format
+msgid "Please quit all kdepim applications before backing up your data."
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:304
+#, kde-format
+msgid "Create backup"
+msgstr "បង្កើត​ការ​បម្រុង​ទុក"
+
+#: gui/pimdataexporterwindow.cpp:306
+#, kde-format
+msgid "Zip file (*.zip)"
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:316
+#, fuzzy, kde-format
+#| msgid "Backing up resources..."
+msgid "Backup in progress..."
+msgstr "កំពុង​បម្រុងទុក​ធនធាន..."
+
+#: gui/pimdataexporterwindow.cpp:358
+#, fuzzy, kde-format
+#| msgid ""
+#| "Before to restore data, close all kdepim applications. Do you want to "
+#| "continue?"
+msgid ""
+"Before restoring data you must close all kdepim applications. Do you want to "
+"continue?"
+msgstr "មុន​ស្ដារ​ទិន្នន័យ បិទ​កម្មវិធី kdepim ទាំងអស់ ។ តើ​អ្នក​ចង់បន្ត​ដែរឬទេ ?"
+
+#: gui/pimdataexporterwindow.cpp:372
+#, kde-format
+msgid "Restore backup"
+msgstr "ស្ដារ​ការ​បម្រុង​ទុក"
+
+#: gui/pimdataexporterwindow.cpp:374
+#, kde-format
+msgid "Zip File"
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:406
+#, fuzzy, kde-format
+#| msgid "Restore resources..."
+msgid "Restore in progress..."
+msgstr "ស្ដារ​ធនធាន..."
+
+#: gui/trayicon/pimdatatrayicon.cpp:13
+#, fuzzy, kde-format
+#| msgid "PIM Setting Exporter"
+msgid "Pim Data Exporter"
+msgstr "កម្មវិធី​នាំចេញ​ការ​កំណត់​របស់ PIM"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:16
+#, kde-format
+msgid "Always Override File"
+msgstr ""
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:17
+#, kde-format
+msgid "Always Override Directory"
+msgstr ""
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:18
+#, kde-format
+msgid "Always Merge Config File"
+msgstr ""
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:23
+#, kde-format
+msgid "Import"
+msgstr ""
+
+#: gui/widgets/selectiontypetreewidget.cpp:351
+#, kde-format
+msgid "Template Files (*.xml)"
+msgstr ""
+
+#~ msgid "PIM Setting Exporter"
+#~ msgstr "កម្មវិធី​នាំចេញ​ការ​កំណត់​របស់ PIM"
+
+#, fuzzy
+#~| msgid "Backup"
+#~ msgid "Backup infos."
+#~ msgstr "បម្រុង​ទុក"
+
+#, fuzzy
+#~| msgid ""
+#~| "Before to backup data, close all kdepim applications. Do you want to "
+#~| "continue?"
+#~ msgid ""
+#~ "Before backing up data, it is recommended to quit all kdepim applications."
+#~ msgstr "មុន​បម្រុង​ទុក​ទិន្នន័យ បិទ​កម្មវិធី​របស់ kdepim ទាំងអស់ ។ តើ​អ្នក​ចង់​បន្ត​ដែរឬទេ ?"
+
+#, fuzzy
+#~| msgid "akonadi database file could not be found in the archive."
+#~ msgid "Akonadi database file could not be found in the archive."
+#~ msgstr "រក​មិន​ឃើញ​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ akonadi នៅ​ក្នុង​ប័ណ្ណសារ ។"
+
+#~ msgid "Restore Akonadi Database..."
+#~ msgstr "ស្ដារ​មូលដ្ឋាន​ទិន្នន័យ Akonadi ..."
+
+#~ msgid "Database driver \"%1\" not supported."
+#~ msgstr "កម្មវិធី​បញ្ជា​មូលដ្ឋាន​ទិន្នន័យ \"%1\" មិន​បានគាំទ្រ​ទេ ។"
+
+#~ msgid "Could not find \"%1\" necessary to restore database."
+#~ msgstr "រក​មិន​ឃើញ \"%1\" ដែល​ចាំបាច់ ដើម្បី​ស្ដារ​មូលដ្ឋាន​ទិន្នន័យ ។"
+
+#~ msgid "Failed to restore Akonadi Database."
+#~ msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ស្ដារ​មូលដ្ឋាន​ទិន្នន័យ Akonadi ។"
+
+#~ msgid "Akonadi Database restored."
+#~ msgstr "បាន​ស្ដារ​មូលដ្ឋាន​ទិន្នន័យ Akonadi ។"
+
+#~ msgid "Akonadi Database"
+#~ msgstr "មូលដ្ឋាន​ទិន្នន័យ Akonadi"
+
+#~ msgid "Overwrite"
+#~ msgstr "សរសេរ​ជាន់​លើ"
+
+#, fuzzy
+#~| msgid "Copyright © 2012 pimsettingexporter authors"
+#~ msgid "Copyright © 2012-2015 pimsettingexporter authors"
+#~ msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ២០១២ ដោយ​អ្នក​និពន្ធ pimsettingexporter"
+
+#~ msgid "Back Up Data..."
+#~ msgstr "បម្រុង​ទុក​ទិន្នន័យ..."
+
+#, fuzzy
+#~| msgid "Copyright © 2012 pimsettingexporter authors"
+#~ msgid "Copyright © 2015 pimsettingexporter authors"
+#~ msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ២០១២ ដោយ​អ្នក​និពន្ធ pimsettingexporter"
+
+#~ msgid "Backing up Akonadi Database..."
+#~ msgstr "កំពុង​​បម្រុ​ងទុក​មូលដ្ឋាន​ទិន្នន័យ Akonadi​..."
+
+#~ msgid "Could not find \"%1\" necessary to dump database."
+#~ msgstr "រក​មិន​ឃើញ \"%1\" ចាំបាច់​ត្រូ​វបង្កើត​មូលដ្ឋាន​ទិន្នន័យ​ទេ​ ។"
+
+#~ msgid "Akonadi Database \"%1\" cannot be added to backup file."
+#~ msgstr "មិន​អាច​បន្ថែម​មូលដ្ឋាន​ទិន្នន័យ Akonadi \"%1\" ទៅ​ឯកសារ​បម្រុង​ទុក​បាន​ទេ ។"
+
+#~ msgid "Akonadi Database backup done."
+#~ msgstr "បាន​ធ្វើ​បម្រុងទុក​​មូលដ្ឋាន​ទិន្នន័យ Akonadi ។"
+
+#, fuzzy
+#~| msgid "MBox \"%1\" file cannot be added to backup file."
+#~ msgid "Theme directory \"%1\" cannot be added to backup file."
+#~ msgstr "ឯកសារ MBox \"%1\" មិនអាច​បន្ថែម​ទៅ​ឯកសារ​បម្រុ​ងទុកបាន​ទេ ។"
+
+#~ msgid "Zip program not found. Install it before to launch this application."
+#~ msgstr "រក​មិ​ន​ឃើញ​កម្មវិធី Zip ទេ ។ ដំឡើង​វា​មុន​នឹង​ចាប់ផ្ដើម​កម្មវិធី​នេះ ។"
+
+#~ msgid "Zip program not found."
+#~ msgstr "រក​មិន​ឃើញ​កម្មវិធី Zip ។"
+
+#~ msgid "Mails backup done."
+#~ msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​សំបុត្រ ។"
+
+#, fuzzy
+#~| msgid "Copyright © 2012 pimsettingexporter authors"
+#~ msgid "Copyright © 2012-2014 pimsettingexporter authors"
+#~ msgstr "រក្សាសិទ្ធិ​ឆ្នាំ ២០១២ ដោយ​អ្នក​និពន្ធ pimsettingexporter"
+
+#~ msgid "Backing up Nepomuk Database..."
+#~ msgstr "កំពុង​បម្រុងទុក​មូលដ្ឋាន​ទិន្នន័យ Nepomuk ..."
+
+#~ msgid "Nepomuk Database backup done."
+#~ msgstr "បាន​ធ្វើ​បម្រុងទុក​មូលដ្ឋាន​ Nepomuk រួចរាល់ ។"
+
+#~ msgid "Nepomuk Database restored."
+#~ msgstr "បាន​ស្ដារ​មូលដ្ឋាន​ទិន្នន័យ Nepomuk ។"
+
+#~ msgid "Failed to restore Nepomuk Database."
+#~ msgstr "បាន​បរាជ័យក្នុងការ​ស្ដារ​មូលដ្ឋាន​ទិន្នន័យ Nepomuk ។"
+
+#~ msgid "Nepomuk Database"
+#~ msgstr "មូលដ្ឋាន​ទិន្នន័យ Nepomuk"
+
+#, fuzzy
+#~| msgid "Config"
+#~ msgid "Configs"
+#~ msgstr "កំណត់​រចនាសម្ព័ន្ធ"
+
+#, fuzzy
+#~| msgid "Transports backup done."
+#~ msgid "Transports Config"
+#~ msgstr "បាន​ធ្វើ​​បម្រុងទុក​កា​រដឹក​ជញ្ជូន ។"
+
+#, fuzzy
+#~| msgid "Akonadi Database"
+#~ msgid "Akonadi"
+#~ msgstr "មូលដ្ឋាន​ទិន្នន័យ Akonadi"
+
+#~ msgid "Mail \"%1\" file cannot be added to backup file."
+#~ msgstr "ឯកសារ​សំបុត្រ \"%1\" មិនអាច​បន្ថែម​ទៅ​ឯកសារ​បម្រុង​ទុក​បាន​ទេ ។"
+
+#~ msgid "Mail \"%1\" was backuped."
+#~ msgstr "សំបុត្រ \"%1\" ត្រូវ​បាន​បម្រុង​ទុក ។"
+
+#~ msgid "MBox \"%1\" was backuped."
+#~ msgstr "MBox \"%1\" ត្រូវបាន​បម្រុង​ទុក ។"
+
+#~ msgid "MBox \"%1\" file cannot be added to backup file."
+#~ msgstr "ឯកសារ MBox \"%1\" មិនអាច​បន្ថែម​ទៅ​ឯកសារ​បម្រុ​ងទុកបាន​ទេ ។"
+
+#~ msgid "backupmail"
+#~ msgstr "backupmail"
+
+#~ msgid "PIM Backup Mail"
+#~ msgstr "PIM Backup Mail"
+
+#~ msgid "Form"
+#~ msgstr "សំណុំបែបបទ"

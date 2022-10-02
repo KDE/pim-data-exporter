@@ -1,0 +1,1429 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-29 00:47+0000\n"
+"PO-Revision-Date: 2022-05-31 16:36+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.04.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf - t/m 2022"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#: console/main.cpp:25 console/main.cpp:27
+#, kde-format
+msgid "PIM Data Exporter Console"
+msgstr "Console voor PIM-exportprogramma van gegevens"
+
+#: console/main.cpp:29
+#, kde-format
+msgid "Copyright © 2015-%1 pimdataexporter authors"
+msgstr "Copyright © 2015-%1 Auteurs van pimdataexporter"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Maintainer"
+msgstr "Onderhouder"
+
+#: console/main.cpp:31
+#, kde-format
+msgid "File to log information to."
+msgstr "Bestand om informatie naar te loggen."
+
+#: console/main.cpp:34
+#, kde-format
+msgid "Template file to define what data, settings to import or export."
+msgstr ""
+"Sjabloonbestand om te definiëren welke gegevens, instellingen te importeer "
+"of te exporteren."
+
+#: console/main.cpp:37
+#, kde-format
+msgid "Import the given file."
+msgstr "Het gegeven bestand importeren."
+
+#: console/main.cpp:39
+#, kde-format
+msgid "Export the given file."
+msgstr "Het gegeven bestand exporteren."
+
+#: core/abstractimportexportjob.cpp:56
+#, kde-format
+msgid "Task Canceled"
+msgstr "Taak geannuleerd"
+
+#: core/abstractimportexportjob.cpp:116
+#, kde-format
+msgid "\"%1\" backup done."
+msgstr "Reservekopie van \"%1\" gemaakt."
+
+#: core/abstractimportexportjob.cpp:118
+#, kde-format
+msgid "\"%1\" cannot be exported."
+msgstr "\"%1\" kan niet geëxporteerd worden."
+
+#: core/abstractimportexportjob.cpp:121
+#, kde-format
+msgid "\"%1\" does not exist."
+msgstr "\"%1\" bestaat niet."
+
+#: core/abstractimportexportjob.cpp:268
+#, kde-format
+msgid "\"%1\" was copied."
+msgstr "\"%1\" is gekopieerd."
+
+#: core/abstractimportexportjob.cpp:273
+#, kde-format
+msgid "Restoring \"%1\"..."
+msgstr "Bezig met herstellen van \"%1\"..."
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "File \"%1\" cannot be copied to \"%2\"."
+msgstr "Bestand \"%1\" kan niet gekopieerd worden naar \"%2\"."
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "Copy file"
+msgstr "Bestand kopiëren"
+
+#: core/abstractimportexportjob.cpp:300
+#, kde-format
+msgid "\"%1\" was restored."
+msgstr "\"%1\" is hersteld."
+
+#: core/abstractimportexportjob.cpp:385
+#: core/addressbook/importaddressbookjobinterface.cpp:231
+#: core/mail/importmailjobinterface.cpp:424
+#, kde-format
+msgid "Resources restored."
+msgstr "Hulpbronnen hersteld."
+
+#: core/abstractimportexportjob.cpp:387
+#, kde-format
+msgid "No resources files found."
+msgstr "Geen bestanden voor hulpbronnen gevonden."
+
+#: core/abstractimportexportjob.cpp:448
+#, kde-format
+msgid "Unable to copy file %1"
+msgstr "Bestand %1 kon niet worden gekopieerd"
+
+#: core/abstractimportexportjob.cpp:489
+#, kde-format
+msgid "Resource '%1' created."
+msgstr "Hulpbron '%1' is aangemaakt."
+
+#: core/abstractimportexportjob.cpp:504
+#, kde-format
+msgid "Failed to synchronize '%1'."
+msgstr "Synchroniseren van '%1' is mislukt."
+
+#: core/abstractimportexportjob.cpp:509
+#, kde-format
+msgid "Resource '%1' synchronized."
+msgstr "Hulpbron '%1' is gesynchroniseerd."
+
+#: core/abstractimportexportjob.cpp:515
+#, kde-format
+msgid "All resources synchronized."
+msgstr "Alle hulpbronnen zijn gesynchroniseerd."
+
+#: core/abstractimportexportjob.cpp:541
+#, kde-format
+msgid "Start synchronizing..."
+msgstr "Beginnen met synchroniseren..."
+
+#: core/abstractimportexportjob.cpp:578
+#, kde-format
+msgid "Directory \"%1\" added to backup file."
+msgstr "Map \"%1\" toegevoegd aan bestand met reservekopie."
+
+#: core/abstractimportexportjob.cpp:580
+#, kde-format
+msgid "Directory \"%1\" cannot be added to backup file."
+msgstr "Map \"%1\" kan niet worden toegevoegd aan bestand met reservekopie."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAddressBook settings..."
+msgstr "Begin met exporteren van instellingen van KAddressBook..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:29
+#, kde-format
+msgid "Export KAddressBook settings"
+msgstr "Instellingen van KAddressBook exporteren"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:42
+#: core/alarm/exportalarmjobinterface.cpp:84
+#: core/calendar/exportcalendarjobinterface.cpp:96
+#: core/mail/exportmailjobinterface.cpp:668
+#: core/notes/exportnotesjobinterface.cpp:53
+#, kde-format
+msgid "Backing up resources..."
+msgstr "Reservekopie maken van hulpbronnen..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:102
+#: core/alarm/exportalarmjobinterface.cpp:76
+#: core/calendar/exportcalendarjobinterface.cpp:75
+#: core/mail/exportmailjobinterface.cpp:690
+#: core/notes/exportnotesjobinterface.cpp:150
+#, kde-format
+msgid "Resources backup done."
+msgstr "Reservekopie gemaakt van hulpbronnen."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:109
+#: core/akregator/exportakregatorjobinterface.cpp:72
+#: core/alarm/exportalarmjobinterface.cpp:109
+#: core/calendar/exportcalendarjobinterface.cpp:228
+#: core/mail/exportmailjobinterface.cpp:167
+#: core/notes/exportnotesjobinterface.cpp:75
+#, kde-format
+msgid "Backing up config..."
+msgstr "Reservekopie maken van configuratie..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:150
+#: core/akregator/exportakregatorjobinterface.cpp:79
+#: core/alarm/exportalarmjobinterface.cpp:135
+#: core/calendar/exportcalendarjobinterface.cpp:248
+#: core/mail/exportmailjobinterface.cpp:552
+#: core/notes/exportnotesjobinterface.cpp:108
+#, kde-format
+msgid "Config backup done."
+msgstr "Reservekopie gemaakt van configuratie."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:41
+#, kde-format
+msgid "Starting to import KAddressBook settings..."
+msgstr "Beginnen met importeren van instellingen van KAddressBook..."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:43
+#, kde-format
+msgid "Import KAddressBook settings"
+msgstr "Instellingen van KAddressBook importeren"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:92
+#: core/akregator/importakregatorjobinterface.cpp:93
+#: core/alarm/importalarmjobinterface.cpp:82
+#: core/calendar/importcalendarjobinterface.cpp:90
+#: core/notes/importnotesjobinterface.cpp:80
+#, kde-format
+msgid "Restore configs..."
+msgstr "Configuraties herstellen..."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:109
+#: core/akregator/importakregatorjobinterface.cpp:99
+#: core/alarm/importalarmjobinterface.cpp:98
+#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/mail/importmailjobinterface.cpp:866
+#: core/notes/importnotesjobinterface.cpp:109
+#, kde-format
+msgid "Config restored."
+msgstr "Configuratie teruggezet."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:162
+#: core/addressbook/importaddressbookjobinterface.cpp:163
+#: core/alarm/importalarmjobinterface.cpp:114
+#: core/alarm/importalarmjobinterface.cpp:115
+#: core/calendar/importcalendarjobinterface.cpp:281
+#: core/calendar/importcalendarjobinterface.cpp:282
+#: core/mail/importmailjobinterface.cpp:199
+#: core/mail/importmailjobinterface.cpp:200
+#: core/notes/importnotesjobinterface.cpp:148
+#: core/notes/importnotesjobinterface.cpp:149
+#, kde-format
+msgid "Restore resources..."
+msgstr "Hulpbronnen herstellen..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:24
+#, kde-format
+msgid "Start export Akregator settings..."
+msgstr "Begin met exporteren van instellingen van Akregator..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:25
+#, kde-format
+msgid "Export Akregator settings"
+msgstr "Instellingen van Akregator exporteren"
+
+#: core/akregator/exportakregatorjobinterface.cpp:87
+#, kde-format
+msgid "Backing up data..."
+msgstr "Reservekopie van gegevens maken..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:94
+#: core/notes/exportnotesjobinterface.cpp:46
+#, kde-format
+msgid "\"%1\" directory cannot be added to backup file."
+msgstr "Map \"%1\" kan niet worden toegevoegd aan bestand met reservekopie."
+
+#: core/akregator/exportakregatorjobinterface.cpp:97
+#, kde-format
+msgid "Data backup done."
+msgstr "Reservekopie van gegevens gemaakt."
+
+#: core/akregator/importakregatorjobinterface.cpp:29
+#, kde-format
+msgid "Starting to import Akregator settings..."
+msgstr "Beginnen met importeren van instellingen van Akregator..."
+
+#: core/akregator/importakregatorjobinterface.cpp:32
+#, kde-format
+msgid "Import Akregator settings"
+msgstr "Instellingen van Akregator importeren"
+
+#: core/akregator/importakregatorjobinterface.cpp:106
+#: core/notes/importnotesjobinterface.cpp:116
+#, kde-format
+msgid "Restore data..."
+msgstr "Gegevens herstellen..."
+
+#: core/akregator/importakregatorjobinterface.cpp:112
+#: core/notes/importnotesjobinterface.cpp:129
+#, kde-format
+msgid "Data restored."
+msgstr "Gegevens teruggezet."
+
+#: core/alarm/exportalarmjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAlarm settings..."
+msgstr "Begin met exporteren van instellingen van KAlarm..."
+
+#: core/alarm/exportalarmjobinterface.cpp:29
+#, kde-format
+msgid "Export KAlarm settings"
+msgstr "Instellingen van KAlarm exporteren"
+
+#: core/alarm/importalarmjobinterface.cpp:32
+#, kde-format
+msgid "Starting to import KAlarm settings..."
+msgstr "Beginnen met importeren van instellingen van KAlarm..."
+
+#: core/alarm/importalarmjobinterface.cpp:33
+#, kde-format
+msgid "Import KAlarm settings"
+msgstr "Instellingen van KAlarm importeren"
+
+#: core/archivestorage.cpp:43
+#, kde-format
+msgid "Archive cannot be opened in write mode."
+msgstr "Openen van archief lukt niet in schrijfmodus."
+
+#: core/archivestorage.cpp:45 core/utils.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Archive cannot be opened in read mode."
+msgstr "Openen van archief lukt niet in leesmodus."
+
+#: core/backupresourcefilejobbase.cpp:47
+#, kde-format
+msgid "\"%1\" is not a file."
+msgstr "\"%1\" is geen bestand."
+
+#: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
+#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
+#, kde-format
+msgid "\"%1\" was backed up."
+msgstr "Van \"%1\" is een reservekopie gemaakt."
+
+#: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
+#: core/storeresourcejob.cpp:59
+#, kde-format
+msgid "\"%1\" file cannot be added to backup file."
+msgstr ""
+"Bestand \"%1\" kan niet worden toegevoegd aan bestand met reservekopie."
+
+#: core/calendar/exportcalendarjobinterface.cpp:82
+#, kde-format
+msgid "Start export KOrganizer settings..."
+msgstr "Begin met exporteren van instellingen van KOrganizer..."
+
+#: core/calendar/exportcalendarjobinterface.cpp:83
+#, kde-format
+msgid "Export KOrganizer settings"
+msgstr "Instellingen van KOrganizer exporteren..."
+
+#: core/calendar/importcalendarjobinterface.cpp:35
+#, kde-format
+msgid "Starting to import KOrganizer settings..."
+msgstr "Beginnen met importeren van instellingen van KOrganizer..."
+
+#: core/calendar/importcalendarjobinterface.cpp:37
+#, kde-format
+msgid "Import KOrganizer settings"
+msgstr "Instellingen van KOrganizer importeren..."
+
+#: core/mail/exportmailjobinterface.cpp:43
+#, kde-format
+msgid "Start export KMail settings..."
+msgstr "Begin met exporteren van instellingen van KMail..."
+
+#: core/mail/exportmailjobinterface.cpp:44
+#, kde-format
+msgid "Export KMail settings"
+msgstr "Instellingen van KMail exporteren"
+
+#: core/mail/exportmailjobinterface.cpp:112
+#, kde-format
+msgid "Backing up Folder Attributes..."
+msgstr "Reservekopie maken van attributen van een map..."
+
+#: core/mail/exportmailjobinterface.cpp:114
+#, kde-format
+msgid "Backing up Mails..."
+msgstr "Reservekopie van e-mails maken..."
+
+#: core/mail/exportmailjobinterface.cpp:115
+#, kde-format
+msgid "Start export resource..."
+msgstr "Begin met exporteren van hulpbron..."
+
+#: core/mail/exportmailjobinterface.cpp:123
+#, kde-format
+msgid "Backing up transports..."
+msgstr "Reservekopie maken van transport-items..."
+
+#: core/mail/exportmailjobinterface.cpp:128
+#: core/mail/exportmailjobinterface.cpp:140
+#, kde-format
+msgid "Transports backup done."
+msgstr "Reservekopie gemaakt van transport-items."
+
+#: core/mail/exportmailjobinterface.cpp:142
+#, kde-format
+msgid "Transport file cannot be added to backup file."
+msgstr ""
+"Bestand met transport-items kan niet worden toegevoegd aan bestand met "
+"reservekopie."
+
+#: core/mail/exportmailjobinterface.cpp:557
+#, kde-format
+msgid "Backing up identity..."
+msgstr "Reservekopie maken van identiteiten..."
+
+#: core/mail/exportmailjobinterface.cpp:596
+#, kde-format
+msgid "vCard file \"%1\" cannot be saved."
+msgstr "vCard-bestand \"%1\" kan niet worden opgeslagen."
+
+#: core/mail/exportmailjobinterface.cpp:609
+#, kde-format
+msgid "Identity backup done."
+msgstr "Reservekopie gemaakt van identiteiten."
+
+#: core/mail/exportmailjobinterface.cpp:611
+#, kde-format
+msgid "Identity file cannot be added to backup file."
+msgstr ""
+"Bestand met identiteiten kan niet worden toegevoegd aan bestand met "
+"reservekopie."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:139
+#, kde-format
+msgid "Filters backup done."
+msgstr "Reservekopie van filters gemaakt."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#, kde-format
+msgid "Filters cannot be exported."
+msgstr "Filters kunnen niet geëxporteerd worden."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#, kde-format
+msgid "Backing up Folder Attributes done."
+msgstr "Reservekopie maken van attributen van een map gereed."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#, kde-format
+msgid "Folder Attributes cannot be exported."
+msgstr "Attributen van map kunnen niet geëxporteerd worden."
+
+#: core/mail/importmailjobinterface.cpp:43
+#, kde-format
+msgid "Starting to import KMail settings..."
+msgstr "Beginnen met importeren van instellingen van KMail..."
+
+#: core/mail/importmailjobinterface.cpp:44
+#, kde-format
+msgid "Import KMail settings"
+msgstr "Instellingen van KMail importeren"
+
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
+#, kde-format
+msgid "Restore transports..."
+msgstr "Transport-items herstellen..."
+
+#: core/mail/importmailjobinterface.cpp:173
+#, kde-format
+msgid "mailtransports file could not be found in the archive."
+msgstr "Bestand \"mailtransports\" is niet gevonden in het archief."
+
+#: core/mail/importmailjobinterface.cpp:188
+#, kde-format
+msgid "Transports restored."
+msgstr "Transport-items hersteld."
+
+#: core/mail/importmailjobinterface.cpp:190
+#, kde-format
+msgid "Failed to restore transports file."
+msgstr "Transport-items herstellen is mislukt."
+
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
+#, kde-format
+msgid "Restore mails..."
+msgstr "E-mailberichten herstellen..."
+
+#: core/mail/importmailjobinterface.cpp:555
+#, kde-format
+msgid "Mails restored."
+msgstr "E-mailberichten teruggezet."
+
+#: core/mail/importmailjobinterface.cpp:562
+#, kde-format
+msgid "Restore config..."
+msgstr "Configuratie herstellen..."
+
+#: core/mail/importmailjobinterface.cpp:565
+#, kde-format
+msgid "filters file could not be found in the archive."
+msgstr "Bestand \"filters\" is niet gevonden in het archief."
+
+#: core/mail/importmailjobinterface.cpp:569
+#, kde-format
+msgid "Restore filters..."
+msgstr "Filters herstellen..."
+
+#: core/mail/importmailjobinterface.cpp:618
+#, kde-format
+msgid "Filters restored."
+msgstr "Filters hersteld."
+
+#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:904
+#, kde-format
+msgid "Restoring identities..."
+msgstr "Bezig identiteiten te herstellen..."
+
+#: core/mail/importmailjobinterface.cpp:902
+#, kde-format
+msgid "emailidentities file could not be found in the archive."
+msgstr "Bestand \"emailidentities\" is niet gevonden in het archief."
+
+#: core/mail/importmailjobinterface.cpp:963
+#, kde-format
+msgid "Identities restored."
+msgstr "Identiteiten hersteld."
+
+#: core/mail/importmailjobinterface.cpp:965
+#, kde-format
+msgid "Failed to restore identity file."
+msgstr "Bestand met identiteiten herstellen is mislukt."
+
+#: core/mail/importmailjobinterface.cpp:1287
+#, kde-format
+msgid "\"%1\" migration done."
+msgstr "Migratie van \"%1\" gedaan."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:35
+#, kde-format
+msgid "Restoring folder attributes..."
+msgstr "Attributen van map worden hersteld..."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:41
+#, kde-format
+msgid "Restoring Folder Attributes done."
+msgstr "Attributen van map herstellen is gedaan."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:45
+#, kde-format
+msgid "Folder Attributes cannot be restored."
+msgstr "Attributen van map kunnen niet hersteld worden."
+
+#: core/notes/exportnotesjobinterface.cpp:28
+#, kde-format
+msgid "Start export KNotes settings..."
+msgstr "Begin met exporteren van instellingen van KNotes..."
+
+#: core/notes/exportnotesjobinterface.cpp:29
+#, kde-format
+msgid "Export KNotes settings"
+msgstr "Instellingen van KNotes exporteren"
+
+#: core/notes/importnotesjobinterface.cpp:49
+#, kde-format
+msgid "Starting to import KNotes settings..."
+msgstr "Beginnen met importeren van instellingen van KNotes..."
+
+#: core/notes/importnotesjobinterface.cpp:52
+#, kde-format
+msgid "Import KNotes settings"
+msgstr "Instellingen van KNotes importeren"
+
+#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#, kde-format
+msgid "No data selected."
+msgstr "Geen gegeven geselecteerd."
+
+#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#, kde-format
+msgid "Unable to open file \"%1\"."
+msgstr "Bestand \"%1\" kon niet worden geopend."
+
+#: core/pimdatabackuprestore.cpp:94
+#, kde-format
+msgid "Starting to backup data in '%1'"
+msgstr "Beginnen met een backup te maken van gegevens in '%1'"
+
+#: core/pimdatabackuprestore.cpp:183
+#, kde-format
+msgid "Backup in '%1' done."
+msgstr "Backup in '%1' gedaan."
+
+#: core/pimdatabackuprestore.cpp:279
+#, kde-format
+msgid "Starting to restore data from '%1'"
+msgstr "Beginnen met herstellen van gegevens uit '%1'"
+
+#: core/pimdatabackuprestore.cpp:287
+#, kde-format
+msgid "Restoring data from '%1' done."
+msgstr "Herstellen van gegevens uit '%1' is gedaan."
+
+#: core/pimdatabackupthread.cpp:37
+#, kde-format
+msgid "Impossible to open archive file."
+msgstr "Archiefbestand openen is niet mogelijk."
+
+#: core/pimdatabackupthread.cpp:44
+#, kde-format
+msgid "Impossible to backup \"%1\"."
+msgstr "Reservekopie maken van \"%1\" is onmogelijk."
+
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
+#, kde-format
+msgid "Resource file \"%1\" cannot be added to backup file."
+msgstr ""
+"Hulpbronbestand \"%1\" kan niet worden toegevoegd aan bestand met "
+"reservekopie."
+
+#: core/resourceconverterbase.cpp:206
+#, kde-format
+msgid "Resource config file \"%1\" doesn't exist."
+msgstr "Configuratiebestand van hulpbron \"%1\" bestaat niet."
+
+#: core/utils.cpp:181
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: core/utils.cpp:183
+#, kde-format
+msgid "KAddressBook"
+msgstr "KAddressBook"
+
+#: core/utils.cpp:185
+#, kde-format
+msgid "KAlarm"
+msgstr "KAlarm"
+
+#: core/utils.cpp:187
+#, kde-format
+msgid "KOrganizer"
+msgstr "KOrganizer"
+
+#: core/utils.cpp:189
+#, kde-format
+msgid "KNotes"
+msgstr "KNotes"
+
+#: core/utils.cpp:191
+#, kde-format
+msgid "Akregator"
+msgstr "Akregator"
+
+#: core/utils.cpp:205
+#, kde-format
+msgid "Identity"
+msgstr "Identiteit"
+
+#: core/utils.cpp:207
+#, kde-format
+msgid "Mails"
+msgstr "E-mails"
+
+#: core/utils.cpp:209
+#, kde-format
+msgid "Mail Transport"
+msgstr "E-mailtransport"
+
+#: core/utils.cpp:211
+#, kde-format
+msgid "Resources"
+msgstr "Hulpbronnen"
+
+#: core/utils.cpp:213
+#, kde-format
+msgid "Config"
+msgstr "Configuratie"
+
+#: core/utils.cpp:215
+#, kde-format
+msgid "Data"
+msgstr "Gegevens"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Archive File Structure"
+msgstr "Bestandsstructuur van archief"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:31
+#, kde-format
+msgid "Backup Archive Structure:"
+msgstr "Archiefstructuur van backup:"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:57
+#, kde-format
+msgid "backup-structure.txt file was not found."
+msgstr "Bestand backup-structure.txt is niet gevonden."
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure PimDataExporter"
+msgstr "PimDataExporter configureren"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
+#, kde-format
+msgid "General"
+msgstr "Algemeen"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:51
+#, kde-format
+msgid "User Feedback"
+msgstr "Terugkoppeling van gebruiker"
+
+#: gui/dialog/selectiontypedialog.cpp:22
+#, kde-format
+msgid "Use this template by default"
+msgstr "Dit sjabloon als standaard gebruiken"
+
+#: gui/dialog/selectiontypedialog.cpp:23
+#, kde-format
+msgid "Save as Template..."
+msgstr "Als sjabloon opslaan..."
+
+#: gui/dialog/selectiontypedialog.cpp:24
+#, kde-format
+msgid "Load Template..."
+msgstr "Sjabloon laden..."
+
+#: gui/dialog/selectiontypedialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Type"
+msgstr "Type selecteren"
+
+#: gui/dialog/selectiontypedialog.cpp:47
+#: gui/dialog/synchronizeresourcedialog.cpp:40
+#, kde-format
+msgid "Select All"
+msgstr "Alles selecteren"
+
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:45
+#, kde-format
+msgid "Unselect All"
+msgstr "Alles deselecteren"
+
+#: gui/dialog/showarchivestructuredialog.cpp:33
+#, kde-format
+msgid "Extract Selected File"
+msgstr "Geselecteerd bestand uitpakken"
+
+#: gui/dialog/showarchivestructuredialog.cpp:34
+#, kde-format
+msgid "Open Selected File"
+msgstr "Geselecteerd bestand openen"
+
+#: gui/dialog/showarchivestructuredialog.cpp:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Show Archive Content on file \"%1\""
+msgstr "Archiefinhoud tonen van bestand \"%1\""
+
+#: gui/dialog/showarchivestructuredialog.cpp:44
+#, kde-format
+msgid "Search..."
+msgstr "Zoeken..."
+
+#: gui/dialog/showarchivestructuredialog.cpp:47
+#, kde-format
+msgid "Save As Text..."
+msgstr "Als tekst opslaan..."
+
+#: gui/dialog/showarchivestructuredialog.cpp:127
+#, kde-format
+msgid "Select Directory"
+msgstr "Map selecteren"
+
+#: gui/dialog/showarchivestructuredialog.cpp:133
+#, kde-format
+msgid "Do you want to overwrite %1?"
+msgstr "Wilt u %1 overschrijven?"
+
+#: gui/dialog/showarchivestructuredialog.cpp:134
+#, kde-format
+msgid "File Already Exist"
+msgstr "Bestand bestaat al"
+
+#: gui/dialog/showarchivestructuredialog.cpp:142
+#, kde-format
+msgid "Impossible to copy %1 in %2."
+msgstr "Kopiëren van %1 in %2 is onmogelijk."
+
+#: gui/dialog/showarchivestructuredialog.cpp:165
+#, kde-format
+msgctxt "qfiledialog filter files text"
+msgid "Text Files"
+msgstr "Tekstbestanden"
+
+#: gui/dialog/showarchivestructuredialog.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Log File"
+msgstr "Logbestand exporteren"
+
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Cannot open archive"
+msgstr "Kan het archief niet openen"
+
+#: gui/dialog/showarchivestructuredialog.cpp:182
+#, kde-format
+msgid "Info"
+msgstr "Informatie"
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "This is not pim archive."
+msgstr "Dit is geen archief van pim."
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "Show information"
+msgstr "Informatie tonen"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Synchronize Resources"
+msgstr "Hulpbronnen synchroniseren"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:26
+#, kde-format
+msgid ""
+"Some resources were added but data were not sync. Select resources that you "
+"want to sync:"
+msgstr ""
+"Enkele hulpbronnen zijn toegevoegd maar gegevens zijn niet gesynchroniseerd. "
+"Selecteer hulpbronnen die u wilt synchroniseren:"
+
+#: gui/importexportprogressindicatorgui.cpp:35
+#: gui/job/fullsynchronizeresourcesjob.cpp:39
+#, kde-format
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: gui/importexportprogressindicatorgui.cpp:66
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
+msgstr "\"%1\" bestaat al. Wilt u deze overschrijven?"
+
+#: gui/importexportprogressindicatorgui.cpp:67
+#: gui/importexportprogressindicatorgui.cpp:79
+#: gui/importexportprogressindicatorgui.cpp:92
+#, kde-format
+msgid "Restore"
+msgstr "Terugzetten"
+
+#: gui/importexportprogressindicatorgui.cpp:69
+#, kde-format
+msgid "Merge"
+msgstr "Samenvoegen"
+
+#: gui/importexportprogressindicatorgui.cpp:78
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it?"
+msgstr "\"%1\" bestaat al. Wilt u deze overschrijven?"
+
+#: gui/importexportprogressindicatorgui.cpp:91
+#, kde-format
+msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
+msgstr "Map \"%1\" bestaat al. Wilt u deze overschrijven?"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:41
+#, kde-format
+msgctxt "@title:window"
+msgid "Synchronize resources"
+msgstr "Hulpbronnen synchroniseren"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:42
+#, kde-format
+msgid "Synchronize resources... It can take some time."
+msgstr "Hulpbronnen synchroniseren.... Kan even duren."
+
+#: gui/pimdatabackuprestoreui.cpp:24
+#, kde-format
+msgid ""
+"The archive was created by a newer version of this program. It might contain "
+"additional data which will be skipped during import. Do you want to import "
+"it?"
+msgstr ""
+"Het archief is gemaakt door een nieuwere versie van dit programma. Het kan "
+"extra gegevens bevatten die overgeslagen worden bij importeren. Wilt u het "
+"importeren?"
+
+#: gui/pimdatabackuprestoreui.cpp:26
+#, kde-format
+msgid "Not correct version"
+msgstr "Geen juiste versie"
+
+#: gui/pimdatabackuprestoreui.cpp:27
+#, kde-format
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Importeren"
+
+#: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
+#, kde-format
+msgid "PIM Data Exporter"
+msgstr "PIM-exportprogramma van gegevens"
+
+#: gui/pimdatacommandlineoption.cpp:41
+#, kde-format
+msgid "Copyright © 2012-%1 pimdataexporter authors"
+msgstr "Copyright © 2012-%1 Auteurs van pimdataexporter"
+
+#: gui/pimdatacommandlineoption.cpp:46
+#, kde-format
+msgid "Template file uses to define what data, settings to import or export"
+msgstr ""
+"Gebruik van sjabloonbestand om te definiërenwelke gegevens te importeer of "
+"te exporteren"
+
+#: gui/pimdatacommandlineoption.cpp:48
+#, kde-format
+msgid "Import the given file"
+msgstr "Het gegeven bestand importeren"
+
+#: gui/pimdatacommandlineoption.cpp:49
+#, kde-format
+msgid "Export the given file"
+msgstr "Het gegeven bestand exporteren"
+
+#: gui/pimdatacommandlineoption.cpp:50
+#, kde-format
+msgid "File or url. The user will be asked whether to import or export."
+msgstr ""
+"Bestand of URL. De gebruiker zal gevraagd worden om het te im- of exporteren."
+
+#: gui/pimdatacommandlineoption.cpp:52
+#, kde-format
+msgid "Lists the available options for user feedback"
+msgstr ""
+"Geeft een lijst met de beschikbare opties voor terugkoppeling van gebruiker"
+
+#. i18n: ectx: Menu (file)
+#: gui/pimdataexporter.rc:8
+#, kde-format
+msgid "&File"
+msgstr "&Bestand"
+
+#. i18n: ectx: Menu (tools)
+#: gui/pimdataexporter.rc:21
+#, kde-format
+msgid "&Tools"
+msgstr "H&ulpmiddelen"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: gui/pimdataexporter.rc:28
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Hoofdwerkbalk"
+
+#: gui/pimdataexporterwindow.cpp:126
+#, kde-format
+msgid "Full sync starts..."
+msgstr "Volledige synchronisatie begint..."
+
+#: gui/pimdataexporterwindow.cpp:156
+#, kde-format
+msgid "Full sync finished."
+msgstr "Volledige synchronisatie is voltooid."
+
+#: gui/pimdataexporterwindow.cpp:163
+#, kde-format
+msgid "Full sync for \"%1\" done."
+msgstr "Volledige synchronisatie voor \"%1\" gedaan."
+
+#: gui/pimdataexporterwindow.cpp:168
+#, kde-format
+msgid "Full sync for \"%1\" failed."
+msgstr "Volledige synchronisatie voor \"%1\" is mislukt."
+
+#: gui/pimdataexporterwindow.cpp:174
+#, kde-format
+msgid ""
+"For restoring data, you must use \"pimdataexporter\". Be careful as it can "
+"overwrite your existing settings and data."
+msgstr ""
+"Voor herstellen van gegevens moet u \"pimdataexporter\" gebruiken. Wees "
+"voorzichtig, het kan uw bestaande instellingen en gegevens overschrijven."
+
+#: gui/pimdataexporterwindow.cpp:176 gui/pimdataexporterwindow.cpp:281
+#: gui/pimdataexporterwindow.cpp:359
+#, kde-format
+msgid "Backup"
+msgstr "Reservekopie maken"
+
+#: gui/pimdataexporterwindow.cpp:203
+#, kde-format
+msgid "Export Data..."
+msgstr "Gegevens exporteren..."
+
+#: gui/pimdataexporterwindow.cpp:208
+#, kde-format
+msgid "Import Data..."
+msgstr "Gegevens importeren..."
+
+#: gui/pimdataexporterwindow.cpp:213
+#, kde-format
+msgid "Save log..."
+msgstr "Log opslaan..."
+
+#: gui/pimdataexporterwindow.cpp:216
+#, kde-format
+msgid "Show Archive Structure Information..."
+msgstr "Informatie over archiefstructuur tonen..."
+
+#: gui/pimdataexporterwindow.cpp:219
+#, kde-format
+msgid "Show Archive Information..."
+msgstr "Informatie over archief tonen..."
+
+#: gui/pimdataexporterwindow.cpp:223
+#, kde-format
+msgid "Show Information on current Archive..."
+msgstr "Informatie tonen van het huidige archief..."
+
+#: gui/pimdataexporterwindow.cpp:259
+#, kde-format
+msgid "Select Archive"
+msgstr "Archief selecteren"
+
+#: gui/pimdataexporterwindow.cpp:259
+#, kde-format
+msgid "Zip file"
+msgstr "Zip-bestand"
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Log is empty."
+msgstr "Log is leeg."
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Save log"
+msgstr "Log opslaan"
+
+#: gui/pimdataexporterwindow.cpp:275
+#, kde-format
+msgid "HTML Files (*.html)"
+msgstr "HTML-bestanden (*.html)"
+
+#: gui/pimdataexporterwindow.cpp:281
+#, kde-format
+msgid "Please quit all kdepim applications before backing up your data."
+msgstr ""
+"Sluit alle kdepim-toepassingen alvorens een reservekopie van uw gegevens te "
+"maken."
+
+#: gui/pimdataexporterwindow.cpp:304
+#, kde-format
+msgid "Create backup"
+msgstr "Reservekopie maken"
+
+#: gui/pimdataexporterwindow.cpp:306
+#, kde-format
+msgid "Zip file (*.zip)"
+msgstr "Zip-bestand (*.zip)"
+
+#: gui/pimdataexporterwindow.cpp:316
+#, kde-format
+msgid "Backup in progress..."
+msgstr "Reservekopie maken bezig..."
+
+#: gui/pimdataexporterwindow.cpp:358
+#, kde-format
+msgid ""
+"Before restoring data you must close all kdepim applications. Do you want to "
+"continue?"
+msgstr ""
+"Alvorens alle gegevens te herstellen moet u alle kdepim-toepassingen "
+"afsluiten. Wilt u doorgaan?"
+
+#: gui/pimdataexporterwindow.cpp:372
+#, kde-format
+msgid "Restore backup"
+msgstr "Reservekopie terugzetten"
+
+#: gui/pimdataexporterwindow.cpp:374
+#, kde-format
+msgid "Zip File"
+msgstr "Zip-bestand"
+
+#: gui/pimdataexporterwindow.cpp:406
+#, kde-format
+msgid "Restore in progress..."
+msgstr "Herstellen bezig..."
+
+#: gui/trayicon/pimdatatrayicon.cpp:13
+#, kde-format
+msgid "Pim Data Exporter"
+msgstr "PIM-exportprogramma van gegevens"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:16
+#, kde-format
+msgid "Always Override File"
+msgstr "Bestand altijd overschrijven"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:17
+#, kde-format
+msgid "Always Override Directory"
+msgstr "Map altijd overschrijven"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:18
+#, kde-format
+msgid "Always Merge Config File"
+msgstr "Configuratiebestand altijd samenvoegen"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:23
+#, kde-format
+msgid "Import"
+msgstr "Importeren"
+
+#: gui/widgets/selectiontypetreewidget.cpp:351
+#, kde-format
+msgid "Template Files (*.xml)"
+msgstr "Sjabloonbestanden (*.xml)"
+
+#~ msgid "&New"
+#~ msgstr "&Nieuw"
+
+#~ msgid "&Edit"
+#~ msgstr "B&ewerken"
+
+#~ msgid "&View"
+#~ msgstr "Beel&d"
+
+#~ msgid "&Action"
+#~ msgstr "&Actie"
+
+#~ msgid "&Settings"
+#~ msgstr "In&stellingen"
+
+#~ msgid "&Help"
+#~ msgstr "&Help"
+
+#~ msgid "&Export"
+#~ msgstr "&Exporteren"
+
+#~ msgid "&Collection"
+#~ msgstr "&Verzameling"
+
+#~ msgid "&Item"
+#~ msgstr "&Item"
+
+#~ msgid "&Cache"
+#~ msgstr "&Cache"
+
+#~ msgid "&Server"
+#~ msgstr "&Server:"
+
+#~ msgid "&Certificates"
+#~ msgstr "&Certificaten"
+
+#~ msgid "&Window"
+#~ msgstr "&Venster"
+
+#~ msgctxt "@title:menu New message, folder or new window."
+#~ msgid "New"
+#~ msgstr "Nieuw"
+
+#~ msgid "&Go"
+#~ msgstr "&Ga naar"
+
+#~ msgid "F&older"
+#~ msgstr "&Map"
+
+#~ msgid "Apply Filters on Folder"
+#~ msgstr "Filters op map toepassen"
+
+#~ msgid "Apply Filters on Folder and all its Subfolders"
+#~ msgstr "Filters op map en al zijn submappen toepassen"
+
+#~ msgid "&Message"
+#~ msgstr "&Bericht"
+
+#~ msgid "Reply Special"
+#~ msgstr "Speciaal antwoorden"
+
+#~ msgid "&Forward"
+#~ msgstr "&Vooruit"
+
+#~ msgid "A&pply Filter"
+#~ msgstr "F&ilter toepassen"
+
+#~ msgid "&Options"
+#~ msgstr "&Opties"
+
+#~ msgid "&Attach"
+#~ msgstr "Bij&lage"
+
+#~ msgid "HTML Toolbar"
+#~ msgstr "HTML-werkbalk"
+
+#~ msgid "Text Direction Toolbar"
+#~ msgstr "Werkbalk voor tekstrichting"
+
+#~ msgid "Navigator"
+#~ msgstr "Navigator"
+
+#~ msgid "PIM Setting Exporter"
+#~ msgstr "PIM-exportprogramma van instellingen"
+
+#~ msgid "Start export Blogilo settings..."
+#~ msgstr "Begin met exporteren van instellingen van Blogilo..."
+
+#~ msgid "Export Blogilo settings"
+#~ msgstr "Instellingen van Blogilo exporteren"
+
+#~ msgid "Starting to import Blogilo settings..."
+#~ msgstr "Beginnen met importeren van instellingen van Blogilo..."
+
+#~ msgid "Import Blogilo settings"
+#~ msgstr "Instellingen van Blogilo importeren"
+
+#~ msgid "Blogilo"
+#~ msgstr "Blogilo"
+
+#~ msgid "Backup infos."
+#~ msgstr "Informatie over backup."
+
+#~ msgid ""
+#~ "Before backing up data, it is recommended to quit all kdepim applications."
+#~ msgstr ""
+#~ "Alvorens een reservekopie van de gegevens te maken is het aanbevolen alle "
+#~ "kdepim toepassingen af te sluiten."
+
+#~ msgid "Akonadi database file could not be found in the archive."
+#~ msgstr "Bestand voor Akonadi-database is niet gevonden in het archief."
+
+#~ msgid "Restore Akonadi Database..."
+#~ msgstr "Akonadi-database herstellen..."
+
+#~ msgid "Database driver \"%1\" not supported."
+#~ msgstr "Databasestuurprogramma \"%1\" wordt niet ondersteund."
+
+#~ msgid "Could not find \"%1\" necessary to restore database."
+#~ msgstr "Kon \"%1\" niet vinden, is nodig om database te herstellen."
+
+#~ msgid "Failed to restore Akonadi Database."
+#~ msgstr "Akonadi-database herstellen is mislukt."
+
+#~ msgid "Akonadi Database restored."
+#~ msgstr "Akonadi-database hersteld"
+
+#~ msgid "Akonadi Database"
+#~ msgstr "Akonadi database"
+
+#~ msgid "Overwrite"
+#~ msgstr "Overschrijven"
+
+#~ msgid "Copyright © 2012-2015 pimsettingexporter authors"
+#~ msgstr "Copyright © 2012-2015 Auteurs van pimsettingexporter"
+
+#~ msgid "Back Up Data..."
+#~ msgstr "Reservekopie maken van gegevens..."
+
+#~ msgid "Copyright © 2015 pimsettingexporter authors"
+#~ msgstr "Copyright © 2015 Auteurs van pimsettingexporter"
+
+#~ msgid "mysqldump not found. Export data aborted"
+#~ msgstr "mysqldump niet gevonden. Exporteren van gegevens afgebroken"
+
+#~ msgid "Backing up Akonadi Database..."
+#~ msgstr "Reservekopie maken van Akonadi database..."
+
+#~ msgid "Could not find \"%1\" necessary to dump database."
+#~ msgstr "Kon \"%1\" niet vinden, is nodig om database te dumpen."
+
+#~ msgid "Akonadi Database \"%1\" cannot be added to backup file."
+#~ msgstr ""
+#~ "Akonadi-database \"%1\" kan niet worden toegevoegd aan bestand met "
+#~ "reservekopie."
+
+#~ msgid "Akonadi Database backup done."
+#~ msgstr "Reservekopie gemaakt van Akonadi database."
+
+#~ msgid "Theme directory \"%1\" cannot be added to backup file."
+#~ msgstr ""
+#~ "Thema-map \"%1\" kan niet worden toegevoegd aan bestand met reservekopie."
+
+#~ msgid "Resource was not configured correctly, not archiving it."
+#~ msgstr "Hulpbron is niet juist ingesteld, kan het niet archiveren."
+
+#~ msgid "Zip program not found. Install it before to launch this application."
+#~ msgstr ""
+#~ "Programma 'zip' niet gevonden. Installeer het alvorens deze toepassing te "
+#~ "starten."
+
+#~ msgid "Zip program not found."
+#~ msgstr "Programma 'zip' gevonden."
+
+#~ msgid "Mails backup done."
+#~ msgstr "Reservekopie van e-mails gemaakt."
+
+#~ msgid "Copyright © 2012-2014 pimsettingexporter authors"
+#~ msgstr "Copyright © 2012-2014 Auteurs van pimsettingexporter"
+
+#~ msgid "Start export KJots settings..."
+#~ msgstr "Begin met exporteren van instellingen van KJots..."
+
+#~ msgid "Start import KJots settings..."
+#~ msgstr "Begin met importeren van instellingen van KJots..."
+
+#~ msgid "KJots"
+#~ msgstr "KJots"
+
+#~ msgid "Start export KNode settings..."
+#~ msgstr "Begin met exporteren van instellingen van KNode..."
+
+#~ msgid "Start import KNode settings..."
+#~ msgstr "Begin met importeren van instellingen van KNode..."
+
+#~ msgid "KNode"
+#~ msgstr "KNode"
+
+#~ msgid ""
+#~ "Archive is newer that apps can import. Perhaps some features will not "
+#~ "correctly import. Do you want to import it?"
+#~ msgstr ""
+#~ "Archief is nieuwer dan applicatie kan importeren. Enige mogelijkheden "
+#~ "zullen niet juist worden geïmporteerd. Wilt u het importeren?"
+
+#~ msgid "Backing up Nepomuk Database..."
+#~ msgstr "Reservekopie maken van Nepomuk-database..."
+
+#~ msgid "Nepomuk Database backup done."
+#~ msgstr "Reservekopie gemaakt van Nepomuk-database."
+
+#~ msgid "Nepomuk Database restored."
+#~ msgstr "Nepomuk-database is hersteld."
+
+#~ msgid "Failed to restore Nepomuk Database."
+#~ msgstr "Nepomuk-database herstellen is mislukt."
+
+#~ msgid "Nepomuk Database"
+#~ msgstr "Nepomuk-database"
+
+#~ msgid "Configs"
+#~ msgstr "Configuraties"
+
+#~ msgid "Transports Config"
+#~ msgstr "Configuratie van transport-items"
+
+#~ msgid "Akonadi"
+#~ msgstr "Akonadi"
+
+#~| msgid "Data"
+#~ msgid "Datas"
+#~ msgstr "Gegevens"
+
+#~ msgid "Mail \"%1\" file cannot be added to backup file."
+#~ msgstr ""
+#~ "Bestand met e-mail \"%1\" kan niet worden toegevoegd aan bestand met "
+#~ "reservekopie."
+
+#~ msgid "Mail \"%1\" was backuped."
+#~ msgstr "Van e-mail \"%1\" is een reservekopie gemaakt."
+
+#~ msgid "MBox \"%1\" was backuped."
+#~ msgstr "Van MBox \"%1\" is een reservekopie gemaakt."
+
+#~ msgid "MBox \"%1\" file cannot be added to backup file."
+#~ msgstr ""
+#~ "Bestand met MBox \"%1\" kan niet worden toegevoegd aan bestand met "
+#~ "reservekopie."
+
+#~ msgid "backupmail"
+#~ msgstr "backupmail"
+
+#~ msgid "PIM Backup Mail"
+#~ msgstr "PIM reservekopie van e-mail"
+
+#~ msgid "Form"
+#~ msgstr "Formulier"
+
+#~ msgid "Resource type '%1' is not available."
+#~ msgstr "Hulpbrontype '%1' is niet beschikbaar."
+
+#~ msgid "Resource '%1' is already set up."
+#~ msgstr "Hulpbron '%1' is al ingesteld."
+
+#~ msgid "Creating resource instance for '%1'..."
+#~ msgstr "Hulpbroninstantie creëren voor  '%1'..."
+
+#~ msgid "Configuring resource instance..."
+#~ msgstr "Hulpbroninstantie configureren..."
+
+#~ msgid "Unable to configure resource instance."
+#~ msgstr "Hulpbroninstantie configureren mislukt."
+
+#~ msgid "Could not convert value of setting '%1' to required type %2."
+#~ msgstr ""
+#~ "De waarde van instelling '%1' kan niet worden geconverteerd naar het "
+#~ "vereiste type %2."
+
+#~ msgid "Could not set setting '%1': %2"
+#~ msgstr "Instelling '%1' kon niet worden ingesteld: %2"
+
+#~ msgid "Resource setup completed."
+#~ msgstr "Instellen van hulpbron voltooid."
+
+#~ msgid "Failed to create resource instance: %1"
+#~ msgstr "Hulpbroninstantie %1 creëren mislukt"

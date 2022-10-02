@@ -1,0 +1,201 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-pimdataexporter "<application
+>Exportador de les dades PIM</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Catalan  "INCLUDE"
+> 
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
+]>
+
+<article id="pimdataexporter" lang="&language;">
+
+<articleinfo id="pimdataexporterinfo">
+<title
+>El manual de l'&i18n-pimdataexporter;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>27 de juliol de 2016</date>
+<releaseinfo
+>5.3.40 (Aplicacions 16.08)</releaseinfo>
+
+</articleinfo>
+
+
+<sect1 id="introduction">
+<title
+>Introducció</title>
+
+<para
+>L'&i18n-pimdataexporter; permet exportar i importar les configuracions PIM i el correu local. Podeu crear una còpia de seguretat i restaurar la configuració dels següents programes: <simplelist>
+<member
+>&kmail;</member>
+<member
+>&knotes;</member>
+<member
+>&akregator;</member>
+<member
+>&kaddressbook;</member>
+<member
+>&kalarm;</member>
+<member
+>&korganizer;</member>
+</simplelist>
+</para>
+
+<sect2 id="using-kapp">
+<title
+>Ús de l'&i18n-pimdataexporter;</title>
+<para
+>La còpia de seguretat és una pràctica essencial per a tots els usuaris. L'&i18n-pimdataexporter; és una gran eina per a realitzar còpies de seguretat o moure totes les vostres opcions de configuració i el correu electrònic per a una nova instal·lació. També podeu utilitzar l'&i18n-pimdataexporter; per importar còpies de seguretat anteriors.</para>
+<para
+>Podeu utilitzar <menuchoice
+><guimenu
+>Eines</guimenu
+><guimenuitem
+>Exporta les dades del &kmail;...</guimenuitem
+></menuchoice
+> a través de la finestra de vista de missatges o podeu executar-lo com una aplicació independent executant &i18n-pimdataexporter; en el llançador d'aplicacions.</para>
+
+<para
+>Per a realitzar una còpia de seguretat, <action
+>seleccioneu <menuchoice
+><guimenu
+>Fitxer</guimenu
+><guimenuitem
+>Còpia de seguretat de les dades...</guimenuitem
+></menuchoice
+></action
+>, se us demanarà que tanqueu totes les aplicacions del kdepim. <warning
+><para
+>Assegureu-vos de tancar totes les finestres, i si no ho feu pot haver-hi pèrdua de dades.</para
+></warning
+> Un cop estiguin tancades, feu clic a <guibutton
+>Sí</guibutton
+> per a continuar o <guibutton
+>No</guibutton
+> per a cancel·lar.</para>
+<para
+>Se us demanarà que creeu un nom per a la còpia de seguretat, escriviu el nom al quadre de text <guilabel
+>Fitxer</guilabel
+>, &pex;, <replaceable
+>la_meva_configuració_del_correu</replaceable
+>. El tipus de fitxer per omissió es desarà com a <filename role="extension"
+>.zip</filename
+>. </para>
+<para
+>La següent pantalla permet seleccionar sobre què voleu realitzar una còpia de seguretat, per omissió se selecciona tot. <note
+> <para
+>La selecció de correu del &kmail; només farà còpia de seguretat en les vostres <quote
+>Carpetes locals</quote
+>, serà una còpia de seguretat de les opcions &imap; i descarregarà els missatges a restaurar. Si teniu missatges de correu electrònic en un servidor &imap;, i voleu fer una còpia de seguretat, haureu d'utilitzar l'<ulink url="help:/akonadi_folderarchive_agent"
+>Agent per arxivar una carpeta</ulink
+> per arxivar aquests correus electrònics a una carpeta local.</para>
+</note
+></para>
+<screenshot>
+<screeninfo
+>Diàleg de selecció</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="selection-dialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Diàleg de selecció</phrase>
+    </textobject>
+    <caption>
+      <para
+>Diàleg de selecció</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+<para
+>L'última pantalla mostra el registre del procés de la còpia de seguretat. La podeu tancar un cop revisat i verificat en el registre que la còpia de seguretat s'ha realitzat correctament.</para>
+<para
+>Per a restaurar la vostra còpia de seguretat, seleccioneu <menuchoice
+><guimenu
+>Fitxer</guimenu
+><guimenuitem
+>Restaura les dades...</guimenuitem
+></menuchoice
+> amb l'&i18n-pimdataexporter;.</para>
+<para
+>Utilitzant <menuchoice
+><guimenu
+>Eines</guimenu
+><guimenuitem
+>Mostra la informació de l'arxiu</guimenuitem
+></menuchoice
+> podreu seleccionar un fitxer de còpia de seguretat i veure el seu contingut.</para>
+</sect2>
+</sect1>
+
+<sect1 id="credits">
+
+<title
+>Crèdits i llicència</title>
+<para
+>&i18n-pimdataexporter;</para>
+<para
+>Copyright del programa 2019 &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Copyright de la documentació &copy; 2019 &Laurent.Montel; &Laurent.Montel.mail; i &Scarlett.Clark; &Scarlett.Clark.mail; </para>
+
+<para
+>Traductor/Revisor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </sect1>
+
+&documentation.index;
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

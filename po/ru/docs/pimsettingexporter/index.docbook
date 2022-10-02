@@ -1,0 +1,233 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-pimdataexporter "<application
+>Средство экспорта данных PIM</application
+> ">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE"
+> 
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
+]>
+
+<article id="pimdataexporter" lang="&language;">
+
+<articleinfo id="pimdataexporterinfo">
+<title
+>Руководство пользователя средства экспорта данных PIM</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Мария</firstname
+><surname
+>Шикунова</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>translation-team@basealt.ru</email
+></address
+></affiliation
+><contrib
+>Редактирование перевода на русский язык</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2016-07-27</date>
+<releaseinfo
+>5.3.40 (Приложения KDE 16.08)</releaseinfo>
+
+</articleinfo>
+
+
+<sect1 id="introduction">
+<title
+>Введение</title>
+
+<para
+>&i18n-pimdataexporter; позволяет экспортировать и импортировать параметры PIM и локальную почту. Функция доступна для следующих программ: <simplelist>
+<member
+>&kmail;</member>
+<member
+>&knotes;</member>
+<member
+>&akregator;</member>
+<member
+>&kaddressbook;</member>
+<member
+>&kalarm;</member>
+<member
+>&korganizer;</member>
+</simplelist>
+</para>
+
+<sect2 id="using-kapp">
+<title
+>Работа со средством экспорта данных PIM</title>
+<para
+>Резервное копирование — это неотъемлемая часть работы с операционной системой для всех пользователей. &i18n-pimdataexporter; отлично подходит для создания резервных копий или переноса всех пользовательских параметров настройки и почты на новое устройство. &i18n-pimdataexporter; также возможно использовать для импорта созданных ранее резервных копий.</para>
+<para
+>Для использования программы выберите в меню окна просмотра сообщений &kmail; пункт <menuchoice
+><guimenu
+>Сервис</guimenu
+><guimenuitem
+>Импорт или экспорт данных &kmail;...</guimenuitem
+></menuchoice
+> или откройте программу как отдельное приложение с помощью меню запуска приложений.</para>
+
+<para
+>Чтобы выполнить резервное копирование, <action
+>выберите в меню пункт <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Экспортировать данные...</guimenuitem
+></menuchoice
+></action
+>: появится диалоговое окно с запросом на закрытие всех приложений kdepim. <warning
+><para
+>Убедитесь, что все приложения действительно закрыты, в противном случае возможна потеря данных.</para
+></warning
+> После закрытия всех приложений нажмите кнопку <guibutton
+>Продолжить</guibutton
+> в диалоговом окне, чтобы продолжить процедуру резервного копирования, либо <guibutton
+>Отмена</guibutton
+>, чтобы её отменить.</para>
+<para
+>Пользователю будет предложено указать имя создаваемой резервной копии; введите его в текстовое поле <guilabel
+>Файл</guilabel
+> (например, <replaceable
+>параметрыпочты</replaceable
+>). По умолчанию резервные копии сохраняются с расширением <filename role="extension"
+>.zip</filename
+>. </para>
+<para
+>Следующее окно позволит выбрать, что следует включить в резервную копию. По умолчанию выбраны все пункты. <note
+> <para
+>При выборе почты &kmail; будут сохраняться резервные копии только локальных папок; приложение выполнит резервное копирование параметров &imap;, а загрузка сообщений будет произведена после восстановления. Если требуется создать резервную копию писем, находящихся на сервере &imap;, и поместить их в локальную папку, следует использовать <ulink url="help:/akonadi_folderarchive_agent"
+>Folder Archive Agent (агент для работы с архивной папкой)</ulink
+>.</para>
+</note
+></para>
+<screenshot>
+<screeninfo
+>Диалоговое окно выбора</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="selection-dialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Диалоговое окно выбора</phrase>
+    </textobject>
+    <caption>
+      <para
+>Диалоговое окно выбора</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+<para
+>Финальное окно отображает отчёт о ходе процесса резервного копирования. Убедитесь, что резервное копирование прошло успешно, и закройте это окно.</para>
+<para
+>Чтобы восстановить данные из резервной копии, выберите в меню средства экспорта данных PIM пункт <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Восстановление данных...</guimenuitem
+></menuchoice
+>.</para>
+<para
+>Чтобы просмотреть содержимое резервной копии, выберите в меню пункт <menuchoice
+><guimenu
+>Сервис</guimenu
+><guimenuitem
+>Показать информацию об архиве...</guimenuitem
+></menuchoice
+>.</para>
+</sect2>
+</sect1>
+
+<sect1 id="credits">
+
+<title
+>Авторские права и лицензия</title>
+<para
+>&i18n-pimdataexporter;</para>
+<para
+>Авторские права на программу: &Laurent.Montel; &Laurent.Montel.mail;, 2019 </para>
+<para
+>Авторские права на документацию: &copy; &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail;, 2019 </para>
+
+<para
+>Мария Шикунова<email
+>translation-team@basealt.ru</email
+></para
+><para
+>Олеся Герасименко<email
+>translation-team@basealt.ru</email
+></para
+> &underFDL; &underGPL; </sect1>
+
+&documentation.index;
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

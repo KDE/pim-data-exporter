@@ -1,0 +1,1400 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Martin Schlander <mschlander@opensuse.org>, 2012, 2013, 2014, 2015, 2016, 2017, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-29 00:47+0000\n"
+"PO-Revision-Date: 2022-02-08 19:50+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.04.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Martin Schlander"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "mschlander@opensuse.org"
+
+#: console/main.cpp:25 console/main.cpp:27
+#, kde-format
+msgid "PIM Data Exporter Console"
+msgstr "Konsol til eksportør til PIM-data"
+
+#: console/main.cpp:29
+#, fuzzy, kde-format
+#| msgid "Copyright © 2015-2021 pimdataexporter authors"
+msgid "Copyright © 2015-%1 pimdataexporter authors"
+msgstr "Ophavsret ©  2015-2021 pimsettingexporter-udviklerne"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Maintainer"
+msgstr "Vedligeholder"
+
+#: console/main.cpp:31
+#, kde-format
+msgid "File to log information to."
+msgstr "Fil hvor information skal logges."
+
+#: console/main.cpp:34
+#, kde-format
+msgid "Template file to define what data, settings to import or export."
+msgstr ""
+"Skabelonfil til at definere hvilke data og indstillinger der skal importeres "
+"eller eksporteres."
+
+#: console/main.cpp:37
+#, kde-format
+msgid "Import the given file."
+msgstr "Importér den givne fil."
+
+#: console/main.cpp:39
+#, kde-format
+msgid "Export the given file."
+msgstr "Eksportér den angivne fil."
+
+#: core/abstractimportexportjob.cpp:56
+#, kde-format
+msgid "Task Canceled"
+msgstr "Opgave annulleret"
+
+#: core/abstractimportexportjob.cpp:116
+#, kde-format
+msgid "\"%1\" backup done."
+msgstr "Backup af \"%1\" gennemført."
+
+#: core/abstractimportexportjob.cpp:118
+#, kde-format
+msgid "\"%1\" cannot be exported."
+msgstr "\"%1\" kan ikke eksporteres."
+
+#: core/abstractimportexportjob.cpp:121
+#, kde-format
+msgid "\"%1\" does not exist."
+msgstr "\"%1\" findes ikke."
+
+#: core/abstractimportexportjob.cpp:268
+#, kde-format
+msgid "\"%1\" was copied."
+msgstr "\"%1\" blev kopieret."
+
+#: core/abstractimportexportjob.cpp:273
+#, fuzzy, kde-format
+#| msgid "Restoring identities..."
+msgid "Restoring \"%1\"..."
+msgstr "Genskaber identiteter..."
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "File \"%1\" cannot be copied to \"%2\"."
+msgstr "Filen \"%1\" kan ikke kopieres til \"%2\"."
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "Copy file"
+msgstr "Kopiér fil"
+
+#: core/abstractimportexportjob.cpp:300
+#, kde-format
+msgid "\"%1\" was restored."
+msgstr "\"%1\" blev genskabt."
+
+#: core/abstractimportexportjob.cpp:385
+#: core/addressbook/importaddressbookjobinterface.cpp:231
+#: core/mail/importmailjobinterface.cpp:424
+#, kde-format
+msgid "Resources restored."
+msgstr "Ressourcer genskabt."
+
+#: core/abstractimportexportjob.cpp:387
+#, kde-format
+msgid "No resources files found."
+msgstr "Ingen ressourcefiler fundet."
+
+#: core/abstractimportexportjob.cpp:448
+#, kde-format
+msgid "Unable to copy file %1"
+msgstr "Kan ikke kopiere filen %1"
+
+#: core/abstractimportexportjob.cpp:489
+#, kde-format
+msgid "Resource '%1' created."
+msgstr "Ressourcen \"%1\" blev oprettet."
+
+#: core/abstractimportexportjob.cpp:504
+#, fuzzy, kde-format
+#| msgid "Failed to synchronize %1."
+msgid "Failed to synchronize '%1'."
+msgstr "Kunne ikke synkronisere %1."
+
+#: core/abstractimportexportjob.cpp:509
+#, fuzzy, kde-format
+#| msgid "Resource %1 synchronized."
+msgid "Resource '%1' synchronized."
+msgstr "Ressourcen %1 blev synkroniseret."
+
+#: core/abstractimportexportjob.cpp:515
+#, kde-format
+msgid "All resources synchronized."
+msgstr "Alle ressourcer synkroniseret."
+
+#: core/abstractimportexportjob.cpp:541
+#, kde-format
+msgid "Start synchronizing..."
+msgstr "Start synkronisering..."
+
+#: core/abstractimportexportjob.cpp:578
+#, kde-format
+msgid "Directory \"%1\" added to backup file."
+msgstr "Mappen \"%1\" blev føjet til backup-filen."
+
+#: core/abstractimportexportjob.cpp:580
+#, kde-format
+msgid "Directory \"%1\" cannot be added to backup file."
+msgstr "Mappen \"%1\" kan ikke føjes til backupfilen."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAddressBook settings..."
+msgstr "Start eksport af KAddressBook-indstillinger..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:29
+#, kde-format
+msgid "Export KAddressBook settings"
+msgstr "Eksport af KAddressBook-indstillinger"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:42
+#: core/alarm/exportalarmjobinterface.cpp:84
+#: core/calendar/exportcalendarjobinterface.cpp:96
+#: core/mail/exportmailjobinterface.cpp:668
+#: core/notes/exportnotesjobinterface.cpp:53
+#, kde-format
+msgid "Backing up resources..."
+msgstr "Laver backup af ressourcer..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:102
+#: core/alarm/exportalarmjobinterface.cpp:76
+#: core/calendar/exportcalendarjobinterface.cpp:75
+#: core/mail/exportmailjobinterface.cpp:690
+#: core/notes/exportnotesjobinterface.cpp:150
+#, kde-format
+msgid "Resources backup done."
+msgstr "Backup af ressourcer gennemført."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:109
+#: core/akregator/exportakregatorjobinterface.cpp:72
+#: core/alarm/exportalarmjobinterface.cpp:109
+#: core/calendar/exportcalendarjobinterface.cpp:228
+#: core/mail/exportmailjobinterface.cpp:167
+#: core/notes/exportnotesjobinterface.cpp:75
+#, kde-format
+msgid "Backing up config..."
+msgstr "Laver backup af konfigurationen..."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:150
+#: core/akregator/exportakregatorjobinterface.cpp:79
+#: core/alarm/exportalarmjobinterface.cpp:135
+#: core/calendar/exportcalendarjobinterface.cpp:248
+#: core/mail/exportmailjobinterface.cpp:552
+#: core/notes/exportnotesjobinterface.cpp:108
+#, kde-format
+msgid "Config backup done."
+msgstr "Backup af konfigurationen gennemført."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:41
+#, kde-format
+msgid "Starting to import KAddressBook settings..."
+msgstr "Påbegynder import af KAddressBook-indstillinger..."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:43
+#, kde-format
+msgid "Import KAddressBook settings"
+msgstr "Import af KAddressBook-indstillinger"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:92
+#: core/akregator/importakregatorjobinterface.cpp:93
+#: core/alarm/importalarmjobinterface.cpp:82
+#: core/calendar/importcalendarjobinterface.cpp:90
+#: core/notes/importnotesjobinterface.cpp:80
+#, kde-format
+msgid "Restore configs..."
+msgstr "Genskab konfiguration..."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:109
+#: core/akregator/importakregatorjobinterface.cpp:99
+#: core/alarm/importalarmjobinterface.cpp:98
+#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/mail/importmailjobinterface.cpp:866
+#: core/notes/importnotesjobinterface.cpp:109
+#, kde-format
+msgid "Config restored."
+msgstr "Konfiguration genskabt."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:162
+#: core/addressbook/importaddressbookjobinterface.cpp:163
+#: core/alarm/importalarmjobinterface.cpp:114
+#: core/alarm/importalarmjobinterface.cpp:115
+#: core/calendar/importcalendarjobinterface.cpp:281
+#: core/calendar/importcalendarjobinterface.cpp:282
+#: core/mail/importmailjobinterface.cpp:199
+#: core/mail/importmailjobinterface.cpp:200
+#: core/notes/importnotesjobinterface.cpp:148
+#: core/notes/importnotesjobinterface.cpp:149
+#, kde-format
+msgid "Restore resources..."
+msgstr "Genskab ressourcer..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:24
+#, kde-format
+msgid "Start export Akregator settings..."
+msgstr "Start eksport af Akregator-indstillinger..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:25
+#, kde-format
+msgid "Export Akregator settings"
+msgstr "Eksport af Akregator-indstillinger"
+
+#: core/akregator/exportakregatorjobinterface.cpp:87
+#, kde-format
+msgid "Backing up data..."
+msgstr "Laver backup af data..."
+
+#: core/akregator/exportakregatorjobinterface.cpp:94
+#: core/notes/exportnotesjobinterface.cpp:46
+#, kde-format
+msgid "\"%1\" directory cannot be added to backup file."
+msgstr "Mappen \"%1\" kan ikke føjes til backupfilen."
+
+#: core/akregator/exportakregatorjobinterface.cpp:97
+#, kde-format
+msgid "Data backup done."
+msgstr "Backup af data gennemført."
+
+#: core/akregator/importakregatorjobinterface.cpp:29
+#, kde-format
+msgid "Starting to import Akregator settings..."
+msgstr "Påbegynder import af Akregator-indstillinger..."
+
+#: core/akregator/importakregatorjobinterface.cpp:32
+#, kde-format
+msgid "Import Akregator settings"
+msgstr "Import af Akregator-indstillinger"
+
+#: core/akregator/importakregatorjobinterface.cpp:106
+#: core/notes/importnotesjobinterface.cpp:116
+#, kde-format
+msgid "Restore data..."
+msgstr "Genskab data..."
+
+#: core/akregator/importakregatorjobinterface.cpp:112
+#: core/notes/importnotesjobinterface.cpp:129
+#, kde-format
+msgid "Data restored."
+msgstr "Data genskabt."
+
+#: core/alarm/exportalarmjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAlarm settings..."
+msgstr "Start eksport af KAlarm-indstillinger..."
+
+#: core/alarm/exportalarmjobinterface.cpp:29
+#, kde-format
+msgid "Export KAlarm settings"
+msgstr "Eksport af KAlarm-indstillinger"
+
+#: core/alarm/importalarmjobinterface.cpp:32
+#, kde-format
+msgid "Starting to import KAlarm settings..."
+msgstr "Påbegynder import af KAlarm-indstillinger..."
+
+#: core/alarm/importalarmjobinterface.cpp:33
+#, kde-format
+msgid "Import KAlarm settings"
+msgstr "Import af KAlarm-indstillinger"
+
+#: core/archivestorage.cpp:43
+#, kde-format
+msgid "Archive cannot be opened in write mode."
+msgstr "Arkivet kan ikke åbnes i skrivetilstand."
+
+#: core/archivestorage.cpp:45 core/utils.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Archive cannot be opened in read mode."
+msgstr "Arkivet kan ikke åbnes i læsetilstand."
+
+#: core/backupresourcefilejobbase.cpp:47
+#, kde-format
+msgid "\"%1\" is not a file."
+msgstr "\"%1\" er ikke en fil."
+
+#: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
+#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
+#, kde-format
+msgid "\"%1\" was backed up."
+msgstr "Backup af \"%1\" gennemført."
+
+#: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
+#: core/storeresourcejob.cpp:59
+#, kde-format
+msgid "\"%1\" file cannot be added to backup file."
+msgstr "Filen \"%1\" kan ikke føjes til backupfilen."
+
+#: core/calendar/exportcalendarjobinterface.cpp:82
+#, kde-format
+msgid "Start export KOrganizer settings..."
+msgstr "Start eksport af KOrganizer-indstillinger..."
+
+#: core/calendar/exportcalendarjobinterface.cpp:83
+#, kde-format
+msgid "Export KOrganizer settings"
+msgstr "Eksport af KOrganizer-indstillinger"
+
+#: core/calendar/importcalendarjobinterface.cpp:35
+#, kde-format
+msgid "Starting to import KOrganizer settings..."
+msgstr "Påbegynder import af KOrganizer-indstillinger..."
+
+#: core/calendar/importcalendarjobinterface.cpp:37
+#, kde-format
+msgid "Import KOrganizer settings"
+msgstr "Eksport af KOrganizer-indstillinger"
+
+#: core/mail/exportmailjobinterface.cpp:43
+#, kde-format
+msgid "Start export KMail settings..."
+msgstr "Import af KMail-indstillinger..."
+
+#: core/mail/exportmailjobinterface.cpp:44
+#, kde-format
+msgid "Export KMail settings"
+msgstr "Eksport af KMail-indstillinger"
+
+#: core/mail/exportmailjobinterface.cpp:112
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Backing up Folder Attributes..."
+msgstr "Laver backup af identitet..."
+
+#: core/mail/exportmailjobinterface.cpp:114
+#, kde-format
+msgid "Backing up Mails..."
+msgstr "Laver backup af e-mails..."
+
+#: core/mail/exportmailjobinterface.cpp:115
+#, fuzzy, kde-format
+#| msgid "Start export Akregator settings..."
+msgid "Start export resource..."
+msgstr "Start eksport af Akregator-indstillinger..."
+
+#: core/mail/exportmailjobinterface.cpp:123
+#, kde-format
+msgid "Backing up transports..."
+msgstr "Laver backup af transporter..."
+
+#: core/mail/exportmailjobinterface.cpp:128
+#: core/mail/exportmailjobinterface.cpp:140
+#, kde-format
+msgid "Transports backup done."
+msgstr "Backup af transporter gennemført."
+
+#: core/mail/exportmailjobinterface.cpp:142
+#, kde-format
+msgid "Transport file cannot be added to backup file."
+msgstr "Transportfilen kan ikke føjes til backupfilen."
+
+#: core/mail/exportmailjobinterface.cpp:557
+#, kde-format
+msgid "Backing up identity..."
+msgstr "Laver backup af identitet..."
+
+#: core/mail/exportmailjobinterface.cpp:596
+#, kde-format
+msgid "vCard file \"%1\" cannot be saved."
+msgstr "vCard-filen \"%1\" kan ikke gemmes."
+
+#: core/mail/exportmailjobinterface.cpp:609
+#, kde-format
+msgid "Identity backup done."
+msgstr "Backup af identitet gennemført."
+
+#: core/mail/exportmailjobinterface.cpp:611
+#, kde-format
+msgid "Identity file cannot be added to backup file."
+msgstr "Identitetfilen kan ikke føjes til backupfilen."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:139
+#, kde-format
+msgid "Filters backup done."
+msgstr "Backup af filtre gennemført."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#, kde-format
+msgid "Filters cannot be exported."
+msgstr "Filtrene kan ikke eksporteres."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Backing up Folder Attributes done."
+msgstr "Laver backup af identitet..."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Folder Attributes cannot be exported."
+msgstr "Filtrene kan ikke eksporteres."
+
+#: core/mail/importmailjobinterface.cpp:43
+#, kde-format
+msgid "Starting to import KMail settings..."
+msgstr "Påbegynder import af KMail-indstillinger..."
+
+#: core/mail/importmailjobinterface.cpp:44
+#, kde-format
+msgid "Import KMail settings"
+msgstr "Import af KMail-indstillinger"
+
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
+#, kde-format
+msgid "Restore transports..."
+msgstr "Genskab transporter..."
+
+#: core/mail/importmailjobinterface.cpp:173
+#, kde-format
+msgid "mailtransports file could not be found in the archive."
+msgstr "Filen mailtransports kunne ikke findes i arkivet."
+
+#: core/mail/importmailjobinterface.cpp:188
+#, kde-format
+msgid "Transports restored."
+msgstr "Transporter genskabt."
+
+#: core/mail/importmailjobinterface.cpp:190
+#, kde-format
+msgid "Failed to restore transports file."
+msgstr "Kunne ikke genskabe transportfilen."
+
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
+#, kde-format
+msgid "Restore mails..."
+msgstr "Genskab e-mails..."
+
+#: core/mail/importmailjobinterface.cpp:555
+#, kde-format
+msgid "Mails restored."
+msgstr "E-mails genskabt."
+
+#: core/mail/importmailjobinterface.cpp:562
+#, kde-format
+msgid "Restore config..."
+msgstr "Genskab konfiguration..."
+
+#: core/mail/importmailjobinterface.cpp:565
+#, kde-format
+msgid "filters file could not be found in the archive."
+msgstr "Filen med filtre kunne ikke findes i arkivet."
+
+#: core/mail/importmailjobinterface.cpp:569
+#, fuzzy, kde-format
+#| msgid "Restore mails..."
+msgid "Restore filters..."
+msgstr "Genskab e-mails..."
+
+#: core/mail/importmailjobinterface.cpp:618
+#, fuzzy, kde-format
+#| msgid "Mails restored."
+msgid "Filters restored."
+msgstr "E-mails genskabt."
+
+#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:904
+#, kde-format
+msgid "Restoring identities..."
+msgstr "Genskaber identiteter..."
+
+#: core/mail/importmailjobinterface.cpp:902
+#, kde-format
+msgid "emailidentities file could not be found in the archive."
+msgstr "Filen emailidentities kunne ikke findes i arkivet."
+
+#: core/mail/importmailjobinterface.cpp:963
+#, kde-format
+msgid "Identities restored."
+msgstr "Identiteter genskabt."
+
+#: core/mail/importmailjobinterface.cpp:965
+#, kde-format
+msgid "Failed to restore identity file."
+msgstr "Kunne ikke genskabe identitetsfilen."
+
+#: core/mail/importmailjobinterface.cpp:1287
+#, fuzzy, kde-format
+#| msgid "\"%1\" backup done."
+msgid "\"%1\" migration done."
+msgstr "Backup af \"%1\" gennemført."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:35
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Restoring folder attributes..."
+msgstr "Laver backup af identitet..."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:41
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Restoring Folder Attributes done."
+msgstr "Laver backup af identitet..."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:45
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Folder Attributes cannot be restored."
+msgstr "Filtrene kan ikke eksporteres."
+
+#: core/notes/exportnotesjobinterface.cpp:28
+#, kde-format
+msgid "Start export KNotes settings..."
+msgstr "Start eksport af KNotes-indstillinger..."
+
+#: core/notes/exportnotesjobinterface.cpp:29
+#, kde-format
+msgid "Export KNotes settings"
+msgstr "Eksport af KNotes-indstillinger"
+
+#: core/notes/importnotesjobinterface.cpp:49
+#, kde-format
+msgid "Starting to import KNotes settings..."
+msgstr "Påbegynder import af KNotes-indstillinger..."
+
+#: core/notes/importnotesjobinterface.cpp:52
+#, kde-format
+msgid "Import KNotes settings"
+msgstr "Import af KNotes-indstillinger"
+
+#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#, kde-format
+msgid "No data selected."
+msgstr "Ingen data valgt."
+
+#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#, kde-format
+msgid "Unable to open file \"%1\"."
+msgstr "Kan ikke åbne filen \"%1\"."
+
+#: core/pimdatabackuprestore.cpp:94
+#, kde-format
+msgid "Starting to backup data in '%1'"
+msgstr "Påbegynder backup af data i \"%1\""
+
+#: core/pimdatabackuprestore.cpp:183
+#, kde-format
+msgid "Backup in '%1' done."
+msgstr "Backup i \"%1\" gennemført."
+
+#: core/pimdatabackuprestore.cpp:279
+#, kde-format
+msgid "Starting to restore data from '%1'"
+msgstr "Påbegynder genskabelse af data fra \"%1\""
+
+#: core/pimdatabackuprestore.cpp:287
+#, kde-format
+msgid "Restoring data from '%1' done."
+msgstr "Gendannelse af data fra \"%1\" gennemført."
+
+#: core/pimdatabackupthread.cpp:37
+#, kde-format
+msgid "Impossible to open archive file."
+msgstr "Kan ikke åbne arkivfil."
+
+#: core/pimdatabackupthread.cpp:44
+#, kde-format
+msgid "Impossible to backup \"%1\"."
+msgstr "Kan ikke lave backup af \"%1\"."
+
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
+#, kde-format
+msgid "Resource file \"%1\" cannot be added to backup file."
+msgstr "Ressourcefilen \"%1\" kan ikke føjes til backupfilen."
+
+#: core/resourceconverterbase.cpp:206
+#, kde-format
+msgid "Resource config file \"%1\" doesn't exist."
+msgstr "Ressourcekonfigurationsfilen \"%1\" findes ikke."
+
+#: core/utils.cpp:181
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: core/utils.cpp:183
+#, kde-format
+msgid "KAddressBook"
+msgstr "KAddressBook"
+
+#: core/utils.cpp:185
+#, kde-format
+msgid "KAlarm"
+msgstr "KAlarm"
+
+#: core/utils.cpp:187
+#, kde-format
+msgid "KOrganizer"
+msgstr "KOrganizer"
+
+#: core/utils.cpp:189
+#, kde-format
+msgid "KNotes"
+msgstr "KNotes"
+
+#: core/utils.cpp:191
+#, kde-format
+msgid "Akregator"
+msgstr "Akregator"
+
+#: core/utils.cpp:205
+#, kde-format
+msgid "Identity"
+msgstr "Identitet"
+
+#: core/utils.cpp:207
+#, kde-format
+msgid "Mails"
+msgstr "E-mails"
+
+#: core/utils.cpp:209
+#, kde-format
+msgid "Mail Transport"
+msgstr "Mailtransport"
+
+#: core/utils.cpp:211
+#, kde-format
+msgid "Resources"
+msgstr "Ressourcer"
+
+#: core/utils.cpp:213
+#, kde-format
+msgid "Config"
+msgstr "Konfiguration"
+
+#: core/utils.cpp:215
+#, kde-format
+msgid "Data"
+msgstr "Data"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Archive File Structure"
+msgstr "Struktur på arkivfil"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:31
+#, kde-format
+msgid "Backup Archive Structure:"
+msgstr "Struktur på backuparkiv:"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:57
+#, kde-format
+msgid "backup-structure.txt file was not found."
+msgstr "Filen backup-structure.txt blev ikke fundet."
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure PimDataExporter"
+msgstr "Indstil PimDataExporter"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
+#, kde-format
+msgid "General"
+msgstr "Generelt"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:51
+#, kde-format
+msgid "User Feedback"
+msgstr "Brugerfeedback"
+
+#: gui/dialog/selectiontypedialog.cpp:22
+#, kde-format
+msgid "Use this template by default"
+msgstr "Brug denne skabelon som standard"
+
+#: gui/dialog/selectiontypedialog.cpp:23
+#, kde-format
+msgid "Save as Template..."
+msgstr "Gem som skabelon..."
+
+#: gui/dialog/selectiontypedialog.cpp:24
+#, kde-format
+msgid "Load Template..."
+msgstr "Indlæs skabelon..."
+
+#: gui/dialog/selectiontypedialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Type"
+msgstr "Vælg type"
+
+#: gui/dialog/selectiontypedialog.cpp:47
+#: gui/dialog/synchronizeresourcedialog.cpp:40
+#, kde-format
+msgid "Select All"
+msgstr "Markér alt"
+
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:45
+#, kde-format
+msgid "Unselect All"
+msgstr "Afmarkér alt"
+
+#: gui/dialog/showarchivestructuredialog.cpp:33
+#, kde-format
+msgid "Extract Selected File"
+msgstr "Udtræk valgt fil"
+
+#: gui/dialog/showarchivestructuredialog.cpp:34
+#, kde-format
+msgid "Open Selected File"
+msgstr "Åbn valgt fil"
+
+#: gui/dialog/showarchivestructuredialog.cpp:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Show Archive Content on file \"%1\""
+msgstr "Vis arkivindhold for filen \"%1\""
+
+#: gui/dialog/showarchivestructuredialog.cpp:44
+#, kde-format
+msgid "Search..."
+msgstr "Søg..."
+
+#: gui/dialog/showarchivestructuredialog.cpp:47
+#, kde-format
+msgid "Save As Text..."
+msgstr "Gem som tekst..."
+
+#: gui/dialog/showarchivestructuredialog.cpp:127
+#, kde-format
+msgid "Select Directory"
+msgstr "Vælg mappe"
+
+#: gui/dialog/showarchivestructuredialog.cpp:133
+#, kde-format
+msgid "Do you want to overwrite %1?"
+msgstr "Vil du overskrive %1?"
+
+#: gui/dialog/showarchivestructuredialog.cpp:134
+#, kde-format
+msgid "File Already Exist"
+msgstr "Filen findes allerede"
+
+#: gui/dialog/showarchivestructuredialog.cpp:142
+#, kde-format
+msgid "Impossible to copy %1 in %2."
+msgstr "Kan ikke kopiere %1 i %2."
+
+#: gui/dialog/showarchivestructuredialog.cpp:165
+#, kde-format
+msgctxt "qfiledialog filter files text"
+msgid "Text Files"
+msgstr "Tekstfiler"
+
+#: gui/dialog/showarchivestructuredialog.cpp:168
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Log File"
+msgstr "Eksportér logfil"
+
+#: gui/dialog/showarchivestructuredialog.cpp:176
+#, kde-format
+msgid "Cannot open archive"
+msgstr "Kan ikke åbne arkiv"
+
+#: gui/dialog/showarchivestructuredialog.cpp:182
+#, kde-format
+msgid "Info"
+msgstr "Info"
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "This is not pim archive."
+msgstr "Dette er ikke et pim-arkiv."
+
+#: gui/dialog/showarchivestructuredialog.cpp:184
+#, kde-format
+msgid "Show information"
+msgstr "Vis information"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Synchronize Resources"
+msgstr "Synkronisér ressourcer"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:26
+#, kde-format
+msgid ""
+"Some resources were added but data were not sync. Select resources that you "
+"want to sync:"
+msgstr ""
+"Nogle ressourcer blev tilføjet, men data var ikke synkroniserede. Vælg "
+"ressourcer som du vil synkronisere:"
+
+#: gui/importexportprogressindicatorgui.cpp:35
+#: gui/job/fullsynchronizeresourcesjob.cpp:39
+#, kde-format
+msgid "Cancel"
+msgstr "Annullér"
+
+#: gui/importexportprogressindicatorgui.cpp:66
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
+msgstr "\"%1\" findes allerede. Vil du overskrive eller sammenflette den?"
+
+#: gui/importexportprogressindicatorgui.cpp:67
+#: gui/importexportprogressindicatorgui.cpp:79
+#: gui/importexportprogressindicatorgui.cpp:92
+#, kde-format
+msgid "Restore"
+msgstr "Genskab"
+
+#: gui/importexportprogressindicatorgui.cpp:69
+#, kde-format
+msgid "Merge"
+msgstr "Sammenflet"
+
+#: gui/importexportprogressindicatorgui.cpp:78
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it?"
+msgstr "\"%1\" findes allerede. Vil du overskrive den?"
+
+#: gui/importexportprogressindicatorgui.cpp:91
+#, kde-format
+msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
+msgstr "Mappen \"%1\" findes allerede. Vil du overskrive den?"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:41
+#, kde-format
+msgctxt "@title:window"
+msgid "Synchronize resources"
+msgstr "Synkronisér ressourcer"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:42
+#, kde-format
+msgid "Synchronize resources... It can take some time."
+msgstr "Synkroniserer ressourcer... Det kan tage noget tid."
+
+#: gui/pimdatabackuprestoreui.cpp:24
+#, kde-format
+msgid ""
+"The archive was created by a newer version of this program. It might contain "
+"additional data which will be skipped during import. Do you want to import "
+"it?"
+msgstr ""
+"Arkivet blev oprettet med en nyere version af dette program. Det indeholder "
+"måske yderligere data, som vil blive sprunget over under import. Vil du "
+"importere det?"
+
+#: gui/pimdatabackuprestoreui.cpp:26
+#, kde-format
+msgid "Not correct version"
+msgstr "Ikke korrekt version"
+
+#: gui/pimdatabackuprestoreui.cpp:27
+#, kde-format
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Importér"
+
+#: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
+#, kde-format
+msgid "PIM Data Exporter"
+msgstr "PIM-dataeksport"
+
+#: gui/pimdatacommandlineoption.cpp:41
+#, fuzzy, kde-format
+#| msgid "Copyright © 2012-2021 pimdataexporter authors"
+msgid "Copyright © 2012-%1 pimdataexporter authors"
+msgstr "Ophavsret ©  2012-2021 pimsettingexporter-udviklerne"
+
+#: gui/pimdatacommandlineoption.cpp:46
+#, kde-format
+msgid "Template file uses to define what data, settings to import or export"
+msgstr ""
+"Skabelonfil der bruges til at definere hvilke data og indstillinger der skal "
+"importeres eller eksporteres"
+
+#: gui/pimdatacommandlineoption.cpp:48
+#, kde-format
+msgid "Import the given file"
+msgstr "Importér den givne fil"
+
+#: gui/pimdatacommandlineoption.cpp:49
+#, kde-format
+msgid "Export the given file"
+msgstr "Eksportér den angivne fil"
+
+#: gui/pimdatacommandlineoption.cpp:50
+#, kde-format
+msgid "File or url. The user will be asked whether to import or export."
+msgstr ""
+"Fil eller URL. Brugeren vil blive spurgt om der skal importeres eller "
+"eksporteres."
+
+#: gui/pimdatacommandlineoption.cpp:52
+#, kde-format
+msgid "Lists the available options for user feedback"
+msgstr "Oplister de tilgængelige indstillinger for brugerfeedback"
+
+#. i18n: ectx: Menu (file)
+#: gui/pimdataexporter.rc:8
+#, kde-format
+msgid "&File"
+msgstr "&Fil"
+
+#. i18n: ectx: Menu (tools)
+#: gui/pimdataexporter.rc:21
+#, kde-format
+msgid "&Tools"
+msgstr "Værk&tøjer"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: gui/pimdataexporter.rc:28
+#, kde-format
+msgid "Main Toolbar"
+msgstr "Hovedværktøjslinje"
+
+#: gui/pimdataexporterwindow.cpp:126
+#, kde-format
+msgid "Full sync starts..."
+msgstr "Fuld synkronisering starter..."
+
+#: gui/pimdataexporterwindow.cpp:156
+#, kde-format
+msgid "Full sync finished."
+msgstr "Fuld synkronisering færdig."
+
+#: gui/pimdataexporterwindow.cpp:163
+#, kde-format
+msgid "Full sync for \"%1\" done."
+msgstr "Fuld synkronisering af \"%1\" gennemført."
+
+#: gui/pimdataexporterwindow.cpp:168
+#, kde-format
+msgid "Full sync for \"%1\" failed."
+msgstr "Fuld synkronisering af \"%1\" mislykkedes."
+
+#: gui/pimdataexporterwindow.cpp:174
+#, kde-format
+msgid ""
+"For restoring data, you must use \"pimdataexporter\". Be careful as it can "
+"overwrite your existing settings and data."
+msgstr ""
+"For at gendanne data skal du bruge \"pimdataexporter\". Vær forsigtig da det "
+"kan overskrive dine eksisterende indstillinger og data."
+
+#: gui/pimdataexporterwindow.cpp:176 gui/pimdataexporterwindow.cpp:281
+#: gui/pimdataexporterwindow.cpp:359
+#, kde-format
+msgid "Backup"
+msgstr "Backup"
+
+#: gui/pimdataexporterwindow.cpp:203
+#, kde-format
+msgid "Export Data..."
+msgstr "Eksportér data..."
+
+#: gui/pimdataexporterwindow.cpp:208
+#, kde-format
+msgid "Import Data..."
+msgstr "Importér data..."
+
+#: gui/pimdataexporterwindow.cpp:213
+#, kde-format
+msgid "Save log..."
+msgstr "Gem log..."
+
+#: gui/pimdataexporterwindow.cpp:216
+#, kde-format
+msgid "Show Archive Structure Information..."
+msgstr "Vis information om arkivstruktur..."
+
+#: gui/pimdataexporterwindow.cpp:219
+#, kde-format
+msgid "Show Archive Information..."
+msgstr "Vis information om arkiv..."
+
+#: gui/pimdataexporterwindow.cpp:223
+#, kde-format
+msgid "Show Information on current Archive..."
+msgstr "Vis information om aktuelt arkiv..."
+
+#: gui/pimdataexporterwindow.cpp:259
+#, kde-format
+msgid "Select Archive"
+msgstr "Vælg arkiv"
+
+#: gui/pimdataexporterwindow.cpp:259
+#, kde-format
+msgid "Zip file"
+msgstr "ZIP-fil"
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Log is empty."
+msgstr "Loggen er tom."
+
+#: gui/pimdataexporterwindow.cpp:271
+#, kde-format
+msgid "Save log"
+msgstr "Gem log"
+
+#: gui/pimdataexporterwindow.cpp:275
+#, kde-format
+msgid "HTML Files (*.html)"
+msgstr "HTML-filer (*.html)"
+
+#: gui/pimdataexporterwindow.cpp:281
+#, kde-format
+msgid "Please quit all kdepim applications before backing up your data."
+msgstr ""
+"Afslut venligst alle KDE-PIM-programmer før du tager backup af dine data."
+
+#: gui/pimdataexporterwindow.cpp:304
+#, kde-format
+msgid "Create backup"
+msgstr "Lav backup"
+
+#: gui/pimdataexporterwindow.cpp:306
+#, kde-format
+msgid "Zip file (*.zip)"
+msgstr "ZIP-fil (*.zip)"
+
+#: gui/pimdataexporterwindow.cpp:316
+#, kde-format
+msgid "Backup in progress..."
+msgstr "Backup i gang..."
+
+#: gui/pimdataexporterwindow.cpp:358
+#, kde-format
+msgid ""
+"Before restoring data you must close all kdepim applications. Do you want to "
+"continue?"
+msgstr ""
+"Før du laver genskaber data skal du lukke alle KDE-PIM-programmer. Vil du "
+"fortsætte?"
+
+#: gui/pimdataexporterwindow.cpp:372
+#, kde-format
+msgid "Restore backup"
+msgstr "Genskab fra backup"
+
+#: gui/pimdataexporterwindow.cpp:374
+#, kde-format
+msgid "Zip File"
+msgstr "ZIP-fil"
+
+#: gui/pimdataexporterwindow.cpp:406
+#, kde-format
+msgid "Restore in progress..."
+msgstr "Genskabelse i gang..."
+
+#: gui/trayicon/pimdatatrayicon.cpp:13
+#, kde-format
+msgid "Pim Data Exporter"
+msgstr "PIM-dataeksport"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:16
+#, kde-format
+msgid "Always Override File"
+msgstr "Tilsidesæt altid fil"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:17
+#, kde-format
+msgid "Always Override Directory"
+msgstr "Tilsidesæt altid mappe"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:18
+#, kde-format
+msgid "Always Merge Config File"
+msgstr "Sammenflet altid konfigurationsfil"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:23
+#, kde-format
+msgid "Import"
+msgstr "Importér"
+
+#: gui/widgets/selectiontypetreewidget.cpp:351
+#, kde-format
+msgid "Template Files (*.xml)"
+msgstr "Skabelonfiler (*.xml)"
+
+#~ msgid "&New"
+#~ msgstr "&Ny"
+
+#~ msgid "&Edit"
+#~ msgstr "&Redigér"
+
+#~ msgid "&View"
+#~ msgstr "&Vis"
+
+#~ msgid "&Action"
+#~ msgstr "H&andling"
+
+#~ msgid "&Settings"
+#~ msgstr "Ind&stillinger"
+
+#~ msgid "&Help"
+#~ msgstr "&Hjælp"
+
+#~ msgid "&Export"
+#~ msgstr "&Eksportér"
+
+#~ msgid "&Collection"
+#~ msgstr "Sam&ling"
+
+#~ msgid "&Item"
+#~ msgstr "&Element"
+
+#~ msgid "&Cache"
+#~ msgstr "&Cache"
+
+#~ msgid "&Server"
+#~ msgstr "&Server"
+
+#~ msgid "&Certificates"
+#~ msgstr "&Certifikater"
+
+#~ msgid "&Window"
+#~ msgstr "&Vindue"
+
+#~ msgctxt "@title:menu New message, folder or new window."
+#~ msgid "New"
+#~ msgstr "Ny"
+
+#~ msgid "&Go"
+#~ msgstr "&Kør"
+
+#~ msgid "F&older"
+#~ msgstr "Ma&ppe"
+
+#~ msgid "Apply Filters on Folder"
+#~ msgstr "Anvend filtre på mappe"
+
+#~ msgid "Apply Filters on Folder and all its Subfolders"
+#~ msgstr "Anvend filtre på mappe og alle dens undermapper"
+
+#~ msgid "&Message"
+#~ msgstr "&Brev"
+
+#~ msgid "Reply Special"
+#~ msgstr "Svar speciel"
+
+#~ msgid "&Forward"
+#~ msgstr "&Videresend"
+
+#~ msgid "A&pply Filter"
+#~ msgstr "An&vend filter"
+
+#~ msgid "&Options"
+#~ msgstr "&Indstillinger"
+
+#~ msgid "&Attach"
+#~ msgstr "&Vedlæg"
+
+#~ msgid "HTML Toolbar"
+#~ msgstr "HTML-værktøjslinje"
+
+#~ msgid "Text Direction Toolbar"
+#~ msgstr "Tekstretning-værktøjslinje"
+
+#~ msgid "Navigator"
+#~ msgstr "Navigering"
+
+#~ msgid "PIM Setting Exporter"
+#~ msgstr "Eksportør til PIM-indstillinger"
+
+#~ msgid "Start export Blogilo settings..."
+#~ msgstr "Start eksport af Blogilo-indstillinger..."
+
+#~ msgid "Export Blogilo settings"
+#~ msgstr "Eksport af Blogilo-indstillinger"
+
+#~ msgid "Starting to import Blogilo settings..."
+#~ msgstr "Påbegynder import af Blogilo-indstillinger..."
+
+#~ msgid "Import Blogilo settings"
+#~ msgstr "Import af Blogilo-indstillinger"
+
+#~ msgid "Blogilo"
+#~ msgstr "Blogilo"
+
+#~ msgid "Backup infos."
+#~ msgstr "Backupinfo."
+
+#~ msgid ""
+#~ "Before backing up data, it is recommended to quit all kdepim applications."
+#~ msgstr ""
+#~ "Før du laver backup af data, anbefales det at lukke alle KDEPIM-"
+#~ "programmer."
+
+#~ msgid "Akonadi database file could not be found in the archive."
+#~ msgstr "Filen med Akonadi-databasen kunne ikke findes i arkivet."
+
+#~ msgid "Restore Akonadi Database..."
+#~ msgstr "Genskab Akonadi-database..."
+
+#~ msgid "Database driver \"%1\" not supported."
+#~ msgstr "Databasedriveren \"%1\" er ikke understøttet."
+
+#~ msgid "Could not find \"%1\" necessary to restore database."
+#~ msgstr "Kunne ikke finde \"%1\" som er nødvendig for at genskabe databasen."
+
+#~ msgid "Failed to restore Akonadi Database."
+#~ msgstr "Kunne ikke genskabe Akonadi-databasen."
+
+#~ msgid "Akonadi Database restored."
+#~ msgstr "Akonadi-database genskabt."
+
+#~ msgid "Akonadi Database"
+#~ msgstr "Akonadi-database"
+
+#~ msgid "Overwrite"
+#~ msgstr "Overskriv"
+
+#, fuzzy
+#~| msgid "Copyright © 2012-2014 pimsettingexporter authors"
+#~ msgid "Copyright © 2012-2015 pimsettingexporter authors"
+#~ msgstr "Ophavsret ©  2012-2014 pimsettingexporter-udviklerne"
+
+#~ msgid "Back Up Data..."
+#~ msgstr "Lav backup af data..."
+
+#, fuzzy
+#~| msgid "Copyright © 2012-2014 pimsettingexporter authors"
+#~ msgid "Copyright © 2015 pimsettingexporter authors"
+#~ msgstr "Ophavsret ©  2012-2014 pimsettingexporter-udviklerne"
+
+#~ msgid "mysqldump not found. Export data aborted"
+#~ msgstr "mysqldump ikke fundet. Eksport af data afbrudt"
+
+#~ msgid "Backing up Akonadi Database..."
+#~ msgstr "Laver backup af Akonadi-databasen..."
+
+#~ msgid "Could not find \"%1\" necessary to dump database."
+#~ msgstr "Kunne ikke finde \"%1\" som er nødvendig for at dumpe databasen."
+
+#~ msgid "Akonadi Database \"%1\" cannot be added to backup file."
+#~ msgstr "Akonadi-databasen \"%1\" kan ikke føjes til backupfilen."
+
+#~ msgid "Akonadi Database backup done."
+#~ msgstr "Backup af Akonadi-databasen gennemført."
+
+#~ msgid "Theme directory \"%1\" cannot be added to backup file."
+#~ msgstr "Temamappen \"%1\" kan ikke føjes til backupfilen."
+
+#~ msgid "Resource was not configured correctly, not archiving it."
+#~ msgstr "Ressourcen var ikke korrekt konfigureret. Den arkiveres ikke."
+
+#~ msgid "Zip program not found. Install it before to launch this application."
+#~ msgstr ""
+#~ "Programmet zip blev ikke fundet. Installér det før du kører dette program."
+
+#~ msgid "Zip program not found."
+#~ msgstr "Programmet zip blev ikke fundet."
+
+#~ msgid "Mails backup done."
+#~ msgstr "Backup af e-mails gennemført."
+
+#, fuzzy
+#~| msgid "Copyright © 2012-2014 pimsettingexporter authors"
+#~ msgid "Copyright © 2012-2014 pimsettingexporter authors"
+#~ msgstr "Ophavsret ©  2012-2014 pimsettingexporter-udviklerne"
+
+#~ msgid "Start export KJots settings..."
+#~ msgstr "Start eksport af KJots-indstillinger..."
+
+#~ msgid "Start import KJots settings..."
+#~ msgstr "Start import af KJots-indstillinger..."
+
+#~ msgid "KJots"
+#~ msgstr "KJots"
+
+#~ msgid "Start export KNode settings..."
+#~ msgstr "Start eksport af KNode-indstillinger..."
+
+#~ msgid "Start import KNode settings..."
+#~ msgstr "Start import af KNode-indstillinger..."
+
+#~ msgid "KNode"
+#~ msgstr "KNode"
+
+#~ msgid "Backing up Nepomuk Database..."
+#~ msgstr "Laver backup af Nepomuk-databasen..."
+
+#~ msgid "Nepomuk Database backup done."
+#~ msgstr "Backup af Nepomuk-databasen gennemført."
+
+#~ msgid "Nepomuk Database restored."
+#~ msgstr "Nepomuk-database genskabt."
+
+#~ msgid "Failed to restore Nepomuk Database."
+#~ msgstr "Kunne ikke genskabe Nepomuk-databasen."
+
+#~ msgid "Nepomuk Database"
+#~ msgstr "Nepomuk-database"
+
+#, fuzzy
+#~| msgid "Config"
+#~ msgid "Configs"
+#~ msgstr "Konfiguration"
+
+#, fuzzy
+#~| msgid "Transports backup done."
+#~ msgid "Transports Config"
+#~ msgstr "Backup af transporter gennemført."
+
+#, fuzzy
+#~| msgid "Akonadi Database"
+#~ msgid "Akonadi"
+#~ msgstr "Akonadi-database"
+
+#~ msgid "Mail \"%1\" file cannot be added to backup file."
+#~ msgstr "Mail-filen \"%1\" kan ikke føjes til backupfilen."
+
+#~ msgid "Mail \"%1\" was backuped."
+#~ msgstr "Backup af Mail \"%1\" gennemført."
+
+#~ msgid "MBox \"%1\" was backuped."
+#~ msgstr "Backup af MBox \"%1\" gennemført."
+
+#~ msgid "MBox \"%1\" file cannot be added to backup file."
+#~ msgstr "MBox-filen \"%1\" kan ikke føjes til backupfilen."
+
+#~ msgid "backupmail"
+#~ msgstr "backupmail"
+
+#~ msgid "PIM Backup Mail"
+#~ msgstr "PIM backup af e-mail"
+
+#~ msgid "Form"
+#~ msgstr "Formular"

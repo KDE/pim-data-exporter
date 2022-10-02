@@ -1,0 +1,217 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-pimdataexporter "<application
+>Export av data för personlig informationshantering</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE"
+> 
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
+]>
+
+<article id="pimdataexporter" lang="&language;">
+
+<articleinfo id="pimdataexporterinfo">
+<title
+>Handbok &i18n-pimdataexporter;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2016-07-27</date>
+<releaseinfo
+>5.3.40 (Program 16.08)</releaseinfo>
+
+</articleinfo>
+
+
+<sect1 id="introduction">
+<title
+>Inledning</title>
+
+<para
+>&i18n-pimdataexporter; gör det möjligt att exportera och importera inställningar för personlig informationshantering och lokal e-post. Det går att säkerhetskopiera och återställa inställningar från följande program: <simplelist>
+<member
+>&kmail;</member>
+<member
+>&knotes;</member>
+<member
+>&akregator;</member>
+<member
+>&kaddressbook;</member>
+<member
+>&kalarm;</member>
+<member
+>&korganizer;</member>
+</simplelist>
+</para>
+
+<sect2 id="using-kapp">
+<title
+>Använda &i18n-pimdataexporter;</title>
+<para
+>Säkerhetskopiering är en väsentlig aktivitet för alla användare. &i18n-pimdataexporter; är ett utmärkt verktyg för att säkerhetskopiera eller flytta alla inställningar och e-post till en ny installation. Du kan också använda &i18n-pimdataexporter; för att importera tidigare säkerhetskopior.</para>
+<para
+>Du kan använda <menuchoice
+><guimenu
+>Verktyg</guimenu
+><guimenuitem
+>Exportera data från &kmail;...</guimenuitem
+></menuchoice
+> visa brevfönstret eller så kan &i18n-pimdataexporter; köras som ett fristående program genom att köra &i18n-pimdataexporter; via programstart.</para>
+
+<para
+><action
+>Välj <menuchoice
+><guimenu
+>Arkiv</guimenu
+> <guimenuitem
+>Säkerhetskopiera data...</guimenuitem
+></menuchoice
+> för att utföra en säkerhetskopiering</action
+>. Det ber dig att stänga alla kdepim-program. <warning
+><para
+>Försäkra dig om att du stänger alla fönster, dataförlust kan inträffa om du inte gör det.</para
+></warning
+> När de väl har stängts, klicka på <guibutton
+>Ja</guibutton
+> för att fortsätta, eller <guibutton
+>Nej</guibutton
+> för att avbryta.</para>
+<para
+>Du blir tillfrågat om att skapa ett namn på säkerhetskopian, som matas in i textrutan <guilabel
+>Fil</guilabel
+>, t.ex. <replaceable
+>mina-brevinställningar</replaceable
+>. Den normala filtypen som den sparas med är <literal role="extension"
+>.zip</literal
+>. </para>
+<para
+>Nästa sida låter dig välja vad du vill säkerhetskopiera, normalt är allting valt. <note
+> <para
+>Val av brev i &kmail; säkerhetskopierar bara brev i <quote
+>Lokala korgar</quote
+>. Det säkerhetskopierar &imap;-inställningar och laddar ner brev vid återställning. Om du har brev på en &imap;-server som du vill säkerhetskopiera, måste du använda <ulink url="help:/akonadi_folderarchive_agent"
+>Modulen för korgarkivering</ulink
+> för att arkivera dessa brev i en lokal korg.</para>
+</note
+></para>
+<screenshot>
+<screeninfo
+>Valdialogrutan</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="selection-dialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Valdialogrutan</phrase>
+    </textobject>
+    <caption>
+      <para
+>Valdialogrutan</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+<para
+>Den sista sidan visar loggen av säkerhetskopieringsprocessen. Du kan stänga fönstret när du väl har granskat loggen och verifierat att säkerhetskopieringen lyckades.</para>
+<para
+>För att återställa säkerhetskopian, välj <menuchoice
+><guimenu
+>Arkiv</guimenu
+><guimenuitem
+>Återställ data...</guimenuitem
+></menuchoice
+> inne i &i18n-pimdataexporter;.</para>
+<para
+>Genom att använda <menuchoice
+><guimenu
+>Verktyg</guimenu
+><guimenuitem
+>Visa arkivinformation</guimenuitem
+></menuchoice
+> kan du välja ett säkerhetskopieringsarkiv och titta på innehållet.</para>
+</sect2>
+</sect1>
+
+<sect1 id="credits">
+
+<title
+>Tack till och licens</title>
+<para
+>&i18n-pimdataexporter;</para>
+<para
+>Program copyright 2019 &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Dokumentation Copyright &copy; 2019 &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail; </para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </sect1>
+
+&documentation.index;
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

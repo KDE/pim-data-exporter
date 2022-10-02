@@ -1,0 +1,216 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-pimdataexporter "<application
+>Інструмент експортування даних PIM</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Ukrainian "INCLUDE"
+> 
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
+]>
+
+<article id="pimdataexporter" lang="&language;">
+
+<articleinfo id="pimdataexporterinfo">
+<title
+>Підручник із засобу експортування даних</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>27 липня 2016 року</date>
+<releaseinfo
+>5.3.40 (Програми 16.08)</releaseinfo>
+
+</articleinfo>
+
+
+<sect1 id="introduction">
+<title
+>Вступ</title>
+
+<para
+>За допомогою засобу експортування даних даними ви можете експортувати та імпортувати параметри роботи з особистими даними та локальні дані електронної пошти. Передбачено резервне копіювання та відновлення параметрів роботи таких програми: <simplelist>
+<member
+>&kmail;</member>
+<member
+>&knotes;</member>
+<member
+>&akregator;</member>
+<member
+>&kaddressbook;</member>
+<member
+>&kalarm;</member>
+<member
+>&korganizer;</member>
+</simplelist>
+</para>
+
+<sect2 id="using-kapp">
+<title
+>Користування засобом експортування даних</title>
+<para
+>Резервне копіювання даних є дуже важливим компонентом роботи з комп’ютером. Засіб експортування даних є чудовим інструментом для створення резервних копій та перенесення усіх параметрів роботи з особистими даними та архіву електронної пошти у нововстановлену операційну систему. Ви також можете скористатися засобом експортування даних для імпортування раніше створених резервних копій даних.</para>
+<para
+>Для виконання цього завдання ви можете скористатися пунктом <menuchoice
+><guimenu
+>Інструменти</guimenu
+><guimenuitem
+>Експортувати дані &kmail;...</guimenuitem
+></menuchoice
+> меню вікна перегляду повідомлень. Крім того, засіб експортування даних можна запустити окремо, вказавши команду &i18n-pimdataexporter; у засобі запуску програм.</para>
+
+<para
+>Щоб створити резервну копію, <action
+>скористайтеся пунктом меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Створити резервну копію даних...</guimenuitem
+></menuchoice
+></action
+>ю У відповідь програм попросить вас завершити роботу усіх програм kdepim. <warning
+><para
+>Вам варто завершити роботу усіх цих програм, щоб запобігти втраті даних.</para
+></warning
+> Щойно роботу програм буде завершено, натисніть кнопку <guibutton
+>Так</guibutton
+>, щоб продовжити експортування, або кнопку <guibutton
+>Ні</guibutton
+>, щоб скасувати експортування.</para>
+<para
+>Програма попросить вас вказати назву файла резервної копії. Вкажіть цю назву у полі <guilabel
+>Файл</guilabel
+>, наприклад <replaceable
+>моїпараметрипошти</replaceable
+>. Типовим типом файлів резервної копії є <filename role="extension"
+>.zip</filename
+>. </para>
+<para
+>За допомогою наступного вікна ви можете вибрати дані, резервну копію яких слід створити. Типово буде експортовано усі дані. <note
+> <para
+>Позначення пункту експортування пошти &kmail; призведе до резервного копіювання лише повідомлень у ваших локальних тек. Також буде створено резервну копію параметрів &imap; і отримано повідомлення під час відновлення параметрів. Якщо ви хочете створити резервну копію якихось повідомлень на сервері &imap;, вам слід скористатися <ulink url="help:/akonadi_folderarchive_agent"
+>агентом архівування до теки</ulink
+>, щоб створити архів ваших повідомлень у локальній теці.</para>
+</note
+></para>
+<screenshot>
+<screeninfo
+>Діалогове вікно вибору</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="selection-dialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Діалогове вікно вибору</phrase>
+    </textobject>
+    <caption>
+      <para
+>Діалогове вікно вибору</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+<para
+>На останній сторінці майстра буде показано журнал процедури створення резервної копії. Ви можете закрити вікно, щойно ознайомитеся з журналом і переконаєтеся, що резервну копію було успішно створено.</para>
+<para
+>Щоб відновити дані з резервної копії, скористайтеся пунктом меню <menuchoice
+><guimenu
+>Файл</guimenu
+><guimenuitem
+>Відновити дані...</guimenuitem
+></menuchoice
+> у вікні засобу експортування даних.</para>
+<para
+>За допомогою пункту меню <menuchoice
+><guimenu
+>Інструменти</guimenu
+><guimenuitem
+>Показати дані щодо архіву</guimenuitem
+></menuchoice
+> ви можете вибрати архів із резервною копією і переглянути його вміст.</para>
+</sect2>
+</sect1>
+
+<sect1 id="credits">
+
+<title
+>Подяки і ліцензування</title>
+<para
+>&i18n-pimdataexporter;</para>
+<para
+>Авторські права на програму належать &Laurent.Montel; &Laurent.Montel.mail;, 2019 </para>
+<para
+>Авторські права на документацію належать &Laurent.Montel; &Laurent.Montel.mail;, 2019; &Scarlett.Clark; &Scarlett.Clark.mail;, 2013 </para>
+
+<para
+>Переклад українською: Юрій Чорноіван<email
+>yurchor@ukr.net</email
+></para
+> 
+&underFDL; &underGPL; </sect1>
+
+&documentation.index;
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

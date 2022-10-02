@@ -1,0 +1,220 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-pimsettingexporter "<application
+>Exportador de preferencias de PIM</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Spanish "INCLUDE"
+> 
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
+]>
+
+<article id="pimsettingexporter" lang="&language;">
+
+<articleinfo id="pimsettingexporterinfo">
+<title
+>El manual de &i18n-pimsettingexporter;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Javier</firstname
+> <surname
+>Viñal</surname
+> <affiliation
+><address
+><email
+>fjvinal@gmail.com</email
+></address
+> </affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2016-07-27</date>
+<releaseinfo
+>5.3.40 (aplicaciones 16.08)</releaseinfo>
+
+</articleinfo>
+
+
+<sect1 id="introduction">
+<title
+>Introducción</title>
+
+<para
+>&i18n-pimsettingexporter; permite exportar e importar preferencias de PIM y correo local. Usted puede crear copias de seguridad y restaurar preferencias desde los siguientes programas: <simplelist>
+<member
+>&kmail;</member>
+<member
+>&knotes;</member>
+<member
+>&akregator;</member>
+<member
+>&kaddressbook;</member>
+<member
+>&kalarm;</member>
+<member
+>&korganizer;</member>
+<member
+>&blogilo;</member>
+</simplelist>
+</para>
+
+<sect2 id="using-kapp">
+<title
+>Uso de &i18n-pimsettingexporter;</title>
+<para
+>La creación de copias de respaldo es una práctica esencial para todos los usuarios. &i18n-pimsettingexporter; es una excelente herramienta para crear copias de respaldo o mover todas sus preferencias y correos a una nueva instalación. Usted también puede usar &i18n-pimsettingexporter; para importar anteriores copias de respaldo.</para>
+<para
+>Usted puede usar <menuchoice
+><guimenu
+>Herramientas</guimenu
+><guimenuitem
+> Exportar datos de &kmail;...</guimenuitem
+></menuchoice
+> mediante la ventana de vista de mensajes o &i18n-pimsettingexporter; puede ejecutarse independientemente, ejecutando &i18n-pimsettingexporter; en el lanzador de aplicaciones.</para>
+
+<para
+>Para ejecutar una copia de respaldo, <action
+>seleccione <menuchoice
+><guimenu
+>Archivo</guimenu
+><guimenuitem
+>Crear copia de respaldo de datos...</guimenuitem
+></menuchoice
+></action
+>, esto le pedirá cerrar todas las aplicaciones de kdepim. <warning
+><para
+>Asegúrese de que usted cierra todas las ventanas, es posible la pérdida de datos si no lo hace.</para
+></warning
+> Una vez que las haya cerrado, pulse <guibutton
+>Sí</guibutton
+> para continuar, o <guibutton
+>No</guibutton
+> para cancelar.</para>
+<para
+>Se le pedirá crear un nombre de copia de respaldo, introduzca el nombre en el área de texto <guilabel
+>Archivo</guilabel
+>, &eg; <replaceable
+>mis-preferencias-de-correo</replaceable
+>. El tipo de archivo predeterminado lo guarda como <filename role="extension"
+>.zip</filename
+>. </para>
+<para
+>La siguiente pantalla le permitirá seleccionar que es lo que quiere respaldar; por omisión, se selecciona todo. <note
+> <para
+>La selección de correos de &kmail; solo creará copias de respaldo de correos de sus <quote
+>Carpetas locales</quote
+>, respaldará las preferencias de &imap; y mensajes descargados hasta la restauración. Si usted tiene correos en un servidor &imap; usted podría querer respaldarlos, debería usar <ulink url="help:/akonadi_folderarchive_agent"
+>Agente de archivado de carpetas</ulink
+> para archivar esos correos en una carpeta local.</para>
+</note
+></para>
+<screenshot>
+<screeninfo
+>Diálogo de selección</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="selection-dialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Diálogo de selección</phrase>
+    </textobject>
+    <caption>
+      <para
+>Diálogo de selección</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+<para
+>La pantalla final muestra el registro del proceso de respaldo. Usted puede cerrar la ventana una vez que haya revisado el registro y verificado que su copia de respaldo ha sido satisfactoria.</para>
+<para
+>Para restaurar su copia de respaldo, seleccione <menuchoice
+><guimenu
+>Archivo</guimenu
+><guimenuitem
+>Restaurar datos...</guimenuitem
+></menuchoice
+> dentro de &i18n-pimsettingexporter;.</para>
+<para
+>Usando <menuchoice
+><guimenu
+>Herramientas</guimenu
+><guimenuitem
+>Mostrar información del archivo</guimenuitem
+></menuchoice
+>, usted puede seleccionar un archivo de respaldo y ver su contenido.</para>
+</sect2>
+</sect1>
+
+<sect1 id="credits">
+
+<title
+>Créditos y licencia</title>
+<para
+>&i18n-pimsettingexporter;</para>
+<para
+>Derechos de autor del programa 2013 &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Derechos de autor de la documentación &copy; 2013 &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail; </para>
+
+<para
+>Traducido por Javier Viñal <email
+>fjvinal@gmail.com</email
+></para
+> 
+&underFDL; &underGPL; </sect1>
+
+&documentation.index;
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

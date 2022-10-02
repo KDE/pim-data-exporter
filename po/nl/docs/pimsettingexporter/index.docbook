@@ -1,0 +1,199 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-pimdataexporter "<application
+>PIM-exportprogramma van gegevens</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE"
+> 
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
+]>
+
+<article id="pimdataexporter" lang="&language;">
+
+<articleinfo id="pimdataexporterinfo">
+<title
+>Het handboek van &i18n-pimdataexporter;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+&Freek.de.Kruijf; 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2016-07-27</date>
+<releaseinfo
+>5.3.40 (applications 16.08)</releaseinfo>
+
+</articleinfo>
+
+
+<sect1 id="introduction">
+<title
+>Inleiding</title>
+
+<para
+>&i18n-pimdataexporter; stelt u in staat om instellingen van PIM en lokale e-mail te exporteren en te importeren. U kunt een reservekopie maken van instellingen en deze herstellen van de volgende programma's: <simplelist>
+<member
+>&kmail;</member>
+<member
+>&knotes;</member>
+<member
+>&akregator;</member>
+<member
+>&kaddressbook;</member>
+<member
+>&kalarm;</member>
+<member
+>&korganizer;</member>
+</simplelist>
+</para>
+
+<sect2 id="using-kapp">
+<title
+>&i18n-pimdataexporter; gebruiken</title>
+<para
+>Een reservekopie maken is een essentiële praktijk voor alle gebruikers. &i18n-pimdataexporter; is een geweldig hulpmiddel voor het maken van een reservekopie of het verplaatsen van al uw instellingen en e-mailberichten naar een nieuwe installatie. U gebruikt &i18n-pimdataexporter; ook om eerdere reservekopieën te importeren.</para>
+<para
+>U kunt <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guimenuitem
+>Gegevens van &kmail; exporteren...</guimenuitem
+></menuchoice
+> gebruiken via het berichtenvenster of &i18n-pimdataexporter; kan uitgevoerd worden als een alleenstaande toepassing door &i18n-pimdataexporter; in de starter van toepassingen.</para>
+
+<para
+>Om een reservekopie te maken, <action
+>selecteer <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Maak een reserverkopie van gegevens...</guimenuitem
+></menuchoice
+></action
+>, het zal u vragen alle kdepim-toepassingen te sluiten. <warning
+><para
+>Ga goed na dat u alle vensters hebt gesloten, verlies van gegevens is mogelijk als u dat niet doet.</para
+></warning
+> Nadat u ze hebt gesloten, klik op de knop <guibutton
+>Ja</guibutton
+> om door te gaan of <guibutton
+>Nee</guibutton
+> om te annuleren.</para>
+<para
+>U zult gevraagd worden om een naam voor de reservekopie te maken, voer de naam in in het tekstvak <guilabel
+>Bestand</guilabel
+>, &eg; <replaceable
+>mijn-e-mailinstellingen</replaceable
+>. Het standaard bestandstype waarin wordt opgeslagen is <filename role="extension"
+>.zip</filename
+>. </para>
+<para
+>Het volgende scherm stelt u in staat om te selecteren waarvan u een reservekopie wilt maken, standaard wordt alles geselecteerd. <note
+> <para
+>Selectie van &kmail; e-mails zal alleen van e-mailberichten in uw <quote
+>Locale mappen</quote
+> een reservekopie maken, ook instellingen van &imap; en berichten downloaden bij herstellen. Als u e-mailberichten op een &imap;-server hebt waarvan u een backup wilt maken, dan zou u <ulink url="help:/akonadi_folderarchive_agent"
+>Agent voor archiveren van mappen</ulink
+> kunnen gebruiken om deze e-mailberichten naar een lokale map te archiveren.</para>
+</note
+></para>
+<screenshot>
+<screeninfo
+>Selectiedialoog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="selection-dialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Selectiedialoog</phrase>
+    </textobject>
+    <caption>
+      <para
+>Selectiedialoog</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+<para
+>Het eindscherm toont de log van het proces van het maken van de reservekopie. U kunt het venster sluiten nadat u de log hebt bekeken en hebt nagegaan dat het maken van de reservekopie met succes is afgesloten.</para>
+<para
+>Om uw reservekopie terug te zetten, selecteer <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Gegevens terugzetten...</guimenuitem
+></menuchoice
+>in &i18n-pimdataexporter;.</para>
+<para
+>Met <menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+><guimenuitem
+>Archiefinformatie tonen</guimenuitem
+></menuchoice
+> kunt u een backup-archief selecteren en zijn inhoud bekijken.</para>
+</sect2>
+</sect1>
+
+<sect1 id="credits">
+
+<title
+>Dankbetuigingen en licentie</title>
+<para
+>&i18n-pimdataexporter;</para>
+<para
+>Programma copyright 2019 &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Documentatie Copyright &copy; 2019 &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail; </para>
+
+&meld.fouten;&vertaling.freek; &underFDL; &underGPL; </sect1>
+
+&documentation.index;
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
