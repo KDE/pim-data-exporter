@@ -15,7 +15,6 @@
 #include <KLocalizedString>
 #include <QTemporaryFile>
 
-#include "gui/pimdataexportgui_debug.h"
 #include <QHeaderView>
 #include <QPointer>
 #include <QTreeWidgetItem>

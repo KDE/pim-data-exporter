@@ -5,7 +5,7 @@
 */
 
 #include "pimdataexporterconfiguredialog.h"
-#include "../widgets/pimdataexporterconfigurewidget.h"
+#include "gui/widgets/pimdataexporterconfigurewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
