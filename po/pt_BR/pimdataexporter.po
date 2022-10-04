@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-29 00:47+0000\n"
+"POT-Creation-Date: 2022-10-04 00:45+0000\n"
 "PO-Revision-Date: 2022-07-13 15:37-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1136,7 +1136,7 @@ msgstr "Sempre mesclar o arquivo de configuração"
 msgid "Import"
 msgstr "Importar"
 
-#: gui/widgets/selectiontypetreewidget.cpp:351
+#: gui/widgets/selectiontypetreewidget.cpp:350
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "Arquivo de modelo (*.xml)"
