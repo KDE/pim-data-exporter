@@ -963,7 +963,7 @@ msgstr "Llista les opcions disponibles per als comentaris dels usuaris"
 #: gui/pimdataexporter.rc:8
 #, kde-format
 msgid "&File"
-msgstr "&Fitxer"
+msgstr "Fi&txer"
 
 #. i18n: ectx: Menu (tools)
 #: gui/pimdataexporter.rc:21
