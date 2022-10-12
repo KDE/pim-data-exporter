@@ -4,21 +4,22 @@
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # Alexander Potashev <aspotashev@gmail.com>, 2014, 2016, 2017.
 # Alexander Yavorsky <kekcuha@gmail.com>, 2019, 2020, 2021.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-04 00:45+0000\n"
-"PO-Revision-Date: 2021-01-17 13:46+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2022-10-11 12:32+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.12.1\n"
+"X-Generator: Lokalize 22.04.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -26,14 +27,16 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Александр Лахин,Александр Поташев,Александр Яворский,Мария Шикунова"
+msgstr ""
+"Александр Лахин,Александр Поташев,Александр Яворский,Мария Шикунова,Олеся "
+"Герасименко"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "exclusion@gmail.com,aspotashev@gmail.com,walker@mail.ru,translation-"
-"team@basealt.ru"
+"team@basealt.ru,translation-team@basealt.ru"
 
 #: console/main.cpp:25 console/main.cpp:27
 #, kde-format
@@ -41,11 +44,10 @@ msgid "PIM Data Exporter Console"
 msgstr "Консоль экспорта данных PIM"
 
 #: console/main.cpp:29
-#, fuzzy, kde-format
-#| msgid "Copyright © 2015-2021 pimdataexporter authors"
+#, kde-format
 msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr ""
-"© Разработчики программы экспорта личных данных (pimdataexporter), 2015–2021"
+"© Разработчики программы экспорта личных данных (pimdataexporter), 2015–%1"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
@@ -104,10 +106,9 @@ msgid "\"%1\" was copied."
 msgstr "Файл «%1» скопирован."
 
 #: core/abstractimportexportjob.cpp:273
-#, fuzzy, kde-format
-#| msgid "Restoring identities..."
+#, kde-format
 msgid "Restoring \"%1\"..."
-msgstr "Восстановление профилей..."
+msgstr "Восстановление файла «%1»..."
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
@@ -147,16 +148,14 @@ msgid "Resource '%1' created."
 msgstr "Создан источник данных «%1»."
 
 #: core/abstractimportexportjob.cpp:504
-#, fuzzy, kde-format
-#| msgid "Failed to synchronize %1."
+#, kde-format
 msgid "Failed to synchronize '%1'."
-msgstr "Не удалось синхронизировать %1."
+msgstr "Не удалось синхронизировать «%1»."
 
 #: core/abstractimportexportjob.cpp:509
-#, fuzzy, kde-format
-#| msgid "Resource %1 synchronized."
+#, kde-format
 msgid "Resource '%1' synchronized."
-msgstr "Источник данных %1 синхронизирован."
+msgstr "Источник данных «%1» синхронизирован."
 
 #: core/abstractimportexportjob.cpp:515
 #, kde-format
@@ -396,10 +395,9 @@ msgid "Export KMail settings"
 msgstr "Экспорт параметров KMail"
 
 #: core/mail/exportmailjobinterface.cpp:112
-#, fuzzy, kde-format
-#| msgid "Backing up identity..."
+#, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr "Архивация профиля..."
+msgstr "Архивация атрибутов папки..."
 
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
@@ -407,10 +405,9 @@ msgid "Backing up Mails..."
 msgstr "Архивация почты..."
 
 #: core/mail/exportmailjobinterface.cpp:115
-#, fuzzy, kde-format
-#| msgid "Start export Akregator settings..."
+#, kde-format
 msgid "Start export resource..."
-msgstr "Начало экспорта данных Akregator..."
+msgstr "Начало экспорта ресурса..."
 
 #: core/mail/exportmailjobinterface.cpp:123
 #, kde-format
@@ -460,16 +457,14 @@ msgid "Filters cannot be exported."
 msgstr "Экспортировать фильтры не удалось."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:163
-#, fuzzy, kde-format
-#| msgid "Backing up identity..."
+#, kde-format
 msgid "Backing up Folder Attributes done."
-msgstr "Архивация профиля..."
+msgstr "Архивация атрибутов папки завершена."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:167
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Folder Attributes cannot be exported."
-msgstr "Экспортировать фильтры не удалось."
+msgstr "Не удалось экспортировать атрибуты папки."
 
 #: core/mail/importmailjobinterface.cpp:43
 #, kde-format
@@ -524,16 +519,14 @@ msgid "filters file could not be found in the archive."
 msgstr "Файл filters в архиве не найден."
 
 #: core/mail/importmailjobinterface.cpp:569
-#, fuzzy, kde-format
-#| msgid "Restore mails..."
+#, kde-format
 msgid "Restore filters..."
-msgstr "Восстановление почты..."
+msgstr "Восстановить фильтры..."
 
 #: core/mail/importmailjobinterface.cpp:618
-#, fuzzy, kde-format
-#| msgid "Mails restored."
+#, kde-format
 msgid "Filters restored."
-msgstr "Почта восстановлена."
+msgstr "Фильтры восстановлены."
 
 #: core/mail/importmailjobinterface.cpp:899
 #: core/mail/importmailjobinterface.cpp:904
@@ -557,28 +550,24 @@ msgid "Failed to restore identity file."
 msgstr "Восстановить файл профиля не удалось."
 
 #: core/mail/importmailjobinterface.cpp:1287
-#, fuzzy, kde-format
-#| msgid "\"%1\" backup done."
+#, kde-format
 msgid "\"%1\" migration done."
-msgstr "Резервное копирование файла «%1» завершено."
+msgstr "Перенос «%1» завершён."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:35
-#, fuzzy, kde-format
-#| msgid "Backing up identity..."
+#, kde-format
 msgid "Restoring folder attributes..."
-msgstr "Архивация профиля..."
+msgstr "Восстановление атрибутов папки..."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:41
-#, fuzzy, kde-format
-#| msgid "Backing up identity..."
+#, kde-format
 msgid "Restoring Folder Attributes done."
-msgstr "Архивация профиля..."
+msgstr "Восстановление атрибутов папки завершено."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:45
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Folder Attributes cannot be restored."
-msgstr "Экспортировать фильтры не удалось."
+msgstr "Не удалось восстановить атрибуты папки."
 
 #: core/notes/exportnotesjobinterface.cpp:28
 #, kde-format
@@ -807,10 +796,9 @@ msgid "Select Directory"
 msgstr "Выбор папки"
 
 #: gui/dialog/showarchivestructuredialog.cpp:133
-#, fuzzy, kde-format
-#| msgid "Do you want to override %1?"
+#, kde-format
 msgid "Do you want to overwrite %1?"
-msgstr "Файл «%1» уже существует. Заменить его?"
+msgstr "Заменить %1?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
@@ -931,8 +919,7 @@ msgid "Not correct version"
 msgstr "Неподдерживаемая версия"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Импорт"
@@ -943,10 +930,10 @@ msgid "PIM Data Exporter"
 msgstr "Экспорт данных PIM"
 
 #: gui/pimdatacommandlineoption.cpp:41
-#, fuzzy, kde-format
-#| msgid "Copyright © 2012-2021 pimdataexporter authors"
+#, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
-msgstr "© Разработчики программы экспорта данных (pimdataexporter), 2012–2021"
+msgstr ""
+"© Разработчики программы экспорта личных данных (pimdataexporter), 2012–%1"
 
 #: gui/pimdatacommandlineoption.cpp:46
 #, kde-format
@@ -1266,9 +1253,6 @@ msgstr "Файлы шаблонов (*.xml)"
 #~ msgstr "Сведения о резервной копии"
 
 #, fuzzy
-#~| msgid ""
-#~| "Before to backup data, close all kdepim applications. Do you want to "
-#~| "continue?"
 #~ msgid ""
 #~ "Before backing up data, it is recommended to quit all kdepim applications."
 #~ msgstr ""
@@ -1276,7 +1260,6 @@ msgstr "Файлы шаблонов (*.xml)"
 #~ "Вы хотите продолжить?"
 
 #, fuzzy
-#~| msgid "akonadi database file could not be found in the archive."
 #~ msgid "Akonadi database file could not be found in the archive."
 #~ msgstr "Файл базы данных Akonadi в архиве не найден."
 
@@ -1332,7 +1315,6 @@ msgstr "Файлы шаблонов (*.xml)"
 #~ msgstr "Заархивировать данные..."
 
 #, fuzzy
-#~| msgid "\"%1\" directory cannot be added to backup file."
 #~ msgid "Theme directory \"%1\" cannot be added to backup file."
 #~ msgstr "Каталог «%1» не удалось добавить в архив."
 
@@ -1363,17 +1345,14 @@ msgstr "Файлы шаблонов (*.xml)"
 #~ msgstr "База данных Nepomuk"
 
 #, fuzzy
-#~| msgid "Config"
 #~ msgid "Configs"
 #~ msgstr "Конфигурация"
 
 #, fuzzy
-#~| msgid "Transports backup done."
 #~ msgid "Transports Config"
 #~ msgstr "Архивация настроек транспорта завершена."
 
 #, fuzzy
-#~| msgid "Akonadi Database"
 #~ msgid "Akonadi"
 #~ msgstr "База данных Akonadi"
 
