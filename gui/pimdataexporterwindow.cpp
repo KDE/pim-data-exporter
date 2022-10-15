@@ -42,12 +42,11 @@
 #include <QStatusBar>
 
 #include <dialog/pimdataexporterconfiguredialog.h>
-
+#include <kwidgetsaddons_version.h>
 #ifdef WITH_KUSERFEEDBACK
 #include "userfeedback/userfeedbackmanager.h"
 #include <KUserFeedback/NotificationPopup>
 #include <KUserFeedback/Provider>
-#include <kwidgetsaddons_version.h>
 #endif
 
 PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
