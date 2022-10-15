@@ -47,6 +47,7 @@
 #include "userfeedback/userfeedbackmanager.h"
 #include <KUserFeedback/NotificationPopup>
 #include <KUserFeedback/Provider>
+#include <kwidgetsaddons_version.h>
 #endif
 
 PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
@@ -354,12 +355,20 @@ void PimDataExporterWindow::slotRestoreData()
 
 void PimDataExporterWindow::loadData(const QString &filename, const QString &templateFile)
 {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    const int answer = KMessageBox::warningTwoActions(this,
+#else
     const int answer = KMessageBox::warningYesNo(this,
-                                                 i18n("Before restoring data you must close all kdepim applications. Do you want to continue?"),
-                                                 i18n("Backup"),
-                                                 KStandardGuiItem::cont(),
-                                                 KStandardGuiItem::cancel());
+#endif
+                                                      i18n("Before restoring data you must close all kdepim applications. Do you want to continue?"),
+                                                      i18n("Backup"),
+                                                      KStandardGuiItem::cont(),
+                                                      KStandardGuiItem::cancel());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    if (answer == KMessageBox::ButtonCode::SecondaryAction) {
+#else
     if (answer == KMessageBox::No) {
+#endif
         return;
     }
 

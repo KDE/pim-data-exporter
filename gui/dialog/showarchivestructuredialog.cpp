@@ -25,6 +25,7 @@
 #include <KTreeWidgetSearchLine>
 #include <QFileDialog>
 #include <QTemporaryDir>
+#include <kwidgetsaddons_version.h>
 
 ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, QWidget *parent)
     : QDialog(parent)
@@ -129,12 +130,21 @@ void ShowArchiveStructureDialog::slotExtractFile()
                                                                       QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
                 if (!dir.isEmpty()) {
                     if (QFile(dir + QLatin1Char('/') + currentFile->name()).exists()) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                        if (KMessageBox::questionTwoActions(this,
+#else
                         if (KMessageBox::questionYesNo(this,
-                                                       i18n("Do you want to overwrite %1?", currentFile->name()),
-                                                       i18n("File Already Exist"),
-                                                       KStandardGuiItem::overwrite(),
-                                                       KStandardGuiItem::cancel())
+
+#endif
+                                                            i18n("Do you want to overwrite %1?", currentFile->name()),
+                                                            i18n("File Already Exist"),
+                                                            KStandardGuiItem::overwrite(),
+                                                            KStandardGuiItem::cancel())
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                            == KMessageBox::ButtonCode::SecondaryAction) {
+#else
                             == KMessageBox::No) {
+#endif
                             return;
                         }
                     }

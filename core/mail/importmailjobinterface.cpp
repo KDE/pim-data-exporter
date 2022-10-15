@@ -27,6 +27,7 @@
 #include <QRegularExpression>
 #include <QStandardPaths>
 #include <QTimer>
+#include <kwidgetsaddons_version.h>
 
 using namespace Akonadi;
 
@@ -641,9 +642,17 @@ void ImportMailJobInterface::restoreConfig()
             const QString kabldaprc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + labldaprcStr;
             if (QFileInfo::exists(kabldaprc)) {
                 const int result = mergeConfigMessageBox(labldaprcStr);
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                if (result == KMessageBox::ButtonCode::PrimaryAction) {
+#else
                 if (result == KMessageBox::Yes) {
+#endif
                     copyToFile(kabldap, kabldaprc, labldaprcStr, Utils::configsPath());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                } else if (result == KMessageBox::ButtonCode::SecondaryAction) {
+#else
                 } else if (result == KMessageBox::No) {
+#endif
                     mergeLdapConfig(kabldap, labldaprcStr, Utils::configsPath());
                 }
             } else {
@@ -660,9 +669,17 @@ void ImportMailJobInterface::restoreConfig()
                 QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveconfigurationrcStr;
             if (QFileInfo::exists(archiveconfigurationrc)) {
                 const int result = mergeConfigMessageBox(archiveconfigurationrcStr);
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                if (result == KMessageBox::ButtonCode::PrimaryAction) {
+#else
                 if (result == KMessageBox::Yes) {
+#endif
                     importArchiveConfig(archiveconfiguration, archiveconfigurationrc, archiveconfigurationrcStr, Utils::configsPath());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                } else if (result == KMessageBox::ButtonCode::SecondaryAction) {
+#else
                 } else if (result == KMessageBox::No) {
+#endif
                     mergeArchiveMailAgentConfig(archiveconfiguration, archiveconfigurationrcStr, Utils::configsPath());
                 }
             } else {
@@ -679,9 +696,17 @@ void ImportMailJobInterface::restoreConfig()
             const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + folderMailArchiveStr;
             if (QFileInfo::exists(archiveconfigurationrc)) {
                 const int result = mergeConfigMessageBox(folderMailArchiveStr);
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                if (result == KMessageBox::ButtonCode::PrimaryAction) {
+#else
                 if (result == KMessageBox::Yes) {
+#endif
                     importMailArchiveConfig(archiveconfiguration, archiveconfigurationrc, folderMailArchiveStr, Utils::configsPath());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                } else if (result == KMessageBox::ButtonCode::SecondaryAction) {
+#else
                 } else if (result == KMessageBox::No) {
+#endif
                     mergeMailArchiveConfig(archiveconfiguration, folderMailArchiveStr, Utils::configsPath());
                 }
             } else {
@@ -698,9 +723,17 @@ void ImportMailJobInterface::restoreConfig()
             const QString unifiedMailBoxrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + unifiedMailBoxStr;
             if (QFileInfo::exists(unifiedMailBoxrc)) {
                 const int result = mergeConfigMessageBox(unifiedMailBoxStr);
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                if (result == KMessageBox::ButtonCode::PrimaryAction) {
+#else
                 if (result == KMessageBox::Yes) {
+#endif
                     importUnifiedMailBoxConfig(archiveconfiguration, unifiedMailBoxrc, unifiedMailBoxStr, Utils::configsPath());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                } else if (result == KMessageBox::ButtonCode::SecondaryAction) {
+#else
                 } else if (result == KMessageBox::No) {
+#endif
                     mergeUnifiedMailBoxConfig(archiveconfiguration, unifiedMailBoxStr, Utils::configsPath());
                 }
             } else {
@@ -748,9 +781,17 @@ void ImportMailJobInterface::restoreConfig()
         const QString sievetemplaterc = configLocation() + sievetemplatercStr;
         if (QFileInfo::exists(sievetemplaterc)) {
             const int result = mergeConfigMessageBox(sievetemplatercStr);
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            if (result == KMessageBox::ButtonCode::PrimaryAction) {
+#else
             if (result == KMessageBox::Yes) {
+#endif
                 copyToFile(sievetemplateconfiguration, sievetemplaterc, sievetemplatercStr, Utils::configsPath());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            } else if (result == KMessageBox::ButtonCode::SecondaryAction) {
+#else
             } else if (result == KMessageBox::No) {
+#endif
                 mergeSieveTemplate(sievetemplateconfiguration, sievetemplatercStr, Utils::configsPath());
             }
         } else {
