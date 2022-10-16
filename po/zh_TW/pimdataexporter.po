@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-04 00:45+0000\n"
+"POT-Creation-Date: 2022-10-16 00:48+0000\n"
 "PO-Revision-Date: 2019-05-14 22:35+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -123,7 +123,7 @@ msgstr "\"%1\" 已複製。"
 
 #: core/abstractimportexportjob.cpp:385
 #: core/addressbook/importaddressbookjobinterface.cpp:231
-#: core/mail/importmailjobinterface.cpp:424
+#: core/mail/importmailjobinterface.cpp:425
 #, kde-format
 msgid "Resources restored."
 msgstr "資源已回復。"
@@ -253,7 +253,7 @@ msgstr "回復郵件..."
 #: core/akregator/importakregatorjobinterface.cpp:99
 #: core/alarm/importalarmjobinterface.cpp:98
 #: core/calendar/importcalendarjobinterface.cpp:228
-#: core/mail/importmailjobinterface.cpp:866
+#: core/mail/importmailjobinterface.cpp:907
 #: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
@@ -265,8 +265,8 @@ msgstr "設定已回復。"
 #: core/alarm/importalarmjobinterface.cpp:115
 #: core/calendar/importcalendarjobinterface.cpp:281
 #: core/calendar/importcalendarjobinterface.cpp:282
-#: core/mail/importmailjobinterface.cpp:199
 #: core/mail/importmailjobinterface.cpp:200
+#: core/mail/importmailjobinterface.cpp:201
 #: core/notes/importnotesjobinterface.cpp:148
 #: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
@@ -354,7 +354,7 @@ msgid "Archive cannot be opened in write mode."
 msgstr "封存無法以寫入模式開啟。"
 
 #: core/archivestorage.cpp:45 core/utils.cpp:134
-#: gui/dialog/showarchivestructuredialog.cpp:176
+#: gui/dialog/showarchivestructuredialog.cpp:186
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "封存無法以讀取模式開啟。"
@@ -487,96 +487,96 @@ msgstr "備份身份中..."
 msgid "Folder Attributes cannot be exported."
 msgstr "無法匯出過濾器。"
 
-#: core/mail/importmailjobinterface.cpp:43
+#: core/mail/importmailjobinterface.cpp:44
 #, fuzzy, kde-format
 #| msgid "Start import KMail settings..."
 msgid "Starting to import KMail settings..."
 msgstr "開始匯入 KMail 設定..."
 
-#: core/mail/importmailjobinterface.cpp:44
+#: core/mail/importmailjobinterface.cpp:45
 #, fuzzy, kde-format
 #| msgid "Start import KMail settings..."
 msgid "Import KMail settings"
 msgstr "開始匯入 KMail 設定..."
 
-#: core/mail/importmailjobinterface.cpp:169
-#: core/mail/importmailjobinterface.cpp:175
+#: core/mail/importmailjobinterface.cpp:170
+#: core/mail/importmailjobinterface.cpp:176
 #, kde-format
 msgid "Restore transports..."
 msgstr "回復傳輸..."
 
-#: core/mail/importmailjobinterface.cpp:173
+#: core/mail/importmailjobinterface.cpp:174
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
 msgstr "封存中找不到郵件傳輸檔案。"
 
-#: core/mail/importmailjobinterface.cpp:188
+#: core/mail/importmailjobinterface.cpp:189
 #, kde-format
 msgid "Transports restored."
 msgstr "傳輸已回復。"
 
-#: core/mail/importmailjobinterface.cpp:190
+#: core/mail/importmailjobinterface.cpp:191
 #, kde-format
 msgid "Failed to restore transports file."
 msgstr "回復傳輸檔失敗。"
 
-#: core/mail/importmailjobinterface.cpp:436
-#: core/mail/importmailjobinterface.cpp:438
+#: core/mail/importmailjobinterface.cpp:437
+#: core/mail/importmailjobinterface.cpp:439
 #, kde-format
 msgid "Restore mails..."
 msgstr "回復郵件..."
 
-#: core/mail/importmailjobinterface.cpp:555
+#: core/mail/importmailjobinterface.cpp:556
 #, kde-format
 msgid "Mails restored."
 msgstr "郵件已回復。"
 
-#: core/mail/importmailjobinterface.cpp:562
+#: core/mail/importmailjobinterface.cpp:563
 #, fuzzy, kde-format
 #| msgid "Restore mails..."
 msgid "Restore config..."
 msgstr "回復郵件..."
 
-#: core/mail/importmailjobinterface.cpp:565
+#: core/mail/importmailjobinterface.cpp:566
 #, kde-format
 msgid "filters file could not be found in the archive."
 msgstr "封存中找不到過濾器檔。"
 
-#: core/mail/importmailjobinterface.cpp:569
+#: core/mail/importmailjobinterface.cpp:570
 #, fuzzy, kde-format
 #| msgid "Restore mails..."
 msgid "Restore filters..."
 msgstr "回復郵件..."
 
-#: core/mail/importmailjobinterface.cpp:618
+#: core/mail/importmailjobinterface.cpp:619
 #, fuzzy, kde-format
 #| msgid "Mails restored."
 msgid "Filters restored."
 msgstr "郵件已回復。"
 
-#: core/mail/importmailjobinterface.cpp:899
-#: core/mail/importmailjobinterface.cpp:904
+#: core/mail/importmailjobinterface.cpp:940
+#: core/mail/importmailjobinterface.cpp:945
 #, fuzzy, kde-format
 #| msgid "Restore identities..."
 msgid "Restoring identities..."
 msgstr "回復身份..."
 
-#: core/mail/importmailjobinterface.cpp:902
+#: core/mail/importmailjobinterface.cpp:943
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
 msgstr "封存中找不到身份檔。"
 
-#: core/mail/importmailjobinterface.cpp:963
+#: core/mail/importmailjobinterface.cpp:1004
 #, kde-format
 msgid "Identities restored."
 msgstr "身份已回復。"
 
-#: core/mail/importmailjobinterface.cpp:965
+#: core/mail/importmailjobinterface.cpp:1006
 #, kde-format
 msgid "Failed to restore identity file."
 msgstr "回復身份檔失敗。"
 
-#: core/mail/importmailjobinterface.cpp:1287
+#: core/mail/importmailjobinterface.cpp:1328
 #, fuzzy, kde-format
 #| msgid "\"%1\" backup done."
 msgid "\"%1\" migration done."
@@ -805,85 +805,85 @@ msgstr "全部選取"
 msgid "Unselect All"
 msgstr "全部取消選取"
 
-#: gui/dialog/showarchivestructuredialog.cpp:33
+#: gui/dialog/showarchivestructuredialog.cpp:34
 #, kde-format
 msgid "Extract Selected File"
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:34
+#: gui/dialog/showarchivestructuredialog.cpp:35
 #, kde-format
 msgid "Open Selected File"
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:36
+#: gui/dialog/showarchivestructuredialog.cpp:37
 #, fuzzy, kde-format
 #| msgid "Show Archive Content on file \"%1\""
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
 msgstr "顯示檔案 \"%1\" 的封存內容"
 
-#: gui/dialog/showarchivestructuredialog.cpp:44
+#: gui/dialog/showarchivestructuredialog.cpp:45
 #, kde-format
 msgid "Search..."
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:47
+#: gui/dialog/showarchivestructuredialog.cpp:48
 #, kde-format
 msgid "Save As Text..."
 msgstr "存成文字..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:127
+#: gui/dialog/showarchivestructuredialog.cpp:128
 #, fuzzy, kde-format
 #| msgid "Select Archive"
 msgid "Select Directory"
 msgstr "選取封存"
 
-#: gui/dialog/showarchivestructuredialog.cpp:133
+#: gui/dialog/showarchivestructuredialog.cpp:139
 #, fuzzy, kde-format
 #| msgid "\"%1\" already exists. Do you want to overwrite it?"
 msgid "Do you want to overwrite %1?"
 msgstr "\"%1\" 已存在。您要覆寫它嗎？"
 
-#: gui/dialog/showarchivestructuredialog.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:140
 #, kde-format
 msgid "File Already Exist"
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:142
+#: gui/dialog/showarchivestructuredialog.cpp:152
 #, fuzzy, kde-format
 #| msgid "Import the given file"
 msgid "Impossible to copy %1 in %2."
 msgstr "匯入指定的檔案"
 
-#: gui/dialog/showarchivestructuredialog.cpp:165
+#: gui/dialog/showarchivestructuredialog.cpp:175
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:168
+#: gui/dialog/showarchivestructuredialog.cpp:178
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
 msgstr "匯出紀錄檔"
 
-#: gui/dialog/showarchivestructuredialog.cpp:176
+#: gui/dialog/showarchivestructuredialog.cpp:186
 #, kde-format
 msgid "Cannot open archive"
 msgstr "無法開啟封存"
 
-#: gui/dialog/showarchivestructuredialog.cpp:182
+#: gui/dialog/showarchivestructuredialog.cpp:192
 #, kde-format
 msgid "Info"
 msgstr "資訊"
 
-#: gui/dialog/showarchivestructuredialog.cpp:184
+#: gui/dialog/showarchivestructuredialog.cpp:194
 #, fuzzy, kde-format
 #| msgid "This is not kdepim archive."
 msgid "This is not pim archive."
 msgstr "這不是 kdepim 封存。"
 
-#: gui/dialog/showarchivestructuredialog.cpp:184
+#: gui/dialog/showarchivestructuredialog.cpp:194
 #, kde-format
 msgid "Show information"
 msgstr "顯示資訊"
@@ -902,35 +902,35 @@ msgid ""
 "want to sync:"
 msgstr ""
 
-#: gui/importexportprogressindicatorgui.cpp:35
+#: gui/importexportprogressindicatorgui.cpp:36
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
 #, kde-format
 msgid "Cancel"
 msgstr ""
 
-#: gui/importexportprogressindicatorgui.cpp:66
+#: gui/importexportprogressindicatorgui.cpp:75
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
 msgstr "\"%1\" 已存在。您要覆寫它還是合併它？"
 
-#: gui/importexportprogressindicatorgui.cpp:67
-#: gui/importexportprogressindicatorgui.cpp:79
+#: gui/importexportprogressindicatorgui.cpp:76
 #: gui/importexportprogressindicatorgui.cpp:92
+#: gui/importexportprogressindicatorgui.cpp:113
 #, kde-format
 msgid "Restore"
 msgstr "回復"
 
-#: gui/importexportprogressindicatorgui.cpp:69
+#: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
 msgid "Merge"
 msgstr "合併"
 
-#: gui/importexportprogressindicatorgui.cpp:78
+#: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it?"
 msgstr "\"%1\" 已存在。您要覆寫它嗎？"
 
-#: gui/importexportprogressindicatorgui.cpp:91
+#: gui/importexportprogressindicatorgui.cpp:112
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
 msgstr "目錄 \"%1\" 已存在。您要覆寫它嗎？"
@@ -947,7 +947,7 @@ msgstr "資源"
 msgid "Synchronize resources... It can take some time."
 msgstr ""
 
-#: gui/pimdatabackuprestoreui.cpp:24
+#: gui/pimdatabackuprestoreui.cpp:30
 #, kde-format
 msgid ""
 "The archive was created by a newer version of this program. It might contain "
@@ -957,12 +957,12 @@ msgstr ""
 "此封存是用新版的程式建立的。它可能包含一些額外的資料，但是在此版匯入時這些資"
 "料會被丟棄。您要匯入嗎？"
 
-#: gui/pimdatabackuprestoreui.cpp:26
+#: gui/pimdatabackuprestoreui.cpp:32
 #, kde-format
 msgid "Not correct version"
 msgstr "版本不正確"
 
-#: gui/pimdatabackuprestoreui.cpp:27
+#: gui/pimdatabackuprestoreui.cpp:33
 #, fuzzy, kde-format
 #| msgid "Restore Data..."
 msgctxt "@action:button"
@@ -1057,7 +1057,7 @@ msgstr ""
 "設定與資料。"
 
 #: gui/pimdataexporterwindow.cpp:176 gui/pimdataexporterwindow.cpp:281
-#: gui/pimdataexporterwindow.cpp:359
+#: gui/pimdataexporterwindow.cpp:363
 #, kde-format
 msgid "Backup"
 msgstr "備份"
@@ -1142,7 +1142,7 @@ msgstr "Zip 檔 (*.zip)"
 msgid "Backup in progress..."
 msgstr "備份資源中..."
 
-#: gui/pimdataexporterwindow.cpp:358
+#: gui/pimdataexporterwindow.cpp:362
 #, fuzzy, kde-format
 #| msgid ""
 #| "Before to restore data, close all kdepim applications. Do you want to "
@@ -1152,18 +1152,18 @@ msgid ""
 "continue?"
 msgstr "在回復資料前，請先關閉所有 kdepim 的應用程式。您要繼續嗎？"
 
-#: gui/pimdataexporterwindow.cpp:372
+#: gui/pimdataexporterwindow.cpp:380
 #, kde-format
 msgid "Restore backup"
 msgstr "回復備份"
 
-#: gui/pimdataexporterwindow.cpp:374
+#: gui/pimdataexporterwindow.cpp:382
 #, fuzzy, kde-format
 #| msgid "Zip File (*.zip)"
 msgid "Zip File"
 msgstr "Zip 檔 (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:406
+#: gui/pimdataexporterwindow.cpp:414
 #, fuzzy, kde-format
 #| msgid "Restore resources..."
 msgid "Restore in progress..."
