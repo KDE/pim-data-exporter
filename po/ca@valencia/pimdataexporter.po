@@ -4,14 +4,14 @@
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Josep M. Ferrer <txemaq@gmail.com>, 2012, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
-# Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2015, 2016, 2017, 2019, 2020.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2022-05-31 13:13+0200\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"PO-Revision-Date: 2022-10-24 15:00+0200\n"
+"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
@@ -609,7 +609,7 @@ msgstr "La còpia de seguretat a «%1» ha finalitzat."
 #: core/pimdatabackuprestore.cpp:279
 #, kde-format
 msgid "Starting to restore data from '%1'"
-msgstr "S'està iniciant l'a restauració de les dades des de «%1»"
+msgstr "S'està iniciant la restauració de les dades des de «%1»"
 
 #: core/pimdatabackuprestore.cpp:287
 #, kde-format
