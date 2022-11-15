@@ -19,6 +19,7 @@
   <name xml:lang="en-GB">PIM Data Exporter</name>
   <name xml:lang="es">Exportador de datos de PIM</name>
   <name xml:lang="et">PIM-andmete eksportija</name>
+  <name xml:lang="eu">PIM datu-esportatzailea</name>
   <name xml:lang="fi">PIM-tietojen vienti</name>
   <name xml:lang="fr">Exportation des données PIM</name>
   <name xml:lang="gl">Exportador de datos de PIM</name>
@@ -52,6 +53,7 @@
   <summary xml:lang="en-GB">Saves all data from PIM apps and restore them in other systems.</summary>
   <summary xml:lang="es">Guarda todos los datos desde aplicaciones PIM y las restaura en otros sistemas.</summary>
   <summary xml:lang="et">Kõigi PIM-rakenduste andmete salvestamine ja nende taastamine teistes süsteemides.</summary>
+  <summary xml:lang="eu">PIM aplikazioetako datu guztiak gorde eta beste sistema batzuetan leheneratzen ditu.</summary>
   <summary xml:lang="fi">Tallentaa kaikkien PIM-sovellusten tiedot ja palauttaa ne toisessa järjestelmässä.</summary>
   <summary xml:lang="fr">Enregistre toutes les données des applis PIM et les restaure sur d'autres systèmes.</summary>
   <summary xml:lang="gl">Garda todos os datos de aplicativos de xestión de información persoal e os restaura noutros sistemas.</summary>
@@ -85,6 +87,7 @@
   <developer_name xml:lang="en-GB">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="es">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="et">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="eu">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="fi">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="fr">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="gl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -122,6 +125,7 @@
     <p xml:lang="en-GB">PIM Data Exporter exports and imports PIM settings</p>
     <p xml:lang="es">El exportador de datos  PIM exporta e importa preferencias de PIM</p>
     <p xml:lang="et">PIM-andmete eksportija ekspordib ja impordib PIM-seadistusi</p>
+    <p xml:lang="eu">PIM datu-esportatzaileak PIM ezarpenak esportatu eta inportatzen ditu</p>
     <p xml:lang="fi">PIM-tietojen viennillä viedään ja tuodaan PIM-asetuksia</p>
     <p xml:lang="fr">L'exportation des données PIM exporte et importe les paramètres PIM</p>
     <p xml:lang="gl">O exportador de datos PIM exporta e importa configuración de xestión de información persoal</p>
