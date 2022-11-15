@@ -7,7 +7,6 @@
 #include "importexportprogressindicatorbase.h"
 #include <KMessageBox>
 #include <QDebug>
-#include <kwidgetsaddons_version.h>
 
 ImportExportProgressIndicatorBase::ImportExportProgressIndicatorBase(QObject *parent)
     : QObject(parent)
@@ -45,11 +44,7 @@ void ImportExportProgressIndicatorBase::setNumberOfStep(int numberOfStep)
 int ImportExportProgressIndicatorBase::mergeConfigMessageBox(const QString &configName) const
 {
     Q_UNUSED(configName)
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     return KMessageBox::ButtonCode::PrimaryAction;
-#else
-    return KMessageBox::Yes;
-#endif
 }
 
 bool ImportExportProgressIndicatorBase::overwriteConfigMessageBox(const QString &configName) const

@@ -10,7 +10,6 @@
 #include <KMessageBox>
 #include <KStandardGuiItem>
 #include <QProgressDialog>
-#include <kwidgetsaddons_version.h>
 
 ImportExportProgressIndicatorGui::ImportExportProgressIndicatorGui(QWidget *parentWidget, QObject *parent)
     : ImportExportProgressIndicatorBase(parent)
@@ -61,17 +60,9 @@ bool ImportExportProgressIndicatorGui::wasCanceled() const
 int ImportExportProgressIndicatorGui::mergeConfigMessageBox(const QString &configName) const
 {
     if (PimDataExportGlobalConfig::self()->alwaysMergeConfigFile()) {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         return KMessageBox::ButtonCode::PrimaryAction;
-#else
-        return KMessageBox::Yes;
-#endif
     }
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     return KMessageBox::warningTwoActionsCancel(mParentWidget,
-#else
-    return KMessageBox::warningYesNoCancel(mParentWidget,
-#endif
                                                 i18n("\"%1\" already exists. Do you want to overwrite it or merge it?", configName),
                                                 i18n("Restore"),
                                                 KStandardGuiItem::overwrite(),
@@ -83,20 +74,12 @@ bool ImportExportProgressIndicatorGui::overwriteConfigMessageBox(const QString &
     if (PimDataExportGlobalConfig::self()->alwaysOverrideFile()) {
         return true;
     }
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     const int answer = KMessageBox::warningTwoActions(mParentWidget,
-#else
-    const int answer = KMessageBox::warningYesNo(mParentWidget,
-#endif
                                                       i18n("\"%1\" already exists. Do you want to overwrite it?", configName),
                                                       i18n("Restore"),
                                                       KStandardGuiItem::overwrite(),
                                                       KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     return (answer == KMessageBox::ButtonCode::PrimaryAction);
-#else
-    return (answer == KMessageBox::Yes);
-#endif
 }
 
 bool ImportExportProgressIndicatorGui::overwriteDirectoryMessageBox(const QString &directory) const
@@ -104,20 +87,12 @@ bool ImportExportProgressIndicatorGui::overwriteDirectoryMessageBox(const QStrin
     if (PimDataExportGlobalConfig::self()->alwaysOverrideDirectory()) {
         return true;
     }
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     const int answer = KMessageBox::warningTwoActions(mParentWidget,
-#else
-    const int answer = KMessageBox::warningYesNo(mParentWidget,
-#endif
                                                       i18n("Directory \"%1\" already exists. Do you want to overwrite it?", directory),
                                                       i18n("Restore"),
                                                       KStandardGuiItem::overwrite(),
                                                       KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
     return (answer == KMessageBox::ButtonCode::PrimaryAction);
-#else
-    return (answer == KMessageBox::Yes);
-#endif
 }
 
 void ImportExportProgressIndicatorGui::showErrorMessage(const QString &message, const QString &title)
