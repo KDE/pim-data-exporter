@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2020-06-05 22:49+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -118,7 +118,7 @@ msgstr "\"%1\" on taastatud."
 
 #: core/abstractimportexportjob.cpp:385
 #: core/addressbook/importaddressbookjobinterface.cpp:231
-#: core/mail/importmailjobinterface.cpp:425
+#: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
 msgstr "Ressursid on taastatud."
@@ -241,7 +241,7 @@ msgstr "Seadistuste taastamine..."
 #: core/akregator/importakregatorjobinterface.cpp:99
 #: core/alarm/importalarmjobinterface.cpp:98
 #: core/calendar/importcalendarjobinterface.cpp:228
-#: core/mail/importmailjobinterface.cpp:907
+#: core/mail/importmailjobinterface.cpp:866
 #: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
@@ -253,8 +253,8 @@ msgstr "Seadistus on taastatud."
 #: core/alarm/importalarmjobinterface.cpp:115
 #: core/calendar/importcalendarjobinterface.cpp:281
 #: core/calendar/importcalendarjobinterface.cpp:282
+#: core/mail/importmailjobinterface.cpp:199
 #: core/mail/importmailjobinterface.cpp:200
-#: core/mail/importmailjobinterface.cpp:201
 #: core/notes/importnotesjobinterface.cpp:148
 #: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
@@ -335,7 +335,7 @@ msgid "Archive cannot be opened in write mode."
 msgstr "Arhiivi ei saa kirjutamisrežiimis avada."
 
 #: core/archivestorage.cpp:45 core/utils.cpp:134
-#: gui/dialog/showarchivestructuredialog.cpp:186
+#: gui/dialog/showarchivestructuredialog.cpp:176
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "Arhiivi ei saa lugemisrežiimis avada."
@@ -462,92 +462,92 @@ msgstr "Identiteedi varundamine..."
 msgid "Folder Attributes cannot be exported."
 msgstr "Filtreid ei saa eksportida."
 
-#: core/mail/importmailjobinterface.cpp:44
+#: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KMail settings..."
 msgstr "KMaili seadistuste impordi alustamine..."
 
-#: core/mail/importmailjobinterface.cpp:45
+#: core/mail/importmailjobinterface.cpp:44
 #, kde-format
 msgid "Import KMail settings"
 msgstr "KMaili seadistuste import..."
 
-#: core/mail/importmailjobinterface.cpp:170
-#: core/mail/importmailjobinterface.cpp:176
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
 #, kde-format
 msgid "Restore transports..."
 msgstr "Kirjade saatmise viiside taastamine..."
 
-#: core/mail/importmailjobinterface.cpp:174
+#: core/mail/importmailjobinterface.cpp:173
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
 msgstr "Faili mailtransports arhiivist ei leitud."
 
-#: core/mail/importmailjobinterface.cpp:189
+#: core/mail/importmailjobinterface.cpp:188
 #, kde-format
 msgid "Transports restored."
 msgstr "Kirjade saatmise viisid on taastatud."
 
-#: core/mail/importmailjobinterface.cpp:191
+#: core/mail/importmailjobinterface.cpp:190
 #, kde-format
 msgid "Failed to restore transports file."
 msgstr "Kirjade saatmise viiside faili ei õnnestunud taastada."
 
-#: core/mail/importmailjobinterface.cpp:437
-#: core/mail/importmailjobinterface.cpp:439
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
 #, kde-format
 msgid "Restore mails..."
 msgstr "Kirjade taastamine..."
 
-#: core/mail/importmailjobinterface.cpp:556
+#: core/mail/importmailjobinterface.cpp:555
 #, kde-format
 msgid "Mails restored."
 msgstr "Kirjad on taastatud."
 
-#: core/mail/importmailjobinterface.cpp:563
+#: core/mail/importmailjobinterface.cpp:562
 #, kde-format
 msgid "Restore config..."
 msgstr "Seadistuse taastamine..."
 
-#: core/mail/importmailjobinterface.cpp:566
+#: core/mail/importmailjobinterface.cpp:565
 #, kde-format
 msgid "filters file could not be found in the archive."
 msgstr "Faili filters arhiivist ei leitud."
 
-#: core/mail/importmailjobinterface.cpp:570
+#: core/mail/importmailjobinterface.cpp:569
 #, fuzzy, kde-format
 #| msgid "Restore mails..."
 msgid "Restore filters..."
 msgstr "Kirjade taastamine..."
 
-#: core/mail/importmailjobinterface.cpp:619
+#: core/mail/importmailjobinterface.cpp:618
 #, fuzzy, kde-format
 #| msgid "Mails restored."
 msgid "Filters restored."
 msgstr "Kirjad on taastatud."
 
-#: core/mail/importmailjobinterface.cpp:940
-#: core/mail/importmailjobinterface.cpp:945
+#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:904
 #, kde-format
 msgid "Restoring identities..."
 msgstr "Identiteetide taastamine..."
 
-#: core/mail/importmailjobinterface.cpp:943
+#: core/mail/importmailjobinterface.cpp:902
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
 msgstr "Faili emailidentities arhiivist ei leitud."
 
-#: core/mail/importmailjobinterface.cpp:1004
+#: core/mail/importmailjobinterface.cpp:963
 #, kde-format
 msgid "Identities restored."
 msgstr "Identiteedid on taastatud."
 
-#: core/mail/importmailjobinterface.cpp:1006
+#: core/mail/importmailjobinterface.cpp:965
 #, kde-format
 msgid "Failed to restore identity file."
 msgstr "Identiteedifaili taastamine nurjus."
 
-#: core/mail/importmailjobinterface.cpp:1328
+#: core/mail/importmailjobinterface.cpp:1287
 #, fuzzy, kde-format
 #| msgid "\"%1\" backup done."
 msgid "\"%1\" migration done."
@@ -767,81 +767,81 @@ msgstr "Vali kõik"
 msgid "Unselect All"
 msgstr "Tühista kõigi valik"
 
-#: gui/dialog/showarchivestructuredialog.cpp:34
+#: gui/dialog/showarchivestructuredialog.cpp:33
 #, kde-format
 msgid "Extract Selected File"
 msgstr "Ekstrakti valitud fail"
 
-#: gui/dialog/showarchivestructuredialog.cpp:35
+#: gui/dialog/showarchivestructuredialog.cpp:34
 #, kde-format
 msgid "Open Selected File"
 msgstr "Ava valitud fail"
 
-#: gui/dialog/showarchivestructuredialog.cpp:37
+#: gui/dialog/showarchivestructuredialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
 msgstr "Faili \"%1\" arhiivi sisu näitamine"
 
-#: gui/dialog/showarchivestructuredialog.cpp:45
+#: gui/dialog/showarchivestructuredialog.cpp:44
 #, kde-format
 msgid "Search..."
 msgstr "Otsi ..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:48
+#: gui/dialog/showarchivestructuredialog.cpp:47
 #, kde-format
 msgid "Save As Text..."
 msgstr "Salvesta tekstina..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:128
+#: gui/dialog/showarchivestructuredialog.cpp:127
 #, kde-format
 msgid "Select Directory"
 msgstr "Kataloogi valimine"
 
-#: gui/dialog/showarchivestructuredialog.cpp:139
+#: gui/dialog/showarchivestructuredialog.cpp:133
 #, fuzzy, kde-format
 #| msgid "Do you want to override %1?"
 msgid "Do you want to overwrite %1?"
 msgstr "Kas kirjutada %1 üle?"
 
-#: gui/dialog/showarchivestructuredialog.cpp:140
+#: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
 msgid "File Already Exist"
 msgstr "Fail on juba olemas"
 
-#: gui/dialog/showarchivestructuredialog.cpp:152
+#: gui/dialog/showarchivestructuredialog.cpp:142
 #, kde-format
 msgid "Impossible to copy %1 in %2."
 msgstr "%1 kopeerimine asukohta %2 ei ole võimalik."
 
-#: gui/dialog/showarchivestructuredialog.cpp:175
+#: gui/dialog/showarchivestructuredialog.cpp:165
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
 msgstr "Tekstifailid"
 
-#: gui/dialog/showarchivestructuredialog.cpp:178
+#: gui/dialog/showarchivestructuredialog.cpp:168
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
 msgstr "Logifaili eksport"
 
-#: gui/dialog/showarchivestructuredialog.cpp:186
+#: gui/dialog/showarchivestructuredialog.cpp:176
 #, kde-format
 msgid "Cannot open archive"
 msgstr "Arhiivi avamine nurjus"
 
-#: gui/dialog/showarchivestructuredialog.cpp:192
+#: gui/dialog/showarchivestructuredialog.cpp:182
 #, kde-format
 msgid "Info"
 msgstr "Teave"
 
-#: gui/dialog/showarchivestructuredialog.cpp:194
+#: gui/dialog/showarchivestructuredialog.cpp:184
 #, kde-format
 msgid "This is not pim archive."
 msgstr "See ei ole PIM-i arhiiv."
 
-#: gui/dialog/showarchivestructuredialog.cpp:194
+#: gui/dialog/showarchivestructuredialog.cpp:184
 #, kde-format
 msgid "Show information"
 msgstr "Teabe näitamine"
@@ -861,35 +861,35 @@ msgstr ""
 "Mõni ressurss lisati, ilma et andmed oleksid olnud sünkroonitud. Vali "
 "ressursid, mida soovid sünkroonida:"
 
-#: gui/importexportprogressindicatorgui.cpp:36
+#: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
 #, kde-format
 msgid "Cancel"
 msgstr "Loobu"
 
-#: gui/importexportprogressindicatorgui.cpp:75
+#: gui/importexportprogressindicatorgui.cpp:66
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
 msgstr "\"%1\" on juba olemas. Kas kirjutada see üle või ühendada?"
 
-#: gui/importexportprogressindicatorgui.cpp:76
+#: gui/importexportprogressindicatorgui.cpp:67
+#: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#: gui/importexportprogressindicatorgui.cpp:113
 #, kde-format
 msgid "Restore"
 msgstr "Taastamine"
 
-#: gui/importexportprogressindicatorgui.cpp:78
+#: gui/importexportprogressindicatorgui.cpp:69
 #, kde-format
 msgid "Merge"
 msgstr "Ühenda"
 
-#: gui/importexportprogressindicatorgui.cpp:91
+#: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it?"
 msgstr "\"%1\" on juba olemas. Kas kirjutada see üle?"
 
-#: gui/importexportprogressindicatorgui.cpp:112
+#: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
 msgstr "Kataloog \"%1\" on juba olemas. Kas kirjutada see üle?"
@@ -905,7 +905,7 @@ msgstr "Ressurside sünkroonimine"
 msgid "Synchronize resources... It can take some time."
 msgstr "Ressurside sünkroonimine ... See võib võtta veidi aega."
 
-#: gui/pimdatabackuprestoreui.cpp:30
+#: gui/pimdatabackuprestoreui.cpp:25
 #, kde-format
 msgid ""
 "The archive was created by a newer version of this program. It might contain "
@@ -915,12 +915,12 @@ msgstr ""
 "Arhiiv on loodud selle programmi uuema versiooniga. See võib sisaldada "
 "lisaandmeid, mis jäetakse importimisel vahele. Kas importida arhiiv?"
 
-#: gui/pimdatabackuprestoreui.cpp:32
+#: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
 msgid "Not correct version"
 msgstr "Ebakorrektne versioon"
 
-#: gui/pimdatabackuprestoreui.cpp:33
+#: gui/pimdatabackuprestoreui.cpp:28
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@action:button"
@@ -982,27 +982,27 @@ msgstr "&Tööriistad"
 msgid "Main Toolbar"
 msgstr "Peamine tööriistariba"
 
-#: gui/pimdataexporterwindow.cpp:126
+#: gui/pimdataexporterwindow.cpp:125
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Täieliku sünkroonimise alustamine..."
 
-#: gui/pimdataexporterwindow.cpp:156
+#: gui/pimdataexporterwindow.cpp:155
 #, kde-format
 msgid "Full sync finished."
 msgstr "Täielik sünkroonimine on lõpetatud."
 
-#: gui/pimdataexporterwindow.cpp:163
+#: gui/pimdataexporterwindow.cpp:162
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "\"%1\" täielik sünkroonimine on valmis."
 
-#: gui/pimdataexporterwindow.cpp:168
+#: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "\"%1\" täielik sünkroonimine nurjus."
 
-#: gui/pimdataexporterwindow.cpp:174
+#: gui/pimdataexporterwindow.cpp:173
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -1011,88 +1011,88 @@ msgstr ""
 "Andmete taastamiseks tuleb kasutada tööriista \"pimdataexporter\". Ole "
 "ettevaatlik, sest see võib kirjutada üle olemasolevad seadistused ja andmed."
 
-#: gui/pimdataexporterwindow.cpp:176 gui/pimdataexporterwindow.cpp:281
-#: gui/pimdataexporterwindow.cpp:363
+#: gui/pimdataexporterwindow.cpp:175 gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup"
 msgstr "Varundamine"
 
-#: gui/pimdataexporterwindow.cpp:203
+#: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Export Data..."
 msgstr "Ekspordi andmed..."
 
-#: gui/pimdataexporterwindow.cpp:208
+#: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Import Data..."
 msgstr "Impordi andmed..."
 
-#: gui/pimdataexporterwindow.cpp:213
+#: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Save log..."
 msgstr "Salvesta logi..."
 
-#: gui/pimdataexporterwindow.cpp:216
+#: gui/pimdataexporterwindow.cpp:215
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Näita arhiivi struktuuriteavet..."
 
-#: gui/pimdataexporterwindow.cpp:219
+#: gui/pimdataexporterwindow.cpp:218
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Näita arhiivi teavet..."
 
-#: gui/pimdataexporterwindow.cpp:223
+#: gui/pimdataexporterwindow.cpp:222
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Näita aktiivse arhiivi teavet..."
 
-#: gui/pimdataexporterwindow.cpp:259
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Select Archive"
 msgstr "Arhiivi valimine"
 
-#: gui/pimdataexporterwindow.cpp:259
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Zip file"
 msgstr "Zip-fail"
 
-#: gui/pimdataexporterwindow.cpp:271
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Log is empty."
 msgstr "Logi on tühi"
 
-#: gui/pimdataexporterwindow.cpp:271
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Save log"
 msgstr "Logi salvestamine"
 
-#: gui/pimdataexporterwindow.cpp:275
+#: gui/pimdataexporterwindow.cpp:274
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML-failid (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:281
+#: gui/pimdataexporterwindow.cpp:280
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "Palun välju enne andmete varundamist kõigist kdepim'i rakendustest."
 
-#: gui/pimdataexporterwindow.cpp:304
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Create backup"
 msgstr "Varukoopia loomine"
 
-#: gui/pimdataexporterwindow.cpp:306
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip-fail (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:316
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Varundamine käib ..."
 
-#: gui/pimdataexporterwindow.cpp:362
+#: gui/pimdataexporterwindow.cpp:357
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1100,17 +1100,17 @@ msgid ""
 msgstr ""
 "Enne andmete taastamist tuleb sulgeda kõik kdepim'i rakendused. Kas jätkata?"
 
-#: gui/pimdataexporterwindow.cpp:380
+#: gui/pimdataexporterwindow.cpp:371
 #, kde-format
 msgid "Restore backup"
 msgstr "Taastamine varukoopialt"
 
-#: gui/pimdataexporterwindow.cpp:382
+#: gui/pimdataexporterwindow.cpp:373
 #, kde-format
 msgid "Zip File"
 msgstr "Zip-fail"
 
-#: gui/pimdataexporterwindow.cpp:414
+#: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Taastamine käib ..."

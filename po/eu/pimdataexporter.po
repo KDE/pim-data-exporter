@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2022-11-14 07:45+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.08.3\n"
 
 #, kde-format
@@ -118,7 +118,7 @@ msgstr "\"%1\" leheneratu egin da."
 
 #: core/abstractimportexportjob.cpp:385
 #: core/addressbook/importaddressbookjobinterface.cpp:231
-#: core/mail/importmailjobinterface.cpp:425
+#: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
 msgstr "Baliabideak leheneratu egin dira."
@@ -239,7 +239,7 @@ msgstr "Leheneratu konfigurazioak..."
 #: core/akregator/importakregatorjobinterface.cpp:99
 #: core/alarm/importalarmjobinterface.cpp:98
 #: core/calendar/importcalendarjobinterface.cpp:228
-#: core/mail/importmailjobinterface.cpp:907
+#: core/mail/importmailjobinterface.cpp:866
 #: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
@@ -251,8 +251,8 @@ msgstr "Konfigurazioa leheneratu da."
 #: core/alarm/importalarmjobinterface.cpp:115
 #: core/calendar/importcalendarjobinterface.cpp:281
 #: core/calendar/importcalendarjobinterface.cpp:282
+#: core/mail/importmailjobinterface.cpp:199
 #: core/mail/importmailjobinterface.cpp:200
-#: core/mail/importmailjobinterface.cpp:201
 #: core/notes/importnotesjobinterface.cpp:148
 #: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
@@ -333,7 +333,7 @@ msgid "Archive cannot be opened in write mode."
 msgstr "Artxiboa ezin da ireki idazteko moduan."
 
 #: core/archivestorage.cpp:45 core/utils.cpp:134
-#: gui/dialog/showarchivestructuredialog.cpp:186
+#: gui/dialog/showarchivestructuredialog.cpp:176
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "Artxiboa ezin da ireki irakurtzeko moduan."
@@ -456,90 +456,90 @@ msgstr "Karpeta-atributuen babeskopia burutu da."
 msgid "Folder Attributes cannot be exported."
 msgstr "Karpeta-atributuak ezin dira esportatu."
 
-#: core/mail/importmailjobinterface.cpp:44
+#: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KMail settings..."
 msgstr "KMail-en ezarpenen inportatzea hasten..."
 
-#: core/mail/importmailjobinterface.cpp:45
+#: core/mail/importmailjobinterface.cpp:44
 #, kde-format
 msgid "Import KMail settings"
 msgstr "Inportatu KMail-en ezarpenak"
 
-#: core/mail/importmailjobinterface.cpp:170
-#: core/mail/importmailjobinterface.cpp:176
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
 #, kde-format
 msgid "Restore transports..."
 msgstr "Leheneratu garraioak..."
 
-#: core/mail/importmailjobinterface.cpp:174
+#: core/mail/importmailjobinterface.cpp:173
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
 msgstr "«mailtransports» fitxategia ezin izan da artxiboan aurkitu."
 
-#: core/mail/importmailjobinterface.cpp:189
+#: core/mail/importmailjobinterface.cpp:188
 #, kde-format
 msgid "Transports restored."
 msgstr "Garraioak leheneratu dira."
 
-#: core/mail/importmailjobinterface.cpp:191
+#: core/mail/importmailjobinterface.cpp:190
 #, kde-format
 msgid "Failed to restore transports file."
 msgstr "Garraioen fitxategia leheneratzea huts egin du."
 
-#: core/mail/importmailjobinterface.cpp:437
-#: core/mail/importmailjobinterface.cpp:439
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
 #, kde-format
 msgid "Restore mails..."
 msgstr "Leheneratu postak..."
 
-#: core/mail/importmailjobinterface.cpp:556
+#: core/mail/importmailjobinterface.cpp:555
 #, kde-format
 msgid "Mails restored."
 msgstr "Postak leheneratu dira."
 
-#: core/mail/importmailjobinterface.cpp:563
+#: core/mail/importmailjobinterface.cpp:562
 #, kde-format
 msgid "Restore config..."
 msgstr "Konfigurazioa leheneratu..."
 
-#: core/mail/importmailjobinterface.cpp:566
+#: core/mail/importmailjobinterface.cpp:565
 #, kde-format
 msgid "filters file could not be found in the archive."
 msgstr "iragazkien fitxategia ezin izan da artxiboan aurkitu."
 
-#: core/mail/importmailjobinterface.cpp:570
+#: core/mail/importmailjobinterface.cpp:569
 #, kde-format
 msgid "Restore filters..."
 msgstr "Leheneratu iragazkiak..."
 
-#: core/mail/importmailjobinterface.cpp:619
+#: core/mail/importmailjobinterface.cpp:618
 #, kde-format
 msgid "Filters restored."
 msgstr "Iragazkiak leheneratu dira."
 
-#: core/mail/importmailjobinterface.cpp:940
-#: core/mail/importmailjobinterface.cpp:945
+#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:904
 #, kde-format
 msgid "Restoring identities..."
 msgstr "Nortasunak leheneratzen..."
 
-#: core/mail/importmailjobinterface.cpp:943
+#: core/mail/importmailjobinterface.cpp:902
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
 msgstr "«emailidentities» fitxategia ezin izan da artxiboan aurkitu."
 
-#: core/mail/importmailjobinterface.cpp:1004
+#: core/mail/importmailjobinterface.cpp:963
 #, kde-format
 msgid "Identities restored."
 msgstr "Nortasunak leheneratu dira."
 
-#: core/mail/importmailjobinterface.cpp:1006
+#: core/mail/importmailjobinterface.cpp:965
 #, kde-format
 msgid "Failed to restore identity file."
 msgstr "Nortasun-fitxategia leheneratzea huts egin du."
 
-#: core/mail/importmailjobinterface.cpp:1328
+#: core/mail/importmailjobinterface.cpp:1287
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "\"%1\" migrazioa burutu da."
@@ -754,80 +754,80 @@ msgstr "Hautatu dena"
 msgid "Unselect All"
 msgstr "Desautatu dena"
 
-#: gui/dialog/showarchivestructuredialog.cpp:34
+#: gui/dialog/showarchivestructuredialog.cpp:33
 #, kde-format
 msgid "Extract Selected File"
 msgstr "Erauzi hautatutako fitxategia"
 
-#: gui/dialog/showarchivestructuredialog.cpp:35
+#: gui/dialog/showarchivestructuredialog.cpp:34
 #, kde-format
 msgid "Open Selected File"
 msgstr "Ireki hautatutako fitxategia"
 
-#: gui/dialog/showarchivestructuredialog.cpp:37
+#: gui/dialog/showarchivestructuredialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
 msgstr "Erakutsi fitxategi-edukia \"%1\" fitxategian"
 
-#: gui/dialog/showarchivestructuredialog.cpp:45
+#: gui/dialog/showarchivestructuredialog.cpp:44
 #, kde-format
 msgid "Search..."
 msgstr "Bilatu..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:48
+#: gui/dialog/showarchivestructuredialog.cpp:47
 #, kde-format
 msgid "Save As Text..."
 msgstr "Gorde testu gisa..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:128
+#: gui/dialog/showarchivestructuredialog.cpp:127
 #, kde-format
 msgid "Select Directory"
 msgstr "Hautatu direktorioa"
 
-#: gui/dialog/showarchivestructuredialog.cpp:139
+#: gui/dialog/showarchivestructuredialog.cpp:133
 #, kde-format
 msgid "Do you want to overwrite %1?"
 msgstr "%1 gainidatzi nahi duzu?"
 
-#: gui/dialog/showarchivestructuredialog.cpp:140
+#: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
 msgid "File Already Exist"
 msgstr "Fitxategia dagoeneko existitzen da"
 
-#: gui/dialog/showarchivestructuredialog.cpp:152
+#: gui/dialog/showarchivestructuredialog.cpp:142
 #, kde-format
 msgid "Impossible to copy %1 in %2."
 msgstr "Ezin da %1 %2(e)(a)n kopiatu."
 
-#: gui/dialog/showarchivestructuredialog.cpp:175
+#: gui/dialog/showarchivestructuredialog.cpp:165
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
 msgstr "Testu-fitxategiak"
 
-#: gui/dialog/showarchivestructuredialog.cpp:178
+#: gui/dialog/showarchivestructuredialog.cpp:168
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
 msgstr "Esportatu egunkari fitxategia"
 
-#: gui/dialog/showarchivestructuredialog.cpp:186
+#: gui/dialog/showarchivestructuredialog.cpp:176
 #, kde-format
 msgid "Cannot open archive"
 msgstr "Ezin da artxiboa ireki"
 
-#: gui/dialog/showarchivestructuredialog.cpp:192
+#: gui/dialog/showarchivestructuredialog.cpp:182
 #, kde-format
 msgid "Info"
 msgstr "Informazioa"
 
-#: gui/dialog/showarchivestructuredialog.cpp:194
+#: gui/dialog/showarchivestructuredialog.cpp:184
 #, kde-format
 msgid "This is not pim archive."
 msgstr "Hau ez da PIM artxiboa."
 
-#: gui/dialog/showarchivestructuredialog.cpp:194
+#: gui/dialog/showarchivestructuredialog.cpp:184
 #, kde-format
 msgid "Show information"
 msgstr "Erakutsi informazioa"
@@ -847,36 +847,36 @@ msgstr ""
 "Baliabide batzuk gehitu dira, baina ez zeuden sinkronizatuta. Hautatu "
 "sinkronizatu nahi dituzun baliabideak:"
 
-#: gui/importexportprogressindicatorgui.cpp:36
+#: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
 #, kde-format
 msgid "Cancel"
 msgstr "Utzi"
 
-#: gui/importexportprogressindicatorgui.cpp:75
+#: gui/importexportprogressindicatorgui.cpp:66
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
 msgstr ""
 "\"%1\" dagoeneko existitzen da. Hura gainidatzi edo bateratu nahi duzu?"
 
-#: gui/importexportprogressindicatorgui.cpp:76
+#: gui/importexportprogressindicatorgui.cpp:67
+#: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#: gui/importexportprogressindicatorgui.cpp:113
 #, kde-format
 msgid "Restore"
 msgstr "Leheneratu"
 
-#: gui/importexportprogressindicatorgui.cpp:78
+#: gui/importexportprogressindicatorgui.cpp:69
 #, kde-format
 msgid "Merge"
 msgstr "Bateratu"
 
-#: gui/importexportprogressindicatorgui.cpp:91
+#: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it?"
 msgstr "\"%1\" dagoeneko existitzen da. Hura gainidatzi nahi duzu?"
 
-#: gui/importexportprogressindicatorgui.cpp:112
+#: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
 msgstr "\"%1\" direktorioa dagoeneko existitzen da. Hura gainidatzi nahi duzu?"
@@ -892,7 +892,7 @@ msgstr "Sinkronizatu baliabideak"
 msgid "Synchronize resources... It can take some time."
 msgstr "Sinkronizatu baliabideak... Denbora pixka bat hartu dezake."
 
-#: gui/pimdatabackuprestoreui.cpp:30
+#: gui/pimdatabackuprestoreui.cpp:25
 #, kde-format
 msgid ""
 "The archive was created by a newer version of this program. It might contain "
@@ -902,12 +902,12 @@ msgstr ""
 "Artxiboa, programa honen bertsio berriago batek sortu du. Inportatzean "
 "ezikusi egingo litzaiekeen datu osagarriak izan litzake. Inportatu nahi duzu?"
 
-#: gui/pimdatabackuprestoreui.cpp:32
+#: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
 msgid "Not correct version"
 msgstr "Ez da bertsio zuzena"
 
-#: gui/pimdatabackuprestoreui.cpp:33
+#: gui/pimdatabackuprestoreui.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Import"
@@ -970,27 +970,27 @@ msgstr "&Tresnak"
 msgid "Main Toolbar"
 msgstr "Tresna-barra nagusia"
 
-#: gui/pimdataexporterwindow.cpp:126
+#: gui/pimdataexporterwindow.cpp:125
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Sinkronizatze osoa hasten da..."
 
-#: gui/pimdataexporterwindow.cpp:156
+#: gui/pimdataexporterwindow.cpp:155
 #, kde-format
 msgid "Full sync finished."
 msgstr "Sinkronizatze osoa amaitu da."
 
-#: gui/pimdataexporterwindow.cpp:163
+#: gui/pimdataexporterwindow.cpp:162
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "\"%1\" osorik sinkronizatzea burutu da."
 
-#: gui/pimdataexporterwindow.cpp:168
+#: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "\"%1\" osorik sinkronizatzea huts egin du."
 
-#: gui/pimdataexporterwindow.cpp:174
+#: gui/pimdataexporterwindow.cpp:173
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -999,90 +999,90 @@ msgstr ""
 "Datuak leheneratzeko, \"pimdataexporter\" erabili behar duzu. Kontuz ibili, "
 "zure ezarpenak eta datuak gainidatz baititzake."
 
-#: gui/pimdataexporterwindow.cpp:176 gui/pimdataexporterwindow.cpp:281
-#: gui/pimdataexporterwindow.cpp:363
+#: gui/pimdataexporterwindow.cpp:175 gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup"
 msgstr "Babeskopia"
 
-#: gui/pimdataexporterwindow.cpp:203
+#: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Export Data..."
 msgstr "Esportatu datuak..."
 
-#: gui/pimdataexporterwindow.cpp:208
+#: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Import Data..."
 msgstr "Inportatu datuak..."
 
-#: gui/pimdataexporterwindow.cpp:213
+#: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Save log..."
 msgstr "Gorde egunkaria..."
 
-#: gui/pimdataexporterwindow.cpp:216
+#: gui/pimdataexporterwindow.cpp:215
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Erakutsi artxibo-egituraren informazioa..."
 
-#: gui/pimdataexporterwindow.cpp:219
+#: gui/pimdataexporterwindow.cpp:218
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Erakutsi artxiboaren informazioa..."
 
-#: gui/pimdataexporterwindow.cpp:223
+#: gui/pimdataexporterwindow.cpp:222
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Erakutsi uneko artxiboari buruzko informazioa..."
 
-#: gui/pimdataexporterwindow.cpp:259
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Select Archive"
 msgstr "Hautatu artxiboa"
 
-#: gui/pimdataexporterwindow.cpp:259
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Zip file"
 msgstr "Zip fitxategia"
 
-#: gui/pimdataexporterwindow.cpp:271
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Log is empty."
 msgstr "Egunkaria hutsik dago."
 
-#: gui/pimdataexporterwindow.cpp:271
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Save log"
 msgstr "Gorde egunkaria"
 
-#: gui/pimdataexporterwindow.cpp:275
+#: gui/pimdataexporterwindow.cpp:274
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML fitxategiak (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:281
+#: gui/pimdataexporterwindow.cpp:280
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Mesedez, irten KDE PIM aplikazio guztietatik zure datuen babeskopia egin "
 "aurretik."
 
-#: gui/pimdataexporterwindow.cpp:304
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Create backup"
 msgstr "Sortu babeskopia"
 
-#: gui/pimdataexporterwindow.cpp:306
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip fitxategia (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:316
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Babeskopia martxan..."
 
-#: gui/pimdataexporterwindow.cpp:362
+#: gui/pimdataexporterwindow.cpp:357
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1091,17 +1091,17 @@ msgstr ""
 "Datuak leheneratu aurretik KDE PIM aplikazio guztiak itxi behar dituzu. "
 "Jarraitu nahi duzu?"
 
-#: gui/pimdataexporterwindow.cpp:380
+#: gui/pimdataexporterwindow.cpp:371
 #, kde-format
 msgid "Restore backup"
 msgstr "Leheneratu babeskopia"
 
-#: gui/pimdataexporterwindow.cpp:382
+#: gui/pimdataexporterwindow.cpp:373
 #, kde-format
 msgid "Zip File"
 msgstr "Zip fitxategia"
 
-#: gui/pimdataexporterwindow.cpp:414
+#: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Leheneratzea martxan..."
