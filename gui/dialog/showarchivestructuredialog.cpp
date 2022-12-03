@@ -23,8 +23,15 @@
 #include <KIO/JobUiDelegateFactory>
 #include <KIO/OpenUrlJob>
 #include <KTreeWidgetSearchLine>
+#include <KWindowConfig>
 #include <QFileDialog>
 #include <QTemporaryDir>
+#include <QWindow>
+
+namespace
+{
+static const char myShowArchiveStructureDialogGroupName[] = "ShowArchiveStructureDialog";
+}
 
 ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, QWidget *parent)
     : QDialog(parent)
@@ -263,17 +270,18 @@ QTreeWidgetItem *ShowArchiveStructureDialog::addTopItem(const QString &name)
     return item;
 }
 
-void ShowArchiveStructureDialog::writeConfig()
-{
-    KConfigGroup group(KSharedConfig::openStateConfig(), "ShowArchiveStructureDialog");
-    group.writeEntry("Size", size());
-}
-
 void ShowArchiveStructureDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "ShowArchiveStructureDialog");
-    const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(600, 400));
+    KConfigGroup group(KSharedConfig::openStateConfig(), myShowArchiveStructureDialogGroupName);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
+}
+
+void ShowArchiveStructureDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openStateConfig(), myShowArchiveStructureDialogGroupName);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.sync();
 }

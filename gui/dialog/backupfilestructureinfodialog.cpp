@@ -15,13 +15,19 @@
 #include <KMessageBox>
 
 #include <KConfigGroup>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QFile>
 #include <QLabel>
 #include <QPushButton>
 #include <QStandardPaths>
 #include <QVBoxLayout>
+#include <QWindow>
 
+namespace
+{
+static const char myBackupFileStructureInfoDialogGroupName[] = "BackupFileStructureInfoDialog";
+}
 BackupFileStructureInfoDialog::BackupFileStructureInfoDialog(QWidget *parent)
     : QDialog(parent)
     , mEditor(new KPIMTextEdit::PlainTextEditorWidget(this))
@@ -60,17 +66,18 @@ void BackupFileStructureInfoDialog::loadStructure()
     mEditor->setPlainText(QString::fromLatin1(f.readAll()));
 }
 
-void BackupFileStructureInfoDialog::writeConfig()
-{
-    KConfigGroup group(KSharedConfig::openStateConfig(), "BackupFileStructureInfoDialog");
-    group.writeEntry("Size", size());
-}
-
 void BackupFileStructureInfoDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "BackupFileStructureInfoDialog");
-    const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(600, 400));
+    KConfigGroup group(KSharedConfig::openStateConfig(), myBackupFileStructureInfoDialogGroupName);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
+}
+
+void BackupFileStructureInfoDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openStateConfig(), myBackupFileStructureInfoDialogGroupName);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.sync();
 }

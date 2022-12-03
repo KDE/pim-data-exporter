@@ -19,6 +19,13 @@
 #include <KUserFeedback/Provider>
 #endif
 
+#include <KWindowConfig>
+#include <QWindow>
+
+namespace
+{
+static const char myPimDataExporterConfigureDialogGroupName[] = "PimDataExporterConfigureDialog";
+}
 PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     : KPageDialog(parent)
     , mConfigureWidget(new PimDataExporterConfigureWidget(this))
@@ -78,16 +85,16 @@ void PimDataExporterConfigureDialog::slotAccepted()
 
 void PimDataExporterConfigureDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "PimDataExporterConfigureDialog");
-    const QSize size = group.readEntry("Size", QSize(600, 400));
-    if (size.isValid()) {
-        resize(size);
-    }
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(600, 400));
+    KConfigGroup group(KSharedConfig::openStateConfig(), myPimDataExporterConfigureDialogGroupName);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void PimDataExporterConfigureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "PimDataExporterConfigureDialog");
-    group.writeEntry("Size", size());
+    KConfigGroup group(KSharedConfig::openStateConfig(), myPimDataExporterConfigureDialogGroupName);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }
