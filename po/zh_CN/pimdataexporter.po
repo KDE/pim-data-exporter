@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-12-04 00:47+0000\n"
 "PO-Revision-Date: 2022-12-01 06:53\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -329,7 +329,7 @@ msgid "Archive cannot be opened in write mode."
 msgstr "归档无法在写入模式打开。"
 
 #: core/archivestorage.cpp:45 core/utils.cpp:134
-#: gui/dialog/showarchivestructuredialog.cpp:176
+#: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "归档无法在读取模式打开。"
@@ -685,34 +685,34 @@ msgstr "配置"
 msgid "Data"
 msgstr "数据"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:29
+#: gui/dialog/backupfilestructureinfodialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Archive File Structure"
 msgstr "归档文件结构"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:31
+#: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgid "Backup Archive Structure:"
 msgstr "备份归档文件结构："
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:57
+#: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
 msgid "backup-structure.txt file was not found."
 msgstr "未找到 backup-structure.txt 文件。"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:27
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr ""
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
 msgid "General"
 msgstr ""
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:51
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
 msgstr ""
@@ -750,80 +750,80 @@ msgstr "全部选中"
 msgid "Unselect All"
 msgstr "全部不选"
 
-#: gui/dialog/showarchivestructuredialog.cpp:33
+#: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
 msgid "Extract Selected File"
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:34
+#: gui/dialog/showarchivestructuredialog.cpp:41
 #, kde-format
 msgid "Open Selected File"
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:36
+#: gui/dialog/showarchivestructuredialog.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
 msgstr "显示文件“%1”上的归档内容"
 
-#: gui/dialog/showarchivestructuredialog.cpp:44
+#: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
 msgid "Search..."
 msgstr "搜索..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:47
+#: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
 msgid "Save As Text..."
 msgstr "另存为文本..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:127
+#: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
 msgid "Select Directory"
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:133
+#: gui/dialog/showarchivestructuredialog.cpp:140
 #, kde-format
 msgid "Do you want to overwrite %1?"
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:141
 #, kde-format
 msgid "File Already Exist"
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:142
+#: gui/dialog/showarchivestructuredialog.cpp:149
 #, kde-format
 msgid "Impossible to copy %1 in %2."
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:165
+#: gui/dialog/showarchivestructuredialog.cpp:172
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
 msgstr "文本文件"
 
-#: gui/dialog/showarchivestructuredialog.cpp:168
+#: gui/dialog/showarchivestructuredialog.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
 msgstr "导出日志文件"
 
-#: gui/dialog/showarchivestructuredialog.cpp:176
+#: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Cannot open archive"
 msgstr "无法打开归档"
 
-#: gui/dialog/showarchivestructuredialog.cpp:182
+#: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
 msgid "Info"
 msgstr "信息"
 
-#: gui/dialog/showarchivestructuredialog.cpp:184
+#: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "This is not pim archive."
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:184
+#: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "Show information"
 msgstr "显示信息"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-12-04 00:47+0000\n"
 "PO-Revision-Date: 2022-07-13 12:13+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -329,7 +329,7 @@ msgid "Archive cannot be opened in write mode."
 msgstr "쓰기 모드로 보관 파일을 열 수 없습니다."
 
 #: core/archivestorage.cpp:45 core/utils.cpp:134
-#: gui/dialog/showarchivestructuredialog.cpp:176
+#: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "읽기 모드로 보관 파일을 열 수 없습니다."
@@ -685,34 +685,34 @@ msgstr "설정"
 msgid "Data"
 msgstr "데이터"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:29
+#: gui/dialog/backupfilestructureinfodialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Archive File Structure"
 msgstr "보관 파일 구조"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:31
+#: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgid "Backup Archive Structure:"
 msgstr "백업 파일 구조:"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:57
+#: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
 msgid "backup-structure.txt file was not found."
 msgstr "backup-structure.txt 파일을 찾을 수 없습니다."
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:27
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "PIM 설정 내보내기 설정"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
 msgid "General"
 msgstr "일반"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:51
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
 msgstr "사용자 피드백"
@@ -750,80 +750,80 @@ msgstr "모두 선택"
 msgid "Unselect All"
 msgstr "모두 선택 해제"
 
-#: gui/dialog/showarchivestructuredialog.cpp:33
+#: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
 msgid "Extract Selected File"
 msgstr "선택한 파일 추출"
 
-#: gui/dialog/showarchivestructuredialog.cpp:34
+#: gui/dialog/showarchivestructuredialog.cpp:41
 #, kde-format
 msgid "Open Selected File"
 msgstr "선택한 파일 열기"
 
-#: gui/dialog/showarchivestructuredialog.cpp:36
+#: gui/dialog/showarchivestructuredialog.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
 msgstr "파일 \"%1\"의 내용 보기"
 
-#: gui/dialog/showarchivestructuredialog.cpp:44
+#: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
 msgid "Search..."
 msgstr "검색..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:47
+#: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
 msgid "Save As Text..."
 msgstr "텍스트로 저장..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:127
+#: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
 msgid "Select Directory"
 msgstr "디렉터리 선택"
 
-#: gui/dialog/showarchivestructuredialog.cpp:133
+#: gui/dialog/showarchivestructuredialog.cpp:140
 #, kde-format
 msgid "Do you want to overwrite %1?"
 msgstr "%1을(를) 덮어쓰시겠습니까?"
 
-#: gui/dialog/showarchivestructuredialog.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:141
 #, kde-format
 msgid "File Already Exist"
 msgstr "파일이 이미 존재함"
 
-#: gui/dialog/showarchivestructuredialog.cpp:142
+#: gui/dialog/showarchivestructuredialog.cpp:149
 #, kde-format
 msgid "Impossible to copy %1 in %2."
 msgstr "%2에 %1을(를) 복사할 수 없습니다."
 
-#: gui/dialog/showarchivestructuredialog.cpp:165
+#: gui/dialog/showarchivestructuredialog.cpp:172
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
 msgstr "텍스트 파일"
 
-#: gui/dialog/showarchivestructuredialog.cpp:168
+#: gui/dialog/showarchivestructuredialog.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
 msgstr "로그 파일 내보내기"
 
-#: gui/dialog/showarchivestructuredialog.cpp:176
+#: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Cannot open archive"
 msgstr "압축 파일을 열 수 없음"
 
-#: gui/dialog/showarchivestructuredialog.cpp:182
+#: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
 msgid "Info"
 msgstr "정보"
 
-#: gui/dialog/showarchivestructuredialog.cpp:184
+#: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "This is not pim archive."
 msgstr "PIM 보관 파일이 아닙니다."
 
-#: gui/dialog/showarchivestructuredialog.cpp:184
+#: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "Show information"
 msgstr "정보 보기"

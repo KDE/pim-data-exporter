@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-12-04 00:47+0000\n"
 "PO-Revision-Date: 2022-06-29 14:25+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -332,7 +332,7 @@ msgid "Archive cannot be opened in write mode."
 msgstr "Archiv nelze otevřít v režimu zápisu."
 
 #: core/archivestorage.cpp:45 core/utils.cpp:134
-#: gui/dialog/showarchivestructuredialog.cpp:176
+#: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "Archiv nelze otevřít v režimu čtení."
@@ -688,34 +688,34 @@ msgstr "Nastavení"
 msgid "Data"
 msgstr "Data"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:29
+#: gui/dialog/backupfilestructureinfodialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Archive File Structure"
 msgstr "Struktura souboru archivu"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:31
+#: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgid "Backup Archive Structure:"
 msgstr "Struktura archivu zálohy:"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:57
+#: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
 msgid "backup-structure.txt file was not found."
 msgstr "Soubor backup-structure.txt nebyl nalezen."
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:27
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "Nastavit PimDataExporter"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
 msgid "General"
 msgstr "Obecné"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:51
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
 msgstr "Zpětná vazba uživatele"
@@ -753,80 +753,80 @@ msgstr "Vybrat vše"
 msgid "Unselect All"
 msgstr "Odznačit vše"
 
-#: gui/dialog/showarchivestructuredialog.cpp:33
+#: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
 msgid "Extract Selected File"
 msgstr "Rozbalit vybrané soubory"
 
-#: gui/dialog/showarchivestructuredialog.cpp:34
+#: gui/dialog/showarchivestructuredialog.cpp:41
 #, kde-format
 msgid "Open Selected File"
 msgstr "Otevřít vybrané soubory"
 
-#: gui/dialog/showarchivestructuredialog.cpp:36
+#: gui/dialog/showarchivestructuredialog.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
 msgstr "Zobrazit obsah archivu \"%1\""
 
-#: gui/dialog/showarchivestructuredialog.cpp:44
+#: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
 msgid "Search..."
 msgstr "Hledat..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:47
+#: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
 msgid "Save As Text..."
 msgstr "Uložit jako text..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:127
+#: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
 msgid "Select Directory"
 msgstr "Vyberte adresář"
 
-#: gui/dialog/showarchivestructuredialog.cpp:133
+#: gui/dialog/showarchivestructuredialog.cpp:140
 #, kde-format
 msgid "Do you want to overwrite %1?"
 msgstr "Přejete si přepsat %1?"
 
-#: gui/dialog/showarchivestructuredialog.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:141
 #, kde-format
 msgid "File Already Exist"
 msgstr "Soubor již existuje"
 
-#: gui/dialog/showarchivestructuredialog.cpp:142
+#: gui/dialog/showarchivestructuredialog.cpp:149
 #, kde-format
 msgid "Impossible to copy %1 in %2."
 msgstr "Nelze zkopírovat %1 do %2."
 
-#: gui/dialog/showarchivestructuredialog.cpp:165
+#: gui/dialog/showarchivestructuredialog.cpp:172
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
 msgstr "Textové Soubory"
 
-#: gui/dialog/showarchivestructuredialog.cpp:168
+#: gui/dialog/showarchivestructuredialog.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
 msgstr "Exportovat soubor záznamu"
 
-#: gui/dialog/showarchivestructuredialog.cpp:176
+#: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Cannot open archive"
 msgstr "Archiv nelze otevřít"
 
-#: gui/dialog/showarchivestructuredialog.cpp:182
+#: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
 msgid "Info"
 msgstr "Informace"
 
-#: gui/dialog/showarchivestructuredialog.cpp:184
+#: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "This is not pim archive."
 msgstr "Toto není archiv pim."
 
-#: gui/dialog/showarchivestructuredialog.cpp:184
+#: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "Show information"
 msgstr "Zobrazit Informace"
