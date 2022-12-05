@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-04 00:47+0000\n"
-"PO-Revision-Date: 2022-10-08 07:25+0200\n"
+"PO-Revision-Date: 2022-12-04 07:22+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,12 +31,12 @@ msgstr "Temuri.doghonadze@gmail.com"
 #: console/main.cpp:25 console/main.cpp:27
 #, kde-format
 msgid "PIM Data Exporter Console"
-msgstr ""
+msgstr "PIM -ის მონაცემების გატანა"
 
 #: console/main.cpp:29
 #, kde-format
 msgid "Copyright © 2015-%1 pimdataexporter authors"
-msgstr ""
+msgstr "© 2015-%1 pimdataexporter -ის ავტორები, ყველა უფლება დაცულია"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
@@ -76,12 +76,12 @@ msgstr "ამოცანა გაუქმდა"
 #: core/abstractimportexportjob.cpp:116
 #, kde-format
 msgid "\"%1\" backup done."
-msgstr ""
+msgstr "\"%1\" -ის მარქაფი დასრულდა."
 
 #: core/abstractimportexportjob.cpp:118
 #, kde-format
 msgid "\"%1\" cannot be exported."
-msgstr ""
+msgstr "\"%1\" -ის გატანა შეუძლებელია."
 
 #: core/abstractimportexportjob.cpp:121
 #, kde-format
@@ -91,7 +91,7 @@ msgstr "\"%1\" არ არსებობს."
 #: core/abstractimportexportjob.cpp:268
 #, kde-format
 msgid "\"%1\" was copied."
-msgstr ""
+msgstr "\"%1\" კოპირებულია."
 
 #: core/abstractimportexportjob.cpp:273
 #, kde-format
@@ -111,34 +111,34 @@ msgstr "ფაილის კოპირება"
 #: core/abstractimportexportjob.cpp:300
 #, kde-format
 msgid "\"%1\" was restored."
-msgstr ""
+msgstr "\"%1\" აღდგენილია."
 
 #: core/abstractimportexportjob.cpp:385
 #: core/addressbook/importaddressbookjobinterface.cpp:231
 #: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
-msgstr ""
+msgstr "რესურსები აღდგენილია."
 
 #: core/abstractimportexportjob.cpp:387
 #, kde-format
 msgid "No resources files found."
-msgstr ""
+msgstr "რესურსის ფაილები ვერ ვიპოვე."
 
 #: core/abstractimportexportjob.cpp:448
 #, kde-format
 msgid "Unable to copy file %1"
-msgstr ""
+msgstr "ფაილის (%1) კოპირების შეცდომა"
 
 #: core/abstractimportexportjob.cpp:489
 #, kde-format
 msgid "Resource '%1' created."
-msgstr ""
+msgstr "რესურსი '%1' შეიქმნა."
 
 #: core/abstractimportexportjob.cpp:504
 #, kde-format
 msgid "Failed to synchronize '%1'."
-msgstr ""
+msgstr "'%1'-ის სინქრონიზაციის შეცდომა."
 
 #: core/abstractimportexportjob.cpp:509
 #, kde-format
@@ -153,7 +153,7 @@ msgstr ""
 #: core/abstractimportexportjob.cpp:541
 #, kde-format
 msgid "Start synchronizing..."
-msgstr ""
+msgstr "სინქრონიზაციის დაწყება..."
 
 #: core/abstractimportexportjob.cpp:578
 #, kde-format
@@ -230,7 +230,7 @@ msgstr ""
 #: core/notes/importnotesjobinterface.cpp:80
 #, kde-format
 msgid "Restore configs..."
-msgstr ""
+msgstr "კონფიგურაციების აღდგენა..."
 
 #: core/addressbook/importaddressbookjobinterface.cpp:109
 #: core/akregator/importakregatorjobinterface.cpp:99
@@ -240,7 +240,7 @@ msgstr ""
 #: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
-msgstr ""
+msgstr "კონფიგურაციები აღდგენილია."
 
 #: core/addressbook/importaddressbookjobinterface.cpp:162
 #: core/addressbook/importaddressbookjobinterface.cpp:163
@@ -254,7 +254,7 @@ msgstr ""
 #: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
-msgstr ""
+msgstr "რესურსების აღდგენა..."
 
 #: core/akregator/exportakregatorjobinterface.cpp:24
 #, kde-format
@@ -333,7 +333,7 @@ msgstr ""
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Archive cannot be opened in read mode."
-msgstr ""
+msgstr "შეცდომა არქივის მხოლოდ-წაკითხვის რეჟიმში გახსნისას."
 
 #: core/backupresourcefilejobbase.cpp:47
 #, kde-format
@@ -669,7 +669,7 @@ msgstr "ელფოსტები"
 #: core/utils.cpp:209
 #, kde-format
 msgid "Mail Transport"
-msgstr ""
+msgstr "ფოსტის ტრანსპორტი"
 
 #: core/utils.cpp:211
 #, kde-format
@@ -785,7 +785,7 @@ msgstr "აირჩიეთ საქაღალდე"
 #: gui/dialog/showarchivestructuredialog.cpp:140
 #, kde-format
 msgid "Do you want to overwrite %1?"
-msgstr ""
+msgstr "გნებავთ, გადააწეროთ %1-ს?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
 #, kde-format
@@ -846,7 +846,7 @@ msgstr ""
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "შეწყვეტა"
 
 #: gui/importexportprogressindicatorgui.cpp:66
 #, kde-format
@@ -923,12 +923,12 @@ msgstr ""
 #: gui/pimdatacommandlineoption.cpp:48
 #, kde-format
 msgid "Import the given file"
-msgstr ""
+msgstr "მითითებული ფაილის შემოტანა"
 
 #: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
 msgid "Export the given file"
-msgstr ""
+msgstr "მითითებული ფაილის გატანა"
 
 #: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
@@ -944,7 +944,7 @@ msgstr "მომხმარებლის უკუკავშირის �
 #: gui/pimdataexporter.rc:8
 #, kde-format
 msgid "&File"
-msgstr ""
+msgstr "&ფაილი"
 
 #. i18n: ectx: Menu (tools)
 #: gui/pimdataexporter.rc:21
