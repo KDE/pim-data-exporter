@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-04 00:47+0000\n"
-"PO-Revision-Date: 2022-05-31 10:51+0300\n"
+"PO-Revision-Date: 2022-12-11 20:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 22.12.0\n"
 "X-POOTLE-MTIME: 1413102216.000000\n"
 
 #, kde-format
@@ -1079,7 +1079,7 @@ msgstr "Zip dosyası (*.zip)"
 #: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Backup in progress..."
-msgstr "Yedekleme devam ediyor..."
+msgstr "Yedekleme sürüyor..."
 
 #: gui/pimdataexporterwindow.cpp:357
 #, kde-format
@@ -1087,8 +1087,8 @@ msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
 msgstr ""
-"Verileri geri yüklemeden önce tüm kdepim uygulamalarını kapatmanız gerekir. "
-"Devam etmek istiyor musun?"
+"Veriyi geri yüklemeden önce tüm kdepim uygulamalarını kapatmanız gerekir. "
+"Sürdürmek istiyor musunuz?"
 
 #: gui/pimdataexporterwindow.cpp:371
 #, kde-format
@@ -1103,7 +1103,7 @@ msgstr "Zip Dosyası"
 #: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgid "Restore in progress..."
-msgstr "Geri yükleme devam ediyor..."
+msgstr "Geri yükleme sürüyor..."
 
 #: gui/trayicon/pimdatatrayicon.cpp:13
 #, kde-format
