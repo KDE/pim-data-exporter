@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-04 00:47+0000\n"
-"PO-Revision-Date: 2022-12-11 20:32+0300\n"
+"PO-Revision-Date: 2022-12-17 19:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -311,7 +311,7 @@ msgstr "Veri geri yüklendi."
 #: core/alarm/exportalarmjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAlarm settings..."
-msgstr "KAlarm ayarlarını dışarı aktarmayı başlat..."
+msgstr "KAlarm ayarlarını dışa aktarmayı başlat..."
 
 #: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
@@ -359,7 +359,7 @@ msgstr "\"%1\" dosyası yedek dosyaya eklenemiyor."
 #: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
 msgid "Start export KOrganizer settings..."
-msgstr "KOrganizer ayarlarını dışarı aktarmayı başlat..."
+msgstr "KOrganizer ayarlarını dışa aktarmayı başlat..."
 
 #: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
@@ -563,7 +563,7 @@ msgstr "Klasör Öznitelikleri geri yüklenemiyor."
 #: core/notes/exportnotesjobinterface.cpp:28
 #, kde-format
 msgid "Start export KNotes settings..."
-msgstr "KNotes ayarlarını dışarı aktarmayı başlat..."
+msgstr "KNotes ayarlarını dışa aktarmayı başlat..."
 
 #: core/notes/exportnotesjobinterface.cpp:29
 #, kde-format
@@ -811,7 +811,7 @@ msgstr "Metin Dosyaları"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
-msgstr "Günlük Dosyasını Dışarı Aktar"
+msgstr "Günlük Dosyasını Dışa Aktar"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
@@ -900,8 +900,8 @@ msgid ""
 "additional data which will be skipped during import. Do you want to import "
 "it?"
 msgstr ""
-"Arşiv bu programın daha yeni sürümü ile oluşturulmuş. İçe alım sırasında "
-"atlanacak ek veriler içerebilir. İçeri aktarmak istiyor musunuz?"
+"Arşiv bu programın daha yeni sürümü ile oluşturulmuş. İçe aktarma sırasında "
+"atlanacak ek veriler içerebilir. İçe aktarmak istiyor musunuz?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
