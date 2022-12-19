@@ -10,12 +10,17 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QVBoxLayout>
-
+#include <QWindow>
+namespace
+{
+static const char myConfigSelectionTypeDialogDialog[] = "SelectionTypeDialog";
+}
 SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     : QDialog(parent)
     , mSelectionTreeWidget(new SelectionTypeTreeWidget(backupData, this))
@@ -73,20 +78,20 @@ SelectionTypeDialog::~SelectionTypeDialog()
     writeConfig();
 }
 
-void SelectionTypeDialog::writeConfig()
-{
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectionTypeDialog");
-    group.writeEntry("Size", size());
-}
-
 void SelectionTypeDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectionTypeDialog");
-    const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(600, 400));
+    KConfigGroup group(KSharedConfig::openStateConfig(), myConfigSelectionTypeDialogDialog);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
     loadDefaultTemplate();
+}
+
+void SelectionTypeDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openStateConfig(), myConfigSelectionTypeDialogDialog);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
 }
 
 QMap<Utils::AppsType, Utils::importExportParameters> SelectionTypeDialog::storedType() const
