@@ -9,7 +9,7 @@ kconfig_add_kcfg_files(pimdataexporter_kcfg_SRCS ${pimdataexporter_kcfg_SRCS})
 add_executable( synchronizeresourcedialogtest synchronizeresourcedialogtest.cpp synchronizeresourcedialogtest.h ../dialog/synchronizeresourcedialog.cpp)
 add_test(NAME synchronizeresourcedialogtest COMMAND synchronizeresourcedialogtest)
 ecm_mark_as_test(synchronizeresourcedialogtest)
-target_link_libraries(synchronizeresourcedialogtest Qt::Test Qt::Widgets KF5::I18n KF5::ItemViews KF5::ConfigCore)
+target_link_libraries(synchronizeresourcedialogtest Qt::Test Qt::Widgets KF5::I18n KF5::ItemViews KF5::ConfigGui)
 
 set(pimdataexporter_userfeedback_LIB)
 if (TARGET KUserFeedbackWidgets)

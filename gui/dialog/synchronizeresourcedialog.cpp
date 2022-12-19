@@ -10,12 +10,18 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QListWidget>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QWindow>
 
+namespace
+{
+static const char mySynchronizeResourceDialogGroupName[] = "SynchronizeResourceDialog";
+}
 SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     : QDialog(parent)
     , mListResourceWidget(new QListWidget(this))
@@ -114,15 +120,16 @@ void SynchronizeResourceDialog::slotAccepted()
 
 void SynchronizeResourceDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SynchronizeResourceDialog");
-    const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(600, 400));
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySynchronizeResourceDialogGroupName);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SynchronizeResourceDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SynchronizeResourceDialog");
-    group.writeEntry("Size", size());
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySynchronizeResourceDialogGroupName);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.sync();
 }
