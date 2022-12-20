@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:47+0000\n"
+"POT-Creation-Date: 2022-12-20 00:47+0000\n"
 "PO-Revision-Date: 2022-07-13 12:13+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -717,35 +717,35 @@ msgstr "일반"
 msgid "User Feedback"
 msgstr "사용자 피드백"
 
-#: gui/dialog/selectiontypedialog.cpp:22
+#: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
 msgid "Use this template by default"
 msgstr "기본값으로 이 템플릿 사용"
 
-#: gui/dialog/selectiontypedialog.cpp:23
+#: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgid "Save as Template..."
 msgstr "템플릿으로 저장..."
 
-#: gui/dialog/selectiontypedialog.cpp:24
+#: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgid "Load Template..."
 msgstr "템플릿 불러오기..."
 
-#: gui/dialog/selectiontypedialog.cpp:26
+#: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
 msgstr "종류 선택"
 
-#: gui/dialog/selectiontypedialog.cpp:47
-#: gui/dialog/synchronizeresourcedialog.cpp:40
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgid "Select All"
 msgstr "모두 선택"
 
-#: gui/dialog/selectiontypedialog.cpp:52
-#: gui/dialog/synchronizeresourcedialog.cpp:45
+#: gui/dialog/selectiontypedialog.cpp:57
+#: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgid "Unselect All"
 msgstr "모두 선택 해제"
@@ -828,13 +828,13 @@ msgstr "PIM 보관 파일이 아닙니다."
 msgid "Show information"
 msgstr "정보 보기"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:23
+#: gui/dialog/synchronizeresourcedialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
 msgstr "자원 동기화"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:26
+#: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "

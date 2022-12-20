@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:47+0000\n"
+"POT-Creation-Date: 2022-12-20 00:47+0000\n"
 "PO-Revision-Date: 2022-11-14 07:45+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -721,35 +721,35 @@ msgstr "Orokorra"
 msgid "User Feedback"
 msgstr "Erabiltzaileen erreakzioa"
 
-#: gui/dialog/selectiontypedialog.cpp:22
+#: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
 msgid "Use this template by default"
 msgstr "Erabili txantiloi hau era lehenetsian"
 
-#: gui/dialog/selectiontypedialog.cpp:23
+#: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgid "Save as Template..."
 msgstr "Gorde txantiloi gisa..."
 
-#: gui/dialog/selectiontypedialog.cpp:24
+#: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgid "Load Template..."
 msgstr "Zamatu txantiloia..."
 
-#: gui/dialog/selectiontypedialog.cpp:26
+#: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
 msgstr "Hautatu mota"
 
-#: gui/dialog/selectiontypedialog.cpp:47
-#: gui/dialog/synchronizeresourcedialog.cpp:40
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgid "Select All"
 msgstr "Hautatu dena"
 
-#: gui/dialog/selectiontypedialog.cpp:52
-#: gui/dialog/synchronizeresourcedialog.cpp:45
+#: gui/dialog/selectiontypedialog.cpp:57
+#: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgid "Unselect All"
 msgstr "Desautatu dena"
@@ -832,13 +832,13 @@ msgstr "Hau ez da PIM artxiboa."
 msgid "Show information"
 msgstr "Erakutsi informazioa"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:23
+#: gui/dialog/synchronizeresourcedialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
 msgstr "Sinkronizatu baliabideak"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:26
+#: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "

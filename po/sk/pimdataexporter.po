@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:47+0000\n"
+"POT-Creation-Date: 2022-12-20 00:47+0000\n"
 "PO-Revision-Date: 2022-04-09 19:24+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -731,35 +731,35 @@ msgstr "Všeobecné"
 msgid "User Feedback"
 msgstr "Používateľská odozva"
 
-#: gui/dialog/selectiontypedialog.cpp:22
+#: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
 msgid "Use this template by default"
 msgstr "Použiť predvolene túto šablónu"
 
-#: gui/dialog/selectiontypedialog.cpp:23
+#: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgid "Save as Template..."
 msgstr "Uložiť ako šablónu..."
 
-#: gui/dialog/selectiontypedialog.cpp:24
+#: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgid "Load Template..."
 msgstr "Načítať šablónu..."
 
-#: gui/dialog/selectiontypedialog.cpp:26
+#: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
 msgstr "Vyberať typ"
 
-#: gui/dialog/selectiontypedialog.cpp:47
-#: gui/dialog/synchronizeresourcedialog.cpp:40
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgid "Select All"
 msgstr "Vybrať všetko"
 
-#: gui/dialog/selectiontypedialog.cpp:52
-#: gui/dialog/synchronizeresourcedialog.cpp:45
+#: gui/dialog/selectiontypedialog.cpp:57
+#: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgid "Unselect All"
 msgstr "Odznačiť všetko"
@@ -842,13 +842,13 @@ msgstr "Toto nie je archív pim."
 msgid "Show information"
 msgstr "Zobraziť informácie"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:23
+#: gui/dialog/synchronizeresourcedialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
 msgstr "Synchronizovať zdroje"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:26
+#: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "

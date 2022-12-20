@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:47+0000\n"
+"POT-Creation-Date: 2022-12-20 00:47+0000\n"
 "PO-Revision-Date: 2014-11-10 19:38+0200\n"
 "Last-Translator: Liudas Ališauskas <liudas@aksioma.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -746,36 +746,36 @@ msgstr ""
 msgid "User Feedback"
 msgstr ""
 
-#: gui/dialog/selectiontypedialog.cpp:22
+#: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
 msgid "Use this template by default"
 msgstr ""
 
-#: gui/dialog/selectiontypedialog.cpp:23
+#: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgid "Save as Template..."
 msgstr "Įrašyti šabloną kaip..."
 
-#: gui/dialog/selectiontypedialog.cpp:24
+#: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgid "Load Template..."
 msgstr "Įkelti šabloną..."
 
-#: gui/dialog/selectiontypedialog.cpp:26
+#: gui/dialog/selectiontypedialog.cpp:31
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@title:window"
 msgid "Select Type"
 msgstr "Pažymėti viską"
 
-#: gui/dialog/selectiontypedialog.cpp:47
-#: gui/dialog/synchronizeresourcedialog.cpp:40
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgid "Select All"
 msgstr "Pažymėti viską"
 
-#: gui/dialog/selectiontypedialog.cpp:52
-#: gui/dialog/synchronizeresourcedialog.cpp:45
+#: gui/dialog/selectiontypedialog.cpp:57
+#: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgid "Unselect All"
 msgstr "Panaikinti žymėjimą"
@@ -862,14 +862,14 @@ msgstr "Nepavyko atverti archyvo"
 msgid "Show information"
 msgstr "Rodyti informaciją"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:23
+#: gui/dialog/synchronizeresourcedialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "Resources"
 msgctxt "@title:window"
 msgid "Synchronize Resources"
 msgstr "Ištekliai"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:26
+#: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "

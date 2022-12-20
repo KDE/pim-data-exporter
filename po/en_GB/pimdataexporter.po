@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:47+0000\n"
+"POT-Creation-Date: 2022-12-20 00:47+0000\n"
 "PO-Revision-Date: 2022-07-22 14:33+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -717,35 +717,35 @@ msgstr "General"
 msgid "User Feedback"
 msgstr "User Feedback"
 
-#: gui/dialog/selectiontypedialog.cpp:22
+#: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
 msgid "Use this template by default"
 msgstr "Use this template by default"
 
-#: gui/dialog/selectiontypedialog.cpp:23
+#: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgid "Save as Template..."
 msgstr "Save as Template..."
 
-#: gui/dialog/selectiontypedialog.cpp:24
+#: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgid "Load Template..."
 msgstr "Load Template..."
 
-#: gui/dialog/selectiontypedialog.cpp:26
+#: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
 msgstr "Select Type"
 
-#: gui/dialog/selectiontypedialog.cpp:47
-#: gui/dialog/synchronizeresourcedialog.cpp:40
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgid "Select All"
 msgstr "Select All"
 
-#: gui/dialog/selectiontypedialog.cpp:52
-#: gui/dialog/synchronizeresourcedialog.cpp:45
+#: gui/dialog/selectiontypedialog.cpp:57
+#: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgid "Unselect All"
 msgstr "Unselect All"
@@ -828,13 +828,13 @@ msgstr "This is not pim archive."
 msgid "Show information"
 msgstr "Show information"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:23
+#: gui/dialog/synchronizeresourcedialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
 msgstr "Synchronise Resources"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:26
+#: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "

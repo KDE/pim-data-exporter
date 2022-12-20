@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde 49i410\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:47+0000\n"
+"POT-Creation-Date: 2022-12-20 00:47+0000\n"
 "PO-Revision-Date: 2014-01-31 19:25+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian\n"
@@ -774,38 +774,38 @@ msgstr ""
 msgid "User Feedback"
 msgstr ""
 
-#: gui/dialog/selectiontypedialog.cpp:22
+#: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
 msgid "Use this template by default"
 msgstr ""
 
-#: gui/dialog/selectiontypedialog.cpp:23
+#: gui/dialog/selectiontypedialog.cpp:28
 #, fuzzy, kde-format
 #| msgid "Save As Text..."
 msgid "Save as Template..."
 msgstr "Snimi kao tekst..."
 
-#: gui/dialog/selectiontypedialog.cpp:24
+#: gui/dialog/selectiontypedialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "Save As Text..."
 msgid "Load Template..."
 msgstr "Snimi kao tekst..."
 
-#: gui/dialog/selectiontypedialog.cpp:26
+#: gui/dialog/selectiontypedialog.cpp:31
 #, fuzzy, kde-format
 #| msgid "Select Type"
 msgctxt "@title:window"
 msgid "Select Type"
 msgstr "Odaberi tip"
 
-#: gui/dialog/selectiontypedialog.cpp:47
-#: gui/dialog/synchronizeresourcedialog.cpp:40
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgid "Select All"
 msgstr "Odaberi sve"
 
-#: gui/dialog/selectiontypedialog.cpp:52
-#: gui/dialog/synchronizeresourcedialog.cpp:45
+#: gui/dialog/selectiontypedialog.cpp:57
+#: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgid "Unselect All"
 msgstr "Poništi izbor svega"
@@ -895,14 +895,14 @@ msgstr "Ne mogu otvoriti arhivu"
 msgid "Show information"
 msgstr "Prikaži informaciju o arhivi..,"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:23
+#: gui/dialog/synchronizeresourcedialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "Resources"
 msgctxt "@title:window"
 msgid "Synchronize Resources"
 msgstr "Resursi"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:26
+#: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
