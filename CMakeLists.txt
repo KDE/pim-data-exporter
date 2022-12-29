@@ -103,7 +103,7 @@ include_directories(${pim-data-exporter_SOURCE_DIR} ${pim-data-exporter_BINARY_D
 
 add_definitions(-DTRANSLATION_DOMAIN=\"pimdataexporter\")
 
-ecm_set_disabled_deprecation_versions(QT 5.15.2  KF 5.101.0)
+ecm_set_disabled_deprecation_versions(QT 5.15.2  KF 5.102.0)
 
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
