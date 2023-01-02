@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2020-2022 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2020-2023 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -14,7 +14,7 @@
 #include <QSignalSpy>
 #include <QTemporaryFile>
 #include <QTest>
-//#define REMOVE_CREATED_ZIP_FILE 1
+// #define REMOVE_CREATED_ZIP_FILE 1
 
 TestExportFile::TestExportFile(QObject *parent)
     : QObject(parent)

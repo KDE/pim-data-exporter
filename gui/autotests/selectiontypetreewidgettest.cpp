@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2017-2022 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2017-2023 Laurent Montel <montel@kde.org>
 
    SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -9,7 +9,7 @@
 #include <QFile>
 #include <QStandardPaths>
 #include <QTest>
-//#define SHOW_WIDGET
+// #define SHOW_WIDGET
 SelectionTypeTreeWidgetTest::SelectionTypeTreeWidgetTest(QObject *parent)
     : QObject(parent)
 {
