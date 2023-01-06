@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2023-01-03 09:41+0100\n"
+"PO-Revision-Date: 2023-01-05 07:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -933,7 +933,7 @@ msgstr "მითითებული ფაილის გატანა"
 #: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgid "File or url. The user will be asked whether to import or export."
-msgstr ""
+msgstr "ფაილი ან ბმული. მომხმარებელს ვკითხავთ, გატანა თუ შემოტანა."
 
 #: gui/pimdatacommandlineoption.cpp:52
 #, kde-format
@@ -1049,7 +1049,7 @@ msgstr "HTML ფაილები (*.html)"
 #: gui/pimdataexporterwindow.cpp:281
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
-msgstr ""
+msgstr "თქვენი მონაცემების მარქაფამდე საჭიროა ყველა kdepim აპლიკაცია გამორთოთ."
 
 #: gui/pimdataexporterwindow.cpp:304
 #, kde-format
