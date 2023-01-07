@@ -3,120 +3,202 @@
 "dtd/kdedbx45.dtd" [
   <!-- Define an entity for your application if it is not part of KDE
        CVS -->
-  <!ENTITY i18n-pimdataexporter "<application>PIM Data Exporter</application>">
+  <!ENTITY i18n-pimdataexporter "<application
+>PIM-Daten-Export</application
+>">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % English "INCLUDE"> 
-  <!ENTITY imap "<acronym>IMAP</acronym>">
+  <!ENTITY % German "INCLUDE"
+> 
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
 ]>
 
 <article id="pimdataexporter" lang="&language;">
 
 <articleinfo id="pimdataexporterinfo">
-<title>The &i18n-pimdataexporter; Handbook</title>
+<title
+>Das Handbuch zu &i18n-pimdataexporter;</title>
 
 <authorgroup>
-<author>
-<personname>
-<firstname>Laurent</firstname>
-<surname>Montel</surname>
-</personname>
-&Laurent.Montel.mail;
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
 </author>
-<author>
-<firstname>Scarlett</firstname>
-<surname>Clark</surname>
-<affiliation><address>
-&Scarlett.Clark.mail;
-</address></affiliation>
-</author>
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<othercredit role="translator"
+><firstname
+>Burkhard</firstname
+><surname
+>Lück</surname
+><affiliation
+><address
+><email
+>lueck@hube-lueck.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
 </authorgroup>
 
 <copyright>
-<year>2013</year>
-<holder>&Laurent.Montel;</holder>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
 </copyright>
 
-<legalnotice>&FDLNotice;</legalnotice>
+<legalnotice
+>&FDLNotice;</legalnotice>
 
-<date>2016-07-27</date>
-<releaseinfo>5.3.40 (applications 16.08)</releaseinfo>
+<date
+>2016-07-27</date>
+<releaseinfo
+>5.3.40 (Anwendungen 16.08)</releaseinfo>
 
 </articleinfo>
 
 
 <sect1 id="introduction">
-<title>Introduction</title>
+<title
+>Einführung</title>
 
-<para>&i18n-pimdataexporter; allows to export and import PIM settings and local mail. You can backup and restore settings from the following programs:
-<simplelist>
-<member>&kmail;</member>
-<member>&knotes;</member>
-<member>&akregator;</member>
-<member>&kaddressbook;</member>
-<member>&kalarm;</member>
-<member>&korganizer;</member>
+<para
+>Mit dem &i18n-pimdataexporter; können Sie PIM-Einstellungen und lokale Ordner exportieren und importieren. Sie können Daten von folgenden Programmen suchen und wiederherstellen: <simplelist>
+<member
+>&kmail;</member>
+<member
+>&knotes;</member>
+<member
+>&akregator;</member>
+<member
+>&kaddressbook;</member>
+<member
+>&kalarm;</member>
+<member
+>&korganizer;</member>
 </simplelist>
 </para>
 
 <sect2 id="using-kapp">
-<title>Using &i18n-pimdataexporter;</title>
-<para>Backing up is an essential practice for all users. &i18n-pimdataexporter;
-is a great tool for backing up or moving all of your settings and email to a new installation.
-You also use &i18n-pimdataexporter; to import previous backups.</para>
-<para>You can use <menuchoice><guimenu>Tools</guimenu><guimenuitem>Export &kmail; Data...</guimenuitem></menuchoice>
- through the message view window or &i18n-pimdataexporter; can be run as a standalone application by running
-&i18n-pimdataexporter; in the application launcher.</para>
+<title
+>&i18n-pimdataexporter; verwenden</title>
+<para
+>Sicherung ist eine wichtige Aufgabe für alle Benutzer. &i18n-pimdataexporter; ist ein leistungsfähiges Programm zur Sicherung oder Übertragung Ihrer Einstellungen und E-Mails auf eine andere Installation. Mit &i18n-pimdataexporter; können Sie ebenfalls Daten aus früheren Sicherungen wieder herstellen.</para>
+<para
+>Sie können <menuchoice
+><guimenu
+>Extras</guimenu
+><guimenuitem
+>&kmail;-Daten exportieren</guimenuitem
+></menuchoice
+> verwenden oder &i18n-pimdataexporter; als eigenständiges Programm ausführen.</para>
 
-<para>To perform a backup, <action>select <menuchoice><guimenu>File</guimenu><guimenuitem>Back Up Data...</guimenuitem></menuchoice></action>,
- it will prompt you to close all kdepim applications.
-<warning><para>Make sure you close all windows, data loss is possible if you don't.</para></warning>
- Once you have closed them, click <guibutton>Yes</guibutton> to continue, or <guibutton>No</guibutton> to cancel.</para>
-<para>You will be prompted to create a backup name, enter the name into the <guilabel>File</guilabel> textbox, &eg; <replaceable>mymailsettings</replaceable>.
- The default filetype it saves as is <filename role="extension">.zip</filename>.
-</para>
-<para>The next screen will allow you to select what you wish to backup, by default everything is selected.
-<note>
-<para>&kmail; Mails selection will only backup mails in your <quote>Local Folders</quote>, it will backup &imap; settings and download messages upon restore.
-If you have emails on a &imap; server you wish to be backed up, you should use  <ulink url="help:/akonadi_folderarchive_agent">Folder Archive Agent</ulink> to archive those emails to a local folder.</para>
-</note></para>
+<para
+>Um eine Sicherung durchzuführen, <action
+>wählen Sie <menuchoice
+><guimenu
+>Datei</guimenu
+><guimenuitem
+>Daten sichern</guimenuitem
+></menuchoice
+></action
+>. Dann werden Sie aufgefordert, alle KDEPIM-Anwendungen zu schließen. <warning
+><para
+>Datenverlust ist möglich, wenn Sie nicht alle Anwendungen schließen.</para
+></warning
+>. Klicken Sie dann auf <guibutton
+>Ja</guibutton
+>, um weiter zu machen oder auf <guibutton
+>Nein</guibutton
+>, um abzubrechen.</para>
+<para
+>Als nächstes müssen Sie einen Ordner wählen und einen Dateinamen wie &eg; <replaceable
+>Meine E-Mails</replaceable
+> in das Feld <guilabel
+>Name</guilabel
+> eingeben. In der Voreinstellung werden die Daten in einem Archiv im Format <filename role="extension"
+>.zip</filename
+> gespeichert. </para>
+<para
+>Im nächsten Fenster können Sie auswählen, welche Daten Sie sichern möchten. In der Voreinstellung ist alles ausgewählt. <note
+> <para
+>Nur E-Mails aus Ihrem <quote
+>Lokalen Ordner</quote
+> können gesichert werden. Für &imap; können die Einstellungen auch gesichert und die Nachrichten beim Zurückspielen heruntergeladen werden. Möchten Sie E-Mails auf einem &imap;-Server sichern, sollten Sie den <ulink url="help:/akonadi_folderarchive_agent"
+>Agent zur Ordner-Archivierung</ulink
+> verwenden, um solche E-Mails in einen lokalen Ordner zu verschieben.</para>
+</note
+></para>
 <screenshot>
-<screeninfo>Selection Dialog</screeninfo>
+<screeninfo
+>Auswahldialog</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="selection-dialog.png" format="PNG"/>
     </imageobject>
     <textobject>
-      <phrase>Selection Dialog</phrase>
+      <phrase
+>Auswahldialog</phrase>
     </textobject>
     <caption>
-      <para>Selection Dialog</para>
+      <para
+>Auswahldialog</para>
     </caption>
   </mediaobject>
 </screenshot>
-<para>The final screen shows the log of the backup up process. You can close the window once you have reviewed the log and verified your backup was successful.</para>
-<para>To restore your backup, select <menuchoice><guimenu>File</guimenu><guimenuitem>Restore Data...</guimenuitem></menuchoice> within &i18n-pimdataexporter;.</para>
-<para>Using <menuchoice><guimenu>Tools</guimenu><guimenuitem>Show Archive Information</guimenuitem></menuchoice>
-you can select a backup archive and view its content.</para>
+<para
+>Dann wird im Fenster das Protokoll der Archivierung angezeigt. Überprüfen Sie, ob die Archivierung erfolgreich durchgeführt wurde und schließen dann das Fenster.</para>
+<para
+>Um Ihre gesicherten Daten wiederherzustellen, wählen Sie <menuchoice
+><guimenu
+>Datei</guimenu
+><guimenuitem
+>Daten zurückspielen ..</guimenuitem
+></menuchoice
+> im &i18n-pimdataexporter;;.</para>
+<para
+>Mit <menuchoice
+><guimenu
+>Extras</guimenu
+><guimenuitem
+>Archiv-Informationen anzeigen</guimenuitem
+></menuchoice
+> können Sie ein Sicherungsarchiv auswählen und dessen Inhalt anzeigen.</para>
 </sect2>
 </sect1>
 
 <sect1 id="credits">
 
-<title>Credits and License</title>
-<para>&i18n-pimdataexporter;</para>
-<para>
-Program copyright 2019 &Laurent.Montel; &Laurent.Montel.mail;
-</para>
-<para>
-Documentation Copyright &copy; 2019 &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail;
-</para>
+<title
+>Danksagungen und Lizenz</title>
+<para
+>&i18n-pimdataexporter;</para>
+<para
+>Programm Copyright 2019 &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>Dokumentation Copyright &copy; 2019 &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail; </para>
 
-<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
-
-&underFDL;               <!-- FDL: do not remove -->
-&underGPL;        	 <!-- GPL License -->
-</sect1>
+<para
+>Übersetzung Burkhard Lück<email
+>lueck@hube-lueck.de</email
+></para
+> &underFDL; &underGPL; </sect1>
 
 &documentation.index;
 </article>
