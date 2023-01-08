@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-20 00:47+0000\n"
-"PO-Revision-Date: 2022-12-29 03:24+0100\n"
+"PO-Revision-Date: 2023-01-07 06:19+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -841,6 +841,8 @@ msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
 msgstr ""
+"რესურსები დამატებულია, მაგრამ მონაცემების სინქრონიზაცია არ მომხდარა. აირჩიეთ "
+"დასასინქრონებელი რესურსები:"
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
@@ -893,6 +895,9 @@ msgid ""
 "additional data which will be skipped during import. Do you want to import "
 "it?"
 msgstr ""
+"არქივი პროგრამის უფრო ახალი ვერსიით შეიქმნა. ის შეიძლება დამატებით "
+"მონაცემებს შეიცავდეს, რომლებიც შემოტანის დროს დაიკარგება. მაინც გნებავთ "
+"შემოტანა?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
@@ -918,7 +923,7 @@ msgstr "© 2012-%1 pimdataexporter -ის ავტორები, ყვე�
 #: gui/pimdatacommandlineoption.cpp:46
 #, kde-format
 msgid "Template file uses to define what data, settings to import or export"
-msgstr ""
+msgstr "შესატანი ან გასატანი მონაცემებისა და პარამეტრების აღწერის ნიმუში"
 
 #: gui/pimdatacommandlineoption.cpp:48
 #, kde-format
@@ -933,7 +938,7 @@ msgstr "მითითებული ფაილის გატანა"
 #: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgid "File or url. The user will be asked whether to import or export."
-msgstr ""
+msgstr "ფაილი ან ბმული. მომხმარებელს ვკითხავთ, გატანა თუ შემოტანა."
 
 #: gui/pimdatacommandlineoption.cpp:52
 #, kde-format
@@ -984,6 +989,8 @@ msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
 "overwrite your existing settings and data."
 msgstr ""
+"მონაცემების აღსადგენად გამოიყენეთ \"pimdataexporter\". ფრთხილად, მას თქვენი "
+"არსებული პარამეტრებისა და მონაცემების თავზე გადაწერა შეუძლია."
 
 #: gui/pimdataexporterwindow.cpp:175 gui/pimdataexporterwindow.cpp:280
 #: gui/pimdataexporterwindow.cpp:358
@@ -1049,7 +1056,7 @@ msgstr "HTML ფაილები (*.html)"
 #: gui/pimdataexporterwindow.cpp:280
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
-msgstr ""
+msgstr "თქვენი მონაცემების მარქაფამდე საჭიროა ყველა kdepim აპლიკაცია გამორთოთ."
 
 #: gui/pimdataexporterwindow.cpp:303
 #, kde-format
@@ -1072,6 +1079,8 @@ msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
 msgstr ""
+"მონაცემების აღდგენამდე ყველა KDEPIM აპლიკაცია უნდა დახუროთ. გნებავთ, "
+"გააგრძელოთ?"
 
 #: gui/pimdataexporterwindow.cpp:371
 #, kde-format
