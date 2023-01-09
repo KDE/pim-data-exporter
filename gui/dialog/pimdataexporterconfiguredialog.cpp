@@ -40,7 +40,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
 
     layout->addWidget(mConfigureWidget);
 
-    auto *generalPageWidgetPage = new KPageWidgetItem(mConfigureWidget, i18n("General"));
+    auto generalPageWidgetPage = new KPageWidgetItem(mConfigureWidget, i18n("General"));
     generalPageWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("network-workgroup")));
     addPage(generalPageWidgetPage);
 

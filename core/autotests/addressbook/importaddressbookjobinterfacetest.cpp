@@ -34,7 +34,7 @@ void ImportAddressbookJobInterfaceTest::importAddressbook()
     QFETCH(QString, testPath);
     QFETCH(Utils::StoredTypes, options);
 
-    auto *file = new TestImportFile(zipFilePath + testPath, this);
+    auto file = new TestImportFile(zipFilePath + testPath, this);
     file->setPathConfig(zipFilePath + testPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::addressbookPath());

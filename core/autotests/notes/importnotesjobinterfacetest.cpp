@@ -34,7 +34,7 @@ void ImportNotesJobInterfaceTest::importNote()
     QFETCH(QString, testPath);
     QFETCH(Utils::StoredTypes, options);
     const QString fullTestPath = zipFilePath + testPath;
-    auto *file = new TestImportFile(fullTestPath, this);
+    auto file = new TestImportFile(fullTestPath, this);
     file->setPathConfig(fullTestPath);
     file->setExtractPath(QDir::tempPath() + testPath);
     file->setExcludePath(Utils::notePath());
