@@ -3,13 +3,13 @@
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2017.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:48+0000\n"
-"PO-Revision-Date: 2022-12-17 19:01+0300\n"
+"PO-Revision-Date: 2023-01-10 22:09+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -172,12 +172,12 @@ msgstr "\"%1\" dizini yedek dosyasına eklenemedi."
 #: core/addressbook/exportaddressbookjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAddressBook settings..."
-msgstr "KAddressBook ayarları dışa aktarmayı başlat..."
+msgstr "K Adres Defteri ayarlarını dışa aktarma başlatılıyor..."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
 msgid "Export KAddressBook settings"
-msgstr "KAddressBook ayarlarını dışa aktar"
+msgstr "K Adres Defteri ayarlarını dışa aktar"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
@@ -220,7 +220,7 @@ msgstr "Yapılandırma yedeklemesı tamamlandı."
 #: core/addressbook/importaddressbookjobinterface.cpp:41
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
-msgstr "K Adres Defteri ayarlarını içe aktarmayı başlat..."
+msgstr "K Adres Defteri ayarlarını içe aktarma başlatılıyor..."
 
 #: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
@@ -263,12 +263,12 @@ msgstr "Kaynakları geri yükle..."
 #: core/akregator/exportakregatorjobinterface.cpp:24
 #, kde-format
 msgid "Start export Akregator settings..."
-msgstr "Akregator ayarlarını dışa aktarmayı başlat..."
+msgstr "Akregatör ayarlarını dışa aktarma başlatılıyor..."
 
 #: core/akregator/exportakregatorjobinterface.cpp:25
 #, kde-format
 msgid "Export Akregator settings"
-msgstr "Akregator ayarlarını dışa aktar"
+msgstr "Akregatör ayarlarını dışa aktar"
 
 #: core/akregator/exportakregatorjobinterface.cpp:87
 #, kde-format
@@ -289,12 +289,12 @@ msgstr "Veri yedekleme tamamlandı."
 #: core/akregator/importakregatorjobinterface.cpp:29
 #, kde-format
 msgid "Starting to import Akregator settings..."
-msgstr "Akregator ayarlarını içe aktarmayı başlat..."
+msgstr "Akregatör ayarlarını içe aktarma başlatılıyor..."
 
 #: core/akregator/importakregatorjobinterface.cpp:32
 #, kde-format
 msgid "Import Akregator settings"
-msgstr "Akregator ayarlarını içe aktar"
+msgstr "Akregatör ayarlarını içe aktar"
 
 #: core/akregator/importakregatorjobinterface.cpp:106
 #: core/notes/importnotesjobinterface.cpp:116
@@ -311,22 +311,22 @@ msgstr "Veri geri yüklendi."
 #: core/alarm/exportalarmjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAlarm settings..."
-msgstr "KAlarm ayarlarını dışa aktarmayı başlat..."
+msgstr "K Alarm ayarlarını dışa aktarma başlatılıyor..."
 
 #: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
 msgid "Export KAlarm settings"
-msgstr "KAlarm ayarlarını dışa aktar"
+msgstr "K Alarm ayarlarını dışa aktar"
 
 #: core/alarm/importalarmjobinterface.cpp:32
 #, kde-format
 msgid "Starting to import KAlarm settings..."
-msgstr "KAlarm ayarlarını içe aktarmayı başlat..."
+msgstr "K Alarm ayarlarını içe aktarma başlatılıyor..."
 
 #: core/alarm/importalarmjobinterface.cpp:33
 #, kde-format
 msgid "Import KAlarm settings"
-msgstr "KAlarm ayarlarını dışa aktar"
+msgstr "K Alarm ayarlarını dışa aktar"
 
 #: core/archivestorage.cpp:43
 #, kde-format
@@ -359,32 +359,32 @@ msgstr "\"%1\" dosyası yedek dosyaya eklenemiyor."
 #: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
 msgid "Start export KOrganizer settings..."
-msgstr "KOrganizer ayarlarını dışa aktarmayı başlat..."
+msgstr "K Organizatör ayarlarını dışa aktarma başlatılıyor..."
 
 #: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
 msgid "Export KOrganizer settings"
-msgstr "KOrganizer ayarlarını dışa aktar"
+msgstr "K Organizatör ayarlarını dışa aktar"
 
 #: core/calendar/importcalendarjobinterface.cpp:35
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
-msgstr "KOrganizer ayarlarını içe aktarmayı başlat..."
+msgstr "K Organizatör ayarlarını içe aktarma başlatılıyor..."
 
 #: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
 msgid "Import KOrganizer settings"
-msgstr "KOrganizer ayarlarını içe aktar"
+msgstr "K Organizatör ayarlarını içe aktar"
 
 #: core/mail/exportmailjobinterface.cpp:43
 #, kde-format
 msgid "Start export KMail settings..."
-msgstr "KMail ayarlarını dışa aktarmayı başlat..."
+msgstr "K Posta ayarlarını dışa aktarma başlatılıyor..."
 
 #: core/mail/exportmailjobinterface.cpp:44
 #, kde-format
 msgid "Export KMail settings"
-msgstr "KMail ayarlarını dışa aktar"
+msgstr "K Posta ayarlarını dışa aktar"
 
 #: core/mail/exportmailjobinterface.cpp:112
 #, kde-format
@@ -460,12 +460,12 @@ msgstr "Klasör Öznitelikleri dışa aktarılamıyor."
 #: core/mail/importmailjobinterface.cpp:44
 #, kde-format
 msgid "Starting to import KMail settings..."
-msgstr "KMail ayarlarını içe aktarmayı başlat..."
+msgstr "K Posta ayarlarını içe aktarma başlatılıyor..."
 
 #: core/mail/importmailjobinterface.cpp:45
 #, kde-format
 msgid "Import KMail settings"
-msgstr "KMail ayarlarını içe aktar"
+msgstr "K Posta ayarlarını içe aktar"
 
 #: core/mail/importmailjobinterface.cpp:170
 #: core/mail/importmailjobinterface.cpp:176
@@ -563,22 +563,22 @@ msgstr "Klasör Öznitelikleri geri yüklenemiyor."
 #: core/notes/exportnotesjobinterface.cpp:28
 #, kde-format
 msgid "Start export KNotes settings..."
-msgstr "KNotes ayarlarını dışa aktarmayı başlat..."
+msgstr "K Notlar ayarlarını dışa aktarma başlatılıyor..."
 
 #: core/notes/exportnotesjobinterface.cpp:29
 #, kde-format
 msgid "Export KNotes settings"
-msgstr "KNotes ayarlarını dışa aktar"
+msgstr "K Notlar ayarlarını dışa aktar"
 
 #: core/notes/importnotesjobinterface.cpp:49
 #, kde-format
 msgid "Starting to import KNotes settings..."
-msgstr "KNotes ayarlarını içe aktarmayı başlat..."
+msgstr "K Notlar ayarlarını içe aktarma başlatılıyor..."
 
 #: core/notes/importnotesjobinterface.cpp:52
 #, kde-format
 msgid "Import KNotes settings"
-msgstr "KNotes ayarlarını içe aktar"
+msgstr "K Notlar ayarlarını içe aktar"
 
 #: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
 #, kde-format
@@ -633,7 +633,7 @@ msgstr "\"%1\" özkaynak yapılandırma dosyası mevcut değil."
 #: core/utils.cpp:181
 #, kde-format
 msgid "KMail"
-msgstr "KMail"
+msgstr "K Posta"
 
 #: core/utils.cpp:183
 #, kde-format
@@ -648,17 +648,17 @@ msgstr "KAlarm"
 #: core/utils.cpp:187
 #, kde-format
 msgid "KOrganizer"
-msgstr "KOrganizer"
+msgstr "K Organizatör"
 
 #: core/utils.cpp:189
 #, kde-format
 msgid "KNotes"
-msgstr "KNotes"
+msgstr "K Notlar"
 
 #: core/utils.cpp:191
 #, kde-format
 msgid "Akregator"
-msgstr "Akregator"
+msgstr "Akregatör"
 
 #: core/utils.cpp:205
 #, kde-format
