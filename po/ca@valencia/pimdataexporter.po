@@ -179,7 +179,7 @@ msgstr "Inicia l'exportació de la configuració de KAddressBook..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
 msgid "Export KAddressBook settings"
-msgstr "Exportació de la configuració de KAddressBook"
+msgstr "Exporteu la configuració de KAddressBook"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
@@ -227,7 +227,7 @@ msgstr "S'està iniciant la importació de la configuració de KAddressBook..."
 #: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
 msgid "Import KAddressBook settings"
-msgstr "Importació de la configuració de KAddressBook"
+msgstr "Importeu la configuració de KAddressBook"
 
 #: core/addressbook/importaddressbookjobinterface.cpp:92
 #: core/akregator/importakregatorjobinterface.cpp:93
@@ -270,7 +270,7 @@ msgstr "Inicia l'exportació de la configuració d'Akregator..."
 #: core/akregator/exportakregatorjobinterface.cpp:25
 #, kde-format
 msgid "Export Akregator settings"
-msgstr "Exportació de la configuració d'Akregator"
+msgstr "Exporteu la configuració d'Akregator"
 
 #: core/akregator/exportakregatorjobinterface.cpp:87
 #, kde-format
@@ -297,7 +297,7 @@ msgstr "S'està iniciant la importació de la configuració d'Akregator..."
 #: core/akregator/importakregatorjobinterface.cpp:32
 #, kde-format
 msgid "Import Akregator settings"
-msgstr "Importació de la configuració d'Akregator"
+msgstr "Importeu la configuració d'Akregator"
 
 #: core/akregator/importakregatorjobinterface.cpp:106
 #: core/notes/importnotesjobinterface.cpp:116
@@ -319,7 +319,7 @@ msgstr "Inicia l'exportació de la configuració de KAlarm..."
 #: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
 msgid "Export KAlarm settings"
-msgstr "Exportació de la configuració de KAlarm"
+msgstr "Exporteu la configuració de KAlarm"
 
 #: core/alarm/importalarmjobinterface.cpp:32
 #, kde-format
@@ -329,7 +329,7 @@ msgstr "S'està iniciant la importació de la configuració de KAlarm..."
 #: core/alarm/importalarmjobinterface.cpp:33
 #, kde-format
 msgid "Import KAlarm settings"
-msgstr "Importació de la configuració de KAlarm"
+msgstr "Importeu la configuració de KAlarm"
 
 #: core/archivestorage.cpp:43
 #, kde-format
@@ -368,7 +368,7 @@ msgstr "Inicia l'exportació de la configuració de KOrganizer..."
 #: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
 msgid "Export KOrganizer settings"
-msgstr "Exportació de la configuració de KOrganizer"
+msgstr "Exporteu la configuració de KOrganizer"
 
 #: core/calendar/importcalendarjobinterface.cpp:35
 #, kde-format
@@ -378,7 +378,7 @@ msgstr "S'està iniciant la importació de la configuració de KOrganizer..."
 #: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
 msgid "Import KOrganizer settings"
-msgstr "Importació de la configuració de KOrganizer"
+msgstr "Importeu la configuració de KOrganizer"
 
 #: core/mail/exportmailjobinterface.cpp:43
 #, kde-format
@@ -388,7 +388,7 @@ msgstr "Inicia l'exportació de la configuració de KMail..."
 #: core/mail/exportmailjobinterface.cpp:44
 #, kde-format
 msgid "Export KMail settings"
-msgstr "Exportació de la configuració de KMail"
+msgstr "Exporteu la configuració de KMail"
 
 #: core/mail/exportmailjobinterface.cpp:112
 #, kde-format
@@ -471,7 +471,7 @@ msgstr "S'està iniciant la importació de la configuració de KMail..."
 #: core/mail/importmailjobinterface.cpp:44
 #, kde-format
 msgid "Import KMail settings"
-msgstr "Importació de la configuració de KMail"
+msgstr "Importeu la configuració de KMail"
 
 #: core/mail/importmailjobinterface.cpp:169
 #: core/mail/importmailjobinterface.cpp:175
@@ -574,7 +574,7 @@ msgstr "Inicia l'exportació de la configuració de KNotes..."
 #: core/notes/exportnotesjobinterface.cpp:29
 #, kde-format
 msgid "Export KNotes settings"
-msgstr "Exportació de la configuració de KNotes"
+msgstr "Exporteu la configuració de KNotes"
 
 #: core/notes/importnotesjobinterface.cpp:49
 #, kde-format
@@ -584,7 +584,7 @@ msgstr "S'està iniciant la importació de la configuració de KNotes..."
 #: core/notes/importnotesjobinterface.cpp:52
 #, kde-format
 msgid "Import KNotes settings"
-msgstr "Importació de la configuració de KNotes"
+msgstr "Importeu la configuració de KNotes"
 
 #: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
 #, kde-format
@@ -718,7 +718,7 @@ msgstr "No s'ha trobat el fitxer backup-structure.txt."
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
-msgstr "Configuració de l'Exportador de les dades PIM"
+msgstr "Configureu l'Exportador de les dades PIM"
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
