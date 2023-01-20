@@ -4,9 +4,9 @@ cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 set(PIM_VERSION "5.22.40")
 project(pim-data-exporter VERSION ${PIM_VERSION})
 set(RELEASE_SERVICE_VERSION "23.03.40")
-set(KF5_MIN_VERSION "5.102.0")
+set(KF_MIN_VERSION "5.102.0")
 
-find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 include(ECMInstallIcons)
 
@@ -63,20 +63,20 @@ set(PIMCOMMON_LIB_VERSION "5.22.40")
 set(AKONADINOTES_LIB_VERSION "5.22.40")
 
 # Find KF5 package
-find_package(KF5Archive ${KF5_MIN_VERSION} REQUIRED)
-find_package(KF5Config ${KF5_MIN_VERSION} REQUIRED)
-find_package(KF5ConfigWidgets ${KF5_MIN_VERSION} REQUIRED)
-find_package(KF5CoreAddons ${KF5_MIN_VERSION} REQUIRED)
-find_package(KF5Crash ${KF5_MIN_VERSION} REQUIRED)
-find_package(KF5DBusAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5ItemViews ${KF5_MIN_VERSION} REQUIRED)
-find_package(KF5KIO ${KF5_MIN_VERSION} REQUIRED)
-find_package(KF5Notifications ${KF5_MIN_VERSION} REQUIRED)
-find_package(KF5WidgetsAddons ${KF5_MIN_VERSION} REQUIRED)
-find_package(KF5XmlGui ${KF5_MIN_VERSION} REQUIRED)
-find_package(KF5WidgetsAddons ${KF5_MIN_VERSION} REQUIRED)
+find_package(KF5Archive ${KF_MIN_VERSION} REQUIRED)
+find_package(KF5Config ${KF_MIN_VERSION} REQUIRED)
+find_package(KF5ConfigWidgets ${KF_MIN_VERSION} REQUIRED)
+find_package(KF5CoreAddons ${KF_MIN_VERSION} REQUIRED)
+find_package(KF5Crash ${KF_MIN_VERSION} REQUIRED)
+find_package(KF5DBusAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5ItemViews ${KF_MIN_VERSION} REQUIRED)
+find_package(KF5KIO ${KF_MIN_VERSION} REQUIRED)
+find_package(KF5Notifications ${KF_MIN_VERSION} REQUIRED)
+find_package(KF5WidgetsAddons ${KF_MIN_VERSION} REQUIRED)
+find_package(KF5XmlGui ${KF_MIN_VERSION} REQUIRED)
+find_package(KF5WidgetsAddons ${KF_MIN_VERSION} REQUIRED)
 
-find_package(KF5DocTools ${KF5_MIN_VERSION})
+find_package(KF5DocTools ${KF_MIN_VERSION})
 set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
     "Tools to generate documentation"
     TYPE OPTIONAL
@@ -85,14 +85,14 @@ set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
 
 # Find KdepimLibs Package
 find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
-find_package(KF5Contacts ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5Contacts ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5IdentityManagement ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5MailCommon ${MAILCOMMON_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimCommonAkonadi ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
-find_package(KF5CalendarCore ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5AkonadiNotes ${AKONADINOTES_LIB_VERSION} CONFIG REQUIRED)
 
 find_package(KUserFeedback 1.2.0 CONFIG)
