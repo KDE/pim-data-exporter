@@ -124,10 +124,10 @@ target_link_libraries(pimdataexporterprivate
     KF5::Mime
     KF5::MailTransport
     KF5::MailCommon
-    KF5::Archive
+    KF${KF_MAJOR_VERSION}::Archive
     KF5::PimCommonAkonadi
-    KF5::I18n
-    KF5::CalendarCore
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::CalendarCore
     KF5::AkonadiNotes
     )
 

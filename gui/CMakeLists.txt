@@ -76,19 +76,19 @@ endif()
 
 target_link_libraries(pimdataexporter
     PRIVATE
-    KF5::XmlGui
-    KF5::DBusAddons
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::DBusAddons
     KF5::MailCommon
     KF5::PimCommon
     pimdataexporterprivate
-    KF5::Archive
-    KF5::ItemViews
-    KF5::KIOFileWidgets
-    KF5::Notifications
-    KF5::I18n
-    KF5::Crash
+    KF${KF_MAJOR_VERSION}::Archive
+    KF${KF_MAJOR_VERSION}::ItemViews
+    KF${KF_MAJOR_VERSION}::KIOFileWidgets
+    KF${KF_MAJOR_VERSION}::Notifications
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::Crash
     ${pimdataexporter_userfeedback_LIB}
-    KF5::WidgetsAddons
+    KF${KF_MAJOR_VERSION}::WidgetsAddons
     )
 
 

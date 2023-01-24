@@ -14,10 +14,10 @@ target_link_libraries(selectiontreewidget_gui
     KF5::AkonadiPrivate
     KF5::MailCommon
     KF5::PimCommon
-    KF5::Archive
+    KF${KF_MAJOR_VERSION}::Archive
     pimdataexporterprivate
-    KF5::ItemViews
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::ItemViews
+    KF${KF_MAJOR_VERSION}::I18n
     )
 
 set(showarchivestructuredialog_gui_SRCS showarchivestructuredialog_gui.cpp ../dialog/showarchivestructuredialog.cpp ../pimdataexportgui_debug.cpp)
@@ -27,9 +27,9 @@ target_link_libraries(showarchivestructuredialog_gui
     KF5::AkonadiPrivate
     KF5::MailCommon
     KF5::PimCommon
-    KF5::Archive
+    KF${KF_MAJOR_VERSION}::Archive
     pimdataexporterprivate
-    KF5::ItemViews
-    KF5::I18n
-    KF5::KIOWidgets
+    KF${KF_MAJOR_VERSION}::ItemViews
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::KIOWidgets
     )
