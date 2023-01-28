@@ -50,8 +50,8 @@ void TestExportFile::start()
 {
     // Don't use setTestModeEnabled otherwise we can set env
     // QStandardPaths::setTestModeEnabled(true);
-    qputenv("XDG_DATA_HOME", mPathConfig + "/share");
-    qputenv("XDG_CONFIG_HOME", mPathConfig + "/config");
+    qputenv("XDG_DATA_HOME", QByteArray(mPathConfig + "/share"));
+    qputenv("XDG_CONFIG_HOME", QByteArray(mPathConfig + "/config"));
 
     // TODO fix file name.
     Utils::addVersion(mArchiveStorage->archive());

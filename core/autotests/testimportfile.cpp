@@ -36,8 +36,8 @@ void TestImportFile::start()
     // TODO define extract path
     QVERIFY(!mExtractPath.isEmpty());
 
-    qputenv("XDG_DATA_HOME", mExtractPath.toLatin1() + "/share");
-    qputenv("XDG_CONFIG_HOME", mExtractPath.toLatin1() + "/config");
+    qputenv("XDG_DATA_HOME", QByteArray(mExtractPath.toLatin1() + "/share"));
+    qputenv("XDG_CONFIG_HOME", QByteArray(mExtractPath.toLatin1() + "/config"));
 
     const int version = Utils::archiveVersion(mArchiveStorage->archive());
     QVERIFY(version <= Utils::currentArchiveVersion());
