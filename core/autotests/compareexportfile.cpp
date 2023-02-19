@@ -66,14 +66,14 @@ void CompareExportFile::compareFiles()
             const QFileInfo fileInfo(fileName);
             QDir().mkpath(fileInfo.dir().path());
 
-            QFile f(fileName);
+            QFile newFile(fileName);
             // qDebug() << " fileName" << fileName;
-            QVERIFY(f.open(QIODevice::WriteOnly));
+            QVERIFY(newFile.open(QIODevice::WriteOnly));
 
             // Store data.
             const QByteArray data = currentFile->data();
-            QCOMPARE(f.write(data), data.length());
-            f.close();
+            QCOMPARE(newFile.write(data), data.length());
+            newFile.close();
 
             CompareFileHelper::compareFile(mListFilePath + QStringLiteral("/references/") + adaptFile, fileName);
         }

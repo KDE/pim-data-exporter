@@ -131,8 +131,8 @@ void ExportMailJobInterfaceImpl::exportFilters()
         QTemporaryFile tmp;
         tmp.open();
         const QUrl url = QUrl::fromLocalFile(tmp.fileName());
-        MailCommon::FilterImporterExporter exportFilters;
-        exportFilters.exportFilters(lstFilter, url, true);
+        MailCommon::FilterImporterExporter mailCommonExportFilters;
+        mailCommonExportFilters.exportFilters(lstFilter, url, true);
         tmp.close();
         const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("filters"));
         if (fileAdded) {

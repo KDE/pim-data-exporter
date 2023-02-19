@@ -204,9 +204,9 @@ void ImportAddressbookJobInterface::restoreResources()
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
                         if (akonadiAgentConfigEntry->isFile()) {
-                            const auto file = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
-                            copyArchiveFileTo(file, copyToDirName);
-                            resourceName = file->name();
+                            const auto akonadiAgentConfigEntryFile = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
+                            copyArchiveFileTo(akonadiAgentConfigEntryFile, copyToDirName);
+                            resourceName = akonadiAgentConfigEntryFile->name();
                             filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);
                         }
                     }
