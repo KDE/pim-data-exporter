@@ -121,7 +121,7 @@ generate_export_header(pimdataexporterprivate BASE_NAME pimdataexporter)
 target_link_libraries(pimdataexporterprivate
     PRIVATE
     KF5::AkonadiCore
-    KF5::Mime
+    KPim${KF_MAJOR_VERSION}::Mime
     KF5::MailTransport
     KF5::MailCommon
     KF${KF_MAJOR_VERSION}::Archive
