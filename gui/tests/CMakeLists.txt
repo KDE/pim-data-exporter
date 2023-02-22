@@ -12,7 +12,7 @@ add_executable(selectiontreewidget_gui ${selectiontreewidget_gui_SRCS})
 target_link_libraries(selectiontreewidget_gui
     KF5::AkonadiCore
     KF5::AkonadiPrivate
-    KF5::MailCommon
+    KPim${KF_MAJOR_VERSION}::MailCommon
     KF5::PimCommon
     KF${KF_MAJOR_VERSION}::Archive
     pimdataexporterprivate
@@ -25,7 +25,7 @@ add_executable(showarchivestructuredialog_gui ${showarchivestructuredialog_gui_S
 target_link_libraries(showarchivestructuredialog_gui
     KF5::AkonadiCore
     KF5::AkonadiPrivate
-    KF5::MailCommon
+    KPim${KF_MAJOR_VERSION}::MailCommon
     KF5::PimCommon
     KF${KF_MAJOR_VERSION}::Archive
     pimdataexporterprivate

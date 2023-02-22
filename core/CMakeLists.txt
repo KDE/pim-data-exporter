@@ -122,8 +122,8 @@ target_link_libraries(pimdataexporterprivate
     PRIVATE
     KF5::AkonadiCore
     KPim${KF_MAJOR_VERSION}::Mime
-    KF5::MailTransport
-    KF5::MailCommon
+    KPim${KF_MAJOR_VERSION}::MailTransport
+    KPim${KF_MAJOR_VERSION}::MailCommon
     KF${KF_MAJOR_VERSION}::Archive
     KF5::PimCommonAkonadi
     KF${KF_MAJOR_VERSION}::I18n
