@@ -3,11 +3,8 @@
 "dtd/kdedbx45.dtd" [
   <!-- Define an entity for your application if it is not part of KDE
        CVS -->
-  <!ENTITY i18n-pimsettingexporter "<application
->pimsettingexporter</application
->">
-  <!ENTITY knode "<application
->Knode</application
+  <!ENTITY i18n-pimdataexporter "<application
+>Exportador de dados PIM</application
 >">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % Brazilian-Portuguese "INCLUDE"
@@ -17,11 +14,11 @@
 >">
 ]>
 
-<article id="pimsettingexporter" lang="&language;">
+<article id="pimdataexporter" lang="&language;">
 
-<articleinfo id="pimsettingexporterinfo">
+<articleinfo id="pimdataexporterinfo">
 <title
->Manual do &i18n-pimsettingexporter;</title>
+>Manual do &i18n-pimdataexporter;</title>
 
 <authorgroup>
 <author
@@ -70,9 +67,9 @@
 >&FDLNotice;</legalnotice>
 
 <date
->02/12/2013</date>
+>27/07/2016</date>
 <releaseinfo
->&kde; 4.12</releaseinfo>
+>5.3.40 (applications 16.08)</releaseinfo>
 
 </articleinfo>
 
@@ -82,13 +79,11 @@
 >Introdução</title>
 
 <para
->O &i18n-pimsettingexporter; permite exportar e importar definições PIM e e-mails locais. Você pode criar cópias de segurança e restaurá-las a partir dos seguintes programas: <simplelist>
+>O &i18n-pimdataexporter; permite exportar e importar definições PIM e e-mails locais. Você pode criar cópias de segurança e restaurá-las a partir dos seguintes programas: <simplelist>
 <member
 >&kmail;</member>
 <member
 >&knotes;</member>
-<member
->&knode;</member>
 <member
 >&akregator;</member>
 <member
@@ -96,15 +91,15 @@
 <member
 >&kalarm;</member>
 <member
->&kjots;</member>
+>&korganizer;</member>
 </simplelist>
 </para>
 
 <sect2 id="using-kapp">
 <title
->Usando o &i18n-pimsettingexporter;</title>
+>Usando o &i18n-pimdataexporter;</title>
 <para
->A cópia de segurança dos dados é uma prática essencial para todos os usuários. O &i18n-pimsettingexporter; é uma ótima ferramenta para criar cópias de segurança ou mover todas as suas configurações para uma nova instalação. Você também poderá usar o &i18n-pimsettingexporter; para importar as cópias de segurança anteriores.</para>
+>A cópia de segurança dos dados é uma prática essencial para todos os usuários. O &i18n-pimdataexporter; é uma ótima ferramenta para criar cópias de segurança ou mover todas as suas configurações para uma nova instalação. Você também poderá usar o &i18n-pimdataexporter; para importar as cópias de segurança anteriores.</para>
 <para
 >Você pode usar a opção <menuchoice
 ><guimenu
@@ -112,24 +107,8 @@
 ><guimenuitem
 >Exportar os dados do &kmail;...</guimenuitem
 ></menuchoice
-> através da janela de exibição da mensagem ou poderá executar o &i18n-pimsettingexporter; como um aplicativo independente, através do lançador de aplicativos.</para>
-<screenshot>
-<screeninfo
->Janela do &i18n-pimsettingexporter;</screeninfo>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="pimsettingexporter.png" format="PNG"/>
-    </imageobject>
-    <textobject>
-      <phrase
->Janela do &i18n-pimsettingexporter;</phrase>
-    </textobject>
-    <caption>
-      <para
->Janela do &i18n-pimsettingexporter;</para>
-    </caption>
-  </mediaobject>
-</screenshot>
+> através da janela de exibição da mensagem ou poderá executar o &i18n-pimdataexporter; como um aplicativo independente, através do lançador de aplicativos.</para>
+
 <para
 >Para criar uma cópia de segurança, <action
 >selecione a opção <menuchoice
@@ -155,9 +134,7 @@
 >minhas-definicoes</replaceable
 >. O tipo de arquivo usado na gravação é o <filename role="extension"
 >.zip</filename
->. Se quiser um tipo diferente, desmarque a opção <guilabel
->Selecionar automaticamente a extensão do nome do arquivo</guilabel
-> e adicione a extensão ao fim do nome do seu arquivo.</para>
+>. </para>
 <para
 >A próxima tela irá permitir a seleção do que deseja copiar. Por padrão, tudo estará selecionado. <note
 > <para
@@ -168,6 +145,23 @@
 > para arquivar essas mensagens em uma pasta local.</para>
 </note
 ></para>
+<screenshot>
+<screeninfo
+>Janela de seleção</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="selection-dialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Janela de seleção</phrase>
+    </textobject>
+    <caption>
+      <para
+>Janela de seleção</para>
+    </caption>
+  </mediaobject>
+</screenshot>
 <para
 >A tela final mostra o registro do processo de geração da cópia de segurança. Você poderá fechar a janela assim que revisar o registro e confirmar que a sua cópia de segurança foi criada com sucesso.</para>
 <para
@@ -177,7 +171,15 @@
 ><guimenuitem
 >Restaurar dados...</guimenuitem
 ></menuchoice
-> dentro do &i18n-pimsettingexporter;.</para>
+> dentro do &i18n-pimdataexporter;.</para>
+<para
+>Usando <menuchoice
+><guimenu
+>Ferramentas</guimenu
+><guimenuitem
+>Mostrar informação do arquivamento</guimenuitem
+></menuchoice
+> você pode selecionar um arquivo de cópia de segurança e ver seu conteúdo.</para>
 </sect2>
 </sect1>
 
@@ -186,29 +188,17 @@
 <title
 >Créditos e licença</title>
 <para
->&i18n-pimsettingexporter;</para>
+>&i18n-pimdataexporter;</para>
 <para
->Direitos autorais do programa 2013 de &Laurent.Montel; &Laurent.Montel.mail; </para>
+>Direitos autorais do programa 2019 de &Laurent.Montel; &Laurent.Montel.mail; </para>
 <para
->Direitos autorais da documentação Copyright &copy; 2013 de &Laurent.Montel; &Laurent.Montel.mail; e &Scarlett.Clark; &Scarlett.Clark.mail; </para>
+>Direitos autorais da documentação &copy; 2019 de &Laurent.Montel; &Laurent.Montel.mail; e &Scarlett.Clark; &Scarlett.Clark.mail; </para>
 
 <para
 >Tradução de André Marcelo Alvarenga <email
 >alvarenga@kde.org</email
 ></para
-> 
-&underFDL; &underGPL; </sect1>
-
-<appendix id="installation">
-<title
->Instalação</title>
-
-<sect1 id="compilation">
-<title
->Compilação e instalação</title>
-&install.compile.documentation; </sect1>
-
-</appendix>
+> &underFDL; &underGPL; </sect1>
 
 &documentation.index;
 </article>
