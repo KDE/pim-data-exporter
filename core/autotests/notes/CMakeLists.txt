@@ -9,7 +9,7 @@ set( exportnotesjobinterfacetest_SRCS exportnotesjobinterfacetest.cpp exportnote
 add_executable( exportnotesjobinterfacetest ${exportnotesjobinterfacetest_SRCS})
 add_test(NAME exportnotesjobinterfacetest COMMAND exportnotesjobinterfacetest)
 ecm_mark_as_test(exportnotesjobinterfacetest)
-target_link_libraries( exportnotesjobinterfacetest Qt::Test pimdataexporterprivate test_resourceconverter KF${KF_MAJOR_VERSION}::ConfigCore KF${KF_MAJOR_VERSION}::Archive KF5::AkonadiCore)
+target_link_libraries( exportnotesjobinterfacetest Qt::Test pimdataexporterprivate test_resourceconverter KF${KF_MAJOR_VERSION}::ConfigCore KF${KF_MAJOR_VERSION}::Archive KPim${KF_MAJOR_VERSION}::AkonadiCore)
 #######
 
 set( importnotesjobinterfacetest_SRCS importnotesjobinterfacetest.cpp importnotesjobinterfacetestimpl.cpp
