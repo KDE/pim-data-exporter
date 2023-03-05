@@ -1080,7 +1080,7 @@ msgstr "ملفّات HTML (*.html)"
 #: gui/pimdataexporterwindow.cpp:281
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
-msgstr "رجاءً أنهِ كلّ تطبيقات «كدي PIM» قبل نسخ البيانات احتياطيًّا."
+msgstr "رجاءً أنهِ كلّ تطبيقات «كِيدِي PIM» قبل نسخ البيانات احتياطيًّا."
 
 #: gui/pimdataexporterwindow.cpp:304
 #, kde-format
@@ -1102,7 +1102,7 @@ msgstr "يجري النّسخ احتياطيًّا..."
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
-msgstr "عليك إغلاق كلّ تطبيقات «كدي PIM» قبل استعادة البيانات. أتريد المتابعة؟"
+msgstr "عليك إغلاق كلّ تطبيقات «كِيدِي PIM» قبل استعادة البيانات. أتريد المتابعة؟"
 
 #: gui/pimdataexporterwindow.cpp:380
 #, kde-format
