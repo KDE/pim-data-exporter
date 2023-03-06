@@ -3,12 +3,12 @@
 
 add_executable(pimdataexporter)
 
-if (TARGET KUserFeedbackWidgets)
+if (TARGET KUserFeedbackWidgets${KUSERFEEDBACK_SUFFIX})
     add_definitions(-DWITH_KUSERFEEDBACK)
 endif()
 
 set(pimdataexporter_userfeedback_SRCS)
-if (TARGET KUserFeedbackWidgets)
+if (TARGET KUserFeedbackWidgets${KUSERFEEDBACK_SUFFIX})
     target_sources(pimdataexporter PRIVATE
         userfeedback/userfeedbackmanager.cpp
         userfeedback/pimdataexporteduserfeedbackprovider.cpp
@@ -70,8 +70,8 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(pimdataexporter PROPERTIES UNITY_BUILD ON)
 endif()
 
-if (TARGET KUserFeedbackWidgets)
-        target_link_libraries(pimdataexporter PRIVATE KUserFeedbackWidgets)
+if (TARGET KUserFeedbackWidgets${KUSERFEEDBACK_SUFFIX})
+        target_link_libraries(pimdataexporter PRIVATE KUserFeedbackWidgets${KUSERFEEDBACK_SUFFIX})
 endif()
 
 target_link_libraries(pimdataexporter

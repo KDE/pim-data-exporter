@@ -12,8 +12,8 @@ ecm_mark_as_test(synchronizeresourcedialogtest)
 target_link_libraries(synchronizeresourcedialogtest Qt::Test Qt::Widgets KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ItemViews KF${KF_MAJOR_VERSION}::ConfigGui)
 
 set(pimdataexporter_userfeedback_LIB)
-if (TARGET KUserFeedbackWidgets)
-        set(pimdataexporter_userfeedback_LIB KUserFeedbackWidgets)
+if (TARGET KUserFeedbackWidgets${KUSERFEEDBACK_SUFFIX})
+        set(pimdataexporter_userfeedback_LIB KUserFeedbackWidgets${KUSERFEEDBACK_SUFFIX})
 endif()
 
 #add_executable( pimdataexporterconfiguredialogtest pimdataexporterconfiguredialogtest.cpp ../dialog/pimdataexporterconfiguredialog.cpp ../widgets/pimdataexporterconfigurewidget.cpp ${pimdataexporter_kcfg_SRCS})
