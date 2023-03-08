@@ -6,8 +6,11 @@
 
 #pragma once
 
+#ifdef USE_KUSERFEEDBACK_QT6
+#include <KUserFeedbackQt6/Provider>
+#else
 #include <KUserFeedback/Provider>
-
+#endif
 class PimDataExportedUserFeedbackProvider : public KUserFeedback::Provider
 {
     Q_OBJECT
