@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:47+0000\n"
+"POT-Creation-Date: 2023-03-09 00:47+0000\n"
 "PO-Revision-Date: 2020-06-05 22:49+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -718,18 +718,18 @@ msgstr "Varundusarhiivi struktuur"
 msgid "backup-structure.txt file was not found."
 msgstr "Faili backup-structure.txt ei leitud."
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "PIM-i andmete ekspordi seadistamine"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:48
 #, kde-format
 msgid "General"
 msgstr "Üldine"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:63
 #, kde-format
 msgid "User Feedback"
 msgstr "Kasutaja tagasiside"
@@ -982,27 +982,27 @@ msgstr "&Tööriistad"
 msgid "Main Toolbar"
 msgstr "Peamine tööriistariba"
 
-#: gui/pimdataexporterwindow.cpp:125
+#: gui/pimdataexporterwindow.cpp:130
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Täieliku sünkroonimise alustamine..."
 
-#: gui/pimdataexporterwindow.cpp:155
+#: gui/pimdataexporterwindow.cpp:160
 #, kde-format
 msgid "Full sync finished."
 msgstr "Täielik sünkroonimine on lõpetatud."
 
-#: gui/pimdataexporterwindow.cpp:162
+#: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "\"%1\" täielik sünkroonimine on valmis."
 
-#: gui/pimdataexporterwindow.cpp:167
+#: gui/pimdataexporterwindow.cpp:172
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "\"%1\" täielik sünkroonimine nurjus."
 
-#: gui/pimdataexporterwindow.cpp:173
+#: gui/pimdataexporterwindow.cpp:178
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -1011,88 +1011,88 @@ msgstr ""
 "Andmete taastamiseks tuleb kasutada tööriista \"pimdataexporter\". Ole "
 "ettevaatlik, sest see võib kirjutada üle olemasolevad seadistused ja andmed."
 
-#: gui/pimdataexporterwindow.cpp:175 gui/pimdataexporterwindow.cpp:280
-#: gui/pimdataexporterwindow.cpp:358
+#: gui/pimdataexporterwindow.cpp:180 gui/pimdataexporterwindow.cpp:285
+#: gui/pimdataexporterwindow.cpp:363
 #, kde-format
 msgid "Backup"
 msgstr "Varundamine"
 
-#: gui/pimdataexporterwindow.cpp:202
+#: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Export Data..."
 msgstr "Ekspordi andmed..."
 
-#: gui/pimdataexporterwindow.cpp:207
+#: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Import Data..."
 msgstr "Impordi andmed..."
 
-#: gui/pimdataexporterwindow.cpp:212
+#: gui/pimdataexporterwindow.cpp:217
 #, kde-format
 msgid "Save log..."
 msgstr "Salvesta logi..."
 
-#: gui/pimdataexporterwindow.cpp:215
+#: gui/pimdataexporterwindow.cpp:220
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Näita arhiivi struktuuriteavet..."
 
-#: gui/pimdataexporterwindow.cpp:218
+#: gui/pimdataexporterwindow.cpp:223
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Näita arhiivi teavet..."
 
-#: gui/pimdataexporterwindow.cpp:222
+#: gui/pimdataexporterwindow.cpp:227
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Näita aktiivse arhiivi teavet..."
 
-#: gui/pimdataexporterwindow.cpp:258
+#: gui/pimdataexporterwindow.cpp:263
 #, kde-format
 msgid "Select Archive"
 msgstr "Arhiivi valimine"
 
-#: gui/pimdataexporterwindow.cpp:258
+#: gui/pimdataexporterwindow.cpp:263
 #, kde-format
 msgid "Zip file"
 msgstr "Zip-fail"
 
-#: gui/pimdataexporterwindow.cpp:270
+#: gui/pimdataexporterwindow.cpp:275
 #, kde-format
 msgid "Log is empty."
 msgstr "Logi on tühi"
 
-#: gui/pimdataexporterwindow.cpp:270
+#: gui/pimdataexporterwindow.cpp:275
 #, kde-format
 msgid "Save log"
 msgstr "Logi salvestamine"
 
-#: gui/pimdataexporterwindow.cpp:274
+#: gui/pimdataexporterwindow.cpp:279
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML-failid (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:285
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "Palun välju enne andmete varundamist kõigist kdepim'i rakendustest."
 
-#: gui/pimdataexporterwindow.cpp:303
+#: gui/pimdataexporterwindow.cpp:308
 #, kde-format
 msgid "Create backup"
 msgstr "Varukoopia loomine"
 
-#: gui/pimdataexporterwindow.cpp:305
+#: gui/pimdataexporterwindow.cpp:310
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip-fail (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:315
+#: gui/pimdataexporterwindow.cpp:320
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Varundamine käib ..."
 
-#: gui/pimdataexporterwindow.cpp:357
+#: gui/pimdataexporterwindow.cpp:362
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1100,17 +1100,17 @@ msgid ""
 msgstr ""
 "Enne andmete taastamist tuleb sulgeda kõik kdepim'i rakendused. Kas jätkata?"
 
-#: gui/pimdataexporterwindow.cpp:371
+#: gui/pimdataexporterwindow.cpp:376
 #, kde-format
 msgid "Restore backup"
 msgstr "Taastamine varukoopialt"
 
-#: gui/pimdataexporterwindow.cpp:373
+#: gui/pimdataexporterwindow.cpp:378
 #, kde-format
 msgid "Zip File"
 msgstr "Zip-fail"
 
-#: gui/pimdataexporterwindow.cpp:405
+#: gui/pimdataexporterwindow.cpp:410
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Taastamine käib ..."
