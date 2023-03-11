@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2011-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(PIM_VERSION "5.22.40")
+set(PIM_VERSION "5.22.80")
 project(pim-data-exporter VERSION ${PIM_VERSION})
-set(RELEASE_SERVICE_VERSION "23.03.40")
+set(RELEASE_SERVICE_VERSION "23.03.80")
 set(KF_MIN_VERSION "5.103.0")
 
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
@@ -32,7 +32,7 @@ file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h *.c)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
 # Do NOT add quote
-set(KDEPIM_DEV_VERSION alpha)
+set(KDEPIM_DEV_VERSION beta1)
 
 # add an extra space
 if(DEFINED KDEPIM_DEV_VERSION)
