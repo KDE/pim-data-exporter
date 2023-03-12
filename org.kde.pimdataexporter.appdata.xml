@@ -26,7 +26,6 @@
   <name xml:lang="hu">PIM adatexportáló</name>
   <name xml:lang="ia">PIM Data Exporter (exportator de datos de PIM)</name>
   <name xml:lang="id">PIM Data Exporter</name>
-  <name xml:lang="is">PIM-gagnaútflutningur</name>
   <name xml:lang="it">Esportatore dei dati di PIM</name>
   <name xml:lang="ka">PIM -ის მონაცემების გატანა</name>
   <name xml:lang="ko">PIM 데이터 내보내기</name>
@@ -61,7 +60,6 @@
   <summary xml:lang="hu">Menti a PIM alkalmazások összes adatát, és visszaállítja azokat egy másik rendszeren.</summary>
   <summary xml:lang="ia">Salveguarda omne datos ex apps de PIM e restabili los in altere systemas,</summary>
   <summary xml:lang="id">Menyimpan semua data dari aplikasi PIM dan mengembalikannya di sistem lain.</summary>
-  <summary xml:lang="is">Vistar öll gögn úr PIM-forritum og endurheimtir þau í öðrum tölvum.</summary>
   <summary xml:lang="it">Salva tutti i dati dalle applicazioni di PIM e li ripristina in altri sistemi.</summary>
   <summary xml:lang="ka">შეინახეთ მონაცემები PIM აპიდან და აღადგინეთ ის სხვა სისტემებზე.</summary>
   <summary xml:lang="ko">PIM 프로그램의 모든 데이터를 저장하고 다른 시스템에서 복원할 수 있도록 합니다.</summary>
@@ -96,7 +94,6 @@
   <developer_name xml:lang="hu">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ia">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="id">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="is">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="it">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ka">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ko">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -135,7 +132,6 @@
     <p xml:lang="hu">A PIM adatexportáló PIM beállításokat exportál és importál</p>
     <p xml:lang="ia">PIM Data Exporter exporta e importa preferentias de PIM</p>
     <p xml:lang="id">PIM Data Exporter mengekspor dan mengimpor pengaturan PIM</p>
-    <p xml:lang="is">PIM-gagnaútflutningur flytur PIM-stillingar út og inn</p>
     <p xml:lang="it">L'esportatore dei dati di PIM esporta ed importa le impostazioni di PIM</p>
     <p xml:lang="ka">PIM-ის მონაცემების გამტანს მისი შემოტანაც შეუძლია</p>
     <p xml:lang="ko">PIM 데이터 내보내기 도구에서는 PIM 설정을 내보내고 가져옵니다</p>
