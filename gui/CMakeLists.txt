@@ -79,7 +79,7 @@ target_link_libraries(pimdataexporter
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::DBusAddons
     KPim${KF_MAJOR_VERSION}::MailCommon
-    KF5::PimCommon
+    KPim${KF_MAJOR_VERSION}::PimCommon
     pimdataexporterprivate
     KF${KF_MAJOR_VERSION}::Archive
     KF${KF_MAJOR_VERSION}::ItemViews

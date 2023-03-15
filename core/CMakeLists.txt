@@ -125,7 +125,7 @@ target_link_libraries(pimdataexporterprivate
     KPim${KF_MAJOR_VERSION}::MailTransport
     KPim${KF_MAJOR_VERSION}::MailCommon
     KF${KF_MAJOR_VERSION}::Archive
-    KF5::PimCommonAkonadi
+    KPim${KF_MAJOR_VERSION}::PimCommonAkonadi
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::CalendarCore
     KPim${KF_MAJOR_VERSION}::AkonadiNotes

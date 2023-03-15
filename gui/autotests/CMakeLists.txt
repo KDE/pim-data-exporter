@@ -33,11 +33,11 @@ add_executable( selectiontypetreewidgettest selectiontypetreewidgettest.cpp sele
     ../widgets/selectiontypetreewidget.cpp ${pimdataexporter_kcfg_SRCS})
 add_test(NAME selectiontypetreewidgettest COMMAND selectiontypetreewidgettest)
 ecm_mark_as_test(selectiontypetreewidgettest)
-target_link_libraries(selectiontypetreewidgettest Qt::Test Qt::Widgets KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ItemViews pimdataexporterprivate KF${KF_MAJOR_VERSION}::ConfigCore KF${KF_MAJOR_VERSION}::ConfigGui KF5::PimCommonAkonadi)
+target_link_libraries(selectiontypetreewidgettest Qt::Test Qt::Widgets KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ItemViews pimdataexporterprivate KF${KF_MAJOR_VERSION}::ConfigCore KF${KF_MAJOR_VERSION}::ConfigGui KPim${KF_MAJOR_VERSION}::PimCommonAkonadi)
 
 
 add_executable( selectiontypedialogtest selectiontypedialogtest.h selectiontypedialogtest.cpp
     ../widgets/selectiontypetreewidget.cpp ../dialog/selectiontypedialog.cpp ${pimdataexporter_kcfg_SRCS})
 add_test(NAME selectiontypedialogtest COMMAND selectiontypedialogtest)
 ecm_mark_as_test(selectiontypedialogtest)
-target_link_libraries(selectiontypedialogtest Qt::Test Qt::Widgets KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ItemViews pimdataexporterprivate KF${KF_MAJOR_VERSION}::ConfigCore KF${KF_MAJOR_VERSION}::ConfigGui KF5::PimCommonAkonadi)
+target_link_libraries(selectiontypedialogtest Qt::Test Qt::Widgets KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::ItemViews pimdataexporterprivate KF${KF_MAJOR_VERSION}::ConfigCore KF${KF_MAJOR_VERSION}::ConfigGui KPim${KF_MAJOR_VERSION}::PimCommonAkonadi)

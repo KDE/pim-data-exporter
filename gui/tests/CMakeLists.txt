@@ -13,7 +13,7 @@ target_link_libraries(selectiontreewidget_gui
     KPim${KF_MAJOR_VERSION}::AkonadiCore
     KPim${KF_MAJOR_VERSION}::AkonadiPrivate
     KPim${KF_MAJOR_VERSION}::MailCommon
-    KF5::PimCommon
+    KPim${KF_MAJOR_VERSION}::PimCommon
     KF${KF_MAJOR_VERSION}::Archive
     pimdataexporterprivate
     KF${KF_MAJOR_VERSION}::ItemViews
@@ -26,7 +26,7 @@ target_link_libraries(showarchivestructuredialog_gui
     KPim${KF_MAJOR_VERSION}::AkonadiCore
     KPim${KF_MAJOR_VERSION}::AkonadiPrivate
     KPim${KF_MAJOR_VERSION}::MailCommon
-    KF5::PimCommon
+    KPim${KF_MAJOR_VERSION}::PimCommon
     KF${KF_MAJOR_VERSION}::Archive
     pimdataexporterprivate
     KF${KF_MAJOR_VERSION}::ItemViews
