@@ -51,7 +51,7 @@
   <summary xml:lang="da">Gemmer alle data fra PIM-programmer og genopretter dem på andre systemer.</summary>
   <summary xml:lang="de">Speichert alle Daten von PIM-Anwendungen, um sie später in anderen Systemen wiederherzustellen.</summary>
   <summary xml:lang="en-GB">Saves all data from PIM apps and restore them in other systems.</summary>
-  <summary xml:lang="es">Guarda todos los datos desde aplicaciones PIM y las restaura en otros sistemas.</summary>
+  <summary xml:lang="es">Guarda todos los datos de las aplicaciones PIM y los restaura en otros sistemas.</summary>
   <summary xml:lang="et">Kõigi PIM-rakenduste andmete salvestamine ja nende taastamine teistes süsteemides.</summary>
   <summary xml:lang="eu">PIM aplikazioetako datu guztiak gorde eta beste sistema batzuetan leheneratzen ditu.</summary>
   <summary xml:lang="fi">Tallentaa kaikkien PIM-sovellusten tiedot ja palauttaa ne toisessa järjestelmässä.</summary>
@@ -123,7 +123,7 @@
     <p xml:lang="da">Eksportør af PIM-data eksporterer og importerer PIM-indstillinger</p>
     <p xml:lang="de">Mit PIM-Daten-Export können Sie PIM-Einstellungen exportieren oder importieren.</p>
     <p xml:lang="en-GB">PIM Data Exporter exports and imports PIM settings</p>
-    <p xml:lang="es">El exportador de datos  PIM exporta e importa preferencias de PIM</p>
+    <p xml:lang="es">El exportador de datos PIM exporta e importa preferencias de PIM</p>
     <p xml:lang="et">PIM-andmete eksportija ekspordib ja impordib PIM-seadistusi</p>
     <p xml:lang="eu">PIM datu-esportatzaileak PIM ezarpenak esportatu eta inportatzen ditu</p>
     <p xml:lang="fi">PIM-tietojen viennillä viedään ja tuodaan PIM-asetuksia</p>
