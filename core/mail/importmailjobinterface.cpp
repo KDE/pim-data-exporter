@@ -1109,11 +1109,7 @@ void ImportMailJobInterface::importTemplatesConfig(const KArchiveFile *templates
         // Identity
         if (str.startsWith(templateGroupIdentityPattern)) {
             bool found = false;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-            const int identity = str.rightRef(str.length() - templateGroupIdentityPattern.length()).toInt(&found);
-#else
             const int identity = QStringView(str).right(str.length() - templateGroupIdentityPattern.length()).toInt(&found);
-#endif
             if (found) {
                 KConfigGroup oldGroup = templateConfig->group(str);
                 if (mHashIdentity.contains(identity)) {

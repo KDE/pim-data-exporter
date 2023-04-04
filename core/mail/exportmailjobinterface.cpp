@@ -282,11 +282,7 @@ void ExportMailJobInterface::backupConfig()
 
         for (const QString &str : archiveList) {
             bool found = false;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-            const int collectionId = str.rightRef(str.length() - archiveGroupPattern.length()).toInt(&found);
-#else
             const int collectionId = QStringView(str).right(str.length() - archiveGroupPattern.length()).toInt(&found);
-#endif
             if (found) {
                 KConfigGroup oldGroup = archiveConfig->group(str);
                 const QString realPath = convertToFullCollectionPath(collectionId);
@@ -318,11 +314,7 @@ void ExportMailJobInterface::backupConfig()
         const QStringList templateList = templateConfig->groupList().filter(QRegularExpression(QStringLiteral("Templates #\\d+")));
         for (const QString &str : templateList) {
             bool found = false;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-            const int collectionId = str.rightRef(str.length() - templateGroupPattern.length()).toInt(&found);
-#else
             const int collectionId = QStringView(str).right(str.length() - templateGroupPattern.length()).toInt(&found);
-#endif
             if (found) {
                 KConfigGroup oldGroup = templateConfig->group(str);
                 const QString realPath = convertToFullCollectionPath(collectionId);
@@ -377,11 +369,7 @@ void ExportMailJobInterface::backupConfig()
         const QStringList folderList = kmailConfig->groupList().filter(QRegularExpression(QStringLiteral("Folder-\\d+")));
         for (const QString &str : folderList) {
             bool found = false;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-            const int collectionId = str.rightRef(str.length() - folderGroupPattern.length()).toInt(&found);
-#else
             const int collectionId = QStringView(str).right(str.length() - folderGroupPattern.length()).toInt(&found);
-#endif
             if (found) {
                 KConfigGroup oldGroup = kmailConfig->group(str);
                 ImportExportMailUtil::cleanupFolderSettings(oldGroup);
@@ -426,11 +414,7 @@ void ExportMailJobInterface::backupConfig()
             const QStringList storageList = storageGroup.keyList().filter(QRegularExpression(QStringLiteral("MessageUniqueIdForStorageModel\\d+")));
             for (const QString &str : storageList) {
                 bool found = false;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-                const int collectionId = str.rightRef(str.length() - storageModelSelectedPattern.length()).toInt(&found);
-#else
                 const int collectionId = QStringView(str).right(str.length() - storageModelSelectedPattern.length()).toInt(&found);
-#endif
                 const QString oldValue = storageGroup.readEntry(str);
                 if (found) {
                     const QString realPath = convertToFullCollectionPath(collectionId);
