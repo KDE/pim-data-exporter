@@ -92,9 +92,8 @@ find_package(KF6CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KPim6AkonadiNotes ${AKONADINOTES_LIB_VERSION} CONFIG REQUIRED)
 
 set(KUSERFEEDBACK_SUFFIX "Qt6")
-find_package(KUserFeedback${KUSERFEEDBACK_SUFFIX} 1.2.1 CONFIG)
-add_definitions(-DUSE_KUSERFEEDBACK_QT6)
-set_package_properties(KUserFeedback${KUSERFEEDBACK_SUFFIX} PROPERTIES DESCRIPTION "User Feedback lib" TYPE OPTIONAL PURPOSE "Allow to send Telemetry Information (optional). It can be disable in apps.")
+find_package(KUserFeedbackQt6 1.2.1 CONFIG)
+set_package_properties(KUserFeedbackQt6 PROPERTIES DESCRIPTION "User Feedback lib" TYPE OPTIONAL PURPOSE "Allow to send Telemetry Information (optional). It can be disable in apps.")
 
 
 include_directories(${pim-data-exporter_SOURCE_DIR} ${pim-data-exporter_BINARY_DIR})
