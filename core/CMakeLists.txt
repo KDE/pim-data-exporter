@@ -120,15 +120,15 @@ generate_export_header(pimdataexporterprivate BASE_NAME pimdataexporter)
 
 target_link_libraries(pimdataexporterprivate
     PRIVATE
-    KPim${KF_MAJOR_VERSION}::AkonadiCore
-    KPim${KF_MAJOR_VERSION}::Mime
-    KPim${KF_MAJOR_VERSION}::MailTransport
-    KPim${KF_MAJOR_VERSION}::MailCommon
-    KF${KF_MAJOR_VERSION}::Archive
-    KPim${KF_MAJOR_VERSION}::PimCommonAkonadi
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::CalendarCore
-    KPim${KF_MAJOR_VERSION}::AkonadiNotes
+    KPim6::AkonadiCore
+    KPim6::Mime
+    KPim6::MailTransport
+    KPim6::MailCommon
+    KF6::Archive
+    KPim6::PimCommonAkonadi
+    KF6::I18n
+    KF6::CalendarCore
+    KPim6::AkonadiNotes
     )
 
 set_target_properties(pimdataexporterprivate PROPERTIES VERSION ${KDEPIM_LIB_VERSION} SOVERSION ${KDEPIM_LIB_SOVERSION})

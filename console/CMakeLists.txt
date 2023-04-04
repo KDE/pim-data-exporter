@@ -30,7 +30,7 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(pimdataexporterconsole PROPERTIES UNITY_BUILD ON)
 endif()
 
-target_link_libraries(pimdataexporterconsole KF${KF_MAJOR_VERSION}::ConfigCore KF${KF_MAJOR_VERSION}::CoreAddons KF${KF_MAJOR_VERSION}::I18n KF${KF_MAJOR_VERSION}::Archive KPim${KF_MAJOR_VERSION}::AkonadiCore   KPim${KF_MAJOR_VERSION}::MailCommon
+target_link_libraries(pimdataexporterconsole KF6::ConfigCore KF6::CoreAddons KF6::I18n KF6::Archive KPim6::AkonadiCore   KPim6::MailCommon
     pimdataexporterprivate
     )
 if (BUILD_TESTING)

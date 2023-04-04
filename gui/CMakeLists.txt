@@ -76,19 +76,19 @@ endif()
 
 target_link_libraries(pimdataexporter
     PRIVATE
-    KF${KF_MAJOR_VERSION}::XmlGui
-    KF${KF_MAJOR_VERSION}::DBusAddons
-    KPim${KF_MAJOR_VERSION}::MailCommon
-    KPim${KF_MAJOR_VERSION}::PimCommon
+    KF6::XmlGui
+    KF6::DBusAddons
+    KPim6::MailCommon
+    KPim6::PimCommon
     pimdataexporterprivate
-    KF${KF_MAJOR_VERSION}::Archive
-    KF${KF_MAJOR_VERSION}::ItemViews
-    KF${KF_MAJOR_VERSION}::KIOFileWidgets
-    KF${KF_MAJOR_VERSION}::Notifications
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::Crash
+    KF6::Archive
+    KF6::ItemViews
+    KF6::KIOFileWidgets
+    KF6::Notifications
+    KF6::I18n
+    KF6::Crash
     ${pimdataexporter_userfeedback_LIB}
-    KF${KF_MAJOR_VERSION}::WidgetsAddons
+    KF6::WidgetsAddons
     )
 
 

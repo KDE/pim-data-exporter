@@ -10,26 +10,26 @@ include_directories(
 set(selectiontreewidget_gui_SRCS selectiontreewidget_gui.cpp ../dialog/selectiontypedialog.cpp ../widgets/selectiontypetreewidget.cpp ../pimdataexportgui_debug.cpp)
 add_executable(selectiontreewidget_gui ${selectiontreewidget_gui_SRCS})
 target_link_libraries(selectiontreewidget_gui
-    KPim${KF_MAJOR_VERSION}::AkonadiCore
-    KPim${KF_MAJOR_VERSION}::AkonadiPrivate
-    KPim${KF_MAJOR_VERSION}::MailCommon
-    KPim${KF_MAJOR_VERSION}::PimCommon
-    KF${KF_MAJOR_VERSION}::Archive
+    KPim6::AkonadiCore
+    KPim6::AkonadiPrivate
+    KPim6::MailCommon
+    KPim6::PimCommon
+    KF6::Archive
     pimdataexporterprivate
-    KF${KF_MAJOR_VERSION}::ItemViews
-    KF${KF_MAJOR_VERSION}::I18n
+    KF6::ItemViews
+    KF6::I18n
     )
 
 set(showarchivestructuredialog_gui_SRCS showarchivestructuredialog_gui.cpp ../dialog/showarchivestructuredialog.cpp ../pimdataexportgui_debug.cpp)
 add_executable(showarchivestructuredialog_gui ${showarchivestructuredialog_gui_SRCS})
 target_link_libraries(showarchivestructuredialog_gui
-    KPim${KF_MAJOR_VERSION}::AkonadiCore
-    KPim${KF_MAJOR_VERSION}::AkonadiPrivate
-    KPim${KF_MAJOR_VERSION}::MailCommon
-    KPim${KF_MAJOR_VERSION}::PimCommon
-    KF${KF_MAJOR_VERSION}::Archive
+    KPim6::AkonadiCore
+    KPim6::AkonadiPrivate
+    KPim6::MailCommon
+    KPim6::PimCommon
+    KF6::Archive
     pimdataexporterprivate
-    KF${KF_MAJOR_VERSION}::ItemViews
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::KIOWidgets
+    KF6::ItemViews
+    KF6::I18n
+    KF6::KIOWidgets
     )
