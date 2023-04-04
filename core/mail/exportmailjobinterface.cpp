@@ -500,7 +500,7 @@ void ExportMailJobInterface::backupConfig()
         }
 
         // Automatic Add Contacts
-        const QVector<uint> listIdentities = listIdentityUoid();
+        const QList<uint> listIdentities = listIdentityUoid();
         for (uint identity : listIdentities) {
             const QString groupId = QStringLiteral("Automatic Add Contacts %1").arg(identity);
             if (kmailConfig->hasGroup(groupId)) {

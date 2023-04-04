@@ -20,7 +20,7 @@ ExportAlarmJobInterfaceTestImpl::ExportAlarmJobInterfaceTestImpl(QObject *parent
 
 ExportAlarmJobInterfaceTestImpl::~ExportAlarmJobInterfaceTestImpl() = default;
 
-QVector<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceTestImpl::listOfResource()
+QList<Utils::AkonadiInstanceInfo> ExportAlarmJobInterfaceTestImpl::listOfResource()
 {
     return mListAkonadiInstanceInfo;
 }

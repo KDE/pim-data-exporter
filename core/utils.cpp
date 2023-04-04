@@ -218,9 +218,9 @@ QString Utils::storedTypeToI18n(StoredType type)
     return {};
 }
 
-QVector<Utils::AkonadiInstanceInfo> Utils::listOfResource()
+QList<Utils::AkonadiInstanceInfo> Utils::listOfResource()
 {
-    QVector<Utils::AkonadiInstanceInfo> instanceInfoList;
+    QList<Utils::AkonadiInstanceInfo> instanceInfoList;
     Akonadi::AgentManager *manager = Akonadi::AgentManager::self();
     const Akonadi::AgentInstance::List list = manager->instances();
     instanceInfoList.reserve(list.count());

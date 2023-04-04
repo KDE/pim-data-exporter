@@ -26,7 +26,7 @@ void ExportNotesJobInterfaceTestImpl::convertCollectionIdsToRealPath(KConfigGrou
     resourceConverterTest.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
 }
 
-QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()
+QList<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceTestImpl::listOfResource()
 {
     return mListAkonadiInstanceInfo;
 }

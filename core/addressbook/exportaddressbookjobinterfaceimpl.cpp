@@ -25,7 +25,7 @@ ExportAddressbookJobInterfaceImpl::ExportAddressbookJobInterfaceImpl(QObject *pa
 
 ExportAddressbookJobInterfaceImpl::~ExportAddressbookJobInterfaceImpl() = default;
 
-QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceImpl::listOfResource()
+QList<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceImpl::listOfResource()
 {
     return Utils::listOfResource();
 }

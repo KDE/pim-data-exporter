@@ -92,7 +92,7 @@ Q_REQUIRED_RESULT PIMDATAEXPORTER_EXPORT QString resourceMailArchiveName();
 Q_REQUIRED_RESULT PIMDATAEXPORTER_EXPORT QString prefixAkonadiConfigFile();
 Q_REQUIRED_RESULT PIMDATAEXPORTER_EXPORT QString exportDataTypeFileName();
 Q_REQUIRED_RESULT QString akonadiAgentName(const QString &configPath);
-Q_REQUIRED_RESULT PIMDATAEXPORTER_EXPORT QVector<Utils::AkonadiInstanceInfo> listOfResource();
+Q_REQUIRED_RESULT PIMDATAEXPORTER_EXPORT QList<Utils::AkonadiInstanceInfo> listOfResource();
 
 KZip *openZip(const QString &filename, QString &errorMsg);
 PIMDATAEXPORTER_EXPORT void storeDataExportInfo(KZip *archive, const QString &exportInfoFileName);

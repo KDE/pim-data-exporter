@@ -34,7 +34,7 @@ void ExportAlarmJobInterfaceTest::exportAlarm()
     QFETCH(Utils::StoredTypes, options);
     std::unique_ptr<TestExportFile> file{new TestExportFile(this)};
     file->setPathConfig(configpath);
-    QVector<Utils::AkonadiInstanceInfo> lstInfo;
+    QList<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;
     info.identifier = QStringLiteral("akonadi_kalarm_dir_resource_1");
     lstInfo << info;

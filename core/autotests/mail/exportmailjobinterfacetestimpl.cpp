@@ -50,7 +50,7 @@ Akonadi::Collection::Id ExportMailJobInterfaceTestImpl::convertFolderPathToColle
     return resourceConverterTest.convertFolderPathToCollectionId(path);
 }
 
-QVector<MailCommon::MailFilter *> ExportMailJobInterfaceTestImpl::filters()
+QList<MailCommon::MailFilter *> ExportMailJobInterfaceTestImpl::filters()
 {
     return {};
 }
@@ -69,7 +69,7 @@ void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &arch
     slotMailsJobTerminated();
 }
 
-QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceTestImpl::listOfResource()
+QList<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceTestImpl::listOfResource()
 {
     return mListAkonadiInstanceInfo;
 }
@@ -126,7 +126,7 @@ ExportMailJobInterfaceTestImpl::createResource(const QString &resources, const Q
     return {};
 }
 
-QVector<uint> ExportMailJobInterfaceTestImpl::listIdentityUoid() const
+QList<uint> ExportMailJobInterfaceTestImpl::listIdentityUoid() const
 {
     return {10, 11, 12, 13, 14};
 }

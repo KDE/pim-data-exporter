@@ -24,7 +24,7 @@ ExportCalendarJobInterfaceImpl::ExportCalendarJobInterfaceImpl(QObject *parent,
 
 ExportCalendarJobInterfaceImpl::~ExportCalendarJobInterfaceImpl() = default;
 
-QVector<Utils::AkonadiInstanceInfo> ExportCalendarJobInterfaceImpl::listOfResource()
+QList<Utils::AkonadiInstanceInfo> ExportCalendarJobInterfaceImpl::listOfResource()
 {
     return Utils::listOfResource();
 }

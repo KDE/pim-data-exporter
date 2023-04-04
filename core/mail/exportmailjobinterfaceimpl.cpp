@@ -58,7 +58,7 @@ void ExportMailJobInterfaceImpl::convertCollectionListToRealPath(KConfigGroup &g
     converter.convertCollectionListToRealPath(group, currentKey);
 }
 
-QVector<MailCommon::MailFilter *> ExportMailJobInterfaceImpl::filters()
+QList<MailCommon::MailFilter *> ExportMailJobInterfaceImpl::filters()
 {
     return MailCommon::FilterManager::instance()->filters();
 }
@@ -69,7 +69,7 @@ QString ExportMailJobInterfaceImpl::convertToFullCollectionPath(const qlonglong 
     return converter.convertToFullCollectionPath(collectionValue);
 }
 
-QVector<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceImpl::listOfResource()
+QList<Utils::AkonadiInstanceInfo> ExportMailJobInterfaceImpl::listOfResource()
 {
     return Utils::listOfResource();
 }
@@ -126,7 +126,7 @@ QString ExportMailJobInterfaceImpl::createResource(const QString &resources, con
 
 void ExportMailJobInterfaceImpl::exportFilters()
 {
-    const QVector<MailCommon::MailFilter *> lstFilter = filters();
+    const QList<MailCommon::MailFilter *> lstFilter = filters();
     if (!lstFilter.isEmpty()) {
         QTemporaryFile tmp;
         tmp.open();
@@ -143,9 +143,9 @@ void ExportMailJobInterfaceImpl::exportFilters()
     }
 }
 
-QVector<uint> ExportMailJobInterfaceImpl::listIdentityUoid() const
+QList<uint> ExportMailJobInterfaceImpl::listIdentityUoid() const
 {
-    QVector<uint> listUiod;
+    QList<uint> listUiod;
     KIdentityManagement::IdentityManager::ConstIterator end = mIdentityManager->end();
     for (KIdentityManagement::IdentityManager::ConstIterator it = mIdentityManager->begin(); it != end; ++it) {
         const uint identityUoid = (*it).uoid();

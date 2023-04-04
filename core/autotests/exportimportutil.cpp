@@ -16,7 +16,7 @@ ExportImportUtil::~ExportImportUtil()
     delete mLogCreateResource;
 }
 
-void ExportImportUtil::setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList)
+void ExportImportUtil::setListOfResource(const QList<Utils::AkonadiInstanceInfo> &instanceInfoList)
 {
     mListAkonadiInstanceInfo = instanceInfoList;
 }

@@ -83,7 +83,7 @@ void ImportMailJobInterfaceImpl::importFilters(const QString &filename)
 {
     bool canceled = false;
     MailCommon::FilterImporterExporter exportFilters;
-    const QVector<MailCommon::MailFilter *> lstFilter = exportFilters.importFilters(canceled, MailCommon::FilterImporterExporter::KMailFilter, filename);
+    const QList<MailCommon::MailFilter *> lstFilter = exportFilters.importFilters(canceled, MailCommon::FilterImporterExporter::KMailFilter, filename);
     if (!canceled) {
         MailCommon::FilterManager::instance()->appendFilters(lstFilter);
     }

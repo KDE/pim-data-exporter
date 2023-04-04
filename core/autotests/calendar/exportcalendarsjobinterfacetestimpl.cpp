@@ -49,7 +49,7 @@ void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString 
     slotCalendarJobTerminated();
 }
 
-QVector<Utils::AkonadiInstanceInfo> ExportCalendarsJobInterfaceTestImpl::listOfResource()
+QList<Utils::AkonadiInstanceInfo> ExportCalendarsJobInterfaceTestImpl::listOfResource()
 {
     return mListAkonadiInstanceInfo;
 }

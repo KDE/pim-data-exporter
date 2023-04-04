@@ -38,7 +38,7 @@ void ExportAddressbookJobInterfaceTestImpl::exportResourceToArchive(const QStrin
     slotAddressbookJobTerminated();
 }
 
-QVector<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceTestImpl::listOfResource()
+QList<Utils::AkonadiInstanceInfo> ExportAddressbookJobInterfaceTestImpl::listOfResource()
 {
     return mListAkonadiInstanceInfo;
 }

@@ -21,7 +21,7 @@ ExportNotesJobInterfaceImpl::ExportNotesJobInterfaceImpl(QObject *parent, Utils:
 
 ExportNotesJobInterfaceImpl::~ExportNotesJobInterfaceImpl() = default;
 
-QVector<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceImpl::listOfResource()
+QList<Utils::AkonadiInstanceInfo> ExportNotesJobInterfaceImpl::listOfResource()
 {
     return Utils::listOfResource();
 }

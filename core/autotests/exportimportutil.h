@@ -7,19 +7,19 @@
 
 #include "logcreatingressource.h"
 #include "utils.h"
-#include <QVector>
+#include <QList>
 
 class ExportImportUtil
 {
 public:
     ExportImportUtil();
     ~ExportImportUtil();
-    void setListOfResource(const QVector<Utils::AkonadiInstanceInfo> &instanceInfoList);
+    void setListOfResource(const QList<Utils::AkonadiInstanceInfo> &instanceInfoList);
     void setPathConfig(const QString &pathConfig);
     void addLogCreateResource(const QString &str);
     Q_REQUIRED_RESULT QString loggingFilePath() const;
 
-    QVector<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
+    QList<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
     QString mPathConfig;
     void setExtractPath(const QString &extractPath);
 

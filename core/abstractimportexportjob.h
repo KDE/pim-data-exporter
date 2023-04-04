@@ -114,7 +114,7 @@ protected:
     createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) = 0;
 
     QHash<QString, Akonadi::Collection::Id> mHashConvertPathCollectionId;
-    QVector<ResourceFiles> mListResourceFile;
+    QList<ResourceFiles> mListResourceFile;
 
     QString mTempDirName;
     const Utils::StoredTypes mTypeSelected;
@@ -124,8 +124,8 @@ protected:
     const int mNumberOfStep = -1;
     PimCommon::CreateResource *mCreateResource = nullptr;
     QStringList mAgentPaths;
-    QVector<Utils::StoredType> mListStep;
-    QVector<Utils::AkonadiInstanceInfo> mAkonadiInstanceInfo;
+    QList<Utils::StoredType> mListStep;
+    QList<Utils::AkonadiInstanceInfo> mAkonadiInstanceInfo;
     int mIndex = -1;
     static int sArchiveVersion;
 
