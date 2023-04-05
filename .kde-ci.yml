@@ -16,16 +16,3 @@ Dependencies:
     'pim/pimcommon' : '@same'
     'pim/akonadi-notes' : '@same'
 
-- 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
-  'require':
-    'frameworks/extra-cmake-modules': '@latest-kf6'
-    'frameworks/kcontacts' : '@latest-kf6'
-    'frameworks/kcalendarcore' : '@latest-kf6'
-    'pim/akonadi' : '@latest-kf6'
-    'pim/kidentitymanagement' : '@latest-kf6'
-    'pim/kmailtransport' : '@latest-kf6'
-    'pim/kmime' : '@latest-kf6'
-    'pim/kpimtextedit' : '@latest-kf6'
-    'pim/mailcommon' : '@latest-kf6'
-    'pim/pimcommon' : '@latest-kf6'
-    'pim/akonadi-notes' : '@latest-kf6'
