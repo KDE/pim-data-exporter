@@ -17,6 +17,7 @@
   <name xml:lang="da">PIM-dataeksport</name>
   <name xml:lang="de">PIM-Daten-Export</name>
   <name xml:lang="en-GB">PIM Data Exporter</name>
+  <name xml:lang="eo">PIM Data Exporter</name>
   <name xml:lang="es">Exportador de datos de PIM</name>
   <name xml:lang="et">PIM-andmete eksportija</name>
   <name xml:lang="eu">PIM datu-esportatzailea</name>
@@ -51,6 +52,7 @@
   <summary xml:lang="da">Gemmer alle data fra PIM-programmer og genopretter dem på andre systemer.</summary>
   <summary xml:lang="de">Speichert alle Daten von PIM-Anwendungen, um sie später in anderen Systemen wiederherzustellen.</summary>
   <summary xml:lang="en-GB">Saves all data from PIM apps and restore them in other systems.</summary>
+  <summary xml:lang="eo">Konservas ĉiujn datumojn de PIM-apoj kaj restaŭrigas ilin en aliaj sistemoj.</summary>
   <summary xml:lang="es">Guarda todos los datos de las aplicaciones PIM y los restaura en otros sistemas.</summary>
   <summary xml:lang="et">Kõigi PIM-rakenduste andmete salvestamine ja nende taastamine teistes süsteemides.</summary>
   <summary xml:lang="eu">PIM aplikazioetako datu guztiak gorde eta beste sistema batzuetan leheneratzen ditu.</summary>
@@ -85,6 +87,7 @@
   <developer_name xml:lang="da">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="de">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="en-GB">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="eo">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="es">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="et">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="eu">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -123,6 +126,7 @@
     <p xml:lang="da">Eksportør af PIM-data eksporterer og importerer PIM-indstillinger</p>
     <p xml:lang="de">Mit PIM-Daten-Export können Sie PIM-Einstellungen exportieren oder importieren.</p>
     <p xml:lang="en-GB">PIM Data Exporter exports and imports PIM settings</p>
+    <p xml:lang="eo">PIM-Dateneksportilo eksportas kaj importas PIM-agordojn</p>
     <p xml:lang="es">El exportador de datos PIM exporta e importa preferencias de PIM</p>
     <p xml:lang="et">PIM-andmete eksportija ekspordib ja impordib PIM-seadistusi</p>
     <p xml:lang="eu">PIM datu-esportatzaileak PIM ezarpenak esportatu eta inportatzen ditu</p>
@@ -163,9 +167,9 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="5.23.1" date="2023-05-11"/>
     <release version="5.23.0" date="2023-04-20"/>
     <release version="5.22.3" date="2023-03-02"/>
     <release version="5.22.2" date="2023-02-02"/>
-    <release version="5.22.1" date="2023-01-05"/>
   </releases>
 </component>
