@@ -37,7 +37,7 @@ msgstr "طرفية مصدّر بيانات إدارة البيانات الشخ�
 #: console/main.cpp:29
 #, kde-format
 msgid "Copyright © 2015-%1 pimdataexporter authors"
-msgstr "الحقوق محفوظة © ٢٠١٥-%1 لمؤلّفي «مصدّر إعدادات PIM»"
+msgstr "الحقوق محفوظة © 2015-%1 لمؤلّفي «مصدّر إعدادات PIM»"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
@@ -942,7 +942,7 @@ msgstr "مصدّر بيانات PIM"
 #: gui/pimdatacommandlineoption.cpp:41
 #, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
-msgstr "الحقوق محفوظة © ٢٠١٥-%1 لمؤلّفي «مصدّر إعدادات PIM»"
+msgstr "الحقوق محفوظة © 2015-%1 لمؤلّفي «مصدّر إعدادات PIM»"
 
 #: gui/pimdatacommandlineoption.cpp:46
 #, kde-format
