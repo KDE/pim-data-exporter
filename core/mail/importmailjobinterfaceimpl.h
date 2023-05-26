@@ -14,7 +14,7 @@
 #include <MailTransport/TransportManager>
 #include <QStringList>
 class ArchiveStorage;
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class Identity;
 class IdentityManager;
@@ -51,5 +51,5 @@ protected:
 private:
     Q_REQUIRED_RESULT int convertEncryptionEnum(int val);
     Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
-    KIdentityManagement::IdentityManager *const mIdentityManager;
+    KIdentityManagementCore::IdentityManager *const mIdentityManager;
 };

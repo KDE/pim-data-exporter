@@ -6,7 +6,7 @@
 
 #include "exportmailjobinterfaceimpl.h"
 #include "exportmailfolderattributejobimpl.h"
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/IdentityManager>
 #include <MailCommon/FilterImporterExporter>
 #include <MailCommon/FilterManager>
 #include <MailCommon/MailUtil>
@@ -23,12 +23,12 @@
 #include "resourceconverterimpl.h"
 #include <QStandardPaths>
 
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 
 ExportMailJobInterfaceImpl::ExportMailJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportMailJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
-    , mIdentityManager(KIdentityManagement::IdentityManager::self())
+    , mIdentityManager(KIdentityManagementCore::IdentityManager::self())
 {
 }
 
@@ -146,8 +146,8 @@ void ExportMailJobInterfaceImpl::exportFilters()
 QList<uint> ExportMailJobInterfaceImpl::listIdentityUoid() const
 {
     QList<uint> listUiod;
-    KIdentityManagement::IdentityManager::ConstIterator end = mIdentityManager->end();
-    for (KIdentityManagement::IdentityManager::ConstIterator it = mIdentityManager->begin(); it != end; ++it) {
+    KIdentityManagementCore::IdentityManager::ConstIterator end = mIdentityManager->end();
+    for (KIdentityManagementCore::IdentityManager::ConstIterator it = mIdentityManager->begin(); it != end; ++it) {
         const uint identityUoid = (*it).uoid();
         listUiod << identityUoid;
     }

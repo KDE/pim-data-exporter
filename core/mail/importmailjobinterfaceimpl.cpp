@@ -9,8 +9,8 @@
 #include "resourceconverterimpl.h"
 #include "smtpmailtransport.h"
 #include <Akonadi/CollectionFetchJob>
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 #include <MailCommon/FilterImporterExporter>
 #include <MailCommon/FilterManager>
 #include <PimCommonAkonadi/CreateResource>
@@ -18,7 +18,7 @@ using namespace Akonadi;
 
 ImportMailJobInterfaceImpl::ImportMailJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportMailJobInterface(parent, typeSelected, archiveStorage, numberOfStep)
-    , mIdentityManager(KIdentityManagement::IdentityManager::self())
+    , mIdentityManager(KIdentityManagementCore::IdentityManager::self())
 {
 }
 
@@ -104,7 +104,7 @@ QString ImportMailJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources,
 void ImportMailJobInterfaceImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentity, int oldUid)
 {
     const QString uniqueName = uniqueIdentityName(name);
-    KIdentityManagement::Identity *identity = &mIdentityManager->newFromScratch(uniqueName);
+    KIdentityManagementCore::Identity *identity = &mIdentityManager->newFromScratch(uniqueName);
     group.writeEntry(QStringLiteral("Identity"), uniqueName);
     group.sync();
 

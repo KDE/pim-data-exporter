@@ -12,7 +12,7 @@
 #include "testimportfile.h"
 #include "utils.h"
 #include <KConfigGroup>
-#include <KIdentityManagement/Identity>
+#include <KIdentityManagementCore/Identity>
 #include <QTest>
 
 #define REMOVE_TEMPORARY_DIRECTORIES 1
@@ -96,7 +96,7 @@ void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfig
     // qDebug() << " void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) not
     // implemented yet" << oldUid << " name " << name;
     const QString uniqueName = uniqueIdentityName(name);
-    KIdentityManagement::Identity identity;
+    KIdentityManagementCore::Identity identity;
     uint value = mIdentityUoid;
     mIdentityUoid++;
     identity.setUoid(value);

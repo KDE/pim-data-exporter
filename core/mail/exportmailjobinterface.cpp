@@ -24,7 +24,7 @@
 #include <QTimer>
 #include <resourceconverterimpl.h>
 
-#include <KIdentityManagement/Identity>
+#include <KIdentityManagementCore/Identity>
 
 ExportMailJobInterface::ExportMailJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)

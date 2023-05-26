@@ -11,7 +11,7 @@
 #include <KSharedConfig>
 #include <ctime>
 class ArchiveStorage;
-namespace KIdentityManagement
+namespace KIdentityManagementCore
 {
 class Identity;
 class IdentityManager;
@@ -45,5 +45,5 @@ protected:
     void exportFolderAttributes() override;
 
 private:
-    KIdentityManagement::IdentityManager *const mIdentityManager;
+    KIdentityManagementCore::IdentityManager *const mIdentityManager;
 };

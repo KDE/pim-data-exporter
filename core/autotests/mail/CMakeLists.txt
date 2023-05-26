@@ -24,7 +24,7 @@ target_sources( importmailjobinterfacetest PRIVATE importmailjobinterfacetest.cp
 
 add_test(NAME importmailjobinterfacetest COMMAND importmailjobinterfacetest)
 ecm_mark_as_test(importmailjobinterfacetest)
-target_link_libraries(importmailjobinterfacetest Qt::Test pimdataexporterprivate KF6::ConfigCore KPim6::AkonadiCore KPim6::AkonadiMime test_resourceconverter KPim6::IdentityManagement KPim6::Mime)
+target_link_libraries(importmailjobinterfacetest Qt::Test pimdataexporterprivate KF6::ConfigCore KPim6::AkonadiCore KPim6::AkonadiMime test_resourceconverter KPim6::IdentityManagementCore KPim6::Mime)
 
 #####
 add_executable( exportmailfolderattributejobtest)

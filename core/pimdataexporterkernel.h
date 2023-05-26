@@ -24,7 +24,7 @@ class PIMDATAEXPORTER_EXPORT PimDataExporterKernel : public QObject, public Mail
 public:
     explicit PimDataExporterKernel(QObject *parent = nullptr);
 
-    KIdentityManagement::IdentityManager *identityManager() override;
+    KIdentityManagementCore::IdentityManager *identityManager() override;
     MessageComposer::MessageSender *msgSender() override;
 
     Akonadi::EntityMimeTypeFilterModel *collectionModel() const override;
@@ -43,7 +43,7 @@ public:
     void expunge(Akonadi::Collection::Id col, bool sync) override;
 
 private:
-    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
+    KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
     MailCommon::FolderCollectionMonitor *mFolderCollectionMonitor = nullptr;
     Akonadi::EntityTreeModel *mEntityTreeModel = nullptr;
     Akonadi::EntityMimeTypeFilterModel *mCollectionModel = nullptr;

@@ -16,7 +16,7 @@
 #include <Akonadi/Session>
 #include <KCalendarCore/Event>
 #include <KCalendarCore/Todo>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/IdentityManager>
 #include <KSharedConfig>
 #include <MailCommon/FolderCollectionMonitor>
 #include <MessageComposer/AkonadiSender>
@@ -29,7 +29,7 @@ const QLatin1String MIME_TEMPLATE("application/x-vnd.kde.alarm.template");
 PimDataExporterKernel::PimDataExporterKernel(QObject *parent)
     : QObject(parent)
 {
-    mIdentityManager = KIdentityManagement::IdentityManager::self();
+    mIdentityManager = KIdentityManagementCore::IdentityManager::self();
     auto session = new Akonadi::Session("Backup Mail Kernel ETM", this);
 
     mFolderCollectionMonitor = new MailCommon::FolderCollectionMonitor(session, this);
@@ -54,7 +54,7 @@ PimDataExporterKernel::PimDataExporterKernel(QObject *parent)
     mCollectionModel->setSortCaseSensitivity(Qt::CaseInsensitive);
 }
 
-KIdentityManagement::IdentityManager *PimDataExporterKernel::identityManager()
+KIdentityManagementCore::IdentityManager *PimDataExporterKernel::identityManager()
 {
     return mIdentityManager;
 }
