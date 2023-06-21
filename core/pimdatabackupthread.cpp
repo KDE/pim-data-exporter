@@ -58,3 +58,5 @@ void PimDataBackupThread::run()
     delete archiveFile;
     Q_EMIT terminated(fileAdded);
 }
+
+#include "moc_pimdatabackupthread.cpp"

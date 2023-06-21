@@ -67,3 +67,5 @@ void SynchronizeResourceJob::setSynchronizeOnlyCollection(bool onlyCollection)
 {
     mOnlyCollection = onlyCollection;
 }
+
+#include "moc_synchronizeresourcejob.cpp"

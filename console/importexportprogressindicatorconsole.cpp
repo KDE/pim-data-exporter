@@ -23,3 +23,5 @@ void ImportExportProgressIndicatorConsole::showErrorMessage(const QString &messa
 {
     qDebug() << " message " << message << " title " << title;
 }
+
+#include "moc_importexportprogressindicatorconsole.cpp"

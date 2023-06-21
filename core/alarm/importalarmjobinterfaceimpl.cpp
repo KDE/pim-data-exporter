@@ -51,3 +51,5 @@ void ImportAlarmJobInterfaceImpl::synchronizeResource(const QStringList &lst)
 {
     startSynchronizeResources(lst);
 }
+
+#include "moc_importalarmjobinterfaceimpl.cpp"

@@ -53,3 +53,5 @@ QString ImportAddressbookJobInterfaceImpl::adaptNewResourceUrl(bool overwriteRes
     ResourceConverterImpl converter;
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
+
+#include "moc_importaddressbookjobinterfaceimpl.cpp"

@@ -40,3 +40,5 @@ void ExportAkregatorJobInterfaceTest::exportAkregator()
     file->start();
     delete exportAkregator;
 }
+
+#include "moc_exportakregatorjobinterfacetest.cpp"

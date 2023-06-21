@@ -81,3 +81,5 @@ void BackupFileStructureInfoDialog::writeConfig()
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }
+
+#include "moc_backupfilestructureinfodialog.cpp"

@@ -29,3 +29,5 @@ void ImportMailFolderAttributeJobTest::shouldEmitSignal()
     job.start();
     QCOMPARE(spyFinished.count(), 1);
 }
+
+#include "moc_importmailfolderattributejobtest.cpp"

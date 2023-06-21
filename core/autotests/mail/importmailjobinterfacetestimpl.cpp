@@ -206,3 +206,5 @@ void ImportMailJobInterfaceTestImpl::importFolderAttributes()
     });
     job->start();
 }
+
+#include "moc_importmailjobinterfacetestimpl.cpp"

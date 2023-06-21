@@ -86,3 +86,5 @@ void ExportResourceArchiveJob::finished()
     Q_EMIT terminated();
     deleteLater();
 }
+
+#include "moc_exportresourcearchivejob.cpp"

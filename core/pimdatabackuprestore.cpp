@@ -327,3 +327,5 @@ void PimDataBackupRestore::slotJobFinished()
         break;
     }
 }
+
+#include "moc_pimdatabackuprestore.cpp"

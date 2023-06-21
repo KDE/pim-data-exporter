@@ -51,3 +51,5 @@ QString ImportNotesJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResources
     ResourceConverterImpl converter;
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
+
+#include "moc_importnotesjobinterfaceimpl.cpp"

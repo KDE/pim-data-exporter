@@ -247,3 +247,5 @@ void ExportCalendarJobInterface::backupConfig()
     backupUiRcFile(QStringLiteral("korganizer_part.rc"), QStringLiteral("korganizer"));
     emitInfo(i18n("Config backup done."));
 }
+
+#include "moc_exportcalendarjobinterface.cpp"

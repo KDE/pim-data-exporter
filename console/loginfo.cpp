@@ -53,3 +53,5 @@ void LogInfo::addLogLine(const QString &message, LogType type)
     // Laurent: Don't use qCDebug here.
     qDebug() << newMessage;
 }
+
+#include "moc_loginfo.cpp"

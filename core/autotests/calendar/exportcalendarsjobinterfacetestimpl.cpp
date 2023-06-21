@@ -100,3 +100,5 @@ QString ExportCalendarsJobInterfaceTestImpl::createResource(const QString &resou
     Q_UNREACHABLE();
     return {};
 }
+
+#include "moc_exportcalendarsjobinterfacetestimpl.cpp"

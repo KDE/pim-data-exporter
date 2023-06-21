@@ -98,3 +98,5 @@ void ExportAkregatorJobInterface::slotCheckBackupData()
     }
     Q_EMIT jobFinished();
 }
+
+#include "moc_exportakregatorjobinterface.cpp"

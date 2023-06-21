@@ -100,3 +100,5 @@ void ExportMailJobInterfaceTest::exportMail()
     file->start();
     delete exportMail;
 }
+
+#include "moc_exportmailjobinterfacetest.cpp"

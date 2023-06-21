@@ -182,3 +182,5 @@ void PimDataExporterConsole::setTemplateFileName(const QString &templateFileName
     }
     mTemplateFileName = templateFileName;
 }
+
+#include "moc_pimdataexporterconsole.cpp"

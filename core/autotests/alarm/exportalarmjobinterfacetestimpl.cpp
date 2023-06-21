@@ -88,3 +88,5 @@ ExportAlarmJobInterfaceTestImpl::createResource(const QString &resources, const 
     Q_UNREACHABLE();
     return {};
 }
+
+#include "moc_exportalarmjobinterfacetestimpl.cpp"

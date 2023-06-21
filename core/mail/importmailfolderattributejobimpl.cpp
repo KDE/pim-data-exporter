@@ -87,3 +87,5 @@ void ImportMailFolderAttributeJobImpl::slotCollectionModifyDone(KJob *job)
     }
     nextAttribute();
 }
+
+#include "moc_importmailfolderattributejobimpl.cpp"

@@ -85,3 +85,5 @@ ArchiveStorage *TestExportFile::archiveStorage() const
 {
     return mArchiveStorage;
 }
+
+#include "moc_testexportfile.cpp"

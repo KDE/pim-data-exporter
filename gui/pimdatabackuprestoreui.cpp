@@ -37,3 +37,5 @@ void PimDataBackupRestoreUI::addExportProgressIndicator()
 {
     mImportExportData->setImportExportProgressIndicator(new ImportExportProgressIndicatorGui(mParentWidget, this));
 }
+
+#include "moc_pimdatabackuprestoreui.cpp"

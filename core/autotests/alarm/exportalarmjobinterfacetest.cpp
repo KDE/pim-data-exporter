@@ -51,3 +51,5 @@ void ExportAlarmJobInterfaceTest::exportAlarm()
     file->start();
     delete exportNote;
 }
+
+#include "moc_exportalarmjobinterfacetest.cpp"

@@ -57,3 +57,5 @@ QString PimDataImportDataInfoFile::importDataInfoPath()
     delete archive;
     return temporaryFilePath;
 }
+
+#include "moc_pimdataimportdatainfofile.cpp"

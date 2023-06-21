@@ -81,3 +81,5 @@ void LogInFile::addLogLine(const QString &message, LogType type)
     }
     mTextStream << newMessage;
 }
+
+#include "moc_loginfile.cpp"

@@ -66,3 +66,5 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate()
 }
 
 QTEST_MAIN(SelectionTypeTreeWidgetTest)
+
+#include "moc_selectiontypetreewidgettest.cpp"

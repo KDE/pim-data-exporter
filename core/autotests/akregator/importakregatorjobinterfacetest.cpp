@@ -42,3 +42,5 @@ void ImportAkregatorJobInterfaceTest::importAkegator()
     delete impl;
     delete file;
 }
+
+#include "moc_importakregatorjobinterfacetest.cpp"

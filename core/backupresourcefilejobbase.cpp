@@ -96,3 +96,5 @@ void BackupResourceFileJobBase::setDefaultPath(const QString &defaultPath)
 {
     mDefaultPath = defaultPath;
 }
+
+#include "moc_backupresourcefilejobbase.cpp"

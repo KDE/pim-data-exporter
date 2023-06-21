@@ -57,3 +57,5 @@ void ExportCalendarsJobInterfaceTest::exportCalendar()
     file->start();
     delete exportNote;
 }
+
+#include "moc_exportcalendarsjobinterfacetest.cpp"

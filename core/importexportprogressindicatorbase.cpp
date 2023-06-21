@@ -63,3 +63,5 @@ void ImportExportProgressIndicatorBase::showErrorMessage(const QString &message,
 {
     qDebug() << " message : " << message << " title " << title;
 }
+
+#include "moc_importexportprogressindicatorbase.cpp"

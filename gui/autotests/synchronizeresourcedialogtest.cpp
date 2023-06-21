@@ -61,3 +61,5 @@ void SynchronizeResourceDialogTest::shouldNotEmptyList()
 }
 
 QTEST_MAIN(SynchronizeResourceDialogTest)
+
+#include "moc_synchronizeresourcedialogtest.cpp"

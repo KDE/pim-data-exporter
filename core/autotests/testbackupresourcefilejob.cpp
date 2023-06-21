@@ -25,3 +25,5 @@ void TestBackupResourceFileJob::setTestPath(const QString &str)
 {
     mTestPath = str;
 }
+
+#include "moc_testbackupresourcefilejob.cpp"

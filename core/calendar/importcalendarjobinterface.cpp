@@ -363,3 +363,5 @@ QString ImportCalendarJobInterface::installConfigLocation() const
 {
     return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
 }
+
+#include "moc_importcalendarjobinterface.cpp"

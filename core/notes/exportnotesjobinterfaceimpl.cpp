@@ -75,3 +75,5 @@ ExportNotesJobInterfaceImpl::createResource(const QString &resources, const QStr
     Q_UNREACHABLE();
     return {};
 }
+
+#include "moc_exportnotesjobinterfaceimpl.cpp"

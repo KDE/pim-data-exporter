@@ -66,3 +66,5 @@ void ImportCalendarJobInterfaceTestImpl::setExistingPathConfig(const QString &pa
 {
     mExistingPathConfig = path;
 }
+
+#include "moc_importcalendarjobinterfacetestimpl.cpp"

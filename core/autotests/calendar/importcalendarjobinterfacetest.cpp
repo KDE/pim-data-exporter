@@ -55,3 +55,5 @@ void ImportCalendarJobInterfaceTest::importCalendar()
     delete impl;
     delete file;
 }
+
+#include "moc_importcalendarjobinterfacetest.cpp"

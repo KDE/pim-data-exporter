@@ -15,3 +15,5 @@ PimDataTrayIcon::PimDataTrayIcon(QObject *parent)
 }
 
 PimDataTrayIcon::~PimDataTrayIcon() = default;
+
+#include "moc_pimdatatrayicon.cpp"

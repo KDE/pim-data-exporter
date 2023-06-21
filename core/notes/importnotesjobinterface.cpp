@@ -203,3 +203,5 @@ void ImportNotesJobInterface::restoreResources()
     }
     synchronizeResource(listResource);
 }
+
+#include "moc_importnotesjobinterface.cpp"

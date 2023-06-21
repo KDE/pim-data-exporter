@@ -50,3 +50,5 @@ void ImportAlarmJobInterfaceTest::importAlarmConfig()
     delete impl;
     delete file;
 }
+
+#include "moc_importalarmjobinterfacetest.cpp"

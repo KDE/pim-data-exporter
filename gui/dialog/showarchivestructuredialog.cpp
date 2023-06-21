@@ -285,3 +285,5 @@ void ShowArchiveStructureDialog::writeConfig()
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }
+
+#include "moc_showarchivestructuredialog.cpp"

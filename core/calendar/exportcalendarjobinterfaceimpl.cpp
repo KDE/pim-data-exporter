@@ -89,3 +89,5 @@ ExportCalendarJobInterfaceImpl::createResource(const QString &resources, const Q
     Q_UNREACHABLE();
     return {};
 }
+
+#include "moc_exportcalendarjobinterfaceimpl.cpp"

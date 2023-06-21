@@ -175,3 +175,5 @@ void ImportAlarmJobInterface::restoreResources()
     // It's maildir support. Need to add support
     synchronizeResource(listResource);
 }
+
+#include "moc_importalarmjobinterface.cpp"

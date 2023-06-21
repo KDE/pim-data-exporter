@@ -68,3 +68,5 @@ QString ImportAlarmJobInterfaceTestImpl::configLocation() const
 {
     return mExistingPathConfig;
 }
+
+#include "moc_importalarmjobinterfacetestimpl.cpp"

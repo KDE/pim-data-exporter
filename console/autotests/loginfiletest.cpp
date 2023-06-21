@@ -21,3 +21,5 @@ void LogInFileTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(LogInFileTest)
+
+#include "moc_loginfiletest.cpp"

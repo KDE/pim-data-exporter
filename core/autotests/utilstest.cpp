@@ -29,3 +29,5 @@ void UtilsTest::shouldTestValue()
     QCOMPARE(Utils::dataPath(), QStringLiteral("data/"));
     QCOMPARE(Utils::notePath(), QStringLiteral("note/"));
 }
+
+#include "moc_utilstest.cpp"

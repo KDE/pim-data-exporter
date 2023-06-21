@@ -673,3 +673,5 @@ void ExportMailJobInterface::backupResources()
 
     emitInfo(i18n("Resources backup done."));
 }
+
+#include "moc_exportmailjobinterface.cpp"

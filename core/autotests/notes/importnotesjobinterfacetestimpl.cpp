@@ -65,3 +65,5 @@ void ImportNotesJobInterfaceTestImpl::setExistingPathConfig(const QString &path)
 {
     mExistingPathConfig = path;
 }
+
+#include "moc_importnotesjobinterfacetestimpl.cpp"

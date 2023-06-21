@@ -55,3 +55,5 @@ QString ImportCalendarJobInterfaceImpl::adaptNewResourceUrl(bool overwriteResour
     ResourceConverterImpl converter;
     return converter.adaptNewResourceUrl(overwriteResources, resourceConfig, storePath);
 }
+
+#include "moc_importcalendarjobinterfaceimpl.cpp"

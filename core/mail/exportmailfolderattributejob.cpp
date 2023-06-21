@@ -82,3 +82,5 @@ void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, 
     }
     deleteLater();
 }
+
+#include "moc_exportmailfolderattributejob.cpp"

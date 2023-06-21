@@ -35,3 +35,5 @@ void PimDataExporterConfigureWidgetTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(PimDataExporterConfigureWidgetTest)
+
+#include "moc_pimdataexporterconfigurewidgettest.cpp"

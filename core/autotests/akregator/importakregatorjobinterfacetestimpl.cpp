@@ -31,3 +31,5 @@ QString ImportAkregatorJobInterfaceTestImpl::adaptNewResourceUrl(bool overwriteR
     Q_UNREACHABLE();
     return {};
 }
+
+#include "moc_importakregatorjobinterfacetestimpl.cpp"

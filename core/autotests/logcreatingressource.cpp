@@ -73,3 +73,5 @@ QString LogCreatingResource::logCreateResource(const QString &resources, const Q
     // qDebug() << " RESOURCE NAME " << resourceName;
     return resourceName;
 }
+
+#include "moc_logcreatingressource.cpp"

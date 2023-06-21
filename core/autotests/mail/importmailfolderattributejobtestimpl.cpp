@@ -30,3 +30,5 @@ void ImportMailFolderAttributeJobTestImpl::applyAttributes(const QMap<Akonadi::C
     }
     restoreFileFolderAttribute();
 }
+
+#include "moc_importmailfolderattributejobtestimpl.cpp"

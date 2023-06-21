@@ -99,3 +99,5 @@ void ImportExportProgressIndicatorGui::showErrorMessage(const QString &message, 
 {
     KMessageBox::error(mParentWidget, message, title);
 }
+
+#include "moc_importexportprogressindicatorgui.cpp"

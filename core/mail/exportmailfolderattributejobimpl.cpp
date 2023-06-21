@@ -74,3 +74,5 @@ void ExportMailFolderAttributeJobImpl::slotFetchFinished(KJob *job)
     }
     storeFileFolderAttribute(lstAttributeInfo);
 }
+
+#include "moc_exportmailfolderattributejobimpl.cpp"

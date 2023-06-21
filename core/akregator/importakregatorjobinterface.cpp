@@ -112,3 +112,5 @@ void ImportAkregatorJobInterface::restoreData()
     emitInfo(i18n("Data restored."));
     QTimer::singleShot(0, this, &ImportAkregatorJobInterface::slotNextStep);
 }
+
+#include "moc_importakregatorjobinterface.cpp"

@@ -59,3 +59,5 @@ void LogWidget::addEndLineLogEntry()
 {
     mCustomLogWidget->addEndLineLogEntry();
 }
+
+#include "moc_logwidget.cpp"

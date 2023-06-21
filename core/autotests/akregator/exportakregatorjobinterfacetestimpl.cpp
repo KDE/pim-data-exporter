@@ -37,3 +37,5 @@ QString ExportAkregatorJobInterfaceTestImpl::createResource(const QString &resou
     Q_UNREACHABLE();
     return {};
 }
+
+#include "moc_exportakregatorjobinterfacetestimpl.cpp"

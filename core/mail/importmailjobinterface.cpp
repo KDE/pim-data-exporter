@@ -1447,3 +1447,5 @@ void ImportMailJobInterface::convertCollectionStrToAkonadiId(const KSharedConfig
         (void)convertRealPathToCollection(eventGroup, key, false);
     }
 }
+
+#include "moc_importmailjobinterface.cpp"

@@ -52,3 +52,5 @@ void ExportNotesJobInterfaceTest::exportNote()
     file->start();
     delete exportNote;
 }
+
+#include "moc_exportnotesjobinterfacetest.cpp"

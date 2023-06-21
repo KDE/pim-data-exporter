@@ -193,3 +193,5 @@ void ImportMailJobInterfaceImpl::addMailTransport(MailTransport::Transport *mt, 
     mHashTransport.insert(transportId, mt->id());
     // qDebug() << " void ImportMailJobInterface::addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId)" << transportId;
 }
+
+#include "moc_importmailjobinterfaceimpl.cpp"

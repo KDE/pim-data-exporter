@@ -20,3 +20,5 @@ QString BackupResourceFileJobImpl::resourcePath(const QString &identifier) const
     const QString url = converter.resourcePath(identifier);
     return url;
 }
+
+#include "moc_backupresourcefilejobimpl.cpp"

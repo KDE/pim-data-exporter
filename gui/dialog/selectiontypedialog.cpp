@@ -150,3 +150,5 @@ void SelectionTypeDialog::loadDefaultTemplate()
 {
     mSelectionTreeWidget->loadDefaultTemplate();
 }
+
+#include "moc_selectiontypedialog.cpp"

@@ -105,3 +105,5 @@ void SelectionTypeDialogTest::shouldSelectAllItems()
 }
 
 QTEST_MAIN(SelectionTypeDialogTest)
+
+#include "moc_selectiontypedialogtest.cpp"

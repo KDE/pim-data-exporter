@@ -157,3 +157,5 @@ void ExportMailJobInterfaceTestImpl::exportFolderAttributes()
     });
     job->start();
 }
+
+#include "moc_exportmailjobinterfacetestimpl.cpp"

@@ -71,3 +71,5 @@ bool PimDataCommandLineOption::parseUserFeedback() const
 {
     return mParser.isSet(QStringLiteral("feedback"));
 }
+
+#include "moc_pimdatacommandlineoption.cpp"

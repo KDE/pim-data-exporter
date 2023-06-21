@@ -131,3 +131,5 @@ QString TestImportFile::extractPath() const
 {
     return mExtractPath;
 }
+
+#include "moc_testimportfile.cpp"

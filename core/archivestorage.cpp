@@ -52,3 +52,5 @@ KZip *ArchiveStorage::archive() const
 {
     return mArchive;
 }
+
+#include "moc_archivestorage.cpp"

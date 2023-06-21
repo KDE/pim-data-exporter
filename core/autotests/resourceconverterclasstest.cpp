@@ -21,3 +21,5 @@ void ResourceConverterClassTest::shouldGetAgentFileName()
     const QString filename = Utils::resourcesPath() + QStringLiteral("akonadi_imap_resource_0rc");
     QCOMPARE(w.agentFileName(filename), QStringLiteral("resources/agent_config_akonadi_imap_resource_0"));
 }
+
+#include "moc_resourceconverterclasstest.cpp"

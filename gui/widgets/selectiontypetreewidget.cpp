@@ -392,3 +392,5 @@ void SelectionTypeTreeWidget::setParameters(const QMap<Utils::AppsType, Utils::i
         ++i;
     }
 }
+
+#include "moc_selectiontypetreewidget.cpp"

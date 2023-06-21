@@ -134,3 +134,5 @@ void ExportAlarmJobInterface::backupConfig()
 
     emitInfo(i18n("Config backup done."));
 }
+
+#include "moc_exportalarmjobinterface.cpp"

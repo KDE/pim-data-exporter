@@ -72,3 +72,5 @@ void FullSynchronizeResourcesJob::slotSynchronizeFinished()
     Q_EMIT synchronizeFinished();
     deleteLater();
 }
+
+#include "moc_fullsynchronizeresourcesjob.cpp"

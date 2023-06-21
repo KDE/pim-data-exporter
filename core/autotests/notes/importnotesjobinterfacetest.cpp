@@ -47,3 +47,5 @@ void ImportNotesJobInterfaceTest::importNote()
     delete impl;
     delete file;
 }
+
+#include "moc_importnotesjobinterfacetest.cpp"

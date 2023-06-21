@@ -90,3 +90,5 @@ ExportAddressbookJobInterfaceImpl::createResource(const QString &resources, cons
     Q_UNREACHABLE();
     return {};
 }
+
+#include "moc_exportaddressbookjobinterfaceimpl.cpp"

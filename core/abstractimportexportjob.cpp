@@ -647,3 +647,5 @@ void AbstractImportExportJob::setTempDirName(const QString &tempDirName)
 {
     mTempDirName = tempDirName;
 }
+
+#include "moc_abstractimportexportjob.cpp"

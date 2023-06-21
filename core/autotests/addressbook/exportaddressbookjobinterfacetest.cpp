@@ -53,3 +53,5 @@ void ExportAddressbookJobInterfaceTest::exportAddressBook()
     file->start();
     delete exportNote;
 }
+
+#include "moc_exportaddressbookjobinterfacetest.cpp"

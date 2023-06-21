@@ -237,3 +237,5 @@ QString ImportAddressbookJobInterface::applicationName() const
 {
     return QStringLiteral("[KAddressBook]");
 }
+
+#include "moc_importaddressbookjobinterface.cpp"

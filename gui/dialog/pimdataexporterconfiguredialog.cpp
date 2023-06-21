@@ -98,3 +98,5 @@ void PimDataExporterConfigureDialog::writeConfig()
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }
+
+#include "moc_pimdataexporterconfiguredialog.cpp"

@@ -96,3 +96,5 @@ void ImportMailFolderAttributeJob::restoreFileFolderAttribute()
     Q_EMIT successed();
     deleteLater();
 }
+
+#include "moc_importmailfolderattributejob.cpp"

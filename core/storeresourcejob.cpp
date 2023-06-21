@@ -61,3 +61,5 @@ void StoreResourceJob::start()
     }
     deleteLater();
 }
+
+#include "moc_storeresourcejob.cpp"

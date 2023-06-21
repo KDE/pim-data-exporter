@@ -34,3 +34,5 @@ PimDataExportedUserFeedbackProvider::PimDataExportedUserFeedbackProvider(QObject
 }
 
 PimDataExportedUserFeedbackProvider::~PimDataExportedUserFeedbackProvider() = default;
+
+#include "moc_pimdataexporteduserfeedbackprovider.cpp"

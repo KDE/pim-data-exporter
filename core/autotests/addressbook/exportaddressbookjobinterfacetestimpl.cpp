@@ -96,3 +96,5 @@ void ExportAddressbookJobInterfaceTestImpl::backupAddressBookResourceFile(const 
     connect(job, &TestBackupResourceFileJob::info, this, &ExportAddressbookJobInterfaceTestImpl::info);
     job->start();
 }
+
+#include "moc_exportaddressbookjobinterfacetestimpl.cpp"

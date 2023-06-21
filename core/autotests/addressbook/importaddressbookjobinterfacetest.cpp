@@ -48,3 +48,5 @@ void ImportAddressbookJobInterfaceTest::importAddressbook()
     delete impl;
     delete file;
 }
+
+#include "moc_importaddressbookjobinterfacetest.cpp"

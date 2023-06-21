@@ -33,3 +33,5 @@ ExportMailFolderAttributeJobImplTest::ExportMailFolderAttributeJobImplTest(QObje
     : ExportMailFolderAttributeJob(parent)
 {
 }
+
+#include "moc_exportmailfolderattributejobtest.cpp"

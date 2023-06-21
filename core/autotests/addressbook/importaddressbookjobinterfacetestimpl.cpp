@@ -66,3 +66,5 @@ QString ImportAddressbookJobInterfaceTestImpl::configLocation() const
     // TODO
     return {};
 }
+
+#include "moc_importaddressbookjobinterfacetestimpl.cpp"

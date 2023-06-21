@@ -30,3 +30,5 @@ void PimDataExporterConfigureDialogTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(PimDataExporterConfigureDialogTest)
+
+#include "moc_pimdataexporterconfiguredialogtest.cpp"

@@ -80,3 +80,5 @@ void ExportAlarmJobInterfaceImpl::convertCollectionIdsToRealPath(KConfigGroup &s
     ResourceConverterImpl converter;
     converter.convertCollectionIdsToRealPath(selectFolderNoteGroup, selectFolderNoteGroupStr);
 }
+
+#include "moc_exportalarmjobinterfaceimpl.cpp"

@@ -55,3 +55,5 @@ void ExportMailFolderAttributeJobTestImpl::fetchAttributes()
 
     storeFileFolderAttribute(lstAttributeInfo);
 }
+
+#include "moc_exportmailfolderattributejobtestimpl.cpp"

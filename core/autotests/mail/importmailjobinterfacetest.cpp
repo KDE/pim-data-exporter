@@ -72,3 +72,5 @@ void ImportMailJobInterfaceTest::importMail()
     delete impl;
     delete file;
 }
+
+#include "moc_importmailjobinterfacetest.cpp"

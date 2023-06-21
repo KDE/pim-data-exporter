@@ -424,3 +424,5 @@ void PimDataExporterWindow::slotShowCurrentArchiveInformations()
         dlg.exec();
     }
 }
+
+#include "moc_pimdataexporterwindow.cpp"

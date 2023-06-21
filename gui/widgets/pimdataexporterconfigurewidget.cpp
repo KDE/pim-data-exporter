@@ -63,3 +63,5 @@ void PimDataExporterConfigureWidget::resetToDefault()
 
     PimDataExportGlobalConfig::self()->useDefaults(bUseDefaults);
 }
+
+#include "moc_pimdataexporterconfigurewidget.cpp"

@@ -149,3 +149,5 @@ void ExportAddressbookJobInterface::backupConfig()
 
     emitInfo(i18n("Config backup done."));
 }
+
+#include "moc_exportaddressbookjobinterface.cpp"

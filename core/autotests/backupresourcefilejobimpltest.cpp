@@ -22,3 +22,5 @@ void BackupResourceFileJobImplTest::shouldHaveDefaultValue()
     QVERIFY(job->defaultPath().isEmpty());
     delete job;
 }
+
+#include "moc_backupresourcefilejobimpltest.cpp"
