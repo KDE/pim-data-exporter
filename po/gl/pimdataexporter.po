@@ -80,7 +80,7 @@ msgstr "Tarefa cancelada"
 #: core/abstractimportexportjob.cpp:116
 #, kde-format
 msgid "\"%1\" backup done."
-msgstr "Fíxose unha copia de seguranza de «%1»."
+msgstr "Fíxose unha copia de seguridade de «%1»."
 
 #: core/abstractimportexportjob.cpp:118
 #, kde-format
@@ -162,13 +162,13 @@ msgstr "Comezar a sincronización…"
 #: core/abstractimportexportjob.cpp:578
 #, kde-format
 msgid "Directory \"%1\" added to backup file."
-msgstr "Engadiuse o directorio «%1» ao ficheiro de copia de seguranza."
+msgstr "Engadiuse o directorio «%1» ao ficheiro de copia de seguridade."
 
 #: core/abstractimportexportjob.cpp:580
 #, kde-format
 msgid "Directory \"%1\" cannot be added to backup file."
 msgstr ""
-"Non se pode engadir o directorio «%1» ao ficheiro de copia de seguranza."
+"Non se pode engadir o directorio «%1» ao ficheiro de copia de seguridade."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:28
 #, kde-format
@@ -187,7 +187,7 @@ msgstr "Exportar a configuración de KAddressBook"
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
-msgstr "Estase a facer a copia de seguranza dos recursos…"
+msgstr "Estase a facer a copia de seguridade dos recursos…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
@@ -196,7 +196,7 @@ msgstr "Estase a facer a copia de seguranza dos recursos…"
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
-msgstr "Fíxose unha copia de seguranza dos recursos."
+msgstr "Fíxose unha copia de seguridade dos recursos."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:109
 #: core/akregator/exportakregatorjobinterface.cpp:72
@@ -206,7 +206,7 @@ msgstr "Fíxose unha copia de seguranza dos recursos."
 #: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
-msgstr "Estase a facer a copia de seguranza da configuración…"
+msgstr "Estase a facer a copia de seguridade da configuración…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:150
 #: core/akregator/exportakregatorjobinterface.cpp:79
@@ -216,7 +216,7 @@ msgstr "Estase a facer a copia de seguranza da configuración…"
 #: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
-msgstr "Fíxose unha copia de seguranza da configuración."
+msgstr "Fíxose unha copia de seguridade da configuración."
 
 #: core/addressbook/importaddressbookjobinterface.cpp:41
 #, kde-format
@@ -274,19 +274,19 @@ msgstr "Exportar a configuración de Akregator"
 #: core/akregator/exportakregatorjobinterface.cpp:87
 #, kde-format
 msgid "Backing up data..."
-msgstr "Facendo unha copia de seguranza dos datos…"
+msgstr "Facendo unha copia de seguridade dos datos…"
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
 #: core/notes/exportnotesjobinterface.cpp:46
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
 msgstr ""
-"Non se pode engadir o directorio «%1» ao ficheiro de copia de seguranza."
+"Non se pode engadir o directorio «%1» ao ficheiro de copia de seguridade."
 
 #: core/akregator/exportakregatorjobinterface.cpp:97
 #, kde-format
 msgid "Data backup done."
-msgstr "Fíxose unha copia de seguranza dos datos."
+msgstr "Fíxose unha copia de seguridade dos datos."
 
 #: core/akregator/importakregatorjobinterface.cpp:29
 #, kde-format
@@ -350,13 +350,14 @@ msgstr "«%1» non é un ficheiro."
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
 #, kde-format
 msgid "\"%1\" was backed up."
-msgstr "Fíxose unha copia de seguranza de «%1»."
+msgstr "Fíxose unha copia de seguridade de «%1»."
 
 #: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
 #: core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
-msgstr "Non se pode engadir o ficheiro «%1» ao ficheiro de copia de seguranza."
+msgstr ""
+"Non se pode engadir o ficheiro «%1» ao ficheiro de copia de seguridade."
 
 #: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
@@ -396,7 +397,7 @@ msgstr "Facendo unha copia de seguridade dos atributos do cartafol…"
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Mails..."
-msgstr "Estase a facer a copia de seguranza das mensaxes de correo…"
+msgstr "Estase a facer a copia de seguridade das mensaxes de correo…"
 
 #: core/mail/exportmailjobinterface.cpp:115
 #, kde-format
@@ -412,19 +413,19 @@ msgstr "Facendo unha copia de seguridade dos transportes…"
 #: core/mail/exportmailjobinterface.cpp:140
 #, kde-format
 msgid "Transports backup done."
-msgstr "Fíxose unha copia de seguranza dos transportes."
+msgstr "Fíxose unha copia de seguridade dos transportes."
 
 #: core/mail/exportmailjobinterface.cpp:142
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr ""
 "Non se pode engadir o ficheiro de transporte ao ficheiro de copia de "
-"seguranza."
+"seguridade."
 
 #: core/mail/exportmailjobinterface.cpp:557
 #, kde-format
 msgid "Backing up identity..."
-msgstr "Estase a facer unha copia de seguranza da identidade…"
+msgstr "Estase a facer unha copia de seguridade da identidade…"
 
 #: core/mail/exportmailjobinterface.cpp:596
 #, kde-format
@@ -434,19 +435,19 @@ msgstr "Non se pode gardar o ficheiro vCard «%1»."
 #: core/mail/exportmailjobinterface.cpp:609
 #, kde-format
 msgid "Identity backup done."
-msgstr "Fíxose unha copia de seguranza da identidade."
+msgstr "Fíxose unha copia de seguridade da identidade."
 
 #: core/mail/exportmailjobinterface.cpp:611
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr ""
 "Non se pode engadir o ficheiro de identidade ao ficheiro de copia de "
-"seguranza."
+"seguridade."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:139
 #, kde-format
 msgid "Filters backup done."
-msgstr "Fíxose unha copia de seguranza dos filtros."
+msgstr "Fíxose unha copia de seguridade dos filtros."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:141
 #, kde-format
@@ -599,12 +600,12 @@ msgstr "Non se pode abrir o ficheiro «%1»."
 #: core/pimdatabackuprestore.cpp:94
 #, kde-format
 msgid "Starting to backup data in '%1'"
-msgstr "Iniciando a copia de seguranza dos datos de «%1»"
+msgstr "Iniciando a copia de seguridade dos datos de «%1»"
 
 #: core/pimdatabackuprestore.cpp:183
 #, kde-format
 msgid "Backup in '%1' done."
-msgstr "Realizouse unha copia de seguranza de «%1»."
+msgstr "Realizouse unha copia de seguridade de «%1»."
 
 #: core/pimdatabackuprestore.cpp:279
 #, kde-format
@@ -624,14 +625,14 @@ msgstr "Non é posíbel abrir o ficheiro de arquivo."
 #: core/pimdatabackupthread.cpp:44
 #, kde-format
 msgid "Impossible to backup \"%1\"."
-msgstr "Non foi posíbel facer unha copia de seguranza de «%1»."
+msgstr "Non foi posíbel facer unha copia de seguridade de «%1»."
 
 #: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr ""
 "Non se pode engadir o ficheiro de recursos «%1» ao ficheiro de copia de "
-"seguranza."
+"seguridade."
 
 #: core/resourceconverterbase.cpp:206
 #, kde-format
@@ -707,7 +708,7 @@ msgstr "Estrutura de ficheiros do arquivo"
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgid "Backup Archive Structure:"
-msgstr "Estrutura do arquivo de seguranza:"
+msgstr "Estrutura do arquivo de seguridade:"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
@@ -777,7 +778,7 @@ msgstr "Abrir o ficheiro seleccionado"
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
-msgstr "Mostrar o contido arquivado do ficheiro «%1»"
+msgstr "Amosar o contido arquivado do ficheiro «%1»"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
@@ -839,7 +840,7 @@ msgstr "Este non é un arquivo de xestión de información persoal."
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "Show information"
-msgstr "Mostrar a información"
+msgstr "Amosar a información"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:29
 #, kde-format
@@ -1003,14 +1004,14 @@ msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
 "overwrite your existing settings and data."
 msgstr ""
-"Para restaurar os datos hai que empregar «pimdataexporter». Teña coidado xa "
-"que pode substituír a súa configuración e datos existentes."
+"Para restaurar os datos hai que usar «pimdataexporter». Teña coidado xa que "
+"pode substituír a súa configuración e datos existentes."
 
 #: gui/pimdataexporterwindow.cpp:180 gui/pimdataexporterwindow.cpp:285
 #: gui/pimdataexporterwindow.cpp:363
 #, kde-format
 msgid "Backup"
-msgstr "Copia de seguranza"
+msgstr "Copia de seguridade"
 
 #: gui/pimdataexporterwindow.cpp:207
 #, kde-format
@@ -1030,17 +1031,17 @@ msgstr "Gardar o rexistro…"
 #: gui/pimdataexporterwindow.cpp:220
 #, kde-format
 msgid "Show Archive Structure Information..."
-msgstr "Mostrar a información da estrutura do arquivo…"
+msgstr "Amosar a información da estrutura do arquivo…"
 
 #: gui/pimdataexporterwindow.cpp:223
 #, kde-format
 msgid "Show Archive Information..."
-msgstr "Mostrar a información do arquivo…"
+msgstr "Amosar a información do arquivo…"
 
 #: gui/pimdataexporterwindow.cpp:227
 #, kde-format
 msgid "Show Information on current Archive..."
-msgstr "Mostrar información do arquivo actual…"
+msgstr "Amosar información do arquivo actual…"
 
 #: gui/pimdataexporterwindow.cpp:263
 #, kde-format
@@ -1072,12 +1073,12 @@ msgstr "Ficheiros HTML (*.html)"
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Saia de todas as aplicacións de KDE PIM antes de facer unha copia de "
-"seguranza dos seus datos."
+"seguridade dos seus datos."
 
 #: gui/pimdataexporterwindow.cpp:308
 #, kde-format
 msgid "Create backup"
-msgstr "Crear unha copia de seguranza"
+msgstr "Crear unha copia de seguridade"
 
 #: gui/pimdataexporterwindow.cpp:310
 #, kde-format
@@ -1087,7 +1088,7 @@ msgstr "Ficheiro Zip (*.zip)"
 #: gui/pimdataexporterwindow.cpp:320
 #, kde-format
 msgid "Backup in progress..."
-msgstr "Copia de seguranza en progreso…"
+msgstr "Copia de seguridade en progreso…"
 
 #: gui/pimdataexporterwindow.cpp:362
 #, kde-format
@@ -1101,7 +1102,7 @@ msgstr ""
 #: gui/pimdataexporterwindow.cpp:376
 #, kde-format
 msgid "Restore backup"
-msgstr "Restaurar unha copia de seguranza"
+msgstr "Restaurar unha copia de seguridade"
 
 #: gui/pimdataexporterwindow.cpp:378
 #, kde-format
