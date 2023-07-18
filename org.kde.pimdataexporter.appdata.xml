@@ -17,7 +17,6 @@
   <name xml:lang="da">PIM-dataeksport</name>
   <name xml:lang="de">PIM-Daten-Export</name>
   <name xml:lang="en-GB">PIM Data Exporter</name>
-  <name xml:lang="eo">PIM Data Exporter</name>
   <name xml:lang="es">Exportador de datos de PIM</name>
   <name xml:lang="et">PIM-andmete eksportija</name>
   <name xml:lang="eu">PIM datu-esportatzailea</name>
@@ -38,7 +37,7 @@
   <name xml:lang="sk">Exportér údajov PIM</name>
   <name xml:lang="sl">PIM Data Exporter</name>
   <name xml:lang="sv">Export av data för personlig informationshantering</name>
-  <name xml:lang="tr">PIM Verisi Dışa Aktarıcı</name>
+  <name xml:lang="tr">PIM Veri Dışa Aktarıcı</name>
   <name xml:lang="uk">Засіб експортування даних PIM</name>
   <name xml:lang="x-test">xxPIM Data Exporterxx</name>
   <name xml:lang="zh-CN">个人信息管理数据导出器</name>
@@ -52,7 +51,6 @@
   <summary xml:lang="da">Gemmer alle data fra PIM-programmer og genopretter dem på andre systemer.</summary>
   <summary xml:lang="de">Speichert alle Daten von PIM-Anwendungen, um sie später in anderen Systemen wiederherzustellen.</summary>
   <summary xml:lang="en-GB">Saves all data from PIM apps and restore them in other systems.</summary>
-  <summary xml:lang="eo">Konservas ĉiujn datumojn de PIM-apoj kaj restaŭrigas ilin en aliaj sistemoj.</summary>
   <summary xml:lang="es">Guarda todos los datos de las aplicaciones PIM y los restaura en otros sistemas.</summary>
   <summary xml:lang="et">Kõigi PIM-rakenduste andmete salvestamine ja nende taastamine teistes süsteemides.</summary>
   <summary xml:lang="eu">PIM aplikazioetako datu guztiak gorde eta beste sistema batzuetan leheneratzen ditu.</summary>
@@ -87,7 +85,6 @@
   <developer_name xml:lang="da">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="de">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="en-GB">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="eo">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="es">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="et">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="eu">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -126,7 +123,6 @@
     <p xml:lang="da">Eksportør af PIM-data eksporterer og importerer PIM-indstillinger</p>
     <p xml:lang="de">Mit PIM-Daten-Export können Sie PIM-Einstellungen exportieren oder importieren.</p>
     <p xml:lang="en-GB">PIM Data Exporter exports and imports PIM settings</p>
-    <p xml:lang="eo">PIM-Dateneksportilo eksportas kaj importas PIM-agordojn</p>
     <p xml:lang="es">El exportador de datos PIM exporta e importa preferencias de PIM</p>
     <p xml:lang="et">PIM-andmete eksportija ekspordib ja impordib PIM-seadistusi</p>
     <p xml:lang="eu">PIM datu-esportatzaileak PIM ezarpenak esportatu eta inportatzen ditu</p>
@@ -147,7 +143,7 @@
     <p xml:lang="sk">Exportér údajov PIM exportuje a importuje nastavenia PIM</p>
     <p xml:lang="sl">PIM Data Exporter izvaža in uvaža nastavitve programov za upravljanje osebnih podatkov</p>
     <p xml:lang="sv">Export av data för personlig informationshantering exporterar och importerar inställningar för personlig informationshantering.</p>
-    <p xml:lang="tr">PIM Verisi Dışa Aktarıcı, PIM ayarlarını içe ve dışa aktarır</p>
+    <p xml:lang="tr">PIM Veri Dışa Aktarıcı, PIM ayarlarını içe ve dışa aktarır</p>
     <p xml:lang="uk">Засіб експортування даних PIM надає змогу експортувати та імпортувати параметри PIM.</p>
     <p xml:lang="x-test">xxPIM Data Exporter exports and imports PIM settingsxx</p>
     <p xml:lang="zh-CN">个人信息管理数据导出器导出及导入个人信息管理数据</p>
