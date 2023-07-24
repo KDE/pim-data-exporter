@@ -1054,7 +1054,7 @@ msgstr "HTML 파일 (*.html)"
 #: gui/pimdataexporterwindow.cpp:285
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
-msgstr "데이터를 백업하기 전에 모든 KDE PIM 프로그램을 종료하십시오."
+msgstr "데이터를 백업하기 전에 모든 KDE PIM 앱을 종료하십시오."
 
 #: gui/pimdataexporterwindow.cpp:308
 #, kde-format
@@ -1077,8 +1077,7 @@ msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
 msgstr ""
-"데이터를 복원하기 전에 모든 KDE PIM 프로그램을 종료하십시오. 계속 진행하시겠"
-"습니까?"
+"데이터를 복원하기 전에 모든 KDE PIM 앱을 종료하십시오. 계속 진행하시겠습니까?"
 
 #: gui/pimdataexporterwindow.cpp:376
 #, kde-format
