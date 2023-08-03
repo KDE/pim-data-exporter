@@ -38,7 +38,7 @@
   <name xml:lang="sk">Exportér údajov PIM</name>
   <name xml:lang="sl">PIM Data Exporter</name>
   <name xml:lang="sv">Export av data för personlig informationshantering</name>
-  <name xml:lang="tr">PIM Verisi Dışa Aktarıcı</name>
+  <name xml:lang="tr">PIM Verisi Dışa Aktarıcısı</name>
   <name xml:lang="uk">Засіб експортування даних PIM</name>
   <name xml:lang="x-test">xxPIM Data Exporterxx</name>
   <name xml:lang="zh-CN">个人信息管理数据导出器</name>
@@ -147,7 +147,7 @@
     <p xml:lang="sk">Exportér údajov PIM exportuje a importuje nastavenia PIM</p>
     <p xml:lang="sl">PIM Data Exporter izvaža in uvaža nastavitve programov za upravljanje osebnih podatkov</p>
     <p xml:lang="sv">Export av data för personlig informationshantering exporterar och importerar inställningar för personlig informationshantering.</p>
-    <p xml:lang="tr">PIM Verisi Dışa Aktarıcı, PIM ayarlarını içe ve dışa aktarır</p>
+    <p xml:lang="tr">PIM Verisi Dışa Aktarıcısı, PIM ayarlarını içe ve dışa aktarır</p>
     <p xml:lang="uk">Засіб експортування даних PIM надає змогу експортувати та імпортувати параметри PIM.</p>
     <p xml:lang="x-test">xxPIM Data Exporter exports and imports PIM settingsxx</p>
     <p xml:lang="zh-CN">个人信息管理数据导出器导出及导入个人信息管理数据</p>
