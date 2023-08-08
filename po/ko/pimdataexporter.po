@@ -117,12 +117,12 @@ msgstr "\"%1\"이(가) 복원되었습니다."
 #: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
-msgstr "자원을 복원했습니다."
+msgstr "리소스를 복원했습니다."
 
 #: core/abstractimportexportjob.cpp:387
 #, kde-format
 msgid "No resources files found."
-msgstr "자원을 찾을 수 없습니다."
+msgstr "리소스를 찾을 수 없습니다."
 
 #: core/abstractimportexportjob.cpp:448
 #, kde-format
@@ -132,7 +132,7 @@ msgstr "파일 %1을(를) 복사할 수 없음"
 #: core/abstractimportexportjob.cpp:489
 #, kde-format
 msgid "Resource '%1' created."
-msgstr "자원 '%1'을(를) 만들었습니다."
+msgstr "리소스 '%1'을(를) 만들었습니다."
 
 #: core/abstractimportexportjob.cpp:504
 #, kde-format
@@ -142,12 +142,12 @@ msgstr "'%1'을(를) 동기화할 수 없습니다."
 #: core/abstractimportexportjob.cpp:509
 #, kde-format
 msgid "Resource '%1' synchronized."
-msgstr "자원 '%1'을(를) 동기화했습니다."
+msgstr "리소스 '%1'을(를) 동기화했습니다."
 
 #: core/abstractimportexportjob.cpp:515
 #, kde-format
 msgid "All resources synchronized."
-msgstr "모든 자원을 동기화했습니다."
+msgstr "모든 리소스를 동기화했습니다."
 
 #: core/abstractimportexportjob.cpp:541
 #, kde-format
@@ -181,7 +181,7 @@ msgstr "KAddressBook 설정 내보내기"
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
-msgstr "자원 백업 중..."
+msgstr "리소스 백업 중..."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
@@ -190,7 +190,7 @@ msgstr "자원 백업 중..."
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
-msgstr "자원을 백업했습니다."
+msgstr "리소스를 백업했습니다."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:109
 #: core/akregator/exportakregatorjobinterface.cpp:72
@@ -253,7 +253,7 @@ msgstr "설정을 복원했습니다."
 #: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
-msgstr "자원 복원 중..."
+msgstr "리소스 복원 중..."
 
 #: core/akregator/exportakregatorjobinterface.cpp:24
 #, kde-format
@@ -394,7 +394,7 @@ msgstr "메일 백업 중..."
 #: core/mail/exportmailjobinterface.cpp:115
 #, kde-format
 msgid "Start export resource..."
-msgstr "자원 내보내기 시작 중..."
+msgstr "리소스 내보내기 시작 중..."
 
 #: core/mail/exportmailjobinterface.cpp:123
 #, kde-format
@@ -618,12 +618,12 @@ msgstr "\"%1\"을(를) 백업할 수 없습니다."
 #: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
-msgstr "자원 파일 \"%1\"을(를) 백업 파일에 추가할 수 없습니다."
+msgstr "리소스 파일 \"%1\"을(를) 백업 파일에 추가할 수 없습니다."
 
 #: core/resourceconverterbase.cpp:206
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
-msgstr "자원 설정 파일 \"%1\"이(가) 없습니다."
+msgstr "리소스 설정 파일 \"%1\"이(가) 없습니다."
 
 #: core/utils.cpp:181
 #, kde-format
@@ -673,7 +673,7 @@ msgstr "메일 전송 방법"
 #: core/utils.cpp:211
 #, kde-format
 msgid "Resources"
-msgstr "자원"
+msgstr "리소스"
 
 #: core/utils.cpp:213
 #, kde-format
@@ -832,7 +832,7 @@ msgstr "정보 보기"
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
-msgstr "자원 동기화"
+msgstr "리소스 동기화"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
@@ -840,8 +840,8 @@ msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
 msgstr ""
-"일부 자원을 추가했으나 데이터가 동기화되지 않았습니다. 동기화할 자원을 선택하"
-"십시오:"
+"일부 리소스를 추가했으나 데이터가 동기화되지 않았습니다. 동기화할 리소스를 선"
+"택하십시오:"
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
@@ -880,12 +880,12 @@ msgstr "디렉터리 \"%1\"이(가) 이미 존재합니다. 덮어쓰시겠습�
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize resources"
-msgstr "자원 동기화"
+msgstr "리소스 동기화"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
 msgid "Synchronize resources... It can take some time."
-msgstr "자원 동기화 중... 시간이 걸립니다."
+msgstr "리소스 동기화 중... 시간이 걸립니다."
 
 #: gui/pimdatabackuprestoreui.cpp:25
 #, kde-format
