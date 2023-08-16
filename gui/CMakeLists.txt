@@ -87,6 +87,7 @@ target_link_libraries(pimdataexporter
     KF6::Notifications
     KF6::I18n
     KF6::Crash
+    KF6::StatusNotifierItem
     ${pimdataexporter_userfeedback_LIB}
     KF6::WidgetsAddons
     )

@@ -71,6 +71,7 @@ find_package(KF6Notifications ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6WidgetsAddons ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6XmlGui ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6WidgetsAddons ${KF_MIN_VERSION} REQUIRED)
+find_package(KF6StatusNotifierItem ${KF_MIN_VERSION} REQUIRED)
 
 find_package(KF6DocTools ${KF_MIN_VERSION})
 set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
