@@ -12,7 +12,7 @@ Dependencies:
     'pim/kidentitymanagement' : '@latest-kf6'
     'pim/kmailtransport' : '@latest-kf6'
     'pim/kmime' : '@latest-kf6'
-    'pim/kpimtextedit' : '@latest-kf6'
     'pim/mailcommon' : '@latest-kf6'
     'pim/pimcommon' : '@latest-kf6'
     'pim/akonadi-notes' : '@latest-kf6'
+    'libraries/ktextaddons': '@latest-kf6'

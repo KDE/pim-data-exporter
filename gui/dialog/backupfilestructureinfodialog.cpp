@@ -6,8 +6,8 @@
 
 #include "backupfilestructureinfodialog.h"
 
-#include <KPIMTextEdit/PlainTextEditor>
-#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <TextCustomEditor/PlainTextEditor>
+#include <TextCustomEditor/PlainTextEditorWidget>
 
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -30,7 +30,7 @@ static const char myBackupFileStructureInfoDialogGroupName[] = "BackupFileStruct
 }
 BackupFileStructureInfoDialog::BackupFileStructureInfoDialog(QWidget *parent)
     : QDialog(parent)
-    , mEditor(new KPIMTextEdit::PlainTextEditorWidget(this))
+    , mEditor(new TextCustomEditor::PlainTextEditorWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Archive File Structure"));
     auto mainLayout = new QVBoxLayout(this);

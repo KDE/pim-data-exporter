@@ -7,7 +7,7 @@
 #pragma once
 
 #include <QDialog>
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class PlainTextEditorWidget;
 }
@@ -22,5 +22,5 @@ private:
     void readConfig();
     void writeConfig();
     void loadStructure();
-    KPIMTextEdit::PlainTextEditorWidget *const mEditor;
+    TextCustomEditor::PlainTextEditorWidget *const mEditor;
 };
