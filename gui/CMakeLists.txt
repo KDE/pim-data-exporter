@@ -90,6 +90,7 @@ target_link_libraries(pimdataexporter
     KF6::StatusNotifierItem
     ${pimdataexporter_userfeedback_LIB}
     KF6::WidgetsAddons
+    KF6::TextCustomEditor
     )
 
 
