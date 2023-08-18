@@ -16,3 +16,4 @@ Dependencies:
     'pim/pimcommon' : '@latest-kf6'
     'pim/akonadi-notes' : '@latest-kf6'
     'libraries/ktextaddons': '@latest-kf6'
+    'libraries/kuserfeedback': '@latest-kf6'
