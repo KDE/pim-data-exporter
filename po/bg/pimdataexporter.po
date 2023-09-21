@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:47+0000\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
 "PO-Revision-Date: 2022-06-28 09:54+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -176,7 +176,7 @@ msgstr "Експортиране на настройките на KAddressBook"
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:668
+#: core/mail/exportmailjobinterface.cpp:652
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
@@ -185,7 +185,7 @@ msgstr "Създаване на резервно копие на ресурси�
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:690
+#: core/mail/exportmailjobinterface.cpp:674
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
@@ -205,7 +205,7 @@ msgstr "Създаване на резервно копие на конфигу�
 #: core/akregator/exportakregatorjobinterface.cpp:79
 #: core/alarm/exportalarmjobinterface.cpp:135
 #: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:552
+#: core/mail/exportmailjobinterface.cpp:536
 #: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
@@ -413,22 +413,22 @@ msgstr ""
 "Файлът с методите за транспорт на пощата не може да бъде добавен към "
 "резервното копие."
 
-#: core/mail/exportmailjobinterface.cpp:557
+#: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
 msgstr "Създаване на резервно копие на самоличностите..."
 
-#: core/mail/exportmailjobinterface.cpp:596
+#: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
 msgstr "vCard файлът \"%1\" не може да бъде запазен."
 
-#: core/mail/exportmailjobinterface.cpp:609
+#: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
 msgid "Identity backup done."
 msgstr "Резервното копие на самоличностите е готово."
 
-#: core/mail/exportmailjobinterface.cpp:611
+#: core/mail/exportmailjobinterface.cpp:595
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr "Файлът за самоличност не може да бъде добавен към резервното копие."
@@ -537,7 +537,7 @@ msgstr "Самоличността е възстановена"
 msgid "Failed to restore identity file."
 msgstr "Неуспешно възстановяване на файла за самоличност."
 
-#: core/mail/importmailjobinterface.cpp:1287
+#: core/mail/importmailjobinterface.cpp:1283
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "Миграцията на \"%1\"  е успешна."
@@ -703,18 +703,18 @@ msgstr "Структура на резервното копие:"
 msgid "backup-structure.txt file was not found."
 msgstr "backup-structure.txt файл не е намерен."
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:39
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "Конфигуриране на PimDataExporter"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:48
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
 msgid "General"
 msgstr "Общи"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:63
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
 msgstr "Обратна връзка от потребителя"
@@ -969,27 +969,27 @@ msgstr "&Инструменти"
 msgid "Main Toolbar"
 msgstr "Основна лента с инструменти"
 
-#: gui/pimdataexporterwindow.cpp:130
+#: gui/pimdataexporterwindow.cpp:125
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Пълното синхронизиране започва..."
 
-#: gui/pimdataexporterwindow.cpp:160
+#: gui/pimdataexporterwindow.cpp:155
 #, kde-format
 msgid "Full sync finished."
 msgstr "Пълното синхронизиране приключи."
 
-#: gui/pimdataexporterwindow.cpp:167
+#: gui/pimdataexporterwindow.cpp:162
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "Пълното синхронизиране за \"%1\" е готово."
 
-#: gui/pimdataexporterwindow.cpp:172
+#: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "Пълното синхронизиране за \"%1\" е неуспешно."
 
-#: gui/pimdataexporterwindow.cpp:178
+#: gui/pimdataexporterwindow.cpp:173
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -998,89 +998,89 @@ msgstr ""
 "За възстановяване на данни трябва да използвате \"pimdataexporter\". "
 "Внимавайте, тъй като може да презапише съществуващите ви настройки и данни."
 
-#: gui/pimdataexporterwindow.cpp:180 gui/pimdataexporterwindow.cpp:285
-#: gui/pimdataexporterwindow.cpp:363
+#: gui/pimdataexporterwindow.cpp:175 gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup"
 msgstr "Резервно копие"
 
-#: gui/pimdataexporterwindow.cpp:207
+#: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Export Data..."
 msgstr "Експортиране на данни..."
 
-#: gui/pimdataexporterwindow.cpp:212
+#: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Import Data..."
 msgstr "Импортиране на данни..."
 
-#: gui/pimdataexporterwindow.cpp:217
+#: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Save log..."
 msgstr "Запазване на дневника..."
 
-#: gui/pimdataexporterwindow.cpp:220
+#: gui/pimdataexporterwindow.cpp:215
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Показване на информация за структурата на архива..."
 
-#: gui/pimdataexporterwindow.cpp:223
+#: gui/pimdataexporterwindow.cpp:218
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Информация за архива..."
 
-#: gui/pimdataexporterwindow.cpp:227
+#: gui/pimdataexporterwindow.cpp:222
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Информация за текущия архив..."
 
-#: gui/pimdataexporterwindow.cpp:263
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Select Archive"
 msgstr "Избор на архив"
 
-#: gui/pimdataexporterwindow.cpp:263
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Zip file"
 msgstr "Zip файл"
 
-#: gui/pimdataexporterwindow.cpp:275
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Log is empty."
 msgstr "Дневникът е празен."
 
-#: gui/pimdataexporterwindow.cpp:275
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Save log"
 msgstr "Запазване на дневника"
 
-#: gui/pimdataexporterwindow.cpp:279
+#: gui/pimdataexporterwindow.cpp:274
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML файлове (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:285
+#: gui/pimdataexporterwindow.cpp:280
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Моля, излезте от всички приложения на kdepim, преди да архивирате данните си."
 
-#: gui/pimdataexporterwindow.cpp:308
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Create backup"
 msgstr "Създаване на резервно копие"
 
-#: gui/pimdataexporterwindow.cpp:310
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip файл (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:320
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Създава се резервно копие..."
 
-#: gui/pimdataexporterwindow.cpp:362
+#: gui/pimdataexporterwindow.cpp:357
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1089,17 +1089,17 @@ msgstr ""
 "Преди да възстановите данните, трябва да затворите всички приложения kdepim. "
 "Искате ли да продължите?"
 
-#: gui/pimdataexporterwindow.cpp:376
+#: gui/pimdataexporterwindow.cpp:371
 #, kde-format
 msgid "Restore backup"
 msgstr "Възстановяване на резервно копие"
 
-#: gui/pimdataexporterwindow.cpp:378
+#: gui/pimdataexporterwindow.cpp:373
 #, kde-format
 msgid "Zip File"
 msgstr "Zip файл"
 
-#: gui/pimdataexporterwindow.cpp:410
+#: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgid "Restore in progress..."
 msgstr "В процес на възстановяване..."

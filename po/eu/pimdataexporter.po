@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:47+0000\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
 "PO-Revision-Date: 2022-11-14 07:45+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -181,7 +181,7 @@ msgstr "Esportatu KAddressBook ezarpenak"
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:668
+#: core/mail/exportmailjobinterface.cpp:652
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
@@ -190,7 +190,7 @@ msgstr "Baliabideen babeskopia egiten..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:690
+#: core/mail/exportmailjobinterface.cpp:674
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
@@ -210,7 +210,7 @@ msgstr "Konfigurazioaren babeskopia egiten..."
 #: core/akregator/exportakregatorjobinterface.cpp:79
 #: core/alarm/exportalarmjobinterface.cpp:135
 #: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:552
+#: core/mail/exportmailjobinterface.cpp:536
 #: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
@@ -416,22 +416,22 @@ msgstr "Garraioaren babeskopia burutu da."
 msgid "Transport file cannot be added to backup file."
 msgstr "Garraio-fitxategia ezin da gehitu babeskopia fitxategira."
 
-#: core/mail/exportmailjobinterface.cpp:557
+#: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
 msgstr "Nortasunaren babeskopia egiten..."
 
-#: core/mail/exportmailjobinterface.cpp:596
+#: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
 msgstr "\"%1\" vCard fitxategia ezin da gorde."
 
-#: core/mail/exportmailjobinterface.cpp:609
+#: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
 msgid "Identity backup done."
 msgstr "Nortasunaren babeskopia burutu da."
 
-#: core/mail/exportmailjobinterface.cpp:611
+#: core/mail/exportmailjobinterface.cpp:595
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr "Nortasun-fitxategia ezin da gehitu babeskopia fitxategira."
@@ -539,7 +539,7 @@ msgstr "Nortasunak leheneratu dira."
 msgid "Failed to restore identity file."
 msgstr "Nortasun-fitxategia leheneratzea huts egin du."
 
-#: core/mail/importmailjobinterface.cpp:1287
+#: core/mail/importmailjobinterface.cpp:1283
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "\"%1\" migrazioa burutu da."
@@ -705,18 +705,18 @@ msgstr "Egin artxibo-egituraren babeskopia:"
 msgid "backup-structure.txt file was not found."
 msgstr "backup-structure.txt fitxategia ez da aurkitu."
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:39
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "Konfiguratu «PimDataExporter»"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:48
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
 msgid "General"
 msgstr "Orokorra"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:63
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
 msgstr "Erabiltzaileen erreakzioa"
@@ -970,27 +970,27 @@ msgstr "&Tresnak"
 msgid "Main Toolbar"
 msgstr "Tresna-barra nagusia"
 
-#: gui/pimdataexporterwindow.cpp:130
+#: gui/pimdataexporterwindow.cpp:125
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Sinkronizatze osoa hasten da..."
 
-#: gui/pimdataexporterwindow.cpp:160
+#: gui/pimdataexporterwindow.cpp:155
 #, kde-format
 msgid "Full sync finished."
 msgstr "Sinkronizatze osoa amaitu da."
 
-#: gui/pimdataexporterwindow.cpp:167
+#: gui/pimdataexporterwindow.cpp:162
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "\"%1\" osorik sinkronizatzea burutu da."
 
-#: gui/pimdataexporterwindow.cpp:172
+#: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "\"%1\" osorik sinkronizatzea huts egin du."
 
-#: gui/pimdataexporterwindow.cpp:178
+#: gui/pimdataexporterwindow.cpp:173
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -999,90 +999,90 @@ msgstr ""
 "Datuak leheneratzeko, \"pimdataexporter\" erabili behar duzu. Kontuz ibili, "
 "zure ezarpenak eta datuak gainidatz baititzake."
 
-#: gui/pimdataexporterwindow.cpp:180 gui/pimdataexporterwindow.cpp:285
-#: gui/pimdataexporterwindow.cpp:363
+#: gui/pimdataexporterwindow.cpp:175 gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup"
 msgstr "Babeskopia"
 
-#: gui/pimdataexporterwindow.cpp:207
+#: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Export Data..."
 msgstr "Esportatu datuak..."
 
-#: gui/pimdataexporterwindow.cpp:212
+#: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Import Data..."
 msgstr "Inportatu datuak..."
 
-#: gui/pimdataexporterwindow.cpp:217
+#: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Save log..."
 msgstr "Gorde egunkaria..."
 
-#: gui/pimdataexporterwindow.cpp:220
+#: gui/pimdataexporterwindow.cpp:215
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Erakutsi artxibo-egituraren informazioa..."
 
-#: gui/pimdataexporterwindow.cpp:223
+#: gui/pimdataexporterwindow.cpp:218
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Erakutsi artxiboaren informazioa..."
 
-#: gui/pimdataexporterwindow.cpp:227
+#: gui/pimdataexporterwindow.cpp:222
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Erakutsi uneko artxiboari buruzko informazioa..."
 
-#: gui/pimdataexporterwindow.cpp:263
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Select Archive"
 msgstr "Hautatu artxiboa"
 
-#: gui/pimdataexporterwindow.cpp:263
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Zip file"
 msgstr "Zip fitxategia"
 
-#: gui/pimdataexporterwindow.cpp:275
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Log is empty."
 msgstr "Egunkaria hutsik dago."
 
-#: gui/pimdataexporterwindow.cpp:275
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Save log"
 msgstr "Gorde egunkaria"
 
-#: gui/pimdataexporterwindow.cpp:279
+#: gui/pimdataexporterwindow.cpp:274
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML fitxategiak (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:285
+#: gui/pimdataexporterwindow.cpp:280
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Mesedez, irten KDE PIM aplikazio guztietatik zure datuen babeskopia egin "
 "aurretik."
 
-#: gui/pimdataexporterwindow.cpp:308
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Create backup"
 msgstr "Sortu babeskopia"
 
-#: gui/pimdataexporterwindow.cpp:310
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip fitxategia (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:320
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Babeskopia martxan..."
 
-#: gui/pimdataexporterwindow.cpp:362
+#: gui/pimdataexporterwindow.cpp:357
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1091,17 +1091,17 @@ msgstr ""
 "Datuak leheneratu aurretik KDE PIM aplikazio guztiak itxi behar dituzu. "
 "Jarraitu nahi duzu?"
 
-#: gui/pimdataexporterwindow.cpp:376
+#: gui/pimdataexporterwindow.cpp:371
 #, kde-format
 msgid "Restore backup"
 msgstr "Leheneratu babeskopia"
 
-#: gui/pimdataexporterwindow.cpp:378
+#: gui/pimdataexporterwindow.cpp:373
 #, kde-format
 msgid "Zip File"
 msgstr "Zip fitxategia"
 
-#: gui/pimdataexporterwindow.cpp:410
+#: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Leheneratzea martxan..."

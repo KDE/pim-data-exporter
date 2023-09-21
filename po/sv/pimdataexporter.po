@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:47+0000\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
 "PO-Revision-Date: 2022-05-31 16:54+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -181,7 +181,7 @@ msgstr "Exportera adressbokens inställningar"
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:668
+#: core/mail/exportmailjobinterface.cpp:652
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
@@ -190,7 +190,7 @@ msgstr "Säkerhetskopierar resurser..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:690
+#: core/mail/exportmailjobinterface.cpp:674
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
@@ -210,7 +210,7 @@ msgstr "Säkerhetskopierar inställning..."
 #: core/akregator/exportakregatorjobinterface.cpp:79
 #: core/alarm/exportalarmjobinterface.cpp:135
 #: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:552
+#: core/mail/exportmailjobinterface.cpp:536
 #: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
@@ -416,22 +416,22 @@ msgstr "Överföringar säkerhetskopierade."
 msgid "Transport file cannot be added to backup file."
 msgstr "Överföringsfil kan inte läggas till i säkerhetskopieringsfil."
 
-#: core/mail/exportmailjobinterface.cpp:557
+#: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
 msgstr "Säkerhetskopierar identitet..."
 
-#: core/mail/exportmailjobinterface.cpp:596
+#: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
 msgstr "vCard-filen \"%1\" kan inte sparas."
 
-#: core/mail/exportmailjobinterface.cpp:609
+#: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
 msgid "Identity backup done."
 msgstr "Identitet säkerhetskopierad."
 
-#: core/mail/exportmailjobinterface.cpp:611
+#: core/mail/exportmailjobinterface.cpp:595
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr "Identitetsfil kan inte läggas till i säkerhetskopieringsfil."
@@ -539,7 +539,7 @@ msgstr "Identiteter återställda."
 msgid "Failed to restore identity file."
 msgstr "Misslyckades återställa identitetsfil."
 
-#: core/mail/importmailjobinterface.cpp:1287
+#: core/mail/importmailjobinterface.cpp:1283
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "Flyttning av \"%1\" klar."
@@ -705,18 +705,18 @@ msgstr "Arkivstruktur för säkerhetskopiering:"
 msgid "backup-structure.txt file was not found."
 msgstr "Filen backup-structure.txt hittades inte."
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:39
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "Anpassa export av personlig informationshantering"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:48
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
 msgid "General"
 msgstr "Allmänt"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:63
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
 msgstr "Användaråterkoppling"
@@ -971,27 +971,27 @@ msgstr "Verk&tyg"
 msgid "Main Toolbar"
 msgstr "Huvudverktygsrad"
 
-#: gui/pimdataexporterwindow.cpp:130
+#: gui/pimdataexporterwindow.cpp:125
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Fullständig synkronisering startar ..."
 
-#: gui/pimdataexporterwindow.cpp:160
+#: gui/pimdataexporterwindow.cpp:155
 #, kde-format
 msgid "Full sync finished."
 msgstr "Fullständig synkronisering klar."
 
-#: gui/pimdataexporterwindow.cpp:167
+#: gui/pimdataexporterwindow.cpp:162
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "Fullständig synkronisering av \"%1\" utförd."
 
-#: gui/pimdataexporterwindow.cpp:172
+#: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "Fullständig synkronisering av \"%1\" misslyckades."
 
-#: gui/pimdataexporterwindow.cpp:178
+#: gui/pimdataexporterwindow.cpp:173
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -1000,88 +1000,88 @@ msgstr ""
 "För att återställa data måste \"pimdataexporter\" användas. Var försiktig, "
 "eftersom det kan skriva över befintliga inställningar och data."
 
-#: gui/pimdataexporterwindow.cpp:180 gui/pimdataexporterwindow.cpp:285
-#: gui/pimdataexporterwindow.cpp:363
+#: gui/pimdataexporterwindow.cpp:175 gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup"
 msgstr "Säkerhetskopiera"
 
-#: gui/pimdataexporterwindow.cpp:207
+#: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Export Data..."
 msgstr "Exportera data..."
 
-#: gui/pimdataexporterwindow.cpp:212
+#: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Import Data..."
 msgstr "Importera data..."
 
-#: gui/pimdataexporterwindow.cpp:217
+#: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Save log..."
 msgstr "Spara logg..."
 
-#: gui/pimdataexporterwindow.cpp:220
+#: gui/pimdataexporterwindow.cpp:215
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Visa information om arkivstruktur..."
 
-#: gui/pimdataexporterwindow.cpp:223
+#: gui/pimdataexporterwindow.cpp:218
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Visa information om arkiv..."
 
-#: gui/pimdataexporterwindow.cpp:227
+#: gui/pimdataexporterwindow.cpp:222
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Visa information om aktuellt arkiv..."
 
-#: gui/pimdataexporterwindow.cpp:263
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Select Archive"
 msgstr "Välj arkiv"
 
-#: gui/pimdataexporterwindow.cpp:263
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Zip file"
 msgstr "Zip-fil"
 
-#: gui/pimdataexporterwindow.cpp:275
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Log is empty."
 msgstr "Loggen är tom."
 
-#: gui/pimdataexporterwindow.cpp:275
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Save log"
 msgstr "Spara logg"
 
-#: gui/pimdataexporterwindow.cpp:279
+#: gui/pimdataexporterwindow.cpp:274
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML-filer (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:285
+#: gui/pimdataexporterwindow.cpp:280
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "Avsluta alla kdepim-program innan data säkerhetskopieras."
 
-#: gui/pimdataexporterwindow.cpp:308
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Create backup"
 msgstr "Skapa säkerhetskopia"
 
-#: gui/pimdataexporterwindow.cpp:310
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip-fil (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:320
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Säkerhetskopiering pågår..."
 
-#: gui/pimdataexporterwindow.cpp:362
+#: gui/pimdataexporterwindow.cpp:357
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1090,17 +1090,17 @@ msgstr ""
 "Innan information återställs måste alla kdepim-program stängas. Vill du "
 "fortsätta?"
 
-#: gui/pimdataexporterwindow.cpp:376
+#: gui/pimdataexporterwindow.cpp:371
 #, kde-format
 msgid "Restore backup"
 msgstr "Återställer säkerhetskopia"
 
-#: gui/pimdataexporterwindow.cpp:378
+#: gui/pimdataexporterwindow.cpp:373
 #, kde-format
 msgid "Zip File"
 msgstr "Zip-fil"
 
-#: gui/pimdataexporterwindow.cpp:410
+#: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Återställning pågår..."

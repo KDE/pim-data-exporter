@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:47+0000\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
 "PO-Revision-Date: 2012-12-31 14:00+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -191,7 +191,7 @@ msgstr ""
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:668
+#: core/mail/exportmailjobinterface.cpp:652
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
@@ -200,7 +200,7 @@ msgstr "កំពុង​បម្រុងទុក​ធនធាន..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:690
+#: core/mail/exportmailjobinterface.cpp:674
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
@@ -220,7 +220,7 @@ msgstr "កំពុង​បម្រុងទុក​ការ​កំណត
 #: core/akregator/exportakregatorjobinterface.cpp:79
 #: core/alarm/exportalarmjobinterface.cpp:135
 #: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:552
+#: core/mail/exportmailjobinterface.cpp:536
 #: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
@@ -437,23 +437,23 @@ msgstr "បាន​ធ្វើ​​បម្រុងទុក​កា​រ
 msgid "Transport file cannot be added to backup file."
 msgstr "មិន​អាច​​បន្ថែម​ឯកសារ​ដឹក​ជញ្ជូន​ទៅ​ឯកសារ​បម្រុង​ទុក​បាន​ទេ ។"
 
-#: core/mail/exportmailjobinterface.cpp:557
+#: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
 msgstr "កំពុង​បម្រុងទុក​អត្តសញ្ញាណ..."
 
-#: core/mail/exportmailjobinterface.cpp:596
+#: core/mail/exportmailjobinterface.cpp:580
 #, fuzzy, kde-format
 #| msgid "vcard file \"%1\" cannot be saved."
 msgid "vCard file \"%1\" cannot be saved."
 msgstr "មិន​អាច​រក្សាទុក \"%1\" ឯកសារ vcard ។"
 
-#: core/mail/exportmailjobinterface.cpp:609
+#: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
 msgid "Identity backup done."
 msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​អត្តសញ្ញាណ ។"
 
-#: core/mail/exportmailjobinterface.cpp:611
+#: core/mail/exportmailjobinterface.cpp:595
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr "មិន​អាច​បន្ថែម​ឯកសារ​អត្តសញ្ញាណ​ទៅ​ឯកសារ​បម្រុងទុក​បាន​ទេ ។"
@@ -567,7 +567,7 @@ msgstr "បាន​ស្ដារ​អត្តសញ្ញាណ ។"
 msgid "Failed to restore identity file."
 msgstr "បាន​បរាជ័យ​ក្នុងការ​ស្ដារ​​ឯកសារ​អត្តសញ្ញាណ ។"
 
-#: core/mail/importmailjobinterface.cpp:1287
+#: core/mail/importmailjobinterface.cpp:1283
 #, fuzzy, kde-format
 #| msgid "\"%1\" backup done."
 msgid "\"%1\" migration done."
@@ -738,19 +738,19 @@ msgstr ""
 msgid "backup-structure.txt file was not found."
 msgstr ""
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:39
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "PIM Setting Exporter"
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "កម្មវិធី​នាំចេញ​ការ​កំណត់​របស់ PIM"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:48
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
 msgid "General"
 msgstr ""
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:63
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
 msgstr ""
@@ -1005,120 +1005,120 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:130
+#: gui/pimdataexporterwindow.cpp:125
 #, kde-format
 msgid "Full sync starts..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:160
+#: gui/pimdataexporterwindow.cpp:155
 #, kde-format
 msgid "Full sync finished."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:167
+#: gui/pimdataexporterwindow.cpp:162
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:172
+#: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:178
+#: gui/pimdataexporterwindow.cpp:173
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
 "overwrite your existing settings and data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:180 gui/pimdataexporterwindow.cpp:285
-#: gui/pimdataexporterwindow.cpp:363
+#: gui/pimdataexporterwindow.cpp:175 gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup"
 msgstr "បម្រុង​ទុក"
 
-#: gui/pimdataexporterwindow.cpp:207
+#: gui/pimdataexporterwindow.cpp:202
 #, fuzzy, kde-format
 #| msgid "Restore Data..."
 msgid "Export Data..."
 msgstr "ស្ដារ​ទិន្នន័យ..."
 
-#: gui/pimdataexporterwindow.cpp:212
+#: gui/pimdataexporterwindow.cpp:207
 #, fuzzy, kde-format
 #| msgid "Restore Data..."
 msgid "Import Data..."
 msgstr "ស្ដារ​ទិន្នន័យ..."
 
-#: gui/pimdataexporterwindow.cpp:217
+#: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Save log..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:220
+#: gui/pimdataexporterwindow.cpp:215
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:223
+#: gui/pimdataexporterwindow.cpp:218
 #, kde-format
 msgid "Show Archive Information..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:227
+#: gui/pimdataexporterwindow.cpp:222
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:263
+#: gui/pimdataexporterwindow.cpp:258
 #, fuzzy, kde-format
 #| msgid "Select Type"
 msgid "Select Archive"
 msgstr "ជ្រើស​ប្រភេទ"
 
-#: gui/pimdataexporterwindow.cpp:263
+#: gui/pimdataexporterwindow.cpp:258
 #, fuzzy, kde-format
 #| msgid "Copy file"
 msgid "Zip file"
 msgstr "ចម្លង​ឯកសារ"
 
-#: gui/pimdataexporterwindow.cpp:275
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Log is empty."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:275
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Save log"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:279
+#: gui/pimdataexporterwindow.cpp:274
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:285
+#: gui/pimdataexporterwindow.cpp:280
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:308
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Create backup"
 msgstr "បង្កើត​ការ​បម្រុង​ទុក"
 
-#: gui/pimdataexporterwindow.cpp:310
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:320
+#: gui/pimdataexporterwindow.cpp:315
 #, fuzzy, kde-format
 #| msgid "Backing up resources..."
 msgid "Backup in progress..."
 msgstr "កំពុង​បម្រុងទុក​ធនធាន..."
 
-#: gui/pimdataexporterwindow.cpp:362
+#: gui/pimdataexporterwindow.cpp:357
 #, fuzzy, kde-format
 #| msgid ""
 #| "Before to restore data, close all kdepim applications. Do you want to "
@@ -1128,17 +1128,17 @@ msgid ""
 "continue?"
 msgstr "មុន​ស្ដារ​ទិន្នន័យ បិទ​កម្មវិធី kdepim ទាំងអស់ ។ តើ​អ្នក​ចង់បន្ត​ដែរឬទេ ?"
 
-#: gui/pimdataexporterwindow.cpp:376
+#: gui/pimdataexporterwindow.cpp:371
 #, kde-format
 msgid "Restore backup"
 msgstr "ស្ដារ​ការ​បម្រុង​ទុក"
 
-#: gui/pimdataexporterwindow.cpp:378
+#: gui/pimdataexporterwindow.cpp:373
 #, kde-format
 msgid "Zip File"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:410
+#: gui/pimdataexporterwindow.cpp:405
 #, fuzzy, kde-format
 #| msgid "Restore resources..."
 msgid "Restore in progress..."
