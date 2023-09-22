@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-06-18 02:23+0200\n"
+"POT-Creation-Date: 2023-09-21 00:46+0000\n"
 "PO-Revision-Date: 2018-01-06 09:21+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -28,208 +28,217 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "caslav.ilic@gmx.net"
 
-#: console/main.cpp:37 console/main.cpp:38
+#: console/main.cpp:25 console/main.cpp:27
 #, fuzzy, kde-format
 #| msgid "PIM Setting Exporter Console"
 msgid "PIM Data Exporter Console"
 msgstr "Конзола извозника ПИМ поставки"
 
-#: console/main.cpp:39
+#: console/main.cpp:29
 #, fuzzy, kde-format
 #| msgid "Copyright © 2015-2018 pimsettingexporter authors"
-msgid "Copyright © 2015-2020 pimdataexporter authors"
+msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "© 2015–2018, аутори Извозника ПИМ поставки"
 
-#: console/main.cpp:40 gui/pimdatacommandlineoption.cpp:54
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "Laurent Montel"
 msgstr "Лорен Монтел"
 
-#: console/main.cpp:40 gui/pimdatacommandlineoption.cpp:54
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "Maintainer"
 msgstr "Одржавалац"
 
-#: console/main.cpp:41
+#: console/main.cpp:31
 #, kde-format
 msgid "File to log information to."
 msgstr "Фајл за бележење информација."
 
-#: console/main.cpp:42
+#: console/main.cpp:34
 #, kde-format
 msgid "Template file to define what data, settings to import or export."
 msgstr "Фајл шаблона који одређује које податке и поставке увести или извести."
 
-#: console/main.cpp:43
+#: console/main.cpp:37
 #, kde-format
 msgid "Import the given file."
 msgstr "Увези задати фајл."
 
-#: console/main.cpp:44
+#: console/main.cpp:39
 #, kde-format
 msgid "Export the given file."
 msgstr "Извези задати фајл."
 
-#: core/abstractimportexportjob.cpp:70
+#: core/abstractimportexportjob.cpp:56
 #, kde-format
 msgid "Task Canceled"
 msgstr "Задатак отказан"
 
-#: core/abstractimportexportjob.cpp:130
+#: core/abstractimportexportjob.cpp:116
 #, kde-format
 msgid "\"%1\" backup done."
 msgstr "Резерва „%1“ направљена."
 
-#: core/abstractimportexportjob.cpp:132
+#: core/abstractimportexportjob.cpp:118
 #, kde-format
 msgid "\"%1\" cannot be exported."
 msgstr "„%1“ не може да се извезе."
 
-#: core/abstractimportexportjob.cpp:135
+#: core/abstractimportexportjob.cpp:121
 #, kde-format
 msgid "\"%1\" does not exist."
 msgstr "„%1“ не постоји."
 
 # >> %1 file name
-#: core/abstractimportexportjob.cpp:282
+#: core/abstractimportexportjob.cpp:268
 #, kde-format
 msgid "\"%1\" was copied."
 msgstr "„%1“ копиран."
 
-#: core/abstractimportexportjob.cpp:311
+# >> @info:progress
+#: core/abstractimportexportjob.cpp:273
+#, fuzzy, kde-format
+#| msgid "Restoring identities..."
+msgid "Restoring \"%1\"..."
+msgstr "Враћам идентитете..."
+
+#: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "File \"%1\" cannot be copied to \"%2\"."
 msgstr "Фајл „%1“ не може да се копира на „%2“."
 
 # >> @title:window
-#: core/abstractimportexportjob.cpp:311
+#: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "Copy file"
 msgstr "Копирање фајла"
 
 # >> %1 file name
-#: core/abstractimportexportjob.cpp:313
+#: core/abstractimportexportjob.cpp:300
 #, kde-format
 msgid "\"%1\" was restored."
 msgstr "„%1“ враћен."
 
-#: core/abstractimportexportjob.cpp:388
-#: core/addressbook/importaddressbookjobinterface.cpp:229
-#: core/mail/importmailjobinterface.cpp:428
+#: core/abstractimportexportjob.cpp:385
+#: core/addressbook/importaddressbookjobinterface.cpp:231
+#: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
 msgstr "Ресурси враћени."
 
-#: core/abstractimportexportjob.cpp:390
+#: core/abstractimportexportjob.cpp:387
 #, kde-format
 msgid "No resources files found."
 msgstr "Није нађен ниједан фајл ресурса."
 
-#: core/abstractimportexportjob.cpp:445
+#: core/abstractimportexportjob.cpp:448
 #, kde-format
 msgid "Unable to copy file %1"
 msgstr "Не могу да копирам фајл %1."
 
-#: core/abstractimportexportjob.cpp:485
+#: core/abstractimportexportjob.cpp:489
 #, kde-format
 msgid "Resource '%1' created."
 msgstr "Ресурс „%1“ створен."
 
-#: core/abstractimportexportjob.cpp:500
-#, kde-format
-msgid "Failed to synchronize %1."
+#: core/abstractimportexportjob.cpp:504
+#, fuzzy, kde-format
+#| msgid "Failed to synchronize %1."
+msgid "Failed to synchronize '%1'."
 msgstr "Не могу да синхронизујем %1."
 
-#: core/abstractimportexportjob.cpp:505
-#, kde-format
-msgid "Resource %1 synchronized."
+#: core/abstractimportexportjob.cpp:509
+#, fuzzy, kde-format
+#| msgid "Resource %1 synchronized."
+msgid "Resource '%1' synchronized."
 msgstr "Ресурс %1 синхронизован."
 
-#: core/abstractimportexportjob.cpp:511
+#: core/abstractimportexportjob.cpp:515
 #, kde-format
 msgid "All resources synchronized."
 msgstr "Сви ресурси синхронизовани."
 
-#: core/abstractimportexportjob.cpp:522
+#: core/abstractimportexportjob.cpp:541
 #, kde-format
 msgid "Start synchronizing..."
 msgstr "Започињем синхронизацију..."
 
-#: core/abstractimportexportjob.cpp:559
+#: core/abstractimportexportjob.cpp:578
 #, kde-format
 msgid "Directory \"%1\" added to backup file."
 msgstr "Фасцикла „%1“ додата у фајл резерве."
 
-#: core/abstractimportexportjob.cpp:561
+#: core/abstractimportexportjob.cpp:580
 #, kde-format
 msgid "Directory \"%1\" cannot be added to backup file."
 msgstr "Фасцикла „%1“ не може да се дода у фајл резерве."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:43
+#: core/addressbook/exportaddressbookjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAddressBook settings..."
 msgstr "Започињем извоз поставки К‑адресара..."
 
 # >> @title:window
-#: core/addressbook/exportaddressbookjobinterface.cpp:44
+#: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
 msgid "Export KAddressBook settings"
 msgstr "Извоз поставки К‑адресара"
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:57
-#: core/alarm/exportalarmjobinterface.cpp:100
-#: core/calendar/exportcalendarjobinterface.cpp:102
-#: core/mail/exportmailjobinterface.cpp:623
-#: core/notes/exportnotesjobinterface.cpp:68
+#: core/addressbook/exportaddressbookjobinterface.cpp:42
+#: core/alarm/exportalarmjobinterface.cpp:84
+#: core/calendar/exportcalendarjobinterface.cpp:96
+#: core/mail/exportmailjobinterface.cpp:652
+#: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
 msgstr "Правим резерву ресурса..."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:112
-#: core/alarm/exportalarmjobinterface.cpp:92
-#: core/calendar/exportcalendarjobinterface.cpp:81
-#: core/mail/exportmailjobinterface.cpp:646
-#: core/notes/exportnotesjobinterface.cpp:160
+#: core/addressbook/exportaddressbookjobinterface.cpp:102
+#: core/alarm/exportalarmjobinterface.cpp:76
+#: core/calendar/exportcalendarjobinterface.cpp:75
+#: core/mail/exportmailjobinterface.cpp:674
+#: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
 msgstr "Резерва ресурса направљена."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:119
-#: core/akregator/exportakregatorjobinterface.cpp:73
-#: core/alarm/exportalarmjobinterface.cpp:120
-#: core/calendar/exportcalendarjobinterface.cpp:122
-#: core/mail/exportmailjobinterface.cpp:169
-#: core/notes/exportnotesjobinterface.cpp:90
+#: core/addressbook/exportaddressbookjobinterface.cpp:109
+#: core/akregator/exportakregatorjobinterface.cpp:72
+#: core/alarm/exportalarmjobinterface.cpp:109
+#: core/calendar/exportcalendarjobinterface.cpp:228
+#: core/mail/exportmailjobinterface.cpp:167
+#: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
 msgstr "Правим резерву поставе..."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:160
-#: core/akregator/exportakregatorjobinterface.cpp:80
-#: core/alarm/exportalarmjobinterface.cpp:146
-#: core/calendar/exportcalendarjobinterface.cpp:205
-#: core/mail/exportmailjobinterface.cpp:506
-#: core/notes/exportnotesjobinterface.cpp:123
+#: core/addressbook/exportaddressbookjobinterface.cpp:150
+#: core/akregator/exportakregatorjobinterface.cpp:79
+#: core/alarm/exportalarmjobinterface.cpp:135
+#: core/calendar/exportcalendarjobinterface.cpp:248
+#: core/mail/exportmailjobinterface.cpp:536
+#: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
 msgstr "Резерва поставе направљена."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:45
+#: core/addressbook/importaddressbookjobinterface.cpp:41
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
 msgstr "Започињем увоз поставки К‑адресара..."
 
 # >> @title:window
-#: core/addressbook/importaddressbookjobinterface.cpp:47
+#: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
 msgid "Import KAddressBook settings"
 msgstr "Увоз поставки К‑адресара"
 
 # >> @info:progress
-#: core/addressbook/importaddressbookjobinterface.cpp:94
+#: core/addressbook/importaddressbookjobinterface.cpp:92
 #: core/akregator/importakregatorjobinterface.cpp:93
-#: core/alarm/importalarmjobinterface.cpp:83
-#: core/calendar/importcalendarjobinterface.cpp:101
+#: core/alarm/importalarmjobinterface.cpp:82
+#: core/calendar/importcalendarjobinterface.cpp:90
 #: core/notes/importnotesjobinterface.cpp:80
 #, kde-format
 msgid "Restore configs..."
@@ -238,9 +247,9 @@ msgstr "Враћам поставе..."
 #: core/addressbook/importaddressbookjobinterface.cpp:109
 #: core/akregator/importakregatorjobinterface.cpp:99
 #: core/alarm/importalarmjobinterface.cpp:98
-#: core/calendar/importcalendarjobinterface.cpp:211
-#: core/mail/importmailjobinterface.cpp:821
-#: core/notes/importnotesjobinterface.cpp:107
+#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/mail/importmailjobinterface.cpp:866
+#: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
 msgstr "Постава враћена."
@@ -250,695 +259,643 @@ msgstr "Постава враћена."
 #: core/addressbook/importaddressbookjobinterface.cpp:163
 #: core/alarm/importalarmjobinterface.cpp:114
 #: core/alarm/importalarmjobinterface.cpp:115
-#: core/calendar/importcalendarjobinterface.cpp:251
-#: core/calendar/importcalendarjobinterface.cpp:252
-#: core/mail/importmailjobinterface.cpp:205
-#: core/mail/importmailjobinterface.cpp:206
-#: core/notes/importnotesjobinterface.cpp:146
-#: core/notes/importnotesjobinterface.cpp:147
+#: core/calendar/importcalendarjobinterface.cpp:281
+#: core/calendar/importcalendarjobinterface.cpp:282
+#: core/mail/importmailjobinterface.cpp:199
+#: core/mail/importmailjobinterface.cpp:200
+#: core/notes/importnotesjobinterface.cpp:148
+#: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
 msgstr "Враћам ресурсе..."
 
-#: core/akregator/exportakregatorjobinterface.cpp:39
+#: core/akregator/exportakregatorjobinterface.cpp:24
 #, kde-format
 msgid "Start export Akregator settings..."
 msgstr "Започињем извоз поставки Акрегатора..."
 
 # >> @title:window
-#: core/akregator/exportakregatorjobinterface.cpp:40
+#: core/akregator/exportakregatorjobinterface.cpp:25
 #, kde-format
 msgid "Export Akregator settings"
 msgstr "Извоз поставки Акрегатора"
 
-#: core/akregator/exportakregatorjobinterface.cpp:88
+#: core/akregator/exportakregatorjobinterface.cpp:87
 #, kde-format
 msgid "Backing up data..."
 msgstr "Правим резерву података..."
 
-#: core/akregator/exportakregatorjobinterface.cpp:95
-#: core/notes/exportnotesjobinterface.cpp:61
+#: core/akregator/exportakregatorjobinterface.cpp:94
+#: core/notes/exportnotesjobinterface.cpp:46
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
 msgstr "Фасцикла „%1“ не може да се дода у фајл резерве."
 
-#: core/akregator/exportakregatorjobinterface.cpp:98
+#: core/akregator/exportakregatorjobinterface.cpp:97
 #, kde-format
 msgid "Data backup done."
 msgstr "Резерва података направљена."
 
-#: core/akregator/importakregatorjobinterface.cpp:44
+#: core/akregator/importakregatorjobinterface.cpp:29
 #, kde-format
 msgid "Starting to import Akregator settings..."
 msgstr "Започињем увоз поставки Акрегатора..."
 
 # >> @title:window
-#: core/akregator/importakregatorjobinterface.cpp:47
+#: core/akregator/importakregatorjobinterface.cpp:32
 #, kde-format
 msgid "Import Akregator settings"
 msgstr "Увоз поставки Акрегатора"
 
 #: core/akregator/importakregatorjobinterface.cpp:106
-#: core/notes/importnotesjobinterface.cpp:114
+#: core/notes/importnotesjobinterface.cpp:116
 #, kde-format
 msgid "Restore data..."
 msgstr "Враћам податке..."
 
 #: core/akregator/importakregatorjobinterface.cpp:112
-#: core/notes/importnotesjobinterface.cpp:127
+#: core/notes/importnotesjobinterface.cpp:129
 #, kde-format
 msgid "Data restored."
 msgstr "Подаци враћени."
 
-#: core/alarm/exportalarmjobinterface.cpp:44
+#: core/alarm/exportalarmjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAlarm settings..."
 msgstr "Започињем извоз поставки К‑аларма..."
 
 # >> @title:window
-#: core/alarm/exportalarmjobinterface.cpp:45
+#: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
 msgid "Export KAlarm settings"
 msgstr "Извоз поставки К‑аларма"
 
-#: core/alarm/importalarmjobinterface.cpp:48
+#: core/alarm/importalarmjobinterface.cpp:32
 #, kde-format
 msgid "Starting to import KAlarm settings..."
 msgstr "Започињем увоз поставки К‑аларма..."
 
 # >> @title:window
-#: core/alarm/importalarmjobinterface.cpp:49
+#: core/alarm/importalarmjobinterface.cpp:33
 #, kde-format
 msgid "Import KAlarm settings"
 msgstr "Увоз поставки К‑аларма"
 
-#: core/archivestorage.cpp:57
+#: core/archivestorage.cpp:43
 #, kde-format
 msgid "Archive cannot be opened in write mode."
 msgstr "Архива не може да се отвори у режиму писања."
 
-#: core/archivestorage.cpp:59 core/utils.cpp:150
-#: gui/dialog/showarchivestructuredialog.cpp:184
+#: core/archivestorage.cpp:45 core/utils.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "Архива не може да се отвори у режиму читања."
 
-#. i18n: ectx: Menu (file)
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/references/config/kaddressbookui.rc:5
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/share/kxmlgui5/kaddressbook/kaddressbookui.rc:5
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/references/config/kaddressbookui.rc:5
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/share/kxmlgui5/kaddressbook/kaddressbookui.rc:5
-#: core/autotests/addressbook/data/import/addressbookconfigandresources/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:5
-#: core/autotests/addressbook/data/import/addressbookonlyconfig/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:5
-#: gui/pimdataexporter.rc:4
-#, kde-format
-msgid "&File"
-msgstr "&Фајл"
-
-#. i18n: ectx: Menu (file_new)
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/references/config/kaddressbookui.rc:10
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/share/kxmlgui5/kaddressbook/kaddressbookui.rc:10
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/references/config/kaddressbookui.rc:10
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/share/kxmlgui5/kaddressbook/kaddressbookui.rc:10
-#: core/autotests/addressbook/data/import/addressbookconfigandresources/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:10
-#: core/autotests/addressbook/data/import/addressbookonlyconfig/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:10
-#, kde-format
-msgid "&New"
-msgstr ""
-
-#. i18n: ectx: Menu (edit)
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/references/config/kaddressbookui.rc:30
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/share/kxmlgui5/kaddressbook/kaddressbookui.rc:30
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/references/config/kaddressbookui.rc:30
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/share/kxmlgui5/kaddressbook/kaddressbookui.rc:30
-#: core/autotests/addressbook/data/import/addressbookconfigandresources/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:30
-#: core/autotests/addressbook/data/import/addressbookonlyconfig/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:30
-#, kde-format
-msgid "&Edit"
-msgstr ""
-
-#. i18n: ectx: Menu (view)
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/references/config/kaddressbookui.rc:46
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/share/kxmlgui5/kaddressbook/kaddressbookui.rc:46
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/references/config/kaddressbookui.rc:46
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/share/kxmlgui5/kaddressbook/kaddressbookui.rc:46
-#: core/autotests/addressbook/data/import/addressbookconfigandresources/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:46
-#: core/autotests/addressbook/data/import/addressbookonlyconfig/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:46
-#, kde-format
-msgid "&View"
-msgstr ""
-
-#. i18n: ectx: Menu (action)
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/references/config/kaddressbookui.rc:56
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/share/kxmlgui5/kaddressbook/kaddressbookui.rc:56
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/references/config/kaddressbookui.rc:56
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/share/kxmlgui5/kaddressbook/kaddressbookui.rc:56
-#: core/autotests/addressbook/data/import/addressbookconfigandresources/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:56
-#: core/autotests/addressbook/data/import/addressbookonlyconfig/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:56
-#, kde-format
-msgid "&Action"
-msgstr ""
-
-#. i18n: ectx: Menu (tools)
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/references/config/kaddressbookui.rc:60
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/share/kxmlgui5/kaddressbook/kaddressbookui.rc:60
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/references/config/kaddressbookui.rc:60
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/share/kxmlgui5/kaddressbook/kaddressbookui.rc:60
-#: core/autotests/addressbook/data/import/addressbookconfigandresources/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:60
-#: core/autotests/addressbook/data/import/addressbookonlyconfig/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:60
-#: gui/pimdataexporter.rc:17
-#, kde-format
-msgid "&Tools"
-msgstr "&Алатке"
-
-#. i18n: ectx: Menu (settings)
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/references/config/kaddressbookui.rc:64
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/share/kxmlgui5/kaddressbook/kaddressbookui.rc:64
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/references/config/kaddressbookui.rc:64
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/share/kxmlgui5/kaddressbook/kaddressbookui.rc:64
-#: core/autotests/addressbook/data/import/addressbookconfigandresources/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:64
-#: core/autotests/addressbook/data/import/addressbookonlyconfig/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:64
-#, kde-format
-msgid "&Settings"
-msgstr ""
-
-#. i18n: ectx: Menu (help)
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/references/config/kaddressbookui.rc:77
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/share/kxmlgui5/kaddressbook/kaddressbookui.rc:77
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/references/config/kaddressbookui.rc:77
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/share/kxmlgui5/kaddressbook/kaddressbookui.rc:77
-#: core/autotests/addressbook/data/import/addressbookconfigandresources/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:77
-#: core/autotests/addressbook/data/import/addressbookonlyconfig/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:77
-#, kde-format
-msgid "&Help"
-msgstr ""
-
-#. i18n: ectx: ToolBar (mainToolBar)
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/references/config/kaddressbookui.rc:92
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/share/kxmlgui5/kaddressbook/kaddressbookui.rc:92
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/references/config/kaddressbookui.rc:92
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/share/kxmlgui5/kaddressbook/kaddressbookui.rc:92
-#: core/autotests/addressbook/data/import/addressbookconfigandresources/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:92
-#: core/autotests/addressbook/data/import/addressbookonlyconfig/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:92
-#: gui/pimdataexporter.rc:24
-#, kde-format
-msgid "Main Toolbar"
-msgstr ""
-
-# >> @title:group
-#. i18n: ectx: Menu (file_export)
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/references/config/kaddressbookui.rc:126
-#: core/autotests/addressbook/data/export/addressbookconfigandresources/share/kxmlgui5/kaddressbook/kaddressbookui.rc:126
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/references/config/kaddressbookui.rc:126
-#: core/autotests/addressbook/data/export/addressbookonlyconfig/share/kxmlgui5/kaddressbook/kaddressbookui.rc:126
-#: core/autotests/addressbook/data/import/addressbookconfigandresources/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:126
-#: core/autotests/addressbook/data/import/addressbookonlyconfig/references/share/kxmlgui5/kaddressbook/kaddressbookui.rc:126
-#, fuzzy, kde-format
-#| msgid "Import"
-msgid "&Export"
-msgstr "Увоз"
-
-#: core/backupresourcefilejobbase.cpp:51
+#: core/backupresourcefilejobbase.cpp:47
 #, fuzzy, kde-format
 #| msgid "\"%1\" does not exist."
 msgid "\"%1\" is not a file."
 msgstr "„%1“ не постоји."
 
-#: core/backupresourcefilejobbase.cpp:56 core/pimdatabackupthread.cpp:67
-#: core/storeresourcejob.cpp:73
+#: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
+#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
 #, kde-format
 msgid "\"%1\" was backed up."
 msgstr "„%1“ додат у резерву."
 
-#: core/backupresourcefilejobbase.cpp:66 core/pimdatabackupthread.cpp:69
-#: core/storeresourcejob.cpp:75
+#: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
+#: core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
 msgstr "Фајл „%1“ не може да се дода у фајл резерве."
 
-#: core/calendar/exportcalendarjobinterface.cpp:88
+#: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
 msgid "Start export KOrganizer settings..."
 msgstr "Започињем извоз поставки К‑организатора..."
 
 # >> @title:window
-#: core/calendar/exportcalendarjobinterface.cpp:89
+#: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
 msgid "Export KOrganizer settings"
 msgstr "Извоз поставки К‑организатора"
 
-#: core/calendar/importcalendarjobinterface.cpp:50
+#: core/calendar/importcalendarjobinterface.cpp:35
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
 msgstr "Започињем увоз поставки К‑организатора..."
 
 # >> @title:window
-#: core/calendar/importcalendarjobinterface.cpp:52
+#: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
 msgid "Import KOrganizer settings"
 msgstr "Увоз поставки К‑организатора"
 
-#: core/mail/exportmailjobinterface.cpp:60
+#: core/mail/exportmailjobinterface.cpp:43
 #, kde-format
 msgid "Start export KMail settings..."
 msgstr "Започињем извоз поставки К‑поште..."
 
 # >> @title:window
-#: core/mail/exportmailjobinterface.cpp:61
+#: core/mail/exportmailjobinterface.cpp:44
 #, kde-format
 msgid "Export KMail settings"
 msgstr "Извоз поставки К‑поште"
 
-#: core/mail/exportmailjobinterface.cpp:121
+#: core/mail/exportmailjobinterface.cpp:112
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Backing up Folder Attributes..."
+msgstr "Правим резерву идентитета..."
+
+#: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Mails..."
 msgstr "Правим резерву поште..."
 
-#: core/mail/exportmailjobinterface.cpp:130
+#: core/mail/exportmailjobinterface.cpp:115
+#, fuzzy, kde-format
+#| msgid "Start export Akregator settings..."
+msgid "Start export resource..."
+msgstr "Започињем извоз поставки Акрегатора..."
+
+#: core/mail/exportmailjobinterface.cpp:123
 #, kde-format
 msgid "Backing up transports..."
 msgstr "Правим резерву транспорта̂..."
 
-#: core/mail/exportmailjobinterface.cpp:135
-#: core/mail/exportmailjobinterface.cpp:147
+#: core/mail/exportmailjobinterface.cpp:128
+#: core/mail/exportmailjobinterface.cpp:140
 #, kde-format
 msgid "Transports backup done."
 msgstr "Резерва транспорта̂ направљена."
 
-#: core/mail/exportmailjobinterface.cpp:149
+#: core/mail/exportmailjobinterface.cpp:142
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr "Фајл транспорта не може да се дода у фајл резерве."
 
-#: core/mail/exportmailjobinterface.cpp:511
+#: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
 msgstr "Правим резерву идентитета..."
 
-#: core/mail/exportmailjobinterface.cpp:549
+#: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
 msgstr "В‑кард фајл „%1“ не може да се сачува."
 
-#: core/mail/exportmailjobinterface.cpp:562
+#: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
 msgid "Identity backup done."
 msgstr "Резерва идентитета направљена."
 
-#: core/mail/exportmailjobinterface.cpp:564
+#: core/mail/exportmailjobinterface.cpp:595
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr "Фајл идентитета не може да се дода у фајл резерве."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:158
+#: core/mail/exportmailjobinterfaceimpl.cpp:139
 #, kde-format
 msgid "Filters backup done."
 msgstr "Резерва филтера направљена."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:160
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "Филтери не могу да се извезу."
 
-#: core/mail/importmailjobinterface.cpp:58
+#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#, fuzzy, kde-format
+#| msgid "Backing up identity..."
+msgid "Backing up Folder Attributes done."
+msgstr "Правим резерву идентитета..."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Folder Attributes cannot be exported."
+msgstr "Филтери не могу да се извезу."
+
+#: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KMail settings..."
 msgstr "Започињем увоз поставки К‑поште..."
 
 # >> @title:window
-#: core/mail/importmailjobinterface.cpp:59
+#: core/mail/importmailjobinterface.cpp:44
 #, kde-format
 msgid "Import KMail settings"
 msgstr "Увоз поставки К‑поште"
 
 # >> @info:progress
-#: core/mail/importmailjobinterface.cpp:180
-#: core/mail/importmailjobinterface.cpp:186
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
 #, kde-format
 msgid "Restore transports..."
 msgstr "Враћам транспорте..."
 
-#: core/mail/importmailjobinterface.cpp:184
+#: core/mail/importmailjobinterface.cpp:173
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
 msgstr "Фајл транспорта̂ не може да се нађе у архиви."
 
-#: core/mail/importmailjobinterface.cpp:194
+#: core/mail/importmailjobinterface.cpp:188
 #, kde-format
 msgid "Transports restored."
 msgstr "Транспорти враћени."
 
-#: core/mail/importmailjobinterface.cpp:196
+#: core/mail/importmailjobinterface.cpp:190
 #, kde-format
 msgid "Failed to restore transports file."
 msgstr "Неуспело враћање фајла транспорта̂."
 
 # >> @info:progress
-#: core/mail/importmailjobinterface.cpp:435
-#: core/mail/importmailjobinterface.cpp:437
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
 #, kde-format
 msgid "Restore mails..."
 msgstr "Враћам пошту..."
 
-#: core/mail/importmailjobinterface.cpp:551
+#: core/mail/importmailjobinterface.cpp:555
 #, kde-format
 msgid "Mails restored."
 msgstr "Пошта враћена."
 
 # >> @info:progress
-#: core/mail/importmailjobinterface.cpp:558
+#: core/mail/importmailjobinterface.cpp:562
 #, kde-format
 msgid "Restore config..."
 msgstr "Враћам поставу..."
 
-#: core/mail/importmailjobinterface.cpp:561
+#: core/mail/importmailjobinterface.cpp:565
 #, kde-format
 msgid "filters file could not be found in the archive."
 msgstr "Фајл филтера не може да се нађе у архиви."
 
 # >> @info:progress
-#: core/mail/importmailjobinterface.cpp:853
-#: core/mail/importmailjobinterface.cpp:858
+#: core/mail/importmailjobinterface.cpp:569
+#, fuzzy, kde-format
+#| msgid "Restore mails..."
+msgid "Restore filters..."
+msgstr "Враћам пошту..."
+
+#: core/mail/importmailjobinterface.cpp:618
+#, fuzzy, kde-format
+#| msgid "Mails restored."
+msgid "Filters restored."
+msgstr "Пошта враћена."
+
+# >> @info:progress
+#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:904
 #, kde-format
 msgid "Restoring identities..."
 msgstr "Враћам идентитете..."
 
-#: core/mail/importmailjobinterface.cpp:856
+#: core/mail/importmailjobinterface.cpp:902
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
 msgstr "Фајл идентитета е‑поште не може да се нађе у архиви."
 
-#: core/mail/importmailjobinterface.cpp:915
+#: core/mail/importmailjobinterface.cpp:963
 #, kde-format
 msgid "Identities restored."
 msgstr "Идентитети враћени."
 
-#: core/mail/importmailjobinterface.cpp:917
+#: core/mail/importmailjobinterface.cpp:965
 #, kde-format
 msgid "Failed to restore identity file."
 msgstr "Неуспело враћање фајла идентитета."
 
-#: core/notes/exportnotesjobinterface.cpp:43
+#: core/mail/importmailjobinterface.cpp:1283
+#, fuzzy, kde-format
+#| msgid "\"%1\" backup done."
+msgid "\"%1\" migration done."
+msgstr "Резерва „%1“ направљена."
+
+# >> @info:progress
+#: core/mail/importmailjobinterfaceimpl.cpp:35
+#, fuzzy, kde-format
+#| msgid "Restoring identities..."
+msgid "Restoring folder attributes..."
+msgstr "Враћам идентитете..."
+
+# >> @info:progress
+#: core/mail/importmailjobinterfaceimpl.cpp:41
+#, fuzzy, kde-format
+#| msgid "Restoring identities..."
+msgid "Restoring Folder Attributes done."
+msgstr "Враћам идентитете..."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:45
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Folder Attributes cannot be restored."
+msgstr "Филтери не могу да се извезу."
+
+#: core/notes/exportnotesjobinterface.cpp:28
 #, kde-format
 msgid "Start export KNotes settings..."
 msgstr "Започињем извоз поставки К‑бележака..."
 
 # >> @title:window
-#: core/notes/exportnotesjobinterface.cpp:44
+#: core/notes/exportnotesjobinterface.cpp:29
 #, kde-format
 msgid "Export KNotes settings"
 msgstr "Извоз поставки К‑бележака"
 
-#: core/notes/importnotesjobinterface.cpp:64
+#: core/notes/importnotesjobinterface.cpp:49
 #, kde-format
 msgid "Starting to import KNotes settings..."
 msgstr "Започињем увоз поставки К‑бележака..."
 
 # >> @title:window
-#: core/notes/importnotesjobinterface.cpp:67
+#: core/notes/importnotesjobinterface.cpp:52
 #, kde-format
 msgid "Import KNotes settings"
 msgstr "Увоз поставки К‑бележака"
 
-#: core/pimdatabackuprestore.cpp:92 core/pimdatabackuprestore.cpp:265
+#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
 #, kde-format
 msgid "No data selected."
 msgstr "Нема изабраних података."
 
-#: core/pimdatabackuprestore.cpp:98 core/pimdatabackuprestore.cpp:271
+#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
 #, kde-format
 msgid "Unable to open file \"%1\"."
 msgstr "Не могу да отворим фајл „%1“."
 
-#: core/pimdatabackuprestore.cpp:107
+#: core/pimdatabackuprestore.cpp:94
 #, kde-format
 msgid "Starting to backup data in '%1'"
 msgstr "Започињем прављење резерве у „%1“..."
 
-#: core/pimdatabackuprestore.cpp:195
+#: core/pimdatabackuprestore.cpp:183
 #, kde-format
 msgid "Backup in '%1' done."
 msgstr "Резерва у „%1“ направљена."
 
-#: core/pimdatabackuprestore.cpp:290
+#: core/pimdatabackuprestore.cpp:279
 #, kde-format
 msgid "Starting to restore data from '%1'"
 msgstr "Започињем враћање података из „%1“..."
 
-#: core/pimdatabackuprestore.cpp:298
+#: core/pimdatabackuprestore.cpp:287
 #, kde-format
 msgid "Restoring data from '%1' done."
 msgstr "Враћање података из „%1“ готово."
 
-#: core/pimdatabackupthread.cpp:50
+#: core/pimdatabackupthread.cpp:37
 #, kde-format
 msgid "Impossible to open archive file."
 msgstr "Фајл архиве не може да се отвори."
 
-#: core/pimdatabackupthread.cpp:57
+#: core/pimdatabackupthread.cpp:44
 #, kde-format
 msgid "Impossible to backup \"%1\"."
 msgstr "Не може да се направи резерва за „%1“."
 
-#: core/resourceconverterbase.cpp:208 core/resourceconverterbase.cpp:216
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "Фајл ресурса „%1“ не може да се дода у фајл резерве."
 
-#: core/resourceconverterbase.cpp:219
+#: core/resourceconverterbase.cpp:206
 #, fuzzy, kde-format
 #| msgid "\"%1\" does not exist."
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr "„%1“ не постоји."
 
-#: core/utils.cpp:197
+#: core/utils.cpp:181
 #, kde-format
 msgid "KMail"
 msgstr "К‑пошта"
 
-#: core/utils.cpp:199
+#: core/utils.cpp:183
 #, kde-format
 msgid "KAddressBook"
 msgstr "К‑адресар"
 
-#: core/utils.cpp:201
+#: core/utils.cpp:185
 #, kde-format
 msgid "KAlarm"
 msgstr "К‑аларм"
 
-#: core/utils.cpp:203
+#: core/utils.cpp:187
 #, kde-format
 msgid "KOrganizer"
 msgstr "К‑организатор"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:189
 #, kde-format
 msgid "KNotes"
 msgstr "К‑белешке"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:191
 #, kde-format
 msgid "Akregator"
 msgstr "Акрегатор"
 
-#: core/utils.cpp:221
+#: core/utils.cpp:205
 #, kde-format
 msgid "Identity"
 msgstr "идентитет"
 
-#: core/utils.cpp:223
+#: core/utils.cpp:207
 #, kde-format
 msgid "Mails"
 msgstr "пошта"
 
-#: core/utils.cpp:225
+#: core/utils.cpp:209
 #, kde-format
 msgid "Mail Transport"
 msgstr "транспорт поште"
 
-#: core/utils.cpp:227
+#: core/utils.cpp:211
 #, kde-format
 msgid "Resources"
 msgstr "ресурси"
 
-#: core/utils.cpp:229
+#: core/utils.cpp:213
 #, kde-format
 msgid "Config"
 msgstr "постава"
 
-#: core/utils.cpp:231
+#: core/utils.cpp:215
 #, kde-format
 msgid "Data"
 msgstr "подаци"
 
 # >> @title:window
-#: gui/dialog/backupfilestructureinfodialog.cpp:41
+#: gui/dialog/backupfilestructureinfodialog.cpp:35
 #, fuzzy, kde-format
 #| msgid "Archive File Structure"
 msgctxt "@title:window"
 msgid "Archive File Structure"
 msgstr "Структура архивског фајла"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:43
+#: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgid "Backup Archive Structure:"
 msgstr "Структура резервне архиве:"
 
 # literal-segment: backup-structure.txt
-#: gui/dialog/backupfilestructureinfodialog.cpp:70
+#: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
 msgid "backup-structure.txt file was not found."
 msgstr "Фајл ‘backup-structure.txt’ није нађен."
 
 # >> @title:window
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:40
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "Configure PimSettingExporter"
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "Подешавање Извозника ПИМ поставки"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:50
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
 msgid "General"
 msgstr ""
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:65
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
 msgstr ""
 
+# >> @option:check
+#: gui/dialog/selectiontypedialog.cpp:27
+#, kde-format
+msgid "Use this template by default"
+msgstr "Овај шаблон је подразумеван"
+
+#: gui/dialog/selectiontypedialog.cpp:28
+#, kde-format
+msgid "Save as Template..."
+msgstr "Сачувај као шаблон..."
+
+#: gui/dialog/selectiontypedialog.cpp:29
+#, kde-format
+msgid "Load Template..."
+msgstr "Учитај шаблон..."
+
 # >> @title:window
-#: gui/dialog/selectiontypedialog.cpp:35
+#: gui/dialog/selectiontypedialog.cpp:31
 #, fuzzy, kde-format
 #| msgid "Select Type"
 msgctxt "@title:window"
 msgid "Select Type"
 msgstr "Избор типа"
 
-# >> @option:check
-#: gui/dialog/selectiontypedialog.cpp:53
-#, kde-format
-msgid "Use this template by default"
-msgstr "Овај шаблон је подразумеван"
-
-#: gui/dialog/selectiontypedialog.cpp:58
-#: gui/dialog/synchronizeresourcedialog.cpp:53
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgid "Select All"
 msgstr "Изабери све"
 
-#: gui/dialog/selectiontypedialog.cpp:63
-#: gui/dialog/synchronizeresourcedialog.cpp:58
+#: gui/dialog/selectiontypedialog.cpp:57
+#: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgid "Unselect All"
 msgstr "Поништи сав избор"
 
-#: gui/dialog/selectiontypedialog.cpp:68
+#: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
-msgid "Save as Template..."
-msgstr "Сачувај као шаблон..."
+msgid "Extract Selected File"
+msgstr ""
 
-#: gui/dialog/selectiontypedialog.cpp:73
+#: gui/dialog/showarchivestructuredialog.cpp:41
 #, kde-format
-msgid "Load Template..."
-msgstr "Учитај шаблон..."
+msgid "Open Selected File"
+msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:47
+#: gui/dialog/showarchivestructuredialog.cpp:43
 #, fuzzy, kde-format
 #| msgid "Show Archive Content on file \"%1\""
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
 msgstr "Прикажи садржај архиве за фајл „%1“"
 
-#: gui/dialog/showarchivestructuredialog.cpp:56
+#: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
 msgid "Search..."
 msgstr "Тражи..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:59
+#: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
 msgid "Save As Text..."
 msgstr "Сачувај као текст..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:65
-#, kde-format
-msgid "Extract Selected File"
-msgstr ""
-
-#: gui/dialog/showarchivestructuredialog.cpp:71
-#, kde-format
-msgid "Open Selected File"
-msgstr ""
-
 # >> @title:window
-#: gui/dialog/showarchivestructuredialog.cpp:142
+#: gui/dialog/showarchivestructuredialog.cpp:134
 #, fuzzy, kde-format
 #| msgid "Select Archive"
 msgid "Select Directory"
 msgstr "Избор архиве"
 
-#: gui/dialog/showarchivestructuredialog.cpp:148
+#: gui/dialog/showarchivestructuredialog.cpp:140
 #, fuzzy, kde-format
 #| msgid "\"%1\" already exists. Do you want to overwrite it?"
-msgid "Do you want to override %1?"
+msgid "Do you want to overwrite %1?"
 msgstr "„%1“ већ постоји. Желите ли да се пребрише?"
 
-#: gui/dialog/showarchivestructuredialog.cpp:148
+#: gui/dialog/showarchivestructuredialog.cpp:141
 #, kde-format
 msgid "File Already Exist"
 msgstr ""
 
-#: gui/dialog/showarchivestructuredialog.cpp:153
+#: gui/dialog/showarchivestructuredialog.cpp:149
 #, fuzzy, kde-format
 #| msgid "Impossible to backup \"%1\"."
 msgid "Impossible to copy %1 in %2."
 msgstr "Не може да се направи резерва за „%1“."
 
 # >> @item
-#: gui/dialog/showarchivestructuredialog.cpp:175
+#: gui/dialog/showarchivestructuredialog.cpp:172
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
 msgstr "текстуални фајлови"
 
-#: gui/dialog/showarchivestructuredialog.cpp:176
+#: gui/dialog/showarchivestructuredialog.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
 msgstr "Извоз дневничког фајла"
 
-#: gui/dialog/showarchivestructuredialog.cpp:184
+#: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Cannot open archive"
 msgstr "Не могу да отворим архиву"
 
-#: gui/dialog/showarchivestructuredialog.cpp:190
+#: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
 msgid "Info"
 msgstr "Подаци"
 
-#: gui/dialog/showarchivestructuredialog.cpp:192
+#: gui/dialog/showarchivestructuredialog.cpp:191
 #, fuzzy, kde-format
 #| msgid "This is not kdepim archive."
 msgid "This is not pim archive."
 msgstr "Ово није архива КДЕ‑ПИМ‑а."
 
 # >> @title:window
-#: gui/dialog/showarchivestructuredialog.cpp:192
+#: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "Show information"
 msgstr "Приказ података"
 
 # >> @title:window
-#: gui/dialog/synchronizeresourcedialog.cpp:35
+#: gui/dialog/synchronizeresourcedialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "Synchronize Resources"
 msgctxt "@title:window"
 msgid "Synchronize Resources"
 msgstr "Синхронизовање ресурса"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:38
+#: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
@@ -947,54 +904,54 @@ msgstr ""
 "Неки ресурси су додати али подаци нису синхронизовани. Изаберите оне које "
 "желите да синхронизујете:"
 
-#: gui/importexportprogressindicatorgui.cpp:48
-#: gui/job/fullsynchronizeresourcesjob.cpp:54
+#: gui/importexportprogressindicatorgui.cpp:35
+#: gui/job/fullsynchronizeresourcesjob.cpp:39
 #, kde-format
 msgid "Cancel"
 msgstr "Одустани"
 
-#: gui/importexportprogressindicatorgui.cpp:78
+#: gui/importexportprogressindicatorgui.cpp:66
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
 msgstr "„%1“ већ постоји. Желите ли да се пребрише или да се стопи?"
 
 # >> @title:window
-#: gui/importexportprogressindicatorgui.cpp:78
-#: gui/importexportprogressindicatorgui.cpp:87
-#: gui/importexportprogressindicatorgui.cpp:95
+#: gui/importexportprogressindicatorgui.cpp:67
+#: gui/importexportprogressindicatorgui.cpp:79
+#: gui/importexportprogressindicatorgui.cpp:92
 #, kde-format
 msgid "Restore"
 msgstr "Враћање"
 
-#: gui/importexportprogressindicatorgui.cpp:79
+#: gui/importexportprogressindicatorgui.cpp:69
 #, kde-format
 msgid "Merge"
 msgstr "Стопи"
 
-#: gui/importexportprogressindicatorgui.cpp:87
+#: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it?"
 msgstr "„%1“ већ постоји. Желите ли да се пребрише?"
 
-#: gui/importexportprogressindicatorgui.cpp:95
+#: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
 msgstr "Фасцикла „%1“ већ постоји. Желите ли да је пребришете?"
 
 # >> @title:window
-#: gui/job/fullsynchronizeresourcesjob.cpp:56
+#: gui/job/fullsynchronizeresourcesjob.cpp:41
 #, fuzzy, kde-format
 #| msgid "Synchronize resources"
 msgctxt "@title:window"
 msgid "Synchronize resources"
 msgstr "Синхронизовање ресурса"
 
-#: gui/job/fullsynchronizeresourcesjob.cpp:57
+#: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
 msgid "Synchronize resources... It can take some time."
 msgstr "Синхронизујем ресурсе, може да потраје..."
 
-#: gui/pimdatabackuprestoreui.cpp:40
+#: gui/pimdatabackuprestoreui.cpp:25
 #, kde-format
 msgid ""
 "The archive was created by a newer version of this program. It might contain "
@@ -1004,69 +961,95 @@ msgstr ""
 "Архива је направљена новијим издањем овог програма. Може садржати додатне "
 "податке који ће бити прескочени при увозу. Желите ли да је увезете?"
 
-#: gui/pimdatabackuprestoreui.cpp:41
+#: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
 msgid "Not correct version"
 msgstr "Неисправно издање"
 
-#: gui/pimdatacommandlineoption.cpp:51 gui/pimdatacommandlineoption.cpp:52
+# >> @title:group
+#: gui/pimdatabackuprestoreui.cpp:28
+#, fuzzy, kde-format
+#| msgid "Import"
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Увоз"
+
+#: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
 #, fuzzy, kde-format
 #| msgid "PIM Setting Exporter"
 msgid "PIM Data Exporter"
 msgstr "Извозник ПИМ поставки"
 
-#: gui/pimdatacommandlineoption.cpp:53
+#: gui/pimdatacommandlineoption.cpp:41
 #, fuzzy, kde-format
 #| msgid "Copyright © 2012-2018 pimsettingexporter authors"
-msgid "Copyright © 2012-2020 pimdataexporter authors"
+msgid "Copyright © 2012-%1 pimdataexporter authors"
 msgstr "© 2012–2018, аутори Извозника ПИМ поставки"
 
-#: gui/pimdatacommandlineoption.cpp:57
+#: gui/pimdatacommandlineoption.cpp:46
 #, kde-format
 msgid "Template file uses to define what data, settings to import or export"
 msgstr "Фајл шаблона који одређује које податке и поставке увести или извести."
 
-#: gui/pimdatacommandlineoption.cpp:58
+#: gui/pimdatacommandlineoption.cpp:48
 #, kde-format
 msgid "Import the given file"
 msgstr "Увези задати фајл."
 
-#: gui/pimdatacommandlineoption.cpp:59
+#: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
 msgid "Export the given file"
 msgstr "Извези задати фајл."
 
-#: gui/pimdatacommandlineoption.cpp:60
+#: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgid "File or url. The user will be asked whether to import or export."
 msgstr "Фајл или УРЛ. Корисник ће бити питан да ли се увози или извози."
 
-#: gui/pimdatacommandlineoption.cpp:62
+#: gui/pimdatacommandlineoption.cpp:52
 #, kde-format
 msgid "Lists the available options for user feedback"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:144
+#. i18n: ectx: Menu (file)
+#: gui/pimdataexporter.rc:8
+#, kde-format
+msgid "&File"
+msgstr "&Фајл"
+
+#. i18n: ectx: Menu (tools)
+#: gui/pimdataexporter.rc:21
+#, kde-format
+msgid "&Tools"
+msgstr "&Алатке"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: gui/pimdataexporter.rc:28
+#, kde-format
+msgid "Main Toolbar"
+msgstr ""
+
+#: gui/pimdataexporterwindow.cpp:125
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Почиње пуна синхронизација..."
 
-#: gui/pimdataexporterwindow.cpp:166
+#: gui/pimdataexporterwindow.cpp:155
 #, kde-format
 msgid "Full sync finished."
 msgstr "Пуна синхронизација довршена."
 
-#: gui/pimdataexporterwindow.cpp:174
+#: gui/pimdataexporterwindow.cpp:162
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "Пуна синхронизација за „%1“ довршена."
 
-#: gui/pimdataexporterwindow.cpp:179
+#: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "Пуна синхронизација за „%1“ пропала."
 
-#: gui/pimdataexporterwindow.cpp:186
+#: gui/pimdataexporterwindow.cpp:173
 #, fuzzy, kde-format
 #| msgid ""
 #| "For restoring data, you must use \"pimsettingexporter\". Be careful as it "
@@ -1079,94 +1062,94 @@ msgstr ""
 "постојеће поставке и податке."
 
 # >> @title:window
-#: gui/pimdataexporterwindow.cpp:188 gui/pimdataexporterwindow.cpp:299
-#: gui/pimdataexporterwindow.cpp:376
+#: gui/pimdataexporterwindow.cpp:175 gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup"
 msgstr "Прављење резерве"
 
-#: gui/pimdataexporterwindow.cpp:215
+#: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Export Data..."
 msgstr "Извези податке..."
 
-#: gui/pimdataexporterwindow.cpp:220
+#: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Import Data..."
 msgstr "Увези податке..."
 
-#: gui/pimdataexporterwindow.cpp:225
+#: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Save log..."
 msgstr "Сачувај дневник..."
 
-#: gui/pimdataexporterwindow.cpp:228
+#: gui/pimdataexporterwindow.cpp:215
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Прикажи податке о структури архиве..."
 
-#: gui/pimdataexporterwindow.cpp:231
+#: gui/pimdataexporterwindow.cpp:218
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Прикажи податке архиве..."
 
-#: gui/pimdataexporterwindow.cpp:234
+#: gui/pimdataexporterwindow.cpp:222
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Прикажи податке о текућој архиви..."
 
 # >> @title:window
-#: gui/pimdataexporterwindow.cpp:273
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Select Archive"
 msgstr "Избор архиве"
 
 # >> @item
-#: gui/pimdataexporterwindow.cpp:273
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Zip file"
 msgstr "ЗИП фајл"
 
-#: gui/pimdataexporterwindow.cpp:286
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Log is empty."
 msgstr "Дневник је празан."
 
 # >> @title:window
-#: gui/pimdataexporterwindow.cpp:286
+#: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Save log"
 msgstr "Уписивање дневника"
 
-#: gui/pimdataexporterwindow.cpp:290
+#: gui/pimdataexporterwindow.cpp:274
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "ХТМЛ фајлови (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:298
+#: gui/pimdataexporterwindow.cpp:280
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "Напустите све програме КДЕ‑ПИМ‑а пре прављења резерве података."
 
 # >> @title:window
-#: gui/pimdataexporterwindow.cpp:319
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Create backup"
 msgstr "Прављење резерве"
 
 # >> @item
-#: gui/pimdataexporterwindow.cpp:321
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "ЗИП фајл (*.zip)"
 
 # >> @info:progress
-#: gui/pimdataexporterwindow.cpp:331
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Прављење резерве у току..."
 
-#: gui/pimdataexporterwindow.cpp:374
+#: gui/pimdataexporterwindow.cpp:357
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1176,51 +1159,57 @@ msgstr ""
 "да наставите?"
 
 # >> @title:window
-#: gui/pimdataexporterwindow.cpp:387
+#: gui/pimdataexporterwindow.cpp:371
 #, kde-format
 msgid "Restore backup"
 msgstr "Враћање резерве"
 
 # >> @item
-#: gui/pimdataexporterwindow.cpp:390
+#: gui/pimdataexporterwindow.cpp:373
 #, kde-format
 msgid "Zip File"
 msgstr "ЗИП фајл"
 
 # >> @info:progress
-#: gui/pimdataexporterwindow.cpp:422
+#: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Враћање у току..."
 
-#: gui/trayicon/pimdatatrayicon.cpp:26
+#: gui/trayicon/pimdatatrayicon.cpp:13
 #, fuzzy, kde-format
 #| msgid "PimSettingExporter"
 msgid "Pim Data Exporter"
 msgstr "Извозник ПИМ поставки"
 
-# >> @title:group
-#: gui/widgets/pimdataexporterconfigurewidget.cpp:33
-#, kde-format
-msgid "Import"
-msgstr "Увоз"
-
-#: gui/widgets/pimdataexporterconfigurewidget.cpp:40
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:16
 #, kde-format
 msgid "Always Override File"
 msgstr "Увек потисни фајл"
 
-#: gui/widgets/pimdataexporterconfigurewidget.cpp:44
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:17
 #, kde-format
 msgid "Always Override Directory"
 msgstr "Увек потисни фасциклу"
 
-#: gui/widgets/pimdataexporterconfigurewidget.cpp:48
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:18
 #, kde-format
 msgid "Always Merge Config File"
 msgstr "Увек стопи поставни фајл"
 
-#: gui/widgets/selectiontypetreewidget.cpp:367
+# >> @title:group
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:23
+#, kde-format
+msgid "Import"
+msgstr "Увоз"
+
+#: gui/widgets/selectiontypetreewidget.cpp:350
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "фајлови шаблона (*.xml)"
+
+# >> @title:group
+#, fuzzy
+#~| msgid "Import"
+#~ msgid "&Export"
+#~ msgstr "Увоз"
