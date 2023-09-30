@@ -85,7 +85,7 @@
 <title
 >Ús de l'&i18n-pimdataexporter;</title>
 <para
->La còpia de seguretat és una pràctica essencial per a tots els usuaris. L'&i18n-pimdataexporter; és una gran eina per a realitzar còpies de seguretat o moure totes les vostres opcions de configuració i el correu electrònic per a una nova instal·lació. També podeu utilitzar l'&i18n-pimdataexporter; per importar còpies de seguretat anteriors.</para>
+>La còpia de seguretat és una pràctica essencial per a tots els usuaris. L'&i18n-pimdataexporter; és una gran eina per a realitzar còpies de seguretat o moure totes les vostres opcions de configuració i el correu electrònic per a una nova instal·lació. També podeu utilitzar l'&i18n-pimdataexporter; per a importar còpies de seguretat anteriors.</para>
 <para
 >Podeu utilitzar <menuchoice
 ><guimenu
@@ -127,8 +127,8 @@
 >La selecció de correu del &kmail; només farà còpia de seguretat en les vostres <quote
 >Carpetes locals</quote
 >, serà una còpia de seguretat de les opcions &imap; i descarregarà els missatges a restaurar. Si teniu missatges de correu electrònic en un servidor &imap;, i voleu fer una còpia de seguretat, haureu d'utilitzar l'<ulink url="help:/akonadi_folderarchive_agent"
->Agent per arxivar una carpeta</ulink
-> per arxivar aquests correus electrònics a una carpeta local.</para>
+>Agent per a arxivar una carpeta</ulink
+> per a arxivar aquests correus electrònics a una carpeta local.</para>
 </note
 ></para>
 <screenshot>
