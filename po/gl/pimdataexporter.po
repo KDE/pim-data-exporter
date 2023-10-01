@@ -80,12 +80,12 @@ msgstr "Tarefa cancelada"
 #: core/abstractimportexportjob.cpp:116
 #, kde-format
 msgid "\"%1\" backup done."
-msgstr "Fíxose unha copia de seguridade de «%1»."
+msgstr "Fíxose unha salvagarda de «%1»."
 
 #: core/abstractimportexportjob.cpp:118
 #, kde-format
 msgid "\"%1\" cannot be exported."
-msgstr "Non se pode exportar «%1»."
+msgstr "Non é posíbel exportar «%1»."
 
 #: core/abstractimportexportjob.cpp:121
 #, kde-format
@@ -105,7 +105,7 @@ msgstr "Restaurando «%1»…"
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "File \"%1\" cannot be copied to \"%2\"."
-msgstr "Non se pode copiar o ficheiro «%1» en «%2»."
+msgstr "Non é posíbel copiar o ficheiro «%1» en «%2»."
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
@@ -132,7 +132,7 @@ msgstr "Non foi posíbel atopar ficheiros de recursos."
 #: core/abstractimportexportjob.cpp:448
 #, kde-format
 msgid "Unable to copy file %1"
-msgstr "Non se pode copiar o ficheiro %1."
+msgstr "Non é posíbel copiar o ficheiro %1."
 
 #: core/abstractimportexportjob.cpp:489
 #, kde-format
@@ -142,7 +142,7 @@ msgstr "Creouse o recurso «%1»."
 #: core/abstractimportexportjob.cpp:504
 #, kde-format
 msgid "Failed to synchronize '%1'."
-msgstr "Non se puido sincronizar «%1»."
+msgstr "Non foi posíbel sincronizar «%1»."
 
 #: core/abstractimportexportjob.cpp:509
 #, kde-format
@@ -162,13 +162,12 @@ msgstr "Comezar a sincronización…"
 #: core/abstractimportexportjob.cpp:578
 #, kde-format
 msgid "Directory \"%1\" added to backup file."
-msgstr "Engadiuse o directorio «%1» ao ficheiro de copia de seguridade."
+msgstr "Engadiuse o directorio «%1» ao ficheiro de salvagarda."
 
 #: core/abstractimportexportjob.cpp:580
 #, kde-format
 msgid "Directory \"%1\" cannot be added to backup file."
-msgstr ""
-"Non se pode engadir o directorio «%1» ao ficheiro de copia de seguridade."
+msgstr "Non é posíbel engadir o directorio «%1» ao ficheiro de salvagarda."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:28
 #, kde-format
@@ -187,7 +186,7 @@ msgstr "Exportar a configuración de KAddressBook"
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
-msgstr "Estase a facer a copia de seguridade dos recursos…"
+msgstr "Facendo a salvagarda dos recursos…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
@@ -196,7 +195,7 @@ msgstr "Estase a facer a copia de seguridade dos recursos…"
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
-msgstr "Fíxose unha copia de seguridade dos recursos."
+msgstr "Fíxose unha salvagarda dos recursos."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:109
 #: core/akregator/exportakregatorjobinterface.cpp:72
@@ -206,7 +205,7 @@ msgstr "Fíxose unha copia de seguridade dos recursos."
 #: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
-msgstr "Estase a facer a copia de seguridade da configuración…"
+msgstr "Facendo a salvagarda da configuración…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:150
 #: core/akregator/exportakregatorjobinterface.cpp:79
@@ -216,7 +215,7 @@ msgstr "Estase a facer a copia de seguridade da configuración…"
 #: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
-msgstr "Fíxose unha copia de seguridade da configuración."
+msgstr "Fíxose unha salvagarda da configuración."
 
 #: core/addressbook/importaddressbookjobinterface.cpp:41
 #, kde-format
@@ -274,19 +273,18 @@ msgstr "Exportar a configuración de Akregator"
 #: core/akregator/exportakregatorjobinterface.cpp:87
 #, kde-format
 msgid "Backing up data..."
-msgstr "Facendo unha copia de seguridade dos datos…"
+msgstr "Facendo unha salvagarda dos datos…"
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
 #: core/notes/exportnotesjobinterface.cpp:46
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
-msgstr ""
-"Non se pode engadir o directorio «%1» ao ficheiro de copia de seguridade."
+msgstr "Non é posíbel engadir o directorio «%1» ao ficheiro de salvagarda."
 
 #: core/akregator/exportakregatorjobinterface.cpp:97
 #, kde-format
 msgid "Data backup done."
-msgstr "Fíxose unha copia de seguridade dos datos."
+msgstr "Fíxose unha salvagarda dos datos."
 
 #: core/akregator/importakregatorjobinterface.cpp:29
 #, kde-format
@@ -333,13 +331,13 @@ msgstr "Importar a configuración de KAlarm"
 #: core/archivestorage.cpp:43
 #, kde-format
 msgid "Archive cannot be opened in write mode."
-msgstr "Non se pode abrir o arquivo en modo de escritura."
+msgstr "Non é posíbel abrir o arquivo en modo de escritura."
 
 #: core/archivestorage.cpp:45 core/utils.cpp:134
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Archive cannot be opened in read mode."
-msgstr "Non se pode abrir o arquivo para lectura."
+msgstr "Non é posíbel abrir o arquivo para lectura."
 
 #: core/backupresourcefilejobbase.cpp:47
 #, kde-format
@@ -350,14 +348,13 @@ msgstr "«%1» non é un ficheiro."
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
 #, kde-format
 msgid "\"%1\" was backed up."
-msgstr "Fíxose unha copia de seguridade de «%1»."
+msgstr "Fíxose unha salvagarda de «%1»."
 
 #: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
 #: core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
-msgstr ""
-"Non se pode engadir o ficheiro «%1» ao ficheiro de copia de seguridade."
+msgstr "Non é posíbel engadir o ficheiro «%1» ao ficheiro de salvagarda."
 
 #: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
@@ -392,12 +389,12 @@ msgstr "Exportar a configuración de KMail"
 #: core/mail/exportmailjobinterface.cpp:112
 #, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr "Facendo unha copia de seguridade dos atributos do cartafol…"
+msgstr "Facendo unha salvagarda dos atributos do cartafol…"
 
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Mails..."
-msgstr "Estase a facer a copia de seguridade das mensaxes de correo…"
+msgstr "Facendo a salvagarda das mensaxes de correo…"
 
 #: core/mail/exportmailjobinterface.cpp:115
 #, kde-format
@@ -407,47 +404,45 @@ msgstr "Iniciar a exportación do recurso…"
 #: core/mail/exportmailjobinterface.cpp:123
 #, kde-format
 msgid "Backing up transports..."
-msgstr "Facendo unha copia de seguridade dos transportes…"
+msgstr "Facendo unha salvagarda dos transportes…"
 
 #: core/mail/exportmailjobinterface.cpp:128
 #: core/mail/exportmailjobinterface.cpp:140
 #, kde-format
 msgid "Transports backup done."
-msgstr "Fíxose unha copia de seguridade dos transportes."
+msgstr "Fíxose unha salvagarda dos transportes."
 
 #: core/mail/exportmailjobinterface.cpp:142
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr ""
-"Non se pode engadir o ficheiro de transporte ao ficheiro de copia de "
-"seguridade."
+"Non é posíbel engadir o ficheiro de transporte ao ficheiro de salvagarda."
 
 #: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
-msgstr "Estase a facer unha copia de seguridade da identidade…"
+msgstr "Facendo unha salvagarda da identidade…"
 
 #: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
-msgstr "Non se pode gardar o ficheiro vCard «%1»."
+msgstr "Non é posíbel gardar o ficheiro vCard «%1»."
 
 #: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
 msgid "Identity backup done."
-msgstr "Fíxose unha copia de seguridade da identidade."
+msgstr "Fíxose unha salvagarda da identidade."
 
 #: core/mail/exportmailjobinterface.cpp:595
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr ""
-"Non se pode engadir o ficheiro de identidade ao ficheiro de copia de "
-"seguridade."
+"Non é posíbel engadir o ficheiro de identidade ao ficheiro de salvagarda."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:139
 #, kde-format
 msgid "Filters backup done."
-msgstr "Fíxose unha copia de seguridade dos filtros."
+msgstr "Fíxose unha salvagarda dos filtros."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:141
 #, kde-format
@@ -457,12 +452,12 @@ msgstr "Os filtros non poden exportarse."
 #: core/mail/exportmailjobinterfaceimpl.cpp:163
 #, kde-format
 msgid "Backing up Folder Attributes done."
-msgstr "Fíxose unha copia de seguridade dos atributos do cartafol."
+msgstr "Fíxose unha salvagarda dos atributos do cartafol."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:167
 #, kde-format
 msgid "Folder Attributes cannot be exported."
-msgstr "Non se poden exportar os atributos do cartafol."
+msgstr "Non é posíbel exportar os atributos do cartafol."
 
 #: core/mail/importmailjobinterface.cpp:43
 #, kde-format
@@ -483,7 +478,7 @@ msgstr "Restaurar os transportes…"
 #: core/mail/importmailjobinterface.cpp:173
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
-msgstr "Non se puido atopar o ficheiro mailtransports no arquivo."
+msgstr "Non foi posíbel atopar o ficheiro mailtransports no arquivo."
 
 #: core/mail/importmailjobinterface.cpp:188
 #, kde-format
@@ -493,7 +488,7 @@ msgstr "Restauráronse os transportes."
 #: core/mail/importmailjobinterface.cpp:190
 #, kde-format
 msgid "Failed to restore transports file."
-msgstr "Non se puido restaurar o ficheiro dos transportes."
+msgstr "Non foi posíbel restaurar o ficheiro dos transportes."
 
 #: core/mail/importmailjobinterface.cpp:436
 #: core/mail/importmailjobinterface.cpp:438
@@ -514,7 +509,7 @@ msgstr "Restaurar a configuración…"
 #: core/mail/importmailjobinterface.cpp:565
 #, kde-format
 msgid "filters file could not be found in the archive."
-msgstr "Non se puido atopar o ficheiro de filtros no arquivo."
+msgstr "Non foi posíbel atopar o ficheiro de filtros no arquivo."
 
 #: core/mail/importmailjobinterface.cpp:569
 #, kde-format
@@ -535,7 +530,7 @@ msgstr "Restaurando as identidades…"
 #: core/mail/importmailjobinterface.cpp:902
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
-msgstr "Non se puido atopar o ficheiro emailidentities no arquivo."
+msgstr "Non foi posíbel atopar o ficheiro emailidentities no arquivo."
 
 #: core/mail/importmailjobinterface.cpp:963
 #, kde-format
@@ -545,7 +540,7 @@ msgstr "Restauráronse as identidades."
 #: core/mail/importmailjobinterface.cpp:965
 #, kde-format
 msgid "Failed to restore identity file."
-msgstr "Non se puido restaurar o ficheiro das identidades."
+msgstr "Non foi posíbel restaurar o ficheiro das identidades."
 
 #: core/mail/importmailjobinterface.cpp:1283
 #, kde-format
@@ -565,7 +560,7 @@ msgstr "Restauráronse os atributos do cartafol."
 #: core/mail/importmailjobinterfaceimpl.cpp:45
 #, kde-format
 msgid "Folder Attributes cannot be restored."
-msgstr "Non se poden restaurar os atributos do cartafol."
+msgstr "Non é posíbel restaurar os atributos do cartafol."
 
 #: core/notes/exportnotesjobinterface.cpp:28
 #, kde-format
@@ -595,17 +590,17 @@ msgstr "Non seleccionou datos."
 #: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
 #, kde-format
 msgid "Unable to open file \"%1\"."
-msgstr "Non se pode abrir o ficheiro «%1»."
+msgstr "Non é posíbel abrir o ficheiro «%1»."
 
 #: core/pimdatabackuprestore.cpp:94
 #, kde-format
 msgid "Starting to backup data in '%1'"
-msgstr "Iniciando a copia de seguridade dos datos de «%1»"
+msgstr "Iniciando a salvagarda dos datos de «%1»"
 
 #: core/pimdatabackuprestore.cpp:183
 #, kde-format
 msgid "Backup in '%1' done."
-msgstr "Realizouse unha copia de seguridade de «%1»."
+msgstr "Realizouse unha salvagarda de «%1»."
 
 #: core/pimdatabackuprestore.cpp:279
 #, kde-format
@@ -625,14 +620,13 @@ msgstr "Non é posíbel abrir o ficheiro de arquivo."
 #: core/pimdatabackupthread.cpp:44
 #, kde-format
 msgid "Impossible to backup \"%1\"."
-msgstr "Non foi posíbel facer unha copia de seguridade de «%1»."
+msgstr "Non foi posíbel facer unha salvagarda de «%1»."
 
 #: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr ""
-"Non se pode engadir o ficheiro de recursos «%1» ao ficheiro de copia de "
-"seguridade."
+"Non é posíbel engadir o ficheiro de recursos «%1» ao ficheiro de salvagarda."
 
 #: core/resourceconverterbase.cpp:206
 #, kde-format
@@ -825,7 +819,7 @@ msgstr "Exportar a un ficheiro de rexistro"
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Cannot open archive"
-msgstr "Non se pode abrir o arquivo"
+msgstr "Non é posíbel abrir o arquivo"
 
 #: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
@@ -1011,7 +1005,7 @@ msgstr ""
 #: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup"
-msgstr "Copia de seguridade"
+msgstr "Salvagarda"
 
 #: gui/pimdataexporterwindow.cpp:202
 #, kde-format
@@ -1072,13 +1066,13 @@ msgstr "Ficheiros HTML (*.html)"
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
-"Saia de todas as aplicacións de KDE PIM antes de facer unha copia de "
-"seguridade dos seus datos."
+"Saia de todas as aplicacións de KDE PIM antes de facer unha salvagarda dos "
+"seus datos."
 
 #: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Create backup"
-msgstr "Crear unha copia de seguridade"
+msgstr "Crear unha salvagarda"
 
 #: gui/pimdataexporterwindow.cpp:305
 #, kde-format
@@ -1088,7 +1082,7 @@ msgstr "Ficheiro Zip (*.zip)"
 #: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Backup in progress..."
-msgstr "Copia de seguridade en progreso…"
+msgstr "Salvagarda en progreso…"
 
 #: gui/pimdataexporterwindow.cpp:357
 #, kde-format
@@ -1102,7 +1096,7 @@ msgstr ""
 #: gui/pimdataexporterwindow.cpp:371
 #, kde-format
 msgid "Restore backup"
-msgstr "Restaurar unha copia de seguridade"
+msgstr "Restaurar unha salvagarda"
 
 #: gui/pimdataexporterwindow.cpp:373
 #, kde-format
