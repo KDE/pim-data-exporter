@@ -16,7 +16,7 @@ public:
     explicit LogInFile(QObject *parent = nullptr);
     ~LogInFile() override;
 
-    Q_REQUIRED_RESULT QString fileName() const;
+    [[nodiscard]] QString fileName() const;
     void setFileName(const QString &fileName);
 
 public Q_SLOTS:

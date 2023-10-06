@@ -18,16 +18,13 @@ public:
     ~ExportCalendarJobInterfaceImpl() override;
 
 protected:
-    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
-    Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) override;
+    [[nodiscard]] Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+    [[nodiscard]] QString convertToFullCollectionPath(const qlonglong collectionValue) override;
     void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) override;
     void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) override;
-    Q_REQUIRED_RESULT QList<Utils::AkonadiInstanceInfo> listOfResource() override;
-    Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
+    [[nodiscard]] QList<Utils::AkonadiInstanceInfo> listOfResource() override;
+    [[nodiscard]] QString resourcePath(const QString &identifier) const override;
     void backupCalendarResourceFile(const QString &agentIdentifier, const QString &defaultPath) override;
-    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
-    Q_REQUIRED_RESULT QString createResource(const QString &resources,
-                                             const QString &name,
-                                             const QMap<QString, QVariant> &settings,
-                                             bool synchronizeTree) override;
+    [[nodiscard]] QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
+    [[nodiscard]] QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) override;
 };

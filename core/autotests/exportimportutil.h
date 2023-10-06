@@ -17,13 +17,13 @@ public:
     void setListOfResource(const QList<Utils::AkonadiInstanceInfo> &instanceInfoList);
     void setPathConfig(const QString &pathConfig);
     void addLogCreateResource(const QString &str);
-    Q_REQUIRED_RESULT QString loggingFilePath() const;
+    [[nodiscard]] QString loggingFilePath() const;
 
     QList<Utils::AkonadiInstanceInfo> mListAkonadiInstanceInfo;
     QString mPathConfig;
     void setExtractPath(const QString &extractPath);
 
-    Q_REQUIRED_RESULT QString extractPath() const;
+    [[nodiscard]] QString extractPath() const;
 
 protected:
     LogCreatingResource *mLogCreateResource = nullptr;

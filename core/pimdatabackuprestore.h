@@ -18,8 +18,8 @@ public:
     explicit PimDataBackupRestore(QObject *parent = nullptr);
     ~PimDataBackupRestore() override;
 
-    Q_REQUIRED_RESULT bool backupStart(const QString &filename);
-    Q_REQUIRED_RESULT bool restoreStart(const QString &filename);
+    [[nodiscard]] bool backupStart(const QString &filename);
+    [[nodiscard]] bool restoreStart(const QString &filename);
 
     void setStoredParameters(const QMap<Utils::AppsType, Utils::importExportParameters> &stored);
 
@@ -48,7 +48,7 @@ protected:
 private:
     void slotJobFinished();
     enum Action { Backup, Restore };
-    Q_REQUIRED_RESULT bool openArchive(const QString &filename, bool readWrite);
+    [[nodiscard]] bool openArchive(const QString &filename, bool readWrite);
     void backupNextStep();
     void restoreNextStep();
     void backupFinished();

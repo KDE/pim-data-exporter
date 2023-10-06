@@ -16,10 +16,10 @@ class GenerateListFileFromArchive
 public:
     explicit GenerateListFileFromArchive(const QString &fileName);
     ~GenerateListFileFromArchive();
-    Q_REQUIRED_RESULT QStringList listFile() const;
+    [[nodiscard]] QStringList listFile() const;
 
 private:
-    Q_REQUIRED_RESULT bool searchArchiveElement(const QString &path, const KArchiveDirectory *topDirectory);
+    [[nodiscard]] bool searchArchiveElement(const QString &path, const KArchiveDirectory *topDirectory);
     void addSubItems(const QString &topLevelPath, const KArchiveEntry *entry, int indent, const QString &fullpath = QString());
     void generateList();
     const QString mFileName;

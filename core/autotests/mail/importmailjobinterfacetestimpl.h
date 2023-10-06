@@ -20,26 +20,24 @@ public:
     void setExistingPathConfig(const QString &path);
 
 protected:
-    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+    [[nodiscard]] Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     void synchronizeResource(const QStringList &lst) override;
 
-    Q_REQUIRED_RESULT QString createResource(const QString &resources,
-                                             const QString &name,
-                                             const QMap<QString, QVariant> &settings,
-                                             bool synchronizeTree = false) override;
+    [[nodiscard]] QString
+    createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree = false) override;
     void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) override;
     void importFilters(const QString &filename) override;
 
-    Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
-    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
+    [[nodiscard]] QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
+    [[nodiscard]] QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
     void addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) override;
     void importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) override;
     void importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId) override;
-    Q_REQUIRED_RESULT QString configLocation() const override;
+    [[nodiscard]] QString configLocation() const override;
     void importFolderAttributes() override final;
 
 private:
-    Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
+    [[nodiscard]] QString uniqueIdentityName(const QString &name);
     uint mIdentityUoid = 1;
     uint mMailTransportId = 1;
     QString mExistingPathConfig;

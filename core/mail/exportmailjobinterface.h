@@ -26,7 +26,7 @@ public:
     void start() override;
     void slotWriteNextArchiveResource();
     void slotMailsJobTerminated();
-    Q_REQUIRED_RESULT virtual QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
+    [[nodiscard]] virtual QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
 
 Q_SIGNALS:
     void taskCanceled();
@@ -39,15 +39,15 @@ protected:
     virtual QList<MailCommon::MailFilter *> filters() = 0;
     void slotCheckBackupResources();
     virtual void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) = 0;
-    Q_REQUIRED_RESULT virtual QList<Utils::AkonadiInstanceInfo> listOfResource() = 0;
-    Q_REQUIRED_RESULT virtual QString storeResources(KZip *archive, const QString &identifier, const QString &path) = 0;
-    Q_REQUIRED_RESULT virtual QString resourcePath(const QString &identifier) const = 0;
+    [[nodiscard]] virtual QList<Utils::AkonadiInstanceInfo> listOfResource() = 0;
+    [[nodiscard]] virtual QString storeResources(KZip *archive, const QString &identifier, const QString &path) = 0;
+    [[nodiscard]] virtual QString resourcePath(const QString &identifier) const = 0;
     virtual void backupMailResourceFile(const QString &agentIdentifier, const QString &defaultPath) = 0;
     virtual void exportFilters() = 0;
-    Q_REQUIRED_RESULT virtual QList<uint> listIdentityUoid() const = 0;
+    [[nodiscard]] virtual QList<uint> listIdentityUoid() const = 0;
 
     virtual void exportFolderAttributes() = 0;
-    Q_REQUIRED_RESULT QString applicationName() const override;
+    [[nodiscard]] QString applicationName() const override;
 
 private:
     void slotCheckBackupIdentity();
@@ -55,7 +55,7 @@ private:
     void slotCheckBackupConfig();
     void slotCheckBackupMails();
 
-    Q_REQUIRED_RESULT bool checkBackupType(Utils::StoredType type) const;
+    [[nodiscard]] bool checkBackupType(Utils::StoredType type) const;
     void backupTransports();
     void backupConfig();
     void backupIdentity();

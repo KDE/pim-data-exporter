@@ -16,7 +16,7 @@ public:
     ~PimDataBackupRestoreUI() override;
 
 protected:
-    Q_REQUIRED_RESULT bool continueToRestore() override;
+    [[nodiscard]] bool continueToRestore() override;
     void addExportProgressIndicator() override;
 
 private:

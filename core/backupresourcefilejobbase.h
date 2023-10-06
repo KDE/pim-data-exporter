@@ -19,18 +19,18 @@ public:
 
     void start();
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
-    Q_REQUIRED_RESULT QString identifier() const;
+    [[nodiscard]] QString identifier() const;
     void setIdentifier(const QString &identifier);
 
-    Q_REQUIRED_RESULT KZip *zip() const;
+    [[nodiscard]] KZip *zip() const;
     void setZip(KZip *zip);
 
-    Q_REQUIRED_RESULT QString defaultPath() const;
+    [[nodiscard]] QString defaultPath() const;
     void setDefaultPath(const QString &defaultPath);
 
-    Q_REQUIRED_RESULT virtual QString resourcePath(const QString &identifier) const = 0;
+    [[nodiscard]] virtual QString resourcePath(const QString &identifier) const = 0;
 Q_SIGNALS:
     void error(const QString &);
     void info(const QString &);

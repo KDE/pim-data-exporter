@@ -23,13 +23,13 @@ public:
 
 protected:
     void slotCheckBackupConfig();
-    Q_REQUIRED_RESULT virtual QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
+    [[nodiscard]] virtual QString convertToFullCollectionPath(const qlonglong collectionValue) = 0;
     virtual void convertCollectionListToRealPath(KConfigGroup &group, const QString &currentKey) = 0;
     virtual void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) = 0;
-    Q_REQUIRED_RESULT virtual QList<Utils::AkonadiInstanceInfo> listOfResource() = 0;
-    Q_REQUIRED_RESULT virtual QString resourcePath(const QString &identifier) const = 0;
+    [[nodiscard]] virtual QList<Utils::AkonadiInstanceInfo> listOfResource() = 0;
+    [[nodiscard]] virtual QString resourcePath(const QString &identifier) const = 0;
     virtual void backupCalendarResourceFile(const QString &agentIdentifier, const QString &defaultPath) = 0;
-    Q_REQUIRED_RESULT QString applicationName() const override;
+    [[nodiscard]] QString applicationName() const override;
 
 private:
     void slotCheckBackupResource();

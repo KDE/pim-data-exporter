@@ -13,7 +13,7 @@ class LoadListFromFile
 public:
     explicit LoadListFromFile(const QString &filename);
     ~LoadListFromFile();
-    Q_REQUIRED_RESULT QStringList fileList() const;
+    [[nodiscard]] QStringList fileList() const;
 
 private:
     QStringList mFileList;

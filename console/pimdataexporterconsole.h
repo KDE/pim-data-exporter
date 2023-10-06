@@ -19,7 +19,7 @@ public:
     explicit PimDataExporterConsole(QObject *parent = nullptr);
     ~PimDataExporterConsole() override;
 
-    Q_REQUIRED_RESULT Mode mode() const;
+    [[nodiscard]] Mode mode() const;
     void setMode(Mode mode);
 
     void setLogFileName(const QString &logFileName);
@@ -28,7 +28,7 @@ public:
 
     void start();
 
-    Q_REQUIRED_RESULT QString importExportFileName() const;
+    [[nodiscard]] QString importExportFileName() const;
     void setImportExportFileName(const QString &importFileName);
 
 Q_SIGNALS:

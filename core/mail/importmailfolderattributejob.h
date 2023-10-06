@@ -19,7 +19,7 @@ public:
     explicit ImportMailFolderAttributeJob(QObject *parent = nullptr);
     ~ImportMailFolderAttributeJob() override;
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
     void setArchiveDirectory(const KArchiveDirectory *zip);
     void setExportInterface(ImportMailJobInterface *interface);

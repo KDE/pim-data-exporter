@@ -16,7 +16,7 @@ public:
     explicit TestExportFile(QObject *parent = nullptr);
     ~TestExportFile() override;
 
-    Q_REQUIRED_RESULT QByteArray pathConfig() const;
+    [[nodiscard]] QByteArray pathConfig() const;
     void setPathConfig(const QByteArray &pathConfig);
 
     AbstractImportExportJob *abstractImportExportJob() const;
@@ -24,7 +24,7 @@ public:
 
     void start();
 
-    Q_REQUIRED_RESULT ArchiveStorage *archiveStorage() const;
+    [[nodiscard]] ArchiveStorage *archiveStorage() const;
 
 private:
     QByteArray mPathConfig;

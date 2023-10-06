@@ -16,10 +16,10 @@ public:
     ~CompareExportFile();
     void compareFiles();
 
-    Q_REQUIRED_RESULT QString tempFilePath() const;
+    [[nodiscard]] QString tempFilePath() const;
     void setTempFilePath(const QString &tempFilePath);
 
-    Q_REQUIRED_RESULT QString listFilePath() const;
+    [[nodiscard]] QString listFilePath() const;
     void setListFilePath(const QString &listFilePath);
 
 private:

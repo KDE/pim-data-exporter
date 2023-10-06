@@ -34,7 +34,7 @@ public:
 
     virtual void start() = 0;
 
-    Q_REQUIRED_RESULT bool wasCanceled() const;
+    [[nodiscard]] bool wasCanceled() const;
 
     static int archiveVersion();
     static void setArchiveVersion(int version);
@@ -62,7 +62,7 @@ protected:
     void emitInfo(const QString &str);
     void emitError(const QString &str);
     virtual QString applicationName() const = 0;
-    Q_REQUIRED_RESULT QString generateInfo(const QString &info);
+    [[nodiscard]] QString generateInfo(const QString &info);
     void initializeListStep();
     virtual void startSynchronizeResources(const QStringList &listResourceToSync);
     void infoAboutNewResource(const QString &resourceName);
@@ -77,27 +77,25 @@ protected:
     void backupUiRcFile(const QString &configFileName, const QString &applicationName);
     void restoreUiRcFile(const QString &configNameStr, const QString &applicationName);
 
-    Q_REQUIRED_RESULT int mergeConfigMessageBox(const QString &configName) const;
-    Q_REQUIRED_RESULT bool overwriteConfigMessageBox(const QString &configName) const;
+    [[nodiscard]] int mergeConfigMessageBox(const QString &configName) const;
+    [[nodiscard]] bool overwriteConfigMessageBox(const QString &configName) const;
 
     void backupResourceFile(const QString &agentIdentifier, const QString &defaultPath);
 
-    Q_REQUIRED_RESULT QStringList restoreResourceFile(const QString &resourceName,
-                                                      const QString &defaultPath,
-                                                      const QString &storePath,
-                                                      bool overwriteResources = false);
+    [[nodiscard]] QStringList
+    restoreResourceFile(const QString &resourceName, const QString &defaultPath, const QString &storePath, bool overwriteResources = false);
     virtual void addSpecificResourceSettings(const KSharedConfig::Ptr &resourceConfig, const QString &resourceName, QMap<QString, QVariant> &settings);
     void restoreConfigFile(const QString &configNameStr);
-    Q_REQUIRED_RESULT bool overwriteDirectoryMessageBox(const QString &directory) const;
+    [[nodiscard]] bool overwriteDirectoryMessageBox(const QString &directory) const;
     void overwriteDirectory(const QString &path, const KArchiveEntry *entry);
     virtual bool isAConfigFile(const QString &name) const;
     void searchAllFiles(const KArchiveDirectory *dir, const QString &prefix, const QString &searchEntryName);
     void storeArchiveInfoResources(const KArchiveDirectory *dir, const QString &prefix);
 
     bool copyArchiveFileTo(const KArchiveFile *file, const QString &destination);
-    Q_REQUIRED_RESULT Akonadi::Collection::Id convertPathToId(const QString &path);
+    [[nodiscard]] Akonadi::Collection::Id convertPathToId(const QString &path);
 
-    Q_REQUIRED_RESULT KZip *archive() const;
+    [[nodiscard]] KZip *archive() const;
 
     void increaseProgressDialog();
     void createProgressDialog(const QString &title = QString());
@@ -108,9 +106,9 @@ protected:
 
     void convertCollectionListStrToAkonadiId(const KSharedConfig::Ptr &config, const QString &groupName, const QString &key, bool addCollectionPrefix);
     void convertRealPathToCollectionList(KConfigGroup &group, const QString &currentKey, bool addCollectionPrefix = true);
-    Q_REQUIRED_RESULT virtual Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
+    [[nodiscard]] virtual Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) = 0;
     virtual QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) = 0;
-    Q_REQUIRED_RESULT virtual QString
+    [[nodiscard]] virtual QString
     createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) = 0;
 
     QHash<QString, Akonadi::Collection::Id> mHashConvertPathCollectionId;

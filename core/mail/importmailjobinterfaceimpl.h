@@ -32,24 +32,21 @@ public:
 
 protected:
     void registerSpecialCollection(Akonadi::SpecialMailCollections::Type type, qint64 colId) override;
-    Q_REQUIRED_RESULT QString createResource(const QString &resources,
-                                             const QString &name,
-                                             const QMap<QString, QVariant> &settings,
-                                             bool synchronizeTree) override;
-    Q_REQUIRED_RESULT QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
+    [[nodiscard]] QString createResource(const QString &resources, const QString &name, const QMap<QString, QVariant> &settings, bool synchronizeTree) override;
+    [[nodiscard]] QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
     void synchronizeResource(const QStringList &lst) override;
     void importFilters(const QString &filename) override;
-    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
-    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
+    [[nodiscard]] Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+    [[nodiscard]] QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
     void addNewIdentity(const QString &name, KConfigGroup &group, int defaultIdentities, int oldUid) override;
     void importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId) override;
     void importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId) override;
     void addMailTransport(MailTransport::Transport *mt, int defaultTransport, int transportId);
-    Q_REQUIRED_RESULT QString configLocation() const override;
+    [[nodiscard]] QString configLocation() const override;
     void importFolderAttributes() override final;
 
 private:
-    Q_REQUIRED_RESULT int convertEncryptionEnum(int val);
-    Q_REQUIRED_RESULT QString uniqueIdentityName(const QString &name);
+    [[nodiscard]] int convertEncryptionEnum(int val);
+    [[nodiscard]] QString uniqueIdentityName(const QString &name);
     KIdentityManagementCore::IdentityManager *const mIdentityManager;
 };

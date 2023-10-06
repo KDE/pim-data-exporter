@@ -17,10 +17,10 @@ public:
     ~ArchiveStorage() override;
 
     void closeArchive();
-    Q_REQUIRED_RESULT bool openArchive(bool write);
+    [[nodiscard]] bool openArchive(bool write);
 
     KZip *archive() const;
-    Q_REQUIRED_RESULT QString filename() const;
+    [[nodiscard]] QString filename() const;
 
 Q_SIGNALS:
     void error(const QString &);

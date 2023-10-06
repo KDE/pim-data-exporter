@@ -13,9 +13,9 @@ class PIMDATAEXPORTER_EXPORT ResourceConverterImpl : public ResourceConverterBas
 public:
     ResourceConverterImpl();
     ~ResourceConverterImpl() override;
-    Q_REQUIRED_RESULT QString convertToFullCollectionPath(const qlonglong collectionValue) override;
-    Q_REQUIRED_RESULT Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
-    Q_REQUIRED_RESULT QString installDefaultDirectory() override;
+    [[nodiscard]] QString convertToFullCollectionPath(const qlonglong collectionValue) override;
+    [[nodiscard]] Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
+    [[nodiscard]] QString installDefaultDirectory() override;
 
-    Q_REQUIRED_RESULT QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
+    [[nodiscard]] QString adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath) override;
 };

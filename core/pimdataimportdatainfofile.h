@@ -19,7 +19,7 @@ public:
 
     void setCurrentFileName(const QString &filename);
 
-    Q_REQUIRED_RESULT QString importDataInfoPath();
+    [[nodiscard]] QString importDataInfoPath();
 
 private:
     QTemporaryDir *mTempDir = nullptr;

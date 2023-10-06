@@ -17,7 +17,7 @@ struct AttributeInfo {
     QByteArray expireAttribute;
     QByteArray favoriteAttribute;
     QByteArray folderAttribute;
-    Q_REQUIRED_RESULT bool isValid() const
+    [[nodiscard]] bool isValid() const
     {
         return !displayAttribute.isEmpty() || !expireAttribute.isEmpty() || !favoriteAttribute.isEmpty() || !folderAttribute.isEmpty();
     }

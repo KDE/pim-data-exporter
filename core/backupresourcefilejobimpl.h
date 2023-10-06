@@ -16,5 +16,5 @@ public:
     explicit BackupResourceFileJobImpl(QObject *parent = nullptr);
     ~BackupResourceFileJobImpl() override;
 
-    Q_REQUIRED_RESULT QString resourcePath(const QString &identifier) const override;
+    [[nodiscard]] QString resourcePath(const QString &identifier) const override;
 };

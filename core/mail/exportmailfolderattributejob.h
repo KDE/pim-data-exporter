@@ -16,7 +16,7 @@ public:
     explicit ExportMailFolderAttributeJob(QObject *parent = nullptr);
     ~ExportMailFolderAttributeJob() override;
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
     void start();
     void setArchive(KZip *zip);

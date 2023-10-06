@@ -13,7 +13,7 @@ class ImportExportProgressIndicatorTest : public ImportExportProgressIndicatorBa
 public:
     explicit ImportExportProgressIndicatorTest(QObject *parent);
 
-    Q_REQUIRED_RESULT int mergeConfigMessageBox(const QString &configName) const override;
-    Q_REQUIRED_RESULT bool overwriteConfigMessageBox(const QString &configName) const override;
-    Q_REQUIRED_RESULT bool overwriteDirectoryMessageBox(const QString &directory) const override;
+    [[nodiscard]] int mergeConfigMessageBox(const QString &configName) const override;
+    [[nodiscard]] bool overwriteConfigMessageBox(const QString &configName) const override;
+    [[nodiscard]] bool overwriteDirectoryMessageBox(const QString &directory) const override;
 };

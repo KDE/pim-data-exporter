@@ -16,7 +16,7 @@ public:
     ~SynchronizeResourceDialog() override;
 
     void setResources(const QHash<QString, QString> &resources);
-    Q_REQUIRED_RESULT QStringList resources() const;
+    [[nodiscard]] QStringList resources() const;
 
 private:
     void slotAccepted();

@@ -16,16 +16,16 @@ public:
 
     void compareFile();
 
-    Q_REQUIRED_RESULT QString archiveFilePath() const;
+    [[nodiscard]] QString archiveFilePath() const;
     void setArchiveFilePath(const QString &archiveFilePath);
 
-    Q_REQUIRED_RESULT QString listFilePath() const;
+    [[nodiscard]] QString listFilePath() const;
     void setListFilePath(const QString &listFilePath);
 
-    Q_REQUIRED_RESULT QString installPath() const;
+    [[nodiscard]] QString installPath() const;
     void setInstallPath(const QString &installPath);
 
-    Q_REQUIRED_RESULT QString excludePath() const;
+    [[nodiscard]] QString excludePath() const;
     void setExcludePath(const QString &excludePath);
 
 private:

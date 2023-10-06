@@ -24,9 +24,9 @@ public:
     void addTitleLogEntry(const QString &log);
     void addEndLineLogEntry();
     void clear();
-    Q_REQUIRED_RESULT QString toHtml() const;
-    Q_REQUIRED_RESULT QString toPlainText() const;
-    Q_REQUIRED_RESULT bool isEmpty() const;
+    [[nodiscard]] QString toHtml() const;
+    [[nodiscard]] QString toPlainText() const;
+    [[nodiscard]] bool isEmpty() const;
 
 private:
     PimCommon::CustomLogWidget *const mCustomLogWidget;

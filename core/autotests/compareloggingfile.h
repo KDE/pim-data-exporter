@@ -16,10 +16,10 @@ public:
 
     void compare();
 
-    Q_REQUIRED_RESULT QString loggingFilePath() const;
+    [[nodiscard]] QString loggingFilePath() const;
     void setLoggingFilePath(const QString &loggingFilePath);
 
-    Q_REQUIRED_RESULT QString listFilePath() const;
+    [[nodiscard]] QString listFilePath() const;
     void setListFilePath(const QString &listFilePath);
 
 private:

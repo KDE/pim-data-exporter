@@ -17,24 +17,24 @@ public:
     ~TestImportFile() override;
 
     void start();
-    Q_REQUIRED_RESULT AbstractImportExportJob *abstractImportExportJob() const;
+    [[nodiscard]] AbstractImportExportJob *abstractImportExportJob() const;
     void setAbstractImportExportJob(AbstractImportExportJob *abstractImportExportJob);
 
-    Q_REQUIRED_RESULT ArchiveStorage *archiveStorage() const;
+    [[nodiscard]] ArchiveStorage *archiveStorage() const;
     void setArchiveStorage(ArchiveStorage *archiveStorage);
 
-    Q_REQUIRED_RESULT QString pathConfig() const;
+    [[nodiscard]] QString pathConfig() const;
     void setPathConfig(const QString &pathConfig);
 
     void setExtractPath(const QString &extractPath);
 
-    Q_REQUIRED_RESULT QString excludePath() const;
+    [[nodiscard]] QString excludePath() const;
     void setExcludePath(const QString &excludePath);
 
-    Q_REQUIRED_RESULT QString loggingFilePath() const;
+    [[nodiscard]] QString loggingFilePath() const;
     void setLoggingFilePath(const QString &loggingFilePath);
 
-    Q_REQUIRED_RESULT QString extractPath() const;
+    [[nodiscard]] QString extractPath() const;
 
 private:
     AbstractImportExportJob *mAbstractImportExportJob = nullptr;

@@ -25,7 +25,7 @@ public:
 
 private:
     void slotExportAsLogFile();
-    Q_REQUIRED_RESULT bool fillTree();
+    [[nodiscard]] bool fillTree();
     void readConfig();
     void writeConfig();
     void slotItemClicked(QTreeWidgetItem *item, int column);
@@ -33,7 +33,7 @@ private:
     void slotExtractFile();
     void slotOpenFile();
 
-    Q_REQUIRED_RESULT bool searchArchiveElement(const QString &path, const KArchiveDirectory *topDirectory, const QString &name);
+    [[nodiscard]] bool searchArchiveElement(const QString &path, const KArchiveDirectory *topDirectory, const QString &name);
     QTreeWidgetItem *addTopItem(const QString &name);
     QTreeWidgetItem *addItem(QTreeWidgetItem *parent, const QString &name, const QString &fillFullPath);
     const QString mFileName;

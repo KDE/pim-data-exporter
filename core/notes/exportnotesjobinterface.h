@@ -25,11 +25,11 @@ public:
 protected:
     virtual void convertCollectionIdsToRealPath(KConfigGroup &selectFolderNoteGroup, const QString &selectFolderNoteGroupStr) = 0;
     virtual void exportResourceToArchive(const QString &archivePath, const QString &url, const QString &identifier) = 0;
-    Q_REQUIRED_RESULT virtual QList<Utils::AkonadiInstanceInfo> listOfResource() = 0;
+    [[nodiscard]] virtual QList<Utils::AkonadiInstanceInfo> listOfResource() = 0;
     void slotNoteJobTerminated();
-    Q_REQUIRED_RESULT virtual QString resourcePath(const QString &identifier) const = 0;
-    Q_REQUIRED_RESULT QString resourceArchiveName() const;
-    Q_REQUIRED_RESULT QString applicationName() const override;
+    [[nodiscard]] virtual QString resourcePath(const QString &identifier) const = 0;
+    [[nodiscard]] QString resourceArchiveName() const;
+    [[nodiscard]] QString applicationName() const override;
 
 private:
     void slotCheckBackupResource();

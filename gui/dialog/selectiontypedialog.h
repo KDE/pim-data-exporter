@@ -17,11 +17,11 @@ public:
     explicit SelectionTypeDialog(bool backupData, QWidget *parent = nullptr);
     ~SelectionTypeDialog() override;
 
-    Q_REQUIRED_RESULT QMap<Utils::AppsType, Utils::importExportParameters> storedType() const;
+    [[nodiscard]] QMap<Utils::AppsType, Utils::importExportParameters> storedType() const;
 
     void loadTemplate(const QString &fileName);
 
-    Q_REQUIRED_RESULT QString exportedFileInfo() const;
+    [[nodiscard]] QString exportedFileInfo() const;
     void removeNotSelectedItems();
 
 private:
