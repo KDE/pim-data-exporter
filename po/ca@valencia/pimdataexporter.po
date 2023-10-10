@@ -792,7 +792,7 @@ msgstr "Anomena i guarda text..."
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
 msgid "Select Directory"
-msgstr "Seleccioneu el directori"
+msgstr "Seleccioneu un directori"
 
 #: gui/dialog/showarchivestructuredialog.cpp:140
 #, kde-format
