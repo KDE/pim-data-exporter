@@ -109,7 +109,7 @@ if (USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
 
-configure_file(pimdataexporter-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/pimdataexporter-version.h @ONLY)
+configure_file(pimdataexporter-version.h.in ${CMAKE_CURRENT_BINARY_DIR}/pimdataexporter-version.h @ONLY)
 
 if(BUILD_TESTING)
    add_definitions(-DBUILD_TESTING)
