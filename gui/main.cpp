@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    KLocalizedString::setApplicationDomain("pimdataexporter");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("pimdataexporter"));
 
     KCrash::initialize();
     app.setDesktopFileName(QStringLiteral("org.kde.pimdataexporter"));
