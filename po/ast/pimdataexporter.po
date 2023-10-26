@@ -1,180 +1,178 @@
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@neuf.fr>
-# Simon Depiets <sdepiets@gmail.com>, 2019, 2020.
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the pim-data-exporter package.
+#
+# SPDX-FileCopyrightText: 2023 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:46+0000\n"
-"PO-Revision-Date: 2023-10-24 20:29+0200\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
-"Language-Team: fr\n"
-"Language: fr\n"
+"PO-Revision-Date: 2023-10-25 10:47+0200\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: \n"
+"Language: ast_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
-"X-Environment: kde\n"
-"X-Accelerator-Marker: &\n"
-"X-Text-Markup: kde4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Simon Depiets, Xavier Besnard"
+msgstr "Softastur"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sdepiets@gmail.com, xavier.besnard@neuf.fr"
+msgstr "alministradores@softastur.org"
 
 #: console/main.cpp:25 console/main.cpp:27
 #, kde-format
 msgid "PIM Data Exporter Console"
-msgstr "Console d'exportation des données PIM"
+msgstr ""
 
 #: console/main.cpp:29
 #, kde-format
 msgid "Copyright © 2015-%1 pimdataexporter authors"
-msgstr "Copyright © 2015 - %1 Les auteurs de « pimdataexporter »"
+msgstr ""
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "Laurent Montel"
-msgstr "Laurent Montel"
+msgstr ""
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "Maintainer"
-msgstr "Mainteneur"
+msgstr ""
 
 #: console/main.cpp:31
 #, kde-format
 msgid "File to log information to."
-msgstr "Fichier dans lequel inscrire les informations."
+msgstr ""
 
 #: console/main.cpp:34
 #, kde-format
 msgid "Template file to define what data, settings to import or export."
 msgstr ""
-"Fichier modèle pour définir quels données et paramètres importer ou exporter."
 
 #: console/main.cpp:37
 #, kde-format
 msgid "Import the given file."
-msgstr "Importer le fichier donné."
+msgstr ""
 
 #: console/main.cpp:39
 #, kde-format
 msgid "Export the given file."
-msgstr "Exporter le fichier donné."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:56
 #, kde-format
 msgid "Task Canceled"
-msgstr "Tâche annulée"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:116
 #, kde-format
 msgid "\"%1\" backup done."
-msgstr "Enregistrement « %1 » terminée."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:118
 #, kde-format
 msgid "\"%1\" cannot be exported."
-msgstr "Il est impossible d'exporter « %1 »."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:121
 #, kde-format
 msgid "\"%1\" does not exist."
-msgstr "« %1 » n'existe pas."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:268
 #, kde-format
 msgid "\"%1\" was copied."
-msgstr "« %1 » a été copié."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:273
 #, kde-format
 msgid "Restoring \"%1\"..."
-msgstr "Restauration de « %1 »..."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "File \"%1\" cannot be copied to \"%2\"."
-msgstr "Il est impossible de copier le fichier « %1 » dans « %2 »."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "Copy file"
-msgstr "Copier un fichier"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:300
 #, kde-format
 msgid "\"%1\" was restored."
-msgstr "« %1 » a été restauré."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:385
 #: core/addressbook/importaddressbookjobinterface.cpp:231
 #: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
-msgstr "Ressources restaurées."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:387
 #, kde-format
 msgid "No resources files found."
-msgstr "Aucun fichier ressource trouvé."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:448
 #, kde-format
 msgid "Unable to copy file %1"
-msgstr "Impossible de copier le fichier « %1 »"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:489
 #, kde-format
 msgid "Resource '%1' created."
-msgstr "Ressource « %1» créée."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:504
 #, kde-format
 msgid "Failed to synchronize '%1'."
-msgstr "Échec de la synchronisation de « %1 »."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:509
 #, kde-format
 msgid "Resource '%1' synchronized."
-msgstr "Ressource « %1 » synchronisée."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:515
 #, kde-format
 msgid "All resources synchronized."
-msgstr "Toutes les ressources sont synchronisées."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:541
 #, kde-format
 msgid "Start synchronizing..."
-msgstr "Démarrage de la synchronisation..."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:578
 #, kde-format
 msgid "Directory \"%1\" added to backup file."
-msgstr "Le dossier « %1 » est ajouté au fichier d'archivage."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:580
 #, kde-format
 msgid "Directory \"%1\" cannot be added to backup file."
-msgstr "Impossible d'ajouter le dossier « %1 » au fichier de sauvegarde."
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAddressBook settings..."
-msgstr "Lancer l'export des paramètres de KAddressBook..."
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
 msgid "Export KAddressBook settings"
-msgstr "Exporter les paramètres de KAddressBook"
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
@@ -183,7 +181,7 @@ msgstr "Exporter les paramètres de KAddressBook"
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
-msgstr "Enregistrement des ressources..."
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
@@ -192,7 +190,7 @@ msgstr "Enregistrement des ressources..."
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
-msgstr "Enregistrement des ressources terminée."
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:109
 #: core/akregator/exportakregatorjobinterface.cpp:72
@@ -202,7 +200,7 @@ msgstr "Enregistrement des ressources terminée."
 #: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
-msgstr "Enregistrement de la configuration..."
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:150
 #: core/akregator/exportakregatorjobinterface.cpp:79
@@ -212,17 +210,17 @@ msgstr "Enregistrement de la configuration..."
 #: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
-msgstr "Enregistrement de la configuration terminée."
+msgstr ""
 
 #: core/addressbook/importaddressbookjobinterface.cpp:41
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
-msgstr "Démarrage de l'import des paramètres de KAddressBook..."
+msgstr ""
 
 #: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
 msgid "Import KAddressBook settings"
-msgstr "Importer les paramètres de KAddressBook"
+msgstr ""
 
 #: core/addressbook/importaddressbookjobinterface.cpp:92
 #: core/akregator/importakregatorjobinterface.cpp:93
@@ -231,7 +229,7 @@ msgstr "Importer les paramètres de KAddressBook"
 #: core/notes/importnotesjobinterface.cpp:80
 #, kde-format
 msgid "Restore configs..."
-msgstr "Restaurer les configurations..."
+msgstr ""
 
 #: core/addressbook/importaddressbookjobinterface.cpp:109
 #: core/akregator/importakregatorjobinterface.cpp:99
@@ -241,7 +239,7 @@ msgstr "Restaurer les configurations..."
 #: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
-msgstr "Configuration restaurée."
+msgstr ""
 
 #: core/addressbook/importaddressbookjobinterface.cpp:162
 #: core/addressbook/importaddressbookjobinterface.cpp:163
@@ -255,596 +253,586 @@ msgstr "Configuration restaurée."
 #: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
-msgstr "Restaurer les ressources..."
+msgstr ""
 
 #: core/akregator/exportakregatorjobinterface.cpp:24
 #, kde-format
 msgid "Start export Akregator settings..."
-msgstr "Lancer l'export des paramètres de Akregator..."
+msgstr ""
 
 #: core/akregator/exportakregatorjobinterface.cpp:25
 #, kde-format
 msgid "Export Akregator settings"
-msgstr "Exporter les paramètres de Akregator"
+msgstr ""
 
 #: core/akregator/exportakregatorjobinterface.cpp:87
 #, kde-format
 msgid "Backing up data..."
-msgstr "Enregistrement des données..."
+msgstr ""
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
 #: core/notes/exportnotesjobinterface.cpp:46
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
 msgstr ""
-"Il est impossible d'ajouter un dossier « %1 » à un fichier de sauvegarde."
 
 #: core/akregator/exportakregatorjobinterface.cpp:97
 #, kde-format
 msgid "Data backup done."
-msgstr "Enregistrement des données terminée."
+msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:29
 #, kde-format
 msgid "Starting to import Akregator settings..."
-msgstr "Démarrage de l'import des paramètres de Akregator..."
+msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:32
 #, kde-format
 msgid "Import Akregator settings"
-msgstr "Importer les paramètres de Akregator"
+msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:106
 #: core/notes/importnotesjobinterface.cpp:116
 #, kde-format
 msgid "Restore data..."
-msgstr "Restauration des données..."
+msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:112
 #: core/notes/importnotesjobinterface.cpp:129
 #, kde-format
 msgid "Data restored."
-msgstr "Données restaurées."
+msgstr ""
 
 #: core/alarm/exportalarmjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAlarm settings..."
-msgstr "Lancer l'export des paramètres de KAlarm..."
+msgstr ""
 
 #: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
 msgid "Export KAlarm settings"
-msgstr "Exporter les paramètres de KAlarm"
+msgstr ""
 
 #: core/alarm/importalarmjobinterface.cpp:32
 #, kde-format
 msgid "Starting to import KAlarm settings..."
-msgstr "Démarrage de l'import des paramètres de KAlarm..."
+msgstr ""
 
 #: core/alarm/importalarmjobinterface.cpp:33
 #, kde-format
 msgid "Import KAlarm settings"
-msgstr "Importer les paramètres de KAlarm"
+msgstr ""
 
 #: core/archivestorage.cpp:43
 #, kde-format
 msgid "Archive cannot be opened in write mode."
-msgstr "Il est impossible d'ouvrir une archive en mode écriture."
+msgstr ""
 
 #: core/archivestorage.cpp:45 core/utils.cpp:134
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Archive cannot be opened in read mode."
-msgstr "Il est impossible d'ouvrir une archive en mode lecture."
+msgstr ""
 
 #: core/backupresourcefilejobbase.cpp:47
 #, kde-format
 msgid "\"%1\" is not a file."
-msgstr "« %1 » n'est pas un fichier."
+msgstr ""
 
 #: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
 #, kde-format
 msgid "\"%1\" was backed up."
-msgstr "« %1 » a été enregistré."
+msgstr ""
 
 #: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
 #: core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
 msgstr ""
-"Il est impossible d'ajouter un fichier « %1 » à un fichier de sauvegarde."
 
 #: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
 msgid "Start export KOrganizer settings..."
-msgstr "Lancer l'export des paramètres de KOrganizer..."
+msgstr ""
 
 #: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
 msgid "Export KOrganizer settings"
-msgstr "Exporter les paramètres de KOrganizer"
+msgstr ""
 
 #: core/calendar/importcalendarjobinterface.cpp:35
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
-msgstr "Démarrage de l'import des paramètres de KOrganizer..."
+msgstr ""
 
 #: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
 msgid "Import KOrganizer settings"
-msgstr "Importer les paramètres de KOrganizer"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:43
 #, kde-format
 msgid "Start export KMail settings..."
-msgstr "Importer les paramètres de KMail"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:44
 #, kde-format
 msgid "Export KMail settings"
-msgstr "Exporter les paramètres de KMail"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:112
 #, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr "Enregistrement des attributs de dossier..."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Mails..."
-msgstr "Enregistrement des courriels..."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:115
 #, kde-format
 msgid "Start export resource..."
-msgstr "Démarrer l'exportation de la ressource..."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:123
 #, kde-format
 msgid "Backing up transports..."
-msgstr "Enregistrement des transports..."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:128
 #: core/mail/exportmailjobinterface.cpp:140
 #, kde-format
 msgid "Transports backup done."
-msgstr "Enregistrement des transports terminée."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:142
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr ""
-"Il est impossible d'ajouter un fichier de transport à un fichier de "
-"sauvegarde."
 
 #: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
-msgstr "Enregistrement de l'identité..."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
-msgstr "Impossible d'enregistrer le fichier vCard « %1 »."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
 msgid "Identity backup done."
-msgstr "Enregistrement de l'identité terminée."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:595
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr ""
-"Il est impossible d'ajouter un fichier d'identité à un fichier de sauvegarde."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:139
 #, kde-format
 msgid "Filters backup done."
-msgstr "Enregistrement des filtres terminée."
+msgstr ""
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:141
 #, kde-format
 msgid "Filters cannot be exported."
-msgstr "Il est impossible d'exporter les filtres."
+msgstr ""
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:163
 #, kde-format
 msgid "Backing up Folder Attributes done."
-msgstr "Enregistrement des attributs de dossier effectué..."
+msgstr ""
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:167
 #, kde-format
 msgid "Folder Attributes cannot be exported."
-msgstr "Il est impossible d'exporter les attributs de dossiers."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KMail settings..."
-msgstr "Démarrage de l'import des paramètres de KMail..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:44
 #, kde-format
 msgid "Import KMail settings"
-msgstr "Importer les paramètres de KMail"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:169
 #: core/mail/importmailjobinterface.cpp:175
 #, kde-format
 msgid "Restore transports..."
-msgstr "Restaurer les transports..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:173
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
 msgstr ""
-"Il est impossible de trouver le fichier de transport de courrier "
-"électronique dans l'archive."
 
 #: core/mail/importmailjobinterface.cpp:188
 #, kde-format
 msgid "Transports restored."
-msgstr "Transports restaurés."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:190
 #, kde-format
 msgid "Failed to restore transports file."
-msgstr "Il est impossible de restaurer le fichier des transports."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:436
 #: core/mail/importmailjobinterface.cpp:438
 #, kde-format
 msgid "Restore mails..."
-msgstr "Restaurer les courriels..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:555
 #, kde-format
 msgid "Mails restored."
-msgstr "Courriels restaurés."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:562
 #, kde-format
 msgid "Restore config..."
-msgstr "Restaurer la configuration..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:565
 #, kde-format
 msgid "filters file could not be found in the archive."
-msgstr "impossible de trouver des filtres dans l'archive."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:569
 #, kde-format
 msgid "Restore filters..."
-msgstr "Restaurer les filtres..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:618
 #, kde-format
 msgid "Filters restored."
-msgstr "Filtres restaurés."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:899
 #: core/mail/importmailjobinterface.cpp:904
 #, kde-format
 msgid "Restoring identities..."
-msgstr "Restauration les identités..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:902
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
 msgstr ""
-"impossible de trouver le fichier des identités de courriels dans l'archive."
 
 #: core/mail/importmailjobinterface.cpp:963
 #, kde-format
 msgid "Identities restored."
-msgstr "Identités restaurées."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:965
 #, kde-format
 msgid "Failed to restore identity file."
-msgstr "Il est impossible de restaurer le fichier des identités."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:1283
 #, kde-format
 msgid "\"%1\" migration done."
-msgstr "Migration de « %1 » terminée."
+msgstr ""
 
 #: core/mail/importmailjobinterfaceimpl.cpp:35
 #, kde-format
 msgid "Restoring folder attributes..."
-msgstr "Restauration des attributs de dossier en cours..."
+msgstr ""
 
 #: core/mail/importmailjobinterfaceimpl.cpp:41
 #, kde-format
 msgid "Restoring Folder Attributes done."
-msgstr "Restauration des attributs de dossier effectuée..."
+msgstr ""
 
 #: core/mail/importmailjobinterfaceimpl.cpp:45
 #, kde-format
 msgid "Folder Attributes cannot be restored."
-msgstr "Il est impossible de restaurer les attributs de dossiers."
+msgstr ""
 
 #: core/notes/exportnotesjobinterface.cpp:28
 #, kde-format
 msgid "Start export KNotes settings..."
-msgstr "Lancer l'export des paramètres de KNotes..."
+msgstr ""
 
 #: core/notes/exportnotesjobinterface.cpp:29
 #, kde-format
 msgid "Export KNotes settings"
-msgstr "Exporter les paramètres de KNotes"
+msgstr ""
 
 #: core/notes/importnotesjobinterface.cpp:49
 #, kde-format
 msgid "Starting to import KNotes settings..."
-msgstr "Démarrage de l'import des paramètres de KNotes..."
+msgstr ""
 
 #: core/notes/importnotesjobinterface.cpp:52
 #, kde-format
 msgid "Import KNotes settings"
-msgstr "Importer les paramètres de KNotes"
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
 #, kde-format
 msgid "No data selected."
-msgstr "Aucune donnée sélectionnée."
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
 #, kde-format
 msgid "Unable to open file \"%1\"."
-msgstr "Impossible d'ouvrir le fichier « %1 »."
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:94
 #, kde-format
 msgid "Starting to backup data in '%1'"
-msgstr "Démarrage de la sauvegarde des données dans « %1 »."
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:183
 #, kde-format
 msgid "Backup in '%1' done."
-msgstr "Enregistrement dans « %1 » terminé."
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:279
 #, kde-format
 msgid "Starting to restore data from '%1'"
-msgstr "Démarrage de la restauration des données depuis « %1 »"
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:287
 #, kde-format
 msgid "Restoring data from '%1' done."
-msgstr "Restauration des données depuis « %1 » terminée."
+msgstr ""
 
 #: core/pimdatabackupthread.cpp:37
 #, kde-format
 msgid "Impossible to open archive file."
-msgstr "Impossible d'ouvrir le fichier archive."
+msgstr ""
 
 #: core/pimdatabackupthread.cpp:44
 #, kde-format
 msgid "Impossible to backup \"%1\"."
-msgstr "Impossible de sauvegarder « %1 »."
+msgstr ""
 
 #: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr ""
-"Il est impossible d'ajouter le fichier de ressources « %1 » à un fichier de "
-"sauvegarde."
 
 #: core/resourceconverterbase.cpp:206
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
-msgstr "Le fichier de configuration des ressources « %1 » n'existe pas."
+msgstr ""
 
 #: core/utils.cpp:181
 #, kde-format
 msgid "KMail"
-msgstr "KMail"
+msgstr ""
 
 #: core/utils.cpp:183
 #, kde-format
 msgid "KAddressBook"
-msgstr "KAddressBook"
+msgstr ""
 
 #: core/utils.cpp:185
 #, kde-format
 msgid "KAlarm"
-msgstr "KAlarm"
+msgstr ""
 
 #: core/utils.cpp:187
 #, kde-format
 msgid "KOrganizer"
-msgstr "KOrganizer"
+msgstr ""
 
 #: core/utils.cpp:189
 #, kde-format
 msgid "KNotes"
-msgstr "KNotes"
+msgstr ""
 
 #: core/utils.cpp:191
 #, kde-format
 msgid "Akregator"
-msgstr "Akregator"
+msgstr ""
 
 #: core/utils.cpp:205
 #, kde-format
 msgid "Identity"
-msgstr "Identité"
+msgstr ""
 
 #: core/utils.cpp:207
 #, kde-format
 msgid "Mails"
-msgstr "Courriels"
+msgstr ""
 
 #: core/utils.cpp:209
 #, kde-format
 msgid "Mail Transport"
-msgstr "Transport de courrier électronique"
+msgstr ""
 
 #: core/utils.cpp:211
 #, kde-format
 msgid "Resources"
-msgstr "Ressources"
+msgstr ""
 
 #: core/utils.cpp:213
 #, kde-format
 msgid "Config"
-msgstr "Configuration"
+msgstr ""
 
 #: core/utils.cpp:215
 #, kde-format
 msgid "Data"
-msgstr "Données"
+msgstr ""
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Archive File Structure"
-msgstr "Structure du fichier d'archive"
+msgstr ""
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgid "Backup Archive Structure:"
-msgstr "Structure du fichier de sauvegarde :"
+msgstr ""
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
 msgid "backup-structure.txt file was not found."
-msgstr "Impossible de trouver le fichier backup-structure.txt."
+msgstr ""
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
-msgstr "Configurer l'exportation des données PIM"
+msgstr ""
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
 msgid "General"
-msgstr "Général"
+msgstr ""
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
-msgstr "Retours des utilisateurs"
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
 msgid "Use this template by default"
-msgstr "Utiliser ce modèle par défaut"
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgid "Save as Template..."
-msgstr "Enregistrer comme modèle..."
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgid "Load Template..."
-msgstr "Charger un modèle..."
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
-msgstr "Sélectionner un type"
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgid "Select All"
-msgstr "Tout sélectionner"
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgid "Unselect All"
-msgstr "Tout dé-sélectionner"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
 msgid "Extract Selected File"
-msgstr "Extraire le fichier sélectionné"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
 #, kde-format
 msgid "Open Selected File"
-msgstr "Ouvrir le fichier sélectionné"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
-msgstr "Afficher le contenu de l'archive dans le fichier « %1 »"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
 msgid "Search..."
-msgstr "Chercher…"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
 msgid "Save As Text..."
-msgstr "Enregistrer dans un fichier texte..."
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
 msgid "Select Directory"
-msgstr "Sélectionner un dossier"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:140
 #, kde-format
 msgid "Do you want to overwrite %1?"
-msgstr "Voulez-vous vraiment écraser %1 ?"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
 #, kde-format
 msgid "File Already Exist"
-msgstr "Le fichier existe déjà"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:149
 #, kde-format
 msgid "Impossible to copy %1 in %2."
-msgstr "Impossible de copier %1 vers %2."
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:172
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
-msgstr "Fichiers texte"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
-msgstr "Exporter le fichier de messages"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Cannot open archive"
-msgstr "Impossible d'ouvrir l'archive"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
 msgid "Info"
-msgstr "Informations"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "This is not pim archive."
-msgstr "Ceci n'est pas une archive pim."
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "Show information"
-msgstr "Afficher les informations"
+msgstr ""
 
 #: gui/dialog/synchronizeresourcedialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
-msgstr "Synchroniser les ressources"
+msgstr ""
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
@@ -852,52 +840,50 @@ msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
 msgstr ""
-"Des ressources on été ajoutée mais les données n'étaient pas synchronisées. "
-"Veuillez sélectionner les ressources que vous souhaitez synchroniser :"
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
 #, kde-format
 msgid "Cancel"
-msgstr "Annuler"
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:66
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
-msgstr "« %1 » existe déjà. Voulez-vous l'écraser ou le fusionner ?"
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
 #, kde-format
 msgid "Restore"
-msgstr "Restaurer"
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:69
 #, kde-format
 msgid "Merge"
-msgstr "Fusionner"
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it?"
-msgstr "« %1 » existe déjà. Voulez-vous l'écraser ?"
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
-msgstr "Le dossier « %1 » existe déjà. Voulez-vous l'écraser ?"
+msgstr ""
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize resources"
-msgstr "Synchroniser les ressources"
+msgstr ""
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
 msgid "Synchronize resources... It can take some time."
-msgstr "Synchronisation des ressources... Cela peut prendre du temps."
+msgstr ""
 
 #: gui/pimdatabackuprestoreui.cpp:25
 #, kde-format
@@ -906,96 +892,90 @@ msgid ""
 "additional data which will be skipped during import. Do you want to import "
 "it?"
 msgstr ""
-"L'archive a été créée par une version plus récente de ce programme. Elle "
-"peut contenir des données supplémentaires qui seront ignorées durant "
-"l'import. Voulez-vous vraiment l'importer ?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
 msgid "Not correct version"
-msgstr "Version incorrecte"
+msgstr ""
 
 #: gui/pimdatabackuprestoreui.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Import"
-msgstr "Importer"
+msgstr ""
 
 #: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
 #, kde-format
 msgid "PIM Data Exporter"
-msgstr "Exportation des données PIM"
+msgstr ""
 
 #: gui/pimdatacommandlineoption.cpp:41
 #, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
-msgstr "Copyright © 2012 - %1 Les auteurs de « pimdataexporter »"
+msgstr ""
 
 #: gui/pimdatacommandlineoption.cpp:46
 #, kde-format
 msgid "Template file uses to define what data, settings to import or export"
 msgstr ""
-"Fichier modèle utilisé pour définir quels données et paramètres importer ou "
-"exporter"
 
 #: gui/pimdatacommandlineoption.cpp:48
 #, kde-format
 msgid "Import the given file"
-msgstr "Importer le fichier donné"
+msgstr ""
 
 #: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
 msgid "Export the given file"
-msgstr "Exporter le fichier donné"
+msgstr ""
 
 #: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgid "File or url. The user will be asked whether to import or export."
 msgstr ""
-"Fichier ou URL. L'utilisateur sera interrogé s'il faut importer ou exporter."
 
 #: gui/pimdatacommandlineoption.cpp:52
 #, kde-format
 msgid "Lists the available options for user feedback"
-msgstr "Liste les options disponibles pour les retours des utilisateurs"
+msgstr ""
 
 #. i18n: ectx: Menu (file)
 #: gui/pimdataexporter.rc:8
 #, kde-format
 msgid "&File"
-msgstr "&Fichier"
+msgstr ""
 
 #. i18n: ectx: Menu (tools)
 #: gui/pimdataexporter.rc:21
 #, kde-format
 msgid "&Tools"
-msgstr "Ou&tils"
+msgstr ""
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: gui/pimdataexporter.rc:28
 #, kde-format
 msgid "Main Toolbar"
-msgstr "Barre principale d'outils"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:125
 #, kde-format
 msgid "Full sync starts..."
-msgstr "La synchronisation complète démarre..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:155
 #, kde-format
 msgid "Full sync finished."
-msgstr "La synchronisation complète est terminée."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:162
 #, kde-format
 msgid "Full sync for \"%1\" done."
-msgstr "La synchronisation complète pour « %1 » est terminée."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync for \"%1\" failed."
-msgstr "La synchronisation complète pour « %1 » a échoué."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:173
 #, kde-format
@@ -1003,90 +983,87 @@ msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
 "overwrite your existing settings and data."
 msgstr ""
-"Pour restaurer les données, vous devez utiliser « pimdataexporter ». Prenez "
-"garde car cela peut écraser vos paramètres et données existants."
 
 #: gui/pimdataexporterwindow.cpp:175 gui/pimdataexporterwindow.cpp:280
 #: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup"
-msgstr "Sauvegarder"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Export Data..."
-msgstr "Exporter des données..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Import Data..."
-msgstr "Importer des données..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Save log..."
-msgstr "Enregistrer les messages..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:215
 #, kde-format
 msgid "Show Archive Structure Information..."
-msgstr "Afficher les informations sur la structure de l'archive..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:218
 #, kde-format
 msgid "Show Archive Information..."
-msgstr "Afficher les informations sur l'archive..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:222
 #, kde-format
 msgid "Show Information on current Archive..."
-msgstr "Afficher les informations sur l'archive courante..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Select Archive"
-msgstr "Sélectionner une archive"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Zip file"
-msgstr "Fichier « zip »"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Log is empty."
-msgstr "Les messages sont vides."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:270
 #, kde-format
 msgid "Save log"
-msgstr "Enregistrer les messages"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:274
 #, kde-format
 msgid "HTML Files (*.html)"
-msgstr "Fichiers HTML (*.html)"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:280
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
-"Veuillez quitter toutes les applications KDE PIM avant de sauvegarder vos."
 
 #: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Create backup"
-msgstr "Créer une sauvegarde"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file (*.zip)"
-msgstr "Fichier zip (*.zip)"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Backup in progress..."
-msgstr "Sauvegarde en cours..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:357
 #, kde-format
@@ -1094,309 +1071,48 @@ msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
 msgstr ""
-"Avant de restaurer des données vous devez fermez toutes les applications de "
-"kdepim. Voulez-vous continuer ?"
 
 #: gui/pimdataexporterwindow.cpp:371
 #, kde-format
 msgid "Restore backup"
-msgstr "Restaurer une copie de sauvegarde"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:373
 #, kde-format
 msgid "Zip File"
-msgstr "Fichier « zip »"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgid "Restore in progress..."
-msgstr "Restauration en cours..."
+msgstr ""
 
 #: gui/trayicon/pimdatatrayicon.cpp:13
 #, kde-format
 msgid "Pim Data Exporter"
-msgstr "Exportation des données PIM"
+msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
 #, kde-format
 msgid "Always Override File"
-msgstr "Toujours forcer le fichier"
+msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
 #, kde-format
 msgid "Always Override Directory"
-msgstr "Toujours forcer le dossier"
+msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
 #, kde-format
 msgid "Always Merge Config File"
-msgstr "Toujours fusionner le fichier de configuration"
+msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:23
 #, kde-format
 msgid "Import"
-msgstr "Importer"
+msgstr ""
 
 #: gui/widgets/selectiontypetreewidget.cpp:350
 #, kde-format
 msgid "Template Files (*.xml)"
-msgstr "Fichiers exemple (*.xml)"
-
-#~ msgid "&New"
-#~ msgstr "&Nouveau"
-
-#~ msgid "&Edit"
-#~ msgstr "Modifi&er"
-
-#~ msgid "&View"
-#~ msgstr "&Affichage"
-
-#~ msgid "&Action"
-#~ msgstr "&Action"
-
-#~ msgid "&Settings"
-#~ msgstr "&Configuration"
-
-#~ msgid "&Help"
-#~ msgstr "&Aide"
-
-#~ msgid "&Export"
-#~ msgstr "&Exporter"
-
-#~ msgid "&Collection"
-#~ msgstr "&Collection"
-
-#~ msgid "&Item"
-#~ msgstr "&Éléments"
-
-#~ msgid "&Cache"
-#~ msgstr "&Cache"
-
-#~ msgid "&Server"
-#~ msgstr "&Serveur"
-
-#~ msgid "&Certificates"
-#~ msgstr "&Certificats"
-
-#~ msgid "&Window"
-#~ msgstr "&Fenêtre"
-
-#~ msgctxt "@title:menu New message, folder or new window."
-#~ msgid "New"
-#~ msgstr "Nouveau"
-
-#~ msgid "&Go"
-#~ msgstr "A&ller"
-
-#~ msgid "F&older"
-#~ msgstr "D&ossier"
-
-#~ msgid "Apply Filters on Folder"
-#~ msgstr "Appliquer les filtres sur le dossier"
-
-#~ msgid "Apply Filters on Folder and all its Subfolders"
-#~ msgstr "Appliquer les filtres sur le dossier et tous ses sous-dossiers"
-
-#~ msgid "&Message"
-#~ msgstr "&Message"
-
-#~ msgid "Reply Special"
-#~ msgstr "Réponse spéciale"
-
-#~ msgid "&Forward"
-#~ msgstr "&Précédent"
-
-#~ msgid "A&pply Filter"
-#~ msgstr "A&ppliquer les filtres"
-
-#~ msgid "&Options"
-#~ msgstr "&Options"
-
-#~ msgid "&Attach"
-#~ msgstr "&Attacher"
-
-#~ msgid "HTML Toolbar"
-#~ msgstr "Barre d'outils « HTML »"
-
-#~ msgid "Text Direction Toolbar"
-#~ msgstr "Barre d'outils d'orientation du texte"
-
-#~ msgid "Navigator"
-#~ msgstr "Navigateur"
-
-#~ msgid "PIM Setting Exporter"
-#~ msgstr "Exportation des paramètres PIM"
-
-#~ msgid "Start export Blogilo settings..."
-#~ msgstr "Lancer l'export des paramètres de Blogilo..."
-
-#~ msgid "Export Blogilo settings"
-#~ msgstr "Exporter les paramètres de Blogilo"
-
-#~ msgid "Starting to import Blogilo settings..."
-#~ msgstr "Démarrage de l'import des paramètres de Blogilo..."
-
-#~ msgid "Import Blogilo settings"
-#~ msgstr "Importer les paramètres de Blogilo"
-
-#~ msgid "Blogilo"
-#~ msgstr "Blogilo"
-
-#~ msgid "Backup infos."
-#~ msgstr "Informations de sauvegarde."
-
-#~ msgid ""
-#~ "Before backing up data, it is recommended to quit all kdepim applications."
-#~ msgstr ""
-#~ "Avant de sauvegarder des données, il est recommandé de fermer toutes les "
-#~ "applications de kdepim."
-
-#~ msgid "Akonadi database file could not be found in the archive."
-#~ msgstr ""
-#~ "impossible de trouver le fichier de base de données Akonadi dans "
-#~ "l'archive."
-
-#~ msgid "Restore Akonadi Database..."
-#~ msgstr "Restaurer la base de données Akonadi..."
-
-#~ msgid "Database driver \"%1\" not supported."
-#~ msgstr "Pilote de base de données « %1 » non pris en charge."
-
-#~ msgid "Could not find \"%1\" necessary to restore database."
-#~ msgstr ""
-#~ "Il est impossible de trouver « %1 » nécessaire pour restaurer la base de "
-#~ "données."
-
-#~ msgid "Failed to restore Akonadi Database."
-#~ msgstr "Il est impossible de restaurer la base de données Akonadi."
-
-#~ msgid "Akonadi Database restored."
-#~ msgstr "Base de données Akonadi restaurée."
-
-#~ msgid "Akonadi Database"
-#~ msgstr "Base de données Akonadi"
-
-#~ msgid "Overwrite"
-#~ msgstr "Écraser"
-
-#~ msgid "Copyright © 2012-2015 pimsettingexporter authors"
-#~ msgstr "Copyright © 2012-2015 Les auteurs de pimsettingexporter"
-
-#~ msgid "Back Up Data..."
-#~ msgstr "Enregistrement des données..."
-
-#~ msgid "Copyright © 2015 pimsettingexporter authors"
-#~ msgstr "Copyright © 2015 Les auteurs de pimsettingexporter"
-
-#~ msgid "mysqldump not found. Export data aborted"
-#~ msgstr "mysqldump introuvable. Exportation des données interrompue"
-
-#~ msgid "Backing up Akonadi Database..."
-#~ msgstr "Enregistrement de la base de données Akonadi..."
-
-#~ msgid "Could not find \"%1\" necessary to dump database."
-#~ msgstr ""
-#~ "Il est impossible de trouver « %1 » nécessaire pour vider la base de "
-#~ "données."
-
-#~ msgid "Akonadi Database \"%1\" cannot be added to backup file."
-#~ msgstr ""
-#~ "Il est impossible d'ajouter la base de données Akonadi « %1 » à un "
-#~ "fichier de sauvegarde."
-
-#~ msgid "Akonadi Database backup done."
-#~ msgstr "Enregistrement de la base de données Akonadi terminée."
-
-#~ msgid "Theme directory \"%1\" cannot be added to backup file."
-#~ msgstr ""
-#~ "Impossible d'ajouter le dossier thème « %1 » au fichier de sauvegarde."
-
-#~ msgid "Resource was not configured correctly, not archiving it."
-#~ msgstr ""
-#~ "La ressource n'a pas été configurée correctement, elle ne sera pas "
-#~ "archivée."
-
-#~ msgid "Zip program not found. Install it before to launch this application."
-#~ msgstr ""
-#~ "Programme Zip introuvable. Installez-le avant de lancer cette application."
-
-#~ msgid "Zip program not found."
-#~ msgstr "Programme Zip introuvable."
-
-#~ msgid "Mails backup done."
-#~ msgstr "Enregistrement du courrier électronique terminée."
-
-#~ msgid "Copyright © 2012-2014 pimsettingexporter authors"
-#~ msgstr "Copyright © 2012-2014 Les auteurs de pimsettingexporter"
-
-#~ msgid "Start export KJots settings..."
-#~ msgstr "Lancer l'export des paramètres de KJots..."
-
-#~ msgid "Start import KJots settings..."
-#~ msgstr "Lancer l'import des paramètres de KJots..."
-
-#~ msgid "KJots"
-#~ msgstr "KJots"
-
-#~ msgid "Start export KNode settings..."
-#~ msgstr "Lancer l'export des paramètres de KNode..."
-
-#~ msgid "Start import KNode settings..."
-#~ msgstr "Lancer l'import des paramètres de KNode..."
-
-#~ msgid "KNode"
-#~ msgstr "KNode"
-
-#~ msgid "Backing up Nepomuk Database..."
-#~ msgstr "Sauvegarde de la base de données Nepomuk..."
-
-#~ msgid "Nepomuk Database backup done."
-#~ msgstr "Sauvegarde de la base de données Nepomuk terminée."
-
-#~ msgid "Nepomuk Database restored."
-#~ msgstr "Base de données Nepomuk restaurée."
-
-#~ msgid "Failed to restore Nepomuk Database."
-#~ msgstr "Il est impossible de restaurer la base de données Nepomuk."
-
-#~ msgid "Nepomuk Database"
-#~ msgstr "Base de données Nepomuk"
-
-#, fuzzy
-#~| msgid "Config"
-#~ msgid "Configs"
-#~ msgstr "Configuration"
-
-#, fuzzy
-#~| msgid "Transports backup done."
-#~ msgid "Transports Config"
-#~ msgstr "Sauvegarde des transports terminée."
-
-#, fuzzy
-#~| msgid "Akonadi Database"
-#~ msgid "Akonadi"
-#~ msgstr "Base de données Akonadi"
-
-#~ msgid "Mail \"%1\" file cannot be added to backup file."
-#~ msgstr ""
-#~ "Il est impossible d'ajouter un fichier de courrier « %1 » à un fichier de "
-#~ "sauvegarde."
-
-#~ msgid "Mail \"%1\" was backuped."
-#~ msgstr "Le fichier de courrier « %1 » a été sauvegardé."
-
-#~ msgid "MBox \"%1\" was backuped."
-#~ msgstr "Le fichier MBox « %1 » a été sauvegardé."
-
-#~ msgid "MBox \"%1\" file cannot be added to backup file."
-#~ msgstr ""
-#~ "Impossible d'ajouter un fichier MBox « %1 » à un fichier de sauvegarde."
-
-#~ msgid "backupmail"
-#~ msgstr "backupmail"
-
-#~ msgid "PIM Backup Mail"
-#~ msgstr "Sauvegarde de courrier pour PIM"
-
-#~ msgid "Form"
-#~ msgstr "Formulaire"
+msgstr ""
