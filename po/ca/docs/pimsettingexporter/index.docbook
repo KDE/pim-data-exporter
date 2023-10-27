@@ -124,9 +124,7 @@
 <para
 >La següent pantalla permet seleccionar sobre què voleu realitzar una còpia de seguretat, per omissió se selecciona tot. <note
 > <para
->La selecció de correu del &kmail; només farà còpia de seguretat en les vostres <quote
->Carpetes locals</quote
->, serà una còpia de seguretat de les opcions &imap; i descarregarà els missatges a restaurar. Si teniu missatges de correu electrònic en un servidor &imap;, i voleu fer una còpia de seguretat, haureu d'utilitzar l'<ulink url="help:/akonadi_folderarchive_agent"
+>La selecció de correu del &kmail; només farà còpia de seguretat en les vostres «Carpetes locals», serà una còpia de seguretat de les opcions &imap; i descarregarà els missatges a restaurar. Si teniu missatges de correu electrònic en un servidor &imap;, i voleu fer una còpia de seguretat, haureu d'utilitzar l'<ulink url="help:/akonadi_folderarchive_agent"
 >Agent per a arxivar una carpeta</ulink
 > per a arxivar aquests correus electrònics a una carpeta local.</para>
 </note
