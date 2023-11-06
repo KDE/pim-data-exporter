@@ -246,7 +246,7 @@ void ExportMailJobInterface::backupConfig()
         tmp.open();
 
         KConfig *archiveConfig = mboxrc->copyTo(tmp.fileName());
-        auto group = archiveConfig->group("UnifiedMailboxes");
+        auto group = archiveConfig->group(QStringLiteral("UnifiedMailboxes"));
         const auto boxGroups = group.groupList();
         for (const auto &str : boxGroups) {
             KConfigGroup oldGroup = group.group(str);

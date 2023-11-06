@@ -1052,8 +1052,8 @@ void ImportMailJobInterface::copyMailArchiveConfig(const KSharedConfig::Ptr &arc
 
 void ImportMailJobInterface::copyUnifiedMailBoxConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
-    auto group = archiveConfigOrigin->group("UnifiedMailboxes");
-    auto groupCopy = archiveConfigDestination->group("UnifiedMailboxes");
+    auto group = archiveConfigOrigin->group(QStringLiteral("UnifiedMailboxes"));
+    auto groupCopy = archiveConfigDestination->group(QStringLiteral("UnifiedMailboxes"));
     const auto boxGroups = group.groupList();
     for (const auto &str : boxGroups) {
         KConfigGroup oldGroup = group.group(str);

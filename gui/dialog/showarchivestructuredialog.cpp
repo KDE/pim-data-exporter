@@ -274,14 +274,14 @@ void ShowArchiveStructureDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(600, 400));
-    KConfigGroup group(KSharedConfig::openStateConfig(), myShowArchiveStructureDialogGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myShowArchiveStructureDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void ShowArchiveStructureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), myShowArchiveStructureDialogGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myShowArchiveStructureDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }

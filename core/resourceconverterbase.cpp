@@ -176,13 +176,13 @@ QString ResourceConverterBase::storeResources(KZip *archive, const QString &iden
 
     if (identifier.contains(POP3_RESOURCE_IDENTIFIER)) {
         const QString targetCollection = QStringLiteral("targetCollection");
-        KConfigGroup group = config->group("General");
+        KConfigGroup group = config->group(QStringLiteral("General"));
         if (group.hasKey(targetCollection)) {
             group.writeEntry(targetCollection, convertToFullCollectionPath(group.readEntry(targetCollection).toLongLong()));
         }
     } else if (PimCommon::Util::isImapResource(identifier)) {
         const QString trash = QStringLiteral("TrashCollection");
-        KConfigGroup group = config->group("cache");
+        KConfigGroup group = config->group(QStringLiteral("cache"));
         if (group.hasKey(trash)) {
             group.writeEntry(trash, convertToFullCollectionPath(group.readEntry(trash).toLongLong()));
         }
