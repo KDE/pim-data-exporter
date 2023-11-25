@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <KUserFeedbackQt6/Provider>
+#include <KUserFeedback/Provider>
 class PimDataExportedUserFeedbackProvider : public KUserFeedback::Provider
 {
     Q_OBJECT

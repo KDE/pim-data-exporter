@@ -13,7 +13,7 @@
 #include <QApplication>
 #ifdef WITH_KUSERFEEDBACK
 #include "userfeedback/pimdataexporteduserfeedbackprovider.h"
-#include <KUserFeedbackQt6/Provider>
+#include <KUserFeedback/Provider>
 #endif
 
 int main(int argc, char *argv[])
