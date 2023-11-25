@@ -36,7 +36,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     // General page
     auto generalConfigureWiget = new QWidget(this);
     auto layout = new QVBoxLayout(generalConfigureWiget);
-    mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
+    mConfigureWidget->setObjectName(QLatin1StringView("configurewidget"));
 
     layout->addWidget(mConfigureWidget);
 
@@ -46,7 +46,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
 
 #ifdef WITH_KUSERFEEDBACK
     auto userFeedBackWidget = new QWidget;
-    userFeedBackWidget->setObjectName(QStringLiteral("userFeedBackWidget"));
+    userFeedBackWidget->setObjectName(QLatin1StringView("userFeedBackWidget"));
 
     mUserFeedbackWidget = new KUserFeedback::FeedbackConfigWidget(this);
 

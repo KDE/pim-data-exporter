@@ -31,25 +31,25 @@ SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
 
     auto lab = new QLabel(i18n("Some resources were added but data were not sync. Select resources that you want to sync:"), this);
     lab->setWordWrap(true);
-    lab->setObjectName(QStringLiteral("label"));
+    lab->setObjectName(QLatin1StringView("label"));
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    buttonBox->setObjectName(QLatin1StringView("buttonbox"));
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-    mListResourceWidget->setObjectName(QStringLiteral("listresourcewidget"));
+    mListResourceWidget->setObjectName(QLatin1StringView("listresourcewidget"));
     auto listWidgetSearchLine = new KListWidgetSearchLine(this, mListResourceWidget);
-    listWidgetSearchLine->setObjectName(QStringLiteral("listwidgetsearchline"));
+    listWidgetSearchLine->setObjectName(QLatin1StringView("listwidgetsearchline"));
 
     auto hbox = new QHBoxLayout;
     auto selectAll = new QPushButton(i18n("Select All"));
-    selectAll->setObjectName(QStringLiteral("selectall_button"));
+    selectAll->setObjectName(QLatin1StringView("selectall_button"));
     connect(selectAll, &QPushButton::clicked, this, &SynchronizeResourceDialog::slotSelectAll);
     hbox->addWidget(selectAll);
 
     auto unselectAll = new QPushButton(i18n("Unselect All"));
-    unselectAll->setObjectName(QStringLiteral("unselectall_button"));
+    unselectAll->setObjectName(QLatin1StringView("unselectall_button"));
     connect(unselectAll, &QPushButton::clicked, this, &SynchronizeResourceDialog::slotUnselectAll);
     hbox->addWidget(unselectAll);
 

@@ -34,7 +34,7 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     auto topLayout = new QVBoxLayout(this);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    buttonBox->setObjectName(QLatin1StringView("buttonbox"));
 
     auto okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
@@ -42,28 +42,28 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SelectionTypeDialog::reject);
     okButton->setDefault(true);
 
-    mSelectionTreeWidget->setObjectName(QStringLiteral("mSelectionTreeWidget"));
+    mSelectionTreeWidget->setObjectName(QLatin1StringView("mSelectionTreeWidget"));
     topLayout->addWidget(mSelectionTreeWidget);
 
-    mUseTemplateByDefault->setObjectName(QStringLiteral("mUseTemplateByDefault"));
+    mUseTemplateByDefault->setObjectName(QLatin1StringView("mUseTemplateByDefault"));
     topLayout->addWidget(mUseTemplateByDefault);
 
     auto hbox = new QHBoxLayout;
     auto selectAll = new QPushButton(i18n("Select All"), this);
-    selectAll->setObjectName(QStringLiteral("selectAll"));
+    selectAll->setObjectName(QLatin1StringView("selectAll"));
     connect(selectAll, &QPushButton::clicked, this, &SelectionTypeDialog::slotSelectAll);
     hbox->addWidget(selectAll);
 
     auto unselectAll = new QPushButton(i18n("Unselect All"), this);
-    unselectAll->setObjectName(QStringLiteral("unselectAll"));
+    unselectAll->setObjectName(QLatin1StringView("unselectAll"));
     connect(unselectAll, &QPushButton::clicked, this, &SelectionTypeDialog::slotUnselectAll);
     hbox->addWidget(unselectAll);
 
-    mSaveTemplate->setObjectName(QStringLiteral("mSaveTemplate"));
+    mSaveTemplate->setObjectName(QLatin1StringView("mSaveTemplate"));
     connect(mSaveTemplate, &QPushButton::clicked, this, &SelectionTypeDialog::slotSaveAsTemplate);
     hbox->addWidget(mSaveTemplate);
 
-    mLoadTemplate->setObjectName(QStringLiteral("mLoadTemplate"));
+    mLoadTemplate->setObjectName(QLatin1StringView("mLoadTemplate"));
     connect(mLoadTemplate, &QPushButton::clicked, this, &SelectionTypeDialog::slotLoadTemplate);
     hbox->addWidget(mLoadTemplate);
 

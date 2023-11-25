@@ -21,19 +21,19 @@ PimDataExporterConfigureWidget::PimDataExporterConfigureWidget(QWidget *parent)
     layout->setContentsMargins(0, 0, 0, 0);
 
     auto groupBox = new QGroupBox(i18n("Import"));
-    groupBox->setObjectName(QStringLiteral("import_groupbox"));
+    groupBox->setObjectName(QLatin1StringView("import_groupbox"));
     layout->addWidget(groupBox);
 
     auto groupBoxLayout = new QVBoxLayout;
     groupBox->setLayout(groupBoxLayout);
 
-    mAlwaysOverrideFile->setObjectName(QStringLiteral("alwaysoverridefile"));
+    mAlwaysOverrideFile->setObjectName(QLatin1StringView("alwaysoverridefile"));
     groupBoxLayout->addWidget(mAlwaysOverrideFile);
 
-    mAlwaysOverrideDirectory->setObjectName(QStringLiteral("alwaysoverridedirectory"));
+    mAlwaysOverrideDirectory->setObjectName(QLatin1StringView("alwaysoverridedirectory"));
     groupBoxLayout->addWidget(mAlwaysOverrideDirectory);
 
-    mAlwaysMergeConfigFile->setObjectName(QStringLiteral("alwaysmergeconfigfile"));
+    mAlwaysMergeConfigFile->setObjectName(QLatin1StringView("alwaysmergeconfigfile"));
     groupBoxLayout->addWidget(mAlwaysMergeConfigFile);
     groupBoxLayout->addStretch(1);
 
