@@ -15,6 +15,7 @@ LogWidget::LogWidget(QWidget *parent)
     , mCustomLogWidget(new PimCommon::CustomLogWidget(this))
 {
     auto layout = new QHBoxLayout(this);
+    layout->setContentsMargins({});
     layout->addWidget(mCustomLogWidget);
 }
 
