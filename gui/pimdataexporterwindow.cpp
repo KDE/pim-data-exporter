@@ -27,6 +27,7 @@
 
 #include <Akonadi/ControlGui>
 
+#include <KAboutData>
 #include <KActionCollection>
 #include <KFileWidget>
 #include <KLocalizedString>
@@ -40,6 +41,7 @@
 #include <QPointer>
 #include <QStandardPaths>
 #include <QStatusBar>
+#include <QVBoxLayout>
 
 #include <dialog/pimdataexporterconfiguredialog.h>
 #ifdef WITH_KUSERFEEDBACK
@@ -47,6 +49,9 @@
 #include <KUserFeedback/NotificationPopup>
 #include <KUserFeedback/Provider>
 #endif
+
+#include <PimCommon/NeedUpdateVersionUtils>
+#include <PimCommon/NeedUpdateVersionWidget>
 
 PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
@@ -65,7 +70,20 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     setupActions(true);
     setupGUI(Keys | StatusBar | Save | Create, QStringLiteral("pimdataexporter.rc"));
 
-    setCentralWidget(mLogWidget);
+    auto mainWidget = new QWidget(this);
+    auto mainWidgetLayout = new QVBoxLayout(mainWidget);
+    mainWidgetLayout->setContentsMargins({});
+    if (PimCommon::NeedUpdateVersionUtils::checkVersion()) {
+        const auto status = PimCommon::NeedUpdateVersionUtils::obsoleteVersionStatus(KAboutData::applicationData().version(), QDate::currentDate());
+        if (status != PimCommon::NeedUpdateVersionUtils::ObsoleteVersion::NotObsoleteYet) {
+            auto needUpdateVersionWidget = new PimCommon::NeedUpdateVersionWidget(this);
+            mainWidgetLayout->addWidget(needUpdateVersionWidget);
+            needUpdateVersionWidget->setObsoleteVersion(status);
+        }
+    }
+    mainWidgetLayout->addWidget(mLogWidget);
+
+    setCentralWidget(mainWidget);
     resize(800, 600);
     Akonadi::ControlGui::widgetNeedsAkonadi(this);
     statusBar()->hide();
