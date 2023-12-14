@@ -70,7 +70,6 @@ find_package(KF6KIO ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6Notifications ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6WidgetsAddons ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6XmlGui ${KF_MIN_VERSION} REQUIRED)
-find_package(KF6WidgetsAddons ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6StatusNotifierItem ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6IconThemes ${KF_MIN_VERSION} QUIET)
 
