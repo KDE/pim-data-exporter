@@ -53,10 +53,31 @@
 #include <PimCommon/NeedUpdateVersionUtils>
 #include <PimCommon/NeedUpdateVersionWidget>
 
+// signal handler for SIGINT & SIGTERM
+#ifdef Q_OS_UNIX
+#include <KSignalHandler>
+#include <signal.h>
+#include <unistd.h>
+#endif
+
 PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     : KXmlGuiWindow(parent)
     , mLogWidget(new LogWidget(this))
 {
+#ifdef Q_OS_UNIX
+    /**
+     * Set up signal handler for SIGINT and SIGTERM
+     */
+    KSignalHandler::self()->watchSignal(SIGINT);
+    KSignalHandler::self()->watchSignal(SIGTERM);
+    connect(KSignalHandler::self(), &KSignalHandler::signalReceived, this, [](int signal) {
+        if (signal == SIGINT || signal == SIGTERM) {
+            printf("Shutting down...\n");
+            // Intercept console.
+            // Show a dialog box ????
+        }
+    });
+#endif
     // Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
 #ifdef WITH_KUSERFEEDBACK
