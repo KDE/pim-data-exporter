@@ -70,11 +70,13 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
      */
     KSignalHandler::self()->watchSignal(SIGINT);
     KSignalHandler::self()->watchSignal(SIGTERM);
-    connect(KSignalHandler::self(), &KSignalHandler::signalReceived, this, [](int signal) {
+    connect(KSignalHandler::self(), &KSignalHandler::signalReceived, this, [this](int signal) {
         if (signal == SIGINT || signal == SIGTERM) {
-            printf("Shutting down...\n");
             // Intercept console.
-            // Show a dialog box ????
+            printf("Shutting down...\n");
+            if (!mInProgress) {
+                close();
+            }
         }
     });
 #endif
@@ -284,6 +286,7 @@ void PimDataExporterWindow::slotUpdateActions(bool inAction)
     mArchiveStructureInfo->setEnabled(!inAction);
     mShowArchiveInformationsAction->setEnabled(!inAction);
     mShowArchiveInformationsAboutCurrentArchiveAction->setEnabled(!inAction && !mLastArchiveFileName.isEmpty());
+    mInProgress = inAction;
 }
 
 void PimDataExporterWindow::slotRestoreFile(const QUrl &url)

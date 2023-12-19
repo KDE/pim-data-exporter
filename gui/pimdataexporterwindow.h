@@ -52,6 +52,7 @@ private:
     void showFinishInformation();
     void importDone();
     QString mLastArchiveFileName;
+    bool mInProgress = false;
     // Name, identifier
     QHash<QString, QString> mNeedToSyncResources;
     LogWidget *const mLogWidget;
