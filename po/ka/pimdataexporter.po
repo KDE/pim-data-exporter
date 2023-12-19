@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-14 01:35+0000\n"
+"POT-Creation-Date: 2023-12-19 01:34+0000\n"
 "PO-Revision-Date: 2023-01-07 06:19+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -963,27 +963,27 @@ msgstr "&ხელსაწყოები"
 msgid "Main Toolbar"
 msgstr "ხელსაწყოთა მთავარი ზოლი"
 
-#: gui/pimdataexporterwindow.cpp:144
+#: gui/pimdataexporterwindow.cpp:165
 #, kde-format
 msgid "Full sync starts..."
 msgstr "სრული სინქრონიზაციის დასაწყისი..."
 
-#: gui/pimdataexporterwindow.cpp:174
+#: gui/pimdataexporterwindow.cpp:195
 #, kde-format
 msgid "Full sync finished."
 msgstr "სრული სინქრონიზაცია დასრულდა."
 
-#: gui/pimdataexporterwindow.cpp:181
+#: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "\"%1\"-ის სრული სინქრონიზაცია დასრულდა."
 
-#: gui/pimdataexporterwindow.cpp:186
+#: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "\"%1\"-ის სრული სინქრონიზაციის შეცდომა."
 
-#: gui/pimdataexporterwindow.cpp:192
+#: gui/pimdataexporterwindow.cpp:213
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -992,88 +992,88 @@ msgstr ""
 "მონაცემების აღსადგენად გამოიყენეთ \"pimdataexporter\". ფრთხილად, მას თქვენი "
 "არსებული პარამეტრებისა და მონაცემების თავზე გადაწერა შეუძლია."
 
-#: gui/pimdataexporterwindow.cpp:194 gui/pimdataexporterwindow.cpp:299
-#: gui/pimdataexporterwindow.cpp:377
+#: gui/pimdataexporterwindow.cpp:215 gui/pimdataexporterwindow.cpp:320
+#: gui/pimdataexporterwindow.cpp:398
 #, kde-format
 msgid "Backup"
 msgstr "მარქაფი"
 
-#: gui/pimdataexporterwindow.cpp:221
+#: gui/pimdataexporterwindow.cpp:242
 #, kde-format
 msgid "Export Data..."
 msgstr "მონაცემების გატანა..."
 
-#: gui/pimdataexporterwindow.cpp:226
+#: gui/pimdataexporterwindow.cpp:247
 #, kde-format
 msgid "Import Data..."
 msgstr "მონაცემების შემოტანა..."
 
-#: gui/pimdataexporterwindow.cpp:231
+#: gui/pimdataexporterwindow.cpp:252
 #, kde-format
 msgid "Save log..."
 msgstr "ჟურნალის შენახვა..."
 
-#: gui/pimdataexporterwindow.cpp:234
+#: gui/pimdataexporterwindow.cpp:255
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "არქივის სტრუქტურის ინფორმაციის ჩვენება..."
 
-#: gui/pimdataexporterwindow.cpp:237
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "არქივის ინფორმაციის ჩვენება..."
 
-#: gui/pimdataexporterwindow.cpp:241
+#: gui/pimdataexporterwindow.cpp:262
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "მიმდინარე არქივის სტრუქტურის ინფორმაციის ჩვენება..."
 
-#: gui/pimdataexporterwindow.cpp:277
+#: gui/pimdataexporterwindow.cpp:298
 #, kde-format
 msgid "Select Archive"
 msgstr "აირჩიეთ არქივი"
 
-#: gui/pimdataexporterwindow.cpp:277
+#: gui/pimdataexporterwindow.cpp:298
 #, kde-format
 msgid "Zip file"
 msgstr "Zip ფაილი"
 
-#: gui/pimdataexporterwindow.cpp:289
+#: gui/pimdataexporterwindow.cpp:310
 #, kde-format
 msgid "Log is empty."
 msgstr "ჟურნალი ცარიელია."
 
-#: gui/pimdataexporterwindow.cpp:289
+#: gui/pimdataexporterwindow.cpp:310
 #, kde-format
 msgid "Save log"
 msgstr "ჟურნალის შენახვა"
 
-#: gui/pimdataexporterwindow.cpp:293
+#: gui/pimdataexporterwindow.cpp:314
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML ფაილები (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:299
+#: gui/pimdataexporterwindow.cpp:320
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "თქვენი მონაცემების მარქაფამდე საჭიროა ყველა kdepim აპლიკაცია გამორთოთ."
 
-#: gui/pimdataexporterwindow.cpp:322
+#: gui/pimdataexporterwindow.cpp:343
 #, kde-format
 msgid "Create backup"
 msgstr "მარქაფის შექმნა"
 
-#: gui/pimdataexporterwindow.cpp:324
+#: gui/pimdataexporterwindow.cpp:345
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip ფაილი (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:334
+#: gui/pimdataexporterwindow.cpp:355
 #, kde-format
 msgid "Backup in progress..."
 msgstr "მარქაფი მიმდინარეობს...."
 
-#: gui/pimdataexporterwindow.cpp:376
+#: gui/pimdataexporterwindow.cpp:397
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1082,17 +1082,17 @@ msgstr ""
 "მონაცემების აღდგენამდე ყველა KDEPIM აპლიკაცია უნდა დახუროთ. გნებავთ, "
 "გააგრძელოთ?"
 
-#: gui/pimdataexporterwindow.cpp:390
+#: gui/pimdataexporterwindow.cpp:411
 #, kde-format
 msgid "Restore backup"
 msgstr "მარქაფის აღდგენა"
 
-#: gui/pimdataexporterwindow.cpp:392
+#: gui/pimdataexporterwindow.cpp:413
 #, kde-format
 msgid "Zip File"
 msgstr "Zip ფაილი"
 
-#: gui/pimdataexporterwindow.cpp:424
+#: gui/pimdataexporterwindow.cpp:445
 #, kde-format
 msgid "Restore in progress..."
 msgstr "აღდგენა მიმდინარეობს..."
