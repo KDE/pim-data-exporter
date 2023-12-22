@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.07.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -382,10 +382,9 @@ msgid "Export KMail settings"
 msgstr "KMail-Einstellungen exportieren"
 
 #: core/mail/exportmailjobinterface.cpp:112
-#, fuzzy, kde-format
-#| msgid "Backing up identity..."
+#, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr "Identität wird gesichert ..."
+msgstr "Ordnerattribute werden gesichert …"
 
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
@@ -393,10 +392,9 @@ msgid "Backing up Mails..."
 msgstr "E-Mails werden gesichert ..."
 
 #: core/mail/exportmailjobinterface.cpp:115
-#, fuzzy, kde-format
-#| msgid "Start export Akregator settings..."
+#, kde-format
 msgid "Start export resource..."
-msgstr "Das Exportieren der Einstellungen von Akregator wird gestartet ..."
+msgstr "Das Exportieren der Ressourcen wird gestartet …"
 
 #: core/mail/exportmailjobinterface.cpp:123
 #, kde-format
@@ -446,16 +444,14 @@ msgid "Filters cannot be exported."
 msgstr "Filter können nicht exportiert werden."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:163
-#, fuzzy, kde-format
-#| msgid "Backing up identity..."
+#, kde-format
 msgid "Backing up Folder Attributes done."
-msgstr "Identität wird gesichert ..."
+msgstr "Sichern der Ordnerattribute ist abgeschlossen."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:167
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Folder Attributes cannot be exported."
-msgstr "Filter können nicht exportiert werden."
+msgstr "Die Ordnerattribute können nicht exportiert werden."
 
 #: core/mail/importmailjobinterface.cpp:43
 #, kde-format
@@ -510,16 +506,14 @@ msgid "filters file could not be found in the archive."
 msgstr "Filterdatei kann im Archiv nicht gefunden werden."
 
 #: core/mail/importmailjobinterface.cpp:569
-#, fuzzy, kde-format
-#| msgid "Restore mails..."
+#, kde-format
 msgid "Restore filters..."
-msgstr "E-Mails zurückspielen ..."
+msgstr "Filter wiederherstellen …"
 
 #: core/mail/importmailjobinterface.cpp:618
-#, fuzzy, kde-format
-#| msgid "Mails restored."
+#, kde-format
 msgid "Filters restored."
-msgstr "Die E-Mails wurden wieder hergestellt."
+msgstr "Die Filter wurden wieder hergestellt."
 
 #: core/mail/importmailjobinterface.cpp:899
 #: core/mail/importmailjobinterface.cpp:904
@@ -543,28 +537,24 @@ msgid "Failed to restore identity file."
 msgstr "Zurückspielen der Identitätendatei ist fehlgeschlagen."
 
 #: core/mail/importmailjobinterface.cpp:1283
-#, fuzzy, kde-format
-#| msgid "\"%1\" backup done."
+#, kde-format
 msgid "\"%1\" migration done."
-msgstr "Sicherung von „%1“ abgeschlossen."
+msgstr "Migration von „%1“ abgeschlossen."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:35
-#, fuzzy, kde-format
-#| msgid "Backing up identity..."
+#, kde-format
 msgid "Restoring folder attributes..."
-msgstr "Identität wird gesichert ..."
+msgstr "Ordnerattribute werden wiederhergestellt …"
 
 #: core/mail/importmailjobinterfaceimpl.cpp:41
-#, fuzzy, kde-format
-#| msgid "Backing up identity..."
+#, kde-format
 msgid "Restoring Folder Attributes done."
-msgstr "Identität wird gesichert ..."
+msgstr "Das Wiederherstellen der Ordnerattribute ist abgeschlossen."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:45
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Folder Attributes cannot be restored."
-msgstr "Filter können nicht exportiert werden."
+msgstr "Die Ordnerattribute können nicht wiederhergestellt werden."
 
 #: core/notes/exportnotesjobinterface.cpp:28
 #, kde-format
