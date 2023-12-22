@@ -42,6 +42,7 @@
   <name xml:lang="uk">Засіб експортування даних PIM</name>
   <name xml:lang="x-test">xxPIM Data Exporterxx</name>
   <name xml:lang="zh-CN">个人信息管理数据导出器</name>
+  <name xml:lang="zh-TW">PIM 資料匯出工具</name>
   <summary>Saves all data from PIM apps and restore them in other systems.</summary>
   <summary xml:lang="ar">تحفظ كل بيانات تطبيقات إدارة البيانات الشخصية وتستعيدها في الأنظمة الأخرى.</summary>
   <summary xml:lang="az">PİM tətbiqlərindən bütün verilənləri saxlayır və onları başqa sistemdə bərpa edir</summary>
@@ -77,6 +78,7 @@
   <summary xml:lang="uk">Зберігає усі дані з програм PIM і відновлює їх у інших системах.</summary>
   <summary xml:lang="x-test">xxSaves all data from PIM apps and restore them in other systems.xx</summary>
   <summary xml:lang="zh-CN">保存源自个人信息管理程序的所有数据，并在其他系统上恢复它们。</summary>
+  <summary xml:lang="zh-TW">儲存 PIM 應用程式裡的資料並在其他系統中回復它。</summary>
   <developer_name>Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ar">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="az">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -151,6 +153,7 @@
     <p xml:lang="uk">Засіб експортування даних PIM надає змогу експортувати та імпортувати параметри PIM.</p>
     <p xml:lang="x-test">xxPIM Data Exporter exports and imports PIM settingsxx</p>
     <p xml:lang="zh-CN">个人信息管理数据导出器导出及导入个人信息管理数据</p>
+    <p xml:lang="zh-TW">PIM 資料匯出工具允許匯出或匯入 PIM 設定。</p>
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=pimsettingsexporter</url>
   <url type="help">https://docs.kde.org/?application=pimsettingexporter</url>
