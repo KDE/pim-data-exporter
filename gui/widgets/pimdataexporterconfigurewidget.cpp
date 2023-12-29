@@ -22,6 +22,7 @@ PimDataExporterConfigureWidget::PimDataExporterConfigureWidget(QWidget *parent)
 
     auto groupBox = new QGroupBox(i18n("Import"));
     groupBox->setObjectName(QLatin1StringView("import_groupbox"));
+    groupBox->setFlat(true);
     layout->addWidget(groupBox);
 
     auto groupBoxLayout = new QVBoxLayout;
