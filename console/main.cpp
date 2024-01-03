@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
                          QStringLiteral(PIMDATAEXPORTER_VERSION),
                          i18n("PIM Data Exporter Console"),
                          KAboutLicense::GPL_V2,
-                         i18n("Copyright © 2015-%1 pimdataexporter authors", QStringLiteral("2023")));
+                         i18n("Copyright © 2015-%1 pimdataexporter authors", QStringLiteral("2024")));
     aboutData.addAuthor(i18n("Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
     const QCommandLineOption logOption(QStringList() << QStringLiteral("logfile"), i18n("File to log information to."), QStringLiteral("file"));
     parser.addOption(logOption);
