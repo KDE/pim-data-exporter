@@ -63,7 +63,7 @@ void TestExportFile::start()
     QSignalSpy error(mAbstractImportExportJob, &AbstractImportExportJob::error);
     mAbstractImportExportJob->start();
     QVERIFY(finish.wait());
-    const bool hasError = error.count() > 0;
+    const bool hasError = !error.isEmpty();
     if (hasError) {
         qDebug() << " error " << error.at(0);
     }
