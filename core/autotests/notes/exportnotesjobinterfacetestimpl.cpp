@@ -35,7 +35,11 @@ void ExportNotesJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
 {
     SaveResourceConfigTest saveResourceConfig;
     saveResourceConfig.setArchive(mArchiveStorage->archive());
-    saveResourceConfig.exportResourceToArchive(archivePath, url, identifier, Utils::resourceNoteArchiveName(), {QLatin1String("akonadi_akonotes_resource_")});
+    saveResourceConfig.exportResourceToArchive(archivePath,
+                                               url,
+                                               identifier,
+                                               Utils::resourceNoteArchiveName(),
+                                               {QLatin1StringView("akonadi_akonotes_resource_")});
     slotNoteJobTerminated();
 }
 

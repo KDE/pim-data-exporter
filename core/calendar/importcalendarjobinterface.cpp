@@ -62,7 +62,7 @@ void ImportCalendarJobInterface::addSpecificResourceSettings(const KSharedConfig
                                                              const QString &resourceName,
                                                              QMap<QString, QVariant> &settings)
 {
-    if (resourceName == QLatin1String("akonadi_ical_resource")) {
+    if (resourceName == QLatin1StringView("akonadi_ical_resource")) {
         KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
         if (general.hasKey(QStringLiteral("DisplayName"))) {
             settings.insert(QStringLiteral("DisplayName"), general.readEntry(QStringLiteral("DisplayName")));
@@ -78,10 +78,10 @@ void ImportCalendarJobInterface::addSpecificResourceSettings(const KSharedConfig
 
 bool ImportCalendarJobInterface::isAConfigFile(const QString &name) const
 {
-    return name.endsWith(QLatin1String("rc"))
-        && (name.contains(QLatin1String("akonadi_ical_resource_")) || name.contains(QLatin1String("akonadi_davgroupware_resource_"))
-            || name.contains(QLatin1String("akonadi_icaldir_resource_")) || name.contains(QLatin1String("akonadi_openxchange_resource_"))
-            || name.contains(QLatin1String("akonadi_google_resource_")));
+    return name.endsWith(QLatin1StringView("rc"))
+        && (name.contains(QLatin1StringView("akonadi_ical_resource_")) || name.contains(QLatin1String("akonadi_davgroupware_resource_"))
+            || name.contains(QLatin1StringView("akonadi_icaldir_resource_")) || name.contains(QLatin1String("akonadi_openxchange_resource_"))
+            || name.contains(QLatin1StringView("akonadi_google_resource_")));
 }
 
 void ImportCalendarJobInterface::restoreConfig()
@@ -180,11 +180,12 @@ void ImportCalendarJobInterface::restoreConfig()
 
     {
         const QString freebusyStr(QStringLiteral("freebusyurls"));
-        const KArchiveEntry *freebusyentry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1String("korganizer/") + freebusyStr);
+        const KArchiveEntry *freebusyentry = mArchiveDirectory->entry(Utils::dataPath() + QLatin1StringView("korganizer/") + freebusyStr);
         if (freebusyentry && freebusyentry->isFile()) {
             const auto freebusyrcFile = static_cast<const KArchiveFile *>(freebusyentry);
 
-            const QString freebusypath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/korganizer/") + freebusyStr;
+            const QString freebusypath =
+                QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/korganizer/") + freebusyStr;
             if (QFileInfo::exists(freebusypath)) {
                 // TODO 4.12 merge it.
                 if (overwriteConfigMessageBox(freebusyStr)) {
@@ -296,7 +297,7 @@ void ImportCalendarJobInterface::restoreResources()
         for (int i = 0; i < numberOfResourceFile; ++i) {
             ResourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
-            if (value.akonadiConfigFile.contains(QLatin1String("akonadi_icaldir_resource_"))) {
+            if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_icaldir_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const auto file = static_cast<const KArchiveFile *>(fileResouceEntry);
@@ -315,14 +316,14 @@ void ImportCalendarJobInterface::restoreResources()
 
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
-                    bool isDirResource = value.akonadiConfigFile.contains(QLatin1String("akonadi_icaldir_resource_"));
+                    bool isDirResource = value.akonadiConfigFile.contains(QLatin1StringView("akonadi_icaldir_resource_"));
                     if (dataResouceEntry->isFile()) {
                         const auto fileEntry = static_cast<const KArchiveFile *>(dataResouceEntry);
                         // TODO  adapt directory name too
                         extractZipFile(fileEntry,
                                        copyToDirName,
                                        newUrlInfo.path(),
-                                       value.akonadiConfigFile.contains(QLatin1String("akonadi_icaldir_resource_")));
+                                       value.akonadiConfigFile.contains(QLatin1StringView("akonadi_icaldir_resource_")));
                     }
                     settings.insert(QStringLiteral("Path"), newUrl);
 

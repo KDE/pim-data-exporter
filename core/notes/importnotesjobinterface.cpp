@@ -56,7 +56,7 @@ void ImportNotesJobInterface::start()
 
 bool ImportNotesJobInterface::isAConfigFile(const QString &name) const
 {
-    return name.endsWith(QLatin1String("rc")) && (name.contains(QLatin1String("akonadi_akonotes_resource_")));
+    return name.endsWith(QLatin1StringView("rc")) && (name.contains(QLatin1String("akonadi_akonotes_resource_")));
 }
 
 QString ImportNotesJobInterface::configLocation() const
@@ -157,7 +157,7 @@ void ImportNotesJobInterface::restoreResources()
         for (int i = 0; i < numberOfResourceFile; ++i) {
             ResourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
-            if (value.akonadiConfigFile.contains(QLatin1String("akonadi_akonotes_resource_"))) {
+            if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_akonotes_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const auto file = static_cast<const KArchiveFile *>(fileResouceEntry);

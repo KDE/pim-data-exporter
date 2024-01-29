@@ -65,7 +65,7 @@ void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &arch
                                                url,
                                                identifier,
                                                Utils::resourceMailArchiveName(),
-                                               {QLatin1String("akonadi_maildir_resource_"), QLatin1String("akonadi_mixedmaildir_resource_")});
+                                               {QLatin1StringView("akonadi_maildir_resource_"), QLatin1String("akonadi_mixedmaildir_resource_")});
     slotMailsJobTerminated();
 }
 
@@ -133,7 +133,7 @@ QList<uint> ExportMailJobInterfaceTestImpl::listIdentityUoid() const
 
 void ExportMailJobInterfaceTestImpl::exportFilters()
 {
-    const QString filename = mPathConfig + QLatin1String("filters");
+    const QString filename = mPathConfig + QLatin1StringView("filters");
     const bool fileAdded = archive()->addLocalFile(filename, Utils::configsPath() + QStringLiteral("filters"));
     if (fileAdded) {
         emitInfo(QStringLiteral("Filters backup done."));

@@ -122,14 +122,14 @@ void SynchronizeResourceDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(600, 400));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySynchronizeResourceDialogGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySynchronizeResourceDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SynchronizeResourceDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySynchronizeResourceDialogGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySynchronizeResourceDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }

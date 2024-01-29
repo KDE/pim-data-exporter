@@ -95,7 +95,7 @@ void ExportMailJobInterfaceTest::exportMail()
 
     auto exportMail = new ExportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportMail->setListOfResource(lstInfo);
-    exportMail->setPathConfig(QLatin1String(configpath));
+    exportMail->setPathConfig(QLatin1StringView(configpath));
     file->setAbstractImportExportJob(exportMail);
     file->start();
     delete exportMail;

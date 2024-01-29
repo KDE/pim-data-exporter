@@ -41,7 +41,7 @@ void ExportCalendarJobInterface::slotWriteNextArchiveResource()
     if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
         const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
         const QString identifier = agent.identifier;
-        if (identifier.contains(QLatin1String("akonadi_icaldir_resource_"))) {
+        if (identifier.contains(QLatin1StringView("akonadi_icaldir_resource_"))) {
             const QString archivePath = Utils::calendarPath() + identifier + QLatin1Char('/');
 
             const QString url = resourcePath(identifier);
@@ -56,16 +56,16 @@ void ExportCalendarJobInterface::slotWriteNextArchiveResource()
             } else {
                 QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
             }
-        } else if (identifier.contains(QLatin1String("akonadi_ical_resource_"))) {
+        } else if (identifier.contains(QLatin1StringView("akonadi_ical_resource_"))) {
             backupCalendarResourceFile(identifier, Utils::calendarPath());
             QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
-        } else if (identifier.contains(QLatin1String("akonadi_davgroupware_resource_"))) {
+        } else if (identifier.contains(QLatin1StringView("akonadi_davgroupware_resource_"))) {
             backupCalendarResourceFile(identifier, Utils::calendarPath());
             QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
-        } else if (identifier.contains(QLatin1String("akonadi_openxchange_resource_"))) {
+        } else if (identifier.contains(QLatin1StringView("akonadi_openxchange_resource_"))) {
             backupCalendarResourceFile(identifier, Utils::calendarPath());
             QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
-        } else if (identifier.contains(QLatin1String("akonadi_google_resource_"))) {
+        } else if (identifier.contains(QLatin1StringView("akonadi_google_resource_"))) {
             backupCalendarResourceFile(identifier, Utils::calendarPath());
             QTimer::singleShot(0, this, &ExportCalendarJobInterface::slotCalendarJobTerminated);
         } else {

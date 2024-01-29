@@ -128,7 +128,7 @@ void ExportNotesJobInterface::slotWriteNextArchiveResource()
     if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
         const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
         const QString identifier = agent.identifier;
-        if (identifier.contains(QLatin1String("akonadi_akonotes_resource_"))) {
+        if (identifier.contains(QLatin1StringView("akonadi_akonotes_resource_"))) {
             const QString archivePath = Utils::notePath() + identifier + QLatin1Char('/');
 
             const QString url = resourcePath(identifier);

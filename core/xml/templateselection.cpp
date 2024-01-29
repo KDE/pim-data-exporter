@@ -21,22 +21,22 @@ Utils::StoredTypes TemplateSelection::loadStoredTypes(int &numberOfStep)
 {
     Utils::StoredTypes types = Utils::None;
     while (mStreamReader->readNextStartElement()) {
-        if (mStreamReader->name() == QLatin1String("mailtransport")) {
+        if (mStreamReader->name() == QLatin1StringView("mailtransport")) {
             types |= Utils::MailTransport;
             numberOfStep++;
-        } else if (mStreamReader->name() == QLatin1String("mail")) {
+        } else if (mStreamReader->name() == QLatin1StringView("mail")) {
             types |= Utils::Mails;
             numberOfStep++;
-        } else if (mStreamReader->name() == QLatin1String("resources")) {
+        } else if (mStreamReader->name() == QLatin1StringView("resources")) {
             types |= Utils::Resources;
             numberOfStep++;
-        } else if (mStreamReader->name() == QLatin1String("identity")) {
+        } else if (mStreamReader->name() == QLatin1StringView("identity")) {
             types |= Utils::Identity;
             numberOfStep++;
-        } else if (mStreamReader->name() == QLatin1String("config")) {
+        } else if (mStreamReader->name() == QLatin1StringView("config")) {
             types |= Utils::Config;
             numberOfStep++;
-        } else if (mStreamReader->name() == QLatin1String("data")) {
+        } else if (mStreamReader->name() == QLatin1StringView("data")) {
             types |= Utils::Data;
             numberOfStep++;
         }
@@ -61,20 +61,20 @@ QMap<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTemp
     QMap<Utils::AppsType, Utils::importExportParameters> value;
     if (mStreamReader->readNextStartElement()) {
         // Compatibility with old version
-        if ((mStreamReader->name() == QLatin1String("pimsettingexporter")) || (mStreamReader->name() == QLatin1String("pimdataexporter"))) {
+        if ((mStreamReader->name() == QLatin1StringView("pimsettingexporter")) || (mStreamReader->name() == QLatin1String("pimdataexporter"))) {
             while (mStreamReader->readNextStartElement()) {
                 Utils::AppsType type = Utils::Unknown;
-                if (mStreamReader->name() == QLatin1String("kmail")) {
+                if (mStreamReader->name() == QLatin1StringView("kmail")) {
                     type = Utils::KMail;
-                } else if (mStreamReader->name() == QLatin1String("kaddressbook")) {
+                } else if (mStreamReader->name() == QLatin1StringView("kaddressbook")) {
                     type = Utils::KAddressBook;
-                } else if (mStreamReader->name() == QLatin1String("kalarm")) {
+                } else if (mStreamReader->name() == QLatin1StringView("kalarm")) {
                     type = Utils::KAlarm;
-                } else if (mStreamReader->name() == QLatin1String("korganizer")) {
+                } else if (mStreamReader->name() == QLatin1StringView("korganizer")) {
                     type = Utils::KOrganizer;
-                } else if (mStreamReader->name() == QLatin1String("knotes")) {
+                } else if (mStreamReader->name() == QLatin1StringView("knotes")) {
                     type = Utils::KNotes;
-                } else if (mStreamReader->name() == QLatin1String("akregator")) {
+                } else if (mStreamReader->name() == QLatin1StringView("akregator")) {
                     type = Utils::Akregator;
                 }
                 if (type != Utils::Unknown) {

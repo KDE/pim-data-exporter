@@ -29,7 +29,7 @@ void CompareImportFile::compareFile()
     QVERIFY(equal);
     for (QString file : archiveList) {
         file.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
-        if (file == QLatin1String("information/exportdatatype.xml") || file == QLatin1String("information/VERSION_2")) {
+        if (file == QLatin1StringView("information/exportdatatype.xml") || file == QLatin1String("information/VERSION_2")) {
             continue;
         }
         // TODO verify with qt6 path
@@ -42,8 +42,8 @@ void CompareImportFile::compareFile()
         file.replace(QStringLiteral("config/kmreadermainwin.rc"), kxmguiPath + QStringLiteral("kmail2/kmmainwin.rc"));
         file.replace(QStringLiteral("config/kontactsummary_part.rc"), kxmguiPath + QStringLiteral("kontactsummary/kontactsummary_part.rc"));
         file.replace(QStringLiteral("config/kwatchgnupgui.rc"), kxmguiPath + QStringLiteral("kwatchgnupg/kwatchgnupgui.rc"));
-        if (file.endsWith(QLatin1String("ui.rc")) && !file.contains(QStringLiteral("kmcomposerui.rc")) && !file.contains(QStringLiteral("akonadiconsoleui.rc"))
-            && !file.contains(QStringLiteral("kwatchgnupgui.rc"))) {
+        if (file.endsWith(QLatin1StringView("ui.rc")) && !file.contains(QStringLiteral("kmcomposerui.rc"))
+            && !file.contains(QStringLiteral("akonadiconsoleui.rc")) && !file.contains(QStringLiteral("kwatchgnupgui.rc"))) {
             QString fileName = file;
             fileName.remove(QStringLiteral("config/"));
             const QString fileuirc = fileName;

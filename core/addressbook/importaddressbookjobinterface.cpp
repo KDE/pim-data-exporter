@@ -65,7 +65,7 @@ void ImportAddressbookJobInterface::addSpecificResourceSettings(const KSharedCon
                                                                 const QString &resourceName,
                                                                 QMap<QString, QVariant> &settings)
 {
-    if (resourceName == QLatin1String("akonadi_vcard_resource")) {
+    if (resourceName == QLatin1StringView("akonadi_vcard_resource")) {
         KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
         if (general.hasKey(QStringLiteral("DisplayName"))) {
             settings.insert(QStringLiteral("DisplayName"), general.readEntry(QStringLiteral("DisplayName")));
@@ -81,9 +81,9 @@ void ImportAddressbookJobInterface::addSpecificResourceSettings(const KSharedCon
 
 bool ImportAddressbookJobInterface::isAConfigFile(const QString &name) const
 {
-    return name.endsWith(QLatin1String("rc"))
-        && (name.startsWith(QLatin1String("akonadi_vcarddir_resource_")) || name.startsWith(QLatin1String("akonadi_vcard_resource_"))
-            || name.startsWith(QLatin1String("akonadi_contacts_resource_")));
+    return name.endsWith(QLatin1StringView("rc"))
+        && (name.startsWith(QLatin1StringView("akonadi_vcarddir_resource_")) || name.startsWith(QLatin1String("akonadi_vcard_resource_"))
+            || name.startsWith(QLatin1StringView("akonadi_contacts_resource_")));
 }
 
 void ImportAddressbookJobInterface::restoreConfig()
@@ -174,8 +174,8 @@ void ImportAddressbookJobInterface::restoreResources()
         for (int i = 0; i < numberOfResourceFile; ++i) {
             ResourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
-            if (value.akonadiConfigFile.contains(QLatin1String("akonadi_vcarddir_resource_"))
-                || value.akonadiConfigFile.contains(QLatin1String("akonadi_contacts_resource_"))) {
+            if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_vcarddir_resource_"))
+                || value.akonadiConfigFile.contains(QLatin1StringView("akonadi_contacts_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const auto file = static_cast<const KArchiveFile *>(fileResouceEntry);
@@ -196,7 +196,7 @@ void ImportAddressbookJobInterface::restoreResources()
                         extractZipFile(fileEntry,
                                        copyToDirName,
                                        newUrlInfo.path(),
-                                       value.akonadiConfigFile.contains(QLatin1String("akonadi_contacts_resource_")));
+                                       value.akonadiConfigFile.contains(QLatin1StringView("akonadi_contacts_resource_")));
                     }
                     settings.insert(QStringLiteral("Path"), newUrl);
 
@@ -211,9 +211,9 @@ void ImportAddressbookJobInterface::restoreResources()
                         }
                     }
                     QString instanceType;
-                    if (value.akonadiConfigFile.contains(QLatin1String("akonadi_vcarddir_resource_"))) {
+                    if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_vcarddir_resource_"))) {
                         instanceType = QStringLiteral("akonadi_vcarddir_resource");
-                    } else if (value.akonadiConfigFile.contains(QLatin1String("akonadi_contacts_resource_"))) {
+                    } else if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_contacts_resource_"))) {
                         instanceType = QStringLiteral("akonadi_contacts_resource");
                     } else {
                         qCWarning(PIMDATAEXPORTERCORE_LOG) << " not supported" << value.akonadiConfigFile;

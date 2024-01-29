@@ -40,7 +40,7 @@ void SaveResourceConfigTest::exportResourceToArchive(const QString &archivePath,
     if (QFileInfo(url).isFile()) {
         QVERIFY(mArchive->addLocalFile(url, archivePath + resourceArchiveName));
     } else {
-        const QString zipFile = url + identifier + QLatin1String(".zip");
+        const QString zipFile = url + identifier + QLatin1StringView(".zip");
         const bool success = mArchive->addLocalFile(zipFile, archivePath + resourceArchiveName);
         if (!success) {
             qDebug() << " zip file " << zipFile;

@@ -88,7 +88,7 @@ void ImportMailJobInterface::searchAllMailsFiles(const KArchiveDirectory *dir, c
         const KArchiveEntry *entry = dir->entry(entryName);
         if (entry && entry->isDirectory()) {
             const QString newPrefix = (prefix.isEmpty() ? prefix : prefix + QLatin1Char('/')) + entryName;
-            if (entryName == QLatin1String("mails")) {
+            if (entryName == QLatin1StringView("mails")) {
                 storeMailArchiveResource(static_cast<const KArchiveDirectory *>(entry), entryName);
             } else {
                 searchAllMailsFiles(static_cast<const KArchiveDirectory *>(entry), newPrefix);
@@ -113,9 +113,9 @@ void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *d
                 const QString archPath(prefix + QLatin1Char('/') + entryName + QLatin1Char('/'));
                 ResourceFiles files;
                 for (const QString &name : lstResourceDirEntries) {
-                    if (name.endsWith(QLatin1String("rc"))
-                        && (name.contains(QLatin1String("akonadi_mbox_resource_")) || name.contains(QLatin1String("akonadi_mixedmaildir_resource_"))
-                            || name.contains(QLatin1String("akonadi_maildir_resource_")))) {
+                    if (name.endsWith(QLatin1StringView("rc"))
+                        && (name.contains(QLatin1StringView("akonadi_mbox_resource_")) || name.contains(QLatin1String("akonadi_mixedmaildir_resource_"))
+                            || name.contains(QLatin1StringView("akonadi_maildir_resource_")))) {
                         files.akonadiConfigFile = archPath + name;
                     } else if (name.startsWith(Utils::prefixAkonadiConfigFile())) {
                         files.akonadiAgentConfigFile = archPath + name;
@@ -232,7 +232,7 @@ void ImportMailJobInterface::restoreResources()
                 const QString resourceFileName = destDirectory + QLatin1Char('/') + filename;
                 KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(resourceFileName);
                 QMap<QString, QVariant> settings;
-                if (filename.contains(QLatin1String("pop3"))) {
+                if (filename.contains(QLatin1StringView("pop3"))) {
                     KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
                     if (general.hasKey(QStringLiteral("login"))) {
                         settings.insert(QStringLiteral("Login"), general.readEntry("login"));
@@ -297,7 +297,7 @@ void ImportMailJobInterface::restoreResources()
 #if 0
                     if (leaveOnserver.hasKey(QStringLiteral("seenUidTimeList"))) {
                         //FIXME
-                        //settings.insert(QLatin1String("SeenUidTimeList"),QVariant::fromValue<QList<int> >(leaveOnserver.readEntry("seenUidTimeList",QList<int>())));
+                        //settings.insert(QLatin1StringView("SeenUidTimeList"),QVariant::fromValue<QList<int> >(leaveOnserver.readEntry("seenUidTimeList",QList<int>())));
                     }
 #endif
                     if (leaveOnserver.hasKey(QStringLiteral("downloadLater"))) {
@@ -310,8 +310,8 @@ void ImportMailJobInterface::restoreResources()
                         infoAboutNewResource(newResource);
                         listResourceToSync << newResource;
                     }
-                } else if (filename.contains(QLatin1String("imap")) || filename.contains(QLatin1String("kolab_"))
-                           || filename.contains(QLatin1String("gmail_"))) {
+                } else if (filename.contains(QLatin1StringView("imap")) || filename.contains(QLatin1String("kolab_"))
+                           || filename.contains(QLatin1StringView("gmail_"))) {
                     KConfigGroup network = resourceConfig->group(QStringLiteral("network"));
                     if (network.hasKey(QStringLiteral("Authentication"))) {
                         settings.insert(QStringLiteral("Authentication"), network.readEntry("Authentication", 1));
@@ -403,9 +403,9 @@ void ImportMailJobInterface::restoreResources()
 
                     QString newResource;
                     const QString newResourceName = resourceName.isEmpty() ? filename : resourceName;
-                    if (filename.contains(QLatin1String("kolab_"))) {
+                    if (filename.contains(QLatin1StringView("kolab_"))) {
                         newResource = createResource(QStringLiteral("akonadi_kolab_resource"), newResourceName, settings, true);
-                    } else if (filename.contains(QLatin1String("gmail_"))) {
+                    } else if (filename.contains(QLatin1StringView("gmail_"))) {
                         newResource = createResource(QStringLiteral("akonadi_gmail_resource"), newResourceName, settings, true);
                     } else {
                         newResource = createResource(QStringLiteral("akonadi_imap_resource"), newResourceName, settings, true);
@@ -470,7 +470,7 @@ void ImportMailJobInterface::restoreMails()
             }
 
             QMap<QString, QVariant> settings;
-            if (resourceName.contains(QLatin1String("akonadi_mbox_resource_"))) {
+            if (resourceName.contains(QLatin1StringView("akonadi_mbox_resource_"))) {
                 const QString dataFile = value.akonadiResources;
                 const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
                 if (dataResouceEntry->isFile()) {
@@ -513,8 +513,8 @@ void ImportMailJobInterface::restoreMails()
                     mHashResources.insert(filename, newResource);
                     infoAboutNewResource(newResource);
                 }
-            } else if (resourceName.contains(QLatin1String("akonadi_maildir_resource_"))
-                       || resourceName.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
+            } else if (resourceName.contains(QLatin1StringView("akonadi_maildir_resource_"))
+                       || resourceName.contains(QLatin1StringView("akonadi_mixedmaildir_resource_"))) {
                 settings.insert(QStringLiteral("Path"), newUrl);
                 KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
                 if (general.hasKey(QStringLiteral("TopLevelIsContainer"))) {
@@ -528,8 +528,8 @@ void ImportMailJobInterface::restoreMails()
                 }
 
                 const QString newResource =
-                    createResource(resourceName.contains(QLatin1String("akonadi_mixedmaildir_resource_")) ? QStringLiteral("akonadi_mixedmaildir_resource")
-                                                                                                          : QStringLiteral("akonadi_maildir_resource"),
+                    createResource(resourceName.contains(QLatin1StringView("akonadi_mixedmaildir_resource_")) ? QStringLiteral("akonadi_mixedmaildir_resource")
+                                                                                                              : QStringLiteral("akonadi_maildir_resource"),
                                    filename,
                                    settings,
                                    true);
@@ -596,14 +596,14 @@ void ImportMailJobInterface::restoreConfig()
                     const QString actName = QStringLiteral("action-name-%1").arg(i);
                     const QString argsName = QStringLiteral("action-args-%1").arg(i);
                     const QString actValue = group.readEntry(actName);
-                    if (actValue == QLatin1String("set identity")) {
+                    if (actValue == QLatin1StringView("set identity")) {
                         const int argsValue = group.readEntry(argsName, -1);
                         if (argsValue != -1) {
                             if (mHashIdentity.contains(argsValue)) {
                                 group.writeEntry(argsName, mHashIdentity.value(argsValue));
                             }
                         }
-                    } else if (actValue == QLatin1String("set transport")) {
+                    } else if (actValue == QLatin1StringView("set transport")) {
                         const int argsValue = group.readEntry(argsName, -1);
                         if (argsValue != -1) {
                             if (mHashTransport.contains(argsValue)) {

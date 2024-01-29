@@ -54,11 +54,11 @@ SmtpMailTransport::SmtpMailTransport(const KConfigGroup &group)
     if (group.hasKey(encryptionStr)) {
         const QString encryptionType = group.readEntry(encryptionStr, QString());
         if (!encryptionType.isEmpty()) {
-            if (encryptionType == QLatin1String("TLS")) {
+            if (encryptionType == QLatin1StringView("TLS")) {
                 setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::TLS));
-            } else if (encryptionType == QLatin1String("SSL")) {
+            } else if (encryptionType == QLatin1StringView("SSL")) {
                 setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::SSL));
-            } else if (encryptionType == QLatin1String("None")) {
+            } else if (encryptionType == QLatin1StringView("None")) {
                 setEncryption(static_cast<int>(MailTransport::TransportBase::EnumEncryption::None));
             } else {
                 qCWarning(PIMDATAEXPORTERCORE_LOG) << "Unknown encryption type " << encryptionType;

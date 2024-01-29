@@ -46,7 +46,7 @@ void ExportAlarmJobInterfaceTest::exportAlarm()
 
     auto exportNote = new ExportAlarmJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);
     exportNote->setListOfResource(lstInfo);
-    exportNote->setPathConfig(QLatin1String(configpath));
+    exportNote->setPathConfig(QLatin1StringView(configpath));
     file->setAbstractImportExportJob(exportNote);
     file->start();
     delete exportNote;

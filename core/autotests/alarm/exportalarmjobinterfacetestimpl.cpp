@@ -40,7 +40,7 @@ void ExportAlarmJobInterfaceTestImpl::exportResourceToArchive(const QString &arc
                                                url,
                                                identifier,
                                                Utils::resourceAlarmArchiveName(),
-                                               {QLatin1String("akonadi_kalarm_dir_resource_")});
+                                               {QLatin1StringView("akonadi_kalarm_dir_resource_")});
     slotAlarmJobTerminated();
 }
 

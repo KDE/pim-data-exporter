@@ -22,9 +22,9 @@
 #include <MessageComposer/AkonadiSender>
 
 // Same element as kalarmcal
-const QLatin1String MIME_ACTIVE("application/x-vnd.kde.alarm.active");
-const QLatin1String MIME_ARCHIVED("application/x-vnd.kde.alarm.archived");
-const QLatin1String MIME_TEMPLATE("application/x-vnd.kde.alarm.template");
+const QLatin1StringView MIME_ACTIVE("application/x-vnd.kde.alarm.active");
+const QLatin1StringView MIME_ARCHIVED("application/x-vnd.kde.alarm.archived");
+const QLatin1StringView MIME_TEMPLATE("application/x-vnd.kde.alarm.template");
 
 PimDataExporterKernel::PimDataExporterKernel(QObject *parent)
     : QObject(parent)

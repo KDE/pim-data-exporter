@@ -45,7 +45,7 @@ void ExportCalendarsJobInterfaceTestImpl::exportResourceToArchive(const QString 
                                                url,
                                                identifier,
                                                Utils::resourceCalendarArchiveName(),
-                                               {QLatin1String("akonadi_icaldir_resource_")});
+                                               {QLatin1StringView("akonadi_icaldir_resource_")});
     slotCalendarJobTerminated();
 }
 

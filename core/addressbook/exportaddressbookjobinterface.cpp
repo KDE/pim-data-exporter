@@ -77,7 +77,7 @@ void ExportAddressbookJobInterface::slotWriteNextArchiveResource()
     if (mIndexIdentifier < mAkonadiInstanceInfo.count()) {
         const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
         const QString identifier = agent.identifier;
-        if (identifier.contains(QLatin1String("akonadi_vcarddir_resource_")) || identifier.contains(QLatin1String("akonadi_contacts_resource_"))) {
+        if (identifier.contains(QLatin1StringView("akonadi_vcarddir_resource_")) || identifier.contains(QLatin1String("akonadi_contacts_resource_"))) {
             const QString archivePath = Utils::addressbookPath() + identifier + QLatin1Char('/');
 
             const QString url = resourcePath(identifier, QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/contacts/"));
@@ -92,7 +92,7 @@ void ExportAddressbookJobInterface::slotWriteNextArchiveResource()
             } else {
                 QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
             }
-        } else if (identifier.contains(QLatin1String("akonadi_vcard_resource_"))) {
+        } else if (identifier.contains(QLatin1StringView("akonadi_vcard_resource_"))) {
             backupAddressBookResourceFile(identifier, Utils::addressbookPath());
             QTimer::singleShot(0, this, &ExportAddressbookJobInterface::slotAddressbookJobTerminated);
         } else {

@@ -70,14 +70,14 @@ void BackupFileStructureInfoDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(600, 400));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myBackupFileStructureInfoDialogGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myBackupFileStructureInfoDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void BackupFileStructureInfoDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myBackupFileStructureInfoDialogGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myBackupFileStructureInfoDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }

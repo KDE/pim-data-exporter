@@ -56,7 +56,7 @@ QString ResourceConverterBase::resourcePath(const KSharedConfigPtr &resourceConf
     KConfigGroup group = resourceConfig->group(QStringLiteral("General"));
     QString url = group.readEntry(QStringLiteral("Path"), defaultPath);
     if (!url.isEmpty()) {
-        url.replace(QLatin1String("$HOME"), QDir::homePath());
+        url.replace(QLatin1StringView("$HOME"), QDir::homePath());
     }
     url = changeResourcePath(url);
     return url;
@@ -196,7 +196,8 @@ QString ResourceConverterBase::storeResources(KZip *archive, const QString &iden
     }
 
     const QString agentConfigFileName = Utils::prefixAkonadiConfigFile() + identifier;
-    const QString agentConfigFileNamePath = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1String("/akonadi/") + agentConfigFileName;
+    const QString agentConfigFileNamePath =
+        QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1StringView("/akonadi/") + agentConfigFileName;
     if (QFileInfo::exists(agentConfigFileNamePath)) {
         fileAdded = archive->addLocalFile(agentConfigFileNamePath, path + agentConfigFileName);
         if (!fileAdded) {

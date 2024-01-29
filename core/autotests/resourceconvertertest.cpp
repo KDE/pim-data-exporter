@@ -38,7 +38,7 @@ QString ResourceConverterTest::changeResourcePath(QString url) const
 {
     // qDebug() << " need to fix " << url << " mTestPath " << mTestPath;
     if (!url.isEmpty()) {
-        url.replace(QLatin1String("[TEST_PATH]"), mTestPath);
+        url.replace(QLatin1StringView("[TEST_PATH]"), mTestPath);
     }
     // qDebug() <<" FIXED " << url;
     return url;

@@ -57,8 +57,8 @@ void ImportAlarmJobInterface::slotNextStep()
 
 bool ImportAlarmJobInterface::isAConfigFile(const QString &name) const
 {
-    return name.endsWith(QLatin1String("rc"))
-        && (name.contains(QLatin1String("akonadi_kalarm_resource_")) || name.contains(QLatin1String("akonadi_kalarm_dir_resource_")));
+    return name.endsWith(QLatin1StringView("rc"))
+        && (name.contains(QLatin1StringView("akonadi_kalarm_resource_")) || name.contains(QLatin1String("akonadi_kalarm_dir_resource_")));
 }
 
 QString ImportAlarmJobInterface::configLocation() const
@@ -126,8 +126,8 @@ void ImportAlarmJobInterface::restoreResources()
         for (int i = 0; i < numberOfResourceFile; ++i) {
             ResourceFiles value = mListResourceFile.at(i);
             QMap<QString, QVariant> settings;
-            if (value.akonadiConfigFile.contains(QLatin1String("akonadi_kalarm_dir_resource_"))
-                || value.akonadiConfigFile.contains(QLatin1String("akonadi_kalarm_resource_"))) {
+            if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_kalarm_dir_resource_"))
+                || value.akonadiConfigFile.contains(QLatin1StringView("akonadi_kalarm_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
                     const auto file = static_cast<const KArchiveFile *>(fileResouceEntry);
@@ -145,7 +145,7 @@ void ImportAlarmJobInterface::restoreResources()
                     QFileInfo newUrlInfo(newUrl);
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
-                    bool isDirResource = value.akonadiConfigFile.contains(QLatin1String("akonadi_kalarm_dir_resource_"));
+                    bool isDirResource = value.akonadiConfigFile.contains(QLatin1StringView("akonadi_kalarm_dir_resource_"));
                     if (dataResouceEntry->isFile()) {
                         const auto fileEntry = static_cast<const KArchiveFile *>(dataResouceEntry);
                         // TODO  adapt directory name too
