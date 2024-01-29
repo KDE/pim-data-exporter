@@ -21,7 +21,7 @@ void CompareFileHelper::compareFile(const QString &referenceFile, const QString 
     QVERIFY(proc.waitForFinished());
 
     auto pStdOut = proc.readAllStandardOutput();
-    if (pStdOut.size()) {
+    if (!pStdOut.isEmpty()) {
         qDebug() << "Files are different, diff output message:\n" << pStdOut.toStdString().c_str();
     }
 
