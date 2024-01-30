@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-20 01:34+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2012-07-01 17:02+0300\n"
 "Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -190,7 +190,7 @@ msgstr ""
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:652
+#: core/mail/exportmailjobinterface.cpp:653
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
@@ -199,7 +199,7 @@ msgstr "Veido resursu rezerves kopiju..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:674
+#: core/mail/exportmailjobinterface.cpp:675
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
@@ -248,7 +248,7 @@ msgstr "Atjaunot datus..."
 #: core/addressbook/importaddressbookjobinterface.cpp:109
 #: core/akregator/importakregatorjobinterface.cpp:99
 #: core/alarm/importalarmjobinterface.cpp:98
-#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/calendar/importcalendarjobinterface.cpp:229
 #: core/mail/importmailjobinterface.cpp:866
 #: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
@@ -259,8 +259,8 @@ msgstr "Konfigurācija atjaunota."
 #: core/addressbook/importaddressbookjobinterface.cpp:163
 #: core/alarm/importalarmjobinterface.cpp:114
 #: core/alarm/importalarmjobinterface.cpp:115
-#: core/calendar/importcalendarjobinterface.cpp:281
 #: core/calendar/importcalendarjobinterface.cpp:282
+#: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
 #: core/mail/importmailjobinterface.cpp:200
 #: core/notes/importnotesjobinterface.cpp:148
@@ -653,12 +653,12 @@ msgstr ""
 msgid "Impossible to backup \"%1\"."
 msgstr ""
 
-#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:204
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "Resursa fails \"%1\" rezerves kopijas failam nevar tikt pievienots."
 
-#: core/resourceconverterbase.cpp:206
+#: core/resourceconverterbase.cpp:207
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr ""

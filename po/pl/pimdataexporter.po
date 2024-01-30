@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-20 01:34+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2022-07-28 20:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -181,7 +181,7 @@ msgstr "Eksportowanie ustawień książki adresowej"
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:652
+#: core/mail/exportmailjobinterface.cpp:653
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
@@ -190,7 +190,7 @@ msgstr "Tworzenie kopii zapasowej zasobów..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:674
+#: core/mail/exportmailjobinterface.cpp:675
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
@@ -238,7 +238,7 @@ msgstr "Przywracanie ustawień..."
 #: core/addressbook/importaddressbookjobinterface.cpp:109
 #: core/akregator/importakregatorjobinterface.cpp:99
 #: core/alarm/importalarmjobinterface.cpp:98
-#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/calendar/importcalendarjobinterface.cpp:229
 #: core/mail/importmailjobinterface.cpp:866
 #: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
@@ -249,8 +249,8 @@ msgstr "Przywrócono ustawienia."
 #: core/addressbook/importaddressbookjobinterface.cpp:163
 #: core/alarm/importalarmjobinterface.cpp:114
 #: core/alarm/importalarmjobinterface.cpp:115
-#: core/calendar/importcalendarjobinterface.cpp:281
 #: core/calendar/importcalendarjobinterface.cpp:282
+#: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
 #: core/mail/importmailjobinterface.cpp:200
 #: core/notes/importnotesjobinterface.cpp:148
@@ -619,12 +619,12 @@ msgstr "Nie można otworzyć pliku archiwum."
 msgid "Impossible to backup \"%1\"."
 msgstr "Nie można utworzyć kopi zapasowej \"%1\"."
 
-#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:204
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "Nie można dodać pliku zasobu \"%1\" do pliku kopii zapasowej."
 
-#: core/resourceconverterbase.cpp:206
+#: core/resourceconverterbase.cpp:207
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr "Plik ustawień zasobów \"%1\" nie istnieje."

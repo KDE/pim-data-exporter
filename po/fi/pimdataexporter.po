@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-20 01:34+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2022-07-11 18:45+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -180,7 +180,7 @@ msgstr "Vie KAddressBookin asetukset"
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:652
+#: core/mail/exportmailjobinterface.cpp:653
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
@@ -189,7 +189,7 @@ msgstr "Varmuuskopioidaan resursseja…"
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:674
+#: core/mail/exportmailjobinterface.cpp:675
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
@@ -237,7 +237,7 @@ msgstr "Palauta asetukset…"
 #: core/addressbook/importaddressbookjobinterface.cpp:109
 #: core/akregator/importakregatorjobinterface.cpp:99
 #: core/alarm/importalarmjobinterface.cpp:98
-#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/calendar/importcalendarjobinterface.cpp:229
 #: core/mail/importmailjobinterface.cpp:866
 #: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
@@ -248,8 +248,8 @@ msgstr "Asetukset palautettu."
 #: core/addressbook/importaddressbookjobinterface.cpp:163
 #: core/alarm/importalarmjobinterface.cpp:114
 #: core/alarm/importalarmjobinterface.cpp:115
-#: core/calendar/importcalendarjobinterface.cpp:281
 #: core/calendar/importcalendarjobinterface.cpp:282
+#: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
 #: core/mail/importmailjobinterface.cpp:200
 #: core/notes/importnotesjobinterface.cpp:148
@@ -618,12 +618,12 @@ msgstr "Arkistotiedostoa on mahdotonta avata."
 msgid "Impossible to backup \"%1\"."
 msgstr "Kohdetta ”%1” on mahdotonta varmuuskopioida."
 
-#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:203
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:204
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "Resurssitiedostoa ”%1” ei voi lisätä varmuuskopiotiedostoon."
 
-#: core/resourceconverterbase.cpp:206
+#: core/resourceconverterbase.cpp:207
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr "Resurssiasetustiedostoa ”%1” ei ole olemassa."
