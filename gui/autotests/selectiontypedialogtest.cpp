@@ -14,7 +14,7 @@
 #include <QTest>
 #include <qtestmouse.h>
 
-#include <gui/widgets/selectiontypetreewidget.h>
+#include "gui/widgets/selectiontypetreewidget.h"
 
 SelectionTypeDialogTest::SelectionTypeDialogTest(QObject *parent)
     : QObject(parent)

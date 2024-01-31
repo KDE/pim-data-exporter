@@ -11,10 +11,10 @@
 #include "pimdataexportconsole_debug.h"
 #include "xml/templateselection.h"
 
+#include "pimdataexporterkernel.h"
 #include <MailCommon/FilterManager>
 #include <MailCommon/MailKernel>
 #include <QTimer>
-#include <pimdataexporterkernel.h>
 
 PimDataExporterConsole::PimDataExporterConsole(QObject *parent)
     : QObject(parent)

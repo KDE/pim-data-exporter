@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <importexportprogressindicatorbase.h>
+#include "importexportprogressindicatorbase.h"
 
 class ImportExportProgressIndicatorTest : public ImportExportProgressIndicatorBase
 {

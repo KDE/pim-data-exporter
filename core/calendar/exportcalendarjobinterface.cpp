@@ -11,10 +11,10 @@
 #include <KConfigGroup>
 #include <QTemporaryFile>
 
+#include "resourceconverterimpl.h"
 #include <QColor>
 #include <QFile>
 #include <QTimer>
-#include <resourceconverterimpl.h>
 
 #include <QFileInfo>
 #include <QStandardPaths>

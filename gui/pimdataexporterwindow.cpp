@@ -43,7 +43,7 @@
 #include <QStatusBar>
 #include <QVBoxLayout>
 
-#include <dialog/pimdataexporterconfiguredialog.h>
+#include "dialog/pimdataexporterconfiguredialog.h"
 #ifdef WITH_KUSERFEEDBACK
 #include "userfeedback/userfeedbackmanager.h"
 #include <KUserFeedback/NotificationPopup>

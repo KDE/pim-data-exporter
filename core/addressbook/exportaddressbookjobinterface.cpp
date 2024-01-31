@@ -12,9 +12,9 @@
 #include <QFileInfo>
 #include <QTemporaryFile>
 
+#include "resourceconverterimpl.h"
 #include <QStandardPaths>
 #include <QTimer>
-#include <resourceconverterimpl.h>
 
 ExportAddressbookJobInterface::ExportAddressbookJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)

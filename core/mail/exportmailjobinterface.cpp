@@ -16,13 +16,13 @@
 #include <QTemporaryFile>
 
 #include "pimdataexportcore_debug.h"
+#include "resourceconverterimpl.h"
 #include <KMime/Message>
 #include <QDir>
 #include <QFile>
 #include <QRegularExpression>
 #include <QStandardPaths>
 #include <QTimer>
-#include <resourceconverterimpl.h>
 
 #include <KIdentityManagementCore/Identity>
 

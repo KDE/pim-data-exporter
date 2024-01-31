@@ -5,10 +5,10 @@
 */
 
 #include "exportresourcearchivejob.h"
+#include "pimdatabackupthread.h"
 #include "pimdataexportcore_debug.h"
 #include "storeresourcejob.h"
 #include <KZip>
-#include <pimdatabackupthread.h>
 
 #include <Akonadi/ServerManager>
 

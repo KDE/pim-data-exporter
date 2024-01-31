@@ -11,10 +11,10 @@
 #include <KZip>
 #include <QTemporaryFile>
 
+#include "resourceconverterimpl.h"
 #include <QDir>
 #include <QStandardPaths>
 #include <QTimer>
-#include <resourceconverterimpl.h>
 
 ExportNotesJobInterface::ExportNotesJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)

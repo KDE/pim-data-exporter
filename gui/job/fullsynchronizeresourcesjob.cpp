@@ -8,8 +8,8 @@
 
 #include <KLocalizedString>
 
+#include "synchronizeresourcejob.h"
 #include <QProgressDialog>
-#include <synchronizeresourcejob.h>
 
 FullSynchronizeResourcesJob::FullSynchronizeResourcesJob(QObject *parent)
     : QObject(parent)

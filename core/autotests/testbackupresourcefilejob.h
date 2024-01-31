@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <backupresourcefilejobbase.h>
+#include "backupresourcefilejobbase.h"
 
 class TestBackupResourceFileJob : public BackupResourceFileJobBase
 {
