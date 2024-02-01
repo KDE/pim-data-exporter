@@ -65,7 +65,7 @@ void ExportMailJobInterfaceTestImpl::exportResourceToArchive(const QString &arch
                                                url,
                                                identifier,
                                                Utils::resourceMailArchiveName(),
-                                               {QLatin1StringView("akonadi_maildir_resource_"), QLatin1String("akonadi_mixedmaildir_resource_")});
+                                               {QLatin1StringView("akonadi_maildir_resource_"), QLatin1StringView("akonadi_mixedmaildir_resource_")});
     slotMailsJobTerminated();
 }
 

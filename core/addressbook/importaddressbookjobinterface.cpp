@@ -82,7 +82,7 @@ void ImportAddressbookJobInterface::addSpecificResourceSettings(const KSharedCon
 bool ImportAddressbookJobInterface::isAConfigFile(const QString &name) const
 {
     return name.endsWith(QLatin1StringView("rc"))
-        && (name.startsWith(QLatin1StringView("akonadi_vcarddir_resource_")) || name.startsWith(QLatin1String("akonadi_vcard_resource_"))
+        && (name.startsWith(QLatin1StringView("akonadi_vcarddir_resource_")) || name.startsWith(QLatin1StringView("akonadi_vcard_resource_"))
             || name.startsWith(QLatin1StringView("akonadi_contacts_resource_")));
 }
 

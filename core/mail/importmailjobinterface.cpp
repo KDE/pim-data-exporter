@@ -114,7 +114,7 @@ void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *d
                 ResourceFiles files;
                 for (const QString &name : lstResourceDirEntries) {
                     if (name.endsWith(QLatin1StringView("rc"))
-                        && (name.contains(QLatin1StringView("akonadi_mbox_resource_")) || name.contains(QLatin1String("akonadi_mixedmaildir_resource_"))
+                        && (name.contains(QLatin1StringView("akonadi_mbox_resource_")) || name.contains(QLatin1StringView("akonadi_mixedmaildir_resource_"))
                             || name.contains(QLatin1StringView("akonadi_maildir_resource_")))) {
                         files.akonadiConfigFile = archPath + name;
                     } else if (name.startsWith(Utils::prefixAkonadiConfigFile())) {
@@ -310,7 +310,7 @@ void ImportMailJobInterface::restoreResources()
                         infoAboutNewResource(newResource);
                         listResourceToSync << newResource;
                     }
-                } else if (filename.contains(QLatin1StringView("imap")) || filename.contains(QLatin1String("kolab_"))
+                } else if (filename.contains(QLatin1StringView("imap")) || filename.contains(QLatin1StringView("kolab_"))
                            || filename.contains(QLatin1StringView("gmail_"))) {
                     KConfigGroup network = resourceConfig->group(QStringLiteral("network"));
                     if (network.hasKey(QStringLiteral("Authentication"))) {

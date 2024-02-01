@@ -29,7 +29,7 @@ void CompareImportFile::compareFile()
     QVERIFY(equal);
     for (QString file : archiveList) {
         file.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
-        if (file == QLatin1StringView("information/exportdatatype.xml") || file == QLatin1String("information/VERSION_2")) {
+        if (file == QLatin1StringView("information/exportdatatype.xml") || file == QLatin1StringView("information/VERSION_2")) {
             continue;
         }
         // TODO verify with qt6 path

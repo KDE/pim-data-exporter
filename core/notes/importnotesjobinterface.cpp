@@ -56,7 +56,7 @@ void ImportNotesJobInterface::start()
 
 bool ImportNotesJobInterface::isAConfigFile(const QString &name) const
 {
-    return name.endsWith(QLatin1StringView("rc")) && (name.contains(QLatin1String("akonadi_akonotes_resource_")));
+    return name.endsWith(QLatin1StringView("rc")) && (name.contains(QLatin1StringView("akonadi_akonotes_resource_")));
 }
 
 QString ImportNotesJobInterface::configLocation() const

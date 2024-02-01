@@ -43,7 +43,7 @@ void CompareExportFile::compareFiles()
     QVERIFY(result);
     const KArchiveDirectory *topDirectory = mZip->directory();
     for (const QString &file : archiveList) {
-        if (file == QLatin1StringView("information/VERSION_2") || file == QLatin1String("information/exportdatatype.xml")) {
+        if (file == QLatin1StringView("information/VERSION_2") || file == QLatin1StringView("information/exportdatatype.xml")) {
             continue;
         }
         const KArchiveEntry *currentEntry = topDirectory->entry(file);

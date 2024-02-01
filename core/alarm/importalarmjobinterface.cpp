@@ -58,7 +58,7 @@ void ImportAlarmJobInterface::slotNextStep()
 bool ImportAlarmJobInterface::isAConfigFile(const QString &name) const
 {
     return name.endsWith(QLatin1StringView("rc"))
-        && (name.contains(QLatin1StringView("akonadi_kalarm_resource_")) || name.contains(QLatin1String("akonadi_kalarm_dir_resource_")));
+        && (name.contains(QLatin1StringView("akonadi_kalarm_resource_")) || name.contains(QLatin1StringView("akonadi_kalarm_dir_resource_")));
 }
 
 QString ImportAlarmJobInterface::configLocation() const

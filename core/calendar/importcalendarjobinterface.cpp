@@ -79,8 +79,8 @@ void ImportCalendarJobInterface::addSpecificResourceSettings(const KSharedConfig
 bool ImportCalendarJobInterface::isAConfigFile(const QString &name) const
 {
     return name.endsWith(QLatin1StringView("rc"))
-        && (name.contains(QLatin1StringView("akonadi_ical_resource_")) || name.contains(QLatin1String("akonadi_davgroupware_resource_"))
-            || name.contains(QLatin1StringView("akonadi_icaldir_resource_")) || name.contains(QLatin1String("akonadi_openxchange_resource_"))
+        && (name.contains(QLatin1StringView("akonadi_ical_resource_")) || name.contains(QLatin1StringView("akonadi_davgroupware_resource_"))
+            || name.contains(QLatin1StringView("akonadi_icaldir_resource_")) || name.contains(QLatin1StringView("akonadi_openxchange_resource_"))
             || name.contains(QLatin1StringView("akonadi_google_resource_")));
 }
 

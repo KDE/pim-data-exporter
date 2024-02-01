@@ -133,7 +133,7 @@ QString ImportMailJobInterfaceImpl::uniqueIdentityName(const QString &name)
 void ImportMailJobInterfaceImpl::importCustomMailTransport(const QString &identifierValue, const KConfigGroup &group, int defaultTransport, int transportId)
 {
     if (!identifierValue.isEmpty()) {
-        if (identifierValue == QLatin1StringView("sendmail") || identifierValue == QLatin1String("akonadi_ewsmta_resource")) {
+        if (identifierValue == QLatin1StringView("sendmail") || identifierValue == QLatin1StringView("akonadi_ewsmta_resource")) {
             MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
             mt->setName(group.readEntry(QStringLiteral("name")));
             const QString hostStr(QStringLiteral("host"));

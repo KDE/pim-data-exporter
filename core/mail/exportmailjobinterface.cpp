@@ -613,11 +613,11 @@ void ExportMailJobInterface::slotWriteNextArchiveResource()
         const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
         const QStringList capabilities(agent.capabilities);
         if (agent.mimeTypes.contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QLatin1StringView("Resource")) && !capabilities.contains(QLatin1String("Virtual"))
+            if (capabilities.contains(QLatin1StringView("Resource")) && !capabilities.contains(QLatin1StringView("Virtual"))
                 && !capabilities.contains(QLatin1StringView("MailTransport"))) {
                 const QString identifier = agent.identifier;
                 if (identifier.contains(QLatin1StringView("akonadi_maildir_resource_"))
-                    || identifier.contains(QLatin1String("akonadi_mixedmaildir_resource_"))) {
+                    || identifier.contains(QLatin1StringView("akonadi_mixedmaildir_resource_"))) {
                     const QString archivePath = Utils::mailsPath() + identifier + QLatin1Char('/');
                     const QString url = resourcePath(identifier);
                     if (!mAgentPaths.contains(url)) {
@@ -655,12 +655,12 @@ void ExportMailJobInterface::backupResources()
     for (const Utils::AkonadiInstanceInfo &agent : std::as_const(mAkonadiInstanceInfo)) {
         const QStringList capabilities = agent.capabilities;
         if (agent.mimeTypes.contains(KMime::Message::mimeType())) {
-            if (capabilities.contains(QLatin1StringView("Resource")) && !capabilities.contains(QLatin1String("Virtual"))
+            if (capabilities.contains(QLatin1StringView("Resource")) && !capabilities.contains(QLatin1StringView("Virtual"))
                 && !capabilities.contains(QLatin1StringView("MailTransport"))) {
                 const QString identifier = agent.identifier;
                 // Store just pop3/imap/kolab/gmail account. Store other config when we copy data.
-                if (identifier.contains(QLatin1StringView("pop3")) || identifier.contains(QLatin1String("imap"))
-                    || identifier.contains(QLatin1String("_kolab_")) || identifier.contains(QLatin1StringView("_gmail_"))) {
+                if (identifier.contains(QLatin1StringView("pop3")) || identifier.contains(QLatin1StringView("imap"))
+                    || identifier.contains(QLatin1StringView("_kolab_")) || identifier.contains(QLatin1StringView("_gmail_"))) {
                     const QString errorStr = storeResources(archive(), identifier, Utils::resourcesPath());
                     if (!errorStr.isEmpty()) {
                         emitError(errorStr);

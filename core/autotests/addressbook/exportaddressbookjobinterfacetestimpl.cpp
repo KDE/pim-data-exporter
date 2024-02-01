@@ -34,7 +34,7 @@ void ExportAddressbookJobInterfaceTestImpl::exportResourceToArchive(const QStrin
                                                url,
                                                identifier,
                                                Utils::resourceAddressbookArchiveName(),
-                                               {QLatin1StringView("akonadi_vcarddir_resource_"), QLatin1String("akonadi_contacts_resource_")});
+                                               {QLatin1StringView("akonadi_vcarddir_resource_"), QLatin1StringView("akonadi_contacts_resource_")});
     slotAddressbookJobTerminated();
 }
 

@@ -61,7 +61,7 @@ QMap<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTemp
     QMap<Utils::AppsType, Utils::importExportParameters> value;
     if (mStreamReader->readNextStartElement()) {
         // Compatibility with old version
-        if ((mStreamReader->name() == QLatin1StringView("pimsettingexporter")) || (mStreamReader->name() == QLatin1String("pimdataexporter"))) {
+        if ((mStreamReader->name() == QLatin1StringView("pimsettingexporter")) || (mStreamReader->name() == QLatin1StringView("pimdataexporter"))) {
             while (mStreamReader->readNextStartElement()) {
                 Utils::AppsType type = Utils::Unknown;
                 if (mStreamReader->name() == QLatin1StringView("kmail")) {
