@@ -3,20 +3,20 @@
 #
 # Franklin Weng <franklin at goodhorse dot idv dot tw>, 2012, 2013, 2014, 2015.
 # pan93412 <pan93412@gmail.com>, 2019.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2023-12-22 06:15+0900\n"
+"PO-Revision-Date: 2024-03-01 03:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.01.80\n"
+"X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -1059,7 +1059,7 @@ msgstr "請在備份您的資料前先離開所有 kdepim 應用程式。"
 #: gui/pimdataexporterwindow.cpp:346
 #, kde-format
 msgid "Create backup"
-msgstr "選擇型態"
+msgstr "建立備份"
 
 #: gui/pimdataexporterwindow.cpp:348
 #, kde-format
