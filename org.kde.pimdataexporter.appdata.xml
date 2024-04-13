@@ -30,6 +30,7 @@
   <name xml:lang="it">Esportatore dei dati di PIM</name>
   <name xml:lang="ka">PIM -ის მონაცემების გატანა</name>
   <name xml:lang="ko">PIM 데이터 내보내기</name>
+  <name xml:lang="lv">PIM datu eksportētājs</name>
   <name xml:lang="nl">PIM-exportprogramma van gegevens</name>
   <name xml:lang="pl">Eksportowanie danych ZIO</name>
   <name xml:lang="pt">Exportação dos Dados PIM</name>
@@ -66,6 +67,7 @@
   <summary xml:lang="it">Salva tutti i dati dalle applicazioni di PIM e li ripristina in altri sistemi.</summary>
   <summary xml:lang="ka">შეინახეთ მონაცემები PIM აპიდან და აღადგინეთ ის სხვა სისტემებზე.</summary>
   <summary xml:lang="ko">PIM 앱의 모든 데이터를 저장하고 다른 시스템에서 복원할 수 있도록 합니다.</summary>
+  <summary xml:lang="lv">Saglabā visus datus no PIM programmām un atjauno tos citās sistēmās.</summary>
   <summary xml:lang="nl">Slaat alle gegevens uit PIM-toepassingen en herstelt ze in andere systemen.</summary>
   <summary xml:lang="pl">Zapisuje wszystkie dane z aplikacji ZIO i przywraca je na innych systemach.</summary>
   <summary xml:lang="pt">Grava todos os dados das aplicações PIM e repõe-os noutros sistemas.</summary>
@@ -102,6 +104,7 @@
   <developer_name xml:lang="it">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ka">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="ko">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer_name xml:lang="lv">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="nl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="pl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
   <developer_name xml:lang="pt">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
@@ -141,6 +144,7 @@
     <p xml:lang="it">L'esportatore dei dati di PIM esporta ed importa le impostazioni di PIM</p>
     <p xml:lang="ka">PIM-ის მონაცემების გამტანს მისი შემოტანაც შეუძლია</p>
     <p xml:lang="ko">PIM 데이터 내보내기 도구에서는 PIM 설정을 내보내고 가져옵니다</p>
+    <p xml:lang="lv">PIM datu eksportētājs eksportē un importē PIM iestatījumus</p>
     <p xml:lang="nl">PIM-exportprogramma van gegevens exporteert en importeert PIM-instellingen.</p>
     <p xml:lang="pl">Eksportowanie danych ZIO umożliwia eksportowanie/importowanie ustawień ZIO</p>
     <p xml:lang="pt">A Exportação de Dados PIM permite exportar ou importar configurações de PIM.</p>
