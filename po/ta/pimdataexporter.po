@@ -1,31 +1,31 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the pim-data-exporter package.
+#
+# SPDX-FileCopyrightText: 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2024-04-22 15:58\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-04-22 21:51+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/pim-data-exporter/pimdataexporter.pot\n"
-"X-Crowdin-File-ID: 45731\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "KDE 中国"
+msgstr ""
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-china@kde.org"
+msgstr ""
 
 #: console/main.cpp:25 console/main.cpp:27
 #, kde-format
@@ -40,57 +40,57 @@ msgstr ""
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "Laurent Montel"
-msgstr "Laurent Montel"
+msgstr ""
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "Maintainer"
-msgstr "维护者"
+msgstr "பராமரிப்பாளர்"
 
 #: console/main.cpp:31
 #, kde-format
 msgid "File to log information to."
-msgstr "记录日志信息的文件。"
+msgstr ""
 
 #: console/main.cpp:34
 #, kde-format
 msgid "Template file to define what data, settings to import or export."
-msgstr "定义导入或导出数据，设置的临时文件。"
+msgstr ""
 
 #: console/main.cpp:37
 #, kde-format
 msgid "Import the given file."
-msgstr "导入给定文件。"
+msgstr ""
 
 #: console/main.cpp:39
 #, kde-format
 msgid "Export the given file."
-msgstr "导出给定文件。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:56
 #, kde-format
 msgid "Task Canceled"
-msgstr "任务已取消"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:116
 #, kde-format
 msgid "\"%1\" backup done."
-msgstr "“%1”备份完成。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:118
 #, kde-format
 msgid "\"%1\" cannot be exported."
-msgstr "“%1”无法导出。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:121
 #, kde-format
 msgid "\"%1\" does not exist."
-msgstr "“%1” 不存在。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:268
 #, kde-format
 msgid "\"%1\" was copied."
-msgstr "“%1”已复制。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:273
 #, kde-format
@@ -100,39 +100,39 @@ msgstr ""
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "File \"%1\" cannot be copied to \"%2\"."
-msgstr "文件“%1”无法复制到“%2”。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "Copy file"
-msgstr "复制文件"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:300
 #, kde-format
 msgid "\"%1\" was restored."
-msgstr "“%1”被恢复。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:385
 #: core/addressbook/importaddressbookjobinterface.cpp:231
 #: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
-msgstr "资源已恢复。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:387
 #, kde-format
 msgid "No resources files found."
-msgstr "没有找到资源文件。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:448
 #, kde-format
 msgid "Unable to copy file %1"
-msgstr "无法复制文件 %1"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:489
 #, kde-format
 msgid "Resource '%1' created."
-msgstr "资源“%1”已被创建。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:504
 #, kde-format
@@ -147,32 +147,32 @@ msgstr ""
 #: core/abstractimportexportjob.cpp:515
 #, kde-format
 msgid "All resources synchronized."
-msgstr "所有资源已被同步。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:541
 #, kde-format
 msgid "Start synchronizing..."
-msgstr "开始同步..."
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:578
 #, kde-format
 msgid "Directory \"%1\" added to backup file."
-msgstr "目录“%1”已添加到备份文件。"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:580
 #, kde-format
 msgid "Directory \"%1\" cannot be added to backup file."
-msgstr "目录“%1”无法被添加到备份文件。"
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAddressBook settings..."
-msgstr "开始导出 KAddressBook 设置..."
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
 msgid "Export KAddressBook settings"
-msgstr "导出 KAddressBook 设置"
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
@@ -181,7 +181,7 @@ msgstr "导出 KAddressBook 设置"
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
-msgstr "正在备份资源..."
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
@@ -190,7 +190,7 @@ msgstr "正在备份资源..."
 #: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
-msgstr "资源备份完成。"
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:109
 #: core/akregator/exportakregatorjobinterface.cpp:72
@@ -200,7 +200,7 @@ msgstr "资源备份完成。"
 #: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
-msgstr "正在备份配置..."
+msgstr ""
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:150
 #: core/akregator/exportakregatorjobinterface.cpp:79
@@ -210,17 +210,17 @@ msgstr "正在备份配置..."
 #: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
-msgstr "配置备份完成。"
+msgstr ""
 
 #: core/addressbook/importaddressbookjobinterface.cpp:41
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
-msgstr "正在开始导入 KAddressBook 设置..."
+msgstr ""
 
 #: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
 msgid "Import KAddressBook settings"
-msgstr "导入 KAddressBook 设置"
+msgstr ""
 
 #: core/addressbook/importaddressbookjobinterface.cpp:92
 #: core/akregator/importakregatorjobinterface.cpp:93
@@ -229,7 +229,7 @@ msgstr "导入 KAddressBook 设置"
 #: core/notes/importnotesjobinterface.cpp:80
 #, kde-format
 msgid "Restore configs..."
-msgstr "恢复配置..."
+msgstr ""
 
 #: core/addressbook/importaddressbookjobinterface.cpp:109
 #: core/akregator/importakregatorjobinterface.cpp:99
@@ -239,7 +239,7 @@ msgstr "恢复配置..."
 #: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
-msgstr "配置已恢复。"
+msgstr ""
 
 #: core/addressbook/importaddressbookjobinterface.cpp:162
 #: core/addressbook/importaddressbookjobinterface.cpp:163
@@ -253,86 +253,86 @@ msgstr "配置已恢复。"
 #: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
-msgstr "恢复资源..."
+msgstr ""
 
 #: core/akregator/exportakregatorjobinterface.cpp:24
 #, kde-format
 msgid "Start export Akregator settings..."
-msgstr "开始导出 Akregator 设置..."
+msgstr ""
 
 #: core/akregator/exportakregatorjobinterface.cpp:25
 #, kde-format
 msgid "Export Akregator settings"
-msgstr "导出 Akregator 设置"
+msgstr ""
 
 #: core/akregator/exportakregatorjobinterface.cpp:87
 #, kde-format
 msgid "Backing up data..."
-msgstr "正在备份数据..."
+msgstr ""
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
 #: core/notes/exportnotesjobinterface.cpp:46
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
-msgstr "“%1”目录无法被添加到备份文件。"
+msgstr ""
 
 #: core/akregator/exportakregatorjobinterface.cpp:97
 #, kde-format
 msgid "Data backup done."
-msgstr "数据备份完成。"
+msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:29
 #, kde-format
 msgid "Starting to import Akregator settings..."
-msgstr "正在开始导入 Akregator 设置..."
+msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:32
 #, kde-format
 msgid "Import Akregator settings"
-msgstr "导入 Akregator 设置"
+msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:106
 #: core/notes/importnotesjobinterface.cpp:116
 #, kde-format
 msgid "Restore data..."
-msgstr "恢复数据..."
+msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:112
 #: core/notes/importnotesjobinterface.cpp:129
 #, kde-format
 msgid "Data restored."
-msgstr "数据已恢复。"
+msgstr ""
 
 #: core/alarm/exportalarmjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAlarm settings..."
-msgstr "开始导出 KAlarm 设置..."
+msgstr ""
 
 #: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
 msgid "Export KAlarm settings"
-msgstr "导出 KAlarm 设置"
+msgstr ""
 
 #: core/alarm/importalarmjobinterface.cpp:32
 #, kde-format
 msgid "Starting to import KAlarm settings..."
-msgstr "正在开始导入 KAlarm 设置..."
+msgstr ""
 
 #: core/alarm/importalarmjobinterface.cpp:33
 #, kde-format
 msgid "Import KAlarm settings"
-msgstr "导入 KAlarm 设置"
+msgstr ""
 
 #: core/archivestorage.cpp:43
 #, kde-format
 msgid "Archive cannot be opened in write mode."
-msgstr "归档无法在写入模式打开。"
+msgstr ""
 
 #: core/archivestorage.cpp:45 core/utils.cpp:134
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Archive cannot be opened in read mode."
-msgstr "归档无法在读取模式打开。"
+msgstr ""
 
 #: core/backupresourcefilejobbase.cpp:47
 #, kde-format
@@ -343,43 +343,43 @@ msgstr ""
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
 #, kde-format
 msgid "\"%1\" was backed up."
-msgstr "\"%1\"已备份。"
+msgstr ""
 
 #: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
 #: core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
-msgstr "“%1”文件无法被添加到备份文件。"
+msgstr ""
 
 #: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
 msgid "Start export KOrganizer settings..."
-msgstr "开始导出 KOrganizer 设置..."
+msgstr ""
 
 #: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
 msgid "Export KOrganizer settings"
-msgstr "导出 KOrganizer 设置"
+msgstr ""
 
 #: core/calendar/importcalendarjobinterface.cpp:35
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
-msgstr "正在开始导出 KOrganizer 设置..."
+msgstr ""
 
 #: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
 msgid "Import KOrganizer settings"
-msgstr "导入 KOrganizer 设置"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:43
 #, kde-format
 msgid "Start export KMail settings..."
-msgstr "开始导出 KMail 设置..."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:44
 #, kde-format
 msgid "Export KMail settings"
-msgstr "导出 KMail 设置"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:112
 #, kde-format
@@ -389,7 +389,7 @@ msgstr ""
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Mails..."
-msgstr "正在备份邮件..."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:115
 #, kde-format
@@ -399,48 +399,48 @@ msgstr ""
 #: core/mail/exportmailjobinterface.cpp:123
 #, kde-format
 msgid "Backing up transports..."
-msgstr "正在备份传输..."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:128
 #: core/mail/exportmailjobinterface.cpp:140
 #, kde-format
 msgid "Transports backup done."
-msgstr "传输备份完成。"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:142
 #, kde-format
 msgid "Transport file cannot be added to backup file."
-msgstr "传输文件无法被添加到备份文件中。"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
-msgstr "正在备份身份..."
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
-msgstr "vCard 文件“%1”无法被保存。"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
 msgid "Identity backup done."
-msgstr "身份备份完成。"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:595
 #, kde-format
 msgid "Identity file cannot be added to backup file."
-msgstr "标识文件无法被添加到备份文件中。"
+msgstr ""
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:139
 #, kde-format
 msgid "Filters backup done."
-msgstr "过滤器备份完成。"
+msgstr ""
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:141
 #, kde-format
 msgid "Filters cannot be exported."
-msgstr "过滤器无法导出。"
+msgstr ""
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:163
 #, kde-format
@@ -455,54 +455,54 @@ msgstr ""
 #: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KMail settings..."
-msgstr "正在开始导入 KMail 设置..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:44
 #, kde-format
 msgid "Import KMail settings"
-msgstr "导入 KMail 设置"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:169
 #: core/mail/importmailjobinterface.cpp:175
 #, kde-format
 msgid "Restore transports..."
-msgstr "恢复传输..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:173
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
-msgstr "无法在归档中找到邮件传输文件。"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:188
 #, kde-format
 msgid "Transports restored."
-msgstr "传输已恢复。"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:190
 #, kde-format
 msgid "Failed to restore transports file."
-msgstr "恢复传输文件失败。"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:436
 #: core/mail/importmailjobinterface.cpp:438
 #, kde-format
 msgid "Restore mails..."
-msgstr "恢复邮件..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:555
 #, kde-format
 msgid "Mails restored."
-msgstr "邮件已恢复。"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:562
 #, kde-format
 msgid "Restore config..."
-msgstr "恢复配置..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:565
 #, kde-format
 msgid "filters file could not be found in the archive."
-msgstr "归档中无法找到过滤器文件。"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:569
 #, kde-format
@@ -518,22 +518,22 @@ msgstr ""
 #: core/mail/importmailjobinterface.cpp:904
 #, kde-format
 msgid "Restoring identities..."
-msgstr "正在恢复身份..."
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:902
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
-msgstr "归档中未找到电子邮件身份文件。"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:963
 #, kde-format
 msgid "Identities restored."
-msgstr "身份已恢复。"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:965
 #, kde-format
 msgid "Failed to restore identity file."
-msgstr "无法回复身份文件。"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:1283
 #, kde-format
@@ -558,67 +558,67 @@ msgstr ""
 #: core/notes/exportnotesjobinterface.cpp:28
 #, kde-format
 msgid "Start export KNotes settings..."
-msgstr "开始导出 KNotes 设置..."
+msgstr ""
 
 #: core/notes/exportnotesjobinterface.cpp:29
 #, kde-format
 msgid "Export KNotes settings"
-msgstr "导出 KNotes 设置"
+msgstr ""
 
 #: core/notes/importnotesjobinterface.cpp:49
 #, kde-format
 msgid "Starting to import KNotes settings..."
-msgstr "正在开始导入 KNotes 设置..."
+msgstr ""
 
 #: core/notes/importnotesjobinterface.cpp:52
 #, kde-format
 msgid "Import KNotes settings"
-msgstr "导入 Knotes 设置"
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
 #, kde-format
 msgid "No data selected."
-msgstr "未选中数据。"
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
 #, kde-format
 msgid "Unable to open file \"%1\"."
-msgstr "无法打开文件“%1”。"
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:94
 #, kde-format
 msgid "Starting to backup data in '%1'"
-msgstr "正在开始备份“%1”中的数据。"
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:183
 #, kde-format
 msgid "Backup in '%1' done."
-msgstr "在“%1”中的备份完成。"
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:279
 #, kde-format
 msgid "Starting to restore data from '%1'"
-msgstr "正在开始从“%1”恢复数据"
+msgstr ""
 
 #: core/pimdatabackuprestore.cpp:287
 #, kde-format
 msgid "Restoring data from '%1' done."
-msgstr "从“%1”恢复数据完成。"
+msgstr ""
 
 #: core/pimdatabackupthread.cpp:37
 #, kde-format
 msgid "Impossible to open archive file."
-msgstr "不可能打开归档文件。"
+msgstr ""
 
 #: core/pimdatabackupthread.cpp:44
 #, kde-format
 msgid "Impossible to backup \"%1\"."
-msgstr "无法备份“%1”。"
+msgstr ""
 
 #: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:204
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
-msgstr "资源文件“%1”无法被添加到备份文件。"
+msgstr ""
 
 #: core/resourceconverterbase.cpp:207
 #, kde-format
@@ -628,78 +628,78 @@ msgstr ""
 #: core/utils.cpp:181
 #, kde-format
 msgid "KMail"
-msgstr "KMail"
+msgstr ""
 
 #: core/utils.cpp:183
 #, kde-format
 msgid "KAddressBook"
-msgstr "KAddressBook"
+msgstr ""
 
 #: core/utils.cpp:185
 #, kde-format
 msgid "KAlarm"
-msgstr "KAlarm"
+msgstr ""
 
 #: core/utils.cpp:187
 #, kde-format
 msgid "KOrganizer"
-msgstr "KOrganizer"
+msgstr ""
 
 #: core/utils.cpp:189
 #, kde-format
 msgid "KNotes"
-msgstr "KNotes"
+msgstr ""
 
 #: core/utils.cpp:191
 #, kde-format
 msgid "Akregator"
-msgstr "Akregator"
+msgstr ""
 
 #: core/utils.cpp:205
 #, kde-format
 msgid "Identity"
-msgstr "身份"
+msgstr ""
 
 #: core/utils.cpp:207
 #, kde-format
 msgid "Mails"
-msgstr "邮件"
+msgstr ""
 
 #: core/utils.cpp:209
 #, kde-format
 msgid "Mail Transport"
-msgstr "邮件传输"
+msgstr ""
 
 #: core/utils.cpp:211
 #, kde-format
 msgid "Resources"
-msgstr "资源"
+msgstr ""
 
 #: core/utils.cpp:213
 #, kde-format
 msgid "Config"
-msgstr "配置"
+msgstr ""
 
 #: core/utils.cpp:215
 #, kde-format
 msgid "Data"
-msgstr "数据"
+msgstr ""
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Archive File Structure"
-msgstr "归档文件结构"
+msgstr ""
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgid "Backup Archive Structure:"
-msgstr "备份归档文件结构："
+msgstr ""
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
 msgid "backup-structure.txt file was not found."
-msgstr "未找到 backup-structure.txt 文件。"
+msgstr ""
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, kde-format
@@ -720,35 +720,35 @@ msgstr ""
 #: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
 msgid "Use this template by default"
-msgstr "默认使用此模板"
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgid "Save as Template..."
-msgstr "保存为模板..."
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgid "Load Template..."
-msgstr "加载模板..."
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
-msgstr "选择类型"
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgid "Select All"
-msgstr "全部选中"
+msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgid "Unselect All"
-msgstr "全部不选"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
@@ -764,17 +764,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
-msgstr "显示文件“%1”上的归档内容"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
 msgid "Search..."
-msgstr "搜索..."
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
 msgid "Save As Text..."
-msgstr "另存为文本..."
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
@@ -800,23 +800,23 @@ msgstr ""
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
-msgstr "文本文件"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
-msgstr "导出日志文件"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Cannot open archive"
-msgstr "无法打开归档"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
 msgid "Info"
-msgstr "信息"
+msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
@@ -826,64 +826,64 @@ msgstr ""
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "Show information"
-msgstr "显示信息"
+msgstr ""
 
 #: gui/dialog/synchronizeresourcedialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
-msgstr "同步资源"
+msgstr ""
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
-msgstr "一些资源被添加了但是数据尚未同步。请选择您要同步的资源："
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
 #, kde-format
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:66
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
-msgstr "“%1” 已存在。您想要覆盖它还是合并它？"
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
 #, kde-format
 msgid "Restore"
-msgstr "恢复"
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:69
 #, kde-format
 msgid "Merge"
-msgstr "合并"
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it?"
-msgstr "“%1” 已经存在。您是否想要覆盖？"
+msgstr ""
 
 #: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
-msgstr "目录“%1”已经存在。您是否想要覆盖？"
+msgstr ""
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize resources"
-msgstr "同步资源"
+msgstr ""
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
 msgid "Synchronize resources... It can take some time."
-msgstr "同步资源... 可能需要一些时间。"
+msgstr ""
 
 #: gui/pimdatabackuprestoreui.cpp:25
 #, kde-format
@@ -892,13 +892,11 @@ msgid ""
 "additional data which will be skipped during import. Do you want to import "
 "it?"
 msgstr ""
-"归档是由新版本的程序生成的。它可能包含额外数据，在导入时将被跳过。您确定要导"
-"入吗？"
 
 #: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
 msgid "Not correct version"
-msgstr "没有正确版本"
+msgstr ""
 
 #: gui/pimdatabackuprestoreui.cpp:28
 #, kde-format
@@ -919,22 +917,22 @@ msgstr ""
 #: gui/pimdatacommandlineoption.cpp:46
 #, kde-format
 msgid "Template file uses to define what data, settings to import or export"
-msgstr "定义导入或导出数据，设置的临时文件"
+msgstr ""
 
 #: gui/pimdatacommandlineoption.cpp:48
 #, kde-format
 msgid "Import the given file"
-msgstr "导入给定文件"
+msgstr ""
 
 #: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
 msgid "Export the given file"
-msgstr "导出给定文件"
+msgstr ""
 
 #: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgid "File or url. The user will be asked whether to import or export."
-msgstr "文件或链接。用户将被询问是否要导入或导出。"
+msgstr ""
 
 #: gui/pimdatacommandlineoption.cpp:52
 #, kde-format
@@ -945,13 +943,13 @@ msgstr ""
 #: gui/pimdataexporter.rc:8
 #, kde-format
 msgid "&File"
-msgstr "文件(&F)"
+msgstr ""
 
 #. i18n: ectx: Menu (tools)
 #: gui/pimdataexporter.rc:21
 #, kde-format
 msgid "&Tools"
-msgstr "工具(&T)"
+msgstr ""
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: gui/pimdataexporter.rc:28
@@ -962,22 +960,22 @@ msgstr ""
 #: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync starts..."
-msgstr "完整同步开始..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:197
 #, kde-format
 msgid "Full sync finished."
-msgstr "完成同步完成。"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:204
 #, kde-format
 msgid "Full sync for \"%1\" done."
-msgstr "“%1”的完整同步完成。"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:209
 #, kde-format
 msgid "Full sync for \"%1\" failed."
-msgstr "“%1”的完整同步失败。"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:215
 #, kde-format
@@ -990,104 +988,104 @@ msgstr ""
 #: gui/pimdataexporterwindow.cpp:401
 #, kde-format
 msgid "Backup"
-msgstr "备份"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:244
 #, kde-format
 msgid "Export Data..."
-msgstr "导出数据..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:249
 #, kde-format
 msgid "Import Data..."
-msgstr "导入数据..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:254
 #, kde-format
 msgid "Save log..."
-msgstr "保存日志..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:257
 #, kde-format
 msgid "Show Archive Structure Information..."
-msgstr "显示存档结构信息..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:260
 #, kde-format
 msgid "Show Archive Information..."
-msgstr "显示存档信息..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:264
 #, kde-format
 msgid "Show Information on current Archive..."
-msgstr "显示当前的归档的信息..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:301
 #, kde-format
 msgid "Select Archive"
-msgstr "选择归档"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:301
 #, kde-format
 msgid "Zip file"
-msgstr "Zip 文件"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:313
 #, kde-format
 msgid "Log is empty."
-msgstr "日志为空。"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:313
 #, kde-format
 msgid "Save log"
-msgstr "保存日志"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:317
 #, kde-format
 msgid "HTML Files (*.html)"
-msgstr "HTML 文件 (*.html)"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:323
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
-msgstr "请备份您的数据之前，退出所有 KDE PIM 应用程序。"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:346
 #, kde-format
 msgid "Create backup"
-msgstr "创建备份"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:348
 #, kde-format
 msgid "Zip file (*.zip)"
-msgstr "Zip 文件 (*.zip)"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup in progress..."
-msgstr "正在进行备份..."
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:400
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
-msgstr "在恢复数据之前，您必须关闭所有 KDE PIM 应用程序。您想继续吗？"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:414
 #, kde-format
 msgid "Restore backup"
-msgstr "还原备份"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Zip File"
-msgstr "Zip 文件"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:448
 #, kde-format
 msgid "Restore in progress..."
-msgstr "正在还原..."
+msgstr ""
 
 #: gui/trayicon/pimdatatrayicon.cpp:13
 #, kde-format
@@ -1097,24 +1095,24 @@ msgstr ""
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
 #, kde-format
 msgid "Always Override File"
-msgstr "总是覆盖文件"
+msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
 #, kde-format
 msgid "Always Override Directory"
-msgstr "总是覆盖目录"
+msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
 #, kde-format
 msgid "Always Merge Config File"
-msgstr "总是合并配置文件"
+msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:23
 #, kde-format
 msgid "Import"
-msgstr "导入"
+msgstr ""
 
 #: gui/widgets/selectiontypetreewidget.cpp:350
 #, kde-format
 msgid "Template Files (*.xml)"
-msgstr "模板文件 (*.xml)"
+msgstr ""
