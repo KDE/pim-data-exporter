@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2024-03-01 03:09+0900\n"
+"PO-Revision-Date: 2024-05-09 06:49+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -717,7 +717,7 @@ msgstr "一般"
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
-msgstr "使用者意見回應"
+msgstr "使用者回饋"
 
 #: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
@@ -941,7 +941,7 @@ msgstr "檔案或網址。使用者會被詢問是否要匯入。"
 #: gui/pimdatacommandlineoption.cpp:52
 #, kde-format
 msgid "Lists the available options for user feedback"
-msgstr "列出能用於使用者意見回應的選項"
+msgstr "列出能用於使用者回饋的選項"
 
 #. i18n: ectx: Menu (file)
 #: gui/pimdataexporter.rc:8
