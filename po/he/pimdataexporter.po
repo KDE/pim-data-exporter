@@ -1,0 +1,1122 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the pim-data-exporter package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: pim-data-exporter\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
+"PO-Revision-Date: 2024-05-09 13:39+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#: console/main.cpp:25 console/main.cpp:27
+#, kde-format
+msgid "PIM Data Exporter Console"
+msgstr "מסוף מייצא נתוני PIM"
+
+#: console/main.cpp:29
+#, kde-format
+msgid "Copyright © 2015-%1 pimdataexporter authors"
+msgstr "כל הזכויות שמורות © 2015‏-%1 יוצרי pimdataexporter"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Laurent Montel"
+msgstr "לורנט מונטל"
+
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#, kde-format
+msgid "Maintainer"
+msgstr "מתחזק"
+
+#: console/main.cpp:31
+#, kde-format
+msgid "File to log information to."
+msgstr "קובץ לתיעוד היומן."
+
+#: console/main.cpp:34
+#, kde-format
+msgid "Template file to define what data, settings to import or export."
+msgstr "קובץ תבנית להגדרת אילו נתונים והגדרות לייבוא או לייצוא."
+
+#: console/main.cpp:37
+#, kde-format
+msgid "Import the given file."
+msgstr "ייבוא הקובץ שסופק."
+
+#: console/main.cpp:39
+#, kde-format
+msgid "Export the given file."
+msgstr "ייצוא הקובץ שסופק."
+
+#: core/abstractimportexportjob.cpp:56
+#, kde-format
+msgid "Task Canceled"
+msgstr "המשימה בוטלה"
+
+#: core/abstractimportexportjob.cpp:116
+#, kde-format
+msgid "\"%1\" backup done."
+msgstr "הגיבוי של „%1” בוצע."
+
+#: core/abstractimportexportjob.cpp:118
+#, kde-format
+msgid "\"%1\" cannot be exported."
+msgstr "אי אפשר לייצא את „%1”."
+
+#: core/abstractimportexportjob.cpp:121
+#, kde-format
+msgid "\"%1\" does not exist."
+msgstr "„%1” לא קיים."
+
+#: core/abstractimportexportjob.cpp:268
+#, kde-format
+msgid "\"%1\" was copied."
+msgstr "„%1” הועתק."
+
+#: core/abstractimportexportjob.cpp:273
+#, kde-format
+msgid "Restoring \"%1\"..."
+msgstr "„%1” משוחזר…"
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "File \"%1\" cannot be copied to \"%2\"."
+msgstr "אי אפשר להעתיק את הקובץ „%1” אל „%2”."
+
+#: core/abstractimportexportjob.cpp:298
+#, kde-format
+msgid "Copy file"
+msgstr "העתקת קובץ"
+
+#: core/abstractimportexportjob.cpp:300
+#, kde-format
+msgid "\"%1\" was restored."
+msgstr "„%1” שוחזר."
+
+#: core/abstractimportexportjob.cpp:385
+#: core/addressbook/importaddressbookjobinterface.cpp:231
+#: core/mail/importmailjobinterface.cpp:424
+#, kde-format
+msgid "Resources restored."
+msgstr "המשאבים שוחזרו"
+
+#: core/abstractimportexportjob.cpp:387
+#, kde-format
+msgid "No resources files found."
+msgstr "לא נמצא קובץ משאבים."
+
+#: core/abstractimportexportjob.cpp:448
+#, kde-format
+msgid "Unable to copy file %1"
+msgstr "לא ניתן להעתיק את הקובץ %1"
+
+#: core/abstractimportexportjob.cpp:489
+#, kde-format
+msgid "Resource '%1' created."
+msgstr "המשאב ‚%1’ נוצר."
+
+#: core/abstractimportexportjob.cpp:504
+#, kde-format
+msgid "Failed to synchronize '%1'."
+msgstr "הסנכרון של ‚%1’ נכשל."
+
+#: core/abstractimportexportjob.cpp:509
+#, kde-format
+msgid "Resource '%1' synchronized."
+msgstr "המשאב ‚%1’ סונכרן."
+
+#: core/abstractimportexportjob.cpp:515
+#, kde-format
+msgid "All resources synchronized."
+msgstr "כל המשאבים סונכרנו."
+
+#: core/abstractimportexportjob.cpp:541
+#, kde-format
+msgid "Start synchronizing..."
+msgstr "הסנכרון התחיל…"
+
+#: core/abstractimportexportjob.cpp:578
+#, kde-format
+msgid "Directory \"%1\" added to backup file."
+msgstr "התיקייה „%1” נוספה לקובץ הגיבוי."
+
+#: core/abstractimportexportjob.cpp:580
+#, kde-format
+msgid "Directory \"%1\" cannot be added to backup file."
+msgstr "אי אפשר להוסיף את התיקייה „%1” לקובץ הגיבוי."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAddressBook settings..."
+msgstr "התחלת ייצוא הגדרות KAddressBook…"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:29
+#, kde-format
+msgid "Export KAddressBook settings"
+msgstr "ייצוא הגדרות KAddressBook"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:42
+#: core/alarm/exportalarmjobinterface.cpp:84
+#: core/calendar/exportcalendarjobinterface.cpp:96
+#: core/mail/exportmailjobinterface.cpp:653
+#: core/notes/exportnotesjobinterface.cpp:53
+#, kde-format
+msgid "Backing up resources..."
+msgstr "המשאבים מגובים…"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:102
+#: core/alarm/exportalarmjobinterface.cpp:76
+#: core/calendar/exportcalendarjobinterface.cpp:75
+#: core/mail/exportmailjobinterface.cpp:675
+#: core/notes/exportnotesjobinterface.cpp:150
+#, kde-format
+msgid "Resources backup done."
+msgstr "גיבוי המשאבים בוצע."
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:109
+#: core/akregator/exportakregatorjobinterface.cpp:72
+#: core/alarm/exportalarmjobinterface.cpp:109
+#: core/calendar/exportcalendarjobinterface.cpp:228
+#: core/mail/exportmailjobinterface.cpp:167
+#: core/notes/exportnotesjobinterface.cpp:75
+#, kde-format
+msgid "Backing up config..."
+msgstr "ההגדרות מגובות…"
+
+#: core/addressbook/exportaddressbookjobinterface.cpp:150
+#: core/akregator/exportakregatorjobinterface.cpp:79
+#: core/alarm/exportalarmjobinterface.cpp:135
+#: core/calendar/exportcalendarjobinterface.cpp:248
+#: core/mail/exportmailjobinterface.cpp:536
+#: core/notes/exportnotesjobinterface.cpp:108
+#, kde-format
+msgid "Config backup done."
+msgstr "ההגדרות גובו."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:41
+#, kde-format
+msgid "Starting to import KAddressBook settings..."
+msgstr "ייבוא הגדרות KAddressBook מתחיל…"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:43
+#, kde-format
+msgid "Import KAddressBook settings"
+msgstr "ייבוא הגדרות KAddressBook"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:92
+#: core/akregator/importakregatorjobinterface.cpp:93
+#: core/alarm/importalarmjobinterface.cpp:82
+#: core/calendar/importcalendarjobinterface.cpp:90
+#: core/notes/importnotesjobinterface.cpp:80
+#, kde-format
+msgid "Restore configs..."
+msgstr "ההגדרות משוחזרות…"
+
+#: core/addressbook/importaddressbookjobinterface.cpp:109
+#: core/akregator/importakregatorjobinterface.cpp:99
+#: core/alarm/importalarmjobinterface.cpp:98
+#: core/calendar/importcalendarjobinterface.cpp:229
+#: core/mail/importmailjobinterface.cpp:866
+#: core/notes/importnotesjobinterface.cpp:109
+#, kde-format
+msgid "Config restored."
+msgstr "ההגדרות שוחזרו."
+
+#: core/addressbook/importaddressbookjobinterface.cpp:162
+#: core/addressbook/importaddressbookjobinterface.cpp:163
+#: core/alarm/importalarmjobinterface.cpp:114
+#: core/alarm/importalarmjobinterface.cpp:115
+#: core/calendar/importcalendarjobinterface.cpp:282
+#: core/calendar/importcalendarjobinterface.cpp:283
+#: core/mail/importmailjobinterface.cpp:199
+#: core/mail/importmailjobinterface.cpp:200
+#: core/notes/importnotesjobinterface.cpp:148
+#: core/notes/importnotesjobinterface.cpp:149
+#, kde-format
+msgid "Restore resources..."
+msgstr "שחזור משאבים…"
+
+#: core/akregator/exportakregatorjobinterface.cpp:24
+#, kde-format
+msgid "Start export Akregator settings..."
+msgstr "התחלת ייצוא הגדרות Akregator…"
+
+#: core/akregator/exportakregatorjobinterface.cpp:25
+#, kde-format
+msgid "Export Akregator settings"
+msgstr "ייצוא הגדרות Akregator"
+
+#: core/akregator/exportakregatorjobinterface.cpp:87
+#, kde-format
+msgid "Backing up data..."
+msgstr "הנתונים מגובים…"
+
+#: core/akregator/exportakregatorjobinterface.cpp:94
+#: core/notes/exportnotesjobinterface.cpp:46
+#, kde-format
+msgid "\"%1\" directory cannot be added to backup file."
+msgstr "אי אפשר להוסיף את התיקייה „%1” לקובץ הגיבוי."
+
+#: core/akregator/exportakregatorjobinterface.cpp:97
+#, kde-format
+msgid "Data backup done."
+msgstr "הנתונים גובו."
+
+#: core/akregator/importakregatorjobinterface.cpp:29
+#, kde-format
+msgid "Starting to import Akregator settings..."
+msgstr "ייבוא הגדרות Akregator מתחיל…"
+
+#: core/akregator/importakregatorjobinterface.cpp:32
+#, kde-format
+msgid "Import Akregator settings"
+msgstr "ייבוא הגדרות Akregator"
+
+#: core/akregator/importakregatorjobinterface.cpp:106
+#: core/notes/importnotesjobinterface.cpp:116
+#, kde-format
+msgid "Restore data..."
+msgstr "שחזור נתונים…"
+
+#: core/akregator/importakregatorjobinterface.cpp:112
+#: core/notes/importnotesjobinterface.cpp:129
+#, kde-format
+msgid "Data restored."
+msgstr "הנתונים שוחזרו."
+
+#: core/alarm/exportalarmjobinterface.cpp:28
+#, kde-format
+msgid "Start export KAlarm settings..."
+msgstr "ייצוא הגדרות KAlarm מתחיל…"
+
+#: core/alarm/exportalarmjobinterface.cpp:29
+#, kde-format
+msgid "Export KAlarm settings"
+msgstr "ייצוא הגדרות KAlarm"
+
+#: core/alarm/importalarmjobinterface.cpp:32
+#, kde-format
+msgid "Starting to import KAlarm settings..."
+msgstr "ייבוא הגדרות KAlarm מתחיל…"
+
+#: core/alarm/importalarmjobinterface.cpp:33
+#, kde-format
+msgid "Import KAlarm settings"
+msgstr "ייבוא הגדרות KAlarm"
+
+#: core/archivestorage.cpp:43
+#, kde-format
+msgid "Archive cannot be opened in write mode."
+msgstr "אי אפשר לפתוח ארכיון במצב כתיבה."
+
+#: core/archivestorage.cpp:45 core/utils.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:183
+#, kde-format
+msgid "Archive cannot be opened in read mode."
+msgstr "אי אפשר לפתוח ארכיון במצב קריאה."
+
+#: core/backupresourcefilejobbase.cpp:47
+#, kde-format
+msgid "\"%1\" is not a file."
+msgstr "„%1” אינו קובץ."
+
+#: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
+#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
+#, kde-format
+msgid "\"%1\" was backed up."
+msgstr "„%1” גובה."
+
+#: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
+#: core/storeresourcejob.cpp:59
+#, kde-format
+msgid "\"%1\" file cannot be added to backup file."
+msgstr "אי אפשר להוסיף את „%1” לקובץ הגיבוי."
+
+#: core/calendar/exportcalendarjobinterface.cpp:82
+#, kde-format
+msgid "Start export KOrganizer settings..."
+msgstr "ייצוא הגדרות KOrganizer החל…"
+
+#: core/calendar/exportcalendarjobinterface.cpp:83
+#, kde-format
+msgid "Export KOrganizer settings"
+msgstr "ייצוא הגדרות KOrganizer"
+
+#: core/calendar/importcalendarjobinterface.cpp:35
+#, kde-format
+msgid "Starting to import KOrganizer settings..."
+msgstr "ייבוא הגדרות KOrganizer מתחיל…"
+
+#: core/calendar/importcalendarjobinterface.cpp:37
+#, kde-format
+msgid "Import KOrganizer settings"
+msgstr "ייבוא הגדרות KOrganizer"
+
+#: core/mail/exportmailjobinterface.cpp:43
+#, kde-format
+msgid "Start export KMail settings..."
+msgstr "ייצוא הגדרות KMail מתחיל…"
+
+#: core/mail/exportmailjobinterface.cpp:44
+#, kde-format
+msgid "Export KMail settings"
+msgstr "ייצוא הגדרות KMail"
+
+#: core/mail/exportmailjobinterface.cpp:112
+#, kde-format
+msgid "Backing up Folder Attributes..."
+msgstr "מאפייני התיקיות מגובים…"
+
+#: core/mail/exportmailjobinterface.cpp:114
+#, kde-format
+msgid "Backing up Mails..."
+msgstr "הודעות הדוא״ל מגובות…"
+
+#: core/mail/exportmailjobinterface.cpp:115
+#, kde-format
+msgid "Start export resource..."
+msgstr "ייצוא המשאב מתחיל…"
+
+#: core/mail/exportmailjobinterface.cpp:123
+#, kde-format
+msgid "Backing up transports..."
+msgstr "ההעברות מגובות…"
+
+#: core/mail/exportmailjobinterface.cpp:128
+#: core/mail/exportmailjobinterface.cpp:140
+#, kde-format
+msgid "Transports backup done."
+msgstr "ההעברות גובו."
+
+#: core/mail/exportmailjobinterface.cpp:142
+#, kde-format
+msgid "Transport file cannot be added to backup file."
+msgstr "אי אפשר להוסיף קובץ העברה לקובץ הגיבוי."
+
+#: core/mail/exportmailjobinterface.cpp:541
+#, kde-format
+msgid "Backing up identity..."
+msgstr "הזהות מגובה…"
+
+#: core/mail/exportmailjobinterface.cpp:580
+#, kde-format
+msgid "vCard file \"%1\" cannot be saved."
+msgstr "שמירת קובץ כרטיס הביקור (vCard) „%1” לא הצליחה."
+
+#: core/mail/exportmailjobinterface.cpp:593
+#, kde-format
+msgid "Identity backup done."
+msgstr "הזהות גובתה."
+
+#: core/mail/exportmailjobinterface.cpp:595
+#, kde-format
+msgid "Identity file cannot be added to backup file."
+msgstr "אי אפשר להוסיף קובץ זהות לקובץ הגיבוי."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:139
+#, kde-format
+msgid "Filters backup done."
+msgstr "המסננים גובו."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#, kde-format
+msgid "Filters cannot be exported."
+msgstr "אי אפשר לייצא את המסננים."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#, kde-format
+msgid "Backing up Folder Attributes done."
+msgstr "מאפייני התיקיות גובו."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#, kde-format
+msgid "Folder Attributes cannot be exported."
+msgstr "אי אפשר לייצא את מאפייני התיקיות."
+
+#: core/mail/importmailjobinterface.cpp:43
+#, kde-format
+msgid "Starting to import KMail settings..."
+msgstr "ייבוא הגדרות KMail מתחיל…"
+
+#: core/mail/importmailjobinterface.cpp:44
+#, kde-format
+msgid "Import KMail settings"
+msgstr "ייבוא הגדרות KMail"
+
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
+#, kde-format
+msgid "Restore transports..."
+msgstr "שחזור העברות…"
+
+#: core/mail/importmailjobinterface.cpp:173
+#, kde-format
+msgid "mailtransports file could not be found in the archive."
+msgstr "לא ניתן למצוא קובץ העברות דוא״ל/mailtransports בארכיון."
+
+#: core/mail/importmailjobinterface.cpp:188
+#, kde-format
+msgid "Transports restored."
+msgstr "ההעברות שוחזרו."
+
+#: core/mail/importmailjobinterface.cpp:190
+#, kde-format
+msgid "Failed to restore transports file."
+msgstr "שחזור קובץ ההעברות נכשל."
+
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
+#, kde-format
+msgid "Restore mails..."
+msgstr "שחזור הודעות דוא״ל…"
+
+#: core/mail/importmailjobinterface.cpp:555
+#, kde-format
+msgid "Mails restored."
+msgstr "הודעות הדוא״ל שוחזרו."
+
+#: core/mail/importmailjobinterface.cpp:562
+#, kde-format
+msgid "Restore config..."
+msgstr "הגדרות משוחזרות…"
+
+#: core/mail/importmailjobinterface.cpp:565
+#, kde-format
+msgid "filters file could not be found in the archive."
+msgstr "לא ניתן למצוא קובץ מסננים/filters בארכיון."
+
+#: core/mail/importmailjobinterface.cpp:569
+#, kde-format
+msgid "Restore filters..."
+msgstr "שחזור מסננים…"
+
+#: core/mail/importmailjobinterface.cpp:618
+#, kde-format
+msgid "Filters restored."
+msgstr "המסננים שוחזרו."
+
+#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:904
+#, kde-format
+msgid "Restoring identities..."
+msgstr "זהויות משוחזרות…"
+
+#: core/mail/importmailjobinterface.cpp:902
+#, kde-format
+msgid "emailidentities file could not be found in the archive."
+msgstr "לא ניתן למצוא קובץ emailidentities בארכיון."
+
+#: core/mail/importmailjobinterface.cpp:963
+#, kde-format
+msgid "Identities restored."
+msgstr "הזהויות שוחזרו."
+
+#: core/mail/importmailjobinterface.cpp:965
+#, kde-format
+msgid "Failed to restore identity file."
+msgstr "שחזור קובץ הזהויות נכשל."
+
+#: core/mail/importmailjobinterface.cpp:1283
+#, kde-format
+msgid "\"%1\" migration done."
+msgstr "ההסבה של „%1” הושלמה."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:35
+#, kde-format
+msgid "Restoring folder attributes..."
+msgstr "מאפייני התיקיות משוחזרים…"
+
+#: core/mail/importmailjobinterfaceimpl.cpp:41
+#, kde-format
+msgid "Restoring Folder Attributes done."
+msgstr "מאפייני התיקיות שוחזרו."
+
+#: core/mail/importmailjobinterfaceimpl.cpp:45
+#, kde-format
+msgid "Folder Attributes cannot be restored."
+msgstr "אי אפשר לשחזר את מאפייני התיקיות."
+
+#: core/notes/exportnotesjobinterface.cpp:28
+#, kde-format
+msgid "Start export KNotes settings..."
+msgstr "ייצוא הגדרות KNotes מתחיל…"
+
+#: core/notes/exportnotesjobinterface.cpp:29
+#, kde-format
+msgid "Export KNotes settings"
+msgstr "ייצוא הגדרות KNotes"
+
+#: core/notes/importnotesjobinterface.cpp:49
+#, kde-format
+msgid "Starting to import KNotes settings..."
+msgstr "ייבוא הגדרות KNotes מתחיל…"
+
+#: core/notes/importnotesjobinterface.cpp:52
+#, kde-format
+msgid "Import KNotes settings"
+msgstr "ייבוא הגדרות KNotes"
+
+#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#, kde-format
+msgid "No data selected."
+msgstr "לא נבחרו נתונים."
+
+#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#, kde-format
+msgid "Unable to open file \"%1\"."
+msgstr "לא ניתן לפתוח את הקובץ „%1”."
+
+#: core/pimdatabackuprestore.cpp:94
+#, kde-format
+msgid "Starting to backup data in '%1'"
+msgstr "גיבוי הנתונים שב־‚%1’ מתחיל"
+
+#: core/pimdatabackuprestore.cpp:183
+#, kde-format
+msgid "Backup in '%1' done."
+msgstr "הגיבוי ב־‚%1’ הסתיים."
+
+#: core/pimdatabackuprestore.cpp:279
+#, kde-format
+msgid "Starting to restore data from '%1'"
+msgstr "שחזור נתונים מתוך ‚%1’ מתחיל"
+
+#: core/pimdatabackuprestore.cpp:287
+#, kde-format
+msgid "Restoring data from '%1' done."
+msgstr "שחזור נתונים מתוך ‚%1’ הושלם."
+
+#: core/pimdatabackupthread.cpp:37
+#, kde-format
+msgid "Impossible to open archive file."
+msgstr "לא ניתן לפתוח את קובץ הארכיון."
+
+#: core/pimdatabackupthread.cpp:44
+#, kde-format
+msgid "Impossible to backup \"%1\"."
+msgstr "לא ניתן לגבות את „%1”."
+
+#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:204
+#, kde-format
+msgid "Resource file \"%1\" cannot be added to backup file."
+msgstr "אי אפשר להוסיף את קובץ המשאב „%1” לקובץ הגיבוי."
+
+#: core/resourceconverterbase.cpp:207
+#, kde-format
+msgid "Resource config file \"%1\" doesn't exist."
+msgstr "קובץ הגדרות המשאב „%1” לא קיים."
+
+#: core/utils.cpp:181
+#, kde-format
+msgid "KMail"
+msgstr "KMail"
+
+#: core/utils.cpp:183
+#, kde-format
+msgid "KAddressBook"
+msgstr "KAddressBook"
+
+#: core/utils.cpp:185
+#, kde-format
+msgid "KAlarm"
+msgstr "KAlarm"
+
+#: core/utils.cpp:187
+#, kde-format
+msgid "KOrganizer"
+msgstr "KOrganizer"
+
+#: core/utils.cpp:189
+#, kde-format
+msgid "KNotes"
+msgstr "KNotes"
+
+#: core/utils.cpp:191
+#, kde-format
+msgid "Akregator"
+msgstr "Akregator"
+
+#: core/utils.cpp:205
+#, kde-format
+msgid "Identity"
+msgstr "זהות"
+
+#: core/utils.cpp:207
+#, kde-format
+msgid "Mails"
+msgstr "הודעות דוא״ל"
+
+#: core/utils.cpp:209
+#, kde-format
+msgid "Mail Transport"
+msgstr "תעבורת דוא״ל"
+
+#: core/utils.cpp:211
+#, kde-format
+msgid "Resources"
+msgstr "משאבים"
+
+#: core/utils.cpp:213
+#, kde-format
+msgid "Config"
+msgstr "הגדרות"
+
+#: core/utils.cpp:215
+#, kde-format
+msgid "Data"
+msgstr "נתונים"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Archive File Structure"
+msgstr "מבנה קובץ ארכיון"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:37
+#, kde-format
+msgid "Backup Archive Structure:"
+msgstr "מבנה קובץ גיבוי:"
+
+#: gui/dialog/backupfilestructureinfodialog.cpp:63
+#, kde-format
+msgid "backup-structure.txt file was not found."
+msgstr "הקובץ backup-structure.txt לא נמצא."
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure PimDataExporter"
+msgstr "הגדרת PimDataExporter"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
+#, kde-format
+msgid "General"
+msgstr "כללי"
+
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
+#, kde-format
+msgid "User Feedback"
+msgstr "משוב משתמש"
+
+#: gui/dialog/selectiontypedialog.cpp:27
+#, kde-format
+msgid "Use this template by default"
+msgstr "להשתמש כתבנית הזאת כברירת המחדל"
+
+#: gui/dialog/selectiontypedialog.cpp:28
+#, kde-format
+msgid "Save as Template..."
+msgstr "שמירה כתבנית…"
+
+#: gui/dialog/selectiontypedialog.cpp:29
+#, kde-format
+msgid "Load Template..."
+msgstr "טעינת תבנית…"
+
+#: gui/dialog/selectiontypedialog.cpp:31
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Type"
+msgstr "בחירת סוג"
+
+#: gui/dialog/selectiontypedialog.cpp:52
+#: gui/dialog/synchronizeresourcedialog.cpp:46
+#, kde-format
+msgid "Select All"
+msgstr "בחירה בהכול"
+
+#: gui/dialog/selectiontypedialog.cpp:57
+#: gui/dialog/synchronizeresourcedialog.cpp:51
+#, kde-format
+msgid "Unselect All"
+msgstr "ביטול בחירה בהכול"
+
+#: gui/dialog/showarchivestructuredialog.cpp:40
+#, kde-format
+msgid "Extract Selected File"
+msgstr "חילוץ הקובץ הנבחר"
+
+#: gui/dialog/showarchivestructuredialog.cpp:41
+#, kde-format
+msgid "Open Selected File"
+msgstr "פתיחת הקובץ הנבחר"
+
+#: gui/dialog/showarchivestructuredialog.cpp:43
+#, kde-format
+msgctxt "@title:window"
+msgid "Show Archive Content on file \"%1\""
+msgstr "הצגת תוכן ארכיון בקובץ „%1”"
+
+#: gui/dialog/showarchivestructuredialog.cpp:51
+#, kde-format
+msgid "Search..."
+msgstr "חיפוש…"
+
+#: gui/dialog/showarchivestructuredialog.cpp:54
+#, kde-format
+msgid "Save As Text..."
+msgstr "שמירה כטקסט…"
+
+#: gui/dialog/showarchivestructuredialog.cpp:134
+#, kde-format
+msgid "Select Directory"
+msgstr "בחירת תיקייה"
+
+#: gui/dialog/showarchivestructuredialog.cpp:140
+#, kde-format
+msgid "Do you want to overwrite %1?"
+msgstr "לדרוס את %1?"
+
+#: gui/dialog/showarchivestructuredialog.cpp:141
+#, kde-format
+msgid "File Already Exist"
+msgstr "הקובץ כבר קיים"
+
+#: gui/dialog/showarchivestructuredialog.cpp:149
+#, kde-format
+msgid "Impossible to copy %1 in %2."
+msgstr "אי אפשר להעתיק את %1 בתוך %2."
+
+#: gui/dialog/showarchivestructuredialog.cpp:172
+#, kde-format
+msgctxt "qfiledialog filter files text"
+msgid "Text Files"
+msgstr "קובצי טקסט"
+
+#: gui/dialog/showarchivestructuredialog.cpp:175
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Log File"
+msgstr "ייצוא קובצי יומן"
+
+#: gui/dialog/showarchivestructuredialog.cpp:183
+#, kde-format
+msgid "Cannot open archive"
+msgstr "לא ניתן לפתוח ארכיון"
+
+#: gui/dialog/showarchivestructuredialog.cpp:189
+#, kde-format
+msgid "Info"
+msgstr "פרטים"
+
+#: gui/dialog/showarchivestructuredialog.cpp:191
+#, kde-format
+msgid "This is not pim archive."
+msgstr "זה לא ארכיון pim."
+
+#: gui/dialog/showarchivestructuredialog.cpp:191
+#, kde-format
+msgid "Show information"
+msgstr "הצגת פרטים"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:29
+#, kde-format
+msgctxt "@title:window"
+msgid "Synchronize Resources"
+msgstr "סנכרון משאבים"
+
+#: gui/dialog/synchronizeresourcedialog.cpp:32
+#, kde-format
+msgid ""
+"Some resources were added but data were not sync. Select resources that you "
+"want to sync:"
+msgstr "חלק מהמשאבים נוספו אבל הנתונים לא סונכרו. נא לבחור את המשאבים לסנכרון:"
+
+#: gui/importexportprogressindicatorgui.cpp:35
+#: gui/job/fullsynchronizeresourcesjob.cpp:39
+#, kde-format
+msgid "Cancel"
+msgstr "ביטול"
+
+#: gui/importexportprogressindicatorgui.cpp:66
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
+msgstr "„%1” כבר קיים. לדרוס או למזג אותו?"
+
+#: gui/importexportprogressindicatorgui.cpp:67
+#: gui/importexportprogressindicatorgui.cpp:79
+#: gui/importexportprogressindicatorgui.cpp:92
+#, kde-format
+msgid "Restore"
+msgstr "שחזור"
+
+#: gui/importexportprogressindicatorgui.cpp:69
+#, kde-format
+msgid "Merge"
+msgstr "מיזוג"
+
+#: gui/importexportprogressindicatorgui.cpp:78
+#, kde-format
+msgid "\"%1\" already exists. Do you want to overwrite it?"
+msgstr "\"%1\" כבר קיים. לדרוס אותו?"
+
+#: gui/importexportprogressindicatorgui.cpp:91
+#, kde-format
+msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
+msgstr "התיקייה „%1” כבר קיימת. לדרוס אותה?"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:41
+#, kde-format
+msgctxt "@title:window"
+msgid "Synchronize resources"
+msgstr "סנכרון משאבים"
+
+#: gui/job/fullsynchronizeresourcesjob.cpp:42
+#, kde-format
+msgid "Synchronize resources... It can take some time."
+msgstr "המשאבים מסתנכרנים… זה יכול לארוך זמן מה."
+
+#: gui/pimdatabackuprestoreui.cpp:25
+#, kde-format
+msgid ""
+"The archive was created by a newer version of this program. It might contain "
+"additional data which will be skipped during import. Do you want to import "
+"it?"
+msgstr ""
+"הארכיון נוצר בגרסה חדשה יותר של התוכנית הזאת. היא יכולה להכיל נתונים נוספים "
+"שלא יתווספו במהלך הייבוא. לייבא אותו?"
+
+#: gui/pimdatabackuprestoreui.cpp:27
+#, kde-format
+msgid "Not correct version"
+msgstr "גרסה שגויה"
+
+#: gui/pimdatabackuprestoreui.cpp:28
+#, kde-format
+msgctxt "@action:button"
+msgid "Import"
+msgstr "ייבוא"
+
+#: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
+#, kde-format
+msgid "PIM Data Exporter"
+msgstr "מייצא נתוני PIM (מידע אישי)"
+
+#: gui/pimdatacommandlineoption.cpp:41
+#, kde-format
+msgid "Copyright © 2012-%1 pimdataexporter authors"
+msgstr "כל הזכויות שמורות © 2012‏-%1 יוצרי pimdataexporter"
+
+#: gui/pimdatacommandlineoption.cpp:46
+#, kde-format
+msgid "Template file uses to define what data, settings to import or export"
+msgstr "קובץ תבנית שמשמש להגדרת אילו נתונים והגדרות לייבוא או לייצוא"
+
+#: gui/pimdatacommandlineoption.cpp:48
+#, kde-format
+msgid "Import the given file"
+msgstr "ייבוא הקובץ שסופק"
+
+#: gui/pimdatacommandlineoption.cpp:49
+#, kde-format
+msgid "Export the given file"
+msgstr "ייצוא הקובץ שסופק"
+
+#: gui/pimdatacommandlineoption.cpp:50
+#, kde-format
+msgid "File or url. The user will be asked whether to import or export."
+msgstr "קובץ או כתובת. תופיע שאלה למשתמש האם לייבא או לייצא."
+
+#: gui/pimdatacommandlineoption.cpp:52
+#, kde-format
+msgid "Lists the available options for user feedback"
+msgstr "הצגת האפשרויות הזמינות למשוב משתמש"
+
+#. i18n: ectx: Menu (file)
+#: gui/pimdataexporter.rc:8
+#, kde-format
+msgid "&File"
+msgstr "&קובץ"
+
+#. i18n: ectx: Menu (tools)
+#: gui/pimdataexporter.rc:21
+#, kde-format
+msgid "&Tools"
+msgstr "&כלים"
+
+#. i18n: ectx: ToolBar (mainToolBar)
+#: gui/pimdataexporter.rc:28
+#, kde-format
+msgid "Main Toolbar"
+msgstr "סרגל כלים ראשי"
+
+#: gui/pimdataexporterwindow.cpp:167
+#, kde-format
+msgid "Full sync starts..."
+msgstr "סנכרון מלא מתחיל…"
+
+#: gui/pimdataexporterwindow.cpp:197
+#, kde-format
+msgid "Full sync finished."
+msgstr "סנכרון מלא הושלם."
+
+#: gui/pimdataexporterwindow.cpp:204
+#, kde-format
+msgid "Full sync for \"%1\" done."
+msgstr "סנכרון מלא של „%1” הצליח."
+
+#: gui/pimdataexporterwindow.cpp:209
+#, kde-format
+msgid "Full sync for \"%1\" failed."
+msgstr "סנכרון מלא של „%1” נכשל."
+
+#: gui/pimdataexporterwindow.cpp:215
+#, kde-format
+msgid ""
+"For restoring data, you must use \"pimdataexporter\". Be careful as it can "
+"overwrite your existing settings and data."
+msgstr ""
+"לשחזור נתונים, חובה להשתמש ב־„pimdataexporter”. רצוי להיזהר כי הוא עלול "
+"לדרוס את ההגדרות והנתונים הנוכחיים שלך."
+
+#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:323
+#: gui/pimdataexporterwindow.cpp:401
+#, kde-format
+msgid "Backup"
+msgstr "גיבוי"
+
+#: gui/pimdataexporterwindow.cpp:244
+#, kde-format
+msgid "Export Data..."
+msgstr "ייצוא נתונים…"
+
+#: gui/pimdataexporterwindow.cpp:249
+#, kde-format
+msgid "Import Data..."
+msgstr "ייבוא נתונים…"
+
+#: gui/pimdataexporterwindow.cpp:254
+#, kde-format
+msgid "Save log..."
+msgstr "שמירת יומן…"
+
+#: gui/pimdataexporterwindow.cpp:257
+#, kde-format
+msgid "Show Archive Structure Information..."
+msgstr "הצגת פרטי מבנה ארכיון…"
+
+#: gui/pimdataexporterwindow.cpp:260
+#, kde-format
+msgid "Show Archive Information..."
+msgstr "הצגת פרטי ארכיון…"
+
+#: gui/pimdataexporterwindow.cpp:264
+#, kde-format
+msgid "Show Information on current Archive..."
+msgstr "הצגת פרטים על הארכיון הנוכחי…"
+
+#: gui/pimdataexporterwindow.cpp:301
+#, kde-format
+msgid "Select Archive"
+msgstr "בחירת ארכיון"
+
+#: gui/pimdataexporterwindow.cpp:301
+#, kde-format
+msgid "Zip file"
+msgstr "קובץ Zip"
+
+#: gui/pimdataexporterwindow.cpp:313
+#, kde-format
+msgid "Log is empty."
+msgstr "היומן ריק."
+
+#: gui/pimdataexporterwindow.cpp:313
+#, kde-format
+msgid "Save log"
+msgstr "שמירת יומן"
+
+#: gui/pimdataexporterwindow.cpp:317
+#, kde-format
+msgid "HTML Files (*.html)"
+msgstr "קובצי HTML‏ (‎*.html)"
+
+#: gui/pimdataexporterwindow.cpp:323
+#, kde-format
+msgid "Please quit all kdepim applications before backing up your data."
+msgstr "נא לצאת מכל יישומי kdepim בטרם גיבוי הנתונים שלך."
+
+#: gui/pimdataexporterwindow.cpp:346
+#, kde-format
+msgid "Create backup"
+msgstr "יצירת גיבוי"
+
+#: gui/pimdataexporterwindow.cpp:348
+#, kde-format
+msgid "Zip file (*.zip)"
+msgstr "קובץ Zip‏ (‎*.zip)"
+
+#: gui/pimdataexporterwindow.cpp:358
+#, kde-format
+msgid "Backup in progress..."
+msgstr "מתבצע גיבוי…"
+
+#: gui/pimdataexporterwindow.cpp:400
+#, kde-format
+msgid ""
+"Before restoring data you must close all kdepim applications. Do you want to "
+"continue?"
+msgstr "בטרם שחזור נתונים חובה לסגור את כל יישומי kdepim. להמשיך?"
+
+#: gui/pimdataexporterwindow.cpp:414
+#, kde-format
+msgid "Restore backup"
+msgstr "שחזור גיבוי"
+
+#: gui/pimdataexporterwindow.cpp:416
+#, kde-format
+msgid "Zip File"
+msgstr "קובץ Zip"
+
+#: gui/pimdataexporterwindow.cpp:448
+#, kde-format
+msgid "Restore in progress..."
+msgstr "מתבצע שחזור…"
+
+#: gui/trayicon/pimdatatrayicon.cpp:13
+#, kde-format
+msgid "Pim Data Exporter"
+msgstr "מייצא נתוני PIM"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:16
+#, kde-format
+msgid "Always Override File"
+msgstr "תמיד לדרוס קובץ"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:17
+#, kde-format
+msgid "Always Override Directory"
+msgstr "תמיד לדרוס תיקייה"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:18
+#, kde-format
+msgid "Always Merge Config File"
+msgstr "תמיד למזג קובצי הגדרות"
+
+#: gui/widgets/pimdataexporterconfigurewidget.cpp:23
+#, kde-format
+msgid "Import"
+msgstr "ייבוא"
+
+#: gui/widgets/selectiontypetreewidget.cpp:350
+#, kde-format
+msgid "Template Files (*.xml)"
+msgstr "קובצי תבנית (‎*.xml)"
