@@ -101,7 +101,7 @@ msgstr "S'ha copiat «%1»."
 #: core/abstractimportexportjob.cpp:273
 #, kde-format
 msgid "Restoring \"%1\"..."
-msgstr "S'està restaurant «%1»..."
+msgstr "S'està restaurant «%1»…"
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
@@ -158,7 +158,7 @@ msgstr "S'han sincronitzat tots els recursos."
 #: core/abstractimportexportjob.cpp:541
 #, kde-format
 msgid "Start synchronizing..."
-msgstr "S'ha iniciat la sincronització..."
+msgstr "S'ha iniciat la sincronització…"
 
 #: core/abstractimportexportjob.cpp:578
 #, kde-format
@@ -174,7 +174,7 @@ msgstr ""
 #: core/addressbook/exportaddressbookjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAddressBook settings..."
-msgstr "Inicia l'exportació de la configuració de KAddressBook..."
+msgstr "Inicia l'exportació de la configuració de KAddressBook…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
@@ -188,7 +188,7 @@ msgstr "Exporteu la configuració de KAddressBook"
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
-msgstr "S'està fent la còpia de seguretat dels recursos..."
+msgstr "S'està fent la còpia de seguretat dels recursos…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
@@ -207,7 +207,7 @@ msgstr "S'ha efectuat la còpia de seguretat dels recursos."
 #: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
-msgstr "S'està fent la còpia de seguretat de la configuració..."
+msgstr "S'està fent la còpia de seguretat de la configuració…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:150
 #: core/akregator/exportakregatorjobinterface.cpp:79
@@ -222,7 +222,7 @@ msgstr "S'ha efectuat la còpia de seguretat de la configuració."
 #: core/addressbook/importaddressbookjobinterface.cpp:41
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
-msgstr "S'està iniciant la importació de la configuració de KAddressBook..."
+msgstr "S'està iniciant la importació de la configuració de KAddressBook…"
 
 #: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
@@ -236,7 +236,7 @@ msgstr "Importeu la configuració de KAddressBook"
 #: core/notes/importnotesjobinterface.cpp:80
 #, kde-format
 msgid "Restore configs..."
-msgstr "Restaura les configuracions..."
+msgstr "Restaura les configuracions…"
 
 #: core/addressbook/importaddressbookjobinterface.cpp:109
 #: core/akregator/importakregatorjobinterface.cpp:99
@@ -260,12 +260,12 @@ msgstr "S'ha restaurat la configuració."
 #: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
-msgstr "Restaura els recursos..."
+msgstr "Restaura els recursos…"
 
 #: core/akregator/exportakregatorjobinterface.cpp:24
 #, kde-format
 msgid "Start export Akregator settings..."
-msgstr "Inicia l'exportació de la configuració d'Akregator..."
+msgstr "Inicia l'exportació de la configuració d'Akregator…"
 
 #: core/akregator/exportakregatorjobinterface.cpp:25
 #, kde-format
@@ -275,7 +275,7 @@ msgstr "Exporteu la configuració d'Akregator"
 #: core/akregator/exportakregatorjobinterface.cpp:87
 #, kde-format
 msgid "Backing up data..."
-msgstr "S'està fent la còpia de seguretat de les dades..."
+msgstr "S'està fent la còpia de seguretat de les dades…"
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
 #: core/notes/exportnotesjobinterface.cpp:46
@@ -292,7 +292,7 @@ msgstr "S'ha efectuat la còpia de seguretat de les dades."
 #: core/akregator/importakregatorjobinterface.cpp:29
 #, kde-format
 msgid "Starting to import Akregator settings..."
-msgstr "S'està iniciant la importació de la configuració d'Akregator..."
+msgstr "S'està iniciant la importació de la configuració d'Akregator…"
 
 #: core/akregator/importakregatorjobinterface.cpp:32
 #, kde-format
@@ -303,7 +303,7 @@ msgstr "Importeu la configuració d'Akregator"
 #: core/notes/importnotesjobinterface.cpp:116
 #, kde-format
 msgid "Restore data..."
-msgstr "Restaura les dades..."
+msgstr "Restaura les dades…"
 
 #: core/akregator/importakregatorjobinterface.cpp:112
 #: core/notes/importnotesjobinterface.cpp:129
@@ -314,7 +314,7 @@ msgstr "S'han restaurat les dades."
 #: core/alarm/exportalarmjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAlarm settings..."
-msgstr "Inicia l'exportació de la configuració de KAlarm..."
+msgstr "Inicia l'exportació de la configuració de KAlarm…"
 
 #: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
@@ -324,7 +324,7 @@ msgstr "Exporteu la configuració de KAlarm"
 #: core/alarm/importalarmjobinterface.cpp:32
 #, kde-format
 msgid "Starting to import KAlarm settings..."
-msgstr "S'està iniciant la importació de la configuració de KAlarm..."
+msgstr "S'està iniciant la importació de la configuració de KAlarm…"
 
 #: core/alarm/importalarmjobinterface.cpp:33
 #, kde-format
@@ -363,7 +363,7 @@ msgstr ""
 #: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
 msgid "Start export KOrganizer settings..."
-msgstr "Inicia l'exportació de la configuració de KOrganizer..."
+msgstr "Inicia l'exportació de la configuració de KOrganizer…"
 
 #: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
@@ -373,7 +373,7 @@ msgstr "Exporteu la configuració de KOrganizer"
 #: core/calendar/importcalendarjobinterface.cpp:35
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
-msgstr "S'està iniciant la importació de la configuració de KOrganizer..."
+msgstr "S'està iniciant la importació de la configuració de KOrganizer…"
 
 #: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
@@ -383,7 +383,7 @@ msgstr "Importeu la configuració de KOrganizer"
 #: core/mail/exportmailjobinterface.cpp:43
 #, kde-format
 msgid "Start export KMail settings..."
-msgstr "Inicia l'exportació de la configuració de KMail..."
+msgstr "Inicia l'exportació de la configuració de KMail…"
 
 #: core/mail/exportmailjobinterface.cpp:44
 #, kde-format
@@ -393,22 +393,22 @@ msgstr "Exporteu la configuració de KMail"
 #: core/mail/exportmailjobinterface.cpp:112
 #, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr "S'està fent la còpia de seguretat dels atributs de les carpetes..."
+msgstr "S'està fent la còpia de seguretat dels atributs de les carpetes…"
 
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Mails..."
-msgstr "S'està fent la còpia de seguretat dels correus..."
+msgstr "S'està fent la còpia de seguretat dels correus…"
 
 #: core/mail/exportmailjobinterface.cpp:115
 #, kde-format
 msgid "Start export resource..."
-msgstr "Inicia l'exportació de recursos..."
+msgstr "Inicia l'exportació de recursos…"
 
 #: core/mail/exportmailjobinterface.cpp:123
 #, kde-format
 msgid "Backing up transports..."
-msgstr "S'està fent la còpia de seguretat dels transports..."
+msgstr "S'està fent la còpia de seguretat dels transports…"
 
 #: core/mail/exportmailjobinterface.cpp:128
 #: core/mail/exportmailjobinterface.cpp:140
@@ -425,7 +425,7 @@ msgstr ""
 #: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
-msgstr "S'està fent la còpia de seguretat de la identitat..."
+msgstr "S'està fent la còpia de seguretat de la identitat…"
 
 #: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
@@ -466,7 +466,7 @@ msgstr "No s'han pogut exportar els atributs de les carpetes."
 #: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KMail settings..."
-msgstr "S'està iniciant la importació de la configuració de KMail..."
+msgstr "S'està iniciant la importació de la configuració de KMail…"
 
 #: core/mail/importmailjobinterface.cpp:44
 #, kde-format
@@ -477,7 +477,7 @@ msgstr "Importeu la configuració de KMail"
 #: core/mail/importmailjobinterface.cpp:175
 #, kde-format
 msgid "Restore transports..."
-msgstr "Restaura els transports..."
+msgstr "Restaura els transports…"
 
 #: core/mail/importmailjobinterface.cpp:173
 #, kde-format
@@ -498,7 +498,7 @@ msgstr "No s'ha pogut restaurar el fitxer de transports."
 #: core/mail/importmailjobinterface.cpp:438
 #, kde-format
 msgid "Restore mails..."
-msgstr "Restaura els correus..."
+msgstr "Restaura els correus…"
 
 #: core/mail/importmailjobinterface.cpp:555
 #, kde-format
@@ -508,7 +508,7 @@ msgstr "S'han restaurat els correus."
 #: core/mail/importmailjobinterface.cpp:562
 #, kde-format
 msgid "Restore config..."
-msgstr "Restaura la configuració..."
+msgstr "Restaura la configuració…"
 
 #: core/mail/importmailjobinterface.cpp:565
 #, kde-format
@@ -518,7 +518,7 @@ msgstr "No s'ha pogut trobar el fitxer «filters» en l'arxiu."
 #: core/mail/importmailjobinterface.cpp:569
 #, kde-format
 msgid "Restore filters..."
-msgstr "Restaura els filtres..."
+msgstr "Restaura els filtres…"
 
 #: core/mail/importmailjobinterface.cpp:618
 #, kde-format
@@ -529,7 +529,7 @@ msgstr "S'han restaurat els filtres."
 #: core/mail/importmailjobinterface.cpp:904
 #, kde-format
 msgid "Restoring identities..."
-msgstr "S'estan restaurant les identitats..."
+msgstr "S'estan restaurant les identitats…"
 
 #: core/mail/importmailjobinterface.cpp:902
 #, kde-format
@@ -554,7 +554,7 @@ msgstr "S'ha efectuat la migració de «%1»."
 #: core/mail/importmailjobinterfaceimpl.cpp:35
 #, kde-format
 msgid "Restoring folder attributes..."
-msgstr "S'estan restaurant els atributs de les carpetes..."
+msgstr "S'estan restaurant els atributs de les carpetes…"
 
 #: core/mail/importmailjobinterfaceimpl.cpp:41
 #, kde-format
@@ -569,7 +569,7 @@ msgstr "No s'han pogut restaurar els atributs de les carpetes."
 #: core/notes/exportnotesjobinterface.cpp:28
 #, kde-format
 msgid "Start export KNotes settings..."
-msgstr "Inicia l'exportació de la configuració de KNotes..."
+msgstr "Inicia l'exportació de la configuració de KNotes…"
 
 #: core/notes/exportnotesjobinterface.cpp:29
 #, kde-format
@@ -579,7 +579,7 @@ msgstr "Exporteu la configuració de KNotes"
 #: core/notes/importnotesjobinterface.cpp:49
 #, kde-format
 msgid "Starting to import KNotes settings..."
-msgstr "S'està iniciant la importació de la configuració de KNotes..."
+msgstr "S'està iniciant la importació de la configuració de KNotes…"
 
 #: core/notes/importnotesjobinterface.cpp:52
 #, kde-format
@@ -738,12 +738,12 @@ msgstr "Utilitza esta plantilla de manera predeterminada"
 #: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgid "Save as Template..."
-msgstr "Anomena i guarda plantilla..."
+msgstr "Anomena i guarda plantilla…"
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgid "Load Template..."
-msgstr "Carrega una plantilla..."
+msgstr "Carrega una plantilla…"
 
 #: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
@@ -782,12 +782,12 @@ msgstr "Mostra el contingut de l'arxiu en el fitxer «%1»"
 #: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
 msgid "Search..."
-msgstr "Busca..."
+msgstr "Busca…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
 msgid "Save As Text..."
-msgstr "Anomena i guarda text..."
+msgstr "Anomena i guarda text…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
@@ -845,7 +845,7 @@ msgstr "Mostra la informació"
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
-msgstr "Sincronització dels recursos"
+msgstr "Sincronitzeu els recursos"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
@@ -893,12 +893,12 @@ msgstr "El directori «%1» ja existix. Voleu sobreescriure'l?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize resources"
-msgstr "Sincronització dels recursos"
+msgstr "Sincronitzeu els recursos"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
 msgid "Synchronize resources... It can take some time."
-msgstr "Sincronització dels recursos... Pot tardar una estona."
+msgstr "Sincronitzeu els recursos… Pot tardar una estona."
 
 #: gui/pimdatabackuprestoreui.cpp:25
 #, kde-format
@@ -980,7 +980,7 @@ msgstr "Barra d'eines principal"
 #: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync starts..."
-msgstr "Inici de sincronització completa..."
+msgstr "Inici de sincronització completa…"
 
 #: gui/pimdataexporterwindow.cpp:197
 #, kde-format
@@ -1015,32 +1015,32 @@ msgstr "Còpia de seguretat"
 #: gui/pimdataexporterwindow.cpp:244
 #, kde-format
 msgid "Export Data..."
-msgstr "Exporta les dades..."
+msgstr "Exporta les dades…"
 
 #: gui/pimdataexporterwindow.cpp:249
 #, kde-format
 msgid "Import Data..."
-msgstr "Importa les dades..."
+msgstr "Importa les dades…"
 
 #: gui/pimdataexporterwindow.cpp:254
 #, kde-format
 msgid "Save log..."
-msgstr "Guarda el registre..."
+msgstr "Guarda el registre…"
 
 #: gui/pimdataexporterwindow.cpp:257
 #, kde-format
 msgid "Show Archive Structure Information..."
-msgstr "Mostra la informació de l'estructura de l'arxiu..."
+msgstr "Mostra la informació de l'estructura de l'arxiu…"
 
 #: gui/pimdataexporterwindow.cpp:260
 #, kde-format
 msgid "Show Archive Information..."
-msgstr "Mostra la informació de l'arxiu..."
+msgstr "Mostra la informació de l'arxiu…"
 
 #: gui/pimdataexporterwindow.cpp:264
 #, kde-format
 msgid "Show Information on current Archive..."
-msgstr "Mostra informació sobre l'arxiu actual..."
+msgstr "Mostra informació sobre l'arxiu actual…"
 
 #: gui/pimdataexporterwindow.cpp:301
 #, kde-format
@@ -1087,7 +1087,7 @@ msgstr "Fitxer Zip (*.zip)"
 #: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup in progress..."
-msgstr "Hi ha una còpia de seguretat en curs..."
+msgstr "Hi ha una còpia de seguretat en curs…"
 
 #: gui/pimdataexporterwindow.cpp:400
 #, kde-format
@@ -1111,7 +1111,7 @@ msgstr "Fitxer Zip"
 #: gui/pimdataexporterwindow.cpp:448
 #, kde-format
 msgid "Restore in progress..."
-msgstr "Hi ha una restauració en curs..."
+msgstr "Hi ha una restauració en curs…"
 
 #: gui/trayicon/pimdatatrayicon.cpp:13
 #, kde-format
