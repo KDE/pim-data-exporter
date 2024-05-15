@@ -39,7 +39,7 @@ void PimDataCommandLineOption::createParser(const QApplication &app)
                          i18n("PIM Data Exporter"),
                          KAboutLicense::GPL_V2,
                          i18n("Copyright © 2012-%1 pimdataexporter authors", QStringLiteral("2024")));
-    aboutData.addAuthor(i18n("Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
+    aboutData.addAuthor(i18nc("@info:credit", "Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
     KAboutData::setApplicationData(aboutData);
     aboutData.setupCommandLine(&mParser);
     mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("template"),
