@@ -66,7 +66,7 @@ int ImportExportProgressIndicatorGui::mergeConfigMessageBox(const QString &confi
                                                 i18n("\"%1\" already exists. Do you want to overwrite it or merge it?", configName),
                                                 i18n("Restore"),
                                                 KStandardGuiItem::overwrite(),
-                                                KGuiItem(i18n("Merge")));
+                                                KGuiItem(i18nc("@action:button", "Merge")));
 }
 
 bool ImportExportProgressIndicatorGui::overwriteConfigMessageBox(const QString &configName) const
