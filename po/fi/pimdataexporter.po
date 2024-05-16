@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-30 00:38+0000\n"
+"POT-Creation-Date: 2024-05-16 00:39+0000\n"
 "PO-Revision-Date: 2022-07-11 18:45+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -39,7 +39,9 @@ msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "Tekijänoikeudet © 2015–%1 pimdataexporterin tekijät"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Laurent Montel"
+msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
@@ -868,7 +870,9 @@ msgid "Restore"
 msgstr "Palauta"
 
 #: gui/importexportprogressindicatorgui.cpp:69
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Merge"
+msgctxt "@action:button"
 msgid "Merge"
 msgstr "Yhdistä"
 

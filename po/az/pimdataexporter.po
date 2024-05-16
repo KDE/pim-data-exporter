@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-30 00:38+0000\n"
+"POT-Creation-Date: 2024-05-16 00:39+0000\n"
 "PO-Revision-Date: 2022-06-16 23:56+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -38,7 +38,9 @@ msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "Müəllif hüquqları pimdataexporter müəlliflərinə aiddir, © 2015-%1"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Laurent Montel"
+msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
@@ -866,7 +868,9 @@ msgid "Restore"
 msgstr "Bərpa edin"
 
 #: gui/importexportprogressindicatorgui.cpp:69
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Merge"
+msgctxt "@action:button"
 msgid "Merge"
 msgstr "Birləşdirin"
 

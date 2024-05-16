@@ -1,7 +1,7 @@
 # translation pimdataexporter.pot to Esperanto
 # Esperantaj mesaĝoj por "pim-data-exporter"
 # Copyright (C) 2019 Free Software Foundation, Inc.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 # Minuskloj: ĉ ĝ ĵ ĥ ŝ ŭ   Majuskloj: Ĉ Ĝ Ĵ Ĥ Ŝ Ŭ
 #
@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-30 00:38+0000\n"
+"POT-Creation-Date: 2024-05-16 00:39+0000\n"
 "PO-Revision-Date: 2024-01-03 14:17+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Oliver Kellogg"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "okellogg@users.sourceforge.net"
+msgstr "olivermkellogg@gmail.com"
 
 #: console/main.cpp:25 console/main.cpp:27
 #, kde-format
@@ -41,7 +41,9 @@ msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "Kopirajto © 2015-%1 pimdataexporter aŭtoroj"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Laurent Montel"
+msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
@@ -866,7 +868,9 @@ msgid "Restore"
 msgstr "Restaŭri"
 
 #: gui/importexportprogressindicatorgui.cpp:69
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Merge"
+msgctxt "@action:button"
 msgid "Merge"
 msgstr "Kunfandi"
 
