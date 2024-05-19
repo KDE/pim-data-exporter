@@ -3,13 +3,13 @@
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2017.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2023-08-02 01:19+0300\n"
+"PO-Revision-Date: 2024-05-18 21:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.07.70\n"
 "X-POOTLE-MTIME: 1413102216.000000\n"
 
 #, kde-format
@@ -38,7 +38,7 @@ msgstr "PIM Verisi Dışa Aktarıcısı Konsolu"
 #: console/main.cpp:29
 #, kde-format
 msgid "Copyright © 2015-%1 pimdataexporter authors"
-msgstr "Telif hakkı © 2015-%1 pimdataexporter yazarları"
+msgstr "Telif hakkı © 2015–%1 pimdataexporter yazarları"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
@@ -80,32 +80,32 @@ msgstr "Görev İptal Edildi"
 #: core/abstractimportexportjob.cpp:116
 #, kde-format
 msgid "\"%1\" backup done."
-msgstr "\"%1\" yedekleme tamamlandı."
+msgstr "“%1” yedeklemesi tamamlandı."
 
 #: core/abstractimportexportjob.cpp:118
 #, kde-format
 msgid "\"%1\" cannot be exported."
-msgstr "\"%1\" dışa aktarılamıyor."
+msgstr "“%1” dışa aktarılamıyor."
 
 #: core/abstractimportexportjob.cpp:121
 #, kde-format
 msgid "\"%1\" does not exist."
-msgstr "\"%1\" mevcut değil."
+msgstr "“%1” yok."
 
 #: core/abstractimportexportjob.cpp:268
 #, kde-format
 msgid "\"%1\" was copied."
-msgstr "\"%1\" kopyalandı."
+msgstr "“%1” kopyalandı."
 
 #: core/abstractimportexportjob.cpp:273
 #, kde-format
 msgid "Restoring \"%1\"..."
-msgstr "\"%1\" geri yükleniyor..."
+msgstr "“%1” geri yükleniyor…"
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "File \"%1\" cannot be copied to \"%2\"."
-msgstr "\"%1\", \"%2\" konumuna kopyalanamıyor."
+msgstr "“%1”, “%2” konumuna kopyalanamıyor."
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
@@ -115,7 +115,7 @@ msgstr "Dosyayı kopyala"
 #: core/abstractimportexportjob.cpp:300
 #, kde-format
 msgid "\"%1\" was restored."
-msgstr "\"%1\" geri yüklendi."
+msgstr "“%1” geri yüklendi."
 
 #: core/abstractimportexportjob.cpp:385
 #: core/addressbook/importaddressbookjobinterface.cpp:231
@@ -137,17 +137,17 @@ msgstr "%1 dosyası kopyalanamadı"
 #: core/abstractimportexportjob.cpp:489
 #, kde-format
 msgid "Resource '%1' created."
-msgstr "'%1' kaynağı oluşturuldu."
+msgstr "“%1” özkaynağı oluşturuldu."
 
 #: core/abstractimportexportjob.cpp:504
 #, kde-format
 msgid "Failed to synchronize '%1'."
-msgstr "\"%1\", eşzamanlanamadı."
+msgstr "“%1” eşzamanlanamadı."
 
 #: core/abstractimportexportjob.cpp:509
 #, kde-format
 msgid "Resource '%1' synchronized."
-msgstr "\"%1\" özkaynağı eşzamanlandı."
+msgstr "“%1” özkaynağı eşzamanlandı."
 
 #: core/abstractimportexportjob.cpp:515
 #, kde-format
@@ -157,22 +157,22 @@ msgstr "Tüm kaynaklar eşitlendi."
 #: core/abstractimportexportjob.cpp:541
 #, kde-format
 msgid "Start synchronizing..."
-msgstr "Eşitlemeyi başlat..."
+msgstr "Eşzamanlamayı Başlat…"
 
 #: core/abstractimportexportjob.cpp:578
 #, kde-format
 msgid "Directory \"%1\" added to backup file."
-msgstr "\"%1\" dizini yedek dosyasına eklendi."
+msgstr "“%1” dizini yedek dosyasına eklendi."
 
 #: core/abstractimportexportjob.cpp:580
 #, kde-format
 msgid "Directory \"%1\" cannot be added to backup file."
-msgstr "\"%1\" dizini yedek dosyasına eklenemedi."
+msgstr "“%1” dizini yedek dosyasına eklenemedi."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAddressBook settings..."
-msgstr "K Adres Defteri ayarlarını dışa aktarma başlatılıyor..."
+msgstr "K Adres Defteri ayarlarını dışa aktarma başlatılıyor…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
@@ -186,7 +186,7 @@ msgstr "K Adres Defteri ayarlarını dışa aktar"
 #: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
-msgstr "Kaynaklar yedekleniyor..."
+msgstr "Özkaynaklar yedekleniyor…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
@@ -205,7 +205,7 @@ msgstr "Kaynak yedekleme tamamlandı."
 #: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
-msgstr "Yapılandırma yedekleniyor..."
+msgstr "Yapılandırma yedekleniyor…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:150
 #: core/akregator/exportakregatorjobinterface.cpp:79
@@ -220,7 +220,7 @@ msgstr "Yapılandırma yedeklemesı tamamlandı."
 #: core/addressbook/importaddressbookjobinterface.cpp:41
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
-msgstr "K Adres Defteri ayarlarını içe aktarma başlatılıyor..."
+msgstr "K Adres Defteri ayarlarını içe aktarma başlatılıyor…"
 
 #: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
@@ -234,7 +234,7 @@ msgstr "K Adres Defteri ayarlarını dışa aktar"
 #: core/notes/importnotesjobinterface.cpp:80
 #, kde-format
 msgid "Restore configs..."
-msgstr "Yapılandırmaları geri yükle..."
+msgstr "Yapılandırmaları geri yükle…"
 
 #: core/addressbook/importaddressbookjobinterface.cpp:109
 #: core/akregator/importakregatorjobinterface.cpp:99
@@ -258,12 +258,12 @@ msgstr "Yapılandırma geri yüklendi."
 #: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
-msgstr "Kaynakları geri yükle..."
+msgstr "Özkaynakları geri yükle…"
 
 #: core/akregator/exportakregatorjobinterface.cpp:24
 #, kde-format
 msgid "Start export Akregator settings..."
-msgstr "Akregatör ayarlarını dışa aktarma başlatılıyor..."
+msgstr "Akregatör ayarlarını dışa aktarma başlatılıyor…"
 
 #: core/akregator/exportakregatorjobinterface.cpp:25
 #, kde-format
@@ -273,13 +273,13 @@ msgstr "Akregatör ayarlarını dışa aktar"
 #: core/akregator/exportakregatorjobinterface.cpp:87
 #, kde-format
 msgid "Backing up data..."
-msgstr "Veri yedekleniyor..."
+msgstr "Veri yedekleniyor…"
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
 #: core/notes/exportnotesjobinterface.cpp:46
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
-msgstr "\"%1\" dizini yedek dosyasına eklenemiyor."
+msgstr "“%1” dizini yedek dosyasına eklenemiyor."
 
 #: core/akregator/exportakregatorjobinterface.cpp:97
 #, kde-format
@@ -289,7 +289,7 @@ msgstr "Veri yedekleme tamamlandı."
 #: core/akregator/importakregatorjobinterface.cpp:29
 #, kde-format
 msgid "Starting to import Akregator settings..."
-msgstr "Akregatör ayarlarını içe aktarma başlatılıyor..."
+msgstr "Akregatör ayarlarını içe aktarma başlatılıyor…"
 
 #: core/akregator/importakregatorjobinterface.cpp:32
 #, kde-format
@@ -300,7 +300,7 @@ msgstr "Akregatör ayarlarını içe aktar"
 #: core/notes/importnotesjobinterface.cpp:116
 #, kde-format
 msgid "Restore data..."
-msgstr "Veriyi geri yükle..."
+msgstr "Veriyi geri yükle…"
 
 #: core/akregator/importakregatorjobinterface.cpp:112
 #: core/notes/importnotesjobinterface.cpp:129
@@ -311,7 +311,7 @@ msgstr "Veri geri yüklendi."
 #: core/alarm/exportalarmjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAlarm settings..."
-msgstr "K Alarm ayarlarını dışa aktarma başlatılıyor..."
+msgstr "K Alarm ayarlarını dışa aktarma başlatılıyor…"
 
 #: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
@@ -321,7 +321,7 @@ msgstr "K Alarm ayarlarını dışa aktar"
 #: core/alarm/importalarmjobinterface.cpp:32
 #, kde-format
 msgid "Starting to import KAlarm settings..."
-msgstr "K Alarm ayarlarını içe aktarma başlatılıyor..."
+msgstr "K Alarm ayarlarını içe aktarma başlatılıyor…"
 
 #: core/alarm/importalarmjobinterface.cpp:33
 #, kde-format
@@ -342,24 +342,24 @@ msgstr "Arşiv okuma kipinde açılamıyor."
 #: core/backupresourcefilejobbase.cpp:47
 #, kde-format
 msgid "\"%1\" is not a file."
-msgstr "\"%1\", bir dosya değil."
+msgstr "“%1” bir dosya değil."
 
 #: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
 #, kde-format
 msgid "\"%1\" was backed up."
-msgstr "\"%1\" yedeklendi."
+msgstr "“%1” yedeklendi."
 
 #: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
 #: core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
-msgstr "\"%1\" dosyası yedek dosyaya eklenemiyor."
+msgstr "“%1” dosyası yedek dosyasına eklenemiyor."
 
 #: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
 msgid "Start export KOrganizer settings..."
-msgstr "K Organizatör ayarlarını dışa aktarma başlatılıyor..."
+msgstr "K Organizatör ayarlarını dışa aktarma başlatılıyor…"
 
 #: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
@@ -369,7 +369,7 @@ msgstr "K Organizatör ayarlarını dışa aktar"
 #: core/calendar/importcalendarjobinterface.cpp:35
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
-msgstr "K Organizatör ayarlarını içe aktarma başlatılıyor..."
+msgstr "K Organizatör ayarlarını içe aktarma başlatılıyor…"
 
 #: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
@@ -379,7 +379,7 @@ msgstr "K Organizatör ayarlarını içe aktar"
 #: core/mail/exportmailjobinterface.cpp:43
 #, kde-format
 msgid "Start export KMail settings..."
-msgstr "K Posta ayarlarını dışa aktarma başlatılıyor..."
+msgstr "K Posta ayarlarını dışa aktarma başlatılıyor…"
 
 #: core/mail/exportmailjobinterface.cpp:44
 #, kde-format
@@ -389,22 +389,22 @@ msgstr "K Posta ayarlarını dışa aktar"
 #: core/mail/exportmailjobinterface.cpp:112
 #, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr "Klasör Öznitelikleri yedekleniyor..."
+msgstr "Klasör öznitelikleri yedekleniyor…"
 
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Mails..."
-msgstr "Postalar yedekleniyor..."
+msgstr "Postalar yedekleniyor…"
 
 #: core/mail/exportmailjobinterface.cpp:115
 #, kde-format
 msgid "Start export resource..."
-msgstr "Dışa aktarma özkaynağını başlat..."
+msgstr "Dışa aktarma özkaynağını başlat…"
 
 #: core/mail/exportmailjobinterface.cpp:123
 #, kde-format
 msgid "Backing up transports..."
-msgstr "Taşımalar yedekleniyor..."
+msgstr "Taşımalar yedekleniyor…"
 
 #: core/mail/exportmailjobinterface.cpp:128
 #: core/mail/exportmailjobinterface.cpp:140
@@ -420,12 +420,12 @@ msgstr "Taşıma dosyası yedekleme dosyasına eklenemiyor."
 #: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
-msgstr "Kimlik yedekleniyor..."
+msgstr "Kimlik yedekleniyor…"
 
 #: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
-msgstr "vCard dosyası \"%1\" kaydedilemiyor."
+msgstr "vCard dosyası “%1” kaydedilemiyor."
 
 #: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
@@ -460,7 +460,7 @@ msgstr "Klasör Öznitelikleri dışa aktarılamıyor."
 #: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KMail settings..."
-msgstr "K Posta ayarlarını içe aktarma başlatılıyor..."
+msgstr "K Posta ayarlarını içe aktarma başlatılıyor…"
 
 #: core/mail/importmailjobinterface.cpp:44
 #, kde-format
@@ -471,7 +471,7 @@ msgstr "K Posta ayarlarını içe aktar"
 #: core/mail/importmailjobinterface.cpp:175
 #, kde-format
 msgid "Restore transports..."
-msgstr "Taşımaları geri yükle..."
+msgstr "Taşımaları geri yükle…"
 
 #: core/mail/importmailjobinterface.cpp:173
 #, kde-format
@@ -492,7 +492,7 @@ msgstr "Taşıma dosyası geri yüklenemedi."
 #: core/mail/importmailjobinterface.cpp:438
 #, kde-format
 msgid "Restore mails..."
-msgstr "Postaları geri yükle..."
+msgstr "Postaları geri yükle…"
 
 #: core/mail/importmailjobinterface.cpp:555
 #, kde-format
@@ -502,7 +502,7 @@ msgstr "Postalar geri yüklendi."
 #: core/mail/importmailjobinterface.cpp:562
 #, kde-format
 msgid "Restore config..."
-msgstr "Yapılandırmayı geri yükle..."
+msgstr "Yapılandırmayı geri yükle…"
 
 #: core/mail/importmailjobinterface.cpp:565
 #, kde-format
@@ -512,7 +512,7 @@ msgstr "filters dosyası arşivde bulunamadı."
 #: core/mail/importmailjobinterface.cpp:569
 #, kde-format
 msgid "Restore filters..."
-msgstr "Süzgeçleri geri yükle..."
+msgstr "Süzgeçleri geri yükle…"
 
 #: core/mail/importmailjobinterface.cpp:618
 #, kde-format
@@ -523,7 +523,7 @@ msgstr "Süzgeçler geri yüklendi."
 #: core/mail/importmailjobinterface.cpp:904
 #, kde-format
 msgid "Restoring identities..."
-msgstr "Kimlikleri geri yükle..."
+msgstr "Kimlikleri geri yükle…"
 
 #: core/mail/importmailjobinterface.cpp:902
 #, kde-format
@@ -543,12 +543,12 @@ msgstr "Kimlik dosyası geri yüklenemedi."
 #: core/mail/importmailjobinterface.cpp:1283
 #, kde-format
 msgid "\"%1\" migration done."
-msgstr "\"%1\" göçü tamamlandı."
+msgstr "“%1” göçü tamamlandı."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:35
 #, kde-format
 msgid "Restoring folder attributes..."
-msgstr "Klasör öznitelikleri geri yükleniyor..."
+msgstr "Klasör öznitelikleri geri yükleniyor…"
 
 #: core/mail/importmailjobinterfaceimpl.cpp:41
 #, kde-format
@@ -563,7 +563,7 @@ msgstr "Klasör Öznitelikleri geri yüklenemiyor."
 #: core/notes/exportnotesjobinterface.cpp:28
 #, kde-format
 msgid "Start export KNotes settings..."
-msgstr "K Notlar ayarlarını dışa aktarma başlatılıyor..."
+msgstr "K Notlar ayarlarını dışa aktarma başlatılıyor…"
 
 #: core/notes/exportnotesjobinterface.cpp:29
 #, kde-format
@@ -573,7 +573,7 @@ msgstr "K Notlar ayarlarını dışa aktar"
 #: core/notes/importnotesjobinterface.cpp:49
 #, kde-format
 msgid "Starting to import KNotes settings..."
-msgstr "K Notlar ayarlarını içe aktarma başlatılıyor..."
+msgstr "K Notlar ayarlarını içe aktarma başlatılıyor…"
 
 #: core/notes/importnotesjobinterface.cpp:52
 #, kde-format
@@ -588,27 +588,27 @@ msgstr "Seçili veri yok."
 #: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
 #, kde-format
 msgid "Unable to open file \"%1\"."
-msgstr "\"%1\" dosyası açılamadı."
+msgstr "“%1” dosyası açılamadı."
 
 #: core/pimdatabackuprestore.cpp:94
 #, kde-format
 msgid "Starting to backup data in '%1'"
-msgstr "'%1' içine verileri yedeklemeye başla"
+msgstr "“%1” içine veriler yedeklenmeye başlanıyor"
 
 #: core/pimdatabackuprestore.cpp:183
 #, kde-format
 msgid "Backup in '%1' done."
-msgstr "'%1' içine yedekleme tamamlandı."
+msgstr "“%1” içine yedekleme tamamlandı."
 
 #: core/pimdatabackuprestore.cpp:279
 #, kde-format
 msgid "Starting to restore data from '%1'"
-msgstr "'%1' yedeğinden veri geri yüklemeyi başlat"
+msgstr "“%1” yedeğinden veri geri yüklemesi başlanıyor"
 
 #: core/pimdatabackuprestore.cpp:287
 #, kde-format
 msgid "Restoring data from '%1' done."
-msgstr "'%1' yedeğinden veri geri yükleme tamamlandı."
+msgstr "“%1” yedeğinden veri geri yükleme tamamlandı."
 
 #: core/pimdatabackupthread.cpp:37
 #, kde-format
@@ -618,17 +618,17 @@ msgstr "Arşiv dosyasını açmak imkansız."
 #: core/pimdatabackupthread.cpp:44
 #, kde-format
 msgid "Impossible to backup \"%1\"."
-msgstr "\"%1\" yedekleme imkansız."
+msgstr "“%1” yedeklemesi olanaksız."
 
 #: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:204
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
-msgstr "\"%1\" kaynak dosyası yedek dosyaya eklenemiyor."
+msgstr "“%1” özkaynak dosyası yedek dosyasına eklenemiyor."
 
 #: core/resourceconverterbase.cpp:207
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
-msgstr "\"%1\" özkaynak yapılandırma dosyası mevcut değil."
+msgstr "“%1” özkaynak yapılandırma dosyası yok."
 
 #: core/utils.cpp:181
 #, kde-format
@@ -699,7 +699,7 @@ msgstr "Arşiv Dosya Yapısı"
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgid "Backup Archive Structure:"
-msgstr "Yedekleme Arşiv Yapısı:"
+msgstr "Yedekleme arşivi yapısı:"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
@@ -710,7 +710,7 @@ msgstr "backup-structure.txt dosyası bulunamadı."
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
-msgstr "PimAyarAktarıcı'yı Yapılandır"
+msgstr "PimDataExporter’ı Yapılandır"
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
@@ -730,12 +730,12 @@ msgstr "Öntanımlı olarak bu şablonu kullan"
 #: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgid "Save as Template..."
-msgstr "Şablon Olarak Kaydet..."
+msgstr "Şablon Olarak Kaydet…"
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgid "Load Template..."
-msgstr "Şablon Yükle..."
+msgstr "Şablon Yükle…"
 
 #: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
@@ -769,17 +769,17 @@ msgstr "Seçili Dosyayı Aç"
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
-msgstr "\"%1\" Dosyası Üzerinde Arşiv İçeriğini Göster"
+msgstr "“%1” Dosyası Üzerinde Arşiv İçeriğini Göster"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
 msgid "Search..."
-msgstr "Ara..."
+msgstr "Ara…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
 msgid "Save As Text..."
-msgstr "Metin Olarak Kaydet..."
+msgstr "Metin Olarak Kaydet…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
@@ -858,7 +858,7 @@ msgstr "İptal"
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
 msgstr ""
-"\"%1 zaten mevcut. Üzerine yazmak mı yoksa birleştirmek mi istiyorsunuz?"
+"“%1” halihazırda var. Üzerine yazmak mı yoksa birleştirmek mi istiyorsunuz?"
 
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
@@ -875,12 +875,12 @@ msgstr "Birleştir"
 #: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it?"
-msgstr "\"%1\" zaten mevcut. Üzerine yazmak istiyor musunuz?"
+msgstr "“%1” halihazırda var. Üzerine yazmak istiyor musunuz?"
 
 #: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
-msgstr "\"%1\" dizini zaten mevcut. Üzerine yazmak istiyor musunuz?"
+msgstr "“%1” dizini halihazırda var. Üzerine yazmak istiyor musunuz?"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:41
 #, kde-format
@@ -891,7 +891,7 @@ msgstr "Özkaynakları eşitle"
 #: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
 msgid "Synchronize resources... It can take some time."
-msgstr "Kaynaklar eşitleniyor... Biraz zaman alabilir."
+msgstr "Özaynaklar eşzamanlanıyor… Biraz zaman alabilir."
 
 #: gui/pimdatabackuprestoreui.cpp:25
 #, kde-format
@@ -922,7 +922,7 @@ msgstr "PIM Verisi Dışa Aktarıcısı"
 #: gui/pimdatacommandlineoption.cpp:41
 #, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
-msgstr "Telif Hakkı © 2012-%1 pimdataexporter yazarları"
+msgstr "Telif Hakkı © 2012–%1 pimdataexporter yazarları"
 
 #: gui/pimdatacommandlineoption.cpp:46
 #, kde-format
@@ -972,7 +972,7 @@ msgstr "Ana Araç Çubuğu"
 #: gui/pimdataexporterwindow.cpp:167
 #, kde-format
 msgid "Full sync starts..."
-msgstr "Tam eşitleme başladı..."
+msgstr "Tam eşzamanlama başladı…"
 
 #: gui/pimdataexporterwindow.cpp:197
 #, kde-format
@@ -982,12 +982,12 @@ msgstr "Tam eşitleme tamamlandı."
 #: gui/pimdataexporterwindow.cpp:204
 #, kde-format
 msgid "Full sync for \"%1\" done."
-msgstr "\"%1\" için tam eşitleme tamamlandı."
+msgstr "“%1” için tam eşzamanlama tamamlandı."
 
 #: gui/pimdataexporterwindow.cpp:209
 #, kde-format
 msgid "Full sync for \"%1\" failed."
-msgstr "\"%1\" eşitleme için tam eşitleme başarısız oldu."
+msgstr "“%1” için tam eşzamanlama başarısız oldu."
 
 #: gui/pimdataexporterwindow.cpp:215
 #, kde-format
@@ -995,8 +995,9 @@ msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
 "overwrite your existing settings and data."
 msgstr ""
-"Verileri geri yüklemek için \"pimdataexporter\" kullanmanız gerekir. Mevcut "
-"ayarlarınıza ve verilerinizin üzerine yazabileceğinden, dikkatli olmalısınız."
+"Verileri geri yüklemek için “pimdataexporter” kullanmanız gerekir. Var olan "
+"ayarlarınıza ve verilerinizin üzerine yazabileceğinden, kullanırken dikkatli "
+"olmalısınız."
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:323
 #: gui/pimdataexporterwindow.cpp:401
@@ -1007,32 +1008,32 @@ msgstr "Yedekle"
 #: gui/pimdataexporterwindow.cpp:244
 #, kde-format
 msgid "Export Data..."
-msgstr "Veriyi Dışa Aktar..."
+msgstr "Veriyi Dışa Aktar…"
 
 #: gui/pimdataexporterwindow.cpp:249
 #, kde-format
 msgid "Import Data..."
-msgstr "Veriyi İçe Aktar..."
+msgstr "Veri İçe Aktar…"
 
 #: gui/pimdataexporterwindow.cpp:254
 #, kde-format
 msgid "Save log..."
-msgstr "Günlüğü kaydet..."
+msgstr "Günlüğü kaydet…"
 
 #: gui/pimdataexporterwindow.cpp:257
 #, kde-format
 msgid "Show Archive Structure Information..."
-msgstr "Arşiv Yapı Bilgisini Göster..."
+msgstr "Arşiv Yapı Bilgisini Göster…"
 
 #: gui/pimdataexporterwindow.cpp:260
 #, kde-format
 msgid "Show Archive Information..."
-msgstr "Arşiv Bilgisini Göster..."
+msgstr "Arşiv Bilgisini Göster…"
 
 #: gui/pimdataexporterwindow.cpp:264
 #, kde-format
 msgid "Show Information on current Archive..."
-msgstr "Mevcut Arşivdeki Bilgiler Göster..."
+msgstr "Geçerli Arşiv için Bilgi Göster…"
 
 #: gui/pimdataexporterwindow.cpp:301
 #, kde-format
@@ -1078,7 +1079,7 @@ msgstr "Zip dosyası (*.zip)"
 #: gui/pimdataexporterwindow.cpp:358
 #, kde-format
 msgid "Backup in progress..."
-msgstr "Yedekleme sürüyor..."
+msgstr "Yedekleme sürüyor…"
 
 #: gui/pimdataexporterwindow.cpp:400
 #, kde-format
@@ -1102,7 +1103,7 @@ msgstr "Zip Dosyası"
 #: gui/pimdataexporterwindow.cpp:448
 #, kde-format
 msgid "Restore in progress..."
-msgstr "Geri yükleme sürüyor..."
+msgstr "Geri yükleme sürüyor…"
 
 #: gui/trayicon/pimdatatrayicon.cpp:13
 #, kde-format
