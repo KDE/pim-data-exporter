@@ -9,6 +9,7 @@ Dependencies:
     'frameworks/kcalendarcore' : '@latest-kf6'
     'frameworks/kstatusnotifieritem': '@latest-kf6'
     'frameworks/kuserfeedback': '@latest-kf6'
+    'frameworks/kiconthemes': '@latest-kf6'
     'pim/akonadi' : '@same'
     'pim/kidentitymanagement' : '@same'
     'pim/kmailtransport' : '@same'

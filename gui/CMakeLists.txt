@@ -73,7 +73,9 @@ endif()
 if (TARGET KF6::UserFeedbackWidgets)
         target_link_libraries(pimdataexporter PRIVATE KF6::UserFeedbackWidgets)
 endif()
-
+if(TARGET KF6::IconThemes)
+    target_link_libraries(pimdataexporter PRIVATE KF6::IconThemes)
+endif()
 target_link_libraries(pimdataexporter
     PRIVATE
     KF6::XmlGui
