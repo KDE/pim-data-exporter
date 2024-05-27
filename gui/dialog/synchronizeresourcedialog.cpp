@@ -29,7 +29,7 @@ SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Synchronize Resources"));
     auto topLayout = new QVBoxLayout(this);
 
-    auto lab = new QLabel(i18n("Some resources were added but data were not sync. Select resources that you want to sync:"), this);
+    auto lab = new QLabel(i18nc("@label:textbox", "Some resources were added but data were not sync. Select resources that you want to sync:"), this);
     lab->setWordWrap(true);
     lab->setObjectName(QLatin1StringView("label"));
 

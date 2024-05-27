@@ -34,7 +34,7 @@ BackupFileStructureInfoDialog::BackupFileStructureInfoDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Archive File Structure"));
     auto mainLayout = new QVBoxLayout(this);
-    auto lab = new QLabel(i18n("Backup Archive Structure:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Backup Archive Structure:"));
     mainLayout->addWidget(lab);
     mEditor->editor()->setWebShortcutSupport(false);
     mEditor->setReadOnly(true);
