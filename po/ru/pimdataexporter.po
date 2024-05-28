@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2022-10-11 12:32+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -708,7 +708,9 @@ msgid "Archive File Structure"
 msgstr "Структура файла архива"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Backup Archive Structure:"
+msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Структура архива:"
 
@@ -851,7 +853,11 @@ msgid "Synchronize Resources"
 msgstr "Синхронизация источников данных"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some resources were added but data were not sync. Select resources that "
+#| "you want to sync:"
+msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"

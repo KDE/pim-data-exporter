@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2024-05-16 09:46+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -702,7 +702,9 @@ msgid "Archive File Structure"
 msgstr "Zgradba arhivske datoteke"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Backup Archive Structure:"
+msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Zgradba arhiva varnostne kopije:"
 
@@ -845,7 +847,11 @@ msgid "Synchronize Resources"
 msgstr "Uskladi vire"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some resources were added but data were not sync. Select resources that "
+#| "you want to sync:"
+msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"

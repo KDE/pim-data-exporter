@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -693,7 +693,9 @@ msgid "Archive File Structure"
 msgstr "归档文件结构"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Backup Archive Structure:"
+msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "备份归档文件结构："
 
@@ -836,7 +838,11 @@ msgid "Synchronize Resources"
 msgstr "同步资源"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some resources were added but data were not sync. Select resources that "
+#| "you want to sync:"
+msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"

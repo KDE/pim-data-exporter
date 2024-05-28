@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2018-01-06 09:21+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -739,7 +739,9 @@ msgid "Archive File Structure"
 msgstr "Структура архивског фајла"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Backup Archive Structure:"
+msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Структура резервне архиве:"
 
@@ -898,7 +900,11 @@ msgid "Synchronize Resources"
 msgstr "Синхронизовање ресурса"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some resources were added but data were not sync. Select resources that "
+#| "you want to sync:"
+msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
