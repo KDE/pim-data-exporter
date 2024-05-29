@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2024-05-16 08:05+0200\n"
+"PO-Revision-Date: 2024-05-28 06:06+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -694,8 +694,7 @@ msgid "Archive File Structure"
 msgstr "არქივის ფაილის სტრუქტურა"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Backup Archive Structure:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "მარქაფის არქივის სტრუქტურა:"
@@ -839,10 +838,7 @@ msgid "Synchronize Resources"
 msgstr "რესურსების სინქრონიზაცია"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some resources were added but data were not sync. Select resources that "
-#| "you want to sync:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "

@@ -693,8 +693,7 @@ msgid "Archive File Structure"
 msgstr "归档文件结构"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Backup Archive Structure:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "备份归档文件结构："
@@ -838,10 +837,7 @@ msgid "Synchronize Resources"
 msgstr "同步资源"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some resources were added but data were not sync. Select resources that "
-#| "you want to sync:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
