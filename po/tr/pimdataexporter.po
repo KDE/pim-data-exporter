@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2024-05-18 21:54+0300\n"
+"PO-Revision-Date: 2024-05-29 13:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -153,7 +153,7 @@ msgstr "“%1” özkaynağı eşzamanlandı."
 #: core/abstractimportexportjob.cpp:515
 #, kde-format
 msgid "All resources synchronized."
-msgstr "Tüm kaynaklar eşitlendi."
+msgstr "Tüm özkaynaklar eşzamanlandı."
 
 #: core/abstractimportexportjob.cpp:541
 #, kde-format
@@ -698,8 +698,7 @@ msgid "Archive File Structure"
 msgstr "Arşiv Dosya Yapısı"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Backup Archive Structure:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Yedekleme arşivi yapısı:"
@@ -840,20 +839,17 @@ msgstr "Bilgi göster"
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
-msgstr "Özkaynakları Eşitle"
+msgstr "Özkaynakları Eşzamanla"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some resources were added but data were not sync. Select resources that "
-#| "you want to sync:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
 msgstr ""
-"Bazı kaynaklar eşitlenmiş; ancak veri eşitlenmemiş. Eşitlemek istediğiniz "
-"kaynakları seçin:"
+"Bazı kaynaklar eşzamanlı; ancak veri eşzamanlanmamış. Eşzamanlamak "
+"istediğiniz özkaynakları seçin:"
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
@@ -894,7 +890,7 @@ msgstr "“%1” dizini halihazırda var. Üzerine yazmak istiyor musunuz?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize resources"
-msgstr "Özkaynakları eşitle"
+msgstr "Özkaynakları eşzamanla"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
@@ -985,7 +981,7 @@ msgstr "Tam eşzamanlama başladı…"
 #: gui/pimdataexporterwindow.cpp:197
 #, kde-format
 msgid "Full sync finished."
-msgstr "Tam eşitleme tamamlandı."
+msgstr "Tam eşzamanlama bitti."
 
 #: gui/pimdataexporterwindow.cpp:204
 #, kde-format
