@@ -28,15 +28,15 @@ int main(int argc, char *argv[])
                          KAboutLicense::GPL_V2,
                          i18n("Copyright © 2015-%1 pimdataexporter authors", QStringLiteral("2024")));
     aboutData.addAuthor(i18nc("@info:credit", "Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
-    const QCommandLineOption logOption(QStringList() << QStringLiteral("logfile"), i18n("File to log information to."), QStringLiteral("file"));
+    const QCommandLineOption logOption(QStringList() << QStringLiteral("logfile"), i18nc("@info:shell", "File to log information to."), QStringLiteral("file"));
     parser.addOption(logOption);
     const QCommandLineOption templateOption(QStringList() << QStringLiteral("template"),
-                                            i18n("Template file to define what data, settings to import or export."),
+                                            i18nc("@info:shell", "Template file to define what data, settings to import or export."),
                                             QStringLiteral("file"));
     parser.addOption(templateOption);
-    const QCommandLineOption importOption(QStringList() << QStringLiteral("import"), i18n("Import the given file."), QStringLiteral("file"));
+    const QCommandLineOption importOption(QStringList() << QStringLiteral("import"), i18nc("@info:shell", "Import the given file."), QStringLiteral("file"));
     parser.addOption(importOption);
-    const QCommandLineOption exportOption(QStringList() << QStringLiteral("export"), i18n("Export the given file."), QStringLiteral("file"));
+    const QCommandLineOption exportOption(QStringList() << QStringLiteral("export"), i18nc("@info:shell", "Export the given file."), QStringLiteral("file"));
     parser.addOption(exportOption);
 
     aboutData.setupCommandLine(&parser);

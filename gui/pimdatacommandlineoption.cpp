@@ -45,11 +45,12 @@ void PimDataCommandLineOption::createParser(const QApplication &app)
     mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("template"),
                                          i18n("Template file uses to define what data, settings to import or export"),
                                          QStringLiteral("file")));
-    mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("import"), i18n("Import the given file")));
-    mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("export"), i18n("Export the given file")));
-    mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), i18n("File or url. The user will be asked whether to import or export.")));
+    mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("import"), i18nc("@info:shell", "Import the given file")));
+    mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("export"), i18nc("@info:shell", "Export the given file")));
+    mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"),
+                                         i18nc("@info:shell", "File or url. The user will be asked whether to import or export.")));
 #ifdef WITH_KUSERFEEDBACK
-    mParser.addOption(QCommandLineOption(QStringLiteral("feedback"), i18n("Lists the available options for user feedback")));
+    mParser.addOption(QCommandLineOption(QStringLiteral("feedback"), i18nc("@info:shell", "Lists the available options for user feedback")));
 #endif
     mParser.process(app);
     aboutData.processCommandLine(&mParser);
