@@ -65,7 +65,6 @@ find_package(KF6Archive ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6Config ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6CoreAddons ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6Crash ${KF_MIN_VERSION} REQUIRED)
-find_package(KF6DBusAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6ItemViews ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6KIO ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6Notifications ${KF_MIN_VERSION} REQUIRED)
@@ -81,6 +80,9 @@ set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
     TYPE OPTIONAL
 )
 
+if (NOT WIN32 AND NOT APPLE)
+    find_package(KF6DBusAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
+endif()
 
 # Find KdepimLibs Package
 find_package(KPim6Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)

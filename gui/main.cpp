@@ -56,7 +56,9 @@ int main(int argc, char *argv[])
         return 0;
     }
 #endif
+#if HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
+#endif
 
     auto backupMailWin = new PimDataExporterWindow();
     parser.setExportWindow(backupMailWin);

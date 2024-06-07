@@ -7,6 +7,10 @@ if (TARGET KF6::UserFeedbackWidgets)
     add_definitions(-DWITH_KUSERFEEDBACK)
 endif()
 
+if (TARGET KF6::DBusAddons)
+    add_definitions(-DHAVE_KDBUSADDONS)
+endif()
+
 set(pimdataexporter_userfeedback_SRCS)
 if (TARGET KF6::UserFeedbackWidgets)
     target_sources(pimdataexporter PRIVATE
@@ -79,7 +83,6 @@ endif()
 target_link_libraries(pimdataexporter
     PRIVATE
     KF6::XmlGui
-    KF6::DBusAddons
     KPim6::MailCommon
     KPim6::PimCommon
     pimdataexporterprivate
@@ -94,6 +97,10 @@ target_link_libraries(pimdataexporter
     KF6::WidgetsAddons
     KF6::TextCustomEditor
     )
+
+if(TARGET KF6::DBusAddons)
+    target_link_libraries(pimdataexporter PRIVATE KF6::DBusAddons)
+endif()
 
 
 install(TARGETS pimdataexporter ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )

@@ -18,3 +18,7 @@ Dependencies:
     'pim/pimcommon' : '@same'
     'pim/akonadi-notes' : '@same'
     'libraries/ktextaddons': '@latest-kf6'
+
+- 'on': ['Linux', 'FreeBSD']
+  'require':
+    'frameworks/kdbusaddons': '@latest-kf6'
