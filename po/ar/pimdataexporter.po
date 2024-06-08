@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-06 00:39+0000\n"
-"PO-Revision-Date: 2024-06-06 08:55+0400\n"
+"PO-Revision-Date: 2024-05-30 07:08+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -51,25 +50,33 @@ msgid "Maintainer"
 msgstr "المصين"
 
 #: console/main.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "File to log information to."
 msgctxt "@info:shell"
 msgid "File to log information to."
 msgstr "الملفّ لتسجيل المعلومات فيه."
 
 #: console/main.cpp:34
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Template file to define what data, settings to import or export."
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
 msgstr "الملفّ القالب لتعريف ما البيانات والإعدادات التي ستُستورد أو تُصدّر."
 
 #: console/main.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Import the given file."
 msgctxt "@info:shell"
 msgid "Import the given file."
 msgstr "استورد الملفّ المعطى."
 
 #: console/main.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Export the given file."
 msgctxt "@info:shell"
 msgid "Export the given file."
 msgstr "صدّر الملفّ المعطى."
@@ -958,25 +965,33 @@ msgid "Template file uses to define what data, settings to import or export"
 msgstr "يُستخدم الملفّ القالب لتعريف ما البيانات والإعدادات التي ستُستورد أو تُصدّر"
 
 #: gui/pimdatacommandlineoption.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Import the given file"
 msgctxt "@info:shell"
 msgid "Import the given file"
 msgstr "استورد الملفّ المعطى"
 
 #: gui/pimdatacommandlineoption.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Export the given file"
 msgctxt "@info:shell"
 msgid "Export the given file"
 msgstr "صدّر الملفّ المعطى"
 
 #: gui/pimdatacommandlineoption.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "File or url. The user will be asked whether to import or export."
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
 msgstr "الملفّ أو المسار. سيُسأل المستخدم أيّهما يجب استيراده أو تصديره."
 
 #: gui/pimdatacommandlineoption.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:shell"
+#| msgid "Lists the available options for user feedback"
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
 msgstr "يسرد الخيارات المتاحة لمشاركة بياناتك"
