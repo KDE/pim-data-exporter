@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-06 00:39+0000\n"
-"PO-Revision-Date: 2024-05-29 08:59+0200\n"
+"PO-Revision-Date: 2024-06-08 11:37+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -52,15 +52,13 @@ msgid "Maintainer"
 msgstr "Mantedor"
 
 #: console/main.cpp:31
-#, fuzzy, kde-format
-#| msgid "File to log information to."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File to log information to."
 msgstr "Ficheiro para rexistrar información."
 
 #: console/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "Template file to define what data, settings to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
 msgstr ""
@@ -68,15 +66,13 @@ msgstr ""
 "exportar."
 
 #: console/main.cpp:37
-#, fuzzy, kde-format
-#| msgid "Import the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file."
 msgstr "Importar o ficheiro dado."
 
 #: console/main.cpp:39
-#, fuzzy, kde-format
-#| msgid "Export the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file."
 msgstr "Exportar o ficheiro dado."
@@ -946,30 +942,26 @@ msgstr ""
 "importar ou exportar"
 
 #: gui/pimdatacommandlineoption.cpp:48
-#, fuzzy, kde-format
-#| msgid "Import the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
 msgstr "Importar o ficheiro dado"
 
 #: gui/pimdatacommandlineoption.cpp:49
-#, fuzzy, kde-format
-#| msgid "Export the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
 msgstr "Exportar o ficheiro dado"
 
 #: gui/pimdatacommandlineoption.cpp:51
-#, fuzzy, kde-format
-#| msgid "File or url. The user will be asked whether to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
 msgstr ""
 "Ficheiro ou URL. Ao usuario pregúntaselle se desexa importar ou exportar."
 
 #: gui/pimdatacommandlineoption.cpp:53
-#, fuzzy, kde-format
-#| msgid "Lists the available options for user feedback"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
 msgstr "Lista todas as opcións dispoñíbeis de comentarios"

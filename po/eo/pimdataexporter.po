@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-06 00:39+0000\n"
-"PO-Revision-Date: 2024-05-29 22:04+0200\n"
+"PO-Revision-Date: 2024-06-08 10:47+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -52,33 +52,29 @@ msgid "Maintainer"
 msgstr "Prizorganto"
 
 #: console/main.cpp:31
-#, fuzzy, kde-format
-#| msgid "File to log information to."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File to log information to."
-msgstr "Dosiero por ensaluti informojn."
+msgstr "Dosiero al kiu protokoli informojn."
 
 #: console/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "Template file to define what data, settings to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
 msgstr ""
-"Ŝablona dosiero por difini kiajn datumojn, agordojn importi aŭ eksporti."
+"Ŝablona dosiero por difini kiajn datumojn, agordojn enporti aŭ elporti."
 
 #: console/main.cpp:37
-#, fuzzy, kde-format
-#| msgid "Import the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file."
-msgstr "Importi la donitan dosieron."
+msgstr "Enporti la donitan dosieron."
 
 #: console/main.cpp:39
-#, fuzzy, kde-format
-#| msgid "Export the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file."
-msgstr "Eksporti la donitan dosieron."
+msgstr "Elporti la donitan dosieron."
 
 #: core/abstractimportexportjob.cpp:56
 #, kde-format
@@ -942,29 +938,25 @@ msgstr ""
 "Ŝablona dosiero uzas por difini kiajn datumojn, agordojn importi aŭ eksporti"
 
 #: gui/pimdatacommandlineoption.cpp:48
-#, fuzzy, kde-format
-#| msgid "Import the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
-msgstr "Importi la donitan dosieron"
+msgstr "Enporti la donitan dosieron"
 
 #: gui/pimdatacommandlineoption.cpp:49
-#, fuzzy, kde-format
-#| msgid "Export the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
-msgstr "Eksporti la donitan dosieron"
+msgstr "Elporti la donitan dosieron"
 
 #: gui/pimdatacommandlineoption.cpp:51
-#, fuzzy, kde-format
-#| msgid "File or url. The user will be asked whether to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
-msgstr "Dosiero aŭ url. La uzanto estos demandita ĉu importi aŭ eksporti."
+msgstr "Dosiero aŭ URL. La uzanto estos demandita ĉu enporti aŭ elporti."
 
 #: gui/pimdatacommandlineoption.cpp:53
-#, fuzzy, kde-format
-#| msgid "Lists the available options for user feedback"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
 msgstr "Listigas la disponeblajn elekteblojn por uzant-sugestoj"
