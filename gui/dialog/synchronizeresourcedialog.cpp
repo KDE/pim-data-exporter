@@ -43,12 +43,12 @@ SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     listWidgetSearchLine->setObjectName(QLatin1StringView("listwidgetsearchline"));
 
     auto hbox = new QHBoxLayout;
-    auto selectAll = new QPushButton(i18n("Select All"));
+    auto selectAll = new QPushButton(i18nc("@action:button", "Select All"));
     selectAll->setObjectName(QLatin1StringView("selectall_button"));
     connect(selectAll, &QPushButton::clicked, this, &SynchronizeResourceDialog::slotSelectAll);
     hbox->addWidget(selectAll);
 
-    auto unselectAll = new QPushButton(i18n("Unselect All"));
+    auto unselectAll = new QPushButton(i18nc("@action:button", "Unselect All"));
     unselectAll->setObjectName(QLatin1StringView("unselectall_button"));
     connect(unselectAll, &QPushButton::clicked, this, &SynchronizeResourceDialog::slotUnselectAll);
     hbox->addWidget(unselectAll);

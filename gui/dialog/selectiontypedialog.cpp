@@ -25,8 +25,8 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     : QDialog(parent)
     , mSelectionTreeWidget(new SelectionTypeTreeWidget(backupData, this))
     , mUseTemplateByDefault(new QCheckBox(i18n("Use this template by default"), this))
-    , mSaveTemplate(new QPushButton(i18n("Save as Template..."), this))
-    , mLoadTemplate(new QPushButton(i18n("Load Template..."), this))
+    , mSaveTemplate(new QPushButton(i18nc("@action:button", "Save as Template..."), this))
+    , mLoadTemplate(new QPushButton(i18nc("@action:button", "Load Template..."), this))
 {
     setWindowTitle(i18nc("@title:window", "Select Type"));
     setModal(true);
@@ -49,12 +49,12 @@ SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     topLayout->addWidget(mUseTemplateByDefault);
 
     auto hbox = new QHBoxLayout;
-    auto selectAll = new QPushButton(i18n("Select All"), this);
+    auto selectAll = new QPushButton(i18nc("@action:button", "Select All"), this);
     selectAll->setObjectName(QLatin1StringView("selectAll"));
     connect(selectAll, &QPushButton::clicked, this, &SelectionTypeDialog::slotSelectAll);
     hbox->addWidget(selectAll);
 
-    auto unselectAll = new QPushButton(i18n("Unselect All"), this);
+    auto unselectAll = new QPushButton(i18nc("@action:button", "Unselect All"), this);
     unselectAll->setObjectName(QLatin1StringView("unselectAll"));
     connect(unselectAll, &QPushButton::clicked, this, &SelectionTypeDialog::slotUnselectAll);
     hbox->addWidget(unselectAll);

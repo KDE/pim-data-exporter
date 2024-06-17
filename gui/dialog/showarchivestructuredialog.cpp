@@ -37,8 +37,8 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     : QDialog(parent)
     , mFileName(filename)
     , mTreeWidget(new QTreeWidget(this))
-    , mExtractFile(new QPushButton(i18n("Extract Selected File"), this))
-    , mOpenFile(new QPushButton(i18n("Open Selected File"), this))
+    , mExtractFile(new QPushButton(i18nc("@action:button", "Extract Selected File"), this))
+    , mOpenFile(new QPushButton(i18nc("@action:button", "Open Selected File"), this))
 {
     setWindowTitle(i18nc("@title:window", "Show Archive Content on file \"%1\"", filename));
     setModal(true);
