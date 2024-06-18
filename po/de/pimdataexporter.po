@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2023-12-21 17:52+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -737,12 +737,16 @@ msgid "Use this template by default"
 msgstr "Diese Vorlage als Standard verwenden"
 
 #: gui/dialog/selectiontypedialog.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save as Template..."
+msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Als Vorlage speichern ..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load Template..."
+msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Vorlage laden ..."
 
@@ -754,23 +758,31 @@ msgstr "Typ auswählen"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action:button"
 msgid "Select All"
 msgstr "Alles auswählen"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unselect All"
+msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Auswahl aufheben"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Extract Selected File"
+msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "Ausgewählte Datei entpacken"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open Selected File"
+msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "Ausgewählte Datei öffnen"
 

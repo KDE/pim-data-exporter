@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2013-02-16 10:30+0200\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -767,11 +767,13 @@ msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
+msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
+msgctxt "@action:button"
 msgid "Load Template..."
 msgstr ""
 
@@ -784,22 +786,26 @@ msgstr ""
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
+msgctxt "@action:button"
 msgid "Select All"
 msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
+msgctxt "@action:button"
 msgid "Unselect All"
 msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
+msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
 #, kde-format
+msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr ""
 

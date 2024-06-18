@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2022-11-14 07:45+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -739,12 +739,16 @@ msgid "Use this template by default"
 msgstr "Erabili txantiloi hau era lehenetsian"
 
 #: gui/dialog/selectiontypedialog.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save as Template..."
+msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Gorde txantiloi gisa..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load Template..."
+msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Zamatu txantiloia..."
 
@@ -756,23 +760,31 @@ msgstr "Hautatu mota"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action:button"
 msgid "Select All"
 msgstr "Hautatu dena"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unselect All"
+msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Desautatu dena"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Extract Selected File"
+msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "Erauzi hautatutako fitxategia"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open Selected File"
+msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "Ireki hautatutako fitxategia"
 

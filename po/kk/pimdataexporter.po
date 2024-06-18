@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2013-11-08 01:45+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -786,12 +786,14 @@ msgstr ""
 #: gui/dialog/selectiontypedialog.cpp:28
 #, fuzzy, kde-format
 #| msgid "Save log..."
+msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Журналын сақтау..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "Save log..."
+msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Журналын сақтау..."
 
@@ -804,23 +806,29 @@ msgstr "Түрін таңдау"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action:button"
 msgid "Select All"
 msgstr "Бүкілін таңдау"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unselect All"
+msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Бүкіл таңдаудан айну"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
+msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
 #, kde-format
+msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr ""
 

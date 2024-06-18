@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2022-10-11 12:32+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -749,12 +749,16 @@ msgid "Use this template by default"
 msgstr "Использовать этот шаблон по умолчанию"
 
 #: gui/dialog/selectiontypedialog.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save as Template..."
+msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Сохранить как шаблон..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load Template..."
+msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Загрузить шаблон..."
 
@@ -766,23 +770,31 @@ msgstr "Выбор типа данных"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action:button"
 msgid "Select All"
 msgstr "Выбрать все"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unselect All"
+msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Снять все отметки"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Extract Selected File"
+msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "Извлечь выбранный файл"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open Selected File"
+msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "Открыть выбранный файл"
 

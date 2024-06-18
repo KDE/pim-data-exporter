@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2012-12-31 14:00+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -769,11 +769,13 @@ msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
+msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
+msgctxt "@action:button"
 msgid "Load Template..."
 msgstr ""
 
@@ -788,22 +790,27 @@ msgstr "ជ្រើស​ប្រភេទ"
 #: gui/dialog/synchronizeresourcedialog.cpp:46
 #, fuzzy, kde-format
 #| msgid "Select Type"
+msgctxt "@action:button"
 msgid "Select All"
 msgstr "ជ្រើស​ប្រភេទ"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Type"
+msgctxt "@action:button"
 msgid "Unselect All"
-msgstr ""
+msgstr "ជ្រើស​ប្រភេទ"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
+msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
 #, kde-format
+msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr ""
 

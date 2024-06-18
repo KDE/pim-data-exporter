@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2022-06-16 23:56+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -738,12 +738,16 @@ msgid "Use this template by default"
 msgstr "Bu şablonu ilkin şablon kimi istifadə edin"
 
 #: gui/dialog/selectiontypedialog.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save as Template..."
+msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Şablon kimi saxlayın..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Load Template..."
+msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Şablonları yükləyin..."
 
@@ -755,23 +759,31 @@ msgstr "Verilənlərin növünü seçin"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action:button"
 msgid "Select All"
 msgstr "Hamısını seçin"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unselect All"
+msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Bütün seçimləri ləğv edin"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Extract Selected File"
+msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "Seçilmiş faylı ixrac edin"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open Selected File"
+msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "Seçilmiş faylı açın"
 
