@@ -83,44 +83,10 @@
   <summary xml:lang="x-test">xxSaves all data from PIM apps and restore them in other systems.xx</summary>
   <summary xml:lang="zh-CN">保存源自个人信息管理程序的所有数据，并在其他系统上恢复它们。</summary>
   <summary xml:lang="zh-TW">儲存 PIM 應用程式裡的資料並在其他系統中回復它。</summary>
-  <developer_name>Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="ar">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="az">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="bg">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="ca">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="ca-valencia">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="cs">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="da">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="de">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="en-GB">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="eo">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="es">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="et">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="eu">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="fi">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="fr">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="gl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="he">לורנט מונטל &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="hu">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="ia">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="id">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="it">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="ka">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="ko">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="lv">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="nl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="pl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="pt">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="pt-BR">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="ru">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="sk">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="sl">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="sv">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="tr">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="uk">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="x-test">xxLaurent Montel &lt;montel@kde.org&gt;xx</developer_name>
-  <developer_name xml:lang="zh-CN">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
-  <developer_name xml:lang="zh-TW">Laurent Montel &lt;montel@kde.org&gt;</developer_name>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
+  <launchable type="desktop-id">org.kde.pimdataexporter.desktop</launchable>
   <description>
     <p>
 	    PIM Data Exporter exports and imports PIM settings
