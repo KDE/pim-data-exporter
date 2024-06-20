@@ -3,28 +3,28 @@
 
 add_executable(pimdataexporter)
 
-if (TARGET KF6::UserFeedbackWidgets)
+if(TARGET KF6::UserFeedbackWidgets)
     add_definitions(-DWITH_KUSERFEEDBACK)
 endif()
 
-if (TARGET KF6::DBusAddons)
+if(TARGET KF6::DBusAddons)
     add_definitions(-DHAVE_KDBUSADDONS)
 endif()
 
 set(pimdataexporter_userfeedback_SRCS)
-if (TARGET KF6::UserFeedbackWidgets)
+if(TARGET KF6::UserFeedbackWidgets)
     target_sources(pimdataexporter PRIVATE
         userfeedback/userfeedbackmanager.cpp
         userfeedback/pimdataexporteduserfeedbackprovider.cpp
         userfeedback/userfeedbackmanager.h
         userfeedback/pimdataexporteduserfeedbackprovider.h
 
-        )
+)
 endif()
 
-include_directories( 
+include_directories(
     ${pim-data-exporter_SOURCE_DIR}/core/
-    )
+)
 
 
 kconfig_add_kcfg_files(pimdataexporter settings/pimdataexporterglobalconfig.kcfgc)
@@ -65,16 +65,16 @@ target_sources(pimdataexporter PRIVATE
     widgets/logwidget.h
     pimdatabackuprestoreui.h
     importexportprogressindicatorgui.h
-    )
+)
 
 #TODO create lib
 
 ecm_qt_declare_logging_category(pimdataexporter HEADER pimdataexportgui_debug.h IDENTIFIER PIMDATAEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimdataexportergui)
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(pimdataexporter PROPERTIES UNITY_BUILD ON)
 endif()
 
-if (TARGET KF6::UserFeedbackWidgets)
+if(TARGET KF6::UserFeedbackWidgets)
         target_link_libraries(pimdataexporter PRIVATE KF6::UserFeedbackWidgets)
 endif()
 if(TARGET KF6::IconThemes)
@@ -96,14 +96,14 @@ target_link_libraries(pimdataexporter
     ${pimdataexporter_userfeedback_LIB}
     KF6::WidgetsAddons
     KF6::TextCustomEditor
-    )
+)
 
 if(TARGET KF6::DBusAddons)
     target_link_libraries(pimdataexporter PRIVATE KF6::DBusAddons)
 endif()
 
 
-install(TARGETS pimdataexporter ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS pimdataexporter ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(PROGRAMS org.kde.pimdataexporter.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 

@@ -101,16 +101,16 @@ target_sources(pimdataexporterprivate PRIVATE
     mail/importmailfolderattributejobimpl.h
     mail/importmailfolderattributejobimpl.cpp
 
-    )
+)
 
 ecm_qt_declare_logging_category(pimdataexporterprivate HEADER pimdataexportcore_debug.h IDENTIFIER PIMDATAEXPORTERCORE_LOG CATEGORY_NAME org.kde.pim.pimdataexportercore
         DESCRIPTION "pimdataexporter (pimdataexporter lib core)"
         OLD_CATEGORY_NAMES log_pimsettingexportercore org.kde.pim.pimsettingexportercore
         EXPORT PIMDATAEXPORTER
-    )
+)
 
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(pimdataexporterprivate PROPERTIES UNITY_BUILD ON)
 endif()
 
@@ -129,7 +129,7 @@ target_link_libraries(pimdataexporterprivate
     KF6::I18n
     KF6::CalendarCore
     KPim6::AkonadiNotes
-    )
+)
 
 set_target_properties(pimdataexporterprivate PROPERTIES VERSION ${KDEPIM_LIB_VERSION} SOVERSION ${KDEPIM_LIB_SOVERSION})
 
