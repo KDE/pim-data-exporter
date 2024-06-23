@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2024-06-08 12:22+0100\n"
+"PO-Revision-Date: 2024-06-22 13:01+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -729,15 +729,13 @@ msgid "Use this template by default"
 msgstr "Use this template by default"
 
 #: gui/dialog/selectiontypedialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "Save as Template..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Save as Template..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Load Template..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Load Template..."
@@ -750,30 +748,26 @@ msgstr "Select Type"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Select All"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Unselect All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Unselect All"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Extract Selected File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "Extract Selected File"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Open Selected File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "Open Selected File"
