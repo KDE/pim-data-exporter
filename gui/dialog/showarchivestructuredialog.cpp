@@ -48,7 +48,7 @@ ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, 
     mTreeWidget->setAlternatingRowColors(true);
 
     auto searchLine = new KTreeWidgetSearchLine(this, mTreeWidget);
-    searchLine->setPlaceholderText(i18n("Search..."));
+    searchLine->setPlaceholderText(i18nc("@info:placeholder", "Search..."));
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     auto user1Button = new QPushButton(this);
     user1Button->setText(i18n("Save As Text..."));
