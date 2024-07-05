@@ -779,8 +779,7 @@ msgid "Show Archive Content on file \"%1\""
 msgstr "显示文件“%1”上的归档内容"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "搜索..."

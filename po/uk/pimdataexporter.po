@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pimdataexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-18 08:36+0300\n"
+"PO-Revision-Date: 2024-07-04 21:27+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -784,8 +784,7 @@ msgid "Show Archive Content on file \"%1\""
 msgstr "Показ вмісту архіву для файла «%1»"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Шукати…"
