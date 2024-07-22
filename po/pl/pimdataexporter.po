@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-22 08:42+0200\n"
+"PO-Revision-Date: 2024-07-21 12:44+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -783,11 +783,10 @@ msgid "Show Archive Content on file \"%1\""
 msgstr "Pokaż zawartość archiwum dla pliku \"%1\""
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr "Szukaj..."
+msgstr "Poszukaj..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
