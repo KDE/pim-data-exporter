@@ -13,9 +13,9 @@
 
 PimDataExporterConfigureWidget::PimDataExporterConfigureWidget(QWidget *parent)
     : QWidget(parent)
-    , mAlwaysOverrideFile(new QCheckBox(i18n("Always Override File")))
-    , mAlwaysOverrideDirectory(new QCheckBox(i18n("Always Override Directory")))
-    , mAlwaysMergeConfigFile(new QCheckBox(i18n("Always Merge Config File")))
+    , mAlwaysOverrideFile(new QCheckBox(i18nc("@option:check", "Always Override File")))
+    , mAlwaysOverrideDirectory(new QCheckBox(i18nc("@option:check", "Always Override Directory")))
+    , mAlwaysMergeConfigFile(new QCheckBox(i18nc("@option:check", "Always Merge Config File")))
 {
     auto layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);

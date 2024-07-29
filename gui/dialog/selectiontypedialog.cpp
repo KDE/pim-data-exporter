@@ -24,7 +24,7 @@ static const char myConfigSelectionTypeDialogDialog[] = "SelectionTypeDialog";
 SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     : QDialog(parent)
     , mSelectionTreeWidget(new SelectionTypeTreeWidget(backupData, this))
-    , mUseTemplateByDefault(new QCheckBox(i18n("Use this template by default"), this))
+    , mUseTemplateByDefault(new QCheckBox(i18nc("@option:check", "Use this template by default"), this))
     , mSaveTemplate(new QPushButton(i18nc("@action:button", "Save as Template..."), this))
     , mLoadTemplate(new QPushButton(i18nc("@action:button", "Load Template..."), this))
 {
