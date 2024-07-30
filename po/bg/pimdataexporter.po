@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-05 15:53+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -726,7 +726,9 @@ msgid "User Feedback"
 msgstr "Обратна връзка от потребителя"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use this template by default"
+msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Използване на този шаблон по подразбиране"
 
@@ -1129,17 +1131,23 @@ msgid "Pim Data Exporter"
 msgstr "Експортиране на данни на PIM"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Override File"
+msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "Винаги да се презаписват файловете"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Override Directory"
+msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "Винаги да се презаписват директориите"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Merge Config File"
+msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "Винаги да се сливат конфигурационните файлове"
 

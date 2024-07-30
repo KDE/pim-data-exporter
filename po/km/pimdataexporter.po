@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2012-12-31 14:00+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -764,6 +764,7 @@ msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
+msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr ""
 
@@ -1174,16 +1175,19 @@ msgstr "កម្មវិធី​នាំចេញ​ការ​កំណត
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
 #, kde-format
+msgctxt "@option:check"
 msgid "Always Override File"
 msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
 #, kde-format
+msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
 #, kde-format
+msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr ""
 

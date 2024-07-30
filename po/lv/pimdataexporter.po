@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-04-10 17:02+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -734,7 +734,9 @@ msgid "User Feedback"
 msgstr "Lietošanas informācija"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use this template by default"
+msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Pēc noklusējuma lietot šo veidni"
 
@@ -1147,17 +1149,23 @@ msgid "Pim Data Exporter"
 msgstr "PIM datu eksportētājs"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Override File"
+msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "Vienmēr pārrakstīt datni"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Override Directory"
+msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "Vienmēr pārrakstīt mapi"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Merge Config File"
+msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "Vienmēr apvienot konfigurācijas datni"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-28 12:22+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -751,7 +751,9 @@ msgid "User Feedback"
 msgstr "مشاركة بياناتك"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use this template by default"
+msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "استخدم هذا القالب مبدئيًّا"
 
@@ -1145,18 +1147,24 @@ msgstr "مصدّر بيانات PIM"
 
 # هي overright في الكود!
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Override File"
+msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "اكتب فوق الملفّ دائمًا"
 
 # هي overright في الكود!
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Override Directory"
+msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "اكتب فوق الدّليل دائمًا"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Merge Config File"
+msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "ادمج ملفّ الضّبط دائمًا"
 

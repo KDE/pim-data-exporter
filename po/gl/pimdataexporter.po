@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-04 14:43+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -732,7 +732,9 @@ msgid "User Feedback"
 msgstr "Comentarios"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use this template by default"
+msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Usar este modelo de maneira predeterminada."
 
@@ -1133,17 +1135,23 @@ msgid "Pim Data Exporter"
 msgstr "Exportador de datos de PIM"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Override File"
+msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "Substituír sempre o ficheiro"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Override Directory"
+msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "Substituír sempre o directorio"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Always Merge Config File"
+msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "Mesturar sempre o ficheiro de configuración"
 

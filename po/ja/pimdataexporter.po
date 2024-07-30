@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2012-04-22 21:56-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -722,6 +722,7 @@ msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
+msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr ""
 
@@ -1110,16 +1111,19 @@ msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
 #, kde-format
+msgctxt "@option:check"
 msgid "Always Override File"
 msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
 #, kde-format
+msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
 #, kde-format
+msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr ""
 

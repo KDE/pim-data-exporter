@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2013-01-14 23:29+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -768,6 +768,7 @@ msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
+msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr ""
 
@@ -1180,16 +1181,19 @@ msgstr "PIM Setting Exporter"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
 #, kde-format
+msgctxt "@option:check"
 msgid "Always Override File"
 msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
 #, kde-format
+msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr ""
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
 #, kde-format
+msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr ""
 
