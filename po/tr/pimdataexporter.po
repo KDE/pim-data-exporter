@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-04 13:59+0300\n"
+"PO-Revision-Date: 2024-07-30 19:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -729,8 +729,7 @@ msgid "User Feedback"
 msgstr "Kullanıcı Geri Bildirimi"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Use this template by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Öntanımlı olarak bu şablonu kullan"
@@ -1132,25 +1131,22 @@ msgid "Pim Data Exporter"
 msgstr "PIM Verisi Dışa Aktarıcısı"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Always Override File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
-msgstr "Her Zaman Dosyanın Üzerine Yaz"
+msgstr "Her zaman dosyayı geçersiz kıl"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Always Override Directory"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
-msgstr "Her Zaman Dizinin Üzerine Yaz"
+msgstr "Her zaman dizini geçersiz kıl"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Always Merge Config File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
-msgstr "Her Zaman Yapılandırma Dosyasını Birleştir"
+msgstr "Her zaman yapılandırma dosyasını birleştir"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:23
 #, kde-format

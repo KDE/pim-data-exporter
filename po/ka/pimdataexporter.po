@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-04 05:57+0200\n"
+"PO-Revision-Date: 2024-07-30 06:27+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -725,11 +725,10 @@ msgid "User Feedback"
 msgstr "მომხარებლის უკუკავშირი"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Use this template by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
-msgstr "ამ შაბლონის ნაგულისხმებად გამოყენება"
+msgstr "ამ შაბლონის ნაგულისხმევად გამოყენება"
 
 #: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
@@ -1124,22 +1123,19 @@ msgid "Pim Data Exporter"
 msgstr "PIM მონაცემების გატანა"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Always Override File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "ფაილი ყოველთვის გადაიფარება"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Always Override Directory"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "საქაღალდე ყოველთვის გადაიფარება"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Always Merge Config File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "კონფიგურაციის ფაილი ყოველთვის შეირწყმება"

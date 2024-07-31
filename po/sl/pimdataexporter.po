@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-04 10:41+0200\n"
+"PO-Revision-Date: 2024-07-30 10:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -733,8 +733,7 @@ msgid "User Feedback"
 msgstr "Povratni odziv uporabnika"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Use this template by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Privzeto uporabi to predlogo"
@@ -1133,25 +1132,22 @@ msgid "Pim Data Exporter"
 msgstr "Izvoznik nastavitev upravljanja osebnih podatkov"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Always Override File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "Vedno prepiši datoteko"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Always Override Directory"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
-msgstr "Vedno prepiši mapo"
+msgstr "Vedno prepiši imenik"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Always Merge Config File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
-msgstr "Vedno združi nastavitveno datoteko"
+msgstr "Vedno združi konfiguracijsko datoteko"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:23
 #, kde-format
