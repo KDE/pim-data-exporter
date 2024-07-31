@@ -24,7 +24,7 @@ bool PimDataBackupRestoreUI::continueToRestore()
         KMessageBox::questionTwoActions(mParentWidget,
                                         i18n("The archive was created by a newer version of this program. It might contain additional data which "
                                              "will be skipped during import. Do you want to import it?"),
-                                        i18n("Not correct version"),
+                                        i18nc("@title:window", "Not correct version"),
                                         KGuiItem(i18nc("@action:button", "Import"), QStringLiteral("document-import")),
                                         KStandardGuiItem::cancel());
     if (answer == KMessageBox::ButtonCode::SecondaryAction) {

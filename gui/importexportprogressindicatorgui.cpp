@@ -64,7 +64,7 @@ int ImportExportProgressIndicatorGui::mergeConfigMessageBox(const QString &confi
     }
     return KMessageBox::warningTwoActionsCancel(mParentWidget,
                                                 i18n("\"%1\" already exists. Do you want to overwrite it or merge it?", configName),
-                                                i18n("Restore"),
+                                                i18nc("@title:window", "Restore"),
                                                 KStandardGuiItem::overwrite(),
                                                 KGuiItem(i18nc("@action:button", "Merge")));
 }
@@ -76,7 +76,7 @@ bool ImportExportProgressIndicatorGui::overwriteConfigMessageBox(const QString &
     }
     const int answer = KMessageBox::warningTwoActions(mParentWidget,
                                                       i18n("\"%1\" already exists. Do you want to overwrite it?", configName),
-                                                      i18n("Restore"),
+                                                      i18nc("@title:window", "Restore"),
                                                       KStandardGuiItem::overwrite(),
                                                       KStandardGuiItem::cancel());
     return (answer == KMessageBox::ButtonCode::PrimaryAction);
@@ -89,7 +89,7 @@ bool ImportExportProgressIndicatorGui::overwriteDirectoryMessageBox(const QStrin
     }
     const int answer = KMessageBox::warningTwoActions(mParentWidget,
                                                       i18n("Directory \"%1\" already exists. Do you want to overwrite it?", directory),
-                                                      i18n("Restore"),
+                                                      i18nc("@title:window", "Restore"),
                                                       KStandardGuiItem::overwrite(),
                                                       KStandardGuiItem::cancel());
     return (answer == KMessageBox::ButtonCode::PrimaryAction);

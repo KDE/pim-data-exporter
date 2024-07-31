@@ -131,14 +131,14 @@ void ShowArchiveStructureDialog::slotExtractFile()
             if (currentEntry && currentEntry->isFile()) {
                 const auto currentFile = static_cast<const KArchiveFile *>(currentEntry);
                 const QString dir = QFileDialog::getExistingDirectory(this,
-                                                                      i18n("Select Directory"),
+                                                                      i18nc("@title:window", "Select Directory"),
                                                                       QDir::homePath(),
                                                                       QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
                 if (!dir.isEmpty()) {
                     if (QFile(dir + QLatin1Char('/') + currentFile->name()).exists()) {
                         if (KMessageBox::questionTwoActions(this,
                                                             i18n("Do you want to overwrite %1?", currentFile->name()),
-                                                            i18n("File Already Exist"),
+                                                            i18nc("@title:window", "File Already Exist"),
                                                             KStandardGuiItem::overwrite(),
                                                             KStandardGuiItem::cancel())
                             == KMessageBox::ButtonCode::SecondaryAction) {
@@ -180,7 +180,7 @@ bool ShowArchiveStructureDialog::fillTree()
     mZip = new KZip(mFileName);
     bool result = mZip->open(QIODevice::ReadOnly);
     if (!result) {
-        KMessageBox::error(this, i18n("Archive cannot be opened in read mode."), i18n("Cannot open archive"));
+        KMessageBox::error(this, i18n("Archive cannot be opened in read mode."), i18nc("@title:window", "Cannot open archive"));
         delete mZip;
         mZip = nullptr;
         return false;
@@ -188,7 +188,7 @@ bool ShowArchiveStructureDialog::fillTree()
     const KArchiveDirectory *topDirectory = mZip->directory();
     const bool isAValidArchive = searchArchiveElement(Utils::infoPath(), topDirectory, i18n("Info"));
     if (!isAValidArchive) {
-        KMessageBox::error(this, i18n("This is not pim archive."), i18n("Show information"));
+        KMessageBox::error(this, i18n("This is not pim archive."), i18nc("@title:window", "Show information"));
         result = false;
     } else {
         (void)searchArchiveElement(Utils::mailsPath(), topDirectory, Utils::appTypeToI18n(Utils::KMail));

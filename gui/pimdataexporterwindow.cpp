@@ -214,7 +214,7 @@ void PimDataExporterWindow::showFinishInformation()
     KMessageBox::information(this,
                              i18n("For restoring data, you must use \"pimdataexporter\". "
                                   "Be careful as it can overwrite your existing settings and data."),
-                             i18n("Backup"),
+                             i18nc("@title:window", "Backup"),
                              QStringLiteral("setProgressDialogLabelBackupInfos"));
     mTrayIcon->setStatus(KStatusNotifierItem::Passive);
 }
@@ -298,7 +298,8 @@ void PimDataExporterWindow::slotRestoreFile(const QUrl &url)
 
 void PimDataExporterWindow::slotShowArchiveInformations()
 {
-    const QString filename = QFileDialog::getOpenFileName(this, i18n("Select Archive"), QString(), QStringLiteral("%1 (*.zip)").arg(i18n("Zip file")));
+    const QString filename =
+        QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select Archive"), QString(), QStringLiteral("%1 (*.zip)").arg(i18n("Zip file")));
     if (filename.isEmpty()) {
         return;
     }
@@ -310,7 +311,7 @@ void PimDataExporterWindow::slotShowArchiveInformations()
 void PimDataExporterWindow::slotSaveLog()
 {
     if (mLogWidget->isEmpty()) {
-        KMessageBox::information(this, i18n("Log is empty."), i18n("Save log"));
+        KMessageBox::information(this, i18n("Log is empty."), i18nc("@title:window", "Save log"));
         return;
     }
     const QString log = mLogWidget->toHtml();
@@ -320,7 +321,7 @@ void PimDataExporterWindow::slotSaveLog()
 
 void PimDataExporterWindow::slotBackupData()
 {
-    if (KMessageBox::warningContinueCancel(this, i18n("Please quit all kdepim applications before backing up your data."), i18n("Backup"))
+    if (KMessageBox::warningContinueCancel(this, i18n("Please quit all kdepim applications before backing up your data."), i18nc("@title:window", "Backup"))
         == KMessageBox::Cancel) {
         return;
     }
@@ -398,7 +399,7 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
 {
     const int answer = KMessageBox::warningTwoActions(this,
                                                       i18n("Before restoring data you must close all kdepim applications. Do you want to continue?"),
-                                                      i18n("Backup"),
+                                                      i18nc("@title:window", "Backup"),
                                                       KStandardGuiItem::cont(),
                                                       KStandardGuiItem::cancel());
     if (answer == KMessageBox::ButtonCode::SecondaryAction) {
