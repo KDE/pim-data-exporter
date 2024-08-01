@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-11 12:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -796,7 +796,9 @@ msgid "Save As Text..."
 msgstr "Gorde testu gisa..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Directory"
+msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Hautatu direktorioa"
 
@@ -806,7 +808,9 @@ msgid "Do you want to overwrite %1?"
 msgstr "%1 gainidatzi nahi duzu?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File Already Exist"
+msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Fitxategia dagoeneko existitzen da"
 
@@ -828,7 +832,9 @@ msgid "Export Log File"
 msgstr "Esportatu egunkari fitxategia"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot open archive"
+msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Ezin da artxiboa ireki"
 
@@ -843,7 +849,9 @@ msgid "This is not pim archive."
 msgstr "Hau ez da PIM artxiboa."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show information"
+msgctxt "@title:window"
 msgid "Show information"
 msgstr "Erakutsi informazioa"
 
@@ -878,7 +886,9 @@ msgstr ""
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Restore"
+msgctxt "@title:window"
 msgid "Restore"
 msgstr "Leheneratu"
 
@@ -920,7 +930,9 @@ msgstr ""
 "ezikusi egingo litzaiekeen datu osagarriak izan litzake. Inportatu nahi duzu?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Not correct version"
+msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Ez da bertsio zuzena"
 
@@ -1021,9 +1033,11 @@ msgstr ""
 "Datuak leheneratzeko, \"pimdataexporter\" erabili behar duzu. Kontuz ibili, "
 "zure ezarpenak eta datuak gainidatz baititzake."
 
-#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:323
-#: gui/pimdataexporterwindow.cpp:401
-#, kde-format
+#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
+#: gui/pimdataexporterwindow.cpp:402
+#, fuzzy, kde-format
+#| msgid "Backup"
+msgctxt "@title:window"
 msgid "Backup"
 msgstr "Babeskopia"
 
@@ -1057,54 +1071,58 @@ msgstr "Erakutsi artxiboaren informazioa..."
 msgid "Show Information on current Archive..."
 msgstr "Erakutsi uneko artxiboari buruzko informazioa..."
 
-#: gui/pimdataexporterwindow.cpp:301
-#, kde-format
+#: gui/pimdataexporterwindow.cpp:302
+#, fuzzy, kde-format
+#| msgid "Select Archive"
+msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Hautatu artxiboa"
 
-#: gui/pimdataexporterwindow.cpp:301
+#: gui/pimdataexporterwindow.cpp:302
 #, kde-format
 msgid "Zip file"
 msgstr "Zip fitxategia"
 
-#: gui/pimdataexporterwindow.cpp:313
+#: gui/pimdataexporterwindow.cpp:314
 #, kde-format
 msgid "Log is empty."
 msgstr "Egunkaria hutsik dago."
 
-#: gui/pimdataexporterwindow.cpp:313
-#, kde-format
+#: gui/pimdataexporterwindow.cpp:314
+#, fuzzy, kde-format
+#| msgid "Save log"
+msgctxt "@title:window"
 msgid "Save log"
 msgstr "Gorde egunkaria"
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML fitxategiak (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:323
+#: gui/pimdataexporterwindow.cpp:324
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Mesedez, irten KDE PIM aplikazio guztietatik zure datuen babeskopia egin "
 "aurretik."
 
-#: gui/pimdataexporterwindow.cpp:346
+#: gui/pimdataexporterwindow.cpp:347
 #, kde-format
 msgid "Create backup"
 msgstr "Sortu babeskopia"
 
-#: gui/pimdataexporterwindow.cpp:348
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip fitxategia (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:358
+#: gui/pimdataexporterwindow.cpp:359
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Babeskopia martxan..."
 
-#: gui/pimdataexporterwindow.cpp:400
+#: gui/pimdataexporterwindow.cpp:401
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1113,17 +1131,17 @@ msgstr ""
 "Datuak leheneratu aurretik KDE PIM aplikazio guztiak itxi behar dituzu. "
 "Jarraitu nahi duzu?"
 
-#: gui/pimdataexporterwindow.cpp:414
+#: gui/pimdataexporterwindow.cpp:415
 #, kde-format
 msgid "Restore backup"
 msgstr "Leheneratu babeskopia"
 
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Zip File"
 msgstr "Zip fitxategia"
 
-#: gui/pimdataexporterwindow.cpp:448
+#: gui/pimdataexporterwindow.cpp:449
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Leheneratzea martxan..."

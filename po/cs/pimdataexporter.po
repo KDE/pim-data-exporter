@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-06-18 16:10+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -794,7 +794,9 @@ msgid "Save As Text..."
 msgstr "Uložit jako text..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Directory"
+msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Vyberte adresář"
 
@@ -804,7 +806,9 @@ msgid "Do you want to overwrite %1?"
 msgstr "Přejete si přepsat %1?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File Already Exist"
+msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Soubor již existuje"
 
@@ -826,7 +830,9 @@ msgid "Export Log File"
 msgstr "Exportovat soubor záznamu"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot open archive"
+msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Archiv nelze otevřít"
 
@@ -841,7 +847,9 @@ msgid "This is not pim archive."
 msgstr "Toto není archiv pim."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show information"
+msgctxt "@title:window"
 msgid "Show information"
 msgstr "Zobrazit Informace"
 
@@ -873,7 +881,9 @@ msgstr "%1 již existuje. Přejte si jej přepsat, nebo sloučit?"
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Restore"
+msgctxt "@title:window"
 msgid "Restore"
 msgstr "Obnovit"
 
@@ -915,7 +925,9 @@ msgstr ""
 "která budou během importu přeskočena. Chcete jej importovat?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Not correct version"
+msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Nesprávná verze"
 
@@ -1014,9 +1026,11 @@ msgstr ""
 "Pro obnovení dat musíte použít \"pimdataexporter\". Opatrně protože může "
 "přepsat vaše nastavení a data."
 
-#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:323
-#: gui/pimdataexporterwindow.cpp:401
-#, kde-format
+#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
+#: gui/pimdataexporterwindow.cpp:402
+#, fuzzy, kde-format
+#| msgid "Backup"
+msgctxt "@title:window"
 msgid "Backup"
 msgstr "Záloha"
 
@@ -1050,52 +1064,56 @@ msgstr "Zobrazit informaci o archivu..."
 msgid "Show Information on current Archive..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:301
-#, kde-format
+#: gui/pimdataexporterwindow.cpp:302
+#, fuzzy, kde-format
+#| msgid "Select Archive"
+msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Vyberte archiv"
 
-#: gui/pimdataexporterwindow.cpp:301
+#: gui/pimdataexporterwindow.cpp:302
 #, kde-format
 msgid "Zip file"
 msgstr "Soubor zip"
 
-#: gui/pimdataexporterwindow.cpp:313
+#: gui/pimdataexporterwindow.cpp:314
 #, kde-format
 msgid "Log is empty."
 msgstr "Záznam je prázdný."
 
-#: gui/pimdataexporterwindow.cpp:313
-#, kde-format
+#: gui/pimdataexporterwindow.cpp:314
+#, fuzzy, kde-format
+#| msgid "Save log"
+msgctxt "@title:window"
 msgid "Save log"
 msgstr "Uložit záznam"
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "Soubory HTML (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:323
+#: gui/pimdataexporterwindow.cpp:324
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:346
+#: gui/pimdataexporterwindow.cpp:347
 #, kde-format
 msgid "Create backup"
 msgstr "Vytvořit zálohu"
 
-#: gui/pimdataexporterwindow.cpp:348
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Soubor zip (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:358
+#: gui/pimdataexporterwindow.cpp:359
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Probíhá zálohování..."
 
-#: gui/pimdataexporterwindow.cpp:400
+#: gui/pimdataexporterwindow.cpp:401
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1103,17 +1121,17 @@ msgid ""
 msgstr ""
 "Před obnovením dat ukončete všechny aplikace kdepim. Přejete si pokračovat?"
 
-#: gui/pimdataexporterwindow.cpp:414
+#: gui/pimdataexporterwindow.cpp:415
 #, kde-format
 msgid "Restore backup"
 msgstr "Obnovit ze zálohy"
 
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Zip File"
 msgstr "Soubor zip"
 
-#: gui/pimdataexporterwindow.cpp:448
+#: gui/pimdataexporterwindow.cpp:449
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Probíhá obnovení..."

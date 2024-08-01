@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2018-01-06 09:21+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -858,6 +858,7 @@ msgstr "Сачувај као текст..."
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, fuzzy, kde-format
 #| msgid "Select Archive"
+msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Избор архиве"
 
@@ -869,6 +870,7 @@ msgstr "„%1“ већ постоји. Желите ли да се пребри
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
 #, kde-format
+msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr ""
 
@@ -892,7 +894,9 @@ msgid "Export Log File"
 msgstr "Извоз дневничког фајла"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot open archive"
+msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Не могу да отворим архиву"
 
@@ -909,7 +913,9 @@ msgstr "Ово није архива КДЕ‑ПИМ‑а."
 
 # >> @title:window
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show information"
+msgctxt "@title:window"
 msgid "Show information"
 msgstr "Приказ података"
 
@@ -949,7 +955,9 @@ msgstr "„%1“ већ постоји. Желите ли да се пребри
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Restore"
+msgctxt "@title:window"
 msgid "Restore"
 msgstr "Враћање"
 
@@ -994,7 +1002,9 @@ msgstr ""
 "податке који ће бити прескочени при увозу. Желите ли да је увезете?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Not correct version"
+msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Неисправно издање"
 
@@ -1101,9 +1111,11 @@ msgstr ""
 "постојеће поставке и податке."
 
 # >> @title:window
-#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:323
-#: gui/pimdataexporterwindow.cpp:401
-#, kde-format
+#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
+#: gui/pimdataexporterwindow.cpp:402
+#, fuzzy, kde-format
+#| msgid "Backup"
+msgctxt "@title:window"
 msgid "Backup"
 msgstr "Прављење резерве"
 
@@ -1138,57 +1150,61 @@ msgid "Show Information on current Archive..."
 msgstr "Прикажи податке о текућој архиви..."
 
 # >> @title:window
-#: gui/pimdataexporterwindow.cpp:301
-#, kde-format
+#: gui/pimdataexporterwindow.cpp:302
+#, fuzzy, kde-format
+#| msgid "Select Archive"
+msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Избор архиве"
 
 # >> @item
-#: gui/pimdataexporterwindow.cpp:301
+#: gui/pimdataexporterwindow.cpp:302
 #, kde-format
 msgid "Zip file"
 msgstr "ЗИП фајл"
 
-#: gui/pimdataexporterwindow.cpp:313
+#: gui/pimdataexporterwindow.cpp:314
 #, kde-format
 msgid "Log is empty."
 msgstr "Дневник је празан."
 
 # >> @title:window
-#: gui/pimdataexporterwindow.cpp:313
-#, kde-format
+#: gui/pimdataexporterwindow.cpp:314
+#, fuzzy, kde-format
+#| msgid "Save log"
+msgctxt "@title:window"
 msgid "Save log"
 msgstr "Уписивање дневника"
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "ХТМЛ фајлови (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:323
+#: gui/pimdataexporterwindow.cpp:324
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "Напустите све програме КДЕ‑ПИМ‑а пре прављења резерве података."
 
 # >> @title:window
-#: gui/pimdataexporterwindow.cpp:346
+#: gui/pimdataexporterwindow.cpp:347
 #, kde-format
 msgid "Create backup"
 msgstr "Прављење резерве"
 
 # >> @item
-#: gui/pimdataexporterwindow.cpp:348
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "ЗИП фајл (*.zip)"
 
 # >> @info:progress
-#: gui/pimdataexporterwindow.cpp:358
+#: gui/pimdataexporterwindow.cpp:359
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Прављење резерве у току..."
 
-#: gui/pimdataexporterwindow.cpp:400
+#: gui/pimdataexporterwindow.cpp:401
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1198,19 +1214,19 @@ msgstr ""
 "да наставите?"
 
 # >> @title:window
-#: gui/pimdataexporterwindow.cpp:414
+#: gui/pimdataexporterwindow.cpp:415
 #, kde-format
 msgid "Restore backup"
 msgstr "Враћање резерве"
 
 # >> @item
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Zip File"
 msgstr "ЗИП фајл"
 
 # >> @info:progress
-#: gui/pimdataexporterwindow.cpp:448
+#: gui/pimdataexporterwindow.cpp:449
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Враћање у току..."

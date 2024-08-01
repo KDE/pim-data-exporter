@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2023-11-07 21:27+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -792,6 +792,7 @@ msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
+msgctxt "@title:window"
 msgid "Select Directory"
 msgstr ""
 
@@ -802,6 +803,7 @@ msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
 #, kde-format
+msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr ""
 
@@ -824,6 +826,7 @@ msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
+msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr ""
 
@@ -839,6 +842,7 @@ msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
+msgctxt "@title:window"
 msgid "Show information"
 msgstr ""
 
@@ -871,6 +875,7 @@ msgstr ""
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
 #, kde-format
+msgctxt "@title:window"
 msgid "Restore"
 msgstr ""
 
@@ -911,6 +916,7 @@ msgstr ""
 
 #: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
+msgctxt "@title:window"
 msgid "Not correct version"
 msgstr ""
 
@@ -1004,9 +1010,10 @@ msgid ""
 "overwrite your existing settings and data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:323
-#: gui/pimdataexporterwindow.cpp:401
+#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
+#: gui/pimdataexporterwindow.cpp:402
 #, kde-format
+msgctxt "@title:window"
 msgid "Backup"
 msgstr ""
 
@@ -1040,69 +1047,71 @@ msgstr ""
 msgid "Show Information on current Archive..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:301
+#: gui/pimdataexporterwindow.cpp:302
 #, kde-format
+msgctxt "@title:window"
 msgid "Select Archive"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:301
+#: gui/pimdataexporterwindow.cpp:302
 #, kde-format
 msgid "Zip file"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:313
+#: gui/pimdataexporterwindow.cpp:314
 #, kde-format
 msgid "Log is empty."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:313
+#: gui/pimdataexporterwindow.cpp:314
 #, kde-format
+msgctxt "@title:window"
 msgid "Save log"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:323
+#: gui/pimdataexporterwindow.cpp:324
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:346
+#: gui/pimdataexporterwindow.cpp:347
 #, kde-format
 msgid "Create backup"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:348
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:358
+#: gui/pimdataexporterwindow.cpp:359
 #, kde-format
 msgid "Backup in progress..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:400
+#: gui/pimdataexporterwindow.cpp:401
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:414
+#: gui/pimdataexporterwindow.cpp:415
 #, kde-format
 msgid "Restore backup"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Zip File"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:448
+#: gui/pimdataexporterwindow.cpp:449
 #, kde-format
 msgid "Restore in progress..."
 msgstr ""

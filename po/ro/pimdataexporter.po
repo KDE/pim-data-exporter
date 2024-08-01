@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2013-02-16 10:30+0200\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -829,6 +829,7 @@ msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
+msgctxt "@title:window"
 msgid "Select Directory"
 msgstr ""
 
@@ -840,6 +841,7 @@ msgstr "„%1” există deja. Doriți să-l suprascrieți?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
 #, kde-format
+msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr ""
 
@@ -862,6 +864,7 @@ msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
+msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr ""
 
@@ -877,6 +880,7 @@ msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
+msgctxt "@title:window"
 msgid "Show information"
 msgstr ""
 
@@ -910,6 +914,7 @@ msgstr ""
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Restore"
 msgstr "Restabilește"
 
@@ -953,6 +958,7 @@ msgstr ""
 
 #: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
+msgctxt "@title:window"
 msgid "Not correct version"
 msgstr ""
 
@@ -1048,9 +1054,11 @@ msgid ""
 "overwrite your existing settings and data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:323
-#: gui/pimdataexporterwindow.cpp:401
-#, kde-format
+#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
+#: gui/pimdataexporterwindow.cpp:402
+#, fuzzy, kde-format
+#| msgid "Backup"
+msgctxt "@title:window"
 msgid "Backup"
 msgstr "Copie de siguranță"
 
@@ -1086,53 +1094,55 @@ msgstr ""
 msgid "Show Information on current Archive..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:301
+#: gui/pimdataexporterwindow.cpp:302
 #, kde-format
+msgctxt "@title:window"
 msgid "Select Archive"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:301
+#: gui/pimdataexporterwindow.cpp:302
 #, kde-format
 msgid "Zip file"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:313
+#: gui/pimdataexporterwindow.cpp:314
 #, kde-format
 msgid "Log is empty."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:313
+#: gui/pimdataexporterwindow.cpp:314
 #, kde-format
+msgctxt "@title:window"
 msgid "Save log"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:323
+#: gui/pimdataexporterwindow.cpp:324
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:346
+#: gui/pimdataexporterwindow.cpp:347
 #, kde-format
 msgid "Create backup"
 msgstr "Creează copie"
 
-#: gui/pimdataexporterwindow.cpp:348
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:358
+#: gui/pimdataexporterwindow.cpp:359
 #, fuzzy, kde-format
 #| msgid "Backing up resources..."
 msgid "Backup in progress..."
 msgstr "Se copiază resursele..."
 
-#: gui/pimdataexporterwindow.cpp:400
+#: gui/pimdataexporterwindow.cpp:401
 #, fuzzy, kde-format
 #| msgid ""
 #| "Before to restore data, close all kdepim applications. Do you want to "
@@ -1144,17 +1154,17 @@ msgstr ""
 "Înainte de a restabili datele, închideți toate aplicațiile kdepim. Doriți să "
 "continuați?"
 
-#: gui/pimdataexporterwindow.cpp:414
+#: gui/pimdataexporterwindow.cpp:415
 #, kde-format
 msgid "Restore backup"
 msgstr "Restabilește rezerva"
 
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Zip File"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:448
+#: gui/pimdataexporterwindow.cpp:449
 #, fuzzy, kde-format
 #| msgid "Restore Data..."
 msgid "Restore in progress..."
