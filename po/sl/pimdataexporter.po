@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 10:14+0200\n"
+"PO-Revision-Date: 2024-08-01 06:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -800,11 +800,10 @@ msgid "Save As Text..."
 msgstr "Shrani kot besedilo..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
-msgstr "Izberi direktorij"
+msgstr "Izberi imenik"
 
 #: gui/dialog/showarchivestructuredialog.cpp:140
 #, kde-format
@@ -812,8 +811,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "Ali želite prepisati %1?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Datoteka že obstaja"
@@ -836,8 +834,7 @@ msgid "Export Log File"
 msgstr "Izvozi datoteko dnevnika"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Ni mogoče odpreti arhiva"
@@ -853,8 +850,7 @@ msgid "This is not pim archive."
 msgstr "To ni arhiv osebnih podatkov."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Pokaži informacije"
@@ -889,8 +885,7 @@ msgstr "\"%1\" že obstaja. Ali jo želite prepisati ali združiti?"
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Obnovi"
@@ -933,8 +928,7 @@ msgstr ""
 "podatke, ki bodo preskočeni med uvažanjem. Ali ga želite uvoziti?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Ni pravilna različica"
@@ -1035,11 +1029,10 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
-msgstr "Varnostno kopiraj"
+msgstr "Varnostna kopija"
 
 #: gui/pimdataexporterwindow.cpp:244
 #, kde-format
@@ -1072,8 +1065,7 @@ msgid "Show Information on current Archive..."
 msgstr "Pokaži podrobnosti o trenutnem arhivu..."
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Izberi arhiv"
@@ -1089,8 +1081,7 @@ msgid "Log is empty."
 msgstr "Dnevnik je prazen."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Shrani dnevnik"

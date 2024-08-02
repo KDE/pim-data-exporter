@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 13:44+0200\n"
+"PO-Revision-Date: 2024-08-01 12:55+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -800,8 +800,7 @@ msgid "Save As Text..."
 msgstr "Als tekst opslaan..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Map selecteren"
@@ -812,8 +811,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "Wilt u %1 overschrijven?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Bestand bestaat al"
@@ -836,8 +834,7 @@ msgid "Export Log File"
 msgstr "Logbestand exporteren"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Kan het archief niet openen"
@@ -853,8 +850,7 @@ msgid "This is not pim archive."
 msgstr "Dit is geen archief van pim."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Informatie tonen"
@@ -889,11 +885,10 @@ msgstr "\"%1\" bestaat al. Wilt u deze overschrijven?"
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
-msgstr "Terugzetten"
+msgstr "Herstellen"
 
 #: gui/importexportprogressindicatorgui.cpp:69
 #, kde-format
@@ -934,8 +929,7 @@ msgstr ""
 "importeren?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Geen juiste versie"
@@ -1038,11 +1032,10 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
-msgstr "Reservekopie maken"
+msgstr "Reservekopie"
 
 #: gui/pimdataexporterwindow.cpp:244
 #, kde-format
@@ -1075,8 +1068,7 @@ msgid "Show Information on current Archive..."
 msgstr "Informatie tonen van het huidige archief..."
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Archief selecteren"
@@ -1092,8 +1084,7 @@ msgid "Log is empty."
 msgstr "Log is leeg."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Log opslaan"

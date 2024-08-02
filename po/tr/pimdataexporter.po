@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 19:05+0300\n"
+"PO-Revision-Date: 2024-08-01 13:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.11.70\n"
 "X-POOTLE-MTIME: 1413102216.000000\n"
 
 #, kde-format
@@ -796,8 +796,7 @@ msgid "Save As Text..."
 msgstr "Metin Olarak Kaydet…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Dizin Seç"
@@ -808,8 +807,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "%1 üzerine yazmak istiyor musunuz?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Dosya Halihazırda Var"
@@ -832,11 +830,10 @@ msgid "Export Log File"
 msgstr "Günlük Dosyasını Dışa Aktar"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
-msgstr "Arşiv açılamıyor"
+msgstr "Arşiv Açılamıyor"
 
 #: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
@@ -849,11 +846,10 @@ msgid "This is not pim archive."
 msgstr "Bu bir pim arşivi değil."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
-msgstr "Bilgi göster"
+msgstr "Bilgi Göster"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:29
 #, kde-format
@@ -886,8 +882,7 @@ msgstr ""
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Geri Yükle"
@@ -930,11 +925,10 @@ msgstr ""
 "atlanacak ek veriler içerebilir. İçe aktarmak istiyor musunuz?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
-msgstr "Doğru sürüm değil"
+msgstr "Doğru Sürüm Değil"
 
 #: gui/pimdatabackuprestoreui.cpp:28
 #, kde-format
@@ -1033,8 +1027,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Yedekle"
@@ -1070,8 +1063,7 @@ msgid "Show Information on current Archive..."
 msgstr "Geçerli Arşiv için Bilgi Göster…"
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Arşiv Seç"
@@ -1087,8 +1079,7 @@ msgid "Log is empty."
 msgstr "Günlük boş."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Günlüğü kaydet"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 10:00+0300\n"
+"PO-Revision-Date: 2024-08-01 08:32+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -792,8 +792,7 @@ msgid "Save As Text..."
 msgstr "שמירה כטקסט…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "בחירת תיקייה"
@@ -804,8 +803,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "לדרוס את %1?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "הקובץ כבר קיים"
@@ -828,8 +826,7 @@ msgid "Export Log File"
 msgstr "ייצוא קובצי יומן"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "לא ניתן לפתוח ארכיון"
@@ -845,8 +842,7 @@ msgid "This is not pim archive."
 msgstr "זה לא ארכיון pim."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "הצגת פרטים"
@@ -879,8 +875,7 @@ msgstr "„%1” כבר קיים. לדרוס או למזג אותו?"
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "שחזור"
@@ -923,8 +918,7 @@ msgstr ""
 "שלא יתווספו במהלך הייבוא. לייבא אותו?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "גרסה שגויה"
@@ -1023,8 +1017,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "גיבוי"
@@ -1060,8 +1053,7 @@ msgid "Show Information on current Archive..."
 msgstr "הצגת פרטים על הארכיון הנוכחי…"
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "בחירת ארכיון"
@@ -1077,8 +1069,7 @@ msgid "Log is empty."
 msgstr "היומן ריק."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "שמירת יומן"

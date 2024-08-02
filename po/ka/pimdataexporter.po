@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 06:27+0200\n"
+"PO-Revision-Date: 2024-08-01 05:46+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -792,8 +792,7 @@ msgid "Save As Text..."
 msgstr "უბრალო ტექსტად შენახვა..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "აირჩიეთ საქაღალდე"
@@ -804,8 +803,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "გნებავთ, გადააწეროთ %1-ს?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "ფაილი უკვე არსებობს"
@@ -828,8 +826,7 @@ msgid "Export Log File"
 msgstr "ჟურნალის ფაილის გატანა"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "არქივის გახსნის შეცდომა"
@@ -845,8 +842,7 @@ msgid "This is not pim archive."
 msgstr "ეს PIM არქივი არაა."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "ინფორმაციის ჩვენება"
@@ -881,8 +877,7 @@ msgstr "\"%1\" უკვე არსებობს. თავზე გად�
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "აღდგენა"
@@ -926,8 +921,7 @@ msgstr ""
 "შემოტანა?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "ვერსია არასწორია"
@@ -1026,8 +1020,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "მარქაფი"
@@ -1063,8 +1056,7 @@ msgid "Show Information on current Archive..."
 msgstr "მიმდინარე არქივის სტრუქტურის ინფორმაციის ჩვენება..."
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "აირჩიეთ არქივი"
@@ -1080,8 +1072,7 @@ msgid "Log is empty."
 msgstr "ჟურნალი ცარიელია."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "ჟურნალის შენახვა"
