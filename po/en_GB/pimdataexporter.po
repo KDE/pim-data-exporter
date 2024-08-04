@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-05 13:52+0100\n"
+"PO-Revision-Date: 2024-08-03 12:49+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -724,8 +724,7 @@ msgid "User Feedback"
 msgstr "User Feedback"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Use this template by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Use this template by default"
@@ -792,8 +791,7 @@ msgid "Save As Text..."
 msgstr "Save As Text..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Select Directory"
@@ -804,8 +802,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "Do you want to overwrite %1?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "File Already Exist"
@@ -828,8 +825,7 @@ msgid "Export Log File"
 msgstr "Export Log File"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Cannot open archive"
@@ -845,8 +841,7 @@ msgid "This is not pim archive."
 msgstr "This is not pim archive."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Show information"
@@ -881,8 +876,7 @@ msgstr "\"%1\" already exists. Do you want to overwrite it or merge it?"
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Restore"
@@ -926,8 +920,7 @@ msgstr ""
 "it?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Not correct version"
@@ -1026,8 +1019,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Backup"
@@ -1063,8 +1055,7 @@ msgid "Show Information on current Archive..."
 msgstr "Show Information on current Archive..."
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Select Archive"
@@ -1080,8 +1071,7 @@ msgid "Log is empty."
 msgstr "Log is empty."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Save log"
@@ -1141,22 +1131,19 @@ msgid "Pim Data Exporter"
 msgstr "Pim Data Exporter"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Always Override File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "Always Override File"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Always Override Directory"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "Always Override Directory"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Always Merge Config File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "Always Merge Config File"

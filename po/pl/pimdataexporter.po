@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-21 12:44+0200\n"
+"PO-Revision-Date: 2024-08-03 11:59+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -728,8 +728,7 @@ msgid "User Feedback"
 msgstr "Informacja zwrotna"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Use this template by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Użyj tego wzorca jako domyślnego"
@@ -796,8 +795,7 @@ msgid "Save As Text..."
 msgstr "Zapisz jako tekst..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Wybierz katalog"
@@ -808,8 +806,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "Czy chcesz zastąpić %1?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Plik już istnieje"
@@ -832,8 +829,7 @@ msgid "Export Log File"
 msgstr "Wyeksportuj plik dziennika"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Nie można otworzyć archiwum"
@@ -849,8 +845,7 @@ msgid "This is not pim archive."
 msgstr "To nie jest archiwum zio."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Pokaż informacje"
@@ -885,8 +880,7 @@ msgstr "\"%1\" już istnieje. Czy chcesz go zastąpić czy może scalić?"
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Przywróć"
@@ -930,8 +924,7 @@ msgstr ""
 "zaimportować?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Niepoprawna wersja"
@@ -1033,8 +1026,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Kopia zapasowa"
@@ -1070,8 +1062,7 @@ msgid "Show Information on current Archive..."
 msgstr "Pokaż informacje o bieżącym archiwum..."
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Wybierz archiwum"
@@ -1087,8 +1078,7 @@ msgid "Log is empty."
 msgstr "Dziennik jest pusty."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Zapisz dziennik"
@@ -1150,22 +1140,19 @@ msgid "Pim Data Exporter"
 msgstr "Eksportowanie ustawień ZIO"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Always Override File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "Zawsze zastępuj plik"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Always Override Directory"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "Zawsze zastępuj katalog"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Always Merge Config File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "Zawsze scalaj plik ustawień"
