@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-11 12:52+0200\n"
+"PO-Revision-Date: 2024-08-06 00:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -728,8 +728,7 @@ msgid "User Feedback"
 msgstr "Erabiltzaileen erreakzioa"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Use this template by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Erabili txantiloi hau era lehenetsian"
@@ -796,8 +795,7 @@ msgid "Save As Text..."
 msgstr "Gorde testu gisa..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Hautatu direktorioa"
@@ -808,8 +806,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "%1 gainidatzi nahi duzu?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Fitxategia dagoeneko existitzen da"
@@ -832,11 +829,10 @@ msgid "Export Log File"
 msgstr "Esportatu egunkari fitxategia"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
-msgstr "Ezin da artxiboa ireki"
+msgstr "Ezin du artxiboa ireki"
 
 #: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
@@ -849,8 +845,7 @@ msgid "This is not pim archive."
 msgstr "Hau ez da PIM artxiboa."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Erakutsi informazioa"
@@ -886,8 +881,7 @@ msgstr ""
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Leheneratu"
@@ -930,8 +924,7 @@ msgstr ""
 "ezikusi egingo litzaiekeen datu osagarriak izan litzake. Inportatu nahi duzu?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Ez da bertsio zuzena"
@@ -1035,8 +1028,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Babeskopia"
@@ -1072,8 +1064,7 @@ msgid "Show Information on current Archive..."
 msgstr "Erakutsi uneko artxiboari buruzko informazioa..."
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Hautatu artxiboa"
@@ -1089,8 +1080,7 @@ msgid "Log is empty."
 msgstr "Egunkaria hutsik dago."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Gorde egunkaria"
@@ -1152,22 +1142,19 @@ msgid "Pim Data Exporter"
 msgstr "PIM datu-esportatzailea"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Always Override File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
-msgstr "Fitxategia beti gainidatzi"
+msgstr "Fitxategia beti gainezarri"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Always Override Directory"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
-msgstr "Direktorioa beti gainidatzi"
+msgstr "Direktorioa beti gainezarri"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Always Merge Config File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "Konfigurazio fitxategia beti bateratu"

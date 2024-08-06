@@ -804,8 +804,7 @@ msgid "Save As Text..."
 msgstr "Anomena i guarda text…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Seleccioneu un directori"
@@ -816,8 +815,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "Voleu sobreescriure %1?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "El fitxer ja existix"
@@ -840,8 +838,7 @@ msgid "Export Log File"
 msgstr "Exporta el fitxer de registre"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "No s'ha pogut obrir l'arxiu"
@@ -857,8 +854,7 @@ msgid "This is not pim archive."
 msgstr "Este no és un arxiu PIM."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Mostra la informació"
@@ -893,8 +889,7 @@ msgstr "«%1» ja existix. Voleu sobreescriure'l o fusionar-lo?"
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Restaura"
@@ -938,8 +933,7 @@ msgstr ""
 "importar-lo?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Versió incorrecta"
@@ -1040,8 +1034,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Còpia de seguretat"
@@ -1077,8 +1070,7 @@ msgid "Show Information on current Archive..."
 msgstr "Mostra informació sobre l'arxiu actual…"
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Selecciona l'arxiu"
@@ -1094,8 +1086,7 @@ msgid "Log is empty."
 msgstr "El registre està buit."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Guarda el registre"
