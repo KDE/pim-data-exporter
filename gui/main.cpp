@@ -35,7 +35,6 @@ int main(int argc, char *argv[])
 
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("pimdataexporter"));
 
-    KCrash::initialize();
 #if HAVE_STYLE_MANAGER
     KStyleManager::initStyle();
 #else // !HAVE_STYLE_MANAGER
@@ -48,6 +47,7 @@ int main(int argc, char *argv[])
 
     PimDataCommandLineOption parser;
     parser.createParser(app);
+    KCrash::initialize();
 #ifdef WITH_KUSERFEEDBACK
     if (parser.parseUserFeedback()) {
         auto provider = new PimDataExportedUserFeedbackProvider;
