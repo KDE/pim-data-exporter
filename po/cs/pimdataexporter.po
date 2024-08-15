@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-06-18 16:10+0200\n"
+"PO-Revision-Date: 2024-08-08 10:02+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -730,7 +730,7 @@ msgstr "Zpětná vazba uživatele"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
-msgstr ""
+msgstr "Použít tuto šablonu jako výchozí"
 
 #: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
@@ -794,8 +794,7 @@ msgid "Save As Text..."
 msgstr "Uložit jako text..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Vyberte adresář"
@@ -806,8 +805,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "Přejete si přepsat %1?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Soubor již existuje"
@@ -830,8 +828,7 @@ msgid "Export Log File"
 msgstr "Exportovat soubor záznamu"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Archiv nelze otevřít"
@@ -847,8 +844,7 @@ msgid "This is not pim archive."
 msgstr "Toto není archiv pim."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Zobrazit Informace"
@@ -881,8 +877,7 @@ msgstr "%1 již existuje. Přejte si jej přepsat, nebo sloučit?"
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Obnovit"
@@ -925,8 +920,7 @@ msgstr ""
 "která budou během importu přeskočena. Chcete jej importovat?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Nesprávná verze"
@@ -1028,8 +1022,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Záloha"
@@ -1065,8 +1058,7 @@ msgid "Show Information on current Archive..."
 msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Vyberte archiv"
@@ -1082,8 +1074,7 @@ msgid "Log is empty."
 msgstr "Záznam je prázdný."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Uložit záznam"
@@ -1145,19 +1136,19 @@ msgstr "Exportér dat PIM"
 #, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
-msgstr ""
+msgstr "Vždy přepsat soubor"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
 #, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
-msgstr ""
+msgstr "Vždy přepsat adresář"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
 #, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
-msgstr ""
+msgstr "Vždy sloučit soubor nastavení"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:23
 #, kde-format
