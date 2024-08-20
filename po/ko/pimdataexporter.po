@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2013, 2014, 2015, 2019, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2013, 2014, 2015, 2019, 2020, 2021, 2022, 2024 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2022-07-13 12:13+0200\n"
+"PO-Revision-Date: 2024-08-19 23:35+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,8 +38,7 @@ msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "Copyright © 2015-%1 pimdataexporter authors"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
-#, fuzzy, kde-format
-#| msgid "Laurent Montel"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
@@ -50,29 +49,25 @@ msgid "Maintainer"
 msgstr "관리자"
 
 #: console/main.cpp:31
-#, fuzzy, kde-format
-#| msgid "File to log information to."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File to log information to."
 msgstr "로그를 기록할 파일입니다."
 
 #: console/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "Template file to define what data, settings to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
 msgstr "가져오거나 내보낼 데이터, 설정을 정의하는 템플릿 파일입니다."
 
 #: console/main.cpp:37
-#, fuzzy, kde-format
-#| msgid "Import the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file."
 msgstr "지정한 파일을 가져옵니다."
 
 #: console/main.cpp:39
-#, fuzzy, kde-format
-#| msgid "Export the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file."
 msgstr "지정한 파일로 내보냅니다."
@@ -702,8 +697,7 @@ msgid "Archive File Structure"
 msgstr "보관 파일 구조"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Backup Archive Structure:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "백업 파일 구조:"
@@ -730,22 +724,19 @@ msgid "User Feedback"
 msgstr "사용자 피드백"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Use this template by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "기본값으로 이 템플릿 사용"
 
 #: gui/dialog/selectiontypedialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "Save as Template..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "템플릿으로 저장..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Load Template..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "템플릿 불러오기..."
@@ -758,30 +749,26 @@ msgstr "종류 선택"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "모두 선택"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Unselect All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "모두 선택 해제"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Extract Selected File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "선택한 파일 추출"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Open Selected File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "선택한 파일 열기"
@@ -793,8 +780,7 @@ msgid "Show Archive Content on file \"%1\""
 msgstr "파일 \"%1\"의 내용 보기"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "검색..."
@@ -805,8 +791,7 @@ msgid "Save As Text..."
 msgstr "텍스트로 저장..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "디렉터리 선택"
@@ -817,8 +802,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "%1을(를) 덮어쓰시겠습니까?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "파일이 이미 존재함"
@@ -841,8 +825,7 @@ msgid "Export Log File"
 msgstr "로그 파일 내보내기"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "압축 파일을 열 수 없음"
@@ -858,8 +841,7 @@ msgid "This is not pim archive."
 msgstr "PIM 보관 파일이 아닙니다."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "정보 보기"
@@ -871,17 +853,14 @@ msgid "Synchronize Resources"
 msgstr "리소스 동기화"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some resources were added but data were not sync. Select resources that "
-#| "you want to sync:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
 msgstr ""
-"일부 리소스를 추가했으나 데이터가 동기화되지 않았습니다. 동기화할 리소스를 선"
-"택하십시오:"
+"일부 자원을 추가했으나 데이터가 동기화되지 않았습니다. 동기화할 자원을 선택하"
+"십시오:"
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
@@ -897,15 +876,13 @@ msgstr "\"%1\"이(가) 이미 존재합니다. 덮어쓰거나 합치시겠습�
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "복원"
 
 #: gui/importexportprogressindicatorgui.cpp:69
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "합치기"
@@ -942,8 +919,7 @@ msgstr ""
 "가 들어 있을 수도 있습니다. 계속 진행하시겠습니까?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "버전이 일치하지 않음"
@@ -970,29 +946,25 @@ msgid "Template file uses to define what data, settings to import or export"
 msgstr "가져오거나 내보낼 데이터, 설정을 정의하는 템플릿 파일"
 
 #: gui/pimdatacommandlineoption.cpp:48
-#, fuzzy, kde-format
-#| msgid "Import the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
 msgstr "지정한 파일 가져오기"
 
 #: gui/pimdatacommandlineoption.cpp:49
-#, fuzzy, kde-format
-#| msgid "Export the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
 msgstr "지정한 파일로 내보내기"
 
 #: gui/pimdatacommandlineoption.cpp:51
-#, fuzzy, kde-format
-#| msgid "File or url. The user will be asked whether to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
 msgstr "파일이나 URL입니다. 사용자에게 가져오거나 내보낼지 여부를 물어봅니다."
 
 #: gui/pimdatacommandlineoption.cpp:53
-#, fuzzy, kde-format
-#| msgid "Lists the available options for user feedback"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
 msgstr "사용자 피드백 옵션을 표시합니다"
@@ -1046,8 +1018,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "백업"
@@ -1083,8 +1054,7 @@ msgid "Show Information on current Archive..."
 msgstr "현재 보관 파일의 정보 표시..."
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "보관 파일 선택"
@@ -1100,8 +1070,7 @@ msgid "Log is empty."
 msgstr "기록이 비어 있습니다."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "기록 저장"
@@ -1160,22 +1129,19 @@ msgid "Pim Data Exporter"
 msgstr "PIM 데이터 내보내기"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Always Override File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "항상 파일 덮어쓰기"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Always Override Directory"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "항상 디렉터리 덮어쓰기"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Always Merge Config File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "항상 설정 파일 합치기"
