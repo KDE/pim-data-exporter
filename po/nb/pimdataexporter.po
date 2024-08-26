@@ -41,7 +41,6 @@ msgstr ""
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
 #, fuzzy, kde-format
-#| msgid "Laurent Montel"
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
@@ -53,14 +52,12 @@ msgstr "Vedlikeholder"
 
 #: console/main.cpp:31
 #, fuzzy, kde-format
-#| msgid "Show information"
 msgctxt "@info:shell"
 msgid "File to log information to."
 msgstr "Vis informasjon"
 
 #: console/main.cpp:34
 #, fuzzy, kde-format
-#| msgid "Template file uses to define what data, settings to import or export"
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
 msgstr ""
@@ -69,14 +66,12 @@ msgstr ""
 
 #: console/main.cpp:37
 #, fuzzy, kde-format
-#| msgid "Import the given file"
 msgctxt "@info:shell"
 msgid "Import the given file."
 msgstr "Importer den gitte fila"
 
 #: console/main.cpp:39
 #, fuzzy, kde-format
-#| msgid "Export the given file"
 msgctxt "@info:shell"
 msgid "Export the given file."
 msgstr "Eksporter den gitte fila"
@@ -707,7 +702,6 @@ msgstr ""
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, fuzzy, kde-format
-#| msgid "Backup Archive Structure:"
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Sikringskopier arkivstruktur:"
@@ -741,14 +735,12 @@ msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:28
 #, fuzzy, kde-format
-#| msgid "Save as Template..."
 msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Lagre som mal …"
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, fuzzy, kde-format
-#| msgid "Load Template..."
 msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Last mal …"
@@ -762,7 +754,6 @@ msgstr ""
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
 #, fuzzy, kde-format
-#| msgid "Select All"
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Velg alt"
@@ -770,7 +761,6 @@ msgstr "Velg alt"
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
 #, fuzzy, kde-format
-#| msgid "Unselect All"
 msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Fravelg alt"
@@ -795,7 +785,6 @@ msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
 #, fuzzy, kde-format
-#| msgid "Search..."
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Søk …"
@@ -807,7 +796,6 @@ msgstr "Lagre som tekst …"
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, fuzzy, kde-format
-#| msgid "Select Archive"
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Velg arkiv"
@@ -842,7 +830,6 @@ msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, fuzzy, kde-format
-#| msgid "Cannot open archive"
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Kan ikke åpne arkiv"
@@ -859,7 +846,6 @@ msgstr ""
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, fuzzy, kde-format
-#| msgid "Show information"
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Vis informasjon"
@@ -893,14 +879,12 @@ msgstr "«%1» finnes fra før. Vil du overskrive den eller flette sammen?"
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
 #, fuzzy, kde-format
-#| msgid "Restore"
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Legg tilbake"
 
 #: gui/importexportprogressindicatorgui.cpp:69
 #, fuzzy, kde-format
-#| msgid "Merge"
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "Flett sammen"
@@ -938,7 +922,6 @@ msgstr ""
 
 #: gui/pimdatabackuprestoreui.cpp:27
 #, fuzzy, kde-format
-#| msgid "Not correct version"
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Ikke riktig versjon"
@@ -968,21 +951,18 @@ msgstr ""
 
 #: gui/pimdatacommandlineoption.cpp:48
 #, fuzzy, kde-format
-#| msgid "Import the given file"
 msgctxt "@info:shell"
 msgid "Import the given file"
 msgstr "Importer den gitte fila"
 
 #: gui/pimdatacommandlineoption.cpp:49
 #, fuzzy, kde-format
-#| msgid "Export the given file"
 msgctxt "@info:shell"
 msgid "Export the given file"
 msgstr "Eksporter den gitte fila"
 
 #: gui/pimdatacommandlineoption.cpp:51
 #, fuzzy, kde-format
-#| msgid "File or url. The user will be asked whether to import or export."
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
 msgstr "Fil eller url. Bruker vil bli spurt om import eller eksport."
@@ -1041,7 +1021,6 @@ msgstr ""
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
 #, fuzzy, kde-format
-#| msgid "Backup"
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Sikringskopi"
@@ -1078,7 +1057,6 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:302
 #, fuzzy, kde-format
-#| msgid "Select Archive"
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Velg arkiv"
@@ -1095,7 +1073,6 @@ msgstr "Loggen er tom."
 
 #: gui/pimdataexporterwindow.cpp:314
 #, fuzzy, kde-format
-#| msgid "Save log"
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Lagre logg"
