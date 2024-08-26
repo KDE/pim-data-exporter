@@ -72,8 +72,6 @@ QMap<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTemp
                     type = Utils::KAlarm;
                 } else if (mStreamReader->name() == QLatin1StringView("korganizer")) {
                     type = Utils::KOrganizer;
-                } else if (mStreamReader->name() == QLatin1StringView("knotes")) {
-                    type = Utils::KNotes;
                 } else if (mStreamReader->name() == QLatin1StringView("akregator")) {
                     type = Utils::Akregator;
                 }
@@ -158,11 +156,6 @@ void TemplateSelection::createTemplate(const QMap<Utils::AppsType, Utils::import
             break;
         case Utils::KOrganizer:
             mStreamWriter->writeStartElement(QStringLiteral("korganizer"));
-            saveParameters(i.value().types);
-            mStreamWriter->writeEndElement();
-            break;
-        case Utils::KNotes:
-            mStreamWriter->writeStartElement(QStringLiteral("knotes"));
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;

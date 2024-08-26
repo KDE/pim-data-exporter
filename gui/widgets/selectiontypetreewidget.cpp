@@ -58,15 +58,6 @@ void SelectionTypeTreeWidget::initialize(bool backupData)
     createSubItem(mKorganizerItem, Utils::Resources);
     createSubItem(mKorganizerItem, Utils::Config);
 
-    mKNotesItem = new QTreeWidgetItem(this);
-    mKNotesItem->setText(0, Utils::appTypeToI18n(Utils::KNotes));
-    mKNotesItem->setCheckState(0, Qt::Checked);
-    createSubItem(mKNotesItem, Utils::Resources);
-    createSubItem(mKNotesItem, Utils::Config);
-    if (!backupData) {
-        createSubItem(mKNotesItem, Utils::Data);
-    }
-
     mAkregatorItem = new QTreeWidgetItem(this);
     mAkregatorItem->setText(0, Utils::appTypeToI18n(Utils::Akregator));
     mAkregatorItem->setCheckState(0, Qt::Checked);
@@ -93,10 +84,6 @@ void SelectionTypeTreeWidget::removeNotSelectedItems()
     if (!removeNotSelectedItem(mKorganizerItem)) {
         delete mKorganizerItem;
         mKorganizerItem = nullptr;
-    }
-    if (!removeNotSelectedItem(mKNotesItem)) {
-        delete mKNotesItem;
-        mKNotesItem = nullptr;
     }
     if (!removeNotSelectedItem(mAkregatorItem)) {
         delete mAkregatorItem;
@@ -137,10 +124,6 @@ QMap<Utils::AppsType, Utils::importExportParameters> SelectionTypeTreeWidget::st
     var = typeChecked(mKorganizerItem);
     if (!var.isEmpty()) {
         stored.insert(Utils::KOrganizer, var);
-    }
-    var = typeChecked(mKNotesItem);
-    if (!var.isEmpty()) {
-        stored.insert(Utils::KNotes, var);
     }
     var = typeChecked(mAkregatorItem);
     if (!var.isEmpty()) {
@@ -234,7 +217,6 @@ void SelectionTypeTreeWidget::setSelectItems(bool b)
     changeState(mKalarmItem, b);
     changeState(mKaddressbookItem, b);
     changeState(mKorganizerItem, b);
-    changeState(mKNotesItem, b);
     changeState(mAkregatorItem, b);
 }
 
@@ -379,9 +361,6 @@ void SelectionTypeTreeWidget::setParameters(const QMap<Utils::AppsType, Utils::i
             break;
         case Utils::KOrganizer:
             initializeSubItem(mKorganizerItem, i.value().types);
-            break;
-        case Utils::KNotes:
-            initializeSubItem(mKNotesItem, i.value().types);
             break;
         case Utils::Akregator:
             initializeSubItem(mAkregatorItem, i.value().types);

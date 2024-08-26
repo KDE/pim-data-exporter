@@ -12,7 +12,6 @@
 #include <Akonadi/ChangeRecorder>
 #include <Akonadi/EntityMimeTypeFilterModel>
 #include <Akonadi/EntityTreeModel>
-#include <Akonadi/NoteUtils>
 #include <Akonadi/Session>
 #include <KCalendarCore/Event>
 #include <KCalendarCore/Todo>
@@ -37,7 +36,6 @@ PimDataExporterKernel::PimDataExporterKernel(QObject *parent)
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KContacts::ContactGroup::mimeType(), true);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KCalendarCore::Todo::todoMimeType(), true);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(KCalendarCore::Event::eventMimeType(), true);
-    mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(Akonadi::NoteUtils::noteMimeType(), true);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(MIME_ACTIVE);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(MIME_ARCHIVED);
     mFolderCollectionMonitor->monitor()->setMimeTypeMonitored(MIME_TEMPLATE);

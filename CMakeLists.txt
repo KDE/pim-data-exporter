@@ -57,7 +57,6 @@ set(KMIME_LIB_VERSION "6.2.40")
 
 set(MAILCOMMON_LIB_VERSION "6.2.40")
 set(PIMCOMMON_LIB_VERSION "6.2.40")
-set(AKONADINOTES_LIB_VERSION "6.2.40")
 set(KTEXTADDONS_MIN_VERSION "1.5.4")
 
 # Find KF6 package
@@ -92,7 +91,6 @@ find_package(KPim6MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6PimCommonAkonadi ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF6CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KPim6AkonadiNotes ${AKONADINOTES_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF6TextCustomEditor ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6UserFeedback ${KF_MIN_VERSION} CONFIG)
 set_package_properties(KF6UserFeedback PROPERTIES DESCRIPTION "User Feedback lib" TYPE OPTIONAL PURPOSE "Allow to send Telemetry Information (optional). It can be disable in apps.")

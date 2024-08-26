@@ -20,9 +20,6 @@
 #include "alarm/exportalarmjobinterfaceimpl.h"
 #include "alarm/importalarmjobinterfaceimpl.h"
 
-#include "notes/exportnotesjobinterfaceimpl.h"
-#include "notes/importnotesjobinterfaceimpl.h"
-
 #include "akregator/exportakregatorjobinterface.h"
 #include "akregator/importakregatorjobinterface.h"
 
@@ -144,12 +141,6 @@ void PimDataBackupRestore::backupNextStep()
                 executeJob();
             }
             break;
-        case Utils::KNotes:
-            if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ExportNotesJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
-                executeJob();
-            }
-            break;
         case Utils::Akregator:
             if (mStoreIterator.value().numberSteps != 0) {
                 mImportExportData = new ExportAkregatorJobInterface(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
@@ -213,12 +204,6 @@ void PimDataBackupRestore::restoreNextStep()
         case Utils::KOrganizer:
             if (mStoreIterator.value().numberSteps != 0) {
                 mImportExportData = new ImportCalendarJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
-                executeJob();
-            }
-            break;
-        case Utils::KNotes:
-            if (mStoreIterator.value().numberSteps != 0) {
-                mImportExportData = new ImportNotesJobInterfaceImpl(this, mStoreIterator.value().types, mArchiveStorage, mStoreIterator.value().numberSteps);
                 executeJob();
             }
             break;

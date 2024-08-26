@@ -17,8 +17,6 @@ target_sources(pimdataexporterprivate PRIVATE
     alarm/exportalarmjobinterfaceimpl.cpp
     alarm/importalarmjobinterfaceimpl.cpp
 
-    notes/exportnotesjobinterface.cpp
-    notes/importnotesjobinterface.cpp
     calendar/exportcalendarjobinterface.cpp
     calendar/importcalendarjobinterface.cpp
     addressbook/exportaddressbookjobinterface.cpp
@@ -28,8 +26,6 @@ target_sources(pimdataexporterprivate PRIVATE
     mail/exportmailjobinterface.cpp
     mail/importmailjobinterface.cpp
 
-    notes/exportnotesjobinterfaceimpl.cpp
-    notes/importnotesjobinterfaceimpl.cpp
     xml/templateselection.cpp
     akregator/exportakregatorjobinterface.cpp
     akregator/importakregatorjobinterface.cpp
@@ -68,10 +64,6 @@ target_sources(pimdataexporterprivate PRIVATE
     mail/importexportmailutil.h
     mail/exportmailjobinterface.h
     resourceconverterbase.h
-    notes/importnotesjobinterfaceimpl.h
-    notes/exportnotesjobinterface.h
-    notes/importnotesjobinterface.h
-    notes/exportnotesjobinterfaceimpl.h
     storeresourcejob.h
     calendar/exportcalendarjobinterfaceimpl.h
     calendar/importcalendarjobinterfaceimpl.h
@@ -128,7 +120,6 @@ target_link_libraries(pimdataexporterprivate
     KPim6::PimCommonAkonadi
     KF6::I18n
     KF6::CalendarCore
-    KPim6::AkonadiNotes
 )
 
 set_target_properties(pimdataexporterprivate PROPERTIES VERSION ${KDEPIM_LIB_VERSION} SOVERSION ${KDEPIM_LIB_SOVERSION})

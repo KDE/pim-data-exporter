@@ -185,8 +185,6 @@ QString Utils::appTypeToI18n(AppsType type)
         return i18n("KAlarm");
     case KOrganizer:
         return i18n("KOrganizer");
-    case KNotes:
-        return i18n("KNotes");
     case Akregator:
         return i18n("Akregator");
     case Unknown:

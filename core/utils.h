@@ -46,7 +46,7 @@ enum StoredType {
 };
 Q_DECLARE_FLAGS(StoredTypes, StoredType)
 
-enum AppsType { Unknown = 0, KMail, KAddressBook, KAlarm, KOrganizer, KNotes, Akregator };
+enum AppsType { Unknown = 0, KMail, KAddressBook, KAlarm, KOrganizer, Akregator };
 
 struct importExportParameters {
     importExportParameters()

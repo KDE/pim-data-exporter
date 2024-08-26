@@ -53,6 +53,5 @@ private:
     QTreeWidgetItem *mKalarmItem = nullptr;
     QTreeWidgetItem *mKaddressbookItem = nullptr;
     QTreeWidgetItem *mKorganizerItem = nullptr;
-    QTreeWidgetItem *mKNotesItem = nullptr;
     QTreeWidgetItem *mAkregatorItem = nullptr;
 };

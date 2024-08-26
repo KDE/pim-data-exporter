@@ -200,7 +200,6 @@ bool ShowArchiveStructureDialog::fillTree()
         (void)searchArchiveElement(Utils::configsPath(), topDirectory, Utils::storedTypeToI18n(Utils::Config));
         (void)searchArchiveElement(Utils::transportsPath(), topDirectory, Utils::storedTypeToI18n(Utils::MailTransport));
         (void)searchArchiveElement(Utils::dataPath(), topDirectory, Utils::storedTypeToI18n(Utils::Data));
-        (void)searchArchiveElement(Utils::notePath(), topDirectory, Utils::appTypeToI18n(Utils::KNotes));
     }
     return result;
 }

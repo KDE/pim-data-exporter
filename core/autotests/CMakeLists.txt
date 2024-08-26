@@ -58,7 +58,6 @@ ecm_mark_as_test(backupresourcefilejobimpltest)
 target_link_libraries(backupresourcefilejobimpltest Qt::Test KF6::ConfigCore pimdataexporterprivate KF6::Archive)
 ###
 
-add_subdirectory(notes)
 add_subdirectory(calendar)
 add_subdirectory(addressbook)
 add_subdirectory(alarm)

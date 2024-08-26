@@ -16,7 +16,6 @@ Dependencies:
     'pim/kmime' : '@same'
     'pim/mailcommon' : '@same'
     'pim/pimcommon' : '@same'
-    'pim/akonadi-notes' : '@same'
     'libraries/ktextaddons': '@latest-kf6'
 
 - 'on': ['Linux', 'FreeBSD']
