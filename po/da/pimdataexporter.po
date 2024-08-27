@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-08-27 00:40+0000\n"
 "PO-Revision-Date: 2022-02-08 19:50+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -194,7 +194,6 @@ msgstr "Eksport af KAddressBook-indstillinger"
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
 #: core/mail/exportmailjobinterface.cpp:653
-#: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
 msgstr "Laver backup af ressourcer..."
@@ -203,7 +202,6 @@ msgstr "Laver backup af ressourcer..."
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
 #: core/mail/exportmailjobinterface.cpp:675
-#: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
 msgstr "Backup af ressourcer gennemført."
@@ -213,7 +211,6 @@ msgstr "Backup af ressourcer gennemført."
 #: core/alarm/exportalarmjobinterface.cpp:109
 #: core/calendar/exportcalendarjobinterface.cpp:228
 #: core/mail/exportmailjobinterface.cpp:167
-#: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
 msgstr "Laver backup af konfigurationen..."
@@ -223,7 +220,6 @@ msgstr "Laver backup af konfigurationen..."
 #: core/alarm/exportalarmjobinterface.cpp:135
 #: core/calendar/exportcalendarjobinterface.cpp:248
 #: core/mail/exportmailjobinterface.cpp:536
-#: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
 msgstr "Backup af konfigurationen gennemført."
@@ -242,7 +238,6 @@ msgstr "Import af KAddressBook-indstillinger"
 #: core/akregator/importakregatorjobinterface.cpp:93
 #: core/alarm/importalarmjobinterface.cpp:82
 #: core/calendar/importcalendarjobinterface.cpp:90
-#: core/notes/importnotesjobinterface.cpp:80
 #, kde-format
 msgid "Restore configs..."
 msgstr "Genskab konfiguration..."
@@ -252,7 +247,6 @@ msgstr "Genskab konfiguration..."
 #: core/alarm/importalarmjobinterface.cpp:98
 #: core/calendar/importcalendarjobinterface.cpp:229
 #: core/mail/importmailjobinterface.cpp:866
-#: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
 msgstr "Konfiguration genskabt."
@@ -265,8 +259,6 @@ msgstr "Konfiguration genskabt."
 #: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
 #: core/mail/importmailjobinterface.cpp:200
-#: core/notes/importnotesjobinterface.cpp:148
-#: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
 msgstr "Genskab ressourcer..."
@@ -287,7 +279,6 @@ msgid "Backing up data..."
 msgstr "Laver backup af data..."
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
-#: core/notes/exportnotesjobinterface.cpp:46
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
 msgstr "Mappen \"%1\" kan ikke føjes til backupfilen."
@@ -308,13 +299,11 @@ msgid "Import Akregator settings"
 msgstr "Import af Akregator-indstillinger"
 
 #: core/akregator/importakregatorjobinterface.cpp:106
-#: core/notes/importnotesjobinterface.cpp:116
 #, kde-format
 msgid "Restore data..."
 msgstr "Genskab data..."
 
 #: core/akregator/importakregatorjobinterface.cpp:112
-#: core/notes/importnotesjobinterface.cpp:129
 #, kde-format
 msgid "Data restored."
 msgstr "Data genskabt."
@@ -581,52 +570,32 @@ msgstr "Laver backup af identitet..."
 msgid "Folder Attributes cannot be restored."
 msgstr "Filtrene kan ikke eksporteres."
 
-#: core/notes/exportnotesjobinterface.cpp:28
-#, kde-format
-msgid "Start export KNotes settings..."
-msgstr "Start eksport af KNotes-indstillinger..."
-
-#: core/notes/exportnotesjobinterface.cpp:29
-#, kde-format
-msgid "Export KNotes settings"
-msgstr "Eksport af KNotes-indstillinger"
-
-#: core/notes/importnotesjobinterface.cpp:49
-#, kde-format
-msgid "Starting to import KNotes settings..."
-msgstr "Påbegynder import af KNotes-indstillinger..."
-
-#: core/notes/importnotesjobinterface.cpp:52
-#, kde-format
-msgid "Import KNotes settings"
-msgstr "Import af KNotes-indstillinger"
-
-#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#: core/pimdatabackuprestore.cpp:76 core/pimdatabackuprestore.cpp:239
 #, kde-format
 msgid "No data selected."
 msgstr "Ingen data valgt."
 
-#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#: core/pimdatabackuprestore.cpp:82 core/pimdatabackuprestore.cpp:245
 #, kde-format
 msgid "Unable to open file \"%1\"."
 msgstr "Kan ikke åbne filen \"%1\"."
 
-#: core/pimdatabackuprestore.cpp:94
+#: core/pimdatabackuprestore.cpp:91
 #, kde-format
 msgid "Starting to backup data in '%1'"
 msgstr "Påbegynder backup af data i \"%1\""
 
-#: core/pimdatabackuprestore.cpp:183
+#: core/pimdatabackuprestore.cpp:174
 #, kde-format
 msgid "Backup in '%1' done."
 msgstr "Backup i \"%1\" gennemført."
 
-#: core/pimdatabackuprestore.cpp:279
+#: core/pimdatabackuprestore.cpp:264
 #, kde-format
 msgid "Starting to restore data from '%1'"
 msgstr "Påbegynder genskabelse af data fra \"%1\""
 
-#: core/pimdatabackuprestore.cpp:287
+#: core/pimdatabackuprestore.cpp:272
 #, kde-format
 msgid "Restoring data from '%1' done."
 msgstr "Gendannelse af data fra \"%1\" gennemført."
@@ -673,40 +642,35 @@ msgstr "KOrganizer"
 
 #: core/utils.cpp:189
 #, kde-format
-msgid "KNotes"
-msgstr "KNotes"
-
-#: core/utils.cpp:191
-#, kde-format
 msgid "Akregator"
 msgstr "Akregator"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:203
 #, kde-format
 msgid "Identity"
 msgstr "Identitet"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:205
 #, kde-format
 msgid "Mails"
 msgstr "E-mails"
 
-#: core/utils.cpp:209
+#: core/utils.cpp:207
 #, kde-format
 msgid "Mail Transport"
 msgstr "Mailtransport"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:209
 #, kde-format
 msgid "Resources"
 msgstr "Ressourcer"
 
-#: core/utils.cpp:213
+#: core/utils.cpp:211
 #, kde-format
 msgid "Config"
 msgstr "Konfiguration"
 
-#: core/utils.cpp:215
+#: core/utils.cpp:213
 #, kde-format
 msgid "Data"
 msgstr "Data"
@@ -1209,10 +1173,25 @@ msgstr "Sammenflet altid konfigurationsfil"
 msgid "Import"
 msgstr "Importér"
 
-#: gui/widgets/selectiontypetreewidget.cpp:350
+#: gui/widgets/selectiontypetreewidget.cpp:332
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "Skabelonfiler (*.xml)"
+
+#~ msgid "Start export KNotes settings..."
+#~ msgstr "Start eksport af KNotes-indstillinger..."
+
+#~ msgid "Export KNotes settings"
+#~ msgstr "Eksport af KNotes-indstillinger"
+
+#~ msgid "Starting to import KNotes settings..."
+#~ msgstr "Påbegynder import af KNotes-indstillinger..."
+
+#~ msgid "Import KNotes settings"
+#~ msgstr "Import af KNotes-indstillinger"
+
+#~ msgid "KNotes"
+#~ msgstr "KNotes"
 
 #~ msgid "&New"
 #~ msgstr "&Ny"

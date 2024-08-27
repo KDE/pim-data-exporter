@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-08-27 00:40+0000\n"
 "PO-Revision-Date: 2024-08-15 06:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -185,7 +185,6 @@ msgstr "匯出 KAddressBook 設定"
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
 #: core/mail/exportmailjobinterface.cpp:653
-#: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
 msgstr "備份資源中..."
@@ -194,7 +193,6 @@ msgstr "備份資源中..."
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
 #: core/mail/exportmailjobinterface.cpp:675
-#: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
 msgstr "資源已完成備份。"
@@ -204,7 +202,6 @@ msgstr "資源已完成備份。"
 #: core/alarm/exportalarmjobinterface.cpp:109
 #: core/calendar/exportcalendarjobinterface.cpp:228
 #: core/mail/exportmailjobinterface.cpp:167
-#: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
 msgstr "備份設定中..."
@@ -214,7 +211,6 @@ msgstr "備份設定中..."
 #: core/alarm/exportalarmjobinterface.cpp:135
 #: core/calendar/exportcalendarjobinterface.cpp:248
 #: core/mail/exportmailjobinterface.cpp:536
-#: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
 msgstr "設定已完成備份。"
@@ -233,7 +229,6 @@ msgstr "匯入 KAddressBook 設定"
 #: core/akregator/importakregatorjobinterface.cpp:93
 #: core/alarm/importalarmjobinterface.cpp:82
 #: core/calendar/importcalendarjobinterface.cpp:90
-#: core/notes/importnotesjobinterface.cpp:80
 #, kde-format
 msgid "Restore configs..."
 msgstr "回復設定..."
@@ -243,7 +238,6 @@ msgstr "回復設定..."
 #: core/alarm/importalarmjobinterface.cpp:98
 #: core/calendar/importcalendarjobinterface.cpp:229
 #: core/mail/importmailjobinterface.cpp:866
-#: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
 msgstr "設定已回復。"
@@ -256,8 +250,6 @@ msgstr "設定已回復。"
 #: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
 #: core/mail/importmailjobinterface.cpp:200
-#: core/notes/importnotesjobinterface.cpp:148
-#: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
 msgstr "回復資源..."
@@ -278,7 +270,6 @@ msgid "Backing up data..."
 msgstr "備份資料中..."
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
-#: core/notes/exportnotesjobinterface.cpp:46
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
 msgstr "檔案 \"%1\" 無法加入備份檔。"
@@ -299,13 +290,11 @@ msgid "Import Akregator settings"
 msgstr "匯入 Akregator 設定"
 
 #: core/akregator/importakregatorjobinterface.cpp:106
-#: core/notes/importnotesjobinterface.cpp:116
 #, kde-format
 msgid "Restore data..."
 msgstr "回復資料..."
 
 #: core/akregator/importakregatorjobinterface.cpp:112
-#: core/notes/importnotesjobinterface.cpp:129
 #, kde-format
 msgid "Data restored."
 msgstr "資料已回復。"
@@ -562,52 +551,32 @@ msgstr "回復資料夾屬性完成。"
 msgid "Folder Attributes cannot be restored."
 msgstr "無法回復資料夾屬性。"
 
-#: core/notes/exportnotesjobinterface.cpp:28
-#, kde-format
-msgid "Start export KNotes settings..."
-msgstr "開始匯出 KNotes 設定..."
-
-#: core/notes/exportnotesjobinterface.cpp:29
-#, kde-format
-msgid "Export KNotes settings"
-msgstr "匯出 KNotes 設定"
-
-#: core/notes/importnotesjobinterface.cpp:49
-#, kde-format
-msgid "Starting to import KNotes settings..."
-msgstr "開始匯入 KNotes 設定..."
-
-#: core/notes/importnotesjobinterface.cpp:52
-#, kde-format
-msgid "Import KNotes settings"
-msgstr "匯入 KNotes 設定"
-
-#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#: core/pimdatabackuprestore.cpp:76 core/pimdatabackuprestore.cpp:239
 #, kde-format
 msgid "No data selected."
 msgstr "沒有選取資料。"
 
-#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#: core/pimdatabackuprestore.cpp:82 core/pimdatabackuprestore.cpp:245
 #, kde-format
 msgid "Unable to open file \"%1\"."
 msgstr "無法開啟檔案 \"%1\"。"
 
-#: core/pimdatabackuprestore.cpp:94
+#: core/pimdatabackuprestore.cpp:91
 #, kde-format
 msgid "Starting to backup data in '%1'"
 msgstr "開始在 '%1' 備份資料"
 
-#: core/pimdatabackuprestore.cpp:183
+#: core/pimdatabackuprestore.cpp:174
 #, kde-format
 msgid "Backup in '%1' done."
 msgstr "在 '%1' 的備份已完成。"
 
-#: core/pimdatabackuprestore.cpp:279
+#: core/pimdatabackuprestore.cpp:264
 #, kde-format
 msgid "Starting to restore data from '%1'"
 msgstr "開始從 '%1' 回復資料"
 
-#: core/pimdatabackuprestore.cpp:287
+#: core/pimdatabackuprestore.cpp:272
 #, kde-format
 msgid "Restoring data from '%1' done."
 msgstr "從 '%1' 回復資料已完成。"
@@ -654,40 +623,35 @@ msgstr "KOrganizer"
 
 #: core/utils.cpp:189
 #, kde-format
-msgid "KNotes"
-msgstr "KNotes"
-
-#: core/utils.cpp:191
-#, kde-format
 msgid "Akregator"
 msgstr "Akregator"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:203
 #, kde-format
 msgid "Identity"
 msgstr "身份"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:205
 #, kde-format
 msgid "Mails"
 msgstr "郵件"
 
-#: core/utils.cpp:209
+#: core/utils.cpp:207
 #, kde-format
 msgid "Mail Transport"
 msgstr "郵件傳送"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:209
 #, kde-format
 msgid "Resources"
 msgstr "資源"
 
-#: core/utils.cpp:213
+#: core/utils.cpp:211
 #, kde-format
 msgid "Config"
 msgstr "設定"
 
-#: core/utils.cpp:215
+#: core/utils.cpp:213
 #, kde-format
 msgid "Data"
 msgstr "資料"
@@ -1150,7 +1114,22 @@ msgstr "總是合併設定檔案"
 msgid "Import"
 msgstr "匯入"
 
-#: gui/widgets/selectiontypetreewidget.cpp:350
+#: gui/widgets/selectiontypetreewidget.cpp:332
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "樣本檔案 (*.xml)"
+
+#~ msgid "Start export KNotes settings..."
+#~ msgstr "開始匯出 KNotes 設定..."
+
+#~ msgid "Export KNotes settings"
+#~ msgstr "匯出 KNotes 設定"
+
+#~ msgid "Starting to import KNotes settings..."
+#~ msgstr "開始匯入 KNotes 設定..."
+
+#~ msgid "Import KNotes settings"
+#~ msgstr "匯入 KNotes 設定"
+
+#~ msgid "KNotes"
+#~ msgstr "KNotes"

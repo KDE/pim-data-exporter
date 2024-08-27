@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde 49i410\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-08-27 00:40+0000\n"
 "PO-Revision-Date: 2014-01-31 19:25+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian\n"
@@ -200,7 +200,6 @@ msgstr "Počni izvoz kaddressbook postavki..."
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
 #: core/mail/exportmailjobinterface.cpp:653
-#: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
 msgstr "vraćanje resursa"
@@ -209,7 +208,6 @@ msgstr "vraćanje resursa"
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
 #: core/mail/exportmailjobinterface.cpp:675
-#: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
 msgstr "vraćanje resursa završeno"
@@ -219,7 +217,6 @@ msgstr "vraćanje resursa završeno"
 #: core/alarm/exportalarmjobinterface.cpp:109
 #: core/calendar/exportcalendarjobinterface.cpp:228
 #: core/mail/exportmailjobinterface.cpp:167
-#: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
 msgstr "Vraćanje konfiguracije"
@@ -229,7 +226,6 @@ msgstr "Vraćanje konfiguracije"
 #: core/alarm/exportalarmjobinterface.cpp:135
 #: core/calendar/exportcalendarjobinterface.cpp:248
 #: core/mail/exportmailjobinterface.cpp:536
-#: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
 msgstr "vVraćanje konfiguracija završeno"
@@ -250,7 +246,6 @@ msgstr "Počni izvoz kaddressbook postavki..."
 #: core/akregator/importakregatorjobinterface.cpp:93
 #: core/alarm/importalarmjobinterface.cpp:82
 #: core/calendar/importcalendarjobinterface.cpp:90
-#: core/notes/importnotesjobinterface.cpp:80
 #, fuzzy, kde-format
 #| msgid "Restore mails..."
 msgid "Restore configs..."
@@ -261,7 +256,6 @@ msgstr "Obnovi poštu..."
 #: core/alarm/importalarmjobinterface.cpp:98
 #: core/calendar/importcalendarjobinterface.cpp:229
 #: core/mail/importmailjobinterface.cpp:866
-#: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
 msgstr "Konfiguracija obnovljena."
@@ -274,8 +268,6 @@ msgstr "Konfiguracija obnovljena."
 #: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
 #: core/mail/importmailjobinterface.cpp:200
-#: core/notes/importnotesjobinterface.cpp:148
-#: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
 msgstr "Obnovi resurse..."
@@ -297,7 +289,6 @@ msgid "Backing up data..."
 msgstr "Pohranjivanje podataka u rezervu..."
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
-#: core/notes/exportnotesjobinterface.cpp:46
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
 msgstr "\"%1% direktorij ne može biti dodan u rezervnu datoteku."
@@ -320,14 +311,12 @@ msgid "Import Akregator settings"
 msgstr "Počni izvoz akregator postavki..."
 
 #: core/akregator/importakregatorjobinterface.cpp:106
-#: core/notes/importnotesjobinterface.cpp:116
 #, fuzzy, kde-format
 #| msgid "Restore Data..."
 msgid "Restore data..."
 msgstr "Vraćanje podataka..."
 
 #: core/akregator/importakregatorjobinterface.cpp:112
-#: core/notes/importnotesjobinterface.cpp:129
 #, kde-format
 msgid "Data restored."
 msgstr "Podaci obnovljeni."
@@ -609,58 +598,35 @@ msgstr "Vraćanje identiteta"
 msgid "Folder Attributes cannot be restored."
 msgstr "Filteri se ne mogu izvesti"
 
-#: core/notes/exportnotesjobinterface.cpp:28
-#, kde-format
-msgid "Start export KNotes settings..."
-msgstr "Počni izvoz knotes postavki..."
-
-#: core/notes/exportnotesjobinterface.cpp:29
-#, fuzzy, kde-format
-#| msgid "Start export KNotes settings..."
-msgid "Export KNotes settings"
-msgstr "Počni izvoz knotes postavki..."
-
-#: core/notes/importnotesjobinterface.cpp:49
-#, fuzzy, kde-format
-#| msgid "Start import KNotes settings..."
-msgid "Starting to import KNotes settings..."
-msgstr "Počni uvoz knotes postavki..."
-
-#: core/notes/importnotesjobinterface.cpp:52
-#, fuzzy, kde-format
-#| msgid "Start export KNotes settings..."
-msgid "Import KNotes settings"
-msgstr "Počni izvoz knotes postavki..."
-
-#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#: core/pimdatabackuprestore.cpp:76 core/pimdatabackuprestore.cpp:239
 #, kde-format
 msgid "No data selected."
 msgstr ""
 
-#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#: core/pimdatabackuprestore.cpp:82 core/pimdatabackuprestore.cpp:245
 #, fuzzy, kde-format
 #| msgid "Failed to synchronize %1."
 msgid "Unable to open file \"%1\"."
 msgstr "Neuspjela sinhronizacija %1."
 
-#: core/pimdatabackuprestore.cpp:94
+#: core/pimdatabackuprestore.cpp:91
 #, fuzzy, kde-format
 #| msgid "Start to backup data in '%1'"
 msgid "Starting to backup data in '%1'"
 msgstr "Započni kopiju podataka u '%1'"
 
-#: core/pimdatabackuprestore.cpp:183
+#: core/pimdatabackuprestore.cpp:174
 #, kde-format
 msgid "Backup in '%1' done."
 msgstr "Kopija u '%1' završena."
 
-#: core/pimdatabackuprestore.cpp:279
+#: core/pimdatabackuprestore.cpp:264
 #, fuzzy, kde-format
 #| msgid "Start to restore data from '%1'"
 msgid "Starting to restore data from '%1'"
 msgstr "Počni obnovu podataka iz '%1'"
 
-#: core/pimdatabackuprestore.cpp:287
+#: core/pimdatabackuprestore.cpp:272
 #, kde-format
 msgid "Restoring data from '%1' done."
 msgstr "Obnova podataka iz '%1' obavljena."
@@ -708,40 +674,35 @@ msgstr "KOrganizer"
 
 #: core/utils.cpp:189
 #, kde-format
-msgid "KNotes"
-msgstr "KNotes"
-
-#: core/utils.cpp:191
-#, kde-format
 msgid "Akregator"
 msgstr "Akregator"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:203
 #, kde-format
 msgid "Identity"
 msgstr "Identitet"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:205
 #, kde-format
 msgid "Mails"
 msgstr "Pošta"
 
-#: core/utils.cpp:209
+#: core/utils.cpp:207
 #, kde-format
 msgid "Mail Transport"
 msgstr "Transport pošte"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:209
 #, kde-format
 msgid "Resources"
 msgstr "Resursi"
 
-#: core/utils.cpp:213
+#: core/utils.cpp:211
 #, kde-format
 msgid "Config"
 msgstr "Konfiguracija"
 
-#: core/utils.cpp:215
+#: core/utils.cpp:213
 #, kde-format
 msgid "Data"
 msgstr "Podaci"
@@ -1242,10 +1203,31 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: gui/widgets/selectiontypetreewidget.cpp:350
+#: gui/widgets/selectiontypetreewidget.cpp:332
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr ""
+
+#~ msgid "Start export KNotes settings..."
+#~ msgstr "Počni izvoz knotes postavki..."
+
+#, fuzzy
+#~| msgid "Start export KNotes settings..."
+#~ msgid "Export KNotes settings"
+#~ msgstr "Počni izvoz knotes postavki..."
+
+#, fuzzy
+#~| msgid "Start import KNotes settings..."
+#~ msgid "Starting to import KNotes settings..."
+#~ msgstr "Počni uvoz knotes postavki..."
+
+#, fuzzy
+#~| msgid "Start export KNotes settings..."
+#~ msgid "Import KNotes settings"
+#~ msgstr "Počni izvoz knotes postavki..."
+
+#~ msgid "KNotes"
+#~ msgstr "KNotes"
 
 #~ msgid "PIM Setting Exporter"
 #~ msgstr "Izvoženje PIM postavki"

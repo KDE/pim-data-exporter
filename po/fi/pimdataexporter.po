@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-08-27 00:40+0000\n"
 "PO-Revision-Date: 2022-07-11 18:45+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -191,7 +191,6 @@ msgstr "Vie KAddressBookin asetukset"
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
 #: core/mail/exportmailjobinterface.cpp:653
-#: core/notes/exportnotesjobinterface.cpp:53
 #, kde-format
 msgid "Backing up resources..."
 msgstr "Varmuuskopioidaan resursseja…"
@@ -200,7 +199,6 @@ msgstr "Varmuuskopioidaan resursseja…"
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
 #: core/mail/exportmailjobinterface.cpp:675
-#: core/notes/exportnotesjobinterface.cpp:150
 #, kde-format
 msgid "Resources backup done."
 msgstr "Resurssit varmuuskopioitu."
@@ -210,7 +208,6 @@ msgstr "Resurssit varmuuskopioitu."
 #: core/alarm/exportalarmjobinterface.cpp:109
 #: core/calendar/exportcalendarjobinterface.cpp:228
 #: core/mail/exportmailjobinterface.cpp:167
-#: core/notes/exportnotesjobinterface.cpp:75
 #, kde-format
 msgid "Backing up config..."
 msgstr "Varmuuskopioidaan asetuksia…"
@@ -220,7 +217,6 @@ msgstr "Varmuuskopioidaan asetuksia…"
 #: core/alarm/exportalarmjobinterface.cpp:135
 #: core/calendar/exportcalendarjobinterface.cpp:248
 #: core/mail/exportmailjobinterface.cpp:536
-#: core/notes/exportnotesjobinterface.cpp:108
 #, kde-format
 msgid "Config backup done."
 msgstr "Asetukset varmuuskopioitu."
@@ -239,7 +235,6 @@ msgstr "Tuo KAddressBookin asetukset"
 #: core/akregator/importakregatorjobinterface.cpp:93
 #: core/alarm/importalarmjobinterface.cpp:82
 #: core/calendar/importcalendarjobinterface.cpp:90
-#: core/notes/importnotesjobinterface.cpp:80
 #, kde-format
 msgid "Restore configs..."
 msgstr "Palauta asetukset…"
@@ -249,7 +244,6 @@ msgstr "Palauta asetukset…"
 #: core/alarm/importalarmjobinterface.cpp:98
 #: core/calendar/importcalendarjobinterface.cpp:229
 #: core/mail/importmailjobinterface.cpp:866
-#: core/notes/importnotesjobinterface.cpp:109
 #, kde-format
 msgid "Config restored."
 msgstr "Asetukset palautettu."
@@ -262,8 +256,6 @@ msgstr "Asetukset palautettu."
 #: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
 #: core/mail/importmailjobinterface.cpp:200
-#: core/notes/importnotesjobinterface.cpp:148
-#: core/notes/importnotesjobinterface.cpp:149
 #, kde-format
 msgid "Restore resources..."
 msgstr "Palauta resurssit…"
@@ -284,7 +276,6 @@ msgid "Backing up data..."
 msgstr "Varmuuskopioidaan tietoja…"
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
-#: core/notes/exportnotesjobinterface.cpp:46
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
 msgstr "Kansiota ”%1” ei voitu lisätä varmuuskopiotiedostoon."
@@ -305,13 +296,11 @@ msgid "Import Akregator settings"
 msgstr "Tuo Akregatorin asetukset"
 
 #: core/akregator/importakregatorjobinterface.cpp:106
-#: core/notes/importnotesjobinterface.cpp:116
 #, kde-format
 msgid "Restore data..."
 msgstr "Palauta tiedot…"
 
 #: core/akregator/importakregatorjobinterface.cpp:112
-#: core/notes/importnotesjobinterface.cpp:129
 #, kde-format
 msgid "Data restored."
 msgstr "Tiedot palautettu."
@@ -568,52 +557,32 @@ msgstr "Kansiomääritteiden palautus valmis."
 msgid "Folder Attributes cannot be restored."
 msgstr "Kansiomääritteitä ei voi palauttaa."
 
-#: core/notes/exportnotesjobinterface.cpp:28
-#, kde-format
-msgid "Start export KNotes settings..."
-msgstr "Aloita KNotesin asetusten vienti…"
-
-#: core/notes/exportnotesjobinterface.cpp:29
-#, kde-format
-msgid "Export KNotes settings"
-msgstr "Vie KNotesin asetukset"
-
-#: core/notes/importnotesjobinterface.cpp:49
-#, kde-format
-msgid "Starting to import KNotes settings..."
-msgstr "Aloitetaan KNotesin asetusten tuonti…"
-
-#: core/notes/importnotesjobinterface.cpp:52
-#, kde-format
-msgid "Import KNotes settings"
-msgstr "Tuo KNotesin asetukset"
-
-#: core/pimdatabackuprestore.cpp:79 core/pimdatabackuprestore.cpp:254
+#: core/pimdatabackuprestore.cpp:76 core/pimdatabackuprestore.cpp:239
 #, kde-format
 msgid "No data selected."
 msgstr "Tietoja ei ole valittu."
 
-#: core/pimdatabackuprestore.cpp:85 core/pimdatabackuprestore.cpp:260
+#: core/pimdatabackuprestore.cpp:82 core/pimdatabackuprestore.cpp:245
 #, kde-format
 msgid "Unable to open file \"%1\"."
 msgstr "Tiedostoa ”%1” ei voida avata."
 
-#: core/pimdatabackuprestore.cpp:94
+#: core/pimdatabackuprestore.cpp:91
 #, kde-format
 msgid "Starting to backup data in '%1'"
 msgstr "Aloitetaan tietojen varmuuskopiointi arkistoon ”%1”"
 
-#: core/pimdatabackuprestore.cpp:183
+#: core/pimdatabackuprestore.cpp:174
 #, kde-format
 msgid "Backup in '%1' done."
 msgstr "Varmuuskopioitu arkistoon ”%1”."
 
-#: core/pimdatabackuprestore.cpp:279
+#: core/pimdatabackuprestore.cpp:264
 #, kde-format
 msgid "Starting to restore data from '%1'"
 msgstr "Aloitetaan tietojen palautus arkistosta ”%1”."
 
-#: core/pimdatabackuprestore.cpp:287
+#: core/pimdatabackuprestore.cpp:272
 #, kde-format
 msgid "Restoring data from '%1' done."
 msgstr "Tiedot on palautettu arkistosta ”%1”."
@@ -660,43 +629,38 @@ msgstr "KOrganizer"
 
 #: core/utils.cpp:189
 #, kde-format
-msgid "KNotes"
-msgstr "KNotes"
-
-#: core/utils.cpp:191
-#, kde-format
 msgid "Akregator"
 msgstr "Akregator"
 
 # Koska tämä liittyy jotenkin id:iden sarjaan, joka alkaa Resources, monikko on luontevampi
-#: core/utils.cpp:205
+#: core/utils.cpp:203
 #, kde-format
 msgid "Identity"
 msgstr "Henkilöydet"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:205
 #, kde-format
 msgid "Mails"
 msgstr "Sähköpostit"
 
 # Koska tämä liittyy jotenkin id:iden sarjaan, joka alkaa Resources, monikko on luontevampi
-#: core/utils.cpp:209
+#: core/utils.cpp:207
 #, kde-format
 msgid "Mail Transport"
 msgstr "Postivälitykset"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:209
 #, kde-format
 msgid "Resources"
 msgstr "Resurssit"
 
 # Koska tämä liittyy jotenkin id:iden sarjaan, joka alkaa Resources, monikko on luontevampi
-#: core/utils.cpp:213
+#: core/utils.cpp:211
 #, kde-format
 msgid "Config"
 msgstr "Asetukset"
 
-#: core/utils.cpp:215
+#: core/utils.cpp:213
 #, kde-format
 msgid "Data"
 msgstr "Tiedot"
@@ -1194,10 +1158,25 @@ msgstr "Yhdistä asetustiedosto aina"
 msgid "Import"
 msgstr "Tuonti"
 
-#: gui/widgets/selectiontypetreewidget.cpp:350
+#: gui/widgets/selectiontypetreewidget.cpp:332
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "Mallipohjatiedostot (*.xml)"
+
+#~ msgid "Start export KNotes settings..."
+#~ msgstr "Aloita KNotesin asetusten vienti…"
+
+#~ msgid "Export KNotes settings"
+#~ msgstr "Vie KNotesin asetukset"
+
+#~ msgid "Starting to import KNotes settings..."
+#~ msgstr "Aloitetaan KNotesin asetusten tuonti…"
+
+#~ msgid "Import KNotes settings"
+#~ msgstr "Tuo KNotesin asetukset"
+
+#~ msgid "KNotes"
+#~ msgstr "KNotes"
 
 #~ msgid "&New"
 #~ msgstr "&Uusi"
