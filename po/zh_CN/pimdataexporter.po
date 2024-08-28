@@ -1114,18 +1114,3 @@ msgstr "导入"
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "模板文件 (*.xml)"
-
-#~ msgid "Start export KNotes settings..."
-#~ msgstr "开始导出 KNotes 设置..."
-
-#~ msgid "Export KNotes settings"
-#~ msgstr "导出 KNotes 设置"
-
-#~ msgid "Starting to import KNotes settings..."
-#~ msgstr "正在开始导入 KNotes 设置..."
-
-#~ msgid "Import KNotes settings"
-#~ msgstr "导入 Knotes 设置"
-
-#~ msgid "KNotes"
-#~ msgstr "KNotes"

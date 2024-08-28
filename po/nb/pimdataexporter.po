@@ -1120,9 +1120,3 @@ msgstr ""
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr ""
-
-#~ msgid "Start export KNotes settings..."
-#~ msgstr "Start eksport av KNotes-innstillinger …"
-
-#~ msgid "KNotes"
-#~ msgstr "KNotes"
