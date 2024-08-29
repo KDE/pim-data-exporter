@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
+# SPDX-FileCopyrightText: 2023, 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 # Frederik Schwarzer <schwarzer@kde.org>, 2012, 2013, 2016, 2022.
 # Burkhard Lück <lueck@hube-lueck.de>, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021.
 msgid ""
@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-27 00:40+0000\n"
-"PO-Revision-Date: 2023-12-21 17:52+0100\n"
+"PO-Revision-Date: 2024-08-28 21:59+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -37,8 +37,7 @@ msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "Copyright © 2015-%1 pimdataexporter-Autoren"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
-#, fuzzy, kde-format
-#| msgid "Laurent Montel"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
@@ -49,34 +48,30 @@ msgid "Maintainer"
 msgstr "Betreuer"
 
 #: console/main.cpp:31
-#, fuzzy, kde-format
-#| msgid "File to log information to."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File to log information to."
 msgstr "Protokolldatei für Information"
 
 #: console/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "Template file to define what data, settings to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
 msgstr ""
-"Vorlagendatei zur Definition der Daten und Einstellungen, die importiert "
-"oder exportiert werden"
+"Die Vorlagendatei zur Definition der Daten und Einstellungen, die importiert "
+"oder exportiert werden."
 
 #: console/main.cpp:37
-#, fuzzy, kde-format
-#| msgid "Import the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file."
-msgstr "Importiert die angegebene Datei,"
+msgstr "Die angegebene Datei importieren."
 
 #: console/main.cpp:39
-#, fuzzy, kde-format
-#| msgid "Export the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file."
-msgstr "Exportiert die angegebene Datei."
+msgstr "Die angegebene Datei exportieren."
 
 #: core/abstractimportexportjob.cpp:56
 #, kde-format
@@ -668,8 +663,7 @@ msgid "Archive File Structure"
 msgstr "Struktur der Archivdatei"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Backup Archive Structure:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Struktur des Sicherungsarchivs:"
@@ -696,25 +690,22 @@ msgid "User Feedback"
 msgstr "Benutzer-Feedback"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Use this template by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Diese Vorlage als Standard verwenden"
 
 #: gui/dialog/selectiontypedialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "Save as Template..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Save as Template..."
-msgstr "Als Vorlage speichern ..."
+msgstr "Als Vorlage speichern …"
 
 #: gui/dialog/selectiontypedialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Load Template..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Load Template..."
-msgstr "Vorlage laden ..."
+msgstr "Vorlage laden …"
 
 #: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
@@ -724,30 +715,26 @@ msgstr "Typ auswählen"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Alles auswählen"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Unselect All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Auswahl aufheben"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Extract Selected File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "Ausgewählte Datei entpacken"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Open Selected File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "Ausgewählte Datei öffnen"
@@ -759,8 +746,7 @@ msgid "Show Archive Content on file \"%1\""
 msgstr "Archiv-Inhalt für Datei „%1“ anzeigen"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Suchen ..."
@@ -771,8 +757,7 @@ msgid "Save As Text..."
 msgstr "Als Text speichern ..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Ordner auswählen"
@@ -783,8 +768,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "Möchten Sie %1 überschreiben?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Datei existiert bereits"
@@ -807,8 +791,7 @@ msgid "Export Log File"
 msgstr "Protokolldatei exportieren"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Archiv kann nicht geöffnet werden"
@@ -824,8 +807,7 @@ msgid "This is not pim archive."
 msgstr "Dies ist kein PIM-Archiv."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Information anzeigen"
@@ -837,10 +819,7 @@ msgid "Synchronize Resources"
 msgstr "Ressourcen abgleichen"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some resources were added but data were not sync. Select resources that "
-#| "you want to sync:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
@@ -864,15 +843,13 @@ msgstr ""
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
-msgstr "Zurückspielen"
+msgstr "Wiederherstellen"
 
 #: gui/importexportprogressindicatorgui.cpp:69
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "Zusammenführen"
@@ -910,8 +887,7 @@ msgstr ""
 "Möchten Sie das Archiv trotzdem importieren?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Dies ist nicht die richtige Version"
@@ -940,34 +916,30 @@ msgstr ""
 "oder Exportiert werden"
 
 #: gui/pimdatacommandlineoption.cpp:48
-#, fuzzy, kde-format
-#| msgid "Import the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
-msgstr "Importiert die angegebene Datei"
+msgstr "Die angegebene Datei importieren"
 
 #: gui/pimdatacommandlineoption.cpp:49
-#, fuzzy, kde-format
-#| msgid "Export the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
-msgstr "Exportiert die angegebene Datei"
+msgstr "Die angegebene Datei exportieren"
 
 #: gui/pimdatacommandlineoption.cpp:51
-#, fuzzy, kde-format
-#| msgid "File or url. The user will be asked whether to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
 msgstr ""
-"Datei oder URL. Der Benutzer gefragt, ob die Dateien importiert oder "
-"importiert werden sollen"
+"Datei oder Adresse. Es wird abgefragt, ob die Dateien importiert oder "
+"exportiert werden sollen."
 
 #: gui/pimdatacommandlineoption.cpp:53
-#, fuzzy, kde-format
-#| msgid "Lists the available options for user feedback"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr "Zeigt die verfügbaren Einstellungen zum Benutzer-Feedback an"
+msgstr "Die verfügbaren Einstellungen zum Benutzer-Feedback anzeigen"
 
 #. i18n: ectx: Menu (file)
 #: gui/pimdataexporter.rc:8
@@ -1019,8 +991,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Sicherung"
@@ -1056,8 +1027,7 @@ msgid "Show Information on current Archive..."
 msgstr "Informationen zu aktuellem Archiv anzeigen ..."
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Archiv auswählen"
@@ -1073,8 +1043,7 @@ msgid "Log is empty."
 msgstr "Das Protokoll ist leer."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Protokoll speichern"
@@ -1134,22 +1103,19 @@ msgid "Pim Data Exporter"
 msgstr "PIM-Daten-Export"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Always Override File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "Datei immer überschreiben"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Always Override Directory"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "Ordner immer überschreiben"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Always Merge Config File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "Konfigurationsdatei immer zusammenführen"
