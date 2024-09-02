@@ -10,7 +10,7 @@
 #include <QTextStream>
 #include <QVariant>
 
-//#define REMOVE_TEMPORARY_FILE 1
+// #define REMOVE_TEMPORARY_FILE 1
 
 LogCreatingResource::LogCreatingResource(QObject *parent)
     : QObject(parent)
