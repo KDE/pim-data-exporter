@@ -3,7 +3,7 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2012, 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021.
 msgid ""
 msgstr ""
-"Project-Id-Version: backupmail\n"
+"Project-Id-Version: pimdataexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-27 00:40+0000\n"
 "PO-Revision-Date: 2024-08-28 21:59+0200\n"

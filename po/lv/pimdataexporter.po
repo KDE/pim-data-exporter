@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-27 00:40+0000\n"
-"PO-Revision-Date: 2024-04-10 17:02+0300\n"
+"PO-Revision-Date: 2024-08-30 12:59+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,8 +40,7 @@ msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "Copyright © 2015—%1 pimdataexporter autori"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
-#, fuzzy, kde-format
-#| msgid "Laurent Montel"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
@@ -52,31 +51,27 @@ msgid "Maintainer"
 msgstr "Uzturētājs"
 
 #: console/main.cpp:31
-#, fuzzy, kde-format
-#| msgid "File to log information to."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File to log information to."
 msgstr "Datne, kurā žurnalēt informāciju."
 
 #: console/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "Template file to define what data, settings to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
 msgstr ""
-"Veidnes datnes, lai definētu, kādus datus un iestatījumus importēt vai "
-"eksportēt."
+"Veidnes datne, kas definē importējamos vai eksportējamos datus un "
+"iestatījumus."
 
 #: console/main.cpp:37
-#, fuzzy, kde-format
-#| msgid "Import the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file."
 msgstr "Importēt doto datni."
 
 #: console/main.cpp:39
-#, fuzzy, kde-format
-#| msgid "Export the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file."
 msgstr "Eksportēt doto datni."
@@ -670,8 +665,7 @@ msgid "Archive File Structure"
 msgstr "Arhīva datņu struktūra"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Backup Archive Structure:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Dublējuma arhīva struktūra:"
@@ -698,22 +692,19 @@ msgid "User Feedback"
 msgstr "Lietošanas informācija"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Use this template by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Pēc noklusējuma lietot šo veidni"
 
 #: gui/dialog/selectiontypedialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "Save as Template..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Saglabāt kā veidni..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Load Template..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Ielādēt veidni..."
@@ -726,30 +717,26 @@ msgstr "Atlasīt tipu"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Atlasīt visu"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Unselect All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Noņemt atlasi visam"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Extract Selected File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "Izvilkt atlasīto datni"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Open Selected File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "Atvērt atlasīto datni"
@@ -761,8 +748,7 @@ msgid "Show Archive Content on file \"%1\""
 msgstr "Rādīt datnes „%1“ arhīva saturu"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Meklēt..."
@@ -773,8 +759,7 @@ msgid "Save As Text..."
 msgstr "Saglabāt kā tekstu..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Atlasīt vārdnīcu"
@@ -785,8 +770,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "Vai vēlaties pārrakstīt „%1“?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Datne jau pastāv"
@@ -809,8 +793,7 @@ msgid "Export Log File"
 msgstr "Eksportēt žurnāla datni"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Nevar atvērt arhīvu"
@@ -826,8 +809,7 @@ msgid "This is not pim archive."
 msgstr "Šis nav PIM arhīvs."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Rādīt informāciju"
@@ -839,10 +821,7 @@ msgid "Synchronize Resources"
 msgstr "Sinhronizēt resursus"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some resources were added but data were not sync. Select resources that "
-#| "you want to sync:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
@@ -865,15 +844,13 @@ msgstr "„%1“ jau pastāv. Vēlaties to pārrakstīt vai apvienot?"
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Atjaunot"
 
 #: gui/importexportprogressindicatorgui.cpp:69
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "Apvienot"
@@ -886,7 +863,7 @@ msgstr "„%1“ jau pastāv. Vēlaties to pārrakstīt?"
 #: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
-msgstr "„%1“ jau pastāv. Vēlaties to pārrakstīt?"
+msgstr "Mape „%1“ jau pastāv. Vēlaties to pārrakstīt?"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:41
 #, kde-format
@@ -910,8 +887,7 @@ msgstr ""
 "datus, kas importa laikā tiks izlaisti. Vai vēlaties to importēt?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Nepareiza versija"
@@ -940,32 +916,28 @@ msgstr ""
 "importēt vai eksportēt"
 
 #: gui/pimdatacommandlineoption.cpp:48
-#, fuzzy, kde-format
-#| msgid "Import the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
 msgstr "Importēt doto datni"
 
 #: gui/pimdatacommandlineoption.cpp:49
-#, fuzzy, kde-format
-#| msgid "Export the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
 msgstr "Eksportēt doto datni"
 
 #: gui/pimdatacommandlineoption.cpp:51
-#, fuzzy, kde-format
-#| msgid "File or url. The user will be asked whether to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
-msgstr "Datne vai URL. Lietotājiem tiks lūgts to importēt vai eksportēt."
+msgstr "Datne vai URL. Lietotājiem lūgs to importēt vai eksportēt."
 
 #: gui/pimdatacommandlineoption.cpp:53
-#, fuzzy, kde-format
-#| msgid "Lists the available options for user feedback"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr "Uzskaita par lietošanu sniedzamās informācijas opcijas"
+msgstr "Uzskaita pieejamās lietotāju atsauksmju opcijas"
 
 #. i18n: ectx: Menu (file)
 #: gui/pimdataexporter.rc:8
@@ -1016,8 +988,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Dublējumkopija"
@@ -1053,8 +1024,7 @@ msgid "Show Information on current Archive..."
 msgstr "Rādīt pašreizējā arhīva informāciju..."
 
 #: gui/pimdataexporterwindow.cpp:302
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Atlasiet arhīvu"
@@ -1070,8 +1040,7 @@ msgid "Log is empty."
 msgstr "Žurnāls ir tukšs."
 
 #: gui/pimdataexporterwindow.cpp:314
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Saglabāt žurnālu"
@@ -1131,22 +1100,19 @@ msgid "Pim Data Exporter"
 msgstr "PIM datu eksportētājs"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Always Override File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "Vienmēr pārrakstīt datni"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Always Override Directory"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "Vienmēr pārrakstīt mapi"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Always Merge Config File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "Vienmēr apvienot konfigurācijas datni"
