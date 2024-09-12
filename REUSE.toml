@@ -1,0 +1,16 @@
+version = 1
+SPDX-PackageName = "pim-data-exporter"
+SPDX-PackageSupplier = "Montel Laurent <montel@kde.org>"
+SPDX-PackageDownloadLocation = "https://invent.kde.org/pim/pim-data-exporter"
+
+[[annotations]]
+path = ["core/autotests/notes/data/**", "core/autotests/mail/data/**", "core/autotests/calendar/data/**", "core/autotests/alarm/data/**", "core/autotests/addressbook/data/**", "core/autotests/akregator/data/**", "gui/autotests/data/**", "TODO", "MAINTAINERS", "gui/autotests/data/**.xml", "gui/backup-structure.txt", "doc/selection-dialog.png", "readme-build-ftime.txt"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Montel Laurent <montel@kde.org>"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = "doc/index.docbook"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Scarlett Clark"
+SPDX-License-Identifier = "GFDL-1.2-or-later"
