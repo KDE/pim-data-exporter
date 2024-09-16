@@ -40,8 +40,7 @@ msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "Copyright © 2012-2013 οι συγγραφείς του pimsettingexporter"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
-#, fuzzy, kde-format
-#| msgid "Laurent Montel"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
@@ -308,8 +307,7 @@ msgid "Import Akregator settings"
 msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:106
-#, fuzzy, kde-format
-#| msgid "Restore Data..."
+#, kde-format
 msgid "Restore data..."
 msgstr "Επαναφορά δεδομένων..."
 
@@ -749,8 +747,7 @@ msgid "Load Template..."
 msgstr ""
 
 #: gui/dialog/selectiontypedialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Select Type"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
 msgstr "Επιλογή τύπου"
@@ -887,15 +884,13 @@ msgstr "Το \"%1\" ήδη υπάρχει. Θέλετε να γίνει αντι
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Επαναφορά"
 
 #: gui/importexportprogressindicatorgui.cpp:69
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "Συγχώνευση"
@@ -1032,8 +1027,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
 #: gui/pimdataexporterwindow.cpp:402
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Εφεδρικό αντίγραφο"
