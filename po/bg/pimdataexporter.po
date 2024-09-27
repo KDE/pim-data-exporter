@@ -1129,18 +1129,3 @@ msgstr "Импортиране"
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "Шаблонни файлове (*.xml)"
-
-#~ msgid "Start export KNotes settings..."
-#~ msgstr "Стартиране на експортиране на настройките на KNotes..."
-
-#~ msgid "Export KNotes settings"
-#~ msgstr "Експортиране на настройки на KNotes"
-
-#~ msgid "Starting to import KNotes settings..."
-#~ msgstr "Започва импортирането на настройките на KNotes..."
-
-#~ msgid "Import KNotes settings"
-#~ msgstr "Импортиране на настройки на KNotes"
-
-#~ msgid "KNotes"
-#~ msgstr "KNotes"
