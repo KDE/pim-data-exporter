@@ -31,6 +31,16 @@ include(KDEGitCommitHooks)
 include(KDEClangFormat)
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h *.c)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+include(ECMCheckOutboundLicense)
+file(GLOB_RECURSE ALL_SOURCE_FILES
+gui/*.cpp
+gui/*.h
+core/*.cpp
+core/*.h
+console/*.cpp
+console/*.h
+)
+ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
 # Do NOT add quote
 set(KDEPIM_DEV_VERSION alpha)
