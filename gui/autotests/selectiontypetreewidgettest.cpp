@@ -28,7 +28,7 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate_data()
 {
     QTest::addColumn<QString>("filename");
     QTest::addColumn<int>("topLevelItems");
-    QTest::newRow("selectedtypemodel1.xml") << QStringLiteral("selectedtypemodel1.xml") << 3; // because blogilo is not supported anymore
+    QTest::newRow("selectedtypemodel1.xml") << QStringLiteral("selectedtypemodel1.xml") << 2; // because blogilo is not supported anymore
     QTest::newRow("selectedtypemodel2.xml") << QStringLiteral("selectedtypemodel2.xml") << 1;
 }
 
