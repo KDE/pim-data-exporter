@@ -35,7 +35,9 @@ public:
 private:
     void slotItemChanged(QTreeWidgetItem *, int);
 
-    enum ActionType { action = Qt::UserRole + 1 };
+    enum ActionType {
+        action = Qt::UserRole + 1
+    };
 
     void initialize(bool backupData);
     void setSelectItems(bool b);

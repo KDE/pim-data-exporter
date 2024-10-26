@@ -21,7 +21,9 @@ public:
     explicit ShowArchiveStructureDialog(const QString &filename, QWidget *parent = nullptr);
     ~ShowArchiveStructureDialog() override;
 
-    enum File { FullPath = Qt::UserRole + 1 };
+    enum File {
+        FullPath = Qt::UserRole + 1
+    };
 
 private:
     void slotExportAsLogFile();

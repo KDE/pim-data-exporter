@@ -47,7 +47,10 @@ protected:
 
 private:
     void slotJobFinished();
-    enum Action { Backup, Restore };
+    enum Action {
+        Backup,
+        Restore
+    };
     [[nodiscard]] bool openArchive(const QString &filename, bool readWrite);
     void backupNextStep();
     void restoreNextStep();

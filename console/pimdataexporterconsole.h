@@ -14,7 +14,10 @@ class PimDataExporterConsole : public QObject
 {
     Q_OBJECT
 public:
-    enum Mode { Import = 0, Export = 1 };
+    enum Mode {
+        Import = 0,
+        Export = 1
+    };
 
     explicit PimDataExporterConsole(QObject *parent = nullptr);
     ~PimDataExporterConsole() override;

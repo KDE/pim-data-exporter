@@ -21,6 +21,11 @@ public:
     void addEndLineLogEntry();
 
 private:
-    enum LogType { AddEndLine = 0, AddInfo, AddError, AddTitle };
+    enum LogType {
+        AddEndLine = 0,
+        AddInfo,
+        AddError,
+        AddTitle
+    };
     void addLogLine(const QString &message, LogType type);
 };
