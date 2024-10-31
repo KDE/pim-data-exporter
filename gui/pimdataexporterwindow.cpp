@@ -264,12 +264,12 @@ void PimDataExporterWindow::setupActions(bool canZipFile)
     mShowArchiveInformationsAboutCurrentArchiveAction->setText(i18n("Show Information on current Archive..."));
     mShowArchiveInformationsAboutCurrentArchiveAction->setEnabled(false);
 
-    KStandardAction::quit(this, &PimDataExporterWindow::close, ac);
+    KStandardActions::quit(this, &PimDataExporterWindow::close, ac);
     mRecentFilesMenu = new KRecentFilesMenu(this);
     actionCollection()->addAction(QStringLiteral("pimdataexporter_file_open_recent"), mRecentFilesMenu->menuAction());
     connect(mRecentFilesMenu, &KRecentFilesMenu::urlTriggered, this, &PimDataExporterWindow::slotRestoreFile);
 
-    KStandardAction::preferences(this, &PimDataExporterWindow::slotConfigure, ac);
+    KStandardActions::preferences(this, &PimDataExporterWindow::slotConfigure, ac);
 }
 
 void PimDataExporterWindow::slotConfigure()
