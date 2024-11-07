@@ -8,7 +8,10 @@
 #include "pimdataexporterwindow.h"
 
 #include <KCrash>
+#if HAVE_KDBUSADDONS
 #include <KDBusService>
+#endif
+
 #include <KLocalizedString>
 #include <QApplication>
 #ifdef WITH_KUSERFEEDBACK
@@ -56,6 +59,7 @@ int main(int argc, char *argv[])
         return 0;
     }
 #endif
+
 #if HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
 #endif
