@@ -66,7 +66,9 @@ int main(int argc, char *argv[])
 
     auto backupMailWin = new PimDataExporterWindow();
     parser.setExportWindow(backupMailWin);
+#if HAVE_KDBUSADDONS
     QObject::connect(&service, &KDBusService::activateRequested, &parser, &PimDataCommandLineOption::slotActivateRequested);
+#endif
     backupMailWin->show();
     parser.handleCommandLine();
 
