@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-27 00:40+0000\n"
-"PO-Revision-Date: 2024-08-07 20:20+0200\n"
+"PO-Revision-Date: 2024-11-09 20:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -79,32 +79,32 @@ msgstr "Задачата е отменена"
 #: core/abstractimportexportjob.cpp:116
 #, kde-format
 msgid "\"%1\" backup done."
-msgstr "\"%1\" резервно копие е успешно."
+msgstr "„%1“ резервно копие е успешно."
 
 #: core/abstractimportexportjob.cpp:118
 #, kde-format
 msgid "\"%1\" cannot be exported."
-msgstr "\"%1\" не може да бъде експортиран."
+msgstr "„%1“ не може да бъде експортиран."
 
 #: core/abstractimportexportjob.cpp:121
 #, kde-format
 msgid "\"%1\" does not exist."
-msgstr "\"%1\" не съществува."
+msgstr "„%1“ не съществува."
 
 #: core/abstractimportexportjob.cpp:268
 #, kde-format
 msgid "\"%1\" was copied."
-msgstr "\"%1\" беше копиран."
+msgstr "„%1“ беше копиран."
 
 #: core/abstractimportexportjob.cpp:273
 #, kde-format
 msgid "Restoring \"%1\"..."
-msgstr "Възстановяване на \"%1\"..."
+msgstr "Възстановяване на „%1“..."
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "File \"%1\" cannot be copied to \"%2\"."
-msgstr "Файлът \"%1\" не може да бъде копиран в \"%2\"."
+msgstr "Файлът „%1“ не може да бъде копиран в „%2“."
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
@@ -114,7 +114,7 @@ msgstr "Копиране на файл"
 #: core/abstractimportexportjob.cpp:300
 #, kde-format
 msgid "\"%1\" was restored."
-msgstr "\"%1\" беше възстановен."
+msgstr "„%1“ беше възстановен."
 
 #: core/abstractimportexportjob.cpp:385
 #: core/addressbook/importaddressbookjobinterface.cpp:231
@@ -136,17 +136,17 @@ msgstr "Не може да се копира файл %1"
 #: core/abstractimportexportjob.cpp:489
 #, kde-format
 msgid "Resource '%1' created."
-msgstr "Ресурсът \"%1\" е създаден."
+msgstr "Ресурсът „%1“ е създаден."
 
 #: core/abstractimportexportjob.cpp:504
 #, kde-format
 msgid "Failed to synchronize '%1'."
-msgstr "Неуспешно синхронизиране на \"%1\"."
+msgstr "Неуспешно синхронизиране на „%1“."
 
 #: core/abstractimportexportjob.cpp:509
 #, kde-format
 msgid "Resource '%1' synchronized."
-msgstr "Ресурс \"%1\" е синхронизиран."
+msgstr "Ресурс „%1“ е синхронизиран."
 
 #: core/abstractimportexportjob.cpp:515
 #, kde-format
@@ -161,12 +161,12 @@ msgstr "Стартиране на синхронизиране..."
 #: core/abstractimportexportjob.cpp:578
 #, kde-format
 msgid "Directory \"%1\" added to backup file."
-msgstr "Директорията \"%1\" е добавена към резервното копие."
+msgstr "Директорията „%1“ е добавена към резервното копие."
 
 #: core/abstractimportexportjob.cpp:580
 #, kde-format
 msgid "Directory \"%1\" cannot be added to backup file."
-msgstr "Директорията \"%1\" не може да бъде добавена към резервното копие."
+msgstr "Директорията „%1“ не може да бъде добавена към резервното копие."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:28
 #, kde-format
@@ -269,7 +269,7 @@ msgstr "Създаване на резервно копие на данните.
 #: core/akregator/exportakregatorjobinterface.cpp:94
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
-msgstr "Директорията \"%1\" не може да бъде добавена към резервното копие."
+msgstr "Директорията „%1“ не може да бъде добавена към резервното копие."
 
 #: core/akregator/exportakregatorjobinterface.cpp:97
 #, kde-format
@@ -330,19 +330,19 @@ msgstr "Архивът не може да се отвори в режим на �
 #: core/backupresourcefilejobbase.cpp:47
 #, kde-format
 msgid "\"%1\" is not a file."
-msgstr "\"%1\" не е файл."
+msgstr "„%1“ не е файл."
 
 #: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
 #, kde-format
 msgid "\"%1\" was backed up."
-msgstr "Резервното копие на \"%1\" е създадено ."
+msgstr "Резервното копие на „%1“ е създадено ."
 
 #: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
 #: core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
-msgstr "Файлът \"%1\" не може да бъде добавен към архивния файл."
+msgstr "Файлът „%1“ не може да бъде добавен към архивния файл."
 
 #: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
@@ -415,7 +415,7 @@ msgstr "Създаване на резервно копие на самолич�
 #: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
-msgstr "vCard файлът \"%1\" не може да бъде запазен."
+msgstr "vCard файлът „%1“ не може да бъде запазен."
 
 #: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
@@ -534,7 +534,7 @@ msgstr "Неуспешно възстановяване на файла за с�
 #: core/mail/importmailjobinterface.cpp:1283
 #, kde-format
 msgid "\"%1\" migration done."
-msgstr "Миграцията на \"%1\"  е успешна."
+msgstr "Миграцията на „%1“  е успешна."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:35
 #, kde-format
@@ -559,27 +559,27 @@ msgstr "Няма избрани данни."
 #: core/pimdatabackuprestore.cpp:82 core/pimdatabackuprestore.cpp:245
 #, kde-format
 msgid "Unable to open file \"%1\"."
-msgstr "Не може да се отвори файл \"%1\"."
+msgstr "Не може да се отвори файл „%1“."
 
 #: core/pimdatabackuprestore.cpp:91
 #, kde-format
 msgid "Starting to backup data in '%1'"
-msgstr "Започва създаването на резервно копие на данни в \"%1\""
+msgstr "Започва създаването на резервно копие на данни в „%1“"
 
 #: core/pimdatabackuprestore.cpp:174
 #, kde-format
 msgid "Backup in '%1' done."
-msgstr "Резервното копие в \"%1\" е готово."
+msgstr "Резервното копие в „%1“ е готово."
 
 #: core/pimdatabackuprestore.cpp:264
 #, kde-format
 msgid "Starting to restore data from '%1'"
-msgstr "Започва да се възстановяват данни от \"%1\""
+msgstr "Започва да се възстановяват данни от „%1“"
 
 #: core/pimdatabackuprestore.cpp:272
 #, kde-format
 msgid "Restoring data from '%1' done."
-msgstr "Възстановяването на данни от \"%1\" приключи."
+msgstr "Възстановяването на данни от „%1“ приключи."
 
 #: core/pimdatabackupthread.cpp:37
 #, kde-format
@@ -589,17 +589,17 @@ msgstr "Невъзможно е да се отвори архивен файл."
 #: core/pimdatabackupthread.cpp:44
 #, kde-format
 msgid "Impossible to backup \"%1\"."
-msgstr "Невъзможно е създаване на резервно копие на \"%1\"."
+msgstr "Невъзможно е създаване на резервно копие на „%1“."
 
 #: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:204
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
-msgstr "Ресурсният файл \"%1\" не може да бъде добавен към резервното копие."
+msgstr "Ресурсният файл „%1“ не може да бъде добавен към резервното копие."
 
 #: core/resourceconverterbase.cpp:207
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
-msgstr "Конфигурационният файл на ресурси \"%1\" не съществува."
+msgstr "Конфигурационният файл на ресурси „%1“ не съществува."
 
 #: core/utils.cpp:181
 #, kde-format
@@ -743,7 +743,7 @@ msgstr "Отваряне на избрания файл"
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
-msgstr "Показване на съдържанието на архива във файл \"%1\""
+msgstr "Показване на съдържанието на архива във файл „%1“"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
@@ -837,8 +837,7 @@ msgstr "Отказ"
 #: gui/importexportprogressindicatorgui.cpp:66
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
-msgstr ""
-"\"%1\" вече съществува. Искате ли да го презапишете или да го обедините?"
+msgstr "„%1“ вече съществува. Искате ли да го презапишете или да го обедините?"
 
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
@@ -857,12 +856,12 @@ msgstr "Сливане"
 #: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it?"
-msgstr "\"%1\" вече съществува. Искате ли да го презапишете?"
+msgstr "„%1“ вече съществува. Искате ли да го презапишете?"
 
 #: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
-msgstr "Директория \"%1\" вече съществува. Искате ли да я презапишете?"
+msgstr "Директория „%1“ вече съществува. Искате ли да я презапишете?"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:41
 #, kde-format
@@ -972,12 +971,12 @@ msgstr "Пълното синхронизиране приключи."
 #: gui/pimdataexporterwindow.cpp:204
 #, kde-format
 msgid "Full sync for \"%1\" done."
-msgstr "Пълното синхронизиране за \"%1\" е готово."
+msgstr "Пълното синхронизиране за „%1“ е готово."
 
 #: gui/pimdataexporterwindow.cpp:209
 #, kde-format
 msgid "Full sync for \"%1\" failed."
-msgstr "Пълното синхронизиране за \"%1\" е неуспешно."
+msgstr "Пълното синхронизиране за „%1“ е неуспешно."
 
 #: gui/pimdataexporterwindow.cpp:215
 #, kde-format
