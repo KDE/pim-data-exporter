@@ -13,7 +13,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
 #include "userfeedback/userfeedbackmanager.h"
 #include <KUserFeedback/FeedbackConfigWidget>
 #include <KUserFeedback/Provider>
@@ -44,7 +44,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     generalPageWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("network-workgroup")));
     addPage(generalPageWidgetPage);
 
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
     auto userFeedBackWidget = new QWidget;
     userFeedBackWidget->setObjectName(QLatin1StringView("userFeedBackWidget"));
 
@@ -75,7 +75,7 @@ PimDataExporterConfigureDialog::~PimDataExporterConfigureDialog()
 void PimDataExporterConfigureDialog::slotAccepted()
 {
     mConfigureWidget->save();
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
     // set current active mode + write back the config for future starts
     UserFeedBackManager::self()->userFeedbackProvider()->setTelemetryMode(mUserFeedbackWidget->telemetryMode());
     UserFeedBackManager::self()->userFeedbackProvider()->setSurveyInterval(mUserFeedbackWidget->surveyInterval());

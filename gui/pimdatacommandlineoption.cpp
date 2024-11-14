@@ -4,6 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "pimdatacommandlineoption.h"
+#include "config-pimdataexporter.h"
 #include "pimdataexporter-version.h"
 #include "pimdataexporterwindow.h"
 #include "pimdataexportgui_debug.h"
@@ -49,7 +50,7 @@ void PimDataCommandLineOption::createParser(const QApplication &app)
     mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("export"), i18nc("@info:shell", "Export the given file")));
     mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"),
                                          i18nc("@info:shell", "File or url. The user will be asked whether to import or export.")));
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
     mParser.addOption(QCommandLineOption(QStringLiteral("feedback"), i18nc("@info:shell", "Lists the available options for user feedback")));
 #endif
     mParser.process(app);

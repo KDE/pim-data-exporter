@@ -4,6 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
+#include "config-pimdataexporter.h"
 #include "pimdatacommandlineoption.h"
 #include "pimdataexporterwindow.h"
 
@@ -14,7 +15,7 @@
 
 #include <KLocalizedString>
 #include <QApplication>
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
 #include "userfeedback/pimdataexporteduserfeedbackprovider.h"
 #include <KUserFeedback/Provider>
 #endif
@@ -51,7 +52,7 @@ int main(int argc, char *argv[])
     PimDataCommandLineOption parser;
     parser.createParser(app);
     KCrash::initialize();
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
     if (parser.parseUserFeedback()) {
         auto provider = new PimDataExportedUserFeedbackProvider;
         QTextStream(stdout) << provider->describeDataSources() << '\n';

@@ -5,6 +5,7 @@
 */
 
 #include "pimdataexporterwindow.h"
+#include "config-pimdataexporter.h"
 #include "dialog/showarchivestructuredialog.h"
 #include "importexportprogressindicatorgui.h"
 #include "job/fullsynchronizeresourcesjob.h"
@@ -44,7 +45,7 @@
 #include <QVBoxLayout>
 
 #include "dialog/pimdataexporterconfiguredialog.h"
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
 #include "userfeedback/userfeedbackmanager.h"
 #include <KUserFeedback/NotificationPopup>
 #include <KUserFeedback/Provider>
@@ -82,7 +83,7 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
 #endif
     // Initialize filtermanager
     (void)MailCommon::FilterManager::instance();
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
     // Initialize
     (void)UserFeedBackManager::self();
 #endif
@@ -112,7 +113,7 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     Akonadi::ControlGui::widgetNeedsAkonadi(this);
     statusBar()->hide();
     mTrayIcon = new PimDataTrayIcon(this);
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
     auto userFeedBackNotificationPopup = new KUserFeedback::NotificationPopup(this);
     userFeedBackNotificationPopup->setFeedbackProvider(UserFeedBackManager::self()->userFeedbackProvider());
 #endif

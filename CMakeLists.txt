@@ -112,6 +112,9 @@ find_package(KF6TextCustomEditor ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6UserFeedback ${KF_MIN_VERSION} CONFIG)
 set_package_properties(KF6UserFeedback PROPERTIES DESCRIPTION "User Feedback lib" TYPE OPTIONAL PURPOSE "Allow to send Telemetry Information (optional). It can be disable in apps.")
 
+if(TARGET KF6::UserFeedbackWidgets)
+	set(PIMDATAEXPORTER_WITH_KUSERFEEDBACK true)
+endif()
 
 include_directories(${pim-data-exporter_SOURCE_DIR} ${pim-data-exporter_BINARY_DIR})
 
@@ -133,6 +136,7 @@ configure_file(pimdataexporter-version.h.in ${CMAKE_CURRENT_BINARY_DIR}/pimdatae
 if(BUILD_TESTING)
    add_definitions(-DBUILD_TESTING)
 endif()
+configure_file(config-pimdataexporter.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-pimdataexporter.h @ONLY)
 
 add_subdirectory(core)
 add_subdirectory(gui)

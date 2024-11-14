@@ -5,9 +5,9 @@
 */
 
 #pragma once
-
+#include "config-pimdataexporter.h"
 #include <KPageDialog>
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
 namespace KUserFeedback
 {
 class FeedbackConfigWidget;
@@ -27,7 +27,7 @@ private:
     void writeConfig();
 
     PimDataExporterConfigureWidget *const mConfigureWidget;
-#ifdef WITH_KUSERFEEDBACK
+#if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
     KUserFeedback::FeedbackConfigWidget *mUserFeedbackWidget = nullptr;
 #endif
 };
