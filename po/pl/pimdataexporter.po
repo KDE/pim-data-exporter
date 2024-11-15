@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-27 00:40+0000\n"
+"POT-Creation-Date: 2024-11-15 00:40+0000\n"
 "PO-Revision-Date: 2024-08-03 11:59+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -39,13 +39,13 @@ msgstr "Konsola eksportera ustawień ZIO"
 msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "Copyright © 2015-%1 autorzy pimdataexporter"
 
-#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
 #, kde-format
 msgid "Maintainer"
 msgstr "Opiekun"
@@ -899,35 +899,35 @@ msgctxt "@action:button"
 msgid "Import"
 msgstr "Zaimportuj"
 
-#: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
+#: gui/pimdatacommandlineoption.cpp:38 gui/pimdatacommandlineoption.cpp:40
 #, kde-format
 msgid "PIM Data Exporter"
 msgstr "Eksportowanie danych ZIO"
 
-#: gui/pimdatacommandlineoption.cpp:41
+#: gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
 msgstr "Copyright © 2015-%1 autorzy pimdataexporter"
 
-#: gui/pimdatacommandlineoption.cpp:46
+#: gui/pimdatacommandlineoption.cpp:47
 #, kde-format
 msgid "Template file uses to define what data, settings to import or export"
 msgstr ""
 "Plik wzorca określa jakie dane, ustawienia zaimportować lub wyeksportować"
 
-#: gui/pimdatacommandlineoption.cpp:48
+#: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
 msgstr "Zaimportuj dany plik"
 
-#: gui/pimdatacommandlineoption.cpp:49
+#: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
 msgstr "Wyeksportuj dany plik"
 
-#: gui/pimdatacommandlineoption.cpp:51
+#: gui/pimdatacommandlineoption.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
@@ -935,7 +935,7 @@ msgstr ""
 "Plik lub adres url. Użytkownik zostanie zapytany o to czy zaimportować czy "
 "wyeksportować."
 
-#: gui/pimdatacommandlineoption.cpp:53
+#: gui/pimdatacommandlineoption.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
@@ -959,27 +959,27 @@ msgstr "&Narzędzia"
 msgid "Main Toolbar"
 msgstr "Główny pasek narzędzi"
 
-#: gui/pimdataexporterwindow.cpp:167
+#: gui/pimdataexporterwindow.cpp:168
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Rozpoczynanie pełnej synchronizacji..."
 
-#: gui/pimdataexporterwindow.cpp:197
+#: gui/pimdataexporterwindow.cpp:198
 #, kde-format
 msgid "Full sync finished."
 msgstr "Ukończono pełną synchronizację."
 
-#: gui/pimdataexporterwindow.cpp:204
+#: gui/pimdataexporterwindow.cpp:205
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "Ukończono pełną synchronizację dla \"%1\"."
 
-#: gui/pimdataexporterwindow.cpp:209
+#: gui/pimdataexporterwindow.cpp:210
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "Niepowodzenie pełnej synchronizacji dla \"%1\"."
 
-#: gui/pimdataexporterwindow.cpp:215
+#: gui/pimdataexporterwindow.cpp:216
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -988,93 +988,93 @@ msgstr ""
 "Do przywrócenia danych użyj Eksportowania Ustawień ZIO. Jednakże zachowaj "
 "ostrożność, bo program ten zastąpi istniejące ustawienia i dane."
 
-#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
-#: gui/pimdataexporterwindow.cpp:402
+#: gui/pimdataexporterwindow.cpp:218 gui/pimdataexporterwindow.cpp:325
+#: gui/pimdataexporterwindow.cpp:403
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Kopia zapasowa"
 
-#: gui/pimdataexporterwindow.cpp:244
+#: gui/pimdataexporterwindow.cpp:245
 #, kde-format
 msgid "Export Data..."
 msgstr "Wyeksportuj dane..."
 
-#: gui/pimdataexporterwindow.cpp:249
+#: gui/pimdataexporterwindow.cpp:250
 #, kde-format
 msgid "Import Data..."
 msgstr "Zaimportuj dane..."
 
-#: gui/pimdataexporterwindow.cpp:254
+#: gui/pimdataexporterwindow.cpp:255
 #, kde-format
 msgid "Save log..."
 msgstr "Zapisz dziennik..."
 
-#: gui/pimdataexporterwindow.cpp:257
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Pokaż informacje o strukturze plików archiwum..."
 
-#: gui/pimdataexporterwindow.cpp:260
+#: gui/pimdataexporterwindow.cpp:261
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Pokaż szczegóły archiwum..."
 
-#: gui/pimdataexporterwindow.cpp:264
+#: gui/pimdataexporterwindow.cpp:265
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Pokaż informacje o bieżącym archiwum..."
 
-#: gui/pimdataexporterwindow.cpp:302
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Wybierz archiwum"
 
-#: gui/pimdataexporterwindow.cpp:302
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Zip file"
 msgstr "Spakuj plik"
 
-#: gui/pimdataexporterwindow.cpp:314
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Log is empty."
 msgstr "Dziennik jest pusty."
 
-#: gui/pimdataexporterwindow.cpp:314
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Zapisz dziennik"
 
-#: gui/pimdataexporterwindow.cpp:318
+#: gui/pimdataexporterwindow.cpp:319
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "Pliki HTML (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:324
+#: gui/pimdataexporterwindow.cpp:325
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Zamknij wszystkie aplikacje do zarządzania danymi osobistymi przed "
 "stworzeniem kopii zapasowej swoich danych."
 
-#: gui/pimdataexporterwindow.cpp:347
+#: gui/pimdataexporterwindow.cpp:348
 #, kde-format
 msgid "Create backup"
 msgstr "Utwórz kopię zapasową"
 
-#: gui/pimdataexporterwindow.cpp:349
+#: gui/pimdataexporterwindow.cpp:350
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Plik Zip (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:359
+#: gui/pimdataexporterwindow.cpp:360
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Tworzenie kopii zapasowej w trakcie..."
 
-#: gui/pimdataexporterwindow.cpp:401
+#: gui/pimdataexporterwindow.cpp:402
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1083,17 +1083,17 @@ msgstr ""
 "Przed przywróceniem danych musisz zamknąć wszystkie aplikacje do zarządzania "
 "danymi osobistymi. Czy chcesz kontynuować?"
 
-#: gui/pimdataexporterwindow.cpp:415
+#: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Restore backup"
 msgstr "Przywróć kopię zapasową"
 
-#: gui/pimdataexporterwindow.cpp:417
+#: gui/pimdataexporterwindow.cpp:418
 #, kde-format
 msgid "Zip File"
 msgstr "Plik Zip"
 
-#: gui/pimdataexporterwindow.cpp:449
+#: gui/pimdataexporterwindow.cpp:450
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Przywracanie w trakcie..."
