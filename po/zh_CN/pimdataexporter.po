@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-27 00:40+0000\n"
+"POT-Creation-Date: 2024-11-15 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -37,13 +37,13 @@ msgstr ""
 msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr ""
 
-#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:42
+#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
 #, kde-format
 msgid "Maintainer"
 msgstr "维护者"
@@ -892,40 +892,40 @@ msgctxt "@action:button"
 msgid "Import"
 msgstr ""
 
-#: gui/pimdatacommandlineoption.cpp:37 gui/pimdatacommandlineoption.cpp:39
+#: gui/pimdatacommandlineoption.cpp:38 gui/pimdatacommandlineoption.cpp:40
 #, kde-format
 msgid "PIM Data Exporter"
 msgstr ""
 
-#: gui/pimdatacommandlineoption.cpp:41
+#: gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
 msgstr ""
 
-#: gui/pimdatacommandlineoption.cpp:46
+#: gui/pimdatacommandlineoption.cpp:47
 #, kde-format
 msgid "Template file uses to define what data, settings to import or export"
 msgstr "定义导入或导出数据，设置的临时文件"
 
-#: gui/pimdatacommandlineoption.cpp:48
+#: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
 msgstr "导入给定文件"
 
-#: gui/pimdatacommandlineoption.cpp:49
+#: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
 msgstr "导出给定文件"
 
-#: gui/pimdatacommandlineoption.cpp:51
+#: gui/pimdatacommandlineoption.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
 msgstr "文件或链接。用户将被询问是否要导入或导出。"
 
-#: gui/pimdatacommandlineoption.cpp:53
+#: gui/pimdatacommandlineoption.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
@@ -949,135 +949,135 @@ msgstr "工具(&T)"
 msgid "Main Toolbar"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:167
+#: gui/pimdataexporterwindow.cpp:168
 #, kde-format
 msgid "Full sync starts..."
 msgstr "完整同步开始..."
 
-#: gui/pimdataexporterwindow.cpp:197
+#: gui/pimdataexporterwindow.cpp:198
 #, kde-format
 msgid "Full sync finished."
 msgstr "完成同步完成。"
 
-#: gui/pimdataexporterwindow.cpp:204
+#: gui/pimdataexporterwindow.cpp:205
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "“%1”的完整同步完成。"
 
-#: gui/pimdataexporterwindow.cpp:209
+#: gui/pimdataexporterwindow.cpp:210
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "“%1”的完整同步失败。"
 
-#: gui/pimdataexporterwindow.cpp:215
+#: gui/pimdataexporterwindow.cpp:216
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
 "overwrite your existing settings and data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:217 gui/pimdataexporterwindow.cpp:324
-#: gui/pimdataexporterwindow.cpp:402
+#: gui/pimdataexporterwindow.cpp:218 gui/pimdataexporterwindow.cpp:325
+#: gui/pimdataexporterwindow.cpp:403
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "备份"
 
-#: gui/pimdataexporterwindow.cpp:244
+#: gui/pimdataexporterwindow.cpp:245
 #, kde-format
 msgid "Export Data..."
 msgstr "导出数据..."
 
-#: gui/pimdataexporterwindow.cpp:249
+#: gui/pimdataexporterwindow.cpp:250
 #, kde-format
 msgid "Import Data..."
 msgstr "导入数据..."
 
-#: gui/pimdataexporterwindow.cpp:254
+#: gui/pimdataexporterwindow.cpp:255
 #, kde-format
 msgid "Save log..."
 msgstr "保存日志..."
 
-#: gui/pimdataexporterwindow.cpp:257
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "显示存档结构信息..."
 
-#: gui/pimdataexporterwindow.cpp:260
+#: gui/pimdataexporterwindow.cpp:261
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "显示存档信息..."
 
-#: gui/pimdataexporterwindow.cpp:264
+#: gui/pimdataexporterwindow.cpp:265
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "显示当前的归档的信息..."
 
-#: gui/pimdataexporterwindow.cpp:302
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "选择归档"
 
-#: gui/pimdataexporterwindow.cpp:302
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Zip file"
 msgstr "Zip 文件"
 
-#: gui/pimdataexporterwindow.cpp:314
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Log is empty."
 msgstr "日志为空。"
 
-#: gui/pimdataexporterwindow.cpp:314
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "保存日志"
 
-#: gui/pimdataexporterwindow.cpp:318
+#: gui/pimdataexporterwindow.cpp:319
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML 文件 (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:324
+#: gui/pimdataexporterwindow.cpp:325
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "请备份您的数据之前，退出所有 KDE PIM 应用程序。"
 
-#: gui/pimdataexporterwindow.cpp:347
+#: gui/pimdataexporterwindow.cpp:348
 #, kde-format
 msgid "Create backup"
 msgstr "创建备份"
 
-#: gui/pimdataexporterwindow.cpp:349
+#: gui/pimdataexporterwindow.cpp:350
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip 文件 (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:359
+#: gui/pimdataexporterwindow.cpp:360
 #, kde-format
 msgid "Backup in progress..."
 msgstr "正在进行备份..."
 
-#: gui/pimdataexporterwindow.cpp:401
+#: gui/pimdataexporterwindow.cpp:402
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
 msgstr "在恢复数据之前，您必须关闭所有 KDE PIM 应用程序。您想继续吗？"
 
-#: gui/pimdataexporterwindow.cpp:415
+#: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Restore backup"
 msgstr "还原备份"
 
-#: gui/pimdataexporterwindow.cpp:417
+#: gui/pimdataexporterwindow.cpp:418
 #, kde-format
 msgid "Zip File"
 msgstr "Zip 文件"
 
-#: gui/pimdataexporterwindow.cpp:449
+#: gui/pimdataexporterwindow.cpp:450
 #, kde-format
 msgid "Restore in progress..."
 msgstr "正在还原..."
