@@ -3,8 +3,8 @@
 "dtd/kdedbx45.dtd" [
   <!-- Define an entity for your application if it is not part of KDE
        CVS -->
-  <!ENTITY i18n-pimsettingexporter "<application
->Exportador de preferencias de PIM</application
+  <!ENTITY i18n-pimdataexporter "<application
+>Exportador de datos de PIM</application
 >">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % Spanish "INCLUDE"
@@ -14,11 +14,11 @@
 >">
 ]>
 
-<article id="pimsettingexporter" lang="&language;">
+<article id="pimdataexporter" lang="&language;">
 
-<articleinfo id="pimsettingexporterinfo">
+<articleinfo id="pimdataexporterinfo">
 <title
->El manual de &i18n-pimsettingexporter;</title>
+>Manual de &i18n-pimdataexporter;</title>
 
 <authorgroup>
 <author
@@ -79,7 +79,7 @@
 >Introducción</title>
 
 <para
->&i18n-pimsettingexporter; permite exportar e importar preferencias de PIM y correo local. Usted puede crear copias de seguridad y restaurar preferencias desde los siguientes programas: <simplelist>
+>&i18n-pimdataexporter; permite exportar e importar preferencias de PIM y correo local. Usted puede crear copias de seguridad y restaurar preferencias desde los siguientes programas: <simplelist>
 <member
 >&kmail;</member>
 <member
@@ -92,16 +92,14 @@
 >&kalarm;</member>
 <member
 >&korganizer;</member>
-<member
->&blogilo;</member>
 </simplelist>
 </para>
 
 <sect2 id="using-kapp">
 <title
->Uso de &i18n-pimsettingexporter;</title>
+>Uso de &i18n-pimdataexporter;</title>
 <para
->La creación de copias de respaldo es una práctica esencial para todos los usuarios. &i18n-pimsettingexporter; es una excelente herramienta para crear copias de respaldo o mover todas sus preferencias y correos a una nueva instalación. Usted también puede usar &i18n-pimsettingexporter; para importar anteriores copias de respaldo.</para>
+>La creación de copias de respaldo es una práctica esencial para todos los usuarios. &i18n-pimdataexporter; es una excelente herramienta para crear copias de respaldo o mover todas sus preferencias y correos a una nueva instalación. Usted también puede usar &i18n-pimdataexporter; para importar anteriores copias de respaldo.</para>
 <para
 >Usted puede usar <menuchoice
 ><guimenu
@@ -109,10 +107,10 @@
 ><guimenuitem
 > Exportar datos de &kmail;...</guimenuitem
 ></menuchoice
-> mediante la ventana de vista de mensajes o &i18n-pimsettingexporter; puede ejecutarse independientemente, ejecutando &i18n-pimsettingexporter; en el lanzador de aplicaciones.</para>
+> mediante la ventana de vista de mensajes o &i18n-pimdataexporter;puede ejecutarse independientemente, ejecutando &i18n-pimdataexporter; en el lanzador de aplicaciones.</para>
 
 <para
->Para ejecutar una copia de respaldo, <action
+>Para hacer una copia de respaldo, <action
 >seleccione <menuchoice
 ><guimenu
 >Archivo</guimenu
@@ -120,13 +118,13 @@
 >Crear copia de respaldo de datos...</guimenuitem
 ></menuchoice
 ></action
->, esto le pedirá cerrar todas las aplicaciones de kdepim. <warning
+>, esto le pedirá que cierre todas las aplicaciones de kdepim. <warning
 ><para
->Asegúrese de que usted cierra todas las ventanas, es posible la pérdida de datos si no lo hace.</para
+>Asegúrese de que cierra todas las ventanas: puede perder datos si no lo hace.</para
 ></warning
 > Una vez que las haya cerrado, pulse <guibutton
 >Sí</guibutton
-> para continuar, o <guibutton
+> para continuar o <guibutton
 >No</guibutton
 > para cancelar.</para>
 <para
@@ -140,11 +138,9 @@
 <para
 >La siguiente pantalla le permitirá seleccionar que es lo que quiere respaldar; por omisión, se selecciona todo. <note
 > <para
->La selección de correos de &kmail; solo creará copias de respaldo de correos de sus <quote
->Carpetas locales</quote
->, respaldará las preferencias de &imap; y mensajes descargados hasta la restauración. Si usted tiene correos en un servidor &imap; usted podría querer respaldarlos, debería usar <ulink url="help:/akonadi_folderarchive_agent"
+>La selección de mensajes de correo de &kmail; solo creará copias de respaldo de los mensajes de sus «Carpetas locales», respaldará las preferencias de &imap; y los mensajes descargados hasta la restauración. Si tiene mensajes en un servidor &imap; que quiera respaldar, debería usar <ulink url="help:/akonadi_folderarchive_agent"
 >Agente de archivado de carpetas</ulink
-> para archivar esos correos en una carpeta local.</para>
+> para archivar dichos mensajes en una carpeta local.</para>
 </note
 ></para>
 <screenshot>
@@ -173,7 +169,7 @@
 ><guimenuitem
 >Restaurar datos...</guimenuitem
 ></menuchoice
-> dentro de &i18n-pimsettingexporter;.</para>
+> dentro de &i18n-pimdataexporter;.</para>
 <para
 >Usando <menuchoice
 ><guimenu
@@ -181,7 +177,7 @@
 ><guimenuitem
 >Mostrar información del archivo</guimenuitem
 ></menuchoice
->, usted puede seleccionar un archivo de respaldo y ver su contenido.</para>
+> podrá seleccionar un archivo de respaldo y ver su contenido.</para>
 </sect2>
 </sect1>
 
@@ -190,18 +186,17 @@
 <title
 >Créditos y licencia</title>
 <para
->&i18n-pimsettingexporter;</para>
+>&i18n-pimdataexporter;</para>
 <para
->Derechos de autor del programa 2013 &Laurent.Montel; &Laurent.Montel.mail; </para>
+>Copyright del programa 2019 &Laurent.Montel; &Laurent.Montel.mail; </para>
 <para
->Derechos de autor de la documentación &copy; 2013 &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail; </para>
+>Copyright de la documentación &copy; 2019 &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail; </para>
 
 <para
 >Traducido por Javier Viñal <email
 >fjvinal@gmail.com</email
 ></para
-> 
-&underFDL; &underGPL; </sect1>
+> &underFDL; &underGPL; </sect1>
 
 &documentation.index;
 </article>
