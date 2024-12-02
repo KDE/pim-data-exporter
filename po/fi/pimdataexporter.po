@@ -1,32 +1,31 @@
 # KDE Finnish translation sprint participants:
+# SPDX-FileCopyrightText: 2012, 2013, 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2024 Tommi Nieminen <translator@legisign.org>
 # Jiri Grönroos <jiri.gronroos+kde@iki.fi>, 2012.
-# Tommi Nieminen <translator@legisign.org>, 2012, 2013, 2015, 2017, 2018, 2019, 2020, 2021, 2022.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2013, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 00:40+0000\n"
-"PO-Revision-Date: 2022-07-11 18:45+0300\n"
+"PO-Revision-Date: 2024-10-17 10:52+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-POT-Import-Date: 2012-12-01 22:25:15+0000\n"
-"X-Generator: Lokalize 20.12.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Tommi Nieminen,Lasse Liehu"
+msgstr "Tommi Nieminen, Lasse Liehu"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "translator@legisign.org,lasse.liehu@gmail.com"
+msgstr "translator@legisign.org, lasse.liehu@gmail.com"
 
 #: console/main.cpp:25 console/main.cpp:27
 #, kde-format
@@ -39,8 +38,7 @@ msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "Tekijänoikeudet © 2015–%1 pimdataexporterin tekijät"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
-#, fuzzy, kde-format
-#| msgid "Laurent Montel"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
@@ -51,31 +49,25 @@ msgid "Maintainer"
 msgstr "Ylläpitäjä"
 
 #: console/main.cpp:31
-#, fuzzy, kde-format
-#| msgid "File to log information to."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File to log information to."
-msgstr "Tiedosto, johon tiedot lokitetaan."
+msgstr "Tiedosto, johon loki kirjoitetaan."
 
 #: console/main.cpp:34
-#, fuzzy, kde-format
-#| msgid "Template file to define what data, settings to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
-msgstr ""
-"Mallipohjatiedosto, joka määrittää mitä tietoja ja asetuksia tuodaan tai "
-"viedään."
+msgstr "Mallipohja, joka määrittää tuotavat tai vietävät tiedot ja asetukset."
 
 #: console/main.cpp:37
-#, fuzzy, kde-format
-#| msgid "Import the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file."
 msgstr "Tuo annettu tiedosto."
 
 #: console/main.cpp:39
-#, fuzzy, kde-format
-#| msgid "Export the given file."
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file."
 msgstr "Vie annettu tiedosto."
@@ -672,8 +664,7 @@ msgid "Archive File Structure"
 msgstr "Arkistotiedoston rakenne"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
-#, fuzzy, kde-format
-#| msgid "Backup Archive Structure:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Varmuuskopioarkiston rakenne:"
@@ -700,22 +691,19 @@ msgid "User Feedback"
 msgstr "Käyttäjäpalaute"
 
 #: gui/dialog/selectiontypedialog.cpp:27
-#, fuzzy, kde-format
-#| msgid "Use this template by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Käytä tätä pohjaa oletuksena"
 
 #: gui/dialog/selectiontypedialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "Save as Template..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Tallenna mallipohjaksi…"
 
 #: gui/dialog/selectiontypedialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Load Template..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Lataa mallipohja…"
@@ -728,30 +716,26 @@ msgstr "Valitse tyyppi"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Valitse kaikki"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Unselect All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Poista kaikki valinnat"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Extract Selected File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "Pura valittu tiedosto"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
-#, fuzzy, kde-format
-#| msgid "Open Selected File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "Avaa valittu tiedosto"
@@ -763,8 +747,7 @@ msgid "Show Archive Content on file \"%1\""
 msgstr "Näytä tiedoston ”%1” arkistosisältö"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Etsi…"
@@ -775,8 +758,7 @@ msgid "Save As Text..."
 msgstr "Tallenna tekstinä…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select Directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Valitse kansio"
@@ -787,8 +769,7 @@ msgid "Do you want to overwrite %1?"
 msgstr "Haluatko korvata tiedoston %1?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
-#, fuzzy, kde-format
-#| msgid "File Already Exist"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Tiedosto on jo olemassa"
@@ -811,8 +792,7 @@ msgid "Export Log File"
 msgstr "Vie lokitiedosto"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
-#, fuzzy, kde-format
-#| msgid "Cannot open archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Arkistoa ei saatu avattua"
@@ -828,8 +808,7 @@ msgid "This is not pim archive."
 msgstr "Tämä ei ole PIM-arkisto."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Show information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Näytä tiedot"
@@ -841,17 +820,14 @@ msgid "Synchronize Resources"
 msgstr "Synkronoi resurssit"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some resources were added but data were not sync. Select resources that "
-#| "you want to sync:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
 msgstr ""
 "Joitakin resursseja lisättiin, mutta tiedot eivät ole ajan tasalla. Valitse "
-"synkronoitavat resurssit:"
+"tahdistettavat resurssit:"
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
@@ -867,15 +843,13 @@ msgstr "”%1” on jo olemassa. Haluatko korvata sen vai yhdistää tiedot?"
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
 msgstr "Palauta"
 
 #: gui/importexportprogressindicatorgui.cpp:69
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
 msgstr "Yhdistä"
@@ -912,11 +886,10 @@ msgstr ""
 "uudenlaisia tietoja, jotka ohitetaan tuonnissa. Haluatko tuoda arkiston?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
-#, fuzzy, kde-format
-#| msgid "Not correct version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
-msgstr "Väärä versio"
+msgstr "Ei kelvollinen versio"
 
 #: gui/pimdatabackuprestoreui.cpp:28
 #, kde-format
@@ -942,32 +915,29 @@ msgstr ""
 "tai viedään"
 
 #: gui/pimdatacommandlineoption.cpp:49
-#, fuzzy, kde-format
-#| msgid "Import the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
 msgstr "Tuo annettu tiedosto"
 
 #: gui/pimdatacommandlineoption.cpp:50
-#, fuzzy, kde-format
-#| msgid "Export the given file"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
 msgstr "Vie annettu tiedosto"
 
 #: gui/pimdatacommandlineoption.cpp:52
-#, fuzzy, kde-format
-#| msgid "File or url. The user will be asked whether to import or export."
+#, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
-msgstr "Tiedosto tai osoite. Käyttäjältä kysytään tuodaanko tai viedäänkö."
+msgstr ""
+"Tiedosto tai verkko-osoite. Käyttäjältä kysytään, tuodaanko tai viedäänkö."
 
 #: gui/pimdatacommandlineoption.cpp:54
-#, fuzzy, kde-format
-#| msgid "Lists the available options for user feedback"
+#, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr "Luettelee käyttäjäpalautteeseen käytettävissä olevat valinnat"
+msgstr "Luettelee mahdolliset käyttäjäpalautevalinnat"
 
 #. i18n: ectx: Menu (file)
 #: gui/pimdataexporter.rc:8
@@ -1018,8 +988,7 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:218 gui/pimdataexporterwindow.cpp:325
 #: gui/pimdataexporterwindow.cpp:403
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Varmuuskopioi"
@@ -1055,8 +1024,7 @@ msgid "Show Information on current Archive..."
 msgstr "Näytä nykyiset arkiston tiedot…"
 
 #: gui/pimdataexporterwindow.cpp:303
-#, fuzzy, kde-format
-#| msgid "Select Archive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Valitse arkisto"
@@ -1072,8 +1040,7 @@ msgid "Log is empty."
 msgstr "Loki on tyhjä."
 
 #: gui/pimdataexporterwindow.cpp:315
-#, fuzzy, kde-format
-#| msgid "Save log"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Tallenna loki"
@@ -1133,22 +1100,19 @@ msgid "Pim Data Exporter"
 msgstr "PIM-tietojen vienti"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Always Override File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
 msgstr "Korvaa tiedosto aina"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Always Override Directory"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
 msgstr "Korvaa kansio aina"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Always Merge Config File"
+#, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
 msgstr "Yhdistä asetustiedosto aina"
