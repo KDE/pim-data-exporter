@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-27 00:40+0000\n"
-"PO-Revision-Date: 2024-04-22 21:51+0530\n"
+"PO-Revision-Date: 2024-12-08 14:34+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -680,12 +680,12 @@ msgstr ""
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "பொதுவானவை"
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
-msgstr ""
+msgstr "பயனர் பின்னூட்டம்"
 
 #: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
@@ -697,33 +697,33 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as Template..."
-msgstr ""
+msgstr "வார்ப்புருவாக சேமி..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Load Template..."
-msgstr ""
+msgstr "வார்ப்புருவை ஏற்று..."
 
 #: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
-msgstr ""
+msgstr "வகையைத் தேர்ந்தெடுக்கவும்"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Select All"
-msgstr ""
+msgstr "அனைத்தையும் தேர்ந்தெடு"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr ""
+msgstr "அனைத்து தேர்வுகளை நிராகரி"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
