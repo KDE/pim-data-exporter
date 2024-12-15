@@ -19,12 +19,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: console/main.cpp:25 console/main.cpp:27
 #, kde-format
@@ -40,7 +40,7 @@ msgstr "प्रतिलिपि अधिकार © 2015-%1 pimdataexporte
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
-msgstr ""
+msgstr "लॉरेण्ट् मोंटेल्"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
 #, kde-format
@@ -51,25 +51,26 @@ msgstr "परिपालकः"
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to log information to."
-msgstr ""
+msgstr "सूचनां लॉग् कर्तुं सञ्चिका ।"
 
 #: console/main.cpp:34
 #, kde-format
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
 msgstr ""
+"किं किं दत्तांशं, सेटिंग्स् आयातयितव्यं निर्यातयितव्यं वा इति परिभाषितुं टेम्पलेट् सञ्चिका ।"
 
 #: console/main.cpp:37
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file."
-msgstr ""
+msgstr "दत्तां सञ्चिकां आयातयन्तु ।"
 
 #: console/main.cpp:39
 #, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file."
-msgstr ""
+msgstr "दत्तां सञ्चिकां निर्यातयन्तु ।"
 
 #: core/abstractimportexportjob.cpp:56
 #, kde-format
@@ -657,13 +658,13 @@ msgstr "दत्तांश"
 #, kde-format
 msgctxt "@title:window"
 msgid "Archive File Structure"
-msgstr ""
+msgstr "संग्रह सञ्चिका संरचना"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
-msgstr ""
+msgstr "बैकअप संग्रह संरचना : १."
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
@@ -674,7 +675,7 @@ msgstr "backup-structure.txt सञ्चिका न प्राप्ता 
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
-msgstr ""
+msgstr "PimDataExporter विन्यस्तं कुर्वन्तु"
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
@@ -690,63 +691,63 @@ msgstr "उपयोक्तृप्रतिक्रिया"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
-msgstr ""
+msgstr "पूर्वनिर्धारितरूपेण एतत् टेम्पलेट् उपयुज्यताम्"
 
 #: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as Template..."
-msgstr ""
+msgstr "टेम्पलेटरूपेण रक्षन्तु..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Load Template..."
-msgstr ""
+msgstr "टेम्पलेट लोड करें..."
 
 #: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
-msgstr ""
+msgstr "प्रकारं चिनोतु"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Select All"
-msgstr ""
+msgstr "All इति चिनोतु"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr ""
+msgstr "All अचयनं कुर्वन्तु"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
-msgstr ""
+msgstr "चयनितसञ्चिकां निष्कासयन्तु"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
-msgstr ""
+msgstr "चयनितं सञ्चिकां उद्घाटयन्तु"
 
 #: gui/dialog/showarchivestructuredialog.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
-msgstr ""
+msgstr "\"%1\" सञ्चिकायां संग्रहसामग्री दर्शयतु ।"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr ""
+msgstr "अन्वेषण..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
@@ -757,7 +758,7 @@ msgstr "पाठरूपेण रक्षतु..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
-msgstr ""
+msgstr "निर्देशिकां चिनोतु"
 
 #: gui/dialog/showarchivestructuredialog.cpp:140
 #, kde-format
@@ -768,7 +769,7 @@ msgstr "%1 इत्यस्य अधिलेखनं कर्तुम् 
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
-msgstr ""
+msgstr "सञ्चिका पूर्वमेव विद्यते"
 
 #: gui/dialog/showarchivestructuredialog.cpp:149
 #, kde-format
@@ -779,19 +780,19 @@ msgstr "%2 मध्ये %1 प्रतिलिपिं कर्तुं 
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
-msgstr ""
+msgstr "पाठसञ्चिकाः"
 
 #: gui/dialog/showarchivestructuredialog.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
-msgstr ""
+msgstr "Log File निर्यातयन्तु"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
-msgstr ""
+msgstr "संग्रहणं उद्घाटयितुं न शक्यते"
 
 #: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
@@ -807,13 +808,13 @@ msgstr "एतत् पिम् आर्काइव नास्ति।"
 #, kde-format
 msgctxt "@title:window"
 msgid "Show information"
-msgstr ""
+msgstr "सूचनां दर्शयतु"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
-msgstr ""
+msgstr "संसाधनानाम् समन्वयनम्"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
@@ -822,6 +823,8 @@ msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
 msgstr ""
+"केचन संसाधनाः योजिताः परन्तु दत्तांशः समन्वयितः नासीत् । यत् संसाधनं भवान् समन्वययितुम् "
+"इच्छति तत् चिनोतु:"
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
@@ -842,13 +845,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore"
-msgstr ""
+msgstr "निर्यत्"
 
 #: gui/importexportprogressindicatorgui.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Merge"
-msgstr ""
+msgstr "विलयः"
 
 #: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
@@ -864,7 +867,7 @@ msgstr "\"%1\" निर्देशिका पूर्वमेव अस्
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize resources"
-msgstr ""
+msgstr "संसाधनानाम् समन्वयनम्"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
@@ -885,7 +888,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
-msgstr ""
+msgstr "सम्यक् संस्करणं न"
 
 #: gui/pimdatabackuprestoreui.cpp:28
 #, kde-format
@@ -913,25 +916,25 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
-msgstr ""
+msgstr "दत्तां सञ्चिकां आयातयन्तु"
 
 #: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
-msgstr ""
+msgstr "दत्तां सञ्चिकां निर्यातयन्तु"
 
 #: gui/pimdatacommandlineoption.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
-msgstr ""
+msgstr "सञ्चिका अथवा url । उपयोक्तारः पृष्टः भविष्यति यत् आयातः निर्यातः वा इति।"
 
 #: gui/pimdatacommandlineoption.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr ""
+msgstr "उपयोक्तृप्रतिक्रियायाः कृते उपलब्धविकल्पान् सूचीबद्धं करोति"
 
 #. i18n: ectx: Menu (file)
 #: gui/pimdataexporter.rc:8
@@ -985,7 +988,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
-msgstr ""
+msgstr "बैकअप"
 
 #: gui/pimdataexporterwindow.cpp:245
 #, kde-format
@@ -1021,7 +1024,7 @@ msgstr "वर्तमान अभिलेखागारस्य विष�
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
-msgstr ""
+msgstr "Archive इति चिनोतु"
 
 #: gui/pimdataexporterwindow.cpp:303
 #, kde-format
@@ -1037,7 +1040,7 @@ msgstr "लॉग् रिक्तम् अस्ति।"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
-msgstr ""
+msgstr "लॉग् रक्षतु"
 
 #: gui/pimdataexporterwindow.cpp:319
 #, kde-format
@@ -1097,19 +1100,19 @@ msgstr "पिम डाटा निर्यातक"
 #, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
-msgstr ""
+msgstr "सर्वदा सञ्चिकां अधिलिखन्तु"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
 #, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
-msgstr ""
+msgstr "सदैव निर्देशिकां अधिलिखन्तु"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
 #, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
-msgstr ""
+msgstr "सदैव Config File विलीनं कुर्वन्तु"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:23
 #, kde-format
