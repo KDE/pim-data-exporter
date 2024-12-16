@@ -1,4 +1,4 @@
-# Sanskrit translations for pim-data-exporter package.
+# Hindi translations for pim-data-exporter package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the pim-data-exporter package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,177 +8,176 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 00:40+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "भवतः नामानि"
+msgstr "तुम्हारे नाम"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "भवतः ईमेलपत्राणि"
+msgstr "आपके ईमेल"
 
 #: console/main.cpp:25 console/main.cpp:27
 #, kde-format
 msgid "PIM Data Exporter Console"
-msgstr "PIM Data Exporter Console इति"
+msgstr "PIM डेटा एक्सपोर्टर कंसोल"
 
 #: console/main.cpp:29
 #, kde-format
 msgid "Copyright © 2015-%1 pimdataexporter authors"
-msgstr "प्रतिलिपि अधिकार © 2015-%1 pimdataexporter लेखक"
+msgstr "कॉपीराइट © 2015-%1 pimdataexporter लेखक"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
-msgstr "लॉरेण्ट् मोंटेल्"
+msgstr "लॉरेंट मोंटेल"
 
 #: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
 #, kde-format
 msgid "Maintainer"
-msgstr "परिपालकः"
+msgstr "मेंटेनर"
 
 #: console/main.cpp:31
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to log information to."
-msgstr "सूचनां लॉग् कर्तुं सञ्चिका ।"
+msgstr "फ़ाइल में जानकारी लॉग करने के लिए."
 
 #: console/main.cpp:34
 #, kde-format
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
 msgstr ""
-"किं किं दत्तांशं, सेटिंग्स् आयातयितव्यं निर्यातयितव्यं वा इति परिभाषितुं टेम्पलेट् सञ्चिका ।"
+"टेम्पलेट फ़ाइल यह परिभाषित करती है कि कौन सा डेटा, सेटिंग आयात या निर्यात करना है।"
 
 #: console/main.cpp:37
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file."
-msgstr "दत्तां सञ्चिकां आयातयन्तु ।"
+msgstr "दी गई फ़ाइल आयात करें."
 
 #: console/main.cpp:39
 #, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file."
-msgstr "दत्तां सञ्चिकां निर्यातयन्तु ।"
+msgstr "दी गई फ़ाइल निर्यात करें."
 
 #: core/abstractimportexportjob.cpp:56
 #, kde-format
 msgid "Task Canceled"
-msgstr "कार्य रद्द"
+msgstr "कार्य रद्द किया गया"
 
 #: core/abstractimportexportjob.cpp:116
 #, kde-format
 msgid "\"%1\" backup done."
-msgstr "\"%1\" बैकअप कृतम् ।"
+msgstr "\"%1\" बैकअप हो गया."
 
 #: core/abstractimportexportjob.cpp:118
 #, kde-format
 msgid "\"%1\" cannot be exported."
-msgstr "\"%1\" निर्यातयितुं न शक्यते ।"
+msgstr "\"%1\" निर्यात नहीं किया जा सकता."
 
 #: core/abstractimportexportjob.cpp:121
 #, kde-format
 msgid "\"%1\" does not exist."
-msgstr "\"%1\" नास्ति ।"
+msgstr "\"%1\" मौजूद नहीं है."
 
 #: core/abstractimportexportjob.cpp:268
 #, kde-format
 msgid "\"%1\" was copied."
-msgstr "\"%1\" प्रतिलिपितः ।"
+msgstr "\"%1\" कॉपी किया गया."
 
 #: core/abstractimportexportjob.cpp:273
 #, kde-format
 msgid "Restoring \"%1\"..."
-msgstr "\"%1\" इत्यस्य पुनर्स्थापनम्..."
+msgstr "\"%1\" को पुनर्स्थापित किया जा रहा है..."
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "File \"%1\" cannot be copied to \"%2\"."
-msgstr "\"%1\" सञ्चिका \"%2\" इत्यत्र प्रतिलिपिं कर्तुं न शक्यते ।"
+msgstr "फ़ाइल \"%1\" को \"%2\" में कॉपी नहीं किया जा सकता."
 
 #: core/abstractimportexportjob.cpp:298
 #, kde-format
 msgid "Copy file"
-msgstr "सञ्चिकां प्रतिलिख्यताम्"
+msgstr "प्रतिलिपि फ़ाइल"
 
 #: core/abstractimportexportjob.cpp:300
 #, kde-format
 msgid "\"%1\" was restored."
-msgstr "\"%1\" पुनः प्राप्तम् ।"
+msgstr "\"%1\" को बहाल किया गया."
 
 #: core/abstractimportexportjob.cpp:385
 #: core/addressbook/importaddressbookjobinterface.cpp:231
 #: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
-msgstr "संसाधनं पुनर्स्थापितम्।"
+msgstr "संसाधन बहाल किये गये।"
 
 #: core/abstractimportexportjob.cpp:387
 #, kde-format
 msgid "No resources files found."
-msgstr "संसाधनसञ्चिकाः न प्राप्ताः ।"
+msgstr "कोई संसाधन फ़ाइल नहीं मिली."
 
 #: core/abstractimportexportjob.cpp:448
 #, kde-format
 msgid "Unable to copy file %1"
-msgstr "%1 सञ्चिकायाः प्रतिलिपिं कर्तुं असमर्थः"
+msgstr "फ़ाइल %1 कॉपी करने में असमर्थ"
 
 #: core/abstractimportexportjob.cpp:489
 #, kde-format
 msgid "Resource '%1' created."
-msgstr "संसाधन '%1' निर्मितम् ।"
+msgstr "संसाधन '%1' बनाया गया."
 
 #: core/abstractimportexportjob.cpp:504
 #, kde-format
 msgid "Failed to synchronize '%1'."
-msgstr "'%1' इत्यस्य समन्वयनं कर्तुं असफलम् ।"
+msgstr "'%1' को सिंक्रनाइज़ करने में विफल."
 
 #: core/abstractimportexportjob.cpp:509
 #, kde-format
 msgid "Resource '%1' synchronized."
-msgstr "संसाधन '%1' समन्वयितम् ।"
+msgstr "संसाधन '%1' सिंक्रनाइज़ किया गया."
 
 #: core/abstractimportexportjob.cpp:515
 #, kde-format
 msgid "All resources synchronized."
-msgstr "सर्वे संसाधनाः समन्वयिताः।"
+msgstr "सभी संसाधन सिंक्रनाइज़."
 
 #: core/abstractimportexportjob.cpp:541
 #, kde-format
 msgid "Start synchronizing..."
-msgstr "समन्वयनं आरभत..."
+msgstr "समन्वयन प्रारंभ करें..."
 
 #: core/abstractimportexportjob.cpp:578
 #, kde-format
 msgid "Directory \"%1\" added to backup file."
-msgstr "\"%1\" निर्देशिका बैकअप सञ्चिकायां योजिता ।"
+msgstr "निर्देशिका \"%1\" को बैकअप फ़ाइल में जोड़ा गया."
 
 #: core/abstractimportexportjob.cpp:580
 #, kde-format
 msgid "Directory \"%1\" cannot be added to backup file."
-msgstr "\"%1\" निर्देशिका बैकअप सञ्चिकायां योजयितुं न शक्यते ।"
+msgstr "निर्देशिका \"%1\" को बैकअप फ़ाइल में नहीं जोड़ा जा सकता."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAddressBook settings..."
-msgstr "निर्यातं आरभत KAddressBook सेटिंग्स्..."
+msgstr "KAddressBook सेटिंग्स निर्यात करना प्रारंभ करें..."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
 msgid "Export KAddressBook settings"
-msgstr "KAddressBook सेटिंग्स् निर्यातयन्तु"
+msgstr "KAddressBook सेटिंग्स निर्यात करें"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:42
 #: core/alarm/exportalarmjobinterface.cpp:84
@@ -186,7 +185,7 @@ msgstr "KAddressBook सेटिंग्स् निर्यातयन्�
 #: core/mail/exportmailjobinterface.cpp:653
 #, kde-format
 msgid "Backing up resources..."
-msgstr "संसाधनानाम् बैकअपं करणम्..."
+msgstr "संसाधनों का बैकअप लिया जा रहा है..."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:102
 #: core/alarm/exportalarmjobinterface.cpp:76
@@ -194,7 +193,7 @@ msgstr "संसाधनानाम् बैकअपं करणम्..."
 #: core/mail/exportmailjobinterface.cpp:675
 #, kde-format
 msgid "Resources backup done."
-msgstr "संसाधनानाम् बैकअपं कृतम्।"
+msgstr "संसाधन बैकअप किया गया."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:109
 #: core/akregator/exportakregatorjobinterface.cpp:72
@@ -203,7 +202,7 @@ msgstr "संसाधनानाम् बैकअपं कृतम्।"
 #: core/mail/exportmailjobinterface.cpp:167
 #, kde-format
 msgid "Backing up config..."
-msgstr "विन्यासस्य बैकअपं करणम्..."
+msgstr "कॉन्फ़िगरेशन का बैकअप लिया जा रहा है..."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:150
 #: core/akregator/exportakregatorjobinterface.cpp:79
@@ -212,17 +211,17 @@ msgstr "विन्यासस्य बैकअपं करणम्..."
 #: core/mail/exportmailjobinterface.cpp:536
 #, kde-format
 msgid "Config backup done."
-msgstr "Config backup कृतम्।"
+msgstr "कॉन्फ़िगरेशन बैकअप हो गया."
 
 #: core/addressbook/importaddressbookjobinterface.cpp:41
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
-msgstr "KAddressBook सेटिंग्स् आयातं कर्तुं आरभ्यते..."
+msgstr "KAddressBook सेटिंग्स आयात करना प्रारंभ किया जा रहा है..."
 
 #: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
 msgid "Import KAddressBook settings"
-msgstr "KAddressBook सेटिंग्स् आयातयन्तु"
+msgstr "KAddressBook सेटिंग्स आयात करें"
 
 #: core/addressbook/importaddressbookjobinterface.cpp:92
 #: core/akregator/importakregatorjobinterface.cpp:93
@@ -230,7 +229,7 @@ msgstr "KAddressBook सेटिंग्स् आयातयन्तु"
 #: core/calendar/importcalendarjobinterface.cpp:90
 #, kde-format
 msgid "Restore configs..."
-msgstr "विन्यासान् पुनर्स्थापयन्तु..."
+msgstr "कॉन्फ़िगरेशन पुनर्स्थापित करें..."
 
 #: core/addressbook/importaddressbookjobinterface.cpp:109
 #: core/akregator/importakregatorjobinterface.cpp:99
@@ -239,7 +238,7 @@ msgstr "विन्यासान् पुनर्स्थापयन्�
 #: core/mail/importmailjobinterface.cpp:866
 #, kde-format
 msgid "Config restored."
-msgstr "Config पुनर्स्थापितम्।"
+msgstr "कॉन्फ़िगरेशन बहाल."
 
 #: core/addressbook/importaddressbookjobinterface.cpp:162
 #: core/addressbook/importaddressbookjobinterface.cpp:163
@@ -251,354 +250,354 @@ msgstr "Config पुनर्स्थापितम्।"
 #: core/mail/importmailjobinterface.cpp:200
 #, kde-format
 msgid "Restore resources..."
-msgstr "संसाधनानाम् पुनर्स्थापनम्..."
+msgstr "संसाधन पुनः स्थापित करें..."
 
 #: core/akregator/exportakregatorjobinterface.cpp:24
 #, kde-format
 msgid "Start export Akregator settings..."
-msgstr "निर्यातं आरभत Akregator सेटिंग्स्..."
+msgstr "Akregator सेटिंग्स निर्यात शुरू करें..."
 
 #: core/akregator/exportakregatorjobinterface.cpp:25
 #, kde-format
 msgid "Export Akregator settings"
-msgstr "Akregator सेटिंग्स् निर्यातयन्तु"
+msgstr "Akregator सेटिंग्स निर्यात करें"
 
 #: core/akregator/exportakregatorjobinterface.cpp:87
 #, kde-format
 msgid "Backing up data..."
-msgstr "आँकडानां बैकअपं करणम्..."
+msgstr "डेटा का बैकअप लिया जा रहा है..."
 
 #: core/akregator/exportakregatorjobinterface.cpp:94
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
-msgstr "\"%1\" निर्देशिका बैकअप सञ्चिकायां योजयितुं न शक्यते ।"
+msgstr "\"%1\" निर्देशिका को बैकअप फ़ाइल में नहीं जोड़ा जा सकता."
 
 #: core/akregator/exportakregatorjobinterface.cpp:97
 #, kde-format
 msgid "Data backup done."
-msgstr "डाटा बैकअप कृतम्।"
+msgstr "डेटा बैकअप हो गया."
 
 #: core/akregator/importakregatorjobinterface.cpp:29
 #, kde-format
 msgid "Starting to import Akregator settings..."
-msgstr "Akregator सेटिंग्स् आयातं कर्तुं आरभ्यते..."
+msgstr "Akregator सेटिंग्स आयात करना शुरू कर रहा हूँ..."
 
 #: core/akregator/importakregatorjobinterface.cpp:32
 #, kde-format
 msgid "Import Akregator settings"
-msgstr "Akregator सेटिंग्स् आयातयन्तु"
+msgstr "Akregator सेटिंग्स आयात करें"
 
 #: core/akregator/importakregatorjobinterface.cpp:106
 #, kde-format
 msgid "Restore data..."
-msgstr "दत्तांशं पुनर्स्थापयन्तु..."
+msgstr "डेटा पुनर्स्थापित करें..."
 
 #: core/akregator/importakregatorjobinterface.cpp:112
 #, kde-format
 msgid "Data restored."
-msgstr "दत्तांशः पुनः स्थापितः।"
+msgstr "डेटा पुनः स्थापित किया गया."
 
 #: core/alarm/exportalarmjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAlarm settings..."
-msgstr "निर्यातं आरभत KAlarm सेटिंग्स्..."
+msgstr "KAlarm सेटिंग्स निर्यात प्रारंभ करें..."
 
 #: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
 msgid "Export KAlarm settings"
-msgstr "KAlarm सेटिंग्स् निर्यातयन्तु"
+msgstr "KAlarm सेटिंग्स निर्यात करें"
 
 #: core/alarm/importalarmjobinterface.cpp:32
 #, kde-format
 msgid "Starting to import KAlarm settings..."
-msgstr "KAlarm सेटिंग्स् आयातं कर्तुं आरभ्यते..."
+msgstr "KAlarm सेटिंग्स आयात करना प्रारंभ किया जा रहा है..."
 
 #: core/alarm/importalarmjobinterface.cpp:33
 #, kde-format
 msgid "Import KAlarm settings"
-msgstr "KAlarm सेटिंग्स् आयातयन्तु"
+msgstr "KAlarm सेटिंग्स आयात करें"
 
 #: core/archivestorage.cpp:43
 #, kde-format
 msgid "Archive cannot be opened in write mode."
-msgstr "लेखनविधाने अभिलेखागारं उद्घाटयितुं न शक्यते ।"
+msgstr "अभिलेख को लेखन मोड में नहीं खोला जा सकता."
 
 #: core/archivestorage.cpp:45 core/utils.cpp:134
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgid "Archive cannot be opened in read mode."
-msgstr "पठनविधाने संग्रहणं उद्घाटयितुं न शक्यते ।"
+msgstr "पुरालेख को पठन मोड में नहीं खोला जा सकता."
 
 #: core/backupresourcefilejobbase.cpp:47
 #, kde-format
 msgid "\"%1\" is not a file."
-msgstr "\"%1\" सञ्चिका नास्ति ।"
+msgstr "\"%1\" कोई फ़ाइल नहीं है."
 
 #: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
 #, kde-format
 msgid "\"%1\" was backed up."
-msgstr "\"%1\" इत्यस्य पृष्ठपोषणं कृतम् ।"
+msgstr "\"%1\" का बैकअप लिया गया."
 
 #: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
 #: core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
-msgstr "\"%1\" सञ्चिकां बैकअपसञ्चिकायां योजयितुं न शक्यते ।"
+msgstr "\"%1\" फ़ाइल को बैकअप फ़ाइल में नहीं जोड़ा जा सकता."
 
 #: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
 msgid "Start export KOrganizer settings..."
-msgstr "निर्यातं आरभत KOrganizer सेटिंग्स्..."
+msgstr "KOrganizer सेटिंग्स निर्यात प्रारंभ करें..."
 
 #: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
 msgid "Export KOrganizer settings"
-msgstr "KOrganizer सेटिंग्स् निर्यातयन्तु"
+msgstr "KOrganizer सेटिंग्स निर्यात करें"
 
 #: core/calendar/importcalendarjobinterface.cpp:35
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
-msgstr "KOrganizer सेटिंग्स् आयातं कर्तुं आरभ्यते..."
+msgstr "KOrganizer सेटिंग्स आयात करना प्रारंभ कर रहा हूँ..."
 
 #: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
 msgid "Import KOrganizer settings"
-msgstr "KOrganizer सेटिंग्स् आयातयन्तु"
+msgstr "KOrganizer सेटिंग्स आयात करें"
 
 #: core/mail/exportmailjobinterface.cpp:43
 #, kde-format
 msgid "Start export KMail settings..."
-msgstr "निर्यातं आरभत KMail सेटिंग्स्..."
+msgstr "KMail सेटिंग्स निर्यात करना प्रारंभ करें..."
 
 #: core/mail/exportmailjobinterface.cpp:44
 #, kde-format
 msgid "Export KMail settings"
-msgstr "KMail सेटिंग्स् निर्यातयन्तु"
+msgstr "KMail सेटिंग्स निर्यात करें"
 
 #: core/mail/exportmailjobinterface.cpp:112
 #, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr "फोल्डर् एट्रिब्यूट्स् बैकअप करणम्..."
+msgstr "फ़ोल्डर विशेषताओं का बैकअप लिया जा रहा है..."
 
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Mails..."
-msgstr "मेलस्य बैकअप करणम्..."
+msgstr "मेल का बैकअप लिया जा रहा है..."
 
 #: core/mail/exportmailjobinterface.cpp:115
 #, kde-format
 msgid "Start export resource..."
-msgstr "निर्यातसंसाधनं आरभत..."
+msgstr "संसाधन निर्यात प्रारंभ करें..."
 
 #: core/mail/exportmailjobinterface.cpp:123
 #, kde-format
 msgid "Backing up transports..."
-msgstr "परिवहनस्य बैकअपं करणम्..."
+msgstr "परिवहन का बैकअप लेना..."
 
 #: core/mail/exportmailjobinterface.cpp:128
 #: core/mail/exportmailjobinterface.cpp:140
 #, kde-format
 msgid "Transports backup done."
-msgstr "परिवहनं बैकअप कृतम्।"
+msgstr "परिवहन बैकअप किया गया।"
 
 #: core/mail/exportmailjobinterface.cpp:142
 #, kde-format
 msgid "Transport file cannot be added to backup file."
-msgstr "परिवहनसञ्चिकां बैकअपसञ्चिकायां योजयितुं न शक्यते ।"
+msgstr "ट्रांसपोर्ट फ़ाइल को बैकअप फ़ाइल में नहीं जोड़ा जा सकता."
 
 #: core/mail/exportmailjobinterface.cpp:541
 #, kde-format
 msgid "Backing up identity..."
-msgstr "पहिचानस्य बैकअपं करणम्..."
+msgstr "पहचान का बैकअप लेना..."
 
 #: core/mail/exportmailjobinterface.cpp:580
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
-msgstr "vCard सञ्चिका \"%1\" रक्षितुं न शक्यते ।"
+msgstr "vCard फ़ाइल \"%1\" सहेजी नहीं जा सकती."
 
 #: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
 msgid "Identity backup done."
-msgstr "परिचयस्य बैकअपः कृतः।"
+msgstr "पहचान बैकअप हो गया."
 
 #: core/mail/exportmailjobinterface.cpp:595
 #, kde-format
 msgid "Identity file cannot be added to backup file."
-msgstr "परिचयसञ्चिकां बैकअपसञ्चिकायां योजयितुं न शक्यते ।"
+msgstr "पहचान फ़ाइल को बैकअप फ़ाइल में नहीं जोड़ा जा सकता."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:139
 #, kde-format
 msgid "Filters backup done."
-msgstr "फ़िल्टर्स बैकअप कृत।"
+msgstr "फ़िल्टर बैकअप किया गया."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:141
 #, kde-format
 msgid "Filters cannot be exported."
-msgstr "फ़िल्टर्स् निर्यातयितुं न शक्यन्ते ।"
+msgstr "फ़िल्टर निर्यात नहीं किये जा सकते."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:163
 #, kde-format
 msgid "Backing up Folder Attributes done."
-msgstr "Folder Attributes इत्यस्य बैकअपं कृत्वा कृतम्।"
+msgstr "फ़ोल्डर विशेषताओं का बैकअप लिया गया।"
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:167
 #, kde-format
 msgid "Folder Attributes cannot be exported."
-msgstr "Folder Attributes निर्यातयितुं न शक्यते ।"
+msgstr "फ़ोल्डर विशेषताएँ निर्यात नहीं की जा सकतीं."
 
 #: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KMail settings..."
-msgstr "KMail सेटिंग्स् आयातं कर्तुं आरभ्यते..."
+msgstr "KMail सेटिंग्स आयात करना प्रारंभ किया जा रहा है..."
 
 #: core/mail/importmailjobinterface.cpp:44
 #, kde-format
 msgid "Import KMail settings"
-msgstr "KMail सेटिंग्स् आयातयन्तु"
+msgstr "KMail सेटिंग आयात करें"
 
 #: core/mail/importmailjobinterface.cpp:169
 #: core/mail/importmailjobinterface.cpp:175
 #, kde-format
 msgid "Restore transports..."
-msgstr "परिवहनं पुनर्स्थापयन्तु..."
+msgstr "परिवहन बहाल करें..."
 
 #: core/mail/importmailjobinterface.cpp:173
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
-msgstr "mailtransports सञ्चिका संग्रहे न प्राप्ता ।"
+msgstr "mailtransports फ़ाइल संग्रह में नहीं मिल सकी."
 
 #: core/mail/importmailjobinterface.cpp:188
 #, kde-format
 msgid "Transports restored."
-msgstr "परिवहनं पुनर्स्थापितम्।"
+msgstr "परिवहन बहाल."
 
 #: core/mail/importmailjobinterface.cpp:190
 #, kde-format
 msgid "Failed to restore transports file."
-msgstr "transports सञ्चिकां पुनःस्थापयितुं असफलम्।"
+msgstr "ट्रांसपोर्ट फ़ाइल को पुनर्स्थापित करने में विफल."
 
 #: core/mail/importmailjobinterface.cpp:436
 #: core/mail/importmailjobinterface.cpp:438
 #, kde-format
 msgid "Restore mails..."
-msgstr "मेल-पुनर्स्थापनम्..."
+msgstr "मेल पुनर्स्थापित करें..."
 
 #: core/mail/importmailjobinterface.cpp:555
 #, kde-format
 msgid "Mails restored."
-msgstr "मेलः पुनः स्थापितः।"
+msgstr "मेल बहाल."
 
 #: core/mail/importmailjobinterface.cpp:562
 #, kde-format
 msgid "Restore config..."
-msgstr "विन्यासं पुनर्स्थापयन्तु..."
+msgstr "कॉन्फ़िगरेशन पुनर्स्थापित करें..."
 
 #: core/mail/importmailjobinterface.cpp:565
 #, kde-format
 msgid "filters file could not be found in the archive."
-msgstr "filters सञ्चिका संग्रहे न प्राप्ता ।"
+msgstr "फ़िल्टर फ़ाइल संग्रह में नहीं मिल सकी."
 
 #: core/mail/importmailjobinterface.cpp:569
 #, kde-format
 msgid "Restore filters..."
-msgstr "फ़िल्टर्स् पुनर्स्थापयन्तु..."
+msgstr "फ़िल्टर पुनर्स्थापित करें..."
 
 #: core/mail/importmailjobinterface.cpp:618
 #, kde-format
 msgid "Filters restored."
-msgstr "फ़िल्टर्स् पुनः स्थापिताः।"
+msgstr "फ़िल्टर बहाल."
 
 #: core/mail/importmailjobinterface.cpp:899
 #: core/mail/importmailjobinterface.cpp:904
 #, kde-format
 msgid "Restoring identities..."
-msgstr "परिचयानां पुनर्स्थापनम्..."
+msgstr "पहचान बहाल करना..."
 
 #: core/mail/importmailjobinterface.cpp:902
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
-msgstr "emailidentities सञ्चिका संग्रहे न प्राप्ता ।"
+msgstr "emailidentities फ़ाइल संग्रह में नहीं मिल सकी."
 
 #: core/mail/importmailjobinterface.cpp:963
 #, kde-format
 msgid "Identities restored."
-msgstr "परिचयाः पुनः स्थापिताः।"
+msgstr "पहचान बहाल हुई।"
 
 #: core/mail/importmailjobinterface.cpp:965
 #, kde-format
 msgid "Failed to restore identity file."
-msgstr "परिचयसञ्चिकां पुनःस्थापयितुं असफलम्।"
+msgstr "पहचान फ़ाइल पुनर्स्थापित करने में विफल."
 
 #: core/mail/importmailjobinterface.cpp:1283
 #, kde-format
 msgid "\"%1\" migration done."
-msgstr "\"%1\" प्रवासः कृतः ।"
+msgstr "\"%1\" माइग्रेशन पूर्ण हुआ."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:35
 #, kde-format
 msgid "Restoring folder attributes..."
-msgstr "फोल्डर् विशेषतानां पुनर्स्थापनम्..."
+msgstr "फ़ोल्डर विशेषताएँ पुनर्स्थापित की जा रही हैं..."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:41
 #, kde-format
 msgid "Restoring Folder Attributes done."
-msgstr "Folder Attributes पुनर्स्थापनं कृतम्।"
+msgstr "फ़ोल्डर विशेषताएँ पुनर्स्थापित की गई."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:45
 #, kde-format
 msgid "Folder Attributes cannot be restored."
-msgstr "Folder Attributes पुनः स्थापयितुं न शक्यते।"
+msgstr "फ़ोल्डर विशेषताएँ पुनर्स्थापित नहीं की जा सकतीं."
 
 #: core/pimdatabackuprestore.cpp:76 core/pimdatabackuprestore.cpp:239
 #, kde-format
 msgid "No data selected."
-msgstr "न दत्तांशः चयनितः।"
+msgstr "कोई डेटा चयनित नहीं."
 
 #: core/pimdatabackuprestore.cpp:82 core/pimdatabackuprestore.cpp:245
 #, kde-format
 msgid "Unable to open file \"%1\"."
-msgstr "\"%1\" सञ्चिकां उद्घाटयितुं असमर्थः ।"
+msgstr "फ़ाइल \"%1\" खोलने में असमर्थ."
 
 #: core/pimdatabackuprestore.cpp:91
 #, kde-format
 msgid "Starting to backup data in '%1'"
-msgstr "'%1' इत्यस्मिन् दत्तांशस्य बैकअपं कर्तुं आरभ्यते।"
+msgstr "'%1' में डेटा का बैकअप लेना शुरू किया जा रहा है"
 
 #: core/pimdatabackuprestore.cpp:174
 #, kde-format
 msgid "Backup in '%1' done."
-msgstr "'%1' इत्यस्मिन् बैकअप कृतम् ।"
+msgstr "'%1' में बैकअप हो गया."
 
 #: core/pimdatabackuprestore.cpp:264
 #, kde-format
 msgid "Starting to restore data from '%1'"
-msgstr "'%1' तः दत्तांशं पुनःस्थापयितुं आरभते।"
+msgstr "'%1' से डेटा पुनःस्थापित करना प्रारंभ किया जा रहा है"
 
 #: core/pimdatabackuprestore.cpp:272
 #, kde-format
 msgid "Restoring data from '%1' done."
-msgstr "'%1' तः आँकडानां पुनर्स्थापनं कृतम् ।"
+msgstr "'%1' से डेटा पुनः स्थापित करना पूर्ण हुआ."
 
 #: core/pimdatabackupthread.cpp:37
 #, kde-format
 msgid "Impossible to open archive file."
-msgstr "संग्रहसञ्चिकां उद्घाटयितुं असम्भवम्।"
+msgstr "पुरालेख फ़ाइल खोलना असंभव है."
 
 #: core/pimdatabackupthread.cpp:44
 #, kde-format
 msgid "Impossible to backup \"%1\"."
-msgstr "\"%1\" इत्यस्य बैकअपं कर्तुं असम्भवम् ।"
+msgstr "\"%1\" का बैकअप लेना असंभव है।"
 
 #: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:204
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
-msgstr "संसाधनसञ्चिका \"%1\" बैकअप सञ्चिकायां योजयितुं न शक्यते ।"
+msgstr "संसाधन फ़ाइल \"%1\" को बैकअप फ़ाइल में नहीं जोड़ा जा सकता."
 
 #: core/resourceconverterbase.cpp:207
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
-msgstr "संसाधनविन्याससञ्चिका \"%1\" नास्ति ।"
+msgstr "संसाधन कॉन्फ़िगरेशन फ़ाइल \"%1\" मौजूद नहीं है."
 
 #: core/utils.cpp:181
 #, kde-format
@@ -613,22 +612,22 @@ msgstr "केएड्रेसबुक"
 #: core/utils.cpp:185
 #, kde-format
 msgid "KAlarm"
-msgstr "K अलार्म"
+msgstr "KAlarm"
 
 #: core/utils.cpp:187
 #, kde-format
 msgid "KOrganizer"
-msgstr "KOorganizer"
+msgstr "ऑर्गेनाइज़र"
 
 #: core/utils.cpp:189
 #, kde-format
 msgid "Akregator"
-msgstr "समुच्चयकारः"
+msgstr "एग्रीगेटर"
 
 #: core/utils.cpp:203
 #, kde-format
 msgid "Identity"
-msgstr "चिह्नं"
+msgstr "पहचान"
 
 #: core/utils.cpp:205
 #, kde-format
@@ -643,40 +642,40 @@ msgstr "मेल परिवहन"
 #: core/utils.cpp:209
 #, kde-format
 msgid "Resources"
-msgstr "संसाधनाः"
+msgstr "संसाधन"
 
 #: core/utils.cpp:211
 #, kde-format
 msgid "Config"
-msgstr "Config"
+msgstr "कॉन्फ़िग"
 
 #: core/utils.cpp:213
 #, kde-format
 msgid "Data"
-msgstr "दत्तांश"
+msgstr "डेटा"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Archive File Structure"
-msgstr "संग्रह सञ्चिका संरचना"
+msgstr "पुरालेख फ़ाइल संरचना"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
-msgstr "बैकअप संग्रह संरचना : १."
+msgstr "बैकअप संग्रह संरचना:"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
 msgid "backup-structure.txt file was not found."
-msgstr "backup-structure.txt सञ्चिका न प्राप्ता ।"
+msgstr "backup-structure.txt फ़ाइल नहीं मिली."
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
-msgstr "PimDataExporter विन्यस्तं कुर्वन्तु"
+msgstr "PimDataExporter कॉन्फ़िगर करें"
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:43
 #, kde-format
@@ -686,19 +685,19 @@ msgstr "सामान्य"
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:58
 #, kde-format
 msgid "User Feedback"
-msgstr "उपयोक्तृप्रतिक्रिया"
+msgstr "उपयोगकर्ता प्रतिसाद"
 
 #: gui/dialog/selectiontypedialog.cpp:27
 #, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
-msgstr "पूर्वनिर्धारितरूपेण एतत् टेम्पलेट् उपयुज्यताम्"
+msgstr "इस टेम्पलेट का डिफ़ॉल्ट रूप से उपयोग करें"
 
 #: gui/dialog/selectiontypedialog.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as Template..."
-msgstr "टेम्पलेटरूपेण रक्षन्तु..."
+msgstr "टेम्पलेट के रूप में सहेजें..."
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
@@ -710,112 +709,112 @@ msgstr "टेम्पलेट लोड करें..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
-msgstr "प्रकारं चिनोतु"
+msgstr "प्रकार चुनें"
 
 #: gui/dialog/selectiontypedialog.cpp:52
 #: gui/dialog/synchronizeresourcedialog.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Select All"
-msgstr "All इति चिनोतु"
+msgstr "सबका चयन करें"
 
 #: gui/dialog/selectiontypedialog.cpp:57
 #: gui/dialog/synchronizeresourcedialog.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "All अचयनं कुर्वन्तु"
+msgstr "सभी को अचयनित करें"
 
 #: gui/dialog/showarchivestructuredialog.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
-msgstr "चयनितसञ्चिकां निष्कासयन्तु"
+msgstr "चयनित फ़ाइल निकालें"
 
 #: gui/dialog/showarchivestructuredialog.cpp:41
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
-msgstr "चयनितं सञ्चिकां उद्घाटयन्तु"
+msgstr "चयनित फ़ाइल खोलें"
 
 #: gui/dialog/showarchivestructuredialog.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
-msgstr "\"%1\" सञ्चिकायां संग्रहसामग्री दर्शयतु ।"
+msgstr "फ़ाइल \"%1\" पर पुरालेख सामग्री दिखाएँ"
 
 #: gui/dialog/showarchivestructuredialog.cpp:51
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr "अन्वेषण..."
+msgstr "खोज..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:54
 #, kde-format
 msgid "Save As Text..."
-msgstr "पाठरूपेण रक्षतु..."
+msgstr "पाठ के रूप में सहेजें..."
 
 #: gui/dialog/showarchivestructuredialog.cpp:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
-msgstr "निर्देशिकां चिनोतु"
+msgstr "निर्देशिका चुनें"
 
 #: gui/dialog/showarchivestructuredialog.cpp:140
 #, kde-format
 msgid "Do you want to overwrite %1?"
-msgstr "%1 इत्यस्य अधिलेखनं कर्तुम् इच्छति वा?"
+msgstr "क्या आप %1 को अधिलेखित करना चाहते हैं?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:141
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
-msgstr "सञ्चिका पूर्वमेव विद्यते"
+msgstr "फ़ाइल पहले से मौजूद है"
 
 #: gui/dialog/showarchivestructuredialog.cpp:149
 #, kde-format
 msgid "Impossible to copy %1 in %2."
-msgstr "%2 मध्ये %1 प्रतिलिपिं कर्तुं असम्भवम् ।"
+msgstr "%2 में %1 की प्रतिलिपि बनाना असंभव है।"
 
 #: gui/dialog/showarchivestructuredialog.cpp:172
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
-msgstr "पाठसञ्चिकाः"
+msgstr "पाठ फ़ाइलें"
 
 #: gui/dialog/showarchivestructuredialog.cpp:175
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
-msgstr "Log File निर्यातयन्तु"
+msgstr "लॉग फ़ाइल निर्यात करें"
 
 #: gui/dialog/showarchivestructuredialog.cpp:183
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
-msgstr "संग्रहणं उद्घाटयितुं न शक्यते"
+msgstr "संग्रह नहीं खोला जा सकता"
 
 #: gui/dialog/showarchivestructuredialog.cpp:189
 #, kde-format
 msgid "Info"
-msgstr "Info"
+msgstr "जानकारी"
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "This is not pim archive."
-msgstr "एतत् पिम् आर्काइव नास्ति।"
+msgstr "यह pim संग्रह नहीं है."
 
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgctxt "@title:window"
 msgid "Show information"
-msgstr "सूचनां दर्शयतु"
+msgstr "जानकारी दिखाएं"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
-msgstr "संसाधनानाम् समन्वयनम्"
+msgstr "संसाधनों को सिंक्रनाइज़ करें"
 
 #: gui/dialog/synchronizeresourcedialog.cpp:32
 #, kde-format
@@ -824,21 +823,18 @@ msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
 msgstr ""
-"केचन संसाधनाः योजिताः परन्तु दत्तांशः समन्वयितः नासीत् । यत् संसाधनं भवान् समन्वययितुम् "
-"इच्छति तत् चिनोतु:"
+"कुछ संसाधन जोड़े गए लेकिन डेटा सिंक नहीं हुआ। वे संसाधन चुनें जिन्हें आप सिंक करना चाहते हैं:"
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
 #, kde-format
 msgid "Cancel"
-msgstr "निरसयतु"
+msgstr "रद्द करना"
 
 #: gui/importexportprogressindicatorgui.cpp:66
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
-msgstr ""
-"\"%1\" पूर्वमेव अस्ति । किं भवन्तः तस्य अधिलेखनं कर्तुम् इच्छन्ति वा विलीनीकरणं कर्तुम् इच्छन्ति "
-"वा?"
+msgstr "\"%1\" पहले से मौजूद है। क्या आप इसे ओवरराइट करना चाहते हैं या मर्ज करना चाहते हैं?"
 
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
@@ -846,34 +842,34 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Restore"
-msgstr "निर्यत्"
+msgstr "पुनर्स्थापित करना"
 
 #: gui/importexportprogressindicatorgui.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Merge"
-msgstr "विलयः"
+msgstr "मर्ज"
 
 #: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it?"
-msgstr "\"%1\" पूर्वमेव अस्ति । किं भवन्तः तस्य अधिलेखनं कर्तुम् इच्छन्ति ?"
+msgstr "\"%1\" पहले से मौजूद है। क्या आप इसे ओवरराइट करना चाहते हैं?"
 
 #: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
-msgstr "\"%1\" निर्देशिका पूर्वमेव अस्ति । किं भवन्तः तस्य अधिलेखनं कर्तुम् इच्छन्ति ?"
+msgstr "निर्देशिका \"%1\" पहले से मौजूद है। क्या आप इसे अधिलेखित करना चाहते हैं?"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize resources"
-msgstr "संसाधनानाम् समन्वयनम्"
+msgstr "संसाधनों को सिंक्रनाइज़ करें"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
 msgid "Synchronize resources... It can take some time."
-msgstr "संसाधनानाम् समन्वयनं कुर्वन्तु... किञ्चित् समयं गृह्णीयात्।"
+msgstr "संसाधनों को सिंक्रनाइज़ करें... इसमें कुछ समय लग सकता है।"
 
 #: gui/pimdatabackuprestoreui.cpp:25
 #, kde-format
@@ -882,14 +878,14 @@ msgid ""
 "additional data which will be skipped during import. Do you want to import "
 "it?"
 msgstr ""
-"अस्य कार्यक्रमस्य नूतनतरसंस्करणेन संग्रहालयः निर्मितः । अस्मिन् अतिरिक्तदत्तांशः भवितुम् अर्हति "
-"ये आयातस्य समये त्यक्ताः भविष्यन्ति । किं भवन्तः तस्य आयातं कर्तुम् इच्छन्ति ?"
+"यह संग्रह इस प्रोग्राम के नए संस्करण द्वारा बनाया गया था। इसमें अतिरिक्त डेटा हो सकता है "
+"जिसे आयात के दौरान छोड़ दिया जाएगा। क्या आप इसे आयात करना चाहते हैं?"
 
 #: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
-msgstr "सम्यक् संस्करणं न"
+msgstr "सही संस्करण नहीं"
 
 #: gui/pimdatabackuprestoreui.cpp:28
 #, kde-format
@@ -900,80 +896,81 @@ msgstr "आयात"
 #: gui/pimdatacommandlineoption.cpp:38 gui/pimdatacommandlineoption.cpp:40
 #, kde-format
 msgid "PIM Data Exporter"
-msgstr "पीआईएम डाटा निर्यातक"
+msgstr "पीआईएम डेटा निर्यातक"
 
 #: gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
-msgstr "प्रतिलिपि अधिकार © 2012-%1 pimdataexporter लेखक"
+msgstr "कॉपीराइट © 2012-%1 pimdataexporter लेखक"
 
 #: gui/pimdatacommandlineoption.cpp:47
 #, kde-format
 msgid "Template file uses to define what data, settings to import or export"
 msgstr ""
-"टेम्पलेट् सञ्चिका किं किं दत्तांशं, सेटिङ्ग्स् आयातितव्यं निर्यातयितव्यं वा इति परिभाषितुं उपयुङ्क्ते"
+"टेम्पलेट फ़ाइल का उपयोग यह निर्धारित करने के लिए किया जाता है कि कौन सा डेटा, सेटिंग "
+"आयात या निर्यात की जाए"
 
 #: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
-msgstr "दत्तां सञ्चिकां आयातयन्तु"
+msgstr "दी गई फ़ाइल आयात करें"
 
 #: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
-msgstr "दत्तां सञ्चिकां निर्यातयन्तु"
+msgstr "दी गई फ़ाइल निर्यात करें"
 
 #: gui/pimdatacommandlineoption.cpp:52
 #, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
-msgstr "सञ्चिका अथवा url । उपयोक्तारः पृष्टः भविष्यति यत् आयातः निर्यातः वा इति।"
+msgstr "फ़ाइल या यूआरएल। उपयोगकर्ता से पूछा जाएगा कि आयात करना है या निर्यात करना है।"
 
 #: gui/pimdatacommandlineoption.cpp:54
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr "उपयोक्तृप्रतिक्रियायाः कृते उपलब्धविकल्पान् सूचीबद्धं करोति"
+msgstr "उपयोगकर्ता फ़ीडबैक के लिए उपलब्ध विकल्पों की सूची बनाता है"
 
 #. i18n: ectx: Menu (file)
 #: gui/pimdataexporter.rc:8
 #, kde-format
 msgid "&File"
-msgstr "&संचिका"
+msgstr "&फ़ाइल"
 
 #. i18n: ectx: Menu (tools)
 #: gui/pimdataexporter.rc:21
 #, kde-format
 msgid "&Tools"
-msgstr "&उपकरणाः"
+msgstr "&औजार"
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: gui/pimdataexporter.rc:28
 #, kde-format
 msgid "Main Toolbar"
-msgstr "मुख्य साधनपट्टी"
+msgstr "मुख्य टूलबार"
 
 #: gui/pimdataexporterwindow.cpp:168
 #, kde-format
 msgid "Full sync starts..."
-msgstr "पूर्णसमन्वयः आरभ्यते..."
+msgstr "पूर्ण समन्वयन प्रारंभ..."
 
 #: gui/pimdataexporterwindow.cpp:198
 #, kde-format
 msgid "Full sync finished."
-msgstr "पूर्णसमन्वयनं समाप्तम्।"
+msgstr "पूर्ण समन्वयन समाप्त."
 
 #: gui/pimdataexporterwindow.cpp:205
 #, kde-format
 msgid "Full sync for \"%1\" done."
-msgstr "\"%1\" कृते पूर्णसमन्वयनं कृतम् ।"
+msgstr "\"%1\" के लिए पूर्ण समन्वयन हो गया."
 
 #: gui/pimdataexporterwindow.cpp:210
 #, kde-format
 msgid "Full sync for \"%1\" failed."
-msgstr "\"%1\" कृते पूर्णसमन्वयनं विफलम् ।"
+msgstr "\"%1\" के लिए पूर्ण समन्वयन विफल हुआ."
 
 #: gui/pimdataexporterwindow.cpp:216
 #, kde-format
@@ -981,8 +978,8 @@ msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
 "overwrite your existing settings and data."
 msgstr ""
-"दत्तांशस्य पुनर्स्थापनार्थं भवद्भिः \"pimdataexporter\" इत्यस्य उपयोगः करणीयः । "
-"सावधानाः भवन्तु यतः एतत् भवतः विद्यमानं सेटिङ्ग्स्, दत्तांशं च अधिलिखितुं शक्नोति ।"
+"डेटा को पुनर्स्थापित करने के लिए, आपको \"pimdataexporter\" का उपयोग करना होगा। "
+"सावधान रहें क्योंकि यह आपकी मौजूदा सेटिंग्स और डेटा को अधिलेखित कर सकता है।"
 
 #: gui/pimdataexporterwindow.cpp:218 gui/pimdataexporterwindow.cpp:325
 #: gui/pimdataexporterwindow.cpp:403
@@ -994,79 +991,79 @@ msgstr "बैकअप"
 #: gui/pimdataexporterwindow.cpp:245
 #, kde-format
 msgid "Export Data..."
-msgstr "निर्यातं आँकडा..."
+msgstr "डेटा निर्यात करें..."
 
 #: gui/pimdataexporterwindow.cpp:250
 #, kde-format
 msgid "Import Data..."
-msgstr "आयातदत्तांशः..."
+msgstr "डेटा आयात करें..."
 
 #: gui/pimdataexporterwindow.cpp:255
 #, kde-format
 msgid "Save log..."
-msgstr "लॉग रक्षतु..."
+msgstr "लॉग सहेजें..."
 
 #: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Show Archive Structure Information..."
-msgstr "अभिलेखागार संरचना सूचना दर्शयतु..."
+msgstr "पुरालेख संरचना जानकारी दिखाएँ..."
 
 #: gui/pimdataexporterwindow.cpp:261
 #, kde-format
 msgid "Show Archive Information..."
-msgstr "अभिलेखागारस्य सूचनां दर्शयतु..."
+msgstr "पुरालेख जानकारी दिखाएं..."
 
 #: gui/pimdataexporterwindow.cpp:265
 #, kde-format
 msgid "Show Information on current Archive..."
-msgstr "वर्तमान अभिलेखागारस्य विषये सूचनां दर्शयतु..."
+msgstr "वर्तमान पुरालेख पर जानकारी दिखाएं..."
 
 #: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
-msgstr "Archive इति चिनोतु"
+msgstr "संग्रह चुनें"
 
 #: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Zip file"
-msgstr "जिप् सञ्चिका"
+msgstr "ज़िप फ़ाइल"
 
 #: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Log is empty."
-msgstr "लॉग् रिक्तम् अस्ति।"
+msgstr "लॉग रिक्त है."
 
 #: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
-msgstr "लॉग् रक्षतु"
+msgstr "लॉग सहेजें"
 
 #: gui/pimdataexporterwindow.cpp:319
 #, kde-format
 msgid "HTML Files (*.html)"
-msgstr "HTML सञ्चिकाः (*.html) २."
+msgstr "HTML फ़ाइलें (*.html)"
 
 #: gui/pimdataexporterwindow.cpp:325
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
-msgstr "कृपया स्वदत्तांशस्य बैकअपं ग्रहीतुं पूर्वं सर्वाणि kdepim अनुप्रयोगाः त्यजन्तु ।"
+msgstr "कृपया अपने डेटा का बैकअप लेने से पहले सभी kdepim अनुप्रयोगों को बंद कर दें।"
 
 #: gui/pimdataexporterwindow.cpp:348
 #, kde-format
 msgid "Create backup"
-msgstr "बैकअप रचयन्तु"
+msgstr "बैकअप बनाएं"
 
 #: gui/pimdataexporterwindow.cpp:350
 #, kde-format
 msgid "Zip file (*.zip)"
-msgstr "जिप् सञ्चिका (*.zip) २."
+msgstr "ज़िप फ़ाइल (*.zip)"
 
 #: gui/pimdataexporterwindow.cpp:360
 #, kde-format
 msgid "Backup in progress..."
-msgstr "बैकअप प्रचलति..."
+msgstr "बैकप चल रहा..."
 
 #: gui/pimdataexporterwindow.cpp:402
 #, kde-format
@@ -1074,46 +1071,46 @@ msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
 msgstr ""
-"दत्तांशं पुनर्स्थापयितुं पूर्वं भवद्भिः सर्वाणि kdepim अनुप्रयोगाः बन्दं कर्तव्यम् । किं त्वं "
-"निरन्तरं कर्तुम् इच्छसि ?"
+"डेटा को पुनर्स्थापित करने से पहले आपको सभी kdepim एप्लिकेशन बंद करने होंगे। क्या आप जारी "
+"रखना चाहते हैं?"
 
 #: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Restore backup"
-msgstr "बैकअप पुनः स्थापयन्तु"
+msgstr "बैकअप बहाल"
 
 #: gui/pimdataexporterwindow.cpp:418
 #, kde-format
 msgid "Zip File"
-msgstr "जिप् सञ्चिका"
+msgstr "ज़िप फ़ाइल"
 
 #: gui/pimdataexporterwindow.cpp:450
 #, kde-format
 msgid "Restore in progress..."
-msgstr "पुनर्स्थापनं प्रचलति..."
+msgstr "पुनःस्थापना प्रगति पर है..."
 
 #: gui/trayicon/pimdatatrayicon.cpp:13
 #, kde-format
 msgid "Pim Data Exporter"
-msgstr "पिम डाटा निर्यातक"
+msgstr "पिम डेटा निर्यातक"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
 #, kde-format
 msgctxt "@option:check"
 msgid "Always Override File"
-msgstr "सर्वदा सञ्चिकां अधिलिखन्तु"
+msgstr "हमेशा फ़ाइल ओवरराइड करें"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:17
 #, kde-format
 msgctxt "@option:check"
 msgid "Always Override Directory"
-msgstr "सदैव निर्देशिकां अधिलिखन्तु"
+msgstr "हमेशा निर्देशिका ओवरराइड करें"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:18
 #, kde-format
 msgctxt "@option:check"
 msgid "Always Merge Config File"
-msgstr "सदैव Config File विलीनं कुर्वन्तु"
+msgstr "हमेशा कॉन्फ़िगरेशन फ़ाइल मर्ज करें"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:23
 #, kde-format
@@ -1123,4 +1120,4 @@ msgstr "आयात"
 #: gui/widgets/selectiontypetreewidget.cpp:332
 #, kde-format
 msgid "Template Files (*.xml)"
-msgstr "टेम्पलेट सञ्चिकाः (*.xml)"
+msgstr "टेम्पलेट फ़ाइलें (*.xml)"
