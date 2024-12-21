@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the pim-data-exporter package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 00:40+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:53+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -665,7 +667,7 @@ msgstr "संग्रह सञ्चिका संरचना"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
-msgstr "बैकअप संग्रह संरचना : १."
+msgstr "बैकअप संग्रह संरचना :"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
@@ -1046,7 +1048,7 @@ msgstr "लॉग् रक्षतु"
 #: gui/pimdataexporterwindow.cpp:319
 #, kde-format
 msgid "HTML Files (*.html)"
-msgstr "HTML सञ्चिकाः (*.html) २."
+msgstr "HTML सञ्चिकाः (*.html)"
 
 #: gui/pimdataexporterwindow.cpp:325
 #, kde-format
@@ -1061,7 +1063,7 @@ msgstr "बैकअप रचयन्तु"
 #: gui/pimdataexporterwindow.cpp:350
 #, kde-format
 msgid "Zip file (*.zip)"
-msgstr "जिप् सञ्चिका (*.zip) २."
+msgstr "जिप् सञ्चिका (*.zip)"
 
 #: gui/pimdataexporterwindow.cpp:360
 #, kde-format
