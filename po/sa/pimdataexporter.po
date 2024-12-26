@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 00:40+0000\n"
-"PO-Revision-Date: 2024-12-24 20:39+0530\n"
+"PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -381,7 +381,7 @@ msgstr "KMail सेटिंग्स् निर्यातयन्तु"
 #: core/mail/exportmailjobinterface.cpp:112
 #, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr "फोल्डर् एट्रिब्यूट्स् बैकअप करणम्..."
+msgstr "समुच्चय एट्रिब्यूट्स् बैकअप करणम्..."
 
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
@@ -540,7 +540,7 @@ msgstr "\"%1\" प्रवासः कृतः ।"
 #: core/mail/importmailjobinterfaceimpl.cpp:35
 #, kde-format
 msgid "Restoring folder attributes..."
-msgstr "फोल्डर् विशेषतानां पुनर्स्थापनम्..."
+msgstr "समुच्चय विशेषतानां पुनर्स्थापनम्..."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:41
 #, kde-format
