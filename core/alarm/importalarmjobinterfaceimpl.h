@@ -18,7 +18,6 @@ public:
     ~ImportAlarmJobInterfaceImpl() override;
 
 protected:
-    void restoreResources();
     [[nodiscard]] Akonadi::Collection::Id convertFolderPathToCollectionId(const QString &path) override;
     [[nodiscard]] QString adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData) override;
     void synchronizeResource(const QStringList &lst) override;
