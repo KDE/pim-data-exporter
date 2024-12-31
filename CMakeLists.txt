@@ -17,7 +17,6 @@ include(ECMAddTests)
 include(GenerateExportHeader)
 include(ECMGenerateHeaders)
 
-include(FeatureSummary)
 include(CheckFunctionExists)
 
 include(KDEInstallDirs)
