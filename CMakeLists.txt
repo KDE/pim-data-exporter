@@ -5,6 +5,8 @@ set(PIM_VERSION "6.3.40")
 project(pim-data-exporter VERSION ${PIM_VERSION})
 set(RELEASE_SERVICE_VERSION "25.03.40")
 set(KF_MIN_VERSION "6.9.0")
+# Update it for each release
+set(PIMDATAEXPORTER_RELEASE_VERSION_DATE "25.01.30") # yy.MM.dd
 
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -135,7 +137,7 @@ configure_file(pimdataexporter-version.h.in ${CMAKE_CURRENT_BINARY_DIR}/pimdatae
 if(BUILD_TESTING)
    add_definitions(-DBUILD_TESTING)
 endif()
-configure_file(config-pimdataexporter.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-pimdataexporter.h @ONLY)
+configure_file(config-pimdataexporter.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-pimdataexporter.h)
 
 add_subdirectory(core)
 add_subdirectory(gui)
