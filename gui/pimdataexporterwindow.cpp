@@ -5,6 +5,7 @@
 */
 
 #include "pimdataexporterwindow.h"
+#include "config-pimdataexporter.h"
 #include "dialog/showarchivestructuredialog.h"
 #include "importexportprogressindicatorgui.h"
 #include "job/fullsynchronizeresourcesjob.h"
@@ -98,7 +99,7 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     mainWidgetLayout->setContentsMargins({});
     mainWidgetLayout->setSpacing(0);
     if (PimCommon::NeedUpdateVersionUtils::checkVersion()) {
-        const auto status = PimCommon::NeedUpdateVersionUtils::obsoleteVersionStatus(KAboutData::applicationData().version(), QDate::currentDate());
+        const auto status = PimCommon::NeedUpdateVersionUtils::obsoleteVersionStatus(QLatin1String(PIMDATAEXPORTER_RELEASE_VERSION_DATE), QDate::currentDate());
         if (status != PimCommon::NeedUpdateVersionUtils::ObsoleteVersion::NotObsoleteYet) {
             auto needUpdateVersionWidget = new PimCommon::NeedUpdateVersionWidget(this);
             mainWidgetLayout->addWidget(needUpdateVersionWidget);
