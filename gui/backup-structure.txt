@@ -58,7 +58,7 @@ Root
 |       |---------templatesconfigurationrc
 |       |---------kalarmrc
 |       |---------korganizerrc
-|       |---------calendar_printing.rc 
+|       |---------calendar_printing.rc
 |       |---------kalendaracrc
 |       |---------kaddressbookrc
 |       |---------akonadi_mailfilter_agent.notifyrc
@@ -104,7 +104,7 @@ Root
 |       |---------akregator.notifyrc
 |       |---------kontactsummary_part.rc
 |       |---------headerthemeeditorui.rc
-|       |---------contactprintthemeeditorui.rc    
+|       |---------contactprintthemeeditorui.rc
 |       |---------contactthemeeditorui.rc
 |       |---------kwatchgnupgrc
 |       |---------kwatchgnupgui.rc

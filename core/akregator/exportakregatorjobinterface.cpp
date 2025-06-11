@@ -36,7 +36,7 @@ Akonadi::Collection::Id ExportAkregatorJobInterface::convertFolderPathToCollecti
 {
     Q_UNUSED(path);
     Q_UNREACHABLE();
-    // Unusued
+    // Unused
     return -1;
 }
 

@@ -9,7 +9,9 @@ ecm_mark_as_test(utilstest)
 target_link_libraries(utilstest Qt::Test pimdataexporterprivate KF6::ConfigCore)
 
 #####
-add_library(test_resourceconverter STATIC
+add_library(
+    test_resourceconverter
+    STATIC
     resourceconvertertest.cpp
     generatelistfilefromarchive.cpp
     loadlistfromfile.cpp
@@ -42,20 +44,51 @@ add_library(test_resourceconverter STATIC
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(test_resourceconverter PROPERTIES UNITY_BUILD ON)
 endif()
-target_link_libraries(test_resourceconverter PUBLIC KF6::ConfigCore pimdataexporterprivate KF6::Archive Qt::Test  KPim6::AkonadiMime KPim6::AkonadiCore KF6::WidgetsAddons)
-
+target_link_libraries(
+    test_resourceconverter
+    PUBLIC
+        KF6::ConfigCore
+        pimdataexporterprivate
+        KF6::Archive
+        Qt::Test
+        KPim6::AkonadiMime
+        KPim6::AkonadiCore
+        KF6::WidgetsAddons
+)
 
 #####
-add_executable(resourceconverterclasstest resourceconverterclasstest.cpp resourceconverterclasstest.h)
+add_executable(
+    resourceconverterclasstest
+    resourceconverterclasstest.cpp
+    resourceconverterclasstest.h
+)
 add_test(NAME resourceconverterclasstest COMMAND resourceconverterclasstest)
 ecm_mark_as_test(resourceconverterclasstest)
-target_link_libraries(resourceconverterclasstest Qt::Test KF6::ConfigCore test_resourceconverter)
+target_link_libraries(
+    resourceconverterclasstest
+    Qt::Test
+    KF6::ConfigCore
+    test_resourceconverter
+)
 
 #####
-add_executable(backupresourcefilejobimpltest backupresourcefilejobimpltest.cpp backupresourcefilejobimpltest.h)
-add_test(NAME backupresourcefilejobimpltest COMMAND backupresourcefilejobimpltest)
+add_executable(
+    backupresourcefilejobimpltest
+    backupresourcefilejobimpltest.cpp
+    backupresourcefilejobimpltest.h
+)
+add_test(
+    NAME backupresourcefilejobimpltest
+    COMMAND backupresourcefilejobimpltest
+)
 ecm_mark_as_test(backupresourcefilejobimpltest)
-target_link_libraries(backupresourcefilejobimpltest Qt::Test KF6::ConfigCore pimdataexporterprivate KF6::Archive)
+target_link_libraries(
+    backupresourcefilejobimpltest
+    Qt::Test
+    KF6::ConfigCore
+    pimdataexporterprivate
+    KF6::Archive
+)
 ###
 
 add_subdirectory(calendar)

@@ -5,7 +5,7 @@
        CVS -->
   <!ENTITY i18n-pimdataexporter "<application>PIM Data Exporter</application>">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % English "INCLUDE"> 
+  <!ENTITY % English "INCLUDE">
   <!ENTITY imap "<acronym>IMAP</acronym>">
 ]>
 

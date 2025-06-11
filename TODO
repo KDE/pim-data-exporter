@@ -4,6 +4,6 @@ TODO 5.15:
 - templatesconfigurationrc (Need to merge in existing config file)
 - akonadi_archivemail_agentrc (Need to merge in existing config file)
 - Allow to merge KMail Snippet config
-- Add export mode 
+- Add export mode
 - Add support for store kaddressbook printing theme.
 - Add support for import/export other akonadi resources (facebook ? google ? etc.)
