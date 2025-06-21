@@ -7,8 +7,7 @@
 >Esportatore dei dati di PIM</application
 >">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % Italian "INCLUDE"
-> 
+  <!ENTITY % Italian "INCLUDE">
   <!ENTITY imap "<acronym
 >IMAP</acronym
 >">
