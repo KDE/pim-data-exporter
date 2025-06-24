@@ -5,6 +5,8 @@
 */
 
 #include "pimdataimportdatainfofile.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "pimdataexportcore_debug.h"
 #include "utils.h"
 #include <KZip>
@@ -43,9 +45,9 @@ QString PimDataImportDataInfoFile::importDataInfoPath()
             if (file->size() == 0) {
                 qCWarning(PIMDATAEXPORTERCORE_LOG) << "Empty exporteddata information file, skipping it";
             } else {
-                temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();
+                temporaryFilePath = mTempDir->path() + u'/' + Utils::exportDataTypeFileName();
                 if (file->copyTo(mTempDir->path())) {
-                    temporaryFilePath = mTempDir->path() + QLatin1Char('/') + Utils::exportDataTypeFileName();
+                    temporaryFilePath = mTempDir->path() + u'/' + Utils::exportDataTypeFileName();
                 } else {
                     qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to copy to temporary file" << temporaryFilePath;
                 }

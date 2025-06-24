@@ -5,6 +5,8 @@
 */
 
 #include "selectiontypedialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "gui/widgets/selectiontypetreewidget.h"
 
 #include <KConfigGroup>

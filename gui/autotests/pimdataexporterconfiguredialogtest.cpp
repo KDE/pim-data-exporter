@@ -5,6 +5,8 @@
 */
 
 #include "pimdataexporterconfiguredialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../dialog/pimdataexporterconfiguredialog.h"
 #include "../widgets/pimdataexporterconfigurewidget.h"
 #include <QDialogButtonBox>
@@ -22,10 +24,10 @@ PimDataExporterConfigureDialogTest::~PimDataExporterConfigureDialogTest()
 void PimDataExporterConfigureDialogTest::shouldHaveDefaultValue()
 {
     PimDataExporterConfigureDialog dlg;
-    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(u"buttonbox"_s);
     QVERIFY(buttonBox);
 
-    PimDataExporterConfigureWidget *configureWidget = dlg.findChild<PimDataExporterConfigureWidget *>(QStringLiteral("configurewidget"));
+    PimDataExporterConfigureWidget *configureWidget = dlg.findChild<PimDataExporterConfigureWidget *>(u"configurewidget"_s);
     QVERIFY(configureWidget);
 }
 

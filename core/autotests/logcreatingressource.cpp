@@ -5,6 +5,7 @@
 */
 
 #include "logcreatingressource.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QTemporaryFile>
 #include <QTextStream>
@@ -37,7 +38,7 @@ void LogCreatingResource::appendText(const QString &str)
 void LogCreatingResource::logSynchronizeResource(const QStringList &lst)
 {
     if (!lst.isEmpty()) {
-        appendText(lst.join(QLatin1Char('\n')));
+        appendText(lst.join(u'\n'));
     }
 }
 
@@ -62,14 +63,14 @@ QString LogCreatingResource::logCreateResource(const QString &resources, const Q
     while (i.hasNext()) {
         i.next();
         if (i.value().canConvert<QStringList>()) {
-            stream << i.key() << ' ' << i.value().toStringList().join(QLatin1Char(',')) << '\n';
+            stream << i.key() << ' ' << i.value().toStringList().join(u',') << '\n';
         } else {
             stream << i.key() << ' ' << i.value().toString() << '\n';
         }
     }
     stream << "synchronizeTree: " << (synchronizeTree ? "true" : "false") << '\n';
     stream << "--------------------------\n";
-    const QString resourceName = resources + QStringLiteral("_new_resource_") + QString::number(mResourceIndex++);
+    const QString resourceName = resources + u"_new_resource_"_s + QString::number(mResourceIndex++);
     // qDebug() << " RESOURCE NAME " << resourceName;
     return resourceName;
 }

@@ -5,6 +5,8 @@
 */
 
 #include "pimdataexporteduserfeedbackprovider.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KUserFeedback/ApplicationVersionSource>
 #include <KUserFeedback/LocaleInfoSource>
 #include <KUserFeedback/PlatformInfoSource>
@@ -16,8 +18,8 @@
 PimDataExportedUserFeedbackProvider::PimDataExportedUserFeedbackProvider(QObject *parent)
     : KUserFeedback::Provider(parent)
 {
-    setProductIdentifier(QStringLiteral("org.kde.pim-data-exporter"));
-    setFeedbackServer(QUrl(QStringLiteral("https://telemetry.kde.org/")));
+    setProductIdentifier(u"org.kde.pim-data-exporter"_s);
+    setFeedbackServer(QUrl(u"https://telemetry.kde.org/"_s));
     setSubmissionInterval(7);
     setApplicationStartsUntilEncouragement(5);
     setEncouragementDelay(30);

@@ -5,6 +5,8 @@
 */
 
 #include "exportmailjobinterfacetestimpl.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "exportmailfolderattributejobtestimpl.h"
 #include "resourceconvertertest.h"
@@ -134,11 +136,11 @@ QList<uint> ExportMailJobInterfaceTestImpl::listIdentityUoid() const
 void ExportMailJobInterfaceTestImpl::exportFilters()
 {
     const QString filename = mPathConfig + QLatin1StringView("filters");
-    const bool fileAdded = archive()->addLocalFile(filename, Utils::configsPath() + QStringLiteral("filters"));
+    const bool fileAdded = archive()->addLocalFile(filename, Utils::configsPath() + u"filters"_s);
     if (fileAdded) {
-        emitInfo(QStringLiteral("Filters backup done."));
+        emitInfo(u"Filters backup done."_s);
     } else {
-        Q_EMIT error(QStringLiteral("Filters cannot be exported."));
+        Q_EMIT error(u"Filters cannot be exported."_s);
     }
 }
 
@@ -148,11 +150,11 @@ void ExportMailJobInterfaceTestImpl::exportFolderAttributes()
     job->setArchive(archive());
     job->setExportInterface(this);
     connect(job, &ExportMailFolderAttributeJobTestImpl::successed, this, [this]() {
-        emitInfo(QStringLiteral("Backing up Folder Attributes done."));
+        emitInfo(u"Backing up Folder Attributes done."_s);
         Q_EMIT exportAttributeDone();
     });
     connect(job, &ExportMailFolderAttributeJobTestImpl::failed, this, [this]() {
-        Q_EMIT error(QStringLiteral("Folder Attributes cannot be exported."));
+        Q_EMIT error(u"Folder Attributes cannot be exported."_s);
         Q_EMIT exportAttributeDone();
     });
     job->start();

@@ -5,6 +5,8 @@
 */
 
 #include "pimdataexporterconfigurewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../widgets/pimdataexporterconfigurewidget.h"
 #include <QCheckBox>
 #include <QGroupBox>
@@ -21,16 +23,16 @@ void PimDataExporterConfigureWidgetTest::shouldHaveDefaultValue()
 {
     PimDataExporterConfigureWidget w;
 
-    auto importGroupBox = w.findChild<QGroupBox *>(QStringLiteral("import_groupbox"));
+    auto importGroupBox = w.findChild<QGroupBox *>(u"import_groupbox"_s);
     QVERIFY(importGroupBox);
 
-    auto alwaysOverrideFile = w.findChild<QCheckBox *>(QStringLiteral("alwaysoverridefile"));
+    auto alwaysOverrideFile = w.findChild<QCheckBox *>(u"alwaysoverridefile"_s);
     QVERIFY(alwaysOverrideFile);
 
-    auto alwaysOverrideDirectory = w.findChild<QCheckBox *>(QStringLiteral("alwaysoverridedirectory"));
+    auto alwaysOverrideDirectory = w.findChild<QCheckBox *>(u"alwaysoverridedirectory"_s);
     QVERIFY(alwaysOverrideDirectory);
 
-    auto alwaysMergeConfigFile = w.findChild<QCheckBox *>(QStringLiteral("alwaysmergeconfigfile"));
+    auto alwaysMergeConfigFile = w.findChild<QCheckBox *>(u"alwaysmergeconfigfile"_s);
     QVERIFY(alwaysMergeConfigFile);
 }
 

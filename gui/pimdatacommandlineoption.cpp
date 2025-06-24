@@ -4,6 +4,8 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "pimdatacommandlineoption.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "config-pimdataexporter.h"
 #include "pimdataexporter-version.h"
 #include "pimdataexporterwindow.h"
@@ -34,24 +36,23 @@ void PimDataCommandLineOption::slotActivateRequested(const QStringList &argument
 
 void PimDataCommandLineOption::createParser(const QApplication &app)
 {
-    KAboutData aboutData(QStringLiteral("pimdataexporter"),
+    KAboutData aboutData(u"pimdataexporter"_s,
                          i18n("PIM Data Exporter"),
                          QStringLiteral(PIMDATAEXPORTER_VERSION),
                          i18n("PIM Data Exporter"),
                          KAboutLicense::GPL_V2,
-                         i18n("Copyright © 2012-%1 pimdataexporter authors", QStringLiteral("2025")));
-    aboutData.addAuthor(i18nc("@info:credit", "Laurent Montel"), i18n("Maintainer"), QStringLiteral("montel@kde.org"));
+                         i18n("Copyright © 2012-%1 pimdataexporter authors", u"2025"_s));
+    aboutData.addAuthor(i18nc("@info:credit", "Laurent Montel"), i18n("Maintainer"), u"montel@kde.org"_s);
     KAboutData::setApplicationData(aboutData);
     aboutData.setupCommandLine(&mParser);
-    mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("template"),
-                                         i18n("Template file uses to define what data, settings to import or export"),
-                                         QStringLiteral("file")));
-    mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("import"), i18nc("@info:shell", "Import the given file")));
-    mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("export"), i18nc("@info:shell", "Export the given file")));
-    mParser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"),
-                                         i18nc("@info:shell", "File or url. The user will be asked whether to import or export.")));
+    mParser.addOption(
+        QCommandLineOption(QStringList() << u"template"_s, i18n("Template file uses to define what data, settings to import or export"), u"file"_s));
+    mParser.addOption(QCommandLineOption(QStringList() << u"import"_s, i18nc("@info:shell", "Import the given file")));
+    mParser.addOption(QCommandLineOption(QStringList() << u"export"_s, i18nc("@info:shell", "Export the given file")));
+    mParser.addOption(
+        QCommandLineOption(QStringList() << u"+[url]"_s, i18nc("@info:shell", "File or url. The user will be asked whether to import or export.")));
 #if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
-    mParser.addOption(QCommandLineOption(QStringLiteral("feedback"), i18nc("@info:shell", "Lists the available options for user feedback")));
+    mParser.addOption(QCommandLineOption(u"feedback"_s, i18nc("@info:shell", "Lists the available options for user feedback")));
 #endif
     mParser.process(app);
     aboutData.processCommandLine(&mParser);
@@ -71,7 +72,7 @@ void PimDataCommandLineOption::handleCommandLine()
 
 bool PimDataCommandLineOption::parseUserFeedback() const
 {
-    return mParser.isSet(QStringLiteral("feedback"));
+    return mParser.isSet(u"feedback"_s);
 }
 
 #include "moc_pimdatacommandlineoption.cpp"

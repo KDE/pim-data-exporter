@@ -5,6 +5,8 @@
 */
 
 #include "exportmailfolderattributejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "pimdataexportcore_debug.h"
 #include "utils.h"
 #include <KConfigGroup>
@@ -59,22 +61,22 @@ void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, 
 
         auto attr = i.value();
         if (!attr.displayAttribute.isEmpty()) {
-            attributeGroup.writeEntry(QStringLiteral("Display"), attr.displayAttribute);
+            attributeGroup.writeEntry(u"Display"_s, attr.displayAttribute);
         }
         if (!attr.expireAttribute.isEmpty()) {
-            attributeGroup.writeEntry(QStringLiteral("Expire"), attr.expireAttribute);
+            attributeGroup.writeEntry(u"Expire"_s, attr.expireAttribute);
         }
         if (!attr.favoriteAttribute.isEmpty()) {
-            attributeGroup.writeEntry(QStringLiteral("Favorite"), attr.favoriteAttribute);
+            attributeGroup.writeEntry(u"Favorite"_s, attr.favoriteAttribute);
         }
         if (!attr.folderAttribute.isEmpty()) {
-            attributeGroup.writeEntry(QStringLiteral("Folder"), attr.folderAttribute);
+            attributeGroup.writeEntry(u"Folder"_s, attr.folderAttribute);
         }
     }
     conf.sync();
     tmp.close();
 
-    const bool fileAdded = mArchive->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("mailfolderattributes"));
+    const bool fileAdded = mArchive->addLocalFile(tmp.fileName(), Utils::configsPath() + u"mailfolderattributes"_s);
     if (fileAdded) {
         Q_EMIT successed();
     } else {

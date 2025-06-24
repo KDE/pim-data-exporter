@@ -5,6 +5,8 @@
 */
 
 #include "importaddressbookjobinterface.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 
 #include <KArchive>
@@ -33,7 +35,7 @@ QString ImportAddressbookJobInterface::configLocation() const
 
 QString ImportAddressbookJobInterface::installConfigLocation() const
 {
-    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
+    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/';
 }
 
 void ImportAddressbookJobInterface::start()
@@ -41,7 +43,7 @@ void ImportAddressbookJobInterface::start()
     Q_EMIT title(i18n("Starting to import KAddressBook settings..."));
     mArchiveDirectory = archive()->directory();
     createProgressDialog(i18n("Import KAddressBook settings"));
-    searchAllFiles(mArchiveDirectory, QString(), QStringLiteral("addressbook"));
+    searchAllFiles(mArchiveDirectory, QString(), u"addressbook"_s);
     initializeListStep();
     QTimer::singleShot(0, this, &ImportAddressbookJobInterface::slotNextStep);
 }
@@ -66,15 +68,15 @@ void ImportAddressbookJobInterface::addSpecificResourceSettings(const KSharedCon
                                                                 QMap<QString, QVariant> &settings)
 {
     if (resourceName == QLatin1StringView("akonadi_vcard_resource")) {
-        KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
-        if (general.hasKey(QStringLiteral("DisplayName"))) {
-            settings.insert(QStringLiteral("DisplayName"), general.readEntry(QStringLiteral("DisplayName")));
+        KConfigGroup general = resourceConfig->group(u"General"_s);
+        if (general.hasKey(u"DisplayName"_s)) {
+            settings.insert(u"DisplayName"_s, general.readEntry(u"DisplayName"_s));
         }
-        if (general.hasKey(QStringLiteral("ReadOnly"))) {
-            settings.insert(QStringLiteral("ReadOnly"), general.readEntry(QStringLiteral("ReadOnly"), false));
+        if (general.hasKey(u"ReadOnly"_s)) {
+            settings.insert(u"ReadOnly"_s, general.readEntry(u"ReadOnly"_s, false));
         }
-        if (general.hasKey(QStringLiteral("MonitorFile"))) {
-            settings.insert(QStringLiteral("MonitorFile"), general.readEntry(QStringLiteral("MonitorFile"), true));
+        if (general.hasKey(u"MonitorFile"_s)) {
+            settings.insert(u"MonitorFile"_s, general.readEntry(u"MonitorFile"_s, true));
         }
     }
 }
@@ -90,7 +92,7 @@ void ImportAddressbookJobInterface::restoreConfig()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore configs..."));
-    const QString kaddressbookStr(QStringLiteral("kaddressbookrc"));
+    const QString kaddressbookStr(u"kaddressbookrc"_s);
     const KArchiveEntry *kaddressbookrcentry = mArchiveDirectory->entry(Utils::configsPath() + kaddressbookStr);
     if (kaddressbookrcentry && kaddressbookrcentry->isFile()) {
         const auto kaddressbookrcFile = static_cast<const KArchiveFile *>(kaddressbookrcentry);
@@ -105,7 +107,7 @@ void ImportAddressbookJobInterface::restoreConfig()
             importkaddressBookConfig(kaddressbookrcFile, installPathFilerc, kaddressbookStr, Utils::configsPath());
         }
     }
-    restoreUiRcFile(QStringLiteral("kaddressbookui.rc"), QStringLiteral("kaddressbook"));
+    restoreUiRcFile(u"kaddressbookui.rc"_s, u"kaddressbook"_s);
     emitInfo(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportAddressbookJobInterface::slotNextStep);
 }
@@ -115,21 +117,21 @@ void ImportAddressbookJobInterface::importkaddressBookConfig(const KArchiveFile 
     copyToFile(file, config, filename, prefix);
     KSharedConfig::Ptr kaddressBookConfig = KSharedConfig::openConfig(config);
 
-    convertCollectionListStrToAkonadiId(kaddressBookConfig, QStringLiteral("CollectionViewCheckState"), QStringLiteral("Selection"), true);
+    convertCollectionListStrToAkonadiId(kaddressBookConfig, u"CollectionViewCheckState"_s, u"Selection"_s, true);
 
-    const QString collectionViewStateStr(QStringLiteral("CollectionViewState"));
+    const QString collectionViewStateStr(u"CollectionViewState"_s);
     if (kaddressBookConfig->hasGroup(collectionViewStateStr)) {
         KConfigGroup group = kaddressBookConfig->group(collectionViewStateStr);
-        QString currentKey(QStringLiteral("Current"));
+        QString currentKey(u"Current"_s);
         convertRealPathToCollection(group, currentKey, true);
 
-        currentKey = QStringLiteral("Expansion");
+        currentKey = u"Expansion"_s;
         convertRealPathToCollectionList(group, currentKey, true);
 
-        currentKey = QStringLiteral("Selection");
+        currentKey = u"Selection"_s;
         convertRealPathToCollection(group, currentKey, true);
     }
-    const QString cvsTemplateDirName = QStringLiteral("/kaddressbook/csv-templates/");
+    const QString cvsTemplateDirName = u"/kaddressbook/csv-templates/"_s;
     const KArchiveEntry *csvtemplateEntry = mArchiveDirectory->entry(Utils::dataPath() + cvsTemplateDirName);
     if (csvtemplateEntry && csvtemplateEntry->isDirectory()) {
         const auto csvTemplateDir = static_cast<const KArchiveDirectory *>(csvtemplateEntry);
@@ -142,18 +144,18 @@ void ImportAddressbookJobInterface::importkaddressBookConfig(const KArchiveFile 
                 QString autocorrectionPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + cvsTemplateDirName;
                 if (QFileInfo::exists(autocorrectionPath)) {
                     if (overwriteConfigMessageBox(name)) {
-                        copyToFile(csvTemplateFile, autocorrectionPath + QLatin1Char('/') + name, name, Utils::dataPath() + cvsTemplateDirName);
+                        copyToFile(csvTemplateFile, autocorrectionPath + u'/' + name, name, Utils::dataPath() + cvsTemplateDirName);
                     }
                 } else {
                     autocorrectionPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + cvsTemplateDirName;
-                    copyToFile(csvTemplateFile, autocorrectionPath + QLatin1Char('/') + name, name, Utils::dataPath() + cvsTemplateDirName);
+                    copyToFile(csvTemplateFile, autocorrectionPath + u'/' + name, name, Utils::dataPath() + cvsTemplateDirName);
                 }
             }
         }
     }
 
-    importDataSubdirectory(QStringLiteral("/kaddressbook/viewertemplates/"));
-    importDataSubdirectory(QStringLiteral("/kaddressbook/printing/"));
+    importDataSubdirectory(u"/kaddressbook/viewertemplates/"_s);
+    importDataSubdirectory(u"/kaddressbook/printing/"_s);
     kaddressBookConfig->sync();
 }
 
@@ -163,12 +165,12 @@ void ImportAddressbookJobInterface::restoreResources()
     setProgressDialogLabel(i18n("Restore resources..."));
     increaseProgressDialog();
     QStringList listResource;
-    listResource << restoreResourceFile(QStringLiteral("akonadi_vcard_resource"), Utils::addressbookPath(), Utils::storeAddressbook());
+    listResource << restoreResourceFile(u"akonadi_vcard_resource"_s, Utils::addressbookPath(), Utils::storeAddressbook());
 
     if (!mListResourceFile.isEmpty()) {
         QDir dir(mTempDirName);
         dir.mkdir(Utils::addressbookPath());
-        const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::addressbookPath());
+        const QString copyToDirName(mTempDirName + u'/' + Utils::addressbookPath());
         QDir().mkpath(copyToDirName);
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {
@@ -183,7 +185,7 @@ void ImportAddressbookJobInterface::restoreResources()
                     QString resourceName(file->name());
 
                     QString filename(resourceName);
-                    KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
+                    KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + u'/' + resourceName);
 
                     // TODO fix default path ????? backupaddressbook ???
                     const QString newUrl = adaptResourcePath(resourceConfig, Utils::storeAddressbook());
@@ -198,7 +200,7 @@ void ImportAddressbookJobInterface::restoreResources()
                                        newUrlInfo.path(),
                                        value.akonadiConfigFile.contains(QLatin1StringView("akonadi_contacts_resource_")));
                     }
-                    settings.insert(QStringLiteral("Path"), newUrl);
+                    settings.insert(u"Path"_s, newUrl);
 
                     const QString agentConfigFile = value.akonadiAgentConfigFile;
                     if (!agentConfigFile.isEmpty()) {
@@ -207,14 +209,14 @@ void ImportAddressbookJobInterface::restoreResources()
                             const auto akonadiAgentConfigEntryFile = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
                             copyArchiveFileTo(akonadiAgentConfigEntryFile, copyToDirName);
                             resourceName = akonadiAgentConfigEntryFile->name();
-                            filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);
+                            filename = Utils::akonadiAgentName(copyToDirName + u'/' + resourceName);
                         }
                     }
                     QString instanceType;
                     if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_vcarddir_resource_"))) {
-                        instanceType = QStringLiteral("akonadi_vcarddir_resource");
+                        instanceType = u"akonadi_vcarddir_resource"_s;
                     } else if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_contacts_resource_"))) {
-                        instanceType = QStringLiteral("akonadi_contacts_resource");
+                        instanceType = u"akonadi_contacts_resource"_s;
                     } else {
                         qCWarning(PIMDATAEXPORTERCORE_LOG) << " not supported" << value.akonadiConfigFile;
                     }
@@ -235,7 +237,7 @@ void ImportAddressbookJobInterface::restoreResources()
 
 QString ImportAddressbookJobInterface::applicationName() const
 {
-    return QStringLiteral("[KAddressBook]");
+    return u"[KAddressBook]"_s;
 }
 
 #include "moc_importaddressbookjobinterface.cpp"

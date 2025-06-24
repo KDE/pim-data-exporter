@@ -5,6 +5,8 @@
 */
 
 #include "backupresourcefilejobbase.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "pimdataexportcore_debug.h"
 #include "storeresourcejob.h"
 
@@ -38,7 +40,7 @@ void BackupResourceFileJobBase::start()
         return;
     }
 
-    const QString archivePath = mDefaultPath + mIdentifier + QLatin1Char('/');
+    const QString archivePath = mDefaultPath + mIdentifier + u'/';
 
     const QString url = resourcePath(mIdentifier);
     if (!url.isEmpty()) {

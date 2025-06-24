@@ -5,6 +5,8 @@
 */
 
 #include "selectiontypetreewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../widgets/selectiontypetreewidget.h"
 #include <QFile>
 #include <QStandardPaths>
@@ -28,8 +30,8 @@ void SelectionTypeTreeWidgetTest::shouldLoadTemplate_data()
 {
     QTest::addColumn<QString>("filename");
     QTest::addColumn<int>("topLevelItems");
-    QTest::newRow("selectedtypemodel1.xml") << QStringLiteral("selectedtypemodel1.xml") << 2; // because blogilo is not supported anymore
-    QTest::newRow("selectedtypemodel2.xml") << QStringLiteral("selectedtypemodel2.xml") << 1;
+    QTest::newRow("selectedtypemodel1.xml") << u"selectedtypemodel1.xml"_s << 2; // because blogilo is not supported anymore
+    QTest::newRow("selectedtypemodel2.xml") << u"selectedtypemodel2.xml"_s << 1;
 }
 
 void checkState(SelectionTypeTreeWidget *mSelectionTreeWidget, bool checked)

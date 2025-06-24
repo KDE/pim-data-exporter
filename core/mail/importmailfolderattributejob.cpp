@@ -5,6 +5,8 @@
 */
 
 #include "importmailfolderattributejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "importmailjobinterface.h"
 #include "pimdataexportcore_debug.h"
 #include "utils.h"
@@ -51,15 +53,15 @@ void ImportMailFolderAttributeJob::start()
         deleteLater();
         return;
     }
-    const KArchiveEntry *mailFolderAttributeFile = mArchiveDirectory->entry(Utils::configsPath() + QStringLiteral("mailfolderattributes"));
+    const KArchiveEntry *mailFolderAttributeFile = mArchiveDirectory->entry(Utils::configsPath() + u"mailfolderattributes"_s);
     QMap<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo> mapAttributeInfo;
     if (mailFolderAttributeFile && mailFolderAttributeFile->isFile()) {
         const auto file = static_cast<const KArchiveFile *>(mailFolderAttributeFile);
-        const QString destDirectory = mExtractPath + QLatin1Char('/') + Utils::resourcesPath();
+        const QString destDirectory = mExtractPath + u'/' + Utils::resourcesPath();
         // qDebug() << " destDirectory " << destDirectory;
         mInterface->copyArchiveFileTo(file, destDirectory);
         const QString filename(file->name());
-        const QString mailFolderAttributesFileName = destDirectory + QLatin1Char('/') + filename;
+        const QString mailFolderAttributesFileName = destDirectory + u'/' + filename;
         KConfig conf(mailFolderAttributesFileName, KConfig::SimpleConfig);
 
         const QStringList groupList = conf.groupList();
@@ -68,19 +70,19 @@ void ImportMailFolderAttributeJob::start()
             KConfigGroup group = conf.group(groupStr);
             // qDebug() << "groupStr  " << groupStr;
             const Akonadi::Collection::Id id = mInterface->convertPathToId(groupStr);
-            const QString displayStr(QStringLiteral("Display"));
+            const QString displayStr(u"Display"_s);
             if (group.hasKey(displayStr)) {
                 info.displayAttribute = group.readEntry(displayStr, QByteArray());
             }
-            const QString expireStr(QStringLiteral("Expire"));
+            const QString expireStr(u"Expire"_s);
             if (group.hasKey(expireStr)) {
                 info.expireAttribute = group.readEntry(expireStr, QByteArray());
             }
-            const QString favoriteStr(QStringLiteral("Favorite"));
+            const QString favoriteStr(u"Favorite"_s);
             if (group.hasKey(favoriteStr)) {
                 info.favoriteAttribute = group.readEntry(favoriteStr, QByteArray());
             }
-            const QString folderStr(QStringLiteral("Folder"));
+            const QString folderStr(u"Folder"_s);
             if (group.hasKey(folderStr)) {
                 info.folderAttribute = group.readEntry(folderStr, QByteArray());
             }

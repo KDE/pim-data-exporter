@@ -5,6 +5,8 @@
 */
 
 #include "pimdatabackuprestoreui.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "abstractimportexportjob.h"
 #include "importexportprogressindicatorgui.h"
 #include <KLocalizedString>
@@ -25,7 +27,7 @@ bool PimDataBackupRestoreUI::continueToRestore()
                                         i18n("The archive was created by a newer version of this program. It might contain additional data which "
                                              "will be skipped during import. Do you want to import it?"),
                                         i18nc("@title:window", "Not correct version"),
-                                        KGuiItem(i18nc("@action:button", "Import"), QStringLiteral("document-import")),
+                                        KGuiItem(i18nc("@action:button", "Import"), u"document-import"_s),
                                         KStandardGuiItem::cancel());
     if (answer == KMessageBox::ButtonCode::SecondaryAction) {
         return false;

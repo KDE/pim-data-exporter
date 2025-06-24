@@ -5,6 +5,7 @@
 */
 
 #include "utils.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <MailCommon/MailUtil>
 #include <PimCommon/PimUtil>
@@ -20,32 +21,32 @@
 
 QString Utils::storeAddressbook()
 {
-    return QStringLiteral("backupaddressbook/");
+    return u"backupaddressbook/"_s;
 }
 
 QString Utils::storeAlarm()
 {
-    return QStringLiteral("backupalarm/");
+    return u"backupalarm/"_s;
 }
 
 QString Utils::storeCalendar()
 {
-    return QStringLiteral("backupcalendar/");
+    return u"backupcalendar/"_s;
 }
 
 QString Utils::backupnote()
 {
-    return QStringLiteral("backupnote/");
+    return u"backupnote/"_s;
 }
 
 QString Utils::storeMails()
 {
-    return QStringLiteral("backupmail/");
+    return u"backupmail/"_s;
 }
 
 QString Utils::exportDataTypeFileName()
 {
-    return QStringLiteral("exportdatatype.xml");
+    return u"exportdatatype.xml"_s;
 }
 
 int Utils::currentArchiveVersion()
@@ -56,73 +57,73 @@ int Utils::currentArchiveVersion()
 
 QString Utils::transportsPath()
 {
-    return QStringLiteral("transports/");
+    return u"transports/"_s;
 }
 
 QString Utils::resourcesPath()
 {
-    return QStringLiteral("resources/");
+    return u"resources/"_s;
 }
 
 QString Utils::identitiesPath()
 {
-    return QStringLiteral("identities/");
+    return u"identities/"_s;
 }
 
 QString Utils::mailsPath()
 {
-    return QStringLiteral("mails/");
+    return u"mails/"_s;
 }
 
 QString Utils::configsPath()
 {
-    return QStringLiteral("configs/");
+    return u"configs/"_s;
 }
 
 QString Utils::akonadiPath()
 {
-    return QStringLiteral("akonadi/");
+    return u"akonadi/"_s;
 }
 
 QString Utils::dataPath()
 {
-    return QStringLiteral("data/");
+    return u"data/"_s;
 }
 
 QString Utils::calendarPath()
 {
-    return QStringLiteral("calendar/");
+    return u"calendar/"_s;
 }
 
 QString Utils::addressbookPath()
 {
-    return QStringLiteral("addressbook/");
+    return u"addressbook/"_s;
 }
 
 QString Utils::alarmPath()
 {
-    return QStringLiteral("alarm/");
+    return u"alarm/"_s;
 }
 
 QString Utils::notePath()
 {
-    return QStringLiteral("note/");
+    return u"note/"_s;
 }
 
 QString Utils::prefixAkonadiConfigFile()
 {
-    return QStringLiteral("agent_config_");
+    return u"agent_config_"_s;
 }
 
 QString Utils::infoPath()
 {
-    return QStringLiteral("information/");
+    return u"information/"_s;
 }
 
 QString Utils::akonadiAgentName(const QString &configPath)
 {
     QSettings settings(configPath, QSettings::IniFormat);
-    const QString name = settings.value(QStringLiteral("Agent/Name")).toString();
+    const QString name = settings.value(u"Agent/Name"_s).toString();
     return name;
 }
 
@@ -153,7 +154,7 @@ void Utils::addVersion(KZip *archive)
 {
     QTemporaryFile tmp;
     tmp.open();
-    const bool fileAdded = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + QStringLiteral("VERSION_%1").arg(currentArchiveVersion()));
+    const bool fileAdded = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + u"VERSION_%1"_s.arg(currentArchiveVersion()));
     if (!fileAdded) {
         // TODO add i18n ?
         qCDebug(PIMDATAEXPORTERCORE_LOG) << "version file can not add to archive";
@@ -162,11 +163,11 @@ void Utils::addVersion(KZip *archive)
 
 int Utils::archiveVersion(KZip *archive)
 {
-    const KArchiveEntry *informationFile = archive->directory()->entry(Utils::infoPath() + QStringLiteral("VERSION_2"));
+    const KArchiveEntry *informationFile = archive->directory()->entry(Utils::infoPath() + u"VERSION_2"_s);
     if (informationFile && informationFile->isFile()) {
         return 2;
     }
-    informationFile = archive->directory()->entry(Utils::infoPath() + QStringLiteral("VERSION_1"));
+    informationFile = archive->directory()->entry(Utils::infoPath() + u"VERSION_1"_s);
     if (informationFile && informationFile->isFile()) {
         return 1;
     }
@@ -234,25 +235,25 @@ QList<Utils::AkonadiInstanceInfo> Utils::listOfResource()
 
 QString Utils::resourceNoteArchiveName()
 {
-    return QStringLiteral("notes.zip");
+    return u"notes.zip"_s;
 }
 
 QString Utils::resourceAddressbookArchiveName()
 {
-    return QStringLiteral("addressbook.zip");
+    return u"addressbook.zip"_s;
 }
 
 QString Utils::resourceAlarmArchiveName()
 {
-    return QStringLiteral("alarm.zip");
+    return u"alarm.zip"_s;
 }
 
 QString Utils::resourceCalendarArchiveName()
 {
-    return QStringLiteral("calendar.zip");
+    return u"calendar.zip"_s;
 }
 
 QString Utils::resourceMailArchiveName()
 {
-    return QStringLiteral("mail.zip");
+    return u"mail.zip"_s;
 }

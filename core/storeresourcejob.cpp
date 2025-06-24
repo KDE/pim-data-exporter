@@ -5,6 +5,8 @@
 */
 
 #include "storeresourcejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "pimdataexportcore_debug.h"
 #include "resourceconverterimpl.h"
 #include <Akonadi/ServerManager>

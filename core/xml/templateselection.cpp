@@ -5,6 +5,8 @@
 */
 
 #include "templateselection.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "pimdataexportcore_debug.h"
 #include <QFile>
 #include <QXmlStreamWriter>
@@ -101,22 +103,22 @@ QMap<Utils::AppsType, Utils::importExportParameters> TemplateSelection::loadTemp
 void TemplateSelection::saveParameters(Utils::StoredTypes type)
 {
     if (type & Utils::MailTransport) {
-        mStreamWriter->writeEmptyElement(QStringLiteral("mailtransport"));
+        mStreamWriter->writeEmptyElement(u"mailtransport"_s);
     }
     if (type & Utils::Mails) {
-        mStreamWriter->writeEmptyElement(QStringLiteral("mail"));
+        mStreamWriter->writeEmptyElement(u"mail"_s);
     }
     if (type & Utils::Resources) {
-        mStreamWriter->writeEmptyElement(QStringLiteral("resources"));
+        mStreamWriter->writeEmptyElement(u"resources"_s);
     }
     if (type & Utils::Identity) {
-        mStreamWriter->writeEmptyElement(QStringLiteral("identity"));
+        mStreamWriter->writeEmptyElement(u"identity"_s);
     }
     if (type & Utils::Config) {
-        mStreamWriter->writeEmptyElement(QStringLiteral("config"));
+        mStreamWriter->writeEmptyElement(u"config"_s);
     }
     if (type & Utils::Data) {
-        mStreamWriter->writeEmptyElement(QStringLiteral("data"));
+        mStreamWriter->writeEmptyElement(u"data"_s);
     }
 }
 
@@ -134,33 +136,33 @@ void TemplateSelection::createTemplate(const QMap<Utils::AppsType, Utils::import
     mStreamWriter->setAutoFormattingIndent(2);
     mStreamWriter->writeStartDocument();
 
-    mStreamWriter->writeStartElement(QStringLiteral("pimdataexporter"));
+    mStreamWriter->writeStartElement(u"pimdataexporter"_s);
 
     QMap<Utils::AppsType, Utils::importExportParameters>::const_iterator i = stored.constBegin();
     while (i != stored.constEnd()) {
         switch (i.key()) {
         case Utils::KMail:
-            mStreamWriter->writeStartElement(QStringLiteral("kmail"));
+            mStreamWriter->writeStartElement(u"kmail"_s);
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
         case Utils::KAddressBook:
-            mStreamWriter->writeStartElement(QStringLiteral("kaddressbook"));
+            mStreamWriter->writeStartElement(u"kaddressbook"_s);
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
         case Utils::KAlarm:
-            mStreamWriter->writeStartElement(QStringLiteral("kalarm"));
+            mStreamWriter->writeStartElement(u"kalarm"_s);
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
         case Utils::KOrganizer:
-            mStreamWriter->writeStartElement(QStringLiteral("korganizer"));
+            mStreamWriter->writeStartElement(u"korganizer"_s);
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;
         case Utils::Akregator:
-            mStreamWriter->writeStartElement(QStringLiteral("akregator"));
+            mStreamWriter->writeStartElement(u"akregator"_s);
             saveParameters(i.value().types);
             mStreamWriter->writeEndElement();
             break;

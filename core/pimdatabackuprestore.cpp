@@ -5,6 +5,8 @@
 */
 
 #include "pimdatabackuprestore.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "importexportprogressindicatorbase.h"
 
@@ -229,7 +231,7 @@ bool PimDataBackupRestore::continueToRestore()
 void PimDataBackupRestore::addDate()
 {
     const QDateTime now = QDateTime::currentDateTime();
-    Q_EMIT addInfo(QLatin1Char('[') + QLocale().toString((now), QLocale::ShortFormat) + QLatin1Char(']'));
+    Q_EMIT addInfo(u'[' + QLocale().toString((now), QLocale::ShortFormat) + u']');
 }
 
 bool PimDataBackupRestore::restoreStart(const QString &filename)

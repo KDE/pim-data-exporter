@@ -5,6 +5,8 @@
 */
 
 #include "compareloggingfile.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "comparefilehelper.h"
 #include <QDebug>
 
@@ -13,7 +15,7 @@ CompareLoggingFile::CompareLoggingFile() = default;
 void CompareLoggingFile::compare()
 {
     qDebug() << " mListFilePath " << mListFilePath << " mLoggingFilePath " << mLoggingFilePath;
-    CompareFileHelper::compareFile(mListFilePath + QStringLiteral("/references/loggingfile.txt"), mLoggingFilePath);
+    CompareFileHelper::compareFile(mListFilePath + u"/references/loggingfile.txt"_s, mLoggingFilePath);
 }
 
 QString CompareLoggingFile::loggingFilePath() const

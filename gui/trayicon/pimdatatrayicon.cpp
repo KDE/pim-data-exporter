@@ -5,13 +5,15 @@
 */
 
 #include "pimdatatrayicon.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 
 PimDataTrayIcon::PimDataTrayIcon(QObject *parent)
     : KStatusNotifierItem(parent)
 {
     setToolTipTitle(i18n("Pim Data Exporter"));
-    setIconByName(QStringLiteral("kontact"));
+    setIconByName(u"kontact"_s);
 }
 
 PimDataTrayIcon::~PimDataTrayIcon() = default;

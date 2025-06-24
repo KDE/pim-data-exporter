@@ -5,6 +5,7 @@
 */
 
 #include "../dialog/showarchivestructuredialog.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QCommandLineOption>
@@ -19,12 +20,12 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), QStringLiteral("URL of a archive to open")));
+    parser.addOption(QCommandLineOption(QStringList() << u"+[url]"_s, u"URL of a archive to open"_s));
     parser.process(app);
 
     QString fileName;
     if (parser.positionalArguments().isEmpty()) {
-        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), QStringLiteral("Zip file (*.zip)"));
+        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), u"Zip file (*.zip)"_s);
     } else {
         fileName = parser.positionalArguments().at(0);
     }

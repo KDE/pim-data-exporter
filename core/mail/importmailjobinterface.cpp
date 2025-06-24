@@ -29,7 +29,7 @@
 #include <QTimer>
 
 using namespace Akonadi;
-
+using namespace Qt::Literals::StringLiterals;
 ImportMailJobInterface::ImportMailJobInterface(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : AbstractImportExportJob(parent, archiveStorage, typeSelected, numberOfStep)
 {
@@ -87,14 +87,14 @@ void ImportMailJobInterface::searchAllMailsFiles(const KArchiveDirectory *dir, c
     for (const QString &entryName : lst) {
         const KArchiveEntry *entry = dir->entry(entryName);
         if (entry && entry->isDirectory()) {
-            const QString newPrefix = (prefix.isEmpty() ? prefix : prefix + QLatin1Char('/')) + entryName;
+            const QString newPrefix = (prefix.isEmpty() ? prefix : prefix + u'/') + entryName;
             if (entryName == QLatin1StringView("mails")) {
                 storeMailArchiveResource(static_cast<const KArchiveDirectory *>(entry), entryName);
             } else {
                 searchAllMailsFiles(static_cast<const KArchiveDirectory *>(entry), newPrefix);
             }
         } else if (entry) {
-            const QString fileName = prefix.isEmpty() ? entry->name() : prefix + QLatin1Char('/') + entry->name();
+            const QString fileName = prefix.isEmpty() ? entry->name() : prefix + u'/' + entry->name();
             mFileList << fileName;
         }
     }
@@ -110,7 +110,7 @@ void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *d
             const auto resourceDir = static_cast<const KArchiveDirectory *>(entry);
             const QStringList lstResourceDirEntries = resourceDir->entries();
             if (lstResourceDirEntries.count() >= 2) {
-                const QString archPath(prefix + QLatin1Char('/') + entryName + QLatin1Char('/'));
+                const QString archPath(prefix + u'/' + entryName + u'/');
                 ResourceFiles files;
                 for (const QString &name : lstResourceDirEntries) {
                     if (name.endsWith(QLatin1StringView("rc"))
@@ -136,24 +136,24 @@ void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *d
 
 void ImportMailJobInterface::importMailTransport(const QString &tempDirName)
 {
-    KSharedConfig::Ptr transportConfig = KSharedConfig::openConfig(tempDirName + QLatin1Char('/') + QStringLiteral("mailtransports"));
+    KSharedConfig::Ptr transportConfig = KSharedConfig::openConfig(tempDirName + u'/' + u"mailtransports"_s);
 
     int defaultTransport = -1;
-    if (transportConfig->hasGroup(QStringLiteral("General"))) {
-        KConfigGroup group = transportConfig->group(QStringLiteral("General"));
-        defaultTransport = group.readEntry(QStringLiteral("default-transport"), -1);
+    if (transportConfig->hasGroup(u"General"_s)) {
+        KConfigGroup group = transportConfig->group(u"General"_s);
+        defaultTransport = group.readEntry(u"default-transport"_s, -1);
     }
 
-    QStringList transportList = transportConfig->groupList().filter(QRegularExpression(QStringLiteral("Transport \\d+")));
+    QStringList transportList = transportConfig->groupList().filter(QRegularExpression(u"Transport \\d+"_s));
     std::sort(transportList.begin(), transportList.end());
     for (const QString &transport : std::as_const(transportList)) {
         KConfigGroup group = transportConfig->group(transport);
-        const int transportId = group.readEntry(QStringLiteral("id"), -1);
+        const int transportId = group.readEntry(u"id"_s, -1);
         if (transportId == -1) {
             qCWarning(PIMDATAEXPORTERCORE_LOG) << "Mail Transport is incorrect. Missing Id";
             continue;
         }
-        const QString identifierStr(QStringLiteral("identifier"));
+        const QString identifierStr(u"identifier"_s);
         if (group.hasKey(identifierStr)) {
             const QString identifierValue = group.readEntry(identifierStr);
             importCustomMailTransport(identifierValue, group, defaultTransport, transportId);
@@ -168,7 +168,7 @@ void ImportMailJobInterface::restoreTransports()
 {
     setProgressDialogLabel(i18n("Restore transports..."));
     increaseProgressDialog();
-    const QString path = Utils::transportsPath() + QStringLiteral("mailtransports");
+    const QString path = Utils::transportsPath() + u"mailtransports"_s;
     if (!mFileList.contains(path)) {
         emitError(i18n("mailtransports file could not be found in the archive."));
     } else {
@@ -205,7 +205,7 @@ void ImportMailJobInterface::restoreResources()
     QStringList listResourceToSync;
     for (const QString &filename : std::as_const(mFileList)) {
         // We need to find akonadi_* and agent_config_akonadi_*
-        if (filename.startsWith(Utils::resourcesPath() + QStringLiteral("akonadi_"))) {
+        if (filename.startsWith(Utils::resourcesPath() + u"akonadi_"_s)) {
             const QString agentFileConfigName = converter.agentFileName(filename);
             QString resourceName;
             if (mFileList.contains(agentFileConfigName)) {
@@ -213,98 +213,98 @@ void ImportMailJobInterface::restoreResources()
                 const KArchiveEntry *agentFileConfigEntry = mArchiveDirectory->entry(agentFileConfigName);
                 if (agentFileConfigEntry && agentFileConfigEntry->isFile()) {
                     const auto file = static_cast<const KArchiveFile *>(agentFileConfigEntry);
-                    const QString destDirectory = mTempDirName + QLatin1Char('/') + Utils::resourcesPath();
+                    const QString destDirectory = mTempDirName + u'/' + Utils::resourcesPath();
                     // qDebug() << " destDirectory " << destDirectory;
                     copyArchiveFileTo(file, destDirectory);
                     const QString filename(file->name());
-                    const QString agentResourceFileName = destDirectory + QLatin1Char('/') + filename;
+                    const QString agentResourceFileName = destDirectory + u'/' + filename;
                     resourceName = Utils::akonadiAgentName(agentResourceFileName);
                 }
             }
             const KArchiveEntry *fileEntry = mArchiveDirectory->entry(filename);
             if (fileEntry && fileEntry->isFile()) {
                 const auto file = static_cast<const KArchiveFile *>(fileEntry);
-                const QString destDirectory = mTempDirName + QLatin1Char('/') + Utils::resourcesPath();
+                const QString destDirectory = mTempDirName + u'/' + Utils::resourcesPath();
 
                 copyArchiveFileTo(file, destDirectory);
 
                 const QString filename(file->name());
-                const QString resourceFileName = destDirectory + QLatin1Char('/') + filename;
+                const QString resourceFileName = destDirectory + u'/' + filename;
                 KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(resourceFileName);
                 QMap<QString, QVariant> settings;
                 if (filename.contains(QLatin1StringView("pop3"))) {
-                    KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
-                    if (general.hasKey(QStringLiteral("login"))) {
-                        settings.insert(QStringLiteral("Login"), general.readEntry("login"));
+                    KConfigGroup general = resourceConfig->group(u"General"_s);
+                    if (general.hasKey(u"login"_s)) {
+                        settings.insert(u"Login"_s, general.readEntry("login"));
                     }
-                    if (general.hasKey(QStringLiteral("host"))) {
-                        settings.insert(QStringLiteral("Host"), general.readEntry("host"));
+                    if (general.hasKey(u"host"_s)) {
+                        settings.insert(u"Host"_s, general.readEntry("host"));
                     }
-                    if (general.hasKey(QStringLiteral("port"))) {
-                        settings.insert(QStringLiteral("Port"), general.readEntry("port", 110));
+                    if (general.hasKey(u"port"_s)) {
+                        settings.insert(u"Port"_s, general.readEntry("port", 110));
                     }
-                    if (general.hasKey(QStringLiteral("authenticationMethod"))) {
-                        settings.insert(QStringLiteral("AuthenticationMethod"), general.readEntry("authenticationMethod", 7));
+                    if (general.hasKey(u"authenticationMethod"_s)) {
+                        settings.insert(u"AuthenticationMethod"_s, general.readEntry("authenticationMethod", 7));
                     }
-                    if (general.hasKey(QStringLiteral("useSSL"))) {
-                        settings.insert(QStringLiteral("UseSSL"), general.readEntry("useSSL", false));
+                    if (general.hasKey(u"useSSL"_s)) {
+                        settings.insert(u"UseSSL"_s, general.readEntry("useSSL", false));
                     }
-                    if (general.hasKey(QStringLiteral("useTLS"))) {
-                        settings.insert(QStringLiteral("UseTLS"), general.readEntry("useTLS", false));
+                    if (general.hasKey(u"useTLS"_s)) {
+                        settings.insert(u"UseTLS"_s, general.readEntry("useTLS", false));
                     }
-                    if (general.hasKey(QStringLiteral("pipelining"))) {
-                        settings.insert(QStringLiteral("Pipelining"), general.readEntry("pipelining", false));
+                    if (general.hasKey(u"pipelining"_s)) {
+                        settings.insert(u"Pipelining"_s, general.readEntry("pipelining", false));
                     }
-                    if (general.hasKey(QStringLiteral("leaveOnServer"))) {
-                        settings.insert(QStringLiteral("LeaveOnServer"), general.readEntry("leaveOnServer", false));
+                    if (general.hasKey(u"leaveOnServer"_s)) {
+                        settings.insert(u"LeaveOnServer"_s, general.readEntry("leaveOnServer", false));
                     }
-                    if (general.hasKey(QStringLiteral("leaveOnServerDays"))) {
-                        settings.insert(QStringLiteral("LeaveOnServerDays"), general.readEntry("leaveOnServerDays", -1));
+                    if (general.hasKey(u"leaveOnServerDays"_s)) {
+                        settings.insert(u"LeaveOnServerDays"_s, general.readEntry("leaveOnServerDays", -1));
                     }
-                    if (general.hasKey(QStringLiteral("leaveOnServerCount"))) {
-                        settings.insert(QStringLiteral("LeaveOnServerCount"), general.readEntry("leaveOnServerCount", -1));
+                    if (general.hasKey(u"leaveOnServerCount"_s)) {
+                        settings.insert(u"LeaveOnServerCount"_s, general.readEntry("leaveOnServerCount", -1));
                     }
-                    if (general.hasKey(QStringLiteral("leaveOnServerSize"))) {
-                        settings.insert(QStringLiteral("LeaveOnServerSize"), general.readEntry("leaveOnServerSize", -1));
+                    if (general.hasKey(u"leaveOnServerSize"_s)) {
+                        settings.insert(u"LeaveOnServerSize"_s, general.readEntry("leaveOnServerSize", -1));
                     }
-                    if (general.hasKey(QStringLiteral("filterOnServer"))) {
-                        settings.insert(QStringLiteral("FilterOnServer"), general.readEntry("filterOnServer", false));
+                    if (general.hasKey(u"filterOnServer"_s)) {
+                        settings.insert(u"FilterOnServer"_s, general.readEntry("filterOnServer", false));
                     }
-                    if (general.hasKey(QStringLiteral("filterCheckSize"))) {
-                        settings.insert(QStringLiteral("FilterCheckSize"), general.readEntry("filterCheckSize"));
+                    if (general.hasKey(u"filterCheckSize"_s)) {
+                        settings.insert(u"FilterCheckSize"_s, general.readEntry("filterCheckSize"));
                     }
-                    if (general.hasKey(QStringLiteral("targetCollection"))) {
+                    if (general.hasKey(u"targetCollection"_s)) {
                         const Akonadi::Collection::Id collection = convertPathToId(general.readEntry("targetCollection"));
                         if (collection != -1) {
-                            settings.insert(QStringLiteral("TargetCollection"), collection);
+                            settings.insert(u"TargetCollection"_s, collection);
                         }
                     }
-                    if (general.hasKey(QStringLiteral("precommand"))) {
-                        settings.insert(QStringLiteral("Precommand"), general.readEntry("precommand"));
+                    if (general.hasKey(u"precommand"_s)) {
+                        settings.insert(u"Precommand"_s, general.readEntry("precommand"));
                     }
-                    if (general.hasKey(QStringLiteral("intervalCheckEnabled"))) {
-                        settings.insert(QStringLiteral("IntervalCheckEnabled"), general.readEntry("intervalCheckEnabled", false));
+                    if (general.hasKey(u"intervalCheckEnabled"_s)) {
+                        settings.insert(u"IntervalCheckEnabled"_s, general.readEntry("intervalCheckEnabled", false));
                     }
-                    if (general.hasKey(QStringLiteral("intervalCheckInterval"))) {
-                        settings.insert(QStringLiteral("IntervalCheckInterval"), general.readEntry("intervalCheckInterval", 5));
+                    if (general.hasKey(u"intervalCheckInterval"_s)) {
+                        settings.insert(u"IntervalCheckInterval"_s, general.readEntry("intervalCheckInterval", 5));
                     }
 
-                    KConfigGroup leaveOnserver = resourceConfig->group(QStringLiteral("LeaveOnServer"));
+                    KConfigGroup leaveOnserver = resourceConfig->group(u"LeaveOnServer"_s);
 
-                    if (leaveOnserver.hasKey(QStringLiteral("seenUidList"))) {
-                        settings.insert(QStringLiteral("SeenUidList"), leaveOnserver.readEntry("seenUidList", QStringList()));
+                    if (leaveOnserver.hasKey(u"seenUidList"_s)) {
+                        settings.insert(u"SeenUidList"_s, leaveOnserver.readEntry("seenUidList", QStringList()));
                     }
 #if 0
-                    if (leaveOnserver.hasKey(QStringLiteral("seenUidTimeList"))) {
+                    if (leaveOnserver.hasKey(u"seenUidTimeList"_s)) {
                         //FIXME
                         //settings.insert(QLatin1StringView("SeenUidTimeList"),QVariant::fromValue<QList<int> >(leaveOnserver.readEntry("seenUidTimeList",QList<int>())));
                     }
 #endif
-                    if (leaveOnserver.hasKey(QStringLiteral("downloadLater"))) {
-                        settings.insert(QStringLiteral("DownloadLater"), leaveOnserver.readEntry("downloadLater", QStringList()));
+                    if (leaveOnserver.hasKey(u"downloadLater"_s)) {
+                        settings.insert(u"DownloadLater"_s, leaveOnserver.readEntry("downloadLater", QStringList()));
                     }
                     const QString newResourceName = resourceName.isEmpty() ? filename : resourceName;
-                    const QString newResource = createResource(QStringLiteral("akonadi_pop3_resource"), newResourceName, settings, false);
+                    const QString newResource = createResource(u"akonadi_pop3_resource"_s, newResourceName, settings, false);
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
                         infoAboutNewResource(newResource);
@@ -312,103 +312,103 @@ void ImportMailJobInterface::restoreResources()
                     }
                 } else if (filename.contains(QLatin1StringView("imap")) || filename.contains(QLatin1StringView("kolab_"))
                            || filename.contains(QLatin1StringView("gmail_"))) {
-                    KConfigGroup network = resourceConfig->group(QStringLiteral("network"));
-                    if (network.hasKey(QStringLiteral("Authentication"))) {
-                        settings.insert(QStringLiteral("Authentication"), network.readEntry("Authentication", 1));
+                    KConfigGroup network = resourceConfig->group(u"network"_s);
+                    if (network.hasKey(u"Authentication"_s)) {
+                        settings.insert(u"Authentication"_s, network.readEntry("Authentication", 1));
                     }
-                    if (network.hasKey(QStringLiteral("ImapPort"))) {
-                        settings.insert(QStringLiteral("ImapPort"), network.readEntry("ImapPort", 993));
+                    if (network.hasKey(u"ImapPort"_s)) {
+                        settings.insert(u"ImapPort"_s, network.readEntry("ImapPort", 993));
                     }
-                    if (network.hasKey(QStringLiteral("ImapServer"))) {
-                        settings.insert(QStringLiteral("ImapServer"), network.readEntry("ImapServer"));
+                    if (network.hasKey(u"ImapServer"_s)) {
+                        settings.insert(u"ImapServer"_s, network.readEntry("ImapServer"));
                     }
-                    if (network.hasKey(QStringLiteral("Safety"))) {
-                        settings.insert(QStringLiteral("Safety"), network.readEntry("Safety", "SSL"));
+                    if (network.hasKey(u"Safety"_s)) {
+                        settings.insert(u"Safety"_s, network.readEntry("Safety", "SSL"));
                     }
-                    if (network.hasKey(QStringLiteral("SubscriptionEnabled"))) {
-                        settings.insert(QStringLiteral("SubscriptionEnabled"), network.readEntry("SubscriptionEnabled", false));
+                    if (network.hasKey(u"SubscriptionEnabled"_s)) {
+                        settings.insert(u"SubscriptionEnabled"_s, network.readEntry("SubscriptionEnabled", false));
                     }
-                    if (network.hasKey(QStringLiteral("UserName"))) {
-                        settings.insert(QStringLiteral("UserName"), network.readEntry("UserName"));
-                    }
-
-                    if (network.hasKey(QStringLiteral("SessionTimeout"))) {
-                        settings.insert(QStringLiteral("SessionTimeout"), network.readEntry("SessionTimeout", 30));
+                    if (network.hasKey(u"UserName"_s)) {
+                        settings.insert(u"UserName"_s, network.readEntry("UserName"));
                     }
 
-                    KConfigGroup cache = resourceConfig->group(QStringLiteral("cache"));
+                    if (network.hasKey(u"SessionTimeout"_s)) {
+                        settings.insert(u"SessionTimeout"_s, network.readEntry("SessionTimeout", 30));
+                    }
 
-                    if (cache.hasKey(QStringLiteral("AccountIdentity"))) {
+                    KConfigGroup cache = resourceConfig->group(u"cache"_s);
+
+                    if (cache.hasKey(u"AccountIdentity"_s)) {
                         const int identity = cache.readEntry("AccountIdentity", -1);
                         if (identity != -1) {
                             if (mHashIdentity.contains(identity)) {
-                                settings.insert(QStringLiteral("AccountIdentity"), mHashIdentity.value(identity));
+                                settings.insert(u"AccountIdentity"_s, mHashIdentity.value(identity));
                             } else {
-                                settings.insert(QStringLiteral("AccountIdentity"), identity);
+                                settings.insert(u"AccountIdentity"_s, identity);
                             }
                         }
                     }
-                    if (cache.hasKey(QStringLiteral("IntervalCheckEnabled"))) {
-                        settings.insert(QStringLiteral("IntervalCheckEnabled"), cache.readEntry("IntervalCheckEnabled", true));
+                    if (cache.hasKey(u"IntervalCheckEnabled"_s)) {
+                        settings.insert(u"IntervalCheckEnabled"_s, cache.readEntry("IntervalCheckEnabled", true));
                     }
-                    if (cache.hasKey(QStringLiteral("RetrieveMetadataOnFolderListing"))) {
-                        settings.insert(QStringLiteral("RetrieveMetadataOnFolderListing"), cache.readEntry("RetrieveMetadataOnFolderListing", true));
+                    if (cache.hasKey(u"RetrieveMetadataOnFolderListing"_s)) {
+                        settings.insert(u"RetrieveMetadataOnFolderListing"_s, cache.readEntry("RetrieveMetadataOnFolderListing", true));
                     }
-                    if (cache.hasKey(QStringLiteral("AutomaticExpungeEnabled"))) {
-                        settings.insert(QStringLiteral("AutomaticExpungeEnabled"), cache.readEntry("AutomaticExpungeEnabled", true));
+                    if (cache.hasKey(u"AutomaticExpungeEnabled"_s)) {
+                        settings.insert(u"AutomaticExpungeEnabled"_s, cache.readEntry("AutomaticExpungeEnabled", true));
                     }
-                    if (cache.hasKey(QStringLiteral("DisconnectedModeEnabled"))) {
-                        settings.insert(QStringLiteral("DisconnectedModeEnabled"), cache.readEntry("DisconnectedModeEnabled", false));
+                    if (cache.hasKey(u"DisconnectedModeEnabled"_s)) {
+                        settings.insert(u"DisconnectedModeEnabled"_s, cache.readEntry("DisconnectedModeEnabled", false));
                     }
-                    if (cache.hasKey(QStringLiteral("IntervalCheckTime"))) {
-                        settings.insert(QStringLiteral("IntervalCheckTime"), cache.readEntry("IntervalCheckTime", -1));
+                    if (cache.hasKey(u"IntervalCheckTime"_s)) {
+                        settings.insert(u"IntervalCheckTime"_s, cache.readEntry("IntervalCheckTime", -1));
                     }
-                    if (cache.hasKey(QStringLiteral("UseDefaultIdentity"))) {
-                        settings.insert(QStringLiteral("UseDefaultIdentity"), cache.readEntry("UseDefaultIdentity", true));
+                    if (cache.hasKey(u"UseDefaultIdentity"_s)) {
+                        settings.insert(u"UseDefaultIdentity"_s, cache.readEntry("UseDefaultIdentity", true));
                     }
-                    if (cache.hasKey(QStringLiteral("TrashCollection"))) {
+                    if (cache.hasKey(u"TrashCollection"_s)) {
                         const Akonadi::Collection::Id collection = convertPathToId(cache.readEntry("TrashCollection"));
                         if (collection != -1) {
-                            settings.insert(QStringLiteral("TrashCollection"), collection);
+                            settings.insert(u"TrashCollection"_s, collection);
                         } else {
                             qCDebug(PIMDATAEXPORTERCORE_LOG) << " Use default trash folder";
                         }
                     }
 
-                    KConfigGroup siever = resourceConfig->group(QStringLiteral("siever"));
-                    if (siever.hasKey(QStringLiteral("SieveSupport"))) {
-                        settings.insert(QStringLiteral("SieveSupport"), siever.readEntry("SieveSupport", false));
+                    KConfigGroup siever = resourceConfig->group(u"siever"_s);
+                    if (siever.hasKey(u"SieveSupport"_s)) {
+                        settings.insert(u"SieveSupport"_s, siever.readEntry("SieveSupport", false));
                     }
-                    if (siever.hasKey(QStringLiteral("SieveReuseConfig"))) {
-                        settings.insert(QStringLiteral("SieveReuseConfig"), siever.readEntry("SieveReuseConfig", true));
+                    if (siever.hasKey(u"SieveReuseConfig"_s)) {
+                        settings.insert(u"SieveReuseConfig"_s, siever.readEntry("SieveReuseConfig", true));
                     }
-                    if (siever.hasKey(QStringLiteral("SievePort"))) {
-                        settings.insert(QStringLiteral("SievePort"), siever.readEntry("SievePort", 4190));
+                    if (siever.hasKey(u"SievePort"_s)) {
+                        settings.insert(u"SievePort"_s, siever.readEntry("SievePort", 4190));
                     }
-                    if (siever.hasKey(QStringLiteral("SieveAlternateUrl"))) {
-                        settings.insert(QStringLiteral("SieveAlternateUrl"), siever.readEntry("SieveAlternateUrl"));
+                    if (siever.hasKey(u"SieveAlternateUrl"_s)) {
+                        settings.insert(u"SieveAlternateUrl"_s, siever.readEntry("SieveAlternateUrl"));
                     }
-                    if (siever.hasKey(QStringLiteral("AlternateAuthentication"))) {
-                        settings.insert(QStringLiteral("AlternateAuthentication"), siever.readEntry("AlternateAuthentication"));
+                    if (siever.hasKey(u"AlternateAuthentication"_s)) {
+                        settings.insert(u"AlternateAuthentication"_s, siever.readEntry("AlternateAuthentication"));
                     }
-                    if (siever.hasKey(QStringLiteral("SieveVacationFilename"))) {
-                        settings.insert(QStringLiteral("SieveVacationFilename"), siever.readEntry("SieveVacationFilename"));
+                    if (siever.hasKey(u"SieveVacationFilename"_s)) {
+                        settings.insert(u"SieveVacationFilename"_s, siever.readEntry("SieveVacationFilename"));
                     }
-                    if (siever.hasKey(QStringLiteral("SieveCustomUsername"))) {
-                        settings.insert(QStringLiteral("SieveCustomUsername"), siever.readEntry("SieveCustomUsername"));
+                    if (siever.hasKey(u"SieveCustomUsername"_s)) {
+                        settings.insert(u"SieveCustomUsername"_s, siever.readEntry("SieveCustomUsername"));
                     }
-                    if (siever.hasKey(QStringLiteral("SieveCustomAuthentification"))) {
-                        settings.insert(QStringLiteral("SieveCustomAuthentification"), siever.readEntry("SieveCustomAuthentification"));
+                    if (siever.hasKey(u"SieveCustomAuthentification"_s)) {
+                        settings.insert(u"SieveCustomAuthentification"_s, siever.readEntry("SieveCustomAuthentification"));
                     }
 
                     QString newResource;
                     const QString newResourceName = resourceName.isEmpty() ? filename : resourceName;
                     if (filename.contains(QLatin1StringView("kolab_"))) {
-                        newResource = createResource(QStringLiteral("akonadi_kolab_resource"), newResourceName, settings, true);
+                        newResource = createResource(u"akonadi_kolab_resource"_s, newResourceName, settings, true);
                     } else if (filename.contains(QLatin1StringView("gmail_"))) {
-                        newResource = createResource(QStringLiteral("akonadi_gmail_resource"), newResourceName, settings, true);
+                        newResource = createResource(u"akonadi_gmail_resource"_s, newResourceName, settings, true);
                     } else {
-                        newResource = createResource(QStringLiteral("akonadi_imap_resource"), newResourceName, settings, true);
+                        newResource = createResource(u"akonadi_imap_resource"_s, newResourceName, settings, true);
                     }
                     if (!newResource.isEmpty()) {
                         mHashResources.insert(filename, newResource);
@@ -427,7 +427,7 @@ void ImportMailJobInterface::restoreResources()
 
 QString ImportMailJobInterface::applicationName() const
 {
-    return QStringLiteral("[KMail]");
+    return u"[KMail]"_s;
 }
 
 void ImportMailJobInterface::restoreMails()
@@ -439,7 +439,7 @@ void ImportMailJobInterface::restoreMails()
 
     QDir dir(mTempDirName);
     dir.mkdir(Utils::mailsPath());
-    const QString copyToDirName(mTempDirName + QLatin1Char('/') + Utils::mailsPath());
+    const QString copyToDirName(mTempDirName + u'/' + Utils::mailsPath());
     QDir().mkpath(copyToDirName);
     const int numberOfResourceFile = mListResourceFile.size();
     for (int i = 0; i < numberOfResourceFile; ++i) {
@@ -454,7 +454,7 @@ void ImportMailJobInterface::restoreMails()
             QString filename(file->name());
             // qCDebug(PIMDATAEXPORTERCORE_LOG)<<" filename "<<filename<<"
             // resourceName"<<resourceName;
-            KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + resourceName);
+            KSharedConfig::Ptr resourceConfig = KSharedConfig::openConfig(copyToDirName + u'/' + resourceName);
 
             const QString newUrl = adaptResourcePath(resourceConfig, Utils::storeMails());
 
@@ -465,7 +465,7 @@ void ImportMailJobInterface::restoreMails()
                     const auto fileEntry = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
                     copyArchiveFileTo(fileEntry, copyToDirName);
                     resourceName = fileEntry->name();
-                    filename = Utils::akonadiAgentName(copyToDirName + QLatin1Char('/') + resourceName);
+                    filename = Utils::akonadiAgentName(copyToDirName + u'/' + resourceName);
                 }
             }
 
@@ -477,59 +477,59 @@ void ImportMailJobInterface::restoreMails()
                     const auto file = static_cast<const KArchiveFile *>(dataResouceEntry);
                     copyArchiveFileTo(file, newUrl);
                 }
-                settings.insert(QStringLiteral("Path"), newUrl);
+                settings.insert(u"Path"_s, newUrl);
 
-                KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
-                if (general.hasKey(QStringLiteral("DisplayName"))) {
-                    settings.insert(QStringLiteral("DisplayName"), general.readEntry(QStringLiteral("DisplayName")));
+                KConfigGroup general = resourceConfig->group(u"General"_s);
+                if (general.hasKey(u"DisplayName"_s)) {
+                    settings.insert(u"DisplayName"_s, general.readEntry(u"DisplayName"_s));
                 }
-                if (general.hasKey(QStringLiteral("ReadOnly"))) {
-                    settings.insert(QStringLiteral("ReadOnly"), general.readEntry(QStringLiteral("ReadOnly"), false));
+                if (general.hasKey(u"ReadOnly"_s)) {
+                    settings.insert(u"ReadOnly"_s, general.readEntry(u"ReadOnly"_s, false));
                 }
-                if (general.hasKey(QStringLiteral("MonitorFile"))) {
-                    settings.insert(QStringLiteral("MonitorFile"), general.readEntry(QStringLiteral("MonitorFile"), false));
+                if (general.hasKey(u"MonitorFile"_s)) {
+                    settings.insert(u"MonitorFile"_s, general.readEntry(u"MonitorFile"_s, false));
                 }
-                if (resourceConfig->hasGroup(QStringLiteral("Locking"))) {
-                    KConfigGroup locking = resourceConfig->group(QStringLiteral("Locking"));
-                    if (locking.hasKey(QStringLiteral("Lockfile"))) {
-                        settings.insert(QStringLiteral("Lockfile"), locking.readEntry(QStringLiteral("Lockfile")));
+                if (resourceConfig->hasGroup(u"Locking"_s)) {
+                    KConfigGroup locking = resourceConfig->group(u"Locking"_s);
+                    if (locking.hasKey(u"Lockfile"_s)) {
+                        settings.insert(u"Lockfile"_s, locking.readEntry(u"Lockfile"_s));
                     }
                     // TODO verify
-                    if (locking.hasKey(QStringLiteral("LockfileMethod"))) {
-                        settings.insert(QStringLiteral("LockfileMethod"), locking.readEntry(QStringLiteral("LockfileMethod"), 4));
+                    if (locking.hasKey(u"LockfileMethod"_s)) {
+                        settings.insert(u"LockfileMethod"_s, locking.readEntry(u"LockfileMethod"_s, 4));
                     }
                 }
-                if (resourceConfig->hasGroup(QStringLiteral("Compacting"))) {
-                    KConfigGroup compacting = resourceConfig->group(QStringLiteral("Compacting"));
-                    if (compacting.hasKey(QStringLiteral("CompactFrequency"))) {
-                        settings.insert(QStringLiteral("CompactFrequency"), compacting.readEntry(QStringLiteral("CompactFrequency"), 1));
+                if (resourceConfig->hasGroup(u"Compacting"_s)) {
+                    KConfigGroup compacting = resourceConfig->group(u"Compacting"_s);
+                    if (compacting.hasKey(u"CompactFrequency"_s)) {
+                        settings.insert(u"CompactFrequency"_s, compacting.readEntry(u"CompactFrequency"_s, 1));
                     }
-                    if (compacting.hasKey(QStringLiteral("MessageCount"))) {
-                        settings.insert(QStringLiteral("MessageCount"), compacting.readEntry(QStringLiteral("MessageCount"), 50));
+                    if (compacting.hasKey(u"MessageCount"_s)) {
+                        settings.insert(u"MessageCount"_s, compacting.readEntry(u"MessageCount"_s, 50));
                     }
                 }
-                const QString newResource = createResource(QStringLiteral("akonadi_mbox_resource"), filename, settings, true);
+                const QString newResource = createResource(u"akonadi_mbox_resource"_s, filename, settings, true);
                 if (!newResource.isEmpty()) {
                     mHashResources.insert(filename, newResource);
                     infoAboutNewResource(newResource);
                 }
             } else if (resourceName.contains(QLatin1StringView("akonadi_maildir_resource_"))
                        || resourceName.contains(QLatin1StringView("akonadi_mixedmaildir_resource_"))) {
-                settings.insert(QStringLiteral("Path"), newUrl);
-                KConfigGroup general = resourceConfig->group(QStringLiteral("General"));
-                if (general.hasKey(QStringLiteral("TopLevelIsContainer"))) {
-                    settings.insert(QStringLiteral("TopLevelIsContainer"), general.readEntry(QStringLiteral("TopLevelIsContainer"), false));
+                settings.insert(u"Path"_s, newUrl);
+                KConfigGroup general = resourceConfig->group(u"General"_s);
+                if (general.hasKey(u"TopLevelIsContainer"_s)) {
+                    settings.insert(u"TopLevelIsContainer"_s, general.readEntry(u"TopLevelIsContainer"_s, false));
                 }
-                if (general.hasKey(QStringLiteral("ReadOnly"))) {
-                    settings.insert(QStringLiteral("ReadOnly"), general.readEntry(QStringLiteral("ReadOnly"), false));
+                if (general.hasKey(u"ReadOnly"_s)) {
+                    settings.insert(u"ReadOnly"_s, general.readEntry(u"ReadOnly"_s, false));
                 }
-                if (general.hasKey(QStringLiteral("MonitorFilesystem"))) {
-                    settings.insert(QStringLiteral("MonitorFilesystem"), general.readEntry(QStringLiteral("MonitorFilesystem"), true));
+                if (general.hasKey(u"MonitorFilesystem"_s)) {
+                    settings.insert(u"MonitorFilesystem"_s, general.readEntry(u"MonitorFilesystem"_s, true));
                 }
 
                 const QString newResource =
-                    createResource(resourceName.contains(QLatin1StringView("akonadi_mixedmaildir_resource_")) ? QStringLiteral("akonadi_mixedmaildir_resource")
-                                                                                                              : QStringLiteral("akonadi_maildir_resource"),
+                    createResource(resourceName.contains(QLatin1StringView("akonadi_mixedmaildir_resource_")) ? u"akonadi_mixedmaildir_resource"_s
+                                                                                                              : u"akonadi_maildir_resource"_s,
                                    filename,
                                    settings,
                                    true);
@@ -560,7 +560,7 @@ void ImportMailJobInterface::restoreConfig()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore config..."));
-    const QString filtersPath(Utils::configsPath() + QStringLiteral("filters"));
+    const QString filtersPath(Utils::configsPath() + u"filters"_s);
     if (!mFileList.contains(filtersPath)) {
         emitError(i18n("filters file could not be found in the archive."));
     } else {
@@ -570,16 +570,16 @@ void ImportMailJobInterface::restoreConfig()
             const auto fileFilter = static_cast<const KArchiveFile *>(filter);
 
             copyArchiveFileTo(fileFilter, mTempDirName);
-            const QString filterFileName(mTempDirName + QLatin1Char('/') + QStringLiteral("filters"));
+            const QString filterFileName(mTempDirName + u'/' + u"filters"_s);
             KSharedConfig::Ptr filtersConfig = KSharedConfig::openConfig(filterFileName);
-            const QStringList filterList = filtersConfig->groupList().filter(QRegularExpression(QStringLiteral("Filter #\\d+")));
+            const QStringList filterList = filtersConfig->groupList().filter(QRegularExpression(u"Filter #\\d+"_s));
             for (const QString &filterStr : filterList) {
                 KConfigGroup group = filtersConfig->group(filterStr);
-                const QString accountStr(QStringLiteral("accounts-set"));
+                const QString accountStr(u"accounts-set"_s);
                 if (group.hasKey(accountStr)) {
                     const QString accounts = group.readEntry(accountStr);
                     if (!accounts.isEmpty()) {
-                        const QStringList lstAccounts = accounts.split(QLatin1Char(','));
+                        const QStringList lstAccounts = accounts.split(u',');
                         QStringList newLstAccounts;
                         for (const QString &acc : lstAccounts) {
                             if (mHashResources.contains(acc)) {
@@ -593,8 +593,8 @@ void ImportMailJobInterface::restoreConfig()
                 }
                 const int numActions = group.readEntry("actions", 0);
                 for (int i = 0; i < numActions; ++i) {
-                    const QString actName = QStringLiteral("action-name-%1").arg(i);
-                    const QString argsName = QStringLiteral("action-args-%1").arg(i);
+                    const QString actName = u"action-name-%1"_s.arg(i);
+                    const QString argsName = u"action-args-%1"_s.arg(i);
                     const QString actValue = group.readEntry(actName);
                     if (actValue == QLatin1StringView("set identity")) {
                         const int argsValue = group.readEntry(argsName, -1);
@@ -618,7 +618,7 @@ void ImportMailJobInterface::restoreConfig()
             emitInfo(i18n("Filters restored."));
         }
     }
-    const QString kmailsnippetrcStr(QStringLiteral("kmailsnippetrc"));
+    const QString kmailsnippetrcStr(u"kmailsnippetrc"_s);
     const KArchiveEntry *kmailsnippetentry = mArchiveDirectory->entry(Utils::configsPath() + kmailsnippetrcStr);
     if (kmailsnippetentry && kmailsnippetentry->isFile()) {
         const auto kmailsnippet = static_cast<const KArchiveFile *>(kmailsnippetentry);
@@ -634,11 +634,11 @@ void ImportMailJobInterface::restoreConfig()
     }
 
     {
-        const QString labldaprcStr(QStringLiteral("kabldaprc"));
+        const QString labldaprcStr(u"kabldaprc"_s);
         const KArchiveEntry *kabldapentry = mArchiveDirectory->entry(Utils::configsPath() + labldaprcStr);
         if (kabldapentry && kabldapentry->isFile()) {
             const auto kabldap = static_cast<const KArchiveFile *>(kabldapentry);
-            const QString kabldaprc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + labldaprcStr;
+            const QString kabldaprc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + labldaprcStr;
             if (QFileInfo::exists(kabldaprc)) {
                 const int result = mergeConfigMessageBox(labldaprcStr);
                 if (result == KMessageBox::ButtonCode::PrimaryAction) {
@@ -652,12 +652,11 @@ void ImportMailJobInterface::restoreConfig()
         }
     }
     {
-        const QString archiveconfigurationrcStr(QStringLiteral("akonadi_archivemail_agentrc"));
+        const QString archiveconfigurationrcStr(u"akonadi_archivemail_agentrc"_s);
         const KArchiveEntry *archiveconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + archiveconfigurationrcStr);
         if (archiveconfigurationentry && archiveconfigurationentry->isFile()) {
             const auto archiveconfiguration = static_cast<const KArchiveFile *>(archiveconfigurationentry);
-            const QString archiveconfigurationrc =
-                QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + archiveconfigurationrcStr;
+            const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + archiveconfigurationrcStr;
             if (QFileInfo::exists(archiveconfigurationrc)) {
                 const int result = mergeConfigMessageBox(archiveconfigurationrcStr);
                 if (result == KMessageBox::ButtonCode::PrimaryAction) {
@@ -672,11 +671,11 @@ void ImportMailJobInterface::restoreConfig()
     }
 
     {
-        const QString folderMailArchiveStr(QStringLiteral("foldermailarchiverc"));
+        const QString folderMailArchiveStr(u"foldermailarchiverc"_s);
         const KArchiveEntry *archivemailentry = mArchiveDirectory->entry(Utils::configsPath() + folderMailArchiveStr);
         if (archivemailentry && archivemailentry->isFile()) {
             const auto archiveconfiguration = static_cast<const KArchiveFile *>(archivemailentry);
-            const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + folderMailArchiveStr;
+            const QString archiveconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + folderMailArchiveStr;
             if (QFileInfo::exists(archiveconfigurationrc)) {
                 const int result = mergeConfigMessageBox(folderMailArchiveStr);
                 if (result == KMessageBox::ButtonCode::PrimaryAction) {
@@ -691,11 +690,11 @@ void ImportMailJobInterface::restoreConfig()
     }
 
     {
-        const QString unifiedMailBoxStr(QStringLiteral("akonadi_unifiedmailbox_agentrc"));
+        const QString unifiedMailBoxStr(u"akonadi_unifiedmailbox_agentrc"_s);
         const KArchiveEntry *unifiedMailBoxEntry = mArchiveDirectory->entry(Utils::configsPath() + unifiedMailBoxStr);
         if (unifiedMailBoxEntry && unifiedMailBoxEntry->isFile()) {
             const auto archiveconfiguration = static_cast<const KArchiveFile *>(unifiedMailBoxEntry);
-            const QString unifiedMailBoxrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + unifiedMailBoxStr;
+            const QString unifiedMailBoxrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + unifiedMailBoxStr;
             if (QFileInfo::exists(unifiedMailBoxrc)) {
                 const int result = mergeConfigMessageBox(unifiedMailBoxStr);
                 if (result == KMessageBox::ButtonCode::PrimaryAction) {
@@ -710,12 +709,11 @@ void ImportMailJobInterface::restoreConfig()
     }
 
     {
-        const QString templatesconfigurationrcStr(QStringLiteral("templatesconfigurationrc"));
+        const QString templatesconfigurationrcStr(u"templatesconfigurationrc"_s);
         const KArchiveEntry *templatesconfigurationentry = mArchiveDirectory->entry(Utils::configsPath() + templatesconfigurationrcStr);
         if (templatesconfigurationentry && templatesconfigurationentry->isFile()) {
             const auto templatesconfiguration = static_cast<const KArchiveFile *>(templatesconfigurationentry);
-            const QString templatesconfigurationrc =
-                QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + templatesconfigurationrcStr;
+            const QString templatesconfigurationrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + templatesconfigurationrcStr;
 
             if (QFileInfo::exists(templatesconfigurationrc)) {
                 // TODO 4.13 allow to merge config.
@@ -727,11 +725,11 @@ void ImportMailJobInterface::restoreConfig()
             }
         }
     }
-    const QString kmailStr(QStringLiteral("kmail2rc"));
+    const QString kmailStr(u"kmail2rc"_s);
     const KArchiveEntry *kmail2rcentry = mArchiveDirectory->entry(Utils::configsPath() + kmailStr);
     if (kmail2rcentry && kmail2rcentry->isFile()) {
         const auto kmailrc = static_cast<const KArchiveFile *>(kmail2rcentry);
-        const QString kmail2rc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kmailStr;
+        const QString kmail2rc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + kmailStr;
         if (QFileInfo::exists(kmail2rc)) {
             if (overwriteConfigMessageBox(kmailStr)) {
                 importKmailConfig(kmailrc, kmail2rc, kmailStr, Utils::configsPath());
@@ -741,7 +739,7 @@ void ImportMailJobInterface::restoreConfig()
         }
     }
 
-    const QString sievetemplatercStr(QStringLiteral("sievetemplaterc"));
+    const QString sievetemplatercStr(u"sievetemplaterc"_s);
     const KArchiveEntry *sievetemplatentry = mArchiveDirectory->entry(Utils::configsPath() + sievetemplatercStr);
     if (sievetemplatentry && sievetemplatentry->isFile()) {
         const auto sievetemplateconfiguration = static_cast<const KArchiveFile *>(sievetemplatentry);
@@ -758,7 +756,7 @@ void ImportMailJobInterface::restoreConfig()
         }
     }
     {
-        const QString customTemplateStr(QStringLiteral("customtemplatesrc"));
+        const QString customTemplateStr(u"customtemplatesrc"_s);
         const KArchiveEntry *customtemplatentry = mArchiveDirectory->entry(Utils::configsPath() + customTemplateStr);
         if (customtemplatentry && customtemplatentry->isFile()) {
             const auto customtemplateconfiguration = static_cast<const KArchiveFile *>(customtemplatentry);
@@ -775,7 +773,7 @@ void ImportMailJobInterface::restoreConfig()
     }
 
     {
-        const QString adblockStr(QStringLiteral("messagevieweradblockrc"));
+        const QString adblockStr(u"messagevieweradblockrc"_s);
         const KArchiveEntry *adblockentry = mArchiveDirectory->entry(Utils::configsPath() + adblockStr);
         if (adblockentry && adblockentry->isFile()) {
             const auto adblockconfiguration = static_cast<const KArchiveFile *>(adblockentry);
@@ -791,45 +789,45 @@ void ImportMailJobInterface::restoreConfig()
         }
     }
 
-    restoreUiRcFile(QStringLiteral("sieveeditorui.rc"), QStringLiteral("sieveeditor"));
-    restoreUiRcFile(QStringLiteral("headerthemeeditorui.rc"), QStringLiteral("headerthemeeditor"));
-    restoreUiRcFile(QStringLiteral("contactthemeeditorui.rc"), QStringLiteral("contactthemeeditor"));
-    restoreUiRcFile(QStringLiteral("contactprintthemeeditorui.rc"), QStringLiteral("contactprintthemeeditor"));
+    restoreUiRcFile(u"sieveeditorui.rc"_s, u"sieveeditor"_s);
+    restoreUiRcFile(u"headerthemeeditorui.rc"_s, u"headerthemeeditor"_s);
+    restoreUiRcFile(u"contactthemeeditorui.rc"_s, u"contactthemeeditor"_s);
+    restoreUiRcFile(u"contactprintthemeeditorui.rc"_s, u"contactprintthemeeditor"_s);
 
-    restoreUiRcFile(QStringLiteral("kmreadermainwin.rc"), QStringLiteral("kmail2"));
-    restoreUiRcFile(QStringLiteral("kmcomposerui.rc"), QStringLiteral("kmail2"));
-    restoreUiRcFile(QStringLiteral("kmmainwin.rc"), QStringLiteral("kmail2"));
-    restoreUiRcFile(QStringLiteral("kmail_part.rc"), QStringLiteral("kmail2"));
-    restoreUiRcFile(QStringLiteral("kontactui.rc"), QStringLiteral("kontact"));
-    restoreUiRcFile(QStringLiteral("kleopatra.rc"), QStringLiteral("kleopatra"));
-    restoreUiRcFile(QStringLiteral("kontactsummary_part.rc"), QStringLiteral("kontactsummary"));
-    restoreUiRcFile(QStringLiteral("kwatchgnupgui.rc"), QStringLiteral("kwatchgnupg"));
-    restoreUiRcFile(QStringLiteral("akonadiconsoleui.rc"), QStringLiteral("akonadiconsole"));
+    restoreUiRcFile(u"kmreadermainwin.rc"_s, u"kmail2"_s);
+    restoreUiRcFile(u"kmcomposerui.rc"_s, u"kmail2"_s);
+    restoreUiRcFile(u"kmmainwin.rc"_s, u"kmail2"_s);
+    restoreUiRcFile(u"kmail_part.rc"_s, u"kmail2"_s);
+    restoreUiRcFile(u"kontactui.rc"_s, u"kontact"_s);
+    restoreUiRcFile(u"kleopatra.rc"_s, u"kleopatra"_s);
+    restoreUiRcFile(u"kontactsummary_part.rc"_s, u"kontactsummary"_s);
+    restoreUiRcFile(u"kwatchgnupgui.rc"_s, u"kwatchgnupg"_s);
+    restoreUiRcFile(u"akonadiconsoleui.rc"_s, u"akonadiconsole"_s);
 
-    restoreConfigFile(QStringLiteral("kontactrc"));
+    restoreConfigFile(u"kontactrc"_s);
 
-    restoreConfigFile(QStringLiteral("kontact_summaryrc"));
-    restoreConfigFile(QStringLiteral("storageservicerc"));
-    restoreConfigFile(QStringLiteral("kpimbalooblacklist"));
-    restoreConfigFile(QStringLiteral("kleopatrarc"));
-    restoreConfigFile(QStringLiteral("sieveeditorrc"));
-    restoreConfigFile(QStringLiteral("kwatchgnupgrc"));
-    restoreConfigFile(QStringLiteral("pimpluginsrc"));
-    restoreConfigFile(QStringLiteral("texttospeechrc"));
-    restoreConfigFile(QStringLiteral("kleopatracertificateselectiondialogrc"));
-    restoreConfigFile(QStringLiteral("dkimsettingsrc"));
-    restoreConfigFile(QStringLiteral("confirmbeforedeletingrc"));
+    restoreConfigFile(u"kontact_summaryrc"_s);
+    restoreConfigFile(u"storageservicerc"_s);
+    restoreConfigFile(u"kpimbalooblacklist"_s);
+    restoreConfigFile(u"kleopatrarc"_s);
+    restoreConfigFile(u"sieveeditorrc"_s);
+    restoreConfigFile(u"kwatchgnupgrc"_s);
+    restoreConfigFile(u"pimpluginsrc"_s);
+    restoreConfigFile(u"texttospeechrc"_s);
+    restoreConfigFile(u"kleopatracertificateselectiondialogrc"_s);
+    restoreConfigFile(u"dkimsettingsrc"_s);
+    restoreConfigFile(u"confirmbeforedeletingrc"_s);
 
     // Restore notify file
     const QStringList lstNotify = {
-        QStringLiteral("akonadi_mailfilter_agent.notifyrc"),
-        QStringLiteral("akonadi_sendlater_agent.notifyrc"),
-        QStringLiteral("akonadi_archivemail_agent.notifyrc"),
-        QStringLiteral("kmail2.notifyrc"),
-        QStringLiteral("akonadi_newmailnotifier_agent.notifyrc"),
-        QStringLiteral("akonadi_maildispatcher_agent.notifyrc"),
-        QStringLiteral("akonadi_followupreminder_agent.notifyrc"),
-        QStringLiteral("messageviewer.notifyrc"),
+        u"akonadi_mailfilter_agent.notifyrc"_s,
+        u"akonadi_sendlater_agent.notifyrc"_s,
+        u"akonadi_archivemail_agent.notifyrc"_s,
+        u"kmail2.notifyrc"_s,
+        u"akonadi_newmailnotifier_agent.notifyrc"_s,
+        u"akonadi_maildispatcher_agent.notifyrc"_s,
+        u"akonadi_followupreminder_agent.notifyrc"_s,
+        u"messageviewer.notifyrc"_s,
     };
 
     // We can't merge it.
@@ -837,31 +835,29 @@ void ImportMailJobInterface::restoreConfig()
         restoreConfigFile(filename);
     }
 
-    importSimpleFilesInDirectory(QStringLiteral("/autocorrect/"));
-    importSimpleFilesInDirectory(QStringLiteral("/gravatar/"));
-    const KArchiveEntry *kmail2Entry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("kmail2/adblockrules_local"));
+    importSimpleFilesInDirectory(u"/autocorrect/"_s);
+    importSimpleFilesInDirectory(u"/gravatar/"_s);
+    const KArchiveEntry *kmail2Entry = mArchiveDirectory->entry(Utils::dataPath() + u"kmail2/adblockrules_local"_s);
     if (kmail2Entry && kmail2Entry->isFile()) {
         const auto entry = static_cast<const KArchiveFile *>(kmail2Entry);
-        const QString adblockPath =
-            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/adblockrules_local");
+        const QString adblockPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u'/' + u"kmail2/adblockrules_local"_s;
         if (QFileInfo::exists(adblockPath)) {
-            if (overwriteConfigMessageBox(QStringLiteral("adblockrules_local"))) {
+            if (overwriteConfigMessageBox(u"adblockrules_local"_s)) {
                 copyToFile(entry,
-                           QString(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/")
-                                   + QStringLiteral("kmail2/adblockrules_local")),
-                           QStringLiteral("adblockrules_local"),
-                           Utils::dataPath() + QStringLiteral("kmail2/"));
+                           QString(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/"_s + u"kmail2/adblockrules_local"_s),
+                           u"adblockrules_local"_s,
+                           Utils::dataPath() + u"kmail2/"_s);
             }
         } else {
             copyToFile(entry,
-                       QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("kmail2/adblockrules_local"),
-                       QStringLiteral("adblockrules_local"),
-                       Utils::dataPath() + QStringLiteral("kmail2/"));
+                       QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u'/' + u"kmail2/adblockrules_local"_s,
+                       u"adblockrules_local"_s,
+                       Utils::dataPath() + u"kmail2/"_s);
         }
     }
 
-    importDataSubdirectory(QStringLiteral("/messageviewer/themes/"));
-    importDataSubdirectory(QStringLiteral("/messageviewerplugins/"));
+    importDataSubdirectory(u"/messageviewer/themes/"_s);
+    importDataSubdirectory(u"/messageviewerplugins/"_s);
 
     emitInfo(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportMailJobInterface::slotNextStep);
@@ -878,15 +874,14 @@ void ImportMailJobInterface::importSimpleFilesInDirectory(const QString &relativ
             if (entry && entry->isFile()) {
                 const auto autocorrectionFile = static_cast<const KArchiveFile *>(entry);
                 const QString name = autocorrectionFile->name();
-                QString autocorrectionPath =
-                    QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + relativePath + QLatin1Char('/') + name;
+                QString autocorrectionPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u'/' + relativePath + u'/' + name;
                 if (QFileInfo::exists(autocorrectionPath)) {
                     if (overwriteConfigMessageBox(name)) {
                         copyToFile(autocorrectionFile, autocorrectionPath, name, Utils::dataPath() + relativePath);
                     }
                 } else {
-                    autocorrectionPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + relativePath;
-                    copyToFile(autocorrectionFile, autocorrectionPath + QLatin1Char('/') + name, name, Utils::dataPath() + relativePath);
+                    autocorrectionPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u'/' + relativePath;
+                    copyToFile(autocorrectionFile, autocorrectionPath + u'/' + name, name, Utils::dataPath() + relativePath);
                 }
             }
         }
@@ -897,7 +892,7 @@ void ImportMailJobInterface::restoreIdentity()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restoring identities..."));
-    const QString path(Utils::identitiesPath() + QStringLiteral("emailidentities"));
+    const QString path(Utils::identitiesPath() + u"emailidentities"_s);
     if (!mFileList.contains(path)) {
         emitError(i18n("emailidentities file could not be found in the archive."));
     } else {
@@ -906,49 +901,49 @@ void ImportMailJobInterface::restoreIdentity()
         if (identity && identity->isFile()) {
             const auto fileIdentity = static_cast<const KArchiveFile *>(identity);
             copyArchiveFileTo(fileIdentity, mTempDirName);
-            KSharedConfig::Ptr identityConfig = KSharedConfig::openConfig(mTempDirName + QLatin1Char('/') + QStringLiteral("emailidentities"));
-            KConfigGroup general = identityConfig->group(QStringLiteral("General"));
-            const int defaultIdentity = general.readEntry(QStringLiteral("Default Identity"), -1);
+            KSharedConfig::Ptr identityConfig = KSharedConfig::openConfig(mTempDirName + u'/' + u"emailidentities"_s);
+            KConfigGroup general = identityConfig->group(u"General"_s);
+            const int defaultIdentity = general.readEntry(u"Default Identity"_s, -1);
 
-            QStringList identityList = identityConfig->groupList().filter(QRegularExpression(QStringLiteral("Identity #\\d+")));
+            QStringList identityList = identityConfig->groupList().filter(QRegularExpression(u"Identity #\\d+"_s));
             std::sort(identityList.begin(), identityList.end());
             for (const QString &identityStr : std::as_const(identityList)) {
                 KConfigGroup group = identityConfig->group(identityStr);
                 int oldUid = -1;
-                const QString uidStr(QStringLiteral("uoid"));
+                const QString uidStr(u"uoid"_s);
                 if (group.hasKey(uidStr)) {
                     oldUid = group.readEntry(uidStr).toUInt();
                     group.deleteEntry(uidStr);
                 }
-                const QString fcc(QStringLiteral("Fcc"));
+                const QString fcc(u"Fcc"_s);
                 qint64 fccId = convertRealPathToCollection(group, fcc);
                 registerSpecialCollection(Akonadi::SpecialMailCollections::SentMail, fccId);
 
-                const QString draft = QStringLiteral("Drafts");
+                const QString draft = u"Drafts"_s;
                 qint64 draftId = convertRealPathToCollection(group, draft);
                 registerSpecialCollection(Akonadi::SpecialMailCollections::Drafts, draftId);
 
-                const QString templates = QStringLiteral("Templates");
+                const QString templates = u"Templates"_s;
                 qint64 templateId = convertRealPathToCollection(group, templates);
                 registerSpecialCollection(Akonadi::SpecialMailCollections::Templates, templateId);
 
                 if (oldUid != -1) {
-                    const QString vcard = QStringLiteral("VCardFile");
+                    const QString vcard = u"VCardFile"_s;
                     if (group.hasKey(vcard)) {
                         const QString vcardFileName = group.readEntry(vcard);
                         if (!vcardFileName.isEmpty()) {
                             const QFileInfo fileInfo(vcardFileName);
                             QFile file(vcardFileName);
                             const KArchiveEntry *vcardEntry =
-                                mArchiveDirectory->entry(Utils::identitiesPath() + QString::number(oldUid) + QLatin1Char('/') + file.fileName());
+                                mArchiveDirectory->entry(Utils::identitiesPath() + QString::number(oldUid) + u'/' + file.fileName());
                             if (vcardEntry && vcardEntry->isFile()) {
                                 const auto vcardFile = static_cast<const KArchiveFile *>(vcardEntry);
-                                QString vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)
-                                    + QStringLiteral("/kmail2/%1").arg(fileInfo.fileName());
+                                QString vcardFilePath =
+                                    QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/kmail2/%1"_s.arg(fileInfo.fileName());
                                 int i = 1;
                                 while (QFileInfo::exists(vcardFileName)) {
                                     vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)
-                                        + QStringLiteral("/kmail2/%1_%2").arg(i).arg(fileInfo.fileName());
+                                        + u"/kmail2/%1_%2"_s.arg(i).arg(fileInfo.fileName());
                                     ++i;
                                 }
                                 copyArchiveFileTo(vcardFile, QFileInfo(vcardFilePath).absolutePath());
@@ -957,7 +952,7 @@ void ImportMailJobInterface::restoreIdentity()
                         }
                     }
                 }
-                const QString name = group.readEntry(QStringLiteral("Identity"));
+                const QString name = group.readEntry(u"Identity"_s);
                 addNewIdentity(name, group, defaultIdentity, oldUid);
             }
             emitInfo(i18n("Identities restored."));
@@ -1013,13 +1008,13 @@ void ImportMailJobInterface::importFolderArchiveConfig(const KArchiveFile *archi
     copyToFile(archiveconfiguration, archiveconfigurationrc, filename, prefix);
     KSharedConfig::Ptr archiveConfig = KSharedConfig::openConfig(archiveconfigurationrc);
 
-    const QStringList archiveList = archiveConfig->groupList().filter(QRegularExpression(QStringLiteral("FolderArchiveAccount ")));
+    const QStringList archiveList = archiveConfig->groupList().filter(QRegularExpression(u"FolderArchiveAccount "_s));
 
     for (const QString &str : archiveList) {
         KConfigGroup oldGroup = archiveConfig->group(str);
-        const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(QStringLiteral("topLevelCollectionId")));
+        const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(u"topLevelCollectionId"_s));
         if (id != -1) {
-            oldGroup.writeEntry(QStringLiteral("topLevelCollectionId"), id);
+            oldGroup.writeEntry(u"topLevelCollectionId"_s, id);
         }
     }
 
@@ -1028,7 +1023,7 @@ void ImportMailJobInterface::importFolderArchiveConfig(const KArchiveFile *archi
 
 void ImportMailJobInterface::copyMailArchiveConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
-    const QString archiveGroupPattern = QStringLiteral("FolderArchiveAccount ");
+    const QString archiveGroupPattern = u"FolderArchiveAccount "_s;
     const QStringList archiveList = archiveConfigOrigin->groupList().filter(archiveGroupPattern);
     for (const QString &str : archiveList) {
         const QString resourcename = str.right(str.length() - archiveGroupPattern.length());
@@ -1038,11 +1033,11 @@ void ImportMailJobInterface::copyMailArchiveConfig(const KSharedConfig::Ptr &arc
             if (mHashResources.contains(resourcename)) {
                 newResourceName = mHashResources.value(resourcename);
 
-                const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(QStringLiteral("topLevelCollectionId")));
+                const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(u"topLevelCollectionId"_s));
                 if (id != -1) {
                     KConfigGroup newGroup(archiveConfigDestination, archiveGroupPattern + newResourceName);
                     oldGroup.copyTo(&newGroup);
-                    newGroup.writeEntry(QStringLiteral("topLevelCollectionId"), id);
+                    newGroup.writeEntry(u"topLevelCollectionId"_s, id);
                 }
             }
             oldGroup.deleteGroup();
@@ -1052,18 +1047,18 @@ void ImportMailJobInterface::copyMailArchiveConfig(const KSharedConfig::Ptr &arc
 
 void ImportMailJobInterface::copyUnifiedMailBoxConfig(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
-    auto group = archiveConfigOrigin->group(QStringLiteral("UnifiedMailboxes"));
-    auto groupCopy = archiveConfigDestination->group(QStringLiteral("UnifiedMailboxes"));
+    auto group = archiveConfigOrigin->group(u"UnifiedMailboxes"_s);
+    auto groupCopy = archiveConfigDestination->group(u"UnifiedMailboxes"_s);
     const auto boxGroups = group.groupList();
     for (const auto &str : boxGroups) {
         KConfigGroup oldGroup = group.group(str);
-        const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(QStringLiteral("collectionId")));
+        const Akonadi::Collection::Id id = convertPathToId(oldGroup.readEntry(u"collectionId"_s));
         if (id != -1) {
             KConfigGroup newGroup = groupCopy.group(str);
             oldGroup.copyTo(&newGroup);
-            newGroup.writeEntry(QStringLiteral("collectionId"), id);
+            newGroup.writeEntry(u"collectionId"_s, id);
         }
-        const QString sourceKey(QStringLiteral("sources"));
+        const QString sourceKey(u"sources"_s);
         convertRealPathToCollectionList(oldGroup, sourceKey, false);
         // oldGroup.deleteGroup();
     }
@@ -1072,7 +1067,7 @@ void ImportMailJobInterface::copyUnifiedMailBoxConfig(const KSharedConfig::Ptr &
 void ImportMailJobInterface::copyArchiveMailAgentConfigGroup(const KSharedConfig::Ptr &archiveConfigOrigin, const KSharedConfig::Ptr &archiveConfigDestination)
 {
     // adapt id
-    const QString archiveGroupPattern = QStringLiteral("ArchiveMailCollection ");
+    const QString archiveGroupPattern = u"ArchiveMailCollection "_s;
     const QStringList archiveList = archiveConfigOrigin->groupList().filter(archiveGroupPattern);
     for (const QString &str : archiveList) {
         const QString path = str.right(str.length() - archiveGroupPattern.length());
@@ -1082,10 +1077,10 @@ void ImportMailJobInterface::copyArchiveMailAgentConfigGroup(const KSharedConfig
             if (id != -1) {
                 KConfigGroup newGroup(archiveConfigDestination, archiveGroupPattern + QString::number(id));
                 oldGroup.copyTo(&newGroup);
-                newGroup.writeEntry(QStringLiteral("saveCollectionId"), id);
+                newGroup.writeEntry(u"saveCollectionId"_s, id);
                 QString storePath = newGroup.readEntry("storePath", QString());
                 if (!QDir(storePath).exists()) {
-                    newGroup.writeEntry(QStringLiteral("storePath"), QDir::homePath());
+                    newGroup.writeEntry(u"storePath"_s, QDir::homePath());
                 }
             }
             oldGroup.deleteGroup();
@@ -1102,8 +1097,8 @@ void ImportMailJobInterface::importTemplatesConfig(const KArchiveFile *templates
     KSharedConfig::Ptr templateConfig = KSharedConfig::openConfig(templatesconfigurationrc);
 
     // adapt id
-    const QString templateGroupPattern = QStringLiteral("Templates #");
-    const QString templateGroupIdentityPattern = QStringLiteral("Templates #IDENTITY_");
+    const QString templateGroupPattern = u"Templates #"_s;
+    const QString templateGroupIdentityPattern = u"Templates #IDENTITY_"_s;
     const QStringList templateList = templateConfig->groupList().filter(templateGroupPattern);
     for (const QString &str : templateList) {
         // Identity
@@ -1140,7 +1135,7 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
     KSharedConfig::Ptr kmailConfig = KSharedConfig::openConfig(kmail2rc);
 
     // adapt folder id
-    const QString folderGroupPattern = QStringLiteral("Folder-");
+    const QString folderGroupPattern = u"Folder-"_s;
     const QStringList folderList = kmailConfig->groupList().filter(folderGroupPattern);
     for (const QString &str : folderList) {
         const QString path = str.right(str.length() - folderGroupPattern.length());
@@ -1148,10 +1143,10 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
             KConfigGroup oldGroup = kmailConfig->group(str);
             ImportExportMailUtil::cleanupFolderSettings(oldGroup);
             if (!oldGroup.keyList().isEmpty()) {
-                if (oldGroup.hasKey(QStringLiteral("Identity"))) {
-                    const int identity = oldGroup.readEntry(QStringLiteral("Identity"), -1);
+                if (oldGroup.hasKey(u"Identity"_s)) {
+                    const int identity = oldGroup.readEntry(u"Identity"_s, -1);
                     if (identity != -1) {
-                        oldGroup.writeEntry(QStringLiteral("Identity"), mHashIdentity.value(identity));
+                        oldGroup.writeEntry(u"Identity"_s, mHashIdentity.value(identity));
                     }
                 }
                 const Akonadi::Collection::Id id = convertPathToId(path);
@@ -1163,10 +1158,10 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
             oldGroup.deleteGroup();
         }
     }
-    const QString accountOrder(QStringLiteral("AccountOrder"));
+    const QString accountOrder(u"AccountOrder"_s);
     if (kmailConfig->hasGroup(accountOrder)) {
         KConfigGroup group = kmailConfig->group(accountOrder);
-        const QStringList orderList = group.readEntry(QStringLiteral("order"), QStringList());
+        const QStringList orderList = group.readEntry(u"order"_s, QStringList());
         QStringList newOrderList;
         if (!orderList.isEmpty()) {
             for (const QString &account : orderList) {
@@ -1179,13 +1174,13 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
         }
     }
 
-    const QString composerStr(QStringLiteral("Composer"));
+    const QString composerStr(u"Composer"_s);
     if (kmailConfig->hasGroup(composerStr)) {
         KConfigGroup composerGroup = kmailConfig->group(composerStr);
-        const QString previousStr(QStringLiteral("previous-fcc"));
+        const QString previousStr(u"previous-fcc"_s);
         (void)convertRealPathToCollection(composerGroup, previousStr);
 
-        const QString previousIdentityStr(QStringLiteral("previous-identity"));
+        const QString previousIdentityStr(u"previous-identity"_s);
         if (composerGroup.hasKey(previousIdentityStr)) {
             const int identityValue = composerGroup.readEntry(previousIdentityStr, -1);
             if (identityValue != -1) {
@@ -1198,39 +1193,39 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
         }
     }
 
-    const QString collectionFolderViewStr(QStringLiteral("CollectionFolderView"));
+    const QString collectionFolderViewStr(u"CollectionFolderView"_s);
     if (kmailConfig->hasGroup(collectionFolderViewStr)) {
         KConfigGroup favoriteGroup = kmailConfig->group(collectionFolderViewStr);
-        const QString currentKey(QStringLiteral("Current"));
+        const QString currentKey(u"Current"_s);
         (void)convertRealPathToCollection(favoriteGroup, currentKey, true);
 
-        const QString expensionKey(QStringLiteral("Expansion"));
+        const QString expensionKey(u"Expansion"_s);
         convertRealPathToCollectionList(favoriteGroup, expensionKey);
     }
 
-    convertCollectionListStrToAkonadiId(kmailConfig, QStringLiteral("FavoriteCollections"), QStringLiteral("FavoriteCollectionIds"), false);
+    convertCollectionListStrToAkonadiId(kmailConfig, u"FavoriteCollections"_s, u"FavoriteCollectionIds"_s, false);
 
     // For favorite id for root collection == 0 and we store only folder => c
-    convertCollectionListStrToAkonadiId(kmailConfig, QStringLiteral("FavoriteCollectionsOrder"), QStringLiteral("0"), true);
+    convertCollectionListStrToAkonadiId(kmailConfig, u"FavoriteCollectionsOrder"_s, u"0"_s, true);
 
     // Event collection
-    convertCollectionStrToAkonadiId(kmailConfig, QStringLiteral("Event"), QStringLiteral("LastEventSelectedFolder"));
+    convertCollectionStrToAkonadiId(kmailConfig, u"Event"_s, u"LastEventSelectedFolder"_s);
     // Todo collection
-    convertCollectionStrToAkonadiId(kmailConfig, QStringLiteral("Todo"), QStringLiteral("LastSelectedFolder"));
+    convertCollectionStrToAkonadiId(kmailConfig, u"Todo"_s, u"LastSelectedFolder"_s);
     // Note collection
-    convertCollectionStrToAkonadiId(kmailConfig, QStringLiteral("Note"), QStringLiteral("LastNoteSelectedFolder"));
+    convertCollectionStrToAkonadiId(kmailConfig, u"Note"_s, u"LastNoteSelectedFolder"_s);
 
     // FolderSelectionDialog collection
-    convertCollectionListStrToAkonadiId(kmailConfig, QStringLiteral("FolderSelectionDialog"), QStringLiteral("LastSelectedFolder"), false);
+    convertCollectionListStrToAkonadiId(kmailConfig, u"FolderSelectionDialog"_s, u"LastSelectedFolder"_s, false);
 
     // Convert MessageListTab collection id
-    const QString messageListPaneStr(QStringLiteral("MessageListPane"));
+    const QString messageListPaneStr(u"MessageListPane"_s);
     if (kmailConfig->hasGroup(messageListPaneStr)) {
         KConfigGroup messageListPaneGroup = kmailConfig->group(messageListPaneStr);
-        const int numberOfTab = messageListPaneGroup.readEntry(QStringLiteral("tabNumber"), 0);
+        const int numberOfTab = messageListPaneGroup.readEntry(u"tabNumber"_s, 0);
         for (int i = 0; i < numberOfTab; ++i) {
-            KConfigGroup messageListPaneTabGroup = kmailConfig->group(QStringLiteral("MessageListTab%1").arg(i));
-            const QString messageListPaneTabFolderStr(QStringLiteral("collectionId"));
+            KConfigGroup messageListPaneTabGroup = kmailConfig->group(u"MessageListTab%1"_s.arg(i));
+            const QString messageListPaneTabFolderStr(u"collectionId"_s);
             convertRealPathToCollectionList(messageListPaneTabGroup, messageListPaneTabFolderStr, false);
         }
     }
@@ -1239,33 +1234,33 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
     QHash<int, uint>::const_iterator i = mHashIdentity.constBegin();
     while (i != mHashIdentity.constEnd()) {
         // Use old key
-        const QString groupId = QStringLiteral("Automatic Add Contacts %1").arg(i.key());
+        const QString groupId = u"Automatic Add Contacts %1"_s.arg(i.key());
         if (kmailConfig->hasGroup(groupId)) {
             KConfigGroup identityGroup = kmailConfig->group(groupId);
 
-            KConfigGroup newGroup(kmailConfig, QStringLiteral("Automatic Add Contacts %1").arg(i.value()));
+            KConfigGroup newGroup(kmailConfig, u"Automatic Add Contacts %1"_s.arg(i.value()));
             identityGroup.copyTo(&newGroup);
-            const QString automaticAddContactStr(QStringLiteral("Collection"));
+            const QString automaticAddContactStr(u"Collection"_s);
             convertRealPathToCollectionList(newGroup, automaticAddContactStr, false);
             identityGroup.deleteGroup();
         }
         ++i;
     }
 
-    const QString generalStr(QStringLiteral("General"));
+    const QString generalStr(u"General"_s);
     if (kmailConfig->hasGroup(generalStr)) {
         KConfigGroup generalGroup = kmailConfig->group(generalStr);
         // Be sure to delete default domain
-        const QString defaultDomainStr(QStringLiteral("Default domain"));
+        const QString defaultDomainStr(u"Default domain"_s);
         if (generalGroup.hasKey(defaultDomainStr)) {
             generalGroup.deleteEntry(defaultDomainStr);
         }
 
-        const QString startupFolderStr(QStringLiteral("startupFolder"));
+        const QString startupFolderStr(u"startupFolder"_s);
         convertRealPathToCollection(generalGroup, startupFolderStr);
     }
 
-    const QString resourceGroupPattern = QStringLiteral("Resource ");
+    const QString resourceGroupPattern = u"Resource "_s;
     const QStringList resourceList = kmailConfig->groupList().filter(resourceGroupPattern);
     for (const QString &str : resourceList) {
         const QString res = str.right(str.length() - resourceGroupPattern.length());
@@ -1288,60 +1283,57 @@ void ImportMailJobInterface::mergeLdapConfig(const KArchiveFile *archivefile, co
     QDir dir(mTempDirName);
     dir.mkdir(prefix);
 
-    const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
+    const QString copyToDirName(mTempDirName + u'/' + prefix);
     copyArchiveFileTo(archivefile, copyToDirName);
 
     KSharedConfig::Ptr existingConfig = KSharedConfig::openConfig(filename);
-    KConfigGroup grpExisting = existingConfig->group(QStringLiteral("LDAP"));
-    int existingNumberHosts = grpExisting.readEntry(QStringLiteral("NumHosts"), 0);
-    int existingNumberSelectedHosts = grpExisting.readEntry(QStringLiteral("NumSelectedHosts"), 0);
+    KConfigGroup grpExisting = existingConfig->group(u"LDAP"_s);
+    int existingNumberHosts = grpExisting.readEntry(u"NumHosts"_s, 0);
+    int existingNumberSelectedHosts = grpExisting.readEntry(u"NumSelectedHosts"_s, 0);
 
-    KSharedConfig::Ptr importingLdapConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + filename);
-    KConfigGroup grpImporting = importingLdapConfig->group(QStringLiteral("LDAP"));
-    int importingNumberHosts = grpImporting.readEntry(QStringLiteral("NumHosts"), 0);
-    int importingNumberSelectedHosts = grpImporting.readEntry(QStringLiteral("NumSelectedHosts"), 0);
+    KSharedConfig::Ptr importingLdapConfig = KSharedConfig::openConfig(copyToDirName + u'/' + filename);
+    KConfigGroup grpImporting = importingLdapConfig->group(u"LDAP"_s);
+    int importingNumberHosts = grpImporting.readEntry(u"NumHosts"_s, 0);
+    int importingNumberSelectedHosts = grpImporting.readEntry(u"NumSelectedHosts"_s, 0);
 
-    grpExisting.writeEntry(QStringLiteral("NumHosts"), (existingNumberHosts + importingNumberHosts));
-    grpExisting.writeEntry(QStringLiteral("NumSelectedHosts"), (existingNumberSelectedHosts + importingNumberSelectedHosts));
+    grpExisting.writeEntry(u"NumHosts"_s, (existingNumberHosts + importingNumberHosts));
+    grpExisting.writeEntry(u"NumSelectedHosts"_s, (existingNumberSelectedHosts + importingNumberSelectedHosts));
 
     for (int i = 0; i < importingNumberSelectedHosts; ++i) {
-        const QString auth = grpImporting.readEntry(QStringLiteral("SelectedAuth%1").arg(i), QString());
+        const QString auth = grpImporting.readEntry(u"SelectedAuth%1"_s.arg(i), QString());
         const int numberHosts = existingNumberSelectedHosts + i + 1;
-        grpExisting.writeEntry(QStringLiteral("SelectedAuth%1").arg(numberHosts), auth);
-        grpExisting.writeEntry(QStringLiteral("SelectedBase%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedBase%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedBind%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedBind%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedHost%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedHost%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedMech%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedMech%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedPageSize%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedPageSize%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("SelectedPort%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedPort%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("SelectedPwdBind%1").arg(numberHosts),
-                               grpImporting.readEntry(QStringLiteral("SelectedPwdBind%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedSecurity%1").arg(numberHosts),
-                               grpImporting.readEntry(QStringLiteral("SelectedSecurity%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedSizeLimit%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedSizeLimit%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("SelectedTimeLimit%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedTimeLimit%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("SelectedUser%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedUser%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SelectedVersion%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SelectedVersion%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("SelectedUserFilter%1").arg(numberHosts),
-                               grpImporting.readEntry(QStringLiteral("SelectedUserFilter%1").arg(i), 0));
+        grpExisting.writeEntry(u"SelectedAuth%1"_s.arg(numberHosts), auth);
+        grpExisting.writeEntry(u"SelectedBase%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedBase%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"SelectedBind%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedBind%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"SelectedHost%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedHost%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"SelectedMech%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedMech%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"SelectedPageSize%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedPageSize%1"_s.arg(i), 0));
+        grpExisting.writeEntry(u"SelectedPort%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedPort%1"_s.arg(i), 0));
+        grpExisting.writeEntry(u"SelectedPwdBind%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedPwdBind%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"SelectedSecurity%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedSecurity%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"SelectedSizeLimit%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedSizeLimit%1"_s.arg(i), 0));
+        grpExisting.writeEntry(u"SelectedTimeLimit%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedTimeLimit%1"_s.arg(i), 0));
+        grpExisting.writeEntry(u"SelectedUser%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedUser%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"SelectedVersion%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedVersion%1"_s.arg(i), 0));
+        grpExisting.writeEntry(u"SelectedUserFilter%1"_s.arg(numberHosts), grpImporting.readEntry(u"SelectedUserFilter%1"_s.arg(i), 0));
     }
 
     for (int i = 0; i < importingNumberHosts; ++i) {
         const int numberHosts = existingNumberHosts + i + 1;
-        grpExisting.writeEntry(QStringLiteral("Auth%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Auth%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Base%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Base%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Bind%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Bind%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Host%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Host%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Mech%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Mech%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("PageSize%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("PageSize%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("Port%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Port%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("PwdBind%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("PwdBind%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Security%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Security%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("SizeLimit%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("SizeLimit%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("TimeLimit%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("TimeLimit%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("User%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("User%1").arg(i), QString()));
-        grpExisting.writeEntry(QStringLiteral("Version%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("Version%1").arg(i), 0));
-        grpExisting.writeEntry(QStringLiteral("UserFilter%1").arg(numberHosts), grpImporting.readEntry(QStringLiteral("UserFilter%1").arg(i), 0));
+        grpExisting.writeEntry(u"Auth%1"_s.arg(numberHosts), grpImporting.readEntry(u"Auth%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"Base%1"_s.arg(numberHosts), grpImporting.readEntry(u"Base%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"Bind%1"_s.arg(numberHosts), grpImporting.readEntry(u"Bind%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"Host%1"_s.arg(numberHosts), grpImporting.readEntry(u"Host%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"Mech%1"_s.arg(numberHosts), grpImporting.readEntry(u"Mech%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"PageSize%1"_s.arg(numberHosts), grpImporting.readEntry(u"PageSize%1"_s.arg(i), 0));
+        grpExisting.writeEntry(u"Port%1"_s.arg(numberHosts), grpImporting.readEntry(u"Port%1"_s.arg(i), 0));
+        grpExisting.writeEntry(u"PwdBind%1"_s.arg(numberHosts), grpImporting.readEntry(u"PwdBind%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"Security%1"_s.arg(numberHosts), grpImporting.readEntry(u"Security%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"SizeLimit%1"_s.arg(numberHosts), grpImporting.readEntry(u"SizeLimit%1"_s.arg(i), 0));
+        grpExisting.writeEntry(u"TimeLimit%1"_s.arg(numberHosts), grpImporting.readEntry(u"TimeLimit%1"_s.arg(i), 0));
+        grpExisting.writeEntry(u"User%1"_s.arg(numberHosts), grpImporting.readEntry(u"User%1"_s.arg(i), QString()));
+        grpExisting.writeEntry(u"Version%1"_s.arg(numberHosts), grpImporting.readEntry(u"Version%1"_s.arg(i), 0));
+        grpExisting.writeEntry(u"UserFilter%1"_s.arg(numberHosts), grpImporting.readEntry(u"UserFilter%1"_s.arg(i), 0));
     }
 
     grpExisting.sync();
@@ -1352,12 +1344,12 @@ void ImportMailJobInterface::mergeUnifiedMailBoxConfig(const KArchiveFile *archi
     QDir dir(mTempDirName);
     dir.mkdir(prefix);
 
-    const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
+    const QString copyToDirName(mTempDirName + u'/' + prefix);
     archivefile->copyTo(copyToDirName);
 
     KSharedConfig::Ptr existingConfig = KSharedConfig::openConfig(filename);
 
-    KSharedConfig::Ptr importingMailArchiveConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + filename);
+    KSharedConfig::Ptr importingMailArchiveConfig = KSharedConfig::openConfig(copyToDirName + u'/' + filename);
 
     copyUnifiedMailBoxConfig(importingMailArchiveConfig, existingConfig);
     existingConfig->sync();
@@ -1369,12 +1361,12 @@ void ImportMailJobInterface::mergeKmailSnippetConfig(const KArchiveFile *archive
     QDir dir(mTempDirName);
     dir.mkdir(prefix);
 
-    const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
+    const QString copyToDirName(mTempDirName + u'/' + prefix);
     copyArchiveFileTo(archivefile, copyToDirName);
 
     KSharedConfig::Ptr existingConfig = KSharedConfig::openConfig(filename);
 
-    KSharedConfig::Ptr importingKMailSnipperConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + filename);
+    KSharedConfig::Ptr importingKMailSnipperConfig = KSharedConfig::openConfig(copyToDirName + u'/' + filename);
 }
 
 void ImportMailJobInterface::mergeMailArchiveConfig(const KArchiveFile *archivefile, const QString &filename, const QString &prefix)
@@ -1382,12 +1374,12 @@ void ImportMailJobInterface::mergeMailArchiveConfig(const KArchiveFile *archivef
     QDir dir(mTempDirName);
     dir.mkdir(prefix);
 
-    const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
+    const QString copyToDirName(mTempDirName + u'/' + prefix);
     archivefile->copyTo(copyToDirName);
 
     KSharedConfig::Ptr existingConfig = KSharedConfig::openConfig(filename);
 
-    KSharedConfig::Ptr importingMailArchiveConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + filename);
+    KSharedConfig::Ptr importingMailArchiveConfig = KSharedConfig::openConfig(copyToDirName + u'/' + filename);
 
     copyMailArchiveConfig(importingMailArchiveConfig, existingConfig);
     existingConfig->sync();
@@ -1398,12 +1390,12 @@ void ImportMailJobInterface::mergeArchiveMailAgentConfig(const KArchiveFile *arc
     QDir dir(mTempDirName);
     dir.mkdir(prefix);
 
-    const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
+    const QString copyToDirName(mTempDirName + u'/' + prefix);
     archivefile->copyTo(copyToDirName);
 
     KSharedConfig::Ptr existingConfig = KSharedConfig::openConfig(filename);
 
-    KSharedConfig::Ptr importingArchiveMailAgentConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + filename);
+    KSharedConfig::Ptr importingArchiveMailAgentConfig = KSharedConfig::openConfig(copyToDirName + u'/' + filename);
 
     copyArchiveMailAgentConfigGroup(importingArchiveMailAgentConfig, existingConfig);
     existingConfig->sync();
@@ -1414,29 +1406,29 @@ void ImportMailJobInterface::mergeSieveTemplate(const KArchiveFile *archivefile,
     QDir dir(mTempDirName);
     dir.mkdir(prefix);
 
-    const QString copyToDirName(mTempDirName + QLatin1Char('/') + prefix);
+    const QString copyToDirName(mTempDirName + u'/' + prefix);
     copyArchiveFileTo(archivefile, copyToDirName);
 
     KSharedConfig::Ptr existingConfig = KSharedConfig::openConfig(filename);
 
-    KSharedConfig::Ptr importingSieveTemplateConfig = KSharedConfig::openConfig(copyToDirName + QLatin1Char('/') + filename);
+    KSharedConfig::Ptr importingSieveTemplateConfig = KSharedConfig::openConfig(copyToDirName + u'/' + filename);
 
-    KConfigGroup grpExisting = existingConfig->group(QStringLiteral("template"));
-    int numberOfExistingTemplate = grpExisting.readEntry(QStringLiteral("templateCount"), 0);
+    KConfigGroup grpExisting = existingConfig->group(u"template"_s);
+    int numberOfExistingTemplate = grpExisting.readEntry(u"templateCount"_s, 0);
 
-    KConfigGroup grpImportExisting = importingSieveTemplateConfig->group(QStringLiteral("template"));
-    const int numberOfImportingTemplate = grpImportExisting.readEntry(QStringLiteral("templateCount"), 0);
+    KConfigGroup grpImportExisting = importingSieveTemplateConfig->group(u"template"_s);
+    const int numberOfImportingTemplate = grpImportExisting.readEntry(u"templateCount"_s, 0);
 
     for (int i = 0; i < numberOfImportingTemplate; ++i) {
-        KConfigGroup templateDefine = importingSieveTemplateConfig->group(QStringLiteral("templateDefine_%1").arg(i));
+        KConfigGroup templateDefine = importingSieveTemplateConfig->group(u"templateDefine_%1"_s.arg(i));
 
-        KConfigGroup newTemplateDefineGrp = existingConfig->group(QStringLiteral("templateDefine_%1").arg(numberOfExistingTemplate));
-        newTemplateDefineGrp.writeEntry(QStringLiteral("Name"), templateDefine.readEntry(QStringLiteral("Name")));
-        newTemplateDefineGrp.writeEntry(QStringLiteral("Text"), templateDefine.readEntry(QStringLiteral("Text")));
+        KConfigGroup newTemplateDefineGrp = existingConfig->group(u"templateDefine_%1"_s.arg(numberOfExistingTemplate));
+        newTemplateDefineGrp.writeEntry(u"Name"_s, templateDefine.readEntry(u"Name"_s));
+        newTemplateDefineGrp.writeEntry(u"Text"_s, templateDefine.readEntry(u"Text"_s));
         ++numberOfExistingTemplate;
         newTemplateDefineGrp.sync();
     }
-    grpExisting.writeEntry(QStringLiteral("templateCount"), numberOfExistingTemplate);
+    grpExisting.writeEntry(u"templateCount"_s, numberOfExistingTemplate);
     grpExisting.sync();
 }
 

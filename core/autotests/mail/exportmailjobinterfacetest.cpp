@@ -5,6 +5,8 @@
 */
 
 #include "exportmailjobinterfacetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "exportmailjobinterfacetestimpl.h"
 #include "testexportfile.h"
@@ -58,39 +60,39 @@ void ExportMailJobInterfaceTest::exportMail()
     QList<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;
 
-    info.identifier = QStringLiteral("akonadi_mbox_resource_1");
+    info.identifier = u"akonadi_mbox_resource_1"_s;
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
-    info.capabilities = QStringList() << QStringLiteral("Resource");
+    info.capabilities = QStringList() << u"Resource"_s;
     lstInfo << info;
-    info.identifier = QStringLiteral("akonadi_maildir_resource_1");
+    info.identifier = u"akonadi_maildir_resource_1"_s;
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
-    info.capabilities = QStringList() << QStringLiteral("Resource");
+    info.capabilities = QStringList() << u"Resource"_s;
     lstInfo << info;
-    info.identifier = QStringLiteral("akonadi_mixedmaildir_resource_1");
+    info.identifier = u"akonadi_mixedmaildir_resource_1"_s;
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
-    info.capabilities = QStringList() << QStringLiteral("Resource");
+    info.capabilities = QStringList() << u"Resource"_s;
     lstInfo << info;
 
     // Pop3 support
-    info.identifier = QStringLiteral("akonadi_pop3_resource_1");
+    info.identifier = u"akonadi_pop3_resource_1"_s;
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
-    info.capabilities = QStringList() << QStringLiteral("Resource");
+    info.capabilities = QStringList() << u"Resource"_s;
     lstInfo << info;
 
     // Imap support
-    info.identifier = QStringLiteral("akonadi_imap_resource_1");
+    info.identifier = u"akonadi_imap_resource_1"_s;
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
-    info.capabilities = QStringList() << QStringLiteral("Resource");
+    info.capabilities = QStringList() << u"Resource"_s;
     lstInfo << info;
 
     // Kolab support
-    info.identifier = QStringLiteral("akonadi_kolab_resource_1");
+    info.identifier = u"akonadi_kolab_resource_1"_s;
     info.mimeTypes = QStringList() << KMime::Message::mimeType();
-    info.capabilities = QStringList() << QStringLiteral("Resource");
+    info.capabilities = QStringList() << u"Resource"_s;
     lstInfo << info;
 
     // Add extra resource.
-    info.identifier = QStringLiteral("akonadi_kalarm_dir_resource_2");
+    info.identifier = u"akonadi_kalarm_dir_resource_2"_s;
     lstInfo << info;
 
     auto exportMail = new ExportMailJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);

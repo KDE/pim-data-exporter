@@ -5,6 +5,8 @@
 */
 
 #include "utilstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../utils.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(UtilsTest)
@@ -15,19 +17,19 @@ UtilsTest::UtilsTest(QObject *parent)
 
 void UtilsTest::shouldTestValue()
 {
-    QCOMPARE(Utils::configsPath(), QStringLiteral("configs/"));
-    QCOMPARE(Utils::transportsPath(), QStringLiteral("transports/"));
-    QCOMPARE(Utils::resourcesPath(), QStringLiteral("resources/"));
-    QCOMPARE(Utils::identitiesPath(), QStringLiteral("identities/"));
-    QCOMPARE(Utils::mailsPath(), QStringLiteral("mails/"));
-    QCOMPARE(Utils::configsPath(), QStringLiteral("configs/"));
-    QCOMPARE(Utils::akonadiPath(), QStringLiteral("akonadi/"));
-    QCOMPARE(Utils::dataPath(), QStringLiteral("data/"));
-    QCOMPARE(Utils::calendarPath(), QStringLiteral("calendar/"));
-    QCOMPARE(Utils::addressbookPath(), QStringLiteral("addressbook/"));
-    QCOMPARE(Utils::alarmPath(), QStringLiteral("alarm/"));
-    QCOMPARE(Utils::dataPath(), QStringLiteral("data/"));
-    QCOMPARE(Utils::notePath(), QStringLiteral("note/"));
+    QCOMPARE(Utils::configsPath(), u"configs/"_s);
+    QCOMPARE(Utils::transportsPath(), u"transports/"_s);
+    QCOMPARE(Utils::resourcesPath(), u"resources/"_s);
+    QCOMPARE(Utils::identitiesPath(), u"identities/"_s);
+    QCOMPARE(Utils::mailsPath(), u"mails/"_s);
+    QCOMPARE(Utils::configsPath(), u"configs/"_s);
+    QCOMPARE(Utils::akonadiPath(), u"akonadi/"_s);
+    QCOMPARE(Utils::dataPath(), u"data/"_s);
+    QCOMPARE(Utils::calendarPath(), u"calendar/"_s);
+    QCOMPARE(Utils::addressbookPath(), u"addressbook/"_s);
+    QCOMPARE(Utils::alarmPath(), u"alarm/"_s);
+    QCOMPARE(Utils::dataPath(), u"data/"_s);
+    QCOMPARE(Utils::notePath(), u"note/"_s);
 }
 
 #include "moc_utilstest.cpp"

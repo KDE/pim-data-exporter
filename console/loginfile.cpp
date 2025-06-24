@@ -5,6 +5,8 @@
 */
 
 #include "loginfile.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "pimdataexportconsole_debug.h"
 
 #include <QFile>
@@ -67,16 +69,16 @@ void LogInFile::addLogLine(const QString &message, LogType type)
     QString newMessage;
     switch (type) {
     case AddEndLine:
-        newMessage = QLatin1Char('\n');
+        newMessage = u'\n';
         break;
     case AddInfo:
-        newMessage = QStringLiteral("INFO: %1\n").arg(message);
+        newMessage = u"INFO: %1\n"_s.arg(message);
         break;
     case AddError:
-        newMessage = QStringLiteral("ERROR: %1\n").arg(message);
+        newMessage = u"ERROR: %1\n"_s.arg(message);
         break;
     case AddTitle:
-        newMessage = message + QLatin1Char('\n');
+        newMessage = message + u'\n';
         break;
     }
     mTextStream << newMessage;

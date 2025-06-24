@@ -5,6 +5,8 @@
 */
 
 #include "exportalarmjobinterfacetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "exportalarmjobinterfacetestimpl.h"
 #include "testexportfile.h"
@@ -36,12 +38,12 @@ void ExportAlarmJobInterfaceTest::exportAlarm()
     file->setPathConfig(configpath);
     QList<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;
-    info.identifier = QStringLiteral("akonadi_kalarm_dir_resource_1");
+    info.identifier = u"akonadi_kalarm_dir_resource_1"_s;
     lstInfo << info;
-    info.identifier = QStringLiteral("akonadi_kalarm_dir_resource_2");
+    info.identifier = u"akonadi_kalarm_dir_resource_2"_s;
     lstInfo << info;
     // Add extra resource.
-    info.identifier = QStringLiteral("akonadi_kolab_resource_2");
+    info.identifier = u"akonadi_kolab_resource_2"_s;
     lstInfo << info;
 
     auto exportNote = new ExportAlarmJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);

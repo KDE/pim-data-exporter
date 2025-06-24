@@ -5,6 +5,8 @@
 */
 
 #include "pimdataexporterconfiguredialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "gui/widgets/pimdataexporterconfigurewidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -41,7 +43,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     layout->addWidget(mConfigureWidget);
 
     auto generalPageWidgetPage = new KPageWidgetItem(mConfigureWidget, i18n("General"));
-    generalPageWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("network-workgroup")));
+    generalPageWidgetPage->setIcon(QIcon::fromTheme(u"network-workgroup"_s));
     addPage(generalPageWidgetPage);
 
 #if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
@@ -56,7 +58,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
 
     mUserFeedbackWidget->setFeedbackProvider(UserFeedBackManager::self()->userFeedbackProvider());
     auto userFeedBackPageWidgetPage = new KPageWidgetItem(userFeedBackWidget, i18n("User Feedback"));
-    userFeedBackPageWidgetPage->setIcon(QIcon::fromTheme(QStringLiteral("preferences-other")));
+    userFeedBackPageWidgetPage->setIcon(QIcon::fromTheme(u"preferences-other"_s));
     addPage(userFeedBackPageWidgetPage);
 #endif
 

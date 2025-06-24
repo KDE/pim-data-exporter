@@ -5,6 +5,8 @@
 */
 
 #include "resourceconvertertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QDebug>
 #include <QDir>
 
@@ -14,7 +16,7 @@ ResourceConverterTest::~ResourceConverterTest() = default;
 
 QString ResourceConverterTest::prefixStr() const
 {
-    return QStringLiteral("foo/bla bla/bli");
+    return u"foo/bla bla/bli"_s;
 }
 
 QString ResourceConverterTest::convertToFullCollectionPath(const qlonglong collectionValue)

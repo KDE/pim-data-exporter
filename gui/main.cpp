@@ -5,6 +5,7 @@
 */
 
 #include "config-pimdataexporter.h"
+
 #include "pimdatacommandlineoption.h"
 #include "pimdataexporterwindow.h"
 
@@ -24,6 +25,7 @@
 
 #include <KStyleManager>
 
+using namespace Qt::Literals::StringLiterals;
 int main(int argc, char *argv[])
 {
     KIconTheme::initTheme();
@@ -32,8 +34,8 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("pimdataexporter"));
 
     KStyleManager::initStyle();
-    app.setDesktopFileName(QStringLiteral("org.kde.pimdataexporter"));
-    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("kontact")));
+    app.setDesktopFileName(u"org.kde.pimdataexporter"_s);
+    QApplication::setWindowIcon(QIcon::fromTheme(u"kontact"_s));
 
     PimDataCommandLineOption parser;
     parser.createParser(app);

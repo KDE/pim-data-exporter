@@ -5,6 +5,8 @@
 */
 
 #include "importakregatorjobinterface.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 
 #include <PimCommonAkonadi/CreateResource>
@@ -55,7 +57,7 @@ ImportAkregatorJobInterface::createResource(const QString &resources, const QStr
 
 QString ImportAkregatorJobInterface::applicationName() const
 {
-    return QStringLiteral("[Akregator]");
+    return u"[Akregator]"_s;
 }
 
 QString ImportAkregatorJobInterface::adaptNewResourceUrl(bool overwriteResources, const KSharedConfig::Ptr &resourceConfig, const QString &storePath)
@@ -88,13 +90,13 @@ void ImportAkregatorJobInterface::slotNextStep()
 
 void ImportAkregatorJobInterface::restoreConfig()
 {
-    const QString akregatorStr(QStringLiteral("akregatorrc"));
+    const QString akregatorStr(u"akregatorrc"_s);
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore configs..."));
     restoreConfigFile(akregatorStr);
-    restoreUiRcFile(QStringLiteral("akregator_part.rc"), QStringLiteral("akregator"));
-    restoreUiRcFile(QStringLiteral("akregator_shell.rc"), QStringLiteral("akregator"));
-    restoreConfigFile(QStringLiteral("akregator.notifyrc"));
+    restoreUiRcFile(u"akregator_part.rc"_s, u"akregator"_s);
+    restoreUiRcFile(u"akregator_shell.rc"_s, u"akregator"_s);
+    restoreConfigFile(u"akregator.notifyrc"_s);
 
     emitInfo(i18n("Config restored."));
     QTimer::singleShot(0, this, &ImportAkregatorJobInterface::slotNextStep);
@@ -104,9 +106,9 @@ void ImportAkregatorJobInterface::restoreData()
 {
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Restore data..."));
-    const KArchiveEntry *akregatorEntry = mArchiveDirectory->entry(Utils::dataPath() + QStringLiteral("akregator/"));
+    const KArchiveEntry *akregatorEntry = mArchiveDirectory->entry(Utils::dataPath() + u"akregator/"_s);
     if (akregatorEntry && akregatorEntry->isDirectory()) {
-        const QString akregatorPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + QStringLiteral("akregator/");
+        const QString akregatorPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u'/' + u"akregator/"_s;
         overwriteDirectory(akregatorPath, akregatorEntry);
     }
     emitInfo(i18n("Data restored."));

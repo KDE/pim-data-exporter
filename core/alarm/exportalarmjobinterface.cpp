@@ -5,6 +5,7 @@
 */
 
 #include "exportalarmjobinterface.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
@@ -52,7 +53,7 @@ void ExportAlarmJobInterface::slotWriteNextArchiveResource()
         const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
         const QString identifier = agent.identifier;
         if (identifier.contains(QLatin1StringView("akonadi_kalarm_dir_resource_"))) {
-            const QString archivePath = Utils::alarmPath() + identifier + QLatin1Char('/');
+            const QString archivePath = Utils::alarmPath() + identifier + u'/';
 
             const QString url = resourcePath(identifier);
             if (!mAgentPaths.contains(url)) {
@@ -101,15 +102,15 @@ void ExportAlarmJobInterface::slotCheckBackupConfig()
 
 QString ExportAlarmJobInterface::applicationName() const
 {
-    return QStringLiteral("[Alarm]");
+    return u"[Alarm]"_s;
 }
 
 void ExportAlarmJobInterface::backupConfig()
 {
     setProgressDialogLabel(i18n("Backing up config..."));
 
-    const QString kalarmStr(QStringLiteral("kalarmrc"));
-    const QString kalarmrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalarmStr;
+    const QString kalarmStr(u"kalarmrc"_s);
+    const QString kalarmrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + kalarmStr;
     if (QFileInfo::exists(kalarmrc)) {
         KSharedConfigPtr kalarm = KSharedConfig::openConfig(kalarmrc);
 
@@ -118,10 +119,10 @@ void ExportAlarmJobInterface::backupConfig()
 
         KConfig *kalarmConfig = kalarm->copyTo(tmp.fileName());
 
-        const QString collectionsStr(QStringLiteral("Collections"));
+        const QString collectionsStr(u"Collections"_s);
         if (kalarmConfig->hasGroup(collectionsStr)) {
             KConfigGroup group = kalarmConfig->group(collectionsStr);
-            const QString selectionKey(QStringLiteral("FavoriteCollectionIds"));
+            const QString selectionKey(u"FavoriteCollectionIds"_s);
             convertCollectionIdsToRealPath(group, selectionKey);
         }
 
@@ -130,7 +131,7 @@ void ExportAlarmJobInterface::backupConfig()
         delete kalarmConfig;
     }
 
-    backupUiRcFile(QStringLiteral("kalarmui.rc"), QStringLiteral("kalarm"));
+    backupUiRcFile(u"kalarmui.rc"_s, u"kalarm"_s);
 
     emitInfo(i18n("Config backup done."));
 }

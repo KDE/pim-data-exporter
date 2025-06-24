@@ -5,6 +5,8 @@
 */
 
 #include "importmailjobinterfacetestimpl.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "importmailfolderattributejobtestimpl.h"
 #include "mail/smtpmailtransport.h"
@@ -29,7 +31,7 @@ ImportMailJobInterfaceTestImpl::~ImportMailJobInterfaceTestImpl()
 {
 #ifdef REMOVE_TEMPORARY_DIRECTORIES
     QVERIFY(QDir(extractPath()).removeRecursively());
-    QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeMails()).removeRecursively());
+    QVERIFY(QDir(QDir::tempPath() + u'/' + Utils::storeMails()).removeRecursively());
 #endif
 }
 
@@ -73,8 +75,8 @@ void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)
     // qDebug() << " void ImportMailJobInterfaceTestImpl::importFilters(const QString &filename)" << filename << " extractpath " << extractPath();
     QFile f(filename);
     QDir dir(extractPath());
-    QVERIFY(dir.mkpath(QStringLiteral("config")));
-    QVERIFY(f.copy(extractPath() + QStringLiteral("/config/filters")));
+    QVERIFY(dir.mkpath(u"config"_s));
+    QVERIFY(f.copy(extractPath() + u"/config/filters"_s));
 }
 
 QString ImportMailJobInterfaceTestImpl::adaptResourcePath(const KSharedConfigPtr &resourceConfig, const QString &storedData)
@@ -100,21 +102,21 @@ void ImportMailJobInterfaceTestImpl::addNewIdentity(const QString &name, KConfig
     uint value = mIdentityUoid;
     mIdentityUoid++;
     identity.setUoid(value);
-    group.writeEntry(QStringLiteral("Name"), uniqueName);
+    group.writeEntry(u"Name"_s, uniqueName);
     group.sync();
 
-    KConfig config(extractPath() + QStringLiteral("/identities/emailidentities"));
+    KConfig config(extractPath() + u"/identities/emailidentities"_s);
 
     identity.readConfig(group);
 
     if (oldUid != -1) {
         mHashIdentity.insert(oldUid, identity.uoid());
         if (oldUid == defaultIdentities) {
-            KConfigGroup grpGeneral = config.group(QStringLiteral("General"));
+            KConfigGroup grpGeneral = config.group(u"General"_s);
             grpGeneral.writeEntry("Default Identity", identity.uoid());
         }
     }
-    KConfigGroup grp = config.group(QStringLiteral("Identity #%1").arg(value - 1));
+    KConfigGroup grp = config.group(u"Identity #%1"_s.arg(value - 1));
     identity.writeConfig(grp);
 }
 
@@ -123,10 +125,10 @@ QString ImportMailJobInterfaceTestImpl::uniqueIdentityName(const QString &name)
     QString newName(name);
     int i = 0;
 
-    const QStringList existingIdentityNames{QStringLiteral("identity1"), QStringLiteral("identity2")};
+    const QStringList existingIdentityNames{u"identity1"_s, u"identity2"_s};
 
     while (existingIdentityNames.contains(newName)) {
-        newName = QStringLiteral("%1_%2").arg(name).arg(i);
+        newName = u"%1_%2"_s.arg(name).arg(i);
         ++i;
     }
     return newName;
@@ -145,41 +147,41 @@ void ImportMailJobInterfaceTestImpl::importCustomMailTransport(const QString &id
 void ImportMailJobInterfaceTestImpl::importSmtpMailTransport(const SmtpMailTransport &smtpMailTransport, int defaultTransport, int transportId)
 {
     // qDebug() << " defaultTransport " << defaultTransport << " transportId " << transportId;
-    KConfig config(extractPath() + QStringLiteral("/config/mailtransports"));
+    KConfig config(extractPath() + u"/config/mailtransports"_s);
     const int transportValue = mMailTransportId;
     mMailTransportId++;
-    KConfigGroup grp = config.group(QStringLiteral("Transport %1").arg(transportValue));
+    KConfigGroup grp = config.group(u"Transport %1"_s.arg(transportValue));
 
     const auto name = smtpMailTransport.name();
-    grp.writeEntry(QStringLiteral("name"), name);
+    grp.writeEntry(u"name"_s, name);
     const auto host = smtpMailTransport.host();
-    grp.writeEntry(QStringLiteral("host"), host);
+    grp.writeEntry(u"host"_s, host);
     const auto port = smtpMailTransport.port();
-    grp.writeEntry(QStringLiteral("port"), port);
+    grp.writeEntry(u"port"_s, port);
     const auto userName = smtpMailTransport.userName();
-    grp.writeEntry(QStringLiteral("userName"), userName);
+    grp.writeEntry(u"userName"_s, userName);
     const auto precommand = smtpMailTransport.precommand();
-    grp.writeEntry(QStringLiteral("precommand"), precommand);
+    grp.writeEntry(u"precommand"_s, precommand);
     const auto requiresAuthentication = smtpMailTransport.requiresAuthentication();
-    grp.writeEntry(QStringLiteral("requiresAuthentication"), requiresAuthentication);
+    grp.writeEntry(u"requiresAuthentication"_s, requiresAuthentication);
     const auto specifyHostname = smtpMailTransport.specifyHostname();
-    grp.writeEntry(QStringLiteral("specifyHostname"), specifyHostname);
+    grp.writeEntry(u"specifyHostname"_s, specifyHostname);
     const auto localHostname = smtpMailTransport.localHostname();
-    grp.writeEntry(QStringLiteral("localHostname"), localHostname);
+    grp.writeEntry(u"localHostname"_s, localHostname);
     const auto specifySenderOverwriteAddress = smtpMailTransport.specifySenderOverwriteAddress();
-    grp.writeEntry(QStringLiteral("specifySenderOverwriteAddress"), specifySenderOverwriteAddress);
+    grp.writeEntry(u"specifySenderOverwriteAddress"_s, specifySenderOverwriteAddress);
     const auto storePassword = smtpMailTransport.storePassword();
-    grp.writeEntry(QStringLiteral("storePassword"), storePassword);
+    grp.writeEntry(u"storePassword"_s, storePassword);
     const auto senderOverwriteAddress = smtpMailTransport.senderOverwriteAddress();
-    grp.writeEntry(QStringLiteral("senderOverwriteAddress"), senderOverwriteAddress);
+    grp.writeEntry(u"senderOverwriteAddress"_s, senderOverwriteAddress);
     const auto encryption = smtpMailTransport.encryption();
-    grp.writeEntry(QStringLiteral("encryption"), encryption);
+    grp.writeEntry(u"encryption"_s, encryption);
     const auto authenticationType = smtpMailTransport.authenticationType();
-    grp.writeEntry(QStringLiteral("authenticationType"), authenticationType);
+    grp.writeEntry(u"authenticationType"_s, authenticationType);
 
     if (transportId == defaultTransport) {
-        KConfigGroup generalGrp = config.group(QStringLiteral("General"));
-        generalGrp.writeEntry(QStringLiteral("default-transport"), transportValue);
+        KConfigGroup generalGrp = config.group(u"General"_s);
+        generalGrp.writeEntry(u"default-transport"_s, transportValue);
     }
     mHashTransport.insert(transportId, transportValue);
 }
@@ -197,11 +199,11 @@ void ImportMailJobInterfaceTestImpl::importFolderAttributes()
     job->setExtractPath(extractPath());
     job->setExportInterface(this);
     connect(job, &ImportMailFolderAttributeJobTestImpl::successed, this, [this]() {
-        emitInfo(QStringLiteral("Backing up Folder Attributes done."));
+        emitInfo(u"Backing up Folder Attributes done."_s);
         Q_EMIT jobFinished();
     });
     connect(job, &ImportMailFolderAttributeJobTestImpl::failed, this, [this]() {
-        Q_EMIT error(QStringLiteral("Folder Attributes cannot be exported."));
+        Q_EMIT error(u"Folder Attributes cannot be exported."_s);
         Q_EMIT jobFinished();
     });
     job->start();

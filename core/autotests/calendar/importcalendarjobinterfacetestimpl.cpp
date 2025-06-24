@@ -5,6 +5,8 @@
 */
 
 #include "importcalendarjobinterfacetestimpl.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
 #include <QTest>
@@ -21,7 +23,7 @@ ImportCalendarJobInterfaceTestImpl::~ImportCalendarJobInterfaceTestImpl()
 {
     // Clean up temp repo
     QVERIFY(QDir(extractPath()).removeRecursively());
-    QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeCalendar()).removeRecursively());
+    QVERIFY(QDir(QDir::tempPath() + u'/' + Utils::storeCalendar()).removeRecursively());
 }
 
 Akonadi::Collection::Id ImportCalendarJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)

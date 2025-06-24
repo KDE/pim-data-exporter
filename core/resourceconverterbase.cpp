@@ -5,6 +5,8 @@
 */
 
 #include "resourceconverterbase.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "utils.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -25,8 +27,8 @@ QString ResourceConverterBase::adaptResourcePath(const KSharedConfigPtr &resourc
         QFileInfo fileInfo(newUrl);
         fileInfo.fileName();
         // qCDebug(PIMDATAEXPORTERCORE_LOG)<<" url "<<url.path();
-        QString currentPath = installDefaultDirectory() + QLatin1Char('/') + storedData;
-        newUrl = (currentPath + QLatin1Char('/') + fileInfo.fileName());
+        QString currentPath = installDefaultDirectory() + u'/' + storedData;
+        newUrl = (currentPath + u'/' + fileInfo.fileName());
         if (!QDir(currentPath).exists()) {
             if (!QDir().mkpath(currentPath)) {
                 qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to create subpath " << currentPath;
@@ -37,7 +39,7 @@ QString ResourceConverterBase::adaptResourcePath(const KSharedConfigPtr &resourc
         QString newFileName = newUrl;
         QFileInfo fileInfo(newFileName);
         for (int i = 0;; ++i) {
-            const QString currentPath = fileInfo.path() + QLatin1Char('/') + QString::number(i) + QLatin1Char('/');
+            const QString currentPath = fileInfo.path() + u'/' + QString::number(i) + u'/';
             newFileName = currentPath + fileInfo.fileName();
             if (!QFileInfo::exists(newFileName)) {
                 if (!QDir().mkpath(currentPath)) {
@@ -53,8 +55,8 @@ QString ResourceConverterBase::adaptResourcePath(const KSharedConfigPtr &resourc
 
 QString ResourceConverterBase::resourcePath(const KSharedConfigPtr &resourceConfig, const QString &defaultPath)
 {
-    KConfigGroup group = resourceConfig->group(QStringLiteral("General"));
-    QString url = group.readEntry(QStringLiteral("Path"), defaultPath);
+    KConfigGroup group = resourceConfig->group(u"General"_s);
+    QString url = group.readEntry(u"Path"_s, defaultPath);
     if (!url.isEmpty()) {
         url.replace(QLatin1StringView("$HOME"), QDir::homePath());
     }
@@ -64,8 +66,8 @@ QString ResourceConverterBase::resourcePath(const KSharedConfigPtr &resourceConf
 
 QString ResourceConverterBase::resourcePath(const QString &agentIdentifier, const QString &defaultPath)
 {
-    const QString agentFileName = agentIdentifier + QStringLiteral("rc");
-    const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
+    const QString agentFileName = agentIdentifier + u"rc"_s;
+    const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + agentFileName;
     // qDebug() << "configFileName " << configFileName;
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
@@ -115,7 +117,7 @@ void ResourceConverterBase::convertCollectionListToRealPath(KConfigGroup &group,
         } else {
             QStringList result;
             for (QString collection : listExpension) {
-                collection.remove(QLatin1Char('c'));
+                collection.remove(u'c');
                 bool found = false;
                 const qlonglong collectionValue = collection.toLongLong(&found);
                 if (found && collectionValue != -1) {
@@ -141,7 +143,7 @@ void ResourceConverterBase::convertCollectionToRealPath(KConfigGroup &group, con
         if (collectionId.isEmpty()) {
             group.deleteEntry(currentKey);
         } else {
-            collectionId.remove(QLatin1Char('c'));
+            collectionId.remove(u'c');
             bool found = false;
             const qlonglong collectionValue = collectionId.toLongLong(&found);
             if (found && collectionValue != -1) {
@@ -165,8 +167,8 @@ QString ResourceConverterBase::agentFileName(const QString &filename)
 
 QString ResourceConverterBase::storeResources(KZip *archive, const QString &identifier, const QString &path)
 {
-    const QString agentFileName = identifier + QStringLiteral("rc");
-    const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + agentFileName;
+    const QString agentFileName = identifier + u"rc"_s;
+    const QString configFileName = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + agentFileName;
     qCWarning(PIMDATAEXPORTERCORE_LOG) << "configFileName " << configFileName << "agentFileName " << configFileName;
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
@@ -175,14 +177,14 @@ QString ResourceConverterBase::storeResources(KZip *archive, const QString &iden
     KConfig *config = resourceConfig->copyTo(tmp.fileName());
 
     if (identifier.contains(POP3_RESOURCE_IDENTIFIER)) {
-        const QString targetCollection = QStringLiteral("targetCollection");
-        KConfigGroup group = config->group(QStringLiteral("General"));
+        const QString targetCollection = u"targetCollection"_s;
+        KConfigGroup group = config->group(u"General"_s);
         if (group.hasKey(targetCollection)) {
             group.writeEntry(targetCollection, convertToFullCollectionPath(group.readEntry(targetCollection).toLongLong()));
         }
     } else if (PimCommon::Util::isImapResource(identifier)) {
-        const QString trash = QStringLiteral("TrashCollection");
-        KConfigGroup group = config->group(QStringLiteral("cache"));
+        const QString trash = u"TrashCollection"_s;
+        KConfigGroup group = config->group(u"cache"_s);
         if (group.hasKey(trash)) {
             group.writeEntry(trash, convertToFullCollectionPath(group.readEntry(trash).toLongLong()));
         }

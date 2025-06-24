@@ -5,6 +5,8 @@
 */
 
 #include "showarchivestructuredialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/utils.h"
 #include "pimdataexportgui_debug.h"
 #include <KLocalizedString>
@@ -100,7 +102,7 @@ void ShowArchiveStructureDialog::slotOpenFile()
                 if (!mTempDir) {
                     mTempDir = new QTemporaryDir;
                 }
-                const QString fileName = mTempDir->path() + QLatin1Char('/') + currentItem->text(0);
+                const QString fileName = mTempDir->path() + u'/' + currentItem->text(0);
                 QFile f(fileName);
                 if (!f.open(QIODevice::WriteOnly)) {
                     qCWarning(PIMDATAEXPORTERGUI_LOG) << "Impossible to extract file: " << currentItem->text(0);
@@ -135,7 +137,7 @@ void ShowArchiveStructureDialog::slotExtractFile()
                                                                       QDir::homePath(),
                                                                       QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
                 if (!dir.isEmpty()) {
-                    if (QFile(dir + QLatin1Char('/') + currentFile->name()).exists()) {
+                    if (QFile(dir + u'/' + currentFile->name()).exists()) {
                         if (KMessageBox::questionTwoActions(this,
                                                             i18n("Do you want to overwrite %1?", currentFile->name()),
                                                             i18nc("@title:window", "File Already Exist"),
@@ -169,7 +171,7 @@ void ShowArchiveStructureDialog::slotItemClicked(QTreeWidgetItem *item, int colu
 void ShowArchiveStructureDialog::slotExportAsLogFile()
 {
     PimCommon::Util::saveTextAs(mLogFile,
-                                QStringLiteral("%1 (*.txt)").arg(i18nc("qfiledialog filter files text", "Text Files")),
+                                u"%1 (*.txt)"_s.arg(i18nc("qfiledialog filter files text", "Text Files")),
                                 this,
                                 QUrl(),
                                 i18nc("@title:window", "Export Log File"));
@@ -209,7 +211,7 @@ bool ShowArchiveStructureDialog::searchArchiveElement(const QString &path, const
     const KArchiveEntry *topEntry = topDirectory->entry(path);
     bool result = true;
     if (topEntry) {
-        mLogFile += name + QLatin1Char('\n');
+        mLogFile += name + u'\n';
         QTreeWidgetItem *item = addTopItem(name);
         addSubItems(path, item, topEntry, 0);
     } else {
@@ -226,7 +228,7 @@ void ShowArchiveStructureDialog::addSubItems(const QString &topLevelPath,
 {
     const auto dir = static_cast<const KArchiveDirectory *>(entry);
     ++indent;
-    const QString space = QString(indent * 2, QLatin1Char(' '));
+    const QString space = QString(indent * 2, u' ');
     const QStringList lst = dir->entries();
     for (const QString &entryName : lst) {
         const KArchiveEntry *archiveEntry = dir->entry(entryName);
@@ -236,15 +238,15 @@ void ShowArchiveStructureDialog::addSubItems(const QString &topLevelPath,
                 QTreeWidgetItem *newTopItem = addItem(parent, dirEntry->name(), QString());
                 QFont font(newTopItem->font(0));
                 font.setBold(true);
-                mLogFile += space + dirEntry->name() + QLatin1Char('\n');
+                mLogFile += space + dirEntry->name() + u'\n';
                 newTopItem->setFont(0, font);
-                addSubItems(topLevelPath, newTopItem, archiveEntry, indent, (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + dirEntry->name());
+                addSubItems(topLevelPath, newTopItem, archiveEntry, indent, (fullpath.isEmpty() ? QString() : fullpath + u'/') + dirEntry->name());
             } else if (archiveEntry->isFile()) {
                 const auto file = static_cast<const KArchiveFile *>(archiveEntry);
-                const QString fileFullPath = topLevelPath + (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + file->name();
+                const QString fileFullPath = topLevelPath + (fullpath.isEmpty() ? QString() : fullpath + u'/') + file->name();
                 // qDebug() << " fileFullPath " <<fileFullPath;
                 addItem(parent, file->name(), fileFullPath);
-                mLogFile += space + file->name() + QLatin1Char('\n');
+                mLogFile += space + file->name() + u'\n';
             }
         }
     }

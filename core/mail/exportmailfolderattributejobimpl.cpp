@@ -5,6 +5,8 @@
 */
 
 #include "exportmailfolderattributejobimpl.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "exportmailjobinterface.h"
 #include "pimdataexportcore_debug.h"
 #include <Akonadi/CollectionFetchJob>
@@ -28,7 +30,7 @@ void ExportMailFolderAttributeJobImpl::fetchAttributes()
     job->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
     job->fetchScope().fetchAttribute<Akonadi::FavoriteCollectionAttribute>();
     job->fetchScope().fetchAttribute<Akonadi::MessageFolderAttribute>();
-    job->fetchScope().setContentMimeTypes({QStringLiteral("message/rfc822")});
+    job->fetchScope().setContentMimeTypes({u"message/rfc822"_s});
     connect(job, &Akonadi::CollectionFetchJob::result, this, &ExportMailFolderAttributeJobImpl::slotFetchFinished);
 }
 

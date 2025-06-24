@@ -5,6 +5,8 @@
 */
 
 #include "generatelistfilefromarchive.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/utils.h"
 #include <KZip>
 #include <QTest>
@@ -63,7 +65,7 @@ bool GenerateListFileFromArchive::searchArchiveElement(const QString &path, cons
 void GenerateListFileFromArchive::addSubItems(const QString &topLevelPath, const KArchiveEntry *entry, int indent, const QString &fullpath)
 {
     const auto dir = static_cast<const KArchiveDirectory *>(entry);
-    const QString space = QString(indent * 2, QLatin1Char(' '));
+    const QString space = QString(indent * 2, u' ');
     const QStringList lst = dir->entries();
     for (const QString &entryName : lst) {
         const KArchiveEntry *archiveEntry = dir->entry(entryName);
@@ -71,10 +73,10 @@ void GenerateListFileFromArchive::addSubItems(const QString &topLevelPath, const
             if (archiveEntry->isDirectory()) {
                 const auto dirEntry = static_cast<const KArchiveDirectory *>(archiveEntry);
                 // mListFile += space + dirEntry->name();
-                addSubItems(topLevelPath, archiveEntry, indent, (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + dirEntry->name());
+                addSubItems(topLevelPath, archiveEntry, indent, (fullpath.isEmpty() ? QString() : fullpath + u'/') + dirEntry->name());
             } else if (archiveEntry->isFile()) {
                 const auto file = static_cast<const KArchiveFile *>(archiveEntry);
-                const QString fileFullPath = topLevelPath + (fullpath.isEmpty() ? QString() : fullpath + QLatin1Char('/')) + file->name();
+                const QString fileFullPath = topLevelPath + (fullpath.isEmpty() ? QString() : fullpath + u'/') + file->name();
                 mListFile += space + fileFullPath;
             }
         }

@@ -5,6 +5,8 @@
 */
 
 #include "importalarmjobinterfacetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "importalarmjobinterfacetestimpl.h"
 #include "testimportfile.h"
@@ -23,10 +25,10 @@ void ImportAlarmJobInterfaceTest::importAlarmConfig_data()
     QTest::addColumn<Utils::StoredTypes>("options");
     Utils::StoredTypes options = {Utils::StoredType::Config};
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("alarmonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/alarmonlyconfig/") << options;
+    QTest::newRow("alarmonlyconfig") << QString::fromLatin1(pathConfig) << u"/alarmonlyconfig/"_s << options;
     // TODO fix me
     //    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
-    //    QTest::newRow("alarmconfigresources") << QString::fromLatin1(pathConfig) << QStringLiteral("/alarmconfigresources/") << options;
+    //    QTest::newRow("alarmconfigresources") << QString::fromLatin1(pathConfig) << u"/alarmconfigresources/"_s << options;
 }
 
 void ImportAlarmJobInterfaceTest::importAlarmConfig()
@@ -43,7 +45,7 @@ void ImportAlarmJobInterfaceTest::importAlarmConfig()
     impl->setPathConfig(file->pathConfig());
     impl->setExtractPath(file->extractPath());
     impl->setTempDirName(file->extractPath());
-    impl->setExistingPathConfig(fullTestPath + QStringLiteral("/existingconfig/"));
+    impl->setExistingPathConfig(fullTestPath + u"/existingconfig/"_s);
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

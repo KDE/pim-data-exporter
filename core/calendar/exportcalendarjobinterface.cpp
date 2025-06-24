@@ -5,6 +5,7 @@
 */
 
 #include "exportcalendarjobinterface.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
@@ -42,7 +43,7 @@ void ExportCalendarJobInterface::slotWriteNextArchiveResource()
         const Utils::AkonadiInstanceInfo agent = mAkonadiInstanceInfo.at(mIndexIdentifier);
         const QString identifier = agent.identifier;
         if (identifier.contains(QLatin1StringView("akonadi_icaldir_resource_"))) {
-            const QString archivePath = Utils::calendarPath() + identifier + QLatin1Char('/');
+            const QString archivePath = Utils::calendarPath() + identifier + u'/';
 
             const QString url = resourcePath(identifier);
             if (!mAgentPaths.contains(url)) {
@@ -113,13 +114,13 @@ void ExportCalendarJobInterface::slotCheckBackupConfig()
 
 QString ExportCalendarJobInterface::applicationName() const
 {
-    return QStringLiteral("[Calendar]");
+    return u"[Calendar]"_s;
 }
 
 void ExportCalendarJobInterface::exportEventViewConfig()
 {
-    const QString eventviewsrcStr(QStringLiteral("eventviewsrc"));
-    const QString eventviewsrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + eventviewsrcStr;
+    const QString eventviewsrcStr(u"eventviewsrc"_s);
+    const QString eventviewsrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + eventviewsrcStr;
     if (QFileInfo::exists(eventviewsrc)) {
         KSharedConfigPtr eventviews = KSharedConfig::openConfig(eventviewsrc);
 
@@ -137,7 +138,7 @@ void ExportCalendarJobInterface::exportEventViewConfig()
 
 void ExportCalendarJobInterface::exportResourceColors(KConfig *config)
 {
-    const QString resourceColorStr(QStringLiteral("Resources Colors"));
+    const QString resourceColorStr(u"Resources Colors"_s);
     if (config->hasGroup(resourceColorStr)) {
         KConfigGroup group = config->group(resourceColorStr);
 
@@ -159,8 +160,8 @@ void ExportCalendarJobInterface::exportResourceColors(KConfig *config)
 
 void ExportCalendarJobInterface::exportKalendarConfig()
 {
-    const QString kalendarStr(QStringLiteral("kalendarrc"));
-    const QString kalendarrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + kalendarStr;
+    const QString kalendarStr(u"kalendarrc"_s);
+    const QString kalendarrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + kalendarStr;
     if (QFileInfo::exists(kalendarrc)) {
         KSharedConfigPtr kalendar = KSharedConfig::openConfig(kalendarrc);
 
@@ -169,10 +170,10 @@ void ExportCalendarJobInterface::exportKalendarConfig()
 
         KConfig *kalendarConfig = kalendar->copyTo(tmp.fileName());
 
-        const QString globalCollectionsStr(QStringLiteral("GlobalCollectionSelection"));
+        const QString globalCollectionsStr(u"GlobalCollectionSelection"_s);
         if (kalendarConfig->hasGroup(globalCollectionsStr)) {
             KConfigGroup group = kalendarConfig->group(globalCollectionsStr);
-            const QString selectionKey(QStringLiteral("Selection"));
+            const QString selectionKey(u"Selection"_s);
             convertCollectionListToRealPath(group, selectionKey);
             // Add Current
         }
@@ -186,8 +187,8 @@ void ExportCalendarJobInterface::exportKalendarConfig()
 
 void ExportCalendarJobInterface::exportKorganizerConfig()
 {
-    const QString korganizerStr(QStringLiteral("korganizerrc"));
-    const QString korganizerrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + korganizerStr;
+    const QString korganizerStr(u"korganizerrc"_s);
+    const QString korganizerrc = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/' + korganizerStr;
     if (QFileInfo::exists(korganizerrc)) {
         KSharedConfigPtr korganizer = KSharedConfig::openConfig(korganizerrc);
 
@@ -196,24 +197,24 @@ void ExportCalendarJobInterface::exportKorganizerConfig()
 
         KConfig *korganizerConfig = korganizer->copyTo(tmp.fileName());
 
-        const QString globalCollectionsStr(QStringLiteral("GlobalCollectionSelection"));
+        const QString globalCollectionsStr(u"GlobalCollectionSelection"_s);
         if (korganizerConfig->hasGroup(globalCollectionsStr)) {
             KConfigGroup group = korganizerConfig->group(globalCollectionsStr);
-            const QString selectionKey(QStringLiteral("Selection"));
+            const QString selectionKey(u"Selection"_s);
             convertCollectionListToRealPath(group, selectionKey);
         }
 
-        const QString collectionTreeViewStr(QStringLiteral("CollectionTreeView"));
+        const QString collectionTreeViewStr(u"CollectionTreeView"_s);
         if (korganizerConfig->hasGroup(collectionTreeViewStr)) {
             KConfigGroup group = korganizerConfig->group(collectionTreeViewStr);
-            const QString selectionKey(QStringLiteral("Expansion"));
+            const QString selectionKey(u"Expansion"_s);
             convertCollectionListToRealPath(group, selectionKey);
         }
 
-        const QString globalCollectionViewStr(QStringLiteral("GlobalCollectionView"));
+        const QString globalCollectionViewStr(u"GlobalCollectionView"_s);
         if (korganizerConfig->hasGroup(globalCollectionViewStr)) {
             KConfigGroup group = korganizerConfig->group(globalCollectionViewStr);
-            const QString selectionKey(QStringLiteral("Expansion"));
+            const QString selectionKey(u"Expansion"_s);
             convertCollectionListToRealPath(group, selectionKey);
         }
 
@@ -229,22 +230,22 @@ void ExportCalendarJobInterface::backupConfig()
 
     exportKorganizerConfig();
     exportEventViewConfig();
-    backupConfigFile(QStringLiteral("kalendaracrc"));
+    backupConfigFile(u"kalendaracrc"_s);
     exportKalendarConfig();
 
-    backupConfigFile(QStringLiteral("calendar_printing.rc"));
+    backupConfigFile(u"calendar_printing.rc"_s);
 
-    const QString freebusyurlsStr(QStringLiteral("korganizer/freebusyurls"));
-    const QString freebusyurls = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + freebusyurlsStr;
+    const QString freebusyurlsStr(u"korganizer/freebusyurls"_s);
+    const QString freebusyurls = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u'/' + freebusyurlsStr;
     if (QFileInfo::exists(freebusyurls)) {
         backupFile(freebusyurls, Utils::dataPath(), freebusyurlsStr);
     }
 
-    storeDirectory(QStringLiteral("/korganizer/templates/"));
-    storeDirectory(QStringLiteral("/korganizer/designer/"));
+    storeDirectory(u"/korganizer/templates/"_s);
+    storeDirectory(u"/korganizer/designer/"_s);
 
-    backupUiRcFile(QStringLiteral("korganizerui.rc"), QStringLiteral("korganizer"));
-    backupUiRcFile(QStringLiteral("korganizer_part.rc"), QStringLiteral("korganizer"));
+    backupUiRcFile(u"korganizerui.rc"_s, u"korganizer"_s);
+    backupUiRcFile(u"korganizer_part.rc"_s, u"korganizer"_s);
     emitInfo(i18n("Config backup done."));
 }
 

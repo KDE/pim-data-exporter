@@ -5,6 +5,8 @@
 */
 
 #include "compareimportfile.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "comparefilehelper.h"
 #include "generatelistfilefromarchive.h"
 #include "loadlistfromfile.h"
@@ -19,7 +21,7 @@ void CompareImportFile::compareFile()
     GenerateListFileFromArchive archive(mArchiveFilePath);
     // qDebug() << " archive " << archive.listFile();
 
-    LoadListFromFile f(mListFilePath + QStringLiteral("/list.txt"));
+    LoadListFromFile f(mListFilePath + u"/list.txt"_s);
     const QStringList archiveList = archive.listFile();
     const bool equal = (f.fileList() == archiveList);
     if (!equal) {
@@ -28,36 +30,36 @@ void CompareImportFile::compareFile()
     }
     QVERIFY(equal);
     for (QString file : archiveList) {
-        file.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
+        file.replace(u"configs/"_s, u"config/"_s);
         if (file == QLatin1StringView("information/exportdatatype.xml") || file == QLatin1StringView("information/VERSION_2")) {
             continue;
         }
         // TODO verify with qt6 path
-        const QString kxmguiPath{QStringLiteral("share/kxmlgui5/")};
-        file.replace(QStringLiteral("config/kleopatra.rc"), kxmguiPath + QStringLiteral("kleopatra/kleopatra.rc"));
-        file.replace(QStringLiteral("config/akonadiconsoleui.rc"), kxmguiPath + QStringLiteral("akonadiconsole/akonadiconsoleui.rc"));
-        file.replace(QStringLiteral("config/kmail_part.rc"), kxmguiPath + QStringLiteral("kmail2/kmail_part.rc"));
-        file.replace(QStringLiteral("config/kmcomposerui.rc"), kxmguiPath + QStringLiteral("kmail2/kmcomposerui.rc"));
-        file.replace(QStringLiteral("config/kmmainwin.rc"), kxmguiPath + QStringLiteral("kmail2/kmmainwin.rc"));
-        file.replace(QStringLiteral("config/kmreadermainwin.rc"), kxmguiPath + QStringLiteral("kmail2/kmmainwin.rc"));
-        file.replace(QStringLiteral("config/kontactsummary_part.rc"), kxmguiPath + QStringLiteral("kontactsummary/kontactsummary_part.rc"));
-        file.replace(QStringLiteral("config/kwatchgnupgui.rc"), kxmguiPath + QStringLiteral("kwatchgnupg/kwatchgnupgui.rc"));
-        if (file.endsWith(QLatin1StringView("ui.rc")) && !file.contains(QStringLiteral("kmcomposerui.rc"))
-            && !file.contains(QStringLiteral("akonadiconsoleui.rc")) && !file.contains(QStringLiteral("kwatchgnupgui.rc"))) {
+        const QString kxmguiPath{u"share/kxmlgui5/"_s};
+        file.replace(u"config/kleopatra.rc"_s, kxmguiPath + u"kleopatra/kleopatra.rc"_s);
+        file.replace(u"config/akonadiconsoleui.rc"_s, kxmguiPath + u"akonadiconsole/akonadiconsoleui.rc"_s);
+        file.replace(u"config/kmail_part.rc"_s, kxmguiPath + u"kmail2/kmail_part.rc"_s);
+        file.replace(u"config/kmcomposerui.rc"_s, kxmguiPath + u"kmail2/kmcomposerui.rc"_s);
+        file.replace(u"config/kmmainwin.rc"_s, kxmguiPath + u"kmail2/kmmainwin.rc"_s);
+        file.replace(u"config/kmreadermainwin.rc"_s, kxmguiPath + u"kmail2/kmmainwin.rc"_s);
+        file.replace(u"config/kontactsummary_part.rc"_s, kxmguiPath + u"kontactsummary/kontactsummary_part.rc"_s);
+        file.replace(u"config/kwatchgnupgui.rc"_s, kxmguiPath + u"kwatchgnupg/kwatchgnupgui.rc"_s);
+        if (file.endsWith(QLatin1StringView("ui.rc")) && !file.contains(u"kmcomposerui.rc"_s) && !file.contains(u"akonadiconsoleui.rc"_s)
+            && !file.contains(u"kwatchgnupgui.rc"_s)) {
             QString fileName = file;
-            fileName.remove(QStringLiteral("config/"));
+            fileName.remove(u"config/"_s);
             const QString fileuirc = fileName;
-            fileName.remove(QStringLiteral("ui.rc"));
-            file = kxmguiPath + fileName + QLatin1Char('/') + fileuirc;
+            fileName.remove(u"ui.rc"_s);
+            file = kxmguiPath + fileName + u'/' + fileuirc;
         }
 
-        // file.replace(QStringLiteral("identities/"), QStringLiteral("config/"));
-        file.replace(QStringLiteral("transports/"), QStringLiteral("config/"));
+        // file.replace(u"identities/"_s, u"config/"_s);
+        file.replace(u"transports/"_s, u"config/"_s);
         // Allow to remove some file from resources path
         if (file.startsWith(mExcludePath)) {
             continue;
         }
-        CompareFileHelper::compareFile(mListFilePath + QStringLiteral("/references/") + file, mInstallPath + QLatin1Char('/') + file);
+        CompareFileHelper::compareFile(mListFilePath + u"/references/"_s + file, mInstallPath + u'/' + file);
     }
 }
 

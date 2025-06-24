@@ -5,6 +5,8 @@
 */
 
 #include "exportakregatorjobinterface.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 #include <KZip>
 
@@ -63,7 +65,7 @@ ExportAkregatorJobInterface::createResource(const QString &resources, const QStr
 
 QString ExportAkregatorJobInterface::applicationName() const
 {
-    return QStringLiteral("[Akregator]");
+    return u"[Akregator]"_s;
 }
 
 void ExportAkregatorJobInterface::slotCheckBackupConfig()
@@ -71,10 +73,10 @@ void ExportAkregatorJobInterface::slotCheckBackupConfig()
     increaseProgressDialog();
     setProgressDialogLabel(i18n("Backing up config..."));
 
-    backupConfigFile(QStringLiteral("akregatorrc"));
-    backupUiRcFile(QStringLiteral("akregator_part.rc"), QStringLiteral("akregator"));
-    backupUiRcFile(QStringLiteral("akregator_shell.rc"), QStringLiteral("akregator"));
-    backupConfigFile(QStringLiteral("akregator.notifyrc"));
+    backupConfigFile(u"akregatorrc"_s);
+    backupUiRcFile(u"akregator_part.rc"_s, u"akregator"_s);
+    backupUiRcFile(u"akregator_shell.rc"_s, u"akregator"_s);
+    backupConfigFile(u"akregator.notifyrc"_s);
 
     emitInfo(i18n("Config backup done."));
     QTimer::singleShot(0, this, &ExportAkregatorJobInterface::slotCheckBackupData);
@@ -86,10 +88,10 @@ void ExportAkregatorJobInterface::slotCheckBackupData()
         increaseProgressDialog();
         setProgressDialogLabel(i18n("Backing up data..."));
 
-        const QString akregatorDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/akregator");
+        const QString akregatorDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/akregator"_s;
         QDir akregatorDirectory(akregatorDir);
         if (akregatorDirectory.exists()) {
-            const bool akregatorDirAdded = archive()->addLocalDirectory(akregatorDir, Utils::dataPath() + QStringLiteral("akregator"));
+            const bool akregatorDirAdded = archive()->addLocalDirectory(akregatorDir, Utils::dataPath() + u"akregator"_s);
             if (!akregatorDirAdded) {
                 Q_EMIT error(i18n("\"%1\" directory cannot be added to backup file.", akregatorDir));
             }

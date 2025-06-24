@@ -5,6 +5,7 @@
 */
 
 #include "backupfilestructureinfodialog.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <TextCustomEditor/PlainTextEditor>
 #include <TextCustomEditor/PlainTextEditorWidget>
@@ -58,7 +59,7 @@ BackupFileStructureInfoDialog::~BackupFileStructureInfoDialog()
 
 void BackupFileStructureInfoDialog::loadStructure()
 {
-    QFile f(QStringLiteral(":/structure/backup-structure.txt"));
+    QFile f(u":/structure/backup-structure.txt"_s);
     if (!f.open(QIODevice::ReadOnly)) {
         KMessageBox::error(this, i18n("backup-structure.txt file was not found."));
         return;

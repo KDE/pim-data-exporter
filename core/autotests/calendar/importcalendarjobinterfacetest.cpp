@@ -5,6 +5,8 @@
 */
 
 #include "importcalendarjobinterfacetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "importcalendarjobinterfacetestimpl.h"
 #include "testimportfile.h"
@@ -24,13 +26,13 @@ void ImportCalendarJobInterfaceTest::importCalendar_data()
     Utils::StoredTypes options = {Utils::StoredType::Config};
 
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
-    QTest::newRow("calendaronlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/calendaronlyconfig/") << options;
+    QTest::newRow("calendaronlyconfig") << QString::fromLatin1(pathConfig) << u"/calendaronlyconfig/"_s << options;
 
     options = {Utils::StoredType::Config | Utils::StoredType::Resources};
-    QTest::newRow("calendarconfigandresource") << QString::fromLatin1(pathConfig) << QStringLiteral("/calendarconfigandresource/") << options;
+    QTest::newRow("calendarconfigandresource") << QString::fromLatin1(pathConfig) << u"/calendarconfigandresource/"_s << options;
 
     options = {Utils::StoredType::Config | Utils::StoredType::Resources};
-    QTest::newRow("calendarconfigandresourceskalendar") << QString::fromLatin1(pathConfig) << QStringLiteral("/calendarconfigandresourceskalendar/") << options;
+    QTest::newRow("calendarconfigandresourceskalendar") << QString::fromLatin1(pathConfig) << u"/calendarconfigandresourceskalendar/"_s << options;
 }
 
 void ImportCalendarJobInterfaceTest::importCalendar()
@@ -48,7 +50,7 @@ void ImportCalendarJobInterfaceTest::importCalendar()
     impl->setPathConfig(file->pathConfig());
     impl->setExtractPath(file->extractPath());
     impl->setTempDirName(file->extractPath());
-    impl->setExistingPathConfig(fullTestPath + QStringLiteral("/existingconfig/"));
+    impl->setExistingPathConfig(fullTestPath + u"/existingconfig/"_s);
     file->setAbstractImportExportJob(impl);
     file->setLoggingFilePath(impl->loggingFilePath());
     file->start();

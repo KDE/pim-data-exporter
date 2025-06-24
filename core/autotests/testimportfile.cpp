@@ -5,6 +5,8 @@
 */
 
 #include "testimportfile.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "abstractimportexportjob.h"
 #include "archivestorage.h"
 #include "compareimportfile.h"
@@ -17,7 +19,7 @@
 
 TestImportFile::TestImportFile(const QString &archivePath, QObject *parent)
     : QObject(parent)
-    , mArchivePath(archivePath + QStringLiteral("archive.zip"))
+    , mArchivePath(archivePath + u"archive.zip"_s)
 {
     mArchiveStorage = new ArchiveStorage(mArchivePath, this);
     const bool archiveOpened = mArchiveStorage->openArchive(false);

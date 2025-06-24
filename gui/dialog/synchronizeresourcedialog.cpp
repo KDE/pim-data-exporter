@@ -5,6 +5,8 @@
 */
 
 #include "synchronizeresourcedialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KListWidgetSearchLine>
 #include <KLocalizedString>
 

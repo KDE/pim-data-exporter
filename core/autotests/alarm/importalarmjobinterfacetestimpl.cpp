@@ -5,6 +5,8 @@
 */
 
 #include "importalarmjobinterfacetestimpl.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "resourceconvertertest.h"
 
@@ -23,7 +25,7 @@ ImportAlarmJobInterfaceTestImpl::~ImportAlarmJobInterfaceTestImpl()
 {
     // Clean up temp repo
     QVERIFY(QDir(extractPath()).removeRecursively());
-    QVERIFY(QDir(QDir::tempPath() + QLatin1Char('/') + Utils::storeAlarm()).removeRecursively());
+    QVERIFY(QDir(QDir::tempPath() + u'/' + Utils::storeAlarm()).removeRecursively());
 }
 
 Akonadi::Collection::Id ImportAlarmJobInterfaceTestImpl::convertFolderPathToCollectionId(const QString &path)

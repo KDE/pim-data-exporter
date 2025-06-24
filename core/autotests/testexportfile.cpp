@@ -5,6 +5,8 @@
 */
 
 #include "testexportfile.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "abstractimportexportjob.h"
 #include "archivestorage.h"
 #include "compareexportfile.h"
@@ -18,7 +20,7 @@
 
 TestExportFile::TestExportFile(QObject *parent)
     : QObject(parent)
-    , mTemporaryFile(QDir::tempPath() + QStringLiteral("/archive.zip"))
+    , mTemporaryFile(QDir::tempPath() + u"/archive.zip"_s)
 {
     mArchiveStorage = new ArchiveStorage(mTemporaryFile, this);
     Q_ASSERT(mArchiveStorage->openArchive(true));

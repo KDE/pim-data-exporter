@@ -4,6 +4,8 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "loginfo.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QDebug>
 
 LogInfo::LogInfo(QObject *parent)
@@ -38,13 +40,13 @@ void LogInfo::addLogLine(const QString &message, LogType type)
     QString newMessage;
     switch (type) {
     case AddEndLine:
-        newMessage = QLatin1Char('\n');
+        newMessage = u'\n';
         break;
     case AddInfo:
-        newMessage = QStringLiteral("INFO: %1").arg(message);
+        newMessage = u"INFO: %1"_s.arg(message);
         break;
     case AddError:
-        newMessage = QStringLiteral("ERROR: %1").arg(message);
+        newMessage = u"ERROR: %1"_s.arg(message);
         break;
     case AddTitle:
         newMessage = message;

@@ -5,6 +5,8 @@
 */
 
 #include "resourceconverterclasstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../utils.h"
 #include "resourceconvertertest.h"
 #include <QTest>
@@ -18,8 +20,8 @@ ResourceConverterClassTest::ResourceConverterClassTest(QObject *parent)
 void ResourceConverterClassTest::shouldGetAgentFileName()
 {
     ResourceConverterTest w;
-    const QString filename = Utils::resourcesPath() + QStringLiteral("akonadi_imap_resource_0rc");
-    QCOMPARE(w.agentFileName(filename), QStringLiteral("resources/agent_config_akonadi_imap_resource_0"));
+    const QString filename = Utils::resourcesPath() + u"akonadi_imap_resource_0rc"_s;
+    QCOMPARE(w.agentFileName(filename), u"resources/agent_config_akonadi_imap_resource_0"_s);
 }
 
 #include "moc_resourceconverterclasstest.cpp"

@@ -5,6 +5,7 @@
 */
 
 #include "comparefilehelper.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QProcess>
 #include <QTest>
@@ -14,10 +15,10 @@ void CompareFileHelper::compareFile(const QString &referenceFile, const QString 
     QProcess proc;
     // qDebug() << "referenceFile " << referenceFile << " archiveFile " << archiveFile;
 #ifdef _WIN32
-    QStringList args = QStringList() << QStringLiteral("Compare-Object") << QString(QStringLiteral("(Get-Content %1)")).arg(referenceFile)
-                                     << QString(QStringLiteral("(Get-Content %1)")).arg(archiveFile);
+    QStringList args = QStringList() << u"Compare-Object"_s << QString(u"(Get-Content %1)"_s).arg(referenceFile)
+                                     << QString(u"(Get-Content %1)"_s).arg(archiveFile);
 
-    proc.start(QStringLiteral("powershell"), args);
+    proc.start(u"powershell"_s, args);
     QVERIFY(proc.waitForFinished());
 
     auto pStdOut = proc.readAllStandardOutput();
@@ -28,10 +29,10 @@ void CompareFileHelper::compareFile(const QString &referenceFile, const QString 
     QCOMPARE(pStdOut.size(), 0);
 #else
     // compare to reference file
-    QStringList args = QStringList() << QStringLiteral("-u") << referenceFile << archiveFile;
+    QStringList args = QStringList() << u"-u"_s << referenceFile << archiveFile;
 
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
-    proc.start(QStringLiteral("diff"), args);
+    proc.start(u"diff"_s, args);
     QVERIFY(proc.waitForFinished());
     QCOMPARE(proc.exitCode(), 0);
 #endif

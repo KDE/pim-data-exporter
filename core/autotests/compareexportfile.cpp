@@ -5,6 +5,8 @@
 */
 
 #include "compareexportfile.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "comparefilehelper.h"
 #include "generatelistfilefromarchive.h"
 #include "loadlistfromfile.h"
@@ -29,7 +31,7 @@ void CompareExportFile::compareFiles()
     GenerateListFileFromArchive archive(mTempFilePath);
     // qDebug() << " archive " << archive.listFile();
 
-    LoadListFromFile f(mListFilePath + QStringLiteral("/list.txt"));
+    LoadListFromFile f(mListFilePath + u"/list.txt"_s);
     const QStringList archiveList = archive.listFile();
     const bool equal = (f.fileList() == archiveList);
     if (!equal) {
@@ -60,8 +62,8 @@ void CompareExportFile::compareFiles()
 
             QString adaptFile = file;
             // We store in zip as configs, but we extract in config/
-            adaptFile.replace(QStringLiteral("configs/"), QStringLiteral("config/"));
-            const QString fileName = mTempDir->path() + QLatin1Char('/') + adaptFile;
+            adaptFile.replace(u"configs/"_s, u"config/"_s);
+            const QString fileName = mTempDir->path() + u'/' + adaptFile;
             // create path
             const QFileInfo fileInfo(fileName);
             QDir().mkpath(fileInfo.dir().path());
@@ -75,7 +77,7 @@ void CompareExportFile::compareFiles()
             QCOMPARE(newFile.write(data), data.length());
             newFile.close();
 
-            CompareFileHelper::compareFile(mListFilePath + QStringLiteral("/references/") + adaptFile, fileName);
+            CompareFileHelper::compareFile(mListFilePath + u"/references/"_s + adaptFile, fileName);
         }
     }
 }

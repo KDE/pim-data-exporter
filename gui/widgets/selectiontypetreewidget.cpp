@@ -5,6 +5,8 @@
 */
 
 #include "selectiontypetreewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/utils.h"
 #include "core/xml/templateselection.h"
 
@@ -270,9 +272,9 @@ void SelectionTypeTreeWidget::loadFileName(const QString &fileName)
 void SelectionTypeTreeWidget::loadDefaultTemplate()
 {
     // Keep old name for compatibility
-    QString ret = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/pimsettingexporter/defaulttemplate.xml"));
+    QString ret = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"/pimsettingexporter/defaulttemplate.xml"_s);
     if (ret.isEmpty()) {
-        ret = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/pimdataexporter/defaulttemplate.xml"));
+        ret = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"/pimdataexporter/defaulttemplate.xml"_s);
     }
     if (!ret.isEmpty()) {
         loadFileName(ret);
@@ -282,7 +284,7 @@ void SelectionTypeTreeWidget::loadDefaultTemplate()
 void SelectionTypeTreeWidget::loadTemplate(const QString &fileName)
 {
     if (fileName.isEmpty()) {
-        QPointer<QFileDialog> dlg = new QFileDialog(this, QString(), QString(), QStringLiteral("*.xml"));
+        QPointer<QFileDialog> dlg = new QFileDialog(this, QString(), QString(), u"*.xml"_s);
         dlg->setFileMode(QFileDialog::ExistingFile);
         if (dlg->exec()) {
             const QStringList file = dlg->selectedFiles();
@@ -318,10 +320,10 @@ QString SelectionTypeTreeWidget::templateSelectionToString()
 void SelectionTypeTreeWidget::saveAsDefaultTemplate()
 {
     const QString templateStr = templateSelectionToString();
-    const QString ret = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/pimdataexporter/");
+    const QString ret = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/pimdataexporter/"_s;
     QDir().mkpath(ret);
 
-    if (!PimCommon::Util::saveToFile(ret + QStringLiteral("defaulttemplate.xml"), templateStr)) {
+    if (!PimCommon::Util::saveToFile(ret + u"defaulttemplate.xml"_s, templateStr)) {
         qWarning() << "Impossible to save as defaulttemplate.xml";
     }
 }

@@ -4,53 +4,55 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "smtpmailtransport.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "pimdataexportcore_debug.h"
 #include <MailTransport/TransportManager>
 
 SmtpMailTransport::SmtpMailTransport(const KConfigGroup &group)
 {
-    setName(group.readEntry(QStringLiteral("name")));
-    const QString hostStr(QStringLiteral("host"));
+    setName(group.readEntry(u"name"_s));
+    const QString hostStr(u"host"_s);
     if (group.hasKey(hostStr)) {
         setHost(group.readEntry(hostStr));
     }
-    const QString portStr(QStringLiteral("port"));
+    const QString portStr(u"port"_s);
     if (group.hasKey(portStr)) {
         setPort(group.readEntry(portStr, -1));
     }
-    const QString userNameStr(QStringLiteral("user"));
+    const QString userNameStr(u"user"_s);
     if (group.hasKey(userNameStr)) {
         setUserName(group.readEntry(userNameStr));
     }
-    const QString precommandStr(QStringLiteral("precommand"));
+    const QString precommandStr(u"precommand"_s);
     if (group.hasKey(precommandStr)) {
         setPrecommand(group.readEntry(precommandStr));
     }
-    const QString requiresAuthenticationStr(QStringLiteral("auth"));
+    const QString requiresAuthenticationStr(u"auth"_s);
     if (group.hasKey(requiresAuthenticationStr)) {
         setRequiresAuthentication(group.readEntry(requiresAuthenticationStr, false));
     }
-    const QString specifyHostnameStr(QStringLiteral("specifyHostname"));
+    const QString specifyHostnameStr(u"specifyHostname"_s);
     if (group.hasKey(specifyHostnameStr)) {
         setSpecifyHostname(group.readEntry(specifyHostnameStr, false));
     }
-    const QString localHostnameStr(QStringLiteral("localHostname"));
+    const QString localHostnameStr(u"localHostname"_s);
     if (group.hasKey(localHostnameStr)) {
         setLocalHostname(group.readEntry(localHostnameStr));
     }
-    const QString specifySenderOverwriteAddressStr(QStringLiteral("specifySenderOverwriteAddress"));
+    const QString specifySenderOverwriteAddressStr(u"specifySenderOverwriteAddress"_s);
     if (group.hasKey(specifySenderOverwriteAddressStr)) {
         setSpecifySenderOverwriteAddress(group.readEntry(specifySenderOverwriteAddressStr, false));
     }
-    const QString storePasswordStr(QStringLiteral("storepass"));
+    const QString storePasswordStr(u"storepass"_s);
     if (group.hasKey(storePasswordStr)) {
         setStorePassword(group.readEntry(storePasswordStr, false));
     }
-    const QString senderOverwriteAddressStr(QStringLiteral("senderOverwriteAddress"));
+    const QString senderOverwriteAddressStr(u"senderOverwriteAddress"_s);
     if (group.hasKey(senderOverwriteAddressStr)) {
         setSenderOverwriteAddress(group.readEntry(senderOverwriteAddressStr));
     }
-    const QString encryptionStr(QStringLiteral("encryption"));
+    const QString encryptionStr(u"encryption"_s);
     if (group.hasKey(encryptionStr)) {
         const QString encryptionType = group.readEntry(encryptionStr, QString());
         if (!encryptionType.isEmpty()) {
@@ -68,7 +70,7 @@ SmtpMailTransport::SmtpMailTransport(const KConfigGroup &group)
         }
         setEncryption(group.readEntry(encryptionStr, 1)); // TODO verify
     }
-    const QString authenticationTypeStr(QStringLiteral("authtype"));
+    const QString authenticationTypeStr(u"authtype"_s);
     if (group.hasKey(authenticationTypeStr)) {
         setAuthenticationType(group.readEntry(authenticationTypeStr, 1)); // TODO verify
     }

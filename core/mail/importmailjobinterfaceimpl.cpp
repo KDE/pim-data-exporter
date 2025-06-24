@@ -5,6 +5,8 @@
 */
 
 #include "importmailjobinterfaceimpl.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "resourceconverterimpl.h"
 #include "smtpmailtransport.h"
@@ -26,7 +28,7 @@ ImportMailJobInterfaceImpl::~ImportMailJobInterfaceImpl() = default;
 
 QString ImportMailJobInterfaceImpl::configLocation() const
 {
-    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/');
+    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + u'/';
 }
 
 void ImportMailJobInterfaceImpl::importFolderAttributes()
@@ -105,7 +107,7 @@ void ImportMailJobInterfaceImpl::addNewIdentity(const QString &name, KConfigGrou
 {
     const QString uniqueName = uniqueIdentityName(name);
     KIdentityManagementCore::Identity *identity = &mIdentityManager->newFromScratch(uniqueName);
-    group.writeEntry(QStringLiteral("Identity"), uniqueName);
+    group.writeEntry(u"Identity"_s, uniqueName);
     group.sync();
 
     identity->readConfig(group);
@@ -124,7 +126,7 @@ QString ImportMailJobInterfaceImpl::uniqueIdentityName(const QString &name)
     QString newName(name);
     int i = 1;
     while (!mIdentityManager->isUnique(newName)) {
-        newName = QStringLiteral("%1_%2").arg(name).arg(i);
+        newName = u"%1_%2"_s.arg(name).arg(i);
         ++i;
     }
     return newName;
@@ -135,8 +137,8 @@ void ImportMailJobInterfaceImpl::importCustomMailTransport(const QString &identi
     if (!identifierValue.isEmpty()) {
         if (identifierValue == QLatin1StringView("sendmail") || identifierValue == QLatin1StringView("akonadi_ewsmta_resource")) {
             MailTransport::Transport *mt = MailTransport::TransportManager::self()->createTransport();
-            mt->setName(group.readEntry(QStringLiteral("name")));
-            const QString hostStr(QStringLiteral("host"));
+            mt->setName(group.readEntry(u"name"_s));
+            const QString hostStr(u"host"_s);
             if (group.hasKey(hostStr)) {
                 mt->setHost(group.readEntry(hostStr));
             }

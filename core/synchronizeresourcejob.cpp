@@ -5,6 +5,7 @@
 */
 
 #include "synchronizeresourcejob.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <Akonadi/AgentInstance>
 #include <Akonadi/AgentManager>

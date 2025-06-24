@@ -5,6 +5,8 @@
 */
 
 #include "pimdataexporterwindow.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "config-pimdataexporter.h"
 #include "dialog/showarchivestructuredialog.h"
 #include "importexportprogressindicatorgui.h"
@@ -92,7 +94,7 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     CommonKernel->registerSettingsIf(kernel); // SettingsIf is used in FolderTreeWidget
 
     setupActions(true);
-    setupGUI(Keys | StatusBar | Save | Create, QStringLiteral("pimdataexporter.rc"));
+    setupGUI(Keys | StatusBar | Save | Create, u"pimdataexporter.rc"_s);
 
     auto mainWidget = new QWidget(this);
     auto mainWidgetLayout = new QVBoxLayout(mainWidget);
@@ -216,21 +218,21 @@ void PimDataExporterWindow::showFinishInformation()
                              i18n("For restoring data, you must use \"pimdataexporter\". "
                                   "Be careful as it can overwrite your existing settings and data."),
                              i18nc("@title:window", "Backup"),
-                             QStringLiteral("setProgressDialogLabelBackupInfos"));
+                             u"setProgressDialogLabelBackupInfos"_s);
     mTrayIcon->setStatus(KStatusNotifierItem::Passive);
 }
 
 void PimDataExporterWindow::handleCommandLine(const QCommandLineParser &parser)
 {
     QString templateFile;
-    if (parser.isSet(QStringLiteral("template"))) {
-        templateFile = parser.value(QStringLiteral("template"));
+    if (parser.isSet(u"template"_s)) {
+        templateFile = parser.value(u"template"_s);
     }
-    if (parser.isSet(QStringLiteral("import"))) {
+    if (parser.isSet(u"import"_s)) {
         if (!parser.positionalArguments().isEmpty()) {
             loadData(parser.positionalArguments().at(0), templateFile);
         }
-    } else if (parser.isSet(QStringLiteral("export"))) {
+    } else if (parser.isSet(u"export"_s)) {
         if (!parser.positionalArguments().isEmpty()) {
             backupData(parser.positionalArguments().at(0), templateFile);
         }
@@ -241,33 +243,33 @@ void PimDataExporterWindow::setupActions(bool canZipFile)
 {
     KActionCollection *ac = actionCollection();
 
-    mBackupAction = ac->addAction(QStringLiteral("backup"), this, &PimDataExporterWindow::slotBackupData);
+    mBackupAction = ac->addAction(u"backup"_s, this, &PimDataExporterWindow::slotBackupData);
     mBackupAction->setText(i18n("Export Data..."));
-    mBackupAction->setIcon(QIcon::fromTheme(QStringLiteral("document-export")));
+    mBackupAction->setIcon(QIcon::fromTheme(u"document-export"_s));
     mBackupAction->setEnabled(canZipFile);
 
-    mRestoreAction = ac->addAction(QStringLiteral("restore"), this, &PimDataExporterWindow::slotRestoreData);
+    mRestoreAction = ac->addAction(u"restore"_s, this, &PimDataExporterWindow::slotRestoreData);
     mRestoreAction->setText(i18n("Import Data..."));
-    mRestoreAction->setIcon(QIcon::fromTheme(QStringLiteral("document-import")));
+    mRestoreAction->setIcon(QIcon::fromTheme(u"document-import"_s));
     mRestoreAction->setEnabled(canZipFile);
 
-    mSaveLogAction = ac->addAction(QStringLiteral("save_log"), this, &PimDataExporterWindow::slotSaveLog);
+    mSaveLogAction = ac->addAction(u"save_log"_s, this, &PimDataExporterWindow::slotSaveLog);
     mSaveLogAction->setText(i18n("Save log..."));
 
-    mArchiveStructureInfo = ac->addAction(QStringLiteral("show_structure_info"), this, &PimDataExporterWindow::slotShowStructureInfos);
+    mArchiveStructureInfo = ac->addAction(u"show_structure_info"_s, this, &PimDataExporterWindow::slotShowStructureInfos);
     mArchiveStructureInfo->setText(i18n("Show Archive Structure Information..."));
 
-    mShowArchiveInformationsAction = ac->addAction(QStringLiteral("show_archive_info"), this, &PimDataExporterWindow::slotShowArchiveInformations);
+    mShowArchiveInformationsAction = ac->addAction(u"show_archive_info"_s, this, &PimDataExporterWindow::slotShowArchiveInformations);
     mShowArchiveInformationsAction->setText(i18n("Show Archive Information..."));
 
     mShowArchiveInformationsAboutCurrentArchiveAction =
-        ac->addAction(QStringLiteral("show_current_archive_info"), this, &PimDataExporterWindow::slotShowCurrentArchiveInformations);
+        ac->addAction(u"show_current_archive_info"_s, this, &PimDataExporterWindow::slotShowCurrentArchiveInformations);
     mShowArchiveInformationsAboutCurrentArchiveAction->setText(i18n("Show Information on current Archive..."));
     mShowArchiveInformationsAboutCurrentArchiveAction->setEnabled(false);
 
     KStandardActions::quit(this, &PimDataExporterWindow::close, ac);
     mRecentFilesMenu = new KRecentFilesMenu(this);
-    actionCollection()->addAction(QStringLiteral("pimdataexporter_file_open_recent"), mRecentFilesMenu->menuAction());
+    actionCollection()->addAction(u"pimdataexporter_file_open_recent"_s, mRecentFilesMenu->menuAction());
     connect(mRecentFilesMenu, &KRecentFilesMenu::urlTriggered, this, &PimDataExporterWindow::slotRestoreFile);
 
     KStandardActions::preferences(this, &PimDataExporterWindow::slotConfigure, ac);
@@ -299,8 +301,7 @@ void PimDataExporterWindow::slotRestoreFile(const QUrl &url)
 
 void PimDataExporterWindow::slotShowArchiveInformations()
 {
-    const QString filename =
-        QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select Archive"), QString(), QStringLiteral("%1 (*.zip)").arg(i18n("Zip file")));
+    const QString filename = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Select Archive"), QString(), u"%1 (*.zip)"_s.arg(i18n("Zip file")));
     if (filename.isEmpty()) {
         return;
     }
@@ -343,11 +344,10 @@ void PimDataExporterWindow::backupData(const QString &filename, const QString &t
 
         if (currentFileName.isEmpty()) {
             QString recentDirClass;
-            currentFileName =
-                QFileDialog::getSaveFileName(this,
-                                             i18n("Create backup"),
-                                             KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimsettingexporter")), recentDirClass).toLocalFile(),
-                                             i18n("Zip file (*.zip)"));
+            currentFileName = QFileDialog::getSaveFileName(this,
+                                                           i18n("Create backup"),
+                                                           KFileWidget::getStartUrl(QUrl(u"kfiledialog:///pimsettingexporter"_s), recentDirClass).toLocalFile(),
+                                                           i18n("Zip file (*.zip)"));
             if (currentFileName.isEmpty()) {
                 return;
             }
@@ -411,11 +411,10 @@ void PimDataExporterWindow::loadData(const QString &filename, const QString &tem
     QString currentFileName = filename;
     if (currentFileName.isEmpty()) {
         QString recentDirClass;
-        currentFileName =
-            QFileDialog::getOpenFileName(this,
-                                         i18n("Restore backup"),
-                                         KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///pimdataexporter")), recentDirClass).toLocalFile(),
-                                         QStringLiteral("%1 (*.zip)").arg(i18n("Zip File")));
+        currentFileName = QFileDialog::getOpenFileName(this,
+                                                       i18n("Restore backup"),
+                                                       KFileWidget::getStartUrl(QUrl(u"kfiledialog:///pimdataexporter"_s), recentDirClass).toLocalFile(),
+                                                       u"%1 (*.zip)"_s.arg(i18n("Zip File")));
         if (currentFileName.isEmpty()) {
             return;
         }

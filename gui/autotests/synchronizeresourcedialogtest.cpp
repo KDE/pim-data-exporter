@@ -5,6 +5,8 @@
 */
 
 #include "synchronizeresourcedialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../dialog/synchronizeresourcedialog.h"
 #include <KListWidgetSearchLine>
 #include <QDialogButtonBox>
@@ -26,23 +28,23 @@ SynchronizeResourceDialogTest::~SynchronizeResourceDialogTest() = default;
 void SynchronizeResourceDialogTest::shouldHaveDefaultValue()
 {
     SynchronizeResourceDialog dlg;
-    auto buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    auto buttonBox = dlg.findChild<QDialogButtonBox *>(u"buttonbox"_s);
     QVERIFY(buttonBox);
 
-    auto listWidget = dlg.findChild<QListWidget *>(QStringLiteral("listresourcewidget"));
+    auto listWidget = dlg.findChild<QListWidget *>(u"listresourcewidget"_s);
     QVERIFY(listWidget);
 
-    auto searchLine = dlg.findChild<KListWidgetSearchLine *>(QStringLiteral("listwidgetsearchline"));
+    auto searchLine = dlg.findChild<KListWidgetSearchLine *>(u"listwidgetsearchline"_s);
     QVERIFY(searchLine);
 
-    auto label = dlg.findChild<QLabel *>(QStringLiteral("label"));
+    auto label = dlg.findChild<QLabel *>(u"label"_s);
     QVERIFY(label);
     QVERIFY(label->wordWrap());
 
-    auto selectAll = dlg.findChild<QPushButton *>(QStringLiteral("selectall_button"));
+    auto selectAll = dlg.findChild<QPushButton *>(u"selectall_button"_s);
     QVERIFY(selectAll);
 
-    auto unselectAll = dlg.findChild<QPushButton *>(QStringLiteral("unselectall_button"));
+    auto unselectAll = dlg.findChild<QPushButton *>(u"unselectall_button"_s);
     QVERIFY(unselectAll);
 
     QVERIFY(dlg.resources().isEmpty());
@@ -51,10 +53,10 @@ void SynchronizeResourceDialogTest::shouldHaveDefaultValue()
 void SynchronizeResourceDialogTest::shouldNotEmptyList()
 {
     SynchronizeResourceDialog dlg;
-    auto listWidget = dlg.findChild<QListWidget *>(QStringLiteral("listresourcewidget"));
+    auto listWidget = dlg.findChild<QListWidget *>(u"listresourcewidget"_s);
     QHash<QString, QString> lst;
-    lst.insert(QStringLiteral("foo"), QStringLiteral("foo"));
-    lst.insert(QStringLiteral("faa"), QStringLiteral("faa"));
+    lst.insert(u"foo"_s, u"foo"_s);
+    lst.insert(u"faa"_s, u"faa"_s);
     dlg.setResources(lst);
     QCOMPARE(dlg.resources().count(), 0);
     QCOMPARE(listWidget->count(), lst.count());

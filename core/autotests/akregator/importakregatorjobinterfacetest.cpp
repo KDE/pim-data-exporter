@@ -5,6 +5,8 @@
 */
 
 #include "importakregatorjobinterfacetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "archivestorage.h"
 #include "importakregatorjobinterfacetestimpl.h"
 #include "testimportfile.h"
@@ -23,9 +25,9 @@ void ImportAkregatorJobInterfaceTest::importAkegator_data()
     QTest::addColumn<Utils::StoredTypes>("options");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
     Utils::StoredTypes options = {Utils::StoredType::Config};
-    QTest::newRow("test1") << QString::fromLatin1(pathConfig) << QStringLiteral("/akregatorconfig/") << options;
+    QTest::newRow("test1") << QString::fromLatin1(pathConfig) << u"/akregatorconfig/"_s << options;
     options = {Utils::StoredType::Config | Utils::StoredType::Resources};
-    QTest::newRow("test1resource") << QString::fromLatin1(pathConfig) << QStringLiteral("/akregatorresource/") << options;
+    QTest::newRow("test1resource") << QString::fromLatin1(pathConfig) << u"/akregatorresource/"_s << options;
 }
 
 void ImportAkregatorJobInterfaceTest::importAkegator()

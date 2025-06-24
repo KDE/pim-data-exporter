@@ -5,6 +5,8 @@
 */
 
 #include "exportaddressbookjobinterfacetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "exportaddressbookjobinterfacetestimpl.h"
 #include "testexportfile.h"
 #include <QTest>
@@ -36,14 +38,14 @@ void ExportAddressbookJobInterfaceTest::exportAddressBook()
     QList<Utils::AkonadiInstanceInfo> lstInfo;
     Utils::AkonadiInstanceInfo info;
 
-    info.identifier = QStringLiteral("akonadi_vcarddir_resource_1");
+    info.identifier = u"akonadi_vcarddir_resource_1"_s;
     lstInfo << info;
-    info.identifier = QStringLiteral("akonadi_contacts_resource_1");
+    info.identifier = u"akonadi_contacts_resource_1"_s;
     lstInfo << info;
-    info.identifier = QStringLiteral("akonadi_vcard_resource_1");
+    info.identifier = u"akonadi_vcard_resource_1"_s;
     lstInfo << info;
     // Add extra resource.
-    info.identifier = QStringLiteral("akonadi_kolab_resource_2");
+    info.identifier = u"akonadi_kolab_resource_2"_s;
     lstInfo << info;
 
     auto exportNote = new ExportAddressbookJobInterfaceTestImpl(this, options, file->archiveStorage(), 1);

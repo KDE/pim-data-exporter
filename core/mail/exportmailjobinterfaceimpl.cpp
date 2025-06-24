@@ -5,6 +5,8 @@
 */
 
 #include "exportmailjobinterfaceimpl.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "exportmailfolderattributejobimpl.h"
 #include <KIdentityManagementCore/IdentityManager>
 #include <MailCommon/FilterImporterExporter>
@@ -98,7 +100,7 @@ QString ExportMailJobInterfaceImpl::storeResources(KZip *archive, const QString 
 QString ExportMailJobInterfaceImpl::resourcePath(const QString &identifier) const
 {
     ResourceConverterImpl converter;
-    const QString url = converter.resourcePath(identifier, QStringLiteral("$HOME/.local/share/local-mail/"));
+    const QString url = converter.resourcePath(identifier, u"$HOME/.local/share/local-mail/"_s);
     return url;
 }
 
@@ -134,7 +136,7 @@ void ExportMailJobInterfaceImpl::exportFilters()
         MailCommon::FilterImporterExporter mailCommonExportFilters;
         mailCommonExportFilters.exportFilters(lstFilter, url, true);
         tmp.close();
-        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + QStringLiteral("filters"));
+        const bool fileAdded = archive()->addLocalFile(tmp.fileName(), Utils::configsPath() + u"filters"_s);
         if (fileAdded) {
             emitInfo(i18n("Filters backup done."));
         } else {

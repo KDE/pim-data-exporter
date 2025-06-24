@@ -5,6 +5,8 @@
 */
 
 #include "importaddressbookjobinterfacetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "importaddressbookjobinterfacetestimpl.h"
 #include "testimportfile.h"
 #include <QTest>
@@ -23,9 +25,9 @@ void ImportAddressbookJobInterfaceTest::importAddressbook_data()
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/import/");
     Utils::StoredTypes options = {Utils::StoredType::Config};
 
-    QTest::newRow("addressbookonlyconfig") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookonlyconfig/") << options;
+    QTest::newRow("addressbookonlyconfig") << QString::fromLatin1(pathConfig) << u"/addressbookonlyconfig/"_s << options;
     options = {Utils::StoredType::Config | Utils::StoredType::Resources};
-    QTest::newRow("addressbookconfigandresources") << QString::fromLatin1(pathConfig) << QStringLiteral("/addressbookconfigandresources/") << options;
+    QTest::newRow("addressbookconfigandresources") << QString::fromLatin1(pathConfig) << u"/addressbookconfigandresources/"_s << options;
 }
 
 void ImportAddressbookJobInterfaceTest::importAddressbook()
