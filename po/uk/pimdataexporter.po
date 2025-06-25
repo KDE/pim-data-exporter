@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimdataexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-01 20:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -30,34 +30,34 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: console/main.cpp:25 console/main.cpp:27
+#: console/main.cpp:27 console/main.cpp:29
 #, kde-format
 msgid "PIM Data Exporter Console"
 msgstr "Консоль експортування особистих даних"
 
-#: console/main.cpp:29
+#: console/main.cpp:31
 #, kde-format
 msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "© Розробники pimdataexporter, 2015–%1"
 
-#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
+#: console/main.cpp:32 gui/pimdatacommandlineoption.cpp:45
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
+#: console/main.cpp:32 gui/pimdatacommandlineoption.cpp:45
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: console/main.cpp:31
+#: console/main.cpp:33
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to log information to."
 msgstr "Файл для запису даних журналу."
 
-#: console/main.cpp:34
+#: console/main.cpp:36
 #, kde-format
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
@@ -65,65 +65,65 @@ msgstr ""
 "Файл шаблону для визначення даних та параметрів, які слід імпортувати або "
 "експортувати."
 
-#: console/main.cpp:37
+#: console/main.cpp:39
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file."
 msgstr "Імпортувати вказаний файл."
 
-#: console/main.cpp:39
+#: console/main.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file."
 msgstr "Експортувати вказаний файл."
 
-#: core/abstractimportexportjob.cpp:56
+#: core/abstractimportexportjob.cpp:58
 #, kde-format
 msgid "Task Canceled"
 msgstr "Завдання скасовано"
 
-#: core/abstractimportexportjob.cpp:116
+#: core/abstractimportexportjob.cpp:117
 #, kde-format
 msgid "\"%1\" backup done."
 msgstr "Створення резервної копії «%1» завершено."
 
-#: core/abstractimportexportjob.cpp:118
+#: core/abstractimportexportjob.cpp:119
 #, kde-format
 msgid "\"%1\" cannot be exported."
 msgstr "Не вдалося експортувати «%1»."
 
-#: core/abstractimportexportjob.cpp:121
+#: core/abstractimportexportjob.cpp:122
 #, kde-format
 msgid "\"%1\" does not exist."
 msgstr "«%1» не існує."
 
-#: core/abstractimportexportjob.cpp:268
+#: core/abstractimportexportjob.cpp:269
 #, kde-format
 msgid "\"%1\" was copied."
 msgstr "«%1» скопійовано."
 
-#: core/abstractimportexportjob.cpp:273
+#: core/abstractimportexportjob.cpp:274
 #, kde-format
 msgid "Restoring \"%1\"..."
 msgstr "Відновлюємо «%1»…"
 
-#: core/abstractimportexportjob.cpp:298
+#: core/abstractimportexportjob.cpp:299
 #, kde-format
 msgid "File \"%1\" cannot be copied to \"%2\"."
 msgstr "Файл «%1» не може бути скопійовано до «%2»."
 
-#: core/abstractimportexportjob.cpp:298
+#: core/abstractimportexportjob.cpp:299
 #, kde-format
 msgid "Copy file"
 msgstr "Копіювання файла"
 
-#: core/abstractimportexportjob.cpp:300
+#: core/abstractimportexportjob.cpp:301
 #, kde-format
 msgid "\"%1\" was restored."
 msgstr "«%1» відновлено."
 
 #: core/abstractimportexportjob.cpp:385
-#: core/addressbook/importaddressbookjobinterface.cpp:231
+#: core/addressbook/importaddressbookjobinterface.cpp:233
 #: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
@@ -174,81 +174,81 @@ msgstr "До файла резервної копії додано катало�
 msgid "Directory \"%1\" cannot be added to backup file."
 msgstr "Каталог «%1» не вдалося додавати до файла резервної копії."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:28
+#: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
 msgid "Start export KAddressBook settings..."
 msgstr "Розпочинаємо експортування параметрів KAddressBook…"
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:29
+#: core/addressbook/exportaddressbookjobinterface.cpp:30
 #, kde-format
 msgid "Export KAddressBook settings"
 msgstr "Експортування параметрів KAddressBook"
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:42
-#: core/alarm/exportalarmjobinterface.cpp:84
-#: core/calendar/exportcalendarjobinterface.cpp:96
+#: core/addressbook/exportaddressbookjobinterface.cpp:43
+#: core/alarm/exportalarmjobinterface.cpp:85
+#: core/calendar/exportcalendarjobinterface.cpp:97
 #: core/mail/exportmailjobinterface.cpp:653
 #, kde-format
 msgid "Backing up resources..."
 msgstr "Створення резервної копії ресурсів…"
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:102
-#: core/alarm/exportalarmjobinterface.cpp:76
-#: core/calendar/exportcalendarjobinterface.cpp:75
+#: core/addressbook/exportaddressbookjobinterface.cpp:103
+#: core/alarm/exportalarmjobinterface.cpp:77
+#: core/calendar/exportcalendarjobinterface.cpp:76
 #: core/mail/exportmailjobinterface.cpp:675
 #, kde-format
 msgid "Resources backup done."
 msgstr "Створення резервної копії ресурсів завершено."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:109
-#: core/akregator/exportakregatorjobinterface.cpp:72
-#: core/alarm/exportalarmjobinterface.cpp:109
-#: core/calendar/exportcalendarjobinterface.cpp:228
-#: core/mail/exportmailjobinterface.cpp:167
+#: core/addressbook/exportaddressbookjobinterface.cpp:110
+#: core/akregator/exportakregatorjobinterface.cpp:74
+#: core/alarm/exportalarmjobinterface.cpp:110
+#: core/calendar/exportcalendarjobinterface.cpp:229
+#: core/mail/exportmailjobinterface.cpp:169
 #, kde-format
 msgid "Backing up config..."
 msgstr "Створення резервної копії налаштувань…"
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:150
-#: core/akregator/exportakregatorjobinterface.cpp:79
-#: core/alarm/exportalarmjobinterface.cpp:135
-#: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:536
+#: core/addressbook/exportaddressbookjobinterface.cpp:151
+#: core/akregator/exportakregatorjobinterface.cpp:81
+#: core/alarm/exportalarmjobinterface.cpp:136
+#: core/calendar/exportcalendarjobinterface.cpp:249
+#: core/mail/exportmailjobinterface.cpp:537
 #, kde-format
 msgid "Config backup done."
 msgstr "Створення резервної копії налаштувань завершено."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:41
+#: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
 msgstr "Розпочинаємо імпортування параметрів KAddressBook…"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:43
+#: core/addressbook/importaddressbookjobinterface.cpp:45
 #, kde-format
 msgid "Import KAddressBook settings"
 msgstr "Імпортування параметрів KAddressBook"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:92
-#: core/akregator/importakregatorjobinterface.cpp:93
-#: core/alarm/importalarmjobinterface.cpp:82
-#: core/calendar/importcalendarjobinterface.cpp:90
+#: core/addressbook/importaddressbookjobinterface.cpp:94
+#: core/akregator/importakregatorjobinterface.cpp:95
+#: core/alarm/importalarmjobinterface.cpp:84
+#: core/calendar/importcalendarjobinterface.cpp:92
 #, kde-format
 msgid "Restore configs..."
 msgstr "Відновити налаштування…"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:109
-#: core/akregator/importakregatorjobinterface.cpp:99
-#: core/alarm/importalarmjobinterface.cpp:98
+#: core/addressbook/importaddressbookjobinterface.cpp:111
+#: core/akregator/importakregatorjobinterface.cpp:101
+#: core/alarm/importalarmjobinterface.cpp:100
 #: core/calendar/importcalendarjobinterface.cpp:229
-#: core/mail/importmailjobinterface.cpp:866
+#: core/mail/importmailjobinterface.cpp:862
 #, kde-format
 msgid "Config restored."
 msgstr "Налаштування відновлено."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:162
-#: core/addressbook/importaddressbookjobinterface.cpp:163
-#: core/alarm/importalarmjobinterface.cpp:114
-#: core/alarm/importalarmjobinterface.cpp:115
+#: core/addressbook/importaddressbookjobinterface.cpp:164
+#: core/addressbook/importaddressbookjobinterface.cpp:165
+#: core/alarm/importalarmjobinterface.cpp:116
+#: core/alarm/importalarmjobinterface.cpp:117
 #: core/calendar/importcalendarjobinterface.cpp:282
 #: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
@@ -257,67 +257,67 @@ msgstr "Налаштування відновлено."
 msgid "Restore resources..."
 msgstr "Відновити ресурси…"
 
-#: core/akregator/exportakregatorjobinterface.cpp:24
+#: core/akregator/exportakregatorjobinterface.cpp:26
 #, kde-format
 msgid "Start export Akregator settings..."
 msgstr "Розпочинаємо експортування параметрів Akregator…"
 
-#: core/akregator/exportakregatorjobinterface.cpp:25
+#: core/akregator/exportakregatorjobinterface.cpp:27
 #, kde-format
 msgid "Export Akregator settings"
 msgstr "Експортування параметрів Akregator"
 
-#: core/akregator/exportakregatorjobinterface.cpp:87
+#: core/akregator/exportakregatorjobinterface.cpp:89
 #, kde-format
 msgid "Backing up data..."
 msgstr "Створення резервної копії даних…"
 
-#: core/akregator/exportakregatorjobinterface.cpp:94
+#: core/akregator/exportakregatorjobinterface.cpp:96
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
 msgstr "Не вдалося додати каталог «%1» до файла резервної копії."
 
-#: core/akregator/exportakregatorjobinterface.cpp:97
+#: core/akregator/exportakregatorjobinterface.cpp:99
 #, kde-format
 msgid "Data backup done."
 msgstr "Створення резервної копії завершено."
 
-#: core/akregator/importakregatorjobinterface.cpp:29
+#: core/akregator/importakregatorjobinterface.cpp:31
 #, kde-format
 msgid "Starting to import Akregator settings..."
 msgstr "Розпочинаємо імпортування параметрів Akregator…"
 
-#: core/akregator/importakregatorjobinterface.cpp:32
+#: core/akregator/importakregatorjobinterface.cpp:34
 #, kde-format
 msgid "Import Akregator settings"
 msgstr "Імпортування параметрів Akregator"
 
-#: core/akregator/importakregatorjobinterface.cpp:106
+#: core/akregator/importakregatorjobinterface.cpp:108
 #, kde-format
 msgid "Restore data..."
 msgstr "Відновити дані…"
 
-#: core/akregator/importakregatorjobinterface.cpp:112
+#: core/akregator/importakregatorjobinterface.cpp:114
 #, kde-format
 msgid "Data restored."
 msgstr "Дані відновлено."
 
-#: core/alarm/exportalarmjobinterface.cpp:28
+#: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
 msgid "Start export KAlarm settings..."
 msgstr "Розпочинаємо експортування параметрів KAlarm…"
 
-#: core/alarm/exportalarmjobinterface.cpp:29
+#: core/alarm/exportalarmjobinterface.cpp:30
 #, kde-format
 msgid "Export KAlarm settings"
 msgstr "Експортування параметрів KAlarm"
 
-#: core/alarm/importalarmjobinterface.cpp:32
+#: core/alarm/importalarmjobinterface.cpp:34
 #, kde-format
 msgid "Starting to import KAlarm settings..."
 msgstr "Розпочинаємо імпортування параметрів KAlarm…"
 
-#: core/alarm/importalarmjobinterface.cpp:33
+#: core/alarm/importalarmjobinterface.cpp:35
 #, kde-format
 msgid "Import KAlarm settings"
 msgstr "Імпортування параметрів KAlarm"
@@ -327,91 +327,91 @@ msgstr "Імпортування параметрів KAlarm"
 msgid "Archive cannot be opened in write mode."
 msgstr "Не вдалося відкрити архів у режимі запису"
 
-#: core/archivestorage.cpp:45 core/utils.cpp:134
-#: gui/dialog/showarchivestructuredialog.cpp:183
+#: core/archivestorage.cpp:45 core/utils.cpp:135
+#: gui/dialog/showarchivestructuredialog.cpp:185
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "Не вдалося відкрити архів у режимі читання"
 
-#: core/backupresourcefilejobbase.cpp:47
+#: core/backupresourcefilejobbase.cpp:49
 #, kde-format
 msgid "\"%1\" is not a file."
 msgstr "«%1» не є файлом."
 
-#: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
-#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
+#: core/backupresourcefilejobbase.cpp:55 core/backupresourcefilejobbase.cpp:62
+#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" was backed up."
 msgstr "Створено резервну копію «%1»."
 
-#: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
-#: core/storeresourcejob.cpp:59
+#: core/backupresourcefilejobbase.cpp:57 core/pimdatabackupthread.cpp:56
+#: core/storeresourcejob.cpp:61
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
 msgstr "Не вдалося додати файл «%1» до файла резервної копії."
 
-#: core/calendar/exportcalendarjobinterface.cpp:82
+#: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
 msgid "Start export KOrganizer settings..."
 msgstr "Розпочинаємо експортування параметрів KOrganizer…"
 
-#: core/calendar/exportcalendarjobinterface.cpp:83
+#: core/calendar/exportcalendarjobinterface.cpp:84
 #, kde-format
 msgid "Export KOrganizer settings"
 msgstr "Експортування параметрів KOrganizer"
 
-#: core/calendar/importcalendarjobinterface.cpp:35
+#: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
 msgstr "Розпочинаємо імпортування параметрів KOrganizer…"
 
-#: core/calendar/importcalendarjobinterface.cpp:37
+#: core/calendar/importcalendarjobinterface.cpp:39
 #, kde-format
 msgid "Import KOrganizer settings"
 msgstr "Імпортування параметрів KOrganizer"
 
-#: core/mail/exportmailjobinterface.cpp:43
+#: core/mail/exportmailjobinterface.cpp:45
 #, kde-format
 msgid "Start export KMail settings..."
 msgstr "Розпочинаємо імпортування параметрів KMail…"
 
-#: core/mail/exportmailjobinterface.cpp:44
+#: core/mail/exportmailjobinterface.cpp:46
 #, kde-format
 msgid "Export KMail settings"
 msgstr "Експортування параметрів KMail"
 
-#: core/mail/exportmailjobinterface.cpp:112
+#: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Folder Attributes..."
 msgstr "Створення резервної атрибутів тек…"
 
-#: core/mail/exportmailjobinterface.cpp:114
+#: core/mail/exportmailjobinterface.cpp:116
 #, kde-format
 msgid "Backing up Mails..."
 msgstr "Створення резервної копії пошти…"
 
-#: core/mail/exportmailjobinterface.cpp:115
+#: core/mail/exportmailjobinterface.cpp:117
 #, kde-format
 msgid "Start export resource..."
 msgstr "Розпочинаємо експортування ресурсу…"
 
-#: core/mail/exportmailjobinterface.cpp:123
+#: core/mail/exportmailjobinterface.cpp:125
 #, kde-format
 msgid "Backing up transports..."
 msgstr "Створення резервної копії даних засобів пересилання…"
 
-#: core/mail/exportmailjobinterface.cpp:128
-#: core/mail/exportmailjobinterface.cpp:140
+#: core/mail/exportmailjobinterface.cpp:130
+#: core/mail/exportmailjobinterface.cpp:142
 #, kde-format
 msgid "Transports backup done."
 msgstr "Створення резервної копії даних засобів пересилання завершено."
 
-#: core/mail/exportmailjobinterface.cpp:142
+#: core/mail/exportmailjobinterface.cpp:144
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr "Неможливо додати файл параметрів передавання до файла резервної копії."
 
-#: core/mail/exportmailjobinterface.cpp:541
+#: core/mail/exportmailjobinterface.cpp:542
 #, kde-format
 msgid "Backing up identity..."
 msgstr "Створення резервної копії профілю…"
@@ -431,22 +431,22 @@ msgstr "Створення резервної копії профілю заве
 msgid "Identity file cannot be added to backup file."
 msgstr "Неможливо додати файл профілю до файла резервної копії."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:139
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
 #, kde-format
 msgid "Filters backup done."
 msgstr "Створення резервної копії фільтрів завершено."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:143
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "Не вдалося експортувати фільтри."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#: core/mail/exportmailjobinterfaceimpl.cpp:165
 #, kde-format
 msgid "Backing up Folder Attributes done."
 msgstr "Створення резервної копії атрибутів тек завершено."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#: core/mail/exportmailjobinterfaceimpl.cpp:169
 #, kde-format
 msgid "Folder Attributes cannot be exported."
 msgstr "Неможливо експортувати атрибути тек."
@@ -513,73 +513,73 @@ msgstr "Відновити фільтри…"
 msgid "Filters restored."
 msgstr "Фільтри відновлено."
 
+#: core/mail/importmailjobinterface.cpp:894
 #: core/mail/importmailjobinterface.cpp:899
-#: core/mail/importmailjobinterface.cpp:904
 #, kde-format
 msgid "Restoring identities..."
 msgstr "Відновлення профілів…"
 
-#: core/mail/importmailjobinterface.cpp:902
+#: core/mail/importmailjobinterface.cpp:897
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
 msgstr "У архіві не виявлено файла emailidentities."
 
-#: core/mail/importmailjobinterface.cpp:963
+#: core/mail/importmailjobinterface.cpp:958
 #, kde-format
 msgid "Identities restored."
 msgstr "Профілі відновлено."
 
-#: core/mail/importmailjobinterface.cpp:965
+#: core/mail/importmailjobinterface.cpp:960
 #, kde-format
 msgid "Failed to restore identity file."
 msgstr "Не вдалося відновити файл профілю."
 
-#: core/mail/importmailjobinterface.cpp:1283
+#: core/mail/importmailjobinterface.cpp:1278
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "Перенесення «%1» завершено."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:35
+#: core/mail/importmailjobinterfaceimpl.cpp:37
 #, kde-format
 msgid "Restoring folder attributes..."
 msgstr "Відновлюємо атрибути тек…"
 
-#: core/mail/importmailjobinterfaceimpl.cpp:41
+#: core/mail/importmailjobinterfaceimpl.cpp:43
 #, kde-format
 msgid "Restoring Folder Attributes done."
 msgstr "Відновлення атрибутів тек завершено."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:45
+#: core/mail/importmailjobinterfaceimpl.cpp:47
 #, kde-format
 msgid "Folder Attributes cannot be restored."
 msgstr "Неможливо відновити атрибути тек."
 
-#: core/pimdatabackuprestore.cpp:76 core/pimdatabackuprestore.cpp:239
+#: core/pimdatabackuprestore.cpp:78 core/pimdatabackuprestore.cpp:241
 #, kde-format
 msgid "No data selected."
 msgstr "Не позначено даних."
 
-#: core/pimdatabackuprestore.cpp:82 core/pimdatabackuprestore.cpp:245
+#: core/pimdatabackuprestore.cpp:84 core/pimdatabackuprestore.cpp:247
 #, kde-format
 msgid "Unable to open file \"%1\"."
 msgstr "Не вдалося відкрити файл «%1»."
 
-#: core/pimdatabackuprestore.cpp:91
+#: core/pimdatabackuprestore.cpp:93
 #, kde-format
 msgid "Starting to backup data in '%1'"
 msgstr "Розпочато резервне копіювання даних у «%1»"
 
-#: core/pimdatabackuprestore.cpp:174
+#: core/pimdatabackuprestore.cpp:176
 #, kde-format
 msgid "Backup in '%1' done."
 msgstr "Резервне копіювання до «%1» завершено."
 
-#: core/pimdatabackuprestore.cpp:264
+#: core/pimdatabackuprestore.cpp:266
 #, kde-format
 msgid "Starting to restore data from '%1'"
 msgstr "Розпочато відновлення даних з «%1»"
 
-#: core/pimdatabackuprestore.cpp:272
+#: core/pimdatabackuprestore.cpp:274
 #, kde-format
 msgid "Restoring data from '%1' done."
 msgstr "Відновлення даних з «%1» завершено."
@@ -594,234 +594,234 @@ msgstr "Не вдалося відкрити файл архіву."
 msgid "Impossible to backup \"%1\"."
 msgstr "Неможливо створити резервну копію «%1»."
 
-#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:204
+#: core/resourceconverterbase.cpp:197 core/resourceconverterbase.cpp:206
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "Неможливо додати файл ресурсу «%1» до файла резервної копії."
 
-#: core/resourceconverterbase.cpp:207
+#: core/resourceconverterbase.cpp:209
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr "Файла налаштувань ресурсу «%1» не існує."
 
-#: core/utils.cpp:181
+#: core/utils.cpp:182
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: core/utils.cpp:183
+#: core/utils.cpp:184
 #, kde-format
 msgid "KAddressBook"
 msgstr "KAddressBook"
 
-#: core/utils.cpp:185
+#: core/utils.cpp:186
 #, kde-format
 msgid "KAlarm"
 msgstr "KAlarm"
 
-#: core/utils.cpp:187
+#: core/utils.cpp:188
 #, kde-format
 msgid "KOrganizer"
 msgstr "KOrganizer"
 
-#: core/utils.cpp:189
+#: core/utils.cpp:190
 #, kde-format
 msgid "Akregator"
 msgstr "Akregator"
 
-#: core/utils.cpp:203
+#: core/utils.cpp:204
 #, kde-format
 msgid "Identity"
 msgstr "Профіль"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:206
 #, kde-format
 msgid "Mails"
 msgstr "Поштові повідомлення"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:208
 #, kde-format
 msgid "Mail Transport"
 msgstr "Надсилання поштових повідомлень"
 
-#: core/utils.cpp:209
+#: core/utils.cpp:210
 #, kde-format
 msgid "Resources"
 msgstr "Ресурси"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:212
 #, kde-format
 msgid "Config"
 msgstr "Налаштування"
 
-#: core/utils.cpp:213
+#: core/utils.cpp:214
 #, kde-format
 msgid "Data"
 msgstr "Дані"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:35
+#: gui/dialog/backupfilestructureinfodialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Archive File Structure"
 msgstr "Структура файла архіву"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:37
+#: gui/dialog/backupfilestructureinfodialog.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Структура архіву резервної копії:"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:63
+#: gui/dialog/backupfilestructureinfodialog.cpp:64
 #, kde-format
 msgid "backup-structure.txt file was not found."
 msgstr "Файл backup-structure.txt не знайдено."
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "Налаштовування експортування даних PIM"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:45
 #, kde-format
 msgid "General"
 msgstr "Загальне"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:60
 #, kde-format
 msgid "User Feedback"
 msgstr "Відгуки користувача"
 
-#: gui/dialog/selectiontypedialog.cpp:27
+#: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Типово використовувати цей шаблон"
 
-#: gui/dialog/selectiontypedialog.cpp:28
+#: gui/dialog/selectiontypedialog.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Зберегти як шаблон…"
 
-#: gui/dialog/selectiontypedialog.cpp:29
+#: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
 msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Завантажити шаблон…"
 
-#: gui/dialog/selectiontypedialog.cpp:31
+#: gui/dialog/selectiontypedialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
 msgstr "Виберіть тип"
 
-#: gui/dialog/selectiontypedialog.cpp:52
-#: gui/dialog/synchronizeresourcedialog.cpp:46
+#: gui/dialog/selectiontypedialog.cpp:54
+#: gui/dialog/synchronizeresourcedialog.cpp:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Позначити всі"
 
-#: gui/dialog/selectiontypedialog.cpp:57
-#: gui/dialog/synchronizeresourcedialog.cpp:51
+#: gui/dialog/selectiontypedialog.cpp:59
+#: gui/dialog/synchronizeresourcedialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Зняти позначення з усіх"
 
-#: gui/dialog/showarchivestructuredialog.cpp:40
+#: gui/dialog/showarchivestructuredialog.cpp:42
 #, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "Видобути позначений файл"
 
-#: gui/dialog/showarchivestructuredialog.cpp:41
+#: gui/dialog/showarchivestructuredialog.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "Відкрити позначений файл"
 
-#: gui/dialog/showarchivestructuredialog.cpp:43
+#: gui/dialog/showarchivestructuredialog.cpp:45
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
 msgstr "Показ вмісту архіву для файла «%1»"
 
-#: gui/dialog/showarchivestructuredialog.cpp:51
+#: gui/dialog/showarchivestructuredialog.cpp:53
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Шукати…"
 
-#: gui/dialog/showarchivestructuredialog.cpp:54
+#: gui/dialog/showarchivestructuredialog.cpp:56
 #, kde-format
 msgid "Save As Text..."
 msgstr "Зберегти як текст…"
 
-#: gui/dialog/showarchivestructuredialog.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:136
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Виберіть каталог"
 
-#: gui/dialog/showarchivestructuredialog.cpp:140
+#: gui/dialog/showarchivestructuredialog.cpp:142
 #, kde-format
 msgid "Do you want to overwrite %1?"
 msgstr "Чи бажаєте ви перезаписати «%1»?"
 
-#: gui/dialog/showarchivestructuredialog.cpp:141
+#: gui/dialog/showarchivestructuredialog.cpp:143
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Файл вже існує"
 
-#: gui/dialog/showarchivestructuredialog.cpp:149
+#: gui/dialog/showarchivestructuredialog.cpp:151
 #, kde-format
 msgid "Impossible to copy %1 in %2."
 msgstr "Неможливо скопіювати %1 до %2."
 
-#: gui/dialog/showarchivestructuredialog.cpp:172
+#: gui/dialog/showarchivestructuredialog.cpp:174
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
 msgstr "Текстові файли"
 
-#: gui/dialog/showarchivestructuredialog.cpp:175
+#: gui/dialog/showarchivestructuredialog.cpp:177
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
 msgstr "Експортування до файла журналу"
 
-#: gui/dialog/showarchivestructuredialog.cpp:183
+#: gui/dialog/showarchivestructuredialog.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Не вдалося відкрити архів"
 
-#: gui/dialog/showarchivestructuredialog.cpp:189
+#: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "Info"
 msgstr "Інформація"
 
-#: gui/dialog/showarchivestructuredialog.cpp:191
+#: gui/dialog/showarchivestructuredialog.cpp:193
 #, kde-format
 msgid "This is not pim archive."
 msgstr "Цей архів не є архівом pim."
 
-#: gui/dialog/showarchivestructuredialog.cpp:191
+#: gui/dialog/showarchivestructuredialog.cpp:193
 #, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Показати відомості"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:29
+#: gui/dialog/synchronizeresourcedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
 msgstr "Синхронізація ресурсів"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:32
+#: gui/dialog/synchronizeresourcedialog.cpp:34
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -877,7 +877,7 @@ msgstr "Синхронізація ресурсів"
 msgid "Synchronize resources... It can take some time."
 msgstr "Синхронізуємо ресурси… Зачекайте, будь ласка."
 
-#: gui/pimdatabackuprestoreui.cpp:25
+#: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
 msgid ""
 "The archive was created by a newer version of this program. It might contain "
@@ -888,48 +888,48 @@ msgstr ""
 "міститися дані, які буде пропущено під час імпортування. Хочете імпортувати "
 "архів попри це?"
 
-#: gui/pimdatabackuprestoreui.cpp:27
+#: gui/pimdatabackuprestoreui.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Неналежна версія"
 
-#: gui/pimdatabackuprestoreui.cpp:28
+#: gui/pimdatabackuprestoreui.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Імпортувати"
 
-#: gui/pimdatacommandlineoption.cpp:38 gui/pimdatacommandlineoption.cpp:40
+#: gui/pimdatacommandlineoption.cpp:40 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "PIM Data Exporter"
 msgstr "Експортування даних PIM"
 
-#: gui/pimdatacommandlineoption.cpp:42
+#: gui/pimdatacommandlineoption.cpp:44
 #, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
 msgstr "© Розробники pimdataexporter, 2012–%1"
 
-#: gui/pimdatacommandlineoption.cpp:47
+#: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
 msgid "Template file uses to define what data, settings to import or export"
 msgstr ""
 "Файл шаблону використовується для визначення даних та параметрів, які слід "
 "імпортувати або експортувати"
 
-#: gui/pimdatacommandlineoption.cpp:49
+#: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
 msgstr "Імпортувати вказаний файл"
 
-#: gui/pimdatacommandlineoption.cpp:50
+#: gui/pimdatacommandlineoption.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
 msgstr "Експортувати вказаний файл"
 
-#: gui/pimdatacommandlineoption.cpp:52
+#: gui/pimdatacommandlineoption.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
@@ -937,7 +937,7 @@ msgstr ""
 "Файл або адреса. Програма надішле користувачеві запит щодо того, що слід "
 "робити, імпортувати чи експортувати."
 
-#: gui/pimdatacommandlineoption.cpp:54
+#: gui/pimdatacommandlineoption.cpp:55
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
@@ -961,27 +961,27 @@ msgstr "І&нструменти"
 msgid "Main Toolbar"
 msgstr "Головна панель інструментів"
 
-#: gui/pimdataexporterwindow.cpp:168
+#: gui/pimdataexporterwindow.cpp:170
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Розпочинаємо повну синхронізацію…"
 
-#: gui/pimdataexporterwindow.cpp:198
+#: gui/pimdataexporterwindow.cpp:200
 #, kde-format
 msgid "Full sync finished."
 msgstr "Повну синхронізацію завершено."
 
-#: gui/pimdataexporterwindow.cpp:205
+#: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "Повну синхронізацію «%1» завершено."
 
-#: gui/pimdataexporterwindow.cpp:210
+#: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "Не вдалося завершити повну синхронізацію «%1»."
 
-#: gui/pimdataexporterwindow.cpp:216
+#: gui/pimdataexporterwindow.cpp:218
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -990,71 +990,71 @@ msgstr ""
 "Для відновлення даних вам слід скористатися «pimdataexporter». Будьте "
 "обережні, програма може перезаписати наявні параметри роботи та дані."
 
-#: gui/pimdataexporterwindow.cpp:218 gui/pimdataexporterwindow.cpp:325
+#: gui/pimdataexporterwindow.cpp:220 gui/pimdataexporterwindow.cpp:326
 #: gui/pimdataexporterwindow.cpp:403
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Резервне копіювання"
 
-#: gui/pimdataexporterwindow.cpp:245
+#: gui/pimdataexporterwindow.cpp:247
 #, kde-format
 msgid "Export Data..."
 msgstr "Експортувати дані…"
 
-#: gui/pimdataexporterwindow.cpp:250
+#: gui/pimdataexporterwindow.cpp:252
 #, kde-format
 msgid "Import Data..."
 msgstr "Імпортувати дані…"
 
-#: gui/pimdataexporterwindow.cpp:255
+#: gui/pimdataexporterwindow.cpp:257
 #, kde-format
 msgid "Save log..."
 msgstr "Зберегти журнал…"
 
-#: gui/pimdataexporterwindow.cpp:258
+#: gui/pimdataexporterwindow.cpp:260
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Показати дані щодо структури архіву…"
 
-#: gui/pimdataexporterwindow.cpp:261
+#: gui/pimdataexporterwindow.cpp:263
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Показати дані щодо архіву…"
 
-#: gui/pimdataexporterwindow.cpp:265
+#: gui/pimdataexporterwindow.cpp:267
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Показати дані щодо поточного архіву…"
 
-#: gui/pimdataexporterwindow.cpp:303
+#: gui/pimdataexporterwindow.cpp:304
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Виберіть архів"
 
-#: gui/pimdataexporterwindow.cpp:303
+#: gui/pimdataexporterwindow.cpp:304
 #, kde-format
 msgid "Zip file"
 msgstr "файл zip"
 
-#: gui/pimdataexporterwindow.cpp:315
+#: gui/pimdataexporterwindow.cpp:316
 #, kde-format
 msgid "Log is empty."
 msgstr "У журналі немає записів."
 
-#: gui/pimdataexporterwindow.cpp:315
+#: gui/pimdataexporterwindow.cpp:316
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Збереження журналу"
 
-#: gui/pimdataexporterwindow.cpp:319
+#: gui/pimdataexporterwindow.cpp:320
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "файли HTML (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:325
+#: gui/pimdataexporterwindow.cpp:326
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
@@ -1085,22 +1085,22 @@ msgstr ""
 "Перш ніж відновлювати дані з резервних копій, завершіть роботу всіх програм "
 "kdepim. Бажаєте продовжити?"
 
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:415
 #, kde-format
 msgid "Restore backup"
 msgstr "Відновити з резервної копії"
 
-#: gui/pimdataexporterwindow.cpp:418
+#: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Zip File"
 msgstr "файл zip"
 
-#: gui/pimdataexporterwindow.cpp:450
+#: gui/pimdataexporterwindow.cpp:449
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Виконуємо відновлення…"
 
-#: gui/trayicon/pimdatatrayicon.cpp:13
+#: gui/trayicon/pimdatatrayicon.cpp:15
 #, kde-format
 msgid "Pim Data Exporter"
 msgstr "Експортування даних PIM"
@@ -1128,7 +1128,7 @@ msgstr "Завжди об’єднувати файли налаштувань"
 msgid "Import"
 msgstr "Імпорт"
 
-#: gui/widgets/selectiontypetreewidget.cpp:332
+#: gui/widgets/selectiontypetreewidget.cpp:334
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "файли шаблонів (*.xml)"

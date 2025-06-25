@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-30 12:59+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -29,34 +29,34 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "einars8@gmail.com, toms.trasuns@posteo.net"
 
-#: console/main.cpp:25 console/main.cpp:27
+#: console/main.cpp:27 console/main.cpp:29
 #, kde-format
 msgid "PIM Data Exporter Console"
 msgstr "PIM datu eksportētāja konsole"
 
-#: console/main.cpp:29
+#: console/main.cpp:31
 #, kde-format
 msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr "Copyright © 2015—%1 pimdataexporter autori"
 
-#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
+#: console/main.cpp:32 gui/pimdatacommandlineoption.cpp:45
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: console/main.cpp:30 gui/pimdatacommandlineoption.cpp:43
+#: console/main.cpp:32 gui/pimdatacommandlineoption.cpp:45
 #, kde-format
 msgid "Maintainer"
 msgstr "Uzturētājs"
 
-#: console/main.cpp:31
+#: console/main.cpp:33
 #, kde-format
 msgctxt "@info:shell"
 msgid "File to log information to."
 msgstr "Datne, kurā žurnalēt informāciju."
 
-#: console/main.cpp:34
+#: console/main.cpp:36
 #, kde-format
 msgctxt "@info:shell"
 msgid "Template file to define what data, settings to import or export."
@@ -64,65 +64,65 @@ msgstr ""
 "Veidnes datne, kas definē importējamos vai eksportējamos datus un "
 "iestatījumus."
 
-#: console/main.cpp:37
+#: console/main.cpp:39
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file."
 msgstr "Importēt doto datni."
 
-#: console/main.cpp:39
+#: console/main.cpp:41
 #, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file."
 msgstr "Eksportēt doto datni."
 
-#: core/abstractimportexportjob.cpp:56
+#: core/abstractimportexportjob.cpp:58
 #, kde-format
 msgid "Task Canceled"
 msgstr "Uzdevums ir atcelts"
 
-#: core/abstractimportexportjob.cpp:116
+#: core/abstractimportexportjob.cpp:117
 #, kde-format
 msgid "\"%1\" backup done."
 msgstr "„%1“ ir dublēts."
 
-#: core/abstractimportexportjob.cpp:118
+#: core/abstractimportexportjob.cpp:119
 #, kde-format
 msgid "\"%1\" cannot be exported."
 msgstr "„%1“ nevar eksportēt."
 
-#: core/abstractimportexportjob.cpp:121
+#: core/abstractimportexportjob.cpp:122
 #, kde-format
 msgid "\"%1\" does not exist."
 msgstr "„%1“ nepastāv."
 
-#: core/abstractimportexportjob.cpp:268
+#: core/abstractimportexportjob.cpp:269
 #, kde-format
 msgid "\"%1\" was copied."
 msgstr "„%1“ ir nokopēts."
 
-#: core/abstractimportexportjob.cpp:273
+#: core/abstractimportexportjob.cpp:274
 #, kde-format
 msgid "Restoring \"%1\"..."
 msgstr "Atjauno „%1“..."
 
-#: core/abstractimportexportjob.cpp:298
+#: core/abstractimportexportjob.cpp:299
 #, kde-format
 msgid "File \"%1\" cannot be copied to \"%2\"."
 msgstr "Datne „%1“ nevar tikt nokopēta uz „%2“."
 
-#: core/abstractimportexportjob.cpp:298
+#: core/abstractimportexportjob.cpp:299
 #, kde-format
 msgid "Copy file"
 msgstr "Kopēt datni"
 
-#: core/abstractimportexportjob.cpp:300
+#: core/abstractimportexportjob.cpp:301
 #, kde-format
 msgid "\"%1\" was restored."
 msgstr "„%1“ ir atjaunots"
 
 #: core/abstractimportexportjob.cpp:385
-#: core/addressbook/importaddressbookjobinterface.cpp:231
+#: core/addressbook/importaddressbookjobinterface.cpp:233
 #: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
@@ -173,81 +173,81 @@ msgstr "Mape „%1“ ir pievienota dublējuma datnei."
 msgid "Directory \"%1\" cannot be added to backup file."
 msgstr "Mapi „%1“ nevar pievienot dublējuma datnei."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:28
+#: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
 msgid "Start export KAddressBook settings..."
 msgstr "Sāk eksportēt „KAddressBook“ iestatījumus..."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:29
+#: core/addressbook/exportaddressbookjobinterface.cpp:30
 #, kde-format
 msgid "Export KAddressBook settings"
 msgstr "Eksportēt „KAddressBook“ iestatījumus"
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:42
-#: core/alarm/exportalarmjobinterface.cpp:84
-#: core/calendar/exportcalendarjobinterface.cpp:96
+#: core/addressbook/exportaddressbookjobinterface.cpp:43
+#: core/alarm/exportalarmjobinterface.cpp:85
+#: core/calendar/exportcalendarjobinterface.cpp:97
 #: core/mail/exportmailjobinterface.cpp:653
 #, kde-format
 msgid "Backing up resources..."
 msgstr "Veidu resursu dublējumu..."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:102
-#: core/alarm/exportalarmjobinterface.cpp:76
-#: core/calendar/exportcalendarjobinterface.cpp:75
+#: core/addressbook/exportaddressbookjobinterface.cpp:103
+#: core/alarm/exportalarmjobinterface.cpp:77
+#: core/calendar/exportcalendarjobinterface.cpp:76
 #: core/mail/exportmailjobinterface.cpp:675
 #, kde-format
 msgid "Resources backup done."
 msgstr "Resursi ir dublēti."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:109
-#: core/akregator/exportakregatorjobinterface.cpp:72
-#: core/alarm/exportalarmjobinterface.cpp:109
-#: core/calendar/exportcalendarjobinterface.cpp:228
-#: core/mail/exportmailjobinterface.cpp:167
+#: core/addressbook/exportaddressbookjobinterface.cpp:110
+#: core/akregator/exportakregatorjobinterface.cpp:74
+#: core/alarm/exportalarmjobinterface.cpp:110
+#: core/calendar/exportcalendarjobinterface.cpp:229
+#: core/mail/exportmailjobinterface.cpp:169
 #, kde-format
 msgid "Backing up config..."
 msgstr "Dublē konfigurāciju..."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:150
-#: core/akregator/exportakregatorjobinterface.cpp:79
-#: core/alarm/exportalarmjobinterface.cpp:135
-#: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:536
+#: core/addressbook/exportaddressbookjobinterface.cpp:151
+#: core/akregator/exportakregatorjobinterface.cpp:81
+#: core/alarm/exportalarmjobinterface.cpp:136
+#: core/calendar/exportcalendarjobinterface.cpp:249
+#: core/mail/exportmailjobinterface.cpp:537
 #, kde-format
 msgid "Config backup done."
 msgstr "Konfigurācija ir dublēta."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:41
+#: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
 msgstr "Sāk importēt „KAddressBook“ iestatījumus..."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:43
+#: core/addressbook/importaddressbookjobinterface.cpp:45
 #, kde-format
 msgid "Import KAddressBook settings"
 msgstr "Importēt „KAddressBook“ iestatījumus"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:92
-#: core/akregator/importakregatorjobinterface.cpp:93
-#: core/alarm/importalarmjobinterface.cpp:82
-#: core/calendar/importcalendarjobinterface.cpp:90
+#: core/addressbook/importaddressbookjobinterface.cpp:94
+#: core/akregator/importakregatorjobinterface.cpp:95
+#: core/alarm/importalarmjobinterface.cpp:84
+#: core/calendar/importcalendarjobinterface.cpp:92
 #, kde-format
 msgid "Restore configs..."
 msgstr "Atjauno konfigurāciju..."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:109
-#: core/akregator/importakregatorjobinterface.cpp:99
-#: core/alarm/importalarmjobinterface.cpp:98
+#: core/addressbook/importaddressbookjobinterface.cpp:111
+#: core/akregator/importakregatorjobinterface.cpp:101
+#: core/alarm/importalarmjobinterface.cpp:100
 #: core/calendar/importcalendarjobinterface.cpp:229
-#: core/mail/importmailjobinterface.cpp:866
+#: core/mail/importmailjobinterface.cpp:862
 #, kde-format
 msgid "Config restored."
 msgstr "Konfigurācija ir atjaunota."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:162
-#: core/addressbook/importaddressbookjobinterface.cpp:163
-#: core/alarm/importalarmjobinterface.cpp:114
-#: core/alarm/importalarmjobinterface.cpp:115
+#: core/addressbook/importaddressbookjobinterface.cpp:164
+#: core/addressbook/importaddressbookjobinterface.cpp:165
+#: core/alarm/importalarmjobinterface.cpp:116
+#: core/alarm/importalarmjobinterface.cpp:117
 #: core/calendar/importcalendarjobinterface.cpp:282
 #: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
@@ -256,67 +256,67 @@ msgstr "Konfigurācija ir atjaunota."
 msgid "Restore resources..."
 msgstr "Atjauno resursus..."
 
-#: core/akregator/exportakregatorjobinterface.cpp:24
+#: core/akregator/exportakregatorjobinterface.cpp:26
 #, kde-format
 msgid "Start export Akregator settings..."
 msgstr "Sākt eksportēt „Akregator“ iestatījumus..."
 
-#: core/akregator/exportakregatorjobinterface.cpp:25
+#: core/akregator/exportakregatorjobinterface.cpp:27
 #, kde-format
 msgid "Export Akregator settings"
 msgstr "Eksportēt „Akregator“ iestatījumus"
 
-#: core/akregator/exportakregatorjobinterface.cpp:87
+#: core/akregator/exportakregatorjobinterface.cpp:89
 #, kde-format
 msgid "Backing up data..."
 msgstr "Dublē datus..."
 
-#: core/akregator/exportakregatorjobinterface.cpp:94
+#: core/akregator/exportakregatorjobinterface.cpp:96
 #, kde-format
 msgid "\"%1\" directory cannot be added to backup file."
 msgstr "„%1“ mapi nevar pievienot dublējuma datnei."
 
-#: core/akregator/exportakregatorjobinterface.cpp:97
+#: core/akregator/exportakregatorjobinterface.cpp:99
 #, kde-format
 msgid "Data backup done."
 msgstr "Datu rezerves kopija ir izveidota."
 
-#: core/akregator/importakregatorjobinterface.cpp:29
+#: core/akregator/importakregatorjobinterface.cpp:31
 #, kde-format
 msgid "Starting to import Akregator settings..."
 msgstr "Sāk importēt „Akregator“ iestatījumus..."
 
-#: core/akregator/importakregatorjobinterface.cpp:32
+#: core/akregator/importakregatorjobinterface.cpp:34
 #, kde-format
 msgid "Import Akregator settings"
 msgstr "Importēt „Akregator“ iestatījumus"
 
-#: core/akregator/importakregatorjobinterface.cpp:106
+#: core/akregator/importakregatorjobinterface.cpp:108
 #, kde-format
 msgid "Restore data..."
 msgstr "Atjauno datus..."
 
-#: core/akregator/importakregatorjobinterface.cpp:112
+#: core/akregator/importakregatorjobinterface.cpp:114
 #, kde-format
 msgid "Data restored."
 msgstr "Dati ir atjaunot."
 
-#: core/alarm/exportalarmjobinterface.cpp:28
+#: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
 msgid "Start export KAlarm settings..."
 msgstr "Sāk eksportēt „KAlarm“ iestatījumus..."
 
-#: core/alarm/exportalarmjobinterface.cpp:29
+#: core/alarm/exportalarmjobinterface.cpp:30
 #, kde-format
 msgid "Export KAlarm settings"
 msgstr "Eksportēt „KAlarm“ iestatījumus"
 
-#: core/alarm/importalarmjobinterface.cpp:32
+#: core/alarm/importalarmjobinterface.cpp:34
 #, kde-format
 msgid "Starting to import KAlarm settings..."
 msgstr "Sāk importēt „KAlarm“ iestatījumus..."
 
-#: core/alarm/importalarmjobinterface.cpp:33
+#: core/alarm/importalarmjobinterface.cpp:35
 #, kde-format
 msgid "Import KAlarm settings"
 msgstr "Importē „KAlarm“ iestatījumus"
@@ -326,91 +326,91 @@ msgstr "Importē „KAlarm“ iestatījumus"
 msgid "Archive cannot be opened in write mode."
 msgstr "Arhīvu nevar atvērt rakstīšanas režīmā."
 
-#: core/archivestorage.cpp:45 core/utils.cpp:134
-#: gui/dialog/showarchivestructuredialog.cpp:183
+#: core/archivestorage.cpp:45 core/utils.cpp:135
+#: gui/dialog/showarchivestructuredialog.cpp:185
 #, kde-format
 msgid "Archive cannot be opened in read mode."
 msgstr "Arhīvu nevar atvērt lasīšanas režīmā."
 
-#: core/backupresourcefilejobbase.cpp:47
+#: core/backupresourcefilejobbase.cpp:49
 #, kde-format
 msgid "\"%1\" is not a file."
 msgstr "„%1“ nav datne."
 
-#: core/backupresourcefilejobbase.cpp:53 core/backupresourcefilejobbase.cpp:60
-#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:57
+#: core/backupresourcefilejobbase.cpp:55 core/backupresourcefilejobbase.cpp:62
+#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" was backed up."
 msgstr "„%1“ ir dublēts."
 
-#: core/backupresourcefilejobbase.cpp:55 core/pimdatabackupthread.cpp:56
-#: core/storeresourcejob.cpp:59
+#: core/backupresourcefilejobbase.cpp:57 core/pimdatabackupthread.cpp:56
+#: core/storeresourcejob.cpp:61
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
 msgstr "„%1“ datni nevar pievienot dublējuma datnei."
 
-#: core/calendar/exportcalendarjobinterface.cpp:82
+#: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
 msgid "Start export KOrganizer settings..."
 msgstr "Sākt eksportēt „KOrganizer“ iestatījumus..."
 
-#: core/calendar/exportcalendarjobinterface.cpp:83
+#: core/calendar/exportcalendarjobinterface.cpp:84
 #, kde-format
 msgid "Export KOrganizer settings"
 msgstr "Eksportēt „KOrganizer“ iestatījumus"
 
-#: core/calendar/importcalendarjobinterface.cpp:35
+#: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
 msgstr "Sāk importēt „KOrganizer“ iestatījumus..."
 
-#: core/calendar/importcalendarjobinterface.cpp:37
+#: core/calendar/importcalendarjobinterface.cpp:39
 #, kde-format
 msgid "Import KOrganizer settings"
 msgstr "Importē „KOrganizer“ iestatījumus"
 
-#: core/mail/exportmailjobinterface.cpp:43
+#: core/mail/exportmailjobinterface.cpp:45
 #, kde-format
 msgid "Start export KMail settings..."
 msgstr "Sākt eksportēt „KMail“ iestatījumus..."
 
-#: core/mail/exportmailjobinterface.cpp:44
+#: core/mail/exportmailjobinterface.cpp:46
 #, kde-format
 msgid "Export KMail settings"
 msgstr "Eksportēt „KMail“ iestatījumus"
 
-#: core/mail/exportmailjobinterface.cpp:112
+#: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Folder Attributes..."
 msgstr "Dublē mapes atribūtus..."
 
-#: core/mail/exportmailjobinterface.cpp:114
+#: core/mail/exportmailjobinterface.cpp:116
 #, kde-format
 msgid "Backing up Mails..."
 msgstr "Dublē vēstules..."
 
-#: core/mail/exportmailjobinterface.cpp:115
+#: core/mail/exportmailjobinterface.cpp:117
 #, kde-format
 msgid "Start export resource..."
 msgstr "Sāk eksportēt resursu..."
 
-#: core/mail/exportmailjobinterface.cpp:123
+#: core/mail/exportmailjobinterface.cpp:125
 #, kde-format
 msgid "Backing up transports..."
 msgstr "Dublē transportus..."
 
-#: core/mail/exportmailjobinterface.cpp:128
-#: core/mail/exportmailjobinterface.cpp:140
+#: core/mail/exportmailjobinterface.cpp:130
+#: core/mail/exportmailjobinterface.cpp:142
 #, kde-format
 msgid "Transports backup done."
 msgstr "Transporti ir nodublēti."
 
-#: core/mail/exportmailjobinterface.cpp:142
+#: core/mail/exportmailjobinterface.cpp:144
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr "Transporta datni nevar pievienot dublējuma datnei."
 
-#: core/mail/exportmailjobinterface.cpp:541
+#: core/mail/exportmailjobinterface.cpp:542
 #, kde-format
 msgid "Backing up identity..."
 msgstr "Dublē identitāti..."
@@ -430,22 +430,22 @@ msgstr "Identitāte ir dublēta."
 msgid "Identity file cannot be added to backup file."
 msgstr "Identitāti nevar pievienot dublējuma datnei."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:139
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
 #, kde-format
 msgid "Filters backup done."
 msgstr "Filtri ir dublēti."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:143
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "Filtri nevar tikt eksportēti."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#: core/mail/exportmailjobinterfaceimpl.cpp:165
 #, kde-format
 msgid "Backing up Folder Attributes done."
 msgstr "Dublēti mapes atribūti."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#: core/mail/exportmailjobinterfaceimpl.cpp:169
 #, kde-format
 msgid "Folder Attributes cannot be exported."
 msgstr "Mapes atribūtus nevar eksportēt."
@@ -512,73 +512,73 @@ msgstr "Atjauno filtrus..."
 msgid "Filters restored."
 msgstr "Filtri ir atjaunoti."
 
+#: core/mail/importmailjobinterface.cpp:894
 #: core/mail/importmailjobinterface.cpp:899
-#: core/mail/importmailjobinterface.cpp:904
 #, kde-format
 msgid "Restoring identities..."
 msgstr "Atjauno identitātes..."
 
-#: core/mail/importmailjobinterface.cpp:902
+#: core/mail/importmailjobinterface.cpp:897
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
 msgstr "arhīvā nevar atrast „emailidentities“ datni."
 
-#: core/mail/importmailjobinterface.cpp:963
+#: core/mail/importmailjobinterface.cpp:958
 #, kde-format
 msgid "Identities restored."
 msgstr "Identitātes atjaunotas."
 
-#: core/mail/importmailjobinterface.cpp:965
+#: core/mail/importmailjobinterface.cpp:960
 #, kde-format
 msgid "Failed to restore identity file."
 msgstr "Neizdevās atjaunot identitātes datni."
 
-#: core/mail/importmailjobinterface.cpp:1283
+#: core/mail/importmailjobinterface.cpp:1278
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "„%1“ migrācija ir veikta."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:35
+#: core/mail/importmailjobinterfaceimpl.cpp:37
 #, kde-format
 msgid "Restoring folder attributes..."
 msgstr "Atjauno mapes atribūtus..."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:41
+#: core/mail/importmailjobinterfaceimpl.cpp:43
 #, kde-format
 msgid "Restoring Folder Attributes done."
 msgstr "Mapes atribūti ir atjaunoti."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:45
+#: core/mail/importmailjobinterfaceimpl.cpp:47
 #, kde-format
 msgid "Folder Attributes cannot be restored."
 msgstr "Mapes atribūtus nevar atjaunot."
 
-#: core/pimdatabackuprestore.cpp:76 core/pimdatabackuprestore.cpp:239
+#: core/pimdatabackuprestore.cpp:78 core/pimdatabackuprestore.cpp:241
 #, kde-format
 msgid "No data selected."
 msgstr "Nav atlasīti dati."
 
-#: core/pimdatabackuprestore.cpp:82 core/pimdatabackuprestore.cpp:245
+#: core/pimdatabackuprestore.cpp:84 core/pimdatabackuprestore.cpp:247
 #, kde-format
 msgid "Unable to open file \"%1\"."
 msgstr "Neizdodas atvērt datni „%1“."
 
-#: core/pimdatabackuprestore.cpp:91
+#: core/pimdatabackuprestore.cpp:93
 #, kde-format
 msgid "Starting to backup data in '%1'"
 msgstr "Sāk dublēt datus datnē „%1“."
 
-#: core/pimdatabackuprestore.cpp:174
+#: core/pimdatabackuprestore.cpp:176
 #, kde-format
 msgid "Backup in '%1' done."
 msgstr "Dublēts datnē „%1“."
 
-#: core/pimdatabackuprestore.cpp:264
+#: core/pimdatabackuprestore.cpp:266
 #, kde-format
 msgid "Starting to restore data from '%1'"
 msgstr "Sāk atjaunot datus no „%1“"
 
-#: core/pimdatabackuprestore.cpp:272
+#: core/pimdatabackuprestore.cpp:274
 #, kde-format
 msgid "Restoring data from '%1' done."
 msgstr "Dati ir atjaunoti no „%1“."
@@ -593,234 +593,234 @@ msgstr "Nav iespējams atvērt arhīva datni."
 msgid "Impossible to backup \"%1\"."
 msgstr "Nav iespējams dublēt „%1“."
 
-#: core/resourceconverterbase.cpp:195 core/resourceconverterbase.cpp:204
+#: core/resourceconverterbase.cpp:197 core/resourceconverterbase.cpp:206
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "Resursa datni „%1“ nevar pievienot dublējuma datnei."
 
-#: core/resourceconverterbase.cpp:207
+#: core/resourceconverterbase.cpp:209
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr "Resursu konfigurācijas datne „%1“ nepastāv."
 
-#: core/utils.cpp:181
+#: core/utils.cpp:182
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: core/utils.cpp:183
+#: core/utils.cpp:184
 #, kde-format
 msgid "KAddressBook"
 msgstr "KAddressBook"
 
-#: core/utils.cpp:185
+#: core/utils.cpp:186
 #, kde-format
 msgid "KAlarm"
 msgstr "KAlarm"
 
-#: core/utils.cpp:187
+#: core/utils.cpp:188
 #, kde-format
 msgid "KOrganizer"
 msgstr "KOrganizer"
 
-#: core/utils.cpp:189
+#: core/utils.cpp:190
 #, kde-format
 msgid "Akregator"
 msgstr "Akregator"
 
-#: core/utils.cpp:203
+#: core/utils.cpp:204
 #, kde-format
 msgid "Identity"
 msgstr "Identitāte"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:206
 #, kde-format
 msgid "Mails"
 msgstr "Vēstules"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:208
 #, kde-format
 msgid "Mail Transport"
 msgstr "Pasta transports"
 
-#: core/utils.cpp:209
+#: core/utils.cpp:210
 #, kde-format
 msgid "Resources"
 msgstr "Resursi"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:212
 #, kde-format
 msgid "Config"
 msgstr "Konfigurācija"
 
-#: core/utils.cpp:213
+#: core/utils.cpp:214
 #, kde-format
 msgid "Data"
 msgstr "Dati"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:35
+#: gui/dialog/backupfilestructureinfodialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Archive File Structure"
 msgstr "Arhīva datņu struktūra"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:37
+#: gui/dialog/backupfilestructureinfodialog.cpp:38
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Dublējuma arhīva struktūra:"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:63
+#: gui/dialog/backupfilestructureinfodialog.cpp:64
 #, kde-format
 msgid "backup-structure.txt file was not found."
 msgstr "„backup-structure.txt“ datne nav atrasta."
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:34
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "Konfigurēt „PimDataExporter“"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:43
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:45
 #, kde-format
 msgid "General"
 msgstr "Pamata"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:58
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:60
 #, kde-format
 msgid "User Feedback"
 msgstr "Lietošanas informācija"
 
-#: gui/dialog/selectiontypedialog.cpp:27
+#: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
 msgctxt "@option:check"
 msgid "Use this template by default"
 msgstr "Pēc noklusējuma lietot šo veidni"
 
-#: gui/dialog/selectiontypedialog.cpp:28
+#: gui/dialog/selectiontypedialog.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Save as Template..."
 msgstr "Saglabāt kā veidni..."
 
-#: gui/dialog/selectiontypedialog.cpp:29
+#: gui/dialog/selectiontypedialog.cpp:31
 #, kde-format
 msgctxt "@action:button"
 msgid "Load Template..."
 msgstr "Ielādēt veidni..."
 
-#: gui/dialog/selectiontypedialog.cpp:31
+#: gui/dialog/selectiontypedialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
 msgstr "Atlasīt tipu"
 
-#: gui/dialog/selectiontypedialog.cpp:52
-#: gui/dialog/synchronizeresourcedialog.cpp:46
+#: gui/dialog/selectiontypedialog.cpp:54
+#: gui/dialog/synchronizeresourcedialog.cpp:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Atlasīt visu"
 
-#: gui/dialog/selectiontypedialog.cpp:57
-#: gui/dialog/synchronizeresourcedialog.cpp:51
+#: gui/dialog/selectiontypedialog.cpp:59
+#: gui/dialog/synchronizeresourcedialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
 msgstr "Noņemt atlasi visam"
 
-#: gui/dialog/showarchivestructuredialog.cpp:40
+#: gui/dialog/showarchivestructuredialog.cpp:42
 #, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
 msgstr "Izvilkt atlasīto datni"
 
-#: gui/dialog/showarchivestructuredialog.cpp:41
+#: gui/dialog/showarchivestructuredialog.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
 msgstr "Atvērt atlasīto datni"
 
-#: gui/dialog/showarchivestructuredialog.cpp:43
+#: gui/dialog/showarchivestructuredialog.cpp:45
 #, kde-format
 msgctxt "@title:window"
 msgid "Show Archive Content on file \"%1\""
 msgstr "Rādīt datnes „%1“ arhīva saturu"
 
-#: gui/dialog/showarchivestructuredialog.cpp:51
+#: gui/dialog/showarchivestructuredialog.cpp:53
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
 msgstr "Meklēt..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:54
+#: gui/dialog/showarchivestructuredialog.cpp:56
 #, kde-format
 msgid "Save As Text..."
 msgstr "Saglabāt kā tekstu..."
 
-#: gui/dialog/showarchivestructuredialog.cpp:134
+#: gui/dialog/showarchivestructuredialog.cpp:136
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
 msgstr "Atlasīt vārdnīcu"
 
-#: gui/dialog/showarchivestructuredialog.cpp:140
+#: gui/dialog/showarchivestructuredialog.cpp:142
 #, kde-format
 msgid "Do you want to overwrite %1?"
 msgstr "Vai vēlaties pārrakstīt „%1“?"
 
-#: gui/dialog/showarchivestructuredialog.cpp:141
+#: gui/dialog/showarchivestructuredialog.cpp:143
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
 msgstr "Datne jau pastāv"
 
-#: gui/dialog/showarchivestructuredialog.cpp:149
+#: gui/dialog/showarchivestructuredialog.cpp:151
 #, kde-format
 msgid "Impossible to copy %1 in %2."
 msgstr "Nav iespējams „%1“ iekopēt „%2“"
 
-#: gui/dialog/showarchivestructuredialog.cpp:172
+#: gui/dialog/showarchivestructuredialog.cpp:174
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
 msgstr "Teksta datnes"
 
-#: gui/dialog/showarchivestructuredialog.cpp:175
+#: gui/dialog/showarchivestructuredialog.cpp:177
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
 msgstr "Eksportēt žurnāla datni"
 
-#: gui/dialog/showarchivestructuredialog.cpp:183
+#: gui/dialog/showarchivestructuredialog.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot open archive"
 msgstr "Nevar atvērt arhīvu"
 
-#: gui/dialog/showarchivestructuredialog.cpp:189
+#: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "Info"
 msgstr "Informācija"
 
-#: gui/dialog/showarchivestructuredialog.cpp:191
+#: gui/dialog/showarchivestructuredialog.cpp:193
 #, kde-format
 msgid "This is not pim archive."
 msgstr "Šis nav PIM arhīvs."
 
-#: gui/dialog/showarchivestructuredialog.cpp:191
+#: gui/dialog/showarchivestructuredialog.cpp:193
 #, kde-format
 msgctxt "@title:window"
 msgid "Show information"
 msgstr "Rādīt informāciju"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:29
+#: gui/dialog/synchronizeresourcedialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
 msgstr "Sinhronizēt resursus"
 
-#: gui/dialog/synchronizeresourcedialog.cpp:32
+#: gui/dialog/synchronizeresourcedialog.cpp:34
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -876,7 +876,7 @@ msgstr "Sinhronizēt resursus"
 msgid "Synchronize resources... It can take some time."
 msgstr "Sinhronizē resursus... Tas var prasīt kādu brīdi"
 
-#: gui/pimdatabackuprestoreui.cpp:25
+#: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
 msgid ""
 "The archive was created by a newer version of this program. It might contain "
@@ -886,54 +886,54 @@ msgstr ""
 "Arhīvu izveidoja šīs programmas jaunāka versija. Tas var saturēt papildu "
 "datus, kas importa laikā tiks izlaisti. Vai vēlaties to importēt?"
 
-#: gui/pimdatabackuprestoreui.cpp:27
+#: gui/pimdatabackuprestoreui.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Not correct version"
 msgstr "Nepareiza versija"
 
-#: gui/pimdatabackuprestoreui.cpp:28
+#: gui/pimdatabackuprestoreui.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importēt"
 
-#: gui/pimdatacommandlineoption.cpp:38 gui/pimdatacommandlineoption.cpp:40
+#: gui/pimdatacommandlineoption.cpp:40 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "PIM Data Exporter"
 msgstr "PIM datu eksportētājs"
 
-#: gui/pimdatacommandlineoption.cpp:42
+#: gui/pimdatacommandlineoption.cpp:44
 #, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
 msgstr "Autortiesības © 2012—%1 „pimdataexporter“ autori"
 
-#: gui/pimdatacommandlineoption.cpp:47
+#: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
 msgid "Template file uses to define what data, settings to import or export"
 msgstr ""
 "Veidnes datnes tiek izmantotas, lai definētu, kādus datus un iestatījumus "
 "importēt vai eksportēt"
 
-#: gui/pimdatacommandlineoption.cpp:49
+#: gui/pimdatacommandlineoption.cpp:50
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
 msgstr "Importēt doto datni"
 
-#: gui/pimdatacommandlineoption.cpp:50
+#: gui/pimdatacommandlineoption.cpp:51
 #, kde-format
 msgctxt "@info:shell"
 msgid "Export the given file"
 msgstr "Eksportēt doto datni"
 
-#: gui/pimdatacommandlineoption.cpp:52
+#: gui/pimdatacommandlineoption.cpp:53
 #, kde-format
 msgctxt "@info:shell"
 msgid "File or url. The user will be asked whether to import or export."
 msgstr "Datne vai URL. Lietotājiem lūgs to importēt vai eksportēt."
 
-#: gui/pimdatacommandlineoption.cpp:54
+#: gui/pimdatacommandlineoption.cpp:55
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
@@ -957,27 +957,27 @@ msgstr "&Rīki"
 msgid "Main Toolbar"
 msgstr "Galvenā rīkjosla"
 
-#: gui/pimdataexporterwindow.cpp:168
+#: gui/pimdataexporterwindow.cpp:170
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Sākas pilna sinhronizācija..."
 
-#: gui/pimdataexporterwindow.cpp:198
+#: gui/pimdataexporterwindow.cpp:200
 #, kde-format
 msgid "Full sync finished."
 msgstr "Pilna sinhronizācija ir pabeigta."
 
-#: gui/pimdataexporterwindow.cpp:205
+#: gui/pimdataexporterwindow.cpp:207
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "Pabeigta „%1“ pilna sinhronizācija."
 
-#: gui/pimdataexporterwindow.cpp:210
+#: gui/pimdataexporterwindow.cpp:212
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "„%1“ pilna sinhronizācijas nav izdevusies."
 
-#: gui/pimdataexporterwindow.cpp:216
+#: gui/pimdataexporterwindow.cpp:218
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -986,71 +986,71 @@ msgstr ""
 "Lai atjaunotu datus, jums ir jālieto „pimdataexporter“. Rīkojieties "
 "piesardzīgi, jo šis rīks var pārrakstīt esošos iestatījumus un datus."
 
-#: gui/pimdataexporterwindow.cpp:218 gui/pimdataexporterwindow.cpp:325
+#: gui/pimdataexporterwindow.cpp:220 gui/pimdataexporterwindow.cpp:326
 #: gui/pimdataexporterwindow.cpp:403
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Dublējumkopija"
 
-#: gui/pimdataexporterwindow.cpp:245
+#: gui/pimdataexporterwindow.cpp:247
 #, kde-format
 msgid "Export Data..."
 msgstr "Eksportēt datus..."
 
-#: gui/pimdataexporterwindow.cpp:250
+#: gui/pimdataexporterwindow.cpp:252
 #, kde-format
 msgid "Import Data..."
 msgstr "Importēt datus..."
 
-#: gui/pimdataexporterwindow.cpp:255
+#: gui/pimdataexporterwindow.cpp:257
 #, kde-format
 msgid "Save log..."
 msgstr "Saglabāt žurnālu..."
 
-#: gui/pimdataexporterwindow.cpp:258
+#: gui/pimdataexporterwindow.cpp:260
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Rādīt arhīva struktūras informāciju..."
 
-#: gui/pimdataexporterwindow.cpp:261
+#: gui/pimdataexporterwindow.cpp:263
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Rādīt arhīva struktūras informāciju..."
 
-#: gui/pimdataexporterwindow.cpp:265
+#: gui/pimdataexporterwindow.cpp:267
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Rādīt pašreizējā arhīva informāciju..."
 
-#: gui/pimdataexporterwindow.cpp:303
+#: gui/pimdataexporterwindow.cpp:304
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Atlasiet arhīvu"
 
-#: gui/pimdataexporterwindow.cpp:303
+#: gui/pimdataexporterwindow.cpp:304
 #, kde-format
 msgid "Zip file"
 msgstr "ZIP datne"
 
-#: gui/pimdataexporterwindow.cpp:315
+#: gui/pimdataexporterwindow.cpp:316
 #, kde-format
 msgid "Log is empty."
 msgstr "Žurnāls ir tukšs."
 
-#: gui/pimdataexporterwindow.cpp:315
+#: gui/pimdataexporterwindow.cpp:316
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Saglabāt žurnālu"
 
-#: gui/pimdataexporterwindow.cpp:319
+#: gui/pimdataexporterwindow.cpp:320
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML datnes (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:325
+#: gui/pimdataexporterwindow.cpp:326
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "Izejiet no visām „kdepim“ programmām pirms sākat dublēt datus."
@@ -1079,22 +1079,22 @@ msgstr ""
 "Pirms datu atjaunošanas jums ir jāaizver visas „kdepim“ programmas. Vai "
 "vēlaties turpināt?"
 
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:415
 #, kde-format
 msgid "Restore backup"
 msgstr "Atjaunot no dublējuma"
 
-#: gui/pimdataexporterwindow.cpp:418
+#: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Zip File"
 msgstr "ZIP datne"
 
-#: gui/pimdataexporterwindow.cpp:450
+#: gui/pimdataexporterwindow.cpp:449
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Notiek atjaunošana..."
 
-#: gui/trayicon/pimdatatrayicon.cpp:13
+#: gui/trayicon/pimdatatrayicon.cpp:15
 #, kde-format
 msgid "Pim Data Exporter"
 msgstr "PIM datu eksportētājs"
@@ -1122,7 +1122,7 @@ msgstr "Vienmēr apvienot konfigurācijas datni"
 msgid "Import"
 msgstr "Importēt"
 
-#: gui/widgets/selectiontypetreewidget.cpp:332
+#: gui/widgets/selectiontypetreewidget.cpp:334
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "Veidnes datne (*.xml)"
