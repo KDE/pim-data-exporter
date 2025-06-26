@@ -153,7 +153,7 @@ include_directories(
 add_definitions(-DTRANSLATION_DOMAIN=\"pimdataexporter\")
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
-ecm_set_disabled_deprecation_versions(QT 6.9.0 KF 6.15.0)
+ecm_set_disabled_deprecation_versions(QT 6.10.0 KF 6.15.0)
 
 option(
     USE_UNITY_CMAKE_SUPPORT
