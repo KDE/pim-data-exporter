@@ -7,8 +7,7 @@
 >PIM-exportprogramma van gegevens</application
 >">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % Dutch "INCLUDE"
-> 
+  <!ENTITY % Dutch "INCLUDE">
   <!ENTITY imap "<acronym
 >IMAP</acronym
 >">
