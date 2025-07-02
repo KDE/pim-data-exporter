@@ -31,10 +31,7 @@ set(showarchivestructuredialog_gui_SRCS
     ../dialog/showarchivestructuredialog.cpp
     ../pimdataexportgui_debug.cpp
 )
-add_executable(
-    showarchivestructuredialog_gui
-    ${showarchivestructuredialog_gui_SRCS}
-)
+add_executable(showarchivestructuredialog_gui ${showarchivestructuredialog_gui_SRCS})
 target_link_libraries(
     showarchivestructuredialog_gui
     KPim6::AkonadiCore

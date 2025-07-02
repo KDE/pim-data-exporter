@@ -13,9 +13,6 @@ add_executable(
     ../loginfile.cpp
     ${pimdataexporterconsole_loginfiletest_SRCS}
 )
-add_test(
-    NAME pimdataexporterconsole_loginfiletest
-    COMMAND pimdataexporterconsole_loginfiletest
-)
+add_test(NAME pimdataexporterconsole_loginfiletest COMMAND pimdataexporterconsole_loginfiletest)
 ecm_mark_as_test(pimdataexporterconsole_loginfiletest)
 target_link_libraries(pimdataexporterconsole_loginfiletest Qt::Test)

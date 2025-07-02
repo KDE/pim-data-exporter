@@ -66,7 +66,12 @@ target_sources(
 
 ecm_qt_declare_logging_category(pimdataexporter HEADER pimdataexportgui_debug.h IDENTIFIER PIMDATAEXPORTERGUI_LOG CATEGORY_NAME org.kde.pim.pimdataexportergui)
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(pimdataexporter PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        pimdataexporter
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 
 if(TARGET KF6::UserFeedbackWidgets)
@@ -98,17 +103,15 @@ if(TARGET KF6::DBusAddons)
     target_link_libraries(pimdataexporter PRIVATE KF6::DBusAddons)
 endif()
 
-install(TARGETS pimdataexporter ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-
 install(
-    PROGRAMS org.kde.pimdataexporter.desktop
-    DESTINATION ${KDE_INSTALL_APPDIR}
+    TARGETS
+        pimdataexporter
+        ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
-install(
-    FILES settings/pimdataexporterglobalconfig.kcfg
-    DESTINATION ${KDE_INSTALL_KCFGDIR}
-)
+install(PROGRAMS org.kde.pimdataexporter.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+
+install(FILES settings/pimdataexporterglobalconfig.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 
 if(BUILD_TESTING)
     add_subdirectory(tests)

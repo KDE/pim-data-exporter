@@ -3,10 +3,19 @@
 add_definitions(-DPIMDATAINSTALL_DIR="${CMAKE_CURRENT_BINARY_DIR}/install")
 
 ####
-add_executable(utilstest utilstest.cpp utilstest.h)
+add_executable(
+    utilstest
+    utilstest.cpp
+    utilstest.h
+)
 add_test(NAME utilstest COMMAND utilstest)
 ecm_mark_as_test(utilstest)
-target_link_libraries(utilstest Qt::Test pimdataexporterprivate KF6::ConfigCore)
+target_link_libraries(
+    utilstest
+    Qt::Test
+    pimdataexporterprivate
+    KF6::ConfigCore
+)
 
 #####
 add_library(
@@ -42,7 +51,12 @@ add_library(
     importexportprogressindicatortest.h
 )
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(test_resourceconverter PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        test_resourceconverter
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 target_link_libraries(
     test_resourceconverter
@@ -77,10 +91,7 @@ add_executable(
     backupresourcefilejobimpltest.cpp
     backupresourcefilejobimpltest.h
 )
-add_test(
-    NAME backupresourcefilejobimpltest
-    COMMAND backupresourcefilejobimpltest
-)
+add_test(NAME backupresourcefilejobimpltest COMMAND backupresourcefilejobimpltest)
 ecm_mark_as_test(backupresourcefilejobimpltest)
 target_link_libraries(
     backupresourcefilejobimpltest

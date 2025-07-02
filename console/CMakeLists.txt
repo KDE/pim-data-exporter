@@ -28,7 +28,12 @@ ecm_qt_declare_logging_category(pimdataexporterconsole HEADER pimdataexportconso
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(pimdataexporterconsole PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        pimdataexporterconsole
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 
 target_link_libraries(
@@ -44,4 +49,8 @@ target_link_libraries(
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
-install(TARGETS pimdataexporterconsole ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(
+    TARGETS
+        pimdataexporterconsole
+        ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+)

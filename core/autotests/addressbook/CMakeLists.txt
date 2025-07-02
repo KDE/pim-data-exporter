@@ -9,14 +9,8 @@ set(exportaddressbookjobinterfacetest_SRCS
     exportaddressbookjobinterfacetestimpl.h
 )
 
-add_executable(
-    exportaddressbookjobinterfacetest
-    ${exportaddressbookjobinterfacetest_SRCS}
-)
-add_test(
-    NAME exportaddressbookjobinterfacetest
-    COMMAND exportaddressbookjobinterfacetest
-)
+add_executable(exportaddressbookjobinterfacetest ${exportaddressbookjobinterfacetest_SRCS})
+add_test(NAME exportaddressbookjobinterfacetest COMMAND exportaddressbookjobinterfacetest)
 ecm_mark_as_test(exportaddressbookjobinterfacetest)
 target_link_libraries(
     exportaddressbookjobinterfacetest
@@ -34,14 +28,8 @@ set(importaddressbookjobinterfacetest_SRCS
     importaddressbookjobinterfacetestimpl.h
 )
 
-add_executable(
-    importaddressbookjobinterfacetest
-    ${importaddressbookjobinterfacetest_SRCS}
-)
-add_test(
-    NAME importaddressbookjobinterfacetest
-    COMMAND importaddressbookjobinterfacetest
-)
+add_executable(importaddressbookjobinterfacetest ${importaddressbookjobinterfacetest_SRCS})
+add_test(NAME importaddressbookjobinterfacetest COMMAND importaddressbookjobinterfacetest)
 ecm_mark_as_test(importaddressbookjobinterfacetest)
 target_link_libraries(
     importaddressbookjobinterfacetest

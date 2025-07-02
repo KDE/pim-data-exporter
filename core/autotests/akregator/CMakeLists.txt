@@ -9,14 +9,8 @@ set(exportakregatorjobinterfacetest_SRCS
     exportakregatorjobinterfacetestimpl.h
 )
 
-add_executable(
-    exportakregatorjobinterfacetest
-    ${exportakregatorjobinterfacetest_SRCS}
-)
-add_test(
-    NAME exportakregatorjobinterfacetest
-    COMMAND exportakregatorjobinterfacetest
-)
+add_executable(exportakregatorjobinterfacetest ${exportakregatorjobinterfacetest_SRCS})
+add_test(NAME exportakregatorjobinterfacetest COMMAND exportakregatorjobinterfacetest)
 ecm_mark_as_test(exportakregatorjobinterfacetest)
 target_link_libraries(
     exportakregatorjobinterfacetest
@@ -35,14 +29,8 @@ set(importakregatorjobinterfacetest_SRCS
     importakregatorjobinterfacetestimpl.h
 )
 
-add_executable(
-    importakregatorjobinterfacetest
-    ${importakregatorjobinterfacetest_SRCS}
-)
-add_test(
-    NAME importakregatorjobinterfacetest
-    COMMAND importakregatorjobinterfacetest
-)
+add_executable(importakregatorjobinterfacetest ${importakregatorjobinterfacetest_SRCS})
+add_test(NAME importakregatorjobinterfacetest COMMAND importakregatorjobinterfacetest)
 ecm_mark_as_test(importakregatorjobinterfacetest)
 target_link_libraries(
     importakregatorjobinterfacetest

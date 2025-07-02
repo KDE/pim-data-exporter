@@ -12,10 +12,7 @@ add_executable(
     synchronizeresourcedialogtest.h
     ../dialog/synchronizeresourcedialog.cpp
 )
-add_test(
-    NAME synchronizeresourcedialogtest
-    COMMAND synchronizeresourcedialogtest
-)
+add_test(NAME synchronizeresourcedialogtest COMMAND synchronizeresourcedialogtest)
 ecm_mark_as_test(synchronizeresourcedialogtest)
 target_link_libraries(
     synchronizeresourcedialogtest
@@ -43,10 +40,7 @@ add_executable(
     ../widgets/pimdataexporterconfigurewidget.cpp
     ${pimdataexporter_kcfg_SRCS}
 )
-add_test(
-    NAME pimdataexporterconfigurewidgettest
-    COMMAND pimdataexporterconfigurewidgettest
-)
+add_test(NAME pimdataexporterconfigurewidgettest COMMAND pimdataexporterconfigurewidgettest)
 ecm_mark_as_test(pimdataexporterconfigurewidgettest)
 target_link_libraries(
     pimdataexporterconfigurewidgettest

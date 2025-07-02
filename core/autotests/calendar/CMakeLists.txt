@@ -9,14 +9,8 @@ set(exportcalendarsjobinterfacetest_SRCS
     exportcalendarsjobinterfacetestimpl.h
 )
 
-add_executable(
-    exportcalendarsjobinterfacetest
-    ${exportcalendarsjobinterfacetest_SRCS}
-)
-add_test(
-    NAME exportcalendarsjobinterfacetest
-    COMMAND exportcalendarsjobinterfacetest
-)
+add_executable(exportcalendarsjobinterfacetest ${exportcalendarsjobinterfacetest_SRCS})
+add_test(NAME exportcalendarsjobinterfacetest COMMAND exportcalendarsjobinterfacetest)
 ecm_mark_as_test(exportcalendarsjobinterfacetest)
 target_link_libraries(
     exportcalendarsjobinterfacetest
@@ -35,14 +29,8 @@ set(importcalendarjobinterfacetest_SRCS
     importcalendarjobinterfacetestimpl.h
 )
 
-add_executable(
-    importcalendarjobinterfacetest
-    ${importcalendarjobinterfacetest_SRCS}
-)
-add_test(
-    NAME importcalendarjobinterfacetest
-    COMMAND importcalendarjobinterfacetest
-)
+add_executable(importcalendarjobinterfacetest ${importcalendarjobinterfacetest_SRCS})
+add_test(NAME importcalendarjobinterfacetest COMMAND importcalendarjobinterfacetest)
 ecm_mark_as_test(importcalendarjobinterfacetest)
 target_link_libraries(
     importcalendarjobinterfacetest

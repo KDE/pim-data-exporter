@@ -61,10 +61,7 @@ target_sources(
         exportmailfolderattributejobtest.cpp
         exportmailfolderattributejobtest.h
 )
-add_test(
-    NAME exportmailfolderattributejobtest
-    COMMAND exportmailfolderattributejobtest
-)
+add_test(NAME exportmailfolderattributejobtest COMMAND exportmailfolderattributejobtest)
 ecm_mark_as_test(exportmailfolderattributejobtest)
 target_link_libraries(
     exportmailfolderattributejobtest
@@ -81,10 +78,7 @@ target_sources(
         importmailfolderattributejobtest.cpp
         importmailfolderattributejobtest.h
 )
-add_test(
-    NAME importmailfolderattributejobtest
-    COMMAND importmailfolderattributejobtest
-)
+add_test(NAME importmailfolderattributejobtest COMMAND importmailfolderattributejobtest)
 ecm_mark_as_test(importmailfolderattributejobtest)
 target_link_libraries(
     importmailfolderattributejobtest
