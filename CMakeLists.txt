@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 set(PIM_VERSION "6.5.40")
 project(pim-data-exporter VERSION ${PIM_VERSION})
 set(RELEASE_SERVICE_VERSION "25.11.70")
-set(KF_MIN_VERSION "6.14.0")
+set(KF_MIN_VERSION "6.15.0")
 # Update it for each release
 set(PIMDATAEXPORTER_RELEASE_VERSION_DATE "25.11.10") # yy.MM.dd
 
