@@ -48,7 +48,7 @@ msgstr "لوران مونتال"
 #: console/main.cpp:32 gui/pimdatacommandlineoption.cpp:45
 #, kde-format
 msgid "Maintainer"
-msgstr "المصين"
+msgstr "الصائن"
 
 #: console/main.cpp:33
 #, kde-format
@@ -810,7 +810,7 @@ msgstr "الملفّات النّصّيّة"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Log File"
-msgstr "تصدير ملفّ السّجلّ"
+msgstr "تصدير ملفّ السجل"
 
 #: gui/dialog/showarchivestructuredialog.cpp:185
 #, kde-format
@@ -1023,7 +1023,7 @@ msgstr "استورد بيانات..."
 #: gui/pimdataexporterwindow.cpp:257
 #, kde-format
 msgid "Save log..."
-msgstr "احفظ السّجلّ..."
+msgstr "احفظ السجل..."
 
 #: gui/pimdataexporterwindow.cpp:260
 #, kde-format
@@ -1054,13 +1054,13 @@ msgstr "ملفّ Zip"
 #: gui/pimdataexporterwindow.cpp:316
 #, kde-format
 msgid "Log is empty."
-msgstr "السّجلّ فارغ."
+msgstr "السجل فارغ."
 
 #: gui/pimdataexporterwindow.cpp:316
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
-msgstr "احفظ السّجلّ"
+msgstr "احفظ السجل"
 
 #: gui/pimdataexporterwindow.cpp:320
 #, kde-format
