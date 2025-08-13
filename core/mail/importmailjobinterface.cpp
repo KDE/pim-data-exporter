@@ -1162,8 +1162,8 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
     if (kmailConfig->hasGroup(accountOrder)) {
         KConfigGroup group = kmailConfig->group(accountOrder);
         const QStringList orderList = group.readEntry(u"order"_s, QStringList());
-        QStringList newOrderList;
         if (!orderList.isEmpty()) {
+            QStringList newOrderList;
             for (const QString &account : orderList) {
                 if (mHashResources.contains(account)) {
                     newOrderList.append(mHashResources.value(account));
@@ -1171,6 +1171,7 @@ void ImportMailJobInterface::importKmailConfig(const KArchiveFile *kmailsnippet,
                     newOrderList.append(account);
                 }
             }
+            group.writeEntry(u"order"_s, newOrderList);
         }
     }
 

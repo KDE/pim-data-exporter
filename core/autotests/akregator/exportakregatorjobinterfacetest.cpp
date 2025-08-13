@@ -22,9 +22,7 @@ void ExportAkregatorJobInterfaceTest::exportAkregator_data()
     QTest::addColumn<QByteArray>("configpath");
     QTest::addColumn<Utils::StoredTypes>("options");
     const QByteArray pathConfig(QByteArray(PIMDATAEXPORTER_DIR) + "/export/");
-    Utils::StoredTypes options = {Utils::StoredType::Config};
-    // TODO
-    options = {Utils::StoredType::Config | Utils::StoredType::Resources};
+    const Utils::StoredTypes options = {Utils::StoredType::Config | Utils::StoredType::Resources};
     QTest::newRow("fullresource") << pathConfig + QByteArray("fullresource/") << options;
 }
 

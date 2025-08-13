@@ -24,7 +24,7 @@ LogInFile::~LogInFile()
     }
 }
 
-QString LogInFile::fileName() const
+const QString &LogInFile::fileName() const
 {
     return mFileName;
 }

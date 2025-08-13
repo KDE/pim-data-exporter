@@ -175,7 +175,6 @@ void ImportAddressbookJobInterface::restoreResources()
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {
             ResourceFiles value = mListResourceFile.at(i);
-            QMap<QString, QVariant> settings;
             if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_vcarddir_resource_"))
                 || value.akonadiConfigFile.contains(QLatin1StringView("akonadi_contacts_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
@@ -200,6 +199,7 @@ void ImportAddressbookJobInterface::restoreResources()
                                        newUrlInfo.path(),
                                        value.akonadiConfigFile.contains(QLatin1StringView("akonadi_contacts_resource_")));
                     }
+                    QMap<QString, QVariant> settings;
                     settings.insert(u"Path"_s, newUrl);
 
                     const QString agentConfigFile = value.akonadiAgentConfigFile;

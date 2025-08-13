@@ -127,7 +127,6 @@ void ImportAlarmJobInterface::restoreResources()
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {
             ResourceFiles value = mListResourceFile.at(i);
-            QMap<QString, QVariant> settings;
             if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_kalarm_dir_resource_"))
                 || value.akonadiConfigFile.contains(QLatin1StringView("akonadi_kalarm_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
@@ -153,6 +152,7 @@ void ImportAlarmJobInterface::restoreResources()
                         // TODO  adapt directory name too
                         extractZipFile(fileEntry, copyToDirName, newUrlInfo.path(), isDirResource);
                     }
+                    QMap<QString, QVariant> settings;
                     settings.insert(u"Path"_s, newUrl);
 
                     const QString agentConfigFile = value.akonadiAgentConfigFile;

@@ -328,7 +328,6 @@ AbstractImportExportJob::restoreResourceFile(const QString &resourceBaseName, co
 
         for (int i = 0, total = mListResourceFile.size(); i < total; ++i) {
             ResourceFiles value = mListResourceFile.at(i);
-            QMap<QString, QVariant> settings;
             if (value.akonadiConfigFile.contains(resourceBaseName + u'_')) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
@@ -354,6 +353,7 @@ AbstractImportExportJob::restoreResourceFile(const QString &resourceBaseName, co
                             qCWarning(PIMDATAEXPORTERCORE_LOG) << "AbstractImportExportJob: file " << dataFile << " can not copy to " << newUrl;
                         }
                     }
+                    QMap<QString, QVariant> settings;
                     // setPath doesn't exist in groupware
                     if (resourceBaseName != u"akonadi_davgroupware_resource"_s && resourceBaseName != u"akonadi_openxchange_resource"_s
                         && resourceBaseName != u"akonadi_google_resource"_s) {
@@ -621,8 +621,8 @@ void AbstractImportExportJob::convertRealPathToCollectionList(KConfigGroup &grou
 {
     if (group.hasKey(currentKey)) {
         const QStringList listExpension = group.readEntry(currentKey, QStringList());
-        QStringList result;
         if (!listExpension.isEmpty()) {
+            QStringList result;
             for (const QString &collection : listExpension) {
                 const Akonadi::Collection::Id id = convertPathToId(collection);
                 if (id != -1) {

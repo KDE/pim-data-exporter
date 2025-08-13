@@ -296,7 +296,6 @@ void ImportCalendarJobInterface::restoreResources()
         const int numberOfResourceFile = mListResourceFile.size();
         for (int i = 0; i < numberOfResourceFile; ++i) {
             ResourceFiles value = mListResourceFile.at(i);
-            QMap<QString, QVariant> settings;
             if (value.akonadiConfigFile.contains(QLatin1StringView("akonadi_icaldir_resource_"))) {
                 const KArchiveEntry *fileResouceEntry = mArchiveDirectory->entry(value.akonadiConfigFile);
                 if (fileResouceEntry && fileResouceEntry->isFile()) {
@@ -325,6 +324,7 @@ void ImportCalendarJobInterface::restoreResources()
                                        newUrlInfo.path(),
                                        value.akonadiConfigFile.contains(QLatin1StringView("akonadi_icaldir_resource_")));
                     }
+                    QMap<QString, QVariant> settings;
                     settings.insert(u"Path"_s, newUrl);
 
                     const QString agentConfigFile = value.akonadiAgentConfigFile;
