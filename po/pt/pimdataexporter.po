@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-08-14 00:43+0000\n"
 "PO-Revision-Date: 2022-06-03 18:10+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -536,7 +536,7 @@ msgstr "As identidades foram repostas."
 msgid "Failed to restore identity file."
 msgstr "Não foi possível repor o ficheiro de identidades."
 
-#: core/mail/importmailjobinterface.cpp:1278
+#: core/mail/importmailjobinterface.cpp:1279
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "A migração do \"%1\" está completa."

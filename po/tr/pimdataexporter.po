@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-08-14 00:43+0000\n"
 "PO-Revision-Date: 2025-03-07 23:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -534,7 +534,7 @@ msgstr "Kimlikler geri yüklendi."
 msgid "Failed to restore identity file."
 msgstr "Kimlik dosyası geri yüklenemedi."
 
-#: core/mail/importmailjobinterface.cpp:1278
+#: core/mail/importmailjobinterface.cpp:1279
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "“%1” göçü tamamlandı."

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimdataexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-08-14 00:43+0000\n"
 "PO-Revision-Date: 2024-08-28 21:59+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -531,7 +531,7 @@ msgstr "Identitäten zurückgespielt."
 msgid "Failed to restore identity file."
 msgstr "Zurückspielen der Identitätendatei ist fehlgeschlagen."
 
-#: core/mail/importmailjobinterface.cpp:1278
+#: core/mail/importmailjobinterface.cpp:1279
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "Migration von „%1“ abgeschlossen."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-08-14 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -529,7 +529,7 @@ msgstr "身份已恢复。"
 msgid "Failed to restore identity file."
 msgstr "无法回复身份文件。"
 
-#: core/mail/importmailjobinterface.cpp:1278
+#: core/mail/importmailjobinterface.cpp:1279
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr ""

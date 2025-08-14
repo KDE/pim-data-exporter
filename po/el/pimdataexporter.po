@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-08-14 00:43+0000\n"
 "PO-Revision-Date: 2013-01-14 23:29+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -563,7 +563,7 @@ msgstr "Έγινε επαναφορά ταυτοτήτων."
 msgid "Failed to restore identity file."
 msgstr "Αποτυχία επαναφοράς αρχείου ταυτοτήτων."
 
-#: core/mail/importmailjobinterface.cpp:1278
+#: core/mail/importmailjobinterface.cpp:1279
 #, fuzzy, kde-format
 #| msgid "\"%1\" backup done."
 msgid "\"%1\" migration done."

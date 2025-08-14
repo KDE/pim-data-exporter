@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-08-14 00:43+0000\n"
 "PO-Revision-Date: 2022-02-08 19:50+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -546,7 +546,7 @@ msgstr "Identiteter genskabt."
 msgid "Failed to restore identity file."
 msgstr "Kunne ikke genskabe identitetsfilen."
 
-#: core/mail/importmailjobinterface.cpp:1278
+#: core/mail/importmailjobinterface.cpp:1279
 #, fuzzy, kde-format
 #| msgid "\"%1\" backup done."
 msgid "\"%1\" migration done."

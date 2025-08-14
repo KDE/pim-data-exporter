@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde 49i410\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-08-14 00:43+0000\n"
 "PO-Revision-Date: 2014-01-31 19:25+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian\n"
@@ -574,7 +574,7 @@ msgstr "Identiteti obnovljeni."
 msgid "Failed to restore identity file."
 msgstr "Nemoguće obnoviti datoteku identiteta."
 
-#: core/mail/importmailjobinterface.cpp:1278
+#: core/mail/importmailjobinterface.cpp:1279
 #, fuzzy, kde-format
 #| msgid "\"%1\" backup done."
 msgid "\"%1\" migration done."
