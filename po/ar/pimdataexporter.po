@@ -793,7 +793,7 @@ msgstr "أتريد الكتابة فوق %1؟"
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
-msgstr "الملف موجود بالفعل"
+msgstr "الملف موجود فعلًا"
 
 #: gui/dialog/showarchivestructuredialog.cpp:151
 #, kde-format
@@ -858,7 +858,7 @@ msgstr "ألغِ"
 #: gui/importexportprogressindicatorgui.cpp:66
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it or merge it?"
-msgstr "‏”%1“ موجود بالفعل. أتريد الكتابة فوقه أو دمجه؟"
+msgstr "‏”%1“ موجود فعلًا. أتريد الكتابة فوقه أو دمجه؟"
 
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
@@ -877,12 +877,12 @@ msgstr "ادمج"
 #: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
 msgid "\"%1\" already exists. Do you want to overwrite it?"
-msgstr "‏”%1“ موجود بالفعل. أتريد الكتابة فوقه؟"
+msgstr "‏”%1“ موجود فعلًا. أتريد الكتابة فوقه؟"
 
 #: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
-msgstr "الدّليل ”%1“ موجود بالفعل. أتريد الكتابة فوقه؟"
+msgstr "الدّليل ”%1“ موجود فعلًا. أتريد الكتابة فوقه؟"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:41
 #, kde-format
