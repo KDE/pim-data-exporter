@@ -10,7 +10,7 @@
 #include "pimdataexporterwindow.h"
 
 #include <KCrash>
-#if HAVE_KDBUSADDONS
+#ifdef HAVE_KDBUSADDONS
 #include <KDBusService>
 #endif
 
@@ -49,13 +49,13 @@ int main(int argc, char *argv[])
     }
 #endif
 
-#if HAVE_KDBUSADDONS
+#ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
 #endif
 
     auto backupMailWin = new PimDataExporterWindow();
     parser.setExportWindow(backupMailWin);
-#if HAVE_KDBUSADDONS
+#ifdef HAVE_KDBUSADDONS
     QObject::connect(&service, &KDBusService::activateRequested, &parser, &PimDataCommandLineOption::slotActivateRequested);
 #endif
     backupMailWin->show();
