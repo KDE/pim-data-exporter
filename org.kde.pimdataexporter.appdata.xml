@@ -140,6 +140,8 @@
   <url type="donation">https://www.kde.org/community/donations/?app=pimsettingexporter</url>
   <url type="homepage">https://apps.kde.org/pimdataexporter/</url>
   <url type="vcs-browser">https://invent.kde.org/pim/pim-data-exporter</url>
+  <url type="contact">https://go.kde.org/matrix/#/#kontact:kde.org</url>
+  <url type="contribute">https://community.kde.org/Get_Involved/</url>
   <content_rating type="oars-1.1"/>
   <provides>
     <binary>pimdataexporter</binary>
