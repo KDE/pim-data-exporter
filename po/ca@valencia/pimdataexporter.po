@@ -722,7 +722,7 @@ msgstr "Carrega una plantilla…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Type"
-msgstr "Seleccioneu el tipus"
+msgstr "Trieu el tipus"
 
 #: gui/dialog/selectiontypedialog.cpp:54
 #: gui/dialog/synchronizeresourcedialog.cpp:48
@@ -771,7 +771,7 @@ msgstr "Anomena i guarda text…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
-msgstr "Seleccioneu un directori"
+msgstr "Trieu un directori"
 
 #: gui/dialog/showarchivestructuredialog.cpp:142
 #, kde-format
@@ -836,8 +836,8 @@ msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
 msgstr ""
-"S'han afegit alguns recursos, però les dades no estan sincronitzades. "
-"Seleccioneu quins recursos voleu sincronitzar:"
+"S'han afegit alguns recursos, però les dades no estan sincronitzades. Trieu "
+"quins recursos voleu sincronitzar:"
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
@@ -1037,7 +1037,7 @@ msgstr "Mostra informació sobre l'arxiu actual…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
-msgstr "Selecciona l'arxiu"
+msgstr "Tria l'arxiu"
 
 #: gui/pimdataexporterwindow.cpp:304
 #, kde-format
@@ -1138,18 +1138,3 @@ msgstr "Importa"
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "Fitxers de plantilla (*.xml)"
-
-#~ msgid "Start export KNotes settings..."
-#~ msgstr "Inicia l'exportació de la configuració de KNotes…"
-
-#~ msgid "Export KNotes settings"
-#~ msgstr "Exporteu la configuració de KNotes"
-
-#~ msgid "Starting to import KNotes settings..."
-#~ msgstr "S'està iniciant la importació de la configuració de KNotes…"
-
-#~ msgid "Import KNotes settings"
-#~ msgstr "Importeu la configuració de KNotes"
-
-#~ msgid "KNotes"
-#~ msgstr "KNotes"
