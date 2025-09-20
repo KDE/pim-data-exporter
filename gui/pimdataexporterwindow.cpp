@@ -30,7 +30,6 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <Akonadi/ControlGui>
 
-#include <KAboutData>
 #include <KActionCollection>
 #include <KFileWidget>
 #include <KLocalizedString>
