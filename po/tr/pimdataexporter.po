@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-14 00:43+0000\n"
+"POT-Creation-Date: 2025-09-21 00:43+0000\n"
 "PO-Revision-Date: 2025-03-07 23:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -959,27 +959,27 @@ msgstr "&Araçlar"
 msgid "Main Toolbar"
 msgstr "Ana Araç Çubuğu"
 
-#: gui/pimdataexporterwindow.cpp:170
+#: gui/pimdataexporterwindow.cpp:169
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Tam eşzamanlama başladı…"
 
-#: gui/pimdataexporterwindow.cpp:200
+#: gui/pimdataexporterwindow.cpp:199
 #, kde-format
 msgid "Full sync finished."
 msgstr "Tam eşzamanlama bitti."
 
-#: gui/pimdataexporterwindow.cpp:207
+#: gui/pimdataexporterwindow.cpp:206
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "“%1” için tam eşzamanlama tamamlandı."
 
-#: gui/pimdataexporterwindow.cpp:212
+#: gui/pimdataexporterwindow.cpp:211
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "“%1” için tam eşzamanlama başarısız oldu."
 
-#: gui/pimdataexporterwindow.cpp:218
+#: gui/pimdataexporterwindow.cpp:217
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -989,92 +989,92 @@ msgstr ""
 "ayarlarınıza ve verilerinizin üzerine yazabileceğinden, kullanırken dikkatli "
 "olmalısınız."
 
-#: gui/pimdataexporterwindow.cpp:220 gui/pimdataexporterwindow.cpp:326
-#: gui/pimdataexporterwindow.cpp:403
+#: gui/pimdataexporterwindow.cpp:219 gui/pimdataexporterwindow.cpp:325
+#: gui/pimdataexporterwindow.cpp:402
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Yedekle"
 
-#: gui/pimdataexporterwindow.cpp:247
+#: gui/pimdataexporterwindow.cpp:246
 #, kde-format
 msgid "Export Data..."
 msgstr "Veriyi Dışa Aktar…"
 
-#: gui/pimdataexporterwindow.cpp:252
+#: gui/pimdataexporterwindow.cpp:251
 #, kde-format
 msgid "Import Data..."
 msgstr "Veri İçe Aktar…"
 
-#: gui/pimdataexporterwindow.cpp:257
+#: gui/pimdataexporterwindow.cpp:256
 #, kde-format
 msgid "Save log..."
 msgstr "Günlüğü kaydet…"
 
-#: gui/pimdataexporterwindow.cpp:260
+#: gui/pimdataexporterwindow.cpp:259
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Arşiv Yapı Bilgisini Göster…"
 
-#: gui/pimdataexporterwindow.cpp:263
+#: gui/pimdataexporterwindow.cpp:262
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Arşiv Bilgisini Göster…"
 
-#: gui/pimdataexporterwindow.cpp:267
+#: gui/pimdataexporterwindow.cpp:266
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Geçerli Arşiv için Bilgi Göster…"
 
-#: gui/pimdataexporterwindow.cpp:304
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Arşiv Seç"
 
-#: gui/pimdataexporterwindow.cpp:304
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Zip file"
 msgstr "Zip dosyası"
 
-#: gui/pimdataexporterwindow.cpp:316
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Log is empty."
 msgstr "Günlük boş."
 
-#: gui/pimdataexporterwindow.cpp:316
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Günlüğü kaydet"
 
-#: gui/pimdataexporterwindow.cpp:320
+#: gui/pimdataexporterwindow.cpp:319
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML Dosyaları (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:326
+#: gui/pimdataexporterwindow.cpp:325
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Verileriniz yedeklenmeden önce, lütfen tüm kdepim uygulamalarında çıkın."
 
-#: gui/pimdataexporterwindow.cpp:348
+#: gui/pimdataexporterwindow.cpp:347
 #, kde-format
 msgid "Create backup"
 msgstr "Yedek oluştur"
 
-#: gui/pimdataexporterwindow.cpp:350
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip dosyası (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:360
+#: gui/pimdataexporterwindow.cpp:359
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Yedekleme sürüyor…"
 
-#: gui/pimdataexporterwindow.cpp:402
+#: gui/pimdataexporterwindow.cpp:401
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1083,17 +1083,17 @@ msgstr ""
 "Veriyi geri yüklemeden önce tüm kdepim uygulamalarını kapatmanız gerekir. "
 "Sürdürmek istiyor musunuz?"
 
-#: gui/pimdataexporterwindow.cpp:415
+#: gui/pimdataexporterwindow.cpp:414
 #, kde-format
 msgid "Restore backup"
 msgstr "Yedekten geri yükle"
 
-#: gui/pimdataexporterwindow.cpp:417
+#: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Zip File"
 msgstr "Zip Dosyası"
 
-#: gui/pimdataexporterwindow.cpp:449
+#: gui/pimdataexporterwindow.cpp:448
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Geri yükleme sürüyor…"

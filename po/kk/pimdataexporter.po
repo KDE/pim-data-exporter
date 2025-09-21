@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-14 00:43+0000\n"
+"POT-Creation-Date: 2025-09-21 00:43+0000\n"
 "PO-Revision-Date: 2013-11-08 01:45+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1015,27 +1015,27 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:170
+#: gui/pimdataexporterwindow.cpp:169
 #, kde-format
 msgid "Full sync starts..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:200
+#: gui/pimdataexporterwindow.cpp:199
 #, kde-format
 msgid "Full sync finished."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:207
+#: gui/pimdataexporterwindow.cpp:206
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:212
+#: gui/pimdataexporterwindow.cpp:211
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:218
+#: gui/pimdataexporterwindow.cpp:217
 #, fuzzy, kde-format
 #| msgid ""
 #| "For restoring data, you must use \"pimsettingexporter\". Be careful it "
@@ -1047,99 +1047,99 @@ msgstr ""
 "Деректерді қалпына келтіру үшін \"pimsettingexporter\"дегенді қолданыңыз. "
 "Абайлаңыз, бар деректердің үстінен жазуы мүмкін."
 
-#: gui/pimdataexporterwindow.cpp:220 gui/pimdataexporterwindow.cpp:326
-#: gui/pimdataexporterwindow.cpp:403
+#: gui/pimdataexporterwindow.cpp:219 gui/pimdataexporterwindow.cpp:325
+#: gui/pimdataexporterwindow.cpp:402
 #, fuzzy, kde-format
 #| msgid "Backup"
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Сақтық көшірмелеу"
 
-#: gui/pimdataexporterwindow.cpp:247
+#: gui/pimdataexporterwindow.cpp:246
 #, fuzzy, kde-format
 #| msgid "Restore Data..."
 msgid "Export Data..."
 msgstr "Деректі қалпына келтіру..."
 
-#: gui/pimdataexporterwindow.cpp:252
+#: gui/pimdataexporterwindow.cpp:251
 #, fuzzy, kde-format
 #| msgid "Restore Data..."
 msgid "Import Data..."
 msgstr "Деректі қалпына келтіру..."
 
-#: gui/pimdataexporterwindow.cpp:257
+#: gui/pimdataexporterwindow.cpp:256
 #, kde-format
 msgid "Save log..."
 msgstr "Журналын сақтау..."
 
-#: gui/pimdataexporterwindow.cpp:260
+#: gui/pimdataexporterwindow.cpp:259
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Архив құрылымы мәліметтерін көрсету..."
 
-#: gui/pimdataexporterwindow.cpp:263
+#: gui/pimdataexporterwindow.cpp:262
 #, fuzzy, kde-format
 #| msgid "Show Archive Structure Information..."
 msgid "Show Archive Information..."
 msgstr "Архив құрылымы мәліметтерін көрсету..."
 
-#: gui/pimdataexporterwindow.cpp:267
+#: gui/pimdataexporterwindow.cpp:266
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:304
+#: gui/pimdataexporterwindow.cpp:303
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Бүкілін таңдау"
 
-#: gui/pimdataexporterwindow.cpp:304
+#: gui/pimdataexporterwindow.cpp:303
 #, fuzzy, kde-format
 #| msgid "Copy file"
 msgid "Zip file"
 msgstr "Файлды көшірмелеу"
 
-#: gui/pimdataexporterwindow.cpp:316
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Log is empty."
 msgstr "Журнал бос."
 
-#: gui/pimdataexporterwindow.cpp:316
+#: gui/pimdataexporterwindow.cpp:315
 #, fuzzy, kde-format
 #| msgid "Save log"
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Журналын сақтау"
 
-#: gui/pimdataexporterwindow.cpp:320
+#: gui/pimdataexporterwindow.cpp:319
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:326
+#: gui/pimdataexporterwindow.cpp:325
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:348
+#: gui/pimdataexporterwindow.cpp:347
 #, kde-format
 msgid "Create backup"
 msgstr "Сақтық көшірмені жасау"
 
-#: gui/pimdataexporterwindow.cpp:350
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:360
+#: gui/pimdataexporterwindow.cpp:359
 #, fuzzy, kde-format
 #| msgid "Backing up resources..."
 msgid "Backup in progress..."
 msgstr "Ресурстарын сақтық көшірмелеу..."
 
-#: gui/pimdataexporterwindow.cpp:402
+#: gui/pimdataexporterwindow.cpp:401
 #, fuzzy, kde-format
 #| msgid ""
 #| "Before to restore data, close all kdepim applications. Do you want to "
@@ -1151,17 +1151,17 @@ msgstr ""
 "Деректің сақтық көшірмесінен қалпына қайтару алдында бүкіл kdepim "
 "қолданбаларын жабу керек. Жалғастыра берейік пе?"
 
-#: gui/pimdataexporterwindow.cpp:415
+#: gui/pimdataexporterwindow.cpp:414
 #, kde-format
 msgid "Restore backup"
 msgstr "Көшірмеден қалпына келтіру"
 
-#: gui/pimdataexporterwindow.cpp:417
+#: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Zip File"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:449
+#: gui/pimdataexporterwindow.cpp:448
 #, fuzzy, kde-format
 #| msgid "Restore resources..."
 msgid "Restore in progress..."
