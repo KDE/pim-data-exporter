@@ -7,8 +7,7 @@
 >Інструмент експортування даних PIM</application
 >">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % Ukrainian "INCLUDE"
-> 
+  <!ENTITY % Ukrainian "INCLUDE">
   <!ENTITY imap "<acronym
 >IMAP</acronym
 >">
