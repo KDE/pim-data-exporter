@@ -151,6 +151,20 @@ if(TARGET KF6::UserFeedbackWidgets)
     set(PIMDATAEXPORTER_WITH_KUSERFEEDBACK true)
 endif()
 
+find_package(KF6TextAddonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG)
+set_package_properties(
+    KF6TextAddonsWidgets
+    PROPERTIES
+        DESCRIPTION
+            "Add text addons widget"
+        TYPE
+            REQUIRED
+)
+
+if(${KF6TextAddonsWidgets_VERSION} VERSION_GREATER_EQUAL 1.8.44)
+    set(HAVE_TEXTUTILS_HAS_WHATSNEW_SUPPORT TRUE)
+endif()
+
 include_directories(
     ${pim-data-exporter_SOURCE_DIR}
     ${pim-data-exporter_BINARY_DIR}

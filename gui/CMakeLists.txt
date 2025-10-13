@@ -97,6 +97,7 @@ target_link_libraries(
         ${pimdataexporter_userfeedback_LIB}
         KF6::WidgetsAddons
         KF6::TextCustomEditor
+        KF6::TextAddonsWidgets
 )
 
 if(TARGET KF6::DBusAddons)
