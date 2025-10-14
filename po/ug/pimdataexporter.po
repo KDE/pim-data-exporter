@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-21 00:43+0000\n"
+"POT-Creation-Date: 2025-10-14 00:43+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -962,139 +962,139 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:169
+#: gui/pimdataexporterwindow.cpp:187
 #, kde-format
 msgid "Full sync starts..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:199
+#: gui/pimdataexporterwindow.cpp:217
 #, kde-format
 msgid "Full sync finished."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:206
+#: gui/pimdataexporterwindow.cpp:224
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:211
+#: gui/pimdataexporterwindow.cpp:229
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:217
+#: gui/pimdataexporterwindow.cpp:235
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
 "overwrite your existing settings and data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:219 gui/pimdataexporterwindow.cpp:325
-#: gui/pimdataexporterwindow.cpp:402
+#: gui/pimdataexporterwindow.cpp:237 gui/pimdataexporterwindow.cpp:343
+#: gui/pimdataexporterwindow.cpp:420
 #, fuzzy, kde-format
 #| msgid "Backup"
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "زاپاسلاش"
 
-#: gui/pimdataexporterwindow.cpp:246
+#: gui/pimdataexporterwindow.cpp:264
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Export Data..."
 msgstr "ئەسلىگە كەلتۈرۈش"
 
-#: gui/pimdataexporterwindow.cpp:251
+#: gui/pimdataexporterwindow.cpp:269
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Import Data..."
 msgstr "ئەسلىگە كەلتۈرۈش"
 
-#: gui/pimdataexporterwindow.cpp:256
+#: gui/pimdataexporterwindow.cpp:274
 #, kde-format
 msgid "Save log..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:259
+#: gui/pimdataexporterwindow.cpp:277
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:262
+#: gui/pimdataexporterwindow.cpp:280
 #, kde-format
 msgid "Show Archive Information..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:266
+#: gui/pimdataexporterwindow.cpp:284
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:303
+#: gui/pimdataexporterwindow.cpp:321
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:303
+#: gui/pimdataexporterwindow.cpp:321
 #, kde-format
 msgid "Zip file"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:315
+#: gui/pimdataexporterwindow.cpp:333
 #, kde-format
 msgid "Log is empty."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:315
+#: gui/pimdataexporterwindow.cpp:333
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:319
+#: gui/pimdataexporterwindow.cpp:337
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:325
+#: gui/pimdataexporterwindow.cpp:343
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:347
+#: gui/pimdataexporterwindow.cpp:365
 #, kde-format
 msgid "Create backup"
 msgstr "زاپاس قۇر"
 
-#: gui/pimdataexporterwindow.cpp:349
+#: gui/pimdataexporterwindow.cpp:367
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:359
+#: gui/pimdataexporterwindow.cpp:377
 #, fuzzy, kde-format
 #| msgid "Backup"
 msgid "Backup in progress..."
 msgstr "زاپاسلاش"
 
-#: gui/pimdataexporterwindow.cpp:401
+#: gui/pimdataexporterwindow.cpp:419
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:414
+#: gui/pimdataexporterwindow.cpp:432
 #, kde-format
 msgid "Restore backup"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:434
 #, kde-format
 msgid "Zip File"
 msgstr ""
 
-#: gui/pimdataexporterwindow.cpp:448
+#: gui/pimdataexporterwindow.cpp:466
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Restore in progress..."
