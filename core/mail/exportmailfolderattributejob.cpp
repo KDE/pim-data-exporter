@@ -54,12 +54,10 @@ void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, 
     tmp.open();
 
     KConfig conf(tmp.fileName());
-    QMapIterator<QString, ImportExportMailUtil::AttributeInfo> i(lstAttributeInfo);
-    while (i.hasNext()) {
-        i.next();
-        KConfigGroup attributeGroup = conf.group(i.key());
+    for (const auto &[key, value] : lstAttributeInfo.asKeyValueRange()) {
+        KConfigGroup attributeGroup = conf.group(key);
 
-        auto attr = i.value();
+        auto attr = value;
         if (!attr.displayAttribute.isEmpty()) {
             attributeGroup.writeEntry(u"Display"_s, attr.displayAttribute);
         }

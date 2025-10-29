@@ -19,15 +19,12 @@ ImportMailFolderAttributeJobTestImpl::~ImportMailFolderAttributeJobTestImpl()
 
 void ImportMailFolderAttributeJobTestImpl::applyAttributes(const QMap<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo> &map)
 {
-    QMapIterator<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo> indexDisplayMap(map);
     QFile data(mExtractPath + u"/config/mailfolderattributes"_s);
     if (data.open(QFile::WriteOnly | QFile::Truncate)) {
         QTextStream out(&data);
-        while (indexDisplayMap.hasNext()) {
-            indexDisplayMap.next();
-            out << "Collection " << indexDisplayMap.key() << " display " << indexDisplayMap.value().displayAttribute << " expire "
-                << indexDisplayMap.value().expireAttribute << " favorite " << indexDisplayMap.value().favoriteAttribute << " folder "
-                << indexDisplayMap.value().folderAttribute << "\n";
+        for (const auto &[key, value] : map.asKeyValueRange()) {
+            out << "Collection " << key << " display " << value.displayAttribute << " expire " << value.expireAttribute << " favorite "
+                << value.favoriteAttribute << " folder " << value.folderAttribute << "\n";
         }
     }
     restoreFileFolderAttribute();

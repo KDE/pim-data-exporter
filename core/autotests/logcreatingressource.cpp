@@ -59,13 +59,11 @@ QString LogCreatingResource::logCreateResource(const QString &resources, const Q
     QTextStream stream(mTmpLogFile);
     stream << resources << '\n';
     stream << name << '\n';
-    QMapIterator<QString, QVariant> i(settings);
-    while (i.hasNext()) {
-        i.next();
-        if (i.value().canConvert<QStringList>()) {
-            stream << i.key() << ' ' << i.value().toStringList().join(u',') << '\n';
+    for (const auto &[key, value] : settings.asKeyValueRange()) {
+        if (value.canConvert<QStringList>()) {
+            stream << key << ' ' << value.toStringList().join(u',') << '\n';
         } else {
-            stream << i.key() << ' ' << i.value().toString() << '\n';
+            stream << key << ' ' << value.toString() << '\n';
         }
     }
     stream << "synchronizeTree: " << (synchronizeTree ? "true" : "false") << '\n';
