@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2011-2025 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(PIM_VERSION "6.5.40")
+set(PIM_VERSION "6.5.80")
 project(pim-data-exporter VERSION ${PIM_VERSION})
-set(RELEASE_SERVICE_VERSION "25.11.70")
+set(RELEASE_SERVICE_VERSION "25.11.80")
 set(KF_MIN_VERSION "6.18.0")
 # Update it for each release
 set(PIMDATAEXPORTER_RELEASE_VERSION_DATE "25.11.10") # yy.MM.dd
@@ -65,7 +65,7 @@ file(
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
 # Do NOT add quote
-set(KDEPIM_DEV_VERSION alpha)
+set(KDEPIM_DEV_VERSION beta)
 
 # add an extra space
 if(DEFINED KDEPIM_DEV_VERSION)
