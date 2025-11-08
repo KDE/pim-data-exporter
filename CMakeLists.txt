@@ -96,7 +96,7 @@ set(KMIME_LIB_VERSION "6.5.40")
 
 set(MAILCOMMON_LIB_VERSION "6.5.40")
 set(PIMCOMMON_LIB_VERSION "6.5.40")
-set(KTEXTADDONS_MIN_VERSION "1.8.0")
+set(KTEXTADDONS_MIN_VERSION "1.8.44")
 
 # Find KF6 package
 find_package(KF6Archive ${KF_MIN_VERSION} REQUIRED)
@@ -160,10 +160,6 @@ set_package_properties(
         TYPE
             REQUIRED
 )
-
-if(${KF6TextAddonsWidgets_VERSION} VERSION_GREATER_EQUAL 1.8.44)
-    set(HAVE_TEXTUTILS_HAS_WHATSNEW_SUPPORT TRUE)
-endif()
 
 include_directories(
     ${pim-data-exporter_SOURCE_DIR}

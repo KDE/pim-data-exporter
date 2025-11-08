@@ -52,13 +52,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <KUserFeedback/Provider>
 #endif
 
-#if HAVE_TEXTUTILS_HAS_WHATSNEW_SUPPORT
 #include <TextAddonsWidgets/NeedUpdateVersionUtils>
 #include <TextAddonsWidgets/NeedUpdateVersionWidget>
-#else
-#include <PimCommon/NeedUpdateVersionUtils>
-#include <PimCommon/NeedUpdateVersionWidget>
-#endif
 
 // signal handler for SIGINT & SIGTERM
 #ifdef Q_OS_UNIX
@@ -104,7 +99,6 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     auto mainWidgetLayout = new QVBoxLayout(mainWidget);
     mainWidgetLayout->setContentsMargins({});
     mainWidgetLayout->setSpacing(0);
-#if HAVE_TEXTUTILS_HAS_WHATSNEW_SUPPORT
     if (TextAddonsWidgets::NeedUpdateVersionUtils::checkVersion()) {
         const auto status =
             TextAddonsWidgets::NeedUpdateVersionUtils::obsoleteVersionStatus(QLatin1String(PIMDATAEXPORTER_RELEASE_VERSION_DATE), QDate::currentDate());
@@ -114,16 +108,6 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
             needUpdateVersionWidget->setObsoleteVersion(status);
         }
     }
-#else
-    if (PimCommon::NeedUpdateVersionUtils::checkVersion()) {
-        const auto status = PimCommon::NeedUpdateVersionUtils::obsoleteVersionStatus(QLatin1String(PIMDATAEXPORTER_RELEASE_VERSION_DATE), QDate::currentDate());
-        if (status != PimCommon::NeedUpdateVersionUtils::ObsoleteVersion::NotObsoleteYet) {
-            auto needUpdateVersionWidget = new PimCommon::NeedUpdateVersionWidget(this);
-            mainWidgetLayout->addWidget(needUpdateVersionWidget);
-            needUpdateVersionWidget->setObsoleteVersion(status);
-        }
-    }
-#endif
 
     mainWidgetLayout->addWidget(mLogWidget);
 
