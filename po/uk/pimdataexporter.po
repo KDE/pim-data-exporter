@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimdataexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:43+0000\n"
+"POT-Creation-Date: 2025-11-09 00:43+0000\n"
 "PO-Revision-Date: 2024-08-01 20:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -961,27 +961,27 @@ msgstr "І&нструменти"
 msgid "Main Toolbar"
 msgstr "Головна панель інструментів"
 
-#: gui/pimdataexporterwindow.cpp:187
+#: gui/pimdataexporterwindow.cpp:171
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Розпочинаємо повну синхронізацію…"
 
-#: gui/pimdataexporterwindow.cpp:217
+#: gui/pimdataexporterwindow.cpp:201
 #, kde-format
 msgid "Full sync finished."
 msgstr "Повну синхронізацію завершено."
 
-#: gui/pimdataexporterwindow.cpp:224
+#: gui/pimdataexporterwindow.cpp:208
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "Повну синхронізацію «%1» завершено."
 
-#: gui/pimdataexporterwindow.cpp:229
+#: gui/pimdataexporterwindow.cpp:213
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "Не вдалося завершити повну синхронізацію «%1»."
 
-#: gui/pimdataexporterwindow.cpp:235
+#: gui/pimdataexporterwindow.cpp:219
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -990,93 +990,93 @@ msgstr ""
 "Для відновлення даних вам слід скористатися «pimdataexporter». Будьте "
 "обережні, програма може перезаписати наявні параметри роботи та дані."
 
-#: gui/pimdataexporterwindow.cpp:237 gui/pimdataexporterwindow.cpp:343
-#: gui/pimdataexporterwindow.cpp:420
+#: gui/pimdataexporterwindow.cpp:221 gui/pimdataexporterwindow.cpp:327
+#: gui/pimdataexporterwindow.cpp:404
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Резервне копіювання"
 
-#: gui/pimdataexporterwindow.cpp:264
+#: gui/pimdataexporterwindow.cpp:248
 #, kde-format
 msgid "Export Data..."
 msgstr "Експортувати дані…"
 
-#: gui/pimdataexporterwindow.cpp:269
+#: gui/pimdataexporterwindow.cpp:253
 #, kde-format
 msgid "Import Data..."
 msgstr "Імпортувати дані…"
 
-#: gui/pimdataexporterwindow.cpp:274
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Save log..."
 msgstr "Зберегти журнал…"
 
-#: gui/pimdataexporterwindow.cpp:277
+#: gui/pimdataexporterwindow.cpp:261
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Показати дані щодо структури архіву…"
 
-#: gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:264
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Показати дані щодо архіву…"
 
-#: gui/pimdataexporterwindow.cpp:284
+#: gui/pimdataexporterwindow.cpp:268
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Показати дані щодо поточного архіву…"
 
-#: gui/pimdataexporterwindow.cpp:321
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Виберіть архів"
 
-#: gui/pimdataexporterwindow.cpp:321
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file"
 msgstr "файл zip"
 
-#: gui/pimdataexporterwindow.cpp:333
+#: gui/pimdataexporterwindow.cpp:317
 #, kde-format
 msgid "Log is empty."
 msgstr "У журналі немає записів."
 
-#: gui/pimdataexporterwindow.cpp:333
+#: gui/pimdataexporterwindow.cpp:317
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Збереження журналу"
 
-#: gui/pimdataexporterwindow.cpp:337
+#: gui/pimdataexporterwindow.cpp:321
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "файли HTML (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:343
+#: gui/pimdataexporterwindow.cpp:327
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Будь ласка, завершіть роботу усіх програм kdepim, перш ніж створювати "
 "резервну копію ваших даних."
 
-#: gui/pimdataexporterwindow.cpp:365
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Create backup"
 msgstr "Створити резервну копію"
 
-#: gui/pimdataexporterwindow.cpp:367
+#: gui/pimdataexporterwindow.cpp:351
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "файл Zip (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:377
+#: gui/pimdataexporterwindow.cpp:361
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Виконуємо резервне копіювання…"
 
-#: gui/pimdataexporterwindow.cpp:419
+#: gui/pimdataexporterwindow.cpp:403
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1085,17 +1085,17 @@ msgstr ""
 "Перш ніж відновлювати дані з резервних копій, завершіть роботу всіх програм "
 "kdepim. Бажаєте продовжити?"
 
-#: gui/pimdataexporterwindow.cpp:432
+#: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Restore backup"
 msgstr "Відновити з резервної копії"
 
-#: gui/pimdataexporterwindow.cpp:434
+#: gui/pimdataexporterwindow.cpp:418
 #, kde-format
 msgid "Zip File"
 msgstr "файл zip"
 
-#: gui/pimdataexporterwindow.cpp:466
+#: gui/pimdataexporterwindow.cpp:450
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Виконуємо відновлення…"

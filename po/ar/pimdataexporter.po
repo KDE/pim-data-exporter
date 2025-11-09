@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:43+0000\n"
+"POT-Creation-Date: 2025-11-09 00:43+0000\n"
 "PO-Revision-Date: 2024-08-15 11:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -974,27 +974,27 @@ msgstr "أ&دوات"
 msgid "Main Toolbar"
 msgstr "شريط الأدوات الرئيسي"
 
-#: gui/pimdataexporterwindow.cpp:187
+#: gui/pimdataexporterwindow.cpp:171
 #, kde-format
 msgid "Full sync starts..."
 msgstr "المزامنة الكاملة تبدأ..."
 
-#: gui/pimdataexporterwindow.cpp:217
+#: gui/pimdataexporterwindow.cpp:201
 #, kde-format
 msgid "Full sync finished."
 msgstr "انتهت المزامنة الكاملة."
 
-#: gui/pimdataexporterwindow.cpp:224
+#: gui/pimdataexporterwindow.cpp:208
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "اكتملت مزامنة ”%1“ بالكامل."
 
-#: gui/pimdataexporterwindow.cpp:229
+#: gui/pimdataexporterwindow.cpp:213
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "فشلت مزامنة ”%1“ بالكامل."
 
-#: gui/pimdataexporterwindow.cpp:235
+#: gui/pimdataexporterwindow.cpp:219
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -1003,108 +1003,108 @@ msgstr ""
 "عليك استخدام ”مصدّر بيانات pimdataexporter“ لاستعادة البيانات. احترس فيمكنها "
 "الكتابة فوق الإعدادات والبيانات الحاليّة."
 
-#: gui/pimdataexporterwindow.cpp:237 gui/pimdataexporterwindow.cpp:343
-#: gui/pimdataexporterwindow.cpp:420
+#: gui/pimdataexporterwindow.cpp:221 gui/pimdataexporterwindow.cpp:327
+#: gui/pimdataexporterwindow.cpp:404
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "انسخ احتياطيًّا"
 
-#: gui/pimdataexporterwindow.cpp:264
+#: gui/pimdataexporterwindow.cpp:248
 #, kde-format
 msgid "Export Data..."
 msgstr "صدّر البيانات..."
 
-#: gui/pimdataexporterwindow.cpp:269
+#: gui/pimdataexporterwindow.cpp:253
 #, kde-format
 msgid "Import Data..."
 msgstr "استورد بيانات..."
 
-#: gui/pimdataexporterwindow.cpp:274
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Save log..."
 msgstr "احفظ السجل..."
 
-#: gui/pimdataexporterwindow.cpp:277
+#: gui/pimdataexporterwindow.cpp:261
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "اعرض معلومات بنية الأرشيف..."
 
-#: gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:264
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "اعرض معلومات الأرشيف..."
 
-#: gui/pimdataexporterwindow.cpp:284
+#: gui/pimdataexporterwindow.cpp:268
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "اعرض معلومات الأرشيف الحاليّ..."
 
-#: gui/pimdataexporterwindow.cpp:321
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "اختر أرشيفًا"
 
-#: gui/pimdataexporterwindow.cpp:321
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file"
 msgstr "ملفّ Zip"
 
-#: gui/pimdataexporterwindow.cpp:333
+#: gui/pimdataexporterwindow.cpp:317
 #, kde-format
 msgid "Log is empty."
 msgstr "السجل فارغ."
 
-#: gui/pimdataexporterwindow.cpp:333
+#: gui/pimdataexporterwindow.cpp:317
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "احفظ السجل"
 
-#: gui/pimdataexporterwindow.cpp:337
+#: gui/pimdataexporterwindow.cpp:321
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "ملفّات HTML (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:343
+#: gui/pimdataexporterwindow.cpp:327
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "رجاءً أنهِ كلّ تطبيقات «كِيدِي PIM» قبل نسخ البيانات احتياطيًّا."
 
-#: gui/pimdataexporterwindow.cpp:365
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Create backup"
 msgstr "أنشئ نسخة احتياطيّة"
 
-#: gui/pimdataexporterwindow.cpp:367
+#: gui/pimdataexporterwindow.cpp:351
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "ملفّ Zip (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:377
+#: gui/pimdataexporterwindow.cpp:361
 #, kde-format
 msgid "Backup in progress..."
 msgstr "يجري النّسخ احتياطيًّا..."
 
-#: gui/pimdataexporterwindow.cpp:419
+#: gui/pimdataexporterwindow.cpp:403
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
 msgstr "عليك إغلاق كلّ تطبيقات «كِيدِي PIM» قبل استعادة البيانات. أتريد المتابعة؟"
 
-#: gui/pimdataexporterwindow.cpp:432
+#: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Restore backup"
 msgstr "استعد النّسخة الاحتياطيّة"
 
-#: gui/pimdataexporterwindow.cpp:434
+#: gui/pimdataexporterwindow.cpp:418
 #, kde-format
 msgid "Zip File"
 msgstr "ملفّ Zip"
 
-#: gui/pimdataexporterwindow.cpp:466
+#: gui/pimdataexporterwindow.cpp:450
 #, kde-format
 msgid "Restore in progress..."
 msgstr "تجري الاستعادة..."

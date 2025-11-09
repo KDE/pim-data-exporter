@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:43+0000\n"
+"POT-Creation-Date: 2025-11-09 00:43+0000\n"
 "PO-Revision-Date: 2024-08-15 06:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -951,27 +951,27 @@ msgstr "工具(&T)"
 msgid "Main Toolbar"
 msgstr "主工具列"
 
-#: gui/pimdataexporterwindow.cpp:187
+#: gui/pimdataexporterwindow.cpp:171
 #, kde-format
 msgid "Full sync starts..."
 msgstr "開始完整同步..."
 
-#: gui/pimdataexporterwindow.cpp:217
+#: gui/pimdataexporterwindow.cpp:201
 #, kde-format
 msgid "Full sync finished."
 msgstr "完整同步已完成。"
 
-#: gui/pimdataexporterwindow.cpp:224
+#: gui/pimdataexporterwindow.cpp:208
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "\"%1\" 的完整同步已完成。"
 
-#: gui/pimdataexporterwindow.cpp:229
+#: gui/pimdataexporterwindow.cpp:213
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "\"%1\" 的完整同步失敗了。"
 
-#: gui/pimdataexporterwindow.cpp:235
+#: gui/pimdataexporterwindow.cpp:219
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -980,108 +980,108 @@ msgstr ""
 "您需要使用 \"pimdataexporter\" 才能回復資料。請小心，它能夠覆寫掉您現有的設定"
 "與資料。"
 
-#: gui/pimdataexporterwindow.cpp:237 gui/pimdataexporterwindow.cpp:343
-#: gui/pimdataexporterwindow.cpp:420
+#: gui/pimdataexporterwindow.cpp:221 gui/pimdataexporterwindow.cpp:327
+#: gui/pimdataexporterwindow.cpp:404
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "備份"
 
-#: gui/pimdataexporterwindow.cpp:264
+#: gui/pimdataexporterwindow.cpp:248
 #, kde-format
 msgid "Export Data..."
 msgstr "匯出資料..."
 
-#: gui/pimdataexporterwindow.cpp:269
+#: gui/pimdataexporterwindow.cpp:253
 #, kde-format
 msgid "Import Data..."
 msgstr "匯入資料..."
 
-#: gui/pimdataexporterwindow.cpp:274
+#: gui/pimdataexporterwindow.cpp:258
 #, kde-format
 msgid "Save log..."
 msgstr "儲存紀錄..."
 
-#: gui/pimdataexporterwindow.cpp:277
+#: gui/pimdataexporterwindow.cpp:261
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "顯示封存結構資訊..."
 
-#: gui/pimdataexporterwindow.cpp:280
+#: gui/pimdataexporterwindow.cpp:264
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "顯示封存資訊..."
 
-#: gui/pimdataexporterwindow.cpp:284
+#: gui/pimdataexporterwindow.cpp:268
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "顯示目前封存的資訊..."
 
-#: gui/pimdataexporterwindow.cpp:321
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "選取封存"
 
-#: gui/pimdataexporterwindow.cpp:321
+#: gui/pimdataexporterwindow.cpp:305
 #, kde-format
 msgid "Zip file"
 msgstr "Zip 檔案"
 
-#: gui/pimdataexporterwindow.cpp:333
+#: gui/pimdataexporterwindow.cpp:317
 #, kde-format
 msgid "Log is empty."
 msgstr "紀錄是空的。"
 
-#: gui/pimdataexporterwindow.cpp:333
+#: gui/pimdataexporterwindow.cpp:317
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "儲存紀錄"
 
-#: gui/pimdataexporterwindow.cpp:337
+#: gui/pimdataexporterwindow.cpp:321
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML 檔案 (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:343
+#: gui/pimdataexporterwindow.cpp:327
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "請在備份您的資料前先離開所有 kdepim 應用程式。"
 
-#: gui/pimdataexporterwindow.cpp:365
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Create backup"
 msgstr "建立備份"
 
-#: gui/pimdataexporterwindow.cpp:367
+#: gui/pimdataexporterwindow.cpp:351
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip 檔 (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:377
+#: gui/pimdataexporterwindow.cpp:361
 #, kde-format
 msgid "Backup in progress..."
 msgstr "備份進行中..."
 
-#: gui/pimdataexporterwindow.cpp:419
+#: gui/pimdataexporterwindow.cpp:403
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
 "continue?"
 msgstr "在回復資料前您必須先關閉所有 kdepim 的應用程式。您要繼續嗎？"
 
-#: gui/pimdataexporterwindow.cpp:432
+#: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Restore backup"
 msgstr "回復備份"
 
-#: gui/pimdataexporterwindow.cpp:434
+#: gui/pimdataexporterwindow.cpp:418
 #, kde-format
 msgid "Zip File"
 msgstr "Zip 檔案"
 
-#: gui/pimdataexporterwindow.cpp:466
+#: gui/pimdataexporterwindow.cpp:450
 #, kde-format
 msgid "Restore in progress..."
 msgstr "回復進行中..."
