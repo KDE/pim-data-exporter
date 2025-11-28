@@ -623,6 +623,7 @@ void AbstractImportExportJob::convertRealPathToCollectionList(KConfigGroup &grou
         const QStringList listExpension = group.readEntry(currentKey, QStringList());
         if (!listExpension.isEmpty()) {
             QStringList result;
+            result.reserve(listExpension.count());
             for (const QString &collection : listExpension) {
                 const Akonadi::Collection::Id id = convertPathToId(collection);
                 if (id != -1) {

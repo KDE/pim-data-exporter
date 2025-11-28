@@ -101,7 +101,7 @@ PimDataExporterWindow::PimDataExporterWindow(QWidget *parent)
     mainWidgetLayout->setSpacing(0);
     if (TextAddonsWidgets::NeedUpdateVersionUtils::checkVersion()) {
         const auto status =
-            TextAddonsWidgets::NeedUpdateVersionUtils::obsoleteVersionStatus(QLatin1String(PIMDATAEXPORTER_RELEASE_VERSION_DATE), QDate::currentDate());
+            TextAddonsWidgets::NeedUpdateVersionUtils::obsoleteVersionStatus(QStringLiteral(PIMDATAEXPORTER_RELEASE_VERSION_DATE), QDate::currentDate());
         if (status != TextAddonsWidgets::NeedUpdateVersionUtils::ObsoleteVersion::NotObsoleteYet) {
             auto needUpdateVersionWidget = new TextAddonsWidgets::NeedUpdateVersionWidget(this);
             mainWidgetLayout->addWidget(needUpdateVersionWidget);
