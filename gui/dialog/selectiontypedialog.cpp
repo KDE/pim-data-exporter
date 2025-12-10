@@ -84,7 +84,7 @@ void SelectionTypeDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(600, 400));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigSelectionTypeDialogDialog));
+    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigSelectionTypeDialogDialog));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
     loadDefaultTemplate();
