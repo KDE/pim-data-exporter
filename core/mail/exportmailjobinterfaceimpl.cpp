@@ -8,7 +8,6 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include "exportmailfolderattributejobimpl.h"
-#include <KIdentityManagementCore/IdentityManager>
 #include <MailCommon/FilterImporterExporter>
 #include <MailCommon/FilterManager>
 #include <MailCommon/MailUtil>
