@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2020-06-05 22:49+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -439,23 +439,23 @@ msgstr "Identiteet on varundatud."
 msgid "Identity file cannot be added to backup file."
 msgstr "Identiteedifaili ei saa varukoopiafaili lisada."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:140
 #, kde-format
 msgid "Filters backup done."
 msgstr "Filtrid on varundatud."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:143
+#: core/mail/exportmailjobinterfaceimpl.cpp:142
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "Filtreid ei saa eksportida."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:165
+#: core/mail/exportmailjobinterfaceimpl.cpp:164
 #, fuzzy, kde-format
 #| msgid "Backing up identity..."
 msgid "Backing up Folder Attributes done."
 msgstr "Identiteedi varundamine..."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:169
+#: core/mail/exportmailjobinterfaceimpl.cpp:168
 #, fuzzy, kde-format
 #| msgid "Filters cannot be exported."
 msgid "Folder Attributes cannot be exported."

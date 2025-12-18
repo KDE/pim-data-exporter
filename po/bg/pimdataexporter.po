@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2024-11-09 20:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -427,22 +427,22 @@ msgstr "Резервното копие на самоличностите е г�
 msgid "Identity file cannot be added to backup file."
 msgstr "Файлът за самоличност не може да бъде добавен към резервното копие."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:140
 #, kde-format
 msgid "Filters backup done."
 msgstr "Резервното копие на филтрите е готово."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:143
+#: core/mail/exportmailjobinterfaceimpl.cpp:142
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "Филтрите не могат да бъдат експортирани."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:165
+#: core/mail/exportmailjobinterfaceimpl.cpp:164
 #, kde-format
 msgid "Backing up Folder Attributes done."
 msgstr "Резервното копие на атрибутите на папката е завършено."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:169
+#: core/mail/exportmailjobinterfaceimpl.cpp:168
 #, kde-format
 msgid "Folder Attributes cannot be exported."
 msgstr "Атрибутите на папката не могат да се експортират."

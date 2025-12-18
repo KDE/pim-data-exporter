@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2024-08-03 12:26+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -433,22 +433,22 @@ msgid "Identity file cannot be added to backup file."
 msgstr ""
 "Non é posíbel engadir o ficheiro de identidade ao ficheiro de salvagarda."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:140
 #, kde-format
 msgid "Filters backup done."
 msgstr "Fíxose unha salvagarda dos filtros."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:143
+#: core/mail/exportmailjobinterfaceimpl.cpp:142
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "Os filtros non poden exportarse."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:165
+#: core/mail/exportmailjobinterfaceimpl.cpp:164
 #, kde-format
 msgid "Backing up Folder Attributes done."
 msgstr "Fíxose unha salvagarda dos atributos do cartafol."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:169
+#: core/mail/exportmailjobinterfaceimpl.cpp:168
 #, kde-format
 msgid "Folder Attributes cannot be exported."
 msgstr "Non é posíbel exportar os atributos do cartafol."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde 49i410\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2014-01-31 19:25+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian\n"
@@ -463,23 +463,23 @@ msgstr "Vraćanje identiteta završeno"
 msgid "Identity file cannot be added to backup file."
 msgstr "Datoteka identiteta ne moze biti dodata datoteci sigurnosnih kopija."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:140
 #, kde-format
 msgid "Filters backup done."
 msgstr "vraćanje filtera završeno"
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:143
+#: core/mail/exportmailjobinterfaceimpl.cpp:142
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "Filteri se ne mogu izvesti"
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:165
+#: core/mail/exportmailjobinterfaceimpl.cpp:164
 #, fuzzy, kde-format
 #| msgid "Backing up identity..."
 msgid "Backing up Folder Attributes done."
 msgstr "Vraćanje identiteta"
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:169
+#: core/mail/exportmailjobinterfaceimpl.cpp:168
 #, fuzzy, kde-format
 #| msgid "Filters cannot be exported."
 msgid "Folder Attributes cannot be exported."

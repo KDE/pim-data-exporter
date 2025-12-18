@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -427,22 +427,22 @@ msgstr "पहचान बैकअप हो गया."
 msgid "Identity file cannot be added to backup file."
 msgstr "पहचान फ़ाइल को बैकअप फ़ाइल में नहीं जोड़ा जा सकता."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:140
 #, kde-format
 msgid "Filters backup done."
 msgstr "फ़िल्टर बैकअप किया गया."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:143
+#: core/mail/exportmailjobinterfaceimpl.cpp:142
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "फ़िल्टर निर्यात नहीं किये जा सकते."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:165
+#: core/mail/exportmailjobinterfaceimpl.cpp:164
 #, kde-format
 msgid "Backing up Folder Attributes done."
 msgstr "फ़ोल्डर विशेषताओं का बैकअप लिया गया।"
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:169
+#: core/mail/exportmailjobinterfaceimpl.cpp:168
 #, kde-format
 msgid "Folder Attributes cannot be exported."
 msgstr "फ़ोल्डर विशेषताएँ निर्यात नहीं की जा सकतीं."
