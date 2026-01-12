@@ -148,7 +148,7 @@ msgstr "S'ha creat el recurs «%1»."
 #: core/abstractimportexportjob.cpp:504
 #, kde-format
 msgid "Failed to synchronize '%1'."
-msgstr "No s'ha pogut sincronitzar «%1»."
+msgstr "Ha fallat mentre se sincronitzava «%1»."
 
 #: core/abstractimportexportjob.cpp:509
 #, kde-format
@@ -486,7 +486,7 @@ msgstr "S'han restaurat els transports."
 #: core/mail/importmailjobinterface.cpp:190
 #, kde-format
 msgid "Failed to restore transports file."
-msgstr "No s'ha pogut restaurar el fitxer de transports."
+msgstr "Ha fallat mentre es restaurava el fitxer de transports."
 
 #: core/mail/importmailjobinterface.cpp:436
 #: core/mail/importmailjobinterface.cpp:438
@@ -538,7 +538,7 @@ msgstr "S'han restaurat les identitats."
 #: core/mail/importmailjobinterface.cpp:960
 #, kde-format
 msgid "Failed to restore identity file."
-msgstr "No s'ha pogut restaurar el fitxer «identity»."
+msgstr "Ha fallat mentre es restaurava el fitxer «identity»."
 
 #: core/mail/importmailjobinterface.cpp:1279
 #, kde-format
