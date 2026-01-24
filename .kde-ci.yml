@@ -21,3 +21,6 @@ Dependencies:
  - 'on': ['Linux', 'FreeBSD']
    'require':
     'frameworks/kdbusaddons': '@latest-kf6'
+
+Options:
+  enable-lsan: True
