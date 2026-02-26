@@ -2,21 +2,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012.
+# SPDX-FileCopyrightText: 2026 Libor Filípek <filipek.libor@protonmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:41+0000\n"
-"PO-Revision-Date: 2024-08-08 10:02+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
-"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2026-01-15 18:54+0100\n"
+"Last-Translator: Libor Filípek <filipek.libor@protonmail.com>\n"
+"Language-Team: \n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -590,7 +591,7 @@ msgstr "Nelze otevřít soubor archivu."
 #: core/pimdatabackupthread.cpp:44
 #, kde-format
 msgid "Impossible to backup \"%1\"."
-msgstr ""
+msgstr "Nelze zálohovat \"%1\"."
 
 #: core/resourceconverterbase.cpp:197 core/resourceconverterbase.cpp:206
 #, kde-format
@@ -826,6 +827,8 @@ msgid ""
 "Some resources were added but data were not sync. Select resources that you "
 "want to sync:"
 msgstr ""
+"Byly přidány některé zdroje, ale data nebyla synchronizována. Vyberte "
+"zdroje, které chcete synchronizovat:"
 
 #: gui/importexportprogressindicatorgui.cpp:35
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
@@ -958,22 +961,22 @@ msgstr "Hlavní panel nástrojů"
 #: gui/pimdataexporterwindow.cpp:187
 #, kde-format
 msgid "Full sync starts..."
-msgstr ""
+msgstr "Spouští se úplná synchronizace..."
 
 #: gui/pimdataexporterwindow.cpp:217
 #, kde-format
 msgid "Full sync finished."
-msgstr ""
+msgstr "Úplná synchronizace dokončena."
 
 #: gui/pimdataexporterwindow.cpp:224
 #, kde-format
 msgid "Full sync for \"%1\" done."
-msgstr ""
+msgstr "Úplná synchronizace pro \"%1\" dokončena."
 
 #: gui/pimdataexporterwindow.cpp:229
 #, kde-format
 msgid "Full sync for \"%1\" failed."
-msgstr ""
+msgstr "Úplná synchronizace pro \"%1\" selhala."
 
 #: gui/pimdataexporterwindow.cpp:235
 #, kde-format
@@ -1019,7 +1022,7 @@ msgstr "Zobrazit informaci o archivu..."
 #: gui/pimdataexporterwindow.cpp:284
 #, kde-format
 msgid "Show Information on current Archive..."
-msgstr ""
+msgstr "Zobrazit informace o aktuálním archivu..."
 
 #: gui/pimdataexporterwindow.cpp:321
 #, kde-format
@@ -1051,7 +1054,7 @@ msgstr "Soubory HTML (*.html)"
 #: gui/pimdataexporterwindow.cpp:343
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
-msgstr ""
+msgstr "Před zálohováním dat ukončete všechny aplikace kdepim."
 
 #: gui/pimdataexporterwindow.cpp:365
 #, kde-format
