@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2011-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.27)
-set(PIM_VERSION "6.6.40")
+set(PIM_VERSION "6.7.40")
 project(pim-data-exporter VERSION ${PIM_VERSION})
-set(RELEASE_SERVICE_VERSION "26.03.40")
+set(RELEASE_SERVICE_VERSION "26.07.40")
 set(KF_MIN_VERSION "6.22.0")
 # Update it for each release
 set(PIMDATAEXPORTER_RELEASE_VERSION_DATE "26.03.10") # yy.MM.dd
