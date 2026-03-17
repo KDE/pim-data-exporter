@@ -94,7 +94,6 @@ target_link_libraries(
         KF6::I18n
         KF6::Crash
         KF6::StatusNotifierItem
-        ${pimdataexporter_userfeedback_LIB}
         KF6::WidgetsAddons
         KF6::TextCustomEditor
         KF6::TextAddonsWidgets
