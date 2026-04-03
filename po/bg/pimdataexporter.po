@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2022, 2024 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022, 2024, 2026 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-18 00:44+0000\n"
-"PO-Revision-Date: 2024-11-09 20:09+0100\n"
+"PO-Revision-Date: 2026-04-03 00:02+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -900,7 +900,7 @@ msgstr "Импортиране"
 #: gui/pimdatacommandlineoption.cpp:40 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "PIM Data Exporter"
-msgstr "Експортиране на данни на PIM"
+msgstr "Експортиране на лични данни"
 
 #: gui/pimdatacommandlineoption.cpp:44
 #, kde-format
@@ -1099,7 +1099,7 @@ msgstr "В процес на възстановяване..."
 #: gui/trayicon/pimdatatrayicon.cpp:15
 #, kde-format
 msgid "Pim Data Exporter"
-msgstr "Експортиране на данни на PIM"
+msgstr "Експортиране на лични данни"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
 #, kde-format
