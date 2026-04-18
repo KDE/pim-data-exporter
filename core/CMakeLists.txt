@@ -109,7 +109,7 @@ target_link_libraries(
     pimdataexporterprivate
     PRIVATE
         KPim6::AkonadiCore
-        KPim6::Mime
+        KF6::Mime
         KPim6::MailTransport
         KPim6::MailCommon
         KF6::Archive

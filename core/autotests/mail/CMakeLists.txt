@@ -22,7 +22,7 @@ target_link_libraries(
     pimdataexporterprivate
     KF6::ConfigCore
     test_resourceconverter
-    KPim6::Mime
+    KF6::Mime
 )
 
 #####
@@ -50,7 +50,7 @@ target_link_libraries(
     KPim6::AkonadiMime
     test_resourceconverter
     KPim6::IdentityManagementCore
-    KPim6::Mime
+    KF6::Mime
 )
 
 #####
