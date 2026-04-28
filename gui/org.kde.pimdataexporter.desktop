@@ -2,7 +2,7 @@
 Name=PIM Data Exporter
 Name[ar]=مصدّر بيانات إدارة البيانات الشخصية
 Name[az]=PİM verilənlərinin ixracatçısı
-Name[bg]=Експортиране на данни на PIM
+Name[bg]=Експортиране на лични данни
 Name[ca]=Exportador de les dades PIM
 Name[ca@valencia]=Exportador de les dades PIM
 Name[cs]=Exportér dat PIM
@@ -85,7 +85,7 @@ GenericName[zh_TW]=從 PIM 應用程式儲存或復原所有資料
 Comment=PIM Setting Exporter allows to save all data from PIM apps and restore them in other systems.
 Comment[ar]=يتيح لك «مصدّر إعدادات إدارة البيانات الشخصية» حفظ كلّ البيانات من تطبيقات إدارة البيانات الشخصية واسترجاعها في الأنظمة الأخرى.
 Comment[az]=PİM Ayarlar İxracatçısı PİM tətbiqlərindən bütün verilənləri saxlamağa və onları başqa sistemdə bərpa etməyə imkan verir.
-Comment[bg]=Програмата за експортиране на настройките на PIM позволява да се запазят всички данни от приложенията на PIM и впоследствие да се възстановят в други системи.
+Comment[bg]=Програмата за експортиране на настройките на лични данни позволява да се запазят всички данни от приложенията за лични данни и впоследствие да се възстановят в други системи.
 Comment[ca]=L'exportador de la configuració PIM permet desar totes les dades de les aplicacions PIM i restaura-les en altres sistemes.
 Comment[ca@valencia]=L'exportador de la configuració PIM permet guardar totes les dades de les aplicacions PIM i restaura-les en altres sistemes.
 Comment[cs]=Exportér nastavení PIM vám umožní uložit všechna data z aplikací PIM a obnovit je na jiných systémech.
