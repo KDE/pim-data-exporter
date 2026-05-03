@@ -13,7 +13,7 @@ Dependencies:
     'pim/akonadi': '@same'
     'pim/kidentitymanagement': '@same'
     'pim/kmailtransport': '@same'
-    'pim/kmime': '@same'
+    'frameworks/kmime': '@latest-kf6'
     'pim/mailcommon': '@same'
     'pim/pimcommon': '@same'
     'libraries/ktextaddons': '@latest-kf6'
