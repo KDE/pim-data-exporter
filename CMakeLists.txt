@@ -42,6 +42,9 @@ endif()
 
 if(GIT_SOURCE_TARBALL)
     set(PRE_COMMIT_INSTALLED FALSE)
+    include(KDEGitCommitHooks)
+    include(KDEClangFormat)
+    kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
     if(${CMAKE_SOURCE_DIR} STREQUAL ${PROJECT_SOURCE_DIR})
         if(EXISTS "${PROJECT_SOURCE_DIR}/.git/hooks/pre-commit")
             file(READ "${PROJECT_SOURCE_DIR}/.git/hooks/pre-commit" FILE_CONTENTS)
@@ -71,9 +74,6 @@ if(GIT_SOURCE_TARBALL)
                     WARNING
                     "Error during installing ${hook_name} hook: ${executable} project source dir ${PROJECT_SOURCE_DIR}"
                 )
-                include(KDEGitCommitHooks)
-                include(KDEClangFormat)
-                kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
             endif()
         endfunction()
 
@@ -86,13 +86,11 @@ if(GIT_SOURCE_TARBALL)
                 install_hook(${PRE_COMMIT_EXECUTABLE} "pre-commit")
             else()
                 message(WARNING "This module has pre-commit support. pre-commit binary was not found.")
-                include(KDEGitCommitHooks)
-                include(KDEClangFormat)
-                kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
             endif()
         endif()
     endif()
 endif()
+
 include(ECMCheckOutboundLicense)
 file(
     GLOB_RECURSE ALL_SOURCE_FILES
