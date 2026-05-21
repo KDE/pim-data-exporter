@@ -16,3 +16,9 @@ path = "doc/index.docbook"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "Scarlett Clark"
 SPDX-License-Identifier = "GFDL-1.2-or-later"
+
+[[annotations]]
+path = ["po/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "LGPL-2.0-or-later"
