@@ -8,24 +8,25 @@ msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-18 00:44+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-06-01 17:40-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #: console/main.cpp:27 console/main.cpp:29
 #, kde-format
@@ -38,8 +39,7 @@ msgid "Copyright © 2015-%1 pimdataexporter authors"
 msgstr ""
 
 #: console/main.cpp:32 gui/pimdatacommandlineoption.cpp:45
-#, fuzzy, kde-format
-#| msgid "Laurent Montel"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
@@ -47,7 +47,7 @@ msgstr "Laurent Montel"
 #: console/main.cpp:32 gui/pimdatacommandlineoption.cpp:45
 #, kde-format
 msgid "Maintainer"
-msgstr "مەسئۇل كىشى"
+msgstr "ئاسرىغۇچى"
 
 #: console/main.cpp:33
 #, kde-format
@@ -91,7 +91,7 @@ msgstr ""
 #: core/abstractimportexportjob.cpp:122
 #, kde-format
 msgid "\"%1\" does not exist."
-msgstr ""
+msgstr "«%1» مەۋجۇت ئەمەس."
 
 #: core/abstractimportexportjob.cpp:269
 #, kde-format
@@ -99,10 +99,9 @@ msgid "\"%1\" was copied."
 msgstr ""
 
 #: core/abstractimportexportjob.cpp:274
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgid "Restoring \"%1\"..."
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr ""
 
 #: core/abstractimportexportjob.cpp:299
 #, kde-format
@@ -275,10 +274,9 @@ msgid "\"%1\" directory cannot be added to backup file."
 msgstr ""
 
 #: core/akregator/exportakregatorjobinterface.cpp:99
-#, fuzzy, kde-format
-#| msgid "Create backup"
+#, kde-format
 msgid "Data backup done."
-msgstr "زاپاس قۇر"
+msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:31
 #, kde-format
@@ -291,10 +289,9 @@ msgid "Import Akregator settings"
 msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:108
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgid "Restore data..."
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr ""
 
 #: core/akregator/importakregatorjobinterface.cpp:114
 #, kde-format
@@ -335,7 +332,7 @@ msgstr ""
 #: core/backupresourcefilejobbase.cpp:49
 #, kde-format
 msgid "\"%1\" is not a file."
-msgstr ""
+msgstr "«%1» ھۆججەت ئەمەس."
 
 #: core/backupresourcefilejobbase.cpp:55 core/backupresourcefilejobbase.cpp:62
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
@@ -380,16 +377,14 @@ msgid "Export KMail settings"
 msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:114
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr "زاپاسلاش"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:116
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Backing up Mails..."
-msgstr "زاپاسلاش"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:117
 #, kde-format
@@ -505,10 +500,9 @@ msgid "filters file could not be found in the archive."
 msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:569
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgid "Restore filters..."
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:618
 #, kde-format
@@ -517,10 +511,9 @@ msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:894
 #: core/mail/importmailjobinterface.cpp:899
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgid "Restoring identities..."
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr ""
 
 #: core/mail/importmailjobinterface.cpp:897
 #, kde-format
@@ -543,16 +536,14 @@ msgid "\"%1\" migration done."
 msgstr ""
 
 #: core/mail/importmailjobinterfaceimpl.cpp:37
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Restoring folder attributes..."
-msgstr "زاپاسلاش"
+msgstr ""
 
 #: core/mail/importmailjobinterfaceimpl.cpp:43
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Restoring Folder Attributes done."
-msgstr "زاپاسلاش"
+msgstr ""
 
 #: core/mail/importmailjobinterfaceimpl.cpp:47
 #, kde-format
@@ -612,17 +603,17 @@ msgstr ""
 #: core/utils.cpp:182
 #, kde-format
 msgid "KMail"
-msgstr ""
+msgstr "KMail  تور خەت"
 
 #: core/utils.cpp:184
 #, kde-format
 msgid "KAddressBook"
-msgstr ""
+msgstr "K ئادرېس دەپتەر"
 
 #: core/utils.cpp:186
 #, kde-format
 msgid "KAlarm"
-msgstr ""
+msgstr "KAlarm"
 
 #: core/utils.cpp:188
 #, kde-format
@@ -662,7 +653,7 @@ msgstr "سەپلىمە"
 #: core/utils.cpp:214
 #, kde-format
 msgid "Data"
-msgstr ""
+msgstr "سانلىق مەلۇمات"
 
 #: gui/dialog/backupfilestructureinfodialog.cpp:36
 #, kde-format
@@ -690,12 +681,12 @@ msgstr ""
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:45
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "ئادەتتىكى"
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:60
 #, kde-format
 msgid "User Feedback"
-msgstr ""
+msgstr "ئىشلەتكۈچى قايتۇرما ئىنكاسى"
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
@@ -726,14 +717,14 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Select All"
-msgstr ""
+msgstr "ھەممىنى تاللا"
 
 #: gui/dialog/selectiontypedialog.cpp:59
 #: gui/dialog/synchronizeresourcedialog.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr ""
+msgstr "ھەممىنى تاللىما"
 
 #: gui/dialog/showarchivestructuredialog.cpp:42
 #, kde-format
@@ -757,7 +748,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr ""
+msgstr "ئىزدە…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:56
 #, kde-format
@@ -773,7 +764,7 @@ msgstr ""
 #: gui/dialog/showarchivestructuredialog.cpp:142
 #, kde-format
 msgid "Do you want to overwrite %1?"
-msgstr ""
+msgstr "%1 قاپلىۋېتەمسىز؟"
 
 #: gui/dialog/showarchivestructuredialog.cpp:143
 #, kde-format
@@ -790,7 +781,7 @@ msgstr ""
 #, kde-format
 msgctxt "qfiledialog filter files text"
 msgid "Text Files"
-msgstr ""
+msgstr "تېكىست ھۆججەتلەر"
 
 #: gui/dialog/showarchivestructuredialog.cpp:177
 #, kde-format
@@ -807,7 +798,7 @@ msgstr ""
 #: gui/dialog/showarchivestructuredialog.cpp:191
 #, kde-format
 msgid "Info"
-msgstr ""
+msgstr "ئۇچۇر"
 
 #: gui/dialog/showarchivestructuredialog.cpp:193
 #, kde-format
@@ -821,11 +812,10 @@ msgid "Show information"
 msgstr ""
 
 #: gui/dialog/synchronizeresourcedialog.cpp:31
-#, fuzzy, kde-format
-#| msgid "Resources"
+#, kde-format
 msgctxt "@title:window"
 msgid "Synchronize Resources"
-msgstr "مەنبەلەر"
+msgstr ""
 
 #: gui/dialog/synchronizeresourcedialog.cpp:34
 #, kde-format
@@ -839,7 +829,7 @@ msgstr ""
 #: gui/job/fullsynchronizeresourcesjob.cpp:39
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "ۋاز كەچ"
 
 #: gui/importexportprogressindicatorgui.cpp:66
 #, kde-format
@@ -849,18 +839,16 @@ msgstr ""
 #: gui/importexportprogressindicatorgui.cpp:67
 #: gui/importexportprogressindicatorgui.cpp:79
 #: gui/importexportprogressindicatorgui.cpp:92
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@title:window"
 msgid "Restore"
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr "ئەسلىگە كەلتۈر"
 
 #: gui/importexportprogressindicatorgui.cpp:69
-#, fuzzy, kde-format
-#| msgid "Merge"
+#, kde-format
 msgctxt "@action:button"
 msgid "Merge"
-msgstr "بىرىكتۈر"
+msgstr "بىرلەشتۈر"
 
 #: gui/importexportprogressindicatorgui.cpp:78
 #, kde-format
@@ -873,11 +861,10 @@ msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
 msgstr ""
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:41
-#, fuzzy, kde-format
-#| msgid "Resources"
+#, kde-format
 msgctxt "@title:window"
 msgid "Synchronize resources"
-msgstr "مەنبەلەر"
+msgstr ""
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
@@ -899,16 +886,15 @@ msgid "Not correct version"
 msgstr ""
 
 #: gui/pimdatabackuprestoreui.cpp:30
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgctxt "@action:button"
 msgid "Import"
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr "ئەكىر"
 
 #: gui/pimdatacommandlineoption.cpp:40 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "PIM Data Exporter"
-msgstr ""
+msgstr "شەخسىي ئۇچۇر باشقۇرۇش سانلىق مەلۇمات چىقارغۇچ"
 
 #: gui/pimdatacommandlineoption.cpp:44
 #, kde-format
@@ -924,7 +910,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:shell"
 msgid "Import the given file"
-msgstr ""
+msgstr "بېرىلگەن ھۆججەتنى ئەكىر"
 
 #: gui/pimdatacommandlineoption.cpp:51
 #, kde-format
@@ -943,24 +929,26 @@ msgstr ""
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
 msgstr ""
+"ئىشلەتكۈچى قايتۇرما ئىنكاسىنىڭ ئىشلەتكىلى بولىدىغان تاللانما تىزىمىنى "
+"كۆرسىتىدۇ"
 
 #. i18n: ectx: Menu (file)
 #: gui/pimdataexporter.rc:8
 #, kde-format
 msgid "&File"
-msgstr ""
+msgstr "ھۆججەت(&F)"
 
 #. i18n: ectx: Menu (tools)
 #: gui/pimdataexporter.rc:21
 #, kde-format
 msgid "&Tools"
-msgstr ""
+msgstr "قورال(&T)"
 
 #. i18n: ectx: ToolBar (mainToolBar)
 #: gui/pimdataexporter.rc:28
 #, kde-format
 msgid "Main Toolbar"
-msgstr ""
+msgstr "ئاساسىي قورال بالداق"
 
 #: gui/pimdataexporterwindow.cpp:171
 #, kde-format
@@ -991,23 +979,20 @@ msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:221 gui/pimdataexporterwindow.cpp:327
 #: gui/pimdataexporterwindow.cpp:404
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "زاپاسلاش"
 
 #: gui/pimdataexporterwindow.cpp:248
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgid "Export Data..."
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:253
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgid "Import Data..."
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:258
 #, kde-format
@@ -1072,10 +1057,9 @@ msgid "Zip file (*.zip)"
 msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:361
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Backup in progress..."
-msgstr "زاپاسلاش"
+msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:403
 #, kde-format
@@ -1095,10 +1079,9 @@ msgid "Zip File"
 msgstr ""
 
 #: gui/pimdataexporterwindow.cpp:450
-#, fuzzy, kde-format
-#| msgid "Restore"
+#, kde-format
 msgid "Restore in progress..."
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr ""
 
 #: gui/trayicon/pimdatatrayicon.cpp:15
 #, kde-format
@@ -1126,14 +1109,13 @@ msgstr ""
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:23
 #, kde-format
 msgid "Import"
-msgstr ""
+msgstr "ئەكىر"
 
 #: gui/widgets/selectiontypetreewidget.cpp:334
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr ""
 
-#, fuzzy
 #~| msgid "Backup"
 #~ msgid "Backup infos."
 #~ msgstr "زاپاسلاش"
@@ -1141,7 +1123,6 @@ msgstr ""
 #~ msgid "Overwrite"
 #~ msgstr "قاپلا"
 
-#, fuzzy
 #~| msgid "Config"
 #~ msgid "Configs"
 #~ msgstr "سەپلىمە"
