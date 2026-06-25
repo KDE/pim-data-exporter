@@ -872,7 +872,7 @@ msgstr "Synchronisa   ressources"
 #: gui/job/fullsynchronizeresourcesjob.cpp:42
 #, kde-format
 msgid "Synchronize resources... It can take some time."
-msgstr "Synchronisa ressource... il pote prender un pauc de tempore."
+msgstr "Synchronisa ressource... il pote prender un pauco de tempore."
 
 #: gui/pimdatabackuprestoreui.cpp:27
 #, kde-format
