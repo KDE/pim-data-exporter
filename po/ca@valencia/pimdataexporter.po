@@ -168,13 +168,12 @@ msgstr "S'ha iniciat la sincronització…"
 #: core/abstractimportexportjob.cpp:578
 #, kde-format
 msgid "Directory \"%1\" added to backup file."
-msgstr "El directori «%1» ha sigut afegit al fitxer de còpia de seguretat."
+msgstr "La carpeta «%1» ha sigut afegida al fitxer de còpia de seguretat."
 
 #: core/abstractimportexportjob.cpp:580
 #, kde-format
 msgid "Directory \"%1\" cannot be added to backup file."
-msgstr ""
-"El directori «%1» no s'ha pogut afegir al fitxer de còpia de seguretat."
+msgstr "La carpeta «%1» no s'ha pogut afegir al fitxer de còpia de seguretat."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:29
 #, kde-format
@@ -872,7 +871,7 @@ msgstr "«%1» ja existix. Voleu sobreescriure'l?"
 #: gui/importexportprogressindicatorgui.cpp:91
 #, kde-format
 msgid "Directory \"%1\" already exists. Do you want to overwrite it?"
-msgstr "El directori «%1» ja existix. Voleu sobreescriure'l?"
+msgstr "La carpeta «%1» ja existix. Voleu sobreescriure-la?"
 
 #: gui/job/fullsynchronizeresourcesjob.cpp:41
 #, kde-format
