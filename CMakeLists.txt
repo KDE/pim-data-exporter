@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2011-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.29)
-set(PIM_VERSION "6.7.40")
+set(PIM_VERSION "6.8.40")
 project(pim-data-exporter VERSION ${PIM_VERSION})
-set(RELEASE_SERVICE_VERSION "26.07.40")
+set(RELEASE_SERVICE_VERSION "26.11.40")
 set(KF_MIN_VERSION "6.25.0")
 # Update it for each release
 set(PIMDATAEXPORTER_RELEASE_VERSION_DATE "26.07.10") # yy.MM.dd
@@ -134,7 +134,7 @@ set(KMIME_LIB_VERSION "6.7.40")
 
 set(MAILCOMMON_LIB_VERSION "6.7.40")
 set(PIMCOMMON_LIB_VERSION "6.7.40")
-set(KTEXTADDONS_MIN_VERSION "2.0.2")
+set(KTEXTADDONS_MIN_VERSION "2.1.0")
 
 # Find KF6 package
 find_package(KF6Archive ${KF_MIN_VERSION} REQUIRED)
