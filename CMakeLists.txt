@@ -148,6 +148,7 @@ find_package(KF6WidgetsAddons ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6XmlGui ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6StatusNotifierItem ${KF_MIN_VERSION} REQUIRED)
 find_package(KF6IconThemes ${KF_MIN_VERSION} QUIET)
+find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(KF6DocTools ${KF_MIN_VERSION})
 set_package_properties(
