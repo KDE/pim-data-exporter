@@ -4,11 +4,10 @@
   <!-- Define an entity for your application if it is not part of KDE
        CVS -->
   <!ENTITY i18n-pimdataexporter "<application
->Exportador de datos de PIM</application
+>Exportador de datos PIM</application
 >">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % Spanish "INCLUDE"
-> 
+  <!ENTITY % Spanish "INCLUDE">
   <!ENTITY imap "<acronym
 >IMAP</acronym
 >">
@@ -41,15 +40,15 @@
 </author>
 <othercredit role="translator"
 ><firstname
->Javier</firstname
-> <surname
->Viñal</surname
-> <affiliation
+>Eloy</firstname
+><surname
+>Cuadra</surname
+><affiliation
 ><address
 ><email
->fjvinal@gmail.com</email
+>ecuadra@eloihr.net</email
 ></address
-> </affiliation
+></affiliation
 ><contrib
 >Traductor</contrib
 ></othercredit
@@ -79,7 +78,7 @@
 >Introducción</title>
 
 <para
->&i18n-pimdataexporter; permite exportar e importar preferencias de PIM y correo local. Usted puede crear copias de seguridad y restaurar preferencias desde los siguientes programas: <simplelist>
+>&i18n-pimdataexporter; permite exportar e importar preferencias de PIM y correo local. Puede crear copias de seguridad y restaurar preferencias de los siguientes programas: <simplelist>
 <member
 >&kmail;</member>
 <member
@@ -99,26 +98,26 @@
 <title
 >Uso de &i18n-pimdataexporter;</title>
 <para
->La creación de copias de respaldo es una práctica esencial para todos los usuarios. &i18n-pimdataexporter; es una excelente herramienta para crear copias de respaldo o mover todas sus preferencias y correos a una nueva instalación. Usted también puede usar &i18n-pimdataexporter; para importar anteriores copias de respaldo.</para>
+>La creación de copias de seguridad es una práctica esencial para todos los usuarios. &i18n-pimdataexporter; es una excelente herramienta para crear copias de seguridad o mover todas sus preferencias y mensajes de correo a una nueva instalación. También puede usar &i18n-pimdataexporter; para importar copias de seguridad anteriores.</para>
 <para
->Usted puede usar <menuchoice
+>Puede usar <menuchoice
 ><guimenu
 >Herramientas</guimenu
 ><guimenuitem
-> Exportar datos de &kmail;...</guimenuitem
+> Exportar datos de &kmail;…</guimenuitem
 ></menuchoice
-> mediante la ventana de vista de mensajes o &i18n-pimdataexporter;puede ejecutarse independientemente, ejecutando &i18n-pimdataexporter; en el lanzador de aplicaciones.</para>
+> mediante la ventana de vista de mensajes o ejecutar &i18n-pimdataexporter; independientemente desde el lanzador de aplicaciones.</para>
 
 <para
->Para hacer una copia de respaldo, <action
+>Para hacer una copia de seguridad, <action
 >seleccione <menuchoice
 ><guimenu
 >Archivo</guimenu
 ><guimenuitem
->Crear copia de respaldo de datos...</guimenuitem
+>Crear copia de seguridad de datos…</guimenuitem
 ></menuchoice
 ></action
->, esto le pedirá que cierre todas las aplicaciones de kdepim. <warning
+>. Se le pedirá que cierre todas las aplicaciones de kdepim. <warning
 ><para
 >Asegúrese de que cierra todas las ventanas: puede perder datos si no lo hace.</para
 ></warning
@@ -128,17 +127,17 @@
 >No</guibutton
 > para cancelar.</para>
 <para
->Se le pedirá crear un nombre de copia de respaldo, introduzca el nombre en el área de texto <guilabel
+>Se le pedirá que proporcione un nombre para la copia de seguridad. Introduzca el nombre en el área de texto <guilabel
 >Archivo</guilabel
->, &eg; <replaceable
+>(por ejemplo, <replaceable
 >mis-preferencias-de-correo</replaceable
->. El tipo de archivo predeterminado lo guarda como <filename role="extension"
+>). El tipo de archivo predeterminado se guarda como <filename role="extension"
 >.zip</filename
 >. </para>
 <para
->La siguiente pantalla le permitirá seleccionar que es lo que quiere respaldar; por omisión, se selecciona todo. <note
+>La siguiente pantalla le permitirá seleccionar el contenido de la copia de seguridad; por omisión, se selecciona todo. <note
 > <para
->La selección de mensajes de correo de &kmail; solo creará copias de respaldo de los mensajes de sus «Carpetas locales», respaldará las preferencias de &imap; y los mensajes descargados hasta la restauración. Si tiene mensajes en un servidor &imap; que quiera respaldar, debería usar <ulink url="help:/akonadi_folderarchive_agent"
+>La selección de mensajes de correo de &kmail; solo creará copias de seguridad de los mensajes de sus «Carpetas locales», las preferencias de &imap; y los mensajes descargados hasta la restauración. Si tiene mensajes en un servidor &imap; que quiera respaldar, debería usar <ulink url="help:/akonadi_folderarchive_agent"
 >Agente de archivado de carpetas</ulink
 > para archivar dichos mensajes en una carpeta local.</para>
 </note
@@ -161,23 +160,23 @@
   </mediaobject>
 </screenshot>
 <para
->La pantalla final muestra el registro del proceso de respaldo. Usted puede cerrar la ventana una vez que haya revisado el registro y verificado que su copia de respaldo ha sido satisfactoria.</para>
+>La pantalla final muestra el registro del proceso de copia de seguridad. Puede cerrar la ventana una vez que haya revisado el registro y verificado que la copia de seguridad se ha realizado correctamente.</para>
 <para
->Para restaurar su copia de respaldo, seleccione <menuchoice
+>Para restaurar la copia de seguridad, seleccione <menuchoice
 ><guimenu
 >Archivo</guimenu
 ><guimenuitem
->Restaurar datos...</guimenuitem
+>Restaurar datos…</guimenuitem
 ></menuchoice
 > dentro de &i18n-pimdataexporter;.</para>
 <para
->Usando <menuchoice
+>Use <menuchoice
 ><guimenu
 >Herramientas</guimenu
 ><guimenuitem
->Mostrar información del archivo</guimenuitem
+>Mostrar información de archivo</guimenuitem
 ></menuchoice
-> podrá seleccionar un archivo de respaldo y ver su contenido.</para>
+> para seleccionar un archivo de copia de seguridad y ver su contenido.</para>
 </sect2>
 </sect1>
 
@@ -193,9 +192,9 @@
 >Copyright de la documentación &copy; 2019 &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail; </para>
 
 <para
->Traducido por Javier Viñal <email
->fjvinal@gmail.com</email
-></para
+>Traducido por Eloy Cuadra <email
+>ecuadra@eloihr.net</email
+>.</para
 > &underFDL; &underGPL; </sect1>
 
 &documentation.index;
