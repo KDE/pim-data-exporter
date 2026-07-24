@@ -4,11 +4,10 @@
   <!-- Define an entity for your application if it is not part of KDE
        CVS -->
   <!ENTITY i18n-pimdataexporter "<application
->Інструмент експортування даних PIM</application
+>Засіб експортування даних PIM</application
 >">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % Ukrainian "INCLUDE"
-> 
+  <!ENTITY % Ukrainian "INCLUDE">
   <!ENTITY imap "<acronym
 >IMAP</acronym
 >">
@@ -18,7 +17,7 @@
 
 <articleinfo id="pimdataexporterinfo">
 <title
->Підручник із засобу експортування даних</title>
+>Підручник з програми &i18n-pimdataexporter;</title>
 
 <authorgroup>
 <author
@@ -97,7 +96,7 @@
 
 <sect2 id="using-kapp">
 <title
->Користування засобом експортування даних</title>
+>Користування програмою &i18n-pimdataexporter;</title>
 <para
 >Резервне копіювання даних є дуже важливим компонентом роботи з комп’ютером. Засіб експортування даних є чудовим інструментом для створення резервних копій та перенесення усіх параметрів роботи з особистими даними та архіву електронної пошти у нововстановлену операційну систему. Ви також можете скористатися засобом експортування даних для імпортування раніше створених резервних копій даних.</para>
 <para
@@ -145,18 +144,18 @@
 ></para>
 <screenshot>
 <screeninfo
->Діалогове вікно вибору</screeninfo>
+>Вікно вибору</screeninfo>
   <mediaobject>
     <imageobject>
       <imagedata fileref="selection-dialog.png" format="PNG"/>
     </imageobject>
     <textobject>
       <phrase
->Діалогове вікно вибору</phrase>
+>Вікно вибору</phrase>
     </textobject>
     <caption>
       <para
->Діалогове вікно вибору</para>
+>Вікно вибору</para>
     </caption>
   </mediaobject>
 </screenshot>
@@ -193,7 +192,7 @@
 >Авторські права на документацію належать &Laurent.Montel; &Laurent.Montel.mail;, 2019; &Scarlett.Clark; &Scarlett.Clark.mail;, 2013 </para>
 
 <para
->Переклад українською: Юрій Чорноіван<email
+>Переклад українською: Юрій Чорноіван <email
 >yurchor@ukr.net</email
 ></para
 > &underFDL; &underGPL; </sect1>
