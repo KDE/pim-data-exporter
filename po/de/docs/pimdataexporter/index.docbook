@@ -7,8 +7,7 @@
 >PIM-Daten-Export</application
 >">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % German "INCLUDE"
-> 
+  <!ENTITY % German "INCLUDE">
   <!ENTITY imap "<acronym
 >IMAP</acronym
 >">
