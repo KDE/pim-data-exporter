@@ -986,7 +986,7 @@ msgid ""
 "overwrite your existing settings and data."
 msgstr ""
 "Zur Wiederherstellung von Daten müssen Sie das Programm pimdataexporter "
-"benutzen. Beachten Sie, dass damit auch bestehende Einstellung und Daten "
+"verwenden. Beachten Sie, dass damit auch bestehende Einstellung und Daten "
 "überschrieben werden."
 
 #: gui/pimdataexporterwindow.cpp:221 gui/pimdataexporterwindow.cpp:327
