@@ -397,7 +397,7 @@ msgstr "تصدير إعدادات «بريدك»"
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr "انسخ صفات المجلد احتياطياً…"
+msgstr "انسخ صفات المجلد احتياطيًا…"
 
 #: core/mail/exportmailjobinterface.cpp:116
 #, kde-format
@@ -459,7 +459,7 @@ msgstr "تعذّر تصدير المرشّحات."
 #: core/mail/exportmailjobinterfaceimpl.cpp:164
 #, kde-format
 msgid "Backing up Folder Attributes done."
-msgstr "انتهى نسخ صفات المجلد احتياطياً."
+msgstr "انتهى نسخ صفات المجلد احتياطيًا."
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:168
 #, kde-format
