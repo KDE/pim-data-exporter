@@ -30,12 +30,12 @@ msgstr "kde-china@kde.org"
 #: console/main.cpp:27 console/main.cpp:29
 #, kde-format
 msgid "PIM Data Exporter Console"
-msgstr ""
+msgstr "PIM 数据导出控制台"
 
 #: console/main.cpp:31
 #, kde-format
 msgid "Copyright © 2015-%1 pimdataexporter authors"
-msgstr ""
+msgstr "Copyright © 2015-%1 pimdataexporter authors"
 
 #: console/main.cpp:32 gui/pimdatacommandlineoption.cpp:45
 #, kde-format
@@ -80,7 +80,7 @@ msgstr "任务已取消"
 #: core/abstractimportexportjob.cpp:117
 #, kde-format
 msgid "\"%1\" backup done."
-msgstr "“%1”备份完成。"
+msgstr "“%1”备份已完成。"
 
 #: core/abstractimportexportjob.cpp:119
 #, kde-format
@@ -100,7 +100,7 @@ msgstr "“%1”已复制。"
 #: core/abstractimportexportjob.cpp:274
 #, kde-format
 msgid "Restoring \"%1\"..."
-msgstr ""
+msgstr "正在正在恢复“%1”..."
 
 #: core/abstractimportexportjob.cpp:299
 #, kde-format
@@ -142,12 +142,12 @@ msgstr "资源“%1”已被创建。"
 #: core/abstractimportexportjob.cpp:504
 #, kde-format
 msgid "Failed to synchronize '%1'."
-msgstr ""
+msgstr "同步“%1”失败。"
 
 #: core/abstractimportexportjob.cpp:509
 #, kde-format
 msgid "Resource '%1' synchronized."
-msgstr ""
+msgstr "资源“%1”已同步。"
 
 #: core/abstractimportexportjob.cpp:515
 #, kde-format
@@ -193,7 +193,7 @@ msgstr "正在备份资源..."
 #: core/mail/exportmailjobinterface.cpp:675
 #, kde-format
 msgid "Resources backup done."
-msgstr "资源备份完成。"
+msgstr "资源备份已完成。"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:110
 #: core/akregator/exportakregatorjobinterface.cpp:74
@@ -211,7 +211,7 @@ msgstr "正在备份配置..."
 #: core/mail/exportmailjobinterface.cpp:537
 #, kde-format
 msgid "Config backup done."
-msgstr "配置备份完成。"
+msgstr "配置备份已完成。"
 
 #: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
@@ -275,7 +275,7 @@ msgstr "“%1”目录无法被添加到备份文件。"
 #: core/akregator/exportakregatorjobinterface.cpp:99
 #, kde-format
 msgid "Data backup done."
-msgstr "数据备份完成。"
+msgstr "数据备份已完成。"
 
 #: core/akregator/importakregatorjobinterface.cpp:31
 #, kde-format
@@ -331,7 +331,7 @@ msgstr "归档无法在读取模式打开。"
 #: core/backupresourcefilejobbase.cpp:49
 #, kde-format
 msgid "\"%1\" is not a file."
-msgstr ""
+msgstr "“%1”不是文件。"
 
 #: core/backupresourcefilejobbase.cpp:55 core/backupresourcefilejobbase.cpp:62
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
@@ -378,7 +378,7 @@ msgstr "导出 KMail 设置"
 #: core/mail/exportmailjobinterface.cpp:114
 #, kde-format
 msgid "Backing up Folder Attributes..."
-msgstr ""
+msgstr "正在备份文件夹属性..."
 
 #: core/mail/exportmailjobinterface.cpp:116
 #, kde-format
@@ -388,7 +388,7 @@ msgstr "正在备份邮件..."
 #: core/mail/exportmailjobinterface.cpp:117
 #, kde-format
 msgid "Start export resource..."
-msgstr ""
+msgstr "开始导出资源..."
 
 #: core/mail/exportmailjobinterface.cpp:125
 #, kde-format
@@ -399,7 +399,7 @@ msgstr "正在备份传输..."
 #: core/mail/exportmailjobinterface.cpp:142
 #, kde-format
 msgid "Transports backup done."
-msgstr "传输备份完成。"
+msgstr "传输备份已完成。"
 
 #: core/mail/exportmailjobinterface.cpp:144
 #, kde-format
@@ -419,7 +419,7 @@ msgstr "vCard 文件“%1”无法被保存。"
 #: core/mail/exportmailjobinterface.cpp:593
 #, kde-format
 msgid "Identity backup done."
-msgstr "身份备份完成。"
+msgstr "身份备份已完成。"
 
 #: core/mail/exportmailjobinterface.cpp:595
 #, kde-format
@@ -429,7 +429,7 @@ msgstr "标识文件无法被添加到备份文件中。"
 #: core/mail/exportmailjobinterfaceimpl.cpp:140
 #, kde-format
 msgid "Filters backup done."
-msgstr "过滤器备份完成。"
+msgstr "过滤器备份已完成。"
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:142
 #, kde-format
@@ -439,12 +439,12 @@ msgstr "过滤器无法导出。"
 #: core/mail/exportmailjobinterfaceimpl.cpp:164
 #, kde-format
 msgid "Backing up Folder Attributes done."
-msgstr ""
+msgstr "备份文件夹属性已完成。"
 
 #: core/mail/exportmailjobinterfaceimpl.cpp:168
 #, kde-format
 msgid "Folder Attributes cannot be exported."
-msgstr ""
+msgstr "无法导出文件夹属性。"
 
 #: core/mail/importmailjobinterface.cpp:43
 #, kde-format
@@ -501,12 +501,12 @@ msgstr "归档中无法找到过滤器文件。"
 #: core/mail/importmailjobinterface.cpp:569
 #, kde-format
 msgid "Restore filters..."
-msgstr ""
+msgstr "恢复过滤条件..."
 
 #: core/mail/importmailjobinterface.cpp:618
 #, kde-format
 msgid "Filters restored."
-msgstr ""
+msgstr "过滤条件已恢复。"
 
 #: core/mail/importmailjobinterface.cpp:894
 #: core/mail/importmailjobinterface.cpp:899
@@ -532,22 +532,22 @@ msgstr "无法回复身份文件。"
 #: core/mail/importmailjobinterface.cpp:1279
 #, kde-format
 msgid "\"%1\" migration done."
-msgstr ""
+msgstr "“%1”迁移已完成。"
 
 #: core/mail/importmailjobinterfaceimpl.cpp:37
 #, kde-format
 msgid "Restoring folder attributes..."
-msgstr ""
+msgstr "正在恢复文件夹属性..."
 
 #: core/mail/importmailjobinterfaceimpl.cpp:43
 #, kde-format
 msgid "Restoring Folder Attributes done."
-msgstr ""
+msgstr "恢复文件夹属性已完成。"
 
 #: core/mail/importmailjobinterfaceimpl.cpp:47
 #, kde-format
 msgid "Folder Attributes cannot be restored."
-msgstr ""
+msgstr "无法恢复文件夹属性。"
 
 #: core/pimdatabackuprestore.cpp:78 core/pimdatabackuprestore.cpp:241
 #, kde-format
@@ -567,7 +567,7 @@ msgstr "正在开始备份“%1”中的数据。"
 #: core/pimdatabackuprestore.cpp:176
 #, kde-format
 msgid "Backup in '%1' done."
-msgstr "在“%1”中的备份完成。"
+msgstr "在“%1”中的备份已完成。"
 
 #: core/pimdatabackuprestore.cpp:266
 #, kde-format
@@ -577,7 +577,7 @@ msgstr "正在开始从“%1”恢复数据"
 #: core/pimdatabackuprestore.cpp:274
 #, kde-format
 msgid "Restoring data from '%1' done."
-msgstr "从“%1”恢复数据完成。"
+msgstr "恢复来自“%1”的数据已完成。"
 
 #: core/pimdatabackupthread.cpp:37
 #, kde-format
@@ -597,7 +597,7 @@ msgstr "资源文件“%1”无法被添加到备份文件。"
 #: core/resourceconverterbase.cpp:209
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
-msgstr ""
+msgstr "资源配置文件“%1”不存在。"
 
 #: core/utils.cpp:182
 #, kde-format
@@ -675,17 +675,17 @@ msgstr "未找到 backup-structure.txt 文件。"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
-msgstr ""
+msgstr "配置 PimDataExporter"
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:45
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "常规"
 
 #: gui/dialog/pimdataexporterconfiguredialog.cpp:60
 #, kde-format
 msgid "User Feedback"
-msgstr ""
+msgstr "用户反馈"
 
 #: gui/dialog/selectiontypedialog.cpp:29
 #, kde-format
@@ -729,13 +729,13 @@ msgstr "全部不选"
 #, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
-msgstr ""
+msgstr "解压缩所选文件"
 
 #: gui/dialog/showarchivestructuredialog.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
-msgstr ""
+msgstr "打开所选文件"
 
 #: gui/dialog/showarchivestructuredialog.cpp:45
 #, kde-format
@@ -758,23 +758,23 @@ msgstr "另存为文本..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
-msgstr ""
+msgstr "选择目录"
 
 #: gui/dialog/showarchivestructuredialog.cpp:142
 #, kde-format
 msgid "Do you want to overwrite %1?"
-msgstr ""
+msgstr "您想要覆盖 %1 吗？"
 
 #: gui/dialog/showarchivestructuredialog.cpp:143
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
-msgstr ""
+msgstr "文件己存在"
 
 #: gui/dialog/showarchivestructuredialog.cpp:151
 #, kde-format
 msgid "Impossible to copy %1 in %2."
-msgstr ""
+msgstr "无法复制 %2 中的 %1。"
 
 #: gui/dialog/showarchivestructuredialog.cpp:174
 #, kde-format
@@ -802,7 +802,7 @@ msgstr "信息"
 #: gui/dialog/showarchivestructuredialog.cpp:193
 #, kde-format
 msgid "This is not pim archive."
-msgstr ""
+msgstr "这不是 kdepim 归档。"
 
 #: gui/dialog/showarchivestructuredialog.cpp:193
 #, kde-format
@@ -890,17 +890,17 @@ msgstr "没有正确版本"
 #, kde-format
 msgctxt "@action:button"
 msgid "Import"
-msgstr ""
+msgstr "导入"
 
 #: gui/pimdatacommandlineoption.cpp:40 gui/pimdatacommandlineoption.cpp:42
 #, kde-format
 msgid "PIM Data Exporter"
-msgstr ""
+msgstr "PIM 数据导出程序"
 
 #: gui/pimdatacommandlineoption.cpp:44
 #, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
-msgstr ""
+msgstr "Copyright © 2012-%1 pimdataexporter authors"
 
 #: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
@@ -929,7 +929,7 @@ msgstr "文件或链接。用户将被询问是否要导入或导出。"
 #, kde-format
 msgctxt "@info:shell"
 msgid "Lists the available options for user feedback"
-msgstr ""
+msgstr "列出用户反馈的可用选项"
 
 #. i18n: ectx: Menu (file)
 #: gui/pimdataexporter.rc:8
@@ -947,7 +947,7 @@ msgstr "工具(&T)"
 #: gui/pimdataexporter.rc:28
 #, kde-format
 msgid "Main Toolbar"
-msgstr ""
+msgstr "主工具栏"
 
 #: gui/pimdataexporterwindow.cpp:171
 #, kde-format
@@ -962,7 +962,7 @@ msgstr "完成同步完成。"
 #: gui/pimdataexporterwindow.cpp:208
 #, kde-format
 msgid "Full sync for \"%1\" done."
-msgstr "“%1”的完整同步完成。"
+msgstr "“%1”的完整同步已完成。"
 
 #: gui/pimdataexporterwindow.cpp:213
 #, kde-format
@@ -975,6 +975,8 @@ msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
 "overwrite your existing settings and data."
 msgstr ""
+"恢复数据时，必须使用“pimdataexporter”。请注意，该工具可能会覆盖您现有的设置和"
+"数据。"
 
 #: gui/pimdataexporterwindow.cpp:221 gui/pimdataexporterwindow.cpp:327
 #: gui/pimdataexporterwindow.cpp:404
@@ -1070,7 +1072,7 @@ msgstr "在恢复数据之前，您必须关闭所有 KDE PIM 应用程序。您
 #: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Restore backup"
-msgstr "还原备份"
+msgstr "恢复备份"
 
 #: gui/pimdataexporterwindow.cpp:418
 #, kde-format
@@ -1080,12 +1082,12 @@ msgstr "Zip 文件"
 #: gui/pimdataexporterwindow.cpp:450
 #, kde-format
 msgid "Restore in progress..."
-msgstr "正在还原..."
+msgstr "正在恢复..."
 
 #: gui/trayicon/pimdatatrayicon.cpp:15
 #, kde-format
 msgid "Pim Data Exporter"
-msgstr ""
+msgstr "Pim 数据导出程序"
 
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:16
 #, kde-format
