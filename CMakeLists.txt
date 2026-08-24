@@ -1,12 +1,12 @@
 # SPDX-FileCopyrightText: 2011-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.29)
-set(PIM_VERSION "6.8.0")
+set(PIM_VERSION "6.8.1")
 project(pim-data-exporter VERSION ${PIM_VERSION})
 set(RELEASE_SERVICE_VERSION "26.08.1")
 set(KF_MIN_VERSION "6.25.0")
 # Update it for each release
-set(PIMDATAEXPORTER_RELEASE_VERSION_DATE "26.08.20") # yy.MM.dd
+set(PIMDATAEXPORTER_RELEASE_VERSION_DATE "26.09.10") # yy.MM.dd
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 include(ECMInstallIcons)
