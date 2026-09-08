@@ -191,7 +191,7 @@ void ImportAddressbookJobInterface::restoreResources()
                     QFileInfo newUrlInfo(newUrl);
                     const QString dataFile = value.akonadiResources;
                     const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
-                    if (dataResouceEntry->isFile()) {
+                    if (dataResouceEntry && dataResouceEntry->isFile()) {
                         const auto fileEntry = static_cast<const KArchiveFile *>(dataResouceEntry);
                         // TODO  adapt directory name too
                         extractZipFile(fileEntry,
@@ -205,7 +205,7 @@ void ImportAddressbookJobInterface::restoreResources()
                     const QString agentConfigFile = value.akonadiAgentConfigFile;
                     if (!agentConfigFile.isEmpty()) {
                         const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
-                        if (akonadiAgentConfigEntry->isFile()) {
+                        if (akonadiAgentConfigEntry && akonadiAgentConfigEntry->isFile()) {
                             const auto akonadiAgentConfigEntryFile = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
                             copyArchiveFileTo(akonadiAgentConfigEntryFile, copyToDirName);
                             resourceName = akonadiAgentConfigEntryFile->name();

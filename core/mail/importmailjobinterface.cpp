@@ -461,7 +461,7 @@ void ImportMailJobInterface::restoreMails()
             const QString agentConfigFile = value.akonadiAgentConfigFile;
             if (!agentConfigFile.isEmpty()) {
                 const KArchiveEntry *akonadiAgentConfigEntry = mArchiveDirectory->entry(agentConfigFile);
-                if (akonadiAgentConfigEntry->isFile()) {
+                if (akonadiAgentConfigEntry && akonadiAgentConfigEntry->isFile()) {
                     const auto fileEntry = static_cast<const KArchiveFile *>(akonadiAgentConfigEntry);
                     copyArchiveFileTo(fileEntry, copyToDirName);
                     resourceName = fileEntry->name();
@@ -473,7 +473,7 @@ void ImportMailJobInterface::restoreMails()
             if (resourceName.contains(QLatin1StringView("akonadi_mbox_resource_"))) {
                 const QString dataFile = value.akonadiResources;
                 const KArchiveEntry *dataResouceEntry = mArchiveDirectory->entry(dataFile);
-                if (dataResouceEntry->isFile()) {
+                if (dataResouceEntry && dataResouceEntry->isFile()) {
                     const auto file = static_cast<const KArchiveFile *>(dataResouceEntry);
                     copyArchiveFileTo(file, newUrl);
                 }
