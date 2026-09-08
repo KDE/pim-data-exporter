@@ -941,7 +941,7 @@ void ImportMailJobInterface::restoreIdentity()
                                 QString vcardFilePath =
                                     QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/kmail2/%1"_s.arg(fileInfo.fileName());
                                 int i = 1;
-                                while (QFileInfo::exists(vcardFileName)) {
+                                while (QFileInfo::exists(vcardFilePath)) {
                                     vcardFilePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)
                                         + u"/kmail2/%1_%2"_s.arg(i).arg(fileInfo.fileName());
                                     ++i;
