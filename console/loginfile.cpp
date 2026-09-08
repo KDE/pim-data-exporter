@@ -37,6 +37,8 @@ void LogInFile::setFileName(const QString &fileName)
             mFile = new QFile(mFileName);
             if (!mFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
                 qCWarning(PIMDATAEXPORTERCONSOLE_LOG) << "Impossible to open filename " << mFileName;
+                delete mFile;
+                mFile = nullptr;
                 return;
             }
         }
