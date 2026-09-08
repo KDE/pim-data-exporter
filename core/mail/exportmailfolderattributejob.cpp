@@ -57,18 +57,17 @@ void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, 
     for (const auto &[key, value] : lstAttributeInfo.asKeyValueRange()) {
         KConfigGroup attributeGroup = conf.group(key);
 
-        auto attr = value;
-        if (!attr.displayAttribute.isEmpty()) {
-            attributeGroup.writeEntry(u"Display"_s, attr.displayAttribute);
+        if (!value.displayAttribute.isEmpty()) {
+            attributeGroup.writeEntry(u"Display"_s, value.displayAttribute);
         }
-        if (!attr.expireAttribute.isEmpty()) {
-            attributeGroup.writeEntry(u"Expire"_s, attr.expireAttribute);
+        if (!value.expireAttribute.isEmpty()) {
+            attributeGroup.writeEntry(u"Expire"_s, value.expireAttribute);
         }
-        if (!attr.favoriteAttribute.isEmpty()) {
-            attributeGroup.writeEntry(u"Favorite"_s, attr.favoriteAttribute);
+        if (!value.favoriteAttribute.isEmpty()) {
+            attributeGroup.writeEntry(u"Favorite"_s, value.favoriteAttribute);
         }
-        if (!attr.folderAttribute.isEmpty()) {
-            attributeGroup.writeEntry(u"Folder"_s, attr.folderAttribute);
+        if (!value.folderAttribute.isEmpty()) {
+            attributeGroup.writeEntry(u"Folder"_s, value.folderAttribute);
         }
     }
     conf.sync();
