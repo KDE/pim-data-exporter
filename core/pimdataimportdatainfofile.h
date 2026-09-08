@@ -9,6 +9,7 @@
 #include "pimdataexporter_export.h"
 #include <QObject>
 #include <QString>
+#include <memory>
 class QTemporaryDir;
 class PIMDATAEXPORTER_EXPORT PimDataImportDataInfoFile : public QObject
 {
@@ -22,6 +23,6 @@ public:
     [[nodiscard]] QString importDataInfoPath();
 
 private:
-    QTemporaryDir *mTempDir = nullptr;
+    std::unique_ptr<QTemporaryDir> mTempDir;
     QString mFilename;
 };

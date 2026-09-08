@@ -42,6 +42,7 @@ void SynchronizeResourceJob::slotNextSync()
         job->start();
     } else {
         Q_EMIT synchronizationFinished();
+        deleteLater();
     }
 }
 

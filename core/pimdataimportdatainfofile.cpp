@@ -17,10 +17,7 @@ PimDataImportDataInfoFile::PimDataImportDataInfoFile(QObject *parent)
 {
 }
 
-PimDataImportDataInfoFile::~PimDataImportDataInfoFile()
-{
-    delete mTempDir;
-}
+PimDataImportDataInfoFile::~PimDataImportDataInfoFile() = default;
 
 void PimDataImportDataInfoFile::setCurrentFileName(const QString &filename)
 {
@@ -33,7 +30,7 @@ QString PimDataImportDataInfoFile::importDataInfoPath()
     if (mFilename.isEmpty()) {
         return temporaryFilePath;
     }
-    mTempDir = new QTemporaryDir;
+    mTempDir.reset(new QTemporaryDir);
     QString errorMsg;
     KZip *archive = Utils::openZip(mFilename, errorMsg);
     if (!archive) {

@@ -129,6 +129,7 @@ PimDataExporterWindow::~PimDataExporterWindow()
 
 void PimDataExporterWindow::initializeBackupRestoreUi()
 {
+    delete mPimDataBackupRestoreUI;
     mPimDataBackupRestoreUI = new PimDataBackupRestoreUI(this, this);
     connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::addInfo, this, &PimDataExporterWindow::slotAddInfo);
     connect(mPimDataBackupRestoreUI, &PimDataBackupRestore::addEndLine, this, &PimDataExporterWindow::slotAddEndLine);
