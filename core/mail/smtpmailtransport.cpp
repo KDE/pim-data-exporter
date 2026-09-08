@@ -4,10 +4,12 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "smtpmailtransport.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "pimdataexportcore_debug.h"
+#include <KConfigGroup>
 #include <MailTransport/TransportManager>
+
+using namespace Qt::Literals::StringLiterals;
 
 SmtpMailTransport::SmtpMailTransport(const KConfigGroup &group)
 {

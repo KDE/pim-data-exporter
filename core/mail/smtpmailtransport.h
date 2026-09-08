@@ -6,9 +6,8 @@
 
 #pragma once
 #include "pimdataexportercore_private_export.h"
-#include <KConfigGroup>
 #include <QString>
-
+class KConfigGroup;
 class PIMDATAEXPORTER_TESTS_EXPORT SmtpMailTransport
 {
 public:
