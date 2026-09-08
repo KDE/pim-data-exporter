@@ -71,7 +71,7 @@ void ExportMailFolderAttributeJobImpl::slotFetchFinished(KJob *job)
             info.folderAttribute = attrFolder->serialized();
         }
         if (info.isValid()) {
-            lstAttributeInfo.insert(mInterface->convertToFullCollectionPath(col.id()), info);
+            lstAttributeInfo.insert(mInterface->convertToFullCollectionPath(col.id()), std::move(info));
         }
     }
     storeFileFolderAttribute(lstAttributeInfo);

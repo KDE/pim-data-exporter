@@ -228,7 +228,7 @@ QList<Utils::AkonadiInstanceInfo> Utils::listOfResource()
         info.identifier = agent.identifier();
         info.mimeTypes = agent.type().mimeTypes();
         info.capabilities = agent.type().capabilities();
-        instanceInfoList.append(info);
+        instanceInfoList.append(std::move(info));
     }
     return instanceInfoList;
 }

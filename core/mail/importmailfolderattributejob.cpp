@@ -87,7 +87,7 @@ void ImportMailFolderAttributeJob::start()
                 info.folderAttribute = group.readEntry(folderStr, QByteArray());
             }
             // qDebug() << " identifier " << id << " info.expireAttribute " << info.expireAttribute << " info.displayAttribute " << info.displayAttribute;
-            mapAttributeInfo.insert(id, info);
+            mapAttributeInfo.insert(id, std::move(info));
         }
     }
     applyAttributes(mapAttributeInfo);

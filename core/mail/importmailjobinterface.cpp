@@ -125,7 +125,7 @@ void ImportMailJobInterface::storeMailArchiveResource(const KArchiveDirectory *d
                 }
                 // Show debug:
                 files.debug();
-                mListResourceFile.append(files);
+                mListResourceFile.append(std::move(files));
             } else {
                 qCDebug(PIMDATAEXPORTERCORE_LOG) << " Problem in archive. number of file " << lstResourceDirEntries.count();
             }

@@ -188,7 +188,7 @@ void AbstractImportExportJob::storeArchiveInfoResources(const KArchiveDirectory 
                     }
                 }
                 files.debug();
-                mListResourceFile.append(files);
+                mListResourceFile.append(std::move(files));
             } else {
                 qCWarning(PIMDATAEXPORTERCORE_LOG) << " Problem in archive. number of file " << lst.count();
             }
