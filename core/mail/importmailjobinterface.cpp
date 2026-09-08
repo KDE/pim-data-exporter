@@ -216,8 +216,8 @@ void ImportMailJobInterface::restoreResources()
                     const QString destDirectory = mTempDirName + u'/' + Utils::resourcesPath();
                     // qDebug() << " destDirectory " << destDirectory;
                     copyArchiveFileTo(file, destDirectory);
-                    const QString filename(file->name());
-                    const QString agentResourceFileName = destDirectory + u'/' + filename;
+                    const QString currentFilename(file->name());
+                    const QString agentResourceFileName = destDirectory + u'/' + currentFilename;
                     resourceName = Utils::akonadiAgentName(agentResourceFileName);
                 }
             }
