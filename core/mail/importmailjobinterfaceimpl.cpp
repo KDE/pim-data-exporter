@@ -5,6 +5,7 @@
 */
 
 #include "importmailjobinterfaceimpl.h"
+#include <qalgorithms.h>
 using namespace Qt::Literals::StringLiterals;
 
 #include "archivestorage.h"

@@ -36,11 +36,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Configure PimDataExporter"));
 
     // General page
-    auto generalConfigureWiget = new QWidget(this);
-    auto layout = new QVBoxLayout(generalConfigureWiget);
     mConfigureWidget->setObjectName(QLatin1StringView("configurewidget"));
-
-    layout->addWidget(mConfigureWidget);
 
     auto generalPageWidgetPage = new KPageWidgetItem(mConfigureWidget, i18n("General"));
     generalPageWidgetPage->setIcon(QIcon::fromTheme(u"network-workgroup"_s));
