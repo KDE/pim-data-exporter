@@ -12,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
+#include <KZip>
 #include <QFileInfo>
 
 BackupResourceFileJobBase::BackupResourceFileJobBase(QObject *parent)

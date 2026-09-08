@@ -6,10 +6,10 @@
 
 #pragma once
 
-#include <KZip>
 #include <QObject>
 
 #include "pimdataexporter_export.h"
+class KZip;
 class PIMDATAEXPORTER_EXPORT BackupResourceFileJobBase : public QObject
 {
     Q_OBJECT
