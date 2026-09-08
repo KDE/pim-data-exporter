@@ -64,7 +64,7 @@ PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
 
     buttonBox()->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
-    connect(buttonBox(), &QDialogButtonBox::accepted, this, &PimDataExporterConfigureDialog::accept);
+    connect(buttonBox(), &QDialogButtonBox::accepted, this, &PimDataExporterConfigureDialog::slotAccepted);
     connect(buttonBox(), &QDialogButtonBox::rejected, this, &PimDataExporterConfigureDialog::reject);
     readConfig();
 }
