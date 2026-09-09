@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:51+0000\n"
 "PO-Revision-Date: 2026-05-02 19:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -333,18 +333,18 @@ msgstr "Arşiv yazma kipinde açılamıyor."
 msgid "Archive cannot be opened in read mode."
 msgstr "Arşiv okuma kipinde açılamıyor."
 
-#: core/backupresourcefilejobbase.cpp:49
+#: core/backupresourcefilejobbase.cpp:50
 #, kde-format
 msgid "\"%1\" is not a file."
 msgstr "“%1” bir dosya değil."
 
-#: core/backupresourcefilejobbase.cpp:55 core/backupresourcefilejobbase.cpp:62
+#: core/backupresourcefilejobbase.cpp:56 core/backupresourcefilejobbase.cpp:63
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" was backed up."
 msgstr "“%1” yedeklendi."
 
-#: core/backupresourcefilejobbase.cpp:57 core/pimdatabackupthread.cpp:56
+#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:56
 #: core/storeresourcejob.cpp:61
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
@@ -539,17 +539,17 @@ msgstr "Kimlik dosyası geri yüklenemedi."
 msgid "\"%1\" migration done."
 msgstr "“%1” göçü tamamlandı."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:37
+#: core/mail/importmailjobinterfaceimpl.cpp:38
 #, kde-format
 msgid "Restoring folder attributes..."
 msgstr "Klasör öznitelikleri geri yükleniyor…"
 
-#: core/mail/importmailjobinterfaceimpl.cpp:43
+#: core/mail/importmailjobinterfaceimpl.cpp:44
 #, kde-format
 msgid "Restoring Folder Attributes done."
 msgstr "Klasör Özniteliklerini geri yükleme tamamlandı."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:47
+#: core/mail/importmailjobinterfaceimpl.cpp:48
 #, kde-format
 msgid "Folder Attributes cannot be restored."
 msgstr "Klasör Öznitelikleri geri yüklenemiyor."
@@ -682,12 +682,12 @@ msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "PimDataExporter’ı Yapılandır"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:45
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:41
 #, kde-format
 msgid "General"
 msgstr "Genel"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:60
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:56
 #, kde-format
 msgid "User Feedback"
 msgstr "Kullanıcı Geri Bildirimi"
@@ -959,27 +959,27 @@ msgstr "&Araçlar"
 msgid "Main Toolbar"
 msgstr "Ana Araç Çubuğu"
 
-#: gui/pimdataexporterwindow.cpp:171
+#: gui/pimdataexporterwindow.cpp:172
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Tam eşzamanlama başladı…"
 
-#: gui/pimdataexporterwindow.cpp:201
+#: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Full sync finished."
 msgstr "Tam eşzamanlama bitti."
 
-#: gui/pimdataexporterwindow.cpp:208
+#: gui/pimdataexporterwindow.cpp:209
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "“%1” için tam eşzamanlama tamamlandı."
 
-#: gui/pimdataexporterwindow.cpp:213
+#: gui/pimdataexporterwindow.cpp:214
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "“%1” için tam eşzamanlama başarısız oldu."
 
-#: gui/pimdataexporterwindow.cpp:219
+#: gui/pimdataexporterwindow.cpp:220
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -989,92 +989,92 @@ msgstr ""
 "ayarlarınıza ve verilerinizin üzerine yazabileceğinden, kullanırken dikkatli "
 "olmalısınız."
 
-#: gui/pimdataexporterwindow.cpp:221 gui/pimdataexporterwindow.cpp:327
-#: gui/pimdataexporterwindow.cpp:404
+#: gui/pimdataexporterwindow.cpp:222 gui/pimdataexporterwindow.cpp:328
+#: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Yedekle"
 
-#: gui/pimdataexporterwindow.cpp:248
+#: gui/pimdataexporterwindow.cpp:249
 #, kde-format
 msgid "Export Data..."
 msgstr "Veriyi Dışa Aktar…"
 
-#: gui/pimdataexporterwindow.cpp:253
+#: gui/pimdataexporterwindow.cpp:254
 #, kde-format
 msgid "Import Data..."
 msgstr "Veri İçe Aktar…"
 
-#: gui/pimdataexporterwindow.cpp:258
+#: gui/pimdataexporterwindow.cpp:259
 #, kde-format
 msgid "Save log..."
 msgstr "Günlüğü kaydet…"
 
-#: gui/pimdataexporterwindow.cpp:261
+#: gui/pimdataexporterwindow.cpp:262
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Arşiv Yapı Bilgisini Göster…"
 
-#: gui/pimdataexporterwindow.cpp:264
+#: gui/pimdataexporterwindow.cpp:265
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Arşiv Bilgisini Göster…"
 
-#: gui/pimdataexporterwindow.cpp:268
+#: gui/pimdataexporterwindow.cpp:269
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Geçerli Arşiv için Bilgi Göster…"
 
-#: gui/pimdataexporterwindow.cpp:305
+#: gui/pimdataexporterwindow.cpp:306
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Arşiv Seç"
 
-#: gui/pimdataexporterwindow.cpp:305
+#: gui/pimdataexporterwindow.cpp:306
 #, kde-format
 msgid "Zip file"
 msgstr "Zip dosyası"
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgid "Log is empty."
 msgstr "Günlük boş."
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Günlüğü kaydet"
 
-#: gui/pimdataexporterwindow.cpp:321
+#: gui/pimdataexporterwindow.cpp:322
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML Dosyaları (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:327
+#: gui/pimdataexporterwindow.cpp:328
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Verileriniz yedeklenmeden önce, lütfen tüm kdepim uygulamalarında çıkın."
 
-#: gui/pimdataexporterwindow.cpp:349
+#: gui/pimdataexporterwindow.cpp:350
 #, kde-format
 msgid "Create backup"
 msgstr "Yedek oluştur"
 
-#: gui/pimdataexporterwindow.cpp:351
+#: gui/pimdataexporterwindow.cpp:352
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Zip dosyası (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:361
+#: gui/pimdataexporterwindow.cpp:362
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Yedekleme sürüyor…"
 
-#: gui/pimdataexporterwindow.cpp:403
+#: gui/pimdataexporterwindow.cpp:404
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1083,17 +1083,17 @@ msgstr ""
 "Veriyi geri yüklemeden önce tüm kdepim uygulamalarını kapatmanız gerekir. "
 "Sürdürmek istiyor musunuz?"
 
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Restore backup"
 msgstr "Yedekten geri yükle"
 
-#: gui/pimdataexporterwindow.cpp:418
+#: gui/pimdataexporterwindow.cpp:419
 #, kde-format
 msgid "Zip File"
 msgstr "Zip Dosyası"
 
-#: gui/pimdataexporterwindow.cpp:450
+#: gui/pimdataexporterwindow.cpp:451
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Geri yükleme sürüyor…"

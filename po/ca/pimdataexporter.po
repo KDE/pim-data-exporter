@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:51+0000\n"
 "PO-Revision-Date: 2024-07-30 11:18+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -336,18 +336,18 @@ msgstr "No s'ha pogut obrir l'arxiu en mode d'escriptura."
 msgid "Archive cannot be opened in read mode."
 msgstr "No s'ha pogut obrir l'arxiu en mode de lectura."
 
-#: core/backupresourcefilejobbase.cpp:49
+#: core/backupresourcefilejobbase.cpp:50
 #, kde-format
 msgid "\"%1\" is not a file."
 msgstr "«%1» no és cap fitxer."
 
-#: core/backupresourcefilejobbase.cpp:55 core/backupresourcefilejobbase.cpp:62
+#: core/backupresourcefilejobbase.cpp:56 core/backupresourcefilejobbase.cpp:63
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" was backed up."
 msgstr "S'ha efectuat la còpia de seguretat de «%1»."
 
-#: core/backupresourcefilejobbase.cpp:57 core/pimdatabackupthread.cpp:56
+#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:56
 #: core/storeresourcejob.cpp:61
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
@@ -544,17 +544,17 @@ msgstr "Ha fallat en restaurar el fitxer «identity»."
 msgid "\"%1\" migration done."
 msgstr "S'ha efectuat la migració de «%1»."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:37
+#: core/mail/importmailjobinterfaceimpl.cpp:38
 #, kde-format
 msgid "Restoring folder attributes..."
 msgstr "S'estan restaurant els atributs de les carpetes..."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:43
+#: core/mail/importmailjobinterfaceimpl.cpp:44
 #, kde-format
 msgid "Restoring Folder Attributes done."
 msgstr "S'ha fet la restauració dels atributs de les carpetes."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:47
+#: core/mail/importmailjobinterfaceimpl.cpp:48
 #, kde-format
 msgid "Folder Attributes cannot be restored."
 msgstr "No s'han pogut restaurar els atributs de les carpetes."
@@ -689,12 +689,12 @@ msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "Configuració de l'Exportador de les dades PIM"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:45
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:41
 #, kde-format
 msgid "General"
 msgstr "General"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:60
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:56
 #, kde-format
 msgid "User Feedback"
 msgstr "Comentaris de l'usuari"
@@ -966,27 +966,27 @@ msgstr "&Eines"
 msgid "Main Toolbar"
 msgstr "Barra d'eines principal"
 
-#: gui/pimdataexporterwindow.cpp:171
+#: gui/pimdataexporterwindow.cpp:172
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Inici de sincronització completa..."
 
-#: gui/pimdataexporterwindow.cpp:201
+#: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Full sync finished."
 msgstr "La sincronització completa ha finalitzat."
 
-#: gui/pimdataexporterwindow.cpp:208
+#: gui/pimdataexporterwindow.cpp:209
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "S'ha completat la sincronització de «%1»."
 
-#: gui/pimdataexporterwindow.cpp:213
+#: gui/pimdataexporterwindow.cpp:214
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "Ha fallat la sincronització de «%1»."
 
-#: gui/pimdataexporterwindow.cpp:219
+#: gui/pimdataexporterwindow.cpp:220
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -995,93 +995,93 @@ msgstr ""
 "Per a restaurar les dades, heu d'usar «pimdataexporter». Aneu amb compte, "
 "podeu sobreescriure la configuració i les dades existents."
 
-#: gui/pimdataexporterwindow.cpp:221 gui/pimdataexporterwindow.cpp:327
-#: gui/pimdataexporterwindow.cpp:404
+#: gui/pimdataexporterwindow.cpp:222 gui/pimdataexporterwindow.cpp:328
+#: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Còpia de seguretat"
 
-#: gui/pimdataexporterwindow.cpp:248
+#: gui/pimdataexporterwindow.cpp:249
 #, kde-format
 msgid "Export Data..."
 msgstr "Exporta les dades..."
 
-#: gui/pimdataexporterwindow.cpp:253
+#: gui/pimdataexporterwindow.cpp:254
 #, kde-format
 msgid "Import Data..."
 msgstr "Importa les dades..."
 
-#: gui/pimdataexporterwindow.cpp:258
+#: gui/pimdataexporterwindow.cpp:259
 #, kde-format
 msgid "Save log..."
 msgstr "Desa el registre..."
 
-#: gui/pimdataexporterwindow.cpp:261
+#: gui/pimdataexporterwindow.cpp:262
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Mostra la informació de l'estructura de l'arxiu..."
 
-#: gui/pimdataexporterwindow.cpp:264
+#: gui/pimdataexporterwindow.cpp:265
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Mostra la informació de l'arxiu..."
 
-#: gui/pimdataexporterwindow.cpp:268
+#: gui/pimdataexporterwindow.cpp:269
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "Mostra informació sobre l'arxiu actual..."
 
-#: gui/pimdataexporterwindow.cpp:305
+#: gui/pimdataexporterwindow.cpp:306
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Selecciona l'arxiu"
 
-#: gui/pimdataexporterwindow.cpp:305
+#: gui/pimdataexporterwindow.cpp:306
 #, kde-format
 msgid "Zip file"
 msgstr "Fitxer Zip"
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgid "Log is empty."
 msgstr "El registre està buit."
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Desa el registre"
 
-#: gui/pimdataexporterwindow.cpp:321
+#: gui/pimdataexporterwindow.cpp:322
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "Fitxers HTML (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:327
+#: gui/pimdataexporterwindow.cpp:328
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Tanqueu totes les aplicacions del kdepim abans de fer una còpia de seguretat "
 "de les dades."
 
-#: gui/pimdataexporterwindow.cpp:349
+#: gui/pimdataexporterwindow.cpp:350
 #, kde-format
 msgid "Create backup"
 msgstr "Crea una còpia de seguretat"
 
-#: gui/pimdataexporterwindow.cpp:351
+#: gui/pimdataexporterwindow.cpp:352
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "Fitxer Zip (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:361
+#: gui/pimdataexporterwindow.cpp:362
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Hi ha una còpia de seguretat en curs..."
 
-#: gui/pimdataexporterwindow.cpp:403
+#: gui/pimdataexporterwindow.cpp:404
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1090,17 +1090,17 @@ msgstr ""
 "Abans de restaurar les dades, tanqueu totes les aplicacions del Kdepim. "
 "Voleu continuar?"
 
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Restore backup"
 msgstr "Restaura una còpia de seguretat"
 
-#: gui/pimdataexporterwindow.cpp:418
+#: gui/pimdataexporterwindow.cpp:419
 #, kde-format
 msgid "Zip File"
 msgstr "Fitxer Zip"
 
-#: gui/pimdataexporterwindow.cpp:450
+#: gui/pimdataexporterwindow.cpp:451
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Hi ha una restauració en curs..."

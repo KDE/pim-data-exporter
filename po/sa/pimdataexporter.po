@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:44+0000\n"
+"POT-Creation-Date: 2026-09-09 00:51+0000\n"
 "PO-Revision-Date: 2024-12-25 19:45+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -331,18 +331,18 @@ msgstr "लेखनविधाने अभिलेखागारं उद�
 msgid "Archive cannot be opened in read mode."
 msgstr "पठनविधाने संग्रहणं उद्घाटयितुं न शक्यते ।"
 
-#: core/backupresourcefilejobbase.cpp:49
+#: core/backupresourcefilejobbase.cpp:50
 #, kde-format
 msgid "\"%1\" is not a file."
 msgstr "\"%1\" सञ्चिका नास्ति ।"
 
-#: core/backupresourcefilejobbase.cpp:55 core/backupresourcefilejobbase.cpp:62
+#: core/backupresourcefilejobbase.cpp:56 core/backupresourcefilejobbase.cpp:63
 #: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" was backed up."
 msgstr "\"%1\" इत्यस्य पृष्ठपोषणं कृतम् ।"
 
-#: core/backupresourcefilejobbase.cpp:57 core/pimdatabackupthread.cpp:56
+#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:56
 #: core/storeresourcejob.cpp:61
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
@@ -537,17 +537,17 @@ msgstr "परिचयसञ्चिकां पुनःस्थापय�
 msgid "\"%1\" migration done."
 msgstr "\"%1\" प्रवासः कृतः ।"
 
-#: core/mail/importmailjobinterfaceimpl.cpp:37
+#: core/mail/importmailjobinterfaceimpl.cpp:38
 #, kde-format
 msgid "Restoring folder attributes..."
 msgstr "समुच्चय विशेषतानां पुनर्स्थापनम्..."
 
-#: core/mail/importmailjobinterfaceimpl.cpp:43
+#: core/mail/importmailjobinterfaceimpl.cpp:44
 #, kde-format
 msgid "Restoring Folder Attributes done."
 msgstr "Folder Attributes पुनर्स्थापनं कृतम्।"
 
-#: core/mail/importmailjobinterfaceimpl.cpp:47
+#: core/mail/importmailjobinterfaceimpl.cpp:48
 #, kde-format
 msgid "Folder Attributes cannot be restored."
 msgstr "Folder Attributes पुनः स्थापयितुं न शक्यते।"
@@ -680,12 +680,12 @@ msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "PimDataExporter विन्यस्तं कुर्वन्तु"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:45
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:41
 #, kde-format
 msgid "General"
 msgstr "सामान्य"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:60
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:56
 #, kde-format
 msgid "User Feedback"
 msgstr "उपयोक्तृप्रतिक्रिया"
@@ -957,27 +957,27 @@ msgstr "&उपकरणाः"
 msgid "Main Toolbar"
 msgstr "मुख्य साधनपट्टी"
 
-#: gui/pimdataexporterwindow.cpp:171
+#: gui/pimdataexporterwindow.cpp:172
 #, kde-format
 msgid "Full sync starts..."
 msgstr "पूर्णसमन्वयः आरभ्यते..."
 
-#: gui/pimdataexporterwindow.cpp:201
+#: gui/pimdataexporterwindow.cpp:202
 #, kde-format
 msgid "Full sync finished."
 msgstr "पूर्णसमन्वयनं समाप्तम्।"
 
-#: gui/pimdataexporterwindow.cpp:208
+#: gui/pimdataexporterwindow.cpp:209
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "\"%1\" कृते पूर्णसमन्वयनं कृतम् ।"
 
-#: gui/pimdataexporterwindow.cpp:213
+#: gui/pimdataexporterwindow.cpp:214
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "\"%1\" कृते पूर्णसमन्वयनं विफलम् ।"
 
-#: gui/pimdataexporterwindow.cpp:219
+#: gui/pimdataexporterwindow.cpp:220
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -986,91 +986,91 @@ msgstr ""
 "दत्तांशस्य पुनर्स्थापनार्थं भवद्भिः \"pimdataexporter\" इत्यस्य उपयोगः करणीयः । "
 "सावधानाः भवन्तु यतः एतत् भवतः विद्यमानं सेटिङ्ग्स्, दत्तांशं च अधिलिखितुं शक्नोति ।"
 
-#: gui/pimdataexporterwindow.cpp:221 gui/pimdataexporterwindow.cpp:327
-#: gui/pimdataexporterwindow.cpp:404
+#: gui/pimdataexporterwindow.cpp:222 gui/pimdataexporterwindow.cpp:328
+#: gui/pimdataexporterwindow.cpp:405
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "बैकअप"
 
-#: gui/pimdataexporterwindow.cpp:248
+#: gui/pimdataexporterwindow.cpp:249
 #, kde-format
 msgid "Export Data..."
 msgstr "निर्यातं आँकडा..."
 
-#: gui/pimdataexporterwindow.cpp:253
+#: gui/pimdataexporterwindow.cpp:254
 #, kde-format
 msgid "Import Data..."
 msgstr "आयातदत्तांशः..."
 
-#: gui/pimdataexporterwindow.cpp:258
+#: gui/pimdataexporterwindow.cpp:259
 #, kde-format
 msgid "Save log..."
 msgstr "लॉग रक्षतु..."
 
-#: gui/pimdataexporterwindow.cpp:261
+#: gui/pimdataexporterwindow.cpp:262
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "अभिलेखागार संरचना सूचना दर्शयतु..."
 
-#: gui/pimdataexporterwindow.cpp:264
+#: gui/pimdataexporterwindow.cpp:265
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "अभिलेखागारस्य सूचनां दर्शयतु..."
 
-#: gui/pimdataexporterwindow.cpp:268
+#: gui/pimdataexporterwindow.cpp:269
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "वर्तमान अभिलेखागारस्य विषये सूचनां दर्शयतु..."
 
-#: gui/pimdataexporterwindow.cpp:305
+#: gui/pimdataexporterwindow.cpp:306
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Archive इति चिनोतु"
 
-#: gui/pimdataexporterwindow.cpp:305
+#: gui/pimdataexporterwindow.cpp:306
 #, kde-format
 msgid "Zip file"
 msgstr "जिप् सञ्चिका"
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgid "Log is empty."
 msgstr "लॉग् रिक्तम् अस्ति।"
 
-#: gui/pimdataexporterwindow.cpp:317
+#: gui/pimdataexporterwindow.cpp:318
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "लॉग् रक्षतु"
 
-#: gui/pimdataexporterwindow.cpp:321
+#: gui/pimdataexporterwindow.cpp:322
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML सञ्चिकाः (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:327
+#: gui/pimdataexporterwindow.cpp:328
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr "कृपया स्वदत्तांशस्य बैकअपं ग्रहीतुं पूर्वं सर्वाणि kdepim अनुप्रयोगाः त्यजन्तु ।"
 
-#: gui/pimdataexporterwindow.cpp:349
+#: gui/pimdataexporterwindow.cpp:350
 #, kde-format
 msgid "Create backup"
 msgstr "बैकअप रचयन्तु"
 
-#: gui/pimdataexporterwindow.cpp:351
+#: gui/pimdataexporterwindow.cpp:352
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "जिप् सञ्चिका (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:361
+#: gui/pimdataexporterwindow.cpp:362
 #, kde-format
 msgid "Backup in progress..."
 msgstr "बैकअप प्रचलति..."
 
-#: gui/pimdataexporterwindow.cpp:403
+#: gui/pimdataexporterwindow.cpp:404
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1079,17 +1079,17 @@ msgstr ""
 "दत्तांशं पुनर्स्थापयितुं पूर्वं भवद्भिः सर्वाणि kdepim अनुप्रयोगाः बन्दं कर्तव्यम् । किं त्वं "
 "निरन्तरं कर्तुम् इच्छसि ?"
 
-#: gui/pimdataexporterwindow.cpp:416
+#: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Restore backup"
 msgstr "बैकअप पुनः स्थापयन्तु"
 
-#: gui/pimdataexporterwindow.cpp:418
+#: gui/pimdataexporterwindow.cpp:419
 #, kde-format
 msgid "Zip File"
 msgstr "जिप् सञ्चिका"
 
-#: gui/pimdataexporterwindow.cpp:450
+#: gui/pimdataexporterwindow.cpp:451
 #, kde-format
 msgid "Restore in progress..."
 msgstr "पुनर्स्थापनं प्रचलति..."
