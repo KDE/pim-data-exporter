@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the pim-data-exporter package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-09 00:51+0000\n"
-"PO-Revision-Date: 2025-11-30 15:22+0530\n"
+"PO-Revision-Date: 2026-09-20 13:56+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -729,13 +729,13 @@ msgstr "அனைத்து தேர்வுகளை நிராகரி"
 #, kde-format
 msgctxt "@action:button"
 msgid "Extract Selected File"
-msgstr ""
+msgstr "தேர்ந்தெடுத்துள்ள கோப்பைப் பிரித்தெடு"
 
 #: gui/dialog/showarchivestructuredialog.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Selected File"
-msgstr ""
+msgstr "தேர்ந்தெடுத்துள்ள கோப்பைத் திற"
 
 #: gui/dialog/showarchivestructuredialog.cpp:45
 #, kde-format
@@ -747,29 +747,29 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr ""
+msgstr "தேடு…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:56
 #, kde-format
 msgid "Save As Text..."
-msgstr ""
+msgstr "உரையாக சேமி…"
 
 #: gui/dialog/showarchivestructuredialog.cpp:136
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Directory"
-msgstr ""
+msgstr "அடைவுத் தேர்வு செய்யவும்"
 
 #: gui/dialog/showarchivestructuredialog.cpp:142
 #, kde-format
 msgid "Do you want to overwrite %1?"
-msgstr ""
+msgstr "%1 தனை மேலெழுத வேண்டுமா?"
 
 #: gui/dialog/showarchivestructuredialog.cpp:143
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exist"
-msgstr ""
+msgstr "கோப்பு ஏற்கனவே உள்ளது"
 
 #: gui/dialog/showarchivestructuredialog.cpp:151
 #, kde-format
@@ -1046,7 +1046,7 @@ msgstr ""
 #: gui/pimdataexporterwindow.cpp:350
 #, kde-format
 msgid "Create backup"
-msgstr ""
+msgstr "காப்புநகலை உருவாக்கு"
 
 #: gui/pimdataexporterwindow.cpp:352
 #, kde-format
@@ -1068,7 +1068,7 @@ msgstr ""
 #: gui/pimdataexporterwindow.cpp:417
 #, kde-format
 msgid "Restore backup"
-msgstr ""
+msgstr "காப்புநகலிலிருந்து மீட்டெடு"
 
 #: gui/pimdataexporterwindow.cpp:419
 #, kde-format
@@ -1106,9 +1106,9 @@ msgstr ""
 #: gui/widgets/pimdataexporterconfigurewidget.cpp:23
 #, kde-format
 msgid "Import"
-msgstr ""
+msgstr "இறக்குமதி"
 
 #: gui/widgets/selectiontypetreewidget.cpp:334
 #, kde-format
 msgid "Template Files (*.xml)"
-msgstr ""
+msgstr "வார்ப்புரு கோப்புகள் (*.xml)"
