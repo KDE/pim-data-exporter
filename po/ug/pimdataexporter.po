@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-09 00:51+0000\n"
-"PO-Revision-Date: 2026-06-01 17:40-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -42,7 +42,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:credit"
 msgid "Laurent Montel"
-msgstr "Laurent Montel"
+msgstr ""
 
 #: console/main.cpp:32 gui/pimdatacommandlineoption.cpp:45
 #, kde-format
@@ -613,7 +613,7 @@ msgstr "K ئادرېس دەپتەر"
 #: core/utils.cpp:186
 #, kde-format
 msgid "KAlarm"
-msgstr "KAlarm"
+msgstr ""
 
 #: core/utils.cpp:188
 #, kde-format
