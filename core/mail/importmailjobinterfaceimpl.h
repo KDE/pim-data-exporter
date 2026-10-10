@@ -10,7 +10,6 @@
 #include "pimdataexportercore_private_export.h"
 #include <Akonadi/Collection>
 #include <Akonadi/SpecialMailCollections>
-#include <KArchive>
 #include <MailTransport/TransportManager>
 #include <QStringList>
 class ArchiveStorage;

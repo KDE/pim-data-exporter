@@ -12,8 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
-#include <QPushButton>
-#include <QVBoxLayout>
+#include <QHBoxLayout>
 
 #if PIMDATAEXPORTER_WITH_KUSERFEEDBACK
 #include "userfeedback/userfeedbackmanager.h"

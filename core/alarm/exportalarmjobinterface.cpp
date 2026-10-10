@@ -13,7 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTemporaryFile>
 #include <QTimer>
 
-#include <QFile>
 #include <QFileInfo>
 #include <QStandardPaths>
 

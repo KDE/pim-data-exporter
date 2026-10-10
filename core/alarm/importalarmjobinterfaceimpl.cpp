@@ -11,10 +11,8 @@
 #include <PimCommonAkonadi/CreateResource>
 
 #include <KArchive>
-#include <KArchiveEntry>
 
 #include "resourceconverterimpl.h"
-#include <QStandardPaths>
 
 ImportAlarmJobInterfaceImpl::ImportAlarmJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ImportAlarmJobInterface(parent, typeSelected, archiveStorage, numberOfStep)

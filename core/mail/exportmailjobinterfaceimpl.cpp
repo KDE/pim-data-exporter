@@ -22,7 +22,6 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "exportresourcearchivejob.h"
 #include "resourceconverterimpl.h"
-#include <QStandardPaths>
 
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>

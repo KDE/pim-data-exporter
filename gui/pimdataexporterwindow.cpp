@@ -36,12 +36,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <KMessageBox>
 #include <KRecentDirs>
 #include <KRecentFilesMenu>
-#include <KSharedConfig>
-#include <KStandardAction>
 #include <QCommandLineParser>
 #include <QFileDialog>
 #include <QPointer>
-#include <QStandardPaths>
 #include <QStatusBar>
 #include <QVBoxLayout>
 

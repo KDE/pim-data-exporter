@@ -13,7 +13,6 @@
 #include <KConfigGroup>
 
 #include "resourceconverterimpl.h"
-#include <QStandardPaths>
 
 ExportAddressbookJobInterfaceImpl::ExportAddressbookJobInterfaceImpl(QObject *parent,
                                                                      Utils::StoredTypes typeSelected,

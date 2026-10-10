@@ -14,7 +14,6 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "resourceconverterimpl.h"
 #include <QColor>
-#include <QFile>
 #include <QTimer>
 
 #include <QFileInfo>

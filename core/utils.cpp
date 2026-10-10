@@ -17,7 +17,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTemporaryFile>
 
 #include <Akonadi/AgentManager>
-#include <QStandardPaths>
 
 QString Utils::storeAddressbook()
 {

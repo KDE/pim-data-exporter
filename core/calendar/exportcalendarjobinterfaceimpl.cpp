@@ -12,7 +12,6 @@
 #include "resourceconverterimpl.h"
 
 #include "exportresourcearchivejob.h"
-#include <QStandardPaths>
 
 ExportCalendarJobInterfaceImpl::ExportCalendarJobInterfaceImpl(QObject *parent,
                                                                Utils::StoredTypes typeSelected,

@@ -10,12 +10,9 @@
 #include <PimCommonAkonadi/CreateResource>
 
 #include <KArchive>
-#include <KArchiveDirectory>
-#include <KArchiveEntry>
 
 #include "resourceconverterimpl.h"
 #include <MailCommon/MailUtil>
-#include <QStandardPaths>
 
 ImportCalendarJobInterfaceImpl::ImportCalendarJobInterfaceImpl(QObject *parent,
                                                                Utils::StoredTypes typeSelected,

@@ -7,12 +7,10 @@
 #include "importaddressbookjobinterfaceimpl.h"
 #include "archivestorage.h"
 #include <KArchive>
-#include <KArchiveEntry>
 #include <MailCommon/MailUtil>
 #include <PimCommonAkonadi/CreateResource>
 
 #include "resourceconverterimpl.h"
-#include <QStandardPaths>
 
 ImportAddressbookJobInterfaceImpl::ImportAddressbookJobInterfaceImpl(QObject *parent,
                                                                      Utils::StoredTypes typeSelected,

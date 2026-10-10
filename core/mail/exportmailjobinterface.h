@@ -8,7 +8,6 @@
 
 #include "abstractimportexportjob.h"
 #include "pimdataexportercore_private_export.h"
-#include <KSharedConfig>
 #include <ctime>
 namespace MailCommon
 {

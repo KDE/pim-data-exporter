@@ -12,7 +12,6 @@
 
 #include "exportresourcearchivejob.h"
 #include "resourceconverterimpl.h"
-#include <QStandardPaths>
 
 ExportAlarmJobInterfaceImpl::ExportAlarmJobInterfaceImpl(QObject *parent, Utils::StoredTypes typeSelected, ArchiveStorage *archiveStorage, int numberOfStep)
     : ExportAlarmJobInterface(parent, typeSelected, archiveStorage, numberOfStep)

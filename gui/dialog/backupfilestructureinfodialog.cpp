@@ -21,7 +21,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <QFile>
 #include <QLabel>
 #include <QPushButton>
-#include <QStandardPaths>
 #include <QVBoxLayout>
 #include <QWindow>
 
