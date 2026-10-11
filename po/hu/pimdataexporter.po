@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:51+0000\n"
+"POT-Creation-Date: 2026-10-11 00:52+0000\n"
 "PO-Revision-Date: 2026-06-18 21:43+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -122,8 +122,8 @@ msgid "\"%1\" was restored."
 msgstr "A(z) „%1” visszaállítva."
 
 #: core/abstractimportexportjob.cpp:385
-#: core/addressbook/importaddressbookjobinterface.cpp:233
-#: core/mail/importmailjobinterface.cpp:424
+#: core/addressbook/importaddressbookjobinterface.cpp:232
+#: core/mail/importmailjobinterface.cpp:423
 #, kde-format
 msgid "Resources restored."
 msgstr "Erőforrások visszaállítva."
@@ -184,16 +184,16 @@ msgid "Export KAddressBook settings"
 msgstr "A KAddressBokk beállításainak exportálása"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:43
-#: core/alarm/exportalarmjobinterface.cpp:85
-#: core/calendar/exportcalendarjobinterface.cpp:97
+#: core/alarm/exportalarmjobinterface.cpp:84
+#: core/calendar/exportcalendarjobinterface.cpp:96
 #: core/mail/exportmailjobinterface.cpp:653
 #, kde-format
 msgid "Backing up resources..."
 msgstr "Erőforrások biztonsági mentése…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:103
-#: core/alarm/exportalarmjobinterface.cpp:77
-#: core/calendar/exportcalendarjobinterface.cpp:76
+#: core/alarm/exportalarmjobinterface.cpp:76
+#: core/calendar/exportcalendarjobinterface.cpp:75
 #: core/mail/exportmailjobinterface.cpp:675
 #, kde-format
 msgid "Resources backup done."
@@ -201,8 +201,8 @@ msgstr "Az erőforrások biztonsági mentése kész."
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:110
 #: core/akregator/exportakregatorjobinterface.cpp:74
-#: core/alarm/exportalarmjobinterface.cpp:110
-#: core/calendar/exportcalendarjobinterface.cpp:229
+#: core/alarm/exportalarmjobinterface.cpp:109
+#: core/calendar/exportcalendarjobinterface.cpp:228
 #: core/mail/exportmailjobinterface.cpp:169
 #, kde-format
 msgid "Backing up config..."
@@ -210,48 +210,48 @@ msgstr "Beállítás biztonsági mentése…"
 
 #: core/addressbook/exportaddressbookjobinterface.cpp:151
 #: core/akregator/exportakregatorjobinterface.cpp:81
-#: core/alarm/exportalarmjobinterface.cpp:136
-#: core/calendar/exportcalendarjobinterface.cpp:249
+#: core/alarm/exportalarmjobinterface.cpp:135
+#: core/calendar/exportcalendarjobinterface.cpp:248
 #: core/mail/exportmailjobinterface.cpp:537
 #, kde-format
 msgid "Config backup done."
 msgstr "A beállítás biztonsági mentése kész."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:43
+#: core/addressbook/importaddressbookjobinterface.cpp:42
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
 msgstr "A KAddressBook beállítások importálásának indítása…"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:45
+#: core/addressbook/importaddressbookjobinterface.cpp:44
 #, kde-format
 msgid "Import KAddressBook settings"
 msgstr "A KAddressBokk beállításainak importálása"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:94
+#: core/addressbook/importaddressbookjobinterface.cpp:93
 #: core/akregator/importakregatorjobinterface.cpp:95
-#: core/alarm/importalarmjobinterface.cpp:84
-#: core/calendar/importcalendarjobinterface.cpp:92
+#: core/alarm/importalarmjobinterface.cpp:83
+#: core/calendar/importcalendarjobinterface.cpp:91
 #, kde-format
 msgid "Restore configs..."
 msgstr "Beállítások visszaállítása…"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:111
+#: core/addressbook/importaddressbookjobinterface.cpp:110
 #: core/akregator/importakregatorjobinterface.cpp:101
-#: core/alarm/importalarmjobinterface.cpp:100
-#: core/calendar/importcalendarjobinterface.cpp:229
-#: core/mail/importmailjobinterface.cpp:862
+#: core/alarm/importalarmjobinterface.cpp:99
+#: core/calendar/importcalendarjobinterface.cpp:228
+#: core/mail/importmailjobinterface.cpp:861
 #, kde-format
 msgid "Config restored."
 msgstr "A beállítás visszaállítva."
 
+#: core/addressbook/importaddressbookjobinterface.cpp:163
 #: core/addressbook/importaddressbookjobinterface.cpp:164
-#: core/addressbook/importaddressbookjobinterface.cpp:165
+#: core/alarm/importalarmjobinterface.cpp:115
 #: core/alarm/importalarmjobinterface.cpp:116
-#: core/alarm/importalarmjobinterface.cpp:117
+#: core/calendar/importcalendarjobinterface.cpp:281
 #: core/calendar/importcalendarjobinterface.cpp:282
-#: core/calendar/importcalendarjobinterface.cpp:283
+#: core/mail/importmailjobinterface.cpp:198
 #: core/mail/importmailjobinterface.cpp:199
-#: core/mail/importmailjobinterface.cpp:200
 #, kde-format
 msgid "Restore resources..."
 msgstr "Erőforrások visszaállítása…"
@@ -301,22 +301,22 @@ msgstr "Adat visszaállítása…"
 msgid "Data restored."
 msgstr "Adatok visszaállítva."
 
-#: core/alarm/exportalarmjobinterface.cpp:29
+#: core/alarm/exportalarmjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAlarm settings..."
 msgstr "A KAlarm beállítások exportálásának indítása…"
 
-#: core/alarm/exportalarmjobinterface.cpp:30
+#: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
 msgid "Export KAlarm settings"
 msgstr "A KAlarm beállításainak exportálása"
 
-#: core/alarm/importalarmjobinterface.cpp:34
+#: core/alarm/importalarmjobinterface.cpp:33
 #, kde-format
 msgid "Starting to import KAlarm settings..."
 msgstr "A KAlarm beállítások importálásának indítása…"
 
-#: core/alarm/importalarmjobinterface.cpp:35
+#: core/alarm/importalarmjobinterface.cpp:34
 #, kde-format
 msgid "Import KAlarm settings"
 msgstr "A KAlarm beállításainak importálása"
@@ -326,7 +326,7 @@ msgstr "A KAlarm beállításainak importálása"
 msgid "Archive cannot be opened in write mode."
 msgstr "Az archívum nem nyitható meg írásmódban."
 
-#: core/archivestorage.cpp:45 core/utils.cpp:135
+#: core/archivestorage.cpp:45 core/utils.cpp:134
 #: gui/dialog/showarchivestructuredialog.cpp:185
 #, kde-format
 msgid "Archive cannot be opened in read mode."
@@ -349,22 +349,22 @@ msgstr "A(z) „%1” biztonsági mentése kész."
 msgid "\"%1\" file cannot be added to backup file."
 msgstr "A(z) „%1” fájl nem adható hozzá a biztonsági mentés fájlhoz."
 
-#: core/calendar/exportcalendarjobinterface.cpp:83
+#: core/calendar/exportcalendarjobinterface.cpp:82
 #, kde-format
 msgid "Start export KOrganizer settings..."
 msgstr "A KOrganizer beállítások exportálásának indítása…"
 
-#: core/calendar/exportcalendarjobinterface.cpp:84
+#: core/calendar/exportcalendarjobinterface.cpp:83
 #, kde-format
 msgid "Export KOrganizer settings"
 msgstr "A KOrganizer beállításainak exportálása"
 
-#: core/calendar/importcalendarjobinterface.cpp:37
+#: core/calendar/importcalendarjobinterface.cpp:36
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
 msgstr "A KOrganizer beállítások importálásának indítása…"
 
-#: core/calendar/importcalendarjobinterface.cpp:39
+#: core/calendar/importcalendarjobinterface.cpp:38
 #, kde-format
 msgid "Import KOrganizer settings"
 msgstr "A KOrganizer beállításainak importálása"
@@ -430,110 +430,110 @@ msgstr "Az identitások biztonsági mentése kész."
 msgid "Identity file cannot be added to backup file."
 msgstr "Az identitásfájl nem adható hozzá a biztonsági mentés fájlhoz."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:140
+#: core/mail/exportmailjobinterfaceimpl.cpp:139
 #, kde-format
 msgid "Filters backup done."
 msgstr "A szűrők biztonsági mentése kész."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:142
+#: core/mail/exportmailjobinterfaceimpl.cpp:141
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "A szűrőket nem lehet exportálni."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:164
+#: core/mail/exportmailjobinterfaceimpl.cpp:163
 #, kde-format
 msgid "Backing up Folder Attributes done."
 msgstr "A mappaattribútumok biztonsági mentése befejeződött."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:168
+#: core/mail/exportmailjobinterfaceimpl.cpp:167
 #, kde-format
 msgid "Folder Attributes cannot be exported."
 msgstr "A mappaattribútumokat nem lehet exportálni."
 
-#: core/mail/importmailjobinterface.cpp:43
+#: core/mail/importmailjobinterface.cpp:42
 #, kde-format
 msgid "Starting to import KMail settings..."
 msgstr "A KMail beállítások importálásának indítása…"
 
-#: core/mail/importmailjobinterface.cpp:44
+#: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Import KMail settings"
 msgstr "A KMail beállításainak importálása"
 
-#: core/mail/importmailjobinterface.cpp:169
-#: core/mail/importmailjobinterface.cpp:175
+#: core/mail/importmailjobinterface.cpp:168
+#: core/mail/importmailjobinterface.cpp:174
 #, kde-format
 msgid "Restore transports..."
 msgstr "Átvitelek visszaállítása…"
 
-#: core/mail/importmailjobinterface.cpp:173
+#: core/mail/importmailjobinterface.cpp:172
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
 msgstr "a levélátviteli fájl nem található az archívumban."
 
-#: core/mail/importmailjobinterface.cpp:188
+#: core/mail/importmailjobinterface.cpp:187
 #, kde-format
 msgid "Transports restored."
 msgstr "Átvitelek visszaállítva."
 
-#: core/mail/importmailjobinterface.cpp:190
+#: core/mail/importmailjobinterface.cpp:189
 #, kde-format
 msgid "Failed to restore transports file."
 msgstr "Nem sikerült visszaállítani az átvitelfájlt."
 
-#: core/mail/importmailjobinterface.cpp:436
-#: core/mail/importmailjobinterface.cpp:438
+#: core/mail/importmailjobinterface.cpp:435
+#: core/mail/importmailjobinterface.cpp:437
 #, kde-format
 msgid "Restore mails..."
 msgstr "Levelek visszaállítása…"
 
-#: core/mail/importmailjobinterface.cpp:555
+#: core/mail/importmailjobinterface.cpp:554
 #, kde-format
 msgid "Mails restored."
 msgstr "Levelek visszaállítva."
 
-#: core/mail/importmailjobinterface.cpp:562
+#: core/mail/importmailjobinterface.cpp:561
 #, kde-format
 msgid "Restore config..."
 msgstr "Beállítás visszaállítása…"
 
-#: core/mail/importmailjobinterface.cpp:565
+#: core/mail/importmailjobinterface.cpp:564
 #, kde-format
 msgid "filters file could not be found in the archive."
 msgstr "szűrőfájl nem található az archívumban."
 
-#: core/mail/importmailjobinterface.cpp:569
+#: core/mail/importmailjobinterface.cpp:568
 #, kde-format
 msgid "Restore filters..."
 msgstr "Szűrők visszaállítása…"
 
-#: core/mail/importmailjobinterface.cpp:618
+#: core/mail/importmailjobinterface.cpp:617
 #, kde-format
 msgid "Filters restored."
 msgstr "Szűrők visszaállítva."
 
-#: core/mail/importmailjobinterface.cpp:894
-#: core/mail/importmailjobinterface.cpp:899
+#: core/mail/importmailjobinterface.cpp:893
+#: core/mail/importmailjobinterface.cpp:898
 #, kde-format
 msgid "Restoring identities..."
 msgstr "Identitások visszaállítása…"
 
-#: core/mail/importmailjobinterface.cpp:897
+#: core/mail/importmailjobinterface.cpp:896
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
 msgstr "Az e-mail-azonosító fájl nem található az archívumban."
 
-#: core/mail/importmailjobinterface.cpp:958
+#: core/mail/importmailjobinterface.cpp:957
 #, kde-format
 msgid "Identities restored."
 msgstr "Identitások visszaállítva."
 
-#: core/mail/importmailjobinterface.cpp:960
+#: core/mail/importmailjobinterface.cpp:959
 #, kde-format
 msgid "Failed to restore identity file."
 msgstr "Az identitásfájl visszaállítása nem sikerült."
 
-#: core/mail/importmailjobinterface.cpp:1279
+#: core/mail/importmailjobinterface.cpp:1278
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "„%1” migrációja kész."
@@ -603,90 +603,90 @@ msgstr "A(z) „%1” erőforrásfájl nem adható hozzá a biztonsági mentés 
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr "A(z) „%1” erőforrás-konfigurációs fájl nem létezik."
 
-#: core/utils.cpp:182
+#: core/utils.cpp:181
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: core/utils.cpp:184
+#: core/utils.cpp:183
 #, kde-format
 msgid "KAddressBook"
 msgstr "KAddressBook"
 
-#: core/utils.cpp:186
+#: core/utils.cpp:185
 #, kde-format
 msgid "KAlarm"
 msgstr "KAlarm"
 
-#: core/utils.cpp:188
+#: core/utils.cpp:187
 #, kde-format
 msgid "KOrganizer"
 msgstr "KOrganizer"
 
-#: core/utils.cpp:190
+#: core/utils.cpp:189
 #, kde-format
 msgid "Akregator"
 msgstr "Akregator"
 
-#: core/utils.cpp:204
+#: core/utils.cpp:203
 #, kde-format
 msgid "Identity"
 msgstr "Identitás"
 
-#: core/utils.cpp:206
+#: core/utils.cpp:205
 #, kde-format
 msgid "Mails"
 msgstr "Levelek"
 
-#: core/utils.cpp:208
+#: core/utils.cpp:207
 #, kde-format
 msgid "Mail Transport"
 msgstr "Továbbítási mód"
 
-#: core/utils.cpp:210
+#: core/utils.cpp:209
 #, kde-format
 msgid "Resources"
 msgstr "Erőforrások"
 
-#: core/utils.cpp:212
+#: core/utils.cpp:211
 #, kde-format
 msgid "Config"
 msgstr "Beállítás"
 
-#: core/utils.cpp:214
+#: core/utils.cpp:213
 #, kde-format
 msgid "Data"
 msgstr "Adat"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:36
+#: gui/dialog/backupfilestructureinfodialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Archive File Structure"
 msgstr "Fájlszerkezet archiválása"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:38
+#: gui/dialog/backupfilestructureinfodialog.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Backup Archive Structure:"
 msgstr "Archívumszerkezet biztonsági mentése:"
 
-#: gui/dialog/backupfilestructureinfodialog.cpp:64
+#: gui/dialog/backupfilestructureinfodialog.cpp:63
 #, kde-format
 msgid "backup-structure.txt file was not found."
 msgstr "A backup-structure.txt fájl nem található."
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:36
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure PimDataExporter"
 msgstr "A PimDataExporter beállítása"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:41
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:40
 #, kde-format
 msgid "General"
 msgstr "Általános"
 
-#: gui/dialog/pimdataexporterconfiguredialog.cpp:56
+#: gui/dialog/pimdataexporterconfiguredialog.cpp:55
 #, kde-format
 msgid "User Feedback"
 msgstr "Felhasználói visszajelzés"
@@ -960,27 +960,27 @@ msgstr "&Eszközök"
 msgid "Main Toolbar"
 msgstr "Alap eszköztár"
 
-#: gui/pimdataexporterwindow.cpp:172
+#: gui/pimdataexporterwindow.cpp:169
 #, kde-format
 msgid "Full sync starts..."
 msgstr "Teljes szinkronizálás indulása…"
 
-#: gui/pimdataexporterwindow.cpp:202
+#: gui/pimdataexporterwindow.cpp:199
 #, kde-format
 msgid "Full sync finished."
 msgstr "A teljes szinkronizálás befejeződött."
 
-#: gui/pimdataexporterwindow.cpp:209
+#: gui/pimdataexporterwindow.cpp:206
 #, kde-format
 msgid "Full sync for \"%1\" done."
 msgstr "A(z) „%1” teljes szinkronizálása befejeződött."
 
-#: gui/pimdataexporterwindow.cpp:214
+#: gui/pimdataexporterwindow.cpp:211
 #, kde-format
 msgid "Full sync for \"%1\" failed."
 msgstr "A(z) „%1” teljes szinkronizálása meghiúsult."
 
-#: gui/pimdataexporterwindow.cpp:220
+#: gui/pimdataexporterwindow.cpp:217
 #, kde-format
 msgid ""
 "For restoring data, you must use \"pimdataexporter\". Be careful as it can "
@@ -989,92 +989,92 @@ msgstr ""
 "Az adatok visszaállításához a „pimdataexporter” használata szükséges. Legyen "
 "óvatos, felülírhatja a meglévő beállításokat, adatokat."
 
-#: gui/pimdataexporterwindow.cpp:222 gui/pimdataexporterwindow.cpp:328
-#: gui/pimdataexporterwindow.cpp:405
+#: gui/pimdataexporterwindow.cpp:219 gui/pimdataexporterwindow.cpp:325
+#: gui/pimdataexporterwindow.cpp:402
 #, kde-format
 msgctxt "@title:window"
 msgid "Backup"
 msgstr "Biztonsági mentés"
 
-#: gui/pimdataexporterwindow.cpp:249
+#: gui/pimdataexporterwindow.cpp:246
 #, kde-format
 msgid "Export Data..."
 msgstr "Adat exportálása…"
 
-#: gui/pimdataexporterwindow.cpp:254
+#: gui/pimdataexporterwindow.cpp:251
 #, kde-format
 msgid "Import Data..."
 msgstr "Adat importálása…"
 
-#: gui/pimdataexporterwindow.cpp:259
+#: gui/pimdataexporterwindow.cpp:256
 #, kde-format
 msgid "Save log..."
 msgstr "Napló mentése…"
 
-#: gui/pimdataexporterwindow.cpp:262
+#: gui/pimdataexporterwindow.cpp:259
 #, kde-format
 msgid "Show Archive Structure Information..."
 msgstr "Archívumszerkezet információk megjelenítése…"
 
-#: gui/pimdataexporterwindow.cpp:265
+#: gui/pimdataexporterwindow.cpp:262
 #, kde-format
 msgid "Show Archive Information..."
 msgstr "Archívum információk megjelenítése…"
 
-#: gui/pimdataexporterwindow.cpp:269
+#: gui/pimdataexporterwindow.cpp:266
 #, kde-format
 msgid "Show Information on current Archive..."
 msgstr "A jelenlegi archívum jellemzőinek megjelenítése…"
 
-#: gui/pimdataexporterwindow.cpp:306
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Archive"
 msgstr "Archívum kijelölése"
 
-#: gui/pimdataexporterwindow.cpp:306
+#: gui/pimdataexporterwindow.cpp:303
 #, kde-format
 msgid "Zip file"
 msgstr "ZIP-fájl"
 
-#: gui/pimdataexporterwindow.cpp:318
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgid "Log is empty."
 msgstr "A napló üres."
 
-#: gui/pimdataexporterwindow.cpp:318
+#: gui/pimdataexporterwindow.cpp:315
 #, kde-format
 msgctxt "@title:window"
 msgid "Save log"
 msgstr "Napló mentése"
 
-#: gui/pimdataexporterwindow.cpp:322
+#: gui/pimdataexporterwindow.cpp:319
 #, kde-format
 msgid "HTML Files (*.html)"
 msgstr "HTML-fájlok (*.html)"
 
-#: gui/pimdataexporterwindow.cpp:328
+#: gui/pimdataexporterwindow.cpp:325
 #, kde-format
 msgid "Please quit all kdepim applications before backing up your data."
 msgstr ""
 "Lépjen ki az összes kdepim alkalmazásból az adatok biztonsági mentése előtt."
 
-#: gui/pimdataexporterwindow.cpp:350
+#: gui/pimdataexporterwindow.cpp:347
 #, kde-format
 msgid "Create backup"
 msgstr "Biztonsági mentés készítése"
 
-#: gui/pimdataexporterwindow.cpp:352
+#: gui/pimdataexporterwindow.cpp:349
 #, kde-format
 msgid "Zip file (*.zip)"
 msgstr "ZIP-fájl (*.zip)"
 
-#: gui/pimdataexporterwindow.cpp:362
+#: gui/pimdataexporterwindow.cpp:359
 #, kde-format
 msgid "Backup in progress..."
 msgstr "Biztonsági mentés folyamatban…"
 
-#: gui/pimdataexporterwindow.cpp:404
+#: gui/pimdataexporterwindow.cpp:401
 #, kde-format
 msgid ""
 "Before restoring data you must close all kdepim applications. Do you want to "
@@ -1083,17 +1083,17 @@ msgstr ""
 "Az adatok visszaállítása előtt zárjon be minden kdepim alkalmazást. Szeretné "
 "folytatni?"
 
-#: gui/pimdataexporterwindow.cpp:417
+#: gui/pimdataexporterwindow.cpp:414
 #, kde-format
 msgid "Restore backup"
 msgstr "Biztonsági mentés visszatöltése"
 
-#: gui/pimdataexporterwindow.cpp:419
+#: gui/pimdataexporterwindow.cpp:416
 #, kde-format
 msgid "Zip File"
 msgstr "ZIP-fájl"
 
-#: gui/pimdataexporterwindow.cpp:451
+#: gui/pimdataexporterwindow.cpp:448
 #, kde-format
 msgid "Restore in progress..."
 msgstr "Visszaállítás folyamatban…"
