@@ -26,7 +26,7 @@ using namespace Qt::Literals::StringLiterals;
 
 namespace
 {
-static const char myBackupFileStructureInfoDialogGroupName[] = "BackupFileStructureInfoDialog";
+const char myBackupFileStructureInfoDialogGroupName[] = "BackupFileStructureInfoDialog";
 }
 BackupFileStructureInfoDialog::BackupFileStructureInfoDialog(QWidget *parent)
     : QDialog(parent)

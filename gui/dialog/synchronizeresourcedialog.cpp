@@ -22,7 +22,7 @@ using namespace Qt::Literals::StringLiterals;
 
 namespace
 {
-static const char mySynchronizeResourceDialogGroupName[] = "SynchronizeResourceDialog";
+const char mySynchronizeResourceDialogGroupName[] = "SynchronizeResourceDialog";
 }
 SynchronizeResourceDialog::SynchronizeResourceDialog(QWidget *parent)
     : QDialog(parent)

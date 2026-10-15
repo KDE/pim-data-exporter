@@ -32,7 +32,7 @@ using namespace Qt::Literals::StringLiterals;
 
 namespace
 {
-static const char myShowArchiveStructureDialogGroupName[] = "ShowArchiveStructureDialog";
+const char myShowArchiveStructureDialogGroupName[] = "ShowArchiveStructureDialog";
 }
 
 ShowArchiveStructureDialog::ShowArchiveStructureDialog(const QString &filename, QWidget *parent)

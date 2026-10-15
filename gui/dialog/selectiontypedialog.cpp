@@ -21,7 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWindow>
 namespace
 {
-static const char myConfigSelectionTypeDialogDialog[] = "SelectionTypeDialog";
+const char myConfigSelectionTypeDialogDialog[] = "SelectionTypeDialog";
 }
 SelectionTypeDialog::SelectionTypeDialog(bool backupData, QWidget *parent)
     : QDialog(parent)

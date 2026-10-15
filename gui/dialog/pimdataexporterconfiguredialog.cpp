@@ -25,7 +25,7 @@ using namespace Qt::Literals::StringLiterals;
 
 namespace
 {
-static const char myPimDataExporterConfigureDialogGroupName[] = "PimDataExporterConfigureDialog";
+const char myPimDataExporterConfigureDialogGroupName[] = "PimDataExporterConfigureDialog";
 }
 PimDataExporterConfigureDialog::PimDataExporterConfigureDialog(QWidget *parent)
     : KPageDialog(parent)
