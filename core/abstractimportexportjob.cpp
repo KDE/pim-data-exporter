@@ -94,7 +94,7 @@ KZip *AbstractImportExportJob::archive() const
 void AbstractImportExportJob::backupUiRcFile(const QString &configFileName, const QString &application)
 {
     const QString configrcStr(configFileName);
-    const QString configrc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"kxmlgui6"_s + application + u'/' + configrcStr;
+    const QString configrc = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/kxmlgui5/"_s + application + u'/' + configrcStr;
     if (QFileInfo::exists(configrc)) {
         backupFile(configrc, Utils::configsPath(), configrcStr);
     }
@@ -456,7 +456,7 @@ void AbstractImportExportJob::restoreUiRcFile(const QString &configNameStr, cons
     if (configNameentry && configNameentry->isFile()) {
         const auto configNameconfiguration = static_cast<const KArchiveFile *>(configNameentry);
         const QString configNamerc =
-            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"kxmlgui6"_s + applicationName + u'/' + configNameStr;
+            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/kxmlgui5/"_s + applicationName + u'/' + configNameStr;
         if (QFileInfo::exists(configNamerc)) {
             if (overwriteConfigMessageBox(configNameStr)) {
                 copyToFile(configNameconfiguration, configNamerc, configNameStr, Utils::configsPath());
