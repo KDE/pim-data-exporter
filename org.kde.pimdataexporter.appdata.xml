@@ -134,7 +134,7 @@
     <p xml:lang="zh-TW">PIM 資料匯出工具允許匯出或匯入 PIM 設定。</p>
   </description>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=pimsettingsexporter</url>
-  <url type="help">https://docs.kde.org/?application=pimsettingexporter</url>
+  <url type="help">https://docs.kde.org/?application=pimdataexporter</url>
   <url type="donation">https://www.kde.org/community/donations/?app=pimsettingexporter</url>
   <url type="homepage">https://apps.kde.org/pimdataexporter/</url>
   <url type="vcs-browser">https://invent.kde.org/pim/pim-data-exporter</url>
