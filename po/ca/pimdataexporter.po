@@ -1137,18 +1137,3 @@ msgstr "Importa"
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "Fitxers de plantilla (*.xml)"
-
-#~ msgid "Start export KNotes settings..."
-#~ msgstr "Inicia l'exportació de la configuració del KNotes..."
-
-#~ msgid "Export KNotes settings"
-#~ msgstr "Exportació de la configuració del KNotes"
-
-#~ msgid "Starting to import KNotes settings..."
-#~ msgstr "S'està iniciant la importació de la configuració del KNotes..."
-
-#~ msgid "Import KNotes settings"
-#~ msgstr "Importació de la configuració del KNotes"
-
-#~ msgid "KNotes"
-#~ msgstr "KNotes"

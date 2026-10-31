@@ -39,7 +39,7 @@ msgstr "Consola de l'exportador de dades PIM"
 #: console/main.cpp:31
 #, kde-format
 msgid "Copyright © 2015-%1 pimdataexporter authors"
-msgstr "Copyright © 2015-%1, els autors de «pimdataexporter»"
+msgstr "Drets d'autoria © 2015-%1, els autors de «pimdataexporter»"
 
 #: console/main.cpp:32 gui/pimdatacommandlineoption.cpp:45
 #, kde-format
@@ -915,7 +915,7 @@ msgstr "Exportador de les dades PIM"
 #: gui/pimdatacommandlineoption.cpp:44
 #, kde-format
 msgid "Copyright © 2012-%1 pimdataexporter authors"
-msgstr "Copyright © 2012-%1, els autors de «pimdataexporter»"
+msgstr "Drets d'autoria © 2012-%1, els autors de «pimdataexporter»"
 
 #: gui/pimdatacommandlineoption.cpp:49
 #, kde-format
