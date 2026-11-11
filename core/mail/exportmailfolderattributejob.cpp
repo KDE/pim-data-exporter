@@ -51,7 +51,10 @@ void ExportMailFolderAttributeJob::setExportInterface(ExportMailJobInterface *in
 void ExportMailFolderAttributeJob::storeFileFolderAttribute(const QMap<QString, ImportExportMailUtil::AttributeInfo> &lstAttributeInfo)
 {
     QTemporaryFile tmp;
-    tmp.open();
+    if (!tmp.open()) {
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+        return;
+    }
 
     KConfig conf(tmp.fileName());
     for (const auto &[key, value] : lstAttributeInfo.asKeyValueRange()) {

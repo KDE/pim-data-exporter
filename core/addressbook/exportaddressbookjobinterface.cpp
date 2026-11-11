@@ -115,7 +115,9 @@ void ExportAddressbookJobInterface::backupConfig()
         KSharedConfigPtr kaddressbook = KSharedConfig::openConfig(kaddressbookrc);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+        }
 
         KConfig *kaddressBookConfig = kaddressbook->copyTo(tmp.fileName());
 

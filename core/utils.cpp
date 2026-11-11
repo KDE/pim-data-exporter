@@ -152,7 +152,10 @@ void Utils::storeDataExportInfo(KZip *archive, const QString &exportInfoFileName
 void Utils::addVersion(KZip *archive)
 {
     QTemporaryFile tmp;
-    tmp.open();
+    if (!tmp.open()) {
+        qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+        return;
+    }
     const bool fileAdded = archive->addLocalFile(tmp.fileName(), Utils::infoPath() + u"VERSION_%1"_s.arg(currentArchiveVersion()));
     if (!fileAdded) {
         // TODO add i18n ?

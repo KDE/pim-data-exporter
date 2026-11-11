@@ -124,7 +124,10 @@ void ExportCalendarJobInterface::exportEventViewConfig()
         KSharedConfigPtr eventviews = KSharedConfig::openConfig(eventviewsrc);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+            return;
+        }
 
         KConfig *eventviewConfig = eventviews->copyTo(tmp.fileName());
         exportResourceColors(eventviewConfig);
@@ -165,7 +168,10 @@ void ExportCalendarJobInterface::exportKalendarConfig()
         KSharedConfigPtr kalendar = KSharedConfig::openConfig(kalendarrc);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+            return;
+        }
 
         KConfig *kalendarConfig = kalendar->copyTo(tmp.fileName());
 
@@ -192,7 +198,10 @@ void ExportCalendarJobInterface::exportKorganizerConfig()
         KSharedConfigPtr korganizer = KSharedConfig::openConfig(korganizerrc);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+            return;
+        }
 
         KConfig *korganizerConfig = korganizer->copyTo(tmp.fileName());
 

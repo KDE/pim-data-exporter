@@ -129,7 +129,10 @@ void ExportMailJobInterfaceImpl::exportFilters()
     const QList<MailCommon::MailFilter *> lstFilter = filters();
     if (!lstFilter.isEmpty()) {
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            emitError(i18n("Filters cannot be exported."));
+            return;
+        }
         const QUrl url = QUrl::fromLocalFile(tmp.fileName());
         MailCommon::FilterImporterExporter mailCommonExportFilters;
         mailCommonExportFilters.exportFilters(lstFilter, url, true);

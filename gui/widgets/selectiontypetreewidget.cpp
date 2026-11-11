@@ -300,7 +300,9 @@ QString SelectionTypeTreeWidget::exportedFileInfo()
 {
     const QString templateStr = templateSelectionToString();
     QTemporaryFile tmp;
-    tmp.open();
+    if (!tmp.open()) {
+        return {};
+    }
     if (!PimCommon::Util::saveToFile(tmp.fileName(), templateStr)) {
         return {};
     } else {

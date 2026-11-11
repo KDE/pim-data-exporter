@@ -173,7 +173,9 @@ QString ResourceConverterBase::storeResources(KZip *archive, const QString &iden
 
     KSharedConfigPtr resourceConfig = KSharedConfig::openConfig(configFileName);
     QTemporaryFile tmp;
-    tmp.open();
+    if (!tmp.open()) {
+        return i18n("Impossible to open temporary file.");
+    }
     KConfig *config = resourceConfig->copyTo(tmp.fileName());
 
     if (identifier.contains(POP3_RESOURCE_IDENTIFIER)) {

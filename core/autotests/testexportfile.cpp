@@ -58,7 +58,7 @@ void TestExportFile::start()
     // TODO fix file name.
     Utils::addVersion(mArchiveStorage->archive());
     QTemporaryFile exportedFileInfoDummy;
-    exportedFileInfoDummy.open();
+    QVERIFY(exportedFileInfoDummy.open());
     Utils::storeDataExportInfo(mArchiveStorage->archive(), exportedFileInfoDummy.fileName());
 
     QSignalSpy finish(mAbstractImportExportJob, &AbstractImportExportJob::jobFinished);

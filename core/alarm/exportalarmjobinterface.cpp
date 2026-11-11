@@ -114,7 +114,9 @@ void ExportAlarmJobInterface::backupConfig()
         KSharedConfigPtr kalarm = KSharedConfig::openConfig(kalarmrc);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+        }
 
         KConfig *kalarmConfig = kalarm->copyTo(tmp.fileName());
 

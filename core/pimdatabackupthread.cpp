@@ -29,7 +29,11 @@ PimDataBackupThread::~PimDataBackupThread()
 void PimDataBackupThread::run()
 {
     QTemporaryFile tmp;
-    tmp.open();
+    if (!tmp.open()) {
+        Q_EMIT error(i18n("Impossible to open temporary file."));
+        Q_EMIT terminated(false);
+        return;
+    }
     auto archiveFile = new KZip(tmp.fileName());
     archiveFile->setCompression(KZip::NoCompression);
     bool result = archiveFile->open(QIODevice::WriteOnly);

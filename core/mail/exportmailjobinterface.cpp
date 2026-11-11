@@ -132,7 +132,10 @@ void ExportMailJobInterface::backupTransports()
         KSharedConfigPtr mailtransportsConfig = KSharedConfig::openConfig(mailtransportsStr);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            emitError(i18n("Transports cannot be exported."));
+            return;
+        }
         KConfig *config = mailtransportsConfig->copyTo(tmp.fileName());
 
         config->sync();
@@ -219,7 +222,9 @@ void ExportMailJobInterface::backupConfig()
         KSharedConfigPtr archivemailrc = KSharedConfig::openConfig(folderMailArchiveStr);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+        }
 
         KConfig *archiveConfig = archivemailrc->copyTo(tmp.fileName());
         const QStringList archiveList = archiveConfig->groupList().filter(QRegularExpression(u"FolderArchiveAccount"_s));
@@ -245,7 +250,9 @@ void ExportMailJobInterface::backupConfig()
         KSharedConfigPtr mboxrc = KSharedConfig::openConfig(unifiedMailBoxrc);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+        }
 
         KConfig *archiveConfig = mboxrc->copyTo(tmp.fileName());
         auto group = archiveConfig->group(u"UnifiedMailboxes"_s);
@@ -275,7 +282,9 @@ void ExportMailJobInterface::backupConfig()
         KSharedConfigPtr archivemailrc = KSharedConfig::openConfig(archiveMailAgentConfigurationStr);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+        }
 
         KConfig *archiveConfig = archivemailrc->copyTo(tmp.fileName());
         const QStringList archiveList = archiveConfig->groupList().filter(QRegularExpression(u"ArchiveMailCollection \\d+"_s));
@@ -308,7 +317,9 @@ void ExportMailJobInterface::backupConfig()
         KSharedConfigPtr templaterc = KSharedConfig::openConfig(templatesconfigurationrcStr);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+        }
 
         KConfig *templateConfig = templaterc->copyTo(tmp.fileName());
         const QString templateGroupPattern = u"Templates #"_s;
@@ -363,7 +374,9 @@ void ExportMailJobInterface::backupConfig()
         KSharedConfigPtr kmailrc = KSharedConfig::openConfig(kmail2rc);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+        }
 
         KConfig *kmailConfig = kmailrc->copyTo(tmp.fileName());
         const QString folderGroupPattern = u"Folder-"_s;
@@ -547,7 +560,10 @@ void ExportMailJobInterface::backupIdentity()
         KSharedConfigPtr identity = KSharedConfig::openConfig(emailidentitiesrc);
 
         QTemporaryFile tmp;
-        tmp.open();
+        if (!tmp.open()) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << "Impossible to open temporary file" << tmp.errorString();
+            return;
+        }
 
         KConfig *identityConfig = identity->copyTo(tmp.fileName());
         const QStringList accountList = identityConfig->groupList().filter(QRegularExpression(u"Identity #\\d+"_s));

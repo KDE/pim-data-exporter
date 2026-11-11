@@ -7,6 +7,7 @@
 #include "logcreatingressource.h"
 using namespace Qt::Literals::StringLiterals;
 
+#include <QDebug>
 #include <QTemporaryFile>
 #include <QTextStream>
 #include <QVariant>
@@ -22,7 +23,9 @@ LogCreatingResource::LogCreatingResource(QObject *parent)
 #else
     mTmpLogFile->setAutoRemove(false);
 #endif
-    mTmpLogFile->open();
+    if (!mTmpLogFile->open()) {
+        qWarning() << "Impossible to open temporary file" << mTmpLogFile->errorString();
+    }
     // qDebug() << " mTmpLogFile*************" << mTmpLogFile->fileName();
 }
 
