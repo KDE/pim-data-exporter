@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:52+0000\n"
+"POT-Creation-Date: 2026-11-12 01:03+0000\n"
 "PO-Revision-Date: 2022-04-09 19:24+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -183,7 +183,7 @@ msgstr "Exportovať nastavenia KAddressBook"
 #: core/addressbook/exportaddressbookjobinterface.cpp:43
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:653
+#: core/mail/exportmailjobinterface.cpp:669
 #, kde-format
 msgid "Backing up resources..."
 msgstr "Zálohujem zdroje..."
@@ -191,7 +191,7 @@ msgstr "Zálohujem zdroje..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:103
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:675
+#: core/mail/exportmailjobinterface.cpp:691
 #, kde-format
 msgid "Resources backup done."
 msgstr "Záloha zdrojov hotová."
@@ -199,17 +199,17 @@ msgstr "Záloha zdrojov hotová."
 #: core/addressbook/exportaddressbookjobinterface.cpp:110
 #: core/akregator/exportakregatorjobinterface.cpp:74
 #: core/alarm/exportalarmjobinterface.cpp:109
-#: core/calendar/exportcalendarjobinterface.cpp:228
-#: core/mail/exportmailjobinterface.cpp:169
+#: core/calendar/exportcalendarjobinterface.cpp:237
+#: core/mail/exportmailjobinterface.cpp:172
 #, kde-format
 msgid "Backing up config..."
 msgstr "Zálohujem nastavenie..."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:151
+#: core/addressbook/exportaddressbookjobinterface.cpp:153
 #: core/akregator/exportakregatorjobinterface.cpp:81
-#: core/alarm/exportalarmjobinterface.cpp:135
-#: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:537
+#: core/alarm/exportalarmjobinterface.cpp:137
+#: core/calendar/exportcalendarjobinterface.cpp:257
+#: core/mail/exportmailjobinterface.cpp:550
 #, kde-format
 msgid "Config backup done."
 msgstr "Záloha nastavenia hotová."
@@ -335,12 +335,12 @@ msgid "\"%1\" is not a file."
 msgstr "\"%1\" nie je súbor."
 
 #: core/backupresourcefilejobbase.cpp:56 core/backupresourcefilejobbase.cpp:63
-#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
+#: core/pimdatabackupthread.cpp:58 core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" was backed up."
 msgstr "\"%1\" bol zálohovaný."
 
-#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:56
+#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:60
 #: core/storeresourcejob.cpp:61
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
@@ -397,52 +397,59 @@ msgid "Backing up transports..."
 msgstr "Zálohujem prenosy..."
 
 #: core/mail/exportmailjobinterface.cpp:130
-#: core/mail/exportmailjobinterface.cpp:142
+#: core/mail/exportmailjobinterface.cpp:145
 #, kde-format
 msgid "Transports backup done."
 msgstr "Záloha prenosov hotová."
 
-#: core/mail/exportmailjobinterface.cpp:144
+#: core/mail/exportmailjobinterface.cpp:136
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Transports cannot be exported."
+msgstr "Filtre sa nedajú exportovať."
+
+#: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr "Súbor prenosov nemohol byť pridaný do súboru zálohy."
 
-#: core/mail/exportmailjobinterface.cpp:542
+#: core/mail/exportmailjobinterface.cpp:555
 #, kde-format
 msgid "Backing up identity..."
 msgstr "Zálohovanie identity..."
 
-#: core/mail/exportmailjobinterface.cpp:580
+#: core/mail/exportmailjobinterface.cpp:596
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
 msgstr "Súbor vizitky \"%1\" sa nedá uložiť."
 
-#: core/mail/exportmailjobinterface.cpp:593
+#: core/mail/exportmailjobinterface.cpp:609
 #, kde-format
 msgid "Identity backup done."
 msgstr "Záloha identity hotová."
 
-#: core/mail/exportmailjobinterface.cpp:595
+#: core/mail/exportmailjobinterface.cpp:611
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr "Súbor identít nemohol byť pridaný do súbory zálohy."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:139
-#, kde-format
-msgid "Filters backup done."
-msgstr "Záloha filtrov hotová."
-
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:133
+#: core/mail/exportmailjobinterfaceimpl.cpp:144
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "Filtre sa nedajú exportovať."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#: core/mail/exportmailjobinterfaceimpl.cpp:142
+#, kde-format
+msgid "Filters backup done."
+msgstr "Záloha filtrov hotová."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:166
 #, kde-format
 msgid "Backing up Folder Attributes done."
 msgstr "Zálohovanie identity..."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#: core/mail/exportmailjobinterfaceimpl.cpp:170
 #, kde-format
 msgid "Folder Attributes cannot be exported."
 msgstr "Filtre sa nedajú exportovať."
@@ -580,77 +587,83 @@ msgstr "Spúšťam obnovu údajov z '%1'"
 msgid "Restoring data from '%1' done."
 msgstr "Obnova údajov z '%1' hotová."
 
-#: core/pimdatabackupthread.cpp:37
+#: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
+#, fuzzy, kde-format
+#| msgid "Impossible to open archive file."
+msgid "Impossible to open temporary file."
+msgstr "Nie je možné otvoriť súbor archívu."
+
+#: core/pimdatabackupthread.cpp:41
 #, kde-format
 msgid "Impossible to open archive file."
 msgstr "Nie je možné otvoriť súbor archívu."
 
-#: core/pimdatabackupthread.cpp:44
+#: core/pimdatabackupthread.cpp:48
 #, kde-format
 msgid "Impossible to backup \"%1\"."
 msgstr "Nie je možné zálohovať \"%1\"."
 
-#: core/resourceconverterbase.cpp:197 core/resourceconverterbase.cpp:206
+#: core/resourceconverterbase.cpp:199 core/resourceconverterbase.cpp:208
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "Súbor zdroja \"%1\" nemohol byť pridaný do súboru zálohy."
 
-#: core/resourceconverterbase.cpp:209
+#: core/resourceconverterbase.cpp:211
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr "Súbor nastavenia zdrojov \"%1\" neexistuje."
 
-#: core/utils.cpp:181
+#: core/utils.cpp:184
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: core/utils.cpp:183
+#: core/utils.cpp:186
 #, kde-format
 msgid "KAddressBook"
 msgstr "KAddressBook"
 
-#: core/utils.cpp:185
+#: core/utils.cpp:188
 #, kde-format
 msgid "KAlarm"
 msgstr "KAlarm"
 
-#: core/utils.cpp:187
+#: core/utils.cpp:190
 #, kde-format
 msgid "KOrganizer"
 msgstr "KOrganizer"
 
-#: core/utils.cpp:189
+#: core/utils.cpp:192
 #, kde-format
 msgid "Akregator"
 msgstr "Akregator"
 
-#: core/utils.cpp:203
+#: core/utils.cpp:206
 #, kde-format
 msgid "Identity"
 msgstr "Identita"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:208
 #, kde-format
 msgid "Mails"
 msgstr "Maily"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:210
 #, kde-format
 msgid "Mail Transport"
 msgstr "Prenos pošty"
 
-#: core/utils.cpp:209
+#: core/utils.cpp:212
 #, kde-format
 msgid "Resources"
 msgstr "Zdroje"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:214
 #, kde-format
 msgid "Config"
 msgstr "Konfigurácia"
 
-#: core/utils.cpp:213
+#: core/utils.cpp:216
 #, kde-format
 msgid "Data"
 msgstr "Údaje"
@@ -1119,7 +1132,7 @@ msgstr "Vždy zlúčiť konfiguračný súbor"
 msgid "Import"
 msgstr "Importovať"
 
-#: gui/widgets/selectiontypetreewidget.cpp:334
+#: gui/widgets/selectiontypetreewidget.cpp:336
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "Súbory šablón (*.xml)"

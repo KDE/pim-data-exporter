@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:52+0000\n"
+"POT-Creation-Date: 2026-11-12 01:03+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -182,7 +182,7 @@ msgstr "导出 KAddressBook 设置"
 #: core/addressbook/exportaddressbookjobinterface.cpp:43
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:653
+#: core/mail/exportmailjobinterface.cpp:669
 #, kde-format
 msgid "Backing up resources..."
 msgstr "正在备份资源..."
@@ -190,7 +190,7 @@ msgstr "正在备份资源..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:103
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:675
+#: core/mail/exportmailjobinterface.cpp:691
 #, kde-format
 msgid "Resources backup done."
 msgstr "资源备份已完成。"
@@ -198,17 +198,17 @@ msgstr "资源备份已完成。"
 #: core/addressbook/exportaddressbookjobinterface.cpp:110
 #: core/akregator/exportakregatorjobinterface.cpp:74
 #: core/alarm/exportalarmjobinterface.cpp:109
-#: core/calendar/exportcalendarjobinterface.cpp:228
-#: core/mail/exportmailjobinterface.cpp:169
+#: core/calendar/exportcalendarjobinterface.cpp:237
+#: core/mail/exportmailjobinterface.cpp:172
 #, kde-format
 msgid "Backing up config..."
 msgstr "正在备份配置..."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:151
+#: core/addressbook/exportaddressbookjobinterface.cpp:153
 #: core/akregator/exportakregatorjobinterface.cpp:81
-#: core/alarm/exportalarmjobinterface.cpp:135
-#: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:537
+#: core/alarm/exportalarmjobinterface.cpp:137
+#: core/calendar/exportcalendarjobinterface.cpp:257
+#: core/mail/exportmailjobinterface.cpp:550
 #, kde-format
 msgid "Config backup done."
 msgstr "配置备份已完成。"
@@ -334,12 +334,12 @@ msgid "\"%1\" is not a file."
 msgstr "“%1”不是文件。"
 
 #: core/backupresourcefilejobbase.cpp:56 core/backupresourcefilejobbase.cpp:63
-#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
+#: core/pimdatabackupthread.cpp:58 core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" was backed up."
 msgstr "\"%1\"已备份。"
 
-#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:56
+#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:60
 #: core/storeresourcejob.cpp:61
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
@@ -396,52 +396,59 @@ msgid "Backing up transports..."
 msgstr "正在备份传输..."
 
 #: core/mail/exportmailjobinterface.cpp:130
-#: core/mail/exportmailjobinterface.cpp:142
+#: core/mail/exportmailjobinterface.cpp:145
 #, kde-format
 msgid "Transports backup done."
 msgstr "传输备份已完成。"
 
-#: core/mail/exportmailjobinterface.cpp:144
+#: core/mail/exportmailjobinterface.cpp:136
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Transports cannot be exported."
+msgstr "过滤器无法导出。"
+
+#: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr "传输文件无法被添加到备份文件中。"
 
-#: core/mail/exportmailjobinterface.cpp:542
+#: core/mail/exportmailjobinterface.cpp:555
 #, kde-format
 msgid "Backing up identity..."
 msgstr "正在备份身份..."
 
-#: core/mail/exportmailjobinterface.cpp:580
+#: core/mail/exportmailjobinterface.cpp:596
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
 msgstr "vCard 文件“%1”无法被保存。"
 
-#: core/mail/exportmailjobinterface.cpp:593
+#: core/mail/exportmailjobinterface.cpp:609
 #, kde-format
 msgid "Identity backup done."
 msgstr "身份备份已完成。"
 
-#: core/mail/exportmailjobinterface.cpp:595
+#: core/mail/exportmailjobinterface.cpp:611
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr "标识文件无法被添加到备份文件中。"
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:139
-#, kde-format
-msgid "Filters backup done."
-msgstr "过滤器备份已完成。"
-
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:133
+#: core/mail/exportmailjobinterfaceimpl.cpp:144
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "过滤器无法导出。"
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#: core/mail/exportmailjobinterfaceimpl.cpp:142
+#, kde-format
+msgid "Filters backup done."
+msgstr "过滤器备份已完成。"
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:166
 #, kde-format
 msgid "Backing up Folder Attributes done."
 msgstr "备份文件夹属性已完成。"
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#: core/mail/exportmailjobinterfaceimpl.cpp:170
 #, kde-format
 msgid "Folder Attributes cannot be exported."
 msgstr "无法导出文件夹属性。"
@@ -579,77 +586,83 @@ msgstr "正在开始从“%1”恢复数据"
 msgid "Restoring data from '%1' done."
 msgstr "恢复来自“%1”的数据已完成。"
 
-#: core/pimdatabackupthread.cpp:37
+#: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
+#, fuzzy, kde-format
+#| msgid "Impossible to open archive file."
+msgid "Impossible to open temporary file."
+msgstr "不可能打开归档文件。"
+
+#: core/pimdatabackupthread.cpp:41
 #, kde-format
 msgid "Impossible to open archive file."
 msgstr "不可能打开归档文件。"
 
-#: core/pimdatabackupthread.cpp:44
+#: core/pimdatabackupthread.cpp:48
 #, kde-format
 msgid "Impossible to backup \"%1\"."
 msgstr "无法备份“%1”。"
 
-#: core/resourceconverterbase.cpp:197 core/resourceconverterbase.cpp:206
+#: core/resourceconverterbase.cpp:199 core/resourceconverterbase.cpp:208
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "资源文件“%1”无法被添加到备份文件。"
 
-#: core/resourceconverterbase.cpp:209
+#: core/resourceconverterbase.cpp:211
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr "资源配置文件“%1”不存在。"
 
-#: core/utils.cpp:181
+#: core/utils.cpp:184
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: core/utils.cpp:183
+#: core/utils.cpp:186
 #, kde-format
 msgid "KAddressBook"
 msgstr "KAddressBook"
 
-#: core/utils.cpp:185
+#: core/utils.cpp:188
 #, kde-format
 msgid "KAlarm"
 msgstr "KAlarm"
 
-#: core/utils.cpp:187
+#: core/utils.cpp:190
 #, kde-format
 msgid "KOrganizer"
 msgstr "KOrganizer"
 
-#: core/utils.cpp:189
+#: core/utils.cpp:192
 #, kde-format
 msgid "Akregator"
 msgstr "Akregator"
 
-#: core/utils.cpp:203
+#: core/utils.cpp:206
 #, kde-format
 msgid "Identity"
 msgstr "身份"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:208
 #, kde-format
 msgid "Mails"
 msgstr "邮件"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:210
 #, kde-format
 msgid "Mail Transport"
 msgstr "邮件传输"
 
-#: core/utils.cpp:209
+#: core/utils.cpp:212
 #, kde-format
 msgid "Resources"
 msgstr "资源"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:214
 #, kde-format
 msgid "Config"
 msgstr "配置"
 
-#: core/utils.cpp:213
+#: core/utils.cpp:216
 #, kde-format
 msgid "Data"
 msgstr "数据"
@@ -1112,7 +1125,7 @@ msgstr "总是合并配置文件"
 msgid "Import"
 msgstr "导入"
 
-#: gui/widgets/selectiontypetreewidget.cpp:334
+#: gui/widgets/selectiontypetreewidget.cpp:336
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "模板文件 (*.xml)"

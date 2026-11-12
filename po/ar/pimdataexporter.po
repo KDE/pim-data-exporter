@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:52+0000\n"
+"POT-Creation-Date: 2026-11-12 01:03+0000\n"
 "PO-Revision-Date: 2024-08-15 11:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -187,7 +187,7 @@ msgstr "تصدير إعدادات «دفتر عناوينك»"
 #: core/addressbook/exportaddressbookjobinterface.cpp:43
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:653
+#: core/mail/exportmailjobinterface.cpp:669
 #, kde-format
 msgid "Backing up resources..."
 msgstr "ينسخ الموارد احتياطيًّا..."
@@ -195,7 +195,7 @@ msgstr "ينسخ الموارد احتياطيًّا..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:103
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:675
+#: core/mail/exportmailjobinterface.cpp:691
 #, kde-format
 msgid "Resources backup done."
 msgstr "اكتمل نسخ الموارد احتياطيًّا."
@@ -203,17 +203,17 @@ msgstr "اكتمل نسخ الموارد احتياطيًّا."
 #: core/addressbook/exportaddressbookjobinterface.cpp:110
 #: core/akregator/exportakregatorjobinterface.cpp:74
 #: core/alarm/exportalarmjobinterface.cpp:109
-#: core/calendar/exportcalendarjobinterface.cpp:228
-#: core/mail/exportmailjobinterface.cpp:169
+#: core/calendar/exportcalendarjobinterface.cpp:237
+#: core/mail/exportmailjobinterface.cpp:172
 #, kde-format
 msgid "Backing up config..."
 msgstr "ينسخ الضّبط احتياطيًّا..."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:151
+#: core/addressbook/exportaddressbookjobinterface.cpp:153
 #: core/akregator/exportakregatorjobinterface.cpp:81
-#: core/alarm/exportalarmjobinterface.cpp:135
-#: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:537
+#: core/alarm/exportalarmjobinterface.cpp:137
+#: core/calendar/exportcalendarjobinterface.cpp:257
+#: core/mail/exportmailjobinterface.cpp:550
 #, kde-format
 msgid "Config backup done."
 msgstr "اكتمل نسخ الضّبط احتياطيًّا."
@@ -348,12 +348,12 @@ msgid "\"%1\" is not a file."
 msgstr "‏”%1“ليس بملف."
 
 #: core/backupresourcefilejobbase.cpp:56 core/backupresourcefilejobbase.cpp:63
-#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
+#: core/pimdatabackupthread.cpp:58 core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" was backed up."
 msgstr "نُسخ ”%1“ احتياطيًّا."
 
-#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:56
+#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:60
 #: core/storeresourcejob.cpp:61
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
@@ -416,52 +416,59 @@ msgid "Backing up transports..."
 msgstr "ينسخ النّقولات احتياطيًّا..."
 
 #: core/mail/exportmailjobinterface.cpp:130
-#: core/mail/exportmailjobinterface.cpp:142
+#: core/mail/exportmailjobinterface.cpp:145
 #, kde-format
 msgid "Transports backup done."
 msgstr "اكتمل نسخ النّقولات احتياطيًّا."
 
-#: core/mail/exportmailjobinterface.cpp:144
+#: core/mail/exportmailjobinterface.cpp:136
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Transports cannot be exported."
+msgstr "تعذّر تصدير المرشّحات."
+
+#: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr "تعذّرت إضافة ملفّ النّقولات إلى ملفّ النّسخة الاحتياطيّة."
 
-#: core/mail/exportmailjobinterface.cpp:542
+#: core/mail/exportmailjobinterface.cpp:555
 #, kde-format
 msgid "Backing up identity..."
 msgstr "ينسخ الهويّة احتياطيًّا..."
 
-#: core/mail/exportmailjobinterface.cpp:580
+#: core/mail/exportmailjobinterface.cpp:596
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
 msgstr "تعذّر حفظ ملفّ vCard ‏”%1“."
 
-#: core/mail/exportmailjobinterface.cpp:593
+#: core/mail/exportmailjobinterface.cpp:609
 #, kde-format
 msgid "Identity backup done."
 msgstr "اكتمل نسخ الهويّة احتياطيًّا."
 
-#: core/mail/exportmailjobinterface.cpp:595
+#: core/mail/exportmailjobinterface.cpp:611
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr "تعذّرت إضافة ملفّ الهويّة إلى ملفّ النّسخة الاحتياطيّة."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:139
-#, kde-format
-msgid "Filters backup done."
-msgstr "اكتمل نسخ المرشّحات احتياطيًّا."
-
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:133
+#: core/mail/exportmailjobinterfaceimpl.cpp:144
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "تعذّر تصدير المرشّحات."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#: core/mail/exportmailjobinterfaceimpl.cpp:142
+#, kde-format
+msgid "Filters backup done."
+msgstr "اكتمل نسخ المرشّحات احتياطيًّا."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:166
 #, kde-format
 msgid "Backing up Folder Attributes done."
 msgstr "انتهى نسخ صفات المجلد احتياطيًا."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#: core/mail/exportmailjobinterfaceimpl.cpp:170
 #, kde-format
 msgid "Folder Attributes cannot be exported."
 msgstr "تعذّر تصدير صفات المجلد."
@@ -603,77 +610,83 @@ msgstr "يبدأ استعادة البيانات من ’%1‘"
 msgid "Restoring data from '%1' done."
 msgstr "اكتملت استعادة البيانات من ’%1‘."
 
-#: core/pimdatabackupthread.cpp:37
+#: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
+#, fuzzy, kde-format
+#| msgid "Impossible to open archive file."
+msgid "Impossible to open temporary file."
+msgstr "تعذّر فتح ملفّ الأرشيف."
+
+#: core/pimdatabackupthread.cpp:41
 #, kde-format
 msgid "Impossible to open archive file."
 msgstr "تعذّر فتح ملفّ الأرشيف."
 
-#: core/pimdatabackupthread.cpp:44
+#: core/pimdatabackupthread.cpp:48
 #, kde-format
 msgid "Impossible to backup \"%1\"."
 msgstr "تعذّر نسخ ”%1“ احتياطيًّا."
 
-#: core/resourceconverterbase.cpp:197 core/resourceconverterbase.cpp:206
+#: core/resourceconverterbase.cpp:199 core/resourceconverterbase.cpp:208
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "تعذّرت إضافة ملفّ الموارد ”%1“ إلى ملفّ النّسخة الاحتياطيّة."
 
-#: core/resourceconverterbase.cpp:209
+#: core/resourceconverterbase.cpp:211
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr "ملف ضبط المصدر ‏”%1“ غير موجود."
 
-#: core/utils.cpp:181
+#: core/utils.cpp:184
 #, kde-format
 msgid "KMail"
 msgstr "بريدك"
 
-#: core/utils.cpp:183
+#: core/utils.cpp:186
 #, kde-format
 msgid "KAddressBook"
 msgstr "دفتر عناوينك"
 
-#: core/utils.cpp:185
+#: core/utils.cpp:188
 #, kde-format
 msgid "KAlarm"
 msgstr "منبّهك"
 
-#: core/utils.cpp:187
+#: core/utils.cpp:190
 #, kde-format
 msgid "KOrganizer"
 msgstr "منظّمك"
 
-#: core/utils.cpp:189
+#: core/utils.cpp:192
 #, kde-format
 msgid "Akregator"
 msgstr "أكريغاتور"
 
-#: core/utils.cpp:203
+#: core/utils.cpp:206
 #, kde-format
 msgid "Identity"
 msgstr "الهويّة"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:208
 #, kde-format
 msgid "Mails"
 msgstr "رسائل البريد"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:210
 #, kde-format
 msgid "Mail Transport"
 msgstr "نقولات البريد"
 
-#: core/utils.cpp:209
+#: core/utils.cpp:212
 #, kde-format
 msgid "Resources"
 msgstr "الموارد"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:214
 #, kde-format
 msgid "Config"
 msgstr "الضّبط"
 
-#: core/utils.cpp:213
+#: core/utils.cpp:216
 #, kde-format
 msgid "Data"
 msgstr "البيانات"
@@ -1139,7 +1152,7 @@ msgstr "ادمج ملفّ الضّبط دائمًا"
 msgid "Import"
 msgstr "الاستيراد"
 
-#: gui/widgets/selectiontypetreewidget.cpp:334
+#: gui/widgets/selectiontypetreewidget.cpp:336
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "ملفّات القوالب (*.xml)"

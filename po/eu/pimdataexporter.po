@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:52+0000\n"
+"POT-Creation-Date: 2026-11-12 01:03+0000\n"
 "PO-Revision-Date: 2024-08-06 00:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -186,7 +186,7 @@ msgstr "Esportatu KAddressBook ezarpenak"
 #: core/addressbook/exportaddressbookjobinterface.cpp:43
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:653
+#: core/mail/exportmailjobinterface.cpp:669
 #, kde-format
 msgid "Backing up resources..."
 msgstr "Baliabideen babeskopia egiten..."
@@ -194,7 +194,7 @@ msgstr "Baliabideen babeskopia egiten..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:103
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:675
+#: core/mail/exportmailjobinterface.cpp:691
 #, kde-format
 msgid "Resources backup done."
 msgstr "Baliabideen babeskopia burutu da."
@@ -202,17 +202,17 @@ msgstr "Baliabideen babeskopia burutu da."
 #: core/addressbook/exportaddressbookjobinterface.cpp:110
 #: core/akregator/exportakregatorjobinterface.cpp:74
 #: core/alarm/exportalarmjobinterface.cpp:109
-#: core/calendar/exportcalendarjobinterface.cpp:228
-#: core/mail/exportmailjobinterface.cpp:169
+#: core/calendar/exportcalendarjobinterface.cpp:237
+#: core/mail/exportmailjobinterface.cpp:172
 #, kde-format
 msgid "Backing up config..."
 msgstr "Konfigurazioaren babeskopia egiten..."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:151
+#: core/addressbook/exportaddressbookjobinterface.cpp:153
 #: core/akregator/exportakregatorjobinterface.cpp:81
-#: core/alarm/exportalarmjobinterface.cpp:135
-#: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:537
+#: core/alarm/exportalarmjobinterface.cpp:137
+#: core/calendar/exportcalendarjobinterface.cpp:257
+#: core/mail/exportmailjobinterface.cpp:550
 #, kde-format
 msgid "Config backup done."
 msgstr "Konfigurazioaren babeskopia burutu da."
@@ -338,12 +338,12 @@ msgid "\"%1\" is not a file."
 msgstr "\"%1\" ez da fitxategi bat."
 
 #: core/backupresourcefilejobbase.cpp:56 core/backupresourcefilejobbase.cpp:63
-#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
+#: core/pimdatabackupthread.cpp:58 core/storeresourcejob.cpp:59
 #, kde-format
 msgid "\"%1\" was backed up."
 msgstr "\"%1\"(r)en babeskopia burutu da."
 
-#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:56
+#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:60
 #: core/storeresourcejob.cpp:61
 #, kde-format
 msgid "\"%1\" file cannot be added to backup file."
@@ -400,52 +400,59 @@ msgid "Backing up transports..."
 msgstr "Garraioaren babeskopia egiten..."
 
 #: core/mail/exportmailjobinterface.cpp:130
-#: core/mail/exportmailjobinterface.cpp:142
+#: core/mail/exportmailjobinterface.cpp:145
 #, kde-format
 msgid "Transports backup done."
 msgstr "Garraioaren babeskopia burutu da."
 
-#: core/mail/exportmailjobinterface.cpp:144
+#: core/mail/exportmailjobinterface.cpp:136
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Transports cannot be exported."
+msgstr "Iragazkiak ezin dira esportatu."
+
+#: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr "Garraio-fitxategia ezin da gehitu babeskopia fitxategira."
 
-#: core/mail/exportmailjobinterface.cpp:542
+#: core/mail/exportmailjobinterface.cpp:555
 #, kde-format
 msgid "Backing up identity..."
 msgstr "Nortasunaren babeskopia egiten..."
 
-#: core/mail/exportmailjobinterface.cpp:580
+#: core/mail/exportmailjobinterface.cpp:596
 #, kde-format
 msgid "vCard file \"%1\" cannot be saved."
 msgstr "\"%1\" vCard fitxategia ezin da gorde."
 
-#: core/mail/exportmailjobinterface.cpp:593
+#: core/mail/exportmailjobinterface.cpp:609
 #, kde-format
 msgid "Identity backup done."
 msgstr "Nortasunaren babeskopia burutu da."
 
-#: core/mail/exportmailjobinterface.cpp:595
+#: core/mail/exportmailjobinterface.cpp:611
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr "Nortasun-fitxategia ezin da gehitu babeskopia fitxategira."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:139
-#, kde-format
-msgid "Filters backup done."
-msgstr "Iragazkien babeskopia burutu da."
-
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:133
+#: core/mail/exportmailjobinterfaceimpl.cpp:144
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "Iragazkiak ezin dira esportatu."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#: core/mail/exportmailjobinterfaceimpl.cpp:142
+#, kde-format
+msgid "Filters backup done."
+msgstr "Iragazkien babeskopia burutu da."
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:166
 #, kde-format
 msgid "Backing up Folder Attributes done."
 msgstr "Karpeta-atributuen babeskopia burutu da."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#: core/mail/exportmailjobinterfaceimpl.cpp:170
 #, kde-format
 msgid "Folder Attributes cannot be exported."
 msgstr "Karpeta-atributuak ezin dira esportatu."
@@ -583,77 +590,83 @@ msgstr "'%1'(e)ko datuak leheneratzen hasten"
 msgid "Restoring data from '%1' done."
 msgstr "'%1'(e)ko datuen leheneratzea burutu da."
 
-#: core/pimdatabackupthread.cpp:37
+#: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
+#, fuzzy, kde-format
+#| msgid "Impossible to open archive file."
+msgid "Impossible to open temporary file."
+msgstr "Ezin da artxibo fitxategia ireki."
+
+#: core/pimdatabackupthread.cpp:41
 #, kde-format
 msgid "Impossible to open archive file."
 msgstr "Ezin da artxibo fitxategia ireki."
 
-#: core/pimdatabackupthread.cpp:44
+#: core/pimdatabackupthread.cpp:48
 #, kde-format
 msgid "Impossible to backup \"%1\"."
 msgstr "Ezin da \"%1\"(r)en babeskopia egin."
 
-#: core/resourceconverterbase.cpp:197 core/resourceconverterbase.cpp:206
+#: core/resourceconverterbase.cpp:199 core/resourceconverterbase.cpp:208
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "\"%1\" baliabide-fitxategia ezin da gehitu babeskopia fitxategira."
 
-#: core/resourceconverterbase.cpp:209
+#: core/resourceconverterbase.cpp:211
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr "\"%1\" baliabide konfigurazio fitxategia ez da existitzen."
 
-#: core/utils.cpp:181
+#: core/utils.cpp:184
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: core/utils.cpp:183
+#: core/utils.cpp:186
 #, kde-format
 msgid "KAddressBook"
 msgstr "KAddressBook"
 
-#: core/utils.cpp:185
+#: core/utils.cpp:188
 #, kde-format
 msgid "KAlarm"
 msgstr "KAlarm"
 
-#: core/utils.cpp:187
+#: core/utils.cpp:190
 #, kde-format
 msgid "KOrganizer"
 msgstr "KOrganizer"
 
-#: core/utils.cpp:189
+#: core/utils.cpp:192
 #, kde-format
 msgid "Akregator"
 msgstr "Akregator"
 
-#: core/utils.cpp:203
+#: core/utils.cpp:206
 #, kde-format
 msgid "Identity"
 msgstr "Nortasuna"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:208
 #, kde-format
 msgid "Mails"
 msgstr "Postak"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:210
 #, kde-format
 msgid "Mail Transport"
 msgstr "Posta-garraioa"
 
-#: core/utils.cpp:209
+#: core/utils.cpp:212
 #, kde-format
 msgid "Resources"
 msgstr "Baliabideak"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:214
 #, kde-format
 msgid "Config"
 msgstr "Konfigurazioa"
 
-#: core/utils.cpp:213
+#: core/utils.cpp:216
 #, kde-format
 msgid "Data"
 msgstr "Datuak"
@@ -1128,7 +1141,7 @@ msgstr "Konfigurazio fitxategia beti bateratu"
 msgid "Import"
 msgstr "Inportatu"
 
-#: gui/widgets/selectiontypetreewidget.cpp:334
+#: gui/widgets/selectiontypetreewidget.cpp:336
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr "Txantiloi fitxategiak (*.xml)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: backupmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:52+0000\n"
+"POT-Creation-Date: 2026-11-12 01:03+0000\n"
 "PO-Revision-Date: 2012-12-31 14:00+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -197,7 +197,7 @@ msgstr ""
 #: core/addressbook/exportaddressbookjobinterface.cpp:43
 #: core/alarm/exportalarmjobinterface.cpp:84
 #: core/calendar/exportcalendarjobinterface.cpp:96
-#: core/mail/exportmailjobinterface.cpp:653
+#: core/mail/exportmailjobinterface.cpp:669
 #, kde-format
 msgid "Backing up resources..."
 msgstr "កំពុង​បម្រុងទុក​ធនធាន..."
@@ -205,7 +205,7 @@ msgstr "កំពុង​បម្រុងទុក​ធនធាន..."
 #: core/addressbook/exportaddressbookjobinterface.cpp:103
 #: core/alarm/exportalarmjobinterface.cpp:76
 #: core/calendar/exportcalendarjobinterface.cpp:75
-#: core/mail/exportmailjobinterface.cpp:675
+#: core/mail/exportmailjobinterface.cpp:691
 #, kde-format
 msgid "Resources backup done."
 msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​ធនធាន ។"
@@ -213,17 +213,17 @@ msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​ធ
 #: core/addressbook/exportaddressbookjobinterface.cpp:110
 #: core/akregator/exportakregatorjobinterface.cpp:74
 #: core/alarm/exportalarmjobinterface.cpp:109
-#: core/calendar/exportcalendarjobinterface.cpp:228
-#: core/mail/exportmailjobinterface.cpp:169
+#: core/calendar/exportcalendarjobinterface.cpp:237
+#: core/mail/exportmailjobinterface.cpp:172
 #, kde-format
 msgid "Backing up config..."
 msgstr "កំពុង​បម្រុងទុក​ការ​កំណត់​រចនាសម្ព័ន្ធ..."
 
-#: core/addressbook/exportaddressbookjobinterface.cpp:151
+#: core/addressbook/exportaddressbookjobinterface.cpp:153
 #: core/akregator/exportakregatorjobinterface.cpp:81
-#: core/alarm/exportalarmjobinterface.cpp:135
-#: core/calendar/exportcalendarjobinterface.cpp:248
-#: core/mail/exportmailjobinterface.cpp:537
+#: core/alarm/exportalarmjobinterface.cpp:137
+#: core/calendar/exportcalendarjobinterface.cpp:257
+#: core/mail/exportmailjobinterface.cpp:550
 #, kde-format
 msgid "Config backup done."
 msgstr "បាន​ធ្វើការ​បម្រុងទុក​ការ​កំណត់​រចនាសម្ព័ន្ធ ។"
@@ -356,13 +356,13 @@ msgid "\"%1\" is not a file."
 msgstr "MBox \"%1\" ត្រូវបាន​បម្រុង​ទុក ។"
 
 #: core/backupresourcefilejobbase.cpp:56 core/backupresourcefilejobbase.cpp:63
-#: core/pimdatabackupthread.cpp:54 core/storeresourcejob.cpp:59
+#: core/pimdatabackupthread.cpp:58 core/storeresourcejob.cpp:59
 #, fuzzy, kde-format
 #| msgid "MBox \"%1\" was backuped."
 msgid "\"%1\" was backed up."
 msgstr "MBox \"%1\" ត្រូវបាន​បម្រុង​ទុក ។"
 
-#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:56
+#: core/backupresourcefilejobbase.cpp:58 core/pimdatabackupthread.cpp:60
 #: core/storeresourcejob.cpp:61
 #, fuzzy, kde-format
 #| msgid "MBox \"%1\" file cannot be added to backup file."
@@ -422,54 +422,61 @@ msgid "Backing up transports..."
 msgstr "កំពុង​បម្រុងទុក​ការ​ដឹក​ជញ្ជូន..."
 
 #: core/mail/exportmailjobinterface.cpp:130
-#: core/mail/exportmailjobinterface.cpp:142
+#: core/mail/exportmailjobinterface.cpp:145
 #, kde-format
 msgid "Transports backup done."
 msgstr "បាន​ធ្វើ​​បម្រុងទុក​កា​រដឹក​ជញ្ជូន ។"
 
-#: core/mail/exportmailjobinterface.cpp:144
+#: core/mail/exportmailjobinterface.cpp:136
+#, fuzzy, kde-format
+#| msgid "Filters cannot be exported."
+msgid "Transports cannot be exported."
+msgstr "តម្រង​មិន​អាច​ត្រូវ​បាន​នាំចេញ​ទេ ។"
+
+#: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
 msgid "Transport file cannot be added to backup file."
 msgstr "មិន​អាច​​បន្ថែម​ឯកសារ​ដឹក​ជញ្ជូន​ទៅ​ឯកសារ​បម្រុង​ទុក​បាន​ទេ ។"
 
-#: core/mail/exportmailjobinterface.cpp:542
+#: core/mail/exportmailjobinterface.cpp:555
 #, kde-format
 msgid "Backing up identity..."
 msgstr "កំពុង​បម្រុងទុក​អត្តសញ្ញាណ..."
 
-#: core/mail/exportmailjobinterface.cpp:580
+#: core/mail/exportmailjobinterface.cpp:596
 #, fuzzy, kde-format
 #| msgid "vcard file \"%1\" cannot be saved."
 msgid "vCard file \"%1\" cannot be saved."
 msgstr "មិន​អាច​រក្សាទុក \"%1\" ឯកសារ vcard ។"
 
-#: core/mail/exportmailjobinterface.cpp:593
+#: core/mail/exportmailjobinterface.cpp:609
 #, kde-format
 msgid "Identity backup done."
 msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​អត្តសញ្ញាណ ។"
 
-#: core/mail/exportmailjobinterface.cpp:595
+#: core/mail/exportmailjobinterface.cpp:611
 #, kde-format
 msgid "Identity file cannot be added to backup file."
 msgstr "មិន​អាច​បន្ថែម​ឯកសារ​អត្តសញ្ញាណ​ទៅ​ឯកសារ​បម្រុងទុក​បាន​ទេ ។"
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:139
-#, kde-format
-msgid "Filters backup done."
-msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​តម្រង ។"
-
-#: core/mail/exportmailjobinterfaceimpl.cpp:141
+#: core/mail/exportmailjobinterfaceimpl.cpp:133
+#: core/mail/exportmailjobinterfaceimpl.cpp:144
 #, kde-format
 msgid "Filters cannot be exported."
 msgstr "តម្រង​មិន​អាច​ត្រូវ​បាន​នាំចេញ​ទេ ។"
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:163
+#: core/mail/exportmailjobinterfaceimpl.cpp:142
+#, kde-format
+msgid "Filters backup done."
+msgstr "បាន​ធ្វើ​ការ​បម្រុងទុក​តម្រង ។"
+
+#: core/mail/exportmailjobinterfaceimpl.cpp:166
 #, fuzzy, kde-format
 #| msgid "Backing up identity..."
 msgid "Backing up Folder Attributes done."
 msgstr "កំពុង​បម្រុងទុក​អត្តសញ្ញាណ..."
 
-#: core/mail/exportmailjobinterfaceimpl.cpp:167
+#: core/mail/exportmailjobinterfaceimpl.cpp:170
 #, fuzzy, kde-format
 #| msgid "Filters cannot be exported."
 msgid "Folder Attributes cannot be exported."
@@ -616,78 +623,83 @@ msgstr ""
 msgid "Restoring data from '%1' done."
 msgstr ""
 
-#: core/pimdatabackupthread.cpp:37
+#: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
+#, kde-format
+msgid "Impossible to open temporary file."
+msgstr ""
+
+#: core/pimdatabackupthread.cpp:41
 #, kde-format
 msgid "Impossible to open archive file."
 msgstr ""
 
-#: core/pimdatabackupthread.cpp:44
+#: core/pimdatabackupthread.cpp:48
 #, kde-format
 msgid "Impossible to backup \"%1\"."
 msgstr ""
 
-#: core/resourceconverterbase.cpp:197 core/resourceconverterbase.cpp:206
+#: core/resourceconverterbase.cpp:199 core/resourceconverterbase.cpp:208
 #, kde-format
 msgid "Resource file \"%1\" cannot be added to backup file."
 msgstr "មិន​អាច​បន្ថែម​ឯកសារ​ធនធាន \"%1\" ទៅ​ឯកសារ​បម្រុងទុក​បាន​ទេ ។"
 
-#: core/resourceconverterbase.cpp:209
+#: core/resourceconverterbase.cpp:211
 #, kde-format
 msgid "Resource config file \"%1\" doesn't exist."
 msgstr ""
 
-#: core/utils.cpp:181
+#: core/utils.cpp:184
 #, fuzzy, kde-format
 #| msgid "Mails"
 msgid "KMail"
 msgstr "សំបុត្រ"
 
-#: core/utils.cpp:183
+#: core/utils.cpp:186
 #, kde-format
 msgid "KAddressBook"
 msgstr ""
 
-#: core/utils.cpp:185
+#: core/utils.cpp:188
 #, kde-format
 msgid "KAlarm"
 msgstr ""
 
-#: core/utils.cpp:187
+#: core/utils.cpp:190
 #, kde-format
 msgid "KOrganizer"
 msgstr ""
 
-#: core/utils.cpp:189
+#: core/utils.cpp:192
 #, kde-format
 msgid "Akregator"
 msgstr ""
 
-#: core/utils.cpp:203
+#: core/utils.cpp:206
 #, kde-format
 msgid "Identity"
 msgstr "អត្តសញ្ញាណ"
 
-#: core/utils.cpp:205
+#: core/utils.cpp:208
 #, kde-format
 msgid "Mails"
 msgstr "សំបុត្រ"
 
-#: core/utils.cpp:207
+#: core/utils.cpp:210
 #, kde-format
 msgid "Mail Transport"
 msgstr "ការ​ដឹកជញ្ជូន​សំបុត្រ"
 
-#: core/utils.cpp:209
+#: core/utils.cpp:212
 #, kde-format
 msgid "Resources"
 msgstr "ធនធាន"
 
-#: core/utils.cpp:211
+#: core/utils.cpp:214
 #, kde-format
 msgid "Config"
 msgstr "កំណត់​រចនាសម្ព័ន្ធ"
 
-#: core/utils.cpp:213
+#: core/utils.cpp:216
 #, kde-format
 msgid "Data"
 msgstr ""
@@ -1171,7 +1183,7 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: gui/widgets/selectiontypetreewidget.cpp:334
+#: gui/widgets/selectiontypetreewidget.cpp:336
 #, kde-format
 msgid "Template Files (*.xml)"
 msgstr ""
