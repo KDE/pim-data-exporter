@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pimsettingexporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-12 01:03+0000\n"
-"PO-Revision-Date: 2026-05-17 07:51-0300\n"
+"PO-Revision-Date: 2026-11-12 05:33-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -407,10 +407,9 @@ msgid "Transports backup done."
 msgstr "Cópia de segurança dos transportes concluída."
 
 #: core/mail/exportmailjobinterface.cpp:136
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Transports cannot be exported."
-msgstr "Os filtros não podem ser exportados."
+msgstr "Os transportes não podem ser exportados."
 
 #: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
@@ -596,10 +595,9 @@ msgid "Restoring data from '%1' done."
 msgstr "Restauração de dados de '%1' concluída."
 
 #: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
-#, fuzzy, kde-format
-#| msgid "Impossible to open archive file."
+#, kde-format
 msgid "Impossible to open temporary file."
-msgstr "Não é possível abrir o arquivo do arquivamento."
+msgstr "Não é possível abrir arquivo temporário."
 
 #: core/pimdatabackupthread.cpp:41
 #, kde-format

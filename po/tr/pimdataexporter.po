@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-12 01:03+0000\n"
-"PO-Revision-Date: 2026-10-12 11:32+0300\n"
+"PO-Revision-Date: 2026-11-12 19:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 "X-POOTLE-MTIME: 1413102216.000000\n"
 
 #, kde-format
@@ -305,22 +305,22 @@ msgstr "Veri geri yüklendi."
 #: core/alarm/exportalarmjobinterface.cpp:28
 #, kde-format
 msgid "Start export KAlarm settings..."
-msgstr "K Alarm ayarlarını dışa aktarma başlatılıyor…"
+msgstr "KAlarm ayarlarını dışa aktarma başlatılıyor…"
 
 #: core/alarm/exportalarmjobinterface.cpp:29
 #, kde-format
 msgid "Export KAlarm settings"
-msgstr "K Alarm ayarlarını dışa aktar"
+msgstr "KAlarm ayarlarını dışa aktar"
 
 #: core/alarm/importalarmjobinterface.cpp:33
 #, kde-format
 msgid "Starting to import KAlarm settings..."
-msgstr "K Alarm ayarlarını içe aktarma başlatılıyor…"
+msgstr "KAlarm ayarlarını içe aktarma başlatılıyor…"
 
 #: core/alarm/importalarmjobinterface.cpp:34
 #, kde-format
 msgid "Import KAlarm settings"
-msgstr "K Alarm ayarlarını dışa aktar"
+msgstr "KAlarm ayarlarını dışa aktar"
 
 #: core/archivestorage.cpp:43
 #, kde-format
@@ -407,10 +407,9 @@ msgid "Transports backup done."
 msgstr "Taşıma yedeklemesi tamamlandı."
 
 #: core/mail/exportmailjobinterface.cpp:136
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Transports cannot be exported."
-msgstr "Süzgeç dışa aktarılamıyor."
+msgstr "Taşımalar dışa aktarılamıyor."
 
 #: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
@@ -574,7 +573,7 @@ msgstr "“%1” dosyası açılamadı."
 #: core/pimdatabackuprestore.cpp:93
 #, kde-format
 msgid "Starting to backup data in '%1'"
-msgstr "“%1” içine veriler yedeklenmeye başlanıyor"
+msgstr "“%1” içine veriler yedeklenmeye başlanıyor…"
 
 #: core/pimdatabackuprestore.cpp:176
 #, kde-format
@@ -584,7 +583,7 @@ msgstr "“%1” içine yedekleme tamamlandı."
 #: core/pimdatabackuprestore.cpp:266
 #, kde-format
 msgid "Starting to restore data from '%1'"
-msgstr "“%1” yedeğinden veri geri yüklemesi başlanıyor"
+msgstr "“%1” yedeğinden veri geri yüklemesine başlanıyor…"
 
 #: core/pimdatabackuprestore.cpp:274
 #, kde-format
@@ -592,15 +591,14 @@ msgid "Restoring data from '%1' done."
 msgstr "“%1” yedeğinden veri geri yükleme tamamlandı."
 
 #: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
-#, fuzzy, kde-format
-#| msgid "Impossible to open archive file."
+#, kde-format
 msgid "Impossible to open temporary file."
-msgstr "Arşiv dosyasını açmak imkansız."
+msgstr "Geçici dosyayı açmak olanaksız."
 
 #: core/pimdatabackupthread.cpp:41
 #, kde-format
 msgid "Impossible to open archive file."
-msgstr "Arşiv dosyasını açmak imkansız."
+msgstr "Arşiv dosyasını açmak olanaksız."
 
 #: core/pimdatabackupthread.cpp:48
 #, kde-format
@@ -630,7 +628,7 @@ msgstr "KAddressbook"
 #: core/utils.cpp:188
 #, kde-format
 msgid "KAlarm"
-msgstr "K Alarm"
+msgstr "KAlarm"
 
 #: core/utils.cpp:190
 #, kde-format

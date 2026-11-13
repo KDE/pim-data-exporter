@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-12 01:03+0000\n"
-"PO-Revision-Date: 2024-12-04 11:03+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"PO-Revision-Date: 2026-11-12 07:44+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -415,10 +415,9 @@ msgid "Transports backup done."
 msgstr "Архивация методов отправки почты завершена."
 
 #: core/mail/exportmailjobinterface.cpp:136
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Transports cannot be exported."
-msgstr "Экспортировать фильтры не удалось."
+msgstr "Экспортировать методы отправки почты не удалось."
 
 #: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
@@ -601,10 +600,9 @@ msgid "Restoring data from '%1' done."
 msgstr "Восстановление данных из «%1» завершено."
 
 #: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
-#, fuzzy, kde-format
-#| msgid "Impossible to open archive file."
+#, kde-format
 msgid "Impossible to open temporary file."
-msgstr "Не удалось открыть файл архива."
+msgstr "Не удалось открыть временный файл."
 
 #: core/pimdatabackupthread.cpp:41
 #, kde-format

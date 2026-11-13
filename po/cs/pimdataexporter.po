@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-12 01:03+0000\n"
-"PO-Revision-Date: 2026-01-15 18:54+0100\n"
-"Last-Translator: Libor Filípek <filipek.libor@protonmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2026-11-12 11:33+0100\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -406,10 +406,9 @@ msgid "Transports backup done."
 msgstr "Záloha transportů dokončena"
 
 #: core/mail/exportmailjobinterface.cpp:136
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Transports cannot be exported."
-msgstr "Filtry nemohou být exportovány."
+msgstr "Transporty nelze exportovat."
 
 #: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
@@ -591,10 +590,9 @@ msgid "Restoring data from '%1' done."
 msgstr "Obnovování dat z '%1' bylo dokončeno."
 
 #: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
-#, fuzzy, kde-format
-#| msgid "Impossible to open archive file."
+#, kde-format
 msgid "Impossible to open temporary file."
-msgstr "Nelze otevřít soubor archivu."
+msgstr "Nelze otevřít dočasný soubor."
 
 #: core/pimdatabackupthread.cpp:41
 #, kde-format

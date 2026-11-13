@@ -1,0 +1,216 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY i18n-pimdataexporter "<application
+>مصدّر بيانات إدارة البيانات الشخصية</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Arabic "INCLUDE">
+  <!ENTITY imap "<acronym
+>IMAP</acronym
+>">
+]>
+
+<article id="pimdataexporter" lang="&language;">
+
+<articleinfo id="pimdataexporterinfo">
+<title
+>دليل &i18n-pimdataexporter;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> &Laurent.Montel.mail; </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>&Laurent.Montel;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2016-07-27</date>
+<releaseinfo
+>5.3.40 (التّطبيقات 16.08)</releaseinfo>
+
+</articleinfo>
+
+
+<sect1 id="introduction">
+<title
+>مقدمة</title>
+
+<para
+>يتيح &i18n-pimdataexporter; تصدير واستيراد إعدادات PIM والبريد المحلي. يمكنك نسخ احتياطي واستعادة الإعدادات من البرامج التالية: <simplelist>
+<member
+>بريدك</member>
+<member
+>ملاحظاتك</member>
+<member
+>أكريغتور</member>
+<member
+>دفتر عناوينك</member>
+<member
+>منبهك</member>
+<member
+>منظمك</member>
+</simplelist>
+</para>
+
+<sect2 id="using-kapp">
+<title
+>استخدام &i18n-pimdataexporter;</title>
+<para
+>النسخ الاحتياطي ممارسة أساسية لجميع المستخدمين. &i18n-pimdataexporter; أداة رائعة للنسخ الاحتياطي أو نقل جميع إعداداتك وبريدك الإلكتروني إلى تثبيت جديد. يمكنك أيضًا استخدام &i18n-pimdataexporter; لاستيراد النسخ الاحتياطية السابقة.</para>
+<para
+>يمكنك استخدام <menuchoice
+><guimenu
+>أدوات</guimenu
+><guimenuitem
+>تصدير بيانات &kmail;...</guimenuitem
+></menuchoice
+> من نافذة عرض الرسائل، أو يمكن تشغيل &i18n-pimdataexporter; كتطبيق مستقل عن طريق تشغيل &i18n-pimdataexporter; في مشغل التطبيقات.</para>
+
+<para
+>لإجراء نسخ احتياطي، <action
+>اختر <menuchoice
+><guimenu
+>ملف</guimenu
+><guimenuitem
+>انسخ البيانات احتياطيًا...</guimenuitem
+></menuchoice
+></action
+>، سيطلب منك إغلاق جميع تطبيقات kdepim. <warning
+><para
+>تأكد من إغلاق جميع النوافذ، فقدان البيانات ممكن إذا لم تفعل.</para
+></warning
+> بمجرد إغلاقها، انقر <guibutton
+>نعم</guibutton
+> للمتابعة، أو <guibutton
+>لا</guibutton
+> للإلغاء.</para>
+<para
+>سيُطلب منك إنشاء اسم للنسخ الاحتياطي، أدخل الاسم في مربع النص <guilabel
+>ملف</guilabel
+>، مثل <replaceable
+>mymailsettings</replaceable
+>. نوع الملف المبدئي الذي يُحفظ به هو <filename role="extension"
+>.zip</filename
+>. </para>
+<para
+>ستتيح لك الشاشة التالية تحديد ما ترغب في نسخه احتياطيًا، بشكل مبدئي كل شيء محدد. <note
+> <para
+>سيقوم اختيار رسائل &kmail; بنسخ الرسائل في <quote
+>المجلدات المحلية</quote
+> فقط، وسينسخ إعدادات &imap; ويُحمل الرسائل عند الاستعادة. إذا كان لديك رسائل بريد إلكتروني على خادم &imap; ترغب في نسخها احتياطيًا، يجب استخدام <ulink url="help:/akonadi_folderarchive_agent"
+>وكيل أرشفة المجلدات</ulink
+> لأرشفة تلك الرسائل إلى مجلد محلي.</para>
+</note
+></para>
+<screenshot>
+<screeninfo
+>حوار التحديد</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="selection-dialog.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>حوار التحديد</phrase>
+    </textobject>
+    <caption>
+      <para
+>حوار التحديد</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+<para
+>تعرض الشاشة النهائية سجل عملية النسخ الاحتياطي. يمكنك إغلاق النافذة بعد مراجعة السجل والتحقق من نجاح النسخ الاحتياطي.</para>
+<para
+>لاستعادة النسخ الاحتياطي، اختر <menuchoice
+><guimenu
+>ملف</guimenu
+><guimenuitem
+>استعادة البيانات...</guimenuitem
+></menuchoice
+> داخل &i18n-pimdataexporter;.</para>
+<para
+>باستخدام <menuchoice
+><guimenu
+>أدوات</guimenu
+><guimenuitem
+>أظهر معلومات الأرشيف</guimenuitem
+></menuchoice
+> يمكنك تحديد أرشيف نسخ احتياطي وعرض محتواه.</para>
+</sect2>
+</sect1>
+
+<sect1 id="credits">
+
+<title
+>الحقوق والترخيص</title>
+<para
+>&i18n-pimdataexporter;</para>
+<para
+>حقوق نشر البرنامج 2019 &Laurent.Montel; &Laurent.Montel.mail; </para>
+<para
+>حقوق نشر التوثيق &copy; 2019 &Laurent.Montel; &Laurent.Montel.mail; &Scarlett.Clark; &Scarlett.Clark.mail; </para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </sect1>
+
+&documentation.index;
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

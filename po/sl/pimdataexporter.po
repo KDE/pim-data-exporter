@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-12 01:03+0000\n"
-"PO-Revision-Date: 2024-08-01 06:41+0200\n"
+"PO-Revision-Date: 2026-11-12 07:33+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.10\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -411,10 +411,9 @@ msgid "Transports backup done."
 msgstr "Varnostno kopiranje prenosov je končano."
 
 #: core/mail/exportmailjobinterface.cpp:136
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Transports cannot be exported."
-msgstr "Filtrov ni mogoče izvoziti."
+msgstr "Transportov ni mogoče izvoziti."
 
 #: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
@@ -596,10 +595,9 @@ msgid "Restoring data from '%1' done."
 msgstr "Obnavljanje podatkov iz '%1' je končano."
 
 #: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
-#, fuzzy, kde-format
-#| msgid "Impossible to open archive file."
+#, kde-format
 msgid "Impossible to open temporary file."
-msgstr "Ni mogoče odpreti arhivske datoteke."
+msgstr "Ni mogoče odpreti začasne datoteke."
 
 #: core/pimdatabackupthread.cpp:41
 #, kde-format
