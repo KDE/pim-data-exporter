@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2018.
-# SPDX-FileCopyrightText: 2022, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2022, 2024, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-12 01:03+0000\n"
-"PO-Revision-Date: 2024-08-15 11:49+0400\n"
+"PO-Revision-Date: 2026-11-14 16:56+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -422,10 +422,9 @@ msgid "Transports backup done."
 msgstr "اكتمل نسخ النّقولات احتياطيًّا."
 
 #: core/mail/exportmailjobinterface.cpp:136
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Transports cannot be exported."
-msgstr "تعذّر تصدير المرشّحات."
+msgstr "تعذّر تصدير النواقل."
 
 #: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
@@ -611,10 +610,9 @@ msgid "Restoring data from '%1' done."
 msgstr "اكتملت استعادة البيانات من ’%1‘."
 
 #: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
-#, fuzzy, kde-format
-#| msgid "Impossible to open archive file."
+#, kde-format
 msgid "Impossible to open temporary file."
-msgstr "تعذّر فتح ملفّ الأرشيف."
+msgstr "من المستحيل فتح الملف المؤقت."
 
 #: core/pimdatabackupthread.cpp:41
 #, kde-format

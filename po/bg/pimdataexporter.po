@@ -404,7 +404,7 @@ msgstr "Резервното копие на методите за трансп�
 #, fuzzy, kde-format
 #| msgid "Filters cannot be exported."
 msgid "Transports cannot be exported."
-msgstr "Филтрите не могат да бъдат експортирани."
+msgstr "Транспортите не могат да бъдат експортирани."
 
 #: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
@@ -592,7 +592,7 @@ msgstr "Възстановяването на данни от „%1“ прик�
 #, fuzzy, kde-format
 #| msgid "Impossible to open archive file."
 msgid "Impossible to open temporary file."
-msgstr "Невъзможно е да се отвори архивен файл."
+msgstr "Невъзможно е да се отвори временен файл."
 
 #: core/pimdatabackupthread.cpp:41
 #, kde-format
