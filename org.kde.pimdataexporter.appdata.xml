@@ -6,7 +6,7 @@
 <component type="desktop-application">
   <id>org.kde.pimdataexporter</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-2.0+</project_license>
+  <project_license>GPL-2.0-or-later</project_license>
   <name>PIM Data Exporter</name>
   <name xml:lang="ar">مصدّر بيانات إدارة البيانات الشخصية</name>
   <name xml:lang="az">PİM verilənlərinin ixracatçısı</name>
@@ -47,7 +47,7 @@
   <name xml:lang="uk">Засіб експортування даних PIM</name>
   <name xml:lang="zh-CN">个人信息管理数据导出器</name>
   <name xml:lang="zh-TW">PIM 資料匯出工具</name>
-  <summary>Saves all data from PIM apps and restore them in other systems.</summary>
+  <summary>Saves all data from PIM apps and restore them in other systems</summary>
   <summary xml:lang="ar">تحفظ كل بيانات تطبيقات إدارة البيانات الشخصية وتستعيدها في الأنظمة الأخرى.</summary>
   <summary xml:lang="az">PİM tətbiqlərindən bütün verilənləri saxlayır və onları başqa sistemdə bərpa edir</summary>
   <summary xml:lang="bg">Запазва всички данни от приложенията за лични данни и ги възстановява в други системи.</summary>
