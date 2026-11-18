@@ -52,6 +52,14 @@
     <name translate="no">KDE</name>
   </developer>
   <launchable type="desktop-id">org.kde.pimdataexporter.desktop</launchable>
+  <keywords>
+    <keyword>backup</keyword>
+    <keyword>restore</keyword>
+    <keyword>export</keyword>
+    <keyword>import</keyword>
+    <keyword translate="no">PIM</keyword>
+    <keyword translate="no">Akonadi</keyword>
+  </keywords>
   <description>
     <p>
 	    PIM Data Exporter exports and imports PIM settings
