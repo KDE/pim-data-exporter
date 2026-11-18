@@ -124,6 +124,7 @@ Comment[uk]=За допомогою програми для експортува
 Comment[zh_CN]=个人信息管理设置导出器可以保存所有个人信息管理程序的数据并且将其在其他系统中恢复。
 Comment[zh_TW]=PIM 資料匯出工具可以將 PIM 應用程式裡的資料儲存並回復到其他系統中。
 Categories=Qt;KDE;Network;Email;
+Keywords=backup;restore;export;import;PIM;Akonadi;
 X-DocPath=pimdataexporter/index.html
 SingleMainWindow=true
 Version=1.5
