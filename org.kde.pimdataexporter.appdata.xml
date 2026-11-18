@@ -107,6 +107,10 @@
     <binary>pimdataexporter</binary>
   </provides>
   <project_group>KDE</project_group>
+  <branding>
+    <color type="primary" scheme_preference="light">#fbe5c4</color>
+    <color type="primary" scheme_preference="dark">#6e4a14</color>
+  </branding>
   <screenshots>
     <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/pimsettingexporter/pimsettingsexporter.png</image>
