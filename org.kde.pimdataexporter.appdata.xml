@@ -48,6 +48,13 @@
   <name xml:lang="zh-CN">个人信息管理数据导出器</name>
   <name xml:lang="zh-TW">PIM 資料匯出工具</name>
   <summary>Saves all data from PIM apps and restore them in other systems</summary>
+  <summary xml:lang="ar">حفظ كل بيانات تطبيقات إدارة البيانات الشخصية وتستعيدها في الأنظمة الأخرى</summary>
+  <summary xml:lang="ca">Desa totes les dades de les aplicacions PIM i les restaura en altres sistemes</summary>
+  <summary xml:lang="ca-valencia">Guarda totes les dades de les aplicacions PIM i les restaura en altres sistemes</summary>
+  <summary xml:lang="nl">Slaat alle gegevens uit PIM-toepassingen en herstelt ze in andere systemen.</summary>
+  <summary xml:lang="pt-BR">Salva todo os dados de aplicativos PIM e restaura-os em outros sistemas.</summary>
+  <summary xml:lang="ru">Сохранение данных из приложений PIM для переноса и восстановления на других системах</summary>
+  <summary xml:lang="tr">PIM uygulamalarından tüm veriyi kaydeder ve diğer sistemlerde geri yükler</summary>
   <developer id="org.kde">
     <name translate="no">KDE</name>
   </developer>
