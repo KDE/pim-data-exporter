@@ -92,9 +92,7 @@ void SynchronizeResourceDialog::selectItem(bool state)
 
 void SynchronizeResourceDialog::setResources(const QHash<QString, QString> &resources)
 {
-    QHashIterator<QString, QString> i(resources);
-    while (i.hasNext()) {
-        i.next();
+    for (auto i = resources.cbegin(), end = resources.cend(); i != end; ++i) {
         auto item = new QListWidgetItem(mListResourceWidget);
         item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
         item->setCheckState(Qt::Unchecked);

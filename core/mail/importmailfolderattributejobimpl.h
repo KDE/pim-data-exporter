@@ -24,5 +24,7 @@ private:
     void nextAttribute();
     void slotCollectionModifyDone(KJob *job);
     void collectionFetchResult(KJob *job);
-    QScopedPointer<QMapIterator<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo>> mIndexMap;
+    QMap<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo> mAttributeMap;
+    QMap<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo>::const_iterator mCurrentAttribute;
+    QMap<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo>::const_iterator mNextAttribute;
 };

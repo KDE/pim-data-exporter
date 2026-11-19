@@ -22,21 +22,24 @@ ImportMailFolderAttributeJobImpl::~ImportMailFolderAttributeJobImpl() = default;
 
 void ImportMailFolderAttributeJobImpl::applyAttributes(const QMap<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo> &map)
 {
-    mIndexMap.reset(new QMapIterator<Akonadi::Collection::Id, ImportExportMailUtil::AttributeInfo>(map));
+    mAttributeMap = map;
+    mCurrentAttribute = mAttributeMap.cend();
+    mNextAttribute = mAttributeMap.cbegin();
     nextAttribute();
 }
 
 void ImportMailFolderAttributeJobImpl::nextAttribute()
 {
-    if (mIndexMap->hasNext()) {
-        mIndexMap->next();
-        qDebug() << " restoring folder attribute " << mIndexMap->key();
-        if (mIndexMap->key() == -1) {
-            qCWarning(PIMDATAEXPORTERCORE_LOG) << " It's a bug !  restoring folder attribute " << mIndexMap->key();
+    if (mNextAttribute != mAttributeMap.cend()) {
+        mCurrentAttribute = mNextAttribute;
+        ++mNextAttribute;
+        qDebug() << " restoring folder attribute " << mCurrentAttribute.key();
+        if (mCurrentAttribute.key() == -1) {
+            qCWarning(PIMDATAEXPORTERCORE_LOG) << " It's a bug !  restoring folder attribute " << mCurrentAttribute.key();
             nextAttribute();
             return;
         }
-        auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection(mIndexMap->key()), Akonadi::CollectionFetchJob::Base, this);
+        auto fetch = new Akonadi::CollectionFetchJob(Akonadi::Collection(mCurrentAttribute.key()), Akonadi::CollectionFetchJob::Base, this);
         fetch->fetchScope().fetchAttribute<Akonadi::EntityDisplayAttribute>();
         fetch->fetchScope().fetchAttribute<MailCommon::ExpireCollectionAttribute>();
         connect(fetch, &Akonadi::CollectionFetchJob::result, this, &ImportMailFolderAttributeJobImpl::collectionFetchResult);
@@ -46,22 +49,22 @@ void ImportMailFolderAttributeJobImpl::nextAttribute()
                 return;
             }
             Akonadi::Collection col = cols.first();
-            if (!mIndexMap->value().expireAttribute.isEmpty()) {
+            if (!mCurrentAttribute.value().expireAttribute.isEmpty()) {
                 MailCommon::ExpireCollectionAttribute *expireAttribute =
                     col.attribute<MailCommon::ExpireCollectionAttribute>(Akonadi::Collection::AddIfMissing);
-                expireAttribute->deserialize(mIndexMap->value().expireAttribute);
+                expireAttribute->deserialize(mCurrentAttribute.value().expireAttribute);
             }
-            if (!mIndexMap->value().displayAttribute.isEmpty()) {
+            if (!mCurrentAttribute.value().displayAttribute.isEmpty()) {
                 Akonadi::EntityDisplayAttribute *entityAttribute = col.attribute<Akonadi::EntityDisplayAttribute>(Akonadi::Collection::AddIfMissing);
-                entityAttribute->deserialize(mIndexMap->value().displayAttribute);
+                entityAttribute->deserialize(mCurrentAttribute.value().displayAttribute);
             }
-            if (!mIndexMap->value().favoriteAttribute.isEmpty()) {
+            if (!mCurrentAttribute.value().favoriteAttribute.isEmpty()) {
                 Akonadi::FavoriteCollectionAttribute *favoriteAttribute =
                     col.attribute<Akonadi::FavoriteCollectionAttribute>(Akonadi::Collection::AddIfMissing);
-                favoriteAttribute->deserialize(mIndexMap->value().favoriteAttribute);
+                favoriteAttribute->deserialize(mCurrentAttribute.value().favoriteAttribute);
             }
 
-            qDebug() << " modify folder attribute " << mIndexMap->key();
+            qDebug() << " modify folder attribute " << mCurrentAttribute.key();
             auto job = new Akonadi::CollectionModifyJob(col, this);
             connect(job, &Akonadi::CollectionModifyJob::result, this, &ImportMailFolderAttributeJobImpl::slotCollectionModifyDone);
         });
