@@ -9,6 +9,7 @@
 #include "pimdataexporter_export.h"
 #include "utils.h"
 #include <Akonadi/Collection>
+#include <QHash>
 #include <QObject>
 #include <QStringList>
 

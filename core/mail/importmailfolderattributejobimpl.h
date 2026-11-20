@@ -8,6 +8,7 @@
 
 #include "importmailfolderattributejob.h"
 #include <Akonadi/Collection>
+#include <QMap>
 class KJob;
 class ImportMailFolderAttributeJobImpl : public ImportMailFolderAttributeJob
 {

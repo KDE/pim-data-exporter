@@ -11,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "utils.h"
 #include <KConfigGroup>
 #include <KZip>
+#include <QMap>
 #include <QTemporaryFile>
 
 ExportMailFolderAttributeJob::ExportMailFolderAttributeJob(QObject *parent)

@@ -7,6 +7,7 @@
 #pragma once
 #include "utils.h"
 #include <KXmlGuiWindow>
+#include <QHash>
 class LogWidget;
 class KRecentFilesMenu;
 class QAction;

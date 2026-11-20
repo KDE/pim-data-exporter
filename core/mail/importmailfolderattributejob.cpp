@@ -15,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KArchiveDirectory>
 #include <KArchiveFile>
 #include <KConfigGroup>
+#include <QMap>
 
 ImportMailFolderAttributeJob::ImportMailFolderAttributeJob(QObject *parent)
     : QObject{parent}

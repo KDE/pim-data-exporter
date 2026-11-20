@@ -8,6 +8,7 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include <QFile>
+#include <QMap>
 ImportMailFolderAttributeJobTestImpl::ImportMailFolderAttributeJobTestImpl(QObject *parent)
     : ImportMailFolderAttributeJob{parent}
 {

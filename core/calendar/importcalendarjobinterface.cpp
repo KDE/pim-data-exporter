@@ -20,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QColor>
 #include <QDir>
+#include <QMap>
 #include <QStandardPaths>
 #include <QTimer>
 

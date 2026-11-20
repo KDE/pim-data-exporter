@@ -23,6 +23,7 @@
 #include <KZip>
 
 #include <QDir>
+#include <QMap>
 #include <QRegularExpression>
 #include <QStandardPaths>
 #include <QTimer>

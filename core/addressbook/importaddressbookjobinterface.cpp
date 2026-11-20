@@ -16,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KZip>
 
 #include <QDir>
+#include <QMap>
 #include <QStandardPaths>
 #include <QTimer>
 

@@ -15,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <Akonadi/FavoriteCollectionAttribute>
 #include <Akonadi/MessageFolderAttribute>
 #include <MailCommon/ExpireCollectionAttribute>
+#include <QMap>
 
 ExportMailFolderAttributeJobImpl::ExportMailFolderAttributeJobImpl(QObject *parent)
     : ExportMailFolderAttributeJob{parent}

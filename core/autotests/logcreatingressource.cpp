@@ -8,6 +8,7 @@
 using namespace Qt::Literals::StringLiterals;
 
 #include <QDebug>
+#include <QMap>
 #include <QTemporaryFile>
 #include <QTextStream>
 #include <QVariant>
