@@ -403,10 +403,9 @@ msgid "Transports backup done."
 msgstr "Záloha prenosov hotová."
 
 #: core/mail/exportmailjobinterface.cpp:136
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Transports cannot be exported."
-msgstr "Filtre sa nedajú exportovať."
+msgstr "Transporty sa nedajú exportovať."
 
 #: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
@@ -588,10 +587,9 @@ msgid "Restoring data from '%1' done."
 msgstr "Obnova údajov z '%1' hotová."
 
 #: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
-#, fuzzy, kde-format
-#| msgid "Impossible to open archive file."
+#, kde-format
 msgid "Impossible to open temporary file."
-msgstr "Nie je možné otvoriť súbor archívu."
+msgstr "Nie je možné otvoriť dočasný súbor."
 
 #: core/pimdatabackupthread.cpp:41
 #, kde-format
