@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-12 01:03+0000\n"
+"POT-Creation-Date: 2026-11-21 01:12+0000\n"
 "PO-Revision-Date: 2026-11-12 07:44+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -131,8 +131,8 @@ msgid "\"%1\" was restored."
 msgstr "Файл «%1» был восстановлен."
 
 #: core/abstractimportexportjob.cpp:385
-#: core/addressbook/importaddressbookjobinterface.cpp:232
-#: core/mail/importmailjobinterface.cpp:423
+#: core/addressbook/importaddressbookjobinterface.cpp:233
+#: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
 msgstr "Источники данных восстановлены."
@@ -226,41 +226,41 @@ msgstr "Архивация конфигурации…"
 msgid "Config backup done."
 msgstr "Архивация конфигурации завершена."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:42
+#: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
 msgstr "Начало импорта параметров KAddressBook…"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:44
+#: core/addressbook/importaddressbookjobinterface.cpp:45
 #, kde-format
 msgid "Import KAddressBook settings"
 msgstr "Импорт параметров KAddressBook"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:93
+#: core/addressbook/importaddressbookjobinterface.cpp:94
 #: core/akregator/importakregatorjobinterface.cpp:95
 #: core/alarm/importalarmjobinterface.cpp:83
-#: core/calendar/importcalendarjobinterface.cpp:91
+#: core/calendar/importcalendarjobinterface.cpp:92
 #, kde-format
 msgid "Restore configs..."
 msgstr "Восстановление конфигурационных файлов…"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:110
+#: core/addressbook/importaddressbookjobinterface.cpp:111
 #: core/akregator/importakregatorjobinterface.cpp:101
 #: core/alarm/importalarmjobinterface.cpp:99
-#: core/calendar/importcalendarjobinterface.cpp:228
-#: core/mail/importmailjobinterface.cpp:861
+#: core/calendar/importcalendarjobinterface.cpp:229
+#: core/mail/importmailjobinterface.cpp:862
 #, kde-format
 msgid "Config restored."
 msgstr "Конфигурация восстановлена."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:163
 #: core/addressbook/importaddressbookjobinterface.cpp:164
+#: core/addressbook/importaddressbookjobinterface.cpp:165
 #: core/alarm/importalarmjobinterface.cpp:115
 #: core/alarm/importalarmjobinterface.cpp:116
-#: core/calendar/importcalendarjobinterface.cpp:281
 #: core/calendar/importcalendarjobinterface.cpp:282
-#: core/mail/importmailjobinterface.cpp:198
+#: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
+#: core/mail/importmailjobinterface.cpp:200
 #, kde-format
 msgid "Restore resources..."
 msgstr "Восстановление ресурсов…"
@@ -368,12 +368,12 @@ msgstr "Начало экспорта параметров KOrganizer…"
 msgid "Export KOrganizer settings"
 msgstr "Экспорт параметров KOrganizer"
 
-#: core/calendar/importcalendarjobinterface.cpp:36
+#: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
 msgstr "Начало импорта параметров KOrganizer…"
 
-#: core/calendar/importcalendarjobinterface.cpp:38
+#: core/calendar/importcalendarjobinterface.cpp:39
 #, kde-format
 msgid "Import KOrganizer settings"
 msgstr "Импорт параметров KOrganizer"
@@ -466,90 +466,90 @@ msgstr "Архивация атрибутов папки завершена."
 msgid "Folder Attributes cannot be exported."
 msgstr "Не удалось экспортировать атрибуты папки."
 
-#: core/mail/importmailjobinterface.cpp:42
+#: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KMail settings..."
 msgstr "Начало импорта параметров KMail…"
 
-#: core/mail/importmailjobinterface.cpp:43
+#: core/mail/importmailjobinterface.cpp:44
 #, kde-format
 msgid "Import KMail settings"
 msgstr "Импорт параметров KMail"
 
-#: core/mail/importmailjobinterface.cpp:168
-#: core/mail/importmailjobinterface.cpp:174
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
 #, kde-format
 msgid "Restore transports..."
 msgstr "Восстановление методов отправки почты…"
 
-#: core/mail/importmailjobinterface.cpp:172
+#: core/mail/importmailjobinterface.cpp:173
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
 msgstr "В архиве отсутствует файл «mailtransports»."
 
-#: core/mail/importmailjobinterface.cpp:187
+#: core/mail/importmailjobinterface.cpp:188
 #, kde-format
 msgid "Transports restored."
 msgstr "Методы отправки почты восстановлены."
 
-#: core/mail/importmailjobinterface.cpp:189
+#: core/mail/importmailjobinterface.cpp:190
 #, kde-format
 msgid "Failed to restore transports file."
 msgstr "Не удалось восстановить конфигурационный файл методов отправки почты."
 
-#: core/mail/importmailjobinterface.cpp:435
-#: core/mail/importmailjobinterface.cpp:437
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
 #, kde-format
 msgid "Restore mails..."
 msgstr "Восстановление почты…"
 
-#: core/mail/importmailjobinterface.cpp:554
+#: core/mail/importmailjobinterface.cpp:555
 #, kde-format
 msgid "Mails restored."
 msgstr "Почта восстановлена."
 
-#: core/mail/importmailjobinterface.cpp:561
+#: core/mail/importmailjobinterface.cpp:562
 #, kde-format
 msgid "Restore config..."
 msgstr "Восстановление параметров…"
 
-#: core/mail/importmailjobinterface.cpp:564
+#: core/mail/importmailjobinterface.cpp:565
 #, kde-format
 msgid "filters file could not be found in the archive."
 msgstr "Файл filters в архиве не найден."
 
-#: core/mail/importmailjobinterface.cpp:568
+#: core/mail/importmailjobinterface.cpp:569
 #, kde-format
 msgid "Restore filters..."
 msgstr "Восстановление фильтров…"
 
-#: core/mail/importmailjobinterface.cpp:617
+#: core/mail/importmailjobinterface.cpp:618
 #, kde-format
 msgid "Filters restored."
 msgstr "Фильтры восстановлены."
 
-#: core/mail/importmailjobinterface.cpp:893
-#: core/mail/importmailjobinterface.cpp:898
+#: core/mail/importmailjobinterface.cpp:894
+#: core/mail/importmailjobinterface.cpp:899
 #, kde-format
 msgid "Restoring identities..."
 msgstr "Восстановление профилей…"
 
-#: core/mail/importmailjobinterface.cpp:896
+#: core/mail/importmailjobinterface.cpp:897
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
 msgstr "Файл emailidentities в архиве не найден."
 
-#: core/mail/importmailjobinterface.cpp:957
+#: core/mail/importmailjobinterface.cpp:958
 #, kde-format
 msgid "Identities restored."
 msgstr "Профили восстановлены."
 
-#: core/mail/importmailjobinterface.cpp:959
+#: core/mail/importmailjobinterface.cpp:960
 #, kde-format
 msgid "Failed to restore identity file."
 msgstr "Восстановить файл профиля не удалось."
 
-#: core/mail/importmailjobinterface.cpp:1278
+#: core/mail/importmailjobinterface.cpp:1279
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "Перенос «%1» завершён."

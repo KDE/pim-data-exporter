@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pim-data-exporter\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-12 01:03+0000\n"
+"POT-Creation-Date: 2026-11-21 01:12+0000\n"
 "PO-Revision-Date: 2022-06-16 23:56+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -125,8 +125,8 @@ msgid "\"%1\" was restored."
 msgstr "\"%1\" bərpa olunmadı."
 
 #: core/abstractimportexportjob.cpp:385
-#: core/addressbook/importaddressbookjobinterface.cpp:232
-#: core/mail/importmailjobinterface.cpp:423
+#: core/addressbook/importaddressbookjobinterface.cpp:233
+#: core/mail/importmailjobinterface.cpp:424
 #, kde-format
 msgid "Resources restored."
 msgstr "Verilənlər mənbəyi bərpa edildi."
@@ -220,41 +220,41 @@ msgstr "Tənzimləmə arxivlənir..."
 msgid "Config backup done."
 msgstr "Tənzimləmənin arxivlənməsi başa çatdı."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:42
+#: core/addressbook/importaddressbookjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KAddressBook settings..."
 msgstr "KAdressBook ayarlarının idxalı başlayır..."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:44
+#: core/addressbook/importaddressbookjobinterface.cpp:45
 #, kde-format
 msgid "Import KAddressBook settings"
 msgstr "KAdressBook ayarlarını idxal edin"
 
-#: core/addressbook/importaddressbookjobinterface.cpp:93
+#: core/addressbook/importaddressbookjobinterface.cpp:94
 #: core/akregator/importakregatorjobinterface.cpp:95
 #: core/alarm/importalarmjobinterface.cpp:83
-#: core/calendar/importcalendarjobinterface.cpp:91
+#: core/calendar/importcalendarjobinterface.cpp:92
 #, kde-format
 msgid "Restore configs..."
 msgstr "Tənzimləmələri bərpa edin..."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:110
+#: core/addressbook/importaddressbookjobinterface.cpp:111
 #: core/akregator/importakregatorjobinterface.cpp:101
 #: core/alarm/importalarmjobinterface.cpp:99
-#: core/calendar/importcalendarjobinterface.cpp:228
-#: core/mail/importmailjobinterface.cpp:861
+#: core/calendar/importcalendarjobinterface.cpp:229
+#: core/mail/importmailjobinterface.cpp:862
 #, kde-format
 msgid "Config restored."
 msgstr "Tənzimləmə bərpa edildi."
 
-#: core/addressbook/importaddressbookjobinterface.cpp:163
 #: core/addressbook/importaddressbookjobinterface.cpp:164
+#: core/addressbook/importaddressbookjobinterface.cpp:165
 #: core/alarm/importalarmjobinterface.cpp:115
 #: core/alarm/importalarmjobinterface.cpp:116
-#: core/calendar/importcalendarjobinterface.cpp:281
 #: core/calendar/importcalendarjobinterface.cpp:282
-#: core/mail/importmailjobinterface.cpp:198
+#: core/calendar/importcalendarjobinterface.cpp:283
 #: core/mail/importmailjobinterface.cpp:199
+#: core/mail/importmailjobinterface.cpp:200
 #, kde-format
 msgid "Restore resources..."
 msgstr "Mənbələri bərpa edin..."
@@ -362,12 +362,12 @@ msgstr "KOrganizer ayarlarının ixracını başladın..."
 msgid "Export KOrganizer settings"
 msgstr "KOrganizer ayarlarını ixrac edin"
 
-#: core/calendar/importcalendarjobinterface.cpp:36
+#: core/calendar/importcalendarjobinterface.cpp:37
 #, kde-format
 msgid "Starting to import KOrganizer settings..."
 msgstr "KOrganizer ayarlarının idxalını başladın..."
 
-#: core/calendar/importcalendarjobinterface.cpp:38
+#: core/calendar/importcalendarjobinterface.cpp:39
 #, kde-format
 msgid "Import KOrganizer settings"
 msgstr "KOrganizer ayarlarını idxal edin"
@@ -461,90 +461,90 @@ msgstr "Qovluq atributlarının ehtiyyat nüsxəsinin saxlanılması icra olundu
 msgid "Folder Attributes cannot be exported."
 msgstr "Qovluq atributlarını ixrac etmək mümkün deyil."
 
-#: core/mail/importmailjobinterface.cpp:42
+#: core/mail/importmailjobinterface.cpp:43
 #, kde-format
 msgid "Starting to import KMail settings..."
 msgstr "KMail ayarlarının idxalı başlayır..."
 
-#: core/mail/importmailjobinterface.cpp:43
+#: core/mail/importmailjobinterface.cpp:44
 #, kde-format
 msgid "Import KMail settings"
 msgstr "KMail ayarlarını idxal edin"
 
-#: core/mail/importmailjobinterface.cpp:168
-#: core/mail/importmailjobinterface.cpp:174
+#: core/mail/importmailjobinterface.cpp:169
+#: core/mail/importmailjobinterface.cpp:175
 #, kde-format
 msgid "Restore transports..."
 msgstr "Poçt göndərişi üsullarını bərpa edin..."
 
-#: core/mail/importmailjobinterface.cpp:172
+#: core/mail/importmailjobinterface.cpp:173
 #, kde-format
 msgid "mailtransports file could not be found in the archive."
 msgstr "Arxivdə \"mailtransports\" faylı tapılmadı."
 
-#: core/mail/importmailjobinterface.cpp:187
+#: core/mail/importmailjobinterface.cpp:188
 #, kde-format
 msgid "Transports restored."
 msgstr "Poçt göndərişi üsulları bərpa edildi."
 
-#: core/mail/importmailjobinterface.cpp:189
+#: core/mail/importmailjobinterface.cpp:190
 #, kde-format
 msgid "Failed to restore transports file."
 msgstr "Poçt köçürmə üsulları faylı bərpa edilə bilmədi."
 
-#: core/mail/importmailjobinterface.cpp:435
-#: core/mail/importmailjobinterface.cpp:437
+#: core/mail/importmailjobinterface.cpp:436
+#: core/mail/importmailjobinterface.cpp:438
 #, kde-format
 msgid "Restore mails..."
 msgstr "Poçtları bərpa edin..."
 
-#: core/mail/importmailjobinterface.cpp:554
+#: core/mail/importmailjobinterface.cpp:555
 #, kde-format
 msgid "Mails restored."
 msgstr "Poçtlar bərpa edildi."
 
-#: core/mail/importmailjobinterface.cpp:561
+#: core/mail/importmailjobinterface.cpp:562
 #, kde-format
 msgid "Restore config..."
 msgstr "Tənzimləməni bərpa edin..."
 
-#: core/mail/importmailjobinterface.cpp:564
+#: core/mail/importmailjobinterface.cpp:565
 #, kde-format
 msgid "filters file could not be found in the archive."
 msgstr "\"filters\" faylı arxivdə tapılmadı."
 
-#: core/mail/importmailjobinterface.cpp:568
+#: core/mail/importmailjobinterface.cpp:569
 #, kde-format
 msgid "Restore filters..."
 msgstr "Süzgəcləri bərpa edin..."
 
-#: core/mail/importmailjobinterface.cpp:617
+#: core/mail/importmailjobinterface.cpp:618
 #, kde-format
 msgid "Filters restored."
 msgstr "Süzgəclər bərpa olundu."
 
-#: core/mail/importmailjobinterface.cpp:893
-#: core/mail/importmailjobinterface.cpp:898
+#: core/mail/importmailjobinterface.cpp:894
+#: core/mail/importmailjobinterface.cpp:899
 #, kde-format
 msgid "Restoring identities..."
 msgstr "Kimliklər bərpa edilir..."
 
-#: core/mail/importmailjobinterface.cpp:896
+#: core/mail/importmailjobinterface.cpp:897
 #, kde-format
 msgid "emailidentities file could not be found in the archive."
 msgstr "\"emailidentities\" faylı arxivdə tapılmadı."
 
-#: core/mail/importmailjobinterface.cpp:957
+#: core/mail/importmailjobinterface.cpp:958
 #, kde-format
 msgid "Identities restored."
 msgstr "Kimliklər bərpa edildi."
 
-#: core/mail/importmailjobinterface.cpp:959
+#: core/mail/importmailjobinterface.cpp:960
 #, kde-format
 msgid "Failed to restore identity file."
 msgstr "Kimlik faylının bərpası baş tutmadı."
 
-#: core/mail/importmailjobinterface.cpp:1278
+#: core/mail/importmailjobinterface.cpp:1279
 #, kde-format
 msgid "\"%1\" migration done."
 msgstr "\"%1\" köçürüldü."
