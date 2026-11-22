@@ -133,6 +133,7 @@ Keywords[cs]=zálohování;obnovení;export;import;PIM;Akonadi;
 Keywords[es]=copia de seguridad;copia de respaldo;restaurar;exportar;importar;PIM;Akonadi;
 Keywords[he]=גיבוי;שחזור;ייצוא;ייבוא;PIM;Akonadi;
 Keywords[it]=copia di sicurezza;ripristino;esportazione;importazione;PIM;Akonadi;
+Keywords[ko]=백업;복원;내보내기;가져오기;
 Keywords[nl]=reservekopie;herstellen;exporteren;importeren;PIM;Akonadi;
 Keywords[pt_BR]=backup;restaurar;exportar;importar;PIM;Akonadi;
 Keywords[ru]=резервное копирование;восстановление;экспорт;импорт;PIM;Akonadi;
