@@ -402,10 +402,9 @@ msgid "Transports backup done."
 msgstr "传输备份已完成。"
 
 #: core/mail/exportmailjobinterface.cpp:136
-#, fuzzy, kde-format
-#| msgid "Filters cannot be exported."
+#, kde-format
 msgid "Transports cannot be exported."
-msgstr "过滤器无法导出。"
+msgstr ""
 
 #: core/mail/exportmailjobinterface.cpp:147
 #, kde-format
@@ -587,10 +586,9 @@ msgid "Restoring data from '%1' done."
 msgstr "恢复来自“%1”的数据已完成。"
 
 #: core/pimdatabackupthread.cpp:33 core/resourceconverterbase.cpp:177
-#, fuzzy, kde-format
-#| msgid "Impossible to open archive file."
+#, kde-format
 msgid "Impossible to open temporary file."
-msgstr "不可能打开归档文件。"
+msgstr ""
 
 #: core/pimdatabackupthread.cpp:41
 #, kde-format
