@@ -56,7 +56,9 @@
   <summary xml:lang="es">Guarda todos los datos de las aplicaciones PIM y los restaura en otros sistemas</summary>
   <summary xml:lang="he">שמירת כל הנתונים מיישומי PIM ואחסונם במערכות אחרות</summary>
   <summary xml:lang="it">Salva tutti i dati dalle applicazioni di PIM e li ripristina in altri sistemi</summary>
+  <summary xml:lang="ka">შეინახეთ მონაცემები PIM აპიდან და აღადგინეთ ის სხვა სისტემებზე</summary>
   <summary xml:lang="ko">PIM 앱의 모든 데이터를 저장하여 다른 시스템에서 복원할 수 있도록 허용</summary>
+  <summary xml:lang="lv">Saglabā visus datus no PIM programmām un atjauno tos citās sistēmās</summary>
   <summary xml:lang="nl">Slaat alle gegevens uit PIM-toepassingen en herstelt ze in andere systemen.</summary>
   <summary xml:lang="pt-BR">Salva todo os dados de aplicativos PIM e restaura-os em outros sistemas.</summary>
   <summary xml:lang="ru">Сохранение данных из приложений PIM для переноса и восстановления на других системах</summary>
