@@ -242,7 +242,7 @@ ecm_qt_install_logging_categories(
         DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 
-install(FILES org.kde.pimdataexporter.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES org.kde.pimdataexporter.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 if(KF6DocTools_FOUND)
     kdoctools_install(po)
